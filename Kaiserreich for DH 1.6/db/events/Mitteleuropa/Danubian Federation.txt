@@ -1,0 +1,1519 @@
+event = {
+ id = 966642
+ random =  no
+ country = U25
+ save_date = yes
+
+   trigger = {
+     event = 901089
+     NOT = { 
+     government = communist
+     ideology = nazi
+     ideology = fascist 
+     }
+     }
+
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 40
+ deathdate = { day = 29 month = december year = 1963 }
+
+
+   name = "Reichsrat elections"
+   desc = "Today the people of Danubian Federation will elect their representative to the Reichsrat ! Danubian Federation is mostly Catholic state. The most popular patries is social conservative 'Christlichsoziale Partei'. Minor parties are liberal, 'Liberalpartei Donau' and 'Sozialdemokratische Arbeiterpartei'."
+   style = 2
+   picture = "rusdumaelect"
+
+   action_a = {
+         name = "No surprise, 'Christlichsoziale Partei' wins"
+         ai_chance = 70
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 3 }
+         command = { type = domestic which = freedom  value = 1 }
+         command = { trigger = { NOT = { event = 758322 } } type = headofstate which = 151246230 }
+         command = { trigger = { event = 758322 } type = headofstate which = 151246228 }
+         command = { type = foreignminister which = 151246141 }
+         command = { type = armamentminister which = 151246116 }
+         command = { type = ministerofsecurity which = 151246192 }
+         command = { type = ministerofintelligence which = 151246122 }
+         command = { type = trigger which = 966643 }
+
+   }
+
+   action_b = {
+         name = "Minor suprise, 'Liberalpartei Donau' Win"
+         ai_chance = 15
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 4 }
+         command = { type = domestic which = freedom  value = 5 }
+         command = { trigger = { NOT = { event = 758322 } } type = headofstate which = 151246230 }
+         command = { trigger = { event = 758322 } type = headofstate which = 151246228 }
+         command = { type = foreignminister which = 151246146 }
+         command = { type = armamentminister which = 151246117 }
+         command = { type = ministerofsecurity which = 151246138  }
+         command = { type = ministerofintelligence which = 151246166 }
+         command = { type = trigger which = 966644 }
+   }
+
+ action_c = {
+         name = "A major surprise,'Sozialdemokratische Arbeiterpartei' Wins"
+         ai_chance = 10
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 7 }
+         command = { trigger = { NOT = { event = 758322 } } type = headofstate which = 151246230 }
+         command = { trigger = { event = 758322 } type = headofstate which = 151246228 }
+         command = { type = foreignminister which = 151246234 }
+         command = { type = armamentminister which = 151246237 }
+         command = { type = ministerofsecurity which = 151246240 }
+         command = { type = ministerofintelligence which = 151246241 }
+         command = { type = trigger which = 966645 }
+       
+   }
+ }
+
+event = {
+   id = 966643
+   random =  no
+   country = U25
+
+   name = "New Ministerpräsident"
+   desc = "Austrian Kaiser after elections must choose new Ministerpräsident (Minister-President)."
+   style = 2
+   picture = "reichsrat"
+
+   action_a = {
+         name = "Ludwig Huegerth is our new Ministerpräsident"
+         ai_chance = 60
+         command = { type = headofgovernment which = 151246112 }
+         command = { type = dissent value = 1 }
+         command = { trigger = { NOT = { event = 966670 } } type = setflag which = U25_CST }
+         command = { trigger = { event = 966670 } type = trigger which = 966662 }
+
+       }
+
+       action_b = {
+         name = "O. Löwenfels-Aarengau is better choice"
+         ai_chance = 40
+         command = { type = headofgovernment which = 151246101 }
+         command = { type = dissent value = 3 }
+         command = { trigger = { NOT = { event = 966670 } } type = setflag which = U25_CST }
+         command = { trigger = { event = 966670 } type = trigger which = 966662 }
+
+
+   }
+ }
+
+
+ event = {
+   id = 966644
+   random =  no
+   country = U25
+
+   name = "New Ministerpräsident"
+   desc = "Austrian Kaiser after elections must choose new Ministerpräsident (Minister-President)."
+   style = 2
+   picture = "reichsrat"
+
+   action_a = {
+         name = "The people want the liberals, the people will get the liberals"
+         ai_chance = 60
+         command = { type = headofgovernment which = 151246233 }
+         command = { type = dissent value = 1 }
+         command = { type = trigger which = 966661 }
+       }
+
+       action_b = {
+         name = "Country needs stability, Jakub Bojko will be next Ministerpräsident"
+         ai_chance = 40
+         command = { type = headofgovernment which = 151246210 }
+         command = { type = foreignminister which = 151246213 }
+         command = { type = dissent value = 3 }
+         command = { type = domestic which = defense_lobby value = 1 }
+         command = { trigger = { NOT = { event = 966670 } } type = setflag which = U25_CST }
+         command = { trigger = { event = 966670 } type = trigger which = 966662 }
+
+
+   }
+ }
+
+
+
+ event = {
+   id = 966645
+   random =  no
+   country = U25
+
+   name = "New Ministerpräsident"
+   desc = "Austrian Kaiser after elections must choose new Ministerpräsident (Minister-President)."
+   style = 2
+   picture = "reichsrat"
+
+   action_a = {
+         name = "Karl Renner will become the Ministerpräsident"
+         ai_chance = 50
+         command = { type = headofgovernment which = 151246111 }
+         command = { type = dissent value = 1 }
+         command = { trigger = { NOT = { event = 966664 } } type = setflag which = U25_SCD }
+         command = { trigger = { event = 966664 } type = trigger which = 966660 }
+       }
+
+       action_b = {
+         name = "Appoint Ministerpräsident from 'Christlichsoziale Partei'"
+         ai_chance = 50
+         command = { type = headofgovernment which = 151246210 }
+         command = { type = foreignminister which = 151246213 }
+         command = { type = dissent value = 5 }
+         command = { type = domestic which = defense_lobby value = 1 }
+         command = { trigger = { NOT = { event = 966670 } } type = setflag which = U25_CST }
+         command = { trigger = { event = 966670 } type = trigger which = 966662 }
+   }
+ }
+
+
+event = {
+ id = 966646
+ random =  no
+ country = U25
+ save_date = yes
+
+   trigger = {
+     event = { id = 966642 days = 1480 }
+     NOT = { government = communist }
+     NOT = { ideology = nazi }
+     NOT = { ideology = fascist }
+     }
+
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 40
+ deathdate = { day = 29 month = december year = 1963 }
+
+
+   name = "Reichsrat elections"
+   desc = "Today the people of Danubian Federation will elect their representative to the Reichsrat ! Danubian Federation is mostly Catholic state. The most popular patries is social conservative 'Christlichsoziale Partei'. Minor parties are liberal, 'Liberalpartei Donau' and 'Sozialdemokratische Arbeiterpartei'."
+   style = 2
+   picture = "rusdumaelect"
+
+   action_a = {
+         name = "No surprise, 'Christlichsoziale Partei' wins"
+         ai_chance = 60
+
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 3 }
+         command = { type = domestic which = freedom  value = 1 }
+         command = { trigger = { NOT = { event = 758322 } } type = headofstate which = 151246230 }
+         command = { trigger = { event = 758322 } type = headofstate which = 151246228 }
+         command = { type = foreignminister which = 151246141 }
+         command = { type = armamentminister which = 151246116 }
+         command = { type = ministerofsecurity which = 151246192 }
+         command = { type = ministerofintelligence which = 151246122 }
+         command = { type = trigger which = 966647 }
+
+   }
+
+   action_b = {
+         name = "A major suprise, 'Liberalpartei Donau' Win"
+         ai_chance = 15
+
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 4 }
+         command = { type = domestic which = freedom  value = 5 }
+         command = { trigger = { NOT = { event = 758322 } } type = headofstate which = 151246230 }
+         command = { trigger = { event = 758322 } type = headofstate which = 151246228 }
+         command = { type = foreignminister which = 151246146 }
+         command = { type = armamentminister which = 151246117 }
+         command = { type = ministerofsecurity which = 151246138  }
+         command = { type = ministerofintelligence which = 151246166 }
+         command = { type = trigger which = 966648 }
+   }
+
+ action_c = {
+         name = "Minor surprise,'Sozialdemokratische Arbeiterpartei' Wins"
+         ai_chance = 20
+
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 7 }
+         command = { trigger = { NOT = { event = 758322 } } type = headofstate which = 151246230 }
+         command = { trigger = { event = 758322 } type = headofstate which = 151246228 }
+         command = { type = foreignminister which = 151246234 }
+         command = { type = armamentminister which = 151246237 }
+         command = { type = ministerofsecurity which = 151246240 }
+         command = { type = ministerofintelligence which = 151246241 }
+         command = { type = trigger which = 966649 }
+       
+   }
+
+ }
+
+event = {
+   id = 966647
+   random =  no
+   country = U25
+
+   name = "New Ministerpräsident"
+   desc = "Austrian Kaiser after elections must choose new Ministerpräsident (Minister-President)."
+   style = 2
+   picture = "reichsrat"
+
+   action_a = {
+         name = "Ludwig Huegerth is our new Ministerpräsident"
+         ai_chance = 60
+         command = { type = headofgovernment which = 151246112 }
+         command = { type = dissent value = 1 }
+         command = { trigger = { NOT = { event = 966670 } } type = setflag which = U25_CST }
+         command = { trigger = { event = 966670 } type = trigger which = 966662 }
+
+       }
+
+       action_b = {
+         name = "O. Löwenfels-Aarengau is better choice"
+         ai_chance = 40
+         command = { type = headofgovernment which = 151246101 }
+         command = { type = dissent value = 3 }
+         command = { trigger = { NOT = { event = 966670 } } type = setflag which = U25_CST }
+         command = { trigger = { event = 966670 } type = trigger which = 966662 }
+
+
+   }
+ }
+
+
+ event = {
+   id = 966648
+   random =  no
+   country = U25
+
+   name = "New Ministerpräsident"
+   desc = "Austrian Kaiser after elections must choose new Ministerpräsident (Minister-President)."
+   style = 2
+   picture = "reichsrat"
+
+   action_a = {
+         name = "The people want the liberals, the people will get the liberals"
+         ai_chance = 60
+         command = { type = headofgovernment which = 151246233 }
+         command = { type = dissent value = 1 }
+         command = { type = trigger which = 966661 }
+       }
+
+       action_b = {
+         name = "Country needs stability, Jakub Bojko will be next Ministerpräsident"
+         ai_chance = 40
+         command = { type = headofgovernment which = 151246210 }
+         command = { type = foreignminister which = 151246213 }
+         command = { type = dissent value = 3 }
+         command = { type = domestic which = defense_lobby value = 1 }
+         command = { trigger = { NOT = { event = 966670 } } type = setflag which = U25_CST }
+         command = { trigger = { event = 966670 } type = trigger which = 966662 }
+
+
+   }
+ }
+
+
+
+ event = {
+   id = 966649
+   random =  no
+   country = U25
+
+   name = "New Ministerpräsident"
+   desc = "Austrian Kaiser after elections must choose new Ministerpräsident (Minister-President)."
+   style = 2
+   picture = "reichsrat"
+
+   action_a = {
+         name = "Karl Renner will become the Ministerpräsident"
+         ai_chance = 50
+         command = { type = headofgovernment which = 151246111 }
+         command = { type = dissent value = 1 }
+         command = { trigger = { NOT = { event = 966664 } } type = setflag which = U25_SCD }
+         command = { trigger = { event = 966664 } type = trigger which = 966660 }
+       }
+
+       action_b = {
+         name = "Appoint Ministerpräsident from 'Christlichsoziale Partei'"
+         ai_chance = 50
+         command = { type = headofgovernment which = 151246210 }
+         command = { type = foreignminister which = 151246213 }
+         command = { type = dissent value = 5 }
+         command = { type = domestic which = defense_lobby value = 1 }
+         command = { trigger = { NOT = { event = 966670 } } type = setflag which = U25_CST }
+         command = { trigger = { event = 966670 } type = trigger which = 966662 }
+
+
+   }
+ }
+
+
+event = {
+ id = 966650
+ random =  no
+ country = U25
+ save_date = yes
+
+   trigger = {
+     event = { id = 966646 days = 1480 }
+     NOT = { government = communist }
+     NOT = { ideology = nazi }
+     NOT = { ideology = fascist }
+     }
+
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 40
+ deathdate = { day = 29 month = december year = 1960 }
+
+
+   name = "Reichsrat elections"
+   desc = "Today the people of Danubian Federation will elect their representative to the Reichsrat ! Danubian Federation is mostly Catholic state. The most popular patries is social conservative 'Christlichsoziale Partei'. Minor parties are liberal, 'Liberalpartei Donau' and 'Sozialdemokratische Arbeiterpartei'."
+   style = 2
+   picture = "rusdumaelect"
+
+   action_a = {
+         name = "No surprise, 'Christlichsoziale Partei' wins"
+         ai_chance = 55
+
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 3 }
+         command = { type = domestic which = freedom  value = 1 }
+         command = { trigger = { NOT = { event = 758322 } } type = headofstate which = 151246230 }
+         command = { trigger = { event = 758322 } type = headofstate which = 151246228 }
+         command = { type = foreignminister which = 151246141 }
+         command = { type = armamentminister which = 151246116 }
+         command = { type = ministerofsecurity which = 151246192 }
+         command = { type = ministerofintelligence which = 151246122 }
+         command = { type = trigger which = 966651 }
+
+   }
+
+   action_b = {
+         name = "A major suprise, 'Liberalpartei Donau' Win"
+         ai_chance = 15
+
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 4 }
+         command = { type = domestic which = freedom  value = 5 }
+         command = { trigger = { NOT = { event = 758322 } } type = headofstate which = 151246230 }
+         command = { trigger = { event = 758322 } type = headofstate which = 151246228 }
+         command = { type = foreignminister which = 151246146 }
+         command = { type = armamentminister which = 151246117 }
+         command = { type = ministerofsecurity which = 151246138  }
+         command = { type = ministerofintelligence which = 151246166 }
+         command = { type = trigger which = 966652 }
+   }
+
+ action_c = {
+         name = "Minor surprise,'Sozialdemokratische Arbeiterpartei' Wins"
+         ai_chance = 25
+
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 7 }
+         command = { trigger = { NOT = { event = 758322 } } type = headofstate which = 151246230 }
+         command = { trigger = { event = 758322 } type = headofstate which = 151246228 }
+         command = { type = foreignminister which = 151246234 }
+         command = { type = armamentminister which = 151246237 }
+         command = { type = ministerofsecurity which = 151246240 }
+         command = { type = ministerofintelligence which = 151246241 }
+         command = { type = trigger which = 966653 }
+       
+   }
+ }
+
+event = {
+   id = 966651
+   random =  no
+   country = U25
+
+   name = "New Ministerpräsident"
+   desc = "Austrian Kaiser after elections must choose new Ministerpräsident (Minister-President)."
+   style = 2
+   picture = "reichsrat"
+
+   action_a = {
+         name = "Bedrich Homola is our new Ministerpräsident"
+         ai_chance = 60
+         command = { type = headofgovernment which = 151246140 }
+         command = { type = dissent value = 1 }
+         command = { trigger = { NOT = { event = 966670 } } type = setflag which = U25_CST }
+         command = { trigger = { event = 966670 } type = trigger which = 966662 }
+       }
+
+       action_b = {
+         name = "O. Löwenfels-Aarengau is better choice"
+         ai_chance = 40
+         command = { type = headofgovernment which = 151246101 }
+         command = { type = dissent value = 3 }
+         command = { trigger = { NOT = { event = 966670 } } type = setflag which = U25_CST }
+         command = { trigger = { event = 966670 } type = trigger which = 966662 }
+
+
+   }
+ }
+
+
+ event = {
+   id = 966652
+   random =  no
+   country = U25
+
+   name = "New Ministerpräsident"
+   desc = "Austrian Kaiser after elections must choose new Ministerpräsident (Minister-President)."
+   style = 2
+   picture = "reichsrat"
+
+   action_a = {
+         name = "The people want the liberals, the people will get the liberals"
+         ai_chance = 60
+         command = { type = headofgovernment which = 151246233 }
+         command = { type = dissent value = 1 }
+         command = { type = trigger which = 966661 }
+       }
+
+       action_b = {
+         name = "Country needs stability, Jakub Bojko will be next Ministerpräsident"
+         ai_chance = 40
+         command = { type = headofgovernment which = 151246210 }
+         command = { type = foreignminister which = 151246213 }
+         command = { type = dissent value = 3 }
+         command = { type = domestic which = defense_lobby value = 1 }
+         command = { trigger = { NOT = { event = 966670 } } type = setflag which = U25_CST }
+         command = { trigger = { event = 966670 } type = trigger which = 966662 }
+
+
+   }
+ }
+
+
+
+ event = {
+   id = 966653
+   random =  no
+   country = U25
+
+   name = "New Ministerpräsident"
+   desc = "Austrian Kaiser after elections must choose new Ministerpräsident (Minister-President)."
+   style = 2
+   picture = "reichsrat"
+
+   action_a = {
+         name = "Alexander Dubcek will become the Ministerpräsident"
+         ai_chance = 50
+         command = { type = headofgovernment which = 151246231 }
+         command = { type = dissent value = 1 }
+         command = { trigger = { NOT = { event = 966664 } } type = setflag which = U25_SCD }
+         command = { trigger = { event = 966664 } type = trigger which = 966660 }
+       }
+
+       action_b = {
+         name = "Appoint Ministerpräsident from 'Christlichsoziale Partei'"
+         ai_chance = 50
+         command = { type = headofgovernment which = 151246226 }
+         command = { type = foreignminister which = 151246213 }
+         command = { type = dissent value = 5 }
+         command = { type = domestic which = defense_lobby value = 1 }
+         command = { trigger = { NOT = { event = 966670 } } type = setflag which = U25_CST }
+         command = { trigger = { event = 966670 } type = trigger which = 966662 }
+
+
+   }
+ }
+
+
+event = {
+ id = 966654
+ random =  no
+ country = U25
+ save_date = yes
+
+   trigger = {
+     event = { id = 966650 days = 1480 }
+     NOT = { government = communist }
+     NOT = { ideology = nazi }
+     NOT = { ideology = fascist }
+     }
+
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 40
+ deathdate = { day = 29 month = december year = 1960 }
+
+
+   name = "Reichsrat elections"
+   desc = "Today the people of Danubian Federation will elect their representative to the Reichsrat ! Danubian Federation is mostly Catholic state. The most popular patries is social conservative 'Christlichsoziale Partei'. Minor parties are liberal, 'Liberalpartei Donau' and 'Sozialdemokratische Arbeiterpartei'."
+   style = 2
+   picture = "rusdumaelect"
+
+   action_a = {
+         name = "No surprise, 'Christlichsoziale Partei' wins"
+         ai_chance = 50
+
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 3 }
+         command = { type = domestic which = freedom  value = 1 }
+         command = { trigger = { NOT = { event = 758322 } } type = headofstate which = 151246230 }
+         command = { trigger = { event = 758322 } type = headofstate which = 151246228 }
+         command = { type = foreignminister which = 151246141 }
+         command = { type = armamentminister which = 151246116 }
+         command = { type = ministerofsecurity which = 151246192 }
+         command = { type = ministerofintelligence which = 151246122 }
+         command = { type = trigger which = 966655 }
+
+   }
+
+   action_b = {
+         name = "A major suprise, 'Liberalpartei Donau' Win"
+         ai_chance = 15
+
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 4 }
+         command = { type = domestic which = freedom  value = 5 }
+         command = { trigger = { NOT = { event = 758322 } } type = headofstate which = 151246230 }
+         command = { trigger = { event = 758322 } type = headofstate which = 151246228 }
+         command = { type = foreignminister which = 151246146 }
+         command = { type = armamentminister which = 151246117 }
+         command = { type = ministerofsecurity which = 151246138  }
+         command = { type = ministerofintelligence which = 151246166 }
+         command = { type = trigger which = 966656 }
+   }
+
+ action_c = {
+         name = "Minor surprise,'Sozialdemokratische Arbeiterpartei' Wins"
+         ai_chance = 30
+
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 7 }
+         command = { trigger = { NOT = { event = 758322 } } type = headofstate which = 151246230 }
+         command = { trigger = { event = 758322 } type = headofstate which = 151246228 }
+         command = { type = foreignminister which = 151246234 }
+         command = { type = armamentminister which = 151246237 }
+         command = { type = ministerofsecurity which = 151246240 }
+         command = { type = ministerofintelligence which = 151246241 }
+         command = { type = trigger which = 966657 }
+       
+   }
+ }
+
+event = {
+   id = 966655
+   random =  no
+   country = U25
+
+   name = "New Ministerpräsident"
+   desc = "Austrian Kaiser after elections must choose new Ministerpräsident (Minister-President)."
+   style = 2
+   picture = "reichsrat"
+
+   action_a = {
+         name = "Bedrich Homola is our new Ministerpräsident"
+         ai_chance = 60
+         command = { type = headofgovernment which = 151246140 }
+         command = { type = dissent value = 1 }
+         command = { trigger = { NOT = { event = 966670 } } type = setflag which = U25_CST }
+         command = { trigger = { event = 966670 } type = trigger which = 966662 }
+
+       }
+
+       action_b = {
+         name = "O. Löwenfels-Aarengau is better choice"
+         ai_chance = 40
+         command = { type = headofgovernment which = 151246101 }
+         command = { type = dissent value = 3 }
+         command = { trigger = { NOT = { event = 966670 } } type = setflag which = U25_CST }
+         command = { trigger = { event = 966670 } type = trigger which = 966662 }
+
+
+   }
+ }
+
+
+ event = {
+   id = 966656
+   random =  no
+   country = U25
+
+   name = "New Ministerpräsident"
+   desc = "Austrian Kaiser after elections must choose new Ministerpräsident (Minister-President)."
+   style = 2
+   picture = "reichsrat"
+
+   action_a = {
+         name = "The people want the liberals, the people will get the liberals"
+         ai_chance = 60
+         command = { type = headofgovernment which = 151246233 }
+         command = { type = dissent value = 1 }
+         command = { type = trigger which = 966661 }
+       }
+
+       action_b = {
+         name = "Country needs stability, Jakub Bojko will be next Ministerpräsident"
+         ai_chance = 40
+         command = { type = headofgovernment which = 151246210 }
+         command = { type = foreignminister which = 151246213 }
+         command = { type = dissent value = 3 }
+         command = { type = domestic which = defense_lobby value = 1 }
+         command = { trigger = { NOT = { event = 966670 } } type = setflag which = U25_CST }
+         command = { trigger = { event = 966670 } type = trigger which = 966662 }
+
+   }
+ }
+
+
+
+ event = {
+   id = 966657
+   random =  no
+   country = U25
+
+   name = "New Ministerpräsident"
+   desc = "Austrian Kaiser after elections must choose new Ministerpräsident (Minister-President)."
+   style = 2
+   picture = "reichsrat"
+
+   action_a = {
+         name = "Alexander Dubcek will become the Ministerpräsident"
+         ai_chance = 50
+         command = { type = headofgovernment which = 151246231 }
+         command = { type = dissent value = 1 }
+         command = { trigger = { NOT = { event = 966664 } } type = setflag which = U25_SCD }
+         command = { trigger = { event = 966664 } type = trigger which = 966660 }
+       }
+
+       action_b = {
+         name = "Appoint Ministerpräsident from 'Christlichsoziale Partei'"
+         ai_chance = 50
+         command = { type = headofgovernment which = 151246226 }
+         command = { type = foreignminister which = 151246213 }
+         command = { type = dissent value = 5 }
+         command = { type = domestic which = defense_lobby value = 1 }
+         command = { trigger = { NOT = { event = 966670 } } type = setflag which = U25_CST }
+         command = { trigger = { event = 966670 } type = trigger which = 966662 }
+
+   }
+ }
+
+
+event = {
+id = 966658
+random = no
+country = U25
+style = 2
+persistent = yes
+picture = "Syndicalists"
+
+trigger = { 
+flag = U25_SCD
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 5
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "Coalition with Socialist ?"
+desc = "After victory of the social democrat in last election some radical members suggest to form coalition with Socialist party to gain constitutional majority in Reichsrat in order to approve all important economical and political reforms. However, such move will be perceived as a threat of syndicalization of our monarchy and might bring us a few problems.."
+
+action_a = {
+ai_chance = 50
+name = "Invite Socialist into coalition !"
+	command = { type = dissent value = 5 }
+        command = { type = domestic which = free_market value = -1 }
+	command = { type = domestic which = political_left value = 1 }
+        command = { type = foreignminister which =  151246254  }
+        command = { type = armamentminister which = 151246265  }
+        command = { type = clrflag which = U25_SCD }
+        command = { type = relation which = GER value = -10 }
+        command = { type = trigger which = 966659 }
+	}
+
+action_b = {
+ai_chance = 50
+name = "Never !"
+	command = { type = dissent value = 3 }
+        command = { type = clrflag which = U25_SCD }
+        command = { type = trigger which = 966660 }
+	}
+
+}
+
+event = {
+id = 966659
+random = no
+country = U25
+style = 2
+persistent = yes
+picture = "reichsrat"
+
+
+name = "Left-wing Coalition decide it's policy"
+desc = "Coalition of Social Democrats and Syndicalist is now ready to apply its political and economical visions into practice. Majority of social-democrats wanted to focus on creation of stable economy, while minority of them together with Socialist want to apply radical reforms along socialist lines."
+
+action_a = {
+ai_chance = 30
+trigger = {
+NOT = {
+ispuppet = U25
+}
+}
+name = "Let us radically reform the economy along Syndicalist lines!"
+	command = { type = domestic which = political_left value = 1 }
+	command = { type = domestic which = democratic value = -1 }
+	command = { type = domestic which = free_market value = -3 }
+	command = { type = relation which = GER value = -50 }
+	command = { type = relation which = CAN value = -50 }
+	command = { type = relation which = FIN value = -50 }
+	command = { type = relation which = TEX value = -50 }
+	command = { type = relation which = ENG value = 50 }
+	command = { type = relation which = FRA value = 50 }
+	command = { type = relation which = NOR value = 50 }
+	command = { type = relation which = CSA value = 50 }
+        command = { type = headofstate which = 151246266 }
+        command = { type = industrial_modifier which = total value = 4 }
+	command = { type = setflag which = U25_SYN }
+	command = { type = dissent value = 5 }
+	}
+
+action_b = {
+ai_chance = 70
+name = "Let us build a People's Home for all nations !"
+	command = { type = dissent value = -5 }
+	command = { type = domestic which = free_market value = -1 }
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = industrial_modifier which = total value = 3 }
+        command = { type = construct which = IC where = -4 value = 1 }
+	}
+
+}
+
+event = {
+id = 966660
+random = no
+country = U25
+style = 2
+persistent = yes
+picture = "reichsrat"
+
+
+name = "The Policy of the Social-Democrats"
+desc = "After their victory, the Social-Democrats remained divided. The largest faction wanted to create a system of government-sponsored welfare-programs to gradually eliminate class-warfare and through democratic control create the socialist society. A  smaller group, espoused no radical changes."
+
+action_a = {
+ai_chance = 70
+name = "Let us build a People's Home for all nations!"
+	command = { type = dissent value = -10 }
+	command = { type = domestic which = free_market value = -1 }
+	command = { type = domestic which = political_left value = 1 }
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = industrial_modifier which = total value = 3 }
+        command = { type = construct which = IC where = -4 value = 1 }
+	}
+
+action_b = {
+ai_chance = 30
+name = "Stay the Course, Lets not Rock the Boat"
+	command = { type = dissent value = -5 }
+	command = { type = domestic which = political_left value = -1 }
+	}
+}
+
+event = {
+id = 966661
+random = no
+country = U25
+style = 2
+persistent = yes
+picture = "reichsrat"
+
+
+name = "The Liberals Decide upon their Policy"
+desc = "A Liberal victory in the latest election was completely unexpected. The liberals, themselves not expecting to seize power, were divided on what to do. Most favoured a policy of maintaining the Status Quo. Others wished for the creation of a welfare-state to ensure the liberty and prosperity of all. A third group propagated a more laissez-faire version of capitalism."
+
+
+action_a = {
+ai_chance = 60
+name = "Stay the Course, Best not to Rock the Boat"
+	command = { type = dissent value = 5 }
+	}
+
+action_b = {
+ai_chance = 15
+name = "Let us build a People's Home for all nations!"
+	command = { type = dissent value = 5 }
+	command = { type = domestic which = free_market value = -1 }
+	command = { type = domestic which = political_left value = 1 }
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = industrial_modifier which = total value = 3 }
+	}
+
+action_c = {
+ai_chance = 25
+name = "A free Market is the Answer to all our Troubles!"
+	command = { type = domestic which = democratic value = 1 }
+	command = { type = domestic which = political_left value = -1 }
+	command = { type = domestic which = free_market value = 9 }
+	command = { type = money value = 100 }
+	command = { type = dissent value = 5 }
+	}
+}
+
+event = {
+id = 966662
+random = no
+country = U25
+style = 2
+persistent = yes
+picture = "reichsrat"
+
+name = "The Conservatives decide their policy"
+desc = "After the latest election a strong lobby within the military wanted to focus on national defence, others believed that in order to rebuild the economy, a focus on agriculture and small-scale industry was needed, and a third group believed that most important should be the focus on smoothing ruffled feathers and avoiding causing any trouble."
+
+action_a = {
+ai_chance = 25
+name = "Let us focus on defending our country from external threats"
+	command = { type = dissent value = 5 }
+	command = { type = domestic which = interventionism value = 2 }
+	command = { type = domestic which = professional_army value = 2 }
+	command = { type = domestic which = defense_lobby value = 2 }
+	command = { type = manpowerpool value = 150 }
+	command = { type = supplies value = -2000 }
+	}
+
+action_b = {
+ai_chance = 15
+name = "Let us avoid interfering too much"
+command = { type = dissent value = -5 }
+command = { type = domestic which = democratic value = 1 }
+	}
+
+action_c = {
+ai_chance = 60
+name = "Let us focus on strengthening our agriculture and industry!"
+	command = { type = domestic which = free_market value = -1 }
+	command = { type = manpowerpool value = -40 }
+	command = { type = construct which = IC where = -4 value = 1 }
+        command = { type = construct which = IC where = -4 value = 1 }
+        command = { type = gain_tech which = -1 } 
+        command = { type = gain_tech which = -1 } 
+	}
+}
+
+event = {
+id = 966663
+random = no
+country = U25
+
+trigger = {
+        flag = U25_SYN
+	}
+
+name = "Armed putsch"
+desc = "Our radical domestical reforms along syndicalist lines have greatly angered conservative and military circles. With silent consent of the emperor these forces have decided to overthrown our government in order to save country from syndicalism."
+style = 2
+picture = "british_protesting"
+
+ 
+ date = { day = 1 month = january year = 1936 }
+ offset = 30
+ deathdate = { day = 10 month = november year = 1970 }
+
+
+
+
+action_a = {
+	name = "Putschist overthrown government !"
+	ai_chance = 50
+	command = { type = dissent value = 5  }
+        command = { type = set_domestic which = democratic value = 4 }
+	command = { type = set_domestic which = political_left value = 3 }
+        command = { type = headofstate which = 151246100 }
+        command = { type = headofgovernment which = 151246177 }
+        command = { type = foreignminister which = 151246102 }
+        command = { type = armamentminister which = 151246103 }
+        command = { type = ministerofsecurity which = 151246104 }
+        command = { type = ministerofintelligence which = 151246105 }
+        command = { type = relation which = GER value = 50 }
+	command = { type = relation which = CAN value = 50 }
+	command = { type = relation which = FIN value = 50 }
+	command = { type = relation which = TEX value = 50 }
+	command = { type = relation which = ENG value = -50 }
+	command = { type = relation which = FRA value = -50 }
+	command = { type = relation which = NOR value = -50 }
+	command = { type = relation which = CSA value = -50 }
+        command = { type = clrflag which = U25_SYN }
+        command = { type = setflag which = U25_SYD }
+	} 
+
+action_b = {
+	name = "People defeat reactionaries !"
+	ai_chance = 50
+	command = { type = dissent value = -15  }
+        command = { type = clrflag which = U25_SYN }
+        command = { type = setflag which = U25_SYV }	
+	}
+}
+
+event = {
+	id = 966664
+	random = no
+	country = U25
+	style = 2
+        
+
+	trigger = {
+	flag = U25_SYD
+	}
+
+	name = "Restoration of Constitution ?"
+	desc = "With situation in our homeland stabilized we can now think about restoration of constitution, suspended after military putsch, in which loyal officers together with conservatives prevented syndicalism from gaining foothold in Danubian Federation."
+        picture = "reichsrat"
+
+	
+	date = { day = 1 month = january year = 1936 }
+	offset = 120
+	deathdate = { day = 29 month = december year = 1970 }
+
+	action_a = {
+	ai_chance = 10
+		name = "Keep military government"
+                command = { type = dissent value = 15 }	
+                command = { type = clrflag which = U25_SYD }
+	}
+
+	action_b = {
+	ai_chance = 90
+		name = "Restore suspended constitution"
+		command = { type = dissent value = -5 } 
+                command = { type = set_domestic which = democratic value = 8 }
+	        command = { type = set_domestic which = political_left value = 3 }
+                command = { type = set_domestic which = free_market value = 7 }
+                command = { type = set_domestic which = freedom  value = 7 }
+                command = { type = clrflag which = U25_SYD }
+	}
+
+
+}
+
+
+event = {
+	id = 966665
+	random = no
+	country = U25
+	style = 2
+        
+
+	trigger = {
+		flag = U25_SYV
+	}
+
+	name = "Fate of Monarchy ?"
+	desc = "Our government successfully resisted attempt to overthrown it by forces of reactionary officers and conservative politicians. Investigation has shown direct involvement of the royal house in preparation of putsch. What should happen to our monarch ? And more importantly what should happen to our homeland ?"
+        picture = "Diet"
+
+	
+	date = { day = 1 month = january year = 1936 }
+	offset = 10
+	deathdate = { day = 29 month = december year = 1970 }
+
+	action_a = {
+	ai_chance = 100
+		name = "Declare Danubian Union !"
+		command = { type = name where = U25 which = U25_SYN_NAME }
+                command = { type = flag_ext where = U25 which = "_syn" }
+                command = { type = dissent value = 5 }
+                command = { type = headofstate which = 151246258 }
+		command = { type = headofgovernment which = 151246246 }
+                command = { type = set_domestic which = democratic value = 3 }
+	        command = { type = set_domestic which = political_left value = 9 }
+                command = { type = relation which = FRA value = 200 }
+                command = { type = relation which = RSI value = 200 }
+                command = { type = relation which = ENG value = 200 }
+                command = { type = relation which = CSA value = 200 }
+                command = { type = relation which = SOV value = 200 }
+                command = { type = relation which = PRK value = 200 }
+                command = { type = relation which = GEO value = 200 }
+                command = { type = relation which = GUA value = 200 }
+                command = { type = relation which = GER value = -50 }
+                command = { type = relation which = CAN value = -50 }
+                command = { type = end_non_aggression which = U25 where = GER }
+                command = { type = end_non_aggression which = GER where = U25 }
+                command = { type = end_non_aggression which = U25 where = ITA }
+                command = { type = end_non_aggression which = ITA where = U25 }
+                command = { trigger = { alliance = { country = U25 country = GER } } type = leave_alliance }
+                command = { trigger = { alliance = { country = U25 country = CAN } } type = leave_alliance }
+                command = { type = end_guarantee which = GER where = U25 }
+		command = { type = end_trades which = GER where = U25 }
+                command = { type = end_guarantee which = CAN where = U25 }
+		command = { type = end_trades which = CAN where = U25 }
+                command = { type = peace which = FRA value = 1 }
+                command = { type = peace which = SOV value = 1 }
+                command = { type = peace which = RSI value = 1 }
+                command = { type = peace which = ENG value = 1 }
+                command = { type = peace which = CSA value = 1 }
+                command = { type = clrflag which = U25_SYV }
+		
+	}
+	action_b = {
+	ai_chance = 0
+		name = "Keep monarch in power...."
+		command = { type = dissent value = 10 } 
+                command = { type = clrflag which = U25_SYV }
+        
+	}
+
+
+}
+
+event = {
+id = 966666
+random = no
+country = U25
+style = 2
+persistent = yes
+picture = "heimwehrserv"
+
+trigger = { 
+flag = U25_CST
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 5
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "Coalition with Nationalist ?"
+desc = "After victory of the social conservative in last election some radical members suggest to form coalition with minor Nationalist parties in order to gain constitutional majority in Reichsrat in order to approve all important economical and political reforms. However, such move will be perceived as a threat of fragmentation of our monarchy and might bring us a few problems.."
+
+action_a = {
+ai_chance = 50
+name = "Invite Nationalist into coalition !"
+	command = { type = dissent value = 7 }
+        command = { type = domestic which = free_market value = -1 }
+	command = { type = domestic which = political_left value = -1 }
+        command = { type = foreignminister which =  151246102  }
+        command = { type = armamentminister which = 151246148  }
+        command = { type = trigger which = 966667 }
+        command = { type = clrflag which = U25_CST }
+	}
+
+action_b = {
+ai_chance = 50
+name = "Never !"
+	command = { type = dissent value = 5 }
+        command = { type = trigger which = 966662 }
+        command = { type = clrflag which = U25_CST }
+	}
+
+}
+
+event = {
+id = 966667
+random = no
+country = U25
+style = 2
+persistent = yes
+picture = "reichsrat"
+
+
+name = "Right-wing Coalition decide it's policy"
+desc = "Coalition of Conservatives and Nationalist is now ready to apply its political and economical visions into practice. Majority of conservatives wanted to focus on creation of stable economy and on defence of our homeland, while minority of them together with Nationalist want to decentralize our rigid empire."
+
+action_a = {
+ai_chance = 30
+name = "Allow more authonomy for nations !"
+trigger = {
+NOT = {
+ispuppet = U25
+}
+}
+	command = { type = domestic which = political_left value = -1 }
+	command = { type = domestic which = democratic value = -1 }
+	command = { type = domestic which = free_market value = -2 }
+        command = { type = domestic which = freedom  value = 1 }
+        command = { type = industrial_modifier which = total value = 3 }
+	command = { type = setflag which = U25_NAT }
+	command = { type = dissent value = 5 }
+	}
+
+action_b = {
+ai_chance = 25
+name = "Let us focus on defending our country from external threats"
+	command = { type = dissent value = 5 }
+	command = { type = set_domestic which = interventionism value = 9 }
+	command = { type = set_domestic which = professional_army value = 9 }
+	command = { type = set_domestic which = defense_lobby value = 9 }
+	command = { type = manpowerpool value = -150 }
+	command = { type = supplies value = -500 }
+	}
+
+action_c = {
+ai_chance = 15
+name = "Let us avoid interfering too much"
+        command = { type = dissent value = -5 }
+        command = { type = domestic which = democratic value = 2 }
+	}
+
+action_d = {
+ai_chance = 60
+name = "Let us focus on strengthening our agriculture and industry!"
+	command = { type = domestic which = free_market value = -1 }
+	command = { type = manpowerpool value = 300 }
+	command = { type = construct which = IC where = -4 value = 1 }
+        command = { type = construct which = IC where = -4 value = 1 }
+	command = { type = gain_tech which = -1 } 
+        command = { type = gain_tech which = -1 } 
+	}
+}
+
+event = {
+id = 966668
+random = no
+country = U25
+style = 2
+persistent = yes
+picture = "reichsrat"
+
+trigger = {
+		flag = U25_NAT
+	}
+
+name = "Regional authonomy"
+desc = "Policy of right-wing coalition to decentralize too rigid imperial structures was so far successfull. Majority of conservative politicians now demand cessation of further decentralization effort, since that may begin to threaten unity of our federation. Minor part of conservatives and nationalist demand to accelerate reforms, which are according to them the only way for stable federation."
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+ai_chance = 40
+name = "Continue with decentralization !"
+	command = { type = domestic which = political_left value = -1 }
+	command = { type = domestic which = democratic value = -1 }
+        command = { type = domestic which = freedom  value = 1 }
+	command = { type = setflag which = U25_NAE }
+        command = { type = clrflag which = U25_NAT }
+	command = { type = dissent value = 5 }
+	}
+
+action_b = {
+ai_chance = 60
+name = "Federation is already too decentralized !"
+	command = { type = dissent value = 5 }
+        command = { type = clrflag which = U25_NAT }
+	}
+
+}
+
+event = {
+id = 966669
+random = no
+country = U25
+
+trigger = {
+        flag = U25_NAE
+	}
+
+name = "Armed putsch"
+desc = "Our radical domestical reforms along nationalist lines have greatly angered centralistic and military circles. With silent consent of the emperor these forces have decided to overthrown our government in order to save unity of country."
+style = 2
+picture = "british_protesting"
+
+ 
+ date = { day = 1 month = january year = 1936 }
+ offset = 30
+ deathdate = { day = 10 month = november year = 1970 }
+
+
+
+
+action_a = {
+	name = "Putschist overthrown government !"
+	ai_chance = 50
+	command = { type = dissent value = 7  }
+        command = { type = set_domestic which = democratic value = 4 }
+	command = { type = set_domestic which = political_left value = 3 }
+        command = { type = headofstate which = 151246100 }
+        command = { type = headofgovernment which = 151246177 }
+        command = { type = foreignminister which = 151246102 }
+        command = { type = armamentminister which = 151246103 }
+        command = { type = ministerofsecurity which = 151246104 }
+        command = { type = ministerofintelligence which = 151246105 }
+        command = { type = clrflag which = U25_NAE }
+        command = { type = setflag which = U25_NAD }       
+	} 
+
+action_b = {
+	name = "Putsch fails !"
+	ai_chance = 50
+	command = { type = dissent value = -8  }
+	command = { type = set_domestic which = democratic value = 4 }
+	command = { type = set_domestic which = political_left value = 2 }
+        command = { type = clrflag which = U25_NAE }
+        command = { type = setflag which = U25_NAV } 
+	}
+}
+
+event = {
+	id = 966670
+	random = no
+	country = U25
+	style = 2
+        
+
+	trigger = {
+	flag = U25_NAD
+	}
+
+	name = "Restoration of Constitution ?"
+	desc = "With situation in our homeland stabilized we can now think about restoration of constitution, suspended after military putsch, in which loyal officers together with centralist prevented nationalist from dissolving Danubian Federation."
+        picture = "reichsrat"
+
+	
+	date = { day = 1 month = january year = 1936 }
+	offset = 120
+	deathdate = { day = 29 month = december year = 1970 }
+
+	action_a = {
+	ai_chance = 10
+		name = "Keep military government"
+                command = { type = dissent value = 15 }	
+                command = { type = clrflag which = U25_NAD }
+	}
+
+	action_b = {
+	ai_chance = 90
+		name = "Restore suspended constitution"
+		command = { type = dissent value = -5 } 
+                command = { type = set_domestic which = democratic value = 8 }
+	        command = { type = set_domestic which = political_left value = 3 }
+                command = { type = set_domestic which = free_market value = 7 }
+                command = { type = set_domestic which = freedom  value = 7 }
+                command = { type = clrflag which = U25_NAD }
+	}
+
+
+}
+
+
+event = {
+	id = 966671
+	random = no
+	country = U25
+	style = 2
+        
+
+	trigger = {
+		flag = U25_NAV
+	}
+
+	name = "Fate of Danubian Federation ?"
+	desc = "Our government successfully resisted attempt to overthrown it by forces of centralist officers and politicians. Investigation has shown direct involvement of the royal house in preparation of putsch. What should happen to our homeland ?"
+        picture = "reichsrat"
+
+	
+	date = { day = 1 month = january year = 1936 }
+	offset = 40
+	deathdate = { day = 29 month = december year = 1970 }
+
+	action_a = {
+	ai_chance = 50
+		name = "Definitively decentralize monarchy !"
+                command = { type = country which = AUS }
+                command = { type = dissent value = 6 }
+                command = { type = clrflag which = U25_NAV }
+                command = { trigger = { NOT = { exists = CZE } } type = setflag which = CZE_PUP }
+                command = { trigger = { NOT = { exists = CZE } } type = independence which = CZE value = 1 when = 0 }
+                command = { trigger = { flag = CZE_PUP } type = make_puppet which = CZE }
+                command = { trigger = { NOT = { exists = SLO } } type = setflag which = SLO_PUP }
+                command = { trigger = { NOT = { exists = SLO } } type = independence which = SLO value = 1 when = 0 }
+                command = { trigger = { flag = SLO_PUP } type = make_puppet which = SLO }
+                command = { trigger = { NOT = { exists = GLD } } type = setflag which = GLD_PUP }
+                command = { trigger = { NOT = { exists = GLD } } type = independence which = GLD value = 1 when = 0 }
+                command = { trigger = { flag = GLD_PUP } type = make_puppet which = GLD }
+                command = { trigger = { NOT = { exists = BOS } } type = setflag which = BOS_PUP }	
+                command = { trigger = { NOT = { exists = BOS } } type = independence which = BOS value = 1 when = 0 }
+                command = { trigger = { flag = BOS_PUP } type = make_puppet which = BOS }
+                command = { trigger = { NOT = { exists = CRO } } type = setflag which = CRO_PUP }	
+                command = { trigger = { NOT = { exists = CRO } } type = independence which = CRO value = 1 when = 0 }
+                command = { trigger = { flag = CRO_PUP } type = make_puppet which = CRO }
+                command = { trigger = { NOT = { exists = HUN } } type = setflag which = HUN_PUP }	
+                command = { trigger = { NOT = { exists = HUN } } type = independence which = HUN value = 1 when = 0 }
+                command = { type = secedeprovince which = HUN value = 336 }
+	        command = { type = secedeprovince which = HUN value = 285 }
+	        command = { type = secedeprovince which = HUN value = 295 }
+	        command = { type = secedeprovince which = HUN value = 287 }
+	        command = { type = secedeprovince which = HUN value = 289 }
+	        command = { type = secedeprovince which = HUN value = 291 }
+                command = { type = secedeprovince which = HUN value = 288 }
+	        command = { type = secedeprovince which = HUN value = 292 }
+	        command = { type = secedeprovince which = HUN value = 293 }
+                command = { type = secedeprovince which = HUN value = 213 }
+                command = { trigger = { flag = HUN_PUP } type = make_puppet which = HUN }
+                command = { trigger = { flag = CZE_PUP } type = trigger which = 966672 }
+                command = { trigger = { flag = CRO_PUP } type = trigger which = 966673 }
+                command = { trigger = { flag = GLD_PUP } type = trigger which = 966674 }
+                command = { trigger = { flag = BOS_PUP } type = trigger which = 966675 }
+                command = { trigger = { flag = HUN_PUP } type = trigger which = 966676 }
+                command = { type = trigger which = 966677 }
+                command = { trigger = { flag = SLO_PUP } type = trigger which = 966678 }
+                command = { type = clrflag which = HUN_PUP } 
+                command = { type = clrflag which = CZE_PUP }
+                command = { type = clrflag which = CRO_PUP }
+                command = { type = clrflag which = GLD_PUP } 
+                command = { type = clrflag which = BOS_PUP }
+                command = { type = clrflag which = SLO_PUP }
+
+	}
+
+	action_b = {
+	ai_chance = 50
+		name = "We have decentralized enough...."
+		command = { type = dissent value = 10 }
+                command = { type = clrflag which = U25_NAV } 
+        
+	}
+
+
+}
+
+event = {
+	id = 966672
+	random = no
+	country = CZE
+	style = 2
+        persistent = yes
+
+	name = "Decentralization of the Empire"
+	desc = "The coalition of Conservatives and Nationalist reformed Danubian Federation into a confederal state, allowing for more internal autonomy for each state. As apart of the reforms Otto von Hapsburg has become the official nominal leader of our nation."
+	picture = "diplomatic_campaign"
+
+	action_a = {
+		name = "Okay"
+		command = { type = headofstate which = 24179 }
+                command = { type = add_division value = infantry when = 9 }
+                command = { type = add_division value = infantry when = 9 }
+	}
+}
+
+event = {
+	id = 966673
+	random = no
+	country = CRO
+	style = 2
+        persistent = yes
+
+	name = "Decentralization of the Empire"
+	desc = "The coalition of Conservatives and Nationalist reformed Danubian Federation into a confederal state, allowing for more internal autonomy for each state. As apart of the reforms Otto von Hapsburg has become the official nominal leader of our nation."
+	picture = "diplomatic_campaign"
+
+	action_a = {
+		name = "Okay"
+		command = { type = headofstate which = 30069 }
+                command = { type = add_division value = infantry when = 9 }
+                command = { type = add_division value = infantry when = 9 }
+	}
+}
+
+event = {
+	id = 966674
+	random = no
+	country = GLD
+	style = 2
+        persistent = yes
+
+	name = "Decentralization of the Empire"
+	desc = "The coalition of Conservatives and Nationalist reformed Danubian Federation into a confederal state, allowing for more internal autonomy for each state. As apart of the reforms Otto von Hapsburg has become the official nominal leader of our nation."
+	picture = "diplomatic_campaign"
+
+	action_a = {
+		name = "Okay"
+		command = { type = headofstate which = 551082 }
+                command = { type = add_division value = infantry when = 9 }
+                command = { type = add_division value = infantry when = 9 }
+	}
+}
+
+event = {
+	id = 966675
+	random = no
+	country = BOS
+	style = 2
+        persistent = yes
+
+	name = "Decentralization of the Empire"
+	desc = "The coalition of Conservatives and Nationalist reformed Danubian Federation into a confederal state, allowing for more internal autonomy for each state. As apart of the reforms Otto von Hapsburg has become the official nominal leader of our nation."
+	picture = "diplomatic_campaign"
+
+	action_a = {
+		name = "Okay"
+		command = { type = headofstate which = 546039 }
+                command = { type = add_division value = infantry when = 9 }
+                command = { type = add_division value = infantry when = 9 }
+	}
+}
+
+event = {
+	id = 966676
+	random = no
+	country = HUN
+	style = 2
+        persistent = yes
+
+	name = "Decentralization of the Empire"
+	desc = "The coalition of Conservatives and Nationalist reformed Danubian Federation into a confederal state, allowing for more internal autonomy for each state. As apart of the reforms Otto von Hapsburg has become the official nominal leader of our nation."
+	picture = "diplomatic_campaign"
+
+	action_a = {
+		name = "Okay"
+		command = { type = headofstate which = 21044 }
+                command = { type = add_division value = infantry when = 9 }
+                command = { type = add_division value = infantry when = 9 }
+                command = { type = addcore which = 336 } 
+                command = { type = addcore which = 285 }
+                command = { type = addcore which = 295 }
+                command = { type = addcore which = 287 } 
+                command = { type = addcore which = 289 }
+                command = { type = addcore which = 291 }
+                command = { type = addcore which = 288 }
+                command = { type = addcore which = 292 } 
+                command = { type = addcore which = 293 }
+                command = { type = addcore which = 213 }
+	}
+}
+
+event = {
+	id = 966677
+	random = no
+	country = AUS
+	style = 2
+
+	name = "Decentralization of the Empire"
+	desc = "The coalition of Conservatives and Nationalist reformed Danubian Federation into a confederal state, allowing for more internal autonomy for each state. As apart of the reforms Otto von Hapsburg has become the official nominal leader of each member state."
+	picture = "diplomatic_campaign"
+
+	action_a = {
+		name = "Okay"
+		command = { type = headofstate which = 23041 }
+                command = { trigger = { NOT = { exists = MTN } control = { province = 332 data = AUS } } type = addcore which = 332 } 
+                command = { trigger = { NOT = { exists = MTN } control = { province = 332 data = AUS } } type = addcore which = 335 }
+                command = { trigger = { control = { province = 400 data = AUS } } type = addcore which = 405 } 
+                command = { trigger = { control = { province = 400 data = AUS } } type = addcore which = 394 }
+                command = { trigger = { control = { province = 400 data = AUS } } type = addcore which = 400 }
+	}
+}
+
+event = {
+	id = 966678
+	random = no
+	country = SLO
+	style = 2
+        persistent = yes
+
+	name = "Decentralization of the Empire"
+	desc = "The coalition of Conservatives and Nationalist reformed Danubian Federation into a confederal state, allowing for more internal autonomy for each state. As apart of the reforms Otto von Hapsburg has become the official nominal leader of our nation."
+	picture = "diplomatic_campaign"
+
+	action_a = {
+		name = "Okay"
+		command = { type = headofstate which = 4568922 }
+                command = { type = add_division value = infantry when = 9 }
+                command = { type = add_division value = infantry when = 9 }
+	}
+}

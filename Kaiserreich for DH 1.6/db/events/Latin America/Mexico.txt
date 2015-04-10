@@ -1,0 +1,1771 @@
+###################################################################################
+# Events for Mexico! by Kibbles 61000-100 Suggestions, motivation and original idea by Masked Pickle
+###################################################################################
+# 61000, "Death of President Zapata"
+# 61001, "The New Direction of Mexico" - Expansion, Industry or Agriculture
+# 61002, "The State of the Military" - What Branch to Invest in
+# 61003, "Where do we go now?" - North or South event for Arango & Toledano if there is a second civil war in the US
+# 61004, "The Oil Industry" - Nationalize or Not
+# 61005, "Deal with the Devil, Arango" (CSA) - CSA approaches Mexico about California - Event for Arango
+# 61006, "The Syndicate asks for our help" - Mexicos response to 005
+# 61007, "The Terms" for Arango (CSA) - Terms to 005
+# 61008, "The Yank's Offer an Alliance" - Terms to 005
+# 61009, "The Yank's Offer" - Terms to 005
+# 61010, "The Yank's Offer Nothing"- Terms to 005
+# 61011, "Mexico Accepts Our Offer" (CSA) - Terms to 005
+# 61012, "Arango wants different Terms" - Terms to 005
+# 61013, "Spanish Immigrates arrive in Mexico" - People fleeing the SCW go to MEX
+# 61014, "Calfornia brought to its knees!" - Surrender Event for California if MEX teams up with CSA
+# 61015, "Calfornia brought to its knees!" - Surrender Event for California if MEX take CAL alone
+# 61016, "A Potential Ally in America" - Arango invited into the Syndicalist club
+# 61017 "The Industrialisation of Mexico" - Which path to go down
+# 61018 "The Agrarian Reform" - Agricultural path to go down
+# 61019, "The New Direction of Mexico" - Expansion, Industry or Agriculture for the Triumverate
+# 61020, "The New Direction of Mexico" - Expansion, Industry or Agriculture for Toledano
+# 61021, "Where do we go now?" - North or South event for Arango & Toledano if there isn't a 2nd Civil War in the US
+# 61022, "Where do we go now?" - North or South event for Triumverate
+# 61023, "Where do we go now?" - North or South event for Triumverate if there is a 2nd Civil War in the US
+# 61024, "A Potential Ally in North Amerika" - Think 16, but replace FRA with GER and Arango with Triple
+# 61025, "A Message from the Germans" - Mexico's reponse to 24
+# 61026, "The Germans Strike a Deal with Mexico" - Allows the TEX to garrison the Texan Border with Mexico
+# 61027, "The Germans Strike a Deal with Mexico" - Allows the CAL to garrison the California Border with Mexico
+# 61028, "The Germans Strike a Deal with Mexico" - Allows the USA to garrison the Texan Border with Mexico
+# 61029, "The Germans Strike a Deal with Mexico" - Allows the USA to garrison the California border with Mexico
+# 61030, "The Germans Strike a Deal with Mexico" - Allows the USA to garrison the California and the Texan border with Mexico
+# 61031, "Mexico has Mobilized for War" - Introduces Mexico to the War with USA, TEX or CAL by putting MEX into the Central.
+
+#61070	Mexico defeats the PSA in a war and demands territory
+#61071	Mexico demands California
+#61072	Mexico demands SoCal 
+#61073	California turns Mexico down
+#61074	PSA accepts the demands
+#61075	PSA accepts the demands
+
+event = {
+id = 61000
+country = MEX
+style = 2
+picture = "zapata"
+
+date = { day = 9 month = april year = 1936 }
+
+name = "The Death of President Zapata"
+desc = "On April 10, 1936, the Hero of Revolution and President of Mexico, Emiliano Zapato passed away from natural causes. After his death there was confusion over who would succeed him as there is no plan for succession."
+
+action_a = {
+name = "Marshall Arango seizes the Palacio de los Pinos"
+ai_chance = 33
+command = { type = setflag which = Arango }
+command = { type = ai which = "kaiserreich\switch\MEX_ARANGO.ai" }
+command = { type = set_domestic which = political_left value = 7 }
+command = { type = set_domestic which = democratic value = 2 }
+command = { type = domestic which = free_market value = 7 }
+command = { type = domestic which = interventionism value = 7 }
+command = { type = domestic which = defense_lobby value = 7 }
+command = { type = sleepminister which = 36121 } #Zapata
+command = { type = sleepminister which = 36122 } #Zapata
+command = { type = headofstate which = 36123 } #Arango
+command = { type = headofgovernment which = 36124 } #Arango
+command = { type = dissent value = 5 } 
+}
+action_b = {
+name = "The Chairman of the Socialist Party, Vicente Lombardo Toledano Takes Power"
+ai_chance = 34
+command = { type = setflag which = Toledano }
+command = { type = ai which = "kaiserreich\switch\MEX_TOLEDANO.ai" }
+command = { type = sleepevent which = 61005 }
+command = { type = sleepevent which = 61016 }
+command = { type = domestic which = interventionism value = -3 }
+command = { type = domestic which = defense_lobby value = -3 }
+command = { type = domestic which = free_market value = -7 }
+command = { type = set_domestic which = political_left value = 7 }
+command = { type = set_domestic which = democratic value = 3 }
+command = { type = sleepminister which = 36121 }
+command = { type = sleepminister which = 36122 }
+command = { type = headofstate which = 36128 } #Lombardo
+command = { type = headofgovernment which = 36129 } #Lombardo
+command = { type = dissent value = 5 } 
+}
+action_c = {
+name = "Calles, Corona and Olachea form a Military Triumverate"
+ai_chance = 33
+command = { type = setflag which = Triple }
+command = { type = ai which = "kaiserreich\switch\MEX_TRIPLE.ai" }
+command = { type = sleepevent which = 61005 }
+command = { type = sleepevent which = 61016 }
+command = { type = set_domestic which = political_left value = 3 }
+command = { type = set_domestic which = democratic value = 3 }
+command = { type = flag_ext where = MEX } #reset Mexican flag
+command = { type = sleepminister which = 36121 }
+command = { type = sleepminister which = 36122 }
+command = { type = headofstate which = 36059 }
+command = { type = headofgovernment which = 36132 }
+command = { type = dissent value = 5 } 
+}
+}
+
+event = {
+id = 61001
+country = MEX
+style = 2
+picture = "arango"
+
+trigger = { flag = arango }
+
+date = { day = 27 month = june year = 1936 }
+
+name = "The New Direction of Mexico"
+desc = "Now that the transition of power is over and Marshall Arango has been declared President of Mexico, it is time to decide which path will we take. The general has shown interest in regaining territories lost to the United States while the oppurtunity presents itself."
+
+action_a = {
+name = "Begin expanding the Military, we must regain our lost territories!"
+ai_chance = 50
+command = { type = belligerence which = MEX value = 5 }
+command = { type = relation which = USA value = -50 }
+command = { type = relation which = CAL value = -50 }
+command = { type = relation which = TEX value = -25 }
+command = { type = relation which = CAN value = -25 }
+command = { type = domestic which = defense_lobby value = 3 }
+command = { type = domestic which = interventionism value = 3 }
+command = { type = dissent value = 3 }
+command = { type = supplies value = -1000 }
+command = { type = money value = -250 }
+command = { type = manpowerpool value = -50 }
+command = { type = setflag which = MEX_Military }
+}
+
+action_b = {
+name = "Industrialization, we need an industrial base if we are to become a World Power" 
+ai_chance = 25
+command = { type = dissent value = -3 }
+command = { type = supplies value = -2000 } 
+command = { type = money value = -500 }
+command = { type = setflag which = MEX_Industry }
+}
+
+action_c = {
+name = "Farming, the demand in the World for agriculture is great"
+ai_chance = 25
+command = { type = manpowerpool value = 50 }
+command = { type = dissent value = -3 }
+command = { type = supplies value = -1000 }
+command = { type = money value = -100 }
+command = { type = setflag which = MEX_Agriculture }
+}
+}
+
+event = {
+id = 61002
+country = MEX
+style = 2
+picture = "mex_army"
+
+trigger = { flag = MEX_Military }
+
+date = { day = 21 month = january year = 1937 }
+
+name = "The State of the Military"
+desc = "EVT_61002_DESC"
+
+action_a = {
+name = "Infantry, battles are won on the ground through numbers"
+ai_chance = 45
+command = { type = max_organization which = land value = 10 }
+command = { type = morale which = land value = 10 }
+
+command = { type = add_corps which = "Nuevo Ejercito Mexicano" value = land where = 1974 }
+command = { type = add_division which = "Infanteria Mexicana" value = infantry when = 9 where = artillery }
+command = { type = add_division which = "Infanteria Mexicana" value = infantry when = 9 }
+command = { type = add_division which = "Infanteria Mexicana" value = infantry when = 9 }
+
+command = { type = add_corps which = "Nuevo Ejercito Mexicano" value = land where = 1974 }
+command = { type = add_division which = "Infanteria Mexicana" value = infantry when = 9 where = artillery }
+command = { type = add_division which = "Infanteria Mexicana" value = infantry when = 9 }
+command = { type = add_division which = "Infanteria Mexicana" value = infantry when = 9 }
+
+command = { type = manpowerpool value = -25 }
+command = { type = domestic which = professional_army value = 1 }
+}
+action_b = {
+name = "Calvary, speed and manuverability are essential to victory"
+ai_chance = 35
+command = { type = max_organization which = land value = 10 }
+command = { type = morale which = land value = 10 }
+command = { type = add_corps which = "Nuevo Ejercito Mexicano" value = land where = 1974 }
+command = { type = add_division which = "Caballeria Mexicana" value = cavalry when = 6 where = artillery }
+command = { type = add_division which = "Caballeria Mexicana" value = cavalry when = 6 }
+command = { type = add_division which = "Caballeria Mexicana" value = cavalry when = 6 }
+command = { type = add_corps which = "Nuevo Ejercito Mexicano" value = land where = 1974 }
+command = { type = add_division which = "Caballeria Mexicana" value = cavalry when = 6 where = artillery }
+command = { type = add_division which = "Caballeria Mexicana" value = cavalry when = 6 }
+command = { type = add_division which = "Caballeria Mexicana" value = cavalry when = 6 }
+command = { type = manpowerpool value = -25 }
+command = { type = domestic which = professional_army value = 1 }
+}
+action_c = {
+name = "Invest in an air-force, you can never underestimate air superiority"
+ai_chance = 20
+command = { type = max_organization which = air value = 10 }
+command = { type = morale which = air value = 10 }
+command = { type = add_corps which = "Primera ala interceptora" value = air where = 1974 }
+command = { type = add_division which = "Escuadron aereo de pelea 100" value = interceptor when = 7 }
+command = { type = add_division which = "Escuadron aereo de pelea 101" value = interceptor when = 7 }
+command = { type = add_corps which = "Segunda ala interceptora" value = air where = 1974 }
+command = { type = add_division which = "Escuadron aereo de pelea 200" value = interceptor when = 7 } #This one existed in OTL and they served somewhere in the pacific
+command = { type = add_division which = "Escuadron aereo de pelea 201" value = interceptor when = 7 }
+command = { type = manpowerpool value = -25 }
+command = { type = domestic which = professional_army value = 1 }
+}
+action_d = {
+name = "A Navy is most important, nothing wrong with having a Navy...What?"
+ai_chance = 0
+command = { type = max_organization which = naval value = 10 }
+command = { type = morale which = naval value = 10 }
+command = { type = add_corps which = "Armada Mexicana" value = naval where = 1968 }
+command = { type = add_division which = "ARM Zaragosa" value = light_cruiser  when = 4 }
+command = { type = add_division which = "ARM Yucatan" value = light_cruiser  when = 4 }
+command = { type = add_division which = "Primera flotilla de destructores" value = destroyer when = 4 }
+command = { type = add_division which = "Segunda flotilla de destructores" value = destroyer when = 4 }
+command = { type = add_division which = "Tercera flotilla de destructores" value = destroyer when = 4 }
+command = { type = add_division which = "Primera flota de transporte" value = transport when = 1 }
+command = { type = add_division which = "Segunda flota de transporte" value = transport when = 1 }
+command = { type = add_division which = "Tercera flota de transporte" value = transport when = 1 }
+command = { type = transport_pool which = MEX value = 20 }
+command = { type = escort_pool which = MEX value = 10 }
+command = { type = manpowerpool value = -25 }
+command = { type = domestic which = professional_army value = 1 }
+}
+}
+
+
+event = {
+id = 61004
+country = MEX
+style = 2
+picture = "venezuelan_oil"
+
+date = { day = 12 month = april year = 1937 }
+
+name = "The Oil Industry"
+desc = "Oil here in Mexico is abundant, yet most of our people still use wood to keep their ovens running. The oil companies in Mexico have had it too good for too long, and we should have nationalized the industry long ago. This would be a big step into becoming more than everyone else's pinhata, so to speak."
+
+action_a = {
+ai_chance = 95
+name = "Storm the rigs! They belong to Mexico!"
+command = { type = domestic which = free_market value = -1 }
+command = { type = oilpool value = 250 }
+command = { type = add_prov_resource which = 1967 value = 5 where = oil }
+command = { type = add_prov_resource which = 1968 value = 3 where = oil }
+command = { type = dissent value = -3 }
+command = { type = relation which = JAP value = -10 }
+command = { type = relation which = USA value = -10 }
+command = { type = relation which = CAN value = -10 }
+command = { type = relation which = GER value = -10 }
+command = { type = relation which = SPA value = -10 }
+}
+action_b = {
+ai_chance = 5
+name = "Nationalizing them would be a dangerous political move"
+command = { type = dissent value = 5 }
+command = { type = relation which = JAP value = 25 }
+command = { type = relation which = USA value = 25 }
+command = { type = relation which = CAN value = 25 }
+}
+}
+
+event = {
+id = 61013
+country = MEX
+style = 2
+picture = "immigrates"
+
+trigger = { 
+OR = {
+war = { country = SPA country = EUS } 
+war = { country = SPA country = SPR }
+war = { country = EUS country = SPR }
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "Spanish Immigrates arrive in Mexico"
+desc = "To escape the civil war ravaging the Iberian Peninsula, immigrants have fled to Latin America. Thousands and their families have recently arrived in Mexico by boat and are looking for work, food and a place to live. We can either bar them entrance from the country, or allow them a place in Mexico."
+
+action_a = {
+ai_chance = 99
+name = "Welcome Them With Open Arms!"
+command = { type = dissent value = 1 }
+command = { type = manpowerpool value = 25 }
+command = { type = relation which = SPA value = 10 }
+command = { type = relation which = EUS value = 10 }
+command = { type = relation which = SPR value = 10 }
+}
+action_b = {
+ai_chance = 1
+name = "Immigrates? Send them back to Iberia!"
+command = { type = dissent value = -3 }
+command = { type = relation which = SPA value = -25 }
+command = { type = relation which = EUS value = -25 }
+command = { type = relation which = SPR value = -25 }
+}
+}
+
+event = {
+id = 61020
+country = MEX
+style = 2
+picture = "factory"
+
+trigger = { flag = MEX_Agriculture }
+
+date = { day = 21 month = january year = 1937 }
+
+name = "The Agrarian Reform"
+desc = "The new government has announced the top priority and the main policy will be boosting the economy, industrializing and modernizing."
+
+action_a = {
+name = "Grow Crops so we can export them to the rest of the world"
+ai_chance = 50
+command = { type = domestic which = free_market value = 1 }
+command = { type = relative_manpower value = 3 }
+command = { type = manpowerpool value = 10 }
+command = { type = gain_tech which = 5020 }
+}
+action_b = {
+name = "Grow Crops so we can feed and maintain our own growing population"
+ai_chance = 50
+command = { type = domestic which = free_market value = -1 }
+command = { type = relative_manpower value = 5 }
+command = { type = manpowerpool value = 50 }
+command = { type = gain_tech which = 5020 }
+command = { type = gain_tech which = 5030 }
+}
+}
+
+event = {
+id = 61021
+country = MEX
+style = 2
+picture = "calles"
+
+trigger = { flag = Triple }
+
+date = { day = 15 month = december year = 1936 }
+
+name = "The New Direction of Mexico"
+desc = "Now that the transition of power is over and the Triumverate has exerted control of the Mexican Government, it is time to decide which path will we take. We can expand our military and become a military power, continue Zapata's work on industrializing Mexico to or pass Agrarian Reforms, profiting from the exports we will send to Europe and abroad."
+
+action_a = {
+name = "Military, we must prepare our army for future conflicts!"
+ai_chance = 60
+command = { type = belligerence which = MEX value = 5 }
+command = { type = relation which = USA value = -50 }
+command = { type = relation which = CAL value = -50 }
+command = { type = relation which = TEX value = -25 }
+command = { type = relation which = CAN value = -25 }
+command = { type = domestic which = defense_lobby value = 3 }
+command = { type = domestic which = interventionism value = 3 }
+command = { type = dissent value = 3 }
+command = { type = supplies value = -1000 }
+command = { type = money value = -250 }
+command = { type = manpowerpool value = -50 }
+command = { type = sleepevent which = 61019 } #agriculture
+command = { type = sleepevent which = 61020 } #industry
+}
+action_b = {
+name = "Industrialization, we must modernize if we hope to succeed!" 
+ai_chance = 25
+command = { type = dissent value = -3 }
+command = { type = supplies value = -2000 } 
+command = { type = money value = -500 }
+command = { type = sleepevent which = 61002 } #army
+command = { type = sleepevent which = 61020 } #agriculture
+}
+action_c = {
+name = "Agriculture, there is much profit in exporting wheat and beef to Europe"
+ai_chance = 15
+command = { type = manpowerpool value = 50 }
+command = { type = dissent value = -3 }
+command = { type = supplies value = -1000 }
+command = { type = money value = -100 }
+command = { type = sleepevent which = 61002 } #army
+command = { type = sleepevent which = 61019 } #industry
+}
+}
+
+event = {
+id = 61022
+country = MEX
+style = 2
+picture = "toledano"
+
+trigger = { flag = toledano }
+
+date = { day = 15 month = december year = 1936 }
+
+name = "The New Direction of Mexico"
+desc = "EVT_61022_DESC"
+
+action_a = {
+name = "We must be able to defend ourselves, expand the military"
+ai_chance = 1
+command = { type = belligerence which = MEX value = 5 }
+command = { type = relation which = USA value = -50 }
+command = { type = relation which = CAL value = -50 }
+command = { type = relation which = TEX value = -25 }
+command = { type = relation which = CAN value = -25 }
+command = { type = domestic which = defense_lobby value = 3 }
+command = { type = domestic which = interventionism value = 3 }
+command = { type = dissent value = 3 }
+command = { type = supplies value = -1000 }
+command = { type = money value = -250 }
+command = { type = manpowerpool value = -50 }
+command = { type = setflag which = MEX_Military }
+}
+action_b = {
+name = "Continue the works of Zapata and focus on industrialization" 
+ai_chance = 84
+command = { type = dissent value = -3 }
+command = { type = supplies value = -2000 } 
+command = { type = money value = -500 }
+command = { type = setflag which = MEX_Industry }
+}
+action_c = {
+name = "Agriculture, we must be able to support a growing population!"
+ai_chance = 15
+command = { type = manpowerpool value = 50 }
+command = { type = dissent value = -3 }
+command = { type = supplies value = -1000 }
+command = { type = money value = -100 }
+command = { type = setflag which = MEX_Agriculture }
+}
+}
+
+#61070	Mexico defeats the PSA in a war and demands territory
+#61071	Mexico demands California
+#61072	Mexico demands SoCal 
+#61073	California turns Mexico down
+#61074	PSA accepts the demands
+#61075	PSA accepts the demands
+
+### Mexico defeats the PSA in a war and demands territory
+event = {
+id = 610701
+random = no
+country = MEX
+trigger = {
+	war = { country = CAL country = MEX }
+	control = { province = 1887 data = MEX }
+	control = { province = 1888 data = MEX }
+	control = { province = 1889 data = MEX }
+	
+	NOT = {
+                ispuppet = CAL
+                ispuppet = MEX
+		war = { country = USA country = MEX }
+		lost_national = { country = MEX value = 10 }
+                alliance = { country = CAN country = CAL }
+                alliance = { country = JAP country = CAL }
+                alliance = { country = USA country = CAL }
+                alliance = { country = RUS country = CAL }
+                alliance = { country = GER country = CAL }
+	} 
+	lost_national = { country = CAL value = 15 }
+}
+name = "Mexico Demands Territory"
+desc = "The Mexican army has overcome the armies of the Pacific States of America and are now in a position to demand terms. Some in the government want the whole of California to be returned to Mexico but others feel that aggressive demands will lead to possible war in the future."
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 1
+deathdate = { day = 29 month = december year = 1954 }
+
+action_a = {
+	name = "Demand all of California"
+	ai_chance = 15
+	command = { type = trigger which = 61071 } #mexico demands California
+        command = { type = addclaim which = 1889 }
+	command = { type = addclaim which = 1892 }
+	command = { type = addclaim which = 1887 }
+	command = { type = addclaim which = 1883 }
+	command = { type = addclaim which = 1891 }
+	command = { type = addclaim which = 1888 }
+	command = { type = addclaim which = 1889 }
+	command = { type = addclaim which = 1884 }
+	command = { type = addclaim which = 1885 }
+        command = { type = addclaim which = 1890 }
+	}
+
+action_b = {
+	name = "Demand the Southern half of California"
+	ai_chance = 60
+	command = { type = trigger which = 61072 } # mexico demands SoCal 
+        command = { type = addclaim which = 1886 }
+	command = { type = addclaim which = 1887 }
+        command = { type = addclaim which = 1892 }
+	}
+
+action_c = {
+	name = "We will crush the PSA" 
+	ai_chance = 5
+	command = { type = dissent value = 1 }
+	#command = { type = setflag which = MEX_AGG }
+	}
+}
+
+### Mexico demands all of California
+event = {
+id = 61071
+random = no
+country = CAL
+
+name = "Mexico Demands All of California"
+desc = "We have been beaten by Mexico in the war and they have demanded all of California. The people want to keep resisting but there may be no options left."
+style = 2
+
+action_a = {
+	name = "We have no choice but to accept"
+	ai_chance = 40
+	command = { type = secedeprovince which = MEX value = 1886 }
+	command = { type = secedeprovince which = MEX value = 1892 }
+        command = { type = secedeprovince which = MEX value = 1887 }
+        command = { type = secedeprovince which = MEX value = 1883 }
+        command = { type = secedeprovince which = MEX value = 1891 }
+        command = { type = secedeprovince which = MEX value = 1888 }
+        command = { type = secedeprovince which = MEX value = 1889 }
+        command = { type = secedeprovince which = MEX value = 1884 }
+        command = { type = secedeprovince which = MEX value = 1885 }
+        command = { type = secedeprovince which = MEX value = 1890 }
+	command = { type = dissent value = 10 }
+	command = { type = trigger which = 61074 }
+	}
+action_b = {
+	name = "No deal. We fight to the end."
+	ai_chance = 60
+	command = { type = dissent value = -1 }
+	command = { type = trigger which = 61073 }
+	}
+}
+
+### Mexico demands the Southern half of California
+event = {
+id = 61072
+random = no
+country = CAL
+
+name = "Mexico Demands Southern California"
+desc = "We have been beaten by Mexico in the war and they have demanded Southern California. The people want to keep resisting but there may be no options left."
+style = 2
+
+action_a = {
+	name = "We have no choice but to accept."
+	ai_chance = 80
+	command = { type = secedeprovince which = MEX value = 1886 }
+        command = { type = secedeprovince which = MEX value = 1887 }
+        command = { type = secedeprovince which = MEX value = 1892 }
+	command = { type = dissent value = 5 }
+	command = { type = trigger which = 61075 }
+	}
+action_b = {
+	name = "No deal. We fight to the end."
+	ai_chance = 20
+	command = { type = dissent value = -1 }
+	command = { type = trigger which = 61073 }
+	}
+}
+
+### California turns Mexico down
+event = {
+id = 61073
+random = no
+country = MEX
+
+name = "The PSA Refuses our Demands"
+desc = "The PSA has refused to accept our demands and now we must destroy them."
+style = 2
+
+action_a = {
+	name = "Bastards"
+	command = { type = dissent value = 1 }
+	}
+}
+
+### PSA accepts the demands
+event = {
+id = 61074
+random = no
+country = MEX
+
+name = "The PSA Accepts Our Demands"
+desc = "The PSA has seen the wisdom of accepting our demands and we can now look forward to having California back. This is a great day for Mexico."
+style = 2
+
+action_a = {
+	 name = "Excellent"
+	 command = { type = peace which = CAL value = 1 }
+	 
+	 
+}
+}
+
+### PSA accepts the demands
+event = {
+id = 61075
+random = no
+country = MEX
+
+name = "The PSA Accepts Our Demands"
+desc = "The PSA has seen the wisdom of accepting our demands and we can now look forward to having part of California back. This is a great day for Mexico."
+style = 2
+
+action_a = {
+	name = "Excellent"
+	command = { type = peace which = CAL value = 1 }
+	
+	
+	}
+}
+
+#Death events
+
+event = {
+	id = 61100
+	random = no
+	country = MEX
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 29 month = september year = 1937 }
+
+	action_a = {
+		name = "OK"
+		command = { type = sleepminister which = 36074 } #Genaro Estrada
+	}
+}
+
+event = {
+	id = 61101
+	random = no
+	country = MEX
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 9 month = november year = 1939 }
+
+	action_a = {
+		name = "OK"
+		command = { type = sleepminister which = 36063 } #Jose Manuel Puig
+	}
+}
+
+event = {
+	id = 61102
+	random = no
+	country = MEX
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 3 month = november year = 1942 }
+
+	action_a = {
+		name = "OK"
+		command = { type = sleepminister which = 36004 } #Enrique Estrada Reynoso
+	}
+}
+
+event = {
+	id = 61103
+	random = no
+	country = MEX
+	style = 2
+
+	trigger = {
+	NOT = { headofgovernment = 36131 } #Plutarco Elias Calles
+	headofstate = 36132 } #Plutarco Elias Calles
+
+	name = "Plutarco Elias Calles has died"
+	desc = "Plutarco Elias Calles, the leader our nation, has died today. Juan Andrew Almazan has assumed office, as was dictated by Calles' will."
+	picture = "minister_died"
+
+	date = { day = 19 month = october year = 1945 }
+
+	action_a = {
+		name = "We will miss him"
+		command = { type = sleepminister which = 36109 } #Plutarco Elias Calles
+		command = { type = sleepminister which = 36131 } #Plutarco Elias Calles
+		command = { type = sleepminister which = 36132 } #Plutarco Elias Calles
+		command = { type = sleepminister which = 36133 } #Plutarco Elias Calles
+		command = { type = headofstate which = 36037 } #Juan Andrew Almazan
+	}
+}
+
+event = {
+	id = 61104
+	random = no
+	country = MEX
+	style = 2
+
+	trigger = {
+	NOT = { headofstate = 36132 } #Plutarco Elias Calles
+	headofgovernment = 36131 } #Plutarco Elias Calles
+
+	name = "Plutarco Elias Calles has died"
+	desc = "Plutarco Elias Calles, one of the Triumverate has died today. Agustin Olachea Aviles one of the other two members of the Triumverate, has become the new head of governmnet."
+	picture = "minister_died"
+
+	date = { day = 19 month = october year = 1945 }
+
+	action_a = {
+		name = "We will miss him"
+		command = { type = sleepminister which = 36109 } #Plutarco Elias Calles
+		command = { type = sleepminister which = 36131 } #Plutarco Elias Calles
+		command = { type = sleepminister which = 36132 } #Plutarco Elias Calles
+		command = { type = sleepminister which = 36133 } #Plutarco Elias Calles
+		command = { type = headofgovernment which = 36038 } #Agustin Olachea Aviles
+	}
+}
+
+event = {
+	id = 61105
+	random = no
+	country = MEX
+	style = 2
+
+	trigger = {
+	headofstate = 36132 #Plutarco Elias Calles
+	headofgovernment = 36131 } #Plutarco Elias Calles
+
+	name = "Plutarco Elias Calles has died"
+	desc = "Plutarco Elias Calles, one of the Triumverate has died today. Juan Andrew Almazan has assumed office, as was dictated by Calles' will."
+	picture = "minister_died"
+
+	date = { day = 19 month = october year = 1945 }
+
+	action_a = {
+		name = "We will miss him"
+		command = { type = sleepminister which = 36109 } #Plutarco Elias Calles
+		command = { type = sleepminister which = 36131 } #Plutarco Elias Calles
+		command = { type = sleepminister which = 36132 } #Plutarco Elias Calles
+		command = { type = sleepminister which = 36133 } #Plutarco Elias Calles
+		command = { type = headofstate which = 36037 } #Juan Andrew Almazan
+		command = { type = headofgovernment which = 36046 } #Juan Andrew Almazan
+	}
+}
+
+event = {
+	id = 61106
+	random = no
+	country = MEX
+	style = 2
+
+	trigger = { NOT = {
+	headofstate = 36132 } #Plutarco Elias Calles
+	headofgovernment = 36131 } #Plutarco Elias Calles
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 19 month = october year = 1945 }
+
+	action_a = {
+		name = "OK"
+		command = { type = sleepminister which = 36109 } #Plutarco Elias Calles
+		command = { type = sleepminister which = 36131 } #Plutarco Elias Calles
+		command = { type = sleepminister which = 36132 } #Plutarco Elias Calles
+		command = { type = sleepminister which = 36133 } #Plutarco Elias Calles
+	}
+}
+
+event = {
+	id = 61107
+	random = no
+	country = MEX
+	style = 2
+
+	trigger = {
+	NOT = { headofgovernment = 36124 } #Pancho Villa
+	headofstate = 36123 } #Pancho Villa
+
+	name = "Pancho Villa has died!"
+	desc = "José Doroteo Arango Arámbula, better known as Pancho Villa, has died today. He was one of the foremost leaders of the Mexican Revolution, commanding the 'Division of the North'. A week of mourning has been declared to honour him and Vicente Lombardo Toledano has become the new President."
+	picture = "minister_died"
+
+	date = { day = 1 month = may year = 1946 }
+
+	action_a = {
+		name = "We will miss him"
+		command = { type = sleepminister which = 36123 } #Pancho Villa
+		command = { type = sleepminister which = 36124 } #Pancho Villa
+		command = { type = sleepminister which = 36125 } #Pancho Villa
+		command = { type = sleepminister which = 36126 } #Pancho Villa
+		command = { type = headofstate which = 36128 } #Vicente Lombardo Toledano
+	}
+}
+
+
+event = {
+	id = 61108
+	random = no
+	country = MEX
+	style = 2
+
+	trigger = {
+	NOT = { headofstate = 36123 } #Pancho Villa
+	headofgovernment = 36124 } #Pancho Villa
+
+	name = "Pancho Villa has died!"
+	desc = "José Doroteo Arango Arámbula, better known as Pancho Villa, has died today. He was one of the foremost leaders of the Mexican Revolution, commanding the 'Division of the North'. A week of mourning has been declared to honour him and Procopio Herrera has become the new head of government."
+	picture = "minister_died"
+
+	date = { day = 1 month = may year = 1946 }
+
+	action_a = {
+		name = "We will miss him"
+		command = { type = sleepminister which = 36123 } #Pancho Villa
+		command = { type = sleepminister which = 36124 } #Pancho Villa
+		command = { type = sleepminister which = 36125 } #Pancho Villa
+		command = { type = sleepminister which = 36126 } #Pancho Villa
+		command = { type = headofgovernment which = 36048 } #Procopio Herrera
+	}
+}
+
+event = {
+	id = 61109
+	random = no
+	country = MEX
+	style = 2
+
+	trigger = {
+	headofstate = 36123 #Pancho Villa
+	headofgovernment = 36124 } #Pancho Villa
+
+	name = "Pancho Villa has died!"
+	desc = "José Doroteo Arango Arámbula, better known as Pancho Villa, has died today. He was one of the foremost leaders of the Mexican Revolution, commanding the 'Division of the North'. A week of mourning has been declared to honour him with Vicente Lombardo Toledano and Procopio Herrera becoming the new President and head of government respectively."
+	picture = "minister_died"
+
+	date = { day = 1 month = may year = 1946 }
+
+	action_a = {
+		name = "We will miss him"
+		command = { type = sleepminister which = 36123 } #Pancho Villa
+		command = { type = sleepminister which = 36124 } #Pancho Villa
+		command = { type = sleepminister which = 36125 } #Pancho Villa
+		command = { type = sleepminister which = 36126 } #Pancho Villa
+		command = { type = headofgovernment which = 36048 } #Procopio Herrera
+	}
+}
+
+event = {
+	id = 61110
+	random = no
+	country = MEX
+	style = 2
+
+	trigger = { NOT = {
+	headofstate = 36123 #Pancho Villa
+	headofgovernment = 36124 } } #Pancho Villa
+
+	name = "Pancho Villa has died"
+	desc = "José Doroteo Arango Arámbula, better known as Pancho Villa, has died today. He was one of the foremost leaders of the Mexican Revolution, commanding the 'Division of the North'. A day of mourning has been declared to honour him."
+	picture = "minister_died"
+
+	date = { day = 1 month = may year = 1946 }
+
+	action_a = {
+		name = "We will miss him"
+		command = { type = sleepminister which = 36123 } #Pancho Villa
+		command = { type = sleepminister which = 36124 } #Pancho Villa
+		command = { type = sleepminister which = 36125 } #Pancho Villa
+		command = { type = sleepminister which = 36126 } #Pancho Villa
+	}
+}
+
+event = {
+	id = 61111
+	random = no
+	country = MEX
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 15 month = feburary year = 1947 }
+
+	action_a = {
+		name = "OK"
+		command = { type = sleepminister which = 36057 } #Francisco R. Serrano
+		command = { type = sleepminister which = 36066 } #Francisco R. Serrano
+	}
+}
+
+event = {
+	id = 61112
+	random = no
+	country = MEX
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 26 month = june year = 1948 }
+
+	action_a = {
+		name = "OK"
+		command = { type = sleepminister which = 36008 } #Pablo Quiroga Escamillo
+		command = { type = sleepminister which = 36095 } #Pablo Quiroga Escamillo
+	}
+}
+
+event = {
+	id = 61113
+	random = no
+	country = MEX
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 15 month = march year = 1952 }
+
+	action_a = {
+		name = "OK"
+		command = { type = sleepminister which = 36075 } #Joaquin Amaro Dominguez
+	}
+}
+
+event = {
+	id = 61114
+	random = no
+	country = MEX
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 29 month = november year = 1952 }
+
+	action_a = {
+		name = "OK"
+		command = { type = sleepminister which = 36107 } #Gilberto Limon Marquez
+	}
+}
+
+event = {
+	id = 61115
+	random = no
+	country = MEX
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 20 month = december year = 1954 }
+
+	action_a = {
+		name = "OK"
+		command = { type = sleepminister which = 36051 } #Francisco Castillo Najera
+	}
+}
+
+event = {
+	id = 61116
+	random = no
+	country = MEX
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 13 month = october year = 1956 }
+
+	action_a = {
+		name = "OK"
+		command = { type = sleepminister which = 36087 } #Manuel Avila Camacho
+	}
+}
+
+
+event = {
+	id = 61117
+	random = no
+	country = MEX
+	style = 2
+	  
+        decision = {
+        war = { country = USA country = TEX }
+        war = { country = USA country = CSA }
+        control = { province = 1928 data = USA }
+        NOT = {
+        ispuppet = MEX
+        atwar = MEX
+	alliance = { country = MEX country = USA }
+        }
+        }
+
+        decision_trigger = {  
+        }
+
+	trigger = {
+        war = { country = USA country = TEX }
+        war = { country = USA country = CSA }
+        control = { province = 1928 data = USA }
+        NOT = {
+        ispuppet = MEX
+        atwar = MEX
+	alliance = { country = MEX country = USA }
+        }
+        }
+
+	name = "Reclaiming lost territories"
+	desc = "The Second American civil war provides us with perfect opportunity to reclaim territories we were forced to secede through the humiliating treaty of Guadalupe Hidalgo to United states."
+	decision_picture = "decision_lostmex"
+        picture = "lostterritoriesmex"
+
+        date = { day = 1 month = january year = 1936 }
+	offset = 40
+	deathdate = { day = 1 month = january year = 1960 }
+
+	action_a = {
+	ai_chance = 50
+	name = "Threaten USA with war!"
+        command = { type = belligerence which = MEX  value = 5  }
+        command = { type = relation which = USA value = -100 }
+        command = { type = relation which = CSA value = -40 }
+        command = { type = relation which = TEX value = -40 }
+        command = { type = relation which = CAL value = -40 }
+        command = { type = domestic which = interventionism value = 2 }
+        command = { type = addclaim which = 1884 }
+        command = { type = addclaim which = 1885 }
+        command = { type = addclaim which = 1890 }
+        command = { type = addclaim which = 1888 }
+        command = { type = addclaim which = 1889 }
+        command = { type = addclaim which = 1883 }
+        command = { type = addclaim which = 1886 }
+        command = { type = addclaim which = 1887 }
+        command = { type = addclaim which = 1891 }
+        command = { type = addclaim which = 1886 }
+        command = { type = addclaim which = 1900 }
+        command = { type = addclaim which = 1901 }
+        command = { type = addclaim which = 1902 }
+        command = { type = addclaim which = 1904 }
+        command = { type = addclaim which = 1906 }
+        command = { type = addclaim which = 1903 }
+        command = { type = addclaim which = 1905 }
+        command = { type = addclaim which = 1922 }
+        command = { type = addclaim which = 1923 }
+        command = { type = addclaim which = 1926 }
+        command = { type = addclaim which = 1920 }
+        command = { type = addclaim which = 1921 }
+        command = { type = addclaim which = 1927 }
+        command = { type = addclaim which = 1924 }
+        command = { type = addclaim which = 1925 }
+        command = { type = addclaim which = 1919 }
+        command = { type = addclaim which = 1928 }
+        command = { type = addclaim which = 1892 }
+        command = { type = dissent value = -5 } 
+        command = { type = trigger which = 61118 }
+	}
+
+	action_b = {
+	ai_chance = 40
+	name = "Merely stake our claims"
+        command = { type = belligerence which = MEX  value = 2  }
+        command = { type = domestic which = interventionism value = 1 }
+        command = { type = relation which = USA value = -50 }
+        command = { type = relation which = CSA value = -10 }
+        command = { type = relation which = TEX value = -20 }
+        command = { type = relation which = CAL value = -20 }
+        command = { type = addclaim which = 1884 }
+        command = { type = addclaim which = 1885 }
+        command = { type = addclaim which = 1890 }
+        command = { type = addclaim which = 1888 }
+        command = { type = addclaim which = 1889 }
+        command = { type = addclaim which = 1883 }
+        command = { type = addclaim which = 1886 }
+        command = { type = addclaim which = 1887 }
+        command = { type = addclaim which = 1891 }
+        command = { type = addclaim which = 1886 }
+        command = { type = addclaim which = 1900 }
+        command = { type = addclaim which = 1901 }
+        command = { type = addclaim which = 1902 }
+        command = { type = addclaim which = 1904 }
+        command = { type = addclaim which = 1906 }
+        command = { type = addclaim which = 1903 }
+        command = { type = addclaim which = 1905 }
+        command = { type = addclaim which = 1922 }
+        command = { type = addclaim which = 1923 }
+        command = { type = addclaim which = 1926 }
+        command = { type = addclaim which = 1920 }
+        command = { type = addclaim which = 1921 }
+        command = { type = addclaim which = 1927 }
+        command = { type = addclaim which = 1924 }
+        command = { type = addclaim which = 1925 }
+        command = { type = addclaim which = 1919 }
+        command = { type = addclaim which = 1928 }
+        command = { type = addclaim which = 1892 }
+        command = { type = dissent value = -3 } 
+        }
+
+        action_b = {
+	ai_chance = 10
+	name = "This is too risky.."
+        command = { type = domestic which = interventionism value = -1 }
+        command = { type = relation which = USA value = 30 }
+        command = { type = dissent value = 2 } 
+        }
+
+        }
+
+
+
+event = {
+	id = 61118
+	random = no
+	country = USA
+	style = 2
+	  
+
+	name = "Mexican territorial demands"
+	desc = "The Mexican state has decided to use ongoing civil war in the United states to reclaim territories lost via treaty of Guadalupe Hidalgo !  How should we react?"
+        picture = "foreign_volunteers"
+
+	action_a = {
+        ai_chance = 20
+        name =  "Secede disputed territory, we must avoid war..."
+        command = { type = domestic which = interventionism value = -1 }
+        command = { type = dissent value = 10 }
+        command = { type = secedeprovince which = MEX value = 1884 }
+        command = { type = secedeprovince which = MEX value = 1885 }
+        command = { type = secedeprovince which = MEX value = 1890 }
+        command = { type = secedeprovince which = MEX value = 1888 }
+        command = { type = secedeprovince which = MEX value = 1889 }
+        command = { type = secedeprovince which = MEX value = 1883 }
+        command = { type = secedeprovince which = MEX value = 1886 }
+        command = { type = secedeprovince which = MEX value = 1887 }
+        command = { type = secedeprovince which = MEX value = 1891 }
+        command = { type = secedeprovince which = MEX value = 1886 }
+        command = { type = secedeprovince which = MEX value = 1887 }
+        command = { type = secedeprovince which = MEX value = 1891 }
+        command = { type = secedeprovince which = MEX value = 1886 }
+        command = { type = secedeprovince which = MEX value = 1900 }
+        command = { type = secedeprovince which = MEX value = 1901 }
+        command = { type = secedeprovince which = MEX value = 1902 }
+        command = { type = secedeprovince which = MEX value = 1904 }
+        command = { type = secedeprovince which = MEX value = 1906 }
+        command = { type = secedeprovince which = MEX value = 1903 }
+        command = { type = secedeprovince which = MEX value = 1905 }
+        command = { type = secedeprovince which = MEX value = 1922 }
+        command = { type = secedeprovince which = MEX value = 1923 }
+        command = { type = secedeprovince which = MEX value = 1926 }
+        command = { type = secedeprovince which = MEX value = 1920 }
+        command = { type = secedeprovince which = MEX value = 1921 }
+        command = { type = secedeprovince which = MEX value = 1927 }
+        command = { type = secedeprovince which = MEX value = 1924 }
+        command = { type = secedeprovince which = MEX value = 1925 }
+        command = { type = secedeprovince which = MEX value = 1919 }
+        command = { type = secedeprovince which = MEX value = 1928 }
+        command = { type = secedeprovince which = MEX value = 1892 }
+		}
+
+	action_b = {
+	ai_chance = 80
+	name = "Never !"
+        command = { type = domestic which = interventionism value = 1 }
+        command = { type = dissent value = -5 }
+        command = { type = trigger which = 61119 }
+        }  
+
+        }
+
+
+event = {
+	id = 61119
+	random = no
+	country = MEX
+	style = 2
+
+	name = "United states refuses our demands"
+	desc = "The foolish leadership of the United States refused to accept our rightful territorial claims. What shall we do ?"
+        picture = "foreign_volunteers"
+
+	action_a = {
+	ai_chance = 50
+	name = "War will solve this !"
+        command = { type = end_non_aggression which = MEX where = USA }
+        command = { type = end_non_aggression which = USA where = MEX }
+        command = { type = war which = USA }
+        command = { type = belligerence which = MEX  value = 5  }
+        command = { type = relation which = USA value = -100 }
+        command = { type = relation which = CSA value = -40 }
+        command = { type = relation which = TEX value = -40 }
+        command = { type = relation which = CAL value = -40 }
+        command = { type = domestic which = interventionism value = 1 }
+        command = { type = dissent value = -5 } 
+        command = { type = trigger which = 61120 }
+	}
+
+	action_b = {
+	ai_chance = 40
+	name = "We are not ready for war...."
+        command = { type = domestic which = interventionism value = -1 }
+        command = { type = dissent value = 1 } 
+        }
+
+
+        }
+
+
+event = {
+	id = 61120
+	random = no
+	country = USA
+        save_date = yes
+
+	name = "Mexico declares war"
+	desc = "Our refusal to accept Mexican territorial claims was the last straw. They decided to declare war upon us and gain disputed territories by force. National guard together with volunteers from local population were mobilized to repell Mexican assault."
+	style = 2
+        picture = "Volkssturm"
+
+
+	action_a = {
+		name = "They must be stoped!" #
+		command = { type = dissent value = 2 } #panic
+		command = { trigger = { control = { province = 1922 data = USA } } type = construct which = land_fort where = 1922 value = 1 }
+		command = { trigger = { control = { province = 1926 data = USA } } type = construct which = land_fort where = 1926 value = 1 }
+		command = { trigger = { control = { province = 1923 data = USA } } type = construct which = land_fort where = 1923 value = 1 }
+                command = { trigger = { control = { province = 1901 data = USA } } type = construct which = land_fort where = 1901 value = 1 }
+                command = { trigger = { control = { province = 1886 data = USA } } type = construct which = land_fort where = 1886 value = 1 }
+		command = { type = manpowerpool value = 20 }
+		command = { type = supplies value = 300 }
+		command = { trigger = { control = { province = 1922 data = USA } } type = add_corps which = "Texas National Guard" value = land when = -1 where = 1922 }
+		command = { trigger = { control = { province = 1922 data = USA } } type = add_division which = "Corpus Christi National Guard" value = militia when = 4 }
+		command = { trigger = { control = { province = 1926 data = USA } } type = add_corps which = "Texas National Guard" value = land when = -1 where = 1926 }
+		command = { trigger = { control = { province = 1926 data = USA } } type = add_division which = "San Antonio National Guard" value = militia when = 4 }
+		command = { trigger = { control = { province = 1923 data = USA } } type = add_corps which = "Texas National Guard" value = land when = -1 where = 1923 }
+		command = { trigger = { control = { province = 1923 data = USA } } type = add_division which = "El Paso National Guard" value = militia when = 4 }
+		command = { trigger = { control = { province = 1901 data = USA } } type = add_corps which = "Arizona National Guard" value = land when = -1 where = 1901 }
+		command = { trigger = { control = { province = 1901 data = USA } } type = add_division which = "Tuscon National Guard" value = militia when = 4 }
+                command = { trigger = { control = { province = 1886 data = USA } } type = add_corps which = "California National Guard" value = land when = -1 where = 1886 }
+		command = { trigger = { control = { province = 1886 data = USA } } type = add_division which = "San Diego National Guard" value = militia when = 4 }
+
+	}
+}
+
+
+event = {
+id = 61121
+country = USA
+style = 2
+
+trigger = {
+war = { country = USA country = MEX }
+control = { province = 1928 data = MEX }
+NOT = {
+control = { province = 1901 data = USA } 
+control = { province = 1923 data = USA }
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 60
+deathdate = { day = 1 month = january year = 1960 }
+
+name = "The Treaty of Houston"
+desc = "We've been beaten by the Mexicans, how did this happen? They've seized the whole border states !"
+picture = "Peace_conference"
+
+action_a = {
+ai_chance = 85
+name =  "Offer peace treaty, recognize Mexican teritorial gains"
+command = { type = trigger which = 61122 }
+command = { type = dissent value = 3 }
+}
+action_b = {
+ai_chance = 15
+name = "No, the war will continue until we march through Mexico City!"
+command = { type = dissent value = 6 }
+}
+}
+
+event = {
+id = 61122
+country = MEX
+style = 2
+
+
+name = "The Treaty of Houston"
+desc = "We've succesfully beaten american national guard and conquered disputed border states. Now humiliated american leadership offers us peace in which they promise to recognize our teritorial gains and withdrawn from disputed teritory. How shall we react ?"
+picture = "Peace_conference"
+
+action_a = {
+ai_chance = 100
+name =  "Accept proposal , this is more than we hoped !"
+command = { type = dissent value = -5 }
+command = { type = peace which = USA value = 0 }
+command = { type = peace which = TEX value = 0 }
+command = { type = trigger which = 61123 }
+}
+
+action_b = {
+ai_chance = 0
+name = "No, the war will continue until our army marches through Washington!"
+command = { type = dissent value = 2 }
+command = { type = belligerence which = MEX value = 5  }
+command = { type = trigger which = 61124 }
+}
+}
+
+
+event = {
+id = 61123
+country = USA
+style = 2
+
+
+
+
+name = "The Treaty of Houston"
+desc = "According to the Treaty of Houston we must withdraw our force from remaining parts of the border states...."
+picture = "lostterritoriesmex"
+
+action_a = {
+name =  "How humiliating !"
+command = { type = construct which = land_fort where = 1922 value = -1 }
+command = { type = construct which = land_fort where = 1926 value = -1 }
+command = { type = construct which = land_fort where = 1923 value = -1 }
+command = { type = construct which = land_fort where = 1901 value = -1 }
+command = { type = construct which = land_fort where = 1886 value = -1 }
+command = { type = secedeprovince which = MEX value = 1884 }
+        command = { type = secedeprovince which = MEX value = 1885 }
+        command = { type = secedeprovince which = MEX value = 1890 }
+        command = { type = secedeprovince which = MEX value = 1888 }
+        command = { type = secedeprovince which = MEX value = 1889 }
+        command = { type = secedeprovince which = MEX value = 1883 }
+        command = { type = secedeprovince which = MEX value = 1886 }
+        command = { type = secedeprovince which = MEX value = 1887 }
+        command = { type = secedeprovince which = MEX value = 1891 }
+        command = { type = secedeprovince which = MEX value = 1886 }
+        command = { type = secedeprovince which = MEX value = 1887 }
+        command = { type = secedeprovince which = MEX value = 1891 }
+        command = { type = secedeprovince which = MEX value = 1886 }
+        command = { type = secedeprovince which = MEX value = 1900 }
+        command = { type = secedeprovince which = MEX value = 1901 }
+        command = { type = secedeprovince which = MEX value = 1902 }
+        command = { type = secedeprovince which = MEX value = 1904 }
+        command = { type = secedeprovince which = MEX value = 1906 }
+        command = { type = secedeprovince which = MEX value = 1903 }
+        command = { type = secedeprovince which = MEX value = 1905 }
+        command = { type = secedeprovince which = MEX value = 1922 }
+        command = { type = secedeprovince which = MEX value = 1923 }
+        command = { type = secedeprovince which = MEX value = 1926 }
+        command = { type = secedeprovince which = MEX value = 1920 }
+        command = { type = secedeprovince which = MEX value = 1921 }
+        command = { type = secedeprovince which = MEX value = 1927 }
+        command = { type = secedeprovince which = MEX value = 1924 }
+        command = { type = secedeprovince which = MEX value = 1925 }
+        command = { type = secedeprovince which = MEX value = 1919 }
+        command = { type = secedeprovince which = MEX value = 1928 }
+        command = { type = secedeprovince which = MEX value = 1892 }
+command = { type = dissent value = 2 }
+}
+
+}
+
+event = {
+id = 61124
+country = USA
+style = 2
+
+
+
+
+name = "Mexico refused to sign peace treaty!"
+desc = "Mexico refused our generous peace offer and renewed military actions...."
+picture = "foreign_volunteers"
+
+action_a = {
+name =  "They will pay for this..."
+command = { type = dissent value = 1 }
+}
+
+}
+
+
+event = {
+id = 61125
+country = MEX
+style = 2
+
+trigger = {
+event = { id = 61120 days = 100 }
+war = { country = USA country = MEX }
+OR = {
+war = { country = USA country = CSA }
+war = { country = USA country = TEX }
+war = { country = USA country = CAL }
+}
+NOT = {
+control = { province = 1928 data = MEX }
+control = { province = 1901 data = MEX } 
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 20
+deathdate = { day = 29 month = december year = 1942 }
+
+name = "American resistance"
+desc = "Our armed forces are unable to break through border defensive lines formed by american National guard supplemented by volunteers from local population. Shall we continue with our armed struggle to gain lost territories or shall we offer cease fire to United States ?"
+picture = "Peace_conference"
+
+action_a = {
+ai_chance = 85
+name =  "Offer cease-fire"
+command = { type = trigger which = 61126 }
+command = { type = dissent value = 3 }
+command = { type = removeclaim which = 1884 }
+        command = { type = removeclaim which = 1885 }
+        command = { type = removeclaim which = 1890 }
+        command = { type = removeclaim which = 1888 }
+        command = { type = removeclaim which = 1889 }
+        command = { type = removeclaim which = 1883 }
+        command = { type = removeclaim which = 1886 }
+        command = { type = removeclaim which = 1887 }
+        command = { type = removeclaim which = 1891 }
+        command = { type = removeclaim which = 1886 }
+        command = { type = removeclaim which = 1900 }
+        command = { type = removeclaim which = 1901 }
+        command = { type = removeclaim which = 1902 }
+        command = { type = removeclaim which = 1904 }
+        command = { type = removeclaim which = 1906 }
+        command = { type = removeclaim which = 1903 }
+        command = { type = removeclaim which = 1905 }
+        command = { type = removeclaim which = 1922 }
+        command = { type = removeclaim which = 1923 }
+        command = { type = removeclaim which = 1926 }
+        command = { type = removeclaim which = 1920 }
+        command = { type = removeclaim which = 1921 }
+        command = { type = removeclaim which = 1927 }
+        command = { type = removeclaim which = 1924 }
+        command = { type = removeclaim which = 1925 }
+        command = { type = removeclaim which = 1919 }
+        command = { type = removeclaim which = 1928 }
+        command = { type = removeclaim which = 1892 }
+}
+action_b = {
+ai_chance = 15
+name = "No, the war will continue until we capture Texas !"
+command = { type = dissent value = 6 }
+}
+}
+
+
+event = {
+id = 61126
+country = USA
+style = 2
+
+
+name = "Mexico offers cease-fire"
+desc = "Our brave national guard supplemented with volunteers from local population succesfully repelled Mexican assault. Now humiliated Mexican leadership offers us cease fire in which they promise to withdrawn all their troops from US soil. How shall we react ?"
+picture = "Peace_conference"
+
+action_a = {
+ai_chance = 100
+name =  "Accept cease-fire proposal !"
+command = { type = dissent value = -5 }
+command = { type = peace which = MEX value = 0 }
+}
+
+action_b = {
+ai_chance = 0
+name = "No, the war will continue until our army marches through Mexico City!"
+command = { type = dissent value = 2 }
+command = { type = belligerence which = USA value = 5  }
+}
+}
+
+
+
+event = {
+id = 61127
+country = MEX
+style = 2
+
+trigger = {
+OR = {
+war = { country = USA country = MEX }
+event = 61123
+}
+control = { province = 1974 data = MEX }
+exists = TEX 
+OR = {
+control = { province = 1923 data = TEX }
+control = { province = 1924 data = TEX } 
+control = { province = 1928 data = TEX }
+control = { province = 1919 data = TEX }
+control = { province = 1922 data = TEX }
+control = { province = 1926 data = TEX }
+control = { province = 1925 data = TEX }
+control = { province = 1927 data = TEX }
+}
+NOT = {
+ispuppet = TEX
+alliance = { country = CSA country = TEX }
+war = { country = TEX country = MEX }
+control = { province = 1923 data = USA }
+control = { province = 1924 data = USA }
+control = { province = 1928 data = USA }
+control = { province = 1919 data = USA }
+control = { province = 1922 data = USA }
+control = { province = 1926 data = USA }
+control = { province = 1925 data = USA }
+control = { province = 1927 data = USA }
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 20
+deathdate = { day = 1 month = january year = 1960 }
+
+name = "American Union state occupies parts of Texas"
+desc = "Ongoing civil war together with our direct intervention in it, allowed American Union state to seize parts of Texas ! How shall we deal with this violation of territorial integrity of Texas ?"
+picture = "foreign_volunteers"
+
+action_a = {
+ai_chance = 85
+name =  "Demand their immediate withdrawal from disputed territory !"
+command = { type = trigger which = 61128 }
+command = { type = end_non_aggression which = MEX where = TEX }
+command = { type = end_non_aggression which = TEX where = MEX }
+}
+
+action_b = {
+ai_chance = 5
+name = "It is too risky...."
+command = { type = dissent value = 1 }
+}
+}
+
+
+
+event = {
+id = 61128
+country = TEX
+style = 2
+
+
+name = "Mexico demands our immediate withdrawal from Texas"
+desc = "During our ongoing assult we have manged to capture parts of the state of Texas, which is claimed by Mexico as well. Currently the Mexican state have issued an official diploamtic demand requesting our immediate withdrawal from disputed territory. What shall we do ?"
+picture = "foreign_volunteers"
+
+action_a = {
+ai_chance = 100
+name =  "We must accept their demands...."
+command = { type = dissent value = 1 }
+command = { type = secedeprovince which = MEX value = 1884 }
+        command = { type = secedeprovince which = MEX value = 1885 }
+        command = { type = secedeprovince which = MEX value = 1890 }
+        command = { type = secedeprovince which = MEX value = 1888 }
+        command = { type = secedeprovince which = MEX value = 1889 }
+        command = { type = secedeprovince which = MEX value = 1883 }
+        command = { type = secedeprovince which = MEX value = 1886 }
+        command = { type = secedeprovince which = MEX value = 1887 }
+        command = { type = secedeprovince which = MEX value = 1891 }
+        command = { type = secedeprovince which = MEX value = 1886 }
+        command = { type = secedeprovince which = MEX value = 1887 }
+        command = { type = secedeprovince which = MEX value = 1891 }
+        command = { type = secedeprovince which = MEX value = 1886 }
+        command = { type = secedeprovince which = MEX value = 1900 }
+        command = { type = secedeprovince which = MEX value = 1901 }
+        command = { type = secedeprovince which = MEX value = 1902 }
+        command = { type = secedeprovince which = MEX value = 1904 }
+        command = { type = secedeprovince which = MEX value = 1906 }
+        command = { type = secedeprovince which = MEX value = 1903 }
+        command = { type = secedeprovince which = MEX value = 1905 }
+        command = { type = secedeprovince which = MEX value = 1922 }
+        command = { type = secedeprovince which = MEX value = 1923 }
+        command = { type = secedeprovince which = MEX value = 1926 }
+        command = { type = secedeprovince which = MEX value = 1920 }
+        command = { type = secedeprovince which = MEX value = 1921 }
+        command = { type = secedeprovince which = MEX value = 1927 }
+        command = { type = secedeprovince which = MEX value = 1924 }
+        command = { type = secedeprovince which = MEX value = 1925 }
+        command = { type = secedeprovince which = MEX value = 1919 }
+        command = { type = secedeprovince which = MEX value = 1928 }
+        command = { type = secedeprovince which = MEX value = 1892 }
+}
+
+action_b = {
+ai_chance = 0
+name = "Never !"
+command = { type = dissent value = -2 }
+command = { type = trigger which = 61129 }
+}
+}
+
+
+
+event = {
+	id = 61129
+	random = no
+	country = MEX
+	style = 2
+
+	name = "American Union state refuses our demands"
+	desc = "The foolish leadership of the American Union state refused to withdrawn their troops from our rightful  territorry. What shall we do ?"
+        picture = "foreign_volunteers"
+
+	action_a = {
+	ai_chance = 50
+	name = "War will solve this !"
+        command = { type = war which = TEX }
+        command = { type = belligerence which = MEX  value = 5  }
+        command = { type = domestic which = interventionism value = 1 }
+        command = { type = dissent value = -1 } 
+	}
+
+	action_b = {
+	ai_chance = 40
+	name = "It is too risky...."
+        command = { type = domestic which = interventionism value = -1 }
+        command = { type = dissent value = 1 } 
+        }
+
+
+        }
+
+
+
+#######################################################
+#Alliance with Centroamerica
+#######################################################
+event = {
+id = 61130
+random = no
+country = MEX
+style = 2
+
+trigger = {
+lost_national = { country = MEX value = 0 }
+lost_national = { country = GUA value = 0 }
+government = { type = communist country = GUA }
+NOT = {
+ispuppet = MEX
+ispuppet = GUA
+lost_national = { country = MEX value = 2 }
+lost_national = { country = GUA value = 2 }
+atwar = MEX
+war = { country = GUA country = USA }
+war = { country = GUA country = JAP }
+war = { country = GUA country = GER }
+war = { country = GUA country = RUS }
+war = { country = GUA country = CSA }
+war = { country = GUA country = CAN }
+alliance = { country = CSA country = MEX }
+alliance = { country = FRA country = MEX }
+alliance = { country = ENG country = MEX }
+}
+government = communist
+}
+
+name = "Alliance with Centroamerica?"
+desc = "Centroamerica and her adherence for Socialism were too long ignored by Mexico. Now we can change the fate of Central America and forge new future together. Shall we lead Central America into Socialist paradise?"
+picture = "foreign_volunteers"
+
+action = {
+trigger = {
+NOT = {
+atwar = GUA
+}
+}
+ai_chance = 100
+name = "We shall build together Syndicalist America"
+command = { type = alliance which = GUA }
+command = { type = set_relation which = GUA value = 200 }
+command = { type = relation which = NIC value = -200 }
+}
+
+action = {
+trigger = {
+atwar = GUA 
+NOT = {
+war = { country = GUA country = USA }
+war = { country = GUA country = JAP }
+war = { country = GUA country = GER }
+war = { country = GUA country = RUS }
+war = { country = GUA country = CSA }
+war = { country = GUA country = CAN }
+}
+}
+ai_chance = 25
+name = "We shall defeat together imperialists in Central America"
+command = { type = alliance which = GUA }
+command = { type = set_relation which = GUA value = 200 }
+command = { type = relation which = NIC value = -200 }
+}
+
+action = {
+ai_chance = 50
+name = "We are not interested in that"
+command = { type = dissent value = 3 }
+command = { type = relation which = GUA value = -100 }
+command = { type = relation which = NIC value = 50 }
+}
+}
+
+#
+#The Independence Day
+#
+
+event = {
+id = 61131
+random = no
+country = MEX
+ persistent = yes
+ style = 2
+ picture = "mexico"
+
+     trigger = {
+         day = 15
+         month = 9
+         NOT = {
+         day = 16
+         }
+         NOT = {
+         month = 10
+         }
+     }
+     
+     date = { day = 0 month = january year = 1936 }
+     offset = 1
+     deathdate = { day = 29 month = december year = 1963 }
+     
+     name = "Independence Day"
+     desc = "Today is the anniversary of the Mexican declaration of Independence in 1810. All of Mexico is in a festive mood and the grievances of the populace against the government is temporarily forgotten in celebratory swings of tequila!"
+     
+	 action_a = {
+         name = "Donde esta la tequila!?"
+         command = { type = dissent value = -1 }
+     }
+
+}

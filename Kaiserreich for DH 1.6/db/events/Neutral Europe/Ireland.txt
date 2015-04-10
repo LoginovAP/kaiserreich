@@ -1,0 +1,2666 @@
+event = {
+id = 979000
+country = IRE
+style = 2
+picture = "church2"
+
+date = { day = 11 month = january year = 1936 }
+offset = 30
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "The State of the Catholic Church in Ireland"
+desc = "We have been debating the state of the church for some time. Now, it is time to make our decision."
+
+action_a = {
+ai_chance = 20
+name = "Ireland will be forever more, a Secular and Strong government!"
+command = { type = domestic which = freedom value = 2 }
+command = { type = relation which = ITA value = -25 }
+command = { type = sleepevent which = 3967101 }
+command = { type = dissent value = 4 }
+command = { type = setflag which = IRE_Secular }
+}
+
+action_b = {
+ai_chance = 75
+name = "God and Government were made for each other"
+command = { type = relation which = ITA value = 50 }
+command = { type = dissent value = -3 }
+}
+
+action_c = {
+ai_chance = 5
+name = "God? We dont need to discuss something that doesn't exist!"
+command = { type = domestic which = freedom value = -2 }
+command = { type = relation which = ITA value = -100 }
+command = { type = dissent value = 10 }
+command = { type = sleepevent which = 3967101 }
+command = { type = setflag which = IRE_Secular }
+}
+}
+
+event = {
+id = 979001
+country = IRE
+style = 2
+picture = "Mining"
+
+date = { day = 4 month = march year = 1936 }
+
+name = "Bord na Mona"
+desc = "The Midland of Ireland has an ample amount of peat that we can use as a substitute for British Coal. This would cut our dependency from the Brits, and make our nation more independent."
+
+action_a = {
+ai_chance = 70
+name = "A State Controlled Peat Mining Company is in Order"
+command = { type = add_prov_resource which = 34 value = 10 where = energy }
+command = { type = domestic which = free_market value = -1 }
+}
+action_b = {
+ai_chance = 15
+name = "A Semi-State Controlled Peat Mining Company is in Order"
+command = { type = add_prov_resource which = 34 value = 10 where = energy }
+
+}
+action_c = {
+ai_chance = 15
+name = "Leave the Peat Mining to Private Corporations"
+command = { type = add_prov_resource which = 34 value = 10 where = energy }
+command = { type = domestic which = free_market value = 1 }
+command = { type = relation which = ITA value = -100 }
+
+}
+}
+
+############################
+#### UoB Victory over Ireland ###
+############################
+# 979002        ENG    A new Irish government
+# 979003        IRE        A new syndicalist government
+#970004        ENG    Unrest in Ireland!
+#970005        ENG    Unrest in Ireland!
+#970006        ENG    Unrest in Ireland!
+#970007        ENG    Revolts in Ireland!
+
+event = {
+id = 979002
+country = ENG
+style = 2
+picture = "politics2"
+
+#triggered by 6656220 - the Irish capitulation
+
+name = "A new Irish government"
+desc = "We granted Ireland independence, but we're going to have a close eye on their government."
+
+action_a = {
+    name = "A good choice"
+    command = { type = make_puppet which = IRE }
+    command = { type = dissent value = -2 }
+    command = { type = trigger which = 979003 }
+    }
+}
+
+event = {
+id = 979003
+country = IRE
+style = 2
+picture = "politics2"
+
+name = "A new Syndicalist government"
+desc = "The victorious Union of Britain liberated us from the oppressive forces of capitalism! Now, a new Irish government will be formed, for our country and for Syndicalism!"
+
+action_a = {
+    name = "For Syndicalism!"
+    command = { type = headofstate which = 25041 } #Jim Larkin sr.
+    command = { type = headofgovernment which = 25050 } #Jim Larkin jr.
+    command = { type = foreignminister which = 25064 } #Bill Gannon
+    command = { type = armamentminister which = 25085 } #James Conolly
+    command = { type = ministerofsecurity which = 25103 } #Bill Scott
+    command = { type = ministerofintelligence which = 25120 } #Betty Sinclair
+    command = { type = chiefofstaff which = 25130 } #Padraig O'Connor
+    command = { type = chiefofarmy which = 25139 } #Seán MacEoin
+    command = { type = chiefofnavy which = 25149 } #William McCullough
+    command = { type = chiefofair which = 25158 } #Pieras Beaslai
+    }
+}
+
+event = {
+id = 979004
+country = ENG
+style = 2
+trigger = {
+    NOT = {
+        exists = IRE
+    }
+    owned = { province = 31 data = ENG } #Cork
+    owned = { province = 30 data = ENG } #Galway
+    owned = { province = 34 data = ENG } #Sligo
+    owned = { province = 32 data = ENG } #Letterkenny
+    owned = { province = 33 data = ENG } #Belfast
+    owned = { province = 35 data = ENG } #Portadown
+    owned = { province = 36 data = ENG } #Dublin
+    flag = IRE_UOB_IRA
+    random = 25
+}
+
+name = "Bombing campaign in Ireland!"
+desc = "The Irish didn't accept our rule and started a bombing campaign! The so-called Irish Republican Army said that they won't stop unless we grant independence to Ireland."
+picture = "allied_offensive_italy"
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 1 month = december year = 1960 }
+
+action_a = {
+    ai_chance = 90
+    name = "We will not listen to their demands!"
+    command = { type = construct which = ic where = 31 value = -1 } #Cork
+        command = { type = construct which = infrastructure where = 32 value = -10 } #Galway
+    command = { type = dissent value = 1 }
+    }
+
+action_b = {
+    ai_chance = 10
+    name = "Grant them independence, but under our control!"
+        command = { type = removeclaim which = 31 }
+    command = { type = removeclaim which = 30 }
+    command = { type = removeclaim which = 34 }
+    command = { type = removeclaim which = 35 }
+    command = { type = removeclaim which = 36 }
+    command = { type = removeclaim which = 32 }
+    command = { type = removeclaim which = 33 }
+    command = { type = independence which = IRE value = 1 when = 0 }
+    command = { type = trigger which = 979002 }
+    command = { type = clrflag which = IRE_UOB_IRA }
+    command = { type = relation which = CSA value = 50 }
+    command = { type = embargo which = CSA where = ENG value = 0 }
+    command = { type = embargo which = ENG where = CSA value = 0 }
+    }
+}
+
+event = {
+id = 979005
+country = ENG
+style = 2
+trigger = {
+    NOT = {
+        exists = IRE
+    }
+    owned = { province = 31 data = ENG } #Cork
+    owned = { province = 30 data = ENG } #Galway
+    owned = { province = 34 data = ENG } #Sligo
+    owned = { province = 32 data = ENG } #Letterkenny
+    owned = { province = 33 data = ENG } #Belfast
+    owned = { province = 35 data = ENG } #Portadown
+    owned = { province = 36 data = ENG } #Dublin
+    flag = IRE_UOB_IRA
+    event = 979004
+    random = 25
+}
+
+name = "Bombing campaign in Ireland!"
+desc = "The Irish didn't accept our rule and started a bombing campaign! The so-called Irish Republican Army said that they won't stop unless we grant independence to Ireland."
+picture = "allied_offensive_italy"
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 1 month = december year = 1960 }
+
+action_a = {
+    ai_chance = 70
+    name = "We will not listen to their demands!"
+    command = { type = construct which = ic where = 34 value = -1 } #Dublin
+        command = { type = construct which = infrastructure where = 30 value = -10 } #Sligo
+    command = { type = dissent value = 3 }
+    }
+
+action_b = {
+    ai_chance = 30
+    name = "Grant them independence, but under our control!"
+        command = { type = removeclaim which = 31 }
+    command = { type = removeclaim which = 30 }
+    command = { type = removeclaim which = 34 }
+    command = { type = removeclaim which = 32 }
+    command = { type = removeclaim which = 35 }
+    command = { type = removeclaim which = 36 }
+    command = { type = removeclaim which = 33 }
+    command = { type = independence which = IRE value = 1 when = 0 }
+    command = { type = trigger which = 979002 }
+    command = { type = clrflag which = IRE_UOB_IRA }
+    command = { type = relation which = CSA value = 50 }
+    command = { type = embargo which = CSA where = ENG value = 0 }
+    command = { type = embargo which = ENG where = CSA value = 0 }
+    }
+}
+
+event = {
+id = 979006
+country = ENG
+style = 2
+trigger = {
+    NOT = {
+        exists = IRE
+    }
+    owned = { province = 31 data = ENG } #Cork
+    owned = { province = 30 data = ENG } #Galway
+    owned = { province = 34 data = ENG } #Sligo
+    owned = { province = 32 data = ENG } #Letterkenny
+    owned = { province = 33 data = ENG } #Belfast
+    owned = { province = 35 data = ENG } #Portadown
+    owned = { province = 36 data = ENG } #Dublin
+    flag = IRE_UOB_IRA
+    event = 979005
+    random = 25
+}
+
+name = "Bombing campaign in Ireland!"
+desc = "The Irish didn't accept our rule and started a bombing campaign! The so-called Irish Republican Army said that they won't stop unless we grant independence to Ireland."
+picture = "allied_offensive_italy"
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 1 month = december year = 1960 }
+
+action_a = {
+    ai_chance = 50
+    name = "We will not listen to their demands!"
+    command = { type = construct which = ic where = 36 value = -1 } #Belfast
+        command = { type = construct which = infrastructure where = 33 value = -10 } #Portadown
+        command = { type = construct which = infrastructure where = 35 value = -10 } #Letterkenny
+    command = { type = dissent value = 5 }
+    }
+action_b = {
+    ai_chance = 50
+    name = "Grant them independence, but under our control!"
+        command = { type = removeclaim which = 31 }
+    command = { type = removeclaim which = 30 }
+    command = { type = removeclaim which = 34 }
+    command = { type = removeclaim which = 32 }
+    command = { type = removeclaim which = 35 }
+    command = { type = removeclaim which = 36 }
+    command = { type = removeclaim which = 33 }
+    command = { type = independence which = IRE value = 1 when = 0 }
+    command = { type = trigger which = 979002 }
+    command = { type = clrflag which = IRE_UOB_IRA }
+    command = { type = relation which = CSA value = 50 }
+    command = { type = embargo which = CSA where = ENG value = 0 }
+    command = { type = embargo which = ENG where = CSA value = 0 }
+    }
+}
+
+event = {
+id = 979007
+country = ENG
+style = 2
+trigger = {
+    NOT = {
+        exists = IRE
+    }
+    owned = { province = 31 data = ENG } #Cork
+    owned = { province = 30 data = ENG } #Galway
+    owned = { province = 34 data = ENG } #Sligo
+    owned = { province = 32 data = ENG } #Letterkenny
+    owned = { province = 33 data = ENG } #Belfast
+    owned = { province = 35 data = ENG } #Portadown
+    owned = { province = 36 data = ENG } #Dublin
+    flag = IRE_UOB_IRA
+    event = 979006
+    random = 25
+}
+
+name = "Revolts in Ireland!"
+desc = "The Irish didn't accept our rule and revolts are starting in all the major cities! The so-called Irish Republican Army said that they won't stop unless we grant independence to Ireland."
+picture = "allied_offensive_italy"
+
+date = { day = 1 month = january year = 1936 }
+offset = 60
+deathdate = { day = 1 month = december year = 1960 }
+
+action_a = {
+    ai_chance = 30
+    name = "We will crush the revolters!"
+    command = { type = province_revoltrisk which = 31 value = 15 } #Cork
+    command = { type = province_revoltrisk which = 30 value = 10 } #Galway
+    command = { type = province_revoltrisk which = 34 value = 10 } #Sligo
+    command = { type = province_revoltrisk which = 32 value = 10 } #Letterkenny
+    command = { type = province_revoltrisk which = 33 value = 15 } #Belfast
+    command = { type = province_revoltrisk which = 35 value = 10 } #Portadown
+    command = { type = province_revoltrisk which = 36 value = 15 } #Dublin
+    command = { type = revolt which = 32 } #Cork
+    command = { type = revolt which = 36 } #Belfast
+    command = { type = revolt which = 34 } #Dublin
+    command = { type = dissent value = 7 }
+    }
+
+action_b = {
+    ai_chance = 70
+    name = "Grant them independence, but under our control!"
+        command = { type = removeclaim which = 31 }
+    command = { type = removeclaim which = 30 }
+    command = { type = removeclaim which = 34 }
+    command = { type = removeclaim which = 35 }
+    command = { type = removeclaim which = 36 }
+    command = { type = removeclaim which = 32 }
+    command = { type = removeclaim which = 33 }
+    command = { type = independence which = IRE value = 1 when = 0 }
+    command = { type = trigger which = 979002 }
+    command = { type = clrflag which = IRE_UOB_IRA }
+    command = { type = relation which = CSA value = 50 }
+    command = { type = embargo which = CSA where = ENG value = 0 }
+    command = { type = embargo which = ENG where = CSA value = 0 }
+    }
+}
+#### end of UoB Victory over Ireland ###
+
+
+event = {
+id = 979008
+random = no
+country = IRE
+picture = "Burning"
+style = 2
+
+name = "St. Joseph's Orphanage is destroyed!"
+desc = "Today is a sad day in County Cavan. A fire at St. Joseph's Orphanage killed 36 people (35 of whom were children)."
+
+date = { day = 23 month = february year = 1943 }
+
+action_a = {
+	name = "Those poor children!"
+	command = { type = dissent value = 1  }
+	command = { type = money value = -5  }
+	command = { type = supplies value = -5  }
+	}
+}
+
+
+#############################################
+###### St. Patricks day massacre by Jamhaw # 
+#############################################
+event = {
+id = 775491
+random = no
+country = IRE
+
+date = { day = 17 month = March year = 1937 }
+
+name = "Explosion in The Irish Press "
+desc = "Reports have just come in of an explosion in the Irish Press building in Dublin, it is believed that as many as forty-three people were killed. The Ulster Volunteer Force has taken credit for the attack."
+style = 2
+
+
+action_a = {
+name = "Bloody hell!"
+ai_chance = 50
+command = { type = dissent value = 4 }
+}
+
+action_b = {
+name = "Scour Ulster until you find the perpretrators!"
+ai_chance = 50
+command = { type = supplies value = -50 }
+command = { type = dissent value = 1 }
+}
+}
+
+
+
+#############################################
+###### Elections #
+#############################################
+
+event = {
+     id = 676000
+     random = no
+     country = IRE
+     style = 2
+
+     trigger = {
+     government = fascist
+     headofstate = 25001
+     NOT = {
+     ispuppet = IRE
+     }
+     }
+
+     name = "Irish 1937 elections"
+     desc = "Like every elections since 1921, even this elections are marred by perpetual manipulations from the ruling Fine Gael party, Taoiseach, and the leader of our nation Michael Collins, who despite his high popularity among the citizens wants to remain in power at any costs..."
+
+     date = { day = 10 month = december year = 1937 }
+     offset = 2
+     deathdate = { day = 15 month = december year = 1937 }
+
+
+     action_a = {
+         ai_chance = 75
+         name = "Fine Gael party wins by manipulation"
+         command = { type = dissent value = 4 }
+         command = { type = set_domestic which = democratic value = 5 }
+         command = { type = set_domestic which = political_left value = 2 }
+         command = { type = set_domestic which = freedom value = 4 }
+         command = { type = headofstate which = 25001 }
+         command = { type = headofgovernment which = 25002 }
+         command = { type = foreignminister which = 25062 }
+         command = { type = armamentminister which = 25083 }
+         command = { type = ministerofsecurity which = 25102 }
+         command = { type = ministerofintelligence which = 25117 }
+         }
+
+     action_b = {
+         ai_chance = 25
+         name = "The democratic opposition wins despite manipulation!"
+         command = { type = dissent value = -3 }
+         command = { type = trigger which = 676010 }
+             }
+     }
+    
+     event = {
+     id = 676010
+     random = no
+     country = IRE
+     style = 2
+
+     name = "Opposition wins elections!"
+     desc = "It seems that despite our manipulations the opposition was able to gain a majority in the Oireachtas ( national assembly ) and is planning to fully restore democracy in Ireland. What shall we do?"
+     picture = "Belgrade"
+
+     action_a = {
+         ai_chance = 60
+         name = "Collins disbands the Oireachtas!"
+         command = { type = set_domestic which = democratic value = 3 }
+         command = { type = set_domestic which = political_left value = 3 }
+         command = { type = set_domestic which = freedom value = 2 }
+         command = { type = dissent value = 15 }
+         command = { type = sleepevent which = 676025 }
+         command = { type = sleepevent which = 676026 }
+         command = { type = sleepevent which = 676027 }
+     }
+     action_b = {
+         ai_chance = 40
+         name = "We can not stop the inevitable...."
+         command = { type = trigger which = 676011 }
+         }
+}
+    
+event = {
+    id = 676011
+    random = no
+    country = IRE
+    style = 2
+
+    name = "Victory of the opposition"
+    desc = "With the fall of the government set up by Michael Collins, the opposition splits into different factions on the matter of ideology. The question is, which shall take power?"
+    picture = "Belgrade"
+
+     action_a = {
+         ai_chance = 40
+         name = "Moderate conservatives form the National Centre Party"
+         command = { type = dissent value = 5 }
+         command = { type = leave_alliance }
+         command = { type = end_puppet }
+         command = { type = set_domestic which = democratic value = 6 }
+         command = { type = set_domestic which = political_left value = 4 }
+         command = { type = headofstate which = 25038 }
+         command = { type = headofgovernment which = 25046 }
+         command = { type = foreignminister which = 25057 }
+         command = { type = armamentminister which = 25076 }
+         command = { type = ministerofsecurity which = 25096 }
+         command = { type = ministerofintelligence which = 25113 }
+         }
+
+     action_b = {
+         ai_chance = 40
+         name = "A coalition of liberals and social democrats revive Sinn Féin"
+         command = { type = dissent value = -1 }
+         command = { type = leave_alliance }
+         command = { type = end_puppet }
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 7 }
+         command = { type = headofstate which = 25035 }
+         command = { type = headofgovernment which = 25042 }
+         command = { type = foreignminister which = 25052 }
+         command = { type = armamentminister which = 25072 }
+         command = { type = ministerofsecurity which = 25089 }
+         command = { type = ministerofintelligence which = 25109 }
+             }
+
+     action_c = {
+         ai_chance = 20
+         name = "Syndicalists take power under the name Saor Éire"        
+         command = { type = dissent value = 5 }
+         command = { type = leave_alliance }
+         command = { type = end_puppet }
+         command = { type = set_domestic which = democratic value = 4 }
+         command = { type = set_domestic which = political_left value = 9 }
+         command = { type = set_domestic which = freedom value = 4 }
+         command = { type = set_domestic which = free_market value = 4 }
+         command = { type = headofstate which = 25041 } #Jim Larkin sr.
+         command = { type = headofgovernment which = 25050 } #James Larkin jr.
+         command = { type = foreignminister which = 25063 } #Jim Larkin sr.
+         command = { type = armamentminister which = 25085 } #LWR James Conolly
+         command = { type = ministerofsecurity which = 25103 } #Bill Scott
+         command = { type = ministerofintelligence which = 25119 } #Sean Murray LE
+         command = { type = sleepminister which = 25001 } #Collins
+         command = { type = set_relation which = FRA value = 150 }
+         command = { type = set_relation which = RSI value = 150 }
+         command = { type = set_relation which = SOV value = 100 }
+         command = { type = set_relation which = SPR value = 50 }
+         command = { type = set_relation which = GUA value = 50 }
+         command = { type = set_relation which = PRK value = 50 }
+         command = { type = set_relation which = ENG value = 200 }
+         command = { type = set_relation which = CSA value = 50 }
+         command = { type = set_relation which = GEO value = 50 }
+             }
+     }
+
+event = {
+    id = 676130
+    random = no
+    country = IRE
+    style = 2
+
+    trigger = {
+government = democratic
+        }
+
+    name = "Elections of 1942"
+    desc = "Under our current Constitutional Republic, elections must be held every five years.  The political factions in our country have consolidated into three different groups, each of which has a chance of winning at the ballot box."
+
+picture = "politics2"
+
+    date = { day = 1 month = december year = 1942 }
+    offset = 5
+    deathdate = { day = 29 month = december year = 1942 }
+
+
+action_a = {
+    ai_chance =  20
+    name = "The left-wing coalition wins!" #SD & syndicalists
+                 command = { type = trigger which = 676131 }
+        }
+    
+action_b = {
+    ai_chance =  40
+    name = "Fianna Fáil - the liberals win!"
+        command = { type = dissent value = -5 }  #ML
+        command = { type = set_domestic which = democratic value = 10 }
+        command = { type = set_domestic which = political_left value = 4 }
+        command = { type = headofstate which = 25035 } #Douglas Hyde
+        command = { type = headofgovernment which = 25044 }
+        command = { type = foreignminister which = 25003 } #Eamon de Valera
+        command = { type = armamentminister which = 25004 } #Sean MacEntee
+        command = { type = ministerofsecurity which = 25095 } #Gerard Boland
+        command = { type = ministerofintelligence which =  25006 } #Gerard Boland
+        }
+        
+
+action_c = {
+    ai_chance =  30
+    name = "The right-wing coalition wins!"
+        command = { type = dissent value = 5  }  # SC, PA, FA
+        command = { type = trigger which = 676132 }
+        }
+
+action_d = {
+    ai_chance =  10
+    name = "Keep current government"
+        command = { type = dissent value = -1  }
+        }
+    }
+    
+    event = {
+    id = 676131
+    random = no
+    country = IRE
+    style = 2
+
+
+    name = "Elections of 1942 - left-wing victory"
+    desc = "The left-wing coalition wins, but which party shall take power?"
+
+picture = "politics2"
+
+
+action_a = {
+    ai_chance =  80
+    name = "Sinn Féin - the social democrats!"
+        command = { type = set_domestic which = democratic value = 8 }
+        command = { type = set_domestic which = political_left value = 9 }
+        command = { type = headofstate which = 25032 } #Alasdair McCabe
+        command = { type = headofgovernment which = 25043 } #Sean Lemass
+        command = { type = foreignminister which = 25053 } #Thomas Johnson
+        command = { type = armamentminister which = 25067 } #Sean Murray SD
+        command = { type = ministerofsecurity which = 25089 } #Jack Thomas
+        command = { type = ministerofintelligence which = 25106 } #Joseph Conolly
+        }
+    
+action_b = {
+    ai_chance =  20
+    name = "Saor Éire - the syndicalists!"
+        command = { type = leave_alliance }
+        command = { type = end_puppet }
+        command = { type = set_relation which = FRA value = 150 }
+        command = { type = set_relation which = RSI value = 150 }
+        command = { type = set_relation which = SOV value = 100 }
+        command = { type = set_relation which = SPR value = 50 }
+        command = { type = set_relation which = GUA value = 50 }
+        command = { type = set_relation which = PRK value = 50 }
+        command = { type = set_relation which = ENG value = 200 }
+        command = { type = set_relation which = CSA value = 50 }
+        command = { type = set_relation which = GEO value = 50 }
+        command = { type = dissent value = 5 }
+        command = { type = set_domestic which = democratic value = 5 }
+        command = { type = set_domestic which = political_left value = 9 }
+        command = { type = set_domestic which = freedom value = 4 }
+        command = { type = set_domestic which = free_market value = 4 }
+        command = { type = headofstate which = 25041 } #Jim Larkin sr.
+        command = { type = headofgovernment which = 25050 } #James Larkin jr.
+        command = { type = foreignminister which = 25063 } #Jim Larkin sr.
+        command = { type = armamentminister which = 25085 } #LWR James Conolly
+        command = { type = ministerofsecurity which =  25103 } #Bill Scott
+        command = { type = ministerofintelligence which = 25119 } #Sean Murray LE
+        }
+    }
+    
+    event = {
+    id = 676132
+    random = no
+    country = IRE
+    style = 2
+
+    name = "Elections of 1942 - right-wing victory"
+    desc = "The right-wing coalition wins, but which party shall take power?"
+
+picture = "politics2"
+
+
+action_a = {
+    ai_chance =  90
+    name = "National Centre Party - the social conservatives!"
+        command = { type = set_domestic which = democratic value = 6 }
+        command = { type = set_domestic which = political_left value = 4 }
+        command = { type = headofstate which = 25038 } #Eoin MacNeil
+        command = { type = headofgovernment which = 25046 } #W. T. Cosgrave
+        command = { type = foreignminister which =  25057 } #Cosgrave
+        command = { type = armamentminister which =  25077 } #John A. Costello
+        command = { type = ministerofsecurity which = 25096 } #Eoin MacNeil
+        command = { type = ministerofintelligence which = 25113 } #Liam Archer
+        }
+    
+action_b = {
+    ai_chance =  10
+    name = "Fine Gael - Michael Collins wins!"
+        command = { type = dissent value = 15 }
+        command = { type = set_domestic which = democratic value = 5 }
+        command = { type = set_domestic which = political_left value = 3 }
+        command = { type = headofstate which = 25001 } #Collins
+        command = { type = headofgovernment which = 25002 } #Eoinn O'Duffy
+        command = { type = foreignminister which =  25062 } #Olivier L. Flanagan
+        command = { type = armamentminister which = 25084 } #Eoin O'Duffy
+        command = { type = ministerofsecurity which = 25102 } #Eamonn Broy
+        command = { type = ministerofintelligence which = 25118 } #Patrick Sweeney
+        }
+    }
+    
+    event = {
+    id = 676134
+    random = no
+    country = IRE
+    style = 2
+
+    trigger = {
+government = democratic
+        }
+
+    name = "Elections of 1948"
+    desc = "Under our current Constitutional Republic, elections must be held every five years.  The political factions in our country have consolidated into three different groups, each of which has a chance of winning at the ballot box."
+
+picture = "politics2"
+
+    date = { day = 1 month = january year = 1948 }
+    offset = 5
+    deathdate = { day = 29 month = january year = 1948 }
+
+
+action_a = {
+    ai_chance =  10
+    name = "The left-wing coalition wins!" #SD & syndicalists
+    command = { type = trigger which = 676135 }
+        }
+    
+action_b = {
+    ai_chance =  40
+    name = "Fianna Fáil - the liberals win!"
+        command = { type = dissent value = -5 }  #ML
+        command = { type = set_domestic which = democratic value = 10 }
+        command = { type = set_domestic which = political_left value = 4 }
+        command = { type = headofstate which = 25036 } #Sean T. O'Ceallaigh
+        command = { type = headofgovernment which = 25044 }
+        command = { type = foreignminister which = 25056 } #P. A. Mulcahy
+        command = { type = armamentminister which = 25075 } #Edmund Noel Mulcahy
+        command = { type = ministerofsecurity which =  25095  } #Gerard Boland
+        command = { type = ministerofintelligence which =  25112 } #Jack Lynch
+        }
+        
+
+action_c = {
+    ai_chance =  40
+    name = "The right-wing coalition wins!"
+        command = { type = dissent value = 5  }  # SC, PA, FA
+        command = { type = trigger which = 676136 }
+        }
+
+action_d = {
+    ai_chance =  10
+    name = "Keep current government"
+        command = { type = dissent value = -1  }
+        }
+    }
+    
+    event = {
+    id = 676135
+    random = no
+    country = IRE
+    style = 2
+
+
+    name = "Elections of 1948 - left-wing victory"
+    desc = "The left-wing coalition wins, but which party shall take power?"
+
+picture = "politics2"
+
+
+action_a = {
+    ai_chance =  80
+    name = "Sinn Féin - the social democrats!"
+        command = { type = set_domestic which = democratic value = 8 }
+        command = { type = set_domestic which = political_left value = 9 }
+        command = { type = headofstate which = 25033 } #Sean Lemass
+        command = { type = headofgovernment which = 25042 }
+        command = { type = foreignminister which =  25054 } #Wiliam Norton
+        command = { type = armamentminister which =  25070 } #Patrick O'Brien
+        command = { type = ministerofsecurity which =  25093 } #Kevin Dixon
+        command = { type = ministerofintelligence which = 25108 } #Hugh Kennedy
+        }
+    
+action_b = {
+    ai_chance =  20
+    name = "Saor Éire - the syndicalists!"
+        command = { type = set_relation which = FRA value = 150 }
+        command = { type = set_relation which = RSI value = 150 }
+        command = { type = set_relation which = SOV value = 100 }
+        command = { type = set_relation which = SPR value = 50 }
+        command = { type = set_relation which = GUA value = 50 }
+        command = { type = set_relation which = PRK value = 50 }
+        command = { type = set_relation which = ENG value = 200 }
+        command = { type = set_relation which = CSA value = 50 }
+        command = { type = set_relation which = GEO value = 50 }
+        command = { type = leave_alliance }
+        command = { type = end_puppet }
+        command = { type = dissent value = 5 }
+        command = { type = set_domestic which = democratic value = 5 }
+        command = { type = set_domestic which = political_left value = 9 }
+        command = { type = set_domestic which = freedom value = 4 }
+        command = { type = set_domestic which = free_market value = 4 }
+        command = { type = headofstate which = 25041 } #Jim Larkin sr.
+        command = { type = headofgovernment which = 25050 } #James Larkin jr.
+        command = { type = foreignminister which =  25064 } #Bill Gannon
+        command = { type = armamentminister which = 25085 } #LWR James Conolly
+        command = { type = ministerofsecurity which =  25103 } #Bill Scott
+        command = { type = ministerofintelligence which =  25119 } #Sean Murray LE
+        }
+    }
+    
+            event = {
+    id = 676136
+    random = no
+    country = IRE
+    style = 2
+
+    name = "Elections of 1948 - right-wing victory"
+    desc = "The right-wing coalition wins, but which party shall take power?"
+
+picture = "politics2"
+
+
+action_a = {
+    ai_chance =  90
+    name = "National Centre Party - the social conservatives!"
+        command = { type = set_domestic which = democratic value = 6 }
+        command = { type = set_domestic which = political_left value = 4 }
+        command = { type = headofstate which = 25039 } #Richard Mulcahy
+        command = { type = headofgovernment which = 25048 } #John A. Costello
+        command = { type = foreignminister which = 25060 } #Costello
+        command = { type = armamentminister which = 25082 } #Patrick McGilligan
+        command = { type = ministerofsecurity which =  25101 } #Sean MacEoin
+        command = { type = ministerofintelligence which = 25116 } #MacEoin
+        }
+    
+action_b = {
+    ai_chance =  10
+    name = "Fine Gael - Michael Collins wins!"
+        command = { type = dissent value = 15 }
+        command = { type = set_domestic which = democratic value = 5 }
+        command = { type = set_domestic which = political_left value = 3 }
+        command = { type = headofstate which = 25001 } #Collins
+        command = { type = headofgovernment which = 25002 } #Eoinn O'Duffy
+        command = { type = foreignminister which =  25062 } #Olivier L. Flanagan
+        command = { type = armamentminister which =  25084 } #Eoin O'Duffy
+        command = { type = ministerofsecurity which =  25102 } #Eamonn Broy
+        command = { type = ministerofintelligence which = 25118 } #Patrick Sweeney
+        }
+    }
+    
+event = {
+    id = 676138
+    random = no
+    country = IRE
+    style = 2
+
+    trigger = {
+government = democratic
+        }
+
+    name = "Elections of 1953"
+    desc = "Under our current Constitutional Republic, elections must be held every five years.  The political factions in our country have consolidated into three different groups, each of which has a chance of winning at the ballot box."
+
+picture = "politics2"
+
+    date = { day = 1 month = january year = 1953 }
+    offset = 5
+    deathdate = { day = 29 month = january year = 1953 }
+
+
+action_a = {
+    ai_chance =  30
+    name = "The left-wing coalition wins!" #SD & syndicalists
+    command = { type = trigger which = 676139 }
+        }
+    
+action_b = {
+    ai_chance =  30
+    name = "Fianna Fáil - the liberals win!"
+        command = { type = dissent value = -5 }  #ML
+        command = { type = set_domestic which = democratic value = 10 }
+        command = { type = set_domestic which = political_left value = 4 }
+        command = { type = headofstate which = 25036 } #Sean T. O'Ceallaigh
+        command = { type = headofgovernment which = 25044 }
+        command = { type = foreignminister which = 25056 } #P. A. Mulcahy
+        command = { type = armamentminister which =  25075 } #Edmund Noel Mulcahy
+        command = { type = ministerofsecurity which =  25095 } #Gerard Boland
+        command = { type = ministerofintelligence which =  25112 } #Jack Lynch
+        }
+        
+
+action_c = {
+    ai_chance =  30
+    name = "The right-wing coalition wins!"
+        command = { type = dissent value = 5  }  # SC, PA, FA
+        command = { type = trigger which = 676140 }
+        }
+
+action_d = {
+    ai_chance =  10
+    name = "Keep current government"
+        command = { type = dissent value = -1  }
+        }
+    }
+    
+    event = {
+    id = 676139
+    random = no
+    country = IRE
+    style = 2
+
+
+    name = "Elections of 1953 - left-wing victory"
+    desc = "The left-wing coalition wins, but which party shall take power?"
+
+picture = "politics2"
+
+
+action_a = {
+    ai_chance =  95
+    name = "Sinn Féin - the social democrats!"
+        command = { type = set_domestic which = democratic value = 8 }
+        command = { type = set_domestic which = political_left value = 9 }
+        command = { type = headofstate which = 25033 } #Sean Lemass
+        command = { type = headofgovernment which = 25042 }
+        command = { type = foreignminister which = 25054 } #Wiliam Norton
+        command = { type = armamentminister which = 25070 } #Patrick O'Brien
+        command = { type = ministerofsecurity which = 25093 } #Kevin Dixon
+        command = { type = ministerofintelligence which = 25108 } #Hugh Kennedy
+        }
+    
+action_b = {
+    ai_chance =  5
+    name = "Saor Éire - the syndicalists!"
+        command = { type = leave_alliance }
+        command = { type = end_puppet }
+        command = { type = set_relation which = FRA value = 150 }
+        command = { type = set_relation which = RSI value = 150 }
+        command = { type = set_relation which = SOV value = 100 }
+        command = { type = set_relation which = SPR value = 50 }
+        command = { type = set_relation which = GUA value = 50 }
+        command = { type = set_relation which = PRK value = 50 }
+        command = { type = set_relation which = ENG value = 200 }
+        command = { type = set_relation which = CSA value = 50 }
+        command = { type = set_relation which = GEO value = 50 }
+        command = { type = dissent value = 5 }
+        command = { type = set_domestic which = democratic value = 5 }
+        command = { type = set_domestic which = political_left value = 9 }
+        command = { type = set_domestic which = freedom value = 4 }
+        command = { type = set_domestic which = free_market value = 4 }
+        command = { type = headofstate which = 25041 } #Jim Larkin sr.
+        command = { type = headofgovernment which = 25050 } #James Larkin jr.
+        command = { type = foreignminister which = 25064 } #Bill Gannon
+        command = { type = armamentminister which = 25085 } #LWR James Conolly
+        command = { type = ministerofsecurity which =  25103 } #Bill Scott
+        command = { type = ministerofintelligence which = 25119 } #Sean Murray LE
+        }
+    }
+    
+    event = {
+    id = 676140
+    random = no
+    country = IRE
+    style = 2
+
+    name = "Elections of 1953 - right-wing victory"
+    desc = "The right-wing coalition wins, but which party shall take power?"
+    
+picture = "politics2"
+
+
+action_a = {
+    ai_chance =  95
+    name = "National Centre Party - the social conservatives!"
+        command = { type = set_domestic which = democratic value = 6 }
+        command = { type = set_domestic which = political_left value = 4 }
+        command = { type = headofstate which = 25039 } #Richard Mulcahy
+        command = { type = headofgovernment which = 25048 } #John A. Costello
+        command = { type = foreignminister which =  25060 } #Costello
+        command = { type = armamentminister which =  25082 } #Patrick McGilligan
+        command = { type = ministerofsecurity which =  25101 } #Sean MacEoin
+        command = { type = ministerofintelligence which =  25116 } #MacEoin
+        }
+    
+action_b = {
+    ai_chance =  5
+    name = "Fine Gael - Michael Collins wins!"
+        command = { type = dissent value = 15 }
+        command = { type = set_domestic which = democratic value = 5 }
+        command = { type = set_domestic which = political_left value = 3 }
+        command = { type = headofstate which = 25001 } #Collins
+        command = { type = headofgovernment which = 25002 } #Eoinn O'Duffy
+        command = { type = foreignminister which = 25062 } #Olivier L. Flanagan
+        command = { type = armamentminister which = 25084  } #Eoin O'Duffy
+        command = { type = ministerofsecurity which =  25102 } #Eamonn Broy
+        command = { type = ministerofintelligence which =  25118 } #Patrick Sweeney
+        }
+    }
+
+event = {
+    id = 676141
+    random = no
+    country = IRE
+    style = 2
+
+    trigger = {
+government = democratic
+        }
+
+    name = "Elections of 1958"
+    desc = "Under our current Constitutional Republic, elections must be held every five years.  The political factions in our country have consolidated into three different groups, each of which has a chance of winning at the ballot box."
+
+picture = "politics2"
+
+    date = { day = 1 month = january year = 1958 }
+    offset = 5
+    deathdate = { day = 29 month = january year = 1958 }
+
+
+action_a = {
+    ai_chance =  30
+    name = "The left-wing coalition wins!" #SD & syndicalists
+    command = { type = trigger which = 676142 }
+        }
+    
+action_b = {
+    ai_chance =  30
+    name = "Fianna Fáil - the liberals win!"
+        command = { type = set_domestic which = democratic value = 10 }
+        command = { type = set_domestic which = political_left value = 4 }
+        command = { type = headofstate which = 25036 } #Sean T. O'Ceallaigh
+        command = { type = headofgovernment which = 25044 }
+        command = { type = foreignminister which = 25056 } #P. A. Mulcahy
+        command = { type = armamentminister which =  25075 } #Edmund Noel Mulcahy
+        command = { type = ministerofsecurity which =  25095 } #Gerard Boland
+        command = { type = ministerofintelligence which =  25112 } #Jack Lynch
+        }
+        
+
+action_c = {
+    ai_chance =  30
+    name = "National Centre Party - the conservatives win!"
+        command = { type = set_domestic which = democratic value = 6 }
+        command = { type = set_domestic which = political_left value = 4 }
+        command = { type = headofstate which = 25039 } #Richard Mulcahy
+        command = { type = headofgovernment which = 25048 } #John A. Costello
+        command = { type = foreignminister which =  25060 } #Costello
+        command = { type = armamentminister which =  25082 } #Patrick McGilligan
+        command = { type = ministerofsecurity which =  25101 } #Sean MacEoin
+        command = { type = ministerofintelligence which =  25116 } #MacEoin
+        }
+
+action_d = {
+    ai_chance =  10
+    name = "Keep current government"
+        command = { type = dissent value = -1  }
+        }
+    }
+    
+    event = {
+    id = 676142
+    random = no
+    country = IRE
+    style = 2
+
+
+    name = "Elections of 1958 - left-wing victory"
+    desc = "The left-wing coalition wins, but which party shall take power?"
+
+picture = "politics2"
+
+
+action_a = {
+    ai_chance =  95
+    name = "Sinn Féin - the social democrats!"
+        command = { type = set_domestic which = democratic value = 8 }
+        command = { type = set_domestic which = political_left value = 9 }
+        command = { type = headofstate which = 25033 } #Sean Lemass
+        command = { type = headofgovernment which = 25042 }
+        command = { type = foreignminister which = 25054 } #Wiliam Norton
+        command = { type = armamentminister which = 25070 } #Patrick O'Brien
+        command = { type = ministerofsecurity which = 25093 } #Kevin Dixon
+        command = { type = ministerofintelligence which = 25108 } #Hugh Kennedy
+        }
+    
+action_b = {
+    ai_chance =  5
+    name = "Saor Éire - the syndicalists!"
+        command = { type = leave_alliance }
+        command = { type = end_puppet }
+        command = { type = set_relation which = FRA value = 150 }
+        command = { type = set_relation which = RSI value = 150 }
+        command = { type = set_relation which = SOV value = 100 }
+        command = { type = set_relation which = SPR value = 50 }
+        command = { type = set_relation which = GUA value = 50 }
+        command = { type = set_relation which = PRK value = 50 }
+        command = { type = set_relation which = ENG value = 200 }
+        command = { type = set_relation which = CSA value = 50 }
+        command = { type = set_relation which = GEO value = 50 }
+        command = { type = dissent value = 5 }
+        command = { type = set_domestic which = democratic value = 5 }
+        command = { type = set_domestic which = political_left value = 9 }
+        command = { type = set_domestic which = freedom value = 4 }
+        command = { type = set_domestic which = free_market value = 4 }
+        command = { type = headofstate which = 25041 } #Jim Larkin sr.
+        command = { type = headofgovernment which = 25050 } #James Larkin jr.
+        command = { type = foreignminister which = 25064 } #Bill Gannon
+        command = { type = armamentminister which = 25085 } #LWR James Conolly
+        command = { type = ministerofsecurity which =  25103 } #Bill Scott
+        command = { type = ministerofintelligence which = 25119 } #Sean Murray LE
+        }
+    }
+
+event = {
+    id = 676143
+    random = no
+    country = IRE
+    style = 2
+
+    trigger = {
+government = democratic
+        }
+
+    name = "Elections of 1963"
+    desc = "Under our current Constitutional Republic, elections must be held every five years.  The political factions in our country have consolidated into three different groups, each of which has a chance of winning at the ballot box."
+
+picture = "politics2"
+
+    date = { day = 1 month = january year = 1963 }
+    offset = 5
+    deathdate = { day = 29 month = january year = 1963 }
+
+
+action_a = {
+    ai_chance =  30
+    name = "The left-wing coalition wins!" #SD & syndicalists
+    command = { type = trigger which = 676144 }
+        }
+    
+action_b = {
+    ai_chance =  30
+    name = "Fianna Fáil - the liberals win!"
+        command = { type = set_domestic which = democratic value = 10 }
+        command = { type = set_domestic which = political_left value = 4 }
+        command = { type = headofstate which = 25036 } #Sean T. O'Ceallaigh
+        command = { type = headofgovernment which = 25044 }
+        command = { type = foreignminister which = 25056 } #P. A. Mulcahy
+        command = { type = armamentminister which =  25075 } #Edmund Noel Mulcahy
+        command = { type = ministerofsecurity which =  25095 } #Gerard Boland
+        command = { type = ministerofintelligence which =  25112 } #Jack Lynch
+        }
+        
+
+action_c = {
+    ai_chance =  30
+    name = "National Centre Party - the conservatives win!"
+        command = { type = set_domestic which = democratic value = 6 }
+        command = { type = set_domestic which = political_left value = 4 }
+        command = { type = headofstate which = 25039 } #Richard Mulcahy
+        command = { type = headofgovernment which = 25048 } #John A. Costello
+        command = { type = foreignminister which =  25060 } #Costello
+        command = { type = armamentminister which =  25082 } #Patrick McGilligan
+        command = { type = ministerofsecurity which =  25101 } #Sean MacEoin
+        command = { type = ministerofintelligence which =  25116 } #MacEoin
+        }
+
+action_d = {
+    ai_chance =  10
+    name = "Keep current government"
+        command = { type = dissent value = -1  }
+        }
+    }
+    
+    event = {
+    id = 676144
+    random = no
+    country = IRE
+    style = 2
+
+
+    name = "Elections of 1963 - left-wing victory"
+    desc = "The left-wing coalition wins, but which party shall take power?"
+
+picture = "politics2"
+
+
+action_a = {
+    ai_chance =  95
+    name = "Sinn Féin - the social democrats!"
+        command = { type = set_domestic which = democratic value = 8 }
+        command = { type = set_domestic which = political_left value = 9 }
+        command = { type = headofstate which = 25033 } #Sean Lemass
+        command = { type = headofgovernment which = 25042 }
+        command = { type = foreignminister which = 25054 } #Wiliam Norton
+        command = { type = armamentminister which = 25070 } #Patrick O'Brien
+        command = { type = ministerofsecurity which = 25093 } #Kevin Dixon
+        command = { type = ministerofintelligence which = 25108 } #Hugh Kennedy
+        }
+    
+action_b = {
+    ai_chance =  5
+    name = "Saor Éire - the syndicalists!"
+        command = { type = leave_alliance }
+        command = { type = end_puppet }
+        command = { type = set_relation which = FRA value = 150 }
+        command = { type = set_relation which = RSI value = 150 }
+        command = { type = set_relation which = SOV value = 100 }
+        command = { type = set_relation which = SPR value = 50 }
+        command = { type = set_relation which = GUA value = 50 }
+        command = { type = set_relation which = PRK value = 50 }
+        command = { type = set_relation which = ENG value = 200 }
+        command = { type = set_relation which = CSA value = 50 }
+        command = { type = set_relation which = GEO value = 50 }
+        command = { type = dissent value = 5 }
+        command = { type = set_domestic which = democratic value = 5 }
+        command = { type = set_domestic which = political_left value = 9 }
+        command = { type = set_domestic which = freedom value = 4 }
+        command = { type = set_domestic which = free_market value = 4 }
+        command = { type = headofstate which = 25041 } #Jim Larkin sr.
+        command = { type = headofgovernment which = 25050 } #James Larkin jr.
+        command = { type = foreignminister which = 25064 } #Bill Gannon
+        command = { type = armamentminister which = 25085 } #LWR James Conolly
+        command = { type = ministerofsecurity which =  25103 } #Bill Scott
+        command = { type = ministerofintelligence which = 25119 } #Sean Murray LE
+        }
+    }
+    
+event = {
+     id = 676025
+     random = no
+     country = IRE
+     style = 2
+
+     trigger = {
+     government = fascist
+     headofstate = 25001
+     NOT = {
+     ispuppet = IRE
+     }
+     }
+
+     name = "Irish 1942 elections"
+     desc = "Like every elections since 1921, even this elections are marred by perpetual manipulations from the ruling Fine Gael party, Taoiseach, and the leader of our nation Michael Collins, who despite his high popularity among the citizens wants to remain in power at any costs..."
+
+     date = { day = 18 month = december year = 1942 }
+     offset = 2
+     deathdate = { day = 22 month = december year = 1942 }
+
+
+     action_a = {
+         ai_chance = 90
+         name = "Collins and the Fine Gael party wins"
+         command = { type = dissent value = 5 }
+         command = { type = set_domestic which = democratic value = 5 }
+         command = { type = set_domestic which = political_left value = 2 }
+         command = { type = domestic which = interventionism value = -1 }
+         command = { type = domestic which = defense_lobby value = 4 }
+         command = { type = headofstate which = 25001 }
+         command = { type = headofgovernment which = 25002 }
+         command = { type = foreignminister which = 25062 }
+         command = { type = armamentminister which = 25083 }
+         command = { type = ministerofsecurity which = 25102 }
+         command = { type = ministerofintelligence which = 25117 }
+         }
+     action_b = {
+         ai_chance = 10
+         name = "The democratic opposition wins despite manipulation!"
+         command = { type = dissent value = -3 }
+         command = { type = trigger which = 676010 }
+             }
+     }
+
+
+
+event = {
+     id = 676026
+     random = no
+     country = IRE
+     style = 2
+
+     trigger = {
+     government = fascist
+     headofstate = 25001
+     NOT = {
+     ispuppet = IRE
+     }
+     }
+
+     name = "Irish 1948 elections"
+     desc = "Like every elections since 1921, even this elections are marred by perpetual manipulations from the ruling Fine Gael party, Taoiseach, and the leader of our nation Michael Collins, who despite his high popularity among the citizens wants to remain in power at any costs..."
+
+     date = { day = 10 month = january year = 1948 }
+     offset = 2
+     deathdate = { day = 15 month = january year = 1948 }
+
+
+     action_a = {
+         ai_chance = 70
+         name = "Collins and Fine Gael party"
+         command = { type = dissent value = 10 } #People are fed up with Collnis
+         command = { type = set_domestic which = democratic value = 5 }
+         command = { type = set_domestic which = political_left value = 2 }
+         command = { type = headofstate which = 25001 }
+         command = { type = headofgovernment which = 25002 }
+         command = { type = foreignminister which = 25062 }
+         command = { type = armamentminister which = 25083 }
+         command = { type = ministerofsecurity which = 25102 }
+         command = { type = ministerofintelligence which = 25117 }
+         }
+     action_b = {
+         ai_chance = 40
+         name = "Democratic opposition wins!"
+         command = { type = dissent value = -3 }
+         command = { type = trigger which = 676010 }
+             }
+     }
+    
+     event = {
+     id = 676027
+     random = no
+     country = IRE
+     style = 2
+
+     trigger = {
+     government = fascist
+     headofstate = 25001
+     NOT = {
+     ispuppet = IRE
+     }
+     }
+
+     name = "Irish 1953 elections"
+     desc = "Like every elections since 1921, even this elections are marred by perpetual manipulations from the ruling Fine Gael party, Taoiseach, and the leader of our nation Michael Collins, who despite his high popularity among the citizens wants to remain in power at any costs..."
+
+     date = { day = 12 month = january year = 1953 }
+     offset = 2
+     deathdate = { day = 17 month = january year = 1953 }
+
+
+     action_a = {
+         ai_chance = 50
+         name = "Collins and Fine Gael party"
+         command = { type = dissent value = 15 } #People are fed up with Collnis
+         command = { type = set_domestic which = democratic value = 5 }
+         command = { type = set_domestic which = political_left value = 2 }
+         command = { type = headofstate which = 25001 }
+         command = { type = headofgovernment which = 25002 }
+         command = { type = foreignminister which = 25062 }
+         command = { type = armamentminister which = 25083 }
+         command = { type = ministerofsecurity which = 25102 }
+         command = { type = ministerofintelligence which = 25117 }
+         }
+     action_b = {
+         ai_chance = 50
+         name = "Democratic opposition wins!"
+         command = { type = dissent value = -3 }
+         command = { type = trigger which = 676010 }
+             }
+     }
+
+
+
+
+event = {
+     id = 676028
+     random = no
+     country = IRE
+     style = 2
+     picture = "minister_died"
+
+     trigger = {
+     NOT = {
+     ispuppet = IRE
+     }
+     headofstate = 25001
+         }
+
+     name = "Michael Collins was killed!"
+     desc = "Michael Collins died when bomb in his car exploded. The ruling Fine Gael party, despite its control over the state, is completely paralyzed by recent events and will be unable to hold its power against continual assault from the opposition. The country is in chaos and various political forces prepare for the worst..."
+
+     date = { day = 10 month = april year = 1953 }
+
+     action_a = {
+         ai_chance = 40
+         name = "Moderate conservatives form the National Centre Party"
+         command = { type = sleepminister which = 25001 } #Collins
+         command = { type = dissent value = 5 }
+         command = { type = leave_alliance }
+         command = { type = end_puppet }
+         command = { type = set_domestic which = democratic value = 6 }
+         command = { type = set_domestic which = political_left value = 4 }
+         command = { type = headofstate which = 25038 }
+         command = { type = headofgovernment which = 25046 }
+         command = { type = foreignminister which = 25057 }
+         command = { type = armamentminister which = 25076 }
+         command = { type = ministerofsecurity which = 25096 }
+         command = { type = ministerofintelligence which = 25113 }
+         }
+
+     action_b = {
+         ai_chance = 40
+         name = "A coalition of liberals and social democrats revive Sinn Féin"
+         command = { type = dissent value = -1 }
+         command = { type = leave_alliance }
+         command = { type = end_puppet }
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 7 }
+         command = { type = sleepminister which = 25001 } #Collins
+         command = { type = headofstate which = 25035 }
+         command = { type = headofgovernment which = 25042 }
+         command = { type = foreignminister which = 25052 }
+         command = { type = armamentminister which = 25072 }
+         command = { type = ministerofsecurity which = 25089 }
+         command = { type = ministerofintelligence which = 25109 }
+             }
+
+     action_c = {
+         ai_chance = 20
+         name = "Syndicalists take power under the name Saor Éire"        
+         command = { type = dissent value = 5 }
+         command = { type = leave_alliance }
+         command = { type = end_puppet }
+         command = { type = set_domestic which = democratic value = 4 }
+         command = { type = set_domestic which = political_left value = 9 }
+         command = { type = set_domestic which = freedom value = 4 }
+         command = { type = set_domestic which = free_market value = 4 }
+         command = { type = headofstate which = 25041 } #Jim Larkin sr.
+         command = { type = headofgovernment which = 25050 } #James Larkin jr.
+         command = { type = foreignminister which = 25063 } #Jim Larkin sr.
+         command = { type = armamentminister which = 25085 } #LWR James Conolly
+         command = { type = ministerofsecurity which = 25103 } #Bill Scott
+         command = { type = ministerofintelligence which = 25119 } #Sean Murray LE
+         command = { type = sleepminister which = 25001 } #Collins
+         command = { type = set_relation which = FRA value = 150 }
+         command = { type = set_relation which = RSI value = 150 }
+         command = { type = set_relation which = SOV value = 100 }
+         command = { type = set_relation which = SPR value = 50 }
+         command = { type = set_relation which = GUA value = 50 }
+         command = { type = set_relation which = PRK value = 50 }
+         command = { type = set_relation which = ENG value = 200 }
+         command = { type = set_relation which = CSA value = 50 }
+         command = { type = set_relation which = GEO value = 50 }
+             }
+     }
+    
+     event = {
+     id = 676029
+     random = no
+     country = IRE
+     style = 2
+     picture = "minister_died"
+
+     trigger = {
+     NOT = {
+     event = 676028 #Assasination
+     headofstate = 25001
+         }
+         }
+
+     name = "Michael Collins dies!"
+     desc = "A long-time leader of the Irish nation died today in his manor in the suburbs of Dublin. Despite his controversial domestic policies and falsification of elections he will be always remembered as the man who brought independence to Ireland."
+
+     date = { day = 20 month = october year = 1962 }
+
+     action_a = {
+         name = "Memento mori"
+         command = { type = sleepminister which = 25001 } #Collins
+         }
+     }
+
+
+
+#############################################
+###### Ireland Flesh out by Agent Larkin #
+#############################################
+event = {
+id = 9000056
+random = no
+country = IRE
+style = 2
+picture = "Board Meeting"
+
+date = { day = 26 month = October year = 1936 }
+
+name = "Hydro-Industry"
+desc = "Following the successful handling of our peat industry representatives from Bord na Mona have come forward with a proposal to dam the river Shannon to help produce more electricity and further reduce our ties to British coal."
+
+action_a = {
+name = "Of course we shall invest"
+ai_chance = 60
+command = { type = dissent value = -1 }
+command = { type = add_prov_resource which = 32 value = 10 where = energy } #Galway
+command = { type = domestic which = free_market value = -1 }
+command = { type = money value = -100 }
+}
+
+action_b = {
+name = "We shall invest heavily in this project"
+ai_chance = 10
+command = { type = dissent value = 2 }
+command = { type = add_prov_resource which = 32 value = 10 where = energy } #Galway
+command = { type = domestic which = free_market value = -2 }
+command = { type = money value = -350 }
+command = { type = construct which = ic where = 32 value = 2 }
+}
+
+action_c = {
+name = "We can not afford this, turn them down."
+ai_chance = 30
+command = { type = dissent value = 2 }
+}
+}
+
+event = {
+id = 9000057
+random = no
+country = IRE
+style = 2
+picture = "urbanwarfare3"
+
+trigger = {
+control = { province = 36 data = IRE } 
+NOT = {
+atwar = IRE
+}
+}
+
+date = { day = 15 month = july year = 1937 }
+offset = 4
+deathdate = { day = 29 month = december year = 1942 }
+
+name = "Scouring of Ulster"
+desc = "While on the search for the people behind the Irish Press bombings our forces have managed to upset the hornet's nest that is Ulster. While there have only been a few clashes in the area the events are reminding people, both in Ulster and outside it, of the Northern Campaign. Some people do not want a repeat of those events and are calling for negotiations."
+
+action_a = {
+name = "Negotiate."
+ai_chance = 50
+command = { type = dissent value = 1 }
+command = { type = event which = 9000060 where = IRE when = 2  }
+}
+
+action_b = {
+name = "We will not negotiate."
+ai_chance = 50
+command = { type = dissent value = 2 }
+command = { type = event which = 9000058 where = IRE when = 2  }
+}
+}
+
+event = {
+id = 9000058
+random = no
+country = IRE
+style = 2
+picture = "FORA"
+
+
+name = "Ulster Rising"
+desc = "Our failure to negotiate with the Unionists of Ulster, as well as the increasingly militant actions of our forces in the area, have forced the Unionists to action!"
+
+action_a = {
+name = "Damn."
+command = { type = revolt which = 35 } #Derry
+command = { type = revolt which = 36 } #Belfast
+command = { type = dissent value = 2 }
+}
+}
+
+event = {
+id = 9000060
+random = no
+country = IRE
+style = 2
+picture = "negotiaton"
+
+
+name = "Negotiating with the Unionists"
+desc = "The negotiations with the Unionists have begun. While they would like a seperate nation they understand that this is not an option and as such are asking for more liberties in the area and an end to the military occupation."
+
+action_a = {
+name = "We accept these requests."
+ai_chance = 50
+command = { type = dissent value = 2 }
+command = { type = remove_division which = 12700 value = 335 }
+command = { type = remove_division which = 12700 value = 334 }
+command = { type = add_division value = infantry when = 7 }
+}
+
+action_b = {
+name = "They want what? Unaccpetable."
+ai_chance = 50
+command = { type = dissent value = 2 }
+command = { type = event which = 9000058 where = IRE when = 2  }
+}
+}
+
+#########################################
+# Ireland and the American Civil War
+#########################################
+event = {
+id = 9000061
+country = IRE
+style = 2
+picture = "immigrates"
+
+trigger = {
+OR = {
+war = { country = USA country = CSA }
+war = { country = TEX country = CSA }
+war = { country = CAN country = CSA }
+war = { country = U10 country = CSA }
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "Ireland and the American Civil War"
+desc = "Since the outbreak of hostilities in the United States, many citizens of Irish descent have decided to return to their ancestral homeland to try and escape the chaos unfolding in America."
+
+action_a = {
+ai_chance = 99
+name = "Ah, to be back now in Carrickfergus on that long road down to the salty sea."
+command = { type = dissent value = 1 }
+command = { type = relative_manpower value = 10 }
+command = { type = relation which = CSA value = 10 }
+command = { type = relation which = USA value = 10 }
+command = { type = relation which = U10 value = 10 }
+command = { type = setflag which = IRE_Refugees }
+}
+action_b = {
+ai_chance = 1
+name = "But the sea is wide and I can't swim over, neither have I wings to fly."
+command = { type = dissent value = 3 }
+command = { type = relation which = CSA value = -25 }
+command = { type = relation which = USA value = -25 }
+command = { type = relation which = U10 value = -25 }
+}
+}
+
+event = {
+id = 9000062
+country = IRE
+style = 2
+picture = "urbanwarfare"
+
+trigger = {
+exists = U10
+flag = IRE_Refugees
+OR = {
+control = { province = 1789 data = CSA }
+control = { province = 1789 data = TEX }
+}
+}
+
+name = "The Fall of Boston"
+desc = "The war in America finally spread to the heart of New England and the young nation's capital, Boston, has fallen into the hands of their enemies. This has lead to a large number of the local Irish population to look to Ireland for safety as others have already done. The question is, are we willing or able to accept such a sudden influx of immigrants?"
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 1
+deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+    name = "We will welcome them."
+    ai_chance = 60
+    command = { type = manpowerpool value = 25 }
+    command = { type = supplies which = -1000 }
+    command = { type = money value = -50 }
+    command = { type = dissent value = 3 }
+    command = { type = setflag which = IRE_Boston }
+}
+action_b = {
+    name = "They will be processed normally just like any other migrant."
+    ai_chance = 35
+    command = { type = dissent value = 5 }
+}
+action_c = {
+    name = "No, we are full!"
+    ai_chance = 5
+    command = { type = relative_manpower value = -5 }
+    command = { type = dissent value = 10 }
+    command = { type = clrflag which = IRE_Refugees }
+}
+}
+
+################################
+# Integration
+################################
+
+event = {
+id = 9000063
+country = IRE
+style = 2
+picture = "ersatz_conversion"
+
+trigger = {
+flag = IRE_Refugees
+}
+
+name = "Immigration and the Economy"
+desc = "The influx of American capital and technical expertise, not to mention cheap labour, has had a positive effect on our economy."
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 120
+deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+name = "Great!"
+command = { type = construct which = IC where = 34 value = 1 } #Dublin
+command = { type = construct which = IC where = 36 value = 1 } #Belfast
+command = { type = setflag which = IRE_Intergration1 }
+}
+}
+
+event = {
+id = 9000064
+country = IRE
+style = 2
+picture = "lend_lease"
+
+trigger = {
+event = { id = 9000063 }
+flag = IRE_Boston
+}
+
+name = "Boston Irish"
+desc = "The Boston Irish after coming to our country largely settled in Belfast and have contributed significantly to the cities industrial capacity. Despite this, their presence alongside other Irish-American immigrants, has only increased the secterian tensions there."
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 100
+deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+name = "Great!"
+command = { type = construct which = IC where = 36 value = 1 } #Belfast
+command = { type = dissent value = 3 }
+}
+}
+
+event = {
+id = 9000065
+country = IRE
+style = 2
+picture = "Strike1"
+
+trigger = {
+flag = IRE_Intergration1
+}
+
+name = "Problems With Integration"
+desc = "EVT_9000065_DESC"
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 150
+deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+    name = "Something Must Be Done."
+    ai_chance = 60
+    command = { type = dissent value = 10 }
+    command = { type = setflag which = IRE_Intergration2 }
+}
+action_b = {
+    name = "It'll Sort Itself Out."
+    ai_chance = 40
+    command = { type = dissent value = 15 }
+    command = { type = clrflag which = IRE_Intergration1 }
+    command = { type = setflag which = IRE_ICA }
+}
+}
+
+event = {
+id = 9000066
+country = IRE
+style = 2
+picture = "politics1"
+
+trigger = {
+flag = IRE_Intergration2
+}
+
+name = "Government Reaction"
+desc = "A debate was held today in Parliament as to what should be done to rectify the present situation. The majority blame the problems on the immigrants for exposing the country to Syndicalist influence and that there should be a crack down upon Trade-Unionists activities. However, a vocal minority call for restraint, arguing for attempts to find ways to encourage cultural unity in Ireland."
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+    name = "Root the bastards out!"
+    ai_chance = 60
+    command = { type = dissent value = 10 }
+    command = { type = setflag which = IRE_ICA }
+}
+action_b = {
+    name = "Finance a commision to investigate possible solutions."
+    ai_chance = 40
+    command = { type = money value = -15 }
+    command = { type = dissent value = -1 } #Dosent make much short term difference.
+    command = { type = setflag which = IRE_Gael1 }
+}
+}
+
+#######################################################
+# Ireland Repression/Irish Citizens Army/UoB Covert Ops
+#######################################################
+
+event = {
+id = 9000067
+country = IRE
+style = 2
+picture = "Milice"
+
+trigger = {
+flag = IRE_ICA
+}
+
+name = "Return of the Irish Citizen Army"
+desc = "The Irish Citizen Army, a prominant orginisation during the struggles against Britain and a forerunner of the IRA has been reformed by radical trade unionists. It cites Collins' many abuses, the lack of democracy, workers rights and the treatment of the immigrant community."
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 5
+deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+     name = "They are no threat."
+     command = { type = dissent value = 1 }
+     command = { type = setflag which = IRE_ICA1 }
+}
+}
+
+event = {
+id = 9000068
+country = IRE
+style = 2
+picture = "Striker"
+
+trigger = {
+event = { id = 9000067 }
+flag = IRE_ICA
+}
+
+name = "IRA Repression"
+desc = "Where shall we focus our efforts in dealsing with the socialists? Ulster is an obvious choice due to the various elements hostile to the government, but any move solely to the north might bring us into open conflict with the Unionists. A nation wide operation would likely be more effective in the long run."
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 30
+deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+     name = "Unionists, Unionists, whats the difference?"
+     ai_chance = 60
+     command = { type = dissent value = 3 }
+     command = { type = event which = 9000068 }
+}
+action_b = {
+     name = "Conduct a nation-wide search."
+     ai_chance = 40
+     command = { type = supplies which = -1000 }
+     command = { type = dissent value = 5 }
+     command = { type = setflag which = IRE_ICA2 }
+}
+}
+
+event = {
+id = 9000069
+country = IRE
+style = 2
+picture = "Romcivwar"
+
+name = "Orangemen Rising"
+desc = "Our decision to focus upon Ulster, as well as the increasingly militant actions of our forces in the area, have forced the Unionists to action! They have attacked not just our forces and the Catholic community but also have targeted the Irish-Americans."
+style = 2
+
+action_a = {
+name = "Damn."
+command = { type = revolt which = 35 } #Derry
+command = { type = revolt which = 36 } #Belfast
+command = { type = dissent value = 2 }
+command = { type = setflag which = IRE_ICA2 }
+}
+}
+
+event = {
+id = 9000070
+country = IRE
+style = 2
+picture = "unemployment2"
+
+trigger = {
+flag = IRE_ICA2
+}
+
+name = "Opposition backs the ICA"
+desc = "Trade Unionists across the country have united behind the ICA, as well as calls of support from the more left wing of the democratic opposition."
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 30
+deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+name = "They wont win."
+command = { type = dissent value = 2 }
+command = { type = setflag which = IRE_ICA3 }
+}
+}
+
+#Irish Citizen Army Insurgency
+event = {
+id = 9000071
+country = IRE
+persistent = yes
+style = 2
+picture = "resistance"
+
+trigger = {
+flag = IRE_ICA3
+NOT = {
+government = communist
+}
+}
+
+name = "Pro-ICA Demonstration"
+desc = "A large rally was held today in support of the ICA and other left wing groups."
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 150
+deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+name = "Break it up!"
+command = { type = dissent value = 1 }
+}
+}
+
+event = {
+id = 9000072
+country = IRE
+persistent = yes
+style = 2
+picture = "resistance"
+
+trigger = {
+flag = IRE_ICA3
+NOT = {
+government = communist
+}
+}
+
+name = "Bank Robbery"
+desc = "Today members of the ICA engaged in an act of theivery to fund their ilegal activities."
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 300
+deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+name = "Damn!"
+command = { type = money value = -15 }
+}
+}
+
+event = {
+id = 9000073
+country = IRE
+persistent = yes
+style = 2
+picture = "resistance"
+
+trigger = {
+flag = IRE_ICA3
+NOT = {
+government = communist
+}
+}
+
+name = "ICA Assasination"
+desc = "Today a local party official was shot by an ICA hit squad."
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 450
+deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+name = "Find who did this!"
+command = { type = dissent value = 2 }
+}
+}
+
+event = {
+id = 9000074
+country = IRE
+persistent = yes
+style = 2
+picture = "resistance"
+
+trigger = {
+flag = IRE_ICA3
+NOT = {
+government = communist
+}
+}
+
+name = "ICA Bombing"
+desc = "Today a bomb was set off at a local party office, undoubtedly by the ICA. The local party official and several bystanders were killed."
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 600
+deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+name = "Hunt them down!"
+command = { type = dissent value = 3 }
+}
+}
+
+event = {
+id = 9000075
+country = ENG
+style = 2
+picture = "ireland"
+
+trigger = {
+flag = IRE_ICA3
+flag = IRE_ENGCOU
+}
+
+name = "Dealing with the ICA?"
+desc = "Support in Ireland for the ICA has grown significantly recently. If we were to help them in their struggle, they would have a chance at overthrowing Collins' dictatorship. While any government they formed would be far more independent than one we would have set up, it would undoubtedly be a friend to the workers of Britain."
+style = 2
+
+
+action_a = {
+     name = "Solidarity!"
+     ai_chance = 90
+     command = { type = supplies which = -2000 }
+     command = { type = manpowerpool value = -5 }
+     command = { type = setflag which = IRE_CIV }
+}
+action_b = {
+     name = "It's not worth the effort."
+     ai_chance = 10
+     command = { type = dissent value = 2 }
+}
+}
+
+event = {
+id = 9000076
+country = IRE
+style = 2
+picture = "Helmets"
+
+trigger = {
+flag = IRE_CIV
+headofstate = 25001
+}
+
+name = "The Irish Civil War"
+desc = "Fighting has broken out across the country as the forces of Fine Gael clash with the opposition."
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+ai_chance = 50
+name = "Victory for Collins!"
+command = { type = dissent value = -25 }
+command = { type = clrflag which = IRE_CIV }
+command = { type = clrflag which = IRE_ICA3 }
+command = { type = add_division value = militia when = 4 }
+command = { type = add_division value = militia when = 4 }
+command = { type = add_division value = militia when = 4 }
+command = { type = event which = 9000077 where = ENG when = 1  }
+}
+action_b = {
+ai_chance = 50
+name = "Victory for the Revolution!"
+command = { type = dissent value = -25 }
+command = { type = clrflag which = IRE_CIV }
+command = { type = set_domestic which = democratic value = 4 }
+command = { type = set_domestic which = political_left value = 9 }
+command = { type = set_domestic which = freedom value = 4 }
+command = { type = set_domestic which = free_market value = 4 }
+command = { type = headofstate which = 25041 } #Jim Larkin sr.
+command = { type = headofgovernment which = 25050 } #James Larkin jr.
+command = { type = foreignminister which = 25063 } #Jim Larkin sr.
+command = { type = armamentminister which = 25085 } #LWR James Conolly
+command = { type = ministerofsecurity which = 25103 } #Bill Scott
+command = { type = ministerofintelligence which = 25119 } #Sean Murray LE
+command = { type = sleepminister which = 25001 } #Collins
+command = { type = set_relation which = FRA value = 150 }
+command = { type = set_relation which = RSI value = 150 }
+command = { type = set_relation which = SOV value = 100 }
+command = { type = set_relation which = SPR value = 50 }
+command = { type = set_relation which = GUA value = 50 }
+command = { type = set_relation which = PRK value = 50 }
+command = { type = set_relation which = ENG value = 200 }
+command = { type = set_relation which = CSA value = 50 }
+command = { type = set_relation which = GEO value = 50 }
+command = { type = add_division which = "1st ICA Guards" value = militia when = 4 }
+command = { type = add_division which = "2nd ICA Guards" value = militia when = 4 }
+command = { type = add_division which = "3rd ICA Guards" value = militia when = 4 }
+command = { type = event which = 9000078 where = ENG when = 1  }
+}
+}
+
+event = {
+     id = 9000077
+     country = ENG
+     style = 2
+         picture = "Helmets"
+
+     name = "Fine Gael defeat the ICA"
+     desc = "Unfortunately, the IRA proved too much for the rebels and we must now decide how to proceed."
+
+     action = {
+         ai_chance = 20
+         name = "War will solve this !"
+                 trigger = {
+                 local_flag = IREUOB_ALONE
+                 }
+                 command = { type = war which = IRE }
+                 command = { trigger = { NOT = { ideology = stalinist } } type = dissent value = 7 }
+                 command = { trigger = { ideology = stalinist } type = dissent value = 3 }
+                 command = { type = belligerence which = ENG value = 5  }
+                 command = { type = relation which = GER value = -50 }
+                 command = { type = relation which = CAN value = -50 }
+         }
+
+         action = {
+         ai_chance = 20
+         name = "Threaten them with war !"
+                 command = { type = event which = 100211 where = IRE when = 1  }
+                 command = { type = dissent value = 1 }
+         }
+
+     action = {
+         ai_chance = 5
+         name = "Actually, the entire dealing with Ireland was a mistake..."
+                 command = { type = dissent value = 2 }
+                 command = { type = relation which = ENG value = -20 }
+                 }
+                 }
+
+event = {
+     id = 9000078
+     country = ENG
+     style = 2
+         picture = "SovietResistance"
+
+     name = "The ICA defeats Fine Gael!"
+     desc = "The Civil War in Ireland is over and the forces of the revolution have triupmhed. We now have a friendly nation guarding our western shores."
+
+action_a = {
+name = "Excellent."
+command = { type = dissent value = -5 }
+}
+}
+
+event = {
+id = 9000079
+country = IRE
+style = 2
+picture = "diplomatic_campaign"
+
+trigger = {
+government = communist
+NOT = {
+alliance = { country = FRA country = IRE }
+alliance = { country = ENG country = IRE }
+alliance = { country = SOV country = IRE }
+atwar = IRE
+ispuppet = IRE
+}
+control = { province = 55 data = FRA }
+exists = FRA
+participant = { country = FRA value = 3 } #Commune of France is part of Syndicalist Internationale
+}
+
+date = { day = 7 month = january year = 1936 }
+offset = 30
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "Foreign policy"
+desc = "With Ireland finally free from capitalist oppression we can now freely decide our stance towards the international community. While many are arguing for the immediate alliance with the other Syndicalist nations, it might be wise enough to remain neutral to rebuild our country."
+
+         action_a = {
+         ai_chance = 95
+         name = "We must join arms with France"
+         command = { type = trigger which = 9000080 }
+         command = { type = domestic which = defense_lobby value = 1 }
+         command = { type = domestic which = interventionism value = 1 }
+         command = { type = dissent value = 4 }
+     }
+     action_b = {
+         ai_chance = 5
+         name = "Isolationism, we must organize our country"
+         command = { type = dissent value = -5 }
+         command = { type = domestic which = defense_lobby value = -1 }
+         command = { type = domestic which = interventionism value = -1 }
+     }
+}
+
+event = {
+     id = 9000080
+     random = no
+     country = FRA
+     style = 2
+     picture = "diplomatic_campaign"
+
+     name = "Ireland wants to join the Syndicalists"
+     desc = "The government of Ireland has announced recently that they want to join the Syndicalist bloc. It's not a sudden move because pro-Syndicalist policy is popular in many circles including the government and army. Do we want Irish workers and peasants joining the crusade against bloodthirsty Germans and rotten imperialist Canadian pigs?"
+
+     action_a = {
+         ai_chance = 100
+         name = "YES!"
+         command = { type = alliance which = IRE }
+         command = { type = relation which = IRE value = 150 }
+         command = { type = dissent value = -4 }
+         command = { type = domestic which = interventionism value = 1 }
+         command = { type = trigger which = 9000081 }
+     }
+     action_b = {
+         ai_chance = 0
+         name = "Rather not."
+         command = { type = dissent value = 1 }
+         command = { type = relation which = IRE value = -100 }
+     }
+}
+
+event = {
+     id = 9000082
+     random = no
+     country = IRE
+     style = 2
+     picture = "diplomatic_campaign"
+
+     name = "We join the Syndicalist bloc"
+     desc = "French and British are happy to see us joining the common case - destroying the evil imperialists. Now we are part of Syndicalist bloc."
+
+     action_a = {
+         name = "This time we will win!"
+         command = { type = dissent value = -3 }
+         command = { type = relation which = CAN value = -150 }
+         command = { type = relation which = GER value = -150 }
+                 command = { type = relation which = FRA value = 150 }
+                 command = { type = relation which = RSI value = 150 }
+                 command = { type = relation which = ENG value = 150 }
+         command = { type = end_trades which = CAN where = IRE }
+         command = { type = end_trades which = GER where = IRE }
+                 command = { type = end_guarantee which = CAN where = IRE }
+                 command = { type = end_guarantee which = GER where = IRE }
+     }
+}
+
+event = {
+id = 9000083
+country = IRE
+style = 2
+picture = "diplomatic_campaign"
+
+trigger = {
+flag = IRE_Gael1
+}
+
+name = "Result of the Commission"
+desc = "The findings of the Commission is that since the creation of an independent Irish State, efforts to promote Irish culture have been lacking. It points to the reliance on the Catholic Church and the lipservice approach to the use of Irish as an official language. The solution would be to forge a common Irish identity by drawing upon it's Celtic past, secular in nature, applied equally across the nation. However this would take time to implement, be costly and upset conservative elements."
+style = 2
+
+date = { day = 7 month = january year = 1936 }
+offset = 30
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+    name = "Create The Ministry Of Culture!"
+    ai_chance = 90
+    command = { type = domestic which = freedom value = -1 }
+    command = { type = money value = -750 }
+    command = { type = setflag which = IRE_Gael2 }
+}
+action_b = {
+    name = "It's not worth the effort."
+    ai_chance = 10
+    command = { type = dissent value = 2 }
+    command = { type = setflag which = IRE_ICA2 }
+}
+}
+
+event = {
+id = 9000084
+country = IRE
+style = 2
+picture = "diplomatic_campaign"
+
+trigger = {
+flag = IRE_Gael2
+Not = { flag = IRE_Secular }
+}
+
+name = "Secularisation of the Irish State"
+desc = "One of the main obstacles to the unity of Ireland was the conflict between Catholic and Protestant. By establishing a clear divide between Church and State in the Irish Republic it is hoped that our citizens will no longer have to choose between their faith and their nation."
+style = 2
+
+date = { day = 7 month = january year = 1936 }
+offset = 15
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+    name = "Ireland will be forever more, a Secular and Strong government!"
+    ai_chance = 99
+    command = { type = domestic which = freedom value = 2 }
+    command = { type = relation which = ITA value = -50 }
+    command = { type = dissent value = 4 }
+    command = { type = sleepevent which = 3967101 }
+    command = { type = setflag which = IRE_Secular }
+}
+action_b = {
+    name = "This was a bad idea."
+    ai_chance = 1
+    command = { type = clrflag which = IRE_Gael1 }
+    command = { type = clrflag which = IRE_Gael2 }
+    command = { type = setflag which = IRE_ICA2 }
+}
+}
+
+event = {
+id = 9000085
+country = IRE
+style = 2
+picture = "diplomatic_campaign"
+
+trigger = {
+flag = IRE_Gael2
+flag = IRE_Secular
+}
+
+name = "Promotion of the Irish language"
+desc = "The Ministry of Culture has proposed the creation of the Foras na Gaelige, which would encourage the revival of the Irish language."
+style = 2
+
+date = { day = 7 month = january year = 1936 }
+offset = 30
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+    name = "Ok."
+    ai_chance = 100
+    command = { type = setflag which = IRE_Gael3 }
+}
+action_b = {
+    name = "No."
+    ai_chance = 0
+    command = { type = clrflag which = IRE_Gael1 }
+    command = { type = clrflag which = IRE_Gael2 }
+    command = { type = setflag which = IRE_ICA2 }
+}
+}
+
+event = {
+id = 9000086
+country = IRE
+style = 2
+picture = "diplomatic_campaign"
+
+trigger = {
+flag = IRE_Gael3
+}
+name = "An Caighdeán Oifigiúil"
+desc = "An Foras na Gaelige has advised the creation of a standard dialect of the Irish language. This would be known as An Caighdeán Oifigiúil (The Official Standard)."
+style = 2
+
+date = { day = 7 month = january year = 1936 }
+offset = 30
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+    name = "Create the official standard."
+    ai_chance = 100
+    command = { type = setflag which = IRE_Gael4 }
+    command = { type = dissent value = 2 }
+}
+action_b = {
+    name = "No need."
+    ai_chance = 0
+    command = { type = clrflag which = IRE_Gael1 }
+    command = { type = clrflag which = IRE_Gael2 }
+    command = { type = clrflag which = IRE_Gael3 }
+    command = { type = setflag which = IRE_ICA2 }
+}
+}
+
+event = {
+id = 9000087
+country = IRE
+style = 2
+picture = "Demonstrations"
+
+trigger = {
+flag = IRE_Gael4
+}
+
+name = "Unionists demand recognition of Ulster-Scots"
+desc = "In response to our attempts to revive the Irish language, the Unionists have demanded that we recognise Ulster-Scots as a minority language. What is our response?"
+style = 2
+
+date = { day = 7 month = january year = 1936 }
+offset = 40
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+    name = "Recognise Ulster-Scots."
+    ai_chance = 60
+    command = { type = dissent value = 2 }
+}
+action_b = {
+    name = "Ignore them."
+    ai_chance = 40
+    command = { type = setflag which = IRE_UVF }
+    command = { type = dissent value = 10 }
+}
+}
+
+event = {
+id = 9000088
+country = IRE
+persistent = yes
+style = 2
+picture = "resistance"
+
+trigger = {
+flag = IRE_UVF
+}
+
+name = "Unionist Demonstration"
+desc = "A large rally was held today by the Orange Order in protest of the government."
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 150
+deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+name = "Break it up!"
+command = { type = dissent value = 1 }
+}
+}
+
+event = {
+id = 9000089
+country = IRE
+persistent = yes
+style = 2
+picture = "resistance"
+
+trigger = {
+flag = IRE_UVF
+}
+
+name = "Bank Robbery"
+desc = "Today members of the UVF engaged in an act of theivery to fund their ilegal activities."
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 300
+deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+name = "Damn!"
+command = { type = money value = -15 }
+}
+}
+
+event = {
+id = 9000090
+country = IRE
+persistent = yes
+style = 2
+picture = "resistance"
+
+trigger = {
+flag = IRE_UVF
+}
+
+name = "UVF Assasination"
+desc = "Today a local party official was shot by an UVF hit squad."
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 450
+deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+name = "Find who did this!"
+command = { type = dissent value = 2 }
+}
+}
+
+event = {
+id = 9000091
+country = IRE
+persistent = yes
+style = 2
+picture = "resistance"
+
+trigger = {
+flag = IRE_UVF
+}
+
+name = "UVF Bombing"
+desc = "Today a bomb was set off at a local party office, undoubtedly by the UVF. The local party official and several bystanders were killed."
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 600
+deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+name = "Hunt them down!"
+command = { type = dissent value = 3 }
+}
+}
+
+event = {
+id = 9000092
+country = IRE
+style = 2
+picture = "womeninarmedforces"
+
+trigger = {
+flag = IRE_Gael4
+NOT = { local_flag = WOMEN_ARMY }
+}
+
+name = "Women's role in the army"
+desc = "In 697 the Cáin Adomnáin was passed by Saint Adomnáin of Iona, one of its new laws forbidding women from fighting. With our recent rejection of the Catholic Church and our promotion of Gaelic culture, the time may have come to include women in our forces once again. This would provide our small nation a vital increase in manpower in the event of foreign aggression against us. Of course, what also must be taken into consideration is that many may be outraged by this suggestion."
+
+date = { day = 1 month = may year = 1936 }
+offset = 100
+deathdate = { day = 1 month = january year = 1970 }
+
+action_a = {
+ai_chance = 15
+name = "They will serve the same way the men do"
+     command = { type = dissent value = 25 }
+     command = { type = relative_manpower value = 50 }
+     command = { type = local_setflag which = WOMEN_ARMY }
+     }
+
+action_b = {
+ai_chance = 40
+name = "Allow volunteer service"
+     command = { type = dissent value = 15 }
+     command = { type = relative_manpower value = 20 }
+     command = { type = local_setflag which = WOMEN_ARMY }
+     }
+
+action_c = {
+ai_chance = 45
+name = "This is unacceptable"
+     command = { type = dissent value = 1 }
+     }
+}
+
+event = {
+id = 9000094
+random = no
+country = IRE
+persistent = yes
+style = 2
+picture = "EasterRising"
+
+trigger = {
+day = 23
+month = 3
+NOT = {
+day = 24
+}
+NOT = {
+month = 4
+}
+NOT = {
+puppet = { country = IRE country = CAN  }
+puppet = { country = IRE country = U07  }
+}
+}
+    
+date = { day = 0 month = january year = 1936 }
+offset = 1
+deathdate = { day = 29 month = december year = 1963 }
+    
+name = "Anniversary of the 1916 Easter Rising!"
+desc = "On Monday, the 24th of April 1916, members of the Irish Volunteers, Irish Citizen Army and Cumann na mBan seized key locations in Dublin and declared a free Irish republic. Surrounded by the vastly superior numbers and artillery of the British Army, they fought on for six days before eventually surrendering. Most of the leaders of the Rising were executed. Although a loss at the time, it would subsequently lead to Ireland's war of independence and freedom after seven hundred years under British rule."
+
+action = {
+name = "For slavery fled, O glorious dead, when you fell in the foggy dew."
+command = { type = dissent value = -1 }
+}
+}
+
+event = {
+id = 9000095
+random = no
+country = IRE
+style = 2
+picture = "Board Meeting"
+
+date = { day = 22 month = January year = 1937 }
+
+name = "National Investment"
+desc = "With tensions growing once again throughout the world, there have been suggestions to increase Ireland's defences. Others argue that we should invest in industry."
+
+action_a = {
+name = "Invest in national defences."
+ai_chance = 25
+command = { type = money value = -750 }
+command = { type = construct which = flak where = 34 value = 2 }
+command = { type = construct which = flak where = 36 value = 3 }
+command = { type = construct which = flak where = 31 value = 3 }
+}
+
+action_b = {
+name = "Invest in industry."
+ai_chance = 25
+command = { type = money value = -750 }
+command = { type = construct which = ic where = 34 value = 2 }
+command = { type = construct which = ic where = 36 value = 2 }
+command = { type = construct which = ic where = 31 value = 2 }
+}
+
+action_c = {
+name = "Invest in both."
+ai_chance = 30
+command = { type = money value = -750 }
+command = { type = construct which = flak where = 34 value = 2 }
+command = { type = construct which = ic where = 34 value = 1 }
+command = { type = construct which = flak where = 36 value = 1 }
+command = { type = construct which = ic where = 36 value = 1 }
+command = { type = construct which = flak where = 31 value = 2 }
+command = { type = construct which = ic where = 31 value = 1 }
+}
+
+action_d = {
+name = "We cannot afford it."
+ai_chance = 20
+command = { type = dissent value = 3 }
+}
+}

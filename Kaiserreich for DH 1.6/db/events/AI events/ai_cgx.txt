@@ -1,0 +1,307 @@
+####################################
+# China and the Warlords 27000 - 27999 by Lothos
+####################################
+# Behavior Flags
+#	UPGPeace			= Upgrading of existing units flag
+#	ChinaBackoff		= Go on the attack or no in China
+
+# Request for Help Flags
+#	ChinaFeeder1	= 10% Exp force request for help
+#	ChinaFeeder2	= 20% Exp force request for help
+#	ChinaFeeder3	= 30% Exp force request for help
+#	ChinaFeeder4	= 40% Exp force request for help
+#	ChinaFeeder5	= 50% Exp force request for help
+#	ChinaFeeder6	= 60% Exp force request for help
+#	ChinaFeeder7	= 70% Exp force request for help
+
+
+
+################
+# Backoff from Japan AI
+#############################################
+event = {
+	id = 27001
+	random = no 
+	country = CGX 
+	
+	trigger = {
+		ai = yes
+		OR = {
+			event = 22001
+			event = 22002
+			lost_national = { country = CGX  value = 35 }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0	
+	
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/CHI_Backoff.ai" }
+		command = { type = ai which = "Air_Ground.ai" }
+	}
+}
+
+
+################
+# China loads initial Backoff AI
+########################################
+event = {
+	id = 27017
+	random = no
+	country = CGX 
+
+	trigger = {
+		ai = yes
+		ai = JAP
+		war = { country = CGX  country = JAP }
+		NOT = {war = { country = CGX  country = CHC } }
+		NOT = {war = { country = CGX  country = CYN } }
+		NOT = {war = { country = CGX  country = CSX } }
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 0 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = ChinaBackoff }
+		command = { type = ai which = "switch/CHI_Backoff.ai" }
+	}
+}
+################
+# China lost to much to JAP go back on the attack
+#############################################
+event = {
+	id = 27018
+	random = no 
+	country = CGX 
+	persistent = yes
+	
+	trigger = {
+		ai = yes
+		ai = JAP
+		NOT = { local_flag = ChinaBackoff }
+		war = { country = CGX  country = JAP }
+		OR = {
+			AND = {
+				year = 1937
+				NOT = { year = 1939 }
+				OR = {
+					AND = {
+						lost_national = { country = CGX  value = 35 }
+						NOT = { control = { province = 1320 data = JAP } }
+						NOT = { control = { province = 1321 data = JAP } }
+					}
+					AND = {
+						lost_national = { country = CGX  value = 40 }
+						OR = {
+							control = { province = 1320 data = JAP }
+							control = { province = 1321 data = JAP }
+						}
+					}
+				}
+			}
+			AND = {
+				year = 1939
+				NOT = { year = 1941 }
+				OR = {
+					AND = {
+						lost_national = { country = CGX  value = 38 }
+						NOT = { control = { province = 1320 data = JAP } }
+						NOT = { control = { province = 1321 data = JAP } }
+					}
+					AND = {
+						lost_national = { country = CGX  value = 43 }
+						OR = {
+							control = { province = 1320 data = JAP }
+							control = { province = 1321 data = JAP }
+						}
+					}
+				}
+			}
+			AND = {
+				year = 1941
+				OR = {
+					AND = {
+						lost_national = { country = CGX  value = 40 }
+						NOT = { control = { province = 1320 data = JAP } }
+						NOT = { control = { province = 1321 data = JAP } }
+					}
+					AND = {
+						lost_national = { country = CGX  value = 45 }
+						OR = {
+							control = { province = 1320 data = JAP }
+							control = { province = 1321 data = JAP }
+						}
+					}
+				}
+			}
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0	
+	
+	date = { day = 0 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = ChinaBackoff }
+		command = { type = ai which = "switch/CHI_Backoff_Remove.ai" }
+	}
+}
+################
+# China regained its areas go back on the defense
+#############################################
+event = {
+	id = 27019
+	random = no 
+	country = CGX 
+	persistent = yes
+	
+	trigger = {
+		ai = yes
+		ai = JAP
+		local_flag = ChinaBackoff
+		war = { country = CGX  country = JAP }
+		NOT = {
+			AND = {
+				year = 1937
+				NOT = { year = 1939 }
+				OR = {
+					AND = {
+						lost_national = { country = CGX  value = 35 }
+						NOT = { control = { province = 1320 data = JAP } }
+						NOT = { control = { province = 1321 data = JAP } }
+					}
+					AND = {
+						lost_national = { country = CGX  value = 40 }
+						OR = {
+							control = { province = 1320 data = JAP }
+							control = { province = 1321 data = JAP }
+						}
+					}
+				}
+			}
+			AND = {
+				year = 1939
+				NOT = { year = 1941 }
+				OR = {
+					AND = {
+						lost_national = { country = CGX  value = 38 }
+						NOT = { control = { province = 1320 data = JAP } }
+						NOT = { control = { province = 1321 data = JAP } }
+					}
+					AND = {
+						lost_national = { country = CGX  value = 43 }
+						OR = {
+							control = { province = 1320 data = JAP }
+							control = { province = 1321 data = JAP }
+						}
+					}
+				}
+			}
+			AND = {
+				year = 1941
+				OR = {
+					AND = {
+						lost_national = { country = CGX  value = 40 }
+						NOT = { control = { province = 1320 data = JAP } }
+						NOT = { control = { province = 1321 data = JAP } }
+					}
+					AND = {
+						lost_national = { country = CGX  value = 45 }
+						OR = {
+							control = { province = 1320 data = JAP }
+							control = { province = 1321 data = JAP }
+						}
+					}
+				}
+			}
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0	
+	
+	date = { day = 0 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = ChinaBackoff }
+		command = { type = ai which = "switch/CHI_Backoff.ai" }
+	}
+}
+
+
+################
+# Concetrate on upgrading while at peace
+#############################################
+event = {
+	id = 27028
+	random = no
+	country = CGX 
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		atwar = no
+		NOT = { local_flag = UPGPeace }
+	}
+
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	name = "AI_EVENT"
+	style = 0
+
+	action_a = {
+		command = { type = ai which = "switch/Minor_Upg_Peace.ai" }
+		command = { type = local_setflag which = UPGPeace }
+	}
+}
+event = {
+	id = 27029
+	random = no
+	country = CGX 
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		atwar = yes
+		local_flag = UPGPeace
+	}
+
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	name = "AI_EVENT"
+	style = 0
+
+	action_a = {
+		command = { type = ai which = "switch/Minor_Upg_War.ai" }
+		command = { type = local_clrflag which = UPGPeace }
+	}
+}
+
+
+
+####################################
+# China 27500 - 27599 = Minister Change Events
+####################################
+
+

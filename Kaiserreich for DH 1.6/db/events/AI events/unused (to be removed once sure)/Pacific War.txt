@@ -1,0 +1,100 @@
+#######################
+#### Germany
+# 1280000 - Invasion of the Philippines
+# 1280001 - Invasion of Manchuria and Korea
+#
+#
+#
+
+event = {
+id = 1280000
+country = GER
+
+trigger = { 
+	AND = {
+	ai = yes
+	war = { country = GER country = JAP } 
+		OR = {
+		control = { province = 1735 data = JAP }
+		control = { province = 1736 data = JAP }
+		control = { province = 1737 data = JAP }
+		control = { province = 1738 data = JAP }
+		control = { province = 1739 data = JAP }
+		control = { province = 1740 data = JAP }
+		control = { province = 1741 data = JAP }
+		control = { province = 1742 data = JAP }
+		control = { province = 1743 data = JAP }
+		control = { province = 1744 data = JAP }
+		control = { province = 1745 data = JAP }
+		control = { province = 1745 data = JAP }
+		control = { province = 1746 data = JAP }
+		control = { province = 1747 data = JAP }
+		control = { province = 1740 data = JAP }
+		control = { province = 1747 data = JAP }
+		control = { province = 1748 data = JAP }
+		control = { province = 1749 data = JAP }
+		control = { province = 1750 data = JAP }
+		puppet = { country = PHI country = JAP }
+		}
+	}
+}
+
+name = "AI_EVENT"
+desc = "Step 1. Invasion of the Philippines."
+style = 0
+
+date = { day = 1 month = january year = 1936 }
+offset =  1
+deathdate = { day = 29 month = december year = 1948 }
+
+action_a = {
+	command = { type = ai which = "kaiserreich/switch/GER_PHI_atwar.ai" }
+	}
+}
+
+event = {
+id = 1280001
+country = GER
+
+trigger = { 
+	AND = {
+	ai = yes
+	war = { country = GER country = JAP } 
+		NOT = {
+	#Philippines
+		control = { province = 1735 data = JAP }
+		control = { province = 1736 data = JAP }
+		control = { province = 1737 data = JAP }
+		control = { province = 1738 data = JAP }
+		control = { province = 1739 data = JAP }
+		control = { province = 1740 data = JAP }
+		control = { province = 1741 data = JAP }
+		control = { province = 1742 data = JAP }
+		control = { province = 1743 data = JAP }
+		control = { province = 1744 data = JAP }
+		control = { province = 1745 data = JAP }
+		control = { province = 1745 data = JAP }
+		control = { province = 1746 data = JAP }
+		control = { province = 1747 data = JAP }
+		control = { province = 1740 data = JAP }
+		control = { province = 1747 data = JAP }
+		control = { province = 1748 data = JAP }
+		control = { province = 1749 data = JAP }
+		control = { province = 1750 data = JAP }
+		puppet = { country = PHI country = JAP }
+		}
+	}
+}
+
+name = "AI_EVENT"
+desc = "Step 2. Invasion of the Manchuria and Korea."
+style = 0
+
+date = { day = 1 month = january year = 1936 }
+offset =  1
+deathdate = { day = 29 month = december year = 1948 }
+
+action_a = {
+	command = { type = ai which = "kaiserreich/switch/GER_MAN_atwar.ai" }
+	}
+}

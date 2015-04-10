@@ -1,0 +1,314 @@
+# Liberation of the UK Events V: Leader Events
+#
+# IDs 830350-830375
+#
+# 830350 - The Death of Roger Backhouse (CAN)
+# 830351 - The Death of Roger Backhouse (UK)
+# 830352 - The Death of Dudley Pound (CAN)
+# 830353 - The Death of Dudley Pound (UK)
+# 830354 - The Role of J. F. C. Fuller
+# 830355 - The Retirement of Hugh Trenchard
+# 830356 - The Retirement of Roger Keyes
+
+event = {
+
+	id = 830350
+	random = no
+	country = CAN
+        style = 2
+
+	trigger = {
+		random = 10
+		NOT = {
+			event = 830222
+			event = 830251
+			}
+		}
+
+	date = { day = 1 month = january year = 1939 }
+	offset = 25
+	deathdate = { day = 29 month = december year = 1948 }
+
+	name = "The Death of Roger Backhouse"
+	desc = "Roger Backhouse, a leading figure in the Royal Navy, has died of a brain tumour."
+
+	action_a = {
+		name = "He Will Be Missed"
+        command = { type = sleepleader which = 52590 } #Backhouse
+        command = { type = sleepminister which = 45147 } #Backhouse
+		}
+	}
+
+event = {
+
+	id = 830351
+	random = no
+	country = U07
+        style = 2
+
+	trigger = {
+		random = 10
+		OR = {
+			event = 830222
+			event = 830251
+			}
+		NOT = {
+			event = 830350
+			}
+		}
+
+	date = { day = 1 month = january year = 1939 }
+	offset = 25
+	deathdate = { day = 29 month = december year = 1948 }
+
+	name = "The Death of Roger Backhouse"
+	desc = "Roger Backhouse, a leading figure in the Royal Navy, has died of a brain tumour."
+
+	action_a = {
+		name = "He Will Be Missed"
+        command = { type = sleepleader which = 752590 } #Backhouse
+        command = { type = sleepminister which = 557534 } #Backhouse
+		}
+	}
+
+event = {
+
+	id = 830352
+	random = no
+	country = CAN
+        style = 2
+
+	trigger = {
+		random = 10
+		NOT = {
+			event = 830223
+			event = 830254
+			}
+		}
+
+	date = { day = 1 month = january year = 1943 }
+	offset = 25
+	deathdate = { day = 29 month = december year = 1948 }
+
+	name = "The Death of Dudley Pound"
+	desc = "Dudley Pound, a leading figure in the Royal Navy, has passed away."
+
+	action_a = {
+		name = "He Will Be Missed"
+        command = { type = sleepleader which = 52615 } #Pound
+        command = { type = sleepminister which = 45148 } #Pound
+		}
+	}
+
+event = {
+
+	id = 830353
+	random = no
+	country = U07
+        style = 2
+
+	trigger = {
+		random = 10
+		OR = {
+			event = 830223
+			event = 830254
+			}
+		NOT = {
+			event = 830352
+			}
+		}
+
+
+	date = { day = 1 month = january year = 1943 }
+	offset = 25
+	deathdate = { day = 29 month = december year = 1948 }
+
+	name = "The Death of Dudley Pound"
+	desc = "Dudley Pound, a leading figure in the Royal Navy, has passed away."
+
+	action_a = {
+		name = "He Will Be Missed"
+        command = { type = sleepleader which = 752615 } #Pound
+        command = { type = sleepminister which = 557535 } #Pound
+        command = { type = sleepteam which = 557422 } #Pound
+		}
+	}
+
+event = {
+
+	id = 830354
+	random = no
+	country = U07
+        style = 2
+
+	trigger = {
+                NOT = {
+                ispuppet = U07
+                }
+		random = 25
+		OR = {
+			event = 830180
+			event = 830181
+			event = 830182
+			event = 830183
+			event = 830184
+			event = 830185
+			event = 830186
+			event = 830187
+			event = 830188
+			event = 830189
+			event = 830190
+			event = 830191
+			event = 830192
+			event = 830193
+			}
+		}
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 15
+	deathdate = { day = 29 month = december year = 1948 }
+
+	name = "The Role of J. F. C. Fuller"
+	desc = "During the long exile of King Edward VII, one of his closest advisors was J. F. C. Fuller, who had served with distinction in the Great War, and who was the leading advocate of tanks.  Now that Britain has been liberated, Fuller has asked to be appointed commander of the Royal Tank Corps, so that he can put his ideas into practice.  However, Fuller is not popular with the officer corps of the British army - his tanks failed to stem the German onslaught in 1919, and many feel that his ideas are fantasy."
+
+    action_a = {
+        name = "Appoint Fuller to the Royal Tank Corps"
+        ai_chance = 50
+        command = { type = waketeam which = 557427 } #Fuller
+        command = { type = dissent value = 1 }
+    }
+    action_b = {
+        name = "Find something else for Fuller to do"
+        ai_chance = 50
+        command = { }
+    }
+}
+
+event = {
+
+	id = 830355
+	random = no
+	country = U07
+        style = 2
+
+	trigger = {
+		OR = {
+			event = 830224
+			event = 830263
+			}
+		OR = {
+			event = 830225 #Return of Portal
+			event = 830266 #Return of Portal
+			event = 830281 #Return of Gibson
+			}
+		random = 25
+		atwar = no
+		}
+
+	date = { day = 1 month = january year = 1943 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1948 }
+
+	name = "The Retirement of Hugh Trenchard"
+	desc = "The King's leading air advisor during the Exile, Hugh Trenchard played a vital role in the liberation of the UK.  After lengthy service in the post-liberation armed forces, Trenchard has decided that the time has come for retirement."
+
+	action_a = {
+		name = "You Have Served Your King Well"
+        command = { type = sleepleader which = 752651 } #Trenchard
+        command = { type = sleepminister which = 557544 } #Trenchard
+        command = { type = sleepteam which = 557425 } #Trenchard
+		}
+	}
+
+event = {
+
+	id = 830356
+	random = no
+	country = U07
+        style = 2
+
+	trigger = {
+		OR = {
+			event = 830220
+			event = 830245
+			}
+		event = 830257 #Return of Vian
+		random = 25
+		atwar = no
+		}
+
+	date = { day = 1 month = january year = 1944 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1948 }
+
+	name = "The Retirement of Roger Keyes"
+	desc = "The King's leading naval advisor during the Exile, Roger Keyes played a vital role in the liberation of the UK.  After lengthy service in the post-liberation armed forces, Keyes has decided that the time has come for retirement."
+
+	action_a = {
+		name = "You Have Served Your King Well"
+        command = { type = sleepminister which = 557536 } #Keyes
+        command = { type = sleepteam which = 557435 } #Keyes
+		}
+	}
+
+event = {
+
+	id = 830357
+	random = no
+	country = U07
+        style = 2
+
+	trigger = {
+		NOT = {
+			event = 830358
+			}
+		}
+
+	date = { day = 0 month = january year = 1948 }
+
+	name = "The Career of Randolph Churchill"
+	desc = "General Randolph Churchill has had a distinguished career in the British army, both during the Exile and after liberation.  However, the temptation exists to follow his father and grandfather and pursue a career in politics."
+
+    action_a = {
+        name = "Go into Politics"
+        ai_chance = 65
+        command = { type = sleepleader which = 752664 }
+    }
+    action_b = {
+        name = "Remain in the Army"
+        command = { type = sleepminister which = 557499 }
+    }
+}
+
+event = {
+
+	id = 830358
+	random = no
+	country = U07
+        style = 2
+
+	trigger = {
+		NOT = {
+			event = 830357
+			}
+		flag = UK_ELECT1_YES
+		}
+
+	date = { day = 3 month = january year = 1948 }
+	offset = 5
+	deathdate = { day = 29 month = december year = 1963 }
+
+	name = "The Career of Randolph Churchill"
+	desc = "General Randolph Churchill has had a distinguished career in the British army, both during the Exile and after liberation.  However, the temptation exists to follow his father and grandfather and pursue a career in politics."
+
+    action_a = {
+        name = "Go into Politics"
+        ai_chance = 65
+        command = { type = sleepleader which = 752664 }
+    }
+    action_b = {
+        name = "Remain in the Army"
+        command = { type = sleepminister which = 557499 }
+    }
+}
+

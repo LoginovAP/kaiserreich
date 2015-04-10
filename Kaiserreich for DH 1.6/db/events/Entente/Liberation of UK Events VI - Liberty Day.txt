@@ -1,0 +1,179 @@
+# Liberation of the UK Events VI: General Domestic Events
+#
+# IDs 830376-830380
+#
+# 830376 - The Proclamation of Liberty Day
+# 830377 - The Progressive Government and Liberty Day
+# 830378 - Liberty Day to be Expanded
+# 830379 - Liberty Day
+# 830380 - Liberty Day (at war with CoF)
+
+event = {
+
+	id = 830376
+	random = no
+	country = U07
+	style = 2
+
+	trigger = {
+		day = 19
+		month = 0
+		NOT = {
+			day = 20
+			}
+		NOT = {
+			month = 1
+			}
+		}
+
+	date = { day = 1 month = january year = 1937 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "The Proclamation of Liberty Day"
+	desc = "EVT_830376_DESC"
+
+	action_a = {
+		name = "An Englishman's Liberty is Sacred!"
+		command = { type = dissent value = -1 }
+		command = { type = setflag which = UK_LIBERTY_DAY }
+		}
+	}
+
+event = {
+
+	id = 830377
+	random = no
+	country = U07
+	style = 2
+
+	trigger = {
+                event = 830376
+		flag = UK_PROG_GOVT
+		}
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "The Progressive Government and Liberty Day"
+	desc = "The newly-elected Progressive government is deciding whether to continue with public celebration of Liberty Day or tone the ceremonies significantly to reduce their overtly anti-Syndicalist nature."
+
+	action_a = {
+		name = "We Must Not Offend the Syndicalists"
+                ai_chance = 40
+		command = { type = clrflag which = UK_LIBERTY_DAY }
+                command = { type = dissent value = 5 }
+                command = { type = relation which = FRA value = 20 }
+		}
+
+        action_b = {
+		name = "Long Live English Liberty!"
+                ai_chance = 60
+		command = { type = dissent value = -5 }
+                command = { type = relation which = FRA value = -20 }
+		}
+
+	}
+
+event = {
+
+	id = 830378
+	random = no
+	country = U07
+        style = 2
+
+	trigger = {
+		event = 830377
+		NOT = {
+			flag = UK_PROG_GOVT
+                        flag = UK_LIBERTY_DAY
+			}
+		}
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "Liberty Day to be Expanded"
+	desc = "With the defeat of the Progressives, the new government has declared that Liberty Day celebrations will be expanded."
+
+	action_a = {
+		name = "Long Live English Liberty!"
+		command = { type = setflag which = UK_LIBERTY_DAY }
+		}
+	}
+
+event = {
+
+	id = 830379
+	random = no
+	persistent = yes
+	country = U07
+        style = 2
+
+	trigger = {
+                event = 830376 
+		day = 19
+		month = 0
+		NOT = {
+			day = 20
+			}
+		NOT = {
+			month = 1
+			}
+		NOT = {
+			war = { country = U07 country = FRA }
+			}
+		flag = UK_LIBERTY_DAY
+		}
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "Liberty Day"
+	desc = "Today marks Liberty Day, when Britons across the country remember their fallen King and those who made the ultimate sacrifice so that liberty could be restored to the British Isles.  The ceremonies also serve as a reminder of the continued threat Syndicalism poses to the world."
+
+	action_a = {
+		name = "Their Sacrifices Will Not Be in Vain"
+		command = { type = relation which = FRA value = -10 }
+		command = { type = relation which = RSI value = -5 }
+		command = { type = relation which = CSA value = -5 }
+		}
+	}
+
+event = {
+
+	id = 830380
+	random = no
+	persistent = yes
+	country = U07
+        style = 2
+
+	trigger = {
+                event = 830376 
+		day = 19
+		month = 0
+		NOT = {
+			day = 20
+			}
+		NOT = {
+			month = 1
+			}
+		war = { country = U07 country = FRA }
+		flag = UK_LIBERTY_DAY
+		}
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "Liberty Day"
+	desc = "With British forces engaged in a deadly struggle with the Commune of France, this year's Liberty Day celebrations serve to rally the British people to the cause of destroying once and for all the scourge of Syndicalism, and safeguarding the liberty of the people forever."
+
+	action_a = {
+		name = "Britain Will Be Victorious!"
+		command = { type = dissent value = -1 }
+		}
+	}

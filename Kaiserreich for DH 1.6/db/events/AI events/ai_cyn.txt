@@ -1,0 +1,198 @@
+#####################
+###  MODIFIED KAISERREICH AI EVENTS - SARMATIA1871
+#####################
+####################################
+# Yunnan AI events 35600 - 35699 by Lothos
+####################################
+################
+# Minister of Security Section 35600 - 35609
+#############################################
+################
+# Chief of Staff Section 35610 - 35619
+#############################################
+################
+# Head of Intelligence Section 35620 - 35629
+#############################################
+################
+# Chief of the Army Section 35630 - 35639
+#############################################
+################
+# Armament Minister Section 35640 - 35649
+#############################################
+
+
+
+
+
+
+
+
+
+################
+# Concetrate on upgrading while at peace
+#############################################
+event = {
+	id = 35668
+	random = no
+	country = CYN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		atwar = no
+		NOT = { local_flag = UPGPeace }
+	}
+
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	name = "AI_EVENT"
+	style = 0
+
+	action_a = {
+		command = { type = ai which = "switch/Minor_Upg_Peace.ai" }
+		command = { type = local_setflag which = UPGPeace }
+	}
+}
+event = {
+	id = 35669
+	random = no
+	country = CYN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		atwar = yes
+		local_flag = UPGPeace
+	}
+
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	name = "AI_EVENT"
+	style = 0
+
+	action_a = {
+		command = { type = ai which = "switch/Minor_Upg_War.ai" }
+		command = { type = local_clrflag which = UPGPeace }
+	}
+}
+################
+# Attack Japan controls
+#	CYNAttackJAP		= Flag turned on means they are free to attack at will
+#############################################
+event = {
+	id = 35670
+	random = no
+	country = CYN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		NOT = { local_flag = CYNAttackJAP }
+		war = { country = JAP country = CYN }
+		OR = {
+			lost_national = { country = CHI value = 50 }
+			lost_national = { country = CYN value = 1 }
+		}
+	}
+
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	name = "AI_EVENT"
+	style = 0
+
+	action_a = {
+		command = { type = ai which = "switch/CYN_Attack_JAP.ai" }
+		command = { type = local_setflag which = CYNAttackJAP }
+	}
+}
+event = {
+	id = 35671
+	random = no
+	country = CYN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		local_flag = CGXAttackJAP
+		NOT = { war = { country = JAP country = CYN } }
+		NOT = { lost_national = { country = CHI value = 50 } }
+		NOT = { lost_national = { country = CYN value = 1 } }
+	}
+
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	name = "AI_EVENT"
+	style = 0
+
+	action_a = {
+		command = { type = ai which = "switch/CYN_Defend_JAP.ai" }
+		command = { type = local_clrflag which = CYNAttackJAP }
+	}
+}
+################
+# Yunnan  Backs off from Japan AI
+#############################################
+event = {
+	id = 35672
+	random = no 
+	country = CYN
+	
+	trigger = {
+		ai = yes
+		war = { country = CYN country = JAP }
+		OR = {
+			event = 22001
+			event = 22002
+			lost_national = { country = CHI value = 35 }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0	
+	
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/WAR_Backoff.ai" }
+		command = { type = ai which = "Air_Ground.ai" }
+	}
+}
+################
+# Yunnan changes to defensive AI vs Japan
+#############################################
+event = {
+	id = 35673
+	random = no 
+	country = CYN
+	
+	trigger = {
+		ai = yes
+		war = { country = JAP country = CYN }
+	}
+
+	name = "AI_EVENT"
+	style = 0	
+	
+	date = { day = 1 month = january year = 1936 }
+	offset = 4
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/CYN_Japan.ai" }
+		command = { type = ai which = "Air_Ground.ai" }
+	}
+}
