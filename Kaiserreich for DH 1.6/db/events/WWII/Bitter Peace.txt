@@ -23,8 +23,8 @@ event = {
                 }
 	} 
 
-	name = "Горький мир"
-	desc = "Война с Германией на данный момент представляется невозможной. Самое время просить о мире."
+	name = "The Bitter Peace"
+	desc = "The war with the Germans now seems hopeless. It may be time to sue for peace."
 	style = 2
 	picture = "Bitter Peace"
 
@@ -33,7 +33,7 @@ event = {
 	deathdate = { day = 29 month = december year = 1966 }
 
 	action_a = {
-		name = "Как унизительно! Умолять о мире."
+		name = "How humiliating! Sue for peace."
 		ai_chance = 100
 		command = { type = dissent value = 10 }
                 command = { type = leave_alliance when = 1 }
@@ -42,7 +42,7 @@ event = {
 	}
 
 	action_b = {
-		name = "Россия-матушка будет воевать до победного конца!"
+		name = "Mother Russia shall fight to the bitter end!"
 		ai_chance = 0
 		command = { type = sleepevent which = 950002 }
 		command = { type = dissent value = 30 }
@@ -56,11 +56,11 @@ event = {
 	style = 2
 	picture = "Bitter Peace"
 
-	name = "Русские просят мира"
+	name = "The Russians sue for Peace"
 	desc = "EVT_9001652_DESC"
 
 	action_a = {
-		name = "Лучше, чем мы ожидали. Принять условия!"
+		name = "Better than we expected, accept the conditions!"
 		ai_chance = 100
 		command = { type = peace which = RUS value = 0 }
 		command = { type = dissent value = -20 }
@@ -79,7 +79,7 @@ event = {
                 command = { type = flag_ext where = RUS } #reset Russian flag
 	}
 	action_b = {
-		name = "Нет миру с русскими!"
+		name = "No Peace with the Russians!"
 		ai_chance = 0
 		command = { type = dissent value = 15 }
 	}
@@ -110,8 +110,8 @@ event = {
                 }
 	}
 
-	name = "Горький мир"
-	desc = "Война с Германией на данный момент представляется невозможной. Самое время просить о мире."
+	name = "The Bitter Peace"
+	desc = "The war with the Germans now seems hopeless. It may be time to sue for peace."
 	style = 2
 	picture = "Bitter Peace"
 
@@ -120,7 +120,7 @@ event = {
 	deathdate = { day = 29 month = december year = 1966 }
 
 	action_a = {
-		name = "Как унизительно! Умолять о мире."
+		name = "How humiliating! Sue for peace."
 		ai_chance = 100
 		command = { type = dissent value = 10 }
                 command = { type = leave_alliance when = 1 }
@@ -129,7 +129,7 @@ event = {
 	}
 
 	action_b = {
-		name = "Россия-матушка будет воевать до победного конца!"
+		name = "Mother Russia shall fight to the bitter end!"
 		ai_chance = 0
 		command = { type = sleepevent which = 950000 }
 		command = { type = dissent value = 30 }
@@ -143,11 +143,11 @@ event = {
 	style = 2
 	picture = "Bitter Peace"
 
-	name = "Русские просят мира"
+	name = "The Russians sue for peace"
 	desc = "EVT_9001652_DESC"
 
 	action_a = {
-		name = "Лучше, чем мы ожидали. Принять условия!"
+		name = "Better than we expected, accept the conditions"
 		ai_chance = 100
 		command = { type = peace which = SOV value = 0 }
 		command = { type = dissent value = -20 }
@@ -155,7 +155,7 @@ event = {
 		command = { type = trigger which = 950004 }
 	}
 	action_b = {
-		name = "Нет миру с русскими!"
+		name = "No peace with the Russians!"
 		ai_chance = 0
 		command = { type = dissent value = 15 }
 	}
@@ -168,11 +168,11 @@ event = {
 	style = 2
 	#picture = "Russiacounterrev"
 
-	name = "Конец советскому режиму"
-	desc = "В начале мирных переговоров Немцы потребовали от нас упразднить советский режим. У нас нет выбора, кроме как подчиниться; они просто раздавят нас, если мы откажемся."
+	name = "The end of the Soviet state"
+	desc = "At the start of the peace deal negotiations the Germans have demanded that we abolish the Soviet state. We have no choice but to comply; they will simply crush us if we refuse."
 
 	action_a = {
-		name = "Прощай, советская Россия!"
+		name = "Goodbye Soviet Russia!"
 		command = { type = flag_ext where = SOV } #reset Soviet flag
                 command = { type = name where = SOV }
 		command = { type = country which = RUS }
@@ -372,16 +372,17 @@ event = {
 		} 
 	}
 
-	name = "Беларусь"
-	desc = "Беларусь на данный момент оккупирована Русскими. Должны ли мы освободить их от российской оккупации? Или позволим русским сохранить их?"
+	name = "White Ruthenia"
+	desc = "White Ruthenia is currently occupied by the Russians. Shall we free them from Russian domination, giving us a valuable buffer state, or will we let the Russians keep it?"
+
 	action_a = {
 		ai_chance = 100
-		name = "Потребовать от Русских освободить их!"
+		name = "Demand that the Russians let them go!"
 		command = { type = trigger which = 950006 }
 	}
 	action_b = {
 		ai_chance = 0
-		name = "Русские могут оставить их себе."
+		name = "The Russians can keep it."
 		command = { }
 	}
 }
@@ -392,11 +393,11 @@ event = {
 	style = 2
 	picture = "Bolshevik Parade"
 
-	name = "Освобождение Беларуси"
-	desc = "Немцы потребовали от нас освободить Беларусь."
+	name = "The liberation of White Ruthenia"
+	desc = "The Germans have demanded that we give up White Ruthenia."
 
 	action_a = {
-		name = "Мы не имеем выбора."
+		name = "We have no choice."
 		command = { trigger = { NOT = { exists = BLR } } type = independence which = BLR value = 1 when = 0 }
 		command = { type = end_mastery which = BLR }
 		command = { type = secedeprovince which = BLR value = 596 }
@@ -431,11 +432,11 @@ event = {
 	style = 2
 	picture = "Bolshevik Parade"
 
-	name = "Возвращение Беларуси"
-	desc = "Беларусь была освобождена и теперь она более лояльна к нам."
+	name = "The return of White Ruthenia"
+	desc = "White Ruthenia has been liberated and is once more loyal to us."
 
 	action_a = {
-		name = "С возвращением!"
+		name = "Welcome back!"
 		command = { type = make_puppet which = BLR }
 		command = { type = alliance which = BLR }
 	}
