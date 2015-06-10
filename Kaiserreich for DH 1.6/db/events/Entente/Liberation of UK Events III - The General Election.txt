@@ -28,8 +28,8 @@ event = {
     event = 830176 
     }
 
-    name = "The Provisional Government and the Approaching Election"
-    desc = "The time has come to begin the preparations for the forthcoming general election. However, some have suggested that perhaps it would be better if the election was postponed and the military remained in control of the country, in the interest of stability of course."
+    name = "EVT_830180_NAME"
+    desc = "EVT_830180_DESC"
     picture = "rusdumaelect"
 
 
@@ -38,12 +38,12 @@ event = {
     deathdate = { day = 29 month = december year = 1966 }
 
     action_a = {
-        name = "Continue the preparations for the election"
+        name = "EVT_830180_OPTIONA"
         ai_chance = 90
         command = { type = setflag which = UK_ELECT1_CAMPAIGN }
     }
     action_b = {
-        name = "Cancel the election, and make the Military Provisional government permanent"
+        name = "EVT_830180_OPTIONB"
         ai_chance = 10
         command = { type = headofstate which = 557400 } #Edward VIII
         command = { type = set_domestic which = democratic value = 3 }
@@ -76,8 +76,8 @@ event = {
 		} 
 	}
 
-	name = "British General Election"
-	desc = "After several months of preparations, the provisional government has completed arrangements for the first free election in Great Britain since the liberation. The King has formally issued the writ for the 660 seats in the House of Commons, and the various political parties have begun their campaigns."
+	name = "EVT_830193_NAME"
+	desc = "EVT_830193_DESC"
 	picture = "rusdumaelect"
 
 	date = { day = 1 month = january year = 1936 }
@@ -86,28 +86,28 @@ event = {
 
 	action_a = {
 		ai_chance = 40
-		name = "Elect the Conservative Party"
+		name = "EVT_830193_OPTIONA"
 		command = { type = dissent value = 1 }
                 command = { type = trigger which = 830194 }
 	}
 
 	action_b = {
 		ai_chance = 10
-		name = "Elect the National Party"
+		name = "EVT_830193_OPTIONB"
 		command = { type = dissent value = 3 }
                 command = { type = trigger which = 830195 }
 	}
 
         action_c = {
 		ai_chance = 30
-		name = "Elect the Liberal Party"
+		name = "EVT_830193_OPTIONC"
 		command = { type = dissent value = 1 }
                 command = { type = trigger which = 830196 }
 	}
 
         action_d = {
 		ai_chance = 45
-		name = "Elect the Progressive Party"
+		name = "EVT_830193_OPTIOND"
                 trigger = {
                 flag = UK_PROVGOV_PROG_ALLOWED
                 }
@@ -124,12 +124,12 @@ event = {
 	style = 2
 	picture = "rusdumaelect"
 
-	name = "The Conservative Party Wins"
-	desc = "The results of the first general election since liberation have been announced, and the Conservative Party has emerged victorious, while the King has appointed Lord Beaverbrook Prime Minister."
+	name = "EVT_830194_NAME"
+	desc = "EVT_830194_DESC"
 
 
         action_a = {
-        name = "PM Beaverbrook forms his cabinet"
+        name = "EVT_830194_OPTIONA"
         command = { type = sleepevent which = 830195 }
         command = { type = sleepevent which = 830196 }
         command = { type = sleepevent which = 830197 }
@@ -158,12 +158,12 @@ event = {
 	picture = "rusdumaelect"
 
 
-	name = "The National Party Wins"
-	desc = "The results of the first general election since liberation have been announced, and the National Party has emerged victorious, while the King has appointed Henry Page Croft Prime Minister."
+	name = "EVT_830195_NAME"
+	desc = "EVT_830195_DESC"
 
 
         action_a = {
-        name = "PM Page Croft forms his cabinet"
+        name = "EVT_830195_OPTIONA"
         command = { type = sleepevent which = 830194 }
         command = { type = sleepevent which = 830196 }
         command = { type = sleepevent which = 830197 }
@@ -192,13 +192,13 @@ event = {
 	picture = "rusdumaelect"
 
 
-	name = "The Liberal Party Wins"
-	desc = "The results of the first general election since liberation have been announced, and the Liberal Party has emerged victorious, while the King has appointed Herbert Samuel Prime Minister."
+	name = "EVT_830196_NAME"
+	desc = "EVT_830196_DESC"
 
 
 
         action_a = {
-        name = "PM Samuel forms his cabinet"
+        name = "EVT_830196_OPTIONA"
         command = { type = sleepevent which = 830194 }
         command = { type = sleepevent which = 830195 }
         command = { type = sleepevent which = 830197 }
@@ -227,12 +227,12 @@ event = {
 	style = 2
 	picture = "rusdumaelect"
 
-	name = "The Progressive Party Wins"
-	desc = "The results of the first general election since liberation have been announced, and the Progressive Party has emerged victorious, while the King has reluctantly appointed Richard Acland Prime Minister."
+	name = "EVT_830197_NAME"
+	desc = "EVT_830197_DESC"
 
 
 	action_a = {
-        name = "PM Acland forms his cabinet"
+        name = "EVT_830197_OPTIONA"
         command = { type = sleepevent which = 830194 }
         command = { type = sleepevent which = 830195 }
         command = { type = sleepevent which = 830196 }
@@ -291,15 +291,15 @@ event = {
 			}
 		}
 
-	name = "The Second Free Election"
-	desc = "The Parliament elected in the first free election after liberation has drawn to a close.  The King has formally issued the writ for the 660 seats in the House of Commons, and the various political parties have begun their campaigns."
+	name = "EVT_830500_NAME"
+	desc = "EVT_830500_DESC"
 
 	date = { day = 1 month = january year = 1936 }
         offset = 15
         deathdate = { day = 29 month = december year = 1960 }
 
 	action_a = {
-		name = "It is Time for the People to Choose"
+		name = "EVT_830500_OPTIONA"
 		command = { type = setflag which = UK_ELECT2_CAMPAIGN }
 		command = { type = clrflag which = UK_CON_GOVT }
 		command = { type = clrflag which = UK_NAT_GOVT }
@@ -326,8 +326,8 @@ event = {
 		} 
 	}
 
-	name = "British General Election"
-	desc = "After a long pre-electoral campaign the time has come to choose our representatives for the next four years."
+	name = "EVT_830501_NAME"
+	desc = "EVT_830501_DESC"
 	picture = "rusdumaelect"
 
 	date = { day = 1 month = january year = 1936 }
@@ -336,28 +336,28 @@ event = {
 
 	action_a = {
 		ai_chance = 50
-		name = "Elect the Conservative Party"
+		name = "EVT_830501_OPTIONA"
 		command = { type = dissent value = 1 }
                 command = { type = trigger which = 830512 }
 	}
 
 	action_b = {
 		ai_chance = 10
-		name = "Elect the National Party"
+		name = "EVT_830501_OPTIONB"
 		command = { type = dissent value = 3 }
                 command = { type = trigger which = 830513 }
 	}
 
         action_c = {
 		ai_chance = 30
-		name = "Elect the Liberal Party"
+		name = "EVT_830501_OPTIONC"
 		command = { type = dissent value = 1 }
                 command = { type = trigger which = 830514 }
 	}
 
         action_d = {
 		ai_chance = 30
-		name = "Elect the Progressive Party"
+		name = "EVT_830501_OPTIOND"
                 trigger = {
                 flag = UK_PROVGOV_PROG_ALLOWED
                 }
@@ -375,11 +375,11 @@ event = {
         picture = "rusdumaelect"
 
 
-	name = "The Conservative Party Wins"
-	desc = "The results of the second general election since liberation have been announced, and the Conservative Party has emerged victorious."
+	name = "EVT_830512_NAME"
+	desc = "EVT_830512_DESC"
 
 	action_a = {
-		name = "Ok"
+		name = "EVT_830512_OPTIONA"
 		command = { type = sleepevent which = 830513 }
 		command = { type = sleepevent which = 830514 }
 		command = { type = sleepevent which = 830515 }
@@ -400,11 +400,11 @@ event = {
         picture = "rusdumaelect"
 
 
-	name = "The National Party Wins"
-	desc = "The results of the second general election since liberation have been announced, and the National Party has emerged victorious."
+	name = "EVT_830513_NAME"
+	desc = "EVT_830513_DESC"
 
 	action_a = {
-		name = "Ok"
+		name = "EVT_830513_OPTIONA"
 		command = { type = sleepevent which = 830512 }
 		command = { type = sleepevent which = 830514 }
 		command = { type = sleepevent which = 830515 }
@@ -427,11 +427,11 @@ event = {
         picture = "rusdumaelect"
 
 
-	name = "The Liberal Party Wins"
-	desc = "The results of the second general election since liberation have been announced, and the Liberal Party has emerged victorious."
+	name = "EVT_830514_NAME"
+	desc = "EVT_830514_DESC"
 
 	action_a = {
-		name = "Ok"
+		name = "EVT_830514_OPTIONA"
 		command = { type = sleepevent which = 830512 }
 		command = { type = sleepevent which = 830513 }
 		command = { type = sleepevent which = 830515 }
@@ -452,11 +452,11 @@ event = {
         picture = "rusdumaelect"
 
 
-	name = "The Progressive Party Wins"
-	desc = "The results of the first general election since liberation have been announced, and the Progressive Party has emerged victorious."
+	name = "EVT_830515_NAME"
+	desc = "EVT_830515_DESC"
 
 	action_a = {
-		name = "Ok"
+		name = "EVT_830515_OPTIONA"
 		command = { type = sleepevent which = 830512 }
 		command = { type = sleepevent which = 830513 }
 		command = { type = sleepevent which = 830514 }
@@ -476,11 +476,11 @@ event = {
 	style = 2
         picture = "rusdumaelect"
 
-	name = "PM Beaverbrook and a Conservative Cabinet"
-	desc = "The King has summoned Lord Beaverbrook to Buckingham Palace, and charged him to form a new government."
+	name = "EVT_830516_NAME"
+	desc = "EVT_830516_DESC"
 
 	action_a = {
-		name = "Ok"
+		name = "EVT_830516_OPTIONA"
         command = { type = headofstate which = 557400 } #Edward VIII
         command = { type = headofgovernment which = 557417 } #Lord Beaverbrook
         command = { type = foreignminister which = 557429 } #Mark Sykes
@@ -506,11 +506,11 @@ event = {
 			}
 		}
 
-	name = "PM Page Croft and a National Cabinet"
-	desc = "The King has summoned Henry Page Croft to Buckingham Palace, and charged him to form a new government."
+	name = "EVT_830517_NAME"
+	desc = "EVT_830517_DESC"
 
 	action_a = {
-		name = "Ok"
+		name = "EVT_830517_OPTIONA"
         command = { type = headofstate which = 557400 } #Edward VIII
         command = { type = headofgovernment which = 557415 } #Henry Page Croft
         command = { type = foreignminister which = 557425 } #Richard Cooper
@@ -531,11 +531,11 @@ event = {
 		flag = UK_NAT_SUETER
 		}
 
-	name = "PM Sueter and a National Cabinet"
-	desc = "The King has summoned Murray Sueter to Buckingham Palace, and charged him to form a new government."
+	name = "EVT_830518_NAME"
+	desc = "EVT_830518_DESC"
 
 	action_a = {
-		name = "Ok"
+		name = "EVT_830518_OPTIONA"
         command = { type = headofstate which = 557400 } #Edward VIII
         command = { type = headofgovernment which = 557414 } #Murray Sueter
         command = { type = foreignminister which = 557424 } #9th Earl of Bessborough
@@ -556,11 +556,11 @@ event = {
 		flag = UK_NAT_RAMSAY
 		}
 
-	name = "PM Ramsay and a National Cabinet"
-	desc = "The King has summoned Archibald Ramsay to Buckingham Palace, and charged him to form a new government."
+	name = "EVT_830519_NAME"
+	desc = "EVT_830519_DESC"
 
 	action_a = {
-		name = "Ok"
+		name = "EVT_830519_OPTIONA"
         command = { type = headofstate which = 557400 } #Edward VIII
         command = { type = headofgovernment which = 557412 } #Archibald Maule Ramsay
         command = { type = foreignminister which = 557422 } #Baron Ampthill
@@ -578,11 +578,11 @@ event = {
 	style = 2
         picture = "rusdumaelect"
 
-	name = "PM Samuel and a Liberal Cabinet"
-	desc = "The King has summoned Herbert Samuel to Buckingham Palace, and charged him to form a new government."
+	name = "EVT_830520_NAME"
+	desc = "EVT_830520_DESC"
 
 	action_a = {
-		name = "Ok"
+		name = "EVT_830520_OPTIONA"
         command = { type = headofstate which = 557400 } #Edward VIII
         command = { type = headofgovernment which = 557418 } #Herbert Samuel
         command = { type = foreignminister which = 557438 } #Walter Runciman
@@ -600,11 +600,11 @@ event = {
 	style = 2
         picture = "rusdumaelect"
 
-	name = "PM Acland and a Progressive Cabinet"
-	desc = "The King has reluctantly summoned Richard Acland to Buckingham Palace, and charged him to form a new government."
+	name = "EVT_830521_NAME"
+	desc = "EVT_830521_DESC"
 
 	action_a = {
-		name = "Ok"
+		name = "EVT_830521_OPTIONA"
         command = { type = headofstate which = 557400 } #Edward VIII
         command = { type = headofgovernment which = 557421 } #Richard Acland
         command = { type = foreignminister which = 557439 } #J. B. Priestley
@@ -637,15 +637,15 @@ event = {
 			}
 		}
 
-	name = "The Third Free Election"
-	desc = "The Parliament elected in the second free election after liberation has drawn to a close.  The King has formally issued the writ for the 660 seats in the House of Commons, and the various political parties have begun their campaigns."
+	name = "EVT_830502_NAME"
+	desc = "EVT_830502_DESC"
 
 	date = { day = 1 month = january year = 1936 }
         offset = 15
         deathdate = { day = 29 month = december year = 1960 }
 
 	action_a = {
-		name = "It is Time for the People to Choose"
+		name = "EVT_830502_OPTIONA"
 		command = { type = setflag which = UK_ELECT3_CAMPAIGN }
 		command = { type = clrflag which = UK_CON_GOVT }
 		command = { type = clrflag which = UK_NAT_GOVT }
@@ -671,8 +671,8 @@ event = {
 		} 
 	}
 
-	name = "British General Election"
-	desc = "After a long pre-electoral campaign the time has come to choose our representatives for the next four years."
+	name = "EVT_830503_NAME"
+	desc = "EVT_830503_DESC"
 	picture = "rusdumaelect"
 
 	date = { day = 1 month = january year = 1936 }
@@ -681,28 +681,28 @@ event = {
 
 	action_a = {
 		ai_chance = 50
-		name = "Elect the Conservative Party"
+		name = "EVT_830503_OPTIONA"
 		command = { type = dissent value = 1 }
                 command = { type = trigger which = 830504 }
 	}
 
 	action_b = {
 		ai_chance = 10
-		name = "Elect the National Party"
+		name = "EVT_830503_OPTIONB"
 		command = { type = dissent value = 3 }
                 command = { type = trigger which = 830505 }
 	}
 
         action_c = {
 		ai_chance = 30
-		name = "Elect the Liberal Party"
+		name = "EVT_830503_OPTIONC"
 		command = { type = dissent value = 1 }
                 command = { type = trigger which = 830506 }
 	}
 
         action_d = {
 		ai_chance = 30
-		name = "Elect the Progressive Party"
+		name = "EVT_830503_OPTIOND"
                 trigger = {
                 flag = UK_PROVGOV_PROG_ALLOWED
                 }
@@ -720,11 +720,11 @@ event = {
         picture = "rusdumaelect"
 
 
-	name = "The Conservative Party Wins"
-	desc = "The results of the third general election since liberation have been announced, and the Conservative Party has emerged victorious."
+	name = "EVT_830504_NAME"
+	desc = "EVT_830504_DESC"
 
 	action_a = {
-		name = "Ok"
+		name = "EVT_830504_OPTIONA"
 		command = { type = sleepevent which = 830513 }
 		command = { type = sleepevent which = 830514 }
 		command = { type = sleepevent which = 830515 }
@@ -745,11 +745,11 @@ event = {
         picture = "rusdumaelect"
 
 
-	name = "The National Party Wins"
-	desc = "The results of the third general election since liberation have been announced, and the National Party has emerged victorious."
+	name = "EVT_830505_NAME"
+	desc = "EVT_830505_DESC"
 
 	action_a = {
-		name = "Ok"
+		name = "EVT_830505_OPTIONA"
 		command = { type = sleepevent which = 830512 }
 		command = { type = sleepevent which = 830514 }
 		command = { type = sleepevent which = 830515 }
@@ -772,11 +772,11 @@ event = {
         picture = "rusdumaelect"
 
 
-	name = "The Liberal Party Wins"
-	desc = "The results of the third general election since liberation have been announced, and the Liberal Party has emerged victorious."
+	name = "EVT_830506_NAME"
+	desc = "EVT_830506_DESC"
 
 	action_a = {
-		name = "Ok"
+		name = "EVT_830506_OPTIONA"
 		command = { type = sleepevent which = 830512 }
 		command = { type = sleepevent which = 830513 }
 		command = { type = sleepevent which = 830515 }
@@ -797,11 +797,11 @@ event = {
         picture = "rusdumaelect"
 
 
-	name = "The Progressive Party Wins"
-	desc = "The results of the third general election since liberation have been announced, and the Progressive Party has emerged victorious."
+	name = "EVT_830507_NAME"
+	desc = "EVT_830507_DESC"
 
 	action_a = {
-		name = "Ok"
+		name = "EVT_830507_OPTIONA"
 		command = { type = sleepevent which = 830512 }
 		command = { type = sleepevent which = 830513 }
 		command = { type = sleepevent which = 830514 }
@@ -821,11 +821,11 @@ event = {
 	style = 2
         picture = "rusdumaelect"
 
-	name = "PM Beaverbrook and a Conservative Cabinet"
-	desc = "The King has summoned Lord Beaverbrook to Buckingham Palace, and charged him to form a new government."
+	name = "EVT_830508_NAME"
+	desc = "EVT_830508_DESC"
 
 	action_a = {
-		name = "Ok"
+		name = "EVT_830508_OPTIONA"
         command = { type = headofstate which = 557400 } #Edward VIII
         command = { type = headofgovernment which = 557417 } #Lord Beaverbrook
         command = { type = foreignminister which = 557429 } #Mark Sykes
@@ -851,11 +851,11 @@ event = {
 			}
 		}
 
-	name = "PM Page Croft and a National Cabinet"
-	desc = "The King has summoned Henry Page Croft to Buckingham Palace, and charged him to form a new government."
+	name = "EVT_830509_NAME"
+	desc = "EVT_830509_DESC"
 
 	action_a = {
-		name = "Ok"
+		name = "EVT_830509_OPTIONA"
         command = { type = headofstate which = 557400 } #Edward VIII
         command = { type = headofgovernment which = 557415 } #Henry Page Croft
         command = { type = foreignminister which = 557425 } #Richard Cooper
@@ -876,11 +876,11 @@ event = {
 		flag = UK_NAT_SUETER
 		}
 
-	name = "PM Sueter and a National Cabinet"
-	desc = "The King has summoned Murray Sueter to Buckingham Palace, and charged him to form a new government."
+	name = "EVT_830510_NAME"
+	desc = "EVT_830510_DESC"
 
 	action_a = {
-		name = "Ok"
+		name = "EVT_830510_OPTIONA"
         command = { type = headofstate which = 557400 } #Edward VIII
         command = { type = headofgovernment which = 557414 } #Murray Sueter
         command = { type = foreignminister which = 557424 } #9th Earl of Bessborough
@@ -901,11 +901,11 @@ event = {
 		flag = UK_NAT_RAMSAY
 		}
 
-	name = "PM Ramsay and a National Cabinet"
-	desc = "The King has summoned Archibald Ramsay to Buckingham Palace, and charged him to form a new government."
+	name = "EVT_830511_NAME"
+	desc = "EVT_830511_DESC"
 
 	action_a = {
-		name = "Ok"
+		name = "EVT_830511_OPTIONA"
         command = { type = headofstate which = 557400 } #Edward VIII
         command = { type = headofgovernment which = 557412 } #Archibald Maule Ramsay
         command = { type = foreignminister which = 557422 } #Baron Ampthill
@@ -923,11 +923,11 @@ event = {
 	style = 2
         picture = "rusdumaelect"
 
-	name = "PM Samuel and a Liberal Cabinet"
-	desc = "The King has summoned Herbert Samuel to Buckingham Palace, and charged him to form a new government."
+	name = "EVT_830522_NAME"
+	desc = "EVT_830522_DESC"
 
 	action_a = {
-		name = "Ok"
+		name = "EVT_830522_OPTIONA"
         command = { type = headofstate which = 557400 } #Edward VIII
         command = { type = headofgovernment which = 557418 } #Herbert Samuel
         command = { type = foreignminister which = 557438 } #Walter Runciman
@@ -945,11 +945,11 @@ event = {
 	style = 2
         picture = "rusdumaelect"
 
-	name = "PM Acland and a Progressive Cabinet"
-	desc = "The King has reluctantly summoned Richard Acland to Buckingham Palace, and charged him to form a new government."
+	name = "EVT_830523_NAME"
+	desc = "EVT_830523_DESC"
 
 	action_a = {
-		name = "Ok"
+		name = "EVT_830523_OPTIONA"
         command = { type = headofstate which = 557400 } #Edward VIII
         command = { type = headofgovernment which = 557421 } #Richard Acland
         command = { type = foreignminister which = 557439 } #J. B. Priestley

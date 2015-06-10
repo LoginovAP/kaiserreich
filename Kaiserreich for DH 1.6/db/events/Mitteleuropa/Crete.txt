@@ -8,13 +8,13 @@ event = {
         puppet = { country = U02 country = GER  }
         }
 
-	name = "The Cretan question"
-	desc = "With our economy shrunk after Black Monday, our Colonial Empire has been under fairly harsh scrutiny. The main territory that has been under examination is Crete. Crete is larger and harder to defend then Malta, and the upkeep is higher as well. To help with our deficit it has been proposed that we essentially sell the island to either the Ottomans or the Greeks. What shall we do?"
+	name = "EVT_9985000_NAME"
+	desc = "EVT_9985000_DESC"
 	picture = "crete"
 
 	action_a = {
 		ai_chance = 50
-		name = "Keep Crete under our influence"
+		name = "EVT_9985000_OPTIONA"
 		command = { type = relation which = GRE value = -10 }
 		command = { type = relation which = OTT value = -10 }
                 command = { type = dissent value = 2  }
@@ -22,14 +22,14 @@ event = {
 	}
 	action_b = {
 		ai_chance = 30
-		name = "Offer Crete to the Ottomans"
+		name = "EVT_9985000_OPTIONB"
 		command = { type = relation which = GRE value = -20 }
 		command = { type = relation which = OTT value = 20 }
 		command = { type = trigger which = 9985001 }
 	}
 	action_c = {
 		ai_chance = 20
-		name = "Offer Crete to the Greeks"
+		name = "EVT_9985000_OPTIONC"
 		command = { type = relation which = GRE value = 20 }
 		command = { type = relation which = OTT value = -20 }
 		command = { type = trigger which = 9985008 }
@@ -42,13 +42,13 @@ event = {
 	country = OTT
 	style = 2
 
-	name = "The sale of Crete"
-	desc = "The Germans have come offering the sale of Crete. While it would obviously cost us a sizeable amount of money, having the island once more would greatly strengthen our posistion in the Mediterranean. What shall our reply be?"
+	name = "EVT_9985001_NAME"
+	desc = "EVT_9985001_DESC"
 	picture = "crete"
 
 	action_a = {
 		ai_chance = 70
-		name = "Welcome home Crete!"
+		name = "EVT_9985001_OPTIONA"
 		command = { type = relation which = GER value = 20 }
 		command = { type = money value = -200 }
                 command = { type = non_aggression which = OTT where = GER }
@@ -56,7 +56,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 30
-		name = "We do not need that rock"
+		name = "EVT_9985001_OPTIONB"
 		command = { type = relation which = GER value = -10 }
 		command = { type = trigger which = 9985005 }
 	}
@@ -68,12 +68,12 @@ event = {
 	country = GER
 	style = 2
 
-	name = "The sale of Crete"
-	desc = "The Ottoman ambassador has sent a message to us declaring that the Sultan has agreed to buy Crete. We have begun to transfer control of the Cretan State to them."
+	name = "EVT_9985002_NAME"
+	desc = "EVT_9985002_DESC"
 	picture = "crete"
 
 	action_a = {
-		name = "Great"
+		name = "EVT_9985002_OPTIONA"
 		command = { type = end_mastery which = U02 }
 		command = { type = money value = 200 }
 		command = { type = trigger which = 9985003 }
@@ -85,13 +85,13 @@ event = {
 	country = OTT
 	style = 2
 
-	name = "The Cretan State"
-	desc = "With the transaction finalised with the Germans, the status of the Cretan state has come to the forefront of our agenda. Because the Cretan State was originally created because of our weak grasp on the island, the majority of the ministers are pushing to just shuffling the government in Crete. However a few hawkish men are calling for direct annexation. What shall we do?"
+	name = "EVT_9985003_NAME"
+	desc = "EVT_9985003_DESC"
         picture = "crete"
 
 	action_a = {
 		ai_chance = 80
-		name = "Install a new Cretan government"
+		name = "EVT_9985003_OPTIONA"
 		command = { type = make_puppet which = U02 }
 		command = { type = coup_nation which = U02 }
 		command = { type = alliance which = U02 }
@@ -99,7 +99,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 20
-		name = "End its autonomy!"
+		name = "EVT_9985003_OPTIONB"
 		command = { type = inherit which = U02 }
                 command = { type = addclaim   which = 382   }
                 command = { type = addclaim   which = 380   }
@@ -112,11 +112,11 @@ event = {
 	style = 2
         picture = "crete"
 
-	name = "The new government of Crete"
-	desc = "Our new protectors, the Ottomans, have decided to reshuffle our government, with Mustafa Ertugru becoming the new High Commissioner."
+	name = "EVT_9985004_NAME"
+	desc = "EVT_9985004_DESC"
 
 	action_a = {
-		name = "Okay"
+		name = "EVT_9985004_OPTIONA"
 		command = { type = headofstate which = 8955011 } #Mustafa Ertugru
 		command = { type = headofgovernment which = 8955012 } #Munis Tekinalp
 		command = { type = armamentminister which = 8955013 } #Sükrü Kaya
@@ -134,19 +134,19 @@ event = {
 	country = GER
 	style = 2
 
-	name = "The Ottomans don't want Crete"
-	desc = "The Ottomans have replied to our offer, flatly stating that they do not want Crete. If we are to rid ourselves of the island, the only nation that could take it now is Greece. Shall we contact them?"
+	name = "EVT_9985005_NAME"
+	desc = "EVT_9985005_DESC"
 	picture = "crete"
 
 	action_a = {
 		ai_chance = 85
-		name = "Keep Crete under our influence then"
+		name = "EVT_9985005_OPTIONA"
 		command = { type = money value = -50 }
                 command = { type = dissent value = 2  }
 	}
 	action_b = {
 		ai_chance = 15
-		name = "Offer it to Greece"
+		name = "EVT_9985005_OPTIONB"
 		command = { type = trigger which = 9985006 }
 	}
 }
@@ -156,20 +156,20 @@ event = {
 	country = GRE
 	style = 2
 
-	name = "The sale of Crete"
-	desc = "The Germans have come offering the sale of Crete. While it would obviously cost us a sizeable amount of money, having the island once more would greatly strengthen our posistion in the Mediterranean. What shall our reply be?"
+	name = "EVT_9985006_NAME"
+	desc = "EVT_9985006_DESC"
 	picture = "crete"
 
 	action_a = {
 		ai_chance = 100
-		name = "Welcome home Crete!"
+		name = "EVT_9985006_OPTIONA"
 		command = { type = trigger which = 9985009 }
                 command = { type = non_aggression which = GRE where = GER }
 		command = { type = money value = -200 }
 	}
 	action_b = {
 		ai_chance = 0
-		name = "We do not need that rock"
+		name = "EVT_9985006_OPTIONB"
 		command = { type = trigger which = 9985007 }
 	}
 }
@@ -180,11 +180,11 @@ event = {
 	style = 2
         picture = "crete"
 
-	name = "The Greeks also reject the offer!"
-	desc = "The government of Greece has refused our offer of Crete. It is clear that for the time being we must hold onto Crete."
+	name = "EVT_9885007_NAME"
+	desc = "EVT_9885007_DESC"
 
 	action_a = {
-		name = "Oh well"
+		name = "EVT_9885007_OPTIONA"
 		command = { type = money value = -50 }
                 command = { type = dissent value = 2  }
 	}
@@ -197,13 +197,13 @@ event = {
 	country = GRE
 	style = 2
 
-	name = "The sale of Crete"
-	desc = "The Germans have come offering the sale of Crete. While it would obviously cost us a sizeable amount of money, having the island once more would greatly strengthen our posistion in the Mediterrian. What shall our reply be?"
+	name = "EVT_9985008_NAME"
+	desc = "EVT_9985008_DESC"
 	picture = "crete"
 
 	action_a = {
 		ai_chance = 100
-		name = "Welcome home Crete!"
+		name = "EVT_9985008_OPTIONA"
 		command = { type = relation which = GER value = 20 }
 		command = { type = money value = -200 }
                 command = { type = non_aggression which = GRE where = GER }
@@ -211,7 +211,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 0
-		name = "We do not need that rock"
+		name = "EVT_9985008_OPTIONB"
 		command = { type = relation which = GER value = -10 }
 		command = { type = trigger which = 9985012 }
 	}
@@ -223,12 +223,12 @@ event = {
 	country = GER
 	style = 2
 
-	name = "The sale of Crete"
-	desc = "The Greek ambassador has sent a message to us declaring that the Greek King has agreed to buy Crete. We have begun to transfer control of the Cretan State to them."
+	name = "EVT_9985009_NAME"
+	desc = "EVT_9985009_DESC"
 	picture = "crete"
 
 	action_a = {
-		name = "Great"
+		name = "EVT_9985009_OPTIONA"
 		command = { type = end_mastery which = U02 }
 		command = { type = money value = 200 }
 		command = { type = trigger which = 9985010 }
@@ -240,13 +240,13 @@ event = {
 	country = GRE
 	style = 2
 
-	name = "The Cretan State"
-	desc = "With the transaction finalised with the Germans, the status of the Cretan state has come to the forefront of our agenda. Because Crete was ours before we lost the Weltkrieg, the majority of the ministers are pushing to annex the Cretan state. However a few men are calling for only the indirect subordination of Crete. What shall we do?"
+	name = "EVT_9985010_NAME"
+	desc = "EVT_9985010_DESC"
 	picture = "crete"
 
 	action_a = {
 		ai_chance = 0
-		name = "Install a new Cretan government"
+		name = "EVT_9985010_OPTIONA"
 		command = { type = make_puppet which = U02 }
 		command = { type = coup_nation which = U02 }
 		command = { type = alliance which = U02 }
@@ -254,7 +254,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 100
-		name = "Hurrah for the second Enosis!"
+		name = "EVT_9985010_OPTIONB"
 		command = { type = inherit which = U02 }
                 command = { type = addcore   which = 382   }
                 command = { type = addcore   which = 380   }
@@ -267,11 +267,11 @@ event = {
 	style = 2
         picture = "crete"
 
-	name = "The new government of Crete"
-	desc = "Our new protectors, the Greeks, have decided to reshuffle our government, with Prince George becoming the new High Commissioner."
+	name = "EVT_9985011_NAME"
+	desc = "EVT_9985011_DESC"
 
 	action_a = {
-		name = "Okay"
+		name = "EVT_9985011_OPTIONA"
 		command = { type = headofstate which = 8955010 } #Prince George
 		command = { type = headofgovernment which = 8955001 } #Carl Dankwort
 		command = { type = armamentminister which = 8955013 } #Sükrü Kaya
@@ -289,19 +289,19 @@ event = {
 	country = GER
 	style = 2
 
-	name = "The Greeks don't want Crete"
-	desc = "The Greeks have replied to our offer, flatly stating that they do not want Crete. If we are to rid ourselves of the island, the only nation that could take it now is the Ottoman Empire. Shall we contact them?"
+	name = "EVT_9985012_NAME"
+	desc = "EVT_9985012_DESC"
 	picture = "crete"
 
 	action_a = {
 		ai_chance = 80
-		name = "Keep Crete under our influence then"
+		name = "EVT_9985012_OPTIONA"
 		command = { type = money value = -50 }
                 command = { type = dissent value = 2  }
 	}
 	action_b = {
 		ai_chance = 20
-		name = "Offer it to the Ottoman Empire"
+		name = "EVT_9985012_OPTIONB"
 		command = { type = trigger which = 9985013 }
 	}
 }
@@ -311,20 +311,20 @@ event = {
 	country = OTT
 	style = 2
 
-	name = "The sale of Crete"
-	desc = "The Germans have come offering the sale of Crete. While it would obviously cost us a sizeable amount of money, having the island once more would greatly strengthen our posistion in the Mediterranean. What shall our reply be?"
+	name = "EVT_9885013_NAME"
+	desc = "EVT_9885013_DESC"
 	picture = "crete"
 
 	action_a = {
 		ai_chance = 75
-		name = "Welcome home Crete!"
+		name = "EVT_9885013_OPTIONA"
 		command = { type = trigger which = 9985002 }
                 command = { type = non_aggression which = OTT where = GER }
                 command = { type = money value = -200 }
 	}
 	action_b = {
 		ai_chance = 25
-		name = "We do not need that rock"
+		name = "EVT_9885013_OPTIONB"
 		command = { type = trigger which = 9985014 }
 	}
 }
@@ -335,11 +335,11 @@ event = {
 	style = 2
         picture = "crete"
 
-	name = "The Ottomans also reject the offer!"
-	desc = "The government of the Ottoman Empire has refused our offer of Crete. It is clear that for the time being we must hold onto Crete."
+	name = "EVT_9885014_NAME"
+	desc = "EVT_9885014_DESC"
 
 	action_a = {
-		name = "Oh well"
+		name = "EVT_9885014_OPTIONA"
 		command = { type = money value = -50 }
                 command = { type = dissent value = 2  }
 	}
@@ -361,8 +361,8 @@ event = {
 	NOT = {
 	ispuppet = GRE } }
 
-	name = "The Second Weltkrieg!"
-	desc = "The Germans and French are once more at war! While we have duly joined the war against the Syndicalists, the 'Enosis' brotherhood have been gathering strength..."
+	name = "EVT_9885015_NAME"
+	desc = "EVT_9885015_DESC"
 
 	date = { day = 1 month = january year = 1936 }
 	offset = 100
@@ -370,13 +370,13 @@ event = {
 
 	action_a = {
 		ai_chance = 50
-		name = "Good riddance!"
+		name = "EVT_9885015_OPTIONA"
 		command = { type = relation which = GRE value = 20 }
 		command = { type = relation which = GER value = -50 }
 	}
 	action_b = {
 		ai_chance = 50
-		name = "The Enosis brotherhood coups the government!"
+		name = "EVT_9885015_OPTIONB"
 		command = { type = trigger which = 9885016 }
 	}
 }
@@ -387,11 +387,11 @@ event = {
 	style = 2
         picture = "crete"
 
-	name = "Crete is Greek once more!"
-	desc = "With the Germans embroiled in their war with the Syndicalists, our brothers in Crete took the chance to rise against the Germans!"
+	name = "EVT_9885016_NAME"
+	desc = "EVT_9885016_DESC"
 
 	action_a = {
-		name = "Hurrah for the second Enosis!"
+		name = "EVT_9885016_OPTIONA"
 		command = { type = inherit which = U02 }
 		command = { type = addcore   which = 382   }
                 command = { type = addcore   which = 380   }
@@ -412,7 +412,7 @@ event = {
 	picture = "minister_died"
 
 	action_a = {
-		name = "OK"
+		name = "EVT_9885030_OPTIONA"
 		command = { type = sleepminister which = 8955003 } #Zaharoff
 	}
 }

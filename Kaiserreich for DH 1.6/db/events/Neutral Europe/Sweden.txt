@@ -12,19 +12,19 @@ date = { day = 1 month = august year = 1936 }
 offset = 5
 deathdate = { day = 3 month = september year = 1936 }
 
-name = "Preparing for the '36 Election"
-desc = "Although the franchise was finally won for everyone in 1921, the old elites retained a significant influence over the government, most notably due to their alliance with the Monarchy. All polls predict a Socialist victory in the upcoming elections, unless something is done to prevent this."
+name = "EVT_94000_NAME"
+desc = "EVT_94000_DESC"
 
 action_a = {
 ai_chance = 50
-name = "Let the Elections proceed without interference!"
+name = "EVT_94000_OPTIONA"
 	command = { type = dissent value = -1 }
 	command = { type = sleepevent which = 94001 }
 	command = { type = domestic which = democratic value = 1 }
 	}
 action_b = {
 ai_chance = 50
-name = "Delay the Election and attempt to force a Right-Wing victory"
+name = "EVT_94000_OPTIONB"
 	command = { type = dissent value = 5 }
 	command = { type = sleepevent which = 94002 }
 	command = { type = domestic which = democratic value = -1 }
@@ -47,12 +47,12 @@ date = { day = 4 month = september year = 1936 }
 offset = 1
 deathdate = { day = 8 month = september year = 1936 }
 
-name = "The Election of '36: Left-Wing Victory!"
-desc = "As polls predicted, the vast majority of the votes in the 1936 election fell to the left-wing parties, however, even this vote was very much divided, amongst the various left-wing factions. Almost anything could have altered the balance of power. Which of the following groups should form the new government?"
+name = "EVT_94002_NAME"
+desc = "EVT_94002_DESC"
 
 action_a = {
 ai_chance = 60
-name = "Per-Albin Hansson and the Social Democrats!"
+name = "EVT_94002_OPTIONA"
 	command = { type = set_domestic which = democratic value = 9 }
 	command = { type = set_domestic which = political_left value = 9 }
 	command = { type = domestic which = defense_lobby value = -1 }
@@ -67,7 +67,7 @@ name = "Per-Albin Hansson and the Social Democrats!"
 	}
 action_b = {
 ai_chance = 30
-name = "Zeth Hoglund and the Radical Leftists!"
+name = "EVT_94002_OPTIONB"
 	command = { type = set_domestic which = political_left value = 9 }
 	command = { type = set_domestic which = democratic value = 5 }
 	command = { type = domestic which = free_market value = -1 }
@@ -83,7 +83,7 @@ name = "Zeth Hoglund and the Radical Leftists!"
 	}
 action_c = {
 ai_chance = 10
-name = "Compromise and let the Liberals form a government!"
+name = "EVT_94002_OPTIONC"
 	command = { type = set_domestic which = democratic value = 9 }
 	command = { type = domestic which = free_market value = 1 }
 	command = { type = set_domestic which = political_left value = 5 }
@@ -107,12 +107,12 @@ date = { day = 1 month = november year = 1936 }
 offset = 15
 deathdate = { day = 29 month = november year = 1936 }
 
-name = "The Election of '36: Right-Wing Victory"
-desc = "The delay of the election gave the Right-Wing the time and resources necessary to secure an electoral victory. Though some left-wing voices cried 'Foul!' and that the delay was violating democratic principles, the situation remained relatively calm. The Right however, was not a unified bloc and ideas were numerous as to which direction the country should take from now on."
+name = "EVT_94001_NAME"
+desc = "EVT_94001_DESC"
 
 action_a = {
 ai_chance = 50
-name = "The country needs stability! Let the conservatives continue their rule!"
+name = "EVT_94001_OPTIONA"
 	command = { type = set_domestic which = democratic value = 5 }
 	command = { type = set_domestic which = political_left value = 3 }
 	command = { type = set_domestic which = defense_lobby value = 4 }
@@ -125,7 +125,7 @@ name = "The country needs stability! Let the conservatives continue their rule!"
 	}
 action_b = {
 ai_chance = 30
-name = "Appease the populace with a liberal compromise-candidate!"
+name = "EVT_94001_OPTIONB"
         
 
 	command = { type = set_domestic which = democratic value = 8 }
@@ -140,7 +140,7 @@ name = "Appease the populace with a liberal compromise-candidate!"
 	}
 action_c = {
 ai_chance = 20
-name = "We need a strong hand! Create a military cabinet!"
+name = "EVT_94001_OPTIONC"
 
 	command = { type = set_domestic which = democratic value = 3 }
 	command = { type = set_domestic which = political_left value = 1 }
@@ -172,12 +172,12 @@ date = { day = 5 month = september year = 1936 }
 offset = 15
 deathdate = { day = 29 month = november year = 1936 }
 
-name = "The Policy of the Social-Democrats"
-desc = "After their victory, the Social-Democrats remained divided. The largest faction wanted to create a system of government-sponsored welfare-programs to gradually eliminate class-warfare and through democratic control create a Socialist society. Against this however, stood the more radical elements of the party. A third, smaller group, espoused no radical changes."
+name = "EVT_94003_NAME"
+desc = "EVT_94003_DESC"
 
 action_a = {
 ai_chance = 70
-name = "Let us build a People's Home for all Swedes!"
+name = "EVT_94003_OPTIONA"
 	command = { type = dissent value = -10 }
 	command = { type = domestic which = free_market value = -1 }
 	command = { type = domestic which = political_left value = 1 }
@@ -188,7 +188,7 @@ name = "Let us build a People's Home for all Swedes!"
 	}
 action_b = {
 ai_chance = 20
-name = "Let us radically reform the economy along Syndicalist lines!"
+name = "EVT_94003_OPTIONB"
 	command = { type = construct which = infrastructure where = 2159 value = 10 }
 	command = { type = construct which = infrastructure where = 2161 value = 10 }
 	command = { type = domestic which = political_left value = 3 }
@@ -213,7 +213,7 @@ name = "Let us radically reform the economy along Syndicalist lines!"
 	}
 action_c = {
 ai_chance = 10
-name = "Stay the Course, Let's not Rock the Boat"
+name = "EVT_94003_OPTIONC"
 	command = { type = dissent value = -5 }
 	command = { type = domestic which = political_left value = -1 }
 	}
@@ -234,12 +234,12 @@ date = { day = 5 month = september year = 1936 }
 offset = 5
 deathdate = { day = 29 month = september year = 1936 }
 
-name = "The Radical Left decide it's policy"
-desc = "The coalition of radical leftists that came to power in the 1936 election was a disparate group of Syndicalists, radical social-democrats, and the odd Bolshevik. There seemed to be several paths for the newly radicalized country to take."
+name = "EVT_94004_NAME"
+desc = "EVT_94004_DESC"
 
 action_a = {
 ai_chance = 40
-name = "Let us radically reform the economy along Syndicalist lines!"
+name = "EVT_94004_OPTIONA"
 	command = { type = construct which = infrastructure where = 2159 value = 10 }
 	command = { type = construct which = infrastructure where = 2161 value = 10 }
 	command = { type = domestic which = political_left value = 3 }
@@ -265,7 +265,7 @@ name = "Let us radically reform the economy along Syndicalist lines!"
 	}
 action_b = {
 ai_chance = 20
-name = "Let us build a People's Home for all Swedes!"
+name = "EVT_94004_OPTIONB"
 	command = { type = dissent value = -10 }
 	command = { type = domestic which = free_market value = -1 }
 	command = { type = domestic which = political_left value = -1 }
@@ -276,7 +276,7 @@ name = "Let us build a People's Home for all Swedes!"
 	}
 action_c = {
 ai_chance = 40
-name = "Let us focus on resisting Bourgeoisie aggression!"
+name = "EVT_94004_OPTIONC"
 	command = { type = domestic which = interventionism value = 3 }
 	command = { type = domestic which = defense_lobby value = 3 }
 	command = { type = domestic which = professional_army value = -3 }
@@ -317,8 +317,8 @@ event = 94001
 event = 94002 }
 }
 
-name = "The Liberals Decide upon their Policy"
-desc = "A Liberal victory in the 1936 election was completely unexpected. The liberals, themselves not expecting to seize power, were divided on what to do. Most favored a policy of maintaining the Status Quo. Others wished for the creation of a welfare-state to ensure the liberty and prosperity of all. A third group propagated a more laissez-faire version of capitalism."
+name = "EVT_94005_NAME"
+desc = "EVT_94005_DESC"
 
 date = { day = 5 month = september year = 1936 }
 offset = 5
@@ -327,12 +327,12 @@ deathdate = { day = 29 month = november year = 1936 }
 
 action_a = {
 ai_chance = 60
-name = "Stay the Course, Best not to Rock the Boat"
+name = "EVT_94005_OPTIONA"
 	command = { type = dissent value = 5 }
 	}
 action_b = {
 ai_chance = 15
-name = "Let us build a People's Home for all Swedes!"
+name = "EVT_94005_OPTIONB"
 	command = { type = dissent value = 5 }
 	command = { type = domestic which = free_market value = -1 }
 	command = { type = domestic which = political_left value = 1 }
@@ -343,7 +343,7 @@ name = "Let us build a People's Home for all Swedes!"
 	}
 action_c = {
 ai_chance = 25
-name = "A Free Market is the Answer to all our Troubles!"
+name = "EVT_94005_OPTIONC"
 	command = { type = set_domestic which = democratic value = 5 }
 	command = { type = set_domestic which = political_left value = 5 }
 	command = { type = domestic which = free_market value = 9 }
@@ -367,12 +367,12 @@ date = { day = 5 month = november year = 1936 }
 offset = 5
 deathdate = { day = 29 month = november year = 1936 }
 
-name = "The Conservatives decide their policy"
-desc = "After the election of 1936 a strong lobby within the military wanted to focus on national defense, others believed that in order to rebuild the economy, a focus on agriculture and small-scale industry was needed, and a third group believed that most important should be the focus on smoothing ruffled feathers and avoiding causing any trouble."
+name = "EVT_94006_NAME"
+desc = "EVT_94006_DESC"
 
 action_a = {
 ai_chance = 25
-name = "Let us focus on defending our country from external threats"
+name = "EVT_94006_OPTIONA"
 	command = { type = dissent value = 5 }
 	command = { type = set_domestic which = interventionism value = 9 }
 	command = { type = set_domestic which = professional_army value = 9 }
@@ -385,13 +385,13 @@ name = "Let us focus on defending our country from external threats"
 	}
 action_b = {
 ai_chance = 15
-name = "Let us avoid interfering too much"
+name = "EVT_94006_OPTIONB"
 command = { type = dissent value = -5 }
 command = { type = domestic which = democratic value = 2 }
 	}
 action_c = {
 ai_chance = 60
-name = "Let us focus on strengthening our agriculture and industry!"
+name = "EVT_94006_OPTIONC"
 	command = { type = domestic which = free_market value = -1 }
 	command = { type = manpowerpool value = 300 }
 	command = { type = construct which = ic where = 2159 value = 1 }
@@ -415,12 +415,12 @@ date = { day = 5 month = november year = 1936 }
 offset = 5
 deathdate = { day = 29 month = november year = 1936 }
 
-name = "The Militarists decide their policy"
-desc = "The election of '36 was after some trouble resolved by King Gustav appointing a cabinet of generals and other military men, with large discretionary powers to restore order and effectively deal with the numerous problems facing the Kingdom."
+name = "EVT_94007_NAME"
+desc = "EVT_94007_DESC"
 
 action_a = {
 ai_chance = 60
-name = "We must defend ourselves against internal and external enemies!"
+name = "EVT_94007_OPTIONA"
 	command = { type = domestic which = defense_lobby value = 2 }
 	command = { type = domestic which = professional_army value = 2 }
 	command = { type = domestic which = interventionism value = 1 }
@@ -433,7 +433,7 @@ name = "We must defend ourselves against internal and external enemies!"
 	}
 action_b = {
 ai_chance = 35
-name = "We must mold all society into a corporate state!"
+name = "EVT_94007_OPTIONB"
 	command = { type = dissent value = 10 }
 	command = { type = domestic which = interventionism value = 1 }
 	command = { type = domestic which = free_market value = -2 }
@@ -445,7 +445,7 @@ name = "We must mold all society into a corporate state!"
 	}
 action_c = {
 ai_chance = 5
-name = "We must greatly expand our military, and our territory!"
+name = "EVT_94007_OPTIONC"
 	command = { type = setflag which = swe_Mil_Expand } 
 	command = { type = add_corps which = "Svenska armen" value = land when = 9024 where = 2159 }
 	command = { type = add_division which = "Infanteridivison ''Lennart Torstensson''" value = infantry when = 9 where = artillery}
@@ -500,16 +500,15 @@ date = { day = 5 month = january year = 1936 }
 offset = 5
 deathdate = { day = 29 month = november year = 1960 }
 
-name = "Syndicalism in Norway"
-desc = "Recently a revolution has taken place in Norway and turned it into a Syndicalist nation, with support from the
-Union of Britain. Now murmurs of discontent are rising in our own country and we need to do something."
+name = "EVT_94008_NAME"
+desc = "EVT_94008_DESC"
 style = 2
 
 
 
       action_a = {
 ai_chance = 90
-name = "Enact syndicalist politics"
+name = "EVT_94008_OPTIONA"
 command = { type = relation which = ENG value = 100 }
 command = { type = relation which = FRA value = 75 }
 command = { type = relation which = NOR value = 150 }
@@ -527,7 +526,7 @@ command = { type = dissent value = 10 }
 
       action_b = {
 ai_chance = 10
-name = "Suppress any rebellion!"
+name = "EVT_94008_OPTIONB"
 command = { type = relation which = NOR value = -75 }
 command = { type = domestic which = freedom value = -1 }
 command = { type = domestic which = political_left value = -1 }
@@ -549,7 +548,7 @@ atwar = SWE
 ispuppet = SWE
 }
 }
-name = "This extremism must be stopped!"
+name = "EVT_94008_OPTIONC"
 command = { type = relation which = ENG value = -100 }
 command = { type = domestic which = democratic value = -1 }
 command = { type = domestic which = freedom value = -1 }
@@ -583,15 +582,15 @@ date = { day = 5 month = january year = 1936 }
 offset = 5
 deathdate = { day = 29 month = november year = 1960 }
 
-    name = "Syndicalism in Norway"
-    desc = "Recently a revolution has taken place in Norway and turned it into a Syndicalist nation, with support from the Union of Britain. Now murmurs of discontent are rising in our own country and we need to do something."
+    name = "EVT_94009_NAME"
+    desc = "EVT_94009_DESC"
     style = 2
 
 
 
       action_a = {
 ai_chance = 60
-name = "Enact Syndicalist politics"
+name = "EVT_94009_OPTIONA"
 command = { type = relation which = ENG value = 100 }
 command = { type = relation which = FRA value = 75 }
 command = { type = relation which = NOR value = 150 }
@@ -609,7 +608,7 @@ command = { type = dissent value = 20 } # Not very supported...
 
       action_b = {
 ai_chance = 40
-name = "Suppress any rebellion!"
+name = "EVT_94009_OPTIONB"
 command = { type = relation which = NOR value = -75 }
 command = { type = domestic which = freedom value = -1 }
 command = { type = domestic which = political_left value = -1 }
@@ -631,7 +630,7 @@ atwar = SWE
 ispuppet = SWE
 }
 }
-name = "This extremism must be stopped!"
+name = "EVT_94009_OPTIONC"
 command = { type = relation which = ENG value = -100 }
 command = { type = domestic which = democratic value = -1 }
 command = { type = domestic which = freedom value = -1 }
@@ -667,15 +666,15 @@ offset = 5
 deathdate = { day = 29 month = november year = 1960 }
 
 
-    name = "Syndicalism in Norway"
-    desc = "Recently a revolution has taken place in Norway and turned it into a Syndicalist nation, with support from the Union of Britain. Now murmurs of discontent are rising in our own country and we need to do something."
+    name = "EVT_94010_NAME"
+    desc = "EVT_94010_DESC"
     style = 2
 
 
 
       action_a = {
 ai_chance = 5
-name = "Enact Syndicalist politics"
+name = "EVT_94010_OPTIONA"
 command = { type = relation which = ENG value = 100 }
 command = { type = relation which = FRA value = 75 }
 command = { type = relation which = NOR value = 150 }
@@ -693,7 +692,7 @@ command = { type = dissent value = 20 } # Not very supported...
 
       action_b = {
 ai_chance = 75
-name = "Suppress any rebellion!"
+name = "EVT_94010_OPTIONB"
 command = { type = relation which = NOR value = -75 }
 command = { type = domestic which = freedom value = -1 }
 command = { type = domestic which = political_left value = -1 }
@@ -715,7 +714,7 @@ atwar = SWE
 ispuppet = SWE
 }
 }
-name = "This extremism must be stopped!"
+name = "EVT_94010_OPTIONC"
 command = { type = relation which = ENG value = -100 }
 command = { type = domestic which = democratic value = -1 }
 command = { type = domestic which = freedom value = -1 }
@@ -752,15 +751,15 @@ date = { day = 5 month = january year = 1936 }
 offset = 5
 deathdate = { day = 29 month = november year = 1960 }
 
-    name = "Syndicalism in Norway"
-    desc = "Recently a revolution has taken place in Norway and turned it into a Syndicalist nation, with support from the Union of Britain. Now murmurs of discontent are rising in our own country and we need to do something."
+    name = "EVT_94011_NAME"
+    desc = "EVT_94011_DESC"
     style = 2
 
 
 
       action_a = {
 ai_chance = 0
-name = "Enact Syndicalist politics"
+name = "EVT_94011_OPTIONA"
 command = { type = relation which = ENG value = 100 }
 command = { type = relation which = FRA value = 75 }
 command = { type = relation which = NOR value = 150 }
@@ -778,7 +777,7 @@ command = { type = dissent value = 20 } # Not very supported...
 
       action_b = {
 ai_chance = 40
-name = "Suppress any rebellion!"
+name = "EVT_94011_OPTIONB"
 command = { type = relation which = NOR value = -75 }
 command = { type = domestic which = freedom value = -1 }
 command = { type = domestic which = political_left value = -1 }
@@ -800,7 +799,7 @@ atwar = SWE
 ispuppet = SWE
 }
 }
-name = "This extremism must be stopped!"
+name = "EVT_94011_OPTIONC"
 command = { type = relation which = ENG value = -100 }
 command = { type = domestic which = democratic value = -1 }
 command = { type = domestic which = freedom value = -1 }
@@ -822,8 +821,8 @@ event = {
     random = no
     country = SWE
 
-	name = "Swedish Empire"
-	desc = "Nationalist feelings have come back again and we now have the chance and impetus to form a new Swedish Empire."
+	name = "EVT_94012_NAME"
+	desc = "EVT_94012_DESC"
 	style = 2
 
 	trigger = { 
@@ -837,7 +836,7 @@ event = {
 
 	action_a = {
 		ai_chance = 80
-		name = "Excellent idea!"
+		name = "EVT_94012_OPTIONA"
 		command = { type = relation which = ENG value = -50 }
 		command = { type = relation which = FIN value = -100 }
 		command = { type = relation which = DEN value = -50 }
@@ -854,14 +853,14 @@ event = {
 	}
 	action_b = {
 		ai_chance = 10
-		name = "Stay in isolation"
+		name = "EVT_94012_OPTIONB"
 		command = { type = relation which = NOR value = 75 }
 		command = { type = peace which = NOR value = 0 }
 		command = { type = domestic which = interventionism value = -2 }
 	}	
 	action_c = {
 		ai_chance = 10
-		name = "Seek alliances"
+		name = "EVT_94012_OPTIONC"
 		command = { type = relation which = NOR value = -10 }
 		command = { type = relation which = FIN value = 25 }
 		command = { type = relation which = DEN value = 100 }
@@ -881,14 +880,14 @@ event = {
 
     trigger = { headofgovernment = 7033 }
 
-    name = "Per Albin Hansson is dead!"
-    desc = "One of Sweden’s most important politicians died today, our Prime minister, Mr. Per Albin Hansson. May him rest in peace!"
+    name = "EVT_94013_NAME"
+    desc = "EVT_94013_DESC"
     picture = "minister_died"
 
     date = { year = 1946 month = october day = 6 }
 
     action_a = {
-		name = "He will be missed!"
+		name = "EVT_94013_OPTIONA"
 		command = { type = sleepminister which = 7033 }
 		command = { type = headofgovernment which = 7034 }
 	}
@@ -914,8 +913,8 @@ event = {
 		}
 	}
 	
-    name = "Our Finish Brothers Are Under Attack!"
-    desc = "Finland, a nation with strong bonds to our nation, is now under horrific attack from the Syndicalist powers. We should prepare for what may happen!"
+    name = "EVT_94014_NAME"
+    desc = "EVT_94014_DESC"
     picture = "finland_sweden"
 
     date = { day = 1 month = october year = 1936 }
@@ -924,7 +923,7 @@ event = {
 
     action_a = {
 		ai_chance = 40
-		name = "Preparation is key."
+		name = "EVT_94014_OPTIONA"
 		command = { type = domestic which = interventionism value = 1 }
 		command = { type = domestic which = defense_lobby value = 1 }
 		command = { type = manpowerpool value = 20 }
@@ -937,7 +936,7 @@ event = {
 	}
     action_b = {
 		ai_chance = 60
-		name = "We will be alright and cannot spare lives for Finland."
+		name = "EVT_94014_OPTIONB"
 		command = { type = dissent value = 1 }
 		command = { type = relation which = FIN value = -25 }
                 command = { type = sleepevent which = 94016 } 
@@ -964,8 +963,8 @@ event = {
 		}
 	}
 
-    name = "Our Danish Brothers Are Under Attack!"
-    desc = "Denmark, our friend in the south, is now under horrific attack from the Syndicalist powers. We should prepare for what may happen!"
+    name = "EVT_94015_NAME"
+    desc = "EVT_94015_DESC"
     picture = "sweden_helps_finland"
 
     date = { day = 1 month = october year = 1936 }
@@ -974,7 +973,7 @@ event = {
 
     action_a = {
 		ai_chance = 40
-		name = "Preparation is key."
+		name = "EVT_94015_OPTIONA"
 		command = { type = domestic which = interventionism value = 1 }
 		command = { type = domestic which = defense_lobby value = 1 }
 		command = { type = manpowerpool value = 20 }
@@ -987,7 +986,7 @@ event = {
 	}
     action_b = {
 		ai_chance = 60
-		name = "We will be alright and cannot spare lives for Denmark."
+		name = "EVT_94015_OPTIONB"
 		command = { type = dissent value = 1 }
 		command = { type = relation which = DEN value = -25 }
                 command = { type = sleepevent which = 94020 } 
@@ -1012,8 +1011,8 @@ event = {
 		war = { country = GER country = ENG }
 	}
     
-	name = "Finland must be protected!"
-    desc = "Sweden has already made some preparations for helping the Finns, we now have to decide how to help them."
+	name = "EVT_94016_NAME"
+    desc = "EVT_94016_DESC"
     picture = "finland_sweden"
 
 	date = { day = 1 month = september year = 1936 }
@@ -1021,7 +1020,7 @@ event = {
     deathdate = { day = 1 month = july year = 1966 }
 
     action_a = {
-        name = "Join The War!"
+        name = "EVT_94016_OPTIONA"
         ai_chance = 3
         command = { type = domestic which = interventionism value = 3 }
         command = { type = domestic which = defense_lobby value = 2 }
@@ -1031,7 +1030,7 @@ event = {
         command = { type = trigger which = 94019 }
     }
     action_b = {
-        name = "Let Volunteers help The Finnish People."
+        name = "EVT_94016_OPTIONB"
         ai_chance = 97
         command = { type = manpowerpool value = -12 }
         command = { type = supplies value = -1000 }
@@ -1047,12 +1046,12 @@ event = {
     country = FIN
     style = 2
     
-	name = "Swedish Aid."
-    desc = "Today Sweden decided to help us in our war against the Syndicalists, not by declaring war upon them, but by sending supplies and volunteers."
+	name = "EVT_94017_NAME"
+    desc = "EVT_94017_DESC"
     picture = "finland_sweden"
 	
     action_a = {
-        name = "We Thank Our Swedish Brothers"
+        name = "EVT_94017_OPTIONA"
         command = { type = add_corps which = "Swedish volunteer Korps" value = land where = 525 } # Helsinki
         command = { type = add_division value = militia when = 5 where = anti_air }
     }
@@ -1064,12 +1063,12 @@ event = {
     country = FIN
 	style = 2
     
-	name = "Swedish Help!"
-    desc = "Sweden, our brave brother in the west, decided to take up arms against the damn Syndies! Together we will protect our lovely Nordic home. Hurrah!"
+	name = "EVT_94018_NAME"
+    desc = "EVT_94018_DESC"
     picture = "finland_sweden"
 	
     action_a = {
-        name = "Hurrah!"
+        name = "EVT_94018_OPTIONA"
         command = { type = relation which = SWE value = 150 }
 	}
 }
@@ -1080,12 +1079,12 @@ event = {
     country = FRA
     style = 2
     
-    name = "Sweden Intervenes!"
-    desc = "The Swedes decided to join our enemy Finland in their war against us! But what harm can two ants do against our mighty magnifying glass!"
+    name = "EVT_94019_NAME"
+    desc = "EVT_94019_DESC"
 	picture = "news_paper"
     
 	action_a = {
-        name = "They will regret this!"
+        name = "EVT_94019_OPTIONA"
         command = { type = dissent value = 1 }
 	}
 }
@@ -1108,8 +1107,8 @@ event = {
 		war = { country = GER country = ENG }
 	}
                       
-    name = "Denmark must be protected!"
-    desc = "Sweden has already made some preparations to help the Danish, we now have to decide how to help them."
+    name = "EVT_94020_NAME"
+    desc = "EVT_94020_DESC"
     picture = "sweden_helps_finland"
 
     date = { day = 1 month = september year = 1936 }
@@ -1117,7 +1116,7 @@ event = {
     deathdate = { day = 1 month = july year = 1966 }
 
     action_a = {
-        name = "Join The War!"
+        name = "EVT_94020_OPTIONA"
         ai_chance = 3
         command = { type = domestic which = interventionism value = 3 }
         command = { type = domestic which = defense_lobby value = 2 }
@@ -1127,7 +1126,7 @@ event = {
         command = { type = trigger which = 94023 }
 	}
     action_b = {
-        name = "Let Volunteers help The Danish People."
+        name = "EVT_94020_OPTIONB"
         ai_chance = 97
         command = { type = manpowerpool value = -12 }
         command = { type = supplies value = -1000 }
@@ -1143,12 +1142,12 @@ event = {
     country = DEN
     style = 2
     
-	name = "Swedish Aid."
-    desc = "Today Sweden decided to help us in our war against the Syndicalists, not by declaring war on them, but by sending supplies and volunteers."
+	name = "EVT_94021_NAME"
+    desc = "EVT_94021_DESC"
     picture = "sweden_helps_finland"
     
 	action_a = {
-        name = "We Thank Our Swedish Brothers"
+        name = "EVT_94021_OPTIONA"
         command = { type = add_corps which = "Swedish volunteer Korps" value = land where = 294 } # Copenhagen
         command = { type = add_division value = militia when = 5 where = anti_air }
     }
@@ -1160,12 +1159,12 @@ event = {
     country = DEN
     style = 2
     
-	name = "Swedish Help!"
-    desc = "Sweden, our brave brother in the west decided to take up arms against the damn Syndies! Together we will protect our lovely Nordic home. Hurrah!"
+	name = "EVT_94022_NAME"
+    desc = "EVT_94022_DESC"
     picture = "sweden_helps_finland"
     
 	action_a = {
-        name = "Hurrah!"
+        name = "EVT_94022_OPTIONA"
         command = { type = relation which = SWE value = 150 }
         }
     }
@@ -1176,12 +1175,12 @@ event = {
     country = FRA
     style = 2
     
-    name = "Sweden Intervenes!"
-    desc = "The Swedes decided to join our enemy Denmark in their war against us! But what harm can two ants do against our mighty magnifying glass!"
+    name = "EVT_94023_NAME"
+    desc = "EVT_94023_DESC"
 	picture = "news_paper"
     
 	action_a = {
-        name = "They will regret this!"
+        name = "EVT_94023_OPTIONA"
         command = { type = dissent value = 1 }
 	}
 }
@@ -1206,19 +1205,19 @@ event = {
 	offset = 5
 	deathdate = { day = 29 month = july year = 1940 }
 
-	name = "War engulfs Europa"
-	desc = "Two Europeans powers, Germany and France, are now locked in conflict. Should we let the elections proceed without interference?"
+	name = "EVT_94516_NAME"
+	desc = "EVT_94516_DESC"
 	picture = "politics2"
 
 	action_a = {
 		ai_chance = 50
-		name = "Let the Election Proceed without interference"
+		name = "EVT_94516_OPTIONA"
 		command = { type = dissent value = 3 }
 		command = { type = domestic which = democratic value = 1 }
     }
 	action_b = {
 		ai_chance = 50
-		name = "We need snap elections"
+		name = "EVT_94516_OPTIONB"
 		command = { type = dissent value = 5 }
 		command = { type = sleepevent which = 94519 }  
         command = { type = trigger which = 94517 }
@@ -1233,13 +1232,13 @@ event = {
 	country = SWE
 	style = 2
 
-	name = "The Election of '40"
-	desc = "As polls predicted, the vast majority of the votes in the 1940 election fell to the center parties, however the voters couldn't choose a leading party."
+	name = "EVT_94517_NAME"
+	desc = "EVT_94517_DESC"
 	picture = "politics2"
 
 	action_a = {
 		ai_chance = 10
-		name = "Sveriges socialdemokratiska arbetareparti wins and creates a new government!"
+		name = "EVT_94517_OPTIONA"
 		command = { type = set_domestic which = democratic value = 9 }
 		command = { type = set_domestic which = political_left value = 9 }
 		command = { type = domestic which = defense_lobby value = -1 }
@@ -1252,7 +1251,7 @@ event = {
     }
 	action_b = {
 		ai_chance = 20
-		name = "Högerpartiet wins and creates a new government!"
+		name = "EVT_94517_OPTIONB"
 		command = { type = set_domestic which = democratic value = 4 }
 		command = { type = set_domestic which = political_left value = 3 }
 		command = { type = set_domestic which = defense_lobby value = 4 }
@@ -1265,7 +1264,7 @@ event = {
     }
 	action_c = {
 		ai_chance = 50
-		name = "Only compromise give Sweden stability. Create a great coalition."
+		name = "EVT_94517_OPTIONC"
 		command = { type = set_domestic which = democratic value = 8 }
 		command = { type = set_domestic which = political_left value = 5 }
 		command = { type = set_domestic which = free_market value = 8 }
@@ -1276,7 +1275,7 @@ event = {
 	}
 	action_d = {
 		ai_chance = 20
-		name = "We need a strong hand! Create a military cabinet!"
+		name = "EVT_94517_OPTIOND"
 		command = { type = set_domestic which = democratic value = 3 }
 		command = { type = set_domestic which = political_left value = 1 }
 		command = { type = domestic which = professional_army value = 2 }
@@ -1297,33 +1296,33 @@ event = {
     random = no
     country = SWE
 
-    name = "Appointment of the prime minister"
-    desc = "Who will be the next prime minister of the  kingdom of Sweden?"
+    name = "EVT_94518_NAME"
+    desc = "EVT_94518_DESC"
     style = 2
 
     action_a = {
 		ai_chance = 25
-		name = "Per-Albin Hansson (Sveriges socialdemokratiska arbetareparti)"
+		name = "EVT_94518_OPTIONA"
 		command = { type = headofgovernment which = 7033 }
 		command = { type = setflag which = eco_swe_sda }
     }
     action_b = {
 		ai_chance = 25
-		name = "Gösta Bagge (Högerpartiet)"
+		name = "EVT_94518_OPTIONB"
 		command = { type = headofgovernment which = 7035 }
 		command = { type = dissent value = 1 }
 		command = { type = clrflag which =  eco_swe_sda }
 	}
     action_c = {
 		ai_chance = 25
-		name = "Gustav Andersson-Rasjön (Folkpartiet)"
+		name = "EVT_94518_OPTIONC"
 		command = { type = headofgovernment which = 7037 }
 		command = { type = dissent value = 3 }
 		command = { type = clrflag which =  eco_swe_sda }
 	}
     action_d = {
 		ai_chance = 25
-		name = "Axel Pehrsson-Bramstorp (Bondeförbundet)"
+		name = "EVT_94518_OPTIOND"
 		command = { type = headofgovernment which = 7002 }
 		command = { type = dissent value = -1 }
 		command = { type = clrflag which =  eco_swe_sda }
@@ -1346,13 +1345,13 @@ event = {
 	offset = 5
 	deathdate = { day = 3 month = september year = 1940 }
 
-	name = "The Election of '40"
-	desc = "As polls predicted, the vast majority of the votes in the 1940 election fell to the left-wing parties, however, even this vote was very much divided, amongst the various left-wing factions. Almost anything could have altered the balance of power. Which of the following groups should form the new government?"
+	name = "EVT_94519_NAME"
+	desc = "EVT_94519_DESC"
 	picture = "politics2"
 
 	action_a = {
 		ai_chance = 50
-		name = "Sveriges socialdemokratiska arbetareparti wins and creates a new government!"
+		name = "EVT_94519_OPTIONA"
 		command = { type = set_domestic which = democratic value = 9 }
 		command = { type = set_domestic which = political_left value = 9 }
 		command = { type = domestic which = defense_lobby value = -1 }
@@ -1367,7 +1366,7 @@ event = {
     }
 	action_b = {
 		ai_chance = 10
-		name = "The country needs stability! Högerpartiet creates a new government!"
+		name = "EVT_94519_OPTIONB"
 		command = { type = set_domestic which = democratic value = 4 }
 		command = { type = set_domestic which = political_left value = 3 }
 		command = { type = set_domestic which = defense_lobby value = 4 }
@@ -1382,7 +1381,7 @@ event = {
     }
 	action_c = {
 		ai_chance = 20
-		name = "Oh my God, Radical Leftists from the Sveriges Syndikalistiska Partii won!"
+		name = "EVT_94519_OPTIONC"
 		command = { type = set_domestic which = political_left value = 9 }
 		command = { type = set_domestic which = democratic value = 5 }
 		command = { type = domestic which = free_market value = -1 }
@@ -1398,7 +1397,7 @@ event = {
     }
 	action_d = {
 		ai_chance = 20
-		name = "Liberals from the Folkpartiet and Bondeförbundet create a coalition"
+		name = "EVT_94519_OPTIOND"
                 command = { type = set_domestic which = democratic value = 9 }
 		command = { type = set_domestic which = political_left value = 5 }
 		command = { type = domestic which = professional_army value = 2 }
@@ -1428,8 +1427,8 @@ event = {
 		flag  =  eco_swe_sda
 	}
 
-    name = "The Election of '44"
-    desc = "The Parliament elected in the last election has drawn to a close. There are 349 seats in the national parliament and various political parties have begun their campaigns. But currently only two parties have a chance of gaining a majority and thus forming a new government. Which one shall prevail?"
+    name = "EVT_94525_NAME"
+    desc = "EVT_94525_DESC"
 
     date = { day = 1 month = may year = 1944 }
     offset = 2
@@ -1438,7 +1437,7 @@ event = {
 
     action_a = {
         ai_chance = 80
-        name = "Sveriges socialdemokratiska arbetareparti"
+        name = "EVT_94525_OPTIONA"
         command = { type = dissent value = -3 }
         command = { type = set_domestic which = democratic value = 10 }
         command = { type = set_domestic which = political_left value = 10 }
@@ -1452,7 +1451,7 @@ event = {
 	}
     action_b = {
         ai_chance = 20
-        name = "Högerpartiet"
+        name = "EVT_94525_OPTIONB"
         command = { type = dissent value = -3 }
         command = { type = set_domestic which = democratic value = 10 }
         command = { type = set_domestic which = political_left value = 4 }
@@ -1478,8 +1477,8 @@ event = {
 		flag  =  eco_swe_sda
 	}
 
-    name = "The Election of '48"
-    desc = "The Parliament elected in the last election has drawn to a close. There are 349 seats in the national parliament and various political parties have begun their campaigns. But currently only two parties have a chance of gaining a majority and thus forming a new government. Which one shall prevail?"
+    name = "EVT_94526_NAME"
+    desc = "EVT_94526_DESC"
 
     date = { day = 1 month = may year = 1948 }
     offset = 2
@@ -1488,7 +1487,7 @@ event = {
 
     action_a = {
         ai_chance = 80
-        name = "Sveriges socialdemokratiska arbetareparti"
+        name = "EVT_94526_OPTIONA"
         command = { type = dissent value = -3 }
         command = { type = set_domestic which = democratic value = 10 }
         command = { type = set_domestic which = political_left value = 10 }
@@ -1503,7 +1502,7 @@ event = {
 	}
     action_b = {
         ai_chance = 20
-        name = "Högerpartiet"
+        name = "EVT_94526_OPTIONB"
         command = { type = dissent value = -3 }
         command = { type = set_domestic which = democratic value = 10 }
         command = { type = set_domestic which = political_left value = 4 }
@@ -1529,8 +1528,8 @@ event = {
 		flag  =  eco_swe_sda
 	}
 
-    name = "The Election of '52"
-    desc = "The Parliament elected in the last election has drawn to a close. There are 349 seats in the national parliament and various political parties have begun their campaigns. But currently only two parties have a chance of gaining a majority and thus forming a new government. Which one shall prevail?"
+    name = "EVT_94527_NAME"
+    desc = "EVT_94527_DESC"
 
     date = { day = 1 month = may year = 1952 }
     offset = 2
@@ -1539,7 +1538,7 @@ event = {
 
     action_a = {
         ai_chance = 80
-        name = "Sveriges socialdemokratiska arbetareparti"
+        name = "EVT_94527_OPTIONA"
         command = { type = dissent value = -3 }
         command = { type = set_domestic which = democratic value = 10 }
         command = { type = set_domestic which = political_left value = 10 }
@@ -1554,7 +1553,7 @@ event = {
 	}
     action_b = {
         ai_chance = 20
-        name = "Högerpartiet"
+        name = "EVT_94527_OPTIONB"
         command = { type = dissent value = -3 }
         command = { type = set_domestic which = democratic value = 10 }
         command = { type = set_domestic which = political_left value = 4 }
@@ -1583,8 +1582,8 @@ event = {
 		not = { flag  =  eco_swe_sda }
 	}
 
-    name = "The Election of '44"
-    desc = "The Parliament elected in the last election has drawn to a close. There are 349 seats in the national parliament and various political parties have begun their campaigns. But currently only two parties have a chance of gaining a majority and thus forming a new government. Which one shall prevail?"
+    name = "EVT_94528_NAME"
+    desc = "EVT_94528_DESC"
 
     date = { day = 1 month = may year = 1944 }
     offset = 2
@@ -1593,7 +1592,7 @@ event = {
 
     action_a = {
         ai_chance = 50
-        name = "Sveriges socialdemokratiska arbetareparti"
+        name = "EVT_94528_OPTIONA"
         command = { type = dissent value = -3 }
         command = { type = set_domestic which = democratic value = 10 }
         command = { type = set_domestic which = political_left value = 10 }
@@ -1608,7 +1607,7 @@ event = {
 	}
     action_b = {
         ai_chance = 50
-        name = "Högerpartiet"
+        name = "EVT_94528_OPTIONB"
         command = { type = dissent value = -3 }
         command = { type = set_domestic which = democratic value = 10 }
         command = { type = set_domestic which = political_left value = 4 }
@@ -1634,8 +1633,8 @@ event = {
 		not = { flag  =  eco_swe_sda }
 	}
 
-    name = "The Election of '48"
-    desc = "The Parliament elected in the last election has drawn to a close. There are 349 seats in the national parliament and various political parties have begun their campaigns. But currently only two parties have a chance of gaining a majority and thus forming a new government. Which one shall prevail?"
+    name = "EVT_94529_NAME"
+    desc = "EVT_94529_DESC"
 
     date = { day = 1 month = may year = 1948 }
     offset = 2
@@ -1644,7 +1643,7 @@ event = {
 
     action_a = {
         ai_chance = 50
-        name = "Sveriges socialdemokratiska arbetareparti"
+        name = "EVT_94529_OPTIONA"
         command = { type = dissent value = -3 }
         command = { type = set_domestic which = democratic value = 10 }
         command = { type = set_domestic which = political_left value = 10 }
@@ -1659,7 +1658,7 @@ event = {
 	}
     action_b = {
         ai_chance = 50
-        name = "Högerpartiet"
+        name = "EVT_94529_OPTIONB"
         command = { type = dissent value = -3 }
         command = { type = set_domestic which = democratic value = 10 }
         command = { type = set_domestic which = political_left value = 4 }
@@ -1685,8 +1684,8 @@ event = {
 		not = { flag  =  eco_swe_sda }
     }
 
-    name = "The Election of '52"
-    desc = "The Parliament elected in the last election has drawn to a close. There are 349 seats in the national parliament and various political parties have begun their campaigns. But currently only two parties have a chance of gaining a majority and thus forming a new government. Which one shall prevail?"
+    name = "EVT_94530_NAME"
+    desc = "EVT_94530_DESC"
 
     date = { day = 1 month = may year = 1952 }
     offset = 2
@@ -1695,7 +1694,7 @@ event = {
 
     action_a = {
         ai_chance = 50
-        name = "Sveriges socialdemokratiska arbetareparti"
+        name = "EVT_94530_OPTIONA"
         command = { type = dissent value = -3 }
         command = { type = set_domestic which = democratic value = 10 }
         command = { type = set_domestic which = political_left value = 10 }
@@ -1710,7 +1709,7 @@ event = {
 	}
     action_b = {
         ai_chance = 50
-        name = "Högerpartiet"
+        name = "EVT_94530_OPTIONB"
         command = { type = dissent value = -3 }
         command = { type = set_domestic which = democratic value = 10 }
         command = { type = set_domestic which = political_left value = 4 }
@@ -1751,12 +1750,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 50
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Foreign policy"
-desc = "With Scandinavia finally free from capitalist oppression we can now freely decide our stance towards the international community. While many are arguing for an immediate alliance with other Syndicalist nations, it might be wise to remain neutral to rebuild our country."
+name = "EVT_94531_NAME"
+desc = "EVT_94531_DESC"
 
         action_a = {
 		ai_chance = 95
-		name = "We must join arms with France"
+		name = "EVT_94531_OPTIONA"
                 command = { type = leave_alliance }
 		command = { type = trigger which = 94532 }
 		command = { type = domestic which = defense_lobby value = 1 }
@@ -1765,7 +1764,7 @@ desc = "With Scandinavia finally free from capitalist oppression we can now free
 	}
 	action_b = {
 		ai_chance = 5
-		name = "Isolationism, we must organize our country"
+		name = "EVT_94531_OPTIONB"
 		command = { type = dissent value = -5 }
 		command = { type = domestic which = defense_lobby value = -1 }
 		command = { type = domestic which = interventionism value = -1 }
@@ -1779,12 +1778,12 @@ event = {
 	style = 2
 	picture = "diplomatic_campaign"
 
-	name = "United Scandinavia wants to join the Syndicalists"
-	desc = "United Scandinavia has announced recently that they want to join the Syndicalist bloc. It's not a sudden move because pro-Syndicalist policy is popular in many circles including the government and army. Do we want Scandinavian workers and peasants joining the crusade against bloodthirsty Germans and rotten imperialist Canadian pigs?"
+	name = "EVT_94532_NAME"
+	desc = "EVT_94532_DESC"
 
 	action_a = {
 		ai_chance = 100
-		name = "YES!"
+		name = "EVT_94532_OPTIONA"
 		command = { type = alliance which = SCA }
 		command = { type = relation which = SCA value = 100 }
 		command = { type = dissent value = -7 }
@@ -1793,7 +1792,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 0
-		name = "Rather not."
+		name = "EVT_94532_OPTIONB"
 		command = { type = dissent value = 1 }
 		command = { type = relation which = U00 value = -100 }
 	}
@@ -1805,11 +1804,11 @@ event = {
 	style = 2
 	picture = "diplomatic_campaign"
 
-	name = "We join the Syndicalist bloc"
-	desc = "French and British are happy to see us joining the common cause - destroying the evil imperialists. Now we are part of the Syndicalist bloc."
+	name = "EVT_94533_NAME"
+	desc = "EVT_94533_DESC"
 
 	action_a = {
-		name = "This time we will win!"
+		name = "EVT_94533_OPTIONA"
 		command = { type = dissent value = -3 }
 		command = { type = relation which = CAN value = -150 }
 		command = { type = relation which = GER value = -150 }

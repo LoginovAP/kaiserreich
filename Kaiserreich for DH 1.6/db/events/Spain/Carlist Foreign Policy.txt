@@ -1,510 +1,510 @@
-# #######################################
-# ### Carlist Foreign Policy
-# #######################################
+########################################
+#### Carlist Foreign Policy
+########################################
 
 event = {
-	id = 91233
-	random = no
-	country = ITA
-	picture = "church2"
-	style = 2
-	
-	trigger = {
-		exists = EUS
-		control = { province = 460 data = EUS }
-		NOT = {
-			exists = SPR
-			exists = SPA
-			ispuppet = EUS
-			ispuppet = ITA
-		}
-		OR = {
-			headofstate = 3234 # Pius XII
-			headofstate = 3249 # John XXIII
-			headofstate = 3251 # Julius IV
-		}
-	}
-	
-	date = { day = 1 month = january year = 1936 }
-	offset = 50
-	deathdate = { day = 29 month = december year = 1960 }
-	
-	name = "EVT_91233_NAME"
-	desc = "EVT_91233_DESC"
-	
-	action_a = {
-		ai_chance = 100
-		name = "EVT_91233_OPTIONA"
-		command = { }
-	}
-	action_b = {
-		ai_chance = 0
-		name = "EVT_91233_OPTIONB"
-		command = { type = sleepevent which = 91234 }
-		command = { type = sleepevent which = 91235 }
-	}
+id = 91233
+random = no
+country = ITA
+picture = "church2"
+style = 2
+
+trigger = { 
+exists = EUS
+control = { province = 460 data = EUS }
+NOT = {
+exists = SPR
+exists = SPA
+ispuppet = EUS
+ispuppet = ITA
+}
+OR = {
+headofstate = 3234 #Pius XII
+headofstate = 3249 #John XXIII
+headofstate = 3251 #Julius IV
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  50
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_91233_NAME"
+desc = "EVT_91233_DESC"
+
+action_a = {
+ai_chance =  100
+name = "EVT_91233_OPTIONA"
+command = { } 
+}
+action_b = {
+ai_chance =  0
+name = "EVT_91233_OPTIONB"
+command = { type = sleepevent which = 91234 }
+command = { type = sleepevent which = 91235 }
+}
 }
 
 event = {
-	id = 91234
-	random = no
-	country = EUS
-	picture = "PiusXI"
-	style = 2
-	
-	trigger = { event = 91233 }
-	
-	date = { day = 1 month = january year = 1936 }
-	offset = 7
-	deathdate = { day = 29 month = december year = 1960 }
-	
-	name = "EVT_91234_NAME"
-	desc = "EVT_91234_DESC"
-	
-	action_a = {
-		ai_chance = 100
-		name = "EVT_91234_OPTIONA"
-		command = { type = dissent value = -3 }
-		command = { type = relation which = ITA value = 25 }
-	}
-	action_b = {
-		ai_chance = 0
-		name = "EVT_91234_OPTIONB"
-		command = { type = relation which = ITA value = -10 }
-		command = { type = sleepevent which = 91247 }
-		command = { type = sleepevent which = 91235 }
-	}
+id = 91234
+random = no
+country = EUS
+picture = "PiusXI"
+style = 2
+
+trigger = { event = 91233 }
+
+date = { day = 1 month = january year = 1936 }
+offset =  7
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_91234_NAME"
+desc = "EVT_91234_DESC"
+
+action_a = {
+ai_chance = 100
+name = "EVT_91234_OPTIONA"
+command = { type = dissent value = -3 }
+command = { type = relation which = ITA value = 25 } 
+}
+action_b = {
+ai_chance =  0
+name = "EVT_91234_OPTIONB"
+command = { type = relation which = ITA value = -10 } 
+command = { type = sleepevent which = 91247 }
+command = { type = sleepevent which = 91235 }
+}
 }
 
 event = {
-	id = 91235
-	random = no
-	country = ITA
-	picture = "carlists"
-	style = 2
-	
-	trigger = { event = 91234 }
-	
-	date = { day = 1 month = january year = 1936 }
-	offset = 14
-	deathdate = { day = 29 month = december year = 1960 }
-	
-	name = "EVT_91235_NAME"
-	desc = "EVT_91235_DESC"
-	
-	action_a = {
-		name = "EVT_91235_OPTIONA"
-		command = { type = dissent value = -3 }
-		command = { type = relation which = EUS value = 25 }
-	}
+id = 91235
+random = no
+country = ITA
+picture = "carlists"
+style = 2
+
+trigger = { event = 91234 }
+
+date = { day = 1 month = january year = 1936 }
+offset =  14
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_91235_NAME"
+desc = "EVT_91235_DESC"
+
+action_a = {
+name = "EVT_91235_OPTIONA"
+command = { type = dissent value = -3 }
+command = { type = relation which = EUS value = 25 } 
+}
 }
 
-# #####################
+######################
 # The Mediterranean bloc
-# #####################
+######################
 
 event = {
-	id = 91247
-	country = EUS
-	style = 2
-	picture = "Carlists"
-	
+id = 91247
+country = EUS
+style = 2
+picture = "Carlists"
 
-	trigger = {
-		exists = ITA
-		control = { province = 460 data = EUS }
+
+trigger = {
+	exists = ITA
+        control = { province = 460 data = EUS } 
 		NOT = {
-			ispuppet = EUS
-			ispuppet = ITA
-			exists = SPA
-			exists = SPR
-		}
-		NOT = { war = { country = EUS country = ITA } }
+		ispuppet = EUS
+		ispuppet = ITA
+		exists = SPA
+		exists = SPR
 	}
-	
-	date = { day = 7 month = january year = 1936 }
-	offset = 20
-	deathdate = { day = 29 month = december year = 1960 }
-	
-	name = "EVT_91247_NAME"
-	desc = "EVT_91247_DESC"
-	
-	action_a = {
-		name = "EVT_91247_OPTIONA"
-		ai_chance = 100
-		command = { type = domestic which = interventionism value = 1 }
-		command = { type = trigger which = 91248 }
-		command = { type = setflag which = EUS_pope }
-	}
-	
-	action_b = {
-		name = "EVT_91247_OPTIONB"
-		ai_chance = 0
-		command = { type = domestic which = interventionism value = -1 }
-	}
+        NOT = { war = { country = EUS country = ITA } }
+}
+
+date = { day = 7 month = january year = 1936 }
+offset = 20
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_91247_NAME"
+desc = "EVT_91247_DESC"
+
+action_a = {
+name = "EVT_91247_OPTIONA"
+ai_chance = 100
+command = { type = domestic which = interventionism value = 1 }
+command = { type = trigger which = 91248 }
+command = { type = setflag which = EUS_pope }
+}
+
+action_b = {
+name = "EVT_91247_OPTIONB"
+ai_chance = 0
+command = { type = domestic which = interventionism value = -1 }
+}
 }
 
 event = {
-	id = 91248
-	country = ITA
-	style = 2
-	picture = "Carlists"
-	
+id = 91248
+country = ITA
+style = 2
+picture = "Carlists"
 
-	trigger = {
-		flag = EUS_pope
-		NOT = { government = communist }
-		NOT = { ispuppet = ITA }
-		NOT = { war = { country = EUS country = ITA } }
-	}
-	
-	date = { day = 7 month = january year = 1936 }
-	offset = 20
-	deathdate = { day = 29 month = december year = 1960 }
-	
-	name = "EVT_91248_NAME"
-	desc = "EVT_91248_DESC"
-	
-	action_a = {
-		name = "EVT_91248_OPTIONA"
-		ai_chance = 100
-		command = { type = domestic which = interventionism value = 1 }
-		command = { type = setflag which = carlpap }
-		command = { type = relation which = EUS value = 100 }
-		command = { type = alliance which = EUS }
-	}
-	action_b = {
-		name = "EVT_91248_OPTIONB"
-		ai_chance = 0
-		command = { type = domestic which = interventionism value = -1 }
-	}
+
+trigger = {
+flag = EUS_pope
+NOT = { government = communist }
+NOT = { ispuppet = ITA }
+NOT = { war = { country = EUS country = ITA } }
+}
+
+date = { day = 7 month = january year = 1936 }
+offset = 20
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_91248_NAME"
+desc = "EVT_91248_DESC"
+
+action_a = {
+name = "EVT_91248_OPTIONA"
+ai_chance = 100
+command = { type = domestic which = interventionism value = 1 }
+command = { type = setflag which = carlpap }
+command = { type = relation which = EUS value = 100 }
+command = { type = alliance which = EUS }
+}
+action_b = {
+name = "EVT_91248_OPTIONB"
+ai_chance = 0
+command = { type = domestic which = interventionism value = -1 }
+}
 }
 
 event = {
-	id = 91249000
-	country = EUS
-	style = 2
-	picture = "Carlists"
-	
+id = 91249000
+country = EUS
+style = 2
+picture = "Carlists"
 
-	trigger = {
-		NOT = {
-			exists = ITA
-		}
-	}
-	
-	date = { day = 7 month = january year = 1936 }
-	offset = 1
-	deathdate = { day = 29 month = december year = 1960 }
-	
-	name = "EVT_91249000_NAME"
-	desc = "EVT_91249000_DESC"
-	
-	action_a = {
-		name = "EVT_91249000_OPTIONA"
-		command = { type = dissent value = -10 }
-	}
+
+trigger = {
+NOT = {
+exists = ITA
+}
+}
+
+date = { day = 7 month = january year = 1936 }
+offset = 1
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_91249000_NAME"
+desc = "EVT_91249000_DESC"
+
+action_a = {
+name = "EVT_91249000_OPTIONA"
+command = { type = dissent value = -10 }
+}
 }
 
 event = {
-	id = 91249
-	country = EUS
-	style = 2
-	picture = "Carlists"
-	
+id = 91249
+country = EUS
+style = 2
+picture = "Carlists"
 
-	trigger = {
-		flag = carlpap
-	}
-	
-	date = { day = 7 month = january year = 1936 }
-	offset = 5
-	deathdate = { day = 29 month = december year = 1960 }
-	
-	name = "EVT_91249_NAME"
-	desc = "EVT_91249_DESC"
-	
-	action_a = {
-		name = "EVT_91249_OPTIONA"
-		ai_chance = 100
-		command = { type = domestic which = interventionism value = 1 }
-		command = { trigger = { NOT = { event = 3967240 ispuppet = POR } NOT = { war = { country = EUS country = POR } } } type = trigger which = 91252 } # Portugal
-		command = { trigger = { NOT = { ispuppet = VIC } NOT = { event = 3967230 } NOT = { war = { country = EUS country = VIC } } } type = trigger which = 91253 } # Nationalist France
-		command = { trigger = { NOT = { ispuppet = CRO } NOT = { war = { country = EUS country = CRO } } } type = trigger which = 91250 } # Croatia
-		command = { type = setflag which = carleuro }
-	}
-	
-	action_b = {
-		name = "EVT_91249_OPTIONB"
-		ai_chance = 0
-		command = { type = domestic which = interventionism value = -1 }
-		command = { type = dissent value = 20 }
-	}
+
+trigger = {
+flag = carlpap
 }
 
+date = { day = 7 month = january year = 1936 }
+offset = 5
+deathdate = { day = 29 month = december year = 1960 }
 
-event = {
-	id = 91250
-	country = CRO
-	style = 2
-	picture = "Carlists"
-	
-	trigger = {
-		NOT = { government = communist }
-	}
-	
-	name = "EVT_91250_NAME"
-	desc = "EVT_91250_DESC"
-	
-	action_a = {
-		name = "EVT_91250_OPTIONA"
-		ai_chance = 50
-		command = { type = dissent value = -5 }
-		command = { type = relation which = EUS value = 100 }
-	}
-	
-	action_b = {
-		name = "EVT_91250_OPTIONB"
-		ai_chance = 50
-		command = { type = leave_alliance }
-		command = { type = dissent value = -5 }
-		command = { type = relation which = EUS value = 100 }
-		command = { type = alliance which = EUS }
-		command = { type = guarantee which = EUS where = CRO }
-	}
+name = "EVT_91249_NAME"
+desc = "EVT_91249_DESC"
+
+action_a = {
+name = "EVT_91249_OPTIONA"
+ai_chance = 100
+command = { type = domestic which = interventionism value = 1 }
+command = { trigger = { NOT = { event = 3967240 ispuppet = POR } NOT = { war = { country = EUS country = POR } } } type = trigger which = 91252 } #Portugal
+command = { trigger = { NOT = { ispuppet = VIC } NOT = { event = 3967230 } NOT = { war = { country = EUS country = VIC } } } type = trigger which = 91253 } #Nationalist France
+command = { trigger = { NOT = { ispuppet = CRO } NOT = { war = { country = EUS country = CRO } } } type = trigger which = 91250 } #Croatia
+command = { type = setflag which = carleuro }
+}
+
+action_b = {
+name = "EVT_91249_OPTIONB"
+ai_chance = 0
+command = { type = domestic which = interventionism value = -1 }
+command = { type = dissent value = 20 }
+}
 }
 
 
 event = {
-	id = 91252
-	country = POR
-	style = 2
-	picture = "Carlists"
-	
-	trigger = {
-		NOT = { government = communist }
-	}
-	
-	name = "EVT_91252_NAME"
-	desc = "EVT_91252_DESC"
-	
-	action_a = {
-		name = "EVT_91252_OPTIONA"
-		ai_chance = 40
-		command = { type = dissent value = -5 }
-		command = { type = relation which = EUS value = 100 }
-	}
-	action_b = {
-		name = "EVT_91252_OPTIONB"
-		ai_chance = 60
-		command = { type = dissent value = -5 }
-		command = { type = leave_alliance }
-		command = { type = relation which = EUS value = 100 }
-		command = { type = embargo which = POR where = EUS value = 0 }
-		command = { type = alliance which = EUS }
-		command = { type = guarantee which = EUS where = POR }
-	}
+id = 91250
+country = CRO
+style = 2
+picture = "Carlists"
+
+trigger = {
+NOT = { government = communist }
+}
+
+name = "EVT_91250_NAME"
+desc = "EVT_91250_DESC"
+
+action_a = {
+name = "EVT_91250_OPTIONA"
+ai_chance = 50
+command = { type = dissent value = -5 }
+command = { type = relation which = EUS value = 100 }
+}
+
+action_b = {
+name = "EVT_91250_OPTIONB"
+ai_chance = 50
+command = { type = leave_alliance }
+command = { type = dissent value = -5 }
+command = { type = relation which = EUS value = 100 }
+command = { type = alliance which = EUS }
+command = { type = guarantee which = EUS where = CRO }
+}
+}
+
+
+event = {
+id = 91252
+country = POR
+style = 2
+picture = "Carlists"
+
+trigger = {
+NOT = { government = communist }
+}
+
+name = "EVT_91252_NAME"
+desc = "EVT_91252_DESC"
+
+action_a = {
+name = "EVT_91252_OPTIONA"
+ai_chance = 40
+command = { type = dissent value = -5 }
+command = { type = relation which = EUS value = 100 }
+}
+action_b = {
+name = "EVT_91252_OPTIONB"
+ai_chance = 60
+command = { type = dissent value = -5 }
+command = { type = leave_alliance }
+command = { type = relation which = EUS value = 100 }
+command = { type = embargo which = POR where = EUS value = 0 }
+command = { type = alliance which = EUS }
+command = { type = guarantee which = EUS where = POR }
+}
 }
 
 event = {
-	id = 91253
-	country = VIC
-	style = 2
-	picture = "Carlists"
-	
-	trigger = {
-		NOT = { government = communist }
-	}
-	
-	name = "EVT_91253_NAME"
-	desc = "EVT_91253_DESC"
-	
-	action_a = {
-		name = "EVT_91253_OPTIONA"
-		ai_chance = 50
-		trigger = {
-			OR = {
-				exists = CAN
-				exists = U07
-			}
-		}
-		command = { type = dissent value = -5 }
-		command = { type = relation which = EUS value = 100 }
-	}
-	action_b = {
-		name = "EVT_91253_OPTIONB"
-		ai_chance = 50
-		trigger = {
-			NOT = { exists = U07 } #  Why would they leave alliance with Canada, if they have already taken British Isles
-		}
-		command = { type = leave_alliance }
-		command = { type = dissent value = -5 }
-		command = { type = relation which = EUS value = 100 }
-		command = { type = relation which = CAN value = -50 }
-		command = { type = relation which = AST value = -25 }
-		command = { type = guarantee which = EUS where = VIC }
-		command = { type = alliance which = EUS }
-	}
+id = 91253
+country = VIC
+style = 2
+picture = "Carlists"
+
+trigger = {
+NOT = { government = communist }
 }
 
-# #####################
+name = "EVT_91253_NAME"
+desc = "EVT_91253_DESC"
+
+action_a = {
+name = "EVT_91253_OPTIONA"
+ai_chance = 50
+trigger = {
+OR = {
+exists = CAN
+exists = U07
+}
+}
+command = { type = dissent value = -5 }
+command = { type = relation which = EUS value = 100 }
+}
+action_b = {
+name = "EVT_91253_OPTIONB"
+ai_chance = 50
+trigger = {
+NOT = { exists = U07 } # Why would they leave alliance with Canada, if they have already taken British Isles
+}
+command = { type = leave_alliance }
+command = { type = dissent value = -5 }
+command = { type = relation which = EUS value = 100 }
+command = { type = relation which = CAN value = -50 }
+command = { type = relation which = AST value = -25 }
+command = { type = guarantee which = EUS where = VIC }
+command = { type = alliance which = EUS }
+}
+}
+
+######################
 # SPANISH INQUISITION
-# #####################
+######################
 
 event = {
-	id = 91254
-	country = EUS
-	style = 2
-	picture = "Church2"
-	
+id = 91254
+country = EUS
+style = 2
+picture = "Church2"
 
-	trigger = {
-		flag = carlpap
-	}
-	
-	date = { day = 7 month = january year = 1936 }
-	offset = 40
-	deathdate = { day = 29 month = december year = 1960 }
-	
-	name = "EVT_91254_NAME"
-	desc = "EVT_91254_DESC"
-	
-	action_a = {
-		name = "EVT_91254_OPTIONA"
-		ai_chance = 65
-		command = { type = dissent value = 5 }
-		command = { type = setflag which = iberinq }
-		command = { type = relation which = FRA value = -20 }
-	}
-	
-	action_b = {
-		name = "EVT_91254_OPTIONB"
-		ai_chance = 35
-		command = { type = dissent value = 10 }
-	}
+
+trigger = {
+flag = carlpap
+}
+
+date = { day = 7 month = january year = 1936 }
+offset = 40
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_91254_NAME"
+desc = "EVT_91254_DESC"
+
+action_a = {
+name = "EVT_91254_OPTIONA"
+ai_chance = 65
+command = { type = dissent value = 5 }
+command = { type = setflag which = iberinq }
+command = { type = relation which = FRA value = -20 }
+}
+
+action_b = {
+name = "EVT_91254_OPTIONB"
+ai_chance = 35
+command = { type = dissent value = 10 }
+}
 }
 
 event = {
-	id = 91255
-	country = EUS
-	style = 2
-	picture = "Church2"
-	
+id = 91255
+country = EUS
+style = 2
+picture = "Church2"
 
-	trigger = {
-		flag = iberinq
-		exists = POR
-	}
-	
-	date = { day = 7 month = january year = 1936 }
-	offset = 20
-	deathdate = { day = 29 month = december year = 1960 }
-	
-	name = "EVT_91255_NAME"
-	desc = "EVT_91255_DESC"
-	
-	action_a = {
-		name = "EVT_91255_OPTIONA"
-		ai_chance = 90
-		command = { type = trigger which = 91256 }
-	}
-	
-	action_b = {
-		name = "EVT_91255_OPTIONB"
-		ai_chance = 10
-		command = { type = dissent value = 2 }
-	}
+
+trigger = {
+flag = iberinq
+exists = POR
+}
+
+date = { day = 7 month = january year = 1936 }
+offset = 20
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_91255_NAME"
+desc = "EVT_91255_DESC"
+
+action_a = {
+name = "EVT_91255_OPTIONA"
+ai_chance = 90
+command = { type = trigger which = 91256 }
+}
+
+action_b = {
+name = "EVT_91255_OPTIONB"
+ai_chance = 10
+command = { type = dissent value = 2 }
+}
 }
 
 event = {
-	id = 91256
-	country = POR
-	style = 2
-	picture = "Carlists"
-	
-	name = "EVT_91256_NAME"
-	desc = "EVT_91256_DESC"
-	
-	action_a = {
-		name = "EVT_91256_OPTIONA"
-		ai_chance = 90
-		command = { type = trigger which = 91257 }
-		command = { type = dissent value = 5 }
-		command = { type = relation which = FRA value = -20 }
-		command = { type = relation which = EUS value = 20 }
-	}
-	
-	action_b = {
-		name = "EVT_91256_OPTIONB"
-		ai_chance = 10
-		command = { type = dissent value = 10 }
-		command = { type = leave_alliance }
-	}
+id = 91256
+country = POR
+style = 2
+picture = "Carlists"
+
+name = "EVT_91256_NAME"
+desc = "EVT_91256_DESC"
+
+action_a = {
+name = "EVT_91256_OPTIONA"
+ai_chance = 90
+command = { type = trigger which = 91257 }
+command = { type = dissent value = 5 }
+command = { type = relation which = FRA value = -20 }
+command = { type = relation which = EUS value = 20 }
+}
+
+action_b = {
+name = "EVT_91256_OPTIONB"
+ai_chance = 10
+command = { type = dissent value = 10 }
+command = { type = leave_alliance }
+}
 }
 
 event = {
-	id = 91257
-	country = ITA
-	style = 2
-	picture = "Carlists"
-	
-	trigger = {
-		NOT = { government = communist }
-		NOT = { war = { country = ITA country = POR } }
-	}
-	
-	name = "EVT_91257_NAME"
-	desc = "EVT_91257_DESC"
-	
-	action_a = {
-		name = "EVT_91257_OPTIONA"
-		command = { type = alliance which = POR }
-	}
+id = 91257
+country = ITA
+style = 2
+picture = "Carlists"
+
+trigger = {
+NOT = { government = communist }
+NOT = { war = { country = ITA country = POR } }
+}
+
+name = "EVT_91257_NAME"
+desc = "EVT_91257_DESC"
+
+action_a = {
+name = "EVT_91257_OPTIONA"
+command = { type = alliance which = POR }
+}
 }
 
 
 
-# ########
-# Carlists exploit the German vs France war
-# ########
+#########
+#Carlists exploit the German vs France war
+#########
 
 event = {
-	id = 3967078
-	country = EUS
-	style = 2
-	picture = "MilitaryParade1"
-	
-	trigger = {
-		war = { country = GER country = FRA }
-		alliance = { country = EUS country = VIC }
-		not = {
-			atwar = EUS
-			exists = SPA
-			exists = SPR
-		}
-	}
-	
-	date = { day = 1 month = january year = 1936 }
-	offset = 10
-	deathdate = { day = 29 month = december year = 1960 }
-	
-	name = "EVT_3967078_NAME"
-	desc = "EVT_3967078_DESC"
-	
-	action_a = {
-		ai_chance = 90
-		name = "EVT_3967078_OPTIONA"
-		command = { type = end_non_aggression which = EUS where = ENG }
-		command = { type = end_non_aggression which = EUS where = FRA }
-		command = { type = end_non_aggression which = EUS where = RSI }
-		command = { type = end_non_aggression which = EUS where = CSA }
-		command = { type = war which = FRA }
-	}
-	
-	action_b = {
-		ai_chance = 10
-		name = "EVT_3967078_OPTIONB"
-		command = { type = dissent value = -5 }
-	}
+id = 3967078
+country = EUS
+style = 2
+picture = "MilitaryParade1"
+
+trigger = { 
+war = { country = GER country = FRA } 
+alliance = { country = EUS country = VIC }
+not = {
+atwar = EUS
+exists = SPA
+exists = SPR 
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_3967078_NAME"
+desc = "EVT_3967078_DESC"
+
+action_a = {
+ai_chance = 90
+name = "EVT_3967078_OPTIONA"
+command = { type = end_non_aggression which = EUS where = ENG }
+command = { type = end_non_aggression which = EUS where = FRA }
+command = { type = end_non_aggression which = EUS where = RSI }
+command = { type = end_non_aggression which = EUS where = CSA }
+command = { type = war which = FRA }
+}
+
+action_b = {
+ai_chance = 10
+name = "EVT_3967078_OPTIONB"
+command = { type = dissent value = -5 }
+}
 }
 

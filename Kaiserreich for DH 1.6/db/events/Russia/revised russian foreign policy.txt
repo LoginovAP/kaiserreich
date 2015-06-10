@@ -6,8 +6,8 @@ event = {
               persistent = yes
 
              
-              name = "Focus in International Policy"
-              desc = "Russia should start being more active on the world stage but we are too weak to interfere in the German or Japanese spheres of influence. The Caucasus, bordering the dying Ottoman Empire, is an easy region to subjugate and has large oil deposits for us to exploit. Central Asia, with its unstable situation between Alash Orda and Turkestan, is an even more easier region to subjugate. We should choose between these areas as we don't have the resources for simultanious actions in both regions."
+              name = "EVT_901971_NAME"
+              desc = "EVT_901971_DESC"
               action_a = {
                                   trigger = {
                                   OR = {
@@ -31,7 +31,7 @@ event = {
                                   }
                                   }
                   ai_chance = 40 
-                  name = "We must secure the Caucasus!"
+                  name = "EVT_901971_OPTIONA"
                   command = { type = domestic which = defense_lobby value = 1 }
                       command = { type = relation which = GER value = -10 }
                       command = { type = relation which = OTT value = -10 }
@@ -57,7 +57,7 @@ event = {
                   }
 
                   ai_chance = 35 
-                  name = "The Central Asian tribes must be brought into the fold!"
+                  name = "EVT_901971_OPTIONB"
                       command = { type = relation which = KAZ value = -10 }
                       command = { type = relation which = KYG value = -10 }
                       command = { type = event which = 901978 where = RUS when = 4  }
@@ -75,8 +75,8 @@ event = {
               persistent = yes
 
              
-              name = "Caucasus direction"
-              desc = "We have chosen to expand in the Caucasus. We must decide whether we want to conquer the entire Caucasus or limit our operations to Georgia, Azerbaijan or Don-Kuban. If we bite off more than we can chew we can have problems, both internal and international."
+              name = "EVT_901972_NAME"
+              desc = "EVT_901972_DESC"
 
               action_a = {
                   trigger = {
@@ -84,7 +84,7 @@ event = {
                   NOT = { control = { province = 694 data = -3 } }
                   }
                   ai_chance = 40 
-                  name = "We will only secure the Don-Kuban steppes!"
+                  name = "EVT_901972_OPTIONA"
                   command = { type = domestic which = defense_lobby value = 1 }
                   command = { type = relation which = GER value = -10 }
                   command = { type = relation which = TRA value = -50 }
@@ -108,7 +108,7 @@ event = {
                   }
 
                   ai_chance = 35 
-                  name = "We must bring Georgia and Azerbaijan into the fold as well!"
+                  name = "EVT_901972_OPTIONB"
                   command = { type = relation which = GEO value = -50 }
                   command = { type = relation which = AZB value = -50 }
                   command = { type = setflag which = RUS_DKC }
@@ -124,7 +124,7 @@ event = {
                   }
 
                   ai_chance = 35 
-                  name = "We must secure the entire Caucasus!"
+                  name = "EVT_901972_OPTIONC"
                   command = { type = relation which = GEO value = -50 }
                   command = { type = relation which = AZB value = -50 }
                   command = { type = relation which = OTT value = -50 }
@@ -156,8 +156,8 @@ event = {
                         }
 			}
 			
-			name = "Report from Russia"
-			desc = "Our secret service reports that Russia plans to once again secure the Caucasus region. Such a drastic step means a direct threat to the stability of Eastern Europe which was set by the Treaty of Brestl-Litovsk. What shall we do?"
+			name = "EVT_901973_NAME"
+			desc = "EVT_901973_DESC"
 
 			action = {
 				ai_chance = 50 
@@ -171,7 +171,7 @@ event = {
                                         alliance = { country = RUS country = GER }
                                         }
 				}
-				name = "Demand that Russia respects the Brest-Litovsk treaty!"
+				name = "EVT_901973_OPTIONA"
                                 command = { type = guarantee which = GER where = TRA  }
                                 command = { type = guarantee which = GER where = AZB  }
 				command = { type = relation which = RUS value = -50 }
@@ -210,7 +210,7 @@ event = {
                                         alliance = { country = RUS country = GER }
                                         }
 				}
-				name = "Threaten Russia and invite the endangered nations into Mitteleuropa!"
+				name = "EVT_901973_OPTIONB"
                                 command = { type = guarantee which = GER where = TRA  }
                                 command = { type = guarantee which = GER where = AZB  }
                                 command = { type = end_non_aggression which = RUS where = GER }
@@ -227,7 +227,7 @@ event = {
 
 			action = {
 				ai_chance = 40 
-				name = "We don't care about the Caucasus."
+				name = "EVT_901973_OPTIONC"
 				command = { type = relation which = RUS value = 50 }
 	                        command = { type = end_guarantee which = GER where = TRA  }
                                 command = { type = end_guarantee which = GER where = AZB  }
@@ -245,12 +245,12 @@ style = 2
 picture = "diplomatic_campaign"
 
 
-name = "German offer"
-desc = "Russian attempts to reassert its sphere of influence on the Caucasus has not gone unnoticed by the German Empire. Diplomatic representatives of German Empire have approached us, seeking to include us into Mitteleuropa as a means of protection from Russia. How should we react?"
+name = "EVT_901997_NAME"
+desc = "EVT_901997_DESC"
 
 action_a = {
  ai_chance = 95
- name = "Accept their offer."
+ name = "EVT_901997_OPTIONA"
 command = { type = relation which = GER value = 200 }
 command = { trigger = { alliance = { country = GER country = UKR } } type = relation which = UKR value = 150 }
 command = { trigger = { alliance = { country = GER country = BLR } } type = relation which = BLR value = 150 }
@@ -277,7 +277,7 @@ command = { type = domestic which = interventionism value = 1 }
 
 action_b = {
  ai_chance = 5
- name = "Refuse."
+ name = "EVT_901997_OPTIONB"
 command = { type = relation which = GER value = -40 }
 }
 }
@@ -290,11 +290,11 @@ country = GER
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Don-Kuban Union joins Mitteleuropa"
-desc = "The Don-Kuban Union has accepted our offer. Now they are a part of Mitteleuropa."
+name = "EVT_901998_NAME"
+desc = "EVT_901998_DESC"
 
 action_a = {
-name = "Excellent !"
+name = "EVT_901998_OPTIONA"
 command = { type = dissent value = -3 }
 command = { type = alliance which = TRA }
 command = { type = relation which = TRA value = 100 }
@@ -309,12 +309,12 @@ style = 2
 picture = "diplomatic_campaign"
 
 
-name = "German offer"
-desc = "Russian attempts to reaasert its sphere of influence on the Caucasus has not gone unnoticed by the German Empire. Diplomatic representatives of German Empire have approached us, seeking to include us into Mitteleuropa as a means of protection from Russia. How should we react?"
+name = "EVT_901999_NAME"
+desc = "EVT_901999_DESC"
 
 action_a = {
  ai_chance = 95
- name = "Accept their offer."
+ name = "EVT_901999_OPTIONA"
 command = { type = relation which = GER value = 200 }
 command = { trigger = { alliance = { country = GER country = UKR } } type = relation which = UKR value = 150 }
 command = { trigger = { alliance = { country = GER country = BLR } } type = relation which = BLR value = 150 }
@@ -338,7 +338,7 @@ command = { type = domestic which = interventionism value = 1 }
 
 action_b = {
  ai_chance = 5
- name = "Refuse."
+ name = "EVT_901999_OPTIONB"
 command = { type = relation which = GER value = -40 }
 }
 }
@@ -350,11 +350,11 @@ country = GER
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Azerbaijan joins Mitteleuropa"
-desc = "Azerbaijan has accepted our offer. Now they are a part of Mitteleuropa."
+name = "EVT_903000_NAME"
+desc = "EVT_903000_DESC"
 
 action_a = {
-name = "Excellent !"
+name = "EVT_903000_OPTIONA"
 command = { type = dissent value = -3 }
 command = { type = alliance which = AZB }
 command = { type = relation which = AZB value = 100 }
@@ -369,12 +369,12 @@ style = 2
 picture = "diplomatic_campaign"
 
 
-name = "German offer"
-desc = "Russian attempts to reaasert its sphere of influence on the Caucasus has not gone unnoticed by the German Empire. Diplomatic representatives of German Empire have approached us, seeking to include us into Mitteleuropa as a means of protection from Russia. How should we react?"
+name = "EVT_903040_NAME"
+desc = "EVT_903040_DESC"
 
 action_a = {
  ai_chance = 95
- name = "Accept their offer."
+ name = "EVT_903040_OPTIONA"
 command = { type = relation which = GER value = 200 }
 command = { trigger = { alliance = { country = GER country = UKR } } type = relation which = UKR value = 150 }
 command = { trigger = { alliance = { country = GER country = BLR } } type = relation which = BLR value = 150 }
@@ -398,7 +398,7 @@ command = { type = domestic which = interventionism value = 1 }
 
 action_b = {
  ai_chance = 5
- name = "Refuse."
+ name = "EVT_903040_OPTIONB"
 command = { type = relation which = GER value = -40 }
 }
 }
@@ -410,11 +410,11 @@ country = GER
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Mountain Republic joins Mitteleuropa"
-desc = "Mountain Republic has accepted our offer. Now they are a part of Mitteleuropa."
+name = "EVT_903041_NAME"
+desc = "EVT_903041_DESC"
 
 action_a = {
-name = "Excellent !"
+name = "EVT_903041_OPTIONA"
 command = { type = dissent value = -3 }
 command = { type = alliance which = U43 }
 command = { type = relation which = U43 value = 100 }
@@ -429,12 +429,12 @@ event = {
 			picture = "Wehrmacht"
                         persistent = yes
 			
-			name = "German Empire threatens Russia!"
-			desc = "The German Kaiser has made it clear that his Empire would fully support the independence of the Caucasian nations if any other nation tries to interfere. It would be most unwise to underestimate them despite the troubles they are facing on the homefront. How shall we react to this statement?"
+			name = "EVT_901974_NAME"
+			desc = "EVT_901974_DESC"
 
 			action_a = {
 				 ai_chance = 50
-				 name = "Who cares?"
+				 name = "EVT_901974_OPTIONA"
                                  trigger = {
                                  NOT = {
                                  alliance = { country = TRA country = GER }
@@ -446,7 +446,7 @@ event = {
 
 			action_b = {
 			ai_chance = 46
-			          name = "Let us focus on Central Asia!"
+			          name = "EVT_901974_OPTIONB"
                                   command = { type = relation which = GER value = 20 }
                                   command = { type = clrflag which = RUS_DKU }
                                   command = { type = clrflag which = RUS_DKC }
@@ -457,7 +457,7 @@ event = {
 	
 			action_c = {
 			         ai_chance = 1
-			         name = "Give up our plans of expansion."
+			         name = "EVT_901974_OPTIONC"
 				 command = { type = domestic which = interventionism value = -1 }
 				 command = { type = domestic which = defense_lobby value = -9 }
 				 command = { type = relation which = GER value = 25 }
@@ -484,12 +484,12 @@ event = {
 	style = 2
         persistent = yes
 
-	name = "Russia has ignored our demands"
-	desc = "The Russian state, in its foolish pride, has refused our reasonable demands regarding the territorial integrity and independence of the Caucasian states. How shall we react to this insolence?"
+	name = "EVT_901975_NAME"
+	desc = "EVT_901975_DESC"
 	picture = "soviet_replacement"
 
 	action_a = {
-		name = "Cease all contacts between Mitteleuropa and Russia!"
+		name = "EVT_901975_OPTIONA"
                 ai_chance = 40
 		command = { type = relation which = RUS value = -100 }
                 command = { type = end_non_aggression which = RUS where = GER }
@@ -512,7 +512,7 @@ event = {
 	}
 
         action_b = {
-		name = "Insolent brats, we will show you German might!"
+		name = "EVT_901975_OPTIONB"
                 ai_chance = 5
 		command = { type = dissent value = 5 }
                 command = { type = relation which = TRA value = 50 }
@@ -524,7 +524,7 @@ event = {
 	}
 
         action_c = {
-		name = "Back down, we can not afford a conflict with Russia."
+		name = "EVT_901975_OPTIONC"
                 ai_chance = 50
                 trigger = { 
                 exists = FRA
@@ -553,12 +553,12 @@ event = {
 	style = 2
         persistent = yes
 
-	name = "Mitteleuropa ceases all contacts with us"
-	desc = "In reaction to our refusal to alter the planned ´stabilization´ of the Caucasian region the German Empire has ordered the cessation of all trade and diplomatic contacts between our state and Mitteleuropa. Our industrial sector is already feeling the consequences of such drastic actions."
+	name = "EVT_901976_NAME"
+	desc = "EVT_901976_DESC"
 	picture = "Wehrmacht"
 
 	action_a = {
-		name = "We shall survive!"
+		name = "EVT_901976_OPTIONA"
 		command = { type = relation which = GER value = -40 }
                 command = { type = relation which = LAT value = -40 }
                 command = { type = end_non_aggression which = RUS where = GER }
@@ -623,8 +623,8 @@ event = {
               }
 
 
-              name = "Focus in International Policy"
-              desc = "We have successfully subjugated the Caucasian nations. We can now expand in Central Asia and bring order to these troubled lands."
+              name = "EVT_901977_NAME"
+              desc = "EVT_901977_DESC"
 
               date = { day = 1 month = january year = 1936 }
 	      offset = 20
@@ -644,7 +644,7 @@ event = {
                                   }
                   }
                   ai_chance = 40 
-                  name = "We must secure Central Asia!"
+                  name = "EVT_901977_OPTIONA"
                   command = { type = domestic which = defense_lobby value = 1 }
                   command = { type = relation which = KYG value = -10 }
                   command = { type = relation which = KAZ value = -50 }
@@ -653,7 +653,7 @@ event = {
 
                   action_b = {
                   ai_chance = 5
-                  name = "We have expanded enough!"
+                  name = "EVT_901977_OPTIONB"
                       command = { type = relation which = KAZ value = 50 }
                       command = { type = relation which = KYG value = 50 }
                       command = { type = clrflag which = RUS_EXP }
@@ -676,8 +676,8 @@ event = {
               picture = "RusEventCA"
 
               
-              name = "Central Asia Direction"
-              desc = "We have chosen to expand in Central Asia. We must decide whetever we want to conquer Central Asia as a whole or limit our plans to Alash-Orda. This region is forgotten and we don't expect international problems, although the Central Asian tribes might prove to be a nuisance."
+              name = "EVT_901978_NAME"
+              desc = "EVT_901978_DESC"
 
               action_a = {
                   trigger = {
@@ -685,7 +685,7 @@ event = {
                   NOT = { control = { province = 504 data = -3 } }
                   }
                   ai_chance = 20
-                  name = "We will secure Alash-Orda!"
+                  name = "EVT_901978_OPTIONA"
                   command = { type = domestic which = defense_lobby value = 1 }
                   command = { type = relation which = KAZ value = -50 }
                   command = { type = relation which = KYG value = -10 }
@@ -699,7 +699,7 @@ event = {
                   NOT = { control = { province = 1105 data = -3 } }
                   }
                   ai_chance = 80 
-                  name = "We must secure Central Asia!"
+                  name = "EVT_901978_OPTIONB"
                   command = { type = relation which = KAZ value = -50 }
                   command = { type = relation which = KYG value = -50 }
                   command = { type = setflag which = RUS_KGD }
@@ -747,8 +747,8 @@ event = {
            
 
              
-              name = "Focus in International Policy"
-              desc = "We have successfully achieved all of our goals in Central Asia. Now we can expand our borders into the Caucasian region and bring order to these troubled lands."
+              name = "EVT_901979_NAME"
+              desc = "EVT_901979_DESC"
 
               date = { day = 1 month = january year = 1936 }
 	      offset = 20
@@ -782,7 +782,7 @@ event = {
                                   }
                                   }
                   ai_chance = 40 
-                  name = "We must secure the Caucasus!"
+                  name = "EVT_901979_OPTIONA"
                   command = { type = domestic which = defense_lobby value = 1 }
                       command = { type = relation which = GER value = -10 }
                       command = { type = relation which = OTT value = -50 }
@@ -791,7 +791,7 @@ event = {
 
               action_b = {
                   ai_chance = 10 
-                  name = "We have expanded enough!"
+                  name = "EVT_901979_OPTIONB"
                       command = { type = relation which = GER value = 50 }
                       command = { type = relation which = OTT value = 10 }
                       command = { type = clrflag which = RUS_EXP }
@@ -843,8 +843,8 @@ event = {
            
 
              
-              name = "Focus in International Policy"
-              desc = "We have successfully achieved all our goals in Central Asia. Unfortunately, expansion into the Caucasus is impossible thanks to German protection over the Don-Kuban union and Azerbaijan. We can either wait for a better opportunity to expand into the Caucasus, risk expansion into the Far East or give up expansionism altogether. What shall we do?"
+              name = "EVT_903001_NAME"
+              desc = "EVT_903001_DESC"
 
               date = { day = 1 month = january year = 1936 }
 	      offset = 20
@@ -874,7 +874,7 @@ event = {
                  }
          }           
          ai_chance = 25
-         name = "We will focus on the Far East!"
+         name = "EVT_903001_OPTIONA"
          command = { type = domestic which = defense_lobby value = 1 }
          command = { type = dissent value = 6 }
          command = { type = relation which = JAP value = -10 }
@@ -893,7 +893,7 @@ event = {
 
      action_b = {             
          ai_chance = 40
-         name = "We will wait for a better opportunity to strike at the Caucasus!"
+         name = "EVT_903001_OPTIONB"
          command = { type = clrflag which = RUS_KGD }
          command = { type = clrflag which = RUS_AOD }
          command = { type = clrflag which = RUS_DKU }
@@ -906,7 +906,7 @@ event = {
 
               action_b = {
                   ai_chance = 10 
-                  name = "We have expanded enough!"
+                  name = "EVT_903001_OPTIONC"
                       command = { type = relation which = GER value = 50 }
                       command = { type = relation which = OTT value = 10 }
                       command = { type = clrflag which = RUS_EXP }
@@ -990,8 +990,8 @@ event = {
            
 
              
-              name = "Focus in International Policy"
-              desc = "We have successfully achieved all our goals in Central Asia and in the Far East. We are finally strong enough to directly interfere in the German sphere of influence in Eastern Europe and the Caucasus. Where should we focus our power?"
+              name = "EVT_903003_NAME"
+              desc = "EVT_903003_DESC"
 
               date = { day = 1 month = january year = 1936 }
 	      offset = 20
@@ -1035,7 +1035,7 @@ event = {
                   }
                   }            
          ai_chance = 5
-         name = "We will focus on Eastern Europe!"
+         name = "EVT_903003_OPTIONA"
          command = { type = domestic which = defense_lobby value = 1 }
          command = { type = relation which = GER value = -10 }
          command = { type = relation which = UKR value = -10 }
@@ -1052,7 +1052,7 @@ event = {
 
      action_b = {             
          ai_chance = 40
-         name = "We will finally seize control of the Caucasus!"
+         name = "EVT_903003_OPTIONB"
          trigger = { 
          OR = {
                                   AND = {
@@ -1095,7 +1095,7 @@ event = {
 
               action_b = {
                   ai_chance = 15 
-                  name = "We have expanded enough!"
+                  name = "EVT_903003_OPTIONC"
                       command = { type = relation which = GER value = 50 }
                       command = { type = relation which = OTT value = 10 }
                       command = { type = clrflag which = RUS_EXP }
@@ -1207,8 +1207,8 @@ event = {
               }
               }
 
-              name = "Caucasus direction"
-              desc = "With a war raging in the west the German Empire is unable to fully protect its sphere of influence in the Caucasus. This presents us with the unique opportunity to expand Russian influence to the Caucasus. The only question is how Russia will achieve its goals in the Caucasus."
+              name = "EVT_903004_NAME"
+              desc = "EVT_903004_DESC"
               picture = "caucasusgeo"
               decision_picture = "decision_status_geo"
 
@@ -1230,7 +1230,7 @@ event = {
      }
 
      action = {
-name = "Offer the German Empire an alliance, for a price..."
+name = "EVT_903004_OPTIONA"
 ai_chance = 40
 trigger = {
 participant = { country = GER value = 2 } #German Empire is part of Mitteleuropa
@@ -1257,7 +1257,7 @@ command = { type = trigger which = 903009 }
 
               action_b = {
                   ai_chance = 10
-                  name = "We have expanded enough."
+                  name = "EVT_903004_OPTIONB"
                       command = { type = relation which = GER value = 50 }
                       command = { type = relation which = OTT value = 10 }
                       command = { type = clrflag which = RUS_EXP }
@@ -1282,12 +1282,12 @@ country = GER
 style = 2
 picture = "soviet_replacement"
 
-name = "Russia demands concessions in the Caucasus"
-desc = "The government of the Russian state has announced recently that they want to reorganize the existing sphere of influence in Caucasus in their favour. They demand the cessation of all guarantees towards the Caucasian states as well as accepting these states as part of the Russian sphere of influence. In return they promise to respect the existing order in Europe and support German Empire economically in the ongoing war. How shall we respond ?"
+name = "EVT_903005_NAME"
+desc = "EVT_903005_DESC"
 
 action_a = {
 ai_chance = 60
-name = "Accept their demands!"
+name = "EVT_903005_OPTIONA"
 trigger = {
 NOT = {
 flag = GERRUS_conc
@@ -1322,7 +1322,7 @@ command = { type = sleepevent which = 901973 }
 
 action_b = {
 ai_chance = 40
-name = "Never!"
+name = "EVT_903005_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = relation which = RUS value = -100 }
 command = { type = relation which = TRA value = 100 }
@@ -1340,11 +1340,11 @@ country = RUS
 style = 2
 picture = "Wehrmacht"
 
-name = "German Empire refused our demands!"
-desc = "The foolish leadership of the German Empire refused our reasonable demands regarding the Caucasus, peace between Russia and Germany seems impossible! What shall we do now?"
+name = "EVT_903006_NAME"
+desc = "EVT_903006_DESC"
 
 action = {
-name = "Declare war upon Mitteleuropa!"
+name = "EVT_903006_OPTIONA"
 ai_chance = 40
 trigger = {
 OR = {
@@ -1360,7 +1360,7 @@ command = { type = sleepevent which = 901973 }
 }
 
 action = {
-name = "Ignore German guarantees!"
+name = "EVT_903006_OPTIONB"
 ai_chance = 50
 trigger = {
 NOT = {
@@ -1380,7 +1380,7 @@ command = { type = sleepevent which = 901973 }
 
 action_b = {
 ai_chance = 10
-name = "Abandon all expansionist plans."
+name = "EVT_903006_OPTIONC"
 command = { type = relation which = GER value = 50 }
 command = { type = relation which = TRA value = 10 }
 command = { type = relation which = AZB value = 10 }
@@ -1404,13 +1404,13 @@ event = {
    country = TRA
    
    
-   name = "Betrayal of the German Empire!"
-   desc = "The German Empire has betrayed us by accepting all Russian demands regarding the Caucasus, leaving us alone to face the might of the Russian state."
+   name = "EVT_903007_NAME"
+   desc = "EVT_903007_DESC"
    style = 2
    picture = "diplomatic_campaign"
 
    action_a = {
-        name = "There is nothing we can do..."
+        name = "EVT_903007_OPTIONA"
 		command = { type = leave_alliance when = 1 } 
                 command = { type = relation which = GER value = -120 }
 		command = { type = end_non_aggression which = TRA where = GER }
@@ -1426,13 +1426,13 @@ event = {
    country = AZB
    
    
-   name = "Betrayal of the German Empire!"
-   desc = "The German Empire has betrayed us by accepting all Russian demands regarding the Caucasus, leaving us alone to face the might of the Russian state."
+   name = "EVT_903008_NAME"
+   desc = "EVT_903008_DESC"
    style = 2
 picture = "diplomatic_campaign"
 
    action_a = {
-        name = "There is nothing we can do..."
+        name = "EVT_903008_OPTIONA"
 		command = { type = leave_alliance when = 1 } 
                 command = { type = relation which = GER value = -120 }
 		command = { type = end_non_aggression which = AZB where = GER }
@@ -1449,13 +1449,13 @@ event = {
    country = U43
    
    
-   name = "Betrayal of the German Empire!"
-   desc = "The German Empire has betrayed us by accepting all Russian demands regarding the Caucasus, leaving us alone to face the might of the Russian state."
+   name = "EVT_903033_NAME"
+   desc = "EVT_903033_DESC"
    style = 2
 picture = "diplomatic_campaign"
 
    action_a = {
-        name = "There is nothing we can do..."
+        name = "EVT_903033_OPTIONA"
 		command = { type = leave_alliance when = 1 } 
                 command = { type = relation which = GER value = -120 }
 		command = { type = end_non_aggression which = U43 where = GER }
@@ -1474,12 +1474,12 @@ country = GER
 style = 2
 picture = "soviet_replacement"
 
-name = "Russia wants to join Mitteleuropa at a cost."
-desc = "The government of the Russian state recently announced that they want to join Mitteleuropa in order to save Europe from syndicalism. They demand the cessation of all guarantees towards the Caucasian states as well as accepting these states as part of the Russian sphere of influence. How shall we respond?"
+name = "EVT_903009_NAME"
+desc = "EVT_903009_DESC"
 
 action_a = {
 ai_chance = 75
-name = "Accept their demands!"
+name = "EVT_903009_OPTIONA"
 command = { type = relation which = RUS value = 100 }
 command = { type = relation which = AZB value = -100 }
 command = { type = relation which = TRA value = -100 }
@@ -1505,7 +1505,7 @@ command = { type = sleepevent which = 901973 }
 
 action_b = {
 ai_chance = 25
-name = "Never!"
+name = "EVT_903009_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = relation which = RUS value = -100 }
 command = { type = relation which = AZB value = 100 }
@@ -1521,12 +1521,12 @@ country = RUS
 style = 2
 picture = "caucasusgeo"
 
-name = "Status of Don-Kuban"
-desc = "The government of the German Empire has accepted our reasonable demands regarding spheres of influence in the Caucasus. The Don-Kuban Union, formerly under the protection of the German Empire, is now at our mercy. What shall we do with this rebellious state?"
+name = "EVT_903010_NAME"
+desc = "EVT_903010_DESC"
 
 action_a = {
 ai_chance = 70
-name = "Demand the full integration of the Don-Kuban Union!"
+name = "EVT_903010_OPTIONA"
 command = { type = dissent value = -3 }
 command = { type = trigger which = 903022 }
 }
@@ -1534,7 +1534,7 @@ command = { type = trigger which = 903022 }
 
 action_b = {
 ai_chance = 40
-name = "Demand reformation of their government!"
+name = "EVT_903010_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = trigger which = 903012 }
 }
@@ -1548,12 +1548,12 @@ country = RUS
 style = 2
 picture = "caucasusgeo"
 
-name = "Status of Azerbaijan"
-desc = "The government of the German Empire has accepted our reasonable demands regarding spheres of influence in the Caucasus. Azerbaijan, formerly under the protection of the German Empire, is now at our mercy. What shall we do with this rebellious state?"
+name = "EVT_903011_NAME"
+desc = "EVT_903011_DESC"
 
 action_a = {
 ai_chance = 70
-name = "Demand the full integration of Azerbaijan!"
+name = "EVT_903011_OPTIONA"
 trigger = {
 flag = RUS_EXP
 }
@@ -1564,7 +1564,7 @@ command = { type = trigger which = 903013 }
 
 action_b = {
 ai_chance = 40
-name = "Demand reformation of their government!"
+name = "EVT_903011_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = trigger which = 903014 }
 }
@@ -1578,12 +1578,12 @@ country = RUS
 style = 2
 picture = "caucasusgeo"
 
-name = "Status of Mountain Republic"
-desc = "The government of the German Empire has accepted our reasonable demands regarding spheres of influence in the Caucasus. Mountain Republic, formerly under the protection of the German Empire, is now at our mercy. What shall we do with this rebellious state?"
+name = "EVT_903034_NAME"
+desc = "EVT_903034_DESC"
 
 action_a = {
 ai_chance = 70
-name = "Demand the full integration of Mountain Republic!"
+name = "EVT_903034_OPTIONA"
 command = { type = dissent value = -3 }
 command = { type = trigger which = 903035 }
 }
@@ -1591,7 +1591,7 @@ command = { type = trigger which = 903035 }
 
 action_b = {
 ai_chance = 40
-name = "Demand reformation of their government!"
+name = "EVT_903034_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = trigger which = 903036 }
 }
@@ -1605,19 +1605,19 @@ country = TRA
 style = 2
 picture = "soviet_replacement"
 
-name = "Russia demands our reintegration"
-desc = "With the eruption of the Second Weltkrieg the attention of the German Empire turned westwards. In effort to gain the support of the Russian state in their ongoing struggle the German Empire has accepted Russian demands regarding spheres of influence in the Caucasus, handing the fate of the Caucasian states to them. Russia has issued series of demands towards our state which, if accepted, will mean the end of our state as independent unit. What shall we do?"  
+name = "EVT_903022_NAME"
+desc = "EVT_903022_DESC"  
 
 action_a = {
 ai_chance = 95
-name = "We have no choice..."
+name = "EVT_903022_OPTIONA"
 command = { type = trigger which = 903015 }
 command = { type = dissent value = 5 }
 }
 
 action_b = { 
 ai_chance = 5
-name = "Resist them!"
+name = "EVT_903022_OPTIONB"
 command = { type = event which = 903016 where = RUS when = 2  }
 }
 }
@@ -1629,19 +1629,19 @@ country = TRA
 style = 2
 picture = "soviet_replacement"
 
-name = "Russia demands reformation of our government"
-desc = "With the eruption of the Second Weltkrieg the attention of the German Empire turned westwards. In effort to gain the support of the Russian state in their ongoing struggle the German Empire has accepted Russian demands regarding spheres of influence in the Caucasus, handing the fate of the Caucasian states to them. Russia has issued series of demands towards our state which, if accepted, will mean the end of our state as independent unit. What shall we do?"  
+name = "EVT_903012_NAME"
+desc = "EVT_903012_DESC"  
 
 action_a = {
 ai_chance = 100
-name = "We have no choice..."
+name = "EVT_903012_OPTIONA"
 command = { type = trigger which = 903017 }
 command = { type = dissent value = 5 }
 }
 
 action_b = { 
 ai_chance = 0
-name = "Resist them!"
+name = "EVT_903012_OPTIONB"
 command = { type = leave_alliance when = 1 } 
 command = { type = event which = 903016 where = RUS when = 2  }
 }
@@ -1654,19 +1654,19 @@ country = AZB
 style = 2
 picture = "soviet_replacement"
 
-name = "Russia demands our reintegration"
-desc = "With the eruption of the Second Weltkrieg the attention of the German Empire turned westwards. In effort to gain the support of the Russian state in their ongoing struggle the German Empire has accepted Russian demands regarding spheres of influence in the Caucasus, handing the fate of the Caucasian states to them. Russia has issued series of demands towards our state which, if accepted, will mean the end of our state as independent unit. What shall we do?"  
+name = "EVT_903013_NAME"
+desc = "EVT_903013_DESC"  
 
 action_a = {
 ai_chance = 95
-name = "We have no choice..."
+name = "EVT_903013_OPTIONA"
 command = { type = trigger which = 903018 }
 command = { type = dissent value = 5 }
 }
 
 action_b = { 
 ai_chance = 5
-name = "Resist them!"
+name = "EVT_903013_OPTIONB"
 command = { type = leave_alliance when = 1 } 
 command = { type = event which = 903019 where = RUS when = 2  }
 }
@@ -1679,19 +1679,19 @@ country = AZB
 style = 2
 picture = "soviet_replacement"
 
-name = "Russia demands reformation of our government"
-desc = "With the eruption of the Second Weltkrieg the attention of the German Empire turned westwards. In effort to gain the support of the Russian state in their ongoing struggle the German Empire has accepted Russian demands regarding spheres of influence in the Caucasus, handing the fate of the Caucasian states to them. Russia has issued series of demands towards our state which, if accepted, will mean the end of our state as independent unit. What shall we do?"  
+name = "EVT_903014_NAME"
+desc = "EVT_903014_DESC"  
 
 action_a = {
 ai_chance = 100
-name = "We have no choice..."
+name = "EVT_903014_OPTIONA"
 command = { type = trigger which = 903020 }
 command = { type = dissent value = 5 }
 }
 
 action_b = { 
 ai_chance = 0
-name = "Resist them!"
+name = "EVT_903014_OPTIONB"
 command = { type = event which = 903019 where = RUS when = 2  }
 }
 }
@@ -1704,11 +1704,11 @@ country = RUS
 style = 2
 picture = "soviet_replacement"
 
-name = "The demise of the Don-Kuban Union"
-desc = "Seeing no other realistic option the government of the Don-Kuban Union was forced to accept our demands."
+name = "EVT_903015_NAME"
+desc = "EVT_903015_DESC"
 
 action_a = {
-name = "Hooray!"
+name = "EVT_903015_OPTIONA"
 command = { type = inherit which = TRA }
 command = { type = dissent value = -5 }
 command = { type = addclaim   which = 694  }
@@ -1751,12 +1751,12 @@ country = RUS
 style = 2
 picture = "soviet_replacement"
 
-name = "The Don-Kuban Union resist our demands"
-desc = "The foolish government of the Don-Kuban Union refused our reasonable demands regarding their rogue state. How shall we react to this insolence?" 
+name = "EVT_903016_NAME"
+desc = "EVT_903016_DESC" 
 
 action_a = {
 ai_chance = 100
-name = "We should declare war!"
+name = "EVT_903016_OPTIONA"
 command = { type = war which = TRA }
 command = { type = addclaim   which = 694  }
 command = { type = addclaim   which = 693  }
@@ -1791,7 +1791,7 @@ command = { type = addclaim   which = 655  }
 
 action_b = {
 ai_chance = 0
-name = "We shall deal with them later."
+name = "EVT_903016_OPTIONB"
 command = { type = addclaim   which = 694  }
 command = { type = addclaim   which = 693  }
 command = { type = addclaim   which = 695  }
@@ -1831,11 +1831,11 @@ country = RUS
 style = 2
 picture = "soviet_replacement"
 
-name = "The submission of the Don-Kuban Union"
-desc = "Seeing no other realistic option the government of the Don-Kuban Union was forced to accept our demands."
+name = "EVT_903017_NAME"
+desc = "EVT_903017_DESC"
 
 action_a = {
-name = "Hooray!"
+name = "EVT_903017_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = make_puppet which = TRA }
 }
@@ -1849,11 +1849,11 @@ country = RUS
 style = 2
 picture = "soviet_replacement"
 
-name = "The demise of Azerbaijan"
-desc = "Seeing no other realistic option the government of Azerbaijan was forced to accept our demands."
+name = "EVT_903018_NAME"
+desc = "EVT_903018_DESC"
 
 action_a = {
-name = "Hooray!"
+name = "EVT_903018_OPTIONA"
 command = { type = inherit which = AZB }
 command = { type = dissent value = -5 }
 command = { type = addclaim   which = 712  }
@@ -1871,12 +1871,12 @@ country = RUS
 style = 2
 picture = "soviet_replacement"
 
-name = "Azerbaijan resist our demands"
-desc = "The foolish government of Azerbaijan has refused our reasonable demands regarding their rogue state. How shall we react to this insolence?" 
+name = "EVT_903019_NAME"
+desc = "EVT_903019_DESC" 
 
 action_a = {
 ai_chance = 100
-name = "We should declare war!"
+name = "EVT_903019_OPTIONA"
 command = { type = war which = AZB }
 command = { type = addclaim   which = 712  }
 command = { type = addclaim   which = 713  }
@@ -1886,7 +1886,7 @@ command = { type = addclaim   which = 704  }
 
 action_b = {
 ai_chance = 0
-name = "We shall deal with them later."
+name = "EVT_903019_OPTIONB"
 command = { type = addclaim   which = 712  }
 command = { type = addclaim   which = 713  }
 command = { type = addclaim   which = 714  }
@@ -1901,11 +1901,11 @@ country = RUS
 style = 2
 picture = "soviet_replacement"
 
-name = "The submission of Azerbaijan"
-desc = "Seeing no other realistic option the government of Azerbaijan was forced to accept our demands."
+name = "EVT_903020_NAME"
+desc = "EVT_903020_DESC"
 
 action_a = {
-name = "Hooray!"
+name = "EVT_903020_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = make_puppet which = AZB }
 }
@@ -1919,19 +1919,19 @@ country = U43
 style = 2
 picture = "soviet_replacement"
 
-name = "Russia demands our reintegration"
-desc = "With the eruption of the Second Weltkrieg the attention of the German Empire turned westwards. In effort to gain the support of the Russian state in their ongoing struggle the German Empire has accepted Russian demands regarding spheres of influence in the Caucasus, handing the fate of the Caucasian states to them. Russia has issued series of demands towards our state which, if accepted, will mean the end of our state as independent unit. What shall we do?"  
+name = "EVT_903035_NAME"
+desc = "EVT_903035_DESC"  
 
 action_a = {
 ai_chance = 45
-name = "We have no choice..."
+name = "EVT_903035_OPTIONA"
 command = { type = trigger which = 903037 }
 command = { type = dissent value = 5 }
 }
 
 action_b = { 
 ai_chance = 55
-name = "Resist them!"
+name = "EVT_903035_OPTIONB"
 command = { type = event which = 903038 where = RUS when = 2  }
 }
 }
@@ -1943,19 +1943,19 @@ country = U43
 style = 2
 picture = "soviet_replacement"
 
-name = "Russia demands reformation of our government"
-desc = "With the eruption of the Second Weltkrieg the attention of the German Empire turned westwards. In effort to gain the support of the Russian state in their ongoing struggle the German Empire has accepted Russian demands regarding spheres of influence in the Caucasus, handing the fate of the Caucasian states to them. Russia has issued series of demands towards our state which, if accepted, will mean the end of our state as independent unit. What shall we do?"  
+name = "EVT_903036_NAME"
+desc = "EVT_903036_DESC"  
 
 action_a = {
 ai_chance = 100
-name = "We have no choice..."
+name = "EVT_903036_OPTIONA"
 command = { type = trigger which = 903039 }
 command = { type = dissent value = 5 }
 }
 
 action_b = { 
 ai_chance = 0
-name = "Resist them!"
+name = "EVT_903036_OPTIONB"
 command = { type = leave_alliance when = 1 } 
 command = { type = event which = 903038 where = RUS when = 2  }
 }
@@ -1968,11 +1968,11 @@ country = RUS
 style = 2
 picture = "soviet_replacement"
 
-name = "The demise of the Mountain Republic"
-desc = "Seeing no other realistic option the government of the Mountain Republic was forced to accept our demands."
+name = "EVT_903037_NAME"
+desc = "EVT_903037_DESC"
 
 action_a = {
-name = "Hooray!"
+name = "EVT_903037_OPTIONA"
 command = { type = inherit which = U43 }
 command = { type = dissent value = 3 }
 command = { type = addclaim   which = 701  }
@@ -1994,12 +1994,12 @@ country = RUS
 style = 2
 picture = "soviet_replacement"
 
-name = "The Mountain Republic resist our demands"
-desc = "The foolish government of the Mountain Republic refused our reasonable demands regarding their rogue state. How shall we react to this insolence?" 
+name = "EVT_903038_NAME"
+desc = "EVT_903038_DESC" 
 
 action_a = {
 ai_chance = 100
-name = "We should declare war!"
+name = "EVT_903038_OPTIONA"
 command = { type = war which = U43 }
 command = { type = addclaim   which = 701  }
 command = { type = addclaim   which = 703  }
@@ -2013,7 +2013,7 @@ command = { type = addclaim   which = 707  }
 
 action_b = {
 ai_chance = 0
-name = "We shall deal with them later."
+name = "EVT_903038_OPTIONB"
 command = { type = addclaim   which = 701  }
 command = { type = addclaim   which = 703  }
 command = { type = addclaim   which = 705  }
@@ -2032,11 +2032,11 @@ country = RUS
 style = 2
 picture = "soviet_replacement"
 
-name = "The submission of the Mountain Republic"
-desc = "Seeing no other realistic option the government of the Mountain Republic was forced to accept our demands."
+name = "EVT_903039_NAME"
+desc = "EVT_903039_DESC"
 
 action_a = {
-name = "Hooray!"
+name = "EVT_903039_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = make_puppet which = U43 }
 }
@@ -2099,8 +2099,8 @@ event = {
 
 
 
-     name = "Focus in International Policy"
-     desc = "Russia is now stronger than before after conquering both the Caucasus and Central Asia. Now we can start actions in the Far East, in Eastern Europe or in the Middle East. We can't engage in more than one area as we are still not powerful enough to fight the Germans and the Japanese simultaneously. We must choose our directions carefully as the international situation is becoming more and more unstable."
+     name = "EVT_903021_NAME"
+     desc = "EVT_903021_DESC"
 
      date = { day = 1 month = january year = 1936 }
      offset = 20
@@ -2133,7 +2133,7 @@ event = {
                  }
          }           
          ai_chance = 40
-         name = "We will focus on the Far East!"
+         name = "EVT_903021_OPTIONA"
          command = { type = domestic which = defense_lobby value = 1 }
          command = { type = relation which = JAP value = -10 }
          command = { type = relation which = MAN value = -10 }
@@ -2186,7 +2186,7 @@ event = {
                   }
                   }            
          ai_chance = 40
-         name = "We will focus on Eastern Europe!"
+         name = "EVT_903021_OPTIONB"
          command = { type = domestic which = defense_lobby value = 1 }
          command = { type = relation which = GER value = -10 }
          command = { type = relation which = UKR value = -10 }
@@ -2257,7 +2257,7 @@ event = {
                  }
               }
             }
-         name = "We will focus on the Middle East!"
+         name = "EVT_903021_OPTIONC"
          command = { type = domestic which = defense_lobby value = 1 }
          command = { type = relation which = GER value = -10 }
          command = { type = relation which = OTT value = -50 }
@@ -2273,7 +2273,7 @@ event = {
      }
      action_d = {
          ai_chance = 10
-         name = "We have expanded enough!"
+         name = "EVT_903021_OPTIOND"
          command = { type = clrflag which = RUS_EXP }
          command = { type = clrflag which = RUS_REAL }
          command = { type = clrflag which = RUS_KGD }
@@ -2362,8 +2362,8 @@ event = {
 
 
 
-     name = "Focus in International Policy"
-     desc = "Russia is now stronger than before after conquering both the Caucasus and Central Asia. Now we can start actions in the Far East, in Eastern Europe or in the Middle East. We can't engage in more than one area as we are still not powerful enough to fight the Germans and the Japanese simultaneously. We must choose our directions carefully as the international situation is becoming more and more unstable."
+     name = "EVT_901989_NAME"
+     desc = "EVT_901989_DESC"
 
      date = { day = 1 month = january year = 1936 }
      offset = 20
@@ -2393,7 +2393,7 @@ event = {
                  }
          }           
          ai_chance = 40
-         name = "We will focus on the Far East!"
+         name = "EVT_901989_OPTIONA"
          command = { type = domestic which = defense_lobby value = 1 }
          command = { type = relation which = JAP value = -10 }
          command = { type = relation which = MAN value = -10 }
@@ -2445,7 +2445,7 @@ event = {
                   }
                   }            
          ai_chance = 40
-         name = "We will focus on Eastern Europe!"
+         name = "EVT_901989_OPTIONB"
          command = { type = domestic which = defense_lobby value = 1 }
          command = { type = relation which = GER value = -10 }
          command = { type = relation which = UKR value = -10 }
@@ -2515,7 +2515,7 @@ event = {
                  }
               }
             }
-         name = "We will focus on the Middle East!"
+         name = "EVT_901989_OPTIONC"
          command = { type = domestic which = defense_lobby value = 1 }
          command = { type = relation which = GER value = -10 }
          command = { type = relation which = OTT value = -50 }
@@ -2530,7 +2530,7 @@ event = {
      }
      action_d = {
          ai_chance = 10
-         name = "We have expanded enough!"
+         name = "EVT_901989_OPTIOND"
          command = { type = clrflag which = RUS_EXP }
          command = { type = clrflag which = RUS_REAL }
          command = { type = clrflag which = RUS_KGD }
@@ -2552,8 +2552,8 @@ event = {
      picture = "RusEventFE"
      persistent = yes
 
-     name = "Far East direction"
-     desc = "We have decided to start actions in the Far East. We will probably meet Japanese resistance by interfering in their sphere of influence. This may give us the chance to avenge the deaths of our fathers and grandfathers who died for Russian Manchuria!"
+     name = "EVT_901980_NAME"
+     desc = "EVT_901980_DESC"
 
      action_a = {
          trigger = {
@@ -2569,7 +2569,7 @@ event = {
              }
          }
          ai_chance = 40
-         name = "We will take back the Trans-Siberian railway!"
+         name = "EVT_901980_OPTIONA"
          command = { type = domestic which = defense_lobby value = 1 }
          command = { type = relation which = MON value = -30 }
          command = { type = relation which = JAP value = -10 }
@@ -2595,7 +2595,7 @@ event = {
              }
          }
          ai_chance = 35
-         name = "We must secure Mongolia and Sinkiang as well!"
+         name = "EVT_901980_OPTIONB"
          command = { type = relation which = MON value = -60 }
          command = { type = relation which = JAP value = -30 }
          command = { type = relation which = CXB value = -30 }
@@ -2630,7 +2630,7 @@ event = {
                  }
          }
          ai_chance = 35
-         name = "We must restore our place in the Far East!"
+         name = "EVT_901980_OPTIONC"
          command = { type = relation which = MON value = -60 }
          command = { type = relation which = JAP value = -50 }
          command = { type = relation which = CXB value = -30 }
@@ -2653,8 +2653,8 @@ event = {
               persistent = yes
 
               
-              name = "European direction"
-              desc = "We have decided to start actions in Eastern Europe. The stakes are high and we must be extremely careful as we don't want to start the a war with Germany over our former lands. We must decide what our goals will be. One mistake and Europe will be plunged into chaos."
+              name = "EVT_901981_NAME"
+              desc = "EVT_901981_DESC"
 
               action_a = {
                   trigger = {
@@ -2670,7 +2670,7 @@ event = {
                   }
                   }
                   ai_chance = 10 
-                  name = "We must restore our dominance over the Ukraine and Belarus!"
+                  name = "EVT_901981_OPTIONA"
                   command = { type = domestic which = defense_lobby value = 1 }
                   command = { type = relation which = UKR value = -20 }
                   command = { type = relation which = BEL value = -20 }
@@ -2704,7 +2704,7 @@ event = {
                   }
                   }
                   ai_chance = 75 
-                  name = "We must secure the Baltic governates as well!"
+                  name = "EVT_901981_OPTIONB"
                   command = { type = relation which = UKR value = -20 }
                   command = { type = relation which = BEL value = -20 }
                   command = { type = relation which = LAT value = -20 }
@@ -2750,7 +2750,7 @@ event = {
                   }
                   }
                   ai_chance = 35 
-                  name = "We will restore our borders in full!"
+                  name = "EVT_901981_OPTIONC"
                   command = { type = relation which = UKR value = -20 }
                   command = { type = relation which = BEL value = -20 }
                   command = { type = relation which = LAT value = -20 }
@@ -2783,8 +2783,8 @@ government = communist
 }
 }
 
-name = "Russian expansionism threatens Finland"
-desc = "Recent reassurgence of the Russian state in the east together with recent russian diplomatic activity through the eastern Europe proves, that in order to keep our state and its borders intact, we need to gain protection of German Empire and Mitteleuropa alliance. Hovewer doing will mean definite military involvement of our state in any potential conflict in the western europe and may further worsen our relations with Russia. What shall we do ?"
+name = "EVT_903032_NAME"
+desc = "EVT_903032_DESC"
 picture = "diplomatic_campaign"
 	
 action = {
@@ -2795,7 +2795,7 @@ ispuppet = GER
 }
 participant = { country = GER value = 2 }
 }
-name = "Ask German Empire for protection"
+name = "EVT_903032_OPTIONA"
 command = { type = trigger which = 903023 }
 command = { type = domestic which = interventionism value = 1 }
 command = { type = relation which = RUS value = -40 }
@@ -2805,7 +2805,7 @@ command = { type = dissent value = 1 }
 
 action = {
 ai_chance = 20
-name = "We don't need any allies"
+name = "EVT_903032_OPTIONB"
 command = { type = dissent value = -1 }
 command = { type = relation which = RUS value = 10 }
 command = { type = domestic which = interventionism value = -4 }
@@ -2820,12 +2820,12 @@ country = GER
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Finland wants to join Mitteleuropa"
-desc = "Government of Finland, afraid of recent agressive russian foreign policy has annouced recently that they want to join Mitteleuropa alliance. It's not a sudden move because pro-German policy is popular in many circles including the ruling cabinet and army. Do we want to allow Finland to join our alliance and protect them from potential Russian diplomatic and economical offensive ?"
+name = "EVT_903023_NAME"
+desc = "EVT_903023_DESC"
 
 action_a = {
 ai_chance = 70
-name = "Accept their offer."
+name = "EVT_903023_OPTIONA"
 command = { type = alliance which = FIN }
 command = { type = relation which = FIN value = 200 }
 command = { type = relation which = RUS value = -40 }
@@ -2836,7 +2836,7 @@ command = { type = trigger which = 903024 }
 
 action_b = {
 ai_chance = 30
-name = "Just guarantee their independence."
+name = "EVT_903023_OPTIONB"
 command = { type = guarantee which = GER where = FIN }
 command = { type = non_aggression which = GER where = FIN }
 command = { type = relation which = FIN value = 80 }
@@ -2845,7 +2845,7 @@ command = { type = relation which = RUS value = -20 }
 
 action_c = {
 ai_chance = 20
-name = "Stable relationship with Russia is more important."
+name = "EVT_903023_OPTIONC"
 command = { type = relation which = RUS value = 40 }
 command = { type = relation which = FIN value = -80 }
 }
@@ -2858,11 +2858,11 @@ country = FIN
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Finland joins Mitteleuropa"
-desc = "Germans accepted our offer and invited us into Mitteleuropa alliance. Now our independence and territorial integrity are protected by powerfull German armed forces."
+name = "EVT_903024_NAME"
+desc = "EVT_903024_DESC"
 
 action_a = {
-name = "Now our independence is secured !"
+name = "EVT_903024_OPTIONA"
 command = { type = relation which = FRA value = -150 }
 command = { type = relation which = ENG value = -150 }
 command = { type = relation which = CAN value = -20 }
@@ -2903,8 +2903,8 @@ government = communist
 }
 }
 
-name = "Russian expansionism threatens Poland"
-desc = "Recent reassurgence of the Russian state in the east together with recent russian diplomatic activity through the eastern Europe proves, that in order to keep our state, its independence and its borders intact, we need to gain protection of German Empire and Mitteleuropa alliance. Hovewer doing will mean definite military involvement of our state in any potential conflict in the western europe and may further worsen our relations with Russia. What shall we do ?"
+name = "EVT_903025_NAME"
+desc = "EVT_903025_DESC"
 picture = "diplomatic_campaign"
 	
 action = {
@@ -2915,7 +2915,7 @@ ispuppet = GER
 }
 participant = { country = GER value = 2 }
 }
-name = "Ask German Empire for protection"
+name = "EVT_903025_OPTIONA"
 command = { type = trigger which = 903026 }
 command = { type = domestic which = interventionism value = 1 }
 command = { type = relation which = RUS value = -40 }
@@ -2925,7 +2925,7 @@ command = { type = dissent value = 1 }
 
 action = {
 ai_chance = 20
-name = "We don't need any allies"
+name = "EVT_903025_OPTIONB"
 command = { type = dissent value = -1 }
 command = { type = relation which = RUS value = 10 }
 command = { type = domestic which = interventionism value = -4 }
@@ -2940,12 +2940,12 @@ country = GER
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Poland wants to join Mitteleuropa"
-desc = "Government of Poland, afraid of recent agressive russian foreign policy has annouced recently that they want to join Mitteleuropa alliance. It's not a sudden move because pro-German policy is popular in many circles including the ruling cabinet and army. Do we want to allow Poland to join our alliance and protect them from potential Russian diplomatic and economical offensive ?"
+name = "EVT_903026_NAME"
+desc = "EVT_903026_DESC"
 
 action_a = {
 ai_chance = 70
-name = "Accept their offer."
+name = "EVT_903026_OPTIONA"
 command = { type = alliance which = POL }
 command = { type = relation which = POL value = 200 }
 command = { type = relation which = RUS value = -40 }
@@ -2956,7 +2956,7 @@ command = { type = trigger which = 903027 }
 
 action_b = {
 ai_chance = 30
-name = "Just guarantee their independence."
+name = "EVT_903026_OPTIONB"
 command = { type = guarantee which = GER where = POL }
 command = { type = non_aggression which = GER where = POL }
 command = { type = relation which = POL value = 80 }
@@ -2965,7 +2965,7 @@ command = { type = relation which = RUS value = -20 }
 
 action_c = {
 ai_chance = 15
-name = "Stable relationship with Russia is more important."
+name = "EVT_903026_OPTIONC"
 command = { type = relation which = RUS value = 40 }
 command = { type = relation which = POL value = -80 }
 }
@@ -2978,11 +2978,11 @@ country = POL
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Poland joins Mitteleuropa"
-desc = "Germans accepted our offer and invited us into Mitteleuropa alliance. Now our independence and territorial integrity are protected by powerfull German armed forces."
+name = "EVT_903027_NAME"
+desc = "EVT_903027_DESC"
 
 action_a = {
-name = "Now our independence is secured !"
+name = "EVT_903027_OPTIONA"
 command = { type = relation which = FRA value = -150 }
 command = { type = relation which = ENG value = -150 }
 command = { type = relation which = CAN value = -20 }
@@ -3022,8 +3022,8 @@ government = communist
 }
 }
 
-name = "Russian expansionism threatens Commonwealth"
-desc = "Recent reassurgence of the Russian state in the east together with recent russian diplomatic activity through the eastern Europe proves, that in order to keep our state, its independence and its borders intact, we need to gain protection of German Empire and Mitteleuropa alliance. Hovewer doing will mean definite military involvement of our state in any potential conflict in the western europe and may further worsen our relations with Russia. What shall we do ?"
+name = "EVT_903029_NAME"
+desc = "EVT_903029_DESC"
 picture = "diplomatic_campaign"
 	
 action = {
@@ -3034,7 +3034,7 @@ ispuppet = GER
 }
 participant = { country = GER value = 2 }
 }
-name = "Ask German Empire for protection"
+name = "EVT_903029_OPTIONA"
 command = { type = trigger which = 903030 }
 command = { type = domestic which = interventionism value = 1 }
 command = { type = relation which = RUS value = -40 }
@@ -3044,7 +3044,7 @@ command = { type = dissent value = 1 }
 
 action = {
 ai_chance = 20
-name = "We don't need any allies"
+name = "EVT_903029_OPTIONB"
 command = { type = dissent value = -1 }
 command = { type = relation which = RUS value = 10 }
 command = { type = domestic which = interventionism value = -4 }
@@ -3059,12 +3059,12 @@ country = GER
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Commonwealth wants to join Mitteleuropa"
-desc = "Government of Commonwealth, afraid of recent agressive russian foreign policy has annouced recently that they want to join Mitteleuropa alliance. It's not a sudden move because pro-German policy is popular in many circles including the ruling cabinet and army. Do we want to allow Commonwealth to join our alliance and protect them from potential Russian diplomatic and economical offensive ?"
+name = "EVT_903030_NAME"
+desc = "EVT_903030_DESC"
 
 action_a = {
 ai_chance = 70
-name = "Accept their offer."
+name = "EVT_903030_OPTIONA"
 command = { type = alliance which = U00 }
 command = { type = relation which = U00 value = 200 }
 command = { type = relation which = RUS value = -40 }
@@ -3075,7 +3075,7 @@ command = { type = trigger which = 903031 }
 
 action_b = {
 ai_chance = 20
-name = "Just guarantee their independence."
+name = "EVT_903030_OPTIONB"
 command = { type = guarantee which = GER where = U00 }
 command = { type = non_aggression which = GER where = U00 }
 command = { type = relation which = U00 value = 80 }
@@ -3084,7 +3084,7 @@ command = { type = relation which = RUS value = -20 }
 
 action_c = {
 ai_chance = 10
-name = "Stable relationship with Russia is more important."
+name = "EVT_903030_OPTIONC"
 command = { type = relation which = RUS value = 40 }
 command = { type = relation which = U00 value = -80 }
 }
@@ -3097,11 +3097,11 @@ country = U00
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Commonwealth joins Mitteleuropa"
-desc = "Germans accepted our offer and invited us into Mitteleuropa alliance. Now our independence and territorial integrity are protected by powerfull German armed forces."
+name = "EVT_903031_NAME"
+desc = "EVT_903031_DESC"
 
 action_a = {
-name = "Now our independence is secured !"
+name = "EVT_903031_OPTIONA"
 command = { type = relation which = FRA value = -150 }
 command = { type = relation which = ENG value = -150 }
 command = { type = relation which = CAN value = -20 }
@@ -3137,8 +3137,8 @@ event = {
               persistent = yes
 
               
-              name = "Middle-East Direction"
-              desc = "We have decided to take care of the Middle Eastern nations. Turkey is weak so we don't need to fear them. However, we must assign priorities in our Middle Eastern policy, do we want to take over Turkey or maybe even Persia?"
+              name = "EVT_901982_NAME"
+              desc = "EVT_901982_DESC"
 
               action_a = {
                   trigger = {
@@ -3158,7 +3158,7 @@ event = {
                   }
                   }
                   ai_chance = 40 
-                  name = "We we must liberate Greater Armenia!"
+                  name = "EVT_901982_OPTIONA"
                   command = { type = domestic which = defense_lobby value = 1 }
                   command = { type = relation which = OTT value = -50 }
                   command = { type = relation which = TUR value = -50 }
@@ -3194,7 +3194,7 @@ event = {
                   }
                   }
                   ai_chance = 50 
-                  name = "We shall finally liberate Constantinople and the Bosporus!"
+                  name = "EVT_901982_OPTIONB"
                   command = { type = relation which = OTT value = -70 }
                   command = { type = relation which = TUR value = -70 }
                   command = { type = relation which = ARM value = -50 }
@@ -3237,7 +3237,7 @@ event = {
                   }
                   }
                   ai_chance = 10 
-                  name = "All of the Middle East must bow under our influence!"
+                  name = "EVT_901982_OPTIONC"
                   command = { type = relation which = OTT value = -70 }
                   command = { type = relation which = TUR value = -70 }
                   command = { type = relation which = PER value = -70 }
@@ -3351,8 +3351,8 @@ event = {
 
 
 
-     name = "Focus in International Policy"
-     desc = "The vast territories of the Far East, the snowy mountains of the Caucasus and the sandy steppes of Central Asia are now under the control of Russia, our former lands returned to us. Our justice is nearly finished but we still have some unresolved issues in Eastern Europe and the Middle East. Russia has to choose where to concentrate their attention next, maybe it's time to stop expanding?"
+     name = "EVT_901983_NAME"
+     desc = "EVT_901983_DESC"
 
      date = { day = 1 month = january year = 1936 }
      offset = 20
@@ -3397,7 +3397,7 @@ event = {
                   }
                   }            
          ai_chance = 40
-         name = "We will focus on Eastern Europe!"
+         name = "EVT_901983_OPTIONA"
          command = { type = domestic which = defense_lobby value = 1 }
          command = { type = relation which = GER value = -10 }
          command = { type = relation which = UKR value = -10 }
@@ -3467,7 +3467,7 @@ event = {
                  }
               }
             }
-         name = "We will focus on the Middle East!"
+         name = "EVT_901983_OPTIONB"
          command = { type = domestic which = defense_lobby value = 1 }
          command = { type = relation which = GER value = -10 }
          command = { type = relation which = OTT value = -50 }
@@ -3482,7 +3482,7 @@ event = {
      }
      action_c = {
          ai_chance = 15
-         name = "We have expanded enough!"
+         name = "EVT_901983_OPTIONC"
          command = { type = clrflag which = RUS_EXP }
          command = { type = clrflag which = RUS_REAL }
          command = { type = clrflag which = RUS_TSR }
@@ -3633,7 +3633,7 @@ event = {
 
 
 
-     name = "Focus in International Policy"
+     name = "EVT_901984_NAME"
      desc = "EVT_91807_DESC"
 
      date = { day = 1 month = january year = 1936 }
@@ -3691,7 +3691,7 @@ event = {
                  }
               }
             }
-         name = "We will focus on the Middle East!"
+         name = "EVT_901984_OPTIONA"
          command = { type = dissent value = 4 }
          command = { type = domestic which = defense_lobby value = 1 }
          command = { type = relation which = GER value = -10 }
@@ -3710,7 +3710,7 @@ event = {
      }
      action_b = {
          ai_chance = 10
-         name = "We have expanded enough!"
+         name = "EVT_901984_OPTIONB"
          command = { type = clrflag which = RUS_EXP }
          command = { type = clrflag which = RUS_REAL }
          command = { type = clrflag which = RUS_UBE }
@@ -3905,7 +3905,7 @@ event = {
 
 
 
-     name = "Focus in International Policy"
+     name = "EVT_901985_NAME"
      desc = "EVT_91808_DESC"
 
      date = { day = 1 month = january year = 1936 }
@@ -3914,7 +3914,7 @@ event = {
 
      action_b = {
          ai_chance = 35
-         name = "Russia must remain vigillant if it is to keep all of its territories!"
+         name = "EVT_901985_OPTIONA"
          command = { type = belligerence which = RUS value = 5  }
          command = { type = domestic which = interventionism value = 1 }
 	 command = { type = dissent value = 4 }
@@ -3925,7 +3925,7 @@ event = {
 
      action_b = {
          ai_chance = 35
-         name = "We have achieved all our goals!"
+         name = "EVT_901985_OPTIONB"
          command = { type = belligerence which = RUS value = -10  }
          command = { type = domestic which = interventionism value = -5 }
 	 command = { type = dissent value = -4 }
@@ -4120,7 +4120,7 @@ event = {
 
 
 
-     name = "Focus in International Policy"
+     name = "EVT_901986_NAME"
      desc = "EVT_91808_DESC"
 
      date = { day = 1 month = january year = 1936 }
@@ -4129,7 +4129,7 @@ event = {
 
      action_b = {
          ai_chance = 35
-         name = "Russia must remain vigillant if it is to keep all of its territories!"
+         name = "EVT_901986_OPTIONA"
          command = { type = belligerence which = RUS value = 5  }
          command = { type = domestic which = interventionism value = 1 }
 	 command = { type = dissent value = 4 }
@@ -4140,7 +4140,7 @@ event = {
 
      action_b = {
          ai_chance = 35
-         name = "We have achieved all our goals!"
+         name = "EVT_901986_OPTIONB"
          command = { type = belligerence which = RUS value = -10  }
          command = { type = domestic which = interventionism value = -5 }
 	 command = { type = dissent value = -4 }
@@ -4335,7 +4335,7 @@ event = {
 
 
 
-     name = "Focus in International Policy"
+     name = "EVT_901987_NAME"
      desc = "EVT_91808_DESC"
 
      date = { day = 1 month = january year = 1936 }
@@ -4344,7 +4344,7 @@ event = {
 
      action_b = {
          ai_chance = 35
-         name = "Russia must remain vigillant if it is to keep all of its territories!"
+         name = "EVT_901987_OPTIONA"
          command = { type = belligerence which = RUS value = 5  }
          command = { type = domestic which = interventionism value = 1 }
 	 command = { type = dissent value = 4 }
@@ -4355,7 +4355,7 @@ event = {
 
      action_b = {
          ai_chance = 35
-         name = "We have achieved all our goals!"
+         name = "EVT_901987_OPTIONB"
          command = { type = belligerence which = RUS value = -10  }
          command = { type = domestic which = interventionism value = -5 }
 	 command = { type = dissent value = -4 }
@@ -4484,8 +4484,8 @@ event = {
 
 
 
-     name = "Focus in International Policy"
-     desc = "The vast deserts of the Middle East, the snowy mountains of the Caucasus and the sandy steppes of Central Asia are now under the control of Russia, our former lands returned to us. Our justice is nearly finished but we still have unresolved issues in Eastern Europe and the Far East. The Russian government has to choose where to concentrate their attention next, maybe it's time to stop expanding?"
+     name = "EVT_901988_NAME"
+     desc = "EVT_901988_DESC"
 
      date = { day = 1 month = january year = 1936 }
      offset = 20
@@ -4530,7 +4530,7 @@ event = {
                   }
                   }            
          ai_chance = 40
-         name = "We will focus on Eastern Europe!"
+         name = "EVT_901988_OPTIONA"
          command = { type = domestic which = defense_lobby value = 1 }
          command = { type = relation which = GER value = -10 }
          command = { type = relation which = UKR value = -10 }
@@ -4570,7 +4570,7 @@ event = {
                  }
          }           
          ai_chance = 40
-         name = "We will focus on the Far East!"
+         name = "EVT_901988_OPTIONB"
          command = { type = domestic which = defense_lobby value = 1 }
          command = { type = relation which = JAP value = -10 }
          command = { type = relation which = MAN value = -10 }
@@ -4588,7 +4588,7 @@ event = {
 
      action_c = {
          ai_chance = 10
-         name = "We have expanded enough!"
+         name = "EVT_901988_OPTIONC"
          command = { type = clrflag which = RUS_EXP }
          command = { type = clrflag which = RUS_REAL }
          command = { type = clrflag which = RUS_KIS }
@@ -4710,8 +4710,8 @@ event = {
 
 
 
-     name = "Focus in International Policy"
-     desc = "The vast territories of Eastern Europe, the snowy mountains of the Caucasus and the sandy steppes of Central Asia are now under the control of Russia, our former lands returned to us. Our justice is nearly finished but we still have unresolved issues in the Middle East and the Far East. The Russian government has to choose where to concentrate their attention next, maybe it's time to stop expanding?"
+     name = "EVT_901990_NAME"
+     desc = "EVT_901990_DESC"
 
      date = { day = 1 month = january year = 1936 }
      offset = 20
@@ -4769,7 +4769,7 @@ event = {
                  }
               }
             }
-         name = "We will focus on the Middle East!"
+         name = "EVT_901990_OPTIONA"
          command = { type = domestic which = defense_lobby value = 1 }
          command = { type = relation which = GER value = -10 }
          command = { type = relation which = OTT value = -50 }
@@ -4806,7 +4806,7 @@ event = {
                  }
          }           
          ai_chance = 40
-         name = "We will focus on the Far East!"
+         name = "EVT_901990_OPTIONB"
          command = { type = domestic which = defense_lobby value = 1 }
          command = { type = relation which = JAP value = -10 }
          command = { type = relation which = MAN value = -10 }
@@ -4824,7 +4824,7 @@ event = {
 
      action_c = {
          ai_chance = 10
-         name = "We have expanded enough!"
+         name = "EVT_901990_OPTIONC"
          command = { type = clrflag which = RUS_EXP }
          command = { type = clrflag which = RUS_REAL }
          command = { type = clrflag which = RUS_UBE }
@@ -4974,7 +4974,7 @@ event = {
 
 
 
-     name = "Focus in International Policy"
+     name = "EVT_901991_NAME"
      desc = "EVT_91809_DESC"
 
      date = { day = 1 month = january year = 1936 }
@@ -5032,7 +5032,7 @@ event = {
                  }
               }
             }
-         name = "We will focus on the Middle East!"
+         name = "EVT_901991_OPTIONA"
          command = { type = dissent value = 4 }
          command = { type = domestic which = defense_lobby value = 1 }
          command = { type = relation which = GER value = -10 }
@@ -5051,7 +5051,7 @@ event = {
      }
      action_b = {
          ai_chance = 10
-         name = "We have expanded enough!"
+         name = "EVT_901991_OPTIONB"
          command = { type = clrflag which = RUS_EXP }
          command = { type = clrflag which = RUS_REAL }
          command = { type = clrflag which = RUS_TSR }
@@ -5209,7 +5209,7 @@ event = {
 
 
 
-     name = "Focus in International Policy"
+     name = "EVT_901992_NAME"
      desc = "EVT_91810_DESC"
 
      date = { day = 1 month = january year = 1936 }
@@ -5254,7 +5254,7 @@ event = {
                   }
                   }            
          ai_chance = 40
-         name = "We will focus on Eastern Europe!"
+         name = "EVT_901992_OPTIONA"
          command = { type = dissent value = 4 }
          command = { type = domestic which = defense_lobby value = 1 }
          command = { type = relation which = GER value = -10 }
@@ -5277,7 +5277,7 @@ event = {
 
      action_b = {
          ai_chance = 10
-         name = "We have expanded enough!"
+         name = "EVT_901992_OPTIONB"
          command = { type = clrflag which = RUS_EXP }
          command = { type = clrflag which = RUS_REAL }
          command = { type = clrflag which = RUS_KIS }
@@ -5435,7 +5435,7 @@ event = {
 
 
 
-     name = "Focus in International Policy"
+     name = "EVT_901993_NAME"
      desc = "EVT_91811_DESC"
 
      date = { day = 1 month = january year = 1936 }
@@ -5480,7 +5480,7 @@ event = {
                   }
                   }            
          ai_chance = 40
-         name = "We will focus on Eastern Europe!"
+         name = "EVT_901993_OPTIONA"
          command = { type = dissent value = 4 }
          command = { type = domestic which = defense_lobby value = 1 }
          command = { type = relation which = GER value = -10 }
@@ -5503,7 +5503,7 @@ event = {
 
      action_b = {
          ai_chance = 10
-         name = "We have expanded enough!"
+         name = "EVT_901993_OPTIONB"
          command = { type = clrflag which = RUS_EXP }
          command = { type = clrflag which = RUS_REAL }
          command = { type = clrflag which = RUS_TSR }
@@ -5670,7 +5670,7 @@ event = {
 
 
 
-     name = "Focus in International Policy"
+     name = "EVT_901994_NAME"
      desc = "EVT_91812_DESC"
 
      date = { day = 1 month = january year = 1936 }
@@ -5701,7 +5701,7 @@ event = {
                  }
          }           
          ai_chance = 40
-         name = "We will focus on the Far East!"
+         name = "EVT_901994_OPTIONA"
          command = { type = dissent value = 4 }
          command = { type = domestic which = defense_lobby value = 1 }
          command = { type = relation which = JAP value = -10 }
@@ -5725,7 +5725,7 @@ event = {
 
      action_b = {
          ai_chance = 15
-         name = "We have expanded enough!"
+         name = "EVT_901994_OPTIONB"
          command = { type = clrflag which = RUS_EXP }
          command = { type = clrflag which = RUS_REAL }
          command = { type = clrflag which = RUS_KIS }
@@ -5891,7 +5891,7 @@ event = {
 
 
 
-     name = "Focus in International Policy"
+     name = "EVT_901995_NAME"
      desc = "EVT_91813_DESC"
 
      date = { day = 1 month = january year = 1936 }
@@ -5922,7 +5922,7 @@ event = {
                  }
          }           
          ai_chance = 40
-         name = "We will focus on the Far East!"
+         name = "EVT_901995_OPTIONA"
          command = { type = dissent value = 4 }
          command = { type = domestic which = defense_lobby value = 1 }
          command = { type = relation which = JAP value = -10 }
@@ -5946,7 +5946,7 @@ event = {
 
      action_b = {
          ai_chance = 15
-         name = "We have expanded enough!"
+         name = "EVT_901995_OPTIONB"
          command = { type = clrflag which = RUS_EXP }
          command = { type = clrflag which = RUS_REAL }
          command = { type = clrflag which = RUS_UBE }
@@ -5973,8 +5973,8 @@ event = {
 
      
 
-     name = "Focus in International Policy"
-     desc = "Russia is now stronger than before after conquering the Caucasus and Central Asia. Now we can start actions in theFar East, in Eastern Europe or in the Middle East. We can't engage in more than one area as we are not powerful enough to fight the Germans and the Japanese simultaneously. We must choose our directions carefully as the international situation is becoming more and more unstable."
+     name = "EVT_901996_NAME"
+     desc = "EVT_901996_DESC"
 
      action_a = {   
          trigger = {
@@ -5999,7 +5999,7 @@ event = {
                  }
          }           
          ai_chance = 40
-         name = "We will focus on the Far East!"
+         name = "EVT_901996_OPTIONA"
          command = { type = domestic which = defense_lobby value = 1 }
          command = { type = relation which = JAP value = -10 }
          command = { type = relation which = MAN value = -10 }
@@ -6051,7 +6051,7 @@ event = {
                   }
                   }            
          ai_chance = 40
-         name = "We will focus on Eastern Europe!"
+         name = "EVT_901996_OPTIONB"
          command = { type = domestic which = defense_lobby value = 1 }
          command = { type = relation which = GER value = -10 }
          command = { type = relation which = UKR value = -10 }
@@ -6121,7 +6121,7 @@ event = {
                  }
               }
             }
-         name = "We will focus on the Middle East!"
+         name = "EVT_901996_OPTIONC"
          command = { type = domestic which = defense_lobby value = 1 }
          command = { type = relation which = GER value = -10 }
          command = { type = relation which = OTT value = -50 }
@@ -6136,7 +6136,7 @@ event = {
      }
      action_d = {
          ai_chance = 10
-         name = "We have expanded enough!"
+         name = "EVT_901996_OPTIOND"
          command = { type = clrflag which = RUS_EXP }
          command = { type = clrflag which = RUS_REAL }
          command = { type = clrflag which = RUS_KGD }

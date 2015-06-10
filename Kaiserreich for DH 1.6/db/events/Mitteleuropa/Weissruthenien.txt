@@ -30,8 +30,8 @@ event = {
         }
         }
 	
-	name = "Sigismund makes his move..."
-	desc = "The Belorussian National Theatre in Minsk is hosting an exceptional performance tonight, as the famous Der Freischütz is on the program. His Majesty Vladimir I, King of White Ruthenia and his entire family are in attendance. His Highness the Prince Sigismund has only reached the building after the third whistle and as he is approaching the entrance..."
+	name = "EVT_654000_NAME"
+	desc = "EVT_654000_DESC"
 	picture = "Romcivwar"
 
 	date = { day = 1 month = january year = 1936 }
@@ -40,7 +40,7 @@ event = {
 
 	action = {
 		ai_chance = 60
-		name = "An explosion rips apart the National Theatre!"
+		name = "EVT_654000_OPTIONA"
 		command = { type = set_domestic which = democratic value = 1 }
 		command = { type = set_domestic which = political_left value = 2 }
 		command = { type = dissent value = 5 }
@@ -62,7 +62,7 @@ event = {
 
 	action = {
 		ai_chance = 30
-		name = "He is arrested by gendarmes as his vile plot is foiled!"
+		name = "EVT_654000_OPTIONB"
 		command = { type = set_domestic which = democratic value = 5 }
 		command = { type = set_domestic which = political_left value = 3 }
 		command = { type = dissent value = 4 }
@@ -86,7 +86,7 @@ event = {
 
 	action = {
 		ai_chance = 10
-		name = "Sigismund takes his seat and all is well"
+		name = "EVT_654000_OPTIONC"
 		command = { type = dissent value = -1 }
                 command = { type = sleepevent which = 654036 }
 	}
@@ -98,13 +98,13 @@ event = {
 	country = BLR
 	style = 2
 
-	name = "Rethinking our commitment to Germany"
-	desc = "Sigismund has called a cabinet meeting about our stance on Mitteleuropa. While supporting Germany in their war against Syndicalism is gaining nothing for us, leaving them would remove their much needed protection. Several ministers have proposed that we leave Mitteleurope and try to court the Russians with an alliance while a few others are demanding we become isolationist. What should we do?"
+	name = "EVT_654001_NAME"
+	desc = "EVT_654001_DESC"
         picture = "politics3"
 
         action_a = {
 		ai_chance = 60
-		name = "Contact Voldemaras"
+		name = "EVT_654001_OPTIONA"
                 trigger = {
                 event = 555003 
         	exists = LIT
@@ -124,7 +124,7 @@ event = {
 
 	action_a = {
 		ai_chance = 60
-		name = "Try to ally with Russia"
+		name = "EVT_654001_OPTIONB"
                 trigger = {
                 exists = RUS
 	        NOT = { 
@@ -143,13 +143,13 @@ event = {
 
 	action_b = {
 		ai_chance = 30
-		name = "Stay loyal to the Germans"
+		name = "EVT_654001_OPTIONC"
 		command = { type = relation which = GER value = 20 }
 	}
 
 	action_c = {
 		ai_chance = 10
-		name = "We need no outside help!"
+		name = "EVT_654001_OPTIOND"
 		command = { type = leave_alliance when = 1 } 
                 command = { type = end_guarantee which = GER where = BLR }
                 command = { trigger = { OR = { NOT = { event = 555003 } exists = LIT alliance = { country = LIT country = GER } } } type = event which = 654007 where = GER when = 2  }
@@ -164,13 +164,13 @@ event = {
 	country = RUS
 	style = 2
 
-	name = "An offer from White Ruthenia"
-	desc = "White Ruthenia has come to us offering a military alliance. While it'd certainly be good to stand with our Slavic brothers, the reaction from Germany would be coarse to say the least. What should we do?"
+	name = "EVT_654005_NAME"
+	desc = "EVT_654005_DESC"
 	picture = "politics3"
 
 	action_a = {
 		ai_chance = 30
-		name = "Accept the offer!"
+		name = "EVT_654005_OPTIONA"
 		command = { type = alliance which = BLR }
 		command = { type = set_relation which = BLR value = 150 }
 		command = { type = trigger which = 654006 }
@@ -178,14 +178,14 @@ event = {
 
 	action_b = {
 		ai_chance = 5
-		name = "We do not need this"
+		name = "EVT_654005_OPTIONB"
 		command = { type = relation which = BLR value = -50 }
 		command = { type = event which = 654007 where = GER when = 2  }
 	}
 
         action_c = {
 		ai_chance = 80
-		name = "A perfect chance to reintegrate White Ruthenia by force!"
+		name = "EVT_654005_OPTIONC"
                 trigger = {
                 flag = RUS_EXP
                 NOT = { 
@@ -207,12 +207,12 @@ event = {
 	country = GER
 	style = 2
 
-	name = "White Ruthenia has left us"
-	desc = "White Ruthenia has left Mitteleuropa and entered an alliance with the Russians. We however can't risk a war over White Ruthenia regardless of what some officials are calling for."
+	name = "EVT_654006_NAME"
+	desc = "EVT_654006_DESC"
 	picture = "Diet"
 
 	action_a = {
-		name = "Curse them!"
+		name = "EVT_654006_OPTIONA"
                 ai_chance = 100
 		command = { type = relation which = BLR value = -50 }
 		command = { type = relation which = RUS value = -50 }
@@ -222,7 +222,7 @@ event = {
 	}
 
         action_b = {
-		name = "We shall destroy them!"
+		name = "EVT_654006_OPTIONB"
                 ai_chance = 0
 		command = { type = relation which = BLR value = -50 }
 		command = { type = relation which = RUS value = -50 }
@@ -241,13 +241,13 @@ event = {
 	country = GER
 	style = 2
 
-	name = "White Ruthenia has left us"
-	desc = "White Ruthenia has left Mitteleuropa and while White Ruthenia is alone and weak our war against Syndicalism takes first priority. However, several Generals have come forward claiming that we could attack and defeat White Ruthenia in a matter of days but to do so would weaken our forces in the West. What should we do?"
+	name = "EVT_654007_NAME"
+	desc = "EVT_654007_DESC"
 	picture = "Diet"
 
 	action_a = {
 		ai_chance = 95
-		name = "Leave them alone for now"
+		name = "EVT_654007_OPTIONA"
 		command = { type = set_relation which = BLR value = -50 }
 		command = { type = end_guarantee which = GER where = BLR }
 		command = { type = end_access which = GER where = BLR }
@@ -256,7 +256,7 @@ event = {
 
 	action_b = {
 		ai_chance = 5
-		name = "Begin preparations for punitive action!"
+		name = "EVT_654007_OPTIONB"
 		command = { type = set_relation which = BLR value = -150 }
 		command = { type = end_guarantee which = GER where = BLR }
 		command = { type = end_access which = GER where = BLR }
@@ -272,20 +272,20 @@ event = {
 	country = GER
 	style = 2
 
-	name = "Fall Jungingen"
-	desc = "With a week having passed since we began preparations for the invasion of White Ruthenia, we are ready as we will ever be. Should we go forward with this ?"
+	name = "EVT_654008_NAME"
+	desc = "EVT_654008_DESC"
 	picture = "german_reinforcment_6"
 
 	action_a = {
 		ai_chance = 90
-		name = "Send in the troops!"
+		name = "EVT_654008_OPTIONA"
 		command = { type = end_non_aggression which = GER where = BLR }
 		command = { type = war which = BLR }
 	}
 
 	action_b = {
 		ai_chance = 10
-		name = "This was a mistake"
+		name = "EVT_654008_OPTIONB"
 		command = { type = domestic which = interventionism value = -1 }
 		command = { type = dissent value = 3 }
 	}
@@ -306,8 +306,8 @@ event = {
         control = { province = 599 data = -3 } 
 	NOT = { exists = BLR } }
 
-	name = "Sigismund has been defeated"
-	desc = "The last troops loyal to Sigismund have been defeated and we now stand in control of White Ruthenia. This is a great day for Germany!"
+	name = "EVT_654009_NAME"
+	desc = "EVT_654009_DESC"
 	picture = "german_strategic_victory"
 
 	date = { day = 1 month = january year = 1936 }
@@ -315,7 +315,7 @@ event = {
 	deathdate = { day = 29 month = december year = 1966 }
 
 	action_a = {
-		name = "We have won!"
+		name = "EVT_654009_OPTIONA"
 		command = { type = dissent value = -2 }
 		command = { 
                 trigger = {
@@ -558,13 +558,13 @@ event = {
 	country = RUS
 	style = 2
 
-	name = "Sigismund has been defeated"
-	desc = "The rebellious Hohenzollern, Sigismund, has been defeated and it's time we return any occupied land of White Ruthenia to Germany."
+	name = "EVT_654010_NAME"
+	desc = "EVT_654010_DESC"
 	picture = "GerPOW"
 
 	action_a = {
 		ai_chance = 100
-		name = "Cede the land"
+		name = "EVT_654010_OPTIONA"
 		command = { type = secedeprovince which = GER value = 257 }
 		command = { type = secedeprovince which = GER value = 256 }
 		command = { type = secedeprovince which = GER value = 251 }
@@ -582,7 +582,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 0
-		name = "Keep the land"
+		name = "EVT_654010_OPTIONB"
 		command = { type = relation which = GER value = -50 }
 	}
 }
@@ -593,13 +593,13 @@ event = {
 	country = UKR
 	style = 2
 
-	name = "Sigismund has been defeated"
-	desc = "The rebellious Hohenzollern, Sigismund, has been defeated and it's time we return any occupied land of White Ruthenia to Germany."
+	name = "EVT_654011_NAME"
+	desc = "EVT_654011_DESC"
 	picture = "GerPOW"
 
 	action_a = {
 		ai_chance = 100
-		name = "Cede the land"
+		name = "EVT_654011_OPTIONA"
 		command = { type = secedeprovince which = GER value = 257 }
 		command = { type = secedeprovince which = GER value = 256 }
 		command = { type = secedeprovince which = GER value = 251 }
@@ -617,7 +617,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 0
-		name = "Keep the land"
+		name = "EVT_654011_OPTIONB"
 		command = { type = relation which = GER value = -50 }
 	}
 }
@@ -628,13 +628,13 @@ event = {
 	country = LAT
 	style = 2
 
-	name = "Sigismund has been defeated"
-	desc = "The rebellious Hohenzollern, Sigismund, has been defeated and it's time we return any occupied land of White Ruthenia to Germany."
+	name = "EVT_654012_NAME"
+	desc = "EVT_654012_DESC"
 	picture = "GerPOW"
 
 	action_a = {
 		ai_chance = 100
-		name = "Cede the land"
+		name = "EVT_654012_OPTIONA"
 		command = { type = secedeprovince which = GER value = 257 }
 		command = { type = secedeprovince which = GER value = 256 }
 		command = { type = secedeprovince which = GER value = 251 }
@@ -652,7 +652,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 0
-		name = "Keep the land"
+		name = "EVT_654012_OPTIONB"
 		command = { type = relation which = GER value = -50 }
 	}
 }
@@ -665,13 +665,13 @@ event = {
 
 	
 
-	name = "Sigismund has been defeated"
-	desc = "The rebellious Hohenzollern, Sigismund, has been defeated and it's time we return any occupied land of White Ruthenia to Germany."
+	name = "EVT_654013_NAME"
+	desc = "EVT_654013_DESC"
 	picture = "GerPOW"
 
 	action_a = {
 		ai_chance = 100
-		name = "Cede the land"
+		name = "EVT_654013_OPTIONA"
 		command = { type = secedeprovince which = GER value = 257 }
 		command = { type = secedeprovince which = GER value = 256 }
 		command = { type = secedeprovince which = GER value = 251 }
@@ -689,7 +689,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 0
-		name = "Keep the land"
+		name = "EVT_654013_OPTIONB"
 		command = { type = relation which = GER value = -50 }
 	}
 }
@@ -700,13 +700,13 @@ event = {
 	country = POL
 	style = 2
 
-	name = "Sigismund has been defeated"
-	desc = "The rebellious Hohenzollern, Sigismund, has been defeated and it's time we return any occupied land of White Ruthenia to Germany."
+	name = "EVT_654014_NAME"
+	desc = "EVT_654014_DESC"
 	picture = "GerPOW"
 
 	action_a = {
 		ai_chance = 100
-		name = "Cede the land"
+		name = "EVT_654014_OPTIONA"
 		command = { type = secedeprovince which = GER value = 257 }
 		command = { type = secedeprovince which = GER value = 256 }
 		command = { type = secedeprovince which = GER value = 251 }
@@ -724,7 +724,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 0
-		name = "Keep the land"
+		name = "EVT_654014_OPTIONB"
 		command = { type = relation which = GER value = -50 }
 	}
 }
@@ -735,13 +735,13 @@ event = {
 	country = U00
 	style = 2
 
-	name = "Sigismund has been defeated"
-	desc = "The rebellious Hohenzollern, Sigismund, has been defeated and it's time we return any occupied land of White Ruthenia to Germany."
+	name = "EVT_654015_NAME"
+	desc = "EVT_654015_DESC"
 	picture = "GerPOW"
 
 	action_a = {
 		ai_chance = 100
-		name = "Cede the land"
+		name = "EVT_654015_OPTIONA"
 		command = { type = secedeprovince which = GER value = 257 }
 		command = { type = secedeprovince which = GER value = 256 }
 		command = { type = secedeprovince which = GER value = 251 }
@@ -759,7 +759,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 0
-		name = "Keep the land"
+		name = "EVT_654015_OPTIONB"
 		command = { type = relation which = GER value = -50 }
 	}
 }
@@ -770,13 +770,13 @@ event = {
 	country = AUS
 	style = 2
 
-	name = "Sigismund has been defeated"
-	desc = "The rebellious Hohenzollern, Sigismund, has been defeated and it's time we return any occupied land of White Ruthenia to Germany."
+	name = "EVT_654016_NAME"
+	desc = "EVT_654016_DESC"
 	picture = "GerPOW"
 
 	action_a = {
 		ai_chance = 100
-		name = "Cede the land"
+		name = "EVT_654016_OPTIONA"
 		command = { type = secedeprovince which = GER value = 257 }
 		command = { type = secedeprovince which = GER value = 256 }
 		command = { type = secedeprovince which = GER value = 251 }
@@ -794,7 +794,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 0
-		name = "Keep the land"
+		name = "EVT_654016_OPTIONB"
 		command = { type = relation which = GER value = -50 }
 	}
 }
@@ -805,13 +805,13 @@ event = {
 	country = U24
 	style = 2
 
-	name = "Sigismund has been defeated"
-	desc = "The rebellious Hohenzollern, Sigismund, has been defeated and it's time we return any occupied land of White Ruthenia to Germany."
+	name = "EVT_654017_NAME"
+	desc = "EVT_654017_DESC"
 	picture = "GerPOW"
 
 	action_a = {
 		ai_chance = 100
-		name = "Cede the land"
+		name = "EVT_654017_OPTIONA"
 		command = { type = secedeprovince which = GER value = 257 }
 		command = { type = secedeprovince which = GER value = 256 }
 		command = { type = secedeprovince which = GER value = 251 }
@@ -829,7 +829,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 0
-		name = "Keep the land"
+		name = "EVT_654017_OPTIONB"
 		command = { type = relation which = GER value = -50 }
 	}
 }
@@ -840,13 +840,13 @@ event = {
 	country = U25
 	style = 2
 
-	name = "Sigismund has been defeated"
-	desc = "The rebellious Hohenzollern, Sigismund, has been defeated and it's time we return any occupied land of White Ruthenia to Germany."
+	name = "EVT_654018_NAME"
+	desc = "EVT_654018_DESC"
 	picture = "GerPOW"
 
 	action_a = {
 		ai_chance = 100
-		name = "Cede the land"
+		name = "EVT_654018_OPTIONA"
 		command = { type = secedeprovince which = GER value = 257 }
 		command = { type = secedeprovince which = GER value = 256 }
 		command = { type = secedeprovince which = GER value = 251 }
@@ -864,7 +864,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 0
-		name = "Keep the land"
+		name = "EVT_654018_OPTIONB"
 		command = { type = relation which = GER value = -50 }
 	}
 }
@@ -875,13 +875,13 @@ event = {
 	country = HUN
 	style = 2
 
-	name = "Sigismund has been defeated"
-	desc = "The rebellious Hohenzollern, Sigismund, has been defeated and it's time we return any occupied land of White Ruthenia to Germany."
+	name = "EVT_654019_NAME"
+	desc = "EVT_654019_DESC"
 	picture = "GerPOW"
 
 	action_a = {
 		ai_chance = 100
-		name = "Cede the land"
+		name = "EVT_654019_OPTIONA"
 		command = { type = secedeprovince which = GER value = 257 }
 		command = { type = secedeprovince which = GER value = 256 }
 		command = { type = secedeprovince which = GER value = 251 }
@@ -899,7 +899,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 0
-		name = "Keep the land"
+		name = "EVT_654019_OPTIONB"
 		command = { type = relation which = GER value = -50 }
 	}
 }
@@ -910,13 +910,13 @@ event = {
 	country = GLD
 	style = 2
 
-	name = "Sigismund has been defeated"
-	desc = "The rebellious Hohenzollern, Sigismund, has been defeated and it's time we return any occupied land of White Ruthenia to Germany."
+	name = "EVT_654020_NAME"
+	desc = "EVT_654020_DESC"
 	picture = "GerPOW"
 
 	action_a = {
 		ai_chance = 100
-		name = "Cede the land"
+		name = "EVT_654020_OPTIONA"
 		command = { type = secedeprovince which = GER value = 257 }
 		command = { type = secedeprovince which = GER value = 256 }
 		command = { type = secedeprovince which = GER value = 251 }
@@ -934,7 +934,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 0
-		name = "Keep the land"
+		name = "EVT_654020_OPTIONB"
 		command = { type = relation which = GER value = -50 }
 	}
 }
@@ -949,13 +949,13 @@ event = {
 	style = 2
 
 
-	name = "The fate of White Ruthenia"
-	desc = "With the end of the war against White Ruthenia, our officials have been discussing what is to be done with the land. It's essentially split between two camps, one wants to give both Lithuania and Poland large amounts of White Ruthenian land as a form of punishment and the other merely wants to reestablish White Ruthenia. What shall we do?"
+	name = "EVT_654021_NAME"
+	desc = "EVT_654021_DESC"
 	picture = "politics4"
 
 	action = {
 		ai_chance = 50
-		name = "Give Poland and Lithuania most of it"
+		name = "EVT_654021_OPTIONA"
                 trigger = {
                 exists = LIT
                 exists = POL
@@ -982,7 +982,7 @@ event = {
 
         action = {
 		ai_chance = 50
-		name = "Offer it to Commonwealth "
+		name = "EVT_654021_OPTIONB"
                 trigger = {
                 exists = U00
                 alliance = { country = GER country = U00 }
@@ -999,7 +999,7 @@ event = {
 
 	action = {
 		ai_chance = 50
-		name = "Recreate White Ruthenia"
+		name = "EVT_654021_OPTIONC"
 		command = { type = independence which = BLR value = 1 when = 0 }
 		command = { type = sleepminister which = 517005 }
 		command = { type = sleepminister which = 517055 }
@@ -1014,7 +1014,7 @@ event = {
 
         action = {
 		ai_chance = 50
-		name = "Offer it to Russia"
+		name = "EVT_654021_OPTIOND"
                 trigger = {
                 alliance = { country = RUS country = GER }
                 }
@@ -1030,12 +1030,12 @@ event = {
 	country = POL
 	style = 2
 
-	name = "Germany has given us land"
-	desc = "With the end of the White Ruthenian war the Germans decided that we are deserving of the Southern White Ruthenian lands. This is a great day for us!"
+	name = "EVT_654024_NAME"
+	desc = "EVT_654024_DESC"
 	picture = "politics3"
 
 	action_a = {
-		name = "We shall put these lands to good use!"
+		name = "EVT_654024_OPTIONA"
 		command = { type = addcore which = 247 }
 		command = { type = addcore which = 248 }
 		command = { type = addcore which = 251 }
@@ -1049,12 +1049,12 @@ event = {
 	country = LIT
 	style = 2
 
-	name = "Germany has given us land"
-	desc = "With the end of the White Ruthenian war the Germans decided that we are deserving of the Western White Ruthenian lands. This is a great day for us!"
+	name = "EVT_654025_NAME"
+	desc = "EVT_654025_DESC"
 	picture = "politics3"
 
 	action_a = {
-		name = "We shall put these lands to good use!"
+		name = "EVT_654025_OPTIONA"
 		command = { type = addcore which = 256 }
 		command = { type = addcore which = 257 }
 		
@@ -1067,12 +1067,12 @@ event = {
 	country = U00
 	style = 2
 
-	name = "Germany has given us land"
-	desc = "With the end of the White Ruthenian war the Germans decided that we are deserving of the Southern and Western White Ruthenian lands. This is a great day for us!"
+	name = "EVT_654026_NAME"
+	desc = "EVT_654026_DESC"
 	picture = "politics3"
 
 	action_a = {
-		name = "We shall put these lands to good use!"
+		name = "EVT_654026_OPTIONA"
 		command = { type = addcore which = 247 }
 		command = { type = addcore which = 248 }
 		command = { type = addcore which = 251 }
@@ -1089,13 +1089,13 @@ event = {
 	style = 2
         persistent = yes
 
-	name = "The remains of White Ruthenia"
-	desc = "The core area of White Ruthenia now needs to be decided. The majority of our ministers are favoring the creation of a rump White Ruthenia as punishment for their rebellion against us."
+	name = "EVT_654027_NAME"
+	desc = "EVT_654027_DESC"
 	picture = "politics4"
 
 	action_a = {
 		ai_chance = 70
-		name = "Recreate White Ruthenia"
+		name = "EVT_654027_OPTIONA"
 		command = { type = independence which = BLR }
 		command = { type = sleepminister which = 517005 }
 		command = { type = sleepminister which = 517055 }
@@ -1110,7 +1110,7 @@ event = {
 
         action_b = {
 		ai_chance = 30
-		name = "Give it to the Commonwealth"
+		name = "EVT_654027_OPTIONB"
                 trigger = {
                 alliance = { country = U00 country = GER }
                 }
@@ -1128,7 +1128,7 @@ event = {
 
 	action_b = {
 		ai_chance = 30
-		name = "Occupy it. For now...."
+		name = "EVT_654027_OPTIONC"
 		command = { type = trigger which = 654032 }
 	}
 }
@@ -1139,12 +1139,12 @@ event = {
 	random = no
 	country = GER
 
-	name = "A more loyal White Ruthenia"
-	desc = "The new government of White Ruthenia has been formed and is our loyal friend."
+	name = "EVT_654031_NAME"
+	desc = "EVT_654031_DESC"
 	picture = "politics1"
 
 	action_a = {
-		name = "Very good"
+		name = "EVT_654031_OPTIONA"
 		command = { type = make_puppet which = BLR }
 		command = { type = alliance which = BLR }
 	}
@@ -1156,12 +1156,12 @@ event = {
 	country = RUS
 	style = 2
 
-	name = "An offer from Germany"
-	desc = "White Ruthenia recently had fought and lost a war against Germany after trying to ally with us. Now, Germany is offering us the entire White Ruthenia in return for our continual support of Mitteleuropa. This would strengthen our presence in Europe, and this offer won't cost us too much. Should we accept the German offer ?"
+	name = "EVT_654032_NAME"
+	desc = "EVT_654032_DESC"
 	picture = "politics4"
 
 	action_a = {
-		name = "Welcome home Minsk!"
+		name = "EVT_654032_OPTIONA"
 		command = { type = relation which = GER value = 20 }
 		command = { type = trigger which = 654033 }
 	}
@@ -1173,12 +1173,12 @@ event = {
 	country = GER
 	style = 2
 
-	name = "Russia agreed to our offer"
-	desc = "Russia has wisely accepted our offer of the remaining lands of White Ruthenia. The trade was worth it as now we have less land to have to worry about."
+	name = "EVT_654033_NAME"
+	desc = "EVT_654033_DESC"
 	picture = "politics4"
 
 	action_a = {
-		name = "Great!"
+		name = "EVT_654033_OPTIONA"
 		command = { type = secedeprovince which = RUS value = 257 }
 		command = { type = secedeprovince which = RUS value = 256 }
 		command = { type = secedeprovince which = RUS value = 251 }
@@ -1204,12 +1204,12 @@ event = {
 	country = U00
 	style = 2
 
-	name = "Germany grants us control over White Ruthenia"
-	desc = "While Germany had originally claimed that the future of Minsk and Mogliev needed more consideration, they sent a message declaring those lands to be ours! White Ruthenia is now all in the Commonwealth!"
+	name = "EVT_654035_NAME"
+	desc = "EVT_654035_DESC"
 	picture = "politics4"
 
 	action_a = {
-		name = "The Commonwealth is stronger!"
+		name = "EVT_654035_OPTIONA"
 		command = { type = addclaim which = 598 }
 		command = { type = addclaim which = 594 }
 		command = { type = addclaim which = 591 }
@@ -1233,13 +1233,13 @@ event = {
 	country = LIT
 	style = 2
 
-	name = "A message from White Ruthenia"
-	desc = "Sigismund, the new King of White Ruthenia has sent us a message expressing his desire to ally with us. While Sigismund is not only a German but also a Hohenzollern means that our policy of anti-Germanism would be questioned. However, we are alone, and it is likely that the Germans will not let us be free peacefully, and any allies are better than none. What should we do?"
+	name = "EVT_654039_NAME"
+	desc = "EVT_654039_DESC"
 	picture = "politics3"
 
 	action_a = {
 		ai_chance = 90
-		name = "Ally with White Ruthenia"
+		name = "EVT_654039_OPTIONA"
                 command = { type = peace which = BLR value = 1 }
 		command = { type = alliance which = BLR }
 		command = { type = set_relation which = BLR value = 120 }
@@ -1249,7 +1249,7 @@ event = {
 
 	action_b = {
 		ai_chance = 10
-		name = "No, they are no help!"
+		name = "EVT_654039_OPTIONB"
 		command = { type = set_relation which = BLR value = -50 }
                 command = { type = event which = 654007 where = GER when = 1  }
 	}
@@ -1260,12 +1260,12 @@ event = {
 	country = GER
 	style = 2
 
-	name = "Nationalism in the East"
-	desc = "Horrible news! With in two days Nationalists in both Lithuania and White Ruthenia have seized their governments and left Mitteleuropa! To matter matters even worse they have allied with each other, clearly against us. With the possibility of several long conflicts to reestablish control over the East, it is not likely the German people will be supportive of any military action. What should we do?"
+	name = "EVT_654040_NAME"
+	desc = "EVT_654040_DESC"
 
 	action_a = {
 		ai_chance = 85
-		name = "Destroy them!"
+		name = "EVT_654040_OPTIONA"
                 command = { type = end_guarantee which = GER where = BLR }
                 command = { type = end_guarantee which = GER where = LIT }
                 command = { type = end_access which = GER where = BLR }
@@ -1277,7 +1277,7 @@ event = {
 
 	action_b = {
  		ai_chance = 15
-		name = "We cannot intervene"
+		name = "EVT_654040_OPTIONB"
 		command = { type = dissent value = 2 }
 	}
 }
@@ -1290,15 +1290,15 @@ id = 654044
 random = no
 country = BLR
 
-name = "Black Monday hits White Ruthenia!"
-desc = "Almost two weeks ago, the Berlin Stock Exchange plunged into bottomless depths, throwing Germany's economy into an unprecedented crisis. Now the crash's shock waves have reached White Ruthenia. German-owned companies have closed down or laid-off their workers, the White Ruthenian rubel is losing value, and agricultural exports are shrinking..."
+name = "EVT_654044_NAME"
+desc = "EVT_654044_DESC"
 style = 2
 picture = "stockcrashrus"
 
 date = { day = 19 month = february year = 1936 }
 
 	action_a = {
-	name = "Let's hope the government will save us from the worst..."
+	name = "EVT_654044_OPTIONA"
 		command = { type = peacetime_ic_mod value = -2 }
 		command = { type = dissent value = 5 }
 		command = { type = money value = -50 }
@@ -1421,8 +1421,8 @@ event = {
   	control = { province = 599 data = BLR } 
 	}
    
-	name = "Ostwall fortification program"
-	desc = "With Russian armed forces emerging from previous years of neglect as fearsome force it is high time for us to improve our weak border defences. Our top military leaders propose to solve this situation via improving existing net of fortifications along borders with Russia, known as Ostwall. Once finished, such massive fortifications will surely stop any kind of Russian assault." 
+	name = "EVT_654045_NAME"
+	desc = "EVT_654045_DESC" 
 	style = 2
 	picture = "Ostwall"
 	decision_picture = "decision_ostwall"
@@ -1432,7 +1432,7 @@ event = {
 	deathdate = { day = 29 month = december year = 1963 }
 
 	action = {
-		name = "Launch Ostwall fortification program!"
+		name = "EVT_654045_OPTIONA"
                 ai_chance = 90
 		command = { trigger = { ai = no } type = money value = -200 }
 		command = { trigger = { ai = no } type = metalpool value = -1500 }
@@ -1440,7 +1440,7 @@ event = {
 	}
 
         action = {
-		name = "This is not needed..."
+		name = "EVT_654045_OPTIONB"
                 ai_chance = 10
 		command = {  } 
 	}
@@ -1479,15 +1479,15 @@ trigger = {
         }
 }
 
-name = "Improving Ostwall"
-desc = "Our dilligent engineers and soldiers have completed another part of fortification line along borders of White Ruthenia with Russia. Shall we continue with its expansion or are such fortifications sufficient ?"
+name = "EVT_654046_NAME"
+desc = "EVT_654046_DESC"
 
 date = { day = 1 month = january year = 1936 }
 offset = 40
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Further improve our defenses !"
+name = "EVT_654046_OPTIONA"
 ai_chance = 100
 command = { type = construct which = land_fort where = 598 value = 1 } 
 command = { type = construct which = land_fort where = 591 value = 1 } 
@@ -1502,7 +1502,7 @@ command = { trigger = { ai = BLR NOT = { ai = RUS } } type = add_division value 
 }
 
 action_b = {
-name = "This is not needed..."
+name = "EVT_654046_OPTIONB"
 ai_chance = 0
 command = { type = local_clrflag which = BLRost_const }
 }
@@ -1540,15 +1540,15 @@ trigger = {
         }
 }
 
-name = "Improving Ostwall"
-desc = "Our dilligent engineers and soldiers have completed another part of fortification line along borders of White Ruthenia with Russia. Shall we continue with its expansion or are such fortifications sufficient ?"
+name = "EVT_654047_NAME"
+desc = "EVT_654047_DESC"
 
 date = { day = 1 month = january year = 1936 }
 offset = 40
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Further improve our defenses !"
+name = "EVT_654047_OPTIONA"
 ai_chance = 80
 command = { type = construct which = land_fort where = 598 value = 1 } 
 command = { type = construct which = land_fort where = 591 value = 1 } 
@@ -1563,7 +1563,7 @@ command = { trigger = { ai = BLR NOT = { ai = RUS } } type = add_division value 
 }
 
 action_b = {
-name = "This is not needed..."
+name = "EVT_654047_OPTIONB"
 ai_chance = 20
 command = { type = local_clrflag which = BLRost_const }
 }
@@ -1600,15 +1600,15 @@ trigger = {
         }
 }
 
-name = "Improving Ostwall"
-desc = "Our dilligent engineers and soldiers have completed another part of fortification line along borders of White Ruthenia with Russia. Shall we continue with its expansion or are such fortifications sufficient ?"
+name = "EVT_654048_NAME"
+desc = "EVT_654048_DESC"
 
 date = { day = 1 month = january year = 1936 }
 offset = 40
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Further improve our defenses !"
+name = "EVT_654048_OPTIONA"
 ai_chance = 50
 command = { type = construct which = land_fort where = 598 value = 1 } 
 command = { type = construct which = land_fort where = 591 value = 1 } 
@@ -1626,7 +1626,7 @@ command = { trigger = { ai = BLR NOT = { ai = RUS } } type = add_division value 
 }
 
 action_b = {
-name = "This is not needed..."
+name = "EVT_654048_OPTIONB"
 ai_chance = 50
 command = { type = local_clrflag which = BLRost_const }
 }
@@ -1663,15 +1663,15 @@ trigger = {
         }
 }
 
-name = "Ostwall fortification program completed"
-desc = "Our dilligent engineers and soldiers have completed fortification line along borders of White Ruthenia with Russia. With such protections in place, our independence is secured."
+name = "EVT_654049_NAME"
+desc = "EVT_654049_DESC"
 
 date = { day = 1 month = january year = 1936 }
 offset = 40
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Excellent !"
+name = "EVT_654049_OPTIONA"
 command = { type = construct which = land_fort where = 598 value = 1 } 
 command = { type = construct which = land_fort where = 591 value = 1 } 
 command = { type = construct which = land_fort where = 592 value = 1 } 

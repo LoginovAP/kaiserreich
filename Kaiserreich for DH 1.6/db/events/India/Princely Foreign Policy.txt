@@ -45,8 +45,8 @@ event = {
                 }	
 	}
 
-	name = "Direction of Princely India's Foreign Policy"
-	desc = "Through a series of successful internal reforms, Princely India has emerged from the mid thirties as a serious and prepared contender for all-Indian supremacy. However, both of our rivals in Delhi and Calcutta have initiated reform programmes of their own and could thus prove a too strong enemy if confronted at the same time. We must pick our battles and decide on a course to bring both traitors and socialists back under one true nationalist Indian government."
+	name = "EVT_101150_NAME"
+	desc = "EVT_101150_DESC"
 
 	date = { day = 1 month = january year = 1936 }
 	offset = 10
@@ -54,7 +54,7 @@ event = {
 
 	action_a = {
 		ai_chance = 75
-		name = "Radical Socialism must be eradicated from the sub-continent!"
+		name = "EVT_101150_OPTIONA"
 		command = { type = belligerence which = IND value = 5 }
 		command = { type = dissent value = -5 }
 		command = { type = relation which = PRK value = -50 }
@@ -64,7 +64,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 24
-		name = "The rotten remnant of British colonialism must be swept away!"
+		name = "EVT_101150_OPTIONB"
 		command = { type = belligerence which = IND value = 5 }
 		command = { type = dissent value = -5 }
 		command = { type = relation which = PAK value = -50 }
@@ -76,7 +76,7 @@ event = {
 
 	action_c = {
 		ai_chance = 1
-		name = "I'd rather go tiger hunting... mmm... tiger."
+		name = "EVT_101150_OPTIONC"
 		command = { type = belligerence which = IND value = -5 }
 		command = { type = dissent value = 10 }
 		command = { type = relation which = PAK value = 50 }
@@ -97,12 +97,12 @@ event = {
               picture = "regalosman"
 
               
-              name = "Toppeling Indian Socialism"
-              desc = "Our government has decided to strike against the inane leftists in Calcutta as our first step towards national unification. Several paths lay before the cabinet as potential options for removing the Socialist regime from the eastern provinces. Some suggest we begin to foster dissatisfaction amongst the largely conservative peasants of Orissa and thus weaken the internal strength of the Syndicalist state whilst others wish direct confrontation - either in accord with Delhi or alone."
+              name = "EVT_101151_NAME"
+              desc = "EVT_101151_DESC"
 
               action_a = {
                   ai_chance = 75
-                  name = "Instigate unrest against the collective farms in Orissa!"
+                  name = "EVT_101151_OPTIONA"
                   command = { type = domestic which = defense_lobby value = 1 }
                   command = { type = setflag which = Orissa_unrest }
                   command = { type = relation which = PRK value = -25 }
@@ -110,7 +110,7 @@ event = {
 
               action_b = {
                   ai_chance = 24
-                  name = "Try to partition the Bhartiya Commune with Delhi."
+                  name = "EVT_101151_OPTIONB"
                   trigger = { exists = PAK }
                   command = { type = domestic which = defense_lobby value = 1 }
 		  command = { type = dissent value = 5 } 
@@ -121,7 +121,7 @@ event = {
 
               action_c = {
                   ai_chance = 1
-                  name = "The National Government shall openly sweep Syndicalism away!"
+                  name = "EVT_101151_OPTIONC"
                   command = { type = war which = PRK }
 		  command = { type = dissent value = 2 }  
                   command = { type = domestic which = defense_lobby value = 2 }
@@ -153,8 +153,8 @@ trigger = {
 		}
 
 
-	name = "Reactionary Riots in Orissa"
-	desc = "Troubling news is trickling in from Orissa where conservative and reactionary peasant leaders are resisting the work of our political commissars. The ryots are protesting against the restrictive directives issued against religious superstitions and poor conditions at the collective farms. The revolt is hastily gaining popular support even in urban centres and we have it on good authority that operatives from the Hyderabad Government are aiding these rebels!"
+	name = "EVT_101152_NAME"
+	desc = "EVT_101152_DESC"
         picture = "reactionaryprotests"
 
 	date = { day = 1 month = january year = 1936 }
@@ -165,13 +165,13 @@ trigger = {
 
         action_a = {
 	        ai_chance =  75
-	        name = "Let the People's Police enforce the will of the proletariat!"
+	        name = "EVT_101152_OPTIONA"
 		command = { type = dissent value = 5  }  
                 command = { type = setflag which = Orissa_unrest_army }
 		}
         action_b = {
 	        ai_chance =  24
-	        name = "Hyderabad has crossed the line! War with the bastards!"
+	        name = "EVT_101152_OPTIONB"
 		command = { type = dissent value = 10 }  
                 command = { type = domestic which = interventionism value = 1 }
                 command = { type = war which = IND }
@@ -179,7 +179,7 @@ trigger = {
 		}
         action_c = {
 	        ai_chance =  1
-	        name = "Cave in to the demands of the rioters."
+	        name = "EVT_101152_OPTIONC"
 		command = { type = dissent value = 15  }
                 command = { type = domestic which = free_market value = 2 }
                 command = { type = domestic which = freedom value = 1 }
@@ -204,8 +204,8 @@ trigger = {
 		}
 
 
-	name = "The Ryots of Orissa are Oppressed!"
-	desc = "Conservative and religious peasants have commenced a full scale uprising against Socialist practices in Orissa. Already their leaders have requested our assistance in the form of volunteers, arms and munitions. However, some ministers argue that we need to intervene more... directly in this conflict."
+	name = "EVT_101153_NAME"
+	desc = "EVT_101153_DESC"
         picture = "reactionaryprotests"
 
 	date = { day = 1 month = january year = 1936 }
@@ -216,13 +216,13 @@ trigger = {
 
         action_a = {
 	        ai_chance =  55
-	        name = "Provide arms and training for the heroic resistance!"
+	        name = "EVT_101153_OPTIONA"
 		command = { type = dissent value = 5  }                    
                 command = { type = event which = 101154 where = PRK when = 3 }
 		}
         action_b = {
 	        ai_chance =  45
-	        name = "In the name of national unification, we must intervene directly!" 
+	        name = "EVT_101153_OPTIONB" 
                 command = { type = domestic which = interventionism value = 1 }
                 command = { type = war which = PRK }
                 command = { type = domestic which = defense_lobby value = 1 }
@@ -271,12 +271,12 @@ event = {
               picture = "regalosman"
 
               
-              name = "Hyderabad Funds Rebel Partisans in Orissa"
-              desc = "Our operatives in the national intelligence unit have uncovered hard evidence of Princely 'volunteers' and weapons amongst the rebels in Orissa. We must act swiftly to preserve the progress of Socialism - both in Orissa and the rest of our glorious republic as well!"
+              name = "EVT_101154_NAME"
+              desc = "EVT_101154_DESC"
 
               action_a = {
                   ai_chance = 60
-                  name = "We cannot let the Zamindari system return! Attack!"
+                  name = "EVT_101154_OPTIONA"
                   command = { type = war which = IND }
 				  command = { type = event which = 101157 where = IND when = 1 }
                   command = { type = domestic which = defense_lobby value = 1 }
@@ -289,7 +289,7 @@ event = {
 
               action_b = {
                   ai_chance = 40
-                  name = "The People's Police are adequately fashioned to combat these thugs."
+                  name = "EVT_101154_OPTIONB"
                   command = { type = event which = 101155 where = PRK when = 7 }
                   }
 
@@ -302,12 +302,12 @@ event = {
               picture = "reactionaryprotests"
 
               
-              name = "Hyderabad Funds Rebel Partisans in Orissa"
-              desc = "Our operatives in the national intelligence unit have uncovered hard evidence of Princely 'volunteers' and weapons amongst the rebels in Orissa. We must act swiftly to preserve the progress of Socialism - both in Orissa and the rest of our glorious republic as well!"
+              name = "EVT_101155_NAME"
+              desc = "EVT_101155_DESC"
 
               action_a = {
                   ai_chance = 30
-                  name = "We cannot let the Zamindari system return! Attack!"
+                  name = "EVT_101155_OPTIONA"
                   command = { type = war which = IND }
 				  command = { type = event which = 101157 where = IND when = 1 }
                   command = { type = domestic which = defense_lobby value = 1 }
@@ -319,7 +319,7 @@ event = {
 
               action_b = {
                   ai_chance = 70
-                  name = "The People's Police are adequately fashioned to combat these thugs."
+                  name = "EVT_101155_OPTIONB"
 		  command = { type = dissent value = 10  }
                   command = { type = setflag which = Orissa_unrest_army_police }
                   }
@@ -346,8 +346,8 @@ trigger = {
 		}
 
 
-	name = "Orissa is in the Hands of the Rebels!"
-	desc = "Damnations! Backed by Princely agents and supplied with firepower from Hyderebad, the rabid reactionary rebels have completely driven our police and paramilitary units away from the rural districts of the province, confining them to the cities. We have no choice but to commit the army to this horrid situation!"
+	name = "EVT_101156_NAME"
+	desc = "EVT_101156_DESC"
         picture = "reactionaryprotests"
 
 	date = { day = 1 month = january year = 1936 }
@@ -358,7 +358,7 @@ trigger = {
 
         action_a = {
 	        ai_chance =  100
-	        name = "Send in the army and sweep this rabble out of India!"
+	        name = "EVT_101156_OPTIONA"
 		command = { type = dissent value = 5  }  
                 command = { type = domestic which = interventionism value = 1 }
                 command = { type = secedeprovince which = IND value = 1493 } 
@@ -375,7 +375,7 @@ trigger = {
 		}
         action_b = {
 	        ai_chance =  1
-	        name = "My dear, I honestly don't give a damn about Bihar."
+	        name = "EVT_101156_OPTIONB"
 		command = { type = dissent value = 10 }  
 		}
 		  
@@ -388,12 +388,12 @@ event = {
               picture = "Nepalarmy"
 
               
-              name = "The Bhartiya Commune Attacks Us!"
-              desc = "Our involvement with the rural revolt in Orissa has finally goaded the inane leftists into attacking us. As we are not seen as the obvious aggressors, we might stand a chance of avoiding Delhi involving itself in the conflict. This might just be the Crossing of the Rubicon for Princely India!Glory to the national government!"
+              name = "EVT_101157_NAME"
+              desc = "EVT_101157_DESC"
 
               action_a = {
                 ai_chance = 100
-                name = "The Ancién Regime will be restored in the East!"
+                name = "EVT_101157_OPTIONA"
                 command = { type = domestic which = defense_lobby value = 1 }
                 command = { type = relation which = PAK value = -20 }
 		command = { type = addclaim which = 1439 }
@@ -440,12 +440,12 @@ event = {
               picture = "Bengal"
 
               
-              name = "Hyderabad and the Pact Against the Bhartiya Commune"
-              desc = "We have been contacted clandestinely by agents of the Hyderabad government asking us to cooperate in overthrowing the socialist regime in the Bengal. This is a tricky situation, since we do not recognize the princely regime and openly contest their claim to all-Indian sovereignty. However, such a pact could serve a useful purpose in removing the radical leftist state and set the stage for a final confrontation with the traitorous princes of the South."
+              name = "EVT_101158_NAME"
+              desc = "EVT_101158_DESC"
 
               action_a = {
                 ai_chance = 65
-                name = "Respond positively to these overtures."
+                name = "EVT_101158_OPTIONA"
                 command = { type = relation which = IND value = 35 }
                 command = { type = relation which = PRK value = -20 }
                 command = { type = event which = 101159 where = IND when = 3 }
@@ -480,7 +480,7 @@ event = {
 
               action_b = {
                 ai_chance = 35
-                name = "Make promises and hedge bets."
+                name = "EVT_101158_OPTIONB"
                 command = { type = event which = 101159 where = IND when = 3 }
                 command = { type = relation which = IND value = 10 }
                 command = { type = relation which = PRK value = -10 }
@@ -490,7 +490,7 @@ event = {
 
               action_c = {
                 ai_chance = 10
-                name = "No deals with scheeming princes!"
+                name = "EVT_101158_OPTIONC"
                 command = { type = relation which = PRK value = 20 }
                 command = { type = relation which = IND value = -25 }
                 command = { type = event which = 101161 where = IND when = 5 }
@@ -506,12 +506,12 @@ event = {
               picture = "Bengal"
 
               
-              name = "The Delhi Government Accepts the Pact"
-              desc = "Today we have scored an important diplomatic victory! The Delhi Government has accepted our proposal to dismantle the socialist mongrels in Calcutta and thus secured our Northern flank. The path to national unification has been cleared and our armed forces are itching for a chance to prove their worth!"
+              name = "EVT_101159_NAME"
+              desc = "EVT_101159_DESC"
 
               action_a = {
                 ai_chance = 99
-                name = "Then let us attack!"
+                name = "EVT_101159_OPTIONA"
                 command = { type = war which = PRK }
                 command = { type = relation which = PAK value = 35 }
                 command = { type = relation which = PRK value = -20 }
@@ -553,7 +553,7 @@ event = {
 
               action_b = {
                 ai_chance = 1
-                name = "Abbandon the idea.. for now."
+                name = "EVT_101159_OPTIONB"
                 command = { type = relation which = PAK value = -50 }
                 command = { type = relation which = PRK value = 50 }
                 }
@@ -568,12 +568,12 @@ event = {
               picture = "regalosman"
 
               
-              name = "Honouring the Delhi-Hyderabad Pact"
-              desc = "In accordance with the secret negotiations between our two governments, Princely India has gone ahead and declared war upon the socialist regime in Calcutta. Should we honour the deal and launch an offensive of our own or employ a more cloak and dagger method of approach?"
+              name = "EVT_101160_NAME"
+              desc = "EVT_101160_DESC"
 
               action_a = {
                 ai_chance = 99
-                name = "Honour the pact and attack the Bhartiya Commune!"
+                name = "EVT_101160_OPTIONA"
                 trigger = { flag = PAK_IND_PACT_YES }
                 command = { type = war which = PRK }
                 command = { type = relation which = IND value = 25 }
@@ -609,7 +609,7 @@ event = {
 
               action_b = {
                 ai_chance = 60
-                name = "Honour the pact and attack the Bhartiya Commune!"
+                name = "EVT_101160_OPTIONB"
                 trigger = { flag = PAK_IND_PACT_MAYBE }
                 command = { type = war which = PRK }
                 command = { type = relation which = IND value = 25 }
@@ -645,7 +645,7 @@ event = {
 
               action_c = {
                 ai_chance = 39
-                name = "Strike the princes in the back!"
+                name = "EVT_101160_OPTIONC"
                 trigger = { flag = PAK_IND_PACT_MAYBE }
                 command = { type = war which = IND }
                 command = { type = relation which = PRK value = 25 }
@@ -681,7 +681,7 @@ event = {
 
               action_d = {
                 ai_chance = 1
-                name = "Time to hunt some tiger. Mmmm... tiger."
+                name = "EVT_101160_OPTIOND"
                 command = { type = relation which = IND value = -50 }
                 command = { type = relation which = PRK value = 50 }
                 }
@@ -696,12 +696,12 @@ event = {
               picture = "Bengal"
 
               
-              name = "The Delhi Government Refuses the Pact"
-              desc = "Damnations! The lapdogs in Delhi have refused any form of cooperation in destroying the Bhartiya Commune."
+              name = "EVT_101161_NAME"
+              desc = "EVT_101161_DESC"
 
               action_a = {
                 ai_chance = 99
-                name = "Then we shall attack the Bolshevik menace on our own!"
+                name = "EVT_101161_OPTIONA"
                 command = { type = war which = PRK }
                 command = { type = relation which = PAK value = 35 }
                 command = { type = relation which = PRK value = -20 }
@@ -742,7 +742,7 @@ event = {
 
               action_b = {
                 ai_chance = 1
-                name = "Abbandon the idea.. for now."
+                name = "EVT_101161_OPTIONB"
                 command = { type = relation which = PAK value = 20 }
                 command = { type = relation which = PRK value = 20 }
                 }
@@ -798,8 +798,8 @@ event = {
                 }	
 	}
 
-	name = "Dealing With the Delhi Government"
-	desc = "We have decided to turn our focus on eliminating the colonial lapdogs in Delhi. Several paths could lead to the collapse of the last remnant of the British Raj. However, the close relations between Delhi and the Entente might prove a challenge too steep if charged head on."
+	name = "EVT_101162_NAME"
+	desc = "EVT_101162_DESC"
 
 	date = { day = 1 month = january year = 1936 }
 	offset = 10
@@ -807,7 +807,7 @@ event = {
 
 	action_a = {
 		ai_chance = 75
-		name = "Let us end this once and for all!"
+		name = "EVT_101162_OPTIONA"
 		command = { type = belligerence which = IND value = 5 }
 		command = { type = dissent value = -5 }
                 command = { type = war which = PAK }
@@ -854,7 +854,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 24
-		name = "Let us attempt to sway the Northern nationalist princes."
+		name = "EVT_101162_OPTIONB"
 		command = { type = belligerence which = IND value = 5 }
 		command = { type = dissent value = 2 }
 		command = { type = relation which = PAK value = -50 }
@@ -866,7 +866,7 @@ event = {
 
 	action_c = {
 		ai_chance = 1
-		name = "Our resources are stretched, let us wait and regroup."
+		name = "EVT_101162_OPTIONC"
 		command = { type = belligerence which = IND value = -5 }
 		command = { type = dissent value = 10 }
 		command = { type = relation which = PAK value = 50 }
@@ -885,12 +885,12 @@ event = {
               picture = "Gangasinghevent"
 
               
-              name = "The National Government Speaks Softly to Northern Princes"
+              name = "EVT_101163_NAME"
               desc = "EVT_101163_DESC"
 
               action_a = {
                 ai_chance = 40
-                name = "Hari Singh of Kashmir is a good reactionary, court him!"
+                name = "EVT_101163_OPTIONA"
 		        command = { type = domestic which = interventionism value = 1 }
                 command = { type = setflag which = IND_Kashmir }
                 command = { type = relation which = PAK value = -50 }
@@ -899,7 +899,7 @@ event = {
 
               action_b = {
                 ai_chance = 50
-                name = "Court both the powerful princes of Baroda and Kashmir!"
+                name = "EVT_101163_OPTIONB"
 		        command = { type = domestic which = interventionism value = 2 }
                 command = { type = setflag which = IND_Kashmir_Baroda }
                 command = { type = relation which = PAK value = -100 }
@@ -908,7 +908,7 @@ event = {
 
               action_c = {
                 ai_chance = 10
-                name = "Abbandon this scheeming and declare war!"
+                name = "EVT_101163_OPTIONC"
 		        command = { type = domestic which = defense_lobby value = 1 }
                 command = { type = war which = PAK }
                 command = { type = relation which = PAK value = -200 }
@@ -963,12 +963,12 @@ event = {
               picture = "diarchy"
 
               
-              name = "Treason and Sedition Amongst our Princes!"
+              name = "EVT_101164_NAME"
               desc = "EVT_101164_DESC"
 
               action = {
                 ai_chance = 40
-                name = "Rush troops to Kashmir and arrest the Maharaja!"
+                name = "EVT_101164_OPTIONA"
                 trigger = { flag = IND_Kashmir }		
                 command = { type = dissent value = 5 }
                 command = { type = relation which = IND value = -50 }
@@ -978,7 +978,7 @@ event = {
 
               action = {
                 ai_chance = 60
-                name = "Hari Singh delcares for Hyderabad and revolts!"
+                name = "EVT_101164_OPTIONB"
                 trigger = { flag = IND_Kashmir }
 		command = { type = domestic which = interventionism value = 1 }
                 command = { type = relation which = IND value = -100 }
@@ -994,7 +994,7 @@ event = {
 
               action = {
                 ai_chance = 50
-                name = "Declare martial law in Baroda and Kashmir and arrest the princes!"
+                name = "EVT_101164_OPTIONC"
                 trigger = { flag = IND_Kashmir_Baroda }
 		command = { type = domestic which = defense_lobby value = 2 }
 	        command = { type = sleepminister which = 564043 }
@@ -1006,7 +1006,7 @@ event = {
 
               action = {
                 ai_chance = 50
-                name = "Baroda and Kashmir secedes and declares for Hyderabad!"
+                name = "EVT_101164_OPTIOND"
                 trigger = { flag = IND_Kashmir_Baroda }
 		        command = { type = domestic which = interventionism value = 1 }
                 command = { type = relation which = IND value = -100 }
@@ -1038,12 +1038,12 @@ event = {
               picture = "diarchy"
 
               
-              name = "Results of our Scheming"
-              desc = "For better or worse our underhand plot to turn some of the Northern princes against their own government has come to an end. It is now time to bring forth the daggers and cut away the last stain of British colonialism on the Indian sub-continent!"
+              name = "EVT_101165_NAME"
+              desc = "EVT_101165_DESC"
 
               action = {
                 ai_chance = 100
-                name = "Rush to the aid of Kashmir - declare war!"
+                name = "EVT_101165_OPTIONA"
                 trigger = { flag = IND_Kashmir }
                 command = { type = add_corps which = "Army of the State of Jammu and Kashmir" value = land where = 1540 }
                 command = { type = add_division which = "1st Jammu and Kashmir Infantry" value = infantry when = 8 }
@@ -1094,7 +1094,7 @@ event = {
 
               action = {
                 ai_chance = 100
-                name = "Baroda and Kashmir join the National Government - to war!"
+                name = "EVT_101165_OPTIONB"
                 trigger = { flag = IND_Kashmir_Baroda } 
                 command = { type = add_corps which = "Army of the State of Jammu and Kashmir" value = land where = 1540 }
                 command = { type = add_division which = "1st Jammu and Kashmir Infantry" value = infantry when = 8 }   
@@ -1152,12 +1152,12 @@ event = {
               picture = "diarchy"
 
               
-              name = "The Princely Plot is Thwarted"
-              desc = "For better or worse our underhand plot to turn some of the Northern princes against their own government has come to an end. It is now time to bring forth the daggers and cut away the last stain of British colonialism on the Indian sub-continent!"
+              name = "EVT_101166_NAME"
+              desc = "EVT_101166_DESC"
 
               action = {
                 ai_chance = 100
-                name = "Then we must crush the pretenders by brute force!"
+                name = "EVT_101166_OPTIONA"
                 trigger = { flag = IND_Kashmir }
                 command = { type = addclaim which = 1540 }
 	            command = { type = addclaim which = 1539 }
@@ -1206,7 +1206,7 @@ event = {
 
               action = {
                 ai_chance = 100
-                name = "Then we must crush the pretenders by brute force!"
+                name = "EVT_101166_OPTIONB"
                 trigger = { flag = IND_Kashmir_Baroda } 
                 command = { type = war which = PAK }            
                 command = { type = addclaim which = 1540 }
@@ -1253,7 +1253,7 @@ event = {
 
               action = {
                 ai_chance = 1
-                name = "Sweet Gods that was a foolish idea..." 
+                name = "EVT_101166_OPTIONC" 
                 command = { type = dissent value = 20 }
                 }    
 
@@ -1266,12 +1266,12 @@ event = {
               picture = "diarchy"
 
               
-              name = "The Gun-Salute State Attacks"
-              desc = "The traitors of the Princely state have attacked us! We must fight for our claim to all-Indian representation!"
+              name = "EVT_1011660_NAME"
+              desc = "EVT_1011660_DESC"
 
               action = {
                 ai_chance = 100
-                name = "Down with the Nizam!"
+                name = "EVT_1011660_OPTIONA"
                   command = { type = addclaim which = 1520 }
                   command = { type = addclaim which = 1517 }
                   command = { type = addclaim which = 1516 }
@@ -1358,8 +1358,8 @@ event = {
                 }	
 	}
 
-	name = "Direction of Princely India's Foreign Policy"
-	desc = "Through a series of successful internal reforms, Princely India has emerged from the mid thirties as a serious and prepared contender for all-Indian supremacy. We have crushed the Delhi government and now we have to do the same with the Socialists in the eastern provinces."
+	name = "EVT_101167_NAME"
+	desc = "EVT_101167_DESC"
 
 	date = { day = 1 month = january year = 1936 }
 	offset = 10
@@ -1367,7 +1367,7 @@ event = {
 
 	action_a = {
 		ai_chance = 100
-		name = "Radical Socialism must be eradicated from the sub-continent!"
+		name = "EVT_101167_OPTIONA"
 		command = { type = belligerence which = IND value = 5 }
 		command = { type = dissent value = -5 }
 		command = { type = relation which = PRK value = -50 }
@@ -1378,7 +1378,7 @@ event = {
 
 	action_b = {
 		ai_chance = 0
-		name = "I'd rather go tiger hunting... mmm... tiger."
+		name = "EVT_101167_OPTIONB"
 		command = { type = belligerence which = IND value = -5 }
 		command = { type = dissent value = 10 }
 		command = { type = relation which = PAK value = 50 }
@@ -1437,8 +1437,8 @@ event = {
                 }	
 	}
 
-name = "Princely India and Her Place in the Sun"
-desc = "We have consolidated India and enforced Princely cohesion throughout the sub-continent. The time has now come for the National Government to descide on our country's role in the world of international diplomacy. Shall we join one of the grand alliances and strenghten the nation's international reputation?"
+name = "EVT_101180_NAME"
+desc = "EVT_101180_DESC"
 
 date = { day = 3 month = july year = 1941 }
 offset = 200
@@ -1453,7 +1453,7 @@ NOT = { war = { country = IND country = JAP } }
 NOT = { participant = { country = JAP value = 1 } }
 NOT = { participant = { country = JAP value = 2 } }
 }
-name = "Align with the Japanese for the glory of Asia!"
+name = "EVT_101180_OPTIONA"
 command = { type = trigger which = 101181 }
 command = { type = dissent value = 2 }
 }
@@ -1466,7 +1466,7 @@ NOT = { ispuppet = GER }
 NOT = { war = { country = IND country = GER } }
 participant = { country = GER value = 2 }
 }
-name = "We can cooperate with the German Empire!"
+name = "EVT_101180_OPTIONB"
 command = { type = trigger which = 101182 }
 command = { type = dissent value = 5 }
 }
@@ -1481,14 +1481,14 @@ NOT = { war = { country = RUS country = IND } }
 NOT = { participant = { country = IND value = 1 } }
 NOT = { participant = { country = IND value = 2 } }
 }
-name = "Alongside Russia we shall bring order to all of Asia!"
+name = "EVT_101180_OPTIONC"
 command = { type = trigger which = 101183 }
 command = { type = dissent value = 5 }
 }
 
 action_d = {
 ai_chance = 3
-name = "Let us rebuild India in splendid isolation."
+name = "EVT_101180_OPTIOND"
 command = { type = belligerence which = IND value = -20  }
 command = { type = dissent value = -10 }
 }
@@ -1501,12 +1501,12 @@ event = {
               picture = "Bengal"
 
               
-              name = "Princely India Wants to Join Our Alliance"
-              desc = "The national government in Hyderabad has recently united the successor states of the subcontinent. The new Indian government has expressed its desire to join our alliance and help furthering the awakening of the people's of Asia. What is the oppinion of the Imperial cabinnet?"
+              name = "EVT_101181_NAME"
+              desc = "EVT_101181_DESC"
 
               action_a = {
                 ai_chance = 99
-                name = "Outstanding, the Co-Prosperity Sphere welcomes them!"
+                name = "EVT_101181_OPTIONA"
                 command = { type = alliance which = IND }
                 command = { type = relation which = IND value = 200 }
                 command = { type = dissent value = -3 }
@@ -1515,7 +1515,7 @@ event = {
 
               action_b = {
                 ai_chance = 1
-                name = "India's s not really my cup of tea."
+                name = "EVT_101181_OPTIONB"
                 command = { type = relation which = IND value = -20 }
                 }
 
@@ -1529,12 +1529,12 @@ event = {
               picture = "Bengal"
 
               
-              name = "Princely India Wants to Join Our Alliance"
-              desc = "The national government in Hyderabad has recently united the successor states of the subcontinent. The new Indian government has expressed its desire to join the Mitteleuropa System and continue to fight Syndicalism in Asia. However, it is expected that the Indians will demand concessions regarding our colonies in the sub-continent."
+              name = "EVT_101182_NAME"
+              desc = "EVT_101182_DESC"
 
               action_a = {
                 ai_chance = 80
-                name = "Wunderbar, the Kaiserreich salutes its new ally!"
+                name = "EVT_101182_OPTIONA"
                 command = { type = alliance which = IND }
                 command = { type = relation which = IND value = 200 }
                 command = { type = dissent value = -3 }
@@ -1543,7 +1543,7 @@ event = {
 
               action_b = {
                 ai_chance = 20
-                name = "India's s not really my cup of tea."
+                name = "EVT_101182_OPTIONB"
                 command = { type = relation which = IND value = -20 }
                 }
 
@@ -1557,12 +1557,12 @@ event = {
               picture = "Bengal"
 
               
-              name = "Princely India Wants to Join Our Alliance"
-              desc = "The national government in Hyderabad has recently united the successor states of the subcontinent. The new Indian government has expressed its desire to join our alliance to further stability and national harmony throughout Eurasia. With such an alliance, the sepoy and cossack will surely dominate the continent!"
+              name = "EVT_101183_NAME"
+              desc = "EVT_101183_DESC"
 
               action_a = {
                 ai_chance = 75
-                name = "This alliance shall mark our victory in the Great Game, accept!"
+                name = "EVT_101183_OPTIONA"
                 command = { type = alliance which = IND }
                 command = { type = relation which = IND value = 200 }
                 command = { type = dissent value = -3 }
@@ -1571,7 +1571,7 @@ event = {
 
               action_b = {
                 ai_chance = 25
-                name = "India's s not really my cup of tea."
+                name = "EVT_101183_OPTIONB"
                 command = { type = relation which = IND value = -20 }
                 }
 
@@ -1602,8 +1602,8 @@ event = {
       } 
       
 
-     name = "The Status of the German Colonies Near India"
-     desc = "After succesfully concluding an alliance with the German Empire, some members of our government believe that we should use our newfound cordial relations to request that the Kaiserreich return the territories it snatched from the British when the Raj collapsed. However, the Indo-German alliance is still fragile and some fear that pressuring the Germans might endanger our newfound international strenght."
+     name = "EVT_101184_NAME"
+     desc = "EVT_101184_DESC"
      picture = "Ceylon"
 
      date = { day = 1 month = january year = 1936 }
@@ -1612,7 +1612,7 @@ event = {
 
      action_a = {
          ai_chance = 20
-         name = "Request the return of the Andaman and Laccadive Islands."
+         name = "EVT_101184_OPTIONA"
          command = { type = relation which = GER value = -10 }
          command = { type = dissent value = -2 }
          command = { type = event which = 101185 where = GER when = 3 }
@@ -1621,7 +1621,7 @@ event = {
      }
      action_b = {
          ai_chance = 60
-         name = "Request the return of the atolls as well as Ceylon."
+         name = "EVT_101184_OPTIONB"
          command = { type = relation which = GER value = -20 }
          command = { type = dissent value = -3 }
          command = { type = event which = 101185 where = GER when = 3 }
@@ -1630,7 +1630,7 @@ event = {
      }
      action_c = {
          ai_chance = 20
-         name = "There's no need to antagonize the Germans."
+         name = "EVT_101184_OPTIONC"
          command = { type = relation which = GER value = 50 }
          command = { type = dissent value = 4 }
      }
@@ -1644,13 +1644,13 @@ event = {
               picture = "Ceylon"
 
               
-              name = "Princely India and the Return of our Indian Colonies"
-              desc = "The Hyderabad government has just proposed a deal that would transfer some of the territories we snatched after the collapse of the British Raj back to the Indian government. This could be a good way to improve relations with the national government, but could also set a dangerous precedent in our other colonies."
+              name = "EVT_101185_NAME"
+              desc = "EVT_101185_DESC"
 
               action = {
                 trigger = { flag = IND_And_Lac }
                 ai_chance = 75
-                name = "Hand over the isles to the Indians."
+                name = "EVT_101185_OPTIONA"
                 command = { type = relation which = IND value = 100 }
                 command = { type = secedeprovince which = IND value = 1421 }
                 command = { type = secedeprovince which = IND value = 1611 } 
@@ -1662,14 +1662,14 @@ event = {
               action = {
                 trigger = { flag = IND_And_Lac }
                 ai_chance = 25
-                name = "Nein, these naval bases are vital to the Kaiserliche Marine!"
+                name = "EVT_101185_OPTIONB"
                 command = { type = relation which = IND value = -20 }
                 }
 
               action = {
                 trigger = { flag = IND_Ceylon }
                 ai_chance = 75
-                name = "Hand over Ceylon and the isles to the Indians."
+                name = "EVT_101185_OPTIONC"
                 command = { type = relation which = IND value = 120 }
                 command = { type = dissent value = 5 }
                 command = { type = domestic which = defense_lobby value = -1 }
@@ -1685,7 +1685,7 @@ event = {
               action = {
                 trigger = { flag = IND_Ceylon }
                 ai_chance = 40
-                name = "Nein, these naval bases are vital to the Kaiserliche Marine!"
+                name = "EVT_101185_OPTIOND"
                 command = { type = relation which = IND value = -25 }
                 }
 
@@ -1699,13 +1699,13 @@ event = {
               style = 2
               picture = "Ceylon"
 
-              name = "The Transfer of the German Colonies"
-              desc = "We have managed to convience the Germans to return some of the colonies taken by the Reich after the Raj collapsed. This is both a great sign of Indo-German friendship, but also proof that we truly have obtained the mandate as legal successor to the British. Glory to India!"
+              name = "EVT_101186_NAME"
+              desc = "EVT_101186_DESC"
 
               action = {
                 trigger = { flag = IND_And_Lac }
                 ai_chance = 100
-                name = "Huzzah!"
+                name = "EVT_101186_OPTIONA"
                 command = { type = relation which = GER value = 25 }
                 command = { type = addcore which = 1421 }
                 command = { type = addcore which = 1611 }
@@ -1717,7 +1717,7 @@ event = {
               action = {
                 trigger = { flag = IND_Ceylon }
                 ai_chance = 85
-                name = "Merge the isles into the Federation!"
+                name = "EVT_101186_OPTIONB"
                 command = { type = relation which = GER value = 120 }
                 command = { type = dissent value = -3 }
                 command = { type = addcore which = 1421 }
@@ -1732,7 +1732,7 @@ event = {
               action = {
                 trigger = { flag = IND_Ceylon }
                 ai_chance = 15
-                name = "Grant Ceylon wide internal autonomy and incorporate the atolls."
+                name = "EVT_101186_OPTIONC"
                 command = { type = addcore which = 1421 }
                 command = { type = addcore which = 1611 }
                 command = { type = addcore which = 1612 }
@@ -1770,8 +1770,8 @@ trigger = {
 	}
 
 
-	name = "Dealing With Bhutan"
-	desc = "In the aftermath of the Raj's collapse, the small and virtually isolated Kingdom of Bhutan utilized the chaotic situation in Northern Assam to seize several districts at the foothills of the Himalayas. With the Bhartiya Commune pacified and Assam integrated into our fair state many of the hawks within the cabinet are demanding the return of this unlawfully occupied territory. Some are even calling for the inclusion of Bhutan into a wider customs union combined with a military treaty."
+	name = "EVT_101187_NAME"
+	desc = "EVT_101187_DESC"
         picture = "Bhutan"
 
 	date = { day = 1 month = january year = 1936 }
@@ -1781,7 +1781,7 @@ trigger = {
 
         action = {
 	        ai_chance =  60
-	        name = "Demand the return of the occupied districts!"
+	        name = "EVT_101187_OPTIONA"
                 command = { type = relation which = BHU value = -25 }
                 command = { type = domestic which = interventionism value = 1 }
                 command = { type = event which = 101188 where = BHU when = 7 }
@@ -1790,7 +1790,7 @@ trigger = {
 
         action = {
 	        ai_chance =  39
-	        name = "Claim the districts and press for a friendly government!"
+	        name = "EVT_101187_OPTIONB"
                 command = { type = relation which = BHU value = -50 }
                 command = { type = addcore which = 1455 }
                 command = { type = domestic which = interventionism value = 2 }
@@ -1800,7 +1800,7 @@ trigger = {
 
         action = {
 	        ai_chance =  1
-	        name = "Bah, we have enough trouble on our plate already."
+	        name = "EVT_101187_OPTIONC"
                 command = { type = domestic which = interventionism value = -2 }
 		command = { type = dissent value = 10 }
 		}
@@ -1814,8 +1814,8 @@ event = {
              style = 2
              picture = "Bhutan"
 
-             name = "The Demands of the Hyderabad Government"
-             desc = "We are under pressure from the resurgent Indian government in Hyderabad to secede the districts we conquered in the aftermath of the British Raj's collapse."
+             name = "EVT_101188_NAME"
+             desc = "EVT_101188_DESC"
 
                 action_a = {
 	        ai_chance =  80
@@ -1827,7 +1827,7 @@ event = {
 
         action = {
 	        ai_chance =  20
-	        name = "Mighty Bhutan shall defend her conquests - to war!"
+	        name = "EVT_101188_OPTIONA"
                 command = { type = war which = IND }
                 command = { type = domestic which = interventionism value = 2 }
 		command = { type = dissent value = 10 }
@@ -1843,8 +1843,8 @@ event = {
              style = 2
              picture = "Bhutan"
 
-             name = "The Demands of the Hyderabad Government"
-             desc = "We are under pressure from the resurgent Indian government in Delhi to secede the districts we conquered in the aftermath of the British Raj's collapse. Furthermore the Indians demand that we surrender our de facto independence."
+             name = "EVT_101189_NAME"
+             desc = "EVT_101189_DESC"
 
                 action_a = {
 	        ai_chance =  70
@@ -1857,7 +1857,7 @@ event = {
 
         action = {
 	        ai_chance =  30
-	        name = "Mighty Bhutan shall defend her conquests - to war!"
+	        name = "EVT_101189_OPTIONA"
                 command = { type = war which = IND }
                 command = { type = domestic which = interventionism value = 2 }
 		command = { type = dissent value = 10 }
@@ -1873,12 +1873,12 @@ event = {
              style = 2
              picture = "Bhutan"
 
-             name = "Bhutan Caves In"
-             desc = "The government of Bhutan has capitulated itself and accepted all of our demands regarding the nature of their government and the status of their illegally occupied Indian territories. Even now, our troops are moving north to secure all vital positions in support of a new friendly Bhutanese cabinet. The sub-continent is on its way to complete unification!"
+             name = "EVT_101190_NAME"
+             desc = "EVT_101190_DESC"
 
                 action_a = {
 	        ai_chance =  99
-	        name = "Behold the power of India resurgent!"
+	        name = "EVT_101190_OPTIONA"
 		        command = { type = make_puppet which = BHU  }
 		        command = { type = alliance which = BHU }
                 command = { type = relation which = BHU value = 200 }
@@ -1887,7 +1887,7 @@ event = {
 
                 action_b = {
 	        ai_chance =  1
-	        name = "We do not need any form of union with these yak-people."
+	        name = "EVT_101190_OPTIONB"
                 command = { type = relation which = BHU value = 100 }
                 command = { type = domestic which = interventionism value = -2 }
 		command = { type = dissent value = 10 }

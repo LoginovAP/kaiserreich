@@ -12,12 +12,12 @@ date = { day = 1 month = april year = 1936 }
 offset = 5
 deathdate = { day = 29 month = january year = 1960 }
 
-name = "The Provinces relations with Panama"
-desc = "We have always been on good terms with Panama, our neighbor to the south. Now, with an increasingly belligerent Colombia to the south, and an expansionist Centroamerica to the northwest, it may be time to band together with Panama, to ensure we both survive."
+name = "EVT_56807_NAME"
+desc = "EVT_56807_DESC"
 
 action_a = {
 ai_chance = 90
-name = "Send an Alliance Proposition to Panama"
+name = "EVT_56807_OPTIONA"
 command = { type = relation which = COL value = -10 } #Colombia
 command = { type = relation which = GUA value = -15 } #Centroamerica
 command = { type = domestic which = interventionism value = 1 }
@@ -26,7 +26,7 @@ command = { type = trigger which = 56808 }
 
 action_b = {
 ai_chance = 10
-name = "The Provinces Are Better Off Without Panama!"
+name = "EVT_56807_OPTIONB"
 command = { type = sleepevent which = 56808 } #Panamas Response
 }
 }
@@ -37,12 +37,12 @@ country = PAN
 style = 2
 picture = "constitutional"
 
-name = "The Provinces Propose an Alliance"
-desc = "The United Provinces have proposed a formal alliance between our two countries. With Colombia increasing the size of their armed forces, it may be time to ally with the Provinces. We need them now more than ever."
+name = "EVT_56808_NAME"
+desc = "EVT_56808_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Now, we stand back to back with the United Provinces"
+name = "EVT_56808_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = relation which = COL value = -15 } #Colombia
 command = { type = relation which = GUA value = -10 } #Centroamerica
@@ -51,7 +51,7 @@ command = { type = trigger which = 56809 }
 }
 action_b = {
 ai_chance = 5
-name = "We Must Turn Them Down..."
+name = "EVT_56808_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = dissent value = 3 }
 command = { type = relation which = NIC value = -25 } #United Provinces
@@ -64,11 +64,11 @@ country = NIC
 style = 2
 picture = "technology_stolen"
 
-name = "Panama Accepts our Proposal"
-desc = "The Government of Panama has agreed to our alliance proposal, now we can sleep safer at night, with less of a threat coming from the radicals in Centroamerica or the imperialists in Colombia."
+name = "EVT_56809_NAME"
+desc = "EVT_56809_DESC"
 
 action_a = {
-name = "Great!"
+name = "EVT_56809_OPTIONA"
 command = { type = alliance which = PAN }
 }
 }
@@ -88,8 +88,8 @@ trigger = {
     }
 }
 
-name = "Spreading syndicalism in Central America"
-desc = "Weakinening influence of the USA on Central America, is presenting us with an unique opportunity to spready syndicalism into strategically important Panama. President of Panama Harmodio Madrid, despite his popularity, has made quite few enemies and we can perhaps support them to permanently silence him. Once current president of Panama is no more, we should be able to use chaos in country to gain full control over it."
+name = "EVT_61093_NAME"
+desc = "EVT_61093_DESC"
 picture = "urbanwarfare2"
 
 date = { day = 7 month = april year = 1936 }
@@ -98,7 +98,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
     ai_chance = 98
-    name = "Secretly nurture syndicalist movement in Panama"
+    name = "EVT_61093_OPTIONA"
     command = { type = manpowerpool value = -2 }
     command = { type = resource which = supplies value = -200 }
     command = { type = domestic which = interventionism value = 1 }
@@ -109,7 +109,7 @@ action_a = {
 
 action_b = {
     ai_chance = 2
-    name = "There are some things that just shouldn't be tried..."
+    name = "EVT_61093_OPTIONB"
     command = { type = dissent value = 1 }
     command = { type = domestic which = interventionism value = -1 }
     command = { type = relation which = USA value = 10 }
@@ -131,11 +131,11 @@ trigger = {
 
 date = { day = 29 month = april year = 1936 }
 
-name = "The Assassination of President Madrid"
-desc = "Our beloved President has been killed by a Syndicalist gunman. Panama City has collapsed into rioting and Syndicalist militias, probably funded by Centroamerica, are attempting to take over the country."
+name = "EVT_56810_NAME"
+desc = "EVT_56810_DESC"
 
 action_a = {
-name = "Awful!"
+name = "EVT_56810_OPTIONA"
         command = { type = leave_alliance }
 	command = { type = sleepminister which = 95001 }
 	command = { type = sleepminister which = 95002 }
@@ -155,12 +155,12 @@ trigger = {
 
 date = { day = 9 month = may year = 1936 }
 
-name = "The government of Panama Collapses"
-desc = "After the assassination of President Madrid, Panama collapsed into battles between Left-Wing guerillas and government forces. We must secure Panama before the chaos spreads across our borders! The United States, which are attempting to halt spreading of syndicalism in Central America have promised us their support in this matter."
+name = "EVT_56811_NAME"
+desc = "EVT_56811_DESC"
 
 action_a = {
 ai_chance = 90
-name = "Occupy Panama, we must bring an end to the chaos"
+name = "EVT_56811_OPTIONA"
 	command = { type = trigger which = 56812 }
         command = { type = event which = 56812 where = PAN when = 4  }
 	command = { type = dissent value = 5 }
@@ -168,7 +168,7 @@ name = "Occupy Panama, we must bring an end to the chaos"
 
 action_b = {
 ai_chance = 10
-name = "We musn't interfere"
+name = "EVT_56811_OPTIONB"
         command = { type = dissent value = 7 }
         command = { type = event which = 56814 where = PAN when = 4  }
 	}
@@ -180,18 +180,18 @@ country = PAN
 style = 2
 picture = "constitutional"
 
-name = "UP troops enter Panama City"
-desc = "Troops from the United Provinces have entered our state to help us maintain order in protect our nation from syndicalist menace."
+name = "EVT_56812_NAME"
+desc = "EVT_56812_DESC"
 
 action_a = {
 ai_chance = 90
-name = "Join with the United Provinces to maintain order in Panama"
+name = "EVT_56812_OPTIONA"
 	command = { type = trigger which = 56813 }
 	}
 
 action_b = {
 ai_chance = 10
-name = "We'll fight the occupation!"
+name = "EVT_56812_OPTIONB"
 	command = { type = war which = NIC }
 	}
 }
@@ -202,11 +202,11 @@ country = NIC
 style = 2
 picture = "constitutional"
 
-name = "Panama joins the United Provinces"
-desc = "Rather than fall to syndicalism, Panama has decided to become a part of the United Provinces."
+name = "EVT_56813_NAME"
+desc = "EVT_56813_DESC"
 
 action_a = {
-name = "Excellent"
+name = "EVT_56813_OPTIONA"
 	command = { type = addcore which = 2078 }
         command = { type = addcore which = 2077 }
         command = { type = addcore which = 889 }
@@ -222,11 +222,11 @@ country = PAN
 style = 2
 picture = "politics2"
 
-name = "Syndicalist Revolution!"
-desc = "After death of president Madrid events in Panama have reached the boiling point, and socialists have stormed the capital with Centroamerican equipment and volunteers and are attempting to install socialist government !"
+name = "EVT_56814_NAME"
+desc = "EVT_56814_DESC"
 
 action_a = {
-name = "The government falls!"
+name = "EVT_56814_OPTIONA"
 ai_chance = 70
 command = { type = relation which = ENG value = 50 }
 command = { type = relation which = SOV value = 50 }
@@ -246,7 +246,7 @@ command = { type = trigger which = 56817 }
 }
 
 action_b = {
-name = "The Socialists are crushed!"
+name = "EVT_56814_OPTIONB"
 ai_chance = 30
 command = { type = dissent value = 5 }
 command = { type = trigger which = 56816 }
@@ -271,8 +271,8 @@ event = {
      }
      }
 
-     name = "Panama sues for peace"
-     desc = "Armed forces of the United provinces have launched successfully invasion of Panama. Defeated remnants of the Panamanian armed forces have retread to their capital while political leaderships begs us for peace. How shall we react ?"
+     name = "EVT_61092_NAME"
+     desc = "EVT_61092_DESC"
      picture = "militaryparade1"
 
      date = { day = 15 month = may year = 1936 }
@@ -281,7 +281,7 @@ event = {
 
      action_a = {
          ai_chance = 90
-         name = "Integrate them directly !"
+         name = "EVT_61092_OPTIONA"
  	 command = { type = inherit which = PAN  }
  	 command = { type = addcore which = 2078 }
  	 command = { type = addcore which = 2077 }
@@ -290,7 +290,7 @@ event = {
 
      action_b = {
          ai_chance = 10
-         name = "They may exist. Under supervision.."
+         name = "EVT_61092_OPTIONB"
          command = { type = peace which = PAN value = 1 }
          command = { type = make_puppet which = PAN }
          }
@@ -311,12 +311,12 @@ event = {
 
  date = { day = 1 month = may year = 1936 }
 
- name = "Chaos in Panama"
- desc = "Yesterday, President Harmodio Madrid of Panama was assassinated by a syndicalist. Reports from our agents in the Canal Zone indicate that the country is in the midst of a syndicalist revolution, the success of which would put both the Canal and our interests in Central America in great jeopardy. The UPCA army is being mobilized and President Sacasa is prepared to send them in to stop the reds."
+ name = "EVT_56815_NAME"
+ desc = "EVT_56815_DESC"
 
  action_a = {
  ai_chance = 100
- name = "Give UPAC the green light."
+ name = "EVT_56815_OPTIONA"
  command = { type = dissent value = 1 }
  command = { type = relation which = PAN value = 10 }
  command = { type = relation which = NIC value = 20 }
@@ -326,7 +326,7 @@ event = {
 
  action_a = {
  ai_chance = 0
- name = "No ! Violence wont solve anything."
+ name = "EVT_56815_OPTIONB"
  command = { type = dissent value = 1 }
  command = { type = relation which = PAN value = -10 }
  command = { type = relation which = NIC value = -20 }
@@ -343,11 +343,11 @@ event = {
  style = 2
  picture = "panamacanal"
 
- name = "Panama is secure!"
- desc = "Our effort and influence prevented another syndicalist revolution in Panama, which threatened strategically important Panama canal."
+ name = "EVT_56816_NAME"
+ desc = "EVT_56816_DESC"
 
  action_a = {
- name = "Phew!"
+ name = "EVT_56816_OPTIONA"
  command = { type = dissent value = -1 }
  command = { type = relation which = NIC value = 70 }
  command = { type = relation which = GUA value = -20 }
@@ -360,11 +360,11 @@ event = {
  style = 2
  picture = "partisan_revolt"
 
- name = "Syndicalist revolution in Panama!"
- desc = "Despite our best effort, the syndicalist with help from Centroamerica took control over Panama ! Even the strategically important Panama canal is now under threat of potential syndicalist infiltration."
+ name = "EVT_56817_NAME"
+ desc = "EVT_56817_DESC"
 
  action_a = {
- name = "Damn it all!"
+ name = "EVT_56817_OPTIONA"
  command = { type = dissent value = 2 }
  command = { type = relation which = NIC value = -10 }
  command = { type = relation which = GUA value = -20 }

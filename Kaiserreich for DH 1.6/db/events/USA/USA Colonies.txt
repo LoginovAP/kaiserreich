@@ -17,11 +17,11 @@ event = {
  offset = 30
  deathdate = { day = 29 month = december year = 1940 }
 
- name = "America in Chaos"
- desc = "Liberia has been under the economic and effective political dominance of the USA since its foundation as a colony for freed slaves in 1822. This dominance has also helped to protect her from European colonial powers. However, now the USA is in chaos, as rival political factions make a bid for the Presidency. The conflict has now deepened to the point of war. No longer can they be relyed upon for protection. Now we must decide how we are to survive."
+ name = "EVT_91801_NAME"
+ desc = "EVT_91801_DESC"
 
  action = {
- name = "We will seek protection from National France"
+ name = "EVT_91801_OPTIONA"
  ai_chance = 30
      command = { type = end_access which = USA }
      command = { type = leave_alliance when = 1 }
@@ -39,7 +39,7 @@ event = {
      }
 
  action = {
- name = "Germany is the only one strong enough to protect us now."
+ name = "EVT_91801_OPTIONB"
  ai_chance = 30
      command = { type = end_access which = USA }
      command = { type = leave_alliance when = 1 }
@@ -57,7 +57,7 @@ event = {
      } 
 
  action = {
- name = "Lapdogs no longer - We can protect ourselves!"
+ name = "EVT_91801_OPTIONC"
  ai_chance = 30
      command = { type = end_access which = USA }
      command = { type = leave_alliance when = 1 }
@@ -75,7 +75,7 @@ event = {
      } 
 
  action = {
- name = "We aren't traitors - Stay loyal to the Americans"
+ name = "EVT_91801_OPTIOND"
  ai_chance = 10
      command = { type = relation which = USA value = 100 }
      command = { type = add_division value = militia when = 4 }
@@ -90,11 +90,11 @@ event = {
      country = VIC
      style = 2
 
- name = "Liberia asks for protection"
- desc = "With the American Civil War in full swing, their former protectorate of the tiny Republic of Liberia has approached us with a request for diplomatic and military protection, as they feel the US is no longer able to grant them this. How shall we answer?"
+ name = "EVT_91802_NAME"
+ desc = "EVT_91802_DESC"
 
  action = {
- name = "Yes, the Liberians will be useful allies"
+ name = "EVT_91802_OPTIONA"
  ai_chance = 70
      command = { type = trigger which = 91803 }
      command = { type = make_puppet which = LIB } 
@@ -104,7 +104,7 @@ event = {
      }
 
  action = {
- name = "They are unprotected - seize their lands!"
+ name = "EVT_91802_OPTIONB"
  ai_chance = 5
      command = { type = trigger which = 91804 }
      command = { type = war which = LIB }
@@ -116,7 +116,7 @@ event = {
      } 
 
  action = {
- name = "We do not want them"
+ name = "EVT_91802_OPTIONC"
  ai_chance = 25
      command = { type = trigger which = 91805 }
      command = { type = relation which = LIB value = -50 }
@@ -129,11 +129,11 @@ event = {
      country = LIB
      style = 2
      
- name = "The French agree to protect us"
- desc = "The French nationalists have agreed to protect us, in return for certain diplomatic and economic concessions. Once again, we are secure!"
+ name = "EVT_91803_NAME"
+ desc = "EVT_91803_DESC"
 
  action = {
- name = "Hurray!"
+ name = "EVT_91803_OPTIONA"
      command = { type = dissent value = -5 }
      }
  }
@@ -144,11 +144,11 @@ event = {
      country = LIB
      style = 2
 
- name = "Liberia under attack"
- desc = "The foreigners now they seek to seize our lands for themselves. We have no choice but to fight for our survival!" 
+ name = "EVT_91804_NAME"
+ desc = "EVT_91804_DESC" 
 
  action = {
- name = "Mobilize as many men as possible."
+ name = "EVT_91804_OPTIONA"
      command = { type = add_division value = militia when = 4 }
      command = { type = add_division value = infantry when = 8 }
      command = { type = dissent value = 5 }
@@ -161,11 +161,11 @@ event = {
      country = LIB
      style = 2
 
- name = "The French refuse our request"
- desc = "Unfortunately the French have declined to protect us..."
+ name = "EVT_91805_NAME"
+ desc = "EVT_91805_DESC"
 
  action = {
- name = "We must move to independence"
+ name = "EVT_91805_OPTIONA"
  ai_chance = 50
      command = { trigger = { NOT = { atwar = VIC ispuppet = VIC } } type = trigger which = 91811 }
      command = { trigger = { NOT = { atwar = CON } } type = trigger which = 91812 }
@@ -173,7 +173,7 @@ event = {
      } 
 
  action = {
- name = "Turn to Germany instead"
+ name = "EVT_91805_OPTIONB"
  ai_chance = 50
  trigger = { NOT = { event = 91806 } }
      command = { type = trigger which = 91806 }
@@ -187,11 +187,11 @@ event = {
      country = GER
      style = 2
 
- name = "Liberia asks for protection"
- desc = "With the American Civil War in full swing, their former protectorate of the tiny Republic of Liberia has approached us with a request for diplomatic and military protection, as they feel the US is no longer able to grant them this. How shall we answer?"
+ name = "EVT_91806_NAME"
+ desc = "EVT_91806_DESC"
 
  action = {
- name = "Yes, they will be useful allies"
+ name = "EVT_91806_OPTIONA"
  ai_chance = 50
      command = { type = trigger which = 91807 }
      command = { type = make_puppet which = LIB} 
@@ -202,7 +202,7 @@ event = {
      }
 
  action = {
- name = "Yes, but grant administration to Mittelafrika"
+ name = "EVT_91806_OPTIONB"
  ai_chance = 40
  trigger = { puppet = { country = CON country = GER } }
      command = { type = trigger which = 91808 }
@@ -213,14 +213,14 @@ event = {
      } 
 
  action = {
- name = "We do not need them"
+ name = "EVT_91806_OPTIONC"
  ai_chance = 10
      command = { type = trigger which = 91810 }
      command = { type = relation which = LIB value = -50 }
      } 
 
  action = {
- name = "They are unprotected - seize their lands!"
+ name = "EVT_91806_OPTIOND"
  ai_chance = 0
      command = { type = trigger which = 91804 }
      command = { type = war which = LIB }
@@ -237,11 +237,11 @@ event = {
      country = LIB
      style = 2
 
- name = "The Germans agree to protect us"
- desc = "The Germans have agreed to protect us, in return for certain diplomatic and economic concessions. Once again we are secure."
+ name = "EVT_91807_NAME"
+ desc = "EVT_91807_DESC"
 
  action = {
- name = "Hurray!"
+ name = "EVT_91807_OPTIONA"
      command = { type = dissent value = -5 }
      }
  }
@@ -252,11 +252,11 @@ event = {
      country = CON
      style = 2
 
- name = "We are granted Liberia as a puppet."
- desc = "The Kaiser has proposed making the nation of Liberia a satellite state of ours. This news is good as we control yet more of Africa."
+ name = "EVT_91808_NAME"
+ desc = "EVT_91808_DESC"
 
  action = {
- name = "Our power grows"
+ name = "EVT_91808_OPTIONA"
      command = { type = trigger which = 91809 }
      command = { type = make_puppet which = LIB }
      }
@@ -268,11 +268,11 @@ event = {
      country = LIB
      style = 2
 
- name = "Germans turn us over to Mittelafrika"
- desc = "The Germans have proposed putting us under the protection of Mittelafrika, their African colonial administration. At least we have a protector, now."
+ name = "EVT_91809_NAME"
+ desc = "EVT_91809_DESC"
 
  action = {
-     name = "Hurray!"
+     name = "EVT_91809_OPTIONA"
      command = { type = dissent value = -5 }
      }
  }
@@ -283,11 +283,11 @@ event = {
      country = LIB
      style = 2
 
- name = "The Germans refuse our request"
- desc = "Unfortunately the Germans have declined to protect us. We stand alone in the world."
+ name = "EVT_91810_NAME"
+ desc = "EVT_91810_DESC"
 
  action = {
- name = "We will have to be independent."
+ name = "EVT_91810_OPTIONA"
  ai_chance = 50
      command = { trigger = { NOT = { atwar = VIC ispuppet = VIC } } type = trigger which = 91811 }
      command = { trigger = { NOT = { atwar = CON } } type = trigger which = 91812 }
@@ -295,7 +295,7 @@ event = {
      } 
 
  action = {
- name = "Turn to National France instead"
+ name = "EVT_91810_OPTIONB"
  ai_chance = 50
  trigger = { NOT = { event = 91802 } }
      command = { type = trigger which = 91802 }
@@ -310,17 +310,17 @@ event = {
 	country = VIC
 	style = 2
 
-	name = "Liberia stands alone"
-	desc = "The tiny nation of Liberia has broken away from US protection and is now alone. We could try to seize the lands for ourselves, although this would not be a popular move amongst both allies and enemies."
+	name = "EVT_91811_NAME"
+	desc = "EVT_91811_DESC"
 
 	action_a = {
-		name = "We have no ambitions on Liberia"
+		name = "EVT_91811_OPTIONA"
 		ai_chance = 90
 		command = { type = belligerence value = -10 }
 	}
 
 	action_b = {
-		name = "They are unprotected - seize their lands!"
+		name = "EVT_91811_OPTIONB"
 		ai_chance = 10
 		command = { type = war which = LIB }
 		command = { type = trigger which = 91813 }
@@ -340,17 +340,17 @@ event = {
      country = CON
      style = 2
 
- name = "Liberia stands alone"
- desc = "The tiny nation of Liberia has broken away from US protection and is now alone. We could try to seize the lands for ourselves, although this would not be a popular move amongst both allies and enemies."
+ name = "EVT_91812_NAME"
+ desc = "EVT_91812_DESC"
 
  action = {
- name = "We have no ambitions on Liberia"
+ name = "EVT_91812_OPTIONA"
  ai_chance = 100
      command = { type = belligerence value = -10 }
      }
 
  action = {
- name = "They are unprotected - seize their lands!"
+ name = "EVT_91812_OPTIONB"
  ai_chance = 0
      command = { type = war which = LIB }
      command = { type = trigger which = 91804 }
@@ -371,11 +371,11 @@ event = {
 	country = LIB
 	style = 2
 
-	name = "The French attack"
-	desc = "The greedy, imperialist French have decided to attack us as we have no protector. We have no choice but to fight for our survival." 
+	name = "EVT_91813_NAME"
+	desc = "EVT_91813_DESC" 
 
 	action_a = {
-		name = "Mobilise as many men as possible."
+		name = "EVT_91813_OPTIONA"
 		command = { type = add_division value = infantry when = 8 }
 	}
 }
@@ -386,11 +386,11 @@ event = {
 	country = LIB 
 	style = 2
 
-	name = "The German-Afrikaans attack"
-	desc = "Taking advantage of our diplomatic isolation, the German administration in Mittelafrika has decided to attack us. We have no choice but to fight for our survival."
+	name = "EVT_91814_NAME"
+	desc = "EVT_91814_DESC"
 	
 	action_a = {
-		name = "Mobilise as many men as possible."
+		name = "EVT_91814_OPTIONA"
 		command = { type = add_division value = infantry when = 8 }
 	}
 }
@@ -409,8 +409,8 @@ trigger = {
  war = { country = USA country = CSA }
  random = 40
 }
-name = "Independence in the Philippines"
-desc = "The civil war in America has left the American hold over the Philippines weakened. The people of the Philippines are demanding full independence but some in the government are worried that an independent Philippines will be absorbed by the greater powers in the area."
+name = "EVT_909500_NAME"
+desc = "EVT_909500_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -418,7 +418,7 @@ offset = 3
 deathdate = { day = 29 month = december year = 1954 }
 
 action_a = {
- name = "Freedom. Terrible, terrible freedom."
+ name = "EVT_909500_OPTIONA"
  command = { type = end_puppet }
  command = { trigger = { alliance = { country = USA country = PHI } } type = leave_alliance when = 1 }
  command = { type = dissent value = 5 }
@@ -438,8 +438,8 @@ trigger = {
  flag = PHI_FREEDOM
  not = { war = { country = USA country = PHI } }
 }
-name = "Seizing American Equipment"
-desc = "With the Americans heading off the island they have left large amounts of equipment in the Philippines. The Filipino army is advocating seizing the resources while they are unguarded but the government is afraid of what this might do to the relations between the two countries."
+name = "EVT_909501_NAME"
+desc = "EVT_909501_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -447,7 +447,7 @@ offset = 35
 deathdate = { day = 29 month = december year = 1954 }
 
 action_a = {
- name = "Seize the equipment"
+ name = "EVT_909501_OPTIONA"
  ai_chance = 66
  command = { type = supplies value = 100 }
  command = { type = money value = 25 }
@@ -456,7 +456,7 @@ action_a = {
  command = { type = domestic which = defense_lobby value = 1 }
 }
 action_b = {
- name = "We should stay friendly"
+ name = "EVT_909501_OPTIONB"
  ai_chance = 34
  command = { type = dissent value = 1 }
  command = { type = relation which = USA value = 25 }
@@ -474,8 +474,8 @@ trigger = {
  puppet = { country = PHI country = USA }
 }
 
-name = "The American Mission in the Philippines"
-desc = "The war has forced the US government to recall all available units. The American forces in the Philippines are still loyal to the US government and Douglas MacArthur. Some are concerned that abandoning the Philippines will be costly but the forces are needed in America."
+name = "EVT_909502_NAME"
+desc = "EVT_909502_DESC"
 style = 2
 picture = "philippines"
 
@@ -484,13 +484,13 @@ offset = 15
 deathdate = { day = 29 month = december year = 1954 }
 
 action_a = {
- name = "Recall the units"
+ name = "EVT_909502_OPTIONA"
  ai_chance = 99
  command = { type = manpowerpool value = 5 }
  command = { type = setflag which = PHI_FREEDOM }
 }
 action_b = {
- name = "We must hold our position"
+ name = "EVT_909502_OPTIONB"
  ai_chance = 1
  command = { type = dissent value = 3 }
 }
@@ -505,8 +505,8 @@ trigger = {
  flag = PHI_FREEDOM
  random = 50
 }
-name = "The Philippine Commonwealth"
-desc = "The Americans had never promised the Filipino people independence and forces inside the country wanted to use the American Civil War as an opportunity to declare independence and form a legitimate government. The Commonwealth of the Philippines was created to administer the nation and transition into a full state of independence."
+name = "EVT_909503_NAME"
+desc = "EVT_909503_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -514,7 +514,7 @@ offset = 15
 deathdate = { day = 29 month = december year = 1954 }
 
 action_a = {
- name = "Our glorious new commonwealth"
+ name = "EVT_909503_OPTIONA"
  command = { type = dissent value = -5 }
  
 }
@@ -535,8 +535,8 @@ NOT = {
 }
 }
 
-name = "Reconstruction"
-desc = "With malice toward none, with charity for all, with firmness in the right as God gives us to see the right, let us strive on to finish the work we are in, to bind up the nation's wounds... to do all which may achieve and cherish a just and lasting peace among ourselves and with all nations."
+name = "EVT_61080_NAME"
+desc = "EVT_61080_DESC"
 style = 2
 
 date = { day = 21 month = august year = 1937 }
@@ -544,7 +544,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "We are not enemies, but friends. Full reintegration"
+name = "EVT_61080_OPTIONA"
 ai_chance = 34
 command = { type = dissent value = 12 }
 command = { type = supplies value = -1200 }
@@ -554,7 +554,7 @@ command = { type = peacetime_ic_mod value = 12 }
 }
 
 action_b = {
-name = "Establish provisional State governments of loyal citizens"
+name = "EVT_61080_OPTIONB"
 ai_chance = 33
 command = { type = dissent value = 5 }
 command = { type = supplies value = -1200 }
@@ -564,7 +564,7 @@ command = { type = peacetime_ic_mod value = 8 }
 }
 
 action_c = {
-name = "Military control must be maintained; the occupation continues"
+name = "EVT_61080_OPTIONC"
 ai_chance = 33
 command = { type = dissent value = 8 }
 command = { type = supplies value = -600 }
@@ -592,8 +592,8 @@ NOT = {
 }
 }
 
-name = "Our place in the sun"
-desc = "The occupation of American overseas territory by foreign powers during the Civil War was an affront to the United States. The establishment of Canadian authority over the Panama Canal Zone, however, was a provocation that could not be overlooked. The victorious government now looked to restore those lands seized by their neighbor to the north."
+name = "EVT_61081_NAME"
+desc = "EVT_61081_DESC"
 style = 2
 
 date = { day = 9 month = march year = 1937 }
@@ -601,7 +601,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1944 }
 
 action_a = {
-name = "Demand the return of the canal zone!"
+name = "EVT_61081_OPTIONA"
 ai_chance = 90
 command = { type = relation which = CAN value = -50 }
 command = { type = domestic which = interventionism value = 1 }
@@ -610,7 +610,7 @@ command = { type = trigger which = 61082 }
 }
 
 action_b = {
-name = "Our concern is elsewhere"
+name = "EVT_61081_OPTIONB"
 ai_chance = 10
 command = { type = domestic which = interventionism value = -1 }
 command = { type = dissent value = 5 }
@@ -627,12 +627,12 @@ picture = "pennsylvania"
 
 # triggered by 61081
 
-name = "The United States' request"
-desc = "The victorious government of the United States has requested we return control of the Panama Canal back to them."
+name = "EVT_61082_NAME"
+desc = "EVT_61082_DESC"
 style = 2
 
 action_a = {
-name = "We must comply"
+name = "EVT_61082_OPTIONA"
 ai_chance = 80
 command = { type = relation which = USA value = 25 }
 command = { type = secedeprovince which = USA value = 889 }
@@ -641,7 +641,7 @@ command = { type = trigger which = 61083 }
 }
 
 action_b = {
-name = "They'll get over it"
+name = "EVT_61082_OPTIONB"
 ai_chance = 20
 command = { type = relation which = USA value = -50 }
 command = { type = dissent value = -1 }
@@ -658,12 +658,12 @@ country = USA
 
 # triggered by 61082
 
-name = "The United States' request"
-desc = "The Canadians have agreed!"
+name = "EVT_61083_NAME"
+desc = "EVT_61083_DESC"
 style = 2
 
 action_a = {
-name = "American control returns to the Canal"
+name = "EVT_61083_OPTIONA"
 command = { type = addcore which = 889 }
 command = { type = relation which = CAN value = 25 }
 command = { type = dissent value = -1 }
@@ -679,19 +679,19 @@ country = USA
 
 # triggered by 61082
 
-name = "The United States' request"
-desc = "The Canadians have refused!"
+name = "EVT_61084_NAME"
+desc = "EVT_61084_DESC"
 style = 2
 
 action_a = {
-name = "This slight will not go unanswered"
+name = "EVT_61084_OPTIONA"
 ai_chance = 97
 command = { type = relation which = CAN value = -15 }
 command = { type = addcore which = 889 }
 }
 
 action_b = {
-name = "This hubris will be met with arms!"
+name = "EVT_61084_OPTIONB"
 ai_chance = 3
 command = { type = war which = CAN }
 command = { type = addcore which = 889 }
@@ -717,8 +717,8 @@ NOT = {
 }
 }
 
-name = "Guantanamo bay naval base"
-desc = "The occupation of American overseas territory by foreign powers during the Civil War was an affront to the United States. The establishment of Cuban authority over the Guantanamo bay naval base, however, was a provocation that could not be overlooked. The victorious government now looked to restore those lands seized by their neighbor to the south."
+name = "EVT_61085_NAME"
+desc = "EVT_61085_DESC"
 style = 2
 picture = "guantanamobaynav"
 
@@ -727,7 +727,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1944 }
 
 action_a = {
-name = "Demand return of the naval base"
+name = "EVT_61085_OPTIONA"
 ai_chance = 90
 command = { type = relation which = CUB value = -50 }
 command = { type = domestic which = interventionism value = 1 }
@@ -738,7 +738,7 @@ command = { type = trigger which = 61086 }
 }
 
 action_b = {
-name = "Our concern is elsewhere"
+name = "EVT_61085_OPTIONB"
 ai_chance = 10
 command = { type = domestic which = interventionism value = -1 }
 command = { type = dissent value = 5 }
@@ -755,12 +755,12 @@ picture = "pennsylvania"
 
 # triggered by 61085
 
-name = "The United States' request"
-desc = "The victorious government of the United States has requested we return control of the Guantanamo naval bay base back to them."
+name = "EVT_61086_NAME"
+desc = "EVT_61086_DESC"
 style = 2
 
 action_a = {
-name = "We must comply"
+name = "EVT_61086_OPTIONA"
 ai_chance = 80
 command = { type = relation which = USA value = 25 }
 command = { type = secedeprovince which = USA value = 1778 }
@@ -769,7 +769,7 @@ command = { type = trigger which = 61087 }
 }
 
 action_b = {
-name = "They'll get over it"
+name = "EVT_61086_OPTIONB"
 ai_chance = 20
 command = { type = relation which = USA value = -50 }
 command = { type = dissent value = -1 }
@@ -786,12 +786,12 @@ country = USA
 
 # triggered by 61086
 
-name = "The United States' request"
-desc = "The Cubans have agreed to our request!"
+name = "EVT_61087_NAME"
+desc = "EVT_61087_DESC"
 style = 2
 
 action_a = {
-name = "American control returns to Cuba"
+name = "EVT_61087_OPTIONA"
 command = { type = addcore which = 1778 }
 command = { type = relation which = CUB value = 25 }
 command = { type = dissent value = -1 }
@@ -807,19 +807,19 @@ country = USA
 
 # triggered by 61086
 
-name = "The United States' request"
-desc = "The Cubans have refused!"
+name = "EVT_61088_NAME"
+desc = "EVT_61088_DESC"
 style = 2
 
 action_a = {
-name = "This slight will not go unanswered"
+name = "EVT_61088_OPTIONA"
 ai_chance = 80
 command = { type = relation which = CUB value = -15 }
 command = { type = addcore which = 1778 }
 }
 
 action_b = {
-name = "This hubris will be met with arms!"
+name = "EVT_61088_OPTIONB"
 ai_chance = 20
 command = { type = war which = CUB }
 command = { type = addcore which = 1778 }

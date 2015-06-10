@@ -55,8 +55,8 @@ trigger = {
  }
         }
 
-name = "Civil War in Russia"
-desc = "The crisis in Russia has reached a frightening level of intensity: once more, Red and White forces are at war.  We have seen the horrors of Bolshevism once before, and though our own workers may not like it, it is probably in our best interests to help the legitimate Russian government."
+name = "EVT_756039_NAME"
+desc = "EVT_756039_DESC"
 style = 2
 picture = "foreign_volunteers"
 decision_picture = "decision_foreign_volunteers"
@@ -66,7 +66,7 @@ offset = 5
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
- name = "Help the White forces"
+ name = "EVT_756039_OPTIONA"
  ai_chance = 60
  command = { type = domestic which = interventionism value = 1 }
  command = { type = relation which = SOV value = -50 }
@@ -82,7 +82,7 @@ action_a = {
 
 action_b = {
  ai_chance = 40
- name = "Do nothing"
+ name = "EVT_756039_OPTIONB"
  command = { type = domestic which = interventionism value = -1 }
  command = { type = relation which = SOV value = 50 }
  command = { type = relation which = RUS value = -50 }
@@ -96,13 +96,13 @@ random = no
 country = RUS
 
 
-name = "Aid from Finland!"
-desc = "The Finns send us significant number of volunteers and military material that will help us considerably in our struggle against dangerous bolshevik menace threatening to rip apart Russia !"
+name = "EVT_756040_NAME"
+desc = "EVT_756040_DESC"
 style = 2
 picture = "foreign_volunteers"
 
 action_a = {
- name = "Great!" # 
+ name = "EVT_756040_OPTIONA" # 
  command = { type = supplies value = 500 }
  command = { type = add_division value = infantry when = 8 }
  command = { type = add_division value = infantry when = 8 }
@@ -132,8 +132,8 @@ trigger = {
 	}
 }
 
-name = "Panic in Karelia!"
-desc = "The Russian government has proved itself unable to maintain the security in Karelia.  We have received word that many local leaders want to secede and join Finland ! We will surely be welcomed by the Karelian population very easily, but we could also move to take the port of Murmansk, although the risk of this would be greater."
+name = "EVT_751012_NAME"
+desc = "EVT_751012_DESC"
 picture = "Karelia"	
 
 date = { day = 1 month = january year = 1936 }
@@ -142,7 +142,7 @@ deathdate = { day = 1 month = january year = 1960 }
 
 action_a = {
 ai_chance = 50
-name = "Claim only Karelia"
+name = "EVT_751012_OPTIONA"
 	command = { type = domestic which = interventionism value = 1 }
 	command = { type = belligerence which = FIN value = 10  }
 	command = { type = relation which = RUS value = -100 }
@@ -160,7 +160,7 @@ name = "Claim only Karelia"
 
 action_b = {
 ai_chance = 30
-name = "Claim Karelia and Lapland"
+name = "EVT_751012_OPTIONB"
 	command = { type = domestic which = interventionism value = 2 }
 	command = { type = relation which = RUS value = -200 }
 	command = { type = relation which = GER value = -50 } #For weakening Russia against the Bolsheviks
@@ -177,7 +177,7 @@ name = "Claim Karelia and Lapland"
 
 action_c = {
 ai_chance = 20
-name = "No, we must ally with Russia against the Bolshevik threat"
+name = "EVT_751012_OPTIONC"
 	command = { type = domestic which = interventionism value = 2 }
 	command = { type = relation which = RUS value = 60 }
 	command = { type = leave_alliance }
@@ -192,7 +192,7 @@ name = "No, we must ally with Russia against the Bolshevik threat"
 
 action_d = {
 ai_chance = 0
-name = "Karelia can provide its own security..."
+name = "EVT_751012_OPTIOND"
 command = { type = dissent value = 2 }
 	}
 }
@@ -203,13 +203,13 @@ random = no
 country = RUS
 style = 2
 
-name = "Finland makes its Move!"
-desc = "The Finns have taken claimed authority over our Karelian provinces, but have guaranteed our sovereignty over Murmansk.  How should we react?"
+name = "EVT_751013_NAME"
+desc = "EVT_751013_DESC"
 picture = "Karelia"
 	
 action_a = {
 ai_chance = 70
-name =  "At least we still hold Lapland..."
+name =  "EVT_751013_OPTIONA"
 	command = { type = secedeprovince which = FIN value = 537 }
 	command = { type = secedeprovince which = FIN value = 541 }
 	command = { type = secedeprovince which = FIN value = 539 }
@@ -217,7 +217,7 @@ name =  "At least we still hold Lapland..."
 	}
 action_b = {
 ai_chance = 30
-name = "How dare they!  Attack!"
+name = "EVT_751013_OPTIONB"
 	command = { type = belligerence which = FIN value = 5 }
 	command = { type = war which = FIN }
 	}  
@@ -230,13 +230,13 @@ random = no
 country = SOV
 style = 2
 
-name = "Finland makes its Move!"
-desc = "The Finns, using ongoing civil war have taken claimed authority over Karelian provinces, but have guaranteed Russian sovereignty over Murmansk.  How should we react to this act of capitalist agression ?"
+name = "EVT_751015_NAME"
+desc = "EVT_751015_DESC"
 picture = "Karelia"
 	
 action_a = {
 ai_chance = 99
-name =  "There is nothing we can do..."
+name =  "EVT_751015_OPTIONA"
 	command = { type = secedeprovince which = FIN value = 537 }
 	command = { type = secedeprovince which = FIN value = 541 }
 	command = { type = secedeprovince which = FIN value = 539 }
@@ -245,7 +245,7 @@ name =  "There is nothing we can do..."
 
 action_b = {
 ai_chance = 1
-name = "How dare they!  Attack!"
+name = "EVT_751015_OPTIONB"
 	command = { type = belligerence which = FIN value = 5 }
 	command = { type = war which = FIN }
 	}  
@@ -256,13 +256,13 @@ id = 751014
 country = RUS
 style = 2
 
-name = "Finland makes its Move!"
-desc = "The Finns have claimed authority over our Karelian provinces, and have occupied Murmansk and the provinces on the White Sea.  How should we react?"
+name = "EVT_751014_NAME"
+desc = "EVT_751014_DESC"
 picture = "Karelia"
 
 action_a = {
 ai_chance = 50
-name =  "Winning the Civil War is more important than Karelia or Lapland..."
+name =  "EVT_751014_OPTIONA"
 	command = { type = secedeprovince which = FIN value = 537 }
 	command = { type = secedeprovince which = FIN value = 541 }
 	command = { type = secedeprovince which = FIN value = 539 }
@@ -273,7 +273,7 @@ name =  "Winning the Civil War is more important than Karelia or Lapland..."
 	}
 action_b = {
 ai_chance = 50
-name = "The Finns Wont Get an Inch!"
+name = "EVT_751014_OPTIONB"
 	command = { type = belligerence which = FIN value = 5 }
 	command = { type = dissent value = 3 }
 	command = { type = war which = FIN }
@@ -286,13 +286,13 @@ random = no
 country = SOV
 style = 2
 
-name = "Finland makes its Move!"
-desc = "The Finns have claimed authority over Karelian provinces, and have occupied Murmansk and the provinces on the White Sea.  How should we react to this act of capitalist agression ?"
+name = "EVT_751016_NAME"
+desc = "EVT_751016_DESC"
 picture = "Karelia"
 	
 action_a = {
 ai_chance = 98
-name =  "Winning the Civil War is more important than Karelia or Lapland..."
+name =  "EVT_751016_OPTIONA"
 	command = { type = secedeprovince which = FIN value = 537 }
 	command = { type = secedeprovince which = FIN value = 541 }
 	command = { type = secedeprovince which = FIN value = 539 }
@@ -303,7 +303,7 @@ name =  "Winning the Civil War is more important than Karelia or Lapland..."
 	}
 action_b = {
 ai_chance = 2
-name = "The Finns Wont Get an Inch!"
+name = "EVT_751016_OPTIONB"
 	command = { type = belligerence which = FIN value = 5 }
 	command = { type = dissent value = 3 }
 	command = { type = war which = FIN }
@@ -338,19 +338,19 @@ date = { day = 1 month = january year = 1936 }
 offset = 25
 deathdate = { day = 1 month = january year = 1960 }
 
-name = "The Treaty of Archangelsk"
-desc = "We've been beaten by the Finns, how did this happen? They've seized the whole White Sea Tundra!"
+name = "EVT_75101400_NAME"
+desc = "EVT_75101400_DESC"
 picture = "FaRpeace"
 
 action_a = {
 ai_chance = 75
-name =  "Offer peace treaty, recognize Finish teritorial gains"
+name =  "EVT_75101400_OPTIONA"
 command = { type = dissent value = 2 }
        command = { type = trigger which = 75101502 }
 }
 action_b = {
 ai_chance = 25
-name = "No, the war will continue until our army marches through Helsinki!"
+name = "EVT_75101400_OPTIONB"
 command = { type = dissent value = 5 }
 }
 }
@@ -381,19 +381,19 @@ date = { day = 1 month = january year = 1936 }
 offset = 25
 deathdate = { day = 1 month = january year = 1960 }
 
-name = "The Treaty of Archangelsk"
-desc = "We've been beaten by the Finns, how did this happen? They've seized the whole White Sea Tundra!"
+name = "EVT_75101401_NAME"
+desc = "EVT_75101401_DESC"
 picture = "FaRpeace"
 
 action_a = {
 ai_chance = 99
-name =  "Offer peace treaty, recognize Finish teritorial gains"
+name =  "EVT_75101401_OPTIONA"
 command = { type = trigger which = 75101502 }
 command = { type = dissent value = 2 }
 }
 action_b = {
 ai_chance = 1
-name = "No, the war will continue until we march through Helsinki!"
+name = "EVT_75101401_OPTIONB"
 command = { type = dissent value = 5 }
 }
 }
@@ -406,13 +406,13 @@ country = FIN
 style = 2
 
 
-name = "The Treaty of Archangelsk"
-desc = "We've succesfully beaten rusian army and conquered whole White Sea Tundra. Now humiliated russian leadership offers us peace in which they promise to recognize our teritorial gains and withdrawn from disputed teritory. How shall we react ?"
+name = "EVT_75101502_NAME"
+desc = "EVT_75101502_DESC"
 picture = "FaRpeace"
 
 action_a = {
 ai_chance = 100
-name =  "Accept proposal , this is more than we hoped !"
+name =  "EVT_75101502_OPTIONA"
 command = { type = dissent value = -5 }
        command = { type = peace which = RUS value = 0 }
        command = { type = addcore   which = 537  }
@@ -425,7 +425,7 @@ command = { type = dissent value = -5 }
 }
 action_b = {
 ai_chance = 0
-name = "No, the war will continue until our army marches through Petrograd!"
+name = "EVT_75101502_OPTIONB"
 command = { type = dissent value = 2 }
        command = { type = addcore   which = 537  }
        command = { type = addcore   which = 541  }
@@ -445,12 +445,12 @@ country = RUS
 style = 2
 
 
-name = "The Treaty of Archangelsk"
-desc = "According to the Treaty of Archangelsk we must withdraw our force from remaining parts of the White Sea Tundra and Lapland..."
+name = "EVT_75101503_NAME"
+desc = "EVT_75101503_DESC"
 picture = "FaRpeace"
 
 action_a = {
-name =  "How humiliating !"
+name =  "EVT_75101503_OPTIONA"
 command = { type = secedeprovince which = FIN value = 537 }
 command = { type = secedeprovince which = FIN value = 541 }
 command = { type = secedeprovince which = FIN value = 539 }
@@ -474,12 +474,12 @@ country = RUS
 style = 2
 
 
-name = "Finland refused to sign peace treaty!"
-desc = "Finland refused our generous peace offer and renewed military actions...."
+name = "EVT_75101504_NAME"
+desc = "EVT_75101504_DESC"
 picture = "FaRpeace"
 
 action_a = {
-name =  "They will pay for this..."
+name =  "EVT_75101504_OPTIONA"
 command = { type = dissent value = 1 }
 }
 
@@ -490,13 +490,13 @@ id = 75101402
 country = RUS
 style = 2
 
-name = "The Finns"
-desc = "The Finns wish to help us more directly with our Civil War against the Communard Bastards. They have asked to form an alliance with us until we can destroy Soviet Russia once and for all."
+name = "EVT_75101402_NAME"
+desc = "EVT_75101402_DESC"
 picture = "FinIntervention"
 
 action_a = {
 ai_chance = 99
-name =  "Good!"
+name =  "EVT_75101402_OPTIONA"
 	command = { type = setflag which = RUS_FIN_Coalition }
         command = { type = clrflag  which = KAR_PANIC }
 	command = { type = relation which = RUS value = 100 }
@@ -505,7 +505,7 @@ name =  "Good!"
 
 action_b = {
 ai_chance = 1
-name = "The Finns are no better than The Soviet Devil!"
+name = "EVT_75101402_OPTIONB"
 command = {  }
 	}
 }
@@ -528,12 +528,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 10
 deathdate = { day = 1 month = january year = 1960 }
 
-name = "The Russo-Finn Alliance"
-desc = "Now that the Russian Civil War is over, there has been a debate in Finland whether the Alliance should be ratified or we if we can trust the Russians. The alliance has served its original purpose, The Soviets have been beaten once again."
+name = "EVT_75101403_NAME"
+desc = "EVT_75101403_DESC"
 
 action_a = {
 ai_chance = 95
-name =  "Alliance is no longer needed"
+name =  "EVT_75101403_OPTIONA"
 	command = { type = leave_alliance }
         command = { type = sleepevent which = 75101404 }
         command = { type = sleepevent which = 75101405 }
@@ -542,7 +542,7 @@ name =  "Alliance is no longer needed"
 
 action_b = {
 ai_chance = 5
-name = "Keep the alliance with our neighbors"
+name = "EVT_75101403_OPTIONB"
 	command = { type = relation which = RUS value = 100 }
         command = { type = sleepevent which = 75101404 }
         command = { type = sleepevent which = 75101405 }
@@ -572,12 +572,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 10
 deathdate = { day = 1 month = january year = 1960 }
 
-name = "The Russo-Finn Alliance"
-desc = "Now that the Russian Civil War is over, there has been a debate in Finland whether the Alliance should be ratified or we if we can trust the Russians. The alliance has served its original purpose, The Soviets have been beaten once again."
+name = "EVT_75101404_NAME"
+desc = "EVT_75101404_DESC"
 
 action_a = {
 ai_chance = 5
-name =  "Alliance is no longer needed"
+name =  "EVT_75101404_OPTIONA"
 	command = { type = leave_alliance }
         command = { type = sleepevent which = 75101403 }
         command = { type = sleepevent which = 75101405 }
@@ -585,7 +585,7 @@ name =  "Alliance is no longer needed"
 	}
 action_b = {
 ai_chance = 95
-name = "Keep the alliance with our neighbors"
+name = "EVT_75101404_OPTIONB"
 	command = { type = relation which = RUS value = 100 }
         command = { type = sleepevent which = 75101403 }
         command = { type = sleepevent which = 75101405 }
@@ -610,19 +610,19 @@ date = { day = 1 month = january year = 1936 }
 offset = 10
 deathdate = { day = 1 month = january year = 1960 }
 
-name = "Russia is Defeated"
-desc = "Russia has fallen from internal weakness and Civil War. Now, Soviet Russia is our new neighbor."
+name = "EVT_75101405_NAME"
+desc = "EVT_75101405_DESC"
 
 
 action_a = {
 ai_chance = 95
-name =  "Ask the Soviets for a Peace Treaty..."
+name =  "EVT_75101405_OPTIONA"
 	command = { type = trigger which = 75101406 }
 	}
 
 action_b = {
 ai_chance = 5
-name = "We won't give the Bolsheviks a minutes rest!"
+name = "EVT_75101405_OPTIONB"
 command = { }
 	}
 }
@@ -632,19 +632,19 @@ id = 75101406
 country = SOV
 style = 2
 
-name = "The Finns ask for Peace"
-desc = "The treacherous White Finns have asked for peace. They worked together with the White Russians to try and stop the revolution from taking place and now they are afraid, we can smell it."
+name = "EVT_75101406_NAME"
+desc = "EVT_75101406_DESC"
 picture = "FaRpeace"
 
 action_a = {
 ai_chance = 75
-name = "We have more threats at home that we have to take care of first..."
+name = "EVT_75101406_OPTIONA"
 	command = { type = peace which = FIN value = 0 }
 	}
 
 action_b = {
 ai_chance = 25
-name =  "We will liberate the Finnish working class and destroy the white Finns!"
+name =  "EVT_75101406_OPTIONB"
 	command = { type = ai which = "kaiserreich/switch/RUS_FIN_atwar.ai" }
 	}
 }
@@ -680,12 +680,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 50
 deathdate = { day = 29 month = december year = 1970 }
 
-name = "Murmansk is vulnerable"
-desc = "With their territory overrun by enemy advances, Russian forces have been pushed deep west. We could use the chance to occupy the key port of Murmansk and nearby areas."
+name = "EVT_123654935_NAME"
+desc = "EVT_123654935_DESC"
 
 action = {
     ai_chance = 100
-    name = "Seize the area"
+    name = "EVT_123654935_OPTIONA"
     command = { type = addclaim which = 534 where = FIN }
     command = { type = addclaim which = 535 where = FIN }
     command = { type = addclaim which = 536 where = FIN }
@@ -694,7 +694,7 @@ action = {
     }
 action = {
     ai_chance = 0
-    name = "This is too risky"
+    name = "EVT_123654935_OPTIONB"
     command = { type = dissent value = 1 }
     }
 }
@@ -706,12 +706,12 @@ country = RUS
 style = 2
 picture = "finnish_flag"
 
-name = "A threat from Finland"
-desc = "With our territory overrun by enemy advances, the northern city of Murmansk has become a safe haven for our forces, far from the frontlines and secure enough for our government. However, the treacherous Finns have amasse troops on the borders and are preparing to seize this important area from us!"
+name = "EVT_123654936_NAME"
+desc = "EVT_123654936_DESC"
 
 action = {
     ai_chance = 70
-    name = "This is hopeless, surrender the area to the Finns"
+    name = "EVT_123654936_OPTIONA"
     command = { type = secedeprovince which = FIN value = 534 }
     command = { type = secedeprovince which = FIN value = 535 }
     command = { type = secedeprovince which = FIN value = 536 }
@@ -719,7 +719,7 @@ action = {
     }
 action = {
     ai_chance = 30
-    name = "Ready the troops! Attack!"
+    name = "EVT_123654936_OPTIONB"
     command = { type = dissent value = -1 }
     command = { type =     war which = FIN }
     }
@@ -754,19 +754,19 @@ date = { day = 1 month = january year = 1936 }
 offset = 110
 deathdate = { day = 1 month = january year = 1960 }
 
-name = "The Treaty of Novosibirsk"
-desc = "We've been beaten by the Siberians, how did this happen? They've seized large part of the Western Siberia!"
+name = "EVT_75101515_NAME"
+desc = "EVT_75101515_DESC"
 picture = "FaRpeace"
 
 action_a = {
 ai_chance = 75
-name =  "Offer peace treaty, recognize Siberian teritorial gains"
+name =  "EVT_75101515_OPTIONA"
 command = { type = dissent value = 6 }
        command = { type = trigger which = 75101517 }
 }
 action_b = {
 ai_chance = 25
-name = "No, the war will continue until our army marches through Novosibirsk!"
+name = "EVT_75101515_OPTIONB"
 command = { type = dissent value = 4 }
 }
 }
@@ -796,19 +796,19 @@ date = { day = 1 month = january year = 1936 }
 offset = 90
 deathdate = { day = 1 month = january year = 1960 }
 
-name = "The Treaty of Novosibirsk"
-desc = "We've been beaten by the Siberians, how did this happen? They've seized large part of the Western Siberia !"
+name = "EVT_75101516_NAME"
+desc = "EVT_75101516_DESC"
 picture = "FaRpeace"
 
 action_a = {
 ai_chance = 99
-name =  "Offer peace treaty, recognize Siberian teritorial gains"
+name =  "EVT_75101516_OPTIONA"
 command = { type = trigger which = 75101517 }
 command = { type = dissent value = 5 }
 }
 action_b = {
 ai_chance = 1
-name = "No, the war will continue until we march through Novosibirsk!"
+name = "EVT_75101516_OPTIONB"
 command = { type = dissent value = 10 }
 }
 }
@@ -821,13 +821,13 @@ country = SIB
 style = 2
 
 
-name = "The Treaty of Novosibirsk"
-desc = "We've succesfully beaten rusian army and conquered large parts of the Western Siberia. Now humiliated russian leadership offers us peace in which they promise to recognize our teritorial gains and withdrawn from disputed teritory. How shall we react ?"
+name = "EVT_75101517_NAME"
+desc = "EVT_75101517_DESC"
 picture = "FaRpeace"
 
 action_a = {
 ai_chance = 100
-name =  "Accept proposal , this is more than we hoped !"
+name =  "EVT_75101517_OPTIONA"
 command = { type = dissent value = -5 }
        command = { type = peace which = RUS value = 0 }
        command = { type = addcore   which = 1132  }
@@ -838,7 +838,7 @@ command = { type = dissent value = -5 }
 }
 action_b = {
 ai_chance = 0
-name = "No, the war will continue until our army marches through Petrograd!"
+name = "EVT_75101517_OPTIONB"
 command = { type = dissent value = 2 }
        command = { type = addcore   which = 1132  }
        command = { type = addcore   which = 1133  }
@@ -856,12 +856,12 @@ country = RUS
 style = 2
 
 
-name = "The Treaty of Novosibirsk"
-desc = "According to the Treaty of Novosibirsk we must withdraw our force from large parts of the Western Siberia...."
+name = "EVT_75101518_NAME"
+desc = "EVT_75101518_DESC"
 picture = "FaRpeace"
 
 action_a = {
-name =  "How humiliating !"
+name =  "EVT_75101518_OPTIONA"
 command = { type = secedeprovince which = SIB value = 1132 }
 command = { type = secedeprovince which = SIB value = 1133 }
 command = { type = secedeprovince which = SIB value = 1127 }
@@ -950,12 +950,12 @@ country = RUS
 style = 2
 
 
-name = "Siberia refused to sign peace treaty!"
-desc = "Siberia refused our generous peace offer and renewed military actions...."
+name = "EVT_75101519_NAME"
+desc = "EVT_75101519_DESC"
 picture = "FaRpeace"
 
 action_a = {
-name =  "They will pay for this..."
+name =  "EVT_75101519_OPTIONA"
 command = { type = dissent value = 1 }
 }
 
@@ -990,19 +990,19 @@ date = { day = 1 month = january year = 1936 }
 offset = 100
 deathdate = { day = 1 month = january year = 1960 }
 
-name = "The Treaty of Astrakhan"
-desc = "We've been beaten by the Kazakhs, how did this happen? They've seized the whole Volga region !"
+name = "EVT_75101505_NAME"
+desc = "EVT_75101505_DESC"
 picture = "FaRpeace"
 
 action_a = {
 ai_chance = 35
-name =  "Offer peace treaty, recognize Kazakhs teritorial gains"
+name =  "EVT_75101505_OPTIONA"
 command = { type = dissent value = 2 }
 command = { type = trigger which = 75101507 }
 }
 action_b = {
 ai_chance = 65
-name = "No, the war will continue until our army marches through Alash-Quala!"
+name = "EVT_75101505_OPTIONB"
 command = { type = dissent value = 4 }
 }
 }
@@ -1033,19 +1033,19 @@ date = { day = 1 month = january year = 1936 }
 offset = 70
 deathdate = { day = 1 month = january year = 1960 }
 
-name = "The Treaty of Astrakhan"
-desc = "We've been beaten by the Kazakhs, how did this happen? They've seized the whole Volga region!"
+name = "EVT_75101506_NAME"
+desc = "EVT_75101506_DESC"
 picture = "FaRpeace"
 
 action_a = {
 ai_chance = 85
-name =  "Offer peace treaty, recognize Kazakhs teritorial gains"
+name =  "EVT_75101506_OPTIONA"
 command = { type = trigger which = 75101507 }
 command = { type = dissent value = 3 }
 }
 action_b = {
 ai_chance = 15
-name = "No, the war will continue until we march through Alash-Quala!"
+name = "EVT_75101506_OPTIONB"
 command = { type = dissent value = 6 }
 }
 }
@@ -1056,13 +1056,13 @@ country = KAZ
 style = 2
 
 
-name = "The Treaty of Astrakhan"
-desc = "We've succesfully beaten rusian army and conquered whole Volga region. Now humiliated russian leadership offers us peace in which they promise to recognize our teritorial gains and withdrawn from disputed teritory. How shall we react ?"
+name = "EVT_75101507_NAME"
+desc = "EVT_75101507_DESC"
 picture = "FaRpeace"
 
 action_a = {
 ai_chance = 100
-name =  "Accept proposal , this is more than we hoped !"
+name =  "EVT_75101507_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = peace which = RUS value = 0 }
 command = { type = addcore which = 660  }
@@ -1081,7 +1081,7 @@ command = { type = trigger which = 75101508 }
 
 action_b = {
 ai_chance = 0
-name = "No, the war will continue until our army marches through Petrograd!"
+name = "EVT_75101507_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = addcore which = 660 }
 command = { type = addcore which = 666 }
@@ -1108,12 +1108,12 @@ style = 2
 
 
 
-name = "The Treaty of Astrakhan"
-desc = "According to the Treaty of Astrakhan we must withdraw our force from remaining parts of the Volga region...."
+name = "EVT_75101508_NAME"
+desc = "EVT_75101508_DESC"
 picture = "FaRpeace"
 
 action_a = {
-name =  "How humiliating !"
+name =  "EVT_75101508_OPTIONA"
 command = { type = removecore which = 660 }
 command = { type = removecore which = 666 }
 command = { type = removecore which = 667 }
@@ -1150,12 +1150,12 @@ style = 2
 
 
 
-name = "Alash-Orda refused to sign peace treaty!"
-desc = "Alash-Orda refused our generous peace offer and renewed military actions...."
+name = "EVT_75101509_NAME"
+desc = "EVT_75101509_DESC"
 picture = "FaRpeace"
 
 action_a = {
-name =  "They will pay for this..."
+name =  "EVT_75101509_OPTIONA"
 command = { type = dissent value = 1 }
 }
 
@@ -1190,19 +1190,19 @@ date = { day = 1 month = january year = 1936 }
 offset = 80
 deathdate = { day = 1 month = january year = 1960 }
 
-name = "The Treaty of Tsarytsin"
-desc = "We've been beaten by the Cossacks, how did this happen? They've seized the whole Tsarytsin region !"
+name = "EVT_75101510_NAME"
+desc = "EVT_75101510_DESC"
 picture = "FaRpeace"
 
 action_a = {
 ai_chance = 30
-name =  "Offer peace treaty, recognize Cossack teritorial gains"
+name =  "EVT_75101510_OPTIONA"
 command = { type = dissent value = 5 }
 command = { type = trigger which = 75101512 }
 }
 action_b = {
 ai_chance = 70
-name = "No, the war will continue until our army marches through Yekaterinodar!"
+name = "EVT_75101510_OPTIONB"
 command = { type = dissent value = 1 }
 }
 }
@@ -1231,19 +1231,19 @@ date = { day = 1 month = january year = 1936 }
 offset = 60
 deathdate = { day = 1 month = january year = 1960 }
 
-name = "The Treaty of Tsarytsin"
-desc = "We've been beaten by the Cossacks, how did this happen? They've seized the whole Tsarytsin region!"
+name = "EVT_75101511_NAME"
+desc = "EVT_75101511_DESC"
 picture = "FaRpeace"
 
 action_a = {
 ai_chance = 90
-name =  "Offer peace treaty, recognize Cossack teritorial gains"
+name =  "EVT_75101511_OPTIONA"
 command = { type = dissent value = 5 }
 command = { type = trigger which = 75101512 }
 }
 action_b = {
 ai_chance = 10
-name = "No, the war will continue until we march through Yekaterinodar!"
+name = "EVT_75101511_OPTIONB"
 command = { type = dissent value = 10 }
 }
 }
@@ -1254,13 +1254,13 @@ country = TRA
 style = 2
 
 
-name = "The Treaty of Tsarytsin"
-desc = "We've succesfully beaten rusian army and conquered whole Tsarytsin region. Now humiliated russian leadership offers us peace in which they promise to recognize our teritorial gains and withdrawn from disputed teritory. How shall we react ?"
+name = "EVT_75101512_NAME"
+desc = "EVT_75101512_DESC"
 picture = "FaRpeace"
 
 action_a = {
 ai_chance = 100
-name =  "Accept proposal , this is more than we hoped !"
+name =  "EVT_75101512_OPTIONA"
 command = { type = dissent value = -5 }
        command = { type = peace which = RUS value = 0 }
        command = { type = addcore which = 663 }
@@ -1278,7 +1278,7 @@ command = { type = dissent value = -5 }
 }
 action_b = {
 ai_chance = 0
-name = "No, the war will continue until our army marches through Petrograd!"
+name = "EVT_75101512_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = addcore which = 663 }
 command = { type = addcore which = 659 }
@@ -1306,12 +1306,12 @@ style = 2
 
 
 
-name = "The Treaty of Tsarytsin"
-desc = "According to the Treaty of Astrakhan we must withdraw our force from remaining parts of the Tsarytsin region...."
+name = "EVT_75101513_NAME"
+desc = "EVT_75101513_DESC"
 picture = "FaRpeace"
 
 action_a = {
-name =  "How humiliating !"
+name =  "EVT_75101513_OPTIONA"
 command = { type = secedeprovince which = TRA value = 663 }
 command = { type = secedeprovince which = TRA value = 659 }
 command = { type = secedeprovince which = TRA value = 642 }
@@ -1344,12 +1344,12 @@ style = 2
 
 
 
-name = "Don-Kuban union refused to sign peace treaty!"
-desc = "Don-Kuban union refused our generous peace offer and renewed military actions...."
+name = "EVT_75101514_NAME"
+desc = "EVT_75101514_DESC"
 picture = "FaRpeace"
 
 action_a = {
-name =  "They will pay for this..."
+name =  "EVT_75101514_OPTIONA"
 command = { type = dissent value = 1 }
 }
 
@@ -1398,8 +1398,8 @@ trigger = {
  }
         }
 
-name = "Civil War in Russia"
-desc = "The crisis in Russia has reached a frightening level of intensity and now Russian workers have risen to struggle for freedom against capitalist oppression once more. Should we help them, even though the Bolshevik methods are rather extreme? "
+name = "EVT_756033_NAME"
+desc = "EVT_756033_DESC"
 style = 2
 picture = "foreign_volunteers"
 decision_picture = "decision_foreign_volunteers"
@@ -1409,7 +1409,7 @@ offset = 5
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
- name = "Help the Russian proletariat"
+ name = "EVT_756033_OPTIONA"
  ai_chance = 80
  command = { type = domestic which = interventionism value = 1 }
  command = { type = relation which = SOV value = 50 }
@@ -1423,7 +1423,7 @@ action_a = {
 
 action_b = {
  ai_chance = 20
- name = "The Bolshevik methods are too extreme"
+ name = "EVT_756033_OPTIONB"
  command = { type = domestic which = interventionism value = -1 }
  command = { type = relation which = SOV value = -50 }
  command = { type = relation which = RUS value = 50 }
@@ -1437,13 +1437,13 @@ random = no
 country = SOV
 
 
-name = "Aid from France!"
-desc = "The French send us significant number of volunteers and military material that will help us considerably in our struggle against decadent russian government !"
+name = "EVT_756034_NAME"
+desc = "EVT_756034_DESC"
 style = 2
 picture = "foreign_volunteers"
 
 action_a = {
- name = "Great!" # Great!
+ name = "EVT_756034_OPTIONA" # Great!
  command = { type = supplies value = 1000 }
  command = { type = add_division value = infantry when = 9 }
  command = { type = add_division value = infantry when = 9 }
@@ -1498,8 +1498,8 @@ trigger = {
  }
         }
 
-name = "Civil War in Russia"
-desc = "The crisis in Russia has reached a frightening level of intensity: once more, Red and White forces are at war.  We have suffered from the horrors of worker-extremism once before and it is probably in our best interests to help the legitimate Russian government and the the country from the terror of Bolshevism"
+name = "EVT_756044_NAME"
+desc = "EVT_756044_DESC"
 style = 2
 picture = "foreign_volunteers"
 decision_picture = "decision_foreign_volunteers"
@@ -1509,7 +1509,7 @@ offset = 5
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
- name = "Help the White forces"
+ name = "EVT_756044_OPTIONA"
  ai_chance = 30
  command = { type = domestic which = interventionism value = 1 }
  command = { type = relation which = SOV value = -50 }
@@ -1523,7 +1523,7 @@ action_a = {
 
 action_b = {
  ai_chance = 70
- name = "We can't spare anything right now"
+ name = "EVT_756044_OPTIONB"
  command = { type = domestic which = interventionism value = -1 }
  command = { type = relation which = SOV value = 50 }
  command = { type = relation which = RUS value = -50 }
@@ -1536,13 +1536,13 @@ random = no
 country = RUS
 
 
-name = "Aid from the French!"
-desc = "The French nationalists send us significant number of volunteers and military material that will help us considerably in our struggle against dangerous bolshevik menace threatening to rip apart Russia !"
+name = "EVT_756045_NAME"
+desc = "EVT_756045_DESC"
 style = 2
 picture = "foreign_volunteers"
 
 action_a = {
- name = "Great !" # Great!
+ name = "EVT_756045_OPTIONA" # Great!
  command = { type = supplies value = 500 }
  command = { type = add_division value = infantry when = 8 }
  command = { type = add_division value = infantry when = 8 }
@@ -1595,8 +1595,8 @@ trigger = {
  }
         }
 
-name = "Civil War in Russia"
-desc = "The crisis in Russia has reached a frightening level of intensity: once more, Red and White forces are at war.  We have suffered from the horrors of worker-extremism once before and it is probably in our best interests to help the legitimate Russian government and the the country from the terror of Bolshevism"
+name = "EVT_756042_NAME"
+desc = "EVT_756042_DESC"
 style = 2
 picture = "foreign_volunteers"
 decision_picture = "decision_foreign_volunteers"
@@ -1606,7 +1606,7 @@ offset = 5
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
- name = "Help the White forces"
+ name = "EVT_756042_OPTIONA"
  ai_chance = 40
  command = { type = domestic which = interventionism value = 1 }
  command = { type = relation which = SOV value = -50 }
@@ -1620,7 +1620,7 @@ action_a = {
 
 action_b = {
  ai_chance = 60
- name = "We can't spare anything right now"
+ name = "EVT_756042_OPTIONB"
  command = { type = domestic which = interventionism value = -1 }
  command = { type = relation which = SOV value = 50 }
  command = { type = relation which = RUS value = -50 }
@@ -1633,13 +1633,13 @@ random = no
 country = RUS
 
 
-name = "Aid from Canada!"
-desc = "The Canadians send us significant number of volunteers and military material that will help us considerably in our struggle against dangerous bolshevik menace threatening to rip apart Russia !"
+name = "EVT_756043_NAME"
+desc = "EVT_756043_DESC"
 style = 2
 picture = "foreign_volunteers"
 
 action_a = {
- name = "Great!" # Great!
+ name = "EVT_756043_OPTIONA" # Great!
  command = { type = supplies value = 1000 }
  command = { type = add_division value = infantry when = 9 }
  command = { type = add_division value = infantry when = 9 }
@@ -1693,8 +1693,8 @@ trigger = {
  }
         }
 
-name = "Civil War in Russia"
-desc = "The crisis in Russia has reached a frightening level of intensity and now Russian workers have risen to struggle for freedom against capitalist oppression once more. Should we help them, even though the Bolshevik methods are rather extreme? "
+name = "EVT_756031_NAME"
+desc = "EVT_756031_DESC"
 style = 2
 picture = "foreign_volunteers"
 decision_picture = "decision_foreign_volunteers"
@@ -1704,7 +1704,7 @@ offset = 5
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
- name = "Help the russian proletariat"
+ name = "EVT_756031_OPTIONA"
  ai_chance = 80
  command = { type = domestic which = interventionism value = 1 }
  command = { type = relation which = SOV value = 50 }
@@ -1718,7 +1718,7 @@ action_a = {
 
 action_b = {
  ai_chance = 20
- name = "The Bolsheviks are too oppressive themselves"
+ name = "EVT_756031_OPTIONB"
  command = { type = domestic which = interventionism value = -1 }
  command = { type = relation which = SOV value = -50 }
  command = { type = relation which = RUS value = 50 }
@@ -1732,13 +1732,13 @@ random = no
 country = SOV
 
 
-name = "Aid from Britain!"
-desc = "The British send send us significant number of volunteers and military material that will help us considerably in our struggle against decadent russian government !"
+name = "EVT_756032_NAME"
+desc = "EVT_756032_DESC"
 style = 2
 picture = "foreign_volunteers"
 
 action_a = {
- name = "Great!" # Great!
+ name = "EVT_756032_OPTIONA" # Great!
  command = { type = supplies value = 1000 }
  command = { type = add_division value = infantry when = 9 }
  command = { type = add_division value = infantry when = 9 }
@@ -1792,8 +1792,8 @@ trigger = {
  }
         }
 
-name = "Civil War in Russia"
-desc = "The crisis in Russia has reached a frightening level of intensity: once more, Red and White forces are at war.  We have seen the horrors of Bolshevism once before, and though our own workers may not like it, it is probably in our best interests to help the legitimate Russian government."
+name = "EVT_756035_NAME"
+desc = "EVT_756035_DESC"
 style = 2
 picture = "Wehrmacht"
 decision_picture = "decision_foreign_volunteers"
@@ -1803,7 +1803,7 @@ offset = 5
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
- name = "Help the White forces"
+ name = "EVT_756035_OPTIONA"
  ai_chance = 75
  command = { type = domestic which = interventionism value = 1 }
  command = { type = relation which = SOV value = -50 }
@@ -1817,7 +1817,7 @@ action_a = {
 }
 
 action_b = {
- name = "Do nothing"
+ name = "EVT_756035_OPTIONB"
 ai_chance = 25
  command = { type = domestic which = interventionism value = -1 }
  command = { type = relation which = SOV value = 50 }
@@ -1832,13 +1832,13 @@ random = no
 country = RUS
 
 
-name = "Aid from Germany!"
-desc = "The Germans send us significant number of volunteers and military material that will help us considerably in our struggle against dangerous bolshevik menace threatening to rip apart Russia !"
+name = "EVT_756036_NAME"
+desc = "EVT_756036_DESC"
 style = 2
 picture = "Wehrmacht"
 
 action_a = {
- name = "Great !" # Great!
+ name = "EVT_756036_OPTIONA" # Great!
  command = { type = supplies value = 1000 }
  command = { type = add_division value = infantry when = 8 }
  command = { type = add_division value = cavalry when = 8 }
@@ -1892,8 +1892,8 @@ war = { country = JAP country = AST }
 }
 }
 }
-name = "Civil War in Russia"
-desc = "The crisis in Russia has reached a frightening level of intensity: once more, Red and White forces are at war.  We have seen the horrors of Bolshevism once before, and though our own workers may not like it, it is probably in our best interests to help the legitimate Russian government."
+name = "EVT_756037_NAME"
+desc = "EVT_756037_DESC"
 style = 2
 picture = "foreign_volunteers"
 decision_picture = "decision_foreign_volunteers"
@@ -1903,7 +1903,7 @@ offset = 5
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Help the White forces"
+name = "EVT_756037_OPTIONA"
 ai_chance = 90
 command = { type = domestic which = interventionism value = 1 }
 command = { type = relation which = SOV value = -50 }
@@ -1916,7 +1916,7 @@ command = { type = trigger which = 756038 }
 
 action_b = {	
 ai_chance = 10
-name = "Do nothing"
+name = "EVT_756037_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = SOV value = 50 }
 command = { type = relation which = RUS value = -50 }
@@ -1930,13 +1930,13 @@ random = no
 country = RUS
 
 
-name = "Aid from Japan!"
-desc = "The Japanese send us significant number of volunteers and military material that will help us considerably in our struggle against dangerous bolshevik menace threatening to rip apart Russia !"
+name = "EVT_756038_NAME"
+desc = "EVT_756038_DESC"
 style = 2
 picture = "foreign_volunteers"
 
 action_a = {
-name = "Great!" # Great!
+name = "EVT_756038_OPTIONA" # Great!
 command = { type = supplies value = 1000 }
 command = { type = add_division value = infantry when = 8 }
 command = { type = add_division value = infantry when = 8 }
@@ -1989,8 +1989,8 @@ NOT = {
 }
        }
 
-name = "Civil War in Russia"
-desc = "The weak, corrupt and oppressive Russian government, that emerged after the Civil war was unable to rule the country effectively and now the Russia workers have risen up against tiranny, hoping to create a more just and free society. We should help the Russian workers as good as we can. "
+name = "EVT_756046_NAME"
+desc = "EVT_756046_DESC"
 style = 2
 picture = "RedStar"
 decision_picture = "decision_foreign_volunteers"
@@ -2000,7 +2000,7 @@ offset = 5
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Help the russian proletariat!"
+name = "EVT_756046_OPTIONA"
 ai_chance = 90
 command = { type = relation which = SOV value = 50 }
 command = { type = relation which = RUS value = -50 }
@@ -2013,7 +2013,7 @@ command = { type = trigger which = 756047 }
 
 action_b = {
 ai_chance = 10
-name = "Perhaps we shouldn't interfere"
+name = "EVT_756046_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = domestic which = political_left value = 1 }
 command = { type = relation which = SOV value = -50 }
@@ -2027,13 +2027,13 @@ random = no
 country = SOV
 
 
-name = "Aid from the Americans!"
-desc = "The syndicates of America send us significant number of volunteers and military material that will help us considerably in our struggle against decadent russian government !"
+name = "EVT_756047_NAME"
+desc = "EVT_756047_DESC"
 style = 2
 picture = "foreign_volunteers"
 
 action_a = {
-name = "Great!" # Great!
+name = "EVT_756047_OPTIONA" # Great!
 command = { type = supplies value = 1000 }
 command = { type = add_division value = infantry when = 9 }
 command = { type = add_division value = infantry when = 9 }
@@ -2072,8 +2072,8 @@ atwar = SPR
 }
 }
 
-name = "Civil War in Russia"
-desc = "The workers of Russia, led by the Bolshevics, have risen once more in an attempt to throw down the ineffective Russian government. We ourselves have experienced a bloody struggle for freedom, perhaps we should help the Russians to succeed as well?  "
+name = "EVT_756048_NAME"
+desc = "EVT_756048_DESC"
 style = 2
 decision_picture = "decision_foreign_volunteers"
 picture = "RedStar"
@@ -2083,7 +2083,7 @@ offset = 5
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Help the russian proletariat!"
+name = "EVT_756048_OPTIONA"
 ai_chance = 70
 command = { type = relation which = SOV value = 50 }
 command = { type = relation which = RUS value = -50 }
@@ -2096,7 +2096,7 @@ command = { type = trigger which = 756049 }
 
 action_b = {
 ai_chance = 30
-name = "Perhaps we shouldn't interfere"
+name = "EVT_756048_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = domestic which = political_left value = 1 }
 command = { type = relation which = SOV value = -50 }
@@ -2110,13 +2110,13 @@ random = no
 country = SOV
 
 
-name = "Aid from the Spanish!"
-desc = "The syndicates of Spain send us significant number of volunteers and military material that will help us considerably in our struggle against decadent russian government !"
+name = "EVT_756049_NAME"
+desc = "EVT_756049_DESC"
 style = 2
 picture = "foreign_volunteers"
 
 action_a = {
-name = "Great!" 
+name = "EVT_756049_OPTIONA" 
 command = { type = supplies value = 500 } 
 command = { type = add_division value = militia when = 5 }
 command = { type = add_division value = militia when = 5 }
@@ -2136,8 +2136,8 @@ event = {
                         event = 756041
 			}
 	}
-	name = "The End of the Russian civil war"
-	desc = "For good or ill, the Russian civil war is now over.  The General Staff have reported that they learnt many valuable lessons regarding the nature of modern warfare over the course of the conflict."
+	name = "EVT_756050_NAME"
+	desc = "EVT_756050_DESC"
 
 
 	style = 2
@@ -2148,7 +2148,7 @@ event = {
 	deathdate = { day = 29 month = december year = 1960 }
 
 	action_a = {
-		name = "Great !" 
+		name = "EVT_756050_OPTIONA" 
 		command = { type = relation which = SOV value = 10 }	# 
 		command = { type = manpowerpool value = 5 }	 	# Soldiers return home
 		command = { type = dissent value = -1 }
@@ -2170,8 +2170,8 @@ event = {
                         event = 756041
 			}
 	}
-	name = "The End of the Russian civil war"
-	desc = "For good or ill, the Russian civil war is now over.  The General Staff have reported that they learnt many valuable lessons regarding the nature of modern warfare over the course of the conflict."
+	name = "EVT_756051_NAME"
+	desc = "EVT_756051_DESC"
 
 
 	style = 2
@@ -2182,7 +2182,7 @@ event = {
 	deathdate = { day = 29 month = december year = 1960 }
 
 	action_a = {
-		name = "Great !" 
+		name = "EVT_756051_OPTIONA" 
 		command = { type = relation which = SOV value = 10 }	# 
 		command = { type = manpowerpool value = 5 }	 	# Soldiers return home
 		command = { type = dissent value = -1 }
@@ -2205,8 +2205,8 @@ event = {
                         event = 756041
 			}
 	}
-	name = "The End of the Russian civil war"
-	desc = "For good or ill, the Russian civil war is now over.  The General Staff have reported that they learnt many valuable lessons regarding the nature of modern warfare over the course of the conflict."
+	name = "EVT_756052_NAME"
+	desc = "EVT_756052_DESC"
 
 
 	style = 2
@@ -2217,7 +2217,7 @@ event = {
 	deathdate = { day = 29 month = december year = 1960 }
 
 	action_a = {
-		name = "Great !" 
+		name = "EVT_756052_OPTIONA" 
 		command = { type = relation which = RUS value = 10 }	# 
 		command = { type = manpowerpool value = 5 }	 	# Soldiers return home
 		command = { type = dissent value = -1 }
@@ -2240,8 +2240,8 @@ event = {
                         event = 756041
 			}
 	}
-	name = "The End of the Russian civil war"
-	desc = "For good or ill, the Russian civil war is now over.  The General Staff have reported that they learnt many valuable lessons regarding the nature of modern warfare over the course of the conflict."
+	name = "EVT_756053_NAME"
+	desc = "EVT_756053_DESC"
 
 
 	style = 2
@@ -2252,7 +2252,7 @@ event = {
 	deathdate = { day = 29 month = december year = 1960 }
 
 	action_a = {
-		name = "Great !" 
+		name = "EVT_756053_OPTIONA" 
 		command = { type = relation which = RUS value = 10 }	# 
 		command = { type = manpowerpool value = 5 }	 	# Soldiers return home
 		command = { type = dissent value = -1 }
@@ -2274,8 +2274,8 @@ event = {
                         event = 756041
 			}
 	}
-	name = "The End of the Russian civil war"
-	desc = "For good or ill, the Russian civil war is now over.  The General Staff have reported that they learnt many valuable lessons regarding the nature of modern warfare over the course of the conflict."
+	name = "EVT_756054_NAME"
+	desc = "EVT_756054_DESC"
 
 
 	style = 2
@@ -2286,7 +2286,7 @@ event = {
 	deathdate = { day = 29 month = december year = 1960 }
 
 	action_a = {
-		name = "Great !" 
+		name = "EVT_756054_OPTIONA" 
 		command = { type = relation which = SOV value = 10 }	# 
 		command = { type = manpowerpool value = 5 }	 	# Soldiers return home
 		command = { type = dissent value = -1 }
@@ -2309,8 +2309,8 @@ event = {
                         event = 756041
 			}
 	}
-	name = "The End of the Russian civil war"
-	desc = "For good or ill, the Russian civil war is now over.  The General Staff have reported that they learnt many valuable lessons regarding the nature of modern warfare over the course of the conflict."
+	name = "EVT_756055_NAME"
+	desc = "EVT_756055_DESC"
 
 
 	style = 2
@@ -2321,7 +2321,7 @@ event = {
 	deathdate = { day = 29 month = december year = 1960 }
 
 	action_a = {
-		name = "Great !" 
+		name = "EVT_756055_OPTIONA" 
 		command = { type = relation which = RUS value = 10 }	# 
 		command = { type = manpowerpool value = 5 }	 	# Soldiers return home
 		command = { type = dissent value = -1 }
@@ -2344,8 +2344,8 @@ event = {
                         event = 756041
 			}
 	}
-	name = "The End of the Russian civil war"
-	desc = "For good or ill, the Russian civil war is now over.  The General Staff have reported that they learnt many valuable lessons regarding the nature of modern warfare over the course of the conflict."
+	name = "EVT_756056_NAME"
+	desc = "EVT_756056_DESC"
 
 
 	style = 2
@@ -2356,7 +2356,7 @@ event = {
 	deathdate = { day = 29 month = december year = 1960 }
 
 	action_a = {
-		name = "Great !" 
+		name = "EVT_756056_OPTIONA" 
 		command = { type = relation which = RUS value = 10 }	# 
 		command = { type = manpowerpool value = 5 }	 	# Soldiers return home
 		command = { type = dissent value = -1 }
@@ -2379,8 +2379,8 @@ event = {
                         event = 756041
 			}
 	}
-	name = "The End of the Russian civil war"
-	desc = "For good or ill, the Russian civil war is now over.  The General Staff have reported that they learnt many valuable lessons regarding the nature of modern warfare over the course of the conflict."
+	name = "EVT_756057_NAME"
+	desc = "EVT_756057_DESC"
 
 
 	style = 2
@@ -2391,7 +2391,7 @@ event = {
 	deathdate = { day = 29 month = december year = 1960 }
 
 	action_a = {
-		name = "Great !" 
+		name = "EVT_756057_OPTIONA" 
 		command = { type = relation which = SOV value = 10 }	# 
 		command = { type = manpowerpool value = 5 }	 	# Soldiers return home
 		command = { type = dissent value = -1 }
@@ -2413,8 +2413,8 @@ event = {
                         event = 756041
 			}
 	}
-	name = "The End of the Russian civil war"
-	desc = "For good or ill, the Russian civil war is now over.  The General Staff have reported that they learnt many valuable lessons regarding the nature of modern warfare over the course of the conflict."
+	name = "EVT_756058_NAME"
+	desc = "EVT_756058_DESC"
 
 
 	style = 2
@@ -2425,7 +2425,7 @@ event = {
 	deathdate = { day = 29 month = december year = 1960 }
 
 	action_a = {
-		name = "Great !" 
+		name = "EVT_756058_OPTIONA" 
 		command = { type = relation which = RUS value = 10 }	# 
 		command = { type = manpowerpool value = 5 }	 	# Soldiers return home
 		command = { type = dissent value = -1 }

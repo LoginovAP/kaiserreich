@@ -14,18 +14,18 @@ date = { day = 1 month = january year = 1936 }
 offset = 80
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Nicolae Iorga"
-desc = "Nicolae Iorga, a prominent Romanian historian and intellectual, has been a thorn in the side of the Iron Guard since we've taken over. Rumor has it that he and others like him have founded a secret, intellectual group, the Bucharest Circle."
+name = "EVT_669000_NAME"
+desc = "EVT_669000_DESC"
 
 action_a = {
 ai_chance = 70
-name = "Iorga Must be Stopped"
+name = "EVT_669000_OPTIONA"
 command = { type = sleepevent which = 669002 }
 }
 
 action_b = {
 ai_chance = 30
-name = "They Don't Sound Like a Threat"
+name = "EVT_669000_OPTIONB"
 command = { type = sleepevent which = 669001 }
 }
 }
@@ -46,11 +46,11 @@ date = { day = 1 month = august year = 1936 }
 offset = 180
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Breakup of the Bucharest Circle"
-desc = "After being tipped off to the meeting place of the Bucharest Circle, we raided the building they we're using as a hideout and imprisoned most of the members."
+name = "EVT_669001_NAME"
+desc = "EVT_669001_DESC"
 
 action_a = {
-name = "Exectute Iorga, imprison the others"
+name = "EVT_669001_OPTIONA"
 command = { type = dissent value = 3 }
 command = { type = research_mod value = -2 } #Cause the smart people you just imprisoned#
 }
@@ -68,12 +68,12 @@ date = { day = 1 month = january year = 1937 }
 offset = 60
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Bucharest Circle"
-desc = "Members of the Bucharest Circle have begun publishing pamphlets, criticizing the government and causing dissent among the people. If we wait any longer, they could plant the seed of revolution."
+name = "EVT_669002_NAME"
+desc = "EVT_669002_DESC"
 
 action_a = {
 ai_chance = 75
-name = "Break up the Circle and Execute Iorga"
+name = "EVT_669002_OPTIONA"
 command = { type = dissent value = 5 }
 command = { type = research_mod value = -2 } #Cause the smart people you just killed#
 command = { type = setflag which = ROM_BUC }
@@ -81,7 +81,7 @@ command = { type = setflag which = ROM_BUC }
 
 action_b = {
 ai_chance = 25
-name = "Leave them be"
+name = "EVT_669002_OPTIONB"
 command = { type = dissent value = -3 }
 command = { type = domestic which = democratic value = 1 }
 command = { type = setflag which = ROM_BUC }
@@ -110,11 +110,11 @@ date = { day = 0 month = january year = 1936 }
 offset = 1
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "Union Day"
-desc = "Union Day represents the Union of the Principalities of Moldova and Wallachia on the 24th of January, 1859, when Alexandru Ioan Cuza was elected as 'Domnitor' in both principalities as a way to bypass the ruling that the two cannot unite in a single state. It is regarded as a National Holiday in Romania."
+name = "EVT_730806_NAME"
+desc = "EVT_730806_DESC"
 
 action_a = {
-name = "Everything for the Fatherland!"
+name = "EVT_730806_OPTIONA"
 	command = { type = dissent value = -1 }
 	}
 }
@@ -141,11 +141,11 @@ date = { day = 0 month = january year = 1936 }
 offset = 1
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "Union Day"
-desc = "Union Day represents the Union of the Principalities of Moldova and Wallachia on the 24th of January, 1859, when Alexandru Ioan Cuza was elected as 'Domnitor' in both principalities as a way to bypass the ruling that the two cannot unite in a single state. It is regarded as a National Holiday in Romania."
+name = "EVT_669007_NAME"
+desc = "EVT_669007_DESC"
 
 action_a = {
-name = "Everything for the Fatherland!"
+name = "EVT_669007_OPTIONA"
 	command = { type = dissent value = -1 }
 	}
 }
@@ -159,22 +159,22 @@ trigger = {
 headofstate = 19043
 }
 
-name = "Political scandal"
-desc = "The eccentric and outspoken former Czar Ferdinand has complained that his already considerable 'pensions' are insufficient for a man of his stature. Prime Minister Filov refused Ferdinand's demands outright, claiming that such extravagance was tasteless in a country suffering from economic depression. Czar Boris has the ungrateful task of choosing between his father and his Prime Minister. Who will the Czar support?"
+name = "EVT_669003_NAME"
+desc = "EVT_669003_DESC"
 style = 2
 picture = "news_paper"
 
 date = { day = 18 month = april year = 1936 }
 
 action_a = {
-name = "Support Ferdinand, Bulgaria will honour its heroes"
+name = "EVT_669003_OPTIONA"
 ai_chance = 50
 command = { type = dissent value = 3 }
 command = { type = money value = -50 }
 command = { type = trigger which = 669004 }
 }
 action_b = {
-name = "Support Filov, Ferdinand demands too much"
+name = "EVT_669003_OPTIONB"
 ai_chance = 50
 command = { type = dissent value = 8 } # Ferdinand has a lot of friends in high places
 command = { type = sleepevent which = 669004 }
@@ -190,21 +190,21 @@ trigger = {
 headofstate = 19043
 }
 
-name = "Filov's choice"
-desc = "The Czar chose to support his father in his demands for a higher pension. The Czar's intervention had made it painfully clear for Filov that it was the Czar who held real power in Bulgaria. Filov was faced with the choice of swallowing his pride and dignity to become the Czar's loyal right hand man, or he could resign and hope his replacement at least has some competence."
+name = "EVT_669004_NAME"
+desc = "EVT_669004_DESC"
 style = 2
 picture = "news_paper"
 
 date = { day = 25 month = april year = 1936 }
 
 action_a = {
-name = "Resign, even politicians have their pride"
+name = "EVT_669004_OPTIONA"
 ai_chance = 80
 command = { type = headofgovernment which = 19057 } #'Happy amateur' seems to suit a political patsy
 command = { type = relation which = GER value = -50 } #Filov was well liked by the German government
 }
 action_b = {
-name = "Serving Bulgaria is more important"
+name = "EVT_669004_OPTIONB"
 ai_chance = 20
 command = { type = dissent value = 3 } # Filov is not popular with Ferdinand and friends
 }
@@ -222,8 +222,8 @@ headofstate = 19045
 }
 }
 
-name = "King Boris III dies under mysterious circumstances."
-desc = "Boris III, Czar of all Bulgarians died today from heart failure. Many suspect foul play since the Czar was a healthy 49-year old whose health failed quickly after a visit to Germany. A wave of anti-German sentiment has swept through the country, accusing the German government of murdering the king. Many Bulgarians fear that one day Bulgaria will be nothing more than a German puppet. Since the Czar's son Symeon is still a minor, the king's brother Kiril has been appointed as regent."
+name = "EVT_669005_NAME"
+desc = "EVT_669005_DESC"
 style = 2
 picture = "minister_died"
 
@@ -231,7 +231,7 @@ date = { day = 28 month = august year = 1943}
 
 action_a = {
 ai_chance = 60
-name = "It must be murder. Let the world know it's murder."
+name = "EVT_669005_OPTIONA"
 command = { type = dissent value = 1 }
 command = { type = sleepminister which = 19043 }
 command = { type = sleepminister which = 19045 }
@@ -240,7 +240,7 @@ command = { type = relation which = GER value = -50 }
 }
 action_b = {
 ai_chance = 40
-name = "It's a tragedy, but nothing more."
+name = "EVT_669005_OPTIONB"
 command = { type = dissent value = 5 }
 command = { type = sleepminister which = 19043}
 command = { type = sleepminister which = 19045 }
@@ -254,15 +254,15 @@ random = no
 country = BUL
 
 
-name = "Former Czar Ferdinand dies"
-desc = "Ferdinand von Saxe-Coburg-Gotha, former Czar of all Bulgarians, is no more. Leading the country through two Balkan Wars and the Weltkrieg he was a symbol of Bulgarian greatness. After his abdication Ferdinand was regularly accused of corruption, but the old man remained popular among the people nevertheless."
+name = "EVT_669006_NAME"
+desc = "EVT_669006_DESC"
 style = 2
 picture = "minister_died"
 
 date = { day = 10 month = september year = 1948 }
 
 action_a = {
-name = "We will miss the old man"
+name = "EVT_669006_OPTIONA"
 command = { type = dissent value = 1  }
 command = { type = money value = 20 } # less royal 'pensions'.
 }

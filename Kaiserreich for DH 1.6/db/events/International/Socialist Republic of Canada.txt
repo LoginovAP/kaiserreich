@@ -10,22 +10,22 @@ country = U28
 
 trigger = { headofstate = 145000 } #J. S. Woodsworth
 
-name = "The death of J. S. Woodsworth"
-desc = "James Shaver Woodsworth, a prominent figure in Canadian Syndicalism and the current President, suffered a stroke and died today. The country mourns the loss of a man who always fought for the great cause of Syndicalism. However, a new President must be chosen: will it be the faithful Stanley Knowles or the more radical Arthur Evans?"
+name = "EVT_1830100_NAME"
+desc = "EVT_1830100_DESC"
 picture = "minister_died"
 
 date = { day = 20 month = march year = 1942 }
 
 action_a = {
     ai_chance = 80
-    name = "Stanley Knowles is the right man for the job."
+    name = "EVT_1830100_OPTIONA"
     command = { type = sleepminister which = 145000 } #J. S. Woodsworth
     command = { type = headofstate which = 145002 } #Stanley Knowles
     command = { type = sleepevent which = 1830101 }
     }
 action_b = {
     ai_chance = 20
-    name = "Arthur 'Slim' Evans will lead the country!"
+    name = "EVT_1830100_OPTIONB"
     command = { type = sleepminister which = 145000 } #J. S. Woodsworth
     command = { type = headofstate which = 145001 } #Arthur 'Slim' Evans
     command = { type = dissent value = 5 }
@@ -44,14 +44,14 @@ trigger = {
 	government = communist
 }
 
-name = "The death of J. S. Woodsworth"
-desc = "James Shaver Woodsworth, a prominent figure in Canadian Syndicalism, suffered a stroke and died today. The country mourns the loss of a man who always fought for the great cause of Syndicalism."
+name = "EVT_1830101_NAME"
+desc = "EVT_1830101_DESC"
 picture = "minister_died"
 
 date = { day = 20 month = march year = 1942 }
 
 action_a = {
-    name = "He was a good man."
+    name = "EVT_1830101_OPTIONA"
     command = { type = sleepminister which = 145000 } #J. S. Woodsworth
     command = { type = sleepevent which = 1830100 }
     }
@@ -64,8 +64,8 @@ event = {
      country = U28
      style = 2
 
-     name = "The first Congress of the Canadian Trade Unions"
-     desc = "Today the first Congress of the Canadian Trade Unions begins. Although political parties are banned, there are informal groups gathering trade unionists with common ideologies: liberal Reformists, orthodox Labourists, and strict Totalists."
+     name = "EVT_765000_NAME"
+     desc = "EVT_765000_DESC"
      picture = "tuc1"
 
      trigger = { government = communist }
@@ -75,7 +75,7 @@ event = {
          deathdate = { day = 29 month = December year = 1963 }
 
      action_a = {
-         name = "The CTUC Congress begins! How exciting!"
+         name = "EVT_765000_OPTIONA"
          command = { type = setflag which = CTUC }
      }
  }
@@ -86,8 +86,8 @@ event = {
      country = U28
      style = 2
 
-     name = "CTUC Congress - Division of the economy"
-     desc = "On this day of the CTUC congress, the debate has wandered into the area of economics. As has been predicted, every faction has put forward their own suggestions. Most people assume that the Labourists will win this debate, since Arthur Evans is a major figure in the Canadian economy these days."
+     name = "EVT_765001_NAME"
+     desc = "EVT_765001_DESC"
      picture = "tuc2"
 
      trigger = { flag = CTUC }
@@ -97,7 +97,7 @@ event = {
      deathdate = { day = 29 month = December year = 1963 }
 
      action_a = {
-         name = "The economy should be controlled by local cooperative sections (Ref)"
+         name = "EVT_765001_OPTIONA"
          ai_chance = 30
          command = { type = peacetime_ic_mod value = 5 }
          command = { type = construct which = ic where = -1 value = 1 }
@@ -108,7 +108,7 @@ event = {
          command = { type = setflag which = ECO_CAN_REF }
      }
      action_b = {
-         name = "Trade unions will control the economy (Lab)"
+         name = "EVT_765001_OPTIONB"
          ai_chance = 40
          command = { type = construct which = ic where = -4 value = 1 }
          command = { type = construct which = ic where = -4 value = 1 }
@@ -117,7 +117,7 @@ event = {
          command = { type = setflag which = ECO_CAN_LAB }
      }
      action_c = {
-         name = "Central planning is the key to success (Tot)"
+         name = "EVT_765001_OPTIONC"
          ai_chance = 30
          command = { type = dissent value = 6 }
          command = { type = construct which = ic where = -1 value = 1 }
@@ -136,8 +136,8 @@ event = {
      country = U28
      style = 2
 
-     name = "CTUC Congress - Economic development"
-     desc = "Today the Congress still debates over the economy. This time the main issue is about the development of the country. Each faction has their own development plan, so it's hard to say who will win."
+     name = "EVT_765002_NAME"
+     desc = "EVT_765002_DESC"
 
      picture = "politics4"
 
@@ -149,7 +149,7 @@ event = {
      deathdate = { day = 29 month = December year = 1963 }
 
      action_a = {
-         name = "We must expand agriculture (Ref)"
+         name = "EVT_765002_OPTIONA"
          ai_chance = 34
          command = { type = supplies value = -1000 }
          command = { type = relative_manpower value = 5 }
@@ -157,7 +157,7 @@ event = {
          command = { type = setflag which = ECO2_CAN_REF }
      }
      action_b = {
-         name = "Industry, for Canada and trade unions! (Lab)"
+         name = "EVT_765002_OPTIONB"
          ai_chance = 33
          command = { type = supplies value = -1000 }
  command = { type = construct which = ic where = -4 value = 1 }
@@ -167,7 +167,7 @@ event = {
          command = { type = setflag which = ECO2_CAN_LAB }
      }
      action_c = {
-         name = "The northern parts of our country need development (Tot)"
+         name = "EVT_765002_OPTIONC"
          ai_chance = 33
          command = { type = setflag which = ECO2_CAN_TOT }
          command = { type = supplies value = -1000 }
@@ -191,8 +191,8 @@ event = {
      country = U28
      style = 2
 
-     name = "CTUC Congress - Military Affairs"
-     desc = "The debate has wandered into the area of military affairs. As has been predicted, every faction has put forward their own suggestions. The debate is heated, since the last few days have only too clearly shown the deep rift within the TUC."
+     name = "EVT_765003_NAME"
+     desc = "EVT_765003_DESC"
      picture = "militaryparade1"
 
 
@@ -204,7 +204,7 @@ event = {
      deathdate = { day = 29 month = December year = 1963 }
 
      action_a = {
-         name = "Let us build socialism at home (Ref)"
+         name = "EVT_765003_OPTIONA"
          ai_chance = 30
          command = { type = add_division value = infantry when = 9 }
          command = { type = add_division value = infantry when = 9 }
@@ -215,7 +215,7 @@ event = {
          command = { type = setflag which = MIL_CAN_REF }
      }
      action_b = {
-         name = "Workers' militia as an army of workers (Lab)"
+         name = "EVT_765003_OPTIONB"
          ai_chance = 30
          command = { type = add_division value = militia when = 5 }
          command = { type = add_division value = militia when = 5 }
@@ -227,7 +227,7 @@ event = {
          command = { type = setflag which = MIL_CAN_LAB }
      }
      action_c = {
-         name = "Expand the army of the proletariat! (Tot)"
+         name = "EVT_765003_OPTIONC"
          ai_chance = 30
          command = { type = add_division value = infantry when = 9 }
          command = { type = add_division value = infantry when = 9 }
@@ -242,7 +242,7 @@ event = {
          command = { type = dissent value = 5 }
      }
      action_d = {
-         name = "Tanks are the future! (All)"
+         name = "EVT_765003_OPTIOND"
          ai_chance = 10
          command = { type = add_division value = armor when = 1 }
          command = { type = add_division value = armor when = 1 }
@@ -260,8 +260,8 @@ event = {
      country = U28
      style = 2
 
-     name = "CTUC Congress - Foreign Policy"
-     desc = "On this day of the CTUC congress, the debate has wandered into the area of foreign policy. As has been predicted, every faction has put forward their own suggestions. The Congress listened casually to every candidate until the suggestion of the Reformists was heard, when a slow, shocked murmur ran through the hall."
+     name = "EVT_765004_NAME"
+     desc = "EVT_765004_DESC"
      picture = "politics1"
 
 
@@ -273,7 +273,7 @@ event = {
      deathdate = { day = 29 month = December year = 1963 }
 
      action_a = {
-         name = "Isolationism - Canada is a world in itself! (Ref)"
+         name = "EVT_765004_OPTIONA"
          ai_chance = 20
          command = { type = setflag which = FOR_CAN_REF }
          command = { type = relation which = GER value = 50 }
@@ -285,7 +285,7 @@ event = {
          command = { type = domestic which = interventionism value = -1 }
      }
      action_b = {
-         name = "Build socialism with the Internationale (Lab)"
+         name = "EVT_765004_OPTIONB"
          ai_chance = 40
          command = { type = setflag which = FOR_CAN_LAB }
          command = { type = relation which = ENG value = 50 }
@@ -295,7 +295,7 @@ event = {
          command = { type = relation which = USA value = -50 }
      }
      action_c = {
-         name = "We must directly fight against the capitalists! (Tot)"
+         name = "EVT_765004_OPTIONC"
          ai_chance = 40
          command = { type = setflag which = FOR_CAN_TOT }
          command = { type = relation which = USA value = -100 }
@@ -310,8 +310,8 @@ event = {
      country = U28
      style = 2
 
-     name = "Quebec issue"
-     desc = "Our country owns Quebec. The main problem is - which policy should be chosen? Both Reformists and Labourists suggest accepting the French culture, while Totalists want assimilation."
+     name = "EVT_765005_NAME"
+     desc = "EVT_765005_DESC"
      picture = "Snowden"
 
      trigger = { flag = CTUC
@@ -323,19 +323,19 @@ event = {
      deathdate = { day = 29 month = December year = 1963 }
 
      action_a = {
-         name = "Establish the primacy of the French in the Province (Ref)"
+         name = "EVT_765005_OPTIONA"
          ai_chance = 20
          command = { type = setflag which = QUE_CAN_REF }
          command = { type = domestic which = freedom value = 2 }
      }
      action_b = {
-         name = "Promote Quebecois culture (Lab)"
+         name = "EVT_765005_OPTIONB"
          ai_chance = 40
          command = { type = setflag which = QUE_CAN_LAB }
          command = { type = domestic which = freedom value = 1 }
      }
      action_c = {
-         name = "Begin to intergrate them (Tot)"
+         name = "EVT_765005_OPTIONC"
          ai_chance = 40
          command = { type = setflag which = QUE_CAN_TOT }
          command = { type = dissent value = 10 }
@@ -372,15 +372,15 @@ event = {
  event = 765004
  flag = CTUC }
 
-     name = "Canadian Election - Totalists secure a majority"
-     desc = "The CTUC has decided to vote for Tim Buck's Totalists with an overwhelming majority. Tim Buck will become the new Chairman of the CTUC."
+     name = "EVT_765006_NAME"
+     desc = "EVT_765006_DESC"
      style = 2
 
      date = { day = 1 month = january year = 1936 }
      offset = 30
      deathdate = { day = 29 month = December year = 1963 }
      action_a = {
-         name = "Congratulations, Comrade Buck"
+         name = "EVT_765006_OPTIONA"
          command = { type = headofstate which = 145003 }
          command = { type = headofgovernment which = 145006 }
          command = { type = foreignminister which = 145010 }
@@ -449,15 +449,15 @@ event = {
  event = 765004
  flag = CTUC }
 
-     name = "Canadian Election - Labourists secure a majority"
-     desc = "The CTUC has decided to vote for Arthur Evans' Labourists with an overwhelming majority. Albert Goodwin will become the new Chairman of the CTUC."
+     name = "EVT_765007_NAME"
+     desc = "EVT_765007_DESC"
      style = 2
 
      date = { day = 1 month = january year = 1936 }
      offset = 30
      deathdate = { day = 29 month = December year = 1963 }
      action_a = {
-         name = "Congratulations, Comrade Evans"
+         name = "EVT_765007_OPTIONA"
          command = { type = headofstate which = 145001 }
          command = { type = headofgovernment which = 145004 }
          command = { type = foreignminister which = 145007 }
@@ -526,15 +526,15 @@ event = {
  event = 765004
  flag = CTUC }
 
-     name = "Canadian Election - Reformists secure a majority"
-     desc = "The CTUC has decided to vote for Woodsworth's Reformists with an overwhelming majority. Abraham Heaps will become the new Chairman of the CTUC."
+     name = "EVT_765008_NAME"
+     desc = "EVT_765008_DESC"
      style = 2
 
      date = { day = 1 month = january year = 1936 }
      offset = 30
      deathdate = { day = 18 month = March year = 1942 }
      action_a = {
-         name = "Congratulations, Comrade Woodsworth"
+         name = "EVT_765008_OPTIONA"
          command = { type = headofstate which = 145000 }
          command = { type = headofgovernment which = 145005 }
          command = { type = foreignminister which = 145009 }
@@ -604,15 +604,15 @@ event = {
  event = 765004
  flag = CTUC }
 
-     name = "Canadian Election - Reformists secure a majority"
-     desc = "The CTUC has decided to vote for Knowles' Reformists with an overwhelming majority. Abraham Heaps will become the new Chairman of the CTUC."
+     name = "EVT_765009_NAME"
+     desc = "EVT_765009_DESC"
      style = 2
 
      date = { day = 1 month = April year = 1942 }
      offset = 30
      deathdate = { day = 29 month = December year = 1963 }
      action_a = {
-         name = "Congratulations, Comrade Knowles"
+         name = "EVT_765009_OPTIONA"
          command = { type = headofstate which = 145002 }
          command = { type = headofgovernment which = 145004 }
          command = { type = foreignminister which = 145009 }
@@ -658,8 +658,8 @@ event = {
      country = U28
      style = 2
 
-     name = "Canadian Election - Draw"
-     desc = "The CTUC has voted repeatedly during the last few days, and the deadlock continues. What should be done?"
+     name = "EVT_765010_NAME"
+     desc = "EVT_765010_DESC"
 
      picture = "politics3"
 
@@ -731,7 +731,7 @@ event = {
      deathdate = { day = 29 month = December year = 1963 }
 
      action_a = {
-         name = "Let's make a coalition between Labourists and Reformists"
+         name = "EVT_765010_OPTIONA"
          command = { type = dissent value = 5 }
          command = { type = headofstate which = 145001 }
          command = { type = headofgovernment which = 145005 }

@@ -29,11 +29,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 200
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Second Italian Unification"
-desc = "We now control the whole Italian peninsula and have won the support of all of its people."
+name = "EVT_55300_NAME"
+desc = "EVT_55300_DESC"
 
 action_a = {
-	name = "The Risorgimento is Complete!"
+	name = "EVT_55300_OPTIONA"
 	command = { type = addcore which = 418 } 
 	command = { type = addcore which = 415 } 
 	command = { type = addcore which = 420 } 
@@ -85,11 +85,11 @@ date = { day = 1 month = january year = 1936 }
 offset =  200
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Second Italian Unification"
-desc = "We now control the whole Italian peninsula and have won the support of all of its people."
+name = "EVT_55301_NAME"
+desc = "EVT_55301_DESC"
 
 action_a = {
-	name = "The Risorgimento is Complete!"
+	name = "EVT_55301_OPTIONA"
 	command = { type = addcore which = 435 } #Genoa
 	command = { type = addcore which = 434 } #La Spezia
 	command = { type = addcore which = 396 } #Milan
@@ -152,8 +152,8 @@ trigger = {
 	
 }
 
-name = "Revolution in the North"
-desc = "A successful revolution in the Italian Federation led to democratic elections which the right-wing conservatives failed to win. Perhaps we can approach the new government and convince them to join our country? A new Risorgimento could be achieved through peaceful negotiations!"
+name = "EVT_124000_NAME"
+desc = "EVT_124000_DESC"
 picture = "politics2"
 
 date = { day = 1 month = january year = 1936 }
@@ -161,7 +161,7 @@ offset = 4
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-	name = "Send a proposal!"
+	name = "EVT_124000_OPTIONA"
 	ai_chance = 95
 	command = { type = dissent value = -1 }
 	command = { type = trigger which = 124001 } #A proposal from the South
@@ -169,7 +169,7 @@ action_a = {
 	command = { type = trigger which = 124003 } #A proposal from the South
 	}
 action_b = {
-	name = "No, they are not worth it!"
+	name = "EVT_124000_OPTIONB"
 	ai_chance = 5
 	command = { type = dissent value = 1 }
 	}
@@ -185,17 +185,17 @@ trigger = {
 	flag = ITA_REV_SL
 }
 
-name = "A proposal from the South"
-desc = "The Socialist Republic of Italy approached us and, together with the congratulations for the new government, they asked if we want to become a part of their country. They think that we can achieve a peaceful unification through negotiations. What should we answer?"
+name = "EVT_124001_NAME"
+desc = "EVT_124001_DESC"
 picture = "politics2"
 
 action_a = {
-	name = "Accept, for a new united Italy!"
+	name = "EVT_124001_OPTIONA"
 	ai_chance = 20
 	command = { type = trigger which = 124004 } #The north accepted our proposal!
 	}
 action_b = {
-	name = "No, we will never be ruled by you!"
+	name = "EVT_124001_OPTIONB"
 	ai_chance = 80
 	command = { type = dissent value = 3 }
 	command = { type = relation which = RSI value = -25 } 
@@ -213,17 +213,17 @@ trigger = {
 	flag = ITA_REV_SD
 }
 
-name = "A proposal from the South"
-desc = "The Socialist Republic of Italy approached us and, together with the congratulations for the new government, they asked if we want to become a part of their country. They think that we can achieve a peaceful unification through negotiations. What should we answer?"
+name = "EVT_124002_NAME"
+desc = "EVT_124002_DESC"
 picture = "politics2"
 
 action_a = {
-	name = "Accept, for a new united Italy!"
+	name = "EVT_124002_OPTIONA"
 	ai_chance = 75
 	command = { type = trigger which = 124004 } #The north accepted our proposal!
 	}
 action_b = {
-	name = "No, we will never be ruled by you!"
+	name = "EVT_124002_OPTIONB"
 	ai_chance = 25
 	command = { type = dissent value = 3 }
 	command = { type = relation which = RSI value = -25 } 
@@ -241,17 +241,17 @@ trigger = {
 	flag = ITA_REV_LWR
 }
 
-name = "A proposal from the South"
-desc = "The Socialist Republic of Italy approached us and, together with the congratulations for the new government, they asked if we want to become a part of their country. They think that we can achieve a peaceful unification through negotiations. What should we answer?"
+name = "EVT_124003_NAME"
+desc = "EVT_124003_DESC"
 picture = "politics2"
 
 action_a = {
-	name = "Accept, for a new united Italy!"
+	name = "EVT_124003_OPTIONA"
 	ai_chance = 100
 	command = { type = trigger which = 124004 } #The north accepted our proposal!
 	}
 action_b = {
-	name = "No, we will never be ruled by you!"
+	name = "EVT_124003_OPTIONB"
 	ai_chance = 0
 	command = { type = dissent value = 3 }
 	command = { type = relation which = RSI value = -25 } 
@@ -265,12 +265,12 @@ random = no
 country = RSI
 style = 2
 
-name = "The North accepted our proposal!"
-desc = "The new government of the Italian Federation accepted our proposal! Despite some grumbling, a new united Italy is born!"
+name = "EVT_124004_NAME"
+desc = "EVT_124004_DESC"
 picture = "military_parade"
 
 action_a = {
-	name = "A new united Italy!"
+	name = "EVT_124004_OPTIONA"
 	command = { type = inherit which = ITA }
 	command = { type = dissent value = 8 }
 	command = { type = addcore which = 435 } #Genoa
@@ -299,17 +299,17 @@ random = no
 country = RSI
 style = 2
 
-name = "The North rejected our proposal"
-desc = "The stupid politicians in the Italian Federation refused to accept our proposal. What should we do now?"
+name = "EVT_124005_NAME"
+desc = "EVT_124005_DESC"
 picture = "failed_objective"
 
 action_a = {
-	name = "We will conquer their lands!"
+	name = "EVT_124005_OPTIONA"
 	ai_chance = 50
 	command = { type = war which = ITA }
 	}
 action_b = {
-	name = "They don't deserve us!"
+	name = "EVT_124005_OPTIONB"
 	ai_chance = 50
 	command = { type = relation which = ITA value = -25 } 
 	}
@@ -329,8 +329,8 @@ trigger = {
 	alliance = { country = FRA country = RSI }
 }
 
-name = "Grenoble Nice and Corsica"
-desc = "After the peaceful annexation of the Italian Federation, we control the provinces of Grenoble, Nice and Corsica, whose rightful owner is our loyal ally, the Commune of France. We can now give those provinces back to their rightful owner."
+name = "EVT_124006_NAME"
+desc = "EVT_124006_DESC"
 picture = "Kaiserreich_VIC_Nice"
 
 date = { day = 1 month = january year = 1936 }
@@ -338,7 +338,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-	name = "The Commune of France will rule these lands!"
+	name = "EVT_124006_OPTIONA"
 	ai_chance = 99
 	command = { type = secedeprovince which = FRA value = 91 } #Grenoble
 	command = { type = secedeprovince which = FRA value = 87 } #Nice
@@ -346,7 +346,7 @@ action_a = {
 	command = { type = relation which = FRA value = 50 } 
 	}
 action_b = {
-	name = "These lands belong to us now!"
+	name = "EVT_124006_OPTIONB"
 	ai_chance = 1
 	command = { type = relation which = FRA value = -50 } 
 	}
@@ -371,8 +371,8 @@ trigger = {
 	
 }
 
-name = "Revolution in the South"
-desc = "A successful revolution in the Socialist Republic of Italy led to democratic elections which the left-wing (former Syndicalist) party failed to win. Perhaps we can approach the new government and convince them to join our country? A new Risorgimento could be achieved through peaceful negotiations!"
+name = "EVT_124007_NAME"
+desc = "EVT_124007_DESC"
 picture = "politics2"
 
 date = { day = 1 month = january year = 1936 }
@@ -380,7 +380,7 @@ offset = 1 #30
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-	name = "Send a proposal!"
+	name = "EVT_124007_OPTIONA"
 	ai_chance = 95
 	command = { type = dissent value = -1 }
 	command = { type = trigger which = 124008 } #A proposal from the North
@@ -388,7 +388,7 @@ action_a = {
 	command = { type = trigger which = 124010 } #A proposal from the North
 	}
 action_b = {
-	name = "No, they are not worth it!"
+	name = "EVT_124007_OPTIONB"
 	ai_chance = 5
 	command = { type = dissent value = 1 }
 	}
@@ -404,17 +404,17 @@ trigger = {
 	flag = RSI_REV_SL
 }
 
-name = "A proposal from the North"
-desc = "The Italian Federation approached us and, together with the congratulations for the new government, they asked if we want to become a part of their country. They think that we can achieve a peaceful unification through negotiations. What should we answer?"
+name = "EVT_124008_NAME"
+desc = "EVT_124008_DESC"
 picture = "politics2"
 
 action_a = {
-	name = "Accept, for a new united Italy!"
+	name = "EVT_124008_OPTIONA"
 	ai_chance = 20
 	command = { type = trigger which = 124011 } #The north accepted our proposal!
 	}
 action_b = {
-	name = "No, we will never be ruled by you!"
+	name = "EVT_124008_OPTIONB"
 	ai_chance = 80
 	command = { type = dissent value = 3 }
 	command = { type = relation which = ITA value = -25 } 
@@ -432,17 +432,17 @@ trigger = {
 	flag = RSI_REV_PA
 }
 
-name = "A proposal from the South"
-desc = "The Italian Federation approached us and, together with the congratulations for the new government, they asked if we want to become a part of their country. They think that we can achieve a peaceful unification through negotiations. What should we answer?"
+name = "EVT_124009_NAME"
+desc = "EVT_124009_DESC"
 picture = "politics2"
 
 action_a = {
-	name = "Accept, for a new united Italy!"
+	name = "EVT_124009_OPTIONA"
 	ai_chance = 50
 	command = { type = trigger which = 124011 } #The north accepted our proposal!
 	}
 action_b = {
-	name = "No, we will never be ruled by you!"
+	name = "EVT_124009_OPTIONB"
 	ai_chance = 50
 	command = { type = dissent value = 3 }
 	command = { type = relation which = ITA value = -25 } 
@@ -460,17 +460,17 @@ trigger = {
 	flag = RSI_REV_SC
 }
 
-name = "A proposal from the South"
-desc = "The Italian Federation approached us and, together with the congratulations for the new government, they asked if we want to become a part of their country. They think that we can achieve a peaceful unification through negotiations. What should we answer?"
+name = "EVT_124010_NAME"
+desc = "EVT_124010_DESC"
 picture = "politics2"
 
 action_a = {
-	name = "Accept, for a new united Italy!"
+	name = "EVT_124010_OPTIONA"
 	ai_chance = 100
 	command = { type = trigger which = 124011 } #The north accepted our proposal!
 	}
 action_b = {
-	name = "No, we will never be ruled by you!"
+	name = "EVT_124010_OPTIONB"
 	ai_chance = 0
 	command = { type = dissent value = 3 }
 	command = { type = relation which = ITA value = -25 } 
@@ -484,12 +484,12 @@ random = no
 country = ITA
 style = 2
 
-name = "The South accepted our proposal!"
-desc = "The new government of the Socialist Republic of Italy accepted our proposal! Despite some grumbling, a new united Italy is born!"
+name = "EVT_124011_NAME"
+desc = "EVT_124011_DESC"
 picture = "military_parade"
 
 action_a = {
-	name = "A new united Italy!"
+	name = "EVT_124011_OPTIONA"
 	command = { type = inherit which = RSI }
 	command = { type = dissent value = 8 }
 	command = { type = addcore which = 418 } 
@@ -519,17 +519,17 @@ random = no
 country = ITA
 style = 2
 
-name = "The South rejected our proposal"
-desc = "The stupid politicians in the Socialist Republic of Italy refused to accept our proposal. What should we do now?"
+name = "EVT_124012_NAME"
+desc = "EVT_124012_DESC"
 picture = "failed_objective"
 
 action_a = {
-	name = "We will conquer their lands!"
+	name = "EVT_124012_OPTIONA"
 	ai_chance = 50
 	command = { type = war which = RSI }
 	}
 action_b = {
-	name = "They don't deserve us!"
+	name = "EVT_124012_OPTIONB"
 	ai_chance = 50
 	command = { type = relation which = RSI value = -25 } 
 	}
@@ -562,8 +562,8 @@ trigger = {
 
 }
 
-name = "Revolutions!"
-desc = "Two successful revolutions in our country and in the Socialist Republic of Italy led to democratic elections won by a liberal or right-leaning party. Perhaps we can approach the new government and convince them to join our country? A new Risorgimento could be achieved through peaceful negotiations!"
+name = "EVT_124013_NAME"
+desc = "EVT_124013_DESC"
 picture = "politics2"
 
 date = { day = 1 month = january year = 1936 }
@@ -571,13 +571,13 @@ offset = 1 #30
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-	name = "Send a proposal!"
+	name = "EVT_124013_OPTIONA"
 	ai_chance = 95
 	command = { type = dissent value = -1 }
 	command = { type = trigger which = 124014 } #A proposal from the North
 	}
 action_b = {
-	name = "No, they are not worth it!"
+	name = "EVT_124013_OPTIONB"
 	ai_chance = 5
 	command = { type = dissent value = 1 }
 	}
@@ -589,17 +589,17 @@ random = no
 country = RSI
 style = 2
 
-name = "A proposal from the North"
-desc = "The Italian Federation approached us and, together with the congratulations for the new government, they asked if we want to become a part of their country. They think that we can achieve a peaceful unification through negotiations. What should we answer?"
+name = "EVT_124014_NAME"
+desc = "EVT_124014_DESC"
 picture = "politics2"
 
 action_a = {
-	name = "Accept, for a new united Italy!"
+	name = "EVT_124014_OPTIONA"
 	ai_chance = 90
 	command = { type = trigger which = 124011 } #The south accepted our proposal!
 	}
 action_b = {
-	name = "No, we will never be ruled by you!"
+	name = "EVT_124014_OPTIONB"
 	ai_chance = 10
 	command = { type = dissent value = 3 }
 	command = { type = relation which = RSI value = -25 } 
@@ -629,8 +629,8 @@ trigger = {
 	flag = RSI_REV_SD
 }
 
-name = "Revolutions!"
-desc = "Two successful revolutions in our country and in the Italian Federation led to democratic elections won by a left-leaning party. Perhaps we can approach the new government and convince them to join our country? A new Risorgimento could be achieved through peaceful negotiations!"
+name = "EVT_124015_NAME"
+desc = "EVT_124015_DESC"
 picture = "politics2"
 
 date = { day = 1 month = january year = 1936 }
@@ -638,13 +638,13 @@ offset = 1 #30
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-	name = "Send a proposal!"
+	name = "EVT_124015_OPTIONA"
 	ai_chance = 95
 	command = { type = dissent value = -1 }
 	command = { type = trigger which = 124016 } #A proposal from the South
 	}
 action_b = {
-	name = "No, they are not worth it!"
+	name = "EVT_124015_OPTIONB"
 	ai_chance = 5
 	command = { type = dissent value = 1 }
 	}
@@ -656,17 +656,17 @@ random = no
 country = ITA
 style = 2
 
-name = "A proposal from the South"
-desc = "The Socialist Republic of Italy approached us and, together with the congratulations for the new government, they asked if we want to become a part of their country. They think that we can achieve a peaceful unification through negotiations. What should we answer?"
+name = "EVT_124016_NAME"
+desc = "EVT_124016_DESC"
 picture = "politics2"
 
 action_a = {
-	name = "Accept, for a new united Italy!"
+	name = "EVT_124016_OPTIONA"
 	ai_chance = 90
 	command = { type = trigger which = 124004 } #The south accepted our proposal!
 	}
 action_b = {
-	name = "No, we will never be ruled by you!"
+	name = "EVT_124016_OPTIONB"
 	ai_chance = 10
 	command = { type = dissent value = 3 }
 	command = { type = relation which = RSI value = -25 } 
@@ -692,12 +692,12 @@ date = { day = 1 month = january year = 1936 }
 offset =  20
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "New resources"
-desc = "Now that the Italian peninsula is once again a united country, we've gained control over the industries, factories, universities and research centres of the former Socialist Republic of Italy. These new resources will greatly advance our production and our technology research!"
+name = "EVT_124017_NAME"
+desc = "EVT_124017_DESC"
 picture = "Bank"
 
 action_a = {
-	name = "Excellent!"
+	name = "EVT_124017_OPTIONA"
 	command = { type = waketeam which =  1823 } #Università Federico II
 	command = { type = waketeam which =  1824 } #I.M.A.M.
 	command = { type = waketeam which =  1825 } #Cantieri Navali di Palermo
@@ -723,12 +723,12 @@ date = { day = 1 month = january year = 1936 }
 offset =  20
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "New resources"
-desc = "Now that the Italian peninsula is once again a united country, we've gained control over the industries, factories, universities and research centres of the former Italian Federation. These new resources will greatly advance our production and our technology research!"
+name = "EVT_124018_NAME"
+desc = "EVT_124018_DESC"
 picture = "Bank"
 
 action_a = {
-	name = "Excellent!"
+	name = "EVT_124018_OPTIONA"
 	command = { type = waketeam which =  7714 } #Politecnico di Milano
 	command = { type = waketeam which =  7715 } #Sapienza di Roma
 	command = { type = waketeam which =  7716 } #Industria Aeronautica del Nord

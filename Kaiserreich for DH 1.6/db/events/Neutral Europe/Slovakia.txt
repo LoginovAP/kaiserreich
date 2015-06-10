@@ -1,5 +1,5 @@
 event = {
-id= 1000200
+id = 1000200
 random = no
 country = HUN
 style = 2
@@ -18,12 +18,12 @@ offset = 10
 deathdate = { day = 29 month = august year = 1938 }
 
 
-name = "Creation of the Slovak National Assembly"
-desc = "Famous politicians of the so-called Slovak parties, namely Karol Sidor and Vavro Srobár, joined with the remaining Slovak clergy and in a speech  proclaimed the creation of the Slovak National Assembly, whose goal is to acquire more laws for the persecuted Slovakian minority. We are sure that this Slovak national assembly is a serious threat to the unity of our country. Shall we arrest them?"
+name = "EVT_1000200_NAME"
+desc = "EVT_1000200_DESC"
 picture = "politics2"
 
 action_a = {
-name = "There are no minorities in Hungary. Arrest those traitors"
+name = "EVT_1000200_OPTIONA"
 ai_chance = 95
 command = { type = dissent value = 6 } # Slovaks are not very happy
 command = { type = domestic which = democratic value = -1 }
@@ -31,7 +31,7 @@ command = { type = setflag which = SLOVAK_SUPRESSED }
 command = { type = domestic which = political_left value = -1 }
 }
 action_b = {
-name = "Let them be."
+name = "EVT_1000200_OPTIONB"
 ai_chance = 5
 command = { type = domestic which = democratic value = 1 }
 command = { type = domestic which = political_left value = 1 }
@@ -43,7 +43,7 @@ command = { type = dissent value = 8 } # Hungarians are not very happy
 
 
 event = {
-id= 1000201
+id = 1000201
 random = no
 country = RUS
 style = 2
@@ -60,8 +60,8 @@ flag = RUS_ISO
 flag = SLOVAK_SUPRESSED
 }
 
-name = "Leaders of the Slovak National Assembly Seek Refuge"
-desc = "The leaders of the Slovak national movement, who became famous after their speech in Martin in which they demanded full sovereignty for Slovaks within the Austro-Hungarian empire, just narrowly escaped arrest and are now are seeking refuge within Russia. Shall we offer shelter to them?"
+name = "EVT_1000201_NAME"
+desc = "EVT_1000201_DESC"
 picture = "slovnatasse"
 
 date = { day = 1 month = january year = 1936 }
@@ -69,7 +69,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Welcome our Slavic brothers with open arms"
+name = "EVT_1000201_OPTIONA"
 ai_chance = 60
 command = { type = relation which = HUN value = -100 }
 command = { type = domestic which = interventionism value = 2 }
@@ -78,7 +78,7 @@ command = { type = clrflag which = SLOVAK_SUPRESSED }
 command = { type = dissent value = 1 } # not everyone is happy with russia helping already doomed nation
 }
 action_b = {
-name = "Return them to Austria-Hungary"
+name = "EVT_1000201_OPTIONB"
 ai_chance = 40
 command = { type = relation which = HUN value = 100 }
 command = { type = domestic which = interventionism value = -1 }
@@ -88,19 +88,19 @@ command = { type = dissent value = 3 }
 }
 
 event = {
-id= 1000202
+id = 1000202
 random = no
 country = RUS
 style = 2
 
 
 
-name = "Slovak National Assembly asks for Diplomatic Support "
-desc = "After we granted them asylum in Russia, the leaders of the Slovak national assembly now ask us for diplomatic support in their effort to secure independence for their country, which is still most brutally oppressed by the Hungarians."
+name = "EVT_1000202_NAME"
+desc = "EVT_1000202_DESC"
 picture = "slovnatasse"
 
 action_a = {
-name = "Offer full diplomatic support"
+name = "EVT_1000202_OPTIONA"
 ai_chance = 60
 command = { type = relation which = HUN value = -200 }
 command = { type = domestic which = interventionism value = 1 }
@@ -110,7 +110,7 @@ command = { type = sleepevent which = 758205 }
 command = { type = dissent value = 1 } # not everyone is happy with russia helping already doomed nation
 }
 action_b = {
-name = "We are not interested"
+name = "EVT_1000202_OPTIONB"
 ai_chance = 40
 command = { type = relation which = HUN value = 50 }
 command = { type = domestic which = interventionism value = -1 }
@@ -120,7 +120,7 @@ command = { type = dissent value = 3 }
 
 
 event = {
-id= 1000203
+id = 1000203
 random = no
 country = RUS
 style = 2
@@ -137,8 +137,8 @@ NOT = {
 alliance = { country = RUS country = HUN }
 }
 }
-name = "Fate of Slovakia"
-desc = "Now that we have liberated Slovakia from the hands of the Hungarian oppressors we should fulfill our promises given to the Slovak national assembly and create an independent Slovakia."
+name = "EVT_1000203_NAME"
+desc = "EVT_1000203_DESC"
 picture = "slovaklib"
 
 date = { day = 1 month = january year = 1936 }
@@ -146,7 +146,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "We shall fulfil our promises!"
+name = "EVT_1000203_OPTIONA"
 ai_chance = 90
 command = { type = independence which = SLO value = 1 when = 0 }
 command = { type = trigger which = 1000205 }
@@ -155,7 +155,7 @@ command = { type = clrflag which = SLOVAK_DEMANDS }
 }
 
 action_b = {
-name = "Temporary occupy Slovakia..."
+name = "EVT_1000203_OPTIONB"
 ai_chance = 10
 command = { type = dissent value = 1 }
 command = { type = clrflag which = SLOVAK_DEMANDS } 
@@ -164,7 +164,7 @@ command = { type = clrflag which = SLOVAK_DEMANDS }
 }
 
 event = {
-id= 1000204
+id = 1000204
 random = no
 country = RUS
 style = 2
@@ -185,8 +185,8 @@ alliance = { country = RUS country = HUN}
 }
 }
 
-name = "Fate of Slovakia"
-desc = "Now that we have liberated Slovakia from the hands of the Hungarian oppressors we should fulfill our promises given to the Slovak national assembly and create an independent Slovak kingdom."
+name = "EVT_1000204_NAME"
+desc = "EVT_1000204_DESC"
 picture = "slovaklib"
 
 date = { day = 1 month = january year = 1936 }
@@ -194,7 +194,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "We shall fulfill our promises!"
+name = "EVT_1000204_OPTIONA"
 ai_chance = 70
 command = { type = independence which = SLO value = 1 when = 0 }
 command = { type = dissent value = 1 } 
@@ -205,7 +205,7 @@ command = { type = sleepevent which = 1000208 }
 command = { type = clrflag which = SLOVAK_DEMANDS } 
 }
 action_b = {
-name = "We shall govern Slovakia directly"
+name = "EVT_1000204_OPTIONB"
 ai_chance = 30
 command = { type = dissent value = 5 } 
 command = { type = clrflag which = SLOVAK_DEMANDS }
@@ -215,17 +215,17 @@ command = { type = clrflag which = SLOVAK_DEMANDS }
 
 
 event = {
-id= 1000205
+id = 1000205
 random = no
 country = SLO
 style = 2
 
-name = "Slovakia finally free"
-desc = "After years of struggle our homeland is finally free from the Hungarian oppressors." 
+name = "EVT_1000205_NAME"
+desc = "EVT_1000205_DESC" 
 picture = "slovnatasse"
 
 action_a = {
-name = "Triple hooray to our Slavic brothers"
+name = "EVT_1000205_OPTIONA"
 
 command = { type = ai which = "kaiserreich/Slovakia.ai" }
 command = { type = manpowerpool value = 100 } 
@@ -243,17 +243,17 @@ command = { type = trigger which = 1000208 }
 
 
 event = {
-id= 1000206
+id = 1000206
 random = no
 country = SLO
 style = 2
 
-name = "Slovakia finally free"
-desc = "After years of struggle our homeland is finally free from the Hungarian oppressors."
+name = "EVT_1000206_NAME"
+desc = "EVT_1000206_DESC"
 picture = "slovnatasse"
 
 action_a = {
-name = "Triple hooray to our Slavic brothers "
+name = "EVT_1000206_OPTIONA"
 
 command = { type = ai which = "kaiserreich/Slovakia.ai" }
 command = { type = manpowerpool value = 100 } 
@@ -270,17 +270,17 @@ command = { type = rarematerialspool value = 500 }
 }
 
 event = {
-id= 1000207
+id = 1000207
 random = no
 country = HUN
 style = 2
 
-name = "Russia Offers Diplomatic Support to the Slovak National Assembly."
-desc = "In a shocking turn of events Russia has offered the Slovak national assembly diplomatic support in their effort to destabilize our homeland."
+name = "EVT_1000207_NAME"
+desc = "EVT_1000207_DESC"
 picture = "politics2"
 
 action_a = {
-name = "We will not forget this."
+name = "EVT_1000207_OPTIONA"
 command = { type = dissent value = 2 }
 
 }
@@ -290,17 +290,17 @@ command = { type = dissent value = 2 }
 
 
 event = {
-id= 1000208
+id = 1000208
 random = no
 country = SLO
 style = 2
 
-name = "Republic or Kingdom?"
-desc = "With the creation of Slovakia some members of the national assembly, especially the clergy, raised the question of Slovakia becoming a constitutional monarchy."
+name = "EVT_1000208_NAME"
+desc = "EVT_1000208_DESC"
 picture = "slovnatasse"
 
 action_a = {
-name = "Slovakia will be constitutional monarchy"
+name = "EVT_1000208_OPTIONA"
 ai_chance = 60
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 4 }
@@ -313,7 +313,7 @@ command = { type = setflag which = SLOVAK_CONST }
 
 }
 action_b = {
-name = "Slovakia will remain a progressive republic"
+name = "EVT_1000208_OPTIONB"
 ai_chance = 40
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 8 }
@@ -345,11 +345,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 7
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "Slovakian Army"
-desc = "After becoming independent, thousands of young Slovakian people approached us and offered to join the newborn Slovakian armed forces."
+name = "EVT_1000219_NAME"
+desc = "EVT_1000219_DESC"
 
 action_a = {
-name = "Welcome them and give them weapons"
+name = "EVT_1000219_OPTIONA"
 command = { type = morale which = land value = 5 }
 command = { type = add_corps which = "Polná Armáda Bernolák" value = land where = 208 }
 command = { type = add_division which = "1.Pesia divízia Janosík" value = infantry when = 9 where = artillery }
@@ -367,18 +367,18 @@ command = { type = domestic which = professional_army value = 1 }
 
 
 event = {
-id= 1000214
+id = 1000214
 random = no
 country = SLO
 style = 2
 
-name = "Looking for a new king"
-desc = "We will ask the European royal houses for new head of our state"
+name = "EVT_1000214_NAME"
+desc = "EVT_1000214_DESC"
 picture = "crownofslovak"
 
 action_a = {
 ai_chance = 30
-name = "The House of Saxe-Coburg-Ghota, they are the richest noble family in our country"
+name = "EVT_1000214_OPTIONA"
 command = { type = relation which = BUL value = 100 }
 command = { type = trigger which = 1000215 }
 command = { type = setflag which = SLOK_SA }
@@ -386,7 +386,7 @@ command = { type = setflag which = SLOK_SA }
 
 action_b = {
 ai_chance = 30
-name = "The Romanovs, we love our eastern brothers"
+name = "EVT_1000214_OPTIONB"
 command = { type = relation which = RUS value = 100 }
 command = { type = trigger which = 1000216 }
 command = { type = setflag which = SLOK_RO }
@@ -394,7 +394,7 @@ command = { type = setflag which = SLOK_RO }
 }
 action_c = {
 ai_chance = 30
-name = "The House of Hohenzollern-Sigmaringen, with Germany for ever"
+name = "EVT_1000214_OPTIONC"
 command = { type = relation which = GER value = 100 }
 command = { type = relation which = RUS value = -40 }
 command = { type = trigger which = 1000217 }
@@ -403,7 +403,7 @@ command = { type = setflag which = SLOK_SI }
 }
 action_d = {
 ai_chance = 10
-name = "The House of Karadordevic, ask our southern brothers"
+name = "EVT_1000214_OPTIOND"
 command = { type = relation which = SER value = 100 }
 command = { type = trigger which = 1000218 }
 command = { type = setflag which = SLOK_KA }
@@ -415,17 +415,17 @@ command = { type = setflag which = SLOK_KA }
 
 
 event = {
-id= 1000215
+id = 1000215
 random = no
 country = SLO
 style = 2
 
-name = "Coronation of the new king"
-desc = "Crown prince Cyril of Bulgaria was crowned a new king of Slovakia under name Cyril I. in the sacred cathedral of St. Martin. "
+name = "EVT_1000215_NAME"
+desc = "EVT_1000215_DESC"
 picture = "slokingelec"
 
 action_a = {
-name = "God save the king"
+name = "EVT_1000215_OPTIONA"
 command = { type = headofstate which = 4568919 }
 command = { type = dissent value = -2 }
 
@@ -434,17 +434,17 @@ command = { type = dissent value = -2 }
 
 }
 event = {
-id= 1000216
+id = 1000216
 random = no
 country = SLO
 style = 2
 
-name = "Coronation of the new king"
-desc = "Konstantine Konstantinovich of Russia was crowned a new king of Slovakia under name Rastislav II in the sacred cathedral of St. Martin. "
+name = "EVT_1000216_NAME"
+desc = "EVT_1000216_DESC"
 picture = "slokingelec"
 
 action_a = {
-name = "God save the king"
+name = "EVT_1000216_OPTIONA"
 command = { type = headofstate which = 4568918 }
 command = { type = dissent value = -2 }
 
@@ -453,17 +453,17 @@ command = { type = dissent value = -2 }
 
 }
 event = {
-id= 1000217
+id = 1000217
 random = no
 country = SLO
 style = 2
 
-name = "Coronation of the new king"
-desc = " Franz Joseph, Prince of Hohenzollern-Emden, was crowned a new king of Slovakia under name Matej I in the sacred cathedral of St. Martin. "
+name = "EVT_1000217_NAME"
+desc = "EVT_1000217_DESC"
 picture = "slokingelec"
 
 action_a = {
-name = "God save the king"
+name = "EVT_1000217_OPTIONA"
 command = { type = headofstate which = 4568920 }
 command = { type = dissent value = -2 }
 
@@ -473,17 +473,17 @@ command = { type = dissent value = -2 }
 
 }
 event = {
-id= 1000218
+id = 1000218
 random = no
 country = SLO
 style = 2
 
-name = "Coronation of the new king"
-desc = "George, Crown Prince of Serbia was crowned a new king of Slovakia under name Juraj I in the sacred cathedral of St. Martin. "
+name = "EVT_1000218_NAME"
+desc = "EVT_1000218_DESC"
 picture = "slokingelec"
 
 action_a = {
-name = "God save the king"
+name = "EVT_1000218_OPTIONA"
 command = { type = headofstate which = 4568921 }
 command = { type = dissent value = -2 }
 
@@ -497,17 +497,17 @@ command = { type = dissent value = -2 }
 
 
 event = {
-id= 1000209
+id = 1000209
 random = no
 country = SLO
 style = 2
 
-name = "Coronation of the new king"
-desc = "Konstantine Konstantinovich of Russia was crowned a new king of Slovakia under name Rastislav II in the sacred cathedral of St. Martin. "
+name = "EVT_1000209_NAME"
+desc = "EVT_1000209_DESC"
 picture = "slokingelec"
 
 action_a = {
-name = "God save the king"
+name = "EVT_1000209_OPTIONA"
 command = { type = headofstate which = 4568918 }
 command = { type = dissent value = -2 }
 
@@ -518,7 +518,7 @@ command = { type = dissent value = -2 }
 
 
 event = {
-id= 1000210
+id = 1000210
 random = no
 country = SLO
 style = 2
@@ -532,8 +532,8 @@ flag = SLOVAK_CONST
 }
 
 
-name = "First free elections"
-desc = "After several months of preparations, the provisional government has completed arrangements for the first free election in the Kingdom of Slovakia since liberation. There are 150 seats in the national assembly and various political parties have begun their campaigns. But currently only two parties have a chance of gaining a majority and thus forming a new government. Which one shall prevail?"
+name = "EVT_1000210_NAME"
+desc = "EVT_1000210_DESC"
 
 
 picture = "rusdumaelect"
@@ -544,7 +544,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 
 action_a = {
-name = "HSLS wins the elections and form a new government"
+name = "EVT_1000210_OPTIONA"
 ai_chance = 60
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 3 }
@@ -563,7 +563,7 @@ command = { type = ministerofintelligence which = 31059 }
 
 }
 action_b = {
-name = "Social democrats win the elections and form a new government"
+name = "EVT_1000210_OPTIONB"
 ai_chance = 40
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 8 }
@@ -584,7 +584,7 @@ command = { type = ministerofintelligence which = 4568899 }
 
 
 event = {
-id= 1000211
+id = 1000211
 random = no
 country = SLO
 style = 2
@@ -598,8 +598,8 @@ flag = SLOVAK_REPUB
 }
 
 
-name = "First free elections"
-desc = "After several months of preparations, the provisional government has completed arrangements for the first free election in the Republic of Slovakia since liberation. There are 150 seats in the national assembly and various political parties have begun their campaigns. But currently only two parties have a chance of gaining a majority and thus forming a new government. Which one shall prevail?"
+name = "EVT_1000211_NAME"
+desc = "EVT_1000211_DESC"
 picture = "rusdumaelect"
 
 date = { day = 1 month = january year = 1936 }
@@ -608,7 +608,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 
 action_a = {
-name = "HSLS wins the elections and form a new government"
+name = "EVT_1000211_OPTIONA"
 ai_chance = 50
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 3 }
@@ -624,7 +624,7 @@ command = { type = ministerofintelligence which = 31059 }
 
 }
 action_b = {
-name = "Social democrats win the elections and form a new government"
+name = "EVT_1000211_OPTIONB"
 ai_chance = 50
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 8 }
@@ -643,7 +643,7 @@ command = { type = ministerofintelligence which = 4568899 }
 
 
 event = {
-id= 1000212
+id = 1000212
 random = no
 country = SLO
 style = 2
@@ -658,8 +658,8 @@ government = communist
 }
 
 
-name = "Second free elections"
-desc = "The Parliament elected in the first free election after liberation has drawn to a close. There are 150 seats in the national assembly and various political parties have begun their campaigns. But currently only two parties have a chance of gaining majority and thus forming a new government. Which one shall prevail?"
+name = "EVT_1000212_NAME"
+desc = "EVT_1000212_DESC"
 picture = "rusdumaelect"
 
 date = { day = 1 month = january year = 1936 }
@@ -668,7 +668,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 
 action_a = {
-name = "HSLS wins the elections and forms a new government"
+name = "EVT_1000212_OPTIONA"
 ai_chance = 50
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 3 }
@@ -684,7 +684,7 @@ command = { type = ministerofintelligence which = 31059 }
 
 }
 action_b = {
-name = "Social democrats win the elections and form a new government"
+name = "EVT_1000212_OPTIONB"
 ai_chance = 50
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 8 }
@@ -703,7 +703,7 @@ command = { type = ministerofintelligence which = 4568899 }
 
 
 event = {
-id= 1000213
+id = 1000213
 random = no
 country = SLO
 style = 2
@@ -718,8 +718,8 @@ government = communist
 }
 
 
-name = "Second free elections"
-desc = "The Parliament elected in the first free election after liberation has drawn to a close. There are 150 seats in the national assembly and various political parties have begun their campaigns. But currently only two parties have a chance of gaining majority and thus forming a new government. Which one shall prevail?"
+name = "EVT_1000213_NAME"
+desc = "EVT_1000213_DESC"
 picture = "rusdumaelect"
 
 date = { day = 1 month = january year = 1936 }
@@ -728,7 +728,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 
 action_a = {
-name = "HSLS wins the elections and forms a new government"
+name = "EVT_1000213_OPTIONA"
 ai_chance = 60
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 3 }
@@ -747,7 +747,7 @@ command = { type = ministerofintelligence which = 31059 }
 
 }
 action_b = {
-name = "Social democrats win the elections and form a new government"
+name = "EVT_1000213_OPTIONB"
 ai_chance = 40
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 8 } 

@@ -22,11 +22,11 @@ date = { day = 1 month = january year = 1936 }
 offset =  15
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Changsha Revolution"
-desc = "Horrible news! The people of Changsha and Nanchang have taken up arms. The rebels have hoisted a Five-Color Flag over the Capital buildings of the Nanchang and Changde Provinces."
+name = "EVT_890704_NAME"
+desc = "EVT_890704_DESC"
 
 action_a = {
-	name = "We will crush them !"
+	name = "EVT_890704_OPTIONA"
 	command = { type = peace which = EAF value = 1 }
 	command = { type = peace which = CYN value = 1 }
         command = { type = independence which = CHI value = 1 when = 1 }
@@ -50,11 +50,11 @@ id = 890705
 country = CHI
 style = 2
 
-name = "The Wuchang Revolution"
-desc = "...Nobody sees this event..."
+name = "EVT_890705_NAME"
+desc = "EVT_890705_DESC"
 
 action_a = {
-name = "Republican China Fights For The Chinese Worker's livelihood!"
+name = "EVT_890705_OPTIONA"
         command = { type = set_domestic which = democratic value = 7 }
 	command = { type = set_domestic which = political_left value = 4 }
 	command = { type = add_division which = "Wuchang Sheng Baoan Zongdui" value = militia when = 4 }
@@ -123,11 +123,11 @@ country = CGX
 picture = "Guerillas"
 style = 2
 
-name = "The Republican Government"
-desc = "The instigators have emerged from hiding, but they already control most of the region."
+name = "EVT_890706_NAME"
+desc = "EVT_890706_DESC"
 
 action_a = {
-name = "We will crush the Rebels! Stability must be restored!"
+name = "EVT_890706_OPTIONA"
 	command = { type = war which = CHI }
 	command = { type = switch_allegiance which = -1 where = CHI }
 	command = { type = switch_allegiance which = -1 where = CHI }
@@ -147,19 +147,19 @@ country = CHI
 style = 2
 picture = "TheBrotherhood"
 
-name = "The Shangqing Offer"
-desc = "The Shangqing traditionalists have offered us an alliance to secure China for the Chinese, this maybe benefit both of us, but we shall see what happens in the end"
+name = "EVT_628017_NAME"
+desc = "EVT_628017_DESC"
 
 action_a = {
 ai_chance = 80
-name = "China for the Chinese!"
+name = "EVT_628017_OPTIONA"
 command = { type = relation which = CHC value = 200 }
 command = { type = alliance which = CHC }
 }
 
 action_b = {
 ai_chance = 20
-name = "Send them away"
+name = "EVT_628017_OPTIONB"
 command = { type = dissent value = 1 }
 
 }
@@ -171,14 +171,14 @@ event = {
      random = no
      country = CGX
  
-     name = "The Second Chinese revolution"
+     name = "EVT_630200_NAME"
      desc = "EVT_91853_DESC"
      picture = "foreign_volunteers"
      style = 2
 
      action_a = {
          ai_chance = 50
-         name = "Officially request German Empire for aid !"
+         name = "EVT_630200_OPTIONA"
          command = { type = relation which = GER value = -10 }
          command = { type = event which = 630201 where = GER when = 5  }
          command = { type = dissent value = 2 }
@@ -186,7 +186,7 @@ event = {
 
      action_b = {
          ai_chance = 50
-         name = "We shall destroy this revolution on our own !"
+         name = "EVT_630200_OPTIONB"
          command = { type = dissent value = -3 }
      }
  }
@@ -196,20 +196,20 @@ event = {
      random = no
      country = GER
 
-     name = "AOG requests military assistance"
-     desc = "Eruption of revolution across the southern China has brought AOG administering southern China and its armed forces into chaos. Scared with recent development, the AOG board of directors are requesting immediate military assistance in quelling this uprising."
+     name = "EVT_630201_NAME"
+     desc = "EVT_630201_DESC"
      style = 2
      picture = "foreign_volunteers"
 
      action_a = {
-         name = "Refuse such absurd demand !"
+         name = "EVT_630201_OPTIONA"
          ai_chance = 80
          command = { type = dissent value = -4 }
          command = { type = relation which = CGX value = -10 }
      }
 
      action_b = {
-         name = "Sent requested aid"
+         name = "EVT_630201_OPTIONB"
          ai_chance = 20
          command = { type = supplies value = -1000 }
          command = { type = manpowerpool value = -20 }
@@ -225,13 +225,13 @@ event = {
      random = no
      country = CGX
 
-     name = "German expeditionary forces arrive"
-     desc = "The German Empire accepted our request at military assistance and send us an expeditionary force, which should help us destroy pathetic republican uprising."
+     name = "EVT_630202_NAME"
+     desc = "EVT_630202_DESC"
      style = 2
      picture = "foreign_volunteers"
 
      action_a = {
-         name = "Great !"
+         name = "EVT_630202_OPTIONA"
          command = { type = supplies value = 500 }
          command = { type = add_division value = infantry when = 9 }
          command = { type = add_division value = infantry when = 9 }
@@ -251,8 +251,8 @@ event = {
                 }     	
 	}
 
-	name = "The End of the Chinese revolution"
-	desc = "For good or ill, the chinese revolution is now over.  The General Staff have reported that they learnt many valuable lessons regarding the nature of modern warfare over the course of the conflict."
+	name = "EVT_630203_NAME"
+	desc = "EVT_630203_DESC"
 	style = 2
 	picture = "foreign_volunteers"
 
@@ -261,7 +261,7 @@ event = {
 	deathdate = { day = 29 month = december year = 1960 }
 
 	action_a = {
-		name = "ACTIONNAME2803A" # Great! 
+		name = "EVT_630203_OPTIONA" # Great! 
 		command = { type = manpowerpool value = 5 }	 	# Soldiers return home
 		command = { type = dissent value = -1 }
 		command = { type = gain_tech which = -1 } 		# get random tech blueprints
@@ -320,15 +320,15 @@ event = {
      offset = 15
      deathdate = { day = 29 month = december year = 1960 }
  
-     name = "The Second Chinese revolution"
-     desc = "The chineese people discontent with corporativist leadership of the german AOG and opression they present have launched a revolution, aimed against German presence in China. This present us ith an great option to weaken German influence in the southern China and ultimately in Pacific as whole."
+     name = "EVT_630199_NAME"
+     desc = "EVT_630199_DESC"
      picture = "foreign_volunteers"
      decision_picture = "decision_foreign_volunteers"
      style = 2
 
      action_a = {
          ai_chance = 99
-         name = "Send aid to the new republican government !"
+         name = "EVT_630199_OPTIONA"
          command = { type = domestic which = interventionism value = 1 }
          command = { type = relation which = GER value = -40 }
          command = { type = relation which = CGX value = -40 }
@@ -340,7 +340,7 @@ event = {
      }
      action_b = {
          ai_chance = 1
-         name = "We cannot do anything..."
+         name = "EVT_630199_OPTIONB"
          command = { type = domestic which = interventionism value = -1 }
          command = { type = relation which = GER value = 40 }
          command = { type = relation which = CGX value = 40 }
@@ -354,13 +354,13 @@ event = {
      random = no
      country = CHI
 
-     name = "Russian volunteers arrive"
-     desc = "The Russian state has decided to support our struggle against german opressors with steady flow of military material and volunteers, eager to see germans defeated."
+     name = "EVT_630188_NAME"
+     desc = "EVT_630188_DESC"
      style = 2
      picture = "foreign_volunteers"
 
      action_a = {
-         name = "Great !"
+         name = "EVT_630188_OPTIONA"
          command = { type = supplies value = 500 }
          command = { type = add_division value = infantry when = 9 }
          command = { type = steal_tech which = RUS }
@@ -379,8 +379,8 @@ event = {
                 }     	
 	}
 
-	name = "The End of the Chinese revolution"
-	desc = "For good or ill, the chinese revolution is now over.  The General Staff have reported that they learnt many valuable lessons regarding the nature of modern warfare over the course of the conflict."
+	name = "EVT_630189_NAME"
+	desc = "EVT_630189_DESC"
 	style = 2
 	picture = "foreign_volunteers"
 
@@ -389,7 +389,7 @@ event = {
 	deathdate = { day = 29 month = december year = 1960 }
 
 	action_a = {
-		name = "ACTIONNAME2803A" # Great! 
+		name = "EVT_630189_OPTIONA" # Great! 
 		command = { type = manpowerpool value = 5 }	 	# Soldiers return home
 		command = { type = dissent value = -1 }
 		command = { type = gain_tech which = -1 } 		# get random tech blueprints
@@ -446,15 +446,15 @@ event = {
      offset = 15
      deathdate = { day = 29 month = december year = 1960 }
  
-     name = "The Second Chinese revolution"
-     desc = "The Chinese people discontent with the corporatist leadership of the German AOG and the oppression it represent, have launched a revolution, aimed against German presence in China. This present us with an great option to weaken German influence in the southern China and ultimately in the Pacific as whole."
+     name = "EVT_630190_NAME"
+     desc = "EVT_630190_DESC"
      picture = "foreign_volunteers"
      decision_picture = "decision_foreign_volunteers"
      style = 2
 
      action_a = {
          ai_chance = 99
-         name = "Send aid to the new republican government !"
+         name = "EVT_630190_OPTIONA"
          command = { type = domestic which = interventionism value = 1 }
          command = { type = relation which = GER value = -40 }
          command = { type = relation which = CGX value = -40 }
@@ -466,7 +466,7 @@ event = {
      }
      action_b = {
          ai_chance = 1
-         name = "We cannot do anything..."
+         name = "EVT_630190_OPTIONB"
          command = { type = domestic which = interventionism value = -1 }
          command = { type = relation which = GER value = 40 }
          command = { type = relation which = CGX value = 40 }
@@ -480,13 +480,13 @@ event = {
      random = no
      country = CHI
 
-     name = "Soviet Volunteers Arrive"
-     desc = "The Soviet state has decided to support our struggle against German oppression with a steady flow of military material and volunteers, eager to see the Germans defeated."
+     name = "EVT_630191_NAME"
+     desc = "EVT_630191_DESC"
      style = 2
      picture = "foreign_volunteers"
 
      action_a = {
-         name = "Great !"
+         name = "EVT_630191_OPTIONA"
          command = { type = supplies value = 500 }
          command = { type = add_division value = infantry when = 9 }
          command = { type = steal_tech which = SOV }
@@ -505,8 +505,8 @@ event = {
                 }     	
 	}
 
-	name = "The End of the Chinese revolution"
-	desc = "For good or ill, the Chinese revolution is now over.  The General Staff have reported that they learnt many valuable lessons regarding the nature of modern warfare over the course of the conflict."
+	name = "EVT_630192_NAME"
+	desc = "EVT_630192_DESC"
 	style = 2
 	picture = "foreign_volunteers"
 
@@ -515,7 +515,7 @@ event = {
 	deathdate = { day = 29 month = december year = 1960 }
 
 	action_a = {
-		name = "ACTIONNAME2803A" # Great! 
+		name = "EVT_630192_OPTIONA" # Great! 
 		command = { type = manpowerpool value = 5 }	 	# Soldiers return home
 		command = { type = dissent value = -1 }
 		command = { type = gain_tech which = -1 } 		# get random tech blueprints
@@ -566,15 +566,15 @@ event = {
      offset = 15
      deathdate = { day = 29 month = december year = 1960 }
  
-     name = "The Second Chinese Revolution"
-     desc = "The Chinese people discontent with the corporatist leadership of the German AOG and the oppression it represent, have launched a revolution, aimed against German presence in China. This present us with an great option to weaken German influence in the southern China and ultimately in the Pacific as whole."
+     name = "EVT_630193_NAME"
+     desc = "EVT_630193_DESC"
      picture = "foreign_volunteers"
      decision_picture = "decision_foreign_volunteers"
      style = 2
 
      action_a = {
          ai_chance = 99
-         name = "Send aid to the new republican government !"
+         name = "EVT_630193_OPTIONA"
          command = { type = domestic which = interventionism value = 1 }
          command = { type = relation which = GER value = -40 }
          command = { type = relation which = CGX value = -40 }
@@ -587,7 +587,7 @@ event = {
 
      action_b = {
          ai_chance = 1
-         name = "We cannot do anything..."
+         name = "EVT_630193_OPTIONB"
          command = { type = domestic which = interventionism value = -1 }
          command = { type = relation which = GER value = 40 }
          command = { type = relation which = CGX value = 40 }
@@ -601,13 +601,13 @@ event = {
      random = no
      country = CHI
 
-     name = "Japanese Volunteers Arrive"
-     desc = "The Empire of Japan state has decided to support our struggle against the German oppressors with a steady flow of military material and volunteers, eager to see the Germans defeated."
+     name = "EVT_630194_NAME"
+     desc = "EVT_630194_DESC"
      style = 2
      picture = "foreign_volunteers"
 
      action_a = {
-         name = "Great !"
+         name = "EVT_630194_OPTIONA"
          command = { type = supplies value = 500 }
          command = { type = add_division value = infantry when = 9 }
          command = { type = steal_tech which = JAP }
@@ -626,8 +626,8 @@ event = {
                 }     	
 	}
 
-	name = "The End of the Chinese Revolution"
-	desc = "For good or ill, the Chinese revolution is now over.  The General Staff have reported that they learnt many valuable lessons regarding the nature of modern warfare over the course of the conflict."
+	name = "EVT_630195_NAME"
+	desc = "EVT_630195_DESC"
 	style = 2
 	picture = "foreign_volunteers"
 
@@ -636,7 +636,7 @@ event = {
 	deathdate = { day = 29 month = december year = 1960 }
 
 	action_a = {
-		name = "ACTIONNAME2803A" # Great! 
+		name = "EVT_630195_OPTIONA" # Great! 
 		command = { type = manpowerpool value = 5 }	 	# Soldiers return home
 		command = { type = dissent value = -1 }
 		command = { type = gain_tech which = -1 } 		# get random tech blueprints
@@ -685,15 +685,15 @@ event = {
      offset = 15
      deathdate = { day = 29 month = december year = 1960 }
  
-     name = "The Second Chinese Revolution"
-     desc = "The Chinese people discontent with corporatist leadership of the German AOG and the oppression they represent has launched a revolution, aimed against German presence in China. Even if a weakening of German presence in China is welcomed by parts of our government, the rise of a hostile republican government to the south as well as a diminished German military presence in Asia is definitively against our interests. As a result, some members of cabinet propose we send aid to the AOG."
+     name = "EVT_630196_NAME"
+     desc = "EVT_630196_DESC"
      picture = "foreign_volunteers"
      decision_picture = "decision_foreign_volunteers"
      style = 2
 
      action_a = {
          ai_chance = 60
-         name = "Send aid to the AOG board of directors !"
+         name = "EVT_630196_OPTIONA"
          command = { type = domestic which = interventionism value = 1 }
          command = { type = relation which = GER value = 40 }
          command = { type = relation which = CGX value = 40 }
@@ -707,7 +707,7 @@ event = {
 
      action_b = {
          ai_chance = 40
-         name = "Us help German colonials? Never going to happen!"
+         name = "EVT_630196_OPTIONB"
          command = { type = domestic which = interventionism value = -1 }
          command = { type = relation which = GER value = -40 }
          command = { type = relation which = CGX value = -40 }
@@ -725,13 +725,13 @@ event = {
      random = no
      country = CGX
 
-     name = "Qing Expeditionary Forces"
-     desc = "The Qing Empire has decided to support our struggle against revolutionary scum with a steady flow of supplies and in the form of an expeditionary force, which should help us destroy this pathetic republican uprising."
+     name = "EVT_630197_NAME"
+     desc = "EVT_630197_DESC"
      style = 2
      picture = "foreign_volunteers"
 
      action_a = {
-         name = "He's all-right that Pu Yi fellow!"
+         name = "EVT_630197_OPTIONA"
          command = { type = supplies value = 500 }
          command = { type = add_division value = infantry when = 9 }
          command = { type = steal_tech which = CSX }
@@ -750,8 +750,8 @@ event = {
                 }     	
 	}
 
-	name = "The End of the Chinese revolution"
-	desc = "For good or ill, the chinese revolution is now over.  The General Staff have reported that they learnt many valuable lessons regarding the nature of modern warfare over the course of the conflict."
+	name = "EVT_630198_NAME"
+	desc = "EVT_630198_DESC"
 	style = 2
 	picture = "foreign_volunteers"
 
@@ -760,7 +760,7 @@ event = {
 	deathdate = { day = 29 month = december year = 1960 }
 
 	action_a = {
-		name = "ACTIONNAME2803A" # Great! 
+		name = "EVT_630198_OPTIONA" # Great! 
 		command = { type = manpowerpool value = 5 }	 	# Soldiers return home
 		command = { type = dissent value = -1 }
 		command = { type = gain_tech which = -1 } 		# get random tech blueprints
@@ -790,8 +790,8 @@ event = {
 		}
 	
 
-	name = "The Seat of Republican Governance"
-	desc = "Thanks to the successes of the National Revolution, all of China between the Three Rivers is now firmly under Republican control. Thus it is now time to cement our authority and right to rule by proclaiming a new permanent seat of government for the great Chinese Republic."
+	name = "EVT_630103_NAME"
+	desc = "EVT_630103_DESC"
         picture = "mayfourth"
 
 	date = { day = 1 month = february year = 1936 }
@@ -801,17 +801,17 @@ event = {
 
 	action_a = {
 		ai_chance = 60
-		name = "Nanjing will serve as the binding knot between North and South!"
+		name = "EVT_630103_OPTIONA"
 		command = { type = capital which = 1337 }
 		}
 	action_b = {
 		ai_chance = 30
-		name = "Beijing is a prime location wherefrom we can take Manchuria!"
+		name = "EVT_630103_OPTIONB"
 		command = { type = capital which = 1247 }
 		}
 	action_c = {
 		ai_chance = 10
-		name = "Guangzhou on the Pearl River will be the home of the Government!"
+		name = "EVT_630103_OPTIONC"
 		command = { type = capital which = 1369 }
 }
 }
@@ -833,8 +833,8 @@ event = {
 		}
 
 
-	name = "The Election of the Six Provinces"
-	desc = "The German AOG has been dismantled and the Provisional Republican Government of China has asserted its influence over the six southern Chinese provinces. However, The Revolution is not over yet and the Provisional Government is just that - provisional. Before we can launch any expeditions of unification we need to define which party will lead us and China in the fullfillment of Sun Yat-sen's legacy."
+	name = "EVT_630104_NAME"
+	desc = "EVT_630104_DESC"
         picture = "mayfourth"
 
 	date = { day = 1 month = april year = 1936 }
@@ -845,7 +845,7 @@ event = {
 
         action_a = {
 	        ai_chance =  45
-	        name = "Soong Ching-ling and Zhou Shuren's Leftist Kuomintang"
+	        name = "EVT_630104_OPTIONA"
 		command = { type = dissent value = -3  }  
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 7 }
@@ -864,7 +864,7 @@ event = {
 		}
         action_b = {
 	        ai_chance =  35
-	        name = "Hu Shi's Liberals Secure a Majority!"
+	        name = "EVT_630104_OPTIONB"
 		command = { type = dissent value = -2 }  
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 5 }
@@ -883,7 +883,7 @@ event = {
 		}
         action_c = {
 	        ai_chance =  20
-	        name = "Chen Jiongming will defend the Republic!"
+	        name = "EVT_630104_OPTIONC"
 		command = { type = dissent value = 3 }
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 2 }
@@ -902,7 +902,7 @@ event = {
 		}
         action_d = {
 	        ai_chance =  0
-	        name = "Bah, General Sun Li-Gen dissolves the National Assembly!"
+	        name = "EVT_630104_OPTIOND"
 		command = { type = dissent value = 25 }
 		command = { type = set_domestic which = democratic value = 3 }
 		command = { type = set_domestic which = political_left value = 4 }
@@ -928,8 +928,8 @@ event = {
 		}
 
 
-	name = "The Legacy of Sun Yat-sen"
-	desc = "The late Sun Yat-sen left us a vision of a united and democratic Republic of China. With the eviction of the AOG and foundation of a duly elected government, we have completed the first task in the great undertaking of creating a functioning Chinese state. Although the recent elections have asserted our democratic reputation in the six provinces under our jurisdiction, cementing our adherence to Sun Yat-sen's Three Principles of the People might serve as a way to spread our influence all the way to Peking." 
+	name = "EVT_630105_NAME"
+	desc = "EVT_630105_DESC" 
 	picture = "mayfourth2"
 
 	date = { day = 1 month = may year = 1936 }
@@ -940,14 +940,14 @@ event = {
 
 	action_a = {
 	        ai_chance =  100
-		name = "The San-min Doctrine is the only viable option!"
+		name = "EVT_630105_OPTIONA"
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = domestic which = defense_lobby value = 2 }
                 command = { type = setflag which = CHI_TPP }
 	        }
         action_b = {
 	        ai_chance =  0
-	        name = "We must spend more time with Political Tutelage..."
+	        name = "EVT_630105_OPTIONB"
 		command = { type = dissent value = 10 }  
 		command = { type = set_domestic which = democratic value = -4 }
 		command = { type = set_domestic which = political_left value = 5 }
@@ -970,8 +970,8 @@ country = CHI
 		control = { province = 1369 data = CHI }
 		}
 
-name = "The New Economic Revolution"
-desc = "With the Kuomintang victory and supremacy in the National Assembly at Guangzhou, we are in a perfect position to reshape the economic landscape in accordance with our political desires. In the Minsheng paragraph of the San-min Doctrine, Sun Yat-sen himself stressed the importance of merging social welfare in accordance with personal liberties into a distinct form of Socialism. Yet that is only one option and the KMT is still divided on the issue."
+name = "EVT_630106_NAME"
+desc = "EVT_630106_DESC"
 style = 2
 picture = "mayfourthkmt"
 
@@ -981,7 +981,7 @@ deathdate = { day = 16 month = february year = 1938 }
 
 action_a = { 
 ai_chance = 20
-name = "Damn them all, the free market will know its own!"
+name = "EVT_630106_OPTIONA"
 command = { type = dissent value = 5 } #not popular.
 command = { type = money value = 200 }
 command = { type = domestic which = free_market value = 9 }
@@ -989,7 +989,7 @@ command = { type = domestic which = free_market value = 9 }
 
 action_b = { 
 ai_chance = 70
-name = "In the name of Sun Yat-sen, we fulfill the Minsheng ideal!"
+name = "EVT_630106_OPTIONB"
 command = { type = dissent value = -5 } 
 command = { type = money value = 50 }
 command = { type = domestic which = free_market value = -1 }
@@ -997,7 +997,7 @@ command = { type = domestic which = free_market value = -1 }
 
 action_c = { 
 ai_chance = 10
-name = "The merchants are fat enough, total state control!"
+name = "EVT_630106_OPTIONC"
 command = { type = dissent value = 15 } 
 command = { type = domestic which = free_market value = -9 }
 }
@@ -1017,8 +1017,8 @@ country = CHI
 		control = { province = 1369 data = CHI }
 		}
 
-name = "The Liberal Reform Programme"
-desc = "With the success of the Liberal wing in the National Assembly at Guangzhou, we are in a perfect position to reshape the economic landscape in accordance with our political desires. The merchants on the Pearl River and the industrialists in the hinterland of Guangxi are demanding more lax regulation of foreign investment and greater economic liberty for business owners. However, such ideas are often compared to the Iron Rice Bowl policies of the AOG."
+name = "EVT_630107_NAME"
+desc = "EVT_630107_DESC"
 style = 2
 picture = "mayfourth"
 
@@ -1028,7 +1028,7 @@ deathdate = { day = 16 month = february year = 1938 }
 
 action_a = { 
 ai_chance = 60
-name = "Let the profits speak for themselves!"
+name = "EVT_630107_OPTIONA"
 command = { type = dissent value = 5 }
 command = { type = money value = 300 }
 command = { type = domestic which = free_market value = 9 }
@@ -1036,7 +1036,7 @@ command = { type = domestic which = free_market value = 9 }
 
 action_b = { 
 ai_chance = 30
-name = "We must not alienate the KMT, Sun Yat-sen's policy!"
+name = "EVT_630107_OPTIONB"
 command = { type = dissent value = 5 } 
 command = { type = money value = 20 }
 command = { type = domestic which = free_market value = -1 }
@@ -1044,7 +1044,7 @@ command = { type = domestic which = free_market value = -1 }
 
 action_c = { 
 ai_chance = 10
-name = "Huh, I actually like central planning..."
+name = "EVT_630107_OPTIONC"
 command = { type = dissent value = 15 } 
 command = { type = domestic which = free_market value = -9 }
 }
@@ -1064,8 +1064,8 @@ country = CHI
 		control = { province = 1369 data = CHI }
 		}
 
-name = "A New Economic Order in China"
-desc = "Following the Conservative ascendance to power in the National Assembly we are in a perfect position to reshape the economic landscape in accordance with our political desires. The officers in the armed forces and the nationalist reactionaries are demanding a Chinese economy meant for the Chinese and a firm rejection of Western ideals of socialism and liberalism, however, a direct attack upon Sun Yat-sen's ideals might prove dangerous."
+name = "EVT_630108_NAME"
+desc = "EVT_630108_DESC"
 style = 2
 picture = "mayfourth"
 
@@ -1075,7 +1075,7 @@ deathdate = { day = 16 month = february year = 1938 }
 
 action_a = { 
 ai_chance = 10
-name = "Economic liberty is essential to Chinese strength!"
+name = "EVT_630108_OPTIONA"
 command = { type = dissent value = 15 }
 command = { type = money value = 300 }
 command = { type = domestic which = free_market value = 9 }
@@ -1083,7 +1083,7 @@ command = { type = domestic which = free_market value = 9 }
 
 action_b = { 
 ai_chance = 30
-name = "We must not alienate the KMT, Sun Yat-sen's policy!"
+name = "EVT_630108_OPTIONB"
 command = { type = dissent value = 5 } 
 command = { type = money value = 20 }
 command = { type = domestic which = free_market value = -1 }
@@ -1091,7 +1091,7 @@ command = { type = domestic which = free_market value = -1 }
 
 action_c = { 
 ai_chance = 60
-name = "The economy is the blood of the state, we must control it!"
+name = "EVT_630108_OPTIONC"
 command = { type = dissent value = -5 } 
 command = { type = domestic which = free_market value = -9 }
 }
@@ -1140,7 +1140,7 @@ country = CHI
                 }
 		}
 
-name = "The Western Expedition"
+name = "EVT_630109_NAME"
 desc = "EVT_91835_DESC"
 style = 2
 picture = "mayfourth3"
@@ -1152,19 +1152,19 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 60
-name = "Deploy the NRA to the border, Kunming must fall!"
+name = "EVT_630109_OPTIONA"
 command = { type = event which = 630110 where = CYN when = 3  }
 }
 
 action_b = {
 ai_chance = 40
-name = "Establish a diplomatic connection with the Long Clique"
+name = "EVT_630109_OPTIONB"
 command = { type = event which = 630113 where = CYN when = 3  }
 }
 
 action_c = {
 ai_chance = 80
-name = "Start reunification talks with National Protection Alliance"
+name = "EVT_630109_OPTIONC"
 trigger = {
 flag = YUN_CHINA
 ispuppet = CYN
@@ -1179,24 +1179,24 @@ country = CYN
 style = 2
 picture = "Board Meeting"
 
-name = "Republican Armies On Our Doorstep"
-desc = "The peasant rabble in Guangxi have deployed troops on our border! How should we react?"
+name = "EVT_630110_NAME"
+desc = "EVT_630110_DESC"
 
 action_a = {
 ai_chance = 20
-name = "United we stand, divided we fall - recognize the Guangzhou Government"
+name = "EVT_630110_OPTIONA"
 command = { type = trigger which = 630111 }
 }
 
 action_b = {
 ai_chance = 40
-name = "Bah, Kunming is safe - ignore them"
+name = "EVT_630110_OPTIONB"
 command = { type = setflag which = CYN_NOP }
 }
 
 action_c = {
 ai_chance = 40
-name = "Democracy is the harbringer of anarchy - to war!"
+name = "EVT_630110_OPTIONC"
 command = { type = war which = CHI }
 
 }
@@ -1208,11 +1208,11 @@ country = CHI
 style = 2
 picture = "mayfourth"
 
-name = "Long Yun covers before us!"
-desc = "Yesterday, in a thoroughly subdued spirit, the Autocrat of Kunming announced his unwavering support for the Chinese Republic. Our men in the border areas report that the advancing formations of the National Revolutionary Army have only encountered celebration and a shower of flowers and kisses from the young women of Yunnan on their advance towards Kunming. Dr. Sun would have been proud of us!"
+name = "EVT_630111_NAME"
+desc = "EVT_630111_DESC"
 
 action_a = {
-name = "The Revolution is not over yet!"
+name = "EVT_630111_OPTIONA"
 	command = { type = inherit which = CYN }
 	command = { type = dissent value = -10 }
 }
@@ -1232,8 +1232,8 @@ country = CHI
 		NOT = { alliance = { country = CHI country = CYN } }
 		}
 
-name = "The Warlord's Insolence"
-desc = "Our attempts at reuniting the bandit lair of Yunnan with the light of the Republic through peaceful means have been rebuked by the Kunming administration. The Hanjian Long and his gang of mad dogs and scoundrels will have to be ousted through the stab of the bayonet and the shot of the rifle so that the Western reaches of China proper may rejoin her six sister provinces of the East."
+name = "EVT_630112_NAME"
+desc = "EVT_630112_DESC"
 style = 2
 picture = "mayfourth3"
 
@@ -1243,14 +1243,14 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
 ai_chance = 100
-name = "Launch the Western Expedition!"
+name = "EVT_630112_OPTIONA"
 command = { type = war which = CYN }
 command = { type = dissent value = -10 }
 }
 
 action_b = {
 ai_chance = 0
-name = "The Passes of Yunnan are closed. Back down."
+name = "EVT_630112_OPTIONB"
 command = { type = dissent value = 15 }
 
 }
@@ -1262,24 +1262,24 @@ country = CYN
 style = 2
 picture = "Board Meeting"
 
-name = "The Offer from Guangzhou"
-desc = "The peasant rabble in Guangxi have announced their intention to enforce a unification with our domains. How should we react ?"
+name = "EVT_630113_NAME"
+desc = "EVT_630113_DESC"
 
 action_a = {
 ai_chance = 20
-name = "United we stand, divided we fall - recognize the Guangzhou Government"
+name = "EVT_630113_OPTIONA"
 command = { type = trigger which = 630111 }
 }
 
 action_b = {
 ai_chance = 20
-name = "Bah, Kunming is safe - ignore them"
+name = "EVT_630113_OPTIONB"
 command = { type = setflag which = CYN_NOP }
 }
 
 action_c = {
 ai_chance = 20
-name = "Democracy is the harbinger of anarchy - to war!"
+name = "EVT_630113_OPTIONC"
 command = { type = war which = CHI }
 command = { type = switch_allegiance which = -1 where = CHI }
 command = { type = switch_allegiance which = -1 where = CHI }
@@ -1289,7 +1289,7 @@ command = { type = switch_allegiance which = -1 where = CHI }
 
 action_d = {
 ai_chance = 40
-name = "Immunity from prosecution and sizeable pensions are the price for our loyalty"
+name = "EVT_630113_OPTIOND"
 command = { type = trigger which = 630114 }
 
 }
@@ -1301,12 +1301,12 @@ country = CHI
 style = 2
 picture = "mayfourth4"
 
-name = "The Demands of a Bandit"
-desc = "Long Yun has announced to our representative in Kunming that he and his government are willing to allow a peaceful unification in return of amnesty for whatever crimes against the people he is perceived to have committed during his tenure in Yunnan as well as a sizeable pension for himself. An agreement will bring Yunnan under Republican control without bloodshed, but our credibility might suffer tremendously. The entire nation eagerly awaits the Republican response."
+name = "EVT_630114_NAME"
+desc = "EVT_630114_DESC"
 
 action_a = {
 ai_chance = 30
-name = "Blood must not be spilled, we accept."
+name = "EVT_630114_OPTIONA"
 command = { type = inherit which = CYN }
 command = { type = dissent value = 10 } # massive loss of prestige
 command = { type = peacetime_ic_mod value = -5 } # pensions for Long and his men
@@ -1314,7 +1314,7 @@ command = { type = peacetime_ic_mod value = -5 } # pensions for Long and his men
 
 action_b = {
 ai_chance = 70
-name = "The NRA will bring you to justice, scoundrel!"
+name = "EVT_630114_OPTIONB"
 command = { type = war which = CYN }
 
 }
@@ -1342,8 +1342,8 @@ event = {
 		}
 
 
-	name = "The Parliamentary elections"
-	desc = "Four years have passed since the Guangzhou Revolution washed off the shame of the German Intervention of 1926 in a river of righteous resistance. As per the constitution and the San-min Doctrine Free China is to experience the second batch of elections to the National Assembly and the old guard of parties have been readying themselves for months. However, new claimants to the popular mandate have also arisen in the Young China Party."
+	name = "EVT_630180_NAME"
+	desc = "EVT_630180_DESC"
         picture = "mayfourth"
 
 	date = { day = 1 month = january year = 1936 }
@@ -1354,7 +1354,7 @@ event = {
 
         action_a = {
 	        ai_chance =  40
-	        name = "Soong Ching-ling and Zhou Shuren's Leftist Kuomintang!"
+	        name = "EVT_630180_OPTIONA"
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 7 }
 		command = { type = dissent value = -3  }  
@@ -1367,7 +1367,7 @@ event = {
 		}
         action_b = {
 	        ai_chance =  25
-	        name = "Hu Shi's Liberals Secure a Majority!"
+	        name = "EVT_630180_OPTIONB"
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 5 }
 		command = { type = dissent value = -2 }  
@@ -1380,7 +1380,7 @@ event = {
 		}
         action_c = {
 	        ai_chance =  10
-	        name = "Chen Jiongming's Conservatives!"
+	        name = "EVT_630180_OPTIONC"
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 3 }
 		command = { type = set_domestic which = freedom value = 4 }
@@ -1395,7 +1395,7 @@ event = {
 		}
         action_d = {
 	        ai_chance =  25
-	        name = "The Young China Party carries the day!"
+	        name = "EVT_630180_OPTIOND"
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 3 }
 		command = { type = set_domestic which = freedom value = 6 }
@@ -1425,8 +1425,8 @@ event = {
 		}
 
 
-	name = "The German Companies"
-	desc = "The profit-driven capitalist system of exploitation and oppression of the major German companies in Southern China was one of the major causes of the Guangzhou Revolution. Thus a call for the expropriation of the financial cooperatives has been voiced within the assembly. However, certain members of the incumbent government argue that such an act could result in a permanent weakening of our ability to develop our industy."
+	name = "EVT_630115_NAME"
+	desc = "EVT_630115_DESC"
         picture = "mayfourth"
 
 	date = { day = 1 month = april year = 1936 }
@@ -1437,7 +1437,7 @@ event = {
 
         action_a = {
 	        ai_chance =  40
-	        name = "We need their industrial expertise..."
+	        name = "EVT_630115_OPTIONA"
                 command = { type = dissent value = 10 }
                 command = { type = waketeam which = 1021 } 
                 command = { type = waketeam which = 1022 }
@@ -1445,7 +1445,7 @@ event = {
 		}
         action_b = {
 	        ai_chance =  60
-                name = "Expropriate the oppressors!"
+                name = "EVT_630115_OPTIONB"
                 command = { type = dissent value = -3 }
                 command = { type = relation which = GER value = -50 } # Germans no like
                 command = { type = trigger which = 630116 }
@@ -1463,19 +1463,19 @@ country = GER
 style = 2
 picture = "Board Meeting"
 
-name = "The Expulsion of AOG Companies"
-desc = "Following the downfall of the AOG, the Chinese republican government in Guangzhou has added insult to injury by proclaiming the Asian sub-companies of Krupp, Opel and Siemens unwanted in their 'Free China'. Our reaction to this humiliation must be swift and decisive!"
+name = "EVT_630116_NAME"
+desc = "EVT_630116_DESC"
 
 action_a = {
 ai_chance = 55
-name = "Demand financial compensation!"
+name = "EVT_630116_OPTIONA"
 command = { type = relation which = CHI value = -25 }
 command = { type = trigger which = 630117 }
 }
 
 action_b = {
 ai_chance = 45
-name = "Well, at least we still hold Tsingtau"
+name = "EVT_630116_OPTIONB"
 command = { type = relation which = CHI value = 25 }
 command = { type = setflag which = GER_AOK }
 command = { type = dissent value = 2 }
@@ -1489,18 +1489,18 @@ country = CHI
 style = 2
 picture = "mayfourth2"
 
-name = "The Tsingtau Ultimatum"
-desc = "Our decision to expropriate the German companies has resulted in a list of demands being cabled to us from German-held Tsingtau. In short, the Kaiser demands suitable monetary compensation for his subjects being targeted by our Government. Such a claim is outrageous, but with German Schutztruppen stationed nearby, to seek a direct confrontation with the Kaiserreich might not be the wisest path to tread."
+name = "EVT_630117_NAME"
+desc = "EVT_630117_DESC"
 
 action_a = {
 ai_chance = 65
-name = "Berlin's bluffing, reject the Kaiser's claims!"
+name = "EVT_630117_OPTIONA"
 command = { type = trigger which = 630118 }
 }
 
 action_b = {
 ai_chance = 35
-name = "We must submit in the name of peace..."
+name = "EVT_630117_OPTIONB"
 command = { type = relation which = GER value = 25 }
 command = { type = money value = -900 }
 command = { type = dissent value = 5 }
@@ -1514,18 +1514,18 @@ country = GER
 style = 2
 picture = "Portland"
 
-name = "Guangzhou laughs at us!"
-desc = "The demand dispatched by our governor in Tsingtau has been thoroughly ignored by the Republican government. The domestic as well as international press is bombarding us with critique and scorn for not standing up to such disrespect from a puny Chinese clique. The Guangzhou government must be chastised!"
+name = "EVT_630118_NAME"
+desc = "EVT_630118_DESC"
 
 action_a = {
 ai_chance = 70
-name = "Have they forgotten 1926? Attack!"
+name = "EVT_630118_OPTIONA"
 command = { type = war which = CHI }
 }
 
 action_b = {
 ai_chance = 30
-name = "I tell you, they're a cunning race!"
+name = "EVT_630118_OPTIONB"
 command = { type = dissent value = 5 }
 
 }
@@ -1552,8 +1552,8 @@ event = {
 		}
 
 
-	name = "The Germans flee before us!"
-	desc = "We have driven the Kaiser's troops from our borders and seized Hanoi from the local colonial governor. Our troops are poised to drive deeper into Indochina and with the interior only weakly defended, now might be a good time to offer Berlin peace terms."
+	name = "EVT_630119_NAME"
+	desc = "EVT_630119_DESC"
         picture = "mayfourth3"
 
 	date = { day = 1 month = january year = 1936 }
@@ -1564,13 +1564,13 @@ event = {
 
         action_a = {
 	        ai_chance =  90
-	        name = "Claim Hainan Island and the Leizhou Peninsula!"
+	        name = "EVT_630119_OPTIONA"
                 command = { type = dissent value = -1 }
                 command = { type = trigger which = 630120 } 
 		}
         action_b = {
 	        ai_chance =  10
-                name = "Fight 'till our banners fly over Saigon!"
+                name = "EVT_630119_OPTIONB"
                 command = { type = dissent value = 5 }
                 command = { type = relation which = GER value = -100 } 
 		}
@@ -1583,12 +1583,12 @@ country = GER
 style = 2
 picture = "Portland"
 
-name = "Guangzhou offers terms"
-desc = "The war in China has turned out to be a regular catastrophe. Our forces have been routed from their bases in Haikou and Naoming, whilst Republican troops are posed to invade German Indochina! The Chinese are proposing a ceasefire in return for our colonies on the island of Hainan and on the Leizhou Peninsula. Maybe it would be wise to accept."
+name = "EVT_630120_NAME"
+desc = "EVT_630120_DESC"
 
 action_a = {
 ai_chance = 90
-name = "Better than we had hoped for..."
+name = "EVT_630120_OPTIONA"
 command = { type = secedeprovince which = CHI value = 1367 } 
 command = { type = secedeprovince which = CHI value = 1365 }
 command = { type = secedeprovince which = CHI value = 1328 } 
@@ -1600,7 +1600,7 @@ command = { type = peace which = CHI value = 0 }
 
 action_b = {
 ai_chance = 10
-name = "I want them dead, all of them!"
+name = "EVT_630120_OPTIONB"
 command = { type = dissent value = 10 } # Hopeless war
 
 }
@@ -1643,17 +1643,17 @@ event = {
 	offset =  90
 	deathdate = { day = 29 month = december year = 1960 }
 
-	name = "Launching the Northern Expedition"
-	desc = "In 1926 the German imperialists imposed the Manchu dynasty upon the northern provinces of China, yet their rule hasn't improved since the Xinhai Revolution. With Yunnan and the AOG gone, the time seems ripe for a repeat of the glorious days of 1911."
+	name = "EVT_630121_NAME"
+	desc = "EVT_630121_DESC"
 
 	action_a = {
 		ai_chance = 40
-		name = "The Qing must be ousted by force!"
+		name = "EVT_630121_OPTIONA"
 		command = { type = trigger which = 630122 }
 	}
 	action_b = {
 		ai_chance = 60
-		name = "Dispatch agitators and demagogues!"
+		name = "EVT_630121_OPTIONB"
 		command = { type = trigger which = 630123 }
 	}
 }
@@ -1665,19 +1665,19 @@ country = CSX
 style = 2
 #picture = "qingthreat"
 
-name = "Republican troops on our border!"
-desc = "The would be revolutionaries of Guangxi have deployed several armies on our border, threatening the important industrial city of Nanjing. Although we knew such confrontation with the resurgent Republic would be unavoidable, the Imperial council is still debating our means of response fiercely."
+name = "EVT_630122_NAME"
+desc = "EVT_630122_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Insolence, the Great Qing will smash them!"
+name = "EVT_630122_OPTIONA"
 command = { type = war which = CHI }
 command = { type = dissent value = -3 }
 }
 
 action_b = {
 ai_chance = 5
-name = "Bah, they will feel our wrath soon enough..."
+name = "EVT_630122_OPTIONB"
 command = { type = dissent value = 30 }
 
 
@@ -1690,19 +1690,19 @@ country = CSX
 style = 2
 #picture = "qingthreat"
 
-name = "Republican agitators within our borders!"
-desc = "Jiangsu province is in complete disarray! Agitators and spies from Guangzhou are spreading their vile propaganda about the imperial house at an alarming rate, and in the foreign concessions in Nanjing revolutionaries are busy making bombs and banners for planned demonstrations against our rule. This cancer of democracy must be cut out, or we might face even greater resistance in our enforcement of the heavenly mandate."
+name = "EVT_630123_NAME"
+desc = "EVT_630123_DESC"
 
 action_a = {
 ai_chance = 35
-name = "Upstarts, the Great Qing will crush you!"
+name = "EVT_630123_OPTIONA"
 command = { type = war which = CHI }
 command = { type = dissent value = -3 }
 }
 
 action_b = {
 ai_chance = 65
-name = "A stronger police force in the urban centres will quell this unrest!"
+name = "EVT_630123_OPTIONB"
 command = { type = setflag which = CSX_MAY }
 command = { type = relation which = CHI value = -100 } 
 command = { type = dissent value = 5 } 
@@ -1725,8 +1725,8 @@ country = CHI
 		NOT = { alliance = { country = CHI country = CSX } }
 		}
 
-name = "Riots in the Capital of Six Dynasties"
-desc = "The infiltrators dispatched by our secret service have managed to rouse the inhabitants of Nanjing and the surrounding areas against Manchu rule. Barricades are being set up in the streets and demonstrators clash with loyalist troops around all the major public buildings. Our general staff is in agreement in its assessment of the situation: With a certain amount of undercover military support, the Nanjing Revolution might actually stand a chance."
+name = "EVT_630124_NAME"
+desc = "EVT_630124_DESC"
 style = 2
 picture = "mayfourth"
 
@@ -1736,7 +1736,7 @@ deathdate = { day = 29 month = june year = 1960 }
 
 action_a = {
 ai_chance = 85
-name = "Smuggle arms and supplies to the revolutionaries!"
+name = "EVT_630124_OPTIONA"
 command = { type = supplies value = -200 }
 command = { type = domestic which = interventionism value = 1 }
 command = { type = trigger which = 630125 }
@@ -1744,7 +1744,7 @@ command = { type = trigger which = 630125 }
 
 action_b = {
 ai_chance = 15
-name = "Enough subterfuge, launch the Expedition!"
+name = "EVT_630124_OPTIONB"
 command = { type = war which = CSX }
 
 }
@@ -1756,12 +1756,12 @@ country = CSX
 style = 2
 picture = "mayfourth"
 
-name = "A new 1853"
-desc = "Horrible, horrible news have just arrived from Nanjing. Whilst our troops attempted to restore imperial authority in the city's centre, rebels opened fire upon our men with automatic weapons. Nanjing is in full revolt and our men have been forced back whilst the Republican five-coloured flag is hoisted throughout the ancient capital."
+name = "EVT_630125_NAME"
+desc = "EVT_630125_DESC"
 
 action_a = {
 ai_chance = 100
-name = "You traitors will share the fate of Hong Xiuquan!"
+name = "EVT_630125_OPTIONA"
 command = { type = secedeprovince which = CHI value = 1337 } #Nanjing
 command = { type = secedeprovince which = CHI value = 1342 } #Xuanzhou
 command = { type = secedeprovince which = CHI value = 1334 } #Nantong
@@ -1779,7 +1779,7 @@ command = { type = war which = CHI }
 
 action_b = {
 ai_chance = 0
-name = "Maybe they are right after all..."
+name = "EVT_630125_OPTIONB"
 command = { type = secedeprovince which = CHI value = 1337 } #Nanjing
 command = { type = secedeprovince which = CHI value = 1342 } #Xuanzhou
 command = { type = secedeprovince which = CHI value = 1334 } #Nantong
@@ -1794,11 +1794,11 @@ country = CHI
 style = 2
 picture = "mayfourth"
 
-name = "The Northern Expedition Commences"
-desc = "With one swift stroke, Nanjing and much of Jiangsu province have come under Republican control. However, the Qing have dispatched its lackeys to quell the nascent movement of national revolution and without the direct assistance of the NRA, the brave freedom fighters in the ancient capital might succumb to the immense pressure of the Manchu onslaught!"
+name = "EVT_630126_NAME"
+desc = "EVT_630126_DESC"
 
 action_a = {
-name = "The revolution isn't over yet!"
+name = "EVT_630126_OPTIONA"
 command = { type = add_corps which = "1st Jiangsu Volunteer Corps" value = land where = 1337 }
 command = { type = add_division which = "Division San-min" value = infantry when = 9 where = artillery }
 command = { type = add_corps which = "2nd Jiangsu Volunteer Corps" value = land where = 1342 }
@@ -1858,17 +1858,17 @@ date = { day = 1 month = january year = 1936 }
      offset =  30
      deathdate = { day = 29 month = december year = 1960 }
 
-     name = "Fate of the German Colonies"
-     desc = "The unthinkable has happened. The German Kaiserreich has suffered a crushing defeat in Europe that has sent shock waves throughout the world. With panic erupting in all of the Kaiser's Chinese conscessions and the local Schutztruppen hard pressed to maintain order, now might be the right time to proclaim an ultimatum regarding the German treaty ports."
+     name = "EVT_630127_NAME"
+     desc = "EVT_630127_DESC"
 
      action_a = {
          ai_chance = 100
-         name = "They reap what they have sowed. Issue our ultimatum!"
+         name = "EVT_630127_OPTIONA"
          command = { type = trigger which = 630128 }
      }
      action_b = {
          ai_chance = 0
-         name = "We have no need for those ports"
+         name = "EVT_630127_OPTIONB"
          command = { type = dissent value = 10 }
      }
 }
@@ -1878,18 +1878,18 @@ id = 630128
 random = no
 country = GER
 
-name = "The Chinese Vultures"
-desc = "Dire news have reached our officials in Tsingtau. The president of the Chinese Republic has demanded our surrender of the German territories in Shandong and at the Hainan Strait."
+name = "EVT_630128_NAME"
+desc = "EVT_630128_DESC"
 
 action_a = {
 ai_chance = 10
-name = "Niemals! Attack"
+name = "EVT_630128_OPTIONA"
 command = { type = trigger which = 630129 }
 }
 
 action_b = {
 ai_chance = 90
-name = "Wir kapitulieren..."
+name = "EVT_630128_OPTIONB"
 command = { type = secedeprovince which = CHI value = 1367 }
 command = { type = secedeprovince which = CHI value = 1328 }
 command = { type = secedeprovince which = CHI value = 1331 }
@@ -1906,18 +1906,18 @@ country = CHI
 style = 2
 picture = "mayfourthsun"
 
-name = "The German Eagle Defends Herself"
-desc = "Our ultimatum has been rebuffed by the German Kaiser, it seems as if we will have to skew the German colonies on our bayonets!"
+name = "EVT_630129_NAME"
+desc = "EVT_630129_DESC"
 
 action_a = {
-name ="The Chinese dragon will tear them apart!"
+name ="EVT_630129_OPTIONA"
 ai_chance = 90
 command = { type = war which = GER }
 command = { type = dissent value = -10 }
 }
 
 action_b = {
-name = "We have better things to do..."
+name = "EVT_630129_OPTIONB"
 ai_chance = 10
 command = { type = dissent value = 5 }
 }
@@ -1970,17 +1970,17 @@ event = {
 	offset =  50
 	deathdate = { day = 29 month = december year = 1960 }
 
-	name = "The Subjugation of the Treaty Ports"
-	desc = "Ever since the downfall of the first Chinese Republic and the resurrection of Manchu rule, the largest Chinese cities on the eastern seaboard have been ruled by a conglomerate of the foreign powers. However, as the star of the western states is fading whilst the Chinese dragon surges to the skies, the possibilities of a reunification with the Legation Cities seem better than ever before."
+	name = "EVT_630130_NAME"
+	desc = "EVT_630130_DESC"
 
 	action_a = {
 		ai_chance = 70
-		name = "The Legation cities are rightfully Chinese!"
+		name = "EVT_630130_OPTIONA"
 		command = { type = trigger which = 630131 }
 	}
 	action_b = {
 		ai_chance = 30
-		name = "Offer them limited autonomy"
+		name = "EVT_630130_OPTIONB"
 	        command = { type = belligerence which = CHI value = -5 }
 		command = { type = dissent value = 3 } #Nationalists unhappy
 		command = { type = trigger which = 630133 }
@@ -1993,18 +1993,18 @@ country = EAF
 style = 2
 picture = "China_Army"
 
-name = "Republican Ambitions of Reunion"
-desc = "We have recieved a personal letter from the president of the Chinese Republic calling for our immediate submission. Although we might have a slim chance at gaining international backing in resisting the Chinese policy of reunification, the populace is widely supportive of a union with the resurgent Republic."
+name = "EVT_630131_NAME"
+desc = "EVT_630131_DESC"
 
 action_a = {
 ai_chance = 70
-name = "Unification will open new markets for investment, we accept!"
+name = "EVT_630131_OPTIONA"
 command = { type = trigger which = 630132 }
 }
 
 action_b = {
 ai_chance = 30
-name = "Call on Berlin for protection!"
+name = "EVT_630131_OPTIONB"
 trigger = {
 exists = GER
 control = { province = 163 data = GER }
@@ -2022,12 +2022,12 @@ country = CHI
 style = 2
 picture = "mayfourth2"
 
-name = "The Legation Cities Carve In"
-desc = "At an emergency meeting, the government of the Confederation of Legations have decided to agree to our demands. Throughout the cities of Shanghai, Hong Kong, and Ningbo people are hoisting the five coloured flag of our great nation whilst the national press is estatic in its praise of our successful unification. Finally, some of the shame conferred upon China after the Century of Humiliation has been washed away."
+name = "EVT_630132_NAME"
+desc = "EVT_630132_DESC"
 
 action_a = {
 ai_chance = 100
-name = "Ha zha, what a glorious day for China!"
+name = "EVT_630132_OPTIONA"
 command = { type = dissent value = -1 } 
 command = { type = waketeam which = 1029 } 
 command = { type = waketeam which = 1030 }
@@ -2045,7 +2045,7 @@ command = { type = relation which = JAP value = -80 }
 
 action_b = {
 ai_chance = 0
-name = "Actually, the Triads are too strong"
+name = "EVT_630132_OPTIONB"
 command = { type = relation which = JAP value = 50 }
 command = { type = relation which = GER value = 50 }
 command = { type = relation which = CAN value = 50 }
@@ -2061,18 +2061,18 @@ country = EAF
 style = 2
 picture = "China_Army"
 
-name = "Republican Ambitions of Reunion"
-desc = "We have recieved a personal letter from the president of the Chinese Republic calling for our recognition of the Chinese National Assembly as the legitimate governing body in the lands of our confederation. According to the communique, we are entitled to widespread home rule although matters of foreign policy and defence will be decided by the central government. Considering the strength of the resurgent Republican regime, this offer seems too good to be true!"
+name = "EVT_630133_NAME"
+desc = "EVT_630133_DESC"
 
 action_a = {
 ai_chance = 10
-name = "Brilliant, let us comply!"
+name = "EVT_630133_OPTIONA"
 command = { type = trigger which = 630134 }
 }
 
 action_b = {
 ai_chance = 80
-name = "Call on Berlin for protection!"
+name = "EVT_630133_OPTIONB"
 command = { type = trigger which = 630135 }
 command = { type = dissent value = 7 } #popular unrest in Shanghai
 
@@ -2086,12 +2086,12 @@ country = CHI
 style = 2
 picture = "mayfourth2"
 
-name = "The Legation Cities Carve In"
-desc = "At an emergency meeting, the government of the Confederation of Legations has decided to agree to our demands. Throughout the cities of Shanghai, Hong Kong, and Ningbo people are hoisting the five coloured flag of our great nation whilst the national press is estatic in its praise of our successful political gamble. With the Legation Cities serving as a buffer, all claims of aggression are null and void!"
+name = "EVT_630134_NAME"
+desc = "EVT_630134_DESC"
 
 action_a = {
 ai_chance = 100
-name = "Ha zha, what a glorious day for China!"
+name = "EVT_630134_OPTIONA"
 command = { type = dissent value = -1 } 
 command = { type = relation which = EAF value = 200 }
 command = { type = removecore which = 1338 }
@@ -2114,7 +2114,7 @@ command = { type = make_puppet which = EAF }
 
 action_b = {
 ai_chance = 0
-name = "Actually, the Triads are too strong"
+name = "EVT_630134_OPTIONB"
 command = { type = relation which = JAP value = 50 }
 command = { type = relation which = GER value = 50 }
 command = { type = relation which = CAN value = 50 }
@@ -2130,19 +2130,19 @@ country = GER
 style = 2
 picture = "China_Army"
 
-name = "Republican Ultimatum to Shanghai"
-desc = "The damned Chinese revolutionaries who have already crushed the AOG and our allies in Peking are up to it again! The Confederation of Legation Cities set up after our 1926 intervention to manage international trade with the Chinese market has been forced into a series of negotiations with the Republican regime. The leader of the Confederation's cabinet has approached us, as the prime guardian of Asian stability, to secure German support against the Chinese menace."
+name = "EVT_630135_NAME"
+desc = "EVT_630135_DESC"
 
 action_a = {
 ai_chance = 40
-name = "Ferry in troops from Tsingtau, the Chinese must be stopped!"
+name = "EVT_630135_OPTIONA"
 command = { type = dissent value = -1 } 
 command = { type = trigger which = 630136 }
 }
 
 action_b = {
 ai_chance = 60
-name = "Fortify our own colonies and leave the Legations to their fate..."
+name = "EVT_630135_OPTIONB"
 command = { type = relation which = EAF value = -200 }
 command = { type = trigger which = 630137 }
 command = { type = dissent value = 5 } 
@@ -2156,18 +2156,18 @@ country = CHI
 style = 2
 picture = "China_Army"
 
-name = "Germany Moves Troops Into the Treaty Ports!"
-desc = "In retaliation to our ultimatum regarding the foreign controlled Treaty Ports, Berlin has deployed men and munitions to the international conscessions in Shanghai and Hong Kong. We are faced with either a massive prestige loss or outright war with at least one of the major powers in South East Asia. Now is truly a dark hour for the growing republic."
+name = "EVT_630136_NAME"
+desc = "EVT_630136_DESC"
 
 action_a = {
 ai_chance = 70
-name = "Back down, this is not worth a war..."
+name = "EVT_630136_OPTIONA"
 command = { type = dissent value = 5 } 
 }
 
 action_b = {
 ai_chance = 30
-name = "Attack, attack, attack!"
+name = "EVT_630136_OPTIONB"
 command = { type = war which = GER }
 command = { type = war which = EAF }
 command = { type = dissent value = -10 } 
@@ -2181,19 +2181,19 @@ country = EAF
 style = 2
 picture = "China_Army"
 
-name = "Germany Betrays Shanghai!"
-desc = "In a stunning display of treachery and cowardice, the Kaiser has sold us out to the Republican menace!"
+name = "EVT_630137_NAME"
+desc = "EVT_630137_DESC"
 
 action_a = {
 ai_chance = 30
-name = "Lay down our arms..."
+name = "EVT_630137_OPTIONA"
 command = { type = dissent value = -1 } 
 command = { type = trigger which = 630132 }
 }
 
 action_b = {
 ai_chance = 70
-name = "As we brought down the Boxers so we shall crush them too!!"
+name = "EVT_630137_OPTIONB"
 command = { type = war which = CHI }
 command = { type = dissent value = 5 } 
 
@@ -2224,11 +2224,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 1
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "Double Ten Day"
-desc = "Today, the tenth day of the tenth month is the anniversary of the 1911 Xinhai Uprising. Posters of Dr. Sun Yat-sen and other revolutionaries decorate the streets of Guangzhou and beyond whilst the people cheer the lion and dragon dancers parading under the five coloured flag. Today, our Republic is truly united!"
+name = "EVT_630138_NAME"
+desc = "EVT_630138_DESC"
 
 action_a = {
-name = "We celebrate in the honour of the fallen!"
+name = "EVT_630138_OPTIONA"
 command = { type = dissent value = -1 }
 
 }
@@ -2251,8 +2251,8 @@ event = {
 		}
 
 
-	name = "Civil War!"
-	desc = "The Heavenly Crusade to purify China has entered a critical stage where our troops will have to fight the stubborn plutocrats of Canton. Although fellow Chinese, their refusal to submit to the Path of Consistence has spelled doom over their puny attempt at state-crafting. There can be only one China!" 
+	name = "EVT_630139_NAME"
+	desc = "EVT_630139_DESC" 
         picture = "shangqingone"
 
 	date = { day = 1 month = april year = 1936 }
@@ -2262,7 +2262,7 @@ event = {
 
 
         action_a = {
-	        name = "The Path of Consistence shall triumph!"
+	        name = "EVT_630139_OPTIONA"
                 command = { type = add_corps which = "3rd Millenarian Corps" value = land where = 1259 }
                 command = { type = add_division which = "Mixed Brigades 'Yellow Spears'" value = militia when = 4 }
                 command = { type = add_division which = "Mixed Brigades 'Red Lanterns'" value = militia when = 4 }
@@ -2328,23 +2328,23 @@ event = {
 	offset =  30
 	deathdate = { day = 29 month = december year = 1960 }
 
-	name = "The Manchurian Plebiscite"
-	desc = "Following the establishment of Republican hegemony over much of Inner China, the National Assembly has instigated a formal debate on the status of the so-called Fengtien Republic. So far we have been very clear regarding our stance towards warlordism, but the Manchurian junta has the support of the Japanese Empire. Our position is dangerous and the cabinet is expected to conclude upon a course within hours. Some propose a peaceful referendum, others prefer sending in the NRA."
+	name = "EVT_630140_NAME"
+	desc = "EVT_630140_DESC"
 
 	action_a = {
 		ai_chance = 70
-		name = "Issue a call for Manchurian self-determination!"
+		name = "EVT_630140_OPTIONA"
 		command = { type = dissent value = -1 }
                 command = { type = setflag which = MAN_PLE }
 	}
 	action_b = {
 		ai_chance = 20
-		name = "We speak softly and carry a bick stick, deploy the NRA!"
+		name = "EVT_630140_OPTIONB"
 		command = { type = trigger which = 630141 }
 	}
 	action_c = {
 		ai_chance = 10
-		name = "Try to shut the assembly up..."
+		name = "EVT_630140_OPTIONC"
 		command = { type = dissent value = 10 }
 	}
 }
@@ -2364,8 +2364,8 @@ country = JAP
 		NOT = { alliance = { country = CHI country = MAN } }
 		}
 
-name = "The Manchurian Plebiscite"
-desc = "Events are unfolding at an alarming pace on the Chinese mainland. The government of the Republic of China has announced its desire for a popular referendum to be held in order to decide whether or not the Fengtien Republic should rejoin China proper. Given how relatively democratic the Chinese Republic is, many members of the diet are ready to abandon our puppet in Mukden in order to throw their lot in with the Five Colour Flag Republic."
+name = "EVT_630150_NAME"
+desc = "EVT_630150_DESC"
 style = 2
 picture = "mayfourthsun"
 
@@ -2375,14 +2375,14 @@ deathdate = { day = 29 month = june year = 1960 }
 
 action_a = {
 ai_chance = 60
-name = "Put pressure on Zhang Zuolin to comply with Republican demands!"
+name = "EVT_630150_OPTIONA"
 command = { type = relation which = CHI value = 200 }
 command = { type = trigger which = 630151 }
 }
 
 action_b = {
 ai_chance = 40
-name = "The interests of the empire lie with the Fengtien!"
+name = "EVT_630150_OPTIONB"
 command = { type = trigger which = 630142 }
 command = { type = relation which = CHI value = -200 }
 command = { type = sleepevent which = 630151 }
@@ -2395,12 +2395,12 @@ country = MAN
 style = 2
 picture = "China_Army"
 
-name = "Japan Supports the Second Republic"
-desc = "Tokyo has released a statement supporting the Chinese Republicans in their bid to arrange a referendum about our continued existence outside the Chinese Republic. We are pressured on two fronts with the National Revolutionary Army posed to strike from Beijing whilst Japan's democratic-oritented government withholds all support for our armies."
+name = "EVT_630151_NAME"
+desc = "EVT_630151_DESC"
 
 action_a = {
 ai_chance = 65
-name = "We yield because we have no choice, allow the plebiscite!"
+name = "EVT_630151_OPTIONA"
 command = { type = dissent value = -1 } 
 command = { type = relation which = JAP value = -100 }
 command = { type = trigger which = 630152 }
@@ -2409,7 +2409,7 @@ command = { type = setflag which = MAN_PLEOK }
 
 action_b = {
 ai_chance = 35
-name = "We shall maintain our independent republic, even if it means fighting both these serpents!"
+name = "EVT_630151_OPTIONB"
 command = { type = leave_alliance } 
 command = { type = end_puppet }
 command = { type = end_trades which = JAP where = MAN }
@@ -2429,12 +2429,12 @@ country = CHI
 style = 2
 picture = "mayfourth4"
 
-name = "The Fengtien Cave In"
-desc = "Thanks to subtle pressure from the Japanese government, Zhang Zuolin has opened his borders to our officials and international observers. Hopefully the referendum will proceed without any interference."
+name = "EVT_630152_NAME"
+desc = "EVT_630152_DESC"
 
 action_a = {
 ai_chance = 100
-name = "We await the results eagerly!"
+name = "EVT_630152_OPTIONA"
 command = { type = setflag which = MAN_PLEGO }
 command = { type = relation which = JAP value = 100 }
 command = { type = relation which = MAN value = 50 }
@@ -2443,7 +2443,7 @@ command = { type = dissent value = -1 }
 
 action_b = {
 ai_chance = 0
-name = "There's no need to vote, because we do not need Manchuria!"
+name = "EVT_630152_OPTIONB"
 command = { type = relation which = MAN value = 300 }
 command = { type = dissent value = 20 } 
 
@@ -2466,8 +2466,8 @@ country = MAN
 		NOT = { alliance = { country = CHI country = MAN } }
 		}
 
-name = "Results of the Manchurian Referendum"
-desc = "The votes are ticking in from all four corners of our beleagured Republic, by now it seems clear that those supporting union with the Chinese Republic will score a major victory, yet with a few bags of cash and some gruff behaviour the possibilities are many."
+name = "EVT_630153_NAME"
+desc = "EVT_630153_DESC"
 style = 2
 picture = "mayfourth3"
 
@@ -2477,14 +2477,14 @@ deathdate = { day = 29 month = june year = 1960 }
 
 action_a = {
 ai_chance = 80
-name = "The Unionist side scores a landslide victory, long live the United Republic!"
+name = "EVT_630153_OPTIONA"
 command = { type = trigger which = 630154 }
 command = { type = sleepevent which = 630155 }
 }
 
 action_b = {
 ai_chance = 20
-name = "With manipulation and scare tacticts the proposal for unification is rejected!"
+name = "EVT_630153_OPTIONB"
 command = { type = trigger which = 630155 }
 command = { type = sleepevent which = 630154 }
 command = { type = leave_alliance } 
@@ -2499,11 +2499,11 @@ country = CHI
 style = 2
 picture = "mayfourthsun"
 
-name = "Manchuria Declares for the Republic"
-desc = "Our man in Mukden has just contacted the foreign ministry - the people of Manchuria has overwhemlingly declared their support for our government. Once more, the far-reaching swathes of Manchuria will belong to China!"
+name = "EVT_630154_NAME"
+desc = "EVT_630154_DESC"
 
 action_a = {
-name = "Glorious is our bloodless victory!"
+name = "EVT_630154_OPTIONA"
 command = { type = inherit which = MAN value = 1 }
 command = { type = dissent value = -5 } 
 }
@@ -2515,12 +2515,12 @@ country = MAN
 style = 2
 picture = "China_Army"
 
-name = "China Demands Manchuria's Submission"
-desc = "The national media is ablaze with the latest rumours form the south. Apparently, Republican officials have stated that Manchuria will have to join the the growing Chinese Republic, or face dire consequences..."
+name = "EVT_630141_NAME"
+desc = "EVT_630141_DESC"
 
 action_a = {
 ai_chance = 45
-name = "We shall unite China under our banner, to war!"
+name = "EVT_630141_OPTIONA"
 command = { type = dissent value = -1 }
 command = { type = leave_alliance } 
 command = { type = end_puppet } 
@@ -2532,7 +2532,7 @@ command = { type = war which = CHI }
 
 action_b = {
 ai_chance = 55
-name = "Appeal to Japan for assistance!"
+name = "EVT_630141_OPTIONB"
 command = { type = dissent value = -1 } 
 command = { type = trigger which = 630153 }
 command = { type = setflag which = MAN_PLE }
@@ -2546,12 +2546,12 @@ country = CHI
 style = 2
 picture = "mayfourth3"
 
-name = "Fraud and Treachery at the Elections!"
-desc = "In a surprising turn of events, Zhang Zuolin and his clique of warlords have interfered in the referendum and coerced the populace into rejecting our proposal for unification! Tokyo has withdrawn her advsiors from Mukden, leaving the way open for the NRA to liberate the oppressed of Manchuria. China shall triumph!"
+name = "EVT_630155_NAME"
+desc = "EVT_630155_DESC"
 
 action_a = {
 ai_chance = 90
-name = "Now is the time to wash the shame of 1895 off in Hanjian blood!"
+name = "EVT_630155_OPTIONA"
 command = { type = dissent value = -10 }
 command = { type = relation which = JAP value = -100 }
 command = { type = war which = MAN }
@@ -2559,7 +2559,7 @@ command = { type = war which = MAN }
 
 action_b = {
 ai_chance = 10
-name = "Back down, Manchuria is a lousy place anyways..."
+name = "EVT_630155_OPTIONB"
 command = { type = dissent value = 20 } 
 }
 }
@@ -2570,12 +2570,12 @@ country = CHI
 style = 2
 picture = "mayfourth"
 
-name = "Japan Stands By Zhang Zuolin!"
-desc = "Our ambassador in Tokyo has recieved a pretty blunt rebuttal from his Japanese contact regarding our ambitions on Manchuria. The Japanese government will defend her puppet through the force of arms in order to keep her foot on Chinese soil. Such imperialistic conduct must be humbled!"
+name = "EVT_630142_NAME"
+desc = "EVT_630142_DESC"
 
 action_a = {
 ai_chance = 80
-name = "We shall bury them!"
+name = "EVT_630142_OPTIONA"
 command = { type = dissent value = -15 }
 command = { type = war which = MAN }
 command = { type = war which = JAP }
@@ -2583,7 +2583,7 @@ command = { type = war which = JAP }
 
 action_b = {
 ai_chance = 20
-name = "Back down, Manchuria is a lousy place anyways..."
+name = "EVT_630142_OPTIONB"
 command = { type = dissent value = 20 } 
 }
 }
@@ -2637,23 +2637,23 @@ event = {
 	offset =  30
 	deathdate = { day = 29 month = december year = 1960 }
 
-	name = "The Manchurian Plebiscite"
-	desc = "Following the establishment of Republican hegemony over much of Inner China, the National Assembly has instigated a formal debate on the status of the so-called Fengtien Republic. So far we have been very clear regarding our stance towards warlordism, but the Manchurian junta has the support of the Japanese Empire. Our position is dangerous and the cabinet is expected to conclude upon a course within hours. Some propose a peaceful referendum, others prefer sending in the NRA."
+	name = "EVT_630156_NAME"
+	desc = "EVT_630156_DESC"
 
 	action_a = {
 		ai_chance = 70
-		name = "Issue a call for Manchurian self-determination!"
+		name = "EVT_630156_OPTIONA"
 		command = { type = dissent value = -1 }
                 command = { type = setflag which = MAN_PLE }
 	}
 	action_b = {
 		ai_chance = 20
-		name = "We speak softly and carry a bick stick, deploy the NRA!"
+		name = "EVT_630156_OPTIONB"
 		command = { type = trigger which = 630141 }
 	}
 	action_c = {
 		ai_chance = 10
-		name = "Try to shut the assembly up..."
+		name = "EVT_630156_OPTIONC"
 		command = { type = dissent value = 10 }
 	}
 }
@@ -2673,8 +2673,8 @@ country = JAP
 		NOT = { alliance = { country = CHI country = MAN } }
 		}
 
-name = "The Manchurian Plebiscite"
-desc = "Events are unfolding at an alarming pace on the Chinese mainland. The government of the Republic of China has announced its desire for a popular referendum to be held in order to decide whether or not the Fengtien Republic should rejoin China proper. The Republican demands are outrageous, but given their recent successes we might have to think twice before rejecting them."
+name = "EVT_630157_NAME"
+desc = "EVT_630157_DESC"
 style = 2
 picture = "mayfourthsun"
 
@@ -2684,7 +2684,7 @@ deathdate = { day = 29 month = june year = 1960 }
 
 action_a = {
 ai_chance = 40
-name = "Put pressure on Zhang Zuolin to comply with Republican demands!"
+name = "EVT_630157_OPTIONA"
 command = { type = relation which = CHI value = 200 }
 command = { type = secedeprovince which = CHI value = 1216 } 
 command = { type = secedeprovince which = CHI value = 1235 } 
@@ -2695,7 +2695,7 @@ command = { type = trigger which = 630158 }
 
 action_b = {
 ai_chance = 60
-name = "The interests of the empire lie with the Fengtien!"
+name = "EVT_630157_OPTIONB"
 command = { type = trigger which = 630164 }
 command = { type = relation which = CHI value = -200 }
 command = { type = sleepevent which = 630158 }
@@ -2708,12 +2708,12 @@ country = MAN
 style = 2
 picture = "China_Army"
 
-name = "Japan Supports the Second Republic"
-desc = "Tokyo has released a statement supporting the Chinese Republicans in their bid to arrange a referendum about our continued existence outside the Chinese Republic. We are pressured on two fronts with the National Revolutionary Army posed to strike from Beijing whilst Japan's government withholds all support for our armies."
+name = "EVT_630158_NAME"
+desc = "EVT_630158_DESC"
 
 action_a = {
 ai_chance = 65
-name = "We yield because we have no choice, allow the plebiscite!"
+name = "EVT_630158_OPTIONA"
 command = { type = dissent value = -1 } 
 command = { type = relation which = JAP value = -100 }
 command = { type = trigger which = 630159 }
@@ -2722,7 +2722,7 @@ command = { type = setflag which = MAN_PLEOK }
 
 action_b = {
 ai_chance = 35
-name = "We shall maintain our independent republic, even if it means fighting both these serpents!"
+name = "EVT_630158_OPTIONB"
 command = { type = leave_alliance } 
 command = { type = end_puppet }
 command = { type = end_trades which = JAP where = MAN }
@@ -2742,12 +2742,12 @@ country = CHI
 style = 2
 picture = "mayfourth4"
 
-name = "The Fengtien Cave In"
-desc = "Thanks to subtle pressure from the Japanese government, Zhang Zuolin has opened his borders to our officials and international observers. Hopefully the referendum will proceed without any interference."
+name = "EVT_630159_NAME"
+desc = "EVT_630159_DESC"
 
 action_a = {
 ai_chance = 100
-name = "We await the results eagerly!"
+name = "EVT_630159_OPTIONA"
 command = { type = setflag which = MAN_PLEGO }
 command = { type = relation which = JAP value = 100 }
 command = { type = relation which = MAN value = 50 }
@@ -2756,7 +2756,7 @@ command = { type = dissent value = -1 }
 
 action_b = {
 ai_chance = 0
-name = "There's no need to vote, because we do not need Manchuria!"
+name = "EVT_630159_OPTIONB"
 command = { type = relation which = MAN value = 300 }
 command = { type = dissent value = 20 } 
 
@@ -2779,8 +2779,8 @@ country = MAN
 		NOT = { alliance = { country = CHI country = MAN } }
 		}
 
-name = "Results of the Manchurian Referendum"
-desc = "The votes are ticking in from all four corners of our beleagured Republic, by now it seems clear that those supporting union with the Chinese Republic will score a major victory, yet with a few bags of cash and some gruff behaviour the possibilities are many."
+name = "EVT_630160_NAME"
+desc = "EVT_630160_DESC"
 style = 2
 picture = "mayfourth3"
 
@@ -2790,14 +2790,14 @@ deathdate = { day = 29 month = june year = 1960 }
 
 action_a = {
 ai_chance = 50
-name = "The Unionist side scores a landslide victory, long live the United Republic!"
+name = "EVT_630160_OPTIONA"
 command = { type = trigger which = 630154 }
 command = { type = sleepevent which = 630155 }
 }
 
 action_b = {
 ai_chance = 50
-name = "With manipulation and scare tactics the proposal for unification is rejected!"
+name = "EVT_630160_OPTIONB"
 command = { type = trigger which = 630163 }
 command = { type = sleepevent which = 630161 }
 command = { type = dissent value = 20 } 
@@ -2810,11 +2810,11 @@ country = CHI
 style = 2
 picture = "mayfourthsun"
 
-name = "Manchuria Declares for the Republic"
-desc = "Our man in Mukden has just contacted the foreign ministry - the people of Manchuria have overwhemlingly declared their support for our government. Once more, the far-reaching swathes of Manchuria will belong to China!"
+name = "EVT_630161_NAME"
+desc = "EVT_630161_DESC"
 
 action_a = {
-name = "Glorious is our bloodless victory!"
+name = "EVT_630161_OPTIONA"
 command = { type = inherit which = MAN value = 1 }
 command = { type = trigger which = 630205 }
 command = { type = dissent value = -5 } 
@@ -2827,19 +2827,19 @@ country = MAN
 style = 2
 picture = "China_Army"
 
-name = "China Demands Manchuria's Submission"
-desc = "The national media is ablaze with the latest rumours form the south. Apparently, Republican officials have stated that Manchuria will have to join the the growing Chinese Republic, or face dire consequences..."
+name = "EVT_630162_NAME"
+desc = "EVT_630162_DESC"
 
 action_a = {
 ai_chance = 25
-name = "We shall unite China under our banner, to war!"
+name = "EVT_630162_OPTIONA"
 command = { type = dissent value = -3 }
 command = { type = war which = CHI }
 }
 
 action_b = {
 ai_chance = 75
-name = "Appeal to Japan for assistance!"
+name = "EVT_630162_OPTIONB"
 command = { type = dissent value = -1 } 
 command = { type = trigger which = 630157 }
 command = { type = setflag which = MAN_PLE }
@@ -2853,12 +2853,12 @@ country = CHI
 style = 2
 picture = "mayfourth3"
 
-name = "Fraud and Treachery at the Elections!"
-desc = "In a surprising turn of events, Zhang Zuolin and his clique of warlords have interfered in the referendum and coerced the populace into rejecting our proposal for unification! Tokyo has withdrawn her advsiors from Mukden, leaving the way open for the NRA to liberate the oppressed of Manchuria. China shall triumph!"
+name = "EVT_630163_NAME"
+desc = "EVT_630163_DESC"
 
 action_a = {
 ai_chance = 90
-name = "Now is the time to wash the shame of 1895 off in Hanjian blood!"
+name = "EVT_630163_OPTIONA"
 command = { type = dissent value = -10 }
 command = { type = relation which = JAP value = -100 }
 command = { type = war which = MAN }
@@ -2866,7 +2866,7 @@ command = { type = war which = MAN }
 
 action_b = {
 ai_chance = 10
-name = "Back down, Manchuria is a lousy place anyways..."
+name = "EVT_630163_OPTIONB"
 command = { type = dissent value = 20 } 
 }
 }
@@ -2877,12 +2877,12 @@ country = CHI
 style = 2
 picture = "mayfourth"
 
-name = "Japan Stands By Zhang Zuolin!"
-desc = "Our ambassador in Tokyo has recieved a pretty blunt rebuttal from his Japanese contact regarding our ambitions on Manchuria. The Japanese government will defend her puppet through the force of arms in order to keep her foot on Chinese soil. Such imperialistic conduct must be humbled!"
+name = "EVT_630164_NAME"
+desc = "EVT_630164_DESC"
 
 action_a = {
 ai_chance = 80
-name = "We shall bury them!"
+name = "EVT_630164_OPTIONA"
 command = { type = dissent value = -15 }
 command = { type = war which = MAN }
 command = { type = war which = JAP }
@@ -2890,7 +2890,7 @@ command = { type = war which = JAP }
 
 action_b = {
 ai_chance = 20
-name = "Back down, Manchuria is a lousy place anyways..."
+name = "EVT_630164_OPTIONB"
 command = { type = dissent value = 20 } 
 }
 }
@@ -2901,12 +2901,12 @@ country = JAP
 style = 2
 picture = "mayfourth4"
 
-name = "Manchuria Votes for Unification With China"
-desc = "The Fengtien clique who has governed Manchuria on our behalf has been strong-armed into accepting a popular referendum stipulating Manchuria's return to Chinese control. How should we react?"
+name = "EVT_630205_NAME"
+desc = "EVT_630205_DESC"
 
 action_a = {
 ai_chance = 89
-name = "We have no choice but to comply."
+name = "EVT_630205_OPTIONA"
 command = { type = secedeprovince which = CHI value = 1216 } 
 command = { type = secedeprovince which = CHI value = 1235 } 
 command = { type = secedeprovince which = CHI value = 1236 } 
@@ -2917,7 +2917,7 @@ command = { type = dissent value = 2 }
 
 action_b = {
 ai_chance = 11
-name = "What were we thinking?! We need Manchuria! To WAR!"
+name = "EVT_630205_OPTIONB"
 command = { type = war which = CHI }
 command = { type = dissent value = -2 } 
 
@@ -2958,8 +2958,8 @@ country = CHI
 		control = { province = 1219 data = CHI }
 		}
 
-name = "The Port Arthur Declaration"
-desc = "After the utter defeat of the Imperial Japanese Army, our republican army controls huges swathes of land in Manchuria and Korea whilst the IJN is reduced to attempting mere blockades. Our man in Tokyo reports severe dissent and war weariness amongst the populace. In light of this, the government has called a conference in occupied Port Arthur to determine our war aims."
+name = "EVT_630165_NAME"
+desc = "EVT_630165_DESC"
 style = 2
 picture = "japsun"
 
@@ -2969,14 +2969,14 @@ deathdate = { day = 29 month = june year = 1960 }
 
 action_a = {
 ai_chance = 99
-name = "Manchuria and Taiwan to China and liberty for Korea!"
+name = "EVT_630165_OPTIONA"
 command = { type = trigger which = 630166 }
 command = { type = dissent value = -3 }
 }
 
 action_b = {
 ai_chance = 1
-name = "We will fight 'till our flag flies over Tokyo!"
+name = "EVT_630165_OPTIONB"
 command = { type = dissent value = 5 } 
 }
 } 
@@ -2987,12 +2987,12 @@ country = JAP
 style = 2
 picture = "japsun"
 
-name = "The Fading Sun over Port Arthur"
-desc = "This is a dark day for the Empire of the Sun. Chinese forces have ousted our men from their vital bases in Manchuria and Korea. On top of this, a declaration has been sent out from Port Arthur by the republican government offering terms that demand our surrender of all territories on the Chinese mainland as well as the return of Taiwan and the independence of Korea."
+name = "EVT_630166_NAME"
+desc = "EVT_630166_DESC"
 
 action_a = {
 ai_chance = 90
-name = "We yield because we have no other choice..."
+name = "EVT_630166_OPTIONA"
 command = { type = dissent value = 6 }
 command = { type = peace which = CHI value = 0 }
 command = { type = secederegion which = CHI value = CHINA when = 1 }
@@ -3198,7 +3198,7 @@ command = { type = trigger which = 630167 }
 
 action_b = {
 ai_chance = 0
-name = "They must be joking, banzai!"
+name = "EVT_630166_OPTIONB"
 command = { type = dissent value = 20 } 
 }
 }
@@ -3209,11 +3209,11 @@ country = CHI
 style = 2
 picture = "mayfourth"
 
-name = "Japan Surrenders"
-desc = "Ha zha! The Japanese government in Tokyo has bowed to our demands of the Port Arthur delcaration. The IJN has already begun evacuating the remnants of the Imperial army to the Home Isles, whilst wild celebration meets our troops from Seoul to Taipei. This treaty makes China one of the great powers and will forever wash away the shame of the cursed 19th century!"
+name = "EVT_630167_NAME"
+desc = "EVT_630167_DESC"
 
 action_a = {
-name = "Finally, peace will blossom in the Far East!"
+name = "EVT_630167_OPTIONA"
 command = { type = dissent value = -3 }
 command = { type = inherit which = U30 value = 1 }
 command = { type = independence which = KOR value = 1 when = 1 }
@@ -3241,12 +3241,12 @@ event = {
     offset = 5
     deathdate = { day = 29 month = december year = 1966 }
 
-    name = "Transamur is alone"
-    desc = "After the Qing pushed the Japanese back to their home islands, Transamur has been in chaos. The Japanese elite have fled back to their home and the country is in chaos. The people are ready to depose of Kolchak and return to the Motherland's control."
+    name = "EVT_630168_NAME"
+    desc = "EVT_630168_DESC"
 
     action_a = {
         ai_chance = 100
-        name = "Move in and bring Transamur back under our control"
+        name = "EVT_630168_OPTIONA"
         command = { type = dissent value = -3 }
         command = { type = inherit which = PRI }
         command = { type = addcore which = 1191 }
@@ -3326,8 +3326,8 @@ decision_trigger = {
                 } 
 		}
 
-name = "Reaching for the Himalayas"
-desc = "Although China proper has finally been united under the central authority of the Republican government much of the former Qing territories lie beyond our control. The flag of the Republic represents the five races of Zhonghua minzu, the Chinese nation, and although the Han red and Manchu blue stripes are under our rule, our claim to legitimacy might be compromised if we do not regain the other Chinese races. With the north secured, we might have a chance at subduing the Tibetans."
+name = "EVT_630169_NAME"
+desc = "EVT_630169_DESC"
 style = 2
 picture = "mayfourthsun"
 decision_picture = "decision_mayfourth"
@@ -3338,13 +3338,13 @@ deathdate = { day = 29 month = december year = 1966 }
 
 action_a = {
 ai_chance = 50
-name = "China will seize Tibet by force!"
+name = "EVT_630169_OPTIONA"
 command = { type = war which = TIB }
 }
 
 action_b = {
 ai_chance = 50
-name = "Try to reason with these yak herders..."
+name = "EVT_630169_OPTIONB"
 command = { type = trigger which = 630170 }
 }
 } 
@@ -3355,26 +3355,26 @@ country = TIB
 style = 2
 picture = "mayfourth"
 
-name = "The Dalai Lama's Decision"
-desc = "The resurgent republic of China has demanded our utter submission to the Chinese National Assembly. However, our government is divided regarding our answer to such boasts..."
+name = "EVT_630170_NAME"
+desc = "EVT_630170_DESC"
 
 action_a = {
 ai_chance = 25
-name = "China's prosperity will be Tibet's great leap into modernity!"
+name = "EVT_630170_OPTIONA"
 command = { type = dissent value = 6 }
 command = { type = trigger which = 630172 }
 }
 
 action_b = {
 ai_chance = 35
-name = "We accept, under the terms of wide autonomy!"
+name = "EVT_630170_OPTIONB"
 command = { type = dissent value = 3 }
 command = { type = trigger which = 630173 }
 }
 
 action_c = {
 ai_chance = 0
-name = "We shall fight these damned Han in defence of our freedom and culture!"
+name = "EVT_630170_OPTIONC"
 command = { type = dissent value = -6 }
 command = { type = war which = CHI }
 }
@@ -3386,11 +3386,11 @@ country = CHI
 style = 2
 picture = "mayfourthsun"
 
-name = "Tibet Caves In!"
-desc = "Today, the Tibetan government in Lhasa subcumbed to our pressure and has petitioned to be accepted into the Chinese Republic. Without having fired a single shot, we have inched a little closer to a complete unification of the old Imperial realm."
+name = "EVT_630172_NAME"
+desc = "EVT_630172_DESC"
 
 action_a = {
-name = "Glory to the Five Races!"
+name = "EVT_630172_OPTIONA"
 command = { type = dissent value = -6 }
 command = { type = inherit which = TIB }
 }
@@ -3402,12 +3402,12 @@ country = CHI
 style = 2
 picture = "mayfourth"
 
-name = "The Dalai Lama Demands Autonomy"
-desc = "We have recieved a letter from Lhasa which doesn't completely reject the union between the Republic and the Tibetan nation. However, the head of the Yellow Hats Buddhists has insisted on retaining his authority in local matters. Accepting this compromise will lead the way for peace, yet the hawks of the administration are calling for war to be declared on the break-away Tibetan state."
+name = "EVT_630173_NAME"
+desc = "EVT_630173_DESC"
 
 action_a = {
 ai_chance = 40
-name = "This compromise shall secure our frontier!"
+name = "EVT_630173_OPTIONA"
 command = { type = removecore which = 1294 }
 command = { type = removecore which = 1286 }
 command = { type = removecore which = 1287 }
@@ -3422,7 +3422,7 @@ command = { type = dissent value = 3 }
 
 action_b = {
 ai_chance = 60
-name = "China is one and indivisible!"
+name = "EVT_630173_OPTIONB"
 command = { type = war which = TIB }
 }
 }
@@ -3474,8 +3474,8 @@ decision_trigger = {
                 }
 		}
 
-name = "The Fate of the Ma Clique"
-desc = "Our eastern border has been thrown into chaos! Raiders and bandits are capitalizing on the liquid status of our relations with the Hui warlords of Xinjiang. Our citizens are terrorized by thugs and the Mas do not lift a finger against them! We must act for the integrity of the republic is at stake!"
+name = "EVT_630174_NAME"
+desc = "EVT_630174_DESC"
 style = 2
 picture = "mayfourthsun"
 decision_picture = "decision_mayfourth"
@@ -3486,21 +3486,21 @@ deathdate = { day = 29 month = december year = 1966 }
 
 action_a = {
 ai_chance = 60
-name = "The Northwestern warlords must submit, issue an ultimatum!"
+name = "EVT_630174_OPTIONA"
 command = { type = dissent value = 3 }
 command = { type = trigger which = 630175 }
 }
 
 action_a = {
 ai_chance = 30
-name = "Heed the advice of the hawks, attack!"
+name = "EVT_630174_OPTIONB"
 command = { type = dissent value = -6 }
 command = { type = war which = CXB }
 }
 
 action_b = {
 ai_chance = 10
-name = "We have more important things to do..."
+name = "EVT_630174_OPTIONC"
 command = { type = dissent value = 6 }
 }
 } 
@@ -3511,24 +3511,24 @@ country = CXB
 style = 2
 picture = "Chinese Infantry"
 
-name = "The Republic Claims the Northwest"
-desc = "With the Chinese Republic regrown to most of its former glory - they are asking for us to come to the table to discuss the terms of our surrender."
+name = "EVT_630175_NAME"
+desc = "EVT_630175_DESC"
 
 action_a = {
 ai_chance = 50
-name = "The NRA is unstoppable, capitulate the Hui domains"
+name = "EVT_630175_OPTIONA"
 command = { type = trigger which = 630176 }
 }
 
 action_b = {
 ai_chance = 35
-name = "Who do they think they are!? We shall fight for our freedom!"
+name = "EVT_630175_OPTIONB"
 command = { type = war which = CHI }
 }
 
 action_c = {
 ai_chance = 15
-name = "We shall rejoin the Zhonghua minzu on our own terms..."
+name = "EVT_630175_OPTIONC"
 command = { type = trigger which = 630177 }
 }
 }
@@ -3539,11 +3539,11 @@ country = CHI
 style = 2
 picture = "mayfourth"
 
-name = "The Hui Resolve"
-desc = "Our diplomatic pressure on the Ma clique of the Northwest has payed off. The Hui warlords have agreed to rejoin their domains with that of the soaring Chinese republic. Long live the Five Races united under one republic!"
+name = "EVT_630176_NAME"
+desc = "EVT_630176_DESC"
 
 action_a = {
-name = "From Urumqi to Nanjing, China celebrates!"
+name = "EVT_630176_OPTIONA"
 command = { type = sleepevent which = 630177 }
 command = { type = dissent value = -5 }
 command = { type = inherit which = CXB }
@@ -3556,19 +3556,19 @@ country = CHI
 style = 2
 picture = "mayfourth2"
 
-name = "The Ma Warlords Demand Autonomy"
-desc = "Our demands for the Northwest's submission have been all but rejected by Ma Fuxiang, primus inter pares of the Ma Clique. However, the Hui despots in turn offer us complete control over foreign relations whilst they maintain their iron grip over the provinces between Shaanxi and Xinjiang."
+name = "EVT_630177_NAME"
+desc = "EVT_630177_DESC"
 
 action_a = {
 ai_chance = 70
-name = "They dare to make claims - crush these petty warlords!"
+name = "EVT_630177_OPTIONA"
 command = { type = war which = CXB }
 command = { type = dissent value = -10 }
 }
 
 action_b = {
 ai_chance = 30
-name = "They will be our shield against the West!"
+name = "EVT_630177_OPTIONB"
 command = { type = make_puppet which = CXB }
 command = { type = dissent value = 3 }
 	command = { type = removecore which = 1268 }
@@ -3622,8 +3622,8 @@ country = CHI
                 }
 		}
 
-name = "Unification of the Five Races"
-desc = "The day of complete unification has finally arrived! From Xinjiang to Manchuria and from Harbin to Guangzhou the five coloured flag of the republic is hoisted in celebration of what will forever on be known as the day China resurrected herself from foreign occupation and influence. Our place in the sun awaits!"
+name = "EVT_630178_NAME"
+desc = "EVT_630178_DESC"
 style = 2
 picture = "mayfourthsun"
 
@@ -3632,7 +3632,7 @@ offset = 20
 deathdate = { day = 29 month = june year = 1966 }
 
 action_a = {
-name = "A hard-fought victory indeed!"
+name = "EVT_630178_OPTIONA"
 command = { type = dissent value = -10 }
 command = { type = waketeam which = 1033 } 
 command = { type = waketeam which = 1034 }
@@ -3664,8 +3664,8 @@ event = {
 		}
 
 
-	name = "The Parliamentary elections"
-	desc = "As four years have passed since the last election the country is filled with excitement and political bickering. Beijing, Nanjing, and Guangzhou are filled with posters and wall paintings proclaiming the advantages of the various parliamentary groupings. Today is a great day for democratic China, the election will prove that the revolution and defeat of the AOG, warlords, and monarchists have secured a future for the Middle Kingdom enshrined in liberty!"
+	name = "EVT_630181_NAME"
+	desc = "EVT_630181_DESC"
         picture = "mayfourth"
 
 	date = { day = 1 month = january year = 1936 }
@@ -3676,7 +3676,7 @@ event = {
 
         action_a = {
 	        ai_chance =  40
-	        name = "Soong Ching-ling and Zhou Shuren's Leftist Kuomintang!"
+	        name = "EVT_630181_OPTIONA"
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 7 }
 		command = { type = dissent value = -3  }  
@@ -3689,7 +3689,7 @@ event = {
 		}
         action_b = {
 	        ai_chance =  25
-	        name = "Hu Shi's Liberals Secure a Majority!"
+	        name = "EVT_630181_OPTIONB"
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 5 }
 		command = { type = dissent value = -2 }  
@@ -3702,7 +3702,7 @@ event = {
 		}
         action_c = {
 	        ai_chance =  10
-	        name = "Chen Jiongming's Conservatives!"
+	        name = "EVT_630181_OPTIONC"
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 3 }
 		command = { type = set_domestic which = freedom value = 4 }
@@ -3717,7 +3717,7 @@ event = {
 		}
         action_d = {
 	        ai_chance =  25
-	        name = "The Young China Party carries the day!"
+	        name = "EVT_630181_OPTIOND"
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 3 }
 		command = { type = set_domestic which = freedom value = 6 }
@@ -3753,8 +3753,8 @@ event = {
 		}
 
 
-	name = "The Parliamentary elections"
-	desc = "As four years have passed since the last election the country is filled with excitement and political bickering. Beijing, Nanjing, and Guangzhou are filled with posters and wall paintings proclaiming the advantages of the various parliamentary groupings. Today is a great day for democratic China, the election will prove that the revolution and defeat of the AOG, warlords, and monarchists have secured a future for the Middle Kingdom enshrined in liberty!"
+	name = "EVT_630182_NAME"
+	desc = "EVT_630182_DESC"
         picture = "mayfourth"
 
 	date = { day = 1 month = january year = 1936 }
@@ -3765,7 +3765,7 @@ event = {
 
         action_a = {
 	        ai_chance =  40
-	        name = "Soong Ching-ling and Zhou Shuren's Leftist Kuomintang!"
+	        name = "EVT_630182_OPTIONA"
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 7 }
 		command = { type = dissent value = -3  }  
@@ -3778,7 +3778,7 @@ event = {
 		}
         action_b = {
 	        ai_chance =  25
-	        name = "Hu Shi's Liberals Secure a Majority!"
+	        name = "EVT_630182_OPTIONB"
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 5 }
 		command = { type = dissent value = -2 }  
@@ -3791,7 +3791,7 @@ event = {
 		}
         action_c = {
 	        ai_chance =  10
-	        name = "Chen Jiongming's Conservatives!"
+	        name = "EVT_630182_OPTIONC"
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 3 }
 		command = { type = set_domestic which = freedom value = 4 }
@@ -3806,7 +3806,7 @@ event = {
 		}
         action_d = {
 	        ai_chance =  25
-	        name = "The Young China Party carries the day!"
+	        name = "EVT_630182_OPTIOND"
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 3 }
 		command = { type = set_domestic which = freedom value = 6 }
@@ -3841,8 +3841,8 @@ event = {
 		}
 
 
-	name = "The Elections of 1952"
-	desc = "As four years have passed since the last election the country is filled with excitement and political bickering. Beijing, Nanjing, and Guangzhou are filled with posters and wall paintings proclaiming the advantages of the various parliamentary groupings. Today is a great day for democratic China, the election will prove that the revolution and defeat of the AOG, warlords, and monarchists have secured a future for the Middle Kingdom enshrined in liberty!"
+	name = "EVT_630183_NAME"
+	desc = "EVT_630183_DESC"
         picture = "mayfourth"
 
 	date = { day = 1 month = january year = 1936 }
@@ -3852,7 +3852,7 @@ event = {
 
         action_a = {
 	        ai_chance =  40
-	        name = "Soong Ching-ling and Zhou Shuren's Leftist Kuomintang!"
+	        name = "EVT_630183_OPTIONA"
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 7 }
 		command = { type = dissent value = -3  }  
@@ -3865,7 +3865,7 @@ event = {
 		}
         action_b = {
 	        ai_chance =  25
-	        name = "Hu Shi's Liberals Secure a Majority!"
+	        name = "EVT_630183_OPTIONB"
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 5 }
 		command = { type = dissent value = -2 }  
@@ -3878,7 +3878,7 @@ event = {
 		}
         action_c = {
 	        ai_chance =  10
-	        name = "Chen Jiongming's Conservatives!"
+	        name = "EVT_630183_OPTIONC"
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 3 }
 		command = { type = set_domestic which = freedom value = 4 }
@@ -3893,7 +3893,7 @@ event = {
 		}
         action_d = {
 	        ai_chance =  25
-	        name = "The Young China Party carries the day!"
+	        name = "EVT_630183_OPTIOND"
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 3 }
 		command = { type = set_domestic which = freedom value = 6 }
@@ -3929,8 +3929,8 @@ event = {
 		}
 
 
-	name = "The Elections of 1956"
-	desc = "As four years have passed since the last election the country is filled with excitement and political bickering. Beijing, Nanjing, and Guangzhou are filled with posters and wall paintings proclaiming the advantages of the various parliamentary groupings. Today is a great day for democratic China, the election will prove that the revolution and defeat of the AOG, warlords, and monarchists have secured a future for the Middle Kingdom enshrined in liberty!"
+	name = "EVT_630184_NAME"
+	desc = "EVT_630184_DESC"
         picture = "mayfourth"
 
 	date = { day = 1 month = january year = 1936 }
@@ -3941,7 +3941,7 @@ event = {
 
         action_a = {
 	        ai_chance =  35
-	        name = "Soong Ching-ling and Zhou Shuren's Leftist Kuomintang!"
+	        name = "EVT_630184_OPTIONA"
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 7 }
 		command = { type = dissent value = -3  }  
@@ -3954,7 +3954,7 @@ event = {
 		}
         action_b = {
 	        ai_chance =  25
-	        name = "Hu Shi's Liberals Secure a Majority!"
+	        name = "EVT_630184_OPTIONB"
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 5 }
 		command = { type = dissent value = -2 }  
@@ -3967,7 +3967,7 @@ event = {
 		}
         action_c = {
 	        ai_chance =  25
-	        name = "Chen Jiongming's Conservatives!"
+	        name = "EVT_630184_OPTIONC"
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 3 }
 		command = { type = set_domestic which = freedom value = 4 }
@@ -3982,7 +3982,7 @@ event = {
 		}
         action_d = {
 	        ai_chance =  15
-	        name = "The Young China Party carries the day!"
+	        name = "EVT_630184_OPTIOND"
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 3 }
 		command = { type = set_domestic which = freedom value = 6 }
@@ -4017,8 +4017,8 @@ event = {
 		}
 
 
-	name = "The Election of 1960"
-	desc = "As four years have passed since the last election the country is filled with excitement and political bickering. Beijing, Nanjing, and Guangzhou are filled with posters and wall paintings proclaiming the advantages of the various parliamentary groupings. Today is a great day for democratic China, the election will prove that the revolution and defeat of the AOG, warlords, and monarchists have secured a future for the Middle Kingdom enshrined in liberty!"
+	name = "EVT_630185_NAME"
+	desc = "EVT_630185_DESC"
         picture = "mayfourth"
 
 	date = { day = 1 month = january year = 1936 }
@@ -4029,7 +4029,7 @@ event = {
 
         action_a = {
 	        ai_chance =  35
-	        name = "Soong Ching-ling and Zhou Shuren's Leftist Kuomintang!"
+	        name = "EVT_630185_OPTIONA"
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 7 }
 		command = { type = dissent value = -3  }  
@@ -4042,7 +4042,7 @@ event = {
 		}
         action_b = {
 	        ai_chance =  25
-	        name = "Hu Shi's Liberals Secure a Majority!"
+	        name = "EVT_630185_OPTIONB"
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 5 }
 		command = { type = dissent value = -2 }  
@@ -4055,7 +4055,7 @@ event = {
 		}
         action_c = {
 	        ai_chance =  25
-	        name = "Chen Jiongming's Conservatives!"
+	        name = "EVT_630185_OPTIONC"
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 3 }
 		command = { type = set_domestic which = freedom value = 4 }
@@ -4070,7 +4070,7 @@ event = {
 		}
         action_d = {
 	        ai_chance =  15
-	        name = "The Young China Party carries the day!"
+	        name = "EVT_630185_OPTIOND"
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 3 }
 		command = { type = set_domestic which = freedom value = 6 }
@@ -4094,11 +4094,11 @@ picture = "mulanevent"
 
 date = { day = 10 month = february year = 1939 }
 
-name = "The Premiere of Mulan Cong Jun"
-desc = "Today saw the premiere of one of the first features of Free China's film industry. Directed by Bu Wancang and with young Chen Yunchang playing the lead, Mulan Cong Jun (Mulan Joins the Army) is a historical period drama based on the legend of Hua Mulan who in a show of filial piety joins the army in her father's place to fight off invading nomads. Hailing traditional virtues of honour and valour, the film was an immediate success and has raised patriotic feelings throughout the country."
+name = "EVT_630179_NAME"
+desc = "EVT_630179_DESC"
 
 action_a = {
-name = "How exciting!"
+name = "EVT_630179_OPTIONA"
 	command = { type = dissent value = -1 }
 	}
 }
@@ -4111,11 +4111,11 @@ picture = "springriverevent"
 
 date = { day = 1 month = october year = 1947 }
 
-name = "The Premiere of The Spring River Flows East"
-desc = "Directed by Cai Chusheng and Zheng Junli, ‘The Spring River Flows East’ is a two part epic movie depicting the hardships of a poor working class couple  during the trials and tribulations of the Chinese Unification. Portraying the corruption that greed and power holds over the people, the movie’s message has been interpreted by many as a direct attack upon the policies of the Liberal party. However, the film has been a smashing success at the box office as well as with the critics."
+name = "EVT_630187_NAME"
+desc = "EVT_630187_DESC"
 
 action_a = {
-name = "I say, it's the stuff that dreams are made of!"
+name = "EVT_630187_OPTIONA"
 	command = { type = dissent value = -1 }
 	}
 }
@@ -4173,20 +4173,20 @@ name = "I say, it's the stuff that dreams are made of!"
  offset = 20
  deathdate = { day = 29 month = december year = 1963 }
 
- name = "Liberation of Western China ?"
- desc = "Second Republic has liberated the Northern China Plains and Manchuria. Now we have to face Mongolia, which opresses non-Mongol citizens in its borders. We can't say that China is free if we tolerate repressive regime in Western China. It's time to act"
+ name = "EVT_596242_NAME"
+ desc = "EVT_596242_DESC"
  picture = "mayfourth3"
  decision_picture = "decision_mayfourth"
 
  action = {
- name = "War will solve this !"
+ name = "EVT_596242_OPTIONA"
  ai_chance = 50
  command = { type = war which = MON }
  command = { type = dissent value = -5 }
  }
 
  action = {
- name = "Send an ultimatum"
+ name = "EVT_596242_OPTIONB"
  ai_chance = 50
  command = { type = trigger which = 596243 }
  }
@@ -4218,7 +4218,7 @@ name = "I say, it's the stuff that dreams are made of!"
  war = { country = RUS country = GER }
  }
  }
- name = "Plan Partition of Mongolia with Russia"
+ name = "EVT_596242_OPTIONC"
  command = { type = trigger which = 506244 }
  }
  }
@@ -4230,12 +4230,12 @@ name = "I say, it's the stuff that dreams are made of!"
  picture = "mayfourth3"
  style = 2
 
- name = "Chinese ultimatum"
- desc = "The arrogant Republic of China has sent us an ultimatum! They demand giving up former Xibei teritorries unless we want to face the Republican army ! What shall we do ?"
+ name = "EVT_596243_NAME"
+ desc = "EVT_596243_DESC"
 
  action_a = {
  ai_chance = 1
- name = "Surrender !"
+ name = "EVT_596243_OPTIONA"
  command = { type = secedeprovince which = CHI value = 1270 }
  command = { type = secedeprovince which = CHI value = 1272 }
  command = { type = secedeprovince which = CHI value = 1273 }
@@ -4246,7 +4246,7 @@ name = "I say, it's the stuff that dreams are made of!"
 
  action_b = {
  ai_chance = 99
- name = "Strike first!"
+ name = "EVT_596243_OPTIONB"
  command = { type = war which = CHI }
  }
  }
@@ -4258,18 +4258,18 @@ name = "I say, it's the stuff that dreams are made of!"
  style = 2
  picture = "mongolia1"
 
- name = "Republic of China wants to partition Mongolia"
- desc = "We have received a special delegation from China. The democratic China wants to 'liberate' Mongolia. They are not convinced that they can do this alone, so they asked us for help. This could be our chance to liberate the occupied Transsiberian Railroad"
+ name = "EVT_506244_NAME"
+ desc = "EVT_506244_DESC"
 
  action = {
  ai_chance = 100
- name = "Refuse to attack Mongolia"
+ name = "EVT_506244_OPTIONA"
  command = { type = trigger which = 596245 }
  }
 
  action = {
  ai_chance = 100
- name = "We have longstanding tradition in partitions, how we could miss this"
+ name = "EVT_506244_OPTIONB"
  command = { type = setflag which = MONGOLIA_PARTITIONS }
  command = { type = war which = MON }
  command = { type = alliance which = CHI }
@@ -4283,11 +4283,11 @@ name = "I say, it's the stuff that dreams are made of!"
  style = 2
  picture = "mongolia1"
 
- name = "Russia refused to partition Mongolia"
- desc = "Unfortunately, Russia doesn't want Transsiberian railroad. We shall not forget this."
+ name = "EVT_506245_NAME"
+ desc = "EVT_506245_DESC"
 
  action_a = {
- name = "Then we will conquer Mongolia without them"
+ name = "EVT_506245_OPTIONA"
  command = { type = war which = MON }
  command = { type = relation which = RUS value = -150 }
  }
@@ -4311,11 +4311,11 @@ name = "I say, it's the stuff that dreams are made of!"
  } 
  }
 
- name = "Partition of Mongolia!"
- desc = "We have liberated the oppressed citizens of Mongolia from evil Baron Sternberg. It's time to honour the pact"
+ name = "EVT_506247_NAME"
+ desc = "EVT_506247_DESC"
 
  action_a = {
- name = "We should honor our agreement"
+ name = "EVT_506247_OPTIONA"
  command = { type = secedearea which = RUS value = Mongolia when = 1  }
  command = { type = clrflag which = MONGOLIA_PARTITIONS }
  command = { trigger = { alliance = { country = RUS country = CHI } } type = event which = 506248 where = CHI when = 2  }
@@ -4329,18 +4329,18 @@ name = "I say, it's the stuff that dreams are made of!"
  style = 2
  picture = "diplomatic_campaign"
 
- name = "Chinese-Russian alliance?"
- desc = "We have gained a lot from alliance with Russia. The war brought our countries closer. A lot of people speculate, that this could be a beginning of new alliance which could shake the world."
+ name = "EVT_506248_NAME"
+ desc = "EVT_506248_DESC"
 
  action_a = {
  ai_chance = 90
- name = "We should preserve the alliance"
+ name = "EVT_506248_OPTIONA"
  command = { type = trigger which = 506249 }
  }
 
  action_b = {
  ai_chance = 10
- name = "This alliance isn't useful anymore"
+ name = "EVT_506248_OPTIONB"
  command = { type = leave_alliance }
  command = { type = relation which = RUS value = -150 }
  }
@@ -4353,19 +4353,19 @@ name = "I say, it's the stuff that dreams are made of!"
  style = 2
  picture = "diplomatic_campaign"
 
- name = "Republic of China wants to keep alliance"
- desc = "The Second Republic has decided that even if we have achieved goal for which our alliance was created, this alliance is still required."
+ name = "EVT_506249_NAME"
+ desc = "EVT_506249_DESC"
 
  action_a = {
  ai_chance = 100
- name = "So shall it be"
+ name = "EVT_506249_OPTIONA"
  command = { type = relation which = CHI value = 200 }
  command = { type = dissent value = 1 }
  }
 
  action_b = {
  ai_chance = 0
- name = "We don't need them"
+ name = "EVT_506249_OPTIONB"
  command = { type = dissent value = 1 }
  command = { type = leave_alliance } 
  command = { type = relation which = CHI value = -200 }
@@ -4412,12 +4412,12 @@ event = {
  offset =  20
  deathdate = { day = 29 month = december year = 1960 }
 
- name = "Status of Macao"
- desc = "It's been hundreds of years since Macao became a Portugese holding in 1557 by purchasing it from the Jiajing Emperor of the Ming dynasty. Today, the Second Republic is strong enough to demand Macao from Portugese. In the name of national unity, we should press Portugal for cession of Macao. "
+ name = "EVT_506250_NAME"
+ desc = "EVT_506250_DESC"
 
  action_a = {
  ai_chance = 95
- name = "It belongs to China!"
+ name = "EVT_506250_OPTIONA"
  command = { type = addcore which = 1372 }
  command = { type = relation which = POR value = -30 }
  command = { type = trigger which = 506251 }
@@ -4425,7 +4425,7 @@ event = {
 
  action_b = {
  ai_chance = 5
- name = "Let the idea slide"
+ name = "EVT_506250_OPTIONB"
  command = { type = relation which = POR value = 75 }
  command = { type = dissent value = 2 }
  }
@@ -4437,18 +4437,18 @@ event = {
  style = 2
  picture = "China_rally"
 
- name = "RoC demands"
- desc = "After centuries, the reborn Republic of China decided to demand Macao from us. The Second Republic is now probably one of the strongest states in the Far East and fighting them over control of Macao is probably not a good idea."
+ name = "EVT_506251_NAME"
+ desc = "EVT_506251_DESC"
 
  action_a = {
  ai_chance = 99
- name = "We have no choice."
+ name = "EVT_506251_OPTIONA"
  command = { type = secedeprovince which = CHI value = 1372 }
  }
 
  action_b = {
  ai_chance = 1
- name = "They will have to fight for it!"
+ name = "EVT_506251_OPTIONB"
  command = { type = war which = CHI }
  }
  }

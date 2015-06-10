@@ -21,11 +21,11 @@ event = {
      offset = 1
      deathdate = { day = 29 month = december year = 1963 }
      
-     name = "15th of March"
-     desc = "In 15. March 1848 there was a full scale revolution in Hungary against Austrian suppression. Austria could only win because of the Russian intervention against Hungary, but it showed Austria that they can not control Hungary for much longer. Austria participated in both Italian and German unification wars, however, Hungary took a great deal in 'sabotaging' the Austrians. Thus the Austrian-Hungarian compromise (Ausgleich) come to life, creating Austria-Hungary."
+     name = "EVT_900_NAME"
+     desc = "EVT_900_DESC"
      
      action_a = {
-         name = "Long live the revolution!"
+         name = "EVT_900_OPTIONA"
          command = { type = dissent value = -1 }
      }
  }
@@ -53,12 +53,12 @@ event = {
  offset = 90
  deathdate = { day = 29 month = june year = 1966 }
 
- name = "Republic or Monarchy ?"
- desc = "Despite being oficially styled the 'Kingdom of Hungary', ever since our liberation from Vienna's tyranny, our country has been de facto ruled as a dictatorship by the duo István Bethlen and Pál Teleki. Now, both our parliament and our landed nobility want a clarification of this situation. What shall we do now ? We must either adopt a new constitution and proclaim a Republic of Hungary, or start searching for suitable candidates for the Crown of Saint Stephen."
+ name = "EVT_901_NAME"
+ desc = "EVT_901_DESC"
 
  action = {
  ai_chance = 60
- name = "Enough with kings, Hungary must become a Republic"
+ name = "EVT_901_OPTIONA"
  command = { type = dissent value = 2 }
  command = { type = flag_ext where = HUN which = "_nor" }
  command = { type = event which = 930 where = HUN when = 5 }
@@ -66,7 +66,7 @@ event = {
 
  action = {
  ai_chance = 40
- name = "Gather the nobles, we must select a king for Hungary"
+ name = "EVT_901_OPTIONB"
  command = { type = dissent value = 10 }
  command = { type = event which = 902 where = HUN when = 60 }
      }
@@ -79,19 +79,19 @@ event = {
  style = 2
  picture = "reichsrat"
 
-     name = "The head of state"
-     desc = "The new constitution has been adopted, a constitution that proclaims that Hungary doesn't have a king from now on. The head of state's role is to remain a stable force in the game of politics. He is elected for 7 years. Candidates are: István Bethlen, a conservative, Károly Peyer, a social democrat, and Károly Bartha, the decorated hero of the victorious revolution againt Austria."
+     name = "EVT_930_NAME"
+     desc = "EVT_930_DESC"
      
      action = {
      ai_chance = 10
-         name = "Károly Peyer, a man for the people and democracy"
+         name = "EVT_930_OPTIONA"
          command = { type = headofstate which = 21045 } 
          command = { type = dissent value = 5 } 
          command = { type = event which = 931 where = HUN when = 30 } #initiates choosing of future course
      }
 
      action = {
-         name = "István Bethlen, his abilities have been proven"
+         name = "EVT_930_OPTIONB"
          ai_chance = 70
          command = { type = headofstate which = 21180 } 
          command = { type = set_domestic which = interventionism value = 7 } 
@@ -99,7 +99,7 @@ event = {
      }
 
      action = {
-         name = "Károly Bartha, military brings stability"
+         name = "EVT_930_OPTIONC"
          ai_chance = 20
          command = { type = headofstate which = 21201 } 
          command = { type = dissent value = 8 }
@@ -116,12 +116,12 @@ event = {
 
      #this is made in case the republic and the monarchy is chosen to have different possible courses, in case scrapped, one of them should be deleted, and links changed accordingly
      #and was obviously revamped without noting anything...
-     name = "Elections"
-     desc = "After the election of the head of state by the Upper house of Parliament in Budapest, the time of elections has come. As it is known, Peyer has lowered the census, and thus the MSZDP (social democrats) have grown in popularity. The other parties are Egységes Párt (conservatives), FKgP (right-centrum), and Szabadelvû Párt (liberals)."
+     name = "EVT_931_NAME"
+     desc = "EVT_931_DESC"
      
      action = {
      ai_chance = 35
-         name = "Kunfi & the social democrats"
+         name = "EVT_931_OPTIONA"
          command = { type = relation which = GER value = -10 }
          command = { type = relation which = ENG value = 10 }
          command = { type = relation which = FRA value = 10 }
@@ -136,7 +136,7 @@ event = {
 
      action = {
      ai_chance = 30
-         name = "Teleki & the conservatives"
+         name = "EVT_931_OPTIONB"
          command = { type = set_domestic which = democratic value = 7 }
          command = { type = set_domestic which = political_left value = 4 }
          command = { type = set_domestic which = freedom value = 3 }
@@ -147,7 +147,7 @@ event = {
 
      action = {
      ai_chance = 50
-         name = "Bajcsy-Zsilinszky & the right-centrum"
+         name = "EVT_931_OPTIONC"
          command = { type = set_domestic which = democratic value = 7 }
          command = { type = set_domestic which = political_left value = 3 }
          command = { type = set_domestic which = freedom value = 3 }
@@ -160,7 +160,7 @@ event = {
 
      action = {
      ai_chance = 5
-         name = "Rassay & the liberals"
+         name = "EVT_931_OPTIOND"
          command = { type = set_domestic which = democratic value = 7 }
          command = { type = set_domestic which = political_left value = 5 }
          command = { type = set_domestic which = freedom value = 6 }
@@ -179,12 +179,12 @@ event = {
  picture = "reichsrat"
 
      #this is made in case the republic and the monarchy is chosen to have different possible courses, in case scrapped, one of them should be deleted, and links changed accordingly
-     name = "Elections"
-     desc = "After the election of the head of state by the Upper house of Parliament in Budapest, the time of elections has come. As it is known, Bethlen has kept existing voting census which means that only educated people may vote, the result could be a win of Egységes Párt (conservatives). Other parties are FKgP (right-centrum) MSZDP (social-democrats), Hungarista Párt (NP), and Szabadelvû Párt (liberals)."
+     name = "EVT_932_NAME"
+     desc = "EVT_932_DESC"
      
      action = {
      ai_chance = 5
-         name = "Kunfi & the social democrats"
+         name = "EVT_932_OPTIONA"
          command = { type = relation which = GER value = -10 }
          command = { type = relation which = ENG value = 10 }
          command = { type = relation which = FRA value = 10 }
@@ -199,7 +199,7 @@ event = {
 
      action = {
      ai_chance = 60
-         name = "Teleki & the conservatives"
+         name = "EVT_932_OPTIONB"
          command = { type = headofgovernment which = 21181 }
          command = { type = set_domestic which = democratic value = 7 }
          command = { type = set_domestic which = political_left value = 4 }
@@ -210,7 +210,7 @@ event = {
 
      action = {
      ai_chance = 20
-         name = "Bajcsy-Zsilinszky & the right-centrum"
+         name = "EVT_932_OPTIONC"
          command = { type = set_domestic which = democratic value = 7 }
          command = { type = set_domestic which = political_left value = 3 }
          command = { type = set_domestic which = freedom value = 3 }
@@ -223,7 +223,7 @@ event = {
 
      action = {
      ai_chance = 5
-         name = "Rassay & the liberals"
+         name = "EVT_932_OPTIOND"
          command = { type = set_domestic which = democratic value = 7 }
          command = { type = set_domestic which = political_left value = 5 }
          command = { type = set_domestic which = freedom value = 6 }
@@ -235,7 +235,7 @@ event = {
 
      action = {
      ai_chance = 0 #player-only choice, not realistic
-         name = "Szálasi & the far right" #Hinnye! - Kry
+         name = "EVT_932_OPTIONE" #Hinnye! - Kry
          command = { type = headofstate which = 21041 }
          command = { type = set_domestic which = democratic value = 2 }
          command = { type = set_domestic which = political_left value = 1 }
@@ -255,12 +255,12 @@ event = {
  picture = "reichsrat"
 
      #this is made in case the republic and the monarchy is chosen to have different possible courses, in case scrapped, one of them should be deleted, and links changed accordingly
-     name = "Elections"
-     desc = "After the election of the head of state by the Upper house of Parliament in Budapest, the time of elections has come - although this custom may only be short lived. As it is known, Bartha has kept existing voting census which means that only educated people may vote, the result could be a win of Egységes Párt (conservatives). Other parties are FKgP (right-centrum) MSZDP (social-democrats), Hungarista Párt (NP), and Szabadelvû Párt (liberals)."
+     name = "EVT_933_NAME"
+     desc = "EVT_933_DESC"
      
      action = {
      ai_chance = 0 #oops, this election may be rigged
-         name = "Kunfi & the social democrats"
+         name = "EVT_933_OPTIONA"
          command = { type = relation which = GER value = -10 }
          command = { type = relation which = ENG value = 10 }
          command = { type = relation which = FRA value = 10 }
@@ -275,7 +275,7 @@ event = {
 
      action = {
      ai_chance = 60
-         name = "Teleki & the conservatives"
+         name = "EVT_933_OPTIONB"
          command = { type = set_domestic which = democratic value = 7 }
          command = { type = set_domestic which = political_left value = 3 }
          command = { type = set_domestic which = freedom value = 3 }
@@ -286,7 +286,7 @@ event = {
 
      action = {
      ai_chance = 20
-         name = "Bajcsy-Zsilinszky & the right-centrum"
+         name = "EVT_933_OPTIONC"
          command = { type = set_domestic which = democratic value = 7 }
          command = { type = set_domestic which = political_left value = 4 }
          command = { type = set_domestic which = freedom value = 3 }
@@ -299,7 +299,7 @@ event = {
 
      action = {
      ai_chance = 5
-         name = "Rassay & the liberals"
+         name = "EVT_933_OPTIOND"
          command = { type = set_domestic which = democratic value = 7 }
          command = { type = set_domestic which = political_left value = 5 }
          command = { type = set_domestic which = freedom value = 6 }
@@ -311,7 +311,7 @@ event = {
 
      action = {
      ai_chance = 10 
-         name = "Szálasi & the far right"
+         name = "EVT_933_OPTIONE"
          command = { type = set_domestic which = democratic value = 2 }
          command = { type = set_domestic which = political_left value = 1 }
          command = { type = set_domestic which = freedom value = 1 }
@@ -323,7 +323,7 @@ event = {
 
      action = {
      ai_chance = 10 
-         name = "The Army shall put an end to this chaotic democracy"
+         name = "EVT_933_OPTIONF"
          command = { type = set_domestic which = democratic value = 3 }
          command = { type = set_domestic which = political_left value = 3 }
          command = { type = set_domestic which = freedom value = 1 }
@@ -341,20 +341,20 @@ event = {
  country = HUN
  style = 2
 
- name = "A King for Hungary"
- desc = "As Bethlen and Teleki have abided to the parliament's pressure and decided to restore the monarchy, the noble houses of Hungary have been gathering in Budapest for weeks, in order to select the first sovereign of the new kingdom. Four main candidates have been put forward and are awaiting confirmation from the parliament: the military-backed Count Gyula of Cseszneky, the pro-German Ludwig of Saxe-Coburg-Gotha-Koháry, the industrialist Pál Maria of Esterházy, and the statesman György of Festetics."
+ name = "EVT_902_NAME"
+ desc = "EVT_902_DESC"
  picture = "reichsrat"
 
  action = {
  ai_chance = 25
- name = "Gyula of Csesznek will help expand the armed forces"
+ name = "EVT_902_OPTIONA"
  command = { type = domestic which = defense_lobby value = 1 }
  command = { type = headofstate which = 21190 }
      }
 
  action = {
  ai_chance = 25
- name = "Ludwig of Saxe-Coburg-Gotha-Koháry, for good relations with Berlin"
+ name = "EVT_902_OPTIONB"
  command = { type = dissent value = 1 }
  command = { type = relation which = GER value = 100 }
  command = { type = headofstate which = 21191 }
@@ -362,19 +362,19 @@ event = {
 
  action = {
  ai_chance = 25
- name = "Pál Maria of Esterházy will bring progress to Hungary"
+ name = "EVT_902_OPTIONC"
  command = { type = headofstate which = 21192 }
      }
 
  action = {
  ai_chance = 25
- name = "György of Festetics will stabilize the nation"
+ name = "EVT_902_OPTIOND"
  command = { type = dissent value = -1 }
  command = { type = headofstate which = 21193 }
      }
 
  action = {
- name = "These are dangerous times for a monarch, regency it is"
+ name = "EVT_902_OPTIONE"
  ai_chance = 35
  command = { type = dissent value = 3 }
  command = { type = event which = 934 where = HUN when = 2 } #an action for regents
@@ -388,32 +388,32 @@ event = {
  style = 2
  picture = "reichsrat"
      
-     name = "Choosing the regent"
-     desc = "There has been several regents up to now in Hungarian history, but the most famous one was John Hunyadi, who defeated the Turks & defended Hungary gloriously. The regent nearly has the power of a king, so the upper house of parliament is asked to choose wisely."
+     name = "EVT_934_NAME"
+     desc = "EVT_934_DESC"
      
      action = {
-     name = "Admiral Horthy"
+     name = "EVT_934_OPTIONA"
      ai_chance = 40
      command = { type = headofstate which = 21001 }
          #Bartha-type election
      }
 
      action = {
-     name = "Miklós Bánffy"
+     name = "EVT_934_OPTIONB"
      ai_chance = 10
      command = { type = headofstate which = 21202 }
          #Bethlen-type election
      }
 
      action = {
-     name = "János Esterházy"
+     name = "EVT_934_OPTIONC"
      ai_chance = 30
      command = { type = headofstate which = 21199 }
          #Peyer-type election
      }
 
      action = {
-     name = "István Bethlen"
+     name = "EVT_934_OPTIOND"
      ai_chance = 20
      command = { type = headofstate which = 21185 } 
          #Bethlen-type election
@@ -438,8 +438,8 @@ event = 901008 # Federalism
 }
 }
 
-name = "Status of Croatia"
-desc = "Now that we have succesfully preserved our autonomy within Austro-Hungarian Empire, it is time to turn our attention to Croatia, which emerged after the catastrophic 1927 Ausgleich as semi-independent part of Hungary. Many members of our government demand to reverse results of 1927 Ausgleich towards more centralised Hungary with Croatia as its part with special privilegies, while other argue that it is better to keep current status of Croatia as centralisation could mean potential conflict with Croatia..."
+name = "EVT_920_NAME"
+desc = "EVT_920_DESC"
 picture = "politics2"
 
 date = { day = 1 month = april year = 1937 }
@@ -448,7 +448,7 @@ deathdate = { day = 29 month = december  year = 1941  }
 
 action_a = {
 	ai_chance =  25
-	name = "It shall be kept as is"
+	name = "EVT_920_OPTIONA"
 	command = { type = trigger which = 921 }
         command = { type = dissent value = 1 }
         command = { type = domestic which = freedom value = 1 }
@@ -457,7 +457,7 @@ action_a = {
 
 action_c = {
 	ai_chance =  75
-	name = "A greater centralization is required !"
+	name = "EVT_920_OPTIONB"
 	command = { type = trigger which = 922 }
         command = { type = dissent value = -2 }
         command = { type = domestic which = freedom value = -1 }
@@ -471,19 +471,19 @@ random = no
 country = CRO
 style = 2
 
-name = "Hungary will keep our autonomy"
-desc = "Great news! Hungary has decided to allow Croatia to keep it’s semi-independent status. Although many are pleased, there are a few radicals advocating the complete independence of Croatia."
+name = "EVT_921_NAME"
+desc = "EVT_921_DESC"
 picture = "politics2"
 
 action_a = {
-	name = "Excellent"
+	name = "EVT_921_OPTIONA"
         ai_chance =  90
 	command = { type = relation which = HUN value = 50 }
 	}
 
 action_b = {
 	ai_chance =  10
-	name = "We want full independence"
+	name = "EVT_921_OPTIONB"
         command = { type = end_access which = HUN where = CRO }
         command = { type = end_puppet }
 	command = { type = trigger which = 924  }
@@ -503,20 +503,20 @@ country = CRO
 style = 2
 
 
-name = "Hungarian centralization"
-desc = "They arrogant Magyars want complete control over Croatia! Although small part of our population supports this, majority desire either keeping status quo or a completely independent Croatia. What shall we do ?"
+name = "EVT_922_NAME"
+desc = "EVT_922_DESC"
 picture = "politics2"
 
 action_a = {
 	ai_chance = 60
-	name = "Accept their demands..."
+	name = "EVT_922_OPTIONA"
 	command = { type = trigger which = 923  }
         command = { type = dissent value = 10 }
 	}
 
 action_b = {
 	ai_chance = 40
-	name = "Refuse and demand full independence !"
+	name = "EVT_922_OPTIONB"
         command = { type = end_access which = HUN where = CRO }
         command = { type = end_puppet }
 	command = { type = trigger which = 924 }
@@ -532,12 +532,12 @@ random = no
 country = HUN
 style = 2
 
-name = "Croatia will submit!"
-desc = "Seeing that centralization of Hungary will greatly benefit Croatia itself, croatian leadership accepted our demands !"
+name = "EVT_923_NAME"
+desc = "EVT_923_DESC"
 picture = "military_parade"
 
 action_a = {
-	name = "Excellent !"
+	name = "EVT_923_OPTIONA"
         command = { trigger = { puppet = { country = BOS country = CRO } } type = make_puppet which = BOS }
         command = { trigger = { NOT = { exists = BOS } owned = { province = 355 data = CRO } } type = addcore  which =  357 }
 	command = { trigger = { NOT = { exists = BOS } owned = { province = 355 data = CRO } } type = addcore  which =  353 }
@@ -567,13 +567,13 @@ random = no
 country = HUN
 style = 2
 
-name = "Croatia demands full independece !"
-desc = "The government of Croatia succumbed before demands of various nationalist groups within parliament and issued towards us demands, which if fufilled will mean full independence of Croatia !"
+name = "EVT_924_NAME"
+desc = "EVT_924_DESC"
 picture = "denmark"
 
 action_a = {
 	ai_chance =  25
-	name = "Accept croatian demands"
+	name = "EVT_924_OPTIONA"
 	command = { type = end_mastery which = CRO }
 	command = { type = dissent value = 10 }
 	command = { trigger = { NOT = { exists = BOS } owned = { province = 355 data = CRO } } type = removeclaim  which =  357 }
@@ -594,7 +594,7 @@ action_a = {
 
 action_b = {
 	ai_chance =  75
-	name = "We shall fight to preserve unity of our country!"
+	name = "EVT_924_OPTIONB"
 	command = { type = end_mastery which = CRO }
 	command = { type = war which = CRO }
         command = { trigger = { NOT = { exists = BOS } owned = { province = 355 data = CRO } } type = addclaim  which =  357 }
@@ -635,8 +635,8 @@ event = 901008 # Federalism
 }
 }
 
-name = "Status of Bosnia"
-desc = "Now that we have succesfully preserved our autonomy within Austro-Hungarian Empire, it is time to turn our attention to Bosnia, which we were able to acquire after last Ausgleich. Many members of our government demand to reverse results of 1927 Ausgleich towards more centralised Hungary with Bosnia as its part with special privilegies, while other argue that it is better to keep current status of Bosnia as centralisation could mean potential conflict with Bosnia..."
+name = "EVT_925_NAME"
+desc = "EVT_925_DESC"
 picture = "politics2"
 
 date = { day = 1 month = april year = 1937 }
@@ -645,7 +645,7 @@ deathdate = { day = 29 month = december  year = 1964  }
 
 action_a = {
 	ai_chance =  50
-	name = "It shall be kept as is"
+	name = "EVT_925_OPTIONA"
 	command = { type = trigger which = 926 }
         command = { type = dissent value = -3 }
         command = { type = domestic which = freedom value = 1 }
@@ -654,7 +654,7 @@ action_a = {
 
 action_c = {
 	ai_chance =  50
-	name = "A greater centralization is required !"
+	name = "EVT_925_OPTIONB"
 	command = { type = trigger which = 927 }
         command = { type = dissent value = 3 }
         command = { type = domestic which = freedom value = -1 }
@@ -669,19 +669,19 @@ random = no
 country = BOS
 style = 2
 
-name = "Hungary will keep our autonomy"
-desc = "Great news! Hungary has decided to allow us to keep our semi-independent status. Although many are pleased, there are a few radicals advocating the complete independence of Bosnia."
+name = "EVT_926_NAME"
+desc = "EVT_926_DESC"
 picture = "politics2"
 
 action_a = {
-	name = "Excellent"
+	name = "EVT_926_OPTIONA"
         ai_chance =  99
 	command = { type = relation which = HUN value = 50 }
 	}
 
 action_b = {
 	ai_chance =  1
-	name = "We want full independence"
+	name = "EVT_926_OPTIONB"
         command = { type = end_access which = HUN where = BOS }
         command = { type = end_puppet }
 	command = { type = trigger which = 929  }
@@ -700,20 +700,20 @@ country = BOS
 style = 2
 
 
-name = "Hungarian centralization"
-desc = "They arrogant Magyars want complete control over Bosnia! Although small part of our population supports this, majority desire either keeping status quo or a completely independent Bosnia. What shall we do ?"
+name = "EVT_927_NAME"
+desc = "EVT_927_DESC"
 picture = "politics2"
 
 action_a = {
 	ai_chance = 75
-	name = "Accept their demands..."
+	name = "EVT_927_OPTIONA"
 	command = { type = trigger which = 928  }
         command = { type = dissent value = 10 }
 	}
 
 action_b = {
 	ai_chance = 25
-	name = "Refuse and demand full independence !"
+	name = "EVT_927_OPTIONB"
         command = { type = end_access which = HUN where = BOS }
         command = { type = end_puppet }
 	command = { type = trigger which = 929 }
@@ -730,12 +730,12 @@ random = no
 country = HUN
 style = 2
 
-name = "Bosnia will submit!"
-desc = "Seeing that centralization of Hungary will greatly benefit Bosnia itself, leadership of Bosnia accepted our demands !"
+name = "EVT_928_NAME"
+desc = "EVT_928_DESC"
 picture = "military_parade"
 
 action_a = {
-	name = "Excellent !"
+	name = "EVT_928_OPTIONA"
 	command = { type = inherit which = BOS }
         command = { type = addcore  which =  357 }
 	command = { type = addcore  which =  353 }
@@ -753,13 +753,13 @@ random = no
 country = HUN
 style = 2
 
-name = "Bosnia demands full independece !"
-desc = "The government of Bosnia succumbed before demands of various nationalist groups within parliament and issued towards us demands, which if fufilled will mean full independence of Bosnia !"
+name = "EVT_929_NAME"
+desc = "EVT_929_DESC"
 picture = "denmark"
 
 action_a = {
 	ai_chance =  50
-	name = "Accept Bosniak demands"
+	name = "EVT_929_OPTIONA"
 	command = { type = end_mastery which = BOS }
 	command = { type = dissent value = 2 }
 	command = { type = removeclaim  which =  357 }
@@ -772,7 +772,7 @@ action_a = {
 
 action_b = {
 	ai_chance =  50
-	name = "We shall fight to preserve unity of our country!"
+	name = "EVT_929_OPTIONB"
 	command = { type = end_mastery which = BOS }
 	command = { type = war which = BOS }
         command = { type = addclaim  which =  357 }

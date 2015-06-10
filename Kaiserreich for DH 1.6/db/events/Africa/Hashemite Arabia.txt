@@ -35,8 +35,8 @@ war = { country = OTT country = SAU }
 }
 
 
-name = "Refugees From the Ottoman Empire"
-desc = "Ever since the Arab Congress in Cairo fleshed out the ambitions of the Arab Bloc, the Arabian vilayets of the Ottoman Empire has been in turmoil. Now Bedus as well as Levantines cross the border to the Hedjaz, hoping to join the Shariffian forces in taking up arms against the Turkish menace."
+name = "EVT_78000_NAME"
+desc = "EVT_78000_DESC"
 
 
 date = { day = 1 month = september year = 1936 }
@@ -46,7 +46,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
 ai_chance =  100
-name = "With the help of God and Cairo, we shall prevail!"
+name = "EVT_78000_OPTIONA"
 command = { type = manpowerpool value = 30 }
 command = { type = add_division value = cavalry when = 7 }
 command = { type = add_division value = infantry when = 4 }
@@ -73,8 +73,8 @@ war = { country = OTT country = SAU }
 }
 
 
-name = "Refugees From the Ottoman Empire"
-desc = "Ever since the Arab Congress in Cairo fleshed out the ambitions of the Arab Bloc, the Arabian vilayets of the Ottoman Empire has been in turmoil. Now Bedus as well as Levantines cross the border to the Hedjaz, hoping to join the Shariffian forces in taking up arms against the Turkish menace."
+name = "EVT_78001_NAME"
+desc = "EVT_78001_DESC"
 
 
 date = { day = 1 month = january year = 1937 }
@@ -84,7 +84,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
 ai_chance =  100
-name = "With the help of God and Cairo, we shall prevail!"
+name = "EVT_78001_OPTIONA"
 command = { type = manpowerpool value = 30 }
 command = { type = add_division value = cavalry when = 7 }
 command = { type = add_division value = militia when = 4 }
@@ -113,7 +113,7 @@ war = { country = OTT country = SAU }
 }
 
 
-name = "Exchanging Letters With the Emir of Jebel Shammar"
+name = "EVT_78002_NAME"
 desc = "EVT_078002_DESC"
 
 
@@ -124,7 +124,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
 ai_chance =  70
-name = "Engage in clandestine contact with bin Abdulaziz!"
+name = "EVT_78002_OPTIONA"
 command = { type = relation which = OTT value = -20 }
 command = { type = event which = 078003 where = REB when = 7 } # Use REB tag for Jebel Shammar response
 command = { type = dissent value = -1 }
@@ -132,7 +132,7 @@ command = { type = dissent value = -1 }
 
 action_a = {
 ai_chance =  30
-name = "We cannot trust that Turkish lapdog!"
+name = "EVT_78002_OPTIONB"
 command = { type = relation which = OTT value = 20 }
 command = { type = dissent value = 1 }
 }
@@ -146,24 +146,24 @@ event = {
 			 save_date = yes
              picture = "Sillyshamar"
 
-             name = "Hashemite Overtures to the Rashid Emirate"
-             desc = "Should we backstab the Ottomans?"
+             name = "EVT_78003_NAME"
+             desc = "EVT_78003_DESC"
 
 
             action_a = {
 	        ai_chance =  70
-	        name = "Respond positively."
+	        name = "EVT_78003_OPTIONA"
 			command = { type = event which = 078004 where = SAU when = 7 }
 			command = { type = event which = 078005 where = OTT when = 10 }
 		}
             action_b = {
 	        ai_chance =  30
-	        name = "Reject these dustbeaten Hedjazi!"
+	        name = "EVT_78003_OPTIONB"
 			command = { type = dissent value = 10 }
 		}		
             action_c = {
 	        ai_chance =  0
-	        name = "I'm a beautiful penguin!"
+	        name = "EVT_78003_OPTIONC"
 			command = { type = event which = 078004 where = SAU when = 7 }
 		}			
 		  
@@ -176,13 +176,13 @@ event = {
              style = 2
              picture = "JebelShamar"
 
-             name = "Rashidi Support"
-             desc = "The Rashidi Emirate has clandestinely let us know that they support our ambitions on the Ottoman Arab provinces, given that we grant them local autonomy and economic privileges."
+             name = "EVT_78004_NAME"
+             desc = "EVT_78004_DESC"
 
 
             action_a = {
 	        ai_chance =  100
-	        name = "God is truly great!"
+	        name = "EVT_78004_OPTIONA"
 			command = { type = wakeleader which = 290044 }
 			command = { type = add_division value = cavalry when = 7 }
 			command = { type = event which = 078005 where = OTT when = 10 }
@@ -197,13 +197,13 @@ event = {
              style = 2
              picture = "JebelShamar"
 
-             name = "Rashidi Scheming With the Hashemite Shariff"
-             desc = "The Rashidi emir of Jebel Shamar is apparently conducting some kind of correspondence with the Arab traitor and so-called Shariff of Mecca, Feisal bin Hussein. This doesn't bode well for our hold on the region."
+             name = "EVT_78005_NAME"
+             desc = "EVT_78005_DESC"
 
 
             action_a = {
 	        ai_chance =  100
-	        name = "That's really not very good."
+	        name = "EVT_78005_OPTIONA"
 			command = { type = relation which = SAU value = -50 }
 			command = { type = province_revoltrisk which = 1044 value = 5 }
 			command = { type = province_revoltrisk which = 1046 value = 5 }
@@ -240,8 +240,8 @@ event = {
         } 
 }		
 
-	name = "A New Capital For Hashemite Arabia?"
-	desc = "After our successful dislodgement of the Turkish oppressor, we now face the prospect of ruling a greater part of Arabia. In lieu of this change, it might be prudent to change our capital to a more centrally placed location."
+	name = "EVT_78006_NAME"
+	desc = "EVT_78006_DESC"
         picture = "Damascus"
 
 	date = { day = 1 month = february year = 1936 }
@@ -255,7 +255,7 @@ event = {
 		owned = { province = 1016 data = SAU }
 		control = { province = 1016 data = SAU } #Damascus	
         }
-		name = "To Damascus! The dream of Lawrence and Feisal!"
+		name = "EVT_78006_OPTIONA"
 		command = { type = capital which = 1016 }
 		}
 	action = {
@@ -264,7 +264,7 @@ event = {
 	    owned = { province = 1034 data = SAU }
 		control = { province = 1034 data = SAU } #Baghdad
 		}
-		name = "Baghdad, the Jewel of Mesopotamia!"
+		name = "EVT_78006_OPTIONB"
 		command = { type = capital which = 1034 }
 		}
 	action = {
@@ -273,17 +273,17 @@ event = {
 	    owned = { province = 1172 data = SAU }
 		control = { province = 1172 data = SAU } #Jerusalem
 		}		
-		name = "Jerusalem, the sacred city of Palestine!"
+		name = "EVT_78006_OPTIONC"
 		command = { type = capital which = 1172 }
         }
 	action = {
 		ai_chance = 5	
-		name = "To Mecca, the most holy of all cities!"
+		name = "EVT_78006_OPTIOND"
 		command = { type = capital which = 1049 }
         }	
 	action = {
 		ai_chance = 1	
-		name = "Riyad in the great desert shall protect our dynasty!?"
+		name = "EVT_78006_OPTIONE"
 		command = { type = dissent value = 2 }
         }				
 }
@@ -323,8 +323,8 @@ event = {
         } 
 }		
 
-	name = "Persian Ambitions in Mesopotamia"
-	desc = "After our defeat of the Ottomans we're now faced with the prospect of Persian hegemony in Mesopotamia. We must do something about this outrageous attack on Arab sovereignty!"
+	name = "EVT_78007_NAME"
+	desc = "EVT_78007_DESC"
         picture = "Damascus"
 
 	date = { day = 1 month = february year = 1936 }
@@ -334,7 +334,7 @@ event = {
 
 	action = {
 		ai_chance = 100
-		name = "We shall drive these Persian heretics into the Caspian!"
+		name = "EVT_78007_OPTIONA"
 		  command = { trigger = { guarantee = { country = -1 country = PER } } type =  end_guarantee which = SAU where = PER }
 		  command = { type = war which = PER }
           command = { type = domestic which = defense_lobby value = 2 }
@@ -345,7 +345,7 @@ event = {
 		}
 	action = {
 		ai_chance = 0
-		name = "Let us rebuild peacefully."
+		name = "EVT_78007_OPTIONB"
           command = { type = domestic which = defense_lobby value = -2 }
           command = { type = relation which = PER value = 100 }
 		  command = { type = dissent value = 10 }		
@@ -359,13 +359,13 @@ event = {
              style = 2
              picture = "JebelShamar"
 
-             name = "The Arabian Block Declares War on Persia"
-             desc = "The traitorous Arabs have true to their base instincts back-stabbed us! We must defend ourselves by all means necessary!"
+             name = "EVT_78008_NAME"
+             desc = "EVT_78008_DESC"
 
 
             action_a = {
 	        ai_chance =  100
-	        name = "This second Arab invasion shall be utterly crushed!"
+	        name = "EVT_78008_OPTIONA"
 			command = { type = relation which = SAU value = -50 }
 			command = { type = addcore which = 1035 }
             command = { type = addcore which = 1036 }

@@ -22,21 +22,21 @@ id = 657049
 random = no
 country = GUY
 
-name = "The Trinidad oil fields"
-desc = "Our geologists found out that the oil fields of Trinidad are larger than previously expected. The Trinidad Oil Company has now asked us for additional funds to exploit the new fields."
+name = "EVT_657049_NAME"
+desc = "EVT_657049_DESC"
 style = 2
 picture = "economic"
 date = { day = 20 month = march year = 1936 }
 
 action_a = {
-     name = "Grant the funds, it will strengthen our economy."
+     name = "EVT_657049_OPTIONA"
      ai_chance = 70
      command = { type = supplies value = -500 }
      command = { type = metalpool value = -500 }
      command = { type = money value = -50 }
 	}
 action_b = {
-     name = "We cannot afford it right now..."
+     name = "EVT_657049_OPTIONB"
      ai_chance = 30
      command = { type = dissent value = 2 }
      command = { type =sleepevent which = 657050 }
@@ -50,13 +50,13 @@ random = no
 country = GUY
 picture = "EdwardVIII1"
 
-name = "The black gold of Trinidad"
-desc = "Today is a great day for the entire Federation! Officials from all over the Carribean have come to Trinidad to witness His Majesty inaugurating the new oilfields and harbour facilities! The new oilfields will almost double our oil production."
+name = "EVT_657050_NAME"
+desc = "EVT_657050_DESC"
 style = 2
 date = { day = 12 month = january year = 1937 }
 
 action_a = {
-    name = "A glorious day!"
+    name = "EVT_657050_OPTIONA"
     command = { type = add_prov_resource which = 1758 value = 8 where = oil  }
     command = { type = construct which = infrastructure where = 1758 value = 10 }
    }
@@ -69,31 +69,31 @@ random = no
 country = GUY
 picture = "mining"
 
-name = "Jamaica's resources"
-desc = " The lack of rare metals has been our economy's weakness for quite some time. But luckily geologists from the University of Jamestown now discovered large deposits of Bauxite on Jamaica. Unfortunately, developing these new resources will take more funding than we can afford."
+name = "EVT_657051_NAME"
+desc = "EVT_657051_DESC"
 style = 2
 
 date = { day = 23 month = June year = 1936 }
 
 action_a = {
-	name = "Ask Canada for funding."
+	name = "EVT_657051_OPTIONA"
 	ai_chance = 50
 	command = { type = trigger which = 657052 }
 	}
 action_b = {
-	name = "We'll provide the necessary funding, no matter the cost."
+	name = "EVT_657051_OPTIONB"
 	ai_chance = 15
 	command = { type = supplies value = -800 }
 	command = { type = metalpool value = -700 }
 	command = { type = money value = -70 }
 	}
 action_c = {
-	name = "Ask the Commonwealth Bank for a credit."
+	name = "EVT_657051_OPTIONC"
 	ai_chance = 30
 	command = { type = setflag which = Carribb_Bank  }
 	}
 action_d = {
-	name = "We currently can not afford it..."
+	name = "EVT_657051_OPTIOND"
 	ai_chance = 5
 	command = { type = dissent value = 2 }
 	command = { type = sleepevent which = 657055 }
@@ -107,12 +107,12 @@ random = no
 country = CAN
 picture = "Gold"
 
-name = "The Federation asks for our assistance"
-desc = " The Carribean Federation has asked for our assistance. Great deposits of rare materials have been discovered on Jamaica, but the Federation will need additional funding to exploit these."
+name = "EVT_657052_NAME"
+desc = "EVT_657052_DESC"
 style = 2
 
 action_a = {
-	name = "Provide the funding, we will benefit from this as well."
+	name = "EVT_657052_OPTIONA"
 	ai_chance = 80
 	command = { type = relation which = GUY value = 30 }
 	command = { type = supplies value = -800 }
@@ -120,7 +120,7 @@ action_a = {
 	command = { type = money value = -70 }
 	}
 action_b = {
-	name = "Heck no, we have nothing to give away for free!"
+	name = "EVT_657052_OPTIONB"
 	ai_chance = 20
 	command = { type = relation which = GUY value = -20 }
 	command = { type = sleepevent which = 657055  }
@@ -139,8 +139,8 @@ trigger = {
 	flag = Carribb_Bank
 }
 
-name = "The Commonwealth Bank granted a credit!"
-desc = "We have now the necessary money to pay for the Jamaica mining operations, and will need to use far less of our own resources! The credit will be paid back over the next few years"
+name = "EVT_657053_NAME"
+desc = "EVT_657053_DESC"
 style = 2
 
 date = { day = 23 month = June year = 1936 }
@@ -148,7 +148,7 @@ offset = 4
 deathdate = { day = 23 month = July year = 1936 }
 
 action_a = {
-	name = "Excellent! Begin construction on Jamaica at once!"
+	name = "EVT_657053_OPTIONA"
 	command = { type = supplies value = -600 }
 	command = { type = metalpool value = -500 }
 	command = { type = sleepevent which = 657054 }
@@ -167,8 +167,8 @@ event = {
    flag = Carribb_Bank
        
    }
-   name = "The Commonwealth Bank refused a credit!"
-   desc = "The Commonwealth Bank refused to give us a credit.. Financing the Jamaica project will be difficult now..."
+   name = "EVT_657054_NAME"
+   desc = "EVT_657054_DESC"
    style = 2
 
    date = { day = 23 month = June year = 1936 }
@@ -176,7 +176,7 @@ event = {
    deathdate = { day = 23 month = July year = 1936 }
 
    action_a = {
-        name = "We must proceed anyway, start the construction!"
+        name = "EVT_657054_OPTIONA"
         ai_chance = 40
         command = { type = clrflag which = Carribb_Bank }
         command = { type = dissent value = 2 }
@@ -186,7 +186,7 @@ event = {
         command = { type = sleepevent which = 657055 }
    }
    action_b = {
-        name = "Damnation, cancel the project..."
+        name = "EVT_657054_OPTIONB"
         ai_chance = 60
         command = { type = clrflag which = Carribb_Bank }
         command = { type = dissent value = 5 }
@@ -205,12 +205,12 @@ event = {
    trigger = {
        
    }
-   name = "Jamaica's Bauxite mines."
-   desc = "The officials in Kingston report that the needed infrastructure on Jamaica is finally completed! Bauxite mining will beginn immediately!"
+   name = "EVT_657055_NAME"
+   desc = "EVT_657055_DESC"
    style = 2
    date = { day = 15 month = march year = 1937 }
    action_a = {
-        name = "We will enter a new age of prosperity!"
+        name = "EVT_657055_OPTIONA"
         command = { trigger = { country = RUS } type = waketeam which = 15202 }
         command = { type = add_prov_resource which = 1782 value = 25 where = rare_materials }
         command = { type = construct which = infrastructure where = 1782 value = 10 }
@@ -228,12 +228,12 @@ event = {
    trigger = { flag = Carribb_Bank
        
    }
-   name = "Repay our credit!"
-   desc = "We have to repay part of our credit to the Commonwealth Bank."
+   name = "EVT_657056_NAME"
+   desc = "EVT_657056_DESC"
    style = 2
    date = { day = 23 month = June year = 1937 }
    action_a = {
-        name = "Ok."
+        name = "EVT_657056_OPTIONA"
 
         command = { type = money value = -100 }
 
@@ -250,12 +250,12 @@ event = {
    trigger = { flag = Carribb_Bank
        
    }
-   name = "Repay our credit!"
-   desc = "We have to repay part of our credit to the Commonwealth Bank."
+   name = "EVT_657057_NAME"
+   desc = "EVT_657057_DESC"
    style = 2
    date = { day = 23 month = June year = 1938 }
    action_a = {
-        name = "Ok."
+        name = "EVT_657057_OPTIONA"
 
         command = { type = money value = -100 }
 
@@ -271,12 +271,12 @@ event = {
    trigger = { flag = Carribb_Bank
        
    }
-   name = "Repay our credit!"
-   desc = "We have to repay part of our credit to the Commonwealth Bank."
+   name = "EVT_657058_NAME"
+   desc = "EVT_657058_DESC"
    style = 2
    date = { day = 23 month = June year = 1939 }
    action_a = {
-        name = "Ok."
+        name = "EVT_657058_OPTIONA"
 
         command = { type = money value = -100 }
 
@@ -294,12 +294,12 @@ event = {
    flag = Carribb_Bank     
    }
 
-   name = "Repay our credit!"
-   desc = "We have to repay part of our credit to the Commonwealth Bank."
+   name = "EVT_657059_NAME"
+   desc = "EVT_657059_DESC"
    style = 2
    date = { day = 23 month = June year = 1940 }
    action_a = {
-        name = "Ok."
+        name = "EVT_657059_OPTIONA"
 
         command = { type = money value = -100 }
 
@@ -317,12 +317,12 @@ event = {
    flag = Carribb_Bank    
    }
 
-   name = "Repay our credit!"
-   desc = "We have to repay part of our credit to the Commonwealth Bank."
+   name = "EVT_657060_NAME"
+   desc = "EVT_657060_DESC"
    style = 2
    date = { day = 23 month = June year = 1941 }
    action_a = {
-        name = "Ok."
+        name = "EVT_657060_OPTIONA"
 
         command = { type = money value = -200 }
 
@@ -340,12 +340,12 @@ event = {
    flag = Carribb_Bank    
    }
 
-   name = "Repay our credit!"
-   desc = "We have to repay part of our credit to the Commonwealth Bank. This is the final payment"
+   name = "EVT_657061_NAME"
+   desc = "EVT_657061_DESC"
    style = 2
    date = { day = 23 month = June year = 1942 }
    action_a = {
-        name = "Finally, the last payment."
+        name = "EVT_657061_OPTIONA"
 
         command = { type = money value = -200 }
         command = { type = clrflag which = Carribb_Bank }
@@ -360,14 +360,14 @@ event = {
    country = GUY
    picture = "Gold"
 
-   name = "The Carribbean Commonwealth Bank"
-   desc = "Ever since our Federation was born, the Cayman Islands take a special place in our economy due to their lax tax and banking laws. The guranteed banking secret has attracted a lot of customers for the Commonwealth Bank and other banks."
+   name = "EVT_651062_NAME"
+   desc = "EVT_651062_DESC"
    style = 2
 
    date = { day = 10 month = january year = 1936 }
 
    action_a = {
-        name = "Money laundering? Let's just look the other way."
+        name = "EVT_651062_OPTIONA"
         command = { type = free_money value = 1 }
    }
 
@@ -394,13 +394,13 @@ event = {
 	offset = 2
 	deathdate = { day = 29 month = may year = 1936 }
 
-	name = "Beginning of the elections"
-	desc = "Today the great elections of the Caribbean Federation begin."
+	name = "EVT_667014_NAME"
+	desc = "EVT_667014_DESC"
 	style = 2
 	picture = "bra_vote"
 
 	action_a = {
-		name = "Let the elections begin"
+		name = "EVT_667014_OPTIONA"
 		command = { type = dissent value = -3 }
 		command = { type = money value = -50 }
 	}
@@ -425,23 +425,23 @@ NOT = { ispuppet = GUY }
         offset = 4
         deathdate = { day = 29 month = may year = 1936 }
 
-	name = "Voting results in Guyana"
-	desc = "The people in Guyana have finished voting and the result is..."
+	name = "EVT_667015_NAME"
+	desc = "EVT_667015_DESC"
 	style = 2
 	picture = "bra_vote"
 
 	action_a = {
-		name = "Liberals win the area"
+		name = "EVT_667015_OPTIONA"
 		ai_chance = 40
 		command = { type = setflag which = GUY_ML }
 	}
 	action_b = {
-		name = "Social Democrats win the area"
+		name = "EVT_667015_OPTIONB"
 		ai_chance = 20
 		command = { type = setflag which = GUY_SD }
 	}
 	action_c = {
-		name = "Nationalists win the area"
+		name = "EVT_667015_OPTIONC"
 		ai_chance = 40
 		command = { type = setflag which = GUY_SC }
 	}
@@ -466,23 +466,23 @@ NOT = { ispuppet = GUY }
         offset = 4
         deathdate = { day = 29 month = may year = 1936 }
 
-	name = "Voting results in the Leeward Islands"
-	desc = "The people in the Leeward Islands have finished voting and the result is..."
+	name = "EVT_667016_NAME"
+	desc = "EVT_667016_DESC"
 	style = 2
 	picture = "bra_vote"
 
 	action_a = {
-		name = "Liberals win the area"
+		name = "EVT_667016_OPTIONA"
 		ai_chance = 40
 		command = { type = setflag which = LI_ML }
 	}
 	action_b = {
-		name = "Social Democrats win the area"
+		name = "EVT_667016_OPTIONB"
 		ai_chance = 50
 		command = { type = setflag which = LI_SD }
 	}
 	action_c = {
-		name = "Nationalists win the area"
+		name = "EVT_667016_OPTIONC"
 		ai_chance = 10
 		command = { type = setflag which = LI_SC }
 	}
@@ -507,23 +507,23 @@ NOT = { ispuppet = GUY }
         offset = 4
         deathdate = { day = 29 month = may year = 1936 }
 
-	name = "Voting results in the Windward Islands!"
-	desc = "The people in the Windward Islands have finished voting and the result is..."
+	name = "EVT_667017_NAME"
+	desc = "EVT_667017_DESC"
 	style = 2
 	picture = "bra_vote"
 
 	action_a = {
-		name = "Liberals win the area"
+		name = "EVT_667017_OPTIONA"
 		ai_chance = 40
 		command = { type = setflag which = WI_ML }
 	}
 	action_b = {
-		name = "Social Democrats win the Area"
+		name = "EVT_667017_OPTIONB"
 		ai_chance = 10
 		command = { type = setflag which = WI_SD }
 	}
 	action_c = {
-		name = "Nationalists win the area"
+		name = "EVT_667017_OPTIONC"
 		ai_chance = 50
 		command = { type = setflag which = WI_SC }
 	}
@@ -550,23 +550,23 @@ NOT = { ispuppet = GUY }
         deathdate = { day = 29 month = may year = 1936 }
 
 
-	name = "Voting results in the Bahamas and Bermuda"
-	desc = "The people in the Bahamas and Bermuda have finished voting and the result is..."
+	name = "EVT_667018_NAME"
+	desc = "EVT_667018_DESC"
 	style = 2
 	picture = "bra_vote"
 
 	action_a = {
-		name = "Liberals win the area"
+		name = "EVT_667018_OPTIONA"
 		ai_chance = 20
 		command = { type = setflag which = BB_ML }
 	}
 	action_b = {
-		name = "Social Democrats win the area"
+		name = "EVT_667018_OPTIONB"
 		ai_chance = 60
 		command = { type = setflag which = BB_SD }
 	}
 	action_c = {
-		name = "Nationalists win the area"
+		name = "EVT_667018_OPTIONC"
 		ai_chance = 20
 		command = { type = setflag which = BB_SC }
 	}
@@ -592,23 +592,23 @@ NOT = { ispuppet = GUY }
         deathdate = { day = 29 month = may year = 1936 }
 
 
-	name = "Voting results in the Greater Antilles"
-	desc = "The people in the Greater Antilles have finished voting and the result is..."
+	name = "EVT_667019_NAME"
+	desc = "EVT_667019_DESC"
 	style = 2
 	picture = "bra_vote"
 
 	action_a = {
-		name = "Liberals win the area"
+		name = "EVT_667019_OPTIONA"
 		ai_chance = 10
 		command = { type = setflag which = GA_ML }
 	}
 	action_b = {
-		name = "Social Democrats win the area"
+		name = "EVT_667019_OPTIONB"
 		ai_chance = 20
 		command = { type = setflag which = GA_SD }
 	}
 	action_c = {
-		name = "Nationalists win the area"
+		name = "EVT_667019_OPTIONC"
 		ai_chance = 70
 		command = { type = setflag which = GA_SC }
 	}
@@ -676,13 +676,13 @@ NOT = { ispuppet = GUY }
         offset = 4
         deathdate = { day = 29 month = may year = 1936 }
 
-	name = "Liberal Party wins"
-	desc = "The Liberal Party wins the elections!"
+	name = "EVT_667020_NAME"
+	desc = "EVT_667020_DESC"
 	style = 2
 	picture = "politics1"
 
 	action_a = {
-		name = "Congratulations!"
+		name = "EVT_667020_OPTIONA"
 		command = { type = set_domestic which = democratic value = 9 }
 		command = { type = set_domestic which = political_left value = 6 }
 		command = { type = set_domestic which = freedom value = 9 }
@@ -778,13 +778,13 @@ NOT = { ispuppet = GUY } OR = {
         deathdate = { day = 29 month = may year = 1936 }
 
 
-	name = "Social Democratic Party wins"
-	desc = "The SDP wins the elections!"
+	name = "EVT_667021_NAME"
+	desc = "EVT_667021_DESC"
 	style = 2
 	picture = "politics1"
 
 	action_a = {
-		name = "Congratulations!"
+		name = "EVT_667021_OPTIONA"
 		command = { type = set_domestic which = democratic value = 9 }
 		command = { type = set_domestic which = political_left value = 9 }
                 command = { type = set_domestic which = free_market value = 3 }
@@ -880,13 +880,13 @@ NOT = { ispuppet = GUY } OR = {
         deathdate = { day = 29 month = may year = 1936 }
 
 
-	name = "Patriotic Union Party wins"
-	desc = "The PU wins the elections! However, this patry has 2 factions - liberal,  Stubbs' faction, and reactionist, quasi-autocrat Derecourt's one."
+	name = "EVT_667022_NAME"
+	desc = "EVT_667022_DESC"
 	style = 2
 	picture = "politics1"
 
 	action_a = {
-		name = "Congratulations, Mr. Stubbs!"
+		name = "EVT_667022_OPTIONA"
                 ai_chance = 55
 		command = { type = set_domestic which = democratic value = 8 }
 		command = { type = set_domestic which = political_left value = 3 }
@@ -921,7 +921,7 @@ NOT = { ispuppet = GUY } OR = {
 	}
 
 	action_b = {
-		name = "Congratulations, Mr. Derecourt!"
+		name = "EVT_667022_OPTIONB"
                 ai_chance = 45
                 command = { type = dissent value = 10 }
 		command = { type = set_domestic which = democratic value = 6 }
@@ -972,8 +972,8 @@ government = democratic
 ideology = paternal_autocrat }
  }
 
-	name = "No majority found after the election"
-	desc = "We must create a minority government then."
+	name = "EVT_667023_NAME"
+	desc = "EVT_667023_DESC"
 	style = 2
 	picture = "politics2"
 
@@ -982,7 +982,7 @@ ideology = paternal_autocrat }
         deathdate = { day = 29 month = may year = 1936 }
 
 	action_a = {
-		name = "A Liberal-Democrat coalition is formed"
+		name = "EVT_667023_OPTIONA"
 		ai_chance = 44
                 command = { type = dissent value = 5 }
 		command = { type = set_domestic which = democratic value = 9 }
@@ -1015,7 +1015,7 @@ ideology = paternal_autocrat }
 		command = { type = clrflag which = GA_SC }
 	}
 	action_b = {
-		name = "A Conservative-Democrat coalition is formed"
+		name = "EVT_667023_OPTIONB"
 		ai_chance = 55
                 command = { type = dissent value = 5 }
 		command = { type = set_domestic which = democratic value = 9 }
@@ -1048,7 +1048,7 @@ ideology = paternal_autocrat }
 		command = { type = clrflag which = GA_SC }
 	}
 	action_c = {
-		name = "Keep the current government"
+		name = "EVT_667023_OPTIONC"
 		ai_chance = 1
 		command = { type = dissent value = 10 }
 		command = { type = clrflag which = GUY_ML }
@@ -1090,13 +1090,13 @@ offset = 15
 deathdate = { day = 29 month = may year = 1941 }
 
 
-	name = "Beginning of the elections"
-	desc = "Today the great elections of the Caribbean Federation begin."
+	name = "EVT_667024_NAME"
+	desc = "EVT_667024_DESC"
 	style = 2
 	picture = "bra_vote"
 
 	action_a = {
-		name = "Let the elections begin"
+		name = "EVT_667024_OPTIONA"
 		command = { type = dissent value = -5 }
 command = { type = money value = -50 }
 	}
@@ -1121,23 +1121,23 @@ NOT = { ispuppet = GUY }
 offset = 15
 deathdate = { day = 29 month = may year = 1941 }
 
-	name = "Voting results in Guyana"
-	desc = "The people in Guyana have finished voting and the result is..."
+	name = "EVT_667025_NAME"
+	desc = "EVT_667025_DESC"
 	style = 2
 	picture = "bra_vote"
 
 	action_a = {
-		name = "Liberals win the area"
+		name = "EVT_667025_OPTIONA"
 		ai_chance = 30
 		command = { type = setflag which = GUY_ML }
 	}
 	action_b = {
-		name = "Social Democrats win the area"
+		name = "EVT_667025_OPTIONB"
 		ai_chance = 10
 		command = { type = setflag which = GUY_SD }
 	}
 	action_c = {
-		name = "Nationalists win the area"
+		name = "EVT_667025_OPTIONC"
 		ai_chance = 60
 		command = { type = setflag which = GUY_SC }
 	}
@@ -1163,23 +1163,23 @@ NOT = { ispuppet = GUY }
 offset = 15
 deathdate = { day = 29 month = may year = 1941 }
 
-	name = "Voting results in the Leeward Islands"
-	desc = "The people in the Leeward Islands have finished voting and the result is..."
+	name = "EVT_667026_NAME"
+	desc = "EVT_667026_DESC"
 	style = 2
 	picture = "bra_vote"
 
 	action_a = {
-		name = "Liberals win the area"
+		name = "EVT_667026_OPTIONA"
 		ai_chance = 10
 		command = { type = setflag which = LI_ML }
 	}
 	action_b = {
-		name = "Social Democrats win the area"
+		name = "EVT_667026_OPTIONB"
 		ai_chance = 30
 		command = { type = setflag which = LI_SD }
 	}
 	action_c = {
-		name = "Nationalists win the area"
+		name = "EVT_667026_OPTIONC"
 		ai_chance = 60
 		command = { type = setflag which = LI_SC }
 	}
@@ -1204,23 +1204,23 @@ NOT = { ispuppet = GUY }
 offset = 10
 deathdate = { day = 29 month = may year = 1941 }
 
-	name = "Voting results in the Windward Islands"
-	desc = "The people in the Windward Islands have finished voting and the result is..."
+	name = "EVT_667027_NAME"
+	desc = "EVT_667027_DESC"
 	style = 2
 	picture = "bra_vote"
 
 	action_a = {
-		name = "Liberals win the area"
+		name = "EVT_667027_OPTIONA"
 		ai_chance = 10
 		command = { type = setflag which = WI_ML }
 	}
 	action_b = {
-		name = "Social Democrats win the Area"
+		name = "EVT_667027_OPTIONB"
 		ai_chance = 10
 		command = { type = setflag which = WI_SD }
 	}
 	action_c = {
-		name = "Nationalists win the area"
+		name = "EVT_667027_OPTIONC"
 		ai_chance = 80
 		command = { type = setflag which = WI_SC }
 	}
@@ -1246,23 +1246,23 @@ NOT = { ispuppet = GUY }
 offset = 10
 deathdate = { day = 29 month = may year = 1941 }
 
-	name = "Voting results in the Bahamas and Bermuda"
-	desc = "The people in the Bahamas and Bermuda have finished voting and the result is..."
+	name = "EVT_667028_NAME"
+	desc = "EVT_667028_DESC"
 	style = 2
 	picture = "bra_vote"
 
 	action_a = {
-		name = "Liberals win the area"
+		name = "EVT_667028_OPTIONA"
 		ai_chance = 20
 		command = { type = setflag which = BB_ML }
 	}
 	action_b = {
-		name = "Social Democrats win the area"
+		name = "EVT_667028_OPTIONB"
 		ai_chance = 60
 		command = { type = setflag which = BB_SD }
 	}
 	action_c = {
-		name = "Nationalists win the area"
+		name = "EVT_667028_OPTIONC"
 		ai_chance = 20
 		command = { type = setflag which = BB_SC }
 	}
@@ -1288,23 +1288,23 @@ offset = 10
 deathdate = { day = 29 month = may year = 1941 }
 
 
-	name = "Greater Antilles' vote results!"
-	desc = "And the winner is..."
+	name = "EVT_667029_NAME"
+	desc = "EVT_667029_DESC"
 	style = 2
 	picture = "bra_vote"
 
 	action_a = {
-		name = "Liberals win the area"
+		name = "EVT_667029_OPTIONA"
 		ai_chance = 10
 		command = { type = setflag which = GA_ML }
 	}
 	action_b = {
-		name = "Social Democrats win the area"
+		name = "EVT_667029_OPTIONB"
 		ai_chance = 20
 		command = { type = setflag which = GA_SD }
 	}
 	action_c = {
-		name = "Nationalists win the area"
+		name = "EVT_667029_OPTIONC"
 		ai_chance = 70
 		command = { type = setflag which = GA_SC }
 	}
@@ -1371,13 +1371,13 @@ NOT = { ispuppet = GUY } OR = {
 offset = 10
 deathdate = { day = 29 month = may year = 1941 }
 
-	name = "Liberal Party wins"
-	desc = "The Liberal Party wins the elections!"
+	name = "EVT_667030_NAME"
+	desc = "EVT_667030_DESC"
 	style = 2
 	picture = "politics1"
 
 	action_a = {
-		name = "Congratulations!"
+		name = "EVT_667030_OPTIONA"
 		command = { type = set_domestic which = democratic value = 9 }
 		command = { type = set_domestic which = political_left value = 6 }
 		command = { type = set_domestic which = freedom value = 9 }
@@ -1473,13 +1473,13 @@ offset = 10
 deathdate = { day = 29 month = may year = 1941 }
 
 
-	name = "Social Democratic Party wins"
-	desc = "The SDP wins the elections!"
+	name = "EVT_667031_NAME"
+	desc = "EVT_667031_DESC"
 	style = 2
 	picture = "politics1"
 
 	action_a = {
-		name = "Congratulations!"
+		name = "EVT_667031_OPTIONA"
 		command = { type = set_domestic which = democratic value = 9 }
 		command = { type = set_domestic which = political_left value = 9 }
                 command = { type = set_domestic which = free_market value = 3 }
@@ -1575,13 +1575,13 @@ offset = 10
 deathdate = { day = 29 month = may year = 1941 }
 
 
-	name = "Patriotic Union Party wins"
-	desc = "The PU wins the elections! However, this patry has 2 factions - liberal,  Stubbs' faction, and reactionist, quasi-autocrat Derecourt's one."
+	name = "EVT_667032_NAME"
+	desc = "EVT_667032_DESC"
 	style = 2
 	picture = "politics1"
 
 	action_a = {
-		name = "Congratulations, Mr. Stubbs!"
+		name = "EVT_667032_OPTIONA"
 ai_chance = 25
 		command = { type = set_domestic which = democratic value = 8 }
 		command = { type = set_domestic which = political_left value = 3 }
@@ -1616,7 +1616,7 @@ ai_chance = 25
 	}
 
 	action_b = {
-		name = "Congratulations, Mr. Derecourt!"
+		name = "EVT_667032_OPTIONB"
                 ai_chance = 75
 command = { type = dissent value = 10 }
 		command = { type = set_domestic which = democratic value = 6 }
@@ -1667,8 +1667,8 @@ government = democratic
 ideology = paternal_autocrat }
  }
 
-	name = "No majority found after the election"
-	desc = "We must create a minority government then."
+	name = "EVT_667034_NAME"
+	desc = "EVT_667034_DESC"
 	style = 2
 	picture = "politics2"
 
@@ -1677,7 +1677,7 @@ offset = 10
 deathdate = { day = 29 month = may year = 1941 }
 
 	action_a = {
-		name = "A Liberal-Democrat coalition is formed"
+		name = "EVT_667034_OPTIONA"
 		ai_chance = 15
                 command = { type = dissent value = 5 }
 		command = { type = set_domestic which = democratic value = 9 }
@@ -1710,7 +1710,7 @@ deathdate = { day = 29 month = may year = 1941 }
 		command = { type = clrflag which = GA_SC }
 	}
 	action_b = {
-		name = "A Conservative-Democrat coalition is formed"
+		name = "EVT_667034_OPTIONB"
 		ai_chance = 70
                 command = { type = dissent value = 5 }
 		command = { type = set_domestic which = democratic value = 9 }
@@ -1743,7 +1743,7 @@ deathdate = { day = 29 month = may year = 1941 }
 		command = { type = clrflag which = GA_SC }
 	}
 	action_c = {
-		name = "Keep the current government"
+		name = "EVT_667034_OPTIONC"
 		ai_chance = 15
 		command = { type = dissent value = 10 }
 		command = { type = clrflag which = GUY_ML }
@@ -1784,13 +1784,13 @@ offset = 15
 deathdate = { day = 29 month = may year = 1946 }
 
 
-	name = "Beginning of the elections"
-	desc = "Today the great elections of the Caribbean Federation begin."
+	name = "EVT_667035_NAME"
+	desc = "EVT_667035_DESC"
 	style = 2
 	picture = "bra_vote"
 
 	action_a = {
-		name = "Let the elections begin"
+		name = "EVT_667035_OPTIONA"
 		command = { type = dissent value = -5 }
 command = { type = money value = -50 }
 	}
@@ -1815,23 +1815,23 @@ NOT = { ispuppet = GUY }
 offset = 15
 deathdate = { day = 29 month = may year = 1946 }
 
-	name = "Voting results in Guyana"
-	desc = "The people in Guyana have finished voting and the result is..."
+	name = "EVT_667036_NAME"
+	desc = "EVT_667036_DESC"
 	style = 2
 	picture = "bra_vote"
 
 	action_a = {
-		name = "Liberals win the area"
+		name = "EVT_667036_OPTIONA"
 		ai_chance = 60
 		command = { type = setflag which = GUY_ML }
 	}
 	action_b = {
-		name = "Social Democrats win the area"
+		name = "EVT_667036_OPTIONB"
 		ai_chance = 10
 		command = { type = setflag which = GUY_SD }
 	}
 	action_c = {
-		name = "Nationalists win the area"
+		name = "EVT_667036_OPTIONC"
 		ai_chance = 30
 		command = { type = setflag which = GUY_SC }
 	}
@@ -1857,24 +1857,24 @@ offset = 15
 deathdate = { day = 29 month = may year = 1946 }
 
 
-	name = "Voting results in the Leeward Islands"
-	desc = "The people in the Leeward Islands have finished voting and the result is..."
+	name = "EVT_667037_NAME"
+	desc = "EVT_667037_DESC"
 	style = 2
 	picture = "bra_vote"
 
 
 	action_a = {
-		name = "Liberals win the area"
+		name = "EVT_667037_OPTIONA"
 		ai_chance = 80
 		command = { type = setflag which = LI_ML }
 	}
 	action_b = {
-		name = "Social Democrats win the area"
+		name = "EVT_667037_OPTIONB"
 		ai_chance = 15
 		command = { type = setflag which = LI_SD }
 	}
 	action_c = {
-		name = "Nationalists win the area"
+		name = "EVT_667037_OPTIONC"
 		ai_chance = 5
 		command = { type = setflag which = LI_SC }
 	}
@@ -1900,23 +1900,23 @@ NOT = { ispuppet = GUY }
 offset = 10
 deathdate = { day = 29 month = may year = 1946 }
 
-	name = "Voting results in the Windward Islands"
-	desc = "The people in the Windward Islands have finished voting and the result is..."
+	name = "EVT_667038_NAME"
+	desc = "EVT_667038_DESC"
 	style = 2
 	picture = "bra_vote"
 
 	action_a = {
-		name = "Liberals win the area"
+		name = "EVT_667038_OPTIONA"
 		ai_chance = 20
 		command = { type = setflag which = WI_ML }
 	}
 	action_b = {
-		name = "Social Democrats win the Area"
+		name = "EVT_667038_OPTIONB"
 		ai_chance = 75
 		command = { type = setflag which = WI_SD }
 	}
 	action_c = {
-		name = "Nationalists win the area"
+		name = "EVT_667038_OPTIONC"
 		ai_chance = 5
 		command = { type = setflag which = WI_SC }
 	}
@@ -1943,23 +1943,23 @@ offset = 10
 deathdate = { day = 29 month = may year = 1946 }
 
 
-	name = "Voting results in the Bahamas and Bermuda"
-	desc = "The people in the Bahamas and Bermuda have finished voting and the result is..."
+	name = "EVT_667039_NAME"
+	desc = "EVT_667039_DESC"
 	style = 2
 	picture = "bra_vote"
 
 	action_a = {
-		name = "Liberals win the area"
+		name = "EVT_667039_OPTIONA"
 		ai_chance = 40
 		command = { type = setflag which = BB_ML }
 	}
 	action_b = {
-		name = "Social Democrats win the area"
+		name = "EVT_667039_OPTIONB"
 		ai_chance = 50
 		command = { type = setflag which = BB_SD }
 	}
 	action_d = {
-		name = "Nationalists win the area"
+		name = "EVT_667039_OPTIONC"
 		ai_chance = 10
 		command = { type = setflag which = BB_SC }
 	}
@@ -1984,23 +1984,23 @@ NOT = { ispuppet = GUY }
 offset = 10
 deathdate = { day = 29 month = may year = 1946 }
 
-	name = "Voting results in the Greater Antilles"
-	desc = "The people in the Greater Antilles have finished voting and the result is..."
+	name = "EVT_667040_NAME"
+	desc = "EVT_667040_DESC"
 	style = 2
 	picture = "bra_vote"
 
 	action_a = {
-		name = "Liberals win the area"
+		name = "EVT_667040_OPTIONA"
 		ai_chance = 90
 		command = { type = setflag which = GA_ML }
 	}
 	action_b = {
-		name = "Social Democrats win the area"
+		name = "EVT_667040_OPTIONB"
 		ai_chance = 5
 		command = { type = setflag which = GA_SD }
 	}
 	action_d = {
-		name = "Nationalists win the area"
+		name = "EVT_667040_OPTIONC"
 		ai_chance = 5
 		command = { type = setflag which = GA_SC }
 	}
@@ -2067,13 +2067,13 @@ NOT = { ispuppet = GUY } OR = {
 offset = 10
 deathdate = { day = 29 month = may year = 1946 }
 
-	name = "Liberal Party wins"
-	desc = "The Liberal Party wins the elections!"
+	name = "EVT_667041_NAME"
+	desc = "EVT_667041_DESC"
 	style = 2
 	picture = "politics1"
 
 	action_a = {
-		name = "Congratulations!"
+		name = "EVT_667041_OPTIONA"
 		command = { type = set_domestic which = democratic value = 9 }
 		command = { type = set_domestic which = political_left value = 6 }
 		command = { type = set_domestic which = freedom value = 9 }
@@ -2169,13 +2169,13 @@ offset = 10
 deathdate = { day = 29 month = may year = 1946 }
 
 
-	name = "Social Democratic Party wins"
-	desc = "The SDP wins the elections!"
+	name = "EVT_667042_NAME"
+	desc = "EVT_667042_DESC"
 	style = 2
 	picture = "politics1"
 
 	action_a = {
-		name = "Congratulations!"
+		name = "EVT_667042_OPTIONA"
 		command = { type = set_domestic which = democratic value = 9 }
 		command = { type = set_domestic which = political_left value = 9 }
                 command = { type = set_domestic which = free_market value = 3 }
@@ -2271,13 +2271,13 @@ offset = 10
 deathdate = { day = 29 month = may year = 1946 }
 
 
-	name = "Patriotic Union Party wins"
-	desc = "The PU wins the elections! However, this patry has 2 factions - liberal,  Stubbs' faction, and reactionist, quasi-autocrat Derecourt's one."
+	name = "EVT_667043_NAME"
+	desc = "EVT_667043_DESC"
 	style = 2
 	picture = "politics1"
 
 	action_a = {
-		name = "Congratulations, Mr. Stubbs!"
+		name = "EVT_667043_OPTIONA"
 ai_chance = 85
 		command = { type = set_domestic which = democratic value = 8 }
 		command = { type = set_domestic which = political_left value = 3 }
@@ -2312,7 +2312,7 @@ ai_chance = 85
 	}
 
 	action_b = {
-		name = "Congratulations, Mr. Derecourt!"
+		name = "EVT_667043_OPTIONB"
                 ai_chance = 15
 command = { type = dissent value = 10 }
 		command = { type = set_domestic which = democratic value = 6 }
@@ -2363,8 +2363,8 @@ government = democratic
 ideology = paternal_autocrat }
  }
 
-	name = "No majority found after the election"
-	desc = "We must create a minority government then."
+	name = "EVT_667044_NAME"
+	desc = "EVT_667044_DESC"
 	style = 2
 	picture = "politics2"
 
@@ -2373,7 +2373,7 @@ offset = 10
 deathdate = { day = 29 month = may year = 1946 }
 
 	action_a = {
-		name = "A Liberal-Democrat coalition is formed"
+		name = "EVT_667044_OPTIONA"
 		ai_chance = 75
 command = { type = dissent value = 5 }
 		command = { type = set_domestic which = democratic value = 9 }
@@ -2406,7 +2406,7 @@ command = { type = dissent value = 5 }
 		command = { type = clrflag which = GA_SC }
 	}
 	action_b = {
-		name = "A Conservative-Democrat coalition is formed"
+		name = "EVT_667044_OPTIONB"
 		ai_chance = 10
 command = { type = dissent value = 5 }
 		command = { type = set_domestic which = democratic value = 9 }
@@ -2439,7 +2439,7 @@ command = { type = dissent value = 5 }
 		command = { type = clrflag which = GA_SC }
 	}
 	action_c = {
-		name = "Keep the current government"
+		name = "EVT_667044_OPTIONC"
 		ai_chance = 15
 		command = { type = dissent value = 10 }
 		command = { type = clrflag which = GUY_ML }
@@ -2480,13 +2480,13 @@ offset = 15
 deathdate = { day = 29 month = may year = 1951 }
 
 
-	name = "Beginning of the elections"
-	desc = "Today the great elections of the Caribbean Federation begin."
+	name = "EVT_667053_NAME"
+	desc = "EVT_667053_DESC"
 	style = 2
 	picture = "bra_vote"
 
 	action_a = {
-		name = "Let the elections begin"
+		name = "EVT_667053_OPTIONA"
 		command = { type = dissent value = -5 }
 command = { type = money value = -50 }
 	}
@@ -2512,23 +2512,23 @@ NOT = { flag = GUY_1951_PROGR }
 offset = 15
 deathdate = { day = 29 month = may year = 1951 }
 
-	name = "Voting results in Guyana"
-	desc = "The people in Guyana have finished voting and the result is..."
+	name = "EVT_667054_NAME"
+	desc = "EVT_667054_DESC"
 	style = 2
 	picture = "bra_vote"
 
 	action_a = {
-		name = "Liberals win the area"
+		name = "EVT_667054_OPTIONA"
 		ai_chance = 60
 		command = { type = setflag which = GUY_ML }
 	}
 	action_b = {
-		name = "Social Democrats win the area"
+		name = "EVT_667054_OPTIONB"
 		ai_chance = 30
 		command = { type = setflag which = GUY_SD }
 	}
 	action_c = {
-		name = "Nationalists win the area"
+		name = "EVT_667054_OPTIONC"
 		ai_chance = 10
 		command = { type = setflag which = GUY_SC }
 	}
@@ -2555,23 +2555,23 @@ offset = 15
 deathdate = { day = 29 month = may year = 1951 }
 
 
-	name = "Voting results in the Leeward Islands"
-	desc = "The people in the Leeward Islands have finished voting and the result is..."
+	name = "EVT_667055_NAME"
+	desc = "EVT_667055_DESC"
 	style = 2
 	picture = "bra_vote"
 
 	action_a = {
-		name = "Liberals win the area"
+		name = "EVT_667055_OPTIONA"
 		ai_chance = 20
 		command = { type = setflag which = LI_ML }
 	}
 	action_b = {
-		name = "Social Democrats win the area"
+		name = "EVT_667055_OPTIONB"
 		ai_chance = 70
 		command = { type = setflag which = LI_SD }
 	}
 	action_c = {
-		name = "Nationalists win the area"
+		name = "EVT_667055_OPTIONC"
 		ai_chance = 10
 		command = { type = setflag which = LI_SC }
 	}
@@ -2598,23 +2598,23 @@ offset = 10
 deathdate = { day = 29 month = may year = 1951 }
 
 
-	name = "Voting results in the Windward Islands"
-	desc = "The people in the Windward Islands have finished voting and the result is..."
+	name = "EVT_667056_NAME"
+	desc = "EVT_667056_DESC"
 	style = 2
 	picture = "bra_vote"
 
 	action_a = {
-		name = "Liberals win the area"
+		name = "EVT_667056_OPTIONA"
 		ai_chance = 20
 		command = { type = setflag which = WI_ML }
 	}
 	action_b = {
-		name = "Social Democrats win the area"
+		name = "EVT_667056_OPTIONB"
 		ai_chance = 75
 		command = { type = setflag which = WI_SD }
 	}
 	action_c = {
-		name = "Nationalists win the area"
+		name = "EVT_667056_OPTIONC"
 		ai_chance = 5
 		command = { type = setflag which = WI_SC }
 	}
@@ -2641,23 +2641,23 @@ NOT = { flag = GUY_1951_PROGR }
 offset = 10
 deathdate = { day = 29 month = may year = 1951 }
 
-	name = "Voting results in the Bahamas and Bermuda"
-	desc = "The people in the Bahamas and Bermuda have finished voting and the result is..."
+	name = "EVT_667057_NAME"
+	desc = "EVT_667057_DESC"
 	style = 2
 	picture = "bra_vote"
 
 	action_a = {
-		name = "Liberals win the area"
+		name = "EVT_667057_OPTIONA"
 		ai_chance = 40
 		command = { type = setflag which = BB_ML }
 	}
 	action_b = {
-		name = "Social Democrats win the area"
+		name = "EVT_667057_OPTIONB"
 		ai_chance = 50
 		command = { type = setflag which = BB_SD }
 	}
 	action_c = {
-		name = "Nationalists win the area"
+		name = "EVT_667057_OPTIONC"
 		ai_chance = 10
 		command = { type = setflag which = BB_SC }
 	}
@@ -2685,23 +2685,23 @@ deathdate = { day = 29 month = may year = 1951 }
 
 
 
-	name = "Voting results in the Greater Antilles"
-	desc = "The people in the Greater Antilles have finished voting and the result is..."
+	name = "EVT_667058_NAME"
+	desc = "EVT_667058_DESC"
 	style = 2
 	picture = "bra_vote"
 
 	action_a = {
-		name = "Liberals win the area"
+		name = "EVT_667058_OPTIONA"
 		ai_chance = 50
 		command = { type = setflag which = GA_ML }
 	}
 	action_b = {
-		name = "Social Democrats win the area"
+		name = "EVT_667058_OPTIONB"
 		ai_chance = 25
 		command = { type = setflag which = GA_SD }
 	}
 	action_c = {
-		name = "Nationalists win the area"
+		name = "EVT_667058_OPTIONC"
 		ai_chance = 75
 		command = { type = setflag which = GA_SC }
 	}
@@ -2768,13 +2768,13 @@ NOT = { ispuppet = GUY } OR = {
 offset = 10
 deathdate = { day = 29 month = may year = 1951 }
 
-	name = "Liberal Party wins"
-	desc = "The Liberal Party wins the elections!"
+	name = "EVT_667059_NAME"
+	desc = "EVT_667059_DESC"
 	style = 2
 	picture = "politics1"
 
 	action_a = {
-		name = "Congratulations!"
+		name = "EVT_667059_OPTIONA"
 		command = { type = set_domestic which = democratic value = 9 }
 		command = { type = set_domestic which = political_left value = 6 }
 		command = { type = set_domestic which = freedom value = 9 }
@@ -2870,13 +2870,13 @@ offset = 10
 deathdate = { day = 29 month = may year = 1951 }
 
 
-	name = "Social Democratic Party wins"
-	desc = "The SDP wins the elections!"
+	name = "EVT_667060_NAME"
+	desc = "EVT_667060_DESC"
 	style = 2
 	picture = "politics1"
 
 	action_a = {
-		name = "Congratulations!"
+		name = "EVT_667060_OPTIONA"
 		command = { type = set_domestic which = democratic value = 9 }
 		command = { type = set_domestic which = political_left value = 9 }
                 command = { type = set_domestic which = free_market value = 3 }
@@ -2972,13 +2972,13 @@ offset = 10
 deathdate = { day = 29 month = may year = 1951 }
 
 
-	name = "Patriotic Union Party wins"
-	desc = "The PU wins the elections! However, this patry has 2 factions - liberal,  Stubbs' faction, and reactionist, quasi-autocrat Derecourt's one."
+	name = "EVT_667061_NAME"
+	desc = "EVT_667061_DESC"
 	style = 2
 	picture = "politics1"
 
 	action_a = {
-		name = "Congratulations, Mr. Stubbs!"
+		name = "EVT_667061_OPTIONA"
 ai_chance = 90
 		command = { type = set_domestic which = democratic value = 8 }
 		command = { type = set_domestic which = political_left value = 3 }
@@ -3013,7 +3013,7 @@ ai_chance = 90
 	}
 
 	action_b = {
-		name = "Congratulations, Mr. Derecourt!"
+		name = "EVT_667061_OPTIONB"
                 ai_chance = 10
                 command = { type = dissent value = 10 }
 		command = { type = set_domestic which = democratic value = 6 }
@@ -3110,13 +3110,13 @@ event = {
 offset = 10
 deathdate = { day = 29 month = may year = 1951 }
 
-	name = "Patriotic Union Party wins"
-	desc = "The PU wins the elections!"
+	name = "EVT_667062_NAME"
+	desc = "EVT_667062_DESC"
 	style = 2
 	picture = "politics1"
 
 	action_a = {
-		name = "Congratulations!"
+		name = "EVT_667062_OPTIONA"
 		command = { type = set_domestic which = democratic value = 8 }
 		command = { type = set_domestic which = political_left value = 3 }
 		command = { type = set_domestic which = freedom value = 5 }
@@ -3165,8 +3165,8 @@ government = democratic
 ideology = paternal_autocrat }
  }
 
-	name = "No majority found after the election"
-	desc = "We must create a minority government then."
+	name = "EVT_667063_NAME"
+	desc = "EVT_667063_DESC"
 	style = 2
 	picture = "politics2"
 
@@ -3175,7 +3175,7 @@ offset = 10
 deathdate = { day = 29 month = may year = 1951 }
 
 	action_a = {
-		name = "A Liberal-Democrat coalition is formed"
+		name = "EVT_667063_OPTIONA"
 		ai_chance = 80
 command = { type = dissent value = 5 }
 		command = { type = set_domestic which = democratic value = 9 }
@@ -3208,7 +3208,7 @@ command = { type = dissent value = 5 }
 		command = { type = clrflag which = GA_SC }
 	}
 	action_b = {
-		name = "A Conservative-Democrat coalition is formed"
+		name = "EVT_667063_OPTIONB"
 		ai_chance = 20
                 command = { type = dissent value = 5 }
 		command = { type = set_domestic which = democratic value = 9 }
@@ -3241,7 +3241,7 @@ command = { type = dissent value = 5 }
 		command = { type = clrflag which = GA_SC }
 	}
 	action_c = {
-		name = "Keep the current government"
+		name = "EVT_667063_OPTIONC"
 		ai_chance = 0
 		command = { type = dissent value = 10 }
 		command = { type = clrflag which = GUY_ML }
@@ -3282,28 +3282,28 @@ NOT = { ispuppet = GUY }
 offset = 15
 deathdate = { day = 29 month = may year = 1951 }
 
-	name = "Voting results in Guyana"
-	desc = "The people in Guyana have finished voting and the result is..."
+	name = "EVT_7699035_NAME"
+	desc = "EVT_7699035_DESC"
 	style = 2
 	picture = "bra_vote"
 
 	action_a = {
-		name = "Liberals win the area"
+		name = "EVT_7699035_OPTIONA"
 		ai_chance = 60
 		command = { type = setflag which = GUY_ML }
 	}
 	action_b = {
-		name = "Social Democrats win the area"
+		name = "EVT_7699035_OPTIONB"
 		ai_chance = 10
 		command = { type = setflag which = GUY_SD }
 	}
 	action_c = {
-		name = "Nationalists win the area"
+		name = "EVT_7699035_OPTIONC"
 		ai_chance = 10
 		command = { type = setflag which = GUY_SC }
 	}
 	action_d = {
-		name = "Progressivists win the area"
+		name = "EVT_7699035_OPTIOND"
 		ai_chance = 20
 		command = { type = setflag which = GUY_LWR }
 	}
@@ -3329,28 +3329,28 @@ offset = 15
 deathdate = { day = 29 month = may year = 1951 }
 
 
-	name = "Voting results in the Leeward Islands"
-	desc = "The people in the Leeward Islands have finished voting and the result is..."
+	name = "EVT_7699036_NAME"
+	desc = "EVT_7699036_DESC"
 	style = 2
 	picture = "bra_vote"
 
 	action_a = {
-		name = "Liberals win the area"
+		name = "EVT_7699036_OPTIONA"
 		ai_chance = 20
 		command = { type = setflag which = LI_ML }
 	}
 	action_b = {
-		name = "Social Democrats win the area"
+		name = "EVT_7699036_OPTIONB"
 		ai_chance = 50
 		command = { type = setflag which = LI_SD }
 	}
 	action_c = {
-		name = "Nationalists win the area"
+		name = "EVT_7699036_OPTIONC"
 		ai_chance = 10
 		command = { type = setflag which = LI_SC }
 	}
 	action_d = {
-		name = "Progressivists win the area"
+		name = "EVT_7699036_OPTIOND"
 		ai_chance = 20
 		command = { type = setflag which = LI_LWR }
 	}
@@ -3376,28 +3376,28 @@ offset = 15
 deathdate = { day = 29 month = may year = 1951 }
 
 
-	name = "Voting results in the Windward Islands"
-	desc = "The people in the Windward Islands have finished voting and the result is..."
+	name = "EVT_7699037_NAME"
+	desc = "EVT_7699037_DESC"
 	style = 2
 	picture = "bra_vote"
 
 	action_a = {
-		name = "Liberals win the area"
+		name = "EVT_7699037_OPTIONA"
 		ai_chance = 20
 		command = { type = setflag which = WI_ML }
 	}
 	action_b = {
-		name = "Social Democrats win the area"
+		name = "EVT_7699037_OPTIONB"
 		ai_chance = 40
 		command = { type = setflag which = WI_SD }
 	}
 	action_c = {
-		name = "Nationalists win the area"
+		name = "EVT_7699037_OPTIONC"
 		ai_chance = 50
 		command = { type = setflag which = WI_SC }
 	}
 	action_d = {
-		name = "Nationalists win the area"
+		name = "EVT_7699037_OPTIOND"
 		ai_chance = 10
 		command = { type = setflag which = WI_LWR }
 	}
@@ -3423,28 +3423,28 @@ offset = 15
 deathdate = { day = 29 month = may year = 1951 }
 
 
-	name = "Voting results in the Bahamas and Bermuda"
-	desc = "The people in the Bahamas and Bermuda have finished voting and the result is..."
+	name = "EVT_7699078_NAME"
+	desc = "EVT_7699078_DESC"
 	style = 2
 	picture = "bra_vote"
 
 	action_a = {
-		name = "Liberals win the area"
+		name = "EVT_7699078_OPTIONA"
 		ai_chance = 40
 		command = { type = setflag which = BB_ML }
 	}
 	action_b = {
-		name = "Social Democrats win the area"
+		name = "EVT_7699078_OPTIONB"
 		ai_chance = 40
 		command = { type = setflag which = BB_SD }
 	}
 	action_c = {
-		name = "Nationalists win the area"
+		name = "EVT_7699078_OPTIONC"
 		ai_chance = 10
 		command = { type = setflag which = BB_SC }
 	}
 	action_d = {
-		name = "Progressivists win the area"
+		name = "EVT_7699078_OPTIOND"
 		ai_chance = 10
 		command = { type = setflag which = BB_LWR }
 	}
@@ -3470,29 +3470,29 @@ offset = 15
 deathdate = { day = 29 month = may year = 1951 }
 
 
-	name = "Voting results in the Greater Antilles"
-	desc = "The people in the Greater Antilles have finished voting and the result is..."
+	name = "EVT_7699079_NAME"
+	desc = "EVT_7699079_DESC"
 	style = 2
 	picture = "bra_vote"
 
 
 	action_a = {
-		name = "Liberals win the area"
+		name = "EVT_7699079_OPTIONA"
 		ai_chance = 25
 		command = { type = setflag which = GA_ML }
 	}
 	action_b = {
-		name = "Social Democrats win the area"
+		name = "EVT_7699079_OPTIONB"
 		ai_chance = 25
 		command = { type = setflag which = GA_SD }
 	}
 	action_c = {
-		name = "Nationalists win the area"
+		name = "EVT_7699079_OPTIONC"
 		ai_chance = 25
 		command = { type = setflag which = GA_SC }
 	}
 	action_d = {
-		name = "Progressivists win the area"
+		name = "EVT_7699079_OPTIOND"
 		ai_chance = 25
 		command = { type = setflag which = GA_LWR }
 	}
@@ -3513,8 +3513,8 @@ NOT = { ispuppet = GUY }
 exists = CAN
 NOT = { exists = CSA } }
 
-	name = "Legalisation of syndicalist parties"
-	desc = "We are a full democracy and we don't have to fear the Syndicalists. Shall we pass the bill that allows them to create legal parties in our country?"
+	name = "EVT_667048_NAME"
+	desc = "EVT_667048_DESC"
 	picture = "Congress"
 	style = 2
 	
@@ -3524,14 +3524,14 @@ NOT = { exists = CSA } }
 	
 	action_a = {
 		ai_chance = 45
-                name = "Pass the bill"
+                name = "EVT_667048_OPTIONA"
 		command = { type = domestic which = freedom value = 1 }
 		command = { type = domestic which = political_left value = 1 }
 		command = { type = dissent value = 4 }
 	}
 	action_b = {
 		ai_chance = 55
-		name = "Veto the bill" 
+		name = "EVT_667048_OPTIONB" 
 		command = { type = domestic which = freedom value = -1 }
                 command = { type = sleepevent which = 667049 }
 	}
@@ -3551,8 +3551,8 @@ exists = CAN
 event = 5336215
 NOT = { exists = CSA } }
 
-	name = "1st Syndicalist Congress of Caribbean Commonwealth"
-	desc = "Finally, we are free and we can create a legal party! In our Congress we invited some members of the Social-Democratic Party. Now, we must decide: should we create our own Progressive party or join the SDP?"
+	name = "EVT_667049_NAME"
+	desc = "EVT_667049_DESC"
 	picture = "Congress"
 	style = 2
 	
@@ -3562,12 +3562,12 @@ NOT = { exists = CSA } }
 	
 	action_a = {
 		ai_chance = 45
-                name = "Join the SDP"
+                name = "EVT_667049_OPTIONA"
                 command = { type = setflag which = GUY_1951_COOP } # If SD wins next elections, progressivists will be invited into government
 	}
 	action_b = {
 		ai_chance = 55
-		name = "We must create our own Progressive Party!" 
+		name = "EVT_667049_OPTIONB" 
                 command = { type = setflag which = GUY_1951_PROGR } # Another version of 1951 elections
 	}
 }
@@ -3584,8 +3584,8 @@ atwar = no
 exists = CAN
 NOT = { exists = CSA } }
 
-	name = "Delegalisation of autocrat groups in policy"
-	desc = "We are a full democracy and we don't have a place for autocrats. Shall we pass the bill that bans them?"
+	name = "EVT_667050_NAME"
+	desc = "EVT_667050_DESC"
 	picture = "Congress"
 	style = 2
 	
@@ -3595,13 +3595,13 @@ NOT = { exists = CSA } }
 	
 	action_a = {
 		ai_chance = 85
-                name = "Pass the bill"
+                name = "EVT_667050_OPTIONA"
 		command = { type = domestic which = freedom value = -1 }
                 command = { type = sleepevent which = 667061 } # Player will have only moderate SC government (sleeps double SC-PA victory)
 	}
 	action_b = {
 		ai_chance = 15
-		name = "Veto the bill" 
+		name = "EVT_667050_OPTIONB" 
 		command = { type = domestic which = freedom value = 1 }
                 command = { type = sleepevent which = 667062 } # Player still can choose between SC and PA (sleeps single SC victory)
 	}
@@ -3622,12 +3622,12 @@ event = {
     offset = 60
     deathdate = { day = 29 month = december year = 1966 }
 
-    name = "American Immigrants arrive on Caribbean"
-    desc = "To escape the civil war ravaging the United States, immigrants have fled to Canada and Latin America. Thousands have recently arrived on the Bahamas by boat and are looking for work, food, and a place to live. We can either block their entrance, or allow them a place in our country."
+    name = "EVT_667051_NAME"
+    desc = "EVT_667051_DESC"
 
     action_a = {
         ai_chance = 99
-        name = "Welcome them with open arms!"
+        name = "EVT_667051_OPTIONA"
         command = { type = dissent value = 5 }
 	command = { type = construct which = IC where = 1997 value = 1 }
         command = { type = manpowerpool value = 25 }
@@ -3637,7 +3637,7 @@ event = {
     }
     action_b = {
         ai_chance = 1
-        name = "Send them back to the continent!"
+        name = "EVT_667051_OPTIONB"
         command = { type = relation which = USA value = -25 }
         command = { type = relation which = TEX value = 25 }
         command = { type = relation which = CSA value = 25 }
@@ -3662,11 +3662,11 @@ event = {
     offset = 1
     deathdate = { day = 29 month = december year = 1966 }
 
-    name = "Independence day!"
-    desc = "Independence Day, also known as the Day of the Federation, celebrations took place today all across the country. Most everyone has set aside their political differences to celebrate the traditions of the Caribbean Comonwealth with fireworks and parades."
+    name = "EVT_667052_NAME"
+    desc = "EVT_667052_DESC"
 
     action_a = {
-        name = "Let's celebrate!"
+        name = "EVT_667052_OPTIONA"
         command = { type = dissent value = -1 }
     }
 }
@@ -3679,7 +3679,7 @@ event = {
 
 	trigger = { ai = no }
 
-	name = "Internal political situation in the Caribbean Commonwealth"
+	name = "EVT_667064_NAME"
 	desc = "EVT_667064_DESC"
 	picture = "Caribbean"
 
@@ -3688,7 +3688,7 @@ offset = 1
 deathdate = { day = 3 month = january year = 1936 }
 
 	action_a = {
-		name = "Long live the Caribbean Commonwealth!"
+		name = "EVT_667064_OPTIONA"
 		command = { }
 	}
 }
@@ -3708,13 +3708,13 @@ event = 667060
         offset = 5 # Check for trigger conditions day
         deathdate = { day = 29 month = may year = 1951 }
 
-	name = "Cooperation between socialists and social-democrats"
-	desc = "The SDP has won the elections. Now, it is time to fulfill the deal between them and the Radical Socialists. Should we invite the Pregressive Movement to join us?"
+	name = "EVT_7334082_NAME"
+	desc = "EVT_7334082_DESC"
 	style = 2
 	picture = "politics1"
 
 	action_a = {
-		name = "Welcome!"
+		name = "EVT_7334082_OPTIONA"
                 ai_chance = 60
 		command = { type = set_domestic which = democratic value = 8 }
 		command = { type = set_domestic which = political_left value = 10 }
@@ -3736,7 +3736,7 @@ event = 667060
 	}
 
 	action_b = {
-		name = "We musn't trust them!"
+		name = "EVT_7334082_OPTIONB"
                 ai_chance = 40
 		command = { type = domestic which = freedom value = -1 }
                 command = { type = dissent value = 10 } #You are liar
@@ -3761,18 +3761,18 @@ flag = GUY_1951_NAT_COUPABLE
         offset = 5 # Check for trigger conditions day
         deathdate = { day = 29 month = september year = 1951 }
 
-	name = "A coup is near?"
-	desc = "Treacherous leftists are ruling our beautiful country! Shall we bring the right people to power?"
+	name = "EVT_7334083_NAME"
+	desc = "EVT_7334083_DESC"
 	style = 2
 	picture = "politics1"
 
 	action_a = {
-		name = "Yes, of course"
+		name = "EVT_7334083_OPTIONA"
                 ai_chance = 60
 		command = { }
 	}
 	action_b = {
-		name = "No, we are Democrats"
+		name = "EVT_7334083_OPTIONB"
                 ai_chance = 40
                 command = { type = clrflag which = GUY_1951_NAT_COUPABLE }
 	}
@@ -3794,26 +3794,26 @@ exists = CAN
         offset = 5 # Check for trigger conditions day
         deathdate = { day = 29 month = september year = 1951 }
 
-	name = "A coup is near?"
-	desc = "Treacherous leftists are ruling our beautiful country! Now, we are ready. We can coup them alone or ask Canada for help."
+	name = "EVT_7334084_NAME"
+	desc = "EVT_7334084_DESC"
 	style = 2
 	picture = "politics1"
 
 	action_a = {
-		name = "Coup them alone"
+		name = "EVT_7334084_OPTIONA"
                 ai_chance = 60
                 command = { type = clrflag which = GUY_1951_NAT_COUPABLE }
                 command = { type = trigger which = 7334086 }
 	}
 
 	action_b = {
-		name = "Ask Canada for help"
+		name = "EVT_7334084_OPTIONB"
                 ai_chance = 30
                 command = { type = clrflag which = GUY_1951_NAT_COUPABLE }
                 command = { type = trigger which = 7334087 }
 	}
 	action_c = {
-		name = "No, we are Democrats, abort it"
+		name = "EVT_7334084_OPTIONC"
                 ai_chance = 10
                 command = { type = clrflag which = GUY_1951_NAT_COUPABLE }
 	}
@@ -3836,19 +3836,19 @@ exists = CAN }
         offset = 5 # Check for trigger conditions day
         deathdate = { day = 29 month = september year = 1951 }
 
-	name = "A coup is near?"
-	desc = "Treacherous leftists are ruling our beautiful contry! Now, we are ready. We can coup them."
+	name = "EVT_7334085_NAME"
+	desc = "EVT_7334085_DESC"
 	style = 2
 	picture = "politics1"
 
 	action_a = {
-		name = "Coup them alone"
+		name = "EVT_7334085_OPTIONA"
                 ai_chance = 60
                 command = { type = clrflag which = GUY_1951_NAT_COUPABLE }
                 command = { type = trigger which = 7334086 }
 	        }
 	action_b = {
-		name = "No, we are Democrats, abort it"
+		name = "EVT_7334085_OPTIONB"
                 ai_chance = 40
                 command = { type = clrflag which = GUY_1951_NAT_COUPABLE }
 	}
@@ -3859,13 +3859,13 @@ event = {
 	random =  no
 	country = GUY
 
-	name = "Nationalist coup!"
-	desc = "Treacherous reactionists with army support are trying to coup us!"
+	name = "EVT_7334086_NAME"
+	desc = "EVT_7334086_DESC"
 	style = 2
 	picture = "politics1"
 
 	action_a = {
-		name = "Coup succeeds"
+		name = "EVT_7334086_OPTIONA"
                 ai_chance = 20
                 command = { type = sleepminister which = 562012 } #Syndicalists
                 command = { type = sleepminister which = 562014 }
@@ -3895,14 +3895,14 @@ event = {
 	}
 
 	action_b = {
-		name = "Coup fails and democracy survives"
+		name = "EVT_7334086_OPTIONB"
                 ai_chance = 40
                 command = { type = dissent value = 10 }
                 command = { type = revolt which = 1997 }
 	}
 
 	action_c = {
-		name = "Coup fails and Syndicalists seize power in the state!"
+		name = "EVT_7334086_OPTIONC"
                 ai_chance = 40
                 command = { type = setflag which = GUY_1951_SYNDIE } #For Canada, if exists
 		command = { type = set_domestic which = democratic value = 7 }
@@ -3935,19 +3935,19 @@ event = {
 	country = CAN
 
 
-	name = "A coup is near?"
-	desc = "Treacherous leftists are ruling in the Caribbean Federation and some right-wing dissidents ask us to help them prepare a coup!! Shall we bring the right people to power?"
+	name = "EVT_7334087_NAME"
+	desc = "EVT_7334087_DESC"
 	style = 2
 	picture = "politics1"
 
 	action_a = {
-		name = "Yes, of course"
+		name = "EVT_7334087_OPTIONA"
                 ai_chance = 60
                 command = { type = trigger which = 7334088 }
 	        }
 
 	action_b = {
-		name = "No, we are democrats"
+		name = "EVT_7334087_OPTIONB"
                 ai_chance = 40
                 command = { type = trigger which = 7334089 }
 	}
@@ -3958,13 +3958,13 @@ event = {
 	random =  no
 	country = GUY
 
-	name = "Nationalist coup!"
-	desc = "Treacherous reactionists with army and foreign support are trying to coup us!"
+	name = "EVT_7334088_NAME"
+	desc = "EVT_7334088_DESC"
 	style = 2
 	picture = "politics1"
 
 	action_a = {
-		name = "Coup succeeds"
+		name = "EVT_7334088_OPTIONA"
                 ai_chance = 60 #Canadian help
                 command = { type = sleepminister which = 562012 } #Syndicalists
                 command = { type = sleepminister which = 562014 }
@@ -3994,7 +3994,7 @@ event = {
 	}
 
 	action_b = {
-		name = "Coup fails, but Cipriani removes the syndicalists from government"
+		name = "EVT_7334088_OPTIONB"
                 ai_chance = 20
 		command = { type = set_domestic which = democratic value = 9 }
 		command = { type = set_domestic which = political_left value = 9 }
@@ -4014,7 +4014,7 @@ event = {
 	}
 
 	action_c = {
-		name = "Coup fails and democracy survives"
+		name = "EVT_7334088_OPTIONC"
                 ai_chance = 15
                 command = { type = leave_alliance }
 		command = { type = set_domestic which = defense_lobby value = 1 }
@@ -4025,7 +4025,7 @@ event = {
 		command = { type = end_access which = CAN where = GUY }
 	}
 	action_d = {
-		name = "Coup fails and Syndicalists seize power in the state!"
+		name = "EVT_7334088_OPTIOND"
                 ai_chance = 5
                 command = { type = setflag which = GUY_1951_SYNDIE } #For Canada, if exists
 		command = { type = set_domestic which = democratic value = 7 }
@@ -4058,19 +4058,19 @@ event = {
 	country = GUY
 
 
-	name = "A coup is near?"
-	desc = "Treacherous leftists are ruling our beautiful country! Canada refused to help. Should we make a coup?"
+	name = "EVT_7334089_NAME"
+	desc = "EVT_7334089_DESC"
 	style = 2
 	picture = "politics1"
 
 	action_a = {
-		name = "Coup them alone"
+		name = "EVT_7334089_OPTIONA"
                 ai_chance = 60
                 command = { type = trigger which = 7334086 }
 	}
 
 	action_b = {
-		name = "No, we are Democrats, abort it"
+		name = "EVT_7334089_OPTIONB"
                 ai_chance = 40
                 command = {  }
 	}
@@ -4092,19 +4092,19 @@ event = {
         offset = 5 # Check for trigger conditions day
         deathdate = { day = 29 month = july year = 1951 }
 
-	name = "A coup is near?"
-	desc = "The SDP betrayed us! Shall we avenge that humiliation?"
+	name = "EVT_7334090_NAME"
+	desc = "EVT_7334090_DESC"
 	style = 2
 	picture = "politics1"
 
 	action_a = {
-		name = "Yes, of course"
+		name = "EVT_7334090_OPTIONA"
                 ai_chance = 60
 		command = { }
 	}
 
 	action_b = {
-		name = "No, we are Democrats"
+		name = "EVT_7334090_OPTIONB"
                 ai_chance = 40
                 command = { type = clrflag which = GUY_1951_SYN_COUPABLE }
 	}
@@ -4115,13 +4115,13 @@ event = {
 	random =  no
 	country = GUY
 
-	name = "Syndicalist coup!"
-	desc = "Treacherous Syndicalists with army support are trying to coup us!"
+	name = "EVT_7334091_NAME"
+	desc = "EVT_7334091_DESC"
 	style = 2
 	picture = "politics1"
 
 	action_a = {
-		name = "Coup fails"
+		name = "EVT_7334091_OPTIONA"
                 ai_chance = 45
                 command = { type = sleepminister which = 562012 } #Syndicalists
                 command = { type = sleepminister which = 562014 }
@@ -4138,7 +4138,7 @@ event = {
 	}
 
 	action_b = {
-		name = "Coup succeeds and Syndicalists seize power in the state!"
+		name = "EVT_7334091_OPTIONB"
                 ai_chance = 55
                 command = { type = setflag which = GUY_1951_SYNDIE } #For Canada, if exists
 		command = { type = set_domestic which = democratic value = 7 }
@@ -4185,13 +4185,13 @@ event = {
         offset = 30 # Check for trigger conditions day
         deathdate = { day = 29 month = december year = 1951 }
 
-	name = "Syndicalist coup"
-	desc = "Horrible news. The attempt of the right-wing forces in the Carribean Federation to coup the exisitng government resulted in a complete Syndicalist take-over! What shall we do?"
+	name = "EVT_7334092_NAME"
+	desc = "EVT_7334092_DESC"
 	style = 2
 	picture = "politics1"
 
 	action_a = {
-		name = "Crush them!"
+		name = "EVT_7334092_OPTIONA"
                 ai_chance = 60
                 command = { type = clrflag which = GUY_1951_SYNDIE }
                 command = { type = domestic which = interventionism value = 1 }
@@ -4199,7 +4199,7 @@ event = {
 	}
 
 	action_b = {
-		name = "Leave them alone"
+		name = "EVT_7334092_OPTIONB"
                 ai_chance = 40
                 command = { type = clrflag which = GUY_1951_SYNDIE }
                 command = { type = domestic which = interventionism value = -1 }

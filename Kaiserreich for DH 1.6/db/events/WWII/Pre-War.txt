@@ -1,127 +1,127 @@
-# #####
-# #########################
-# ### Switzerland - 1937
-# #########################
-# #####
+######
+##########################
+#### Switzerland - 1937
+##########################
+######
 event = {
-	id = 9445501
-	picture = "Alps"
-	country = FRA
-	save_date = yes
-	
-	trigger = {
-		control = { province = 391 data = SCH }
+id = 9445501
+picture = "Alps"
+country = FRA
+save_date = yes
+
+trigger = { 
+	control = { province = 391 data = SCH }
 		NOT = {
-			alliance = { country = GER country = SCH }
-			alliance = { country = AUS country = SCH }
-			alliance = { country = ENG country = SCH }
-			alliance = { country = ITA country = SCH }
-			atwar = FRA
-			ispuppet = GER
-			ispuppet = SCH
-			ispuppet = FRA
-		}
+		alliance = { country = GER country = SCH } 
+		alliance = { country = AUS country = SCH }
+		alliance = { country = ENG country = SCH }
+		alliance = { country = ITA country = SCH }
+		atwar = FRA
+		ispuppet = GER
+                ispuppet = SCH
+		ispuppet = FRA
 	}
-	
-	name = "EVT_9445501_NAME"
-	desc = "EVT_9445501_DESC"
-	style = 2
-	
-	date = { day = 14 month = june year = 1937 }
-	offset = 21
-	deathdate = { day = 1 month = december year = 1960 }
-	
-	action_a = {
-		ai_chance = 97
-		name = "EVT_9445501_OPTIONA"
-		command = { type = trigger which = 9445502 }
-		command = { type = relation which = GER value = -50 }
-		command = { type = relation which = ITA value = -30 }
-		command = { type = relation which = AUS value = -30 }
-		command = { type = relation which = SCH value = -60 }
-		command = { type = belligerence which = FRA value = 1 }
-		command = { type = domestic which = interventionism value = 1 }
-		command = { type = domestic which = defense_lobby value = 1 }
+}
+
+name = "EVT_9445501_NAME"
+desc = "EVT_9445501_DESC"
+style = 2
+
+date = { day = 14 month = june year = 1937 }
+offset = 21
+deathdate = { day = 1 month = december year = 1960 }
+
+action_a = {
+ai_chance = 97
+name = "EVT_9445501_OPTIONA"
+	command = { type = trigger which = 9445502 }
+	command = { type = relation which = GER value = -50 }
+	command = { type = relation which = ITA value = -30 }
+	command = { type = relation which = AUS value = -30 }
+	command = { type = relation which = SCH value = -60 }
+	command = { type = belligerence which = FRA value = 1 }
+	command = { type = domestic which = interventionism value = 1 }
+	command = { type = domestic which = defense_lobby value = 1 }
 	}
-	
-	action_b = {
-		ai_chance = 3
-		name = "EVT_9445501_OPTIONB"
-		command = { type = domestic which = defense_lobby value = -1 }
-		command = { type = belligerence which = FRA value = -1 }
-		command = { type = relation which = SCH value = 10 }
-		command = { type = dissent value = 3 }
-		command = { type = sleepevent which = 11800114 }
+
+action_b = {
+ai_chance = 3
+name = "EVT_9445501_OPTIONB"
+	command = { type = domestic which = defense_lobby value = -1 }
+	command = { type = belligerence which = FRA value = -1 }
+	command = { type = relation which = SCH value = 10 }
+	command = { type = dissent value = 3 }
+        command = { type = sleepevent which = 11800114 }
 	}
 }
 
 event = {
-	id = 9445502
-	picture = "Alps"
-	country = SCH
-	style = 2
-	
-	name = "EVT_9445502_NAME"
-	desc = "EVT_9445502_DESC"
-	
-	action_a = {
-		ai_chance = 25
-		name = "EVT_9445502_OPTIONA"
-		command = { type = secedeprovince which = FRA value = 391 }
-		command = { type = trigger which = 9445503 }
-		command = { type = relation which = GER value = -50 }
-		command = { type = relation which = ITA value = -30 }
-		command = { type = relation which = AUS value = -30 }
-		command = { type = relation which = SCH value = -60 }
-		command = { type = belligerence which = FRA value = 1 }
-		command = { type = leave_alliance }
-		command = { type = dissent value = 10 }
-		command = { type = domestic which = interventionism value = 1 }
-		command = { type = domestic which = defense_lobby value = 1 }
+id = 9445502
+picture = "Alps"
+country = SCH
+style = 2
+
+name = "EVT_9445502_NAME"
+desc = "EVT_9445502_DESC"
+
+action_a = {
+ai_chance = 25
+name = "EVT_9445502_OPTIONA"
+	command = { type = secedeprovince which = FRA value = 391 }
+	command = { type = trigger which = 9445503 }
+	command = { type = relation which = GER value = -50 }
+	command = { type = relation which = ITA value = -30 }
+	command = { type = relation which = AUS value = -30 }
+	command = { type = relation which = SCH value = -60 }
+	command = { type = belligerence which = FRA value = 1 }
+	command = { type = leave_alliance }
+        command = { type = dissent value = 10 }
+	command = { type = domestic which = interventionism value = 1 }
+	command = { type = domestic which = defense_lobby value = 1 }
 	}
-	
-	action_b = {
-		name = "EVT_9445502_OPTIONB"
-		ai_chance = 3
-		command = { type = leave_alliance }
-		command = { type = domestic which = political_left value = -2 }
-		command = { type = relation which = FRA value = -50 }
-		command = { type = relation which = ENG value = -30 }
-		command = { type = relation which = GER value = 10 }
-		command = { type = relation which = AUS value = 10 }
-		command = { type = relation which = ITA value = 10 }
-		command = { type = dissent value = -10 }
-		command = { type = trigger which = 9445504 }
+
+action_b = {
+name = "EVT_9445502_OPTIONB"
+ai_chance = 3
+	command = { type = leave_alliance }
+	command = { type = domestic which = political_left value = -2 }
+	command = { type = relation which = FRA value = -50 }
+	command = { type = relation which = ENG value = -30 }
+	command = { type = relation which = GER value = 10 }
+	command = { type = relation which = AUS value = 10 }
+	command = { type = relation which = ITA value = 10 }
+	command = { type = dissent value = -10 }
+	command = { type = trigger which = 9445504 }
 	}
-	
-	action_c = {
-		name = "EVT_9445502_OPTIONC"
-		ai_chance = 60
-		trigger = {
-			control = { province = 145 data = GER }
-			control = { province = 163 data = GER }
-			NOT = {
-				alliance = { country = GER country = FRA }
-				atwar = SCH
-				war = { country = GER country = RUS }
-				war = { country = GER country = JAP }
-				war = { country = GER country = SOV }
-				exists = U31
-				ispuppet = GER
-				government = communist
-			}
-		}
-		command = { type = leave_alliance }
-		command = { type = domestic which = political_left value = -2 }
-		command = { type = relation which = FRA value = -50 }
-		command = { type = relation which = ENG value = -30 }
-		command = { type = relation which = GER value = 20 }
-		command = { type = relation which = AUS value = 10 }
-		command = { type = relation which = ITA value = 10 }
-		command = { type = dissent value = -10 }
-		command = { type = trigger which = 9445510 }
+
+action_c = {
+name = "EVT_9445502_OPTIONC"
+ai_chance = 60
+        trigger = {
+        control = { province = 145 data = GER } 
+        control = { province = 163 data = GER } 
+        NOT = {
+        alliance = { country = GER country = FRA }
+        atwar = SCH
+        war = { country = GER country = RUS }
+        war = { country = GER country = JAP }
+        war = { country = GER country = SOV }
+        exists = U31
+        ispuppet = GER
+        government = communist
+        }
 	}
-	
+	command = { type = leave_alliance }
+	command = { type = domestic which = political_left value = -2 }
+	command = { type = relation which = FRA value = -50 }
+	command = { type = relation which = ENG value = -30 }
+	command = { type = relation which = GER value = 20 }
+	command = { type = relation which = AUS value = 10 }
+	command = { type = relation which = ITA value = 10 }
+	command = { type = dissent value = -10 }
+	command = { type = trigger which = 9445510 }
+	}
+
 }
 
 
@@ -130,7 +130,7 @@ event = {
 	country = GER
 	style = 2
 	picture = "alsaceorwar"
-	
+
 	name = "EVT_9445510_NAME"
 	desc = "EVT_9445510_DESC"
 	
@@ -143,7 +143,7 @@ event = {
 		command = { type = dissent value = 1 }
 		command = { type = trigger which = 9445512 }
 	}
-	
+
 	action_b = {
 		ai_chance = 30
 		name = "EVT_9445510_OPTIONB"
@@ -151,49 +151,49 @@ event = {
 		command = { type = relation which = SCH value = -50 }
 		command = { type = relation which = FRA value = 50 }
 		command = { type = dissent value = 3 }
-		command = { type = trigger which = 9445511 }
+                command = { type = trigger which = 9445511 }
 	}
 }
 
 event = {
-	id = 9445511
-	picture = "Alps"
-	country = SCH
-	style = 2
-	
-	name = "EVT_9445511_NAME"
-	desc = "EVT_9445511_DESC"
-	
-	action_a = {
-		ai_chance = 97
-		name = "EVT_9445511_OPTIONA"
-		command = { type = secedeprovince which = FRA value = 391 }
-		command = { type = trigger which = 9445503 }
-		command = { type = relation which = GER value = -50 }
-		command = { type = relation which = ITA value = -30 }
-		command = { type = relation which = AUS value = -30 }
-		command = { type = relation which = SCH value = -60 }
-		command = { type = belligerence which = FRA value = 1 }
-		command = { type = leave_alliance }
-		command = { type = dissent value = 10 }
-		command = { type = domestic which = interventionism value = 1 }
-		command = { type = domestic which = defense_lobby value = 1 }
+id = 9445511
+picture = "Alps"
+country = SCH
+style = 2
+
+name = "EVT_9445511_NAME"
+desc = "EVT_9445511_DESC"
+
+action_a = {
+ai_chance = 97
+name = "EVT_9445511_OPTIONA"
+	command = { type = secedeprovince which = FRA value = 391 }
+	command = { type = trigger which = 9445503 }
+	command = { type = relation which = GER value = -50 }
+	command = { type = relation which = ITA value = -30 }
+	command = { type = relation which = AUS value = -30 }
+	command = { type = relation which = SCH value = -60 }
+	command = { type = belligerence which = FRA value = 1 }
+	command = { type = leave_alliance }
+        command = { type = dissent value = 10 }
+	command = { type = domestic which = interventionism value = 1 }
+	command = { type = domestic which = defense_lobby value = 1 }
 	}
-	
-	action_b = {
-		name = "EVT_9445511_OPTIONB"
-		ai_chance = 3
-		command = { type = leave_alliance }
-		command = { type = domestic which = political_left value = -2 }
-		command = { type = relation which = FRA value = -50 }
-		command = { type = relation which = ENG value = -30 }
-		command = { type = relation which = GER value = 10 }
-		command = { type = relation which = AUS value = 10 }
-		command = { type = relation which = ITA value = 10 }
-		command = { type = dissent value = -10 }
-		command = { type = trigger which = 9445504 }
+
+action_b = {
+name = "EVT_9445511_OPTIONB"
+ai_chance = 3
+	command = { type = leave_alliance }
+	command = { type = domestic which = political_left value = -2 }
+	command = { type = relation which = FRA value = -50 }
+	command = { type = relation which = ENG value = -30 }
+	command = { type = relation which = GER value = 10 }
+	command = { type = relation which = AUS value = 10 }
+	command = { type = relation which = ITA value = 10 }
+	command = { type = dissent value = -10 }
+	command = { type = trigger which = 9445504 }
 	}
-	
+
 }
 
 event = {
@@ -201,10 +201,10 @@ event = {
 	country = FRA
 	style = 2
 	picture = "Wehrmacht"
-	
+
 	name = "EVT_9445512_NAME"
 	desc = "EVT_9445512_DESC"
-	
+
 	action_a = {
 		ai_chance = 50
 		name = "EVT_9445512_OPTIONA"
@@ -215,7 +215,7 @@ event = {
 		command = { type = trigger which = 9445513 }
 		command = { type = trigger which = 9445515 }
 	}
-	
+
 	action_b = {
 		ai_chance = 50
 		name = "EVT_9445512_OPTIONB"
@@ -232,10 +232,10 @@ event = {
 	country = GER
 	style = 2
 	picture = "Wehrmacht"
-	
+
 	name = "EVT_9445513_NAME"
 	desc = "EVT_9445513_DESC"
-	
+
 	action_a = {
 		name = "EVT_9445513_OPTIONA"
 		command = { type = relation which = SCH value = 25 }
@@ -248,23 +248,23 @@ event = {
 	country = GER
 	style = 2
 	picture = "alsaceorwar"
-	
+
 	name = "EVT_9445514_NAME"
 	desc = "EVT_9445514_DESC"
-	
+
 	action_a = {
 		ai_chance = 40
 		name = "EVT_9445514_OPTIONA"
 		command = { type = war which = FRA }
 		command = { type = alliance which = SCH }
-		command = { type = dissent value = 3 }
+                command = { type = dissent value = 3 }
 	}
-	
+
 	action_b = {
 		ai_chance = 60
 		name = "EVT_9445514_OPTIONB"
 		command = { type = dissent value = 3 }
-		command = { type = trigger which = 9445511 }
+                command = { type = trigger which = 9445511 }
 	}
 }
 
@@ -273,10 +273,10 @@ event = {
 	country = SCH
 	style = 2
 	picture = "Wehrmacht"
-	
+
 	name = "EVT_9445515_NAME"
 	desc = "EVT_9445515_DESC"
-	
+
 	action_a = {
 		name = "EVT_9445515_OPTIONA"
 		command = { type = dissent value = -10 }
@@ -286,325 +286,325 @@ event = {
 
 
 event = {
-	id = 9445503
-	picture = "Alps"
-	country = FRA
-	style = 2
-	
-	name = "EVT_9445503_NAME"
-	desc = "EVT_9445503_DESC"
-	
-	action_a = {
-		name = "EVT_9445503_OPTIONA"
-		command = { type = dissent value = -5 }
-		command = { type = trigger which = 908014 }
+id = 9445503
+picture = "Alps"
+country = FRA
+style = 2
+
+name = "EVT_9445503_NAME"
+desc = "EVT_9445503_DESC"
+
+action_a = {
+name = "EVT_9445503_OPTIONA"
+	command = { type = dissent value = -5 }
+	command = { type = trigger which = 908014 }
 	}
 }
 
 event = {
-	id = 9445504
-	picture = "Alps"
-	country = FRA
-	style = 2
-	
-	name = "EVT_9445504_NAME"
-	desc = "EVT_9445504_DESC"
-	
-	action_a = {
-		name = "EVT_9445504_OPTIONA"
-		ai_chance = 25
-		command = { type = dissent value = 5 }
+id = 9445504
+picture = "Alps"
+country = FRA
+style = 2
+
+name = "EVT_9445504_NAME"
+desc = "EVT_9445504_DESC"
+
+action_a = {
+name = "EVT_9445504_OPTIONA"
+ai_chance = 25
+	command = { type = dissent value = 5 }
 	}
-	
-	action_b = {
-		name = "EVT_9445504_OPTIONB"
-		ai_chance = 75
-		command = { type = domestic which = interventionism value = 1 }
-		command = { type = relation which = GER value = -10 }
-		command = { type = relation which = ITA value = -10 }
-		command = { type = relation which = AUS value = -7 }
-		command = { type = war which = SCH }
-		command = { type = dissent value = -3 }
+
+action_b = {
+name = "EVT_9445504_OPTIONB"
+ai_chance = 75
+	command = { type = domestic which = interventionism value = 1 }
+	command = { type = relation which = GER value = -10 }
+	command = { type = relation which = ITA value = -10 }
+	command = { type = relation which = AUS value = -7 }
+	command = { type = war which = SCH }
+	command = { type = dissent value = -3 }
 	}
 }
 
 event = {
-	id = 9445505
-	picture = "Alps"
-	country = ITA
-	style = 2
-	
-	trigger = {
-		NOT = {
-			ispuppet = ITA
-			atwar = ITA
-			government = communist
-		}
-		war = { country = FRA country = SCH }
+id = 9445505
+picture = "Alps"
+country = ITA
+style = 2
+
+trigger = { 
+	NOT = { 
+	ispuppet = ITA
+	atwar = ITA
+        government = communist
+        }
+	war = { country = FRA country = SCH }
+}
+
+date = { day = 14 month = june year = 1937 }
+offset = 2
+deathdate = { day = 1 month = december year = 1953 }
+
+name = "EVT_9445505_NAME"
+desc = "EVT_9445505_DESC"
+
+action_a = {
+name = "EVT_9445505_OPTIONA"
+ai_chance = 25
+	command = { type = dissent value = 5 }
+	command = { type = war which = FRA }
+	command = { type = alliance which = SCH }
+	command = { type = relation which = SCH value = 200 }
+	command = { type = domestic which = interventionism value = 2 }
+	command = { type = domestic which = defense_lobby value = 2 }
 	}
-	
-	date = { day = 14 month = june year = 1937 }
-	offset = 2
-	deathdate = { day = 1 month = december year = 1953 }
-	
-	name = "EVT_9445505_NAME"
-	desc = "EVT_9445505_DESC"
-	
-	action_a = {
-		name = "EVT_9445505_OPTIONA"
-		ai_chance = 25
-		command = { type = dissent value = 5 }
-		command = { type = war which = FRA }
-		command = { type = alliance which = SCH }
-		command = { type = relation which = SCH value = 200 }
-		command = { type = domestic which = interventionism value = 2 }
-		command = { type = domestic which = defense_lobby value = 2 }
-	}
-	
-	action_b = {
-		name = "EVT_9445505_OPTIONB"
-		ai_chance = 75
-		command = { type = domestic which = interventionism value = -1 }
-		command = { type = domestic which = defense_lobby value = -1 }
-		command = { type = relation which = SCH value = -20 }
-		command = { type = dissent value = 3 }
+
+action_b = {
+name = "EVT_9445505_OPTIONB"
+ai_chance = 75
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = domestic which = defense_lobby value = -1 }
+	command = { type = relation which = SCH value = -20 }
+	command = { type = dissent value = 3 }
 	}
 }
 
 event = {
-	id = 9445506
-	picture = "English_declaration_war"
-	decision_picture = "decision_english_declaration_war"
-	country = ENG
-	style = 2
-	
-	decision = {
-		NOT = {
-			ispuppet = ENG
-			atwar = ENG
-		}
-		government = communist
-		war = { country = FRA country = SCH }
+id = 9445506
+picture = "English_declaration_war"
+decision_picture = "decision_english_declaration_war"
+country = ENG
+style = 2
+
+decision = {
+NOT = { 
+	        ispuppet = ENG
+	        atwar = ENG
+                }
+                government = communist
+                war = { country = FRA country = SCH }
 		OR = {
-			war = { country = FRA country = ITA }
-			war = { country = FRA country = AUS }
-			war = { country = FRA country = GER }
-		}
-	}
-	
-	decision_trigger = {
+		war = { country = FRA country = ITA }
+		war = { country = FRA country = AUS }
+		war = { country = FRA country = GER }	
+	        }
+}
+
+decision_trigger = {
 		
-	}
-	
-	trigger = {
-		NOT = {
-			ispuppet = ENG
-			atwar = ENG
-		}
-		government = communist
-		war = { country = FRA country = SCH }
+    }
+
+trigger = { 
+                NOT = { 
+	        ispuppet = ENG
+	        atwar = ENG
+                }
+                government = communist
+                war = { country = FRA country = SCH }
 		OR = {
-			war = { country = FRA country = ITA }
-			war = { country = FRA country = AUS }
-			war = { country = FRA country = GER }
-		}
+		war = { country = FRA country = ITA }
+		war = { country = FRA country = AUS }
+		war = { country = FRA country = GER }	
+	        }
+}
+
+date = { day = 14 month = june year = 1937 }
+offset = 11
+deathdate = { day = 1 month = december year = 1960 }
+
+name = "EVT_9445506_NAME"
+desc = "EVT_9445506_DESC"
+
+action_a = {
+name = "EVT_9445506_OPTIONA"
+ai_chance = 90
+	command = { type = dissent value = 10 }
+        command = { trigger = { alliance = { country = ENG country = ICL } } type = setflag which = ENG_ICLALL }
+        command = { trigger = { alliance = { country = ENG country = ICL } } type = leave_alliance }
+	command = { type = trigger which = 9445521 }
+	command = { type = relation which = FRA value = 200 }
+	command = { type = relation which = SPR value = 150 }
+	command = { type = relation which = GEO value = 150 }
+	command = { type = relation which = GER value = -100 }
+	command = { type = domestic which = interventionism value = 2 }
+	command = { type = domestic which = defense_lobby value = 2 }
 	}
-	
-	date = { day = 14 month = june year = 1937 }
-	offset = 11
-	deathdate = { day = 1 month = december year = 1960 }
-	
-	name = "EVT_9445506_NAME"
-	desc = "EVT_9445506_DESC"
-	
-	action_a = {
-		name = "EVT_9445506_OPTIONA"
-		ai_chance = 90
-		command = { type = dissent value = 10 }
-		command = { trigger = { alliance = { country = ENG country = ICL } } type = setflag which = ENG_ICLALL }
-		command = { trigger = { alliance = { country = ENG country = ICL } } type = leave_alliance }
-		command = { type = trigger which = 9445521 }
-		command = { type = relation which = FRA value = 200 }
-		command = { type = relation which = SPR value = 150 }
-		command = { type = relation which = GEO value = 150 }
-		command = { type = relation which = GER value = -100 }
-		command = { type = domestic which = interventionism value = 2 }
-		command = { type = domestic which = defense_lobby value = 2 }
-	}
-	
-	action_b = {
-		name = "EVT_9445506_OPTIONB"
-		ai_chance = 10
-		command = { type = domestic which = interventionism value = -1 }
-		command = { type = domestic which = defense_lobby value = -1 }
-		command = { type = relation which = SCH value = -20 }
-		command = { type = dissent value = 10 }
-		command = { type = sleepevent which = 9445520 }
-		command = { type = sleepevent which = 99445535 }
-		command = { type = sleepevent which = 102928342 }
-		command = { type = sleepevent which = 900820 }
+
+action_b = {
+name = "EVT_9445506_OPTIONB"
+ai_chance = 10
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = domestic which = defense_lobby value = -1 }
+	command = { type = relation which = SCH value = -20 }
+	command = { type = dissent value = 10 }
+        command = { type = sleepevent which = 9445520 }
+        command = { type = sleepevent which = 99445535 }
+        command = { type = sleepevent which = 102928342 }
+        command = { type = sleepevent which = 900820 }
 	}
 }
 
 
 
 event = {
-	id = 9445508
-	picture = "Alps"
-	country = GER
-	style = 2
-	
-	trigger = {
-		war = { country = FRA country = SCH }
-		control = { province = 163 data = GER }
-		control = { province = 145 data = GER }
-		NOT = {
-			government = communist
-			ispuppet = GER
-			atwar = GER
-			war = { country = FRA country = GER }
-			alliance = { country = SCH country = GER }
-		}
+id = 9445508
+picture = "Alps"
+country = GER
+style = 2
+
+trigger = { 
+                war = { country = FRA country = SCH }
+                control = { province = 163 data = GER } 
+                control = { province = 145 data = GER } 
+		NOT = { 
+                government = communist
+	        ispuppet = GER
+	        atwar = GER
+                war = { country = FRA country = GER }
+                alliance = { country = SCH country = GER }
+                }
+}
+
+date = { day = 14 month = june year = 1937 }
+offset = 6
+deathdate = { day = 1 month = december year = 1960 }
+
+name = "EVT_9445508_NAME"
+desc = "EVT_9445508_DESC"
+
+action_a = {
+name = "EVT_9445508_OPTIONA"
+ai_chance = 99
+	command = { type = alliance which = SCH }
+	command = { trigger = { alliance = { country = SCH country = ITA } } type = alliance which = ITA }
+	command = { type = relation which = SCH value = 100 }
+	command = { type = relation which = FRA value = -100 }
+	command = { type = relation which = ENG value = -75 }
+	command = { type = domestic which = interventionism value = 2 }
+	command = { type = domestic which = defense_lobby value = 2 }
 	}
-	
-	date = { day = 14 month = june year = 1937 }
-	offset = 6
-	deathdate = { day = 1 month = december year = 1960 }
-	
-	name = "EVT_9445508_NAME"
-	desc = "EVT_9445508_DESC"
-	
-	action_a = {
-		name = "EVT_9445508_OPTIONA"
-		ai_chance = 99
-		command = { type = alliance which = SCH }
-		command = { trigger = { alliance = { country = SCH country = ITA } } type = alliance which = ITA }
-		command = { type = relation which = SCH value = 100 }
-		command = { type = relation which = FRA value = -100 }
-		command = { type = relation which = ENG value = -75 }
-		command = { type = domestic which = interventionism value = 2 }
-		command = { type = domestic which = defense_lobby value = 2 }
-	}
-	
-	action_b = {
-		name = "EVT_9445508_OPTIONB"
-		ai_chance = 1
-		command = { type = domestic which = interventionism value = -1 }
-		command = { type = relation which = SCH value = -20 }
-		command = { type = dissent value = 5 }
+
+action_b = {
+name = "EVT_9445508_OPTIONB"
+ai_chance = 1
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = relation which = SCH value = -20 }
+	command = { type = dissent value = 5 }
 	}
 }
 
 event = {
-	id = 9445509
-	picture = "Alps"
-	country = GER
-	style = 2
-	
-	trigger = {
-		war = { country = FRA country = SCH }
-		control = { province = 163 data = GER }
-		control = { province = 145 data = GER }
-		atwar = GER
-		NOT = {
-			war = { country = FRA country = GER }
-			government = communist
-			ispuppet = GER
-			alliance = { country = SCH country = GER }
-		}
+id = 9445509
+picture = "Alps"
+country = GER
+style = 2
+
+trigger = { 
+                war = { country = FRA country = SCH }
+                control = { province = 163 data = GER } 
+                control = { province = 145 data = GER } 
+                atwar = GER
+		NOT = { 
+                war = { country = FRA country = GER }
+                government = communist
+	        ispuppet = GER
+                alliance = { country = SCH country = GER }
+                }
+}
+
+date = { day = 14 month = june year = 1937 }
+offset = 6
+deathdate = { day = 1 month = december year = 1960 }
+
+name = "EVT_9445509_NAME"
+desc = "EVT_9445509_DESC"
+
+action_a = {
+name = "EVT_9445509_OPTIONA"
+ai_chance = 70
+	command = { type = alliance which = SCH }
+	command = { type = relation which = SCH value = 100 }
+	command = { type = relation which = FRA value = -100 }
+	command = { type = relation which = ENG value = -75 }
+	command = { type = domestic which = interventionism value = 2 }
+	command = { type = domestic which = defense_lobby value = 2 }
 	}
-	
-	date = { day = 14 month = june year = 1937 }
-	offset = 6
-	deathdate = { day = 1 month = december year = 1960 }
-	
-	name = "EVT_9445509_NAME"
-	desc = "EVT_9445509_DESC"
-	
-	action_a = {
-		name = "EVT_9445509_OPTIONA"
-		ai_chance = 70
-		command = { type = alliance which = SCH }
-		command = { type = relation which = SCH value = 100 }
-		command = { type = relation which = FRA value = -100 }
-		command = { type = relation which = ENG value = -75 }
-		command = { type = domestic which = interventionism value = 2 }
-		command = { type = domestic which = defense_lobby value = 2 }
-	}
-	
-	action_b = {
-		name = "EVT_9445509_OPTIONB"
-		ai_chance = 30
-		command = { type = domestic which = interventionism value = -1 }
-		command = { type = relation which = SCH value = -20 }
-		command = { type = dissent value = 5 }
+
+action_b = {
+name = "EVT_9445509_OPTIONB"
+ai_chance = 30
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = relation which = SCH value = -20 }
+	command = { type = dissent value = 5 }
 	}
 }
 
 
-# #####
-# #########################
-# ### Assassination - 1937
-# #########################
-# #####
+######
+##########################
+#### Assassination - 1937
+##########################
+######
 
 event = {
-	id = 9445519
-	picture = "minister_died"
-	country = GER
-	style = 2
-	
-	trigger = {
-		exists = FRA
-		control = { province = 55 data = FRA }
-		NOT = {
-			atwar = GER
-			government = communist
-			war = { country = GER country = FRA }
-			ispuppet = GER
-			ispuppet = FRA
-		}
+id = 9445519
+picture = "minister_died"
+country = GER
+style = 2
+
+trigger = { 
+        exists = FRA
+        control = { province = 55 data = FRA }
+	NOT = {
+        atwar = GER
+        government = communist
+	war = { country = GER country = FRA }
+	ispuppet = GER
+	ispuppet = FRA
 	}
-	
-	name = "EVT_9445519_NAME"
-	desc = "EVT_9445519_DESC"
-	
-	date = { day = 14 month = march year = 1938 }
-	offset = 21
-	deathdate = { day = 1 month = december year = 1960 }
-	
-	action_a = {
-		ai_chance = 90
-		name = "EVT_9445519_OPTIONA"
-		command = { type = dissent value = 3 }
-		command = { type = sleepevent which = 94455191 }
-		command = { type = sleepevent which = 94455192 }
-		command = { type = sleepevent which = 94455193 }
-		command = { type = sleepminister which = 46 }
-		command = { type = sleepminister which = 65 }
+}
+
+name = "EVT_9445519_NAME"
+desc = "EVT_9445519_DESC"
+
+date = { day = 14 month = march year = 1938 }
+offset = 21
+deathdate = { day = 1 month = december year = 1960 }
+
+action_a = {
+ai_chance = 90
+name = "EVT_9445519_OPTIONA"
+	command = { type = dissent value = 3 }
+        command = { type = sleepevent which = 94455191 }
+        command = { type = sleepevent which = 94455192 }
+        command = { type = sleepevent which = 94455193 }
+        command = { type = sleepminister which = 46 }
+	command = { type = sleepminister which = 65 }
 	}
-	
-	action_b = {
-		ai_chance = 10
-		name = "EVT_9445519_OPTIONB"
-		command = { type = setflag which = GER_FRA_WAR }
-		command = { type = war which = FRA }
-		command = { type = belligerence which = GER value = 3 }
-		command = { type = dissent value = -5 }
-		command = { type = manpowerpool value = 25 }
-		command = { type = relation which = FRA value = -200 }
-		command = { type = relation which = RSI value = -200 }
-		command = { type = relation which = SPR value = -100 }
-		command = { type = relation which = GEO value = -100 }
-		command = { type = relation which = SOV value = -100 }
-		command = { type = relation which = ENG value = -50 }
-		command = { type = relation which = CSA value = -25 }
-		command = { type = domestic which = defense_lobby value = 1 }
-		command = { type = sleepevent which = 94455191 }
-		command = { type = sleepevent which = 94455192 }
-		command = { type = sleepevent which = 94455193 }
-		command = { type = sleepminister which = 46 }
-		command = { type = sleepminister which = 65 }
+
+action_b = {
+ai_chance = 10
+name = "EVT_9445519_OPTIONB"
+	command = { type = setflag which = GER_FRA_WAR }
+	command = { type = war which = FRA }
+	command = { type = belligerence which = GER value = 3 }
+	command = { type = dissent value = -5 }
+	command = { type = manpowerpool value = 25 }
+	command = { type = relation which = FRA value = -200 }
+	command = { type = relation which = RSI value = -200 }
+	command = { type = relation which = SPR value = -100 }
+	command = { type = relation which = GEO value = -100 }
+	command = { type = relation which = SOV value = -100 }
+	command = { type = relation which = ENG value = -50 }
+	command = { type = relation which = CSA value = -25 }
+	command = { type = domestic which = defense_lobby value = 1 }
+        command = { type = sleepevent which = 94455191 }
+        command = { type = sleepevent which = 94455192 }
+        command = { type = sleepevent which = 94455193 }
+        command = { type = sleepminister which = 46 }
+	command = { type = sleepminister which = 65 }
 	}
 }
 
@@ -613,38 +613,38 @@ event = {
 	id = 94455191
 	picture = "minister_died"
 	country = GER
-	style = 2
-	
-	trigger = {
-		atwar = GER
-		exists = FRA
-		control = { province = 55 data = FRA }
-		NOT = {
-			government = communist
-			war = { country = GER country = FRA }
-			ispuppet = GER
-			ispuppet = FRA
-		}
+        style = 2
+
+	trigger = { 
+        atwar = GER
+        exists = FRA
+        control = { province = 55 data = FRA }
+	NOT = {
+        government = communist
+	war = { country = GER country = FRA }
+	ispuppet = GER
+	ispuppet = FRA
 	}
-	
+        }
+
 	name = "EVT_94455191_NAME"
 	desc = "EVT_94455191_DESC"
-	
+
 	date = { day = 14 month = march year = 1938 }
 	offset = 21
 	deathdate = { day = 29 month = december year = 1966 }
-	
+
 	action_a = {
 		ai_chance = 99
 		name = "EVT_94455191_OPTIONA"
 		command = { type = dissent value = 3 }
-		command = { type = sleepevent which = 9445519 }
-		command = { type = sleepevent which = 94455192 }
-		command = { type = sleepevent which = 94455193 }
-		command = { type = sleepminister which = 46 }
+                command = { type = sleepevent which = 9445519 }
+                command = { type = sleepevent which = 94455192 }
+                command = { type = sleepevent which = 94455193 }
+                command = { type = sleepminister which = 46 }
 		command = { type = sleepminister which = 65 }
 	}
-	
+
 	action_b = {
 		ai_chance = 1
 		name = "EVT_94455191_OPTIONB"
@@ -664,7 +664,7 @@ event = {
 		command = { type = sleepevent which = 94455192 }
 		command = { type = sleepevent which = 94455193 }
 		command = { type = sleepevent which = 9445520 }
-		command = { type = sleepminister which = 46 }
+                command = { type = sleepminister which = 46 }
 		command = { type = sleepminister which = 65 }
 		command = { type = setflag which = GER_FRA_WAR }
 	}
@@ -675,9 +675,9 @@ event = {
 	id = 9445520
 	country = ENG
 	style = 2
-	
+
 	decision = {
-		NOT = {
+		        NOT = {
 			war = { country = GER country = ENG }
 			alliance = { country = ENG country = FRA }
 			alliance = { country = ENG country = GER }
@@ -685,16 +685,16 @@ event = {
 			ispuppet = FRA
 		}
 	}
-	
+
 	decision_trigger = {
-		war = { country = GER country = FRA }
+		war = { country = GER country = FRA }      
 		government = communist
-	}
-	
+    }
+
 	trigger = {
 		war = { country = GER country = FRA }
 		government = communist
-		NOT = {
+                        NOT = {
 			war = { country = GER country = ENG }
 			alliance = { country = ENG country = FRA }
 			alliance = { country = ENG country = GER }
@@ -702,21 +702,21 @@ event = {
 			ispuppet = FRA
 		}
 	}
-	
-	name = "EVT_9445520_NAME"
-	desc = "EVT_9445520_DESC"
-	picture = "English_declaration_war"
-	decision_picture = "decision_english_declaration_war"
-	
-	date = { day = 14 month = march year = 1938 }
-	offset = 18
-	deathdate = { day = 1 month = december year = 1960 }
-	
+
+name = "EVT_9445520_NAME"
+desc = "EVT_9445520_DESC"
+picture = "English_declaration_war"
+decision_picture = "decision_english_declaration_war"
+
+date = { day = 14 month = march year = 1938 }
+offset = 18
+deathdate = { day = 1 month = december year = 1960 }
+
 	action_a = {
 		ai_chance = 97
 		name = "EVT_9445520_OPTIONA"
-		command = { trigger = { alliance = { country = ENG country = ICL } } type = setflag which = ENG_ICLALL }
-		command = { trigger = { alliance = { country = ENG country = ICL } } type = leave_alliance }
+                command = { trigger = { alliance = { country = ENG country = ICL } } type = setflag which = ENG_ICLALL }
+                command = { trigger = { alliance = { country = ENG country = ICL } } type = leave_alliance }
 		command = { type = trigger which = 9445521 }
 		command = { type = belligerence which = ENG value = 3 }
 		command = { type = dissent value = -10 }
@@ -730,8 +730,8 @@ event = {
 		command = { type = relation which = ITA value = -100 }
 		command = { type = domestic which = interventionism value = 1 }
 		command = { type = domestic which = defense_lobby value = 1 }
-	}
-	
+    }
+
 	action_b = {
 		ai_chance = 3
 		name = "EVT_9445520_OPTIONB"
@@ -745,27 +745,27 @@ event = {
 		command = { type = relation which = ITA value = 10 }
 		command = { type = domestic which = interventionism value = -2 }
 		command = { type = domestic which = defense_lobby value = -2 }
-		command = { type = sleepevent which = 9445506 }
-		command = { type = sleepevent which = 99445535 }
-		command = { type = sleepevent which = 102928342 }
-		command = { type = sleepevent which = 900820 }
-	}
+                command = { type = sleepevent which = 9445506 }
+                command = { type = sleepevent which = 99445535 }
+                command = { type = sleepevent which = 102928342 }
+                command = { type = sleepevent which = 900820 }
+    }
 }
 
 event = {
-	id = 9445521
-	picture = "news_paper"
-	country = FRA
-	style = 2
-	
-	name = "EVT_9445521_NAME"
-	desc = "EVT_9445521_DESC"
-	
-	action_a = {
-		name = "EVT_9445521_OPTIONA"
-		command = { trigger = { flag = ENG_ICLALL } type = alliance which = ICL }
-		command = { type = alliance which = ENG }
-		command = { type = clrflag which = ENG_ICLALL }
+id = 9445521
+picture = "news_paper"
+country = FRA
+style = 2
+
+name = "EVT_9445521_NAME"
+desc = "EVT_9445521_DESC"
+
+action_a = {
+name = "EVT_9445521_OPTIONA"
+        command = { trigger = { flag = ENG_ICLALL } type = alliance which = ICL }
+	command = { type = alliance which = ENG }
+        command = { type = clrflag which = ENG_ICLALL }
 	}
 }
 
@@ -774,52 +774,52 @@ event = {
 	id = 9445516
 	country = FRA
 	style = 2
-	
+
 	decision = {
-		government = communist
-		OR = {
-			war = { country = ENG country = CAN }
-			war = { country = ENG country = GER }
-		}
-		control = { province = 55 data = FRA }
-		NOT = {
-			atwar = FRA
+                        government = communist
+                        OR = {
+                        war = { country = ENG country = CAN }
+                        war = { country = ENG country = GER }
+                        }
+                        control = { province = 55 data = FRA }
+		        NOT = {
+                        atwar = FRA
 			alliance = { country = ENG country = FRA }
 			alliance = { country = ENG country = GER }
 			ispuppet = ENG
 			ispuppet = FRA
 		}
 	}
-	
+
 	decision_trigger = {
 		
-	}
-	
+    }
+
 	trigger = {
-		government = communist
-		OR = {
-			war = { country = ENG country = CAN }
-			war = { country = ENG country = GER }
-		}
-		control = { province = 55 data = FRA }
-		NOT = {
-			atwar = FRA
+                        government = communist
+		        OR = {
+                        war = { country = ENG country = CAN }
+                        war = { country = ENG country = GER }
+                        }
+                        control = { province = 55 data = FRA }
+		        NOT = {
+                        atwar = FRA
 			alliance = { country = ENG country = FRA }
 			alliance = { country = ENG country = GER }
 			ispuppet = ENG
 			ispuppet = FRA
 		}
 	}
-	
-	name = "EVT_9445516_NAME"
-	desc = "EVT_9445516_DESC"
-	picture = "English_declaration_war"
-	decision_picture = "decision_english_declaration_war"
-	
-	date = { day = 1 month = january year = 1936 }
-	offset = 18
-	deathdate = { day = 29 month = december year = 1960 }
-	
+
+name = "EVT_9445516_NAME"
+desc = "EVT_9445516_DESC"
+picture = "English_declaration_war"
+decision_picture = "decision_english_declaration_war"
+
+date = { day = 1 month = january year = 1936 }
+offset = 18
+deathdate = { day = 29 month = december year = 1960 }
+
 	action_a = {
 		ai_chance = 97
 		name = "EVT_9445516_OPTIONA"
@@ -836,8 +836,8 @@ event = {
 		command = { type = relation which = ITA value = -100 }
 		command = { type = domestic which = interventionism value = 1 }
 		command = { type = domestic which = defense_lobby value = 1 }
-	}
-	
+    }
+
 	action_b = {
 		ai_chance = 3
 		name = "EVT_9445516_OPTIONB"
@@ -851,519 +851,519 @@ event = {
 		command = { type = relation which = ITA value = 10 }
 		command = { type = domestic which = interventionism value = -2 }
 		command = { type = domestic which = defense_lobby value = -2 }
+    }
+}
+
+event = {
+id = 9445517
+random = no
+country = ENG
+style = 2
+picture = "Syndicalists"
+
+name = "EVT_9445517_NAME"
+desc = "EVT_9445517_DESC"
+
+action_a  = {
+ai_chance = 80
+name = "Yes, socialist countries should stick together!"
+command = { type = relation which = FRA value = 200 }
+command = { trigger = { alliance = { country = ENG country = ICL } } type = setflag which = ENG_ICLALL }
+command = { trigger = { alliance = { country = ENG country = ICL } } type = leave_alliance }
+command = { type = domestic which = interventionism value = 2 }
+command = { type = domestic which = defense_lobby value = -1 }
+command = { type = trigger which = 9445518 }
+}
+
+action_b  = {
+ai_chance = 5
+name = " No, we do not need them!"
+command = { type = domestic which = interventionism value = -2 }
+command = { type = domestic which = defense_lobby value = 1 }
+}
+}
+
+event = {
+id = 9445518
+country = FRA
+style = 2
+picture = "Syndicalists"
+
+name = "EVT_9445518_NAME"
+desc = "EVT_9445518_DESC"
+
+action_a = {
+name = "EVT_9445518_OPTIONA"
+        command = { trigger = { flag = ENG_ICLALL } type = alliance which = ICL }
+	command = { type = alliance which = ENG }
+        command = { type = set_relation which = ENG value = 175 }
+        command = { type = dissent value = -3 }
+        command = { type = domestic which = interventionism value = 1 }
+        command = { type = clrflag which = ENG_ICLALL }
+	}
+}
+
+
+####
+##############################
+#### Alsace-Lorraine
+##############################
+####
+
+event = {
+    id = 9445530
+    random = no
+    country = FRA
+
+    decision = {
+        exists = GER     
+        NOT = {
+                alliance = { country = GER country = FRA }
+                war = { country = GER country = FRA }
+                ispuppet = GER
+                ispuppet = FRA
+        }
+        owned = { province = 106 data = GER }
+        owned = { province = 96 data = GER }
+        owned = { province = 105 data = GER }
+        owned = { province = 104 data = GER }
+        owned = { province = 107 data = GER }          
+    }
+    
+    decision_trigger = {
+        garrison = { country = FRA province = 97 size = 1 } #
+        garrison = { country = FRA province = 95 size = 1 } #
+        garrison = { country = FRA province = 100 size = 1 } #
+        garrison = { country = FRA province = 103 size = 1 } #
+    }
+    
+    trigger = {
+        exists = GER   
+        owned = { province = 106 data = GER }
+        owned = { province = 96 data = GER }
+        owned = { province = 105 data = GER }
+        owned = { province = 104 data = GER }
+        owned = { province = 107 data = GER }      
+        garrison = { country = FRA province = 97 size = 1 } #
+        garrison = { country = FRA province = 95 size = 1 } #
+        garrison = { country = FRA province = 100 size = 1 } #
+        garrison = { country = FRA province = 103 size = 1 } #
+        NOT = {
+                alliance = { country = GER country = FRA }
+                war = { country = GER country = FRA }
+                ispuppet = GER
+                ispuppet = FRA
+        }
+        OR = {
+              AND = {
+                     month = 3
+                     NOT = { month = 6 }
+                     random = 15
+              }
+              AND = {
+                     month = 6
+                     NOT = {  month = 8 }
+                     random = 50
+              }
+              AND = {
+                     month = 8
+                     NOT = { month = 9 }
+                     random = 75
+              }
+       }
+}
+
+
+    name = "EVT_9445530_NAME"
+    desc = "EVT_9998_DESC"
+    style = 2
+    picture = "alsaceorwar"
+    decision_picture = "decision_alsaceorwar"
+
+    date = { day = 14 month = june year = 1939 }
+    offset = 21
+    deathdate = { day = 1 month = december year = 1953 }
+
+    action_a = {
+    ai_chance = 80
+    name = "EVT_9445530_OPTIONA"
+    command = { type = trigger which = 9445531 }
+
+    command = { type = relation which = GER value = -15 }
+    command = { type = relation which = AUS value = -15 }
+    command = { type = relation which = ITA value = -15 }
+    command = { type = relation which = HUN value = -15 }
+    }
+
+   action_b = {
+   ai_chance = 1
+   name = "EVT_9445530_OPTIONB"
+    command = { type = relation which = GER value = 15 }
+    command = { type = relation which = AUS value = 5 }
+    command = { type = relation which = ITA value = 5 }
+    command = { type = relation which = HUN value = 5 }
+
+    command = { type = relation which = ENG value = -10 }
+    command = { type = relation which = SPR value = -10 }
+    command = { type = relation which = GEO value = -10 }
+    command = { type = relation which = RSI value = -10 }
+    command = { type = removeclaim which = 104 }
+    command = { type = removeclaim which = 105 }
+    command = { type = removecore which = 106 }
+    command = { type = removeclaim which = 107 }
+    command = { type = removecore which = 96 }
+
+    command = { type = domestic which = interventionism value = -1 }
+    command = { type = dissent value = 10 }
+    }
+
+}
+
+
+
+
+event = { 
+id = 9445531
+picture = "Alsace-Lorraine"
+country = GER
+	
+name = "EVT_9445531_NAME"
+desc = "EVT_9445531_DESC"
+style = 2
+
+action_a = {
+name = "EVT_9445531_OPTIONA"
+ai_chance = 99
+	command = { type = relation which = ITA value = 5 }
+	command = { type = relation which = AUS value = 10 }
+	command = { type = relation which = HUN value = 10 }
+	command = { type = domestic which = defense_lobby value = 1 }
+	command = { type = domestic which = interventionism value = 1 }
+	command = { type = trigger which = 9445532 }
+	command = { type = dissent value = -5 }
+	}
+
+action_b = {
+name = "EVT_9445531_OPTIONB"
+ai_chance = 1
+	command = { type = relation which = FRA value = 10 }
+	command = { type = relation which = HUN value = -5 }
+	command = { type = relation which = ITA value = -5 }
+	command = { type = relation which = AUS value = -5 }
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = domestic which = defense_lobby value = -1 }
+	command = { type = secedeprovince which = FRA value = 96 }
+	command = { type = secedeprovince which = FRA value = 106 }
+	command = { type = secedeprovince which = FRA value = 105 }
+        command = { type = secedeprovince which = FRA value = 107 }
+	command = { type = secedeprovince which = FRA value = 104 }
+	command = { type = trigger which = 9445533 }
+	command = { type = dissent value = 25 }
 	}
 }
 
 event = {
-	id = 9445517
-	random = no
-	country = ENG
-	style = 2
-	picture = "Syndicalists"
-	
-	name = "EVT_9445517_NAME"
-	desc = "EVT_9445517_DESC"
-	
-	action_a = {
-		ai_chance = 80
-		name = "EVT_9445517_OPTIONA"
-		command = { type = relation which = FRA value = 200 }
-		command = { trigger = { alliance = { country = ENG country = ICL } } type = setflag which = ENG_ICLALL }
-		command = { trigger = { alliance = { country = ENG country = ICL } } type = leave_alliance }
-		command = { type = domestic which = interventionism value = 2 }
-		command = { type = domestic which = defense_lobby value = -1 }
-		command = { type = trigger which = 9445518 }
+id = 9445532
+picture = "Alsace-Lorraine"
+country = FRA
+style = 2
+
+name = "EVT_9445532_NAME"
+desc = "EVT_9445532_DESC"
+
+action_a = {
+ai_chance = 100
+name = "EVT_9445532_OPTIONA"
+	command = { type = domestic which = interventionism value = 2 }
+	command = { type = domestic which = defense_lobby value = 2 }
+	command = { type = setflag which = FRA_GER_WAR_FINAL_1 }
+        command = { type = manpowerpool value = 200 }
+	command = { type = war which = GER }
 	}
-	
-	action_b = {
-		ai_chance = 5
-		name = "EVT_9445517_OPTIONB"
-		command = { type = domestic which = interventionism value = -2 }
-		command = { type = domestic which = defense_lobby value = 1 }
+action_b = {
+ai_chance = 0
+name = "EVT_9445532_OPTIONB"
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = dissent value = 10 }
 	}
 }
 
 event = {
-	id = 9445518
-	country = FRA
-	style = 2
-	picture = "Syndicalists"
-	
-	name = "EVT_9445518_NAME"
-	desc = "EVT_9445518_DESC"
-	
-	action_a = {
-		name = "EVT_9445518_OPTIONA"
-		command = { trigger = { flag = ENG_ICLALL } type = alliance which = ICL }
-		command = { type = alliance which = ENG }
-		command = { type = set_relation which = ENG value = 175 }
-		command = { type = dissent value = -3 }
-		command = { type = domestic which = interventionism value = 1 }
-		command = { type = clrflag which = ENG_ICLALL }
+id = 9445533
+picture = "Alsace-Lorraine"
+country = FRA
+style = 2
+
+name = "EVT_9445533_NAME"
+desc = "EVT_9445533_DESC"
+
+action_a = {
+ai_chance = 100
+name = "EVT_9445533_OPTIONA"
+	command = { type = setflag which = GER_FOLD }
+	command = { type = dissent value = -10 }
+	command = { type = relation which = GER value = 5 }
+	command = { type = belligerence which = FRA value = 1 }
+	command = { type = manpowerpool value = 30 }
 	}
 }
 
+event = {
+id = 9445534
+picture = "red"
+country = FRA
+style = 2
 
-# ###
-# #############################
-# ### Alsace-Lorraine
-# #############################
-# ###
+trigger = { flag = GER_FOLD }
+
+date = { day = 14 month = january year = 1936 }
+offset = 41
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_9445534_NAME"
+desc = "EVT_9445534_DESC"
+
+action_a = {
+ai_chance = 99
+name = "EVT_9445534_OPTIONA"
+	command = { type = setflag which = FRA_GER_WAR_FINAL_1 }
+	command = { type = war which = GER }
+	}
+action_b = {
+ai_chance = 1
+name = "EVT_9445534_OPTIONB"
+	command = { }
+	}
+}
 
 event = {
-	id = 9445530
-	random = no
-	country = FRA
-	
-	decision = {
-		exists = GER
+id = 99445535
+picture = "English_declaration_war"
+decision_picture = "decision_english_declaration_war"
+country = ENG
+style = 2
+
+decision = {
+		        flag = FRA_GER_WAR_FINAL_1
+	war = { country = GER country = FRA }
+                government = communist
 		NOT = {
-			alliance = { country = GER country = FRA }
-			war = { country = GER country = FRA }
-			ispuppet = GER
-			ispuppet = FRA
-		}
-		owned = { province = 106 data = GER }
-		owned = { province = 96 data = GER }
-		owned = { province = 105 data = GER }
-		owned = { province = 104 data = GER }
-		owned = { province = 107 data = GER }
+		alliance = { country = ENG country = FRA }
+		alliance = { country = ENG country = GER }
+		war = { country = ENG country = GER }
 	}
-	
+}
+
 	decision_trigger = {
-		garrison = { country = FRA province = 97 size = 1 } # 
-		garrison = { country = FRA province = 95 size = 1 } # 
-		garrison = { country = FRA province = 100 size = 1 } # 
-		garrison = { country = FRA province = 103 size = 1 } # 
-	}
-	
-	trigger = {
-		exists = GER
-		owned = { province = 106 data = GER }
-		owned = { province = 96 data = GER }
-		owned = { province = 105 data = GER }
-		owned = { province = 104 data = GER }
-		owned = { province = 107 data = GER }
-		garrison = { country = FRA province = 97 size = 1 } # 
-		garrison = { country = FRA province = 95 size = 1 } # 
-		garrison = { country = FRA province = 100 size = 1 } # 
-		garrison = { country = FRA province = 103 size = 1 } # 
+    }
+       
+        trigger = {
+ 
+	flag = FRA_GER_WAR_FINAL_1
+	war = { country = GER country = FRA }
+                government = communist
 		NOT = {
-			alliance = { country = GER country = FRA }
-			war = { country = GER country = FRA }
-			ispuppet = GER
-			ispuppet = FRA
-		}
-		OR = {
-			AND = {
-				month = 3
-				NOT = { month = 6 }
-				random = 15
-			}
-			AND = {
-				month = 6
-				NOT = { month = 8 }
-				random = 50
-			}
-			AND = {
-				month = 8
-				NOT = { month = 9 }
-				random = 75
-			}
-		}
+		alliance = { country = ENG country = FRA }
+		alliance = { country = ENG country = GER }
+		war = { country = ENG country = GER }
 	}
-	
+}
 
-	name = "EVT_9445530_NAME"
-	desc = "EVT_9445530_DESC"
-	style = 2
-	picture = "alsaceorwar"
-	decision_picture = "decision_alsaceorwar"
-	
-	date = { day = 14 month = june year = 1939 }
-	offset = 21
-	deathdate = { day = 1 month = december year = 1953 }
-	
-	action_a = {
-		ai_chance = 80
-		name = "EVT_9445530_OPTIONA"
-		command = { type = trigger which = 9445531 }
-		
-		command = { type = relation which = GER value = -15 }
-		command = { type = relation which = AUS value = -15 }
-		command = { type = relation which = ITA value = -15 }
-		command = { type = relation which = HUN value = -15 }
+date = { day = 14 month = june year = 1937 }
+offset = 11
+deathdate = { day = 1 month = december year = 1960 }
+
+name = "EVT_99445535_NAME"
+desc = "EVT_99445535_DESC"
+
+action_a = {
+name = "EVT_99445535_OPTIONA"
+ai_chance = 99
+	command = { type = dissent value = 5 }
+        command = { trigger = { alliance = { country = ENG country = ICL } } type = setflag which = ENG_ICLALL }
+        command = { trigger = { alliance = { country = ENG country = ICL } } type = leave_alliance }
+	command = { type = trigger which = 9445521 }
+	command = { type = relation which = FRA value = 200 }
+	command = { type = relation which = SPR value = 150 }
+	command = { type = relation which = GEO value = 150 }
+	command = { type = relation which = GER value = -100 }
+	command = { type = domestic which = interventionism value = 2 }
+	command = { type = domestic which = defense_lobby value = 2 }
 	}
-	
-	action_b = {
-		ai_chance = 1
-		name = "EVT_9445530_OPTIONB"
-		command = { type = relation which = GER value = 15 }
-		command = { type = relation which = AUS value = 5 }
-		command = { type = relation which = ITA value = 5 }
-		command = { type = relation which = HUN value = 5 }
-		
-		command = { type = relation which = ENG value = -10 }
-		command = { type = relation which = SPR value = -10 }
-		command = { type = relation which = GEO value = -10 }
-		command = { type = relation which = RSI value = -10 }
-		command = { type = removeclaim which = 104 }
-		command = { type = removeclaim which = 105 }
-		command = { type = removecore which = 106 }
-		command = { type = removeclaim which = 107 }
-		command = { type = removecore which = 96 }
-		
-		command = { type = domestic which = interventionism value = -1 }
-		command = { type = dissent value = 10 }
+
+action_b = {
+name = "EVT_99445535_OPTIONB"
+ai_chance = 1
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = domestic which = defense_lobby value = -1 }
+	command = { type = relation which = FRA value = -75 }
+	command = { type = relation which = RSI value = -50 }
+	command = { type = relation which = GEO value = -50 }
+	command = { type = dissent value = 15 }
+        command = { type = sleepevent which = 9445506 }
+        command = { type = sleepevent which = 9445520 }
+        command = { type = sleepevent which = 102928342 }
+        command = { type = sleepevent which = 900820 }
 	}
-	
 }
 
 
 
-
 event = {
-	id = 9445531
-	picture = "Alsace-Lorraine"
-	country = GER
-	
-	name = "EVT_9445531_NAME"
-	desc = "EVT_9445531_DESC"
-	style = 2
-	
-	action_a = {
-		name = "EVT_9445531_OPTIONA"
-		ai_chance = 99
-		command = { type = relation which = ITA value = 5 }
-		command = { type = relation which = AUS value = 10 }
-		command = { type = relation which = HUN value = 10 }
-		command = { type = domestic which = defense_lobby value = 1 }
-		command = { type = domestic which = interventionism value = 1 }
-		command = { type = trigger which = 9445532 }
-		command = { type = dissent value = -5 }
+id = 102928340
+picture = "FAUD2"
+country = GER
+style = 2
+
+trigger = {
+        NOT = {
+	government = communist
+        }
+}
+
+date = { day = 14 month = april year = 1936 }
+offset = 7
+deathdate = { day = 1 month = december year = 1960 }
+
+name = "EVT_102928340_NAME"
+desc = "EVT_102928340_DESC"
+
+action_a = {
+ai_chance = 75
+name = "EVT_102928340_OPTIONA"
+	command = { type = dissent value = 5 }
+	command = { type = setflag which = FAUD }
 	}
-	
-	action_b = {
-		name = "EVT_9445531_OPTIONB"
-		ai_chance = 1
-		command = { type = relation which = FRA value = 10 }
-		command = { type = relation which = HUN value = -5 }
-		command = { type = relation which = ITA value = -5 }
-		command = { type = relation which = AUS value = -5 }
-		command = { type = domestic which = interventionism value = -1 }
-		command = { type = domestic which = defense_lobby value = -1 }
-		command = { type = secedeprovince which = FRA value = 96 }
-		command = { type = secedeprovince which = FRA value = 106 }
-		command = { type = secedeprovince which = FRA value = 105 }
-		command = { type = secedeprovince which = FRA value = 107 }
-		command = { type = secedeprovince which = FRA value = 104 }
-		command = { type = trigger which = 9445533 }
-		command = { type = dissent value = 25 }
+action_b = {
+ai_chance = 25
+name = "EVT_102928340_OPTIONB"
+	command = { type = dissent value = 10 }
 	}
 }
 
 event = {
-	id = 9445532
-	picture = "Alsace-Lorraine"
-	country = FRA
-	style = 2
-	
-	name = "EVT_9445532_NAME"
-	desc = "EVT_9445532_DESC"
-	
-	action_a = {
-		ai_chance = 100
-		name = "EVT_9445532_OPTIONA"
-		command = { type = domestic which = interventionism value = 2 }
-		command = { type = domestic which = defense_lobby value = 2 }
-		command = { type = setflag which = FRA_GER_WAR_FINAL_1 }
-		command = { type = manpowerpool value = 200 }
-		command = { type = war which = GER }
-	}
-	action_b = {
-		ai_chance = 0
-		name = "EVT_9445532_OPTIONB"
-		command = { type = domestic which = interventionism value = -1 }
-		command = { type = dissent value = 10 }
-	}
-}
+id = 102928341
+picture = "FAUD1"
+country = FRA
+style = 2
 
-event = {
-	id = 9445533
-	picture = "Alsace-Lorraine"
-	country = FRA
-	style = 2
-	
-	name = "EVT_9445533_NAME"
-	desc = "EVT_9445533_DESC"
-	
-	action_a = {
-		ai_chance = 100
-		name = "EVT_9445533_OPTIONA"
-		command = { type = setflag which = GER_FOLD }
-		command = { type = dissent value = -10 }
-		command = { type = relation which = GER value = 5 }
-		command = { type = belligerence which = FRA value = 1 }
-		command = { type = manpowerpool value = 30 }
-	}
-}
-
-event = {
-	id = 9445534
-	picture = "red"
-	country = FRA
-	style = 2
-	
-	trigger = { flag = GER_FOLD }
-	
-	date = { day = 14 month = january year = 1936 }
-	offset = 41
-	deathdate = { day = 29 month = december year = 1963 }
-	
-	name = "EVT_9445534_NAME"
-	desc = "EVT_9445534_DESC"
-	
-	action_a = {
-		ai_chance = 99
-		name = "EVT_9445534_OPTIONA"
-		command = { type = setflag which = FRA_GER_WAR_FINAL_1 }
-		command = { type = war which = GER }
-	}
-	action_b = {
-		ai_chance = 1
-		name = "EVT_9445534_OPTIONB"
-		command = { }
-	}
-}
-
-event = {
-	id = 99445535
-	picture = "English_declaration_war"
-	decision_picture = "decision_english_declaration_war"
-	country = ENG
-	style = 2
-	
-	decision = {
-		flag = FRA_GER_WAR_FINAL_1
-		war = { country = GER country = FRA }
-		government = communist
+trigger = { 
+	flag = FAUD
+	flag = 3rdI_FRA_issue2_Y
 		NOT = {
-			alliance = { country = ENG country = FRA }
-			alliance = { country = ENG country = GER }
-			war = { country = ENG country = GER }
-		}
-	}
-	
-	decision_trigger = {
-	}
-	
-	trigger = {
-		
-		flag = FRA_GER_WAR_FINAL_1
-		war = { country = GER country = FRA }
-		government = communist
-		NOT = {
-			alliance = { country = ENG country = FRA }
-			alliance = { country = ENG country = GER }
-			war = { country = ENG country = GER }
-		}
-	}
-	
-	date = { day = 14 month = june year = 1937 }
-	offset = 11
-	deathdate = { day = 1 month = december year = 1960 }
-	
-	name = "EVT_99445535_NAME"
-	desc = "EVT_99445535_DESC"
-	
-	action_a = {
-		name = "EVT_99445535_OPTIONA"
-		ai_chance = 99
-		command = { type = dissent value = 5 }
-		command = { trigger = { alliance = { country = ENG country = ICL } } type = setflag which = ENG_ICLALL }
-		command = { trigger = { alliance = { country = ENG country = ICL } } type = leave_alliance }
-		command = { type = trigger which = 9445521 }
-		command = { type = relation which = FRA value = 200 }
-		command = { type = relation which = SPR value = 150 }
-		command = { type = relation which = GEO value = 150 }
-		command = { type = relation which = GER value = -100 }
-		command = { type = domestic which = interventionism value = 2 }
-		command = { type = domestic which = defense_lobby value = 2 }
-	}
-	
-	action_b = {
-		name = "EVT_99445535_OPTIONB"
-		ai_chance = 1
-		command = { type = domestic which = interventionism value = -1 }
-		command = { type = domestic which = defense_lobby value = -1 }
-		command = { type = relation which = FRA value = -75 }
-		command = { type = relation which = RSI value = -50 }
-		command = { type = relation which = GEO value = -50 }
-		command = { type = dissent value = 15 }
-		command = { type = sleepevent which = 9445506 }
-		command = { type = sleepevent which = 9445520 }
-		command = { type = sleepevent which = 102928342 }
-		command = { type = sleepevent which = 900820 }
-	}
-}
-
-
-
-event = {
-	id = 102928340
-	picture = "FAUD2"
-	country = GER
-	style = 2
-	
-	trigger = {
-		NOT = {
-			government = communist
-		}
-	}
-	
-	date = { day = 14 month = april year = 1936 }
-	offset = 7
-	deathdate = { day = 1 month = december year = 1960 }
-	
-	name = "EVT_102928340_NAME"
-	desc = "EVT_102928340_DESC"
-	
-	action_a = {
-		ai_chance = 75
-		name = "EVT_102928340_OPTIONA"
-		command = { type = dissent value = 5 }
-		command = { type = setflag which = FAUD }
-	}
-	action_b = {
-		ai_chance = 25
-		name = "EVT_102928340_OPTIONB"
-		command = { type = dissent value = 10 }
-	}
-}
-
-event = {
-	id = 102928341
-	picture = "FAUD1"
-	country = FRA
-	style = 2
-	
-	trigger = {
-		flag = FAUD
-		flag = 3rdI_FRA_issue2_Y
-		NOT = {
-			war = { country = FRA country = GER }
-		}
-	}
-	
-	date = { day = 1 month = january year = 1936 }
-	offset = 7
-	deathdate = { day = 1 month = december year = 1960 }
-	
-	name = "EVT_102928341_NAME"
-	desc = "EVT_102928341_DESC"
-	
-	action_a = {
-		ai_chance = 99
-		name = "EVT_102928341_OPTIONA"
-		command = { type = clrflag which = FAUD }
-	}
-	action_b = {
-		ai_chance = 1
-		name = "EVT_102928341_OPTIONB"
-		command = { type = war which = GER }
-		command = { type = sleepevent which = 977700 }
-		command = { type = relation which = ITA value = -25 }
-		command = { type = relation which = AUS value = -50 }
-		command = { type = relation which = HUN value = -50 }
-		command = { type = domestic which = defense_lobby value = 2 }
-		command = { type = domestic which = interventionism value = 2 }
-	}
-}
-
-event = {
-	id = 102928342
-	picture = "FAUD1"
-	decision_picture = "decision_english_declaration_war"
-	country = ENG
-	style = 2
-	
-	decision = {
 		war = { country = FRA country = GER }
-		random = 70
-		flag = FAUD
-		flag = 3rdI_ENG_issue2_Y
-		NOT = {
-			war = { country = ENG country = GER }
-		}
 	}
-	
-	decision_trigger = {
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 7
+deathdate = { day = 1 month = december year = 1960 }
+
+name = "EVT_102928341_NAME"
+desc = "EVT_102928341_DESC"
+
+action_a = {
+ai_chance = 99
+name = "EVT_102928341_OPTIONA"
+	command = { type = clrflag which = FAUD }
 	}
-	
-	trigger = {
-		war = { country = FRA country = GER }
-		random = 70
-		flag = FAUD
-		flag = 3rdI_ENG_issue2_Y
-		NOT = {
-			war = { country = ENG country = GER }
-		}
-	}
-	
-	date = { day = 1 month = january year = 1936 }
-	offset = 7
-	deathdate = { day = 1 month = december year = 1960 }
-	
-	name = "EVT_102928342_NAME"
-	desc = "EVT_102928342_DESC"
-	
-	action_a = {
-		ai_chance = 80
-		name = "EVT_102928342_OPTIONA"
-		command = { type = war which = GER }
-		command = { trigger = { alliance = { country = ENG country = ICL } } type = setflag which = ENG_ICLALL }
-		command = { trigger = { alliance = { country = ENG country = ICL } } type = leave_alliance }
-		command = { type = trigger which = 102928343 }
-		command = { type = domestic which = defense_lobby value = 2 }
-		command = { type = domestic which = interventionism value = 2 }
-	}
-	
-	action_b = {
-		ai_chance = 20
-		name = "EVT_102928342_OPTIONB"
-		command = { type = relation which = FRA value = -25 }
-		command = { type = relation which = RSI value = -25 }
-		command = { type = relation which = GER value = 10 }
-		command = { type = dissent value = -3 }
-		command = { type = domestic which = defense_lobby value = -1 }
-		command = { type = domestic which = interventionism value = -1 }
-		command = { type = sleepevent which = 9445506 }
-		command = { type = sleepevent which = 9445520 }
-		command = { type = sleepevent which = 99445535 }
-		command = { type = sleepevent which = 900820 }
+action_b = {
+ai_chance = 1
+name = "EVT_102928341_OPTIONB"
+	command = { type = war which = GER }
+	command = { type = sleepevent which = 977700 }
+	command = { type = relation which = ITA value = -25 }
+	command = { type = relation which = AUS value = -50 }
+	command = { type = relation which = HUN value = -50 }
+	command = { type = domestic which = defense_lobby value = 2 }
+	command = { type = domestic which = interventionism value = 2 }
 	}
 }
 
 event = {
-	id = 102928343
-	country = FRA
-	style = 2
-	
-	name = "EVT_102928343_NAME"
-	desc = "EVT_102928343_DESC"
-	
-	action_a = {
-		name = "EVT_102928343_OPTIONA"
-		command = { trigger = { flag = ENG_ICLALL } type = alliance which = ICL }
-		command = { type = alliance which = ENG }
-		command = { type = clrflag which = ENG_ICLALL }
+id = 102928342
+picture = "FAUD1"
+decision_picture = "decision_english_declaration_war"
+country = ENG
+style = 2
+
+decision = {
+	war = { country = FRA country = GER }
+	random = 70
+	flag = FAUD
+	flag = 3rdI_ENG_issue2_Y
+		NOT = {
+		war = { country = ENG country = GER }
+	}
+}
+
+	decision_trigger = {
+    }
+
+trigger = {
+	war = { country = FRA country = GER }
+	random = 70
+	flag = FAUD
+	flag = 3rdI_ENG_issue2_Y
+		NOT = {
+		war = { country = ENG country = GER }
+	}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 7
+deathdate = { day = 1 month = december year = 1960 }
+
+name = "EVT_102928342_NAME"
+desc = "EVT_102928342_DESC"
+
+action_a = {
+ai_chance = 80
+name = "EVT_102928342_OPTIONA"
+	command = { type = war which = GER }
+        command = { trigger = { alliance = { country = ENG country = ICL } } type = setflag which = ENG_ICLALL }
+        command = { trigger = { alliance = { country = ENG country = ICL } } type = leave_alliance }
+	command = { type = trigger which = 102928343 }
+	command = { type = domestic which = defense_lobby value = 2 }
+	command = { type = domestic which = interventionism value = 2 }
+	}
+
+action_b = {
+ai_chance = 20
+name = "EVT_102928342_OPTIONB"
+	command = { type = relation which = FRA value = -25 }
+	command = { type = relation which = RSI value = -25 }
+	command = { type = relation which = GER value = 10 }
+	command = { type = dissent value = -3 }
+	command = { type = domestic which = defense_lobby value = -1 }
+	command = { type = domestic which = interventionism value = -1 }
+        command = { type = sleepevent which = 9445506 }
+        command = { type = sleepevent which = 9445520 }
+        command = { type = sleepevent which = 99445535 }
+        command = { type = sleepevent which = 900820 }
+	}
+}
+
+event = {
+id = 102928343
+country = FRA
+style = 2
+
+name = "EVT_102928343_NAME"
+desc = "EVT_102928343_DESC"
+
+action_a = {
+name = "EVT_102928343_OPTIONA"
+        command = { trigger = { flag = ENG_ICLALL } type = alliance which = ICL }
+	command = { type = alliance which = ENG }
+        command = { type = clrflag which = ENG_ICLALL }
 	}
 }
 
 
 
 
-# ####################################
+#####################################
 event = {
 	id = 900820
 	picture = "English_declaration_war"
@@ -1373,8 +1373,8 @@ event = {
 	
 	decision = {
 		OR = {
-			event = 900819 # The Syndicalist ignore our Ultimatum (ITA)
-			event = 900828 # The Syndicalist ignore our Ultimatum (SPA)
+			event = 900819 #The Syndicalist ignore our Ultimatum (ITA)
+			event = 900828 #The Syndicalist ignore our Ultimatum (SPA)
 		}
 		war = { country = GER country = FRA }
 		NOT = {
@@ -1385,13 +1385,13 @@ event = {
 			ispuppet = FRA
 		}
 	}
-	
+
 	decision_trigger = { }
-	
+
 	trigger = {
 		OR = {
-			event = 900819 # The Syndicalist ignore our Ultimatum (ITA)
-			event = 900828 # The Syndicalist ignore our Ultimatum (SPA)
+			event = 900819 #The Syndicalist ignore our Ultimatum (ITA)
+			event = 900828 #The Syndicalist ignore our Ultimatum (SPA)
 		}
 		war = { country = GER country = FRA }
 		NOT = {
@@ -1402,19 +1402,19 @@ event = {
 			ispuppet = FRA
 		}
 	}
-	
+
 	name = "EVT_900820_NAME"
 	desc = "EVT_900820_DESC"
-	
+
 	date = { day = 1 month = january year = 1936 }
 	offset = 10
 	deathdate = { day = 29 month = december year = 1960 }
-	
+
 	action_a = {
 		ai_chance = 97
 		name = "EVT_900820_OPTIONA"
-		command = { trigger = { alliance = { country = ENG country = ICL } } type = setflag which = ENG_ICLALL }
-		command = { trigger = { alliance = { country = ENG country = ICL } } type = leave_alliance }
+                command = { trigger = { alliance = { country = ENG country = ICL } } type = setflag which = ENG_ICLALL }
+                command = { trigger = { alliance = { country = ENG country = ICL } } type = leave_alliance }
 		command = { type = trigger which = 900821 }
 		command = { type = belligerence which = ENG value = 3 }
 		command = { type = dissent value = -10 }
@@ -1442,10 +1442,10 @@ event = {
 		command = { type = relation which = ITA value = 10 }
 		command = { type = domestic which = interventionism value = -2 }
 		command = { type = domestic which = defense_lobby value = -2 }
-		command = { type = sleepevent which = 9445506 }
-		command = { type = sleepevent which = 9445520 }
-		command = { type = sleepevent which = 99445535 }
-		command = { type = sleepevent which = 102928342 }
+                command = { type = sleepevent which = 9445506 }
+                command = { type = sleepevent which = 9445520 }
+                command = { type = sleepevent which = 99445535 }
+                command = { type = sleepevent which = 102928342 }
 	}
 }
 
@@ -1454,418 +1454,418 @@ event = {
 	picture = "news_paper"
 	country = FRA
 	style = 2
-	
+
 	name = "EVT_900821_NAME"
 	desc = "EVT_900821_DESC"
-	
+
 	action_a = {
-		name = "EVT_900821_OPTIONA"
-		command = { trigger = { flag = ENG_ICLALL } type = alliance which = ICL }
-		command = { type = alliance which = ENG }
-		command = { type = clrflag which = ENG_ICLALL }
+	name = "EVT_900821_OPTIONA"
+                command = { trigger = { flag = ENG_ICLALL } type = alliance which = ICL }
+	        command = { type = alliance which = ENG }
+                command = { type = clrflag which = ENG_ICLALL }
 		command = { type = dissent value = -10 }
-	}
+    }
 }
 
-# ## New events for possible war between Germany and Commune of France (by Matt_lublin)
+### New events for possible war between Germany and Commune of France (by Matt_lublin)
 event = {
-	id = 69025
-	random = no
-	country = GER
-	trigger = {
-		exists = FRA
-		event = 102928341 #  FAUD scandal
-		event = 907000 #  German elections 1937 (Reichskanzler)
-		control = { province = 145 data = GER }
-		NOT = {
-			war = { country = GER country = FRA }
-			exists = U18
-		}
-		OR = {
-			headofgovernment = 45 #  von Schleiter
-			headofgovernment = 47 #  von Papen
-		}
-	}
-	
-	name = "EVT_69025_NAME"
-	desc = "EVT_69025_DESC"
-	style = 2
-	picture = "FAUD1"
-	date = { day = 1 month = january year = 1936 }
-	offset = 30
-	deathdate = { day = 29 month = august year = 1939 }
-	
-	action_a = {
-		name = "EVT_69025_OPTIONA"
-		command = { type = trigger which = 69026 }
-		command = { type = dissent value = 1 }
-		command = { type = industrial_modifier which = total value = -10 }
-	}
+id = 69025
+random = no
+country = GER
+trigger = {
+exists = FRA
+event = 102928341 # FAUD scandal
+event = 907000 # German elections 1937 (Reichskanzler)
+control = { province = 145 data = GER }
+NOT = {
+war = { country = GER country = FRA }
+exists =  U18
+}
+OR = {
+headofgovernment = 45 # von Schleiter
+headofgovernment = 47 # von Papen
+}
 }
 
-event = {
-	id = 69026
-	random = no
-	country = FRA
-	
+name = "EVT_69025_NAME"
+desc = "EVT_69025_DESC"
+style = 2
+picture = "FAUD1"
+date = { day = 1 month = january year = 1936 }
+offset = 30
+deathdate = { day = 29 month = august year = 1939 }
 
-	name = "EVT_69026_NAME"
-	desc = "EVT_69026_DESC"
-	style = 2
-	picture = "FAUD1"
-	
-	action_a = {
-		name = "EVT_69026_OPTIONA"
-		ai_chance = 5
-		command = { type = setflag which = FRA_HELP }
-		command = { type = manpowerpool value = -10 }
-		command = { type = resource which = supplies value = -1000 }
-	}
-	
-	action_b = {
-		name = "EVT_69026_OPTIONB"
-		ai_chance = 95
-		command = { type = dissent value = 2 }
-		command = { type = setflag which = NO_FRA_HELP }
-	}
+action_a = {
+name = "EVT_69025_OPTIONA"
+command = { type = trigger which = 69026 }
+command = { type = dissent value = 1 }
+command = { type = industrial_modifier which = total value = -10 }
+}
 }
 
 event = {
-	id = 69027
-	random = no
-	country = GER
-	
-	trigger = {
-		flag = FRA_HELP
-	}
-	
-	name = "EVT_69027_NAME"
-	desc = "EVT_69027_DESC"
-	style = 2
-	picture = "FAUD1"
-	
-	date = { day = 1 month = january year = 1936 }
-	offset = 10
-	deathdate = { day = 29 month = december year = 1947 }
-	
-	action_a = {
-		name = "EVT_69027_OPTIONA"
-		ai_chance = 10
-		command = { type = dissent value = 5 }
-		command = { type = set_domestic which = freedom value = -1 }
-		command = { type = industrial_modifier which = total value = -10 }
-		command = { type = setflag which = WOG_SUP }
-	}
-	
-	action_b = {
-		name = "EVT_69027_OPTIONB"
-		ai_chance = 90
-		command = { type = dissent value = -2 }
-		command = { type = set_domestic which = freedom value = 1 }
-		command = { type = trigger which = 69029 }
-	}
+id = 69026
+random = no
+country = FRA
+
+
+name = "EVT_69026_NAME"
+desc = "EVT_69026_DESC"
+style = 2
+picture = "FAUD1"
+
+action_a = {
+name = "EVT_69026_OPTIONA"
+ai_chance = 5
+command = { type = setflag which = FRA_HELP }
+command = { type = manpowerpool value = -10 }
+command = { type = resource which = supplies value = -1000 }
+}    
+
+action_b = {
+name = "EVT_69026_OPTIONB"
+ai_chance = 95
+command = { type = dissent value = 2 }
+command = { type = setflag which = NO_FRA_HELP }
+}
 }
 
 event = {
-	id = 69028
-	random = no
-	country = GER
-	
-	trigger = {
-		flag = NO_FRA_HELP
-	}
-	
-	name = "EVT_69028_NAME"
-	desc = "EVT_69028_DESC"
-	style = 2
-	picture = "FAUD1"
-	
-	date = { day = 1 month = january year = 1936 }
-	offset = 10
-	deathdate = { day = 29 month = december year = 1947 }
-	
-	action_a = {
-		name = "EVT_69028_OPTIONA"
-		command = { type = dissent value = -5 }
-		command = { type = resource which = supplies value = -1000 }
-		command = { type = clrflag which = NO_FRA_HELP }
-		command = { type = industrial_modifier which = total value = 10 }
-	}
+id = 69027
+random = no
+country = GER
+
+trigger = {
+flag = FRA_HELP
+}
+
+name = "EVT_69027_NAME"
+desc = "EVT_69027_DESC"
+style = 2
+picture = "FAUD1"
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1947 }
+
+action_a = {
+name = "EVT_69027_OPTIONA"
+ai_chance = 10
+command = { type = dissent value = 5 }
+command = { type = set_domestic which = freedom value = -1 }
+command = { type = industrial_modifier which = total value = -10 }
+command = { type = setflag which = WOG_SUP }
+}    
+
+action_b = {
+name = "EVT_69027_OPTIONB"
+ai_chance = 90
+command = { type = dissent value = -2 }
+command = { type = set_domestic which = freedom value = 1 }
+command = { type = trigger which = 69029  }
+}
 }
 
 event = {
-	id = 69029
-	random = no
-	country = GER
-	
+id = 69028
+random = no
+country = GER
 
+trigger = {
+flag = NO_FRA_HELP
+}
 
-	name = "EVT_69029_NAME"
-	desc = "EVT_69029_DESC"
-	style = 2
-	picture = "FAUD1"
-	
+name = "EVT_69028_NAME"
+desc = "EVT_69028_DESC"
+style = 2
+picture = "FAUD1"
 
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1947 }
 
-
-	action_a = {
-		ai_chance = 40
-		name = "EVT_69029_OPTIONA"
-		command = { type = dissent value = 2 }
-		command = { type = sleepevent which = 69030 }
-		command = { type = industrial_modifier which = total value = -10 }
-		command = { type = setflag which = WOG_SUP }
-	}
-	action_b = {
-		ai_chance = 25
-		name = "EVT_69029_OPTIONB"
-		command = { type = dissent value = 1 }
-		command = { type = money value = -50 }
-		command = { type = supplies value = -500 }
-		command = { type = sleepevent which = 69031 }
-		
-	}
-	action_c = {
-		ai_chance = 25
-		name = "EVT_69029_OPTIONC"
-		command = { type = dissent value = 1 }
-		command = { type = domestic which = free_market value = -1 }
-		command = { type = sleepevent which = 69031 }
-		
-	}
-	action_d = {
-		ai_chance = 10
-		name = "EVT_69029_OPTIOND"
-		command = { type = dissent value = -2 }
-		command = { type = money value = -50 }
-		command = { type = supplies value = -500 }
-		command = { type = domestic which = free_market value = -1 }
-		command = { type = sleepevent which = 69031 }
-		
-	}
+action_a = {
+name = "EVT_69028_OPTIONA"
+command = { type = dissent value = -5 }
+command = { type = resource which = supplies value = -1000 }
+command = { type = clrflag which = NO_FRA_HELP }
+command = { type = industrial_modifier which = total value = 10 }
+}
 }
 
 event = {
-	id = 69030
-	random = no
-	country = GER
-	
-	trigger = {
-		event = 69029
-	}
-	
-	name = "EVT_69030_NAME"
-	desc = "EVT_69030_DESC"
-	style = 2
-	picture = "FAUD1"
-	
+    id = 69029
+    random = no
+    country = GER
 
-	date = { day = 1 month = january year = 1936 }
-	offset = 10
-	deathdate = { day = 29 month = december year = 1970 }
-	
-	action_a = {
-		name = "EVT_69030_OPTIONA"
-		command = { type = industrial_modifier which = total value = 10 }
-		
-	}
+    
+
+    name = "EVT_69029_NAME"
+    desc = "EVT_69029_DESC"
+    style = 2
+    picture = "FAUD1"
+
+    
+    
+
+    action_a = {
+    ai_chance = 40
+        name = "EVT_69029_OPTIONA"
+        command = { type = dissent value = 2 }
+        command = { type = sleepevent which = 69030 }
+        command = { type = industrial_modifier which = total value = -10 }
+        command = { type = setflag which = WOG_SUP }
+    }
+    action_b = {
+    ai_chance = 25
+        name = "EVT_69029_OPTIONB"
+        command = { type = dissent value = 1 }
+        command = { type = money value = -50 }
+        command = { type = supplies value = -500 }
+        command = { type = sleepevent which = 69031 }
+        
+    }
+    action_c = {
+    ai_chance = 25
+        name = "EVT_69029_OPTIONC"
+        command = { type = dissent value = 1 }
+        command = { type = domestic which = free_market value = -1 }
+        command = { type = sleepevent which = 69031 }
+        
+    }
+    action_d = {
+    ai_chance = 10
+        name = "EVT_69029_OPTIOND"
+        command = { type = dissent value = -2 }
+        command = { type = money value = -50 }
+        command = { type = supplies value = -500 }
+        command = { type = domestic which = free_market value = -1 }
+        command = { type = sleepevent which = 69031 }
+        
+    }
 }
 
 event = {
-	id = 69031
-	random = no
-	country = GER
-	
-	trigger = {
-		flag = WOG_SUP
-	}
-	
-	name = "EVT_69031_NAME"
-	desc = "EVT_69031_DESC"
-	style = 2
-	picture = "FAUD1"
-	
+    id = 69030
+    random = no
+    country = GER
 
-	date = { day = 1 month = january year = 1936 }
-	offset = 40
-	deathdate = { day = 29 month = december year = 1970 }
-	
-	action_a = {
-		name = "EVT_69031_OPTIONA"
-		command = { type = industrial_modifier which = total value = 15 }
-		command = { type = dissent value = 3 }
-		command = { type = clrflag which = WOG_SUP }
-	}
+    trigger = {
+        event = 69029
+        }
+
+    name = "EVT_69030_NAME"
+    desc = "EVT_69030_DESC"
+    style = 2
+    picture = "FAUD1"
+
+    
+    date = { day = 1 month = january year = 1936 }
+    offset = 10
+    deathdate = { day = 29 month = december year = 1970 }
+
+        action_a = {
+        name = "EVT_69030_OPTIONA"
+        command = { type = industrial_modifier which = total value = 10 }
+        
+    }
 }
 
 event = {
-	id = 69032
-	random = no
-	country = GER
-	
-	trigger = {
-		NOT = {
-			government = communist
-			war = { country = FRA country = GER }
-		}
-		flag = FRA_HELP
-		OR = {
-			event = 69030
-			event = 69031
-		}
-	}
-	
-	name = "EVT_69032_NAME"
-	desc = "EVT_69032_DESC"
-	style = 2
-	picture = "FAUD1"
-	
+    id = 69031
+    random = no
+    country = GER
 
-	date = { day = 1 month = january year = 1936 }
-	offset = 30
-	deathdate = { day = 29 month = december year = 1970 }
-	
-	action_a = {
-		ai_chance = 30
-		name = "EVT_69032_OPTIONA"
-		command = { type = dissent value = 3 }
-		command = { type = war which = FRA }
-		command = { type = clrflag which = FRA_HELP }
-	}
-	action_b = {
-		ai_chance = 70
-		name = "EVT_69032_OPTIONB"
-		command = { type = dissent value = 5 }
-		command = { type = clrflag which = FRA_HELP }
-		
-	}
+    trigger = {        
+        flag = WOG_SUP
+                }
+
+    name = "EVT_69031_NAME"
+    desc = "EVT_69031_DESC"
+    style = 2
+    picture = "FAUD1"
+
+    
+    date = { day = 1 month = january year = 1936 }
+    offset = 40
+    deathdate = { day = 29 month = december year = 1970 }
+
+        action_a = {
+        name = "EVT_69031_OPTIONA"
+        command = { type = industrial_modifier which = total value = 15 }
+        command = { type = dissent value = 3 }
+        command = { type = clrflag which = WOG_SUP }
+    }
+}
+
+event = {
+    id = 69032
+    random = no
+    country = GER
+
+    trigger = {
+                NOT = { 
+                government = communist
+                war = { country = FRA country = GER } 
+                }
+                flag = FRA_HELP
+                OR =  {
+                event = 69030
+                event = 69031
+                }
+                }
+
+    name = "EVT_69032_NAME"
+    desc = "EVT_69032_DESC"
+    style = 2
+    picture = "FAUD1"
+
+    
+    date = { day = 1 month = january year = 1936 }
+    offset = 30
+    deathdate = { day = 29 month = december year = 1970 }
+
+        action_a = {
+        ai_chance = 30
+        name = "EVT_69032_OPTIONA"
+        command = { type = dissent value = 3 }
+        command = { type = war which = FRA }
+        command = { type = clrflag which = FRA_HELP }
+    }
+        action_b = {
+        ai_chance = 70
+        name = "EVT_69032_OPTIONB"
+        command = { type = dissent value = 5 }
+        command = { type = clrflag which = FRA_HELP }
+                
+    }
 }
 
 
-# ### Syndicalist aid for France
+#### Syndicalist aid for France
 event = {
-	id = 932922
-	random = no
-	country = MEX
-	
-	decision = {
-		government = communist
-		participant = { country = FRA value = 3 }
-		war = { country = FRA country = GER }
-		NOT = {
-			atwar = MEX
-			ispuppet = MEX
-			ispuppet = FRA
-		}
-		control = { province = 55 data = FRA }
-	}
-	
-	decision_trigger = {
-		manpower = 5
-		supplies = 400
-		money = 50
-	}
-	
-	trigger = {
-		government = communist
-		participant = { country = FRA value = 3 }
-		war = { country = FRA country = GER }
-		NOT = {
-			atwar = MEX
-			ispuppet = MEX
-			ispuppet = FRA
-		}
-		control = { province = 55 data = FRA }
-	}
-	
-	date = { day = 1 month = january year = 1936 }
-	offset = 15
-	deathdate = { day = 29 month = december year = 1940 }
-	
-	name = "EVT_932922_NAME"
-	desc = "EVT_932922_DESC"
-	picture = "foreign_volunteers"
-	decision_picture = "decision_foreign_volunteers"
-	style = 2
-	
-	action = {
+     id = 932922
+     random = no
+     country = MEX
+
+     decision = {
+     government = communist
+     participant = { country = FRA value = 3 }
+     war = { country = FRA country = GER }
+     NOT = {  
+     atwar = MEX  
+     ispuppet = MEX
+     ispuppet = FRA 
+     }
+     control = { province = 55 data = FRA } 
+     }
+
+     decision_trigger = {
+         manpower = 5
+         supplies = 400
+         money = 50
+         }
+
+     trigger = { 
+     government = communist
+     participant = { country = FRA value = 3 }
+     war = { country = FRA country = GER }
+     NOT = {  
+     atwar = MEX  
+     ispuppet = MEX
+     ispuppet = FRA 
+     }
+     control = { province = 55 data = FRA } 
+     }
+
+     date = { day = 1 month = january year = 1936 }
+     offset = 15
+     deathdate = { day = 29 month = december year = 1940 }
+ 
+     name = "EVT_932922_NAME"
+     desc = "EVT_932922_DESC"
+     picture = "foreign_volunteers"
+     decision_picture = "decision_foreign_volunteers"
+     style = 2
+
+     action = {
 		trigger = { ai = FRA }
-		ai_chance = 99
-		name = "EVT_932922_OPTIONA"
-		command = { type = domestic which = interventionism value = 1 }
-		command = { type = relation which = GER value = -50 }
-		command = { type = relation which = FRA value = 50 }
-		command = { type = money value = -50 }
-		command = { type = manpowerpool value = -5 }
-		command = { type = resource which = supplies value = -400 }
-		command = { type = event which = 932923 where = FRA when = 6 }
-	}
-	action = {
+         ai_chance = 99
+         name = "EVT_932922_OPTIONA"
+         command = { type = domestic which = interventionism value = 1 }
+         command = { type = relation which = GER value = -50 }
+         command = { type = relation which = FRA value = 50 }
+         command = { type = money value = -50 }
+         command = { type = manpowerpool value = -5 }
+         command = { type = resource which = supplies value = -400 }
+         command = { type = event which = 932923 where = FRA when = 6  }
+     }
+	 action = {
 		trigger = { NOT = { ai = FRA } }
-		ai_chance = 1
-		name = "EVT_932922_OPTIONB"
-		command = { type = domestic which = interventionism value = 1 }
-		command = { type = relation which = GER value = -50 }
-		command = { type = relation which = FRA value = 50 }
-		command = { type = money value = -50 }
-		command = { type = manpowerpool value = -5 }
-		command = { type = resource which = supplies value = -400 }
-		command = { type = event which = 932923 where = FRA when = 6 }
-	}
-	action = {
-		ai_chance = 1
-		name = "EVT_932922_OPTIONC"
-		command = { type = domestic which = interventionism value = -1 }
-		command = { type = relation which = GER value = 50 }
-		command = { type = relation which = FRA value = -50 }
-		command = { type = dissent value = 5 }
-	}
-}
+         ai_chance = 1
+         name = "EVT_932922_OPTIONB"
+         command = { type = domestic which = interventionism value = 1 }
+         command = { type = relation which = GER value = -50 }
+         command = { type = relation which = FRA value = 50 }
+         command = { type = money value = -50 }
+         command = { type = manpowerpool value = -5 }
+         command = { type = resource which = supplies value = -400 }
+         command = { type = event which = 932923 where = FRA when = 6  }
+     }
+     action = {
+         ai_chance = 1
+         name = "EVT_932922_OPTIONC"
+         command = { type = domestic which = interventionism value = -1 }
+         command = { type = relation which = GER value = 50 }
+         command = { type = relation which = FRA value = -50 }
+         command = { type = dissent value = 5 }
+     }
+ }
 
-event = {
-	id = 932923
-	random = no
-	country = FRA
-	
-	name = "EVT_932923_NAME"
-	desc = "EVT_932923_DESC"
-	style = 2
-	picture = "foreign_volunteers"
-	
-	action_a = {
-		name = "EVT_932923_OPTIONA"
-		command = { type = supplies value = 500 }
-		command = { trigger = { ai = yes } type = add_division value = infantry when = 8 }
-		command = { trigger = { ai = yes } type = add_division value = infantry when = 8 }
-		command = { type = add_division value = infantry when = 8 }
-		command = { type = steal_tech which = MEX }
-	}
-}
+ event = {
+     id = 932923
+     random = no
+     country = FRA
+
+     name = "EVT_932923_NAME"
+     desc = "EVT_932923_DESC"
+     style = 2
+     picture = "foreign_volunteers"
+
+     action_a = {
+         name = "EVT_932923_OPTIONA"
+         command = { type = supplies value = 500 }
+         command = { trigger = { ai = yes } type = add_division value = infantry when = 8 }
+         command = { trigger = { ai = yes } type = add_division value = infantry when = 8 }
+         command = { type = add_division value = infantry when = 8 }
+         command = { type = steal_tech which = MEX }
+     }
+ }
 
 event = {
 	id = 932924
 	random = no
 	country = MEX
-	
+
 	trigger = {
 		event = 932923
-		NOT = { war = { country = FRA country = GER } }
+                NOT = { war = { country = FRA country = GER } }     	
 	}
-	
+
 	name = "EVT_932924_NAME"
 	desc = "EVT_932924_DESC"
 	style = 2
 	picture = "foreign_volunteers"
-	
+
 	date = { day = 18 month = july year = 1936 }
 	offset = 30
 	deathdate = { day = 29 month = december year = 1960 }
-	
+
 	action_a = {
-		name = "EVT_932924_OPTIONA" #  Great! 
-		command = { type = manpowerpool value = 5 } #  Soldiers return home
+		name = "EVT_932924_OPTIONA" # Great! 
+		command = { type = manpowerpool value = 5 }	 	# Soldiers return home
 		command = { type = dissent value = -1 }
-		command = { type = gain_tech which = -1 } #  get random tech blueprints
+		command = { type = gain_tech which = -1 } 		# get random tech blueprints
 		command = { type = add_leader_skill which = -1 value = 1 }
 		command = { type = add_leader_skill which = -1 value = 1 }
 	}
@@ -1873,128 +1873,128 @@ event = {
 
 
 event = {
-	id = 932925
-	random = no
-	country = BRA
-	
-	decision = {
-		government = communist
-		participant = { country = FRA value = 3 }
-		war = { country = FRA country = GER }
-		NOT = {
-			atwar = BRA
-			ispuppet = BRA
-			ispuppet = FRA
-		}
-		control = { province = 55 data = FRA }
-	}
-	
-	decision_trigger = {
-		manpower = 5
-		supplies = 400
-		money = 50
-	}
-	
-	trigger = {
-		government = communist
-		participant = { country = FRA value = 3 }
-		war = { country = FRA country = GER }
-		NOT = {
-			atwar = BRA
-			ispuppet = BRA
-			ispuppet = FRA
-		}
-		control = { province = 55 data = FRA }
-	}
-	
-	date = { day = 1 month = january year = 1936 }
-	offset = 15
-	deathdate = { day = 29 month = december year = 1940 }
-	
-	name = "EVT_932925_NAME"
-	desc = "EVT_932925_DESC"
-	picture = "foreign_volunteers"
-	decision_picture = "decision_foreign_volunteers"
-	style = 2
-	
-	action = {
+     id = 932925
+     random = no
+     country = BRA
+
+     decision = {
+     government = communist
+     participant = { country = FRA value = 3 }
+     war = { country = FRA country = GER }
+     NOT = {  
+     atwar = BRA  
+     ispuppet = BRA
+     ispuppet = FRA 
+     }
+     control = { province = 55 data = FRA } 
+     }
+
+     decision_trigger = {
+         manpower = 5
+         supplies = 400
+         money = 50
+         }
+
+     trigger = { 
+     government = communist
+     participant = { country = FRA value = 3 }
+     war = { country = FRA country = GER }
+     NOT = {  
+     atwar = BRA 
+     ispuppet = BRA
+     ispuppet = FRA 
+     }
+     control = { province = 55 data = FRA } 
+     }
+
+     date = { day = 1 month = january year = 1936 }
+     offset = 15
+     deathdate = { day = 29 month = december year = 1940 }
+ 
+     name = "EVT_932925_NAME"
+     desc = "EVT_932925_DESC"
+     picture = "foreign_volunteers"
+     decision_picture = "decision_foreign_volunteers"
+     style = 2
+
+     action = {
 		trigger = { ai = FRA }
-		ai_chance = 99
-		name = "EVT_932925_OPTIONA"
-		command = { type = domestic which = interventionism value = 1 }
-		command = { type = relation which = GER value = -50 }
-		command = { type = relation which = FRA value = 50 }
-		command = { type = money value = -50 }
-		command = { type = manpowerpool value = -5 }
-		command = { type = resource which = supplies value = -400 }
-		command = { type = event which = 932926 where = FRA when = 6 }
-	}
-	action = {
+         ai_chance = 99
+         name = "EVT_932925_OPTIONA"
+         command = { type = domestic which = interventionism value = 1 }
+         command = { type = relation which = GER value = -50 }
+         command = { type = relation which = FRA value = 50 }
+         command = { type = money value = -50 }
+         command = { type = manpowerpool value = -5 }
+         command = { type = resource which = supplies value = -400 }
+         command = { type = event which = 932926 where = FRA when = 6  }
+     }
+     action = {
 		trigger = { NOT = { ai = FRA } }
-		ai_chance = 1
-		name = "EVT_932925_OPTIONB"
-		command = { type = domestic which = interventionism value = 1 }
-		command = { type = relation which = GER value = -50 }
-		command = { type = relation which = FRA value = 50 }
-		command = { type = money value = -50 }
-		command = { type = manpowerpool value = -5 }
-		command = { type = resource which = supplies value = -400 }
-		command = { type = event which = 932926 where = FRA when = 6 }
-	}
-	action = {
-		ai_chance = 1
-		name = "EVT_932925_OPTIONC"
-		command = { type = domestic which = interventionism value = -1 }
-		command = { type = relation which = GER value = 50 }
-		command = { type = relation which = FRA value = -50 }
-		command = { type = dissent value = 5 }
-	}
-}
+         ai_chance = 1
+         name = "EVT_932925_OPTIONB"
+         command = { type = domestic which = interventionism value = 1 }
+         command = { type = relation which = GER value = -50 }
+         command = { type = relation which = FRA value = 50 }
+         command = { type = money value = -50 }
+         command = { type = manpowerpool value = -5 }
+         command = { type = resource which = supplies value = -400 }
+         command = { type = event which = 932926 where = FRA when = 6  }
+     }
+     action = {
+         ai_chance = 1
+         name = "EVT_932925_OPTIONC"
+         command = { type = domestic which = interventionism value = -1 }
+         command = { type = relation which = GER value = 50 }
+         command = { type = relation which = FRA value = -50 }
+         command = { type = dissent value = 5 }
+     }
+ }
 
-event = {
-	id = 932926
-	random = no
-	country = FRA
-	
-	name = "EVT_932926_NAME"
-	desc = "EVT_932926_DESC"
-	style = 2
-	picture = "foreign_volunteers"
-	
-	action_a = {
-		name = "EVT_932926_OPTIONA"
-		command = { type = supplies value = 500 }
-		command = { trigger = { ai = yes } type = add_division value = infantry when = 8 }
-		command = { trigger = { ai = yes } type = add_division value = infantry when = 8 }
-		command = { type = add_division value = infantry when = 8 }
-		command = { type = steal_tech which = BRA }
-	}
-}
+ event = {
+     id = 932926
+     random = no
+     country = FRA
+
+     name = "EVT_932926_NAME"
+     desc = "EVT_932926_DESC"
+     style = 2
+     picture = "foreign_volunteers"
+
+     action_a = {
+         name = "EVT_932926_OPTIONA"
+         command = { type = supplies value = 500 }
+         command = { trigger = { ai = yes } type = add_division value = infantry when = 8 }
+         command = { trigger = { ai = yes } type = add_division value = infantry when = 8 }
+         command = { type = add_division value = infantry when = 8 }
+         command = { type = steal_tech which = BRA }
+     }
+ }
 
 event = {
 	id = 932927
 	random = no
 	country = BRA
-	
+
 	trigger = {
 		event = 932926
-		NOT = { war = { country = FRA country = GER } }
+                NOT = { war = { country = FRA country = GER } }     	
 	}
-	
+
 	name = "EVT_932927_NAME"
 	desc = "EVT_932927_DESC"
 	style = 2
 	picture = "foreign_volunteers"
-	
+
 	date = { day = 18 month = july year = 1936 }
 	offset = 30
 	deathdate = { day = 29 month = december year = 1960 }
-	
+
 	action_a = {
-		name = "EVT_932927_OPTIONA" #  Great! 
-		command = { type = manpowerpool value = 5 } #  Soldiers return home
+		name = "EVT_932927_OPTIONA" # Great! 
+		command = { type = manpowerpool value = 5 }	 	# Soldiers return home
 		command = { type = dissent value = -1 }
-		command = { type = gain_tech which = -1 } #  get random tech blueprints
+		command = { type = gain_tech which = -1 } 		# get random tech blueprints
 		command = { type = add_leader_skill which = -1 value = 1 }
 		command = { type = add_leader_skill which = -1 value = 1 }
 	}
@@ -2002,128 +2002,128 @@ event = {
 
 
 event = {
-	id = 932928
-	random = no
-	country = PRK
-	
-	decision = {
-		government = communist
-		participant = { country = FRA value = 3 }
-		war = { country = FRA country = GER }
-		NOT = {
-			atwar = PRK
-			ispuppet = PRK
-			ispuppet = FRA
-		}
-		control = { province = 55 data = FRA }
-	}
-	
-	decision_trigger = {
-		manpower = 5
-		supplies = 400
-		money = 50
-	}
-	
-	trigger = {
-		government = communist
-		participant = { country = FRA value = 3 }
-		war = { country = FRA country = GER }
-		NOT = {
-			atwar = PRK
-			ispuppet = PRK
-			ispuppet = FRA
-		}
-		control = { province = 55 data = FRA }
-	}
-	
-	date = { day = 1 month = january year = 1936 }
-	offset = 15
-	deathdate = { day = 29 month = december year = 1940 }
-	
-	name = "EVT_932928_NAME"
-	desc = "EVT_932928_DESC"
-	picture = "foreign_volunteers"
-	decision_picture = "decision_foreign_volunteers"
-	style = 2
-	
-	action = {
+     id = 932928
+     random = no
+     country = PRK
+
+     decision = {
+     government = communist
+     participant = { country = FRA value = 3 }
+     war = { country = FRA country = GER }
+     NOT = {  
+     atwar = PRK  
+     ispuppet = PRK
+     ispuppet = FRA 
+     }
+     control = { province = 55 data = FRA } 
+     }
+
+     decision_trigger = {
+         manpower = 5
+         supplies = 400
+         money = 50
+         }
+
+     trigger = { 
+     government = communist
+     participant = { country = FRA value = 3 }
+     war = { country = FRA country = GER }
+     NOT = {  
+     atwar = PRK 
+     ispuppet = PRK
+     ispuppet = FRA 
+     }
+     control = { province = 55 data = FRA } 
+     }
+
+     date = { day = 1 month = january year = 1936 }
+     offset = 15
+     deathdate = { day = 29 month = december year = 1940 }
+ 
+     name = "EVT_932928_NAME"
+     desc = "EVT_932928_DESC"
+     picture = "foreign_volunteers"
+     decision_picture = "decision_foreign_volunteers"
+     style = 2
+
+     action = {
 		trigger = { ai = FRA }
-		ai_chance = 99
-		name = "EVT_932928_OPTIONA"
-		command = { type = domestic which = interventionism value = 1 }
-		command = { type = relation which = GER value = -50 }
-		command = { type = relation which = FRA value = 50 }
-		command = { type = money value = -50 }
-		command = { type = manpowerpool value = -5 }
-		command = { type = resource which = supplies value = -400 }
-		command = { type = event which = 932929 where = FRA when = 6 }
-	}
-	action = {
+         ai_chance = 99
+         name = "EVT_932928_OPTIONA"
+         command = { type = domestic which = interventionism value = 1 }
+         command = { type = relation which = GER value = -50 }
+         command = { type = relation which = FRA value = 50 }
+         command = { type = money value = -50 }
+         command = { type = manpowerpool value = -5 }
+         command = { type = resource which = supplies value = -400 }
+         command = { type = event which = 932929 where = FRA when = 6  }
+     }
+     action = {
 		trigger = { NOT = { ai = FRA } }
-		ai_chance = 1
-		name = "EVT_932928_OPTIONB"
-		command = { type = domestic which = interventionism value = 1 }
-		command = { type = relation which = GER value = -50 }
-		command = { type = relation which = FRA value = 50 }
-		command = { type = money value = -50 }
-		command = { type = manpowerpool value = -5 }
-		command = { type = resource which = supplies value = -400 }
-		command = { type = event which = 932929 where = FRA when = 6 }
-	}
-	action = {
-		ai_chance = 1
-		name = "EVT_932928_OPTIONC"
-		command = { type = domestic which = interventionism value = -1 }
-		command = { type = relation which = GER value = 50 }
-		command = { type = relation which = FRA value = -50 }
-		command = { type = dissent value = 5 }
-	}
-}
+         ai_chance = 1
+         name = "EVT_932928_OPTIONB"
+         command = { type = domestic which = interventionism value = 1 }
+         command = { type = relation which = GER value = -50 }
+         command = { type = relation which = FRA value = 50 }
+         command = { type = money value = -50 }
+         command = { type = manpowerpool value = -5 }
+         command = { type = resource which = supplies value = -400 }
+         command = { type = event which = 932929 where = FRA when = 6  }
+     }
+     action = {
+         ai_chance = 1
+         name = "EVT_932928_OPTIONC"
+         command = { type = domestic which = interventionism value = -1 }
+         command = { type = relation which = GER value = 50 }
+         command = { type = relation which = FRA value = -50 }
+         command = { type = dissent value = 5 }
+     }
+ }
 
-event = {
-	id = 932929
-	random = no
-	country = FRA
-	
-	name = "EVT_932929_NAME"
-	desc = "EVT_932929_DESC"
-	style = 2
-	picture = "foreign_volunteers"
-	
-	action_a = {
-		name = "EVT_932929_OPTIONA"
-		command = { type = supplies value = 500 }
-		command = { trigger = { ai = yes } type = add_division value = infantry when = 8 }
-		command = { trigger = { ai = yes } type = add_division value = infantry when = 8 }
-		command = { type = add_division value = infantry when = 8 }
-		command = { type = steal_tech which = PRK }
-	}
-}
+ event = {
+     id = 932929
+     random = no
+     country = FRA
+
+     name = "EVT_932929_NAME"
+     desc = "EVT_932929_DESC"
+     style = 2
+     picture = "foreign_volunteers"
+
+     action_a = {
+         name = "EVT_932929_OPTIONA"
+         command = { type = supplies value = 500 }
+         command = { trigger = { ai = yes } type = add_division value = infantry when = 8 }
+         command = { trigger = { ai = yes } type = add_division value = infantry when = 8 }
+         command = { type = add_division value = infantry when = 8 }
+         command = { type = steal_tech which = PRK }
+     }
+ }
 
 event = {
 	id = 932930
 	random = no
 	country = PRK
-	
+
 	trigger = {
 		event = 932929
-		NOT = { war = { country = FRA country = GER } }
+                NOT = { war = { country = FRA country = GER } }     	
 	}
-	
+
 	name = "EVT_932930_NAME"
 	desc = "EVT_932930_DESC"
 	style = 2
 	picture = "foreign_volunteers"
-	
+
 	date = { day = 18 month = july year = 1936 }
 	offset = 30
 	deathdate = { day = 29 month = december year = 1960 }
-	
+
 	action_a = {
-		name = "EVT_932930_OPTIONA" #  Great! 
-		command = { type = manpowerpool value = 5 } #  Soldiers return home
+		name = "EVT_932930_OPTIONA" # Great! 
+		command = { type = manpowerpool value = 5 }	 	# Soldiers return home
 		command = { type = dissent value = -1 }
-		command = { type = gain_tech which = -1 } #  get random tech blueprints
+		command = { type = gain_tech which = -1 } 		# get random tech blueprints
 		command = { type = add_leader_skill which = -1 value = 1 }
 		command = { type = add_leader_skill which = -1 value = 1 }
 	}
@@ -2132,128 +2132,128 @@ event = {
 
 
 event = {
-	id = 932931
-	random = no
-	country = GUA
-	
-	decision = {
-		government = communist
-		participant = { country = FRA value = 3 }
-		war = { country = FRA country = GER }
-		NOT = {
-			atwar = GUA
-			ispuppet = GUA
-			ispuppet = FRA
-		}
-		control = { province = 55 data = FRA }
-	}
-	
-	decision_trigger = {
-		manpower = 5
-		supplies = 400
-		money = 50
-	}
-	
-	trigger = {
-		government = communist
-		participant = { country = FRA value = 3 }
-		war = { country = FRA country = GER }
-		NOT = {
-			atwar = GUA
-			ispuppet = GUA
-			ispuppet = FRA
-		}
-		control = { province = 55 data = FRA }
-	}
-	
-	date = { day = 1 month = january year = 1936 }
-	offset = 15
-	deathdate = { day = 29 month = december year = 1940 }
-	
-	name = "EVT_932931_NAME"
-	desc = "EVT_932931_DESC"
-	picture = "foreign_volunteers"
-	decision_picture = "decision_foreign_volunteers"
-	style = 2
-	
-	action = {
+     id = 932931
+     random = no
+     country = GUA
+
+     decision = {
+     government = communist
+     participant = { country = FRA value = 3 }
+     war = { country = FRA country = GER }
+     NOT = {  
+     atwar = GUA  
+     ispuppet = GUA
+     ispuppet = FRA 
+     }
+     control = { province = 55 data = FRA } 
+     }
+
+     decision_trigger = {
+         manpower = 5
+         supplies = 400
+         money = 50
+         }
+
+     trigger = { 
+     government = communist
+     participant = { country = FRA value = 3 }
+     war = { country = FRA country = GER }
+     NOT = {  
+     atwar = GUA 
+     ispuppet = GUA
+     ispuppet = FRA 
+     }
+     control = { province = 55 data = FRA } 
+     }
+
+     date = { day = 1 month = january year = 1936 }
+     offset = 15
+     deathdate = { day = 29 month = december year = 1940 }
+ 
+     name = "EVT_932931_NAME"
+     desc = "EVT_932931_DESC"
+     picture = "foreign_volunteers"
+     decision_picture = "decision_foreign_volunteers"
+     style = 2
+
+     action = {
 		trigger = { ai = FRA }
-		ai_chance = 99
-		name = "EVT_932931_OPTIONA"
-		command = { type = domestic which = interventionism value = 1 }
-		command = { type = relation which = GER value = -50 }
-		command = { type = relation which = FRA value = 50 }
-		command = { type = money value = -50 }
-		command = { type = manpowerpool value = -5 }
-		command = { type = resource which = supplies value = -400 }
-		command = { type = event which = 932932 where = FRA when = 6 }
-	}
-	action = {
+         ai_chance = 99
+         name = "EVT_932931_OPTIONA"
+         command = { type = domestic which = interventionism value = 1 }
+         command = { type = relation which = GER value = -50 }
+         command = { type = relation which = FRA value = 50 }
+         command = { type = money value = -50 }
+         command = { type = manpowerpool value = -5 }
+         command = { type = resource which = supplies value = -400 }
+         command = { type = event which = 932932 where = FRA when = 6  }
+     }
+     action = {
 		trigger = { NOT = { ai = FRA } }
-		ai_chance = 1
-		name = "EVT_932931_OPTIONB"
-		command = { type = domestic which = interventionism value = 1 }
-		command = { type = relation which = GER value = -50 }
-		command = { type = relation which = FRA value = 50 }
-		command = { type = money value = -50 }
-		command = { type = manpowerpool value = -5 }
-		command = { type = resource which = supplies value = -400 }
-		command = { type = event which = 932932 where = FRA when = 6 }
-	}
-	action = {
-		ai_chance = 1
-		name = "EVT_932931_OPTIONC"
-		command = { type = domestic which = interventionism value = -1 }
-		command = { type = relation which = GER value = 50 }
-		command = { type = relation which = FRA value = -50 }
-		command = { type = dissent value = 5 }
-	}
-}
+         ai_chance = 1
+         name = "EVT_932931_OPTIONB"
+         command = { type = domestic which = interventionism value = 1 }
+         command = { type = relation which = GER value = -50 }
+         command = { type = relation which = FRA value = 50 }
+         command = { type = money value = -50 }
+         command = { type = manpowerpool value = -5 }
+         command = { type = resource which = supplies value = -400 }
+         command = { type = event which = 932932 where = FRA when = 6  }
+     }
+     action = {
+         ai_chance = 1
+         name = "EVT_932931_OPTIONC"
+         command = { type = domestic which = interventionism value = -1 }
+         command = { type = relation which = GER value = 50 }
+         command = { type = relation which = FRA value = -50 }
+         command = { type = dissent value = 5 }
+     }
+ }
 
-event = {
-	id = 932932
-	random = no
-	country = FRA
-	
-	name = "EVT_932932_NAME"
-	desc = "EVT_932932_DESC"
-	style = 2
-	picture = "foreign_volunteers"
-	
-	action_a = {
-		name = "EVT_932932_OPTIONA"
-		command = { type = supplies value = 500 }
-		command = { trigger = { ai = yes } type = add_division value = infantry when = 8 }
-		command = { trigger = { ai = yes } type = add_division value = infantry when = 8 }
-		command = { type = add_division value = infantry when = 8 }
-		command = { type = steal_tech which = GUA }
-	}
-}
+ event = {
+     id = 932932
+     random = no
+     country = FRA
+
+     name = "EVT_932932_NAME"
+     desc = "EVT_932932_DESC"
+     style = 2
+     picture = "foreign_volunteers"
+
+     action_a = {
+         name = "EVT_932932_OPTIONA"
+         command = { type = supplies value = 500 }
+         command = { trigger = { ai = yes } type = add_division value = infantry when = 8 }
+         command = { trigger = { ai = yes } type = add_division value = infantry when = 8 }
+         command = { type = add_division value = infantry when = 8 }
+         command = { type = steal_tech which = GUA }
+     }
+ }
 
 event = {
 	id = 932933
 	random = no
 	country = GUA
-	
+
 	trigger = {
 		event = 932932
-		NOT = { war = { country = FRA country = GER } }
+                NOT = { war = { country = FRA country = GER } }     	
 	}
-	
+
 	name = "EVT_932933_NAME"
 	desc = "EVT_932933_DESC"
 	style = 2
 	picture = "foreign_volunteers"
-	
+
 	date = { day = 18 month = july year = 1936 }
 	offset = 30
 	deathdate = { day = 29 month = december year = 1960 }
-	
+
 	action_a = {
-		name = "EVT_932933_OPTIONA" #  Great! 
-		command = { type = manpowerpool value = 5 } #  Soldiers return home
+		name = "EVT_932933_OPTIONA" # Great! 
+		command = { type = manpowerpool value = 5 }	 	# Soldiers return home
 		command = { type = dissent value = -1 }
-		command = { type = gain_tech which = -1 } #  get random tech blueprints
+		command = { type = gain_tech which = -1 } 		# get random tech blueprints
 		command = { type = add_leader_skill which = -1 value = 1 }
 		command = { type = add_leader_skill which = -1 value = 1 }
 	}
@@ -2264,68 +2264,68 @@ event = {
 	id = 932934
 	random = no
 	country = FRA
-	
-	decision = {
-		OR = {
-			war = { country = GER country = RUS }
-			war = { country = GER country = SOV }
-		}
-		NOT = {
-			alliance = { country = FRA country = GER }
-			ispuppet = FRA
-			ispuppet = GER
-			atwar = FRA
-		}
-		control = { province = 55 data = FRA }
-		control = { province = 163 data = GER }
-		control = { province = 145 data = GER }
-	}
-	
 
-	decision_trigger = {
+        decision = {
+        OR = {
+                war = { country = GER country = RUS }
+                war = { country = GER country = SOV }
+        }
+                NOT = {
+                alliance = { country = FRA country = GER }
+                ispuppet = FRA
+                ispuppet = GER
+                atwar = FRA
 	}
-	
+        control = { province = 55 data = FRA }
+        control = { province = 163 data = GER }
+        control = { province = 145 data = GER }
+        }
+
+
+        decision_trigger = {
+        }
+
 	trigger = {
-		OR = {
-			war = { country = GER country = RUS }
-			war = { country = GER country = SOV }
-		}
-		NOT = {
-			alliance = { country = FRA country = GER }
-			ispuppet = FRA
-			ispuppet = GER
-			atwar = FRA
-		}
-		control = { province = 55 data = FRA }
-		control = { province = 163 data = GER }
-		control = { province = 145 data = GER }
+        OR = {
+                war = { country = GER country = RUS }
+                war = { country = GER country = SOV }
+        }
+                NOT = {
+                alliance = { country = FRA country = GER }
+                ispuppet = FRA
+                ispuppet = GER
+                atwar = FRA
 	}
+        control = { province = 55 data = FRA }
+        control = { province = 163 data = GER }
+        control = { province = 145 data = GER }
+        }
 	
 	name = "EVT_932934_NAME"
-	desc = "EVT_932934_DESC"
+	desc = "EVT_932934_DESC"		
 	style = 2
-	picture = "alsaceorwar"
-	decision_picture = "decision_alsaceorwar"
-	
+        picture = "alsaceorwar"
+        decision_picture = "decision_alsaceorwar"
+        
 
 	date = { day = 1 month = january year = 1936 }
-	offset = 20
+	offset = 20 
 	deathdate = { day = 29 month = december year = 1963 }
-	
+
 	action_a = {
-		ai_chance = 85
+        ai_chance = 85
 		name = "EVT_932934_OPTIONA"
 		command = { type = war which = GER }
 		command = { type = relation which = GER value = -100 }
-		command = { type = dissent value = -2 }
-		
+                command = { type = dissent value = -2 }
+                
 	}
-	action_b = {
-		ai_chance = 15
+        action_b = {
+        ai_chance = 15
 		name = "EVT_932934_OPTIONB"
 		command = { type = relation which = GER value = 20 }
 		command = { type = dissent value = 2 }
-		
+                
 	}
 }
 
@@ -2338,33 +2338,33 @@ event = {
 	country = GER
 	style = 2
 	picture = "Wehrmacht"
-	
+
 	trigger = {
-		ai = GER
-		exists = FRA
-		control = { province = 163 data = GER }
+                ai = GER
+                exists = FRA
+                control = { province = 163 data = GER } 
 		NOT = {
-			ai = FRA
-			ispuppet = GER
-			alliance = { country = FRA country = GER }
-			war = { country = GER country = FRA }
+ 		ai = FRA
+                ispuppet = GER
+                alliance = { country = FRA country = GER }
+                war = { country = GER country = FRA }
 		}
 	}
-	
+
 	date = { day = 1 month = january year = 1937 }
 	offset = 7
 	deathdate = { day = 29 month = december year = 1940 }
-	
+
 	name = "EVT_932935_NAME"
 	desc = "EVT_932935_DESC"
-	
+
 	action_a = {
 		name = "EVT_932935_OPTIONA"
 		command = { type = industrial_modifier which = total value = 5 }
-		command = { type = add_division value = infantry when = 9 }
-		command = { type = add_division value = infantry when = 9 }
-		command = { type = manpowerpool value = 30 }
-		command = { type = dissent value = -3 }
+                command = { type = add_division value = infantry when = 9 }
+                command = { type = add_division value = infantry when = 9 }
+                command = { type = manpowerpool value = 30 }
+                command = { type = dissent value = -3 }
 	}
 }
 
@@ -2374,33 +2374,33 @@ event = {
 	country = GER
 	style = 2
 	picture = "Wehrmacht"
-	
+
 	trigger = {
-		ai = GER
-		exists = FRA
-		control = { province = 163 data = GER }
+                ai = GER
+                exists = FRA
+                control = { province = 163 data = GER } 
 		NOT = {
-			ai = FRA
-			ispuppet = GER
-			alliance = { country = FRA country = GER }
-			war = { country = GER country = FRA }
+ 		ai = FRA
+                ispuppet = GER
+                alliance = { country = FRA country = GER }
+                war = { country = GER country = FRA }
 		}
 	}
-	
+
 	date = { day = 1 month = january year = 1938 }
 	offset = 7
 	deathdate = { day = 29 month = december year = 1940 }
-	
+
 	name = "EVT_932936_NAME"
 	desc = "EVT_932936_DESC"
-	
+
 	action_a = {
 		name = "EVT_932936_OPTIONA"
 		command = { type = industrial_modifier which = total value = 5 }
-		command = { type = add_division value = infantry when = 9 }
-		command = { type = add_division value = infantry when = 9 }
-		command = { type = manpowerpool value = 30 }
-		command = { type = dissent value = -3 }
+                command = { type = add_division value = infantry when = 9 }
+                command = { type = add_division value = infantry when = 9 }
+                command = { type = manpowerpool value = 30 }
+                command = { type = dissent value = -3 }
 	}
 }
 
@@ -2411,33 +2411,33 @@ event = {
 	country = GER
 	style = 2
 	picture = "Wehrmacht"
-	
+
 	trigger = {
-		ai = GER
-		exists = FRA
-		control = { province = 163 data = GER }
+                ai = GER
+                exists = FRA
+                control = { province = 163 data = GER } 
 		NOT = {
-			ai = FRA
-			ispuppet = GER
-			alliance = { country = FRA country = GER }
-			war = { country = GER country = FRA }
+ 		ai = FRA
+                ispuppet = GER
+                alliance = { country = FRA country = GER }
+                war = { country = GER country = FRA }
 		}
 	}
-	
+
 	date = { day = 1 month = january year = 1939 }
 	offset = 7
 	deathdate = { day = 29 month = december year = 1940 }
-	
+
 	name = "EVT_932937_NAME"
 	desc = "EVT_932937_DESC"
-	
+
 	action_a = {
 		name = "EVT_932937_OPTIONA"
 		command = { type = industrial_modifier which = total value = 5 }
-		command = { type = add_division value = infantry when = 9 }
-		command = { type = add_division value = infantry when = 9 }
-		command = { type = manpowerpool value = 30 }
-		command = { type = dissent value = -3 }
+                command = { type = add_division value = infantry when = 9 }
+                command = { type = add_division value = infantry when = 9 }
+                command = { type = manpowerpool value = 30 }
+                command = { type = dissent value = -3 }
 	}
 }
 
@@ -2449,34 +2449,34 @@ event = {
 	country = FRA
 	style = 2
 	picture = "alsaceorwar"
-	
+
 	trigger = {
-		ai = FRA
-		exists = GER
-		control = { province = 55 data = FRA }
+                ai = FRA
+                exists = GER
+                control = { province = 55 data = FRA } 
 		NOT = {
-			ai = GER
-			ispuppet = FRA
-			alliance = { country = FRA country = GER }
-			war = { country = GER country = FRA }
+ 		ai = GER
+                ispuppet = FRA
+                alliance = { country = FRA country = GER }
+                war = { country = GER country = FRA }
 		}
 	}
-	
+
 	date = { day = 1 month = january year = 1937 }
 	offset = 7
 	deathdate = { day = 29 month = december year = 1940 }
-	
+
 	name = "EVT_932938_NAME"
 	desc = "EVT_932938_DESC"
-	
+
 	action_a = {
 		name = "EVT_932938_OPTIONA"
 		command = { type = industrial_modifier which = total value = 5 }
+                command = { type = add_division value = infantry when = 9 }
 		command = { type = add_division value = infantry when = 9 }
-		command = { type = add_division value = infantry when = 9 }
-		command = { type = add_division value = infantry when = 9 }
-		command = { type = manpowerpool value = 30 }
-		command = { type = dissent value = -3 }
+                command = { type = add_division value = infantry when = 9 }
+                command = { type = manpowerpool value = 30 }
+                command = { type = dissent value = -3 }
 	}
 }
 
@@ -2486,34 +2486,34 @@ event = {
 	country = FRA
 	style = 2
 	picture = "alsaceorwar"
-	
+
 	trigger = {
-		ai = FRA
-		exists = GER
-		control = { province = 55 data = FRA }
+                ai = FRA
+                exists = GER
+                control = { province = 55 data = FRA } 
 		NOT = {
-			ai = GER
-			ispuppet = FRA
-			alliance = { country = FRA country = GER }
-			war = { country = GER country = FRA }
+ 		ai = GER
+                ispuppet = FRA
+                alliance = { country = FRA country = GER }
+                war = { country = GER country = FRA }
 		}
 	}
-	
+
 	date = { day = 1 month = january year = 1938 }
 	offset = 7
 	deathdate = { day = 29 month = december year = 1940 }
-	
+
 	name = "EVT_932939_NAME"
 	desc = "EVT_932939_DESC"
-	
+
 	action_a = {
 		name = "EVT_932939_OPTIONA"
 		command = { type = industrial_modifier which = total value = 5 }
+                command = { type = add_division value = infantry when = 9 }
 		command = { type = add_division value = infantry when = 9 }
-		command = { type = add_division value = infantry when = 9 }
-		command = { type = add_division value = infantry when = 9 }
-		command = { type = manpowerpool value = 30 }
-		command = { type = dissent value = -3 }
+                command = { type = add_division value = infantry when = 9 }
+                command = { type = manpowerpool value = 30 }
+                command = { type = dissent value = -3 }
 	}
 }
 
@@ -2524,150 +2524,150 @@ event = {
 	country = FRA
 	style = 2
 	picture = "alsaceorwar"
-	
+
 	trigger = {
-		ai = FRA
-		exists = GER
-		control = { province = 55 data = FRA }
+                ai = FRA
+                exists = GER
+                control = { province = 55 data = FRA } 
 		NOT = {
-			ai = GER
-			ispuppet = FRA
-			alliance = { country = FRA country = GER }
-			war = { country = GER country = FRA }
+ 		ai = GER
+                ispuppet = FRA
+                alliance = { country = FRA country = GER }
+                war = { country = GER country = FRA }
 		}
 	}
-	
+
 	date = { day = 1 month = january year = 1939 }
 	offset = 7
 	deathdate = { day = 29 month = december year = 1940 }
-	
+
 	name = "EVT_932940_NAME"
 	desc = "EVT_932940_DESC"
-	
+
 	action_a = {
 		name = "EVT_932940_OPTIONA"
 		command = { type = industrial_modifier which = total value = 5 }
+                command = { type = add_division value = infantry when = 9 }
 		command = { type = add_division value = infantry when = 9 }
-		command = { type = add_division value = infantry when = 9 }
-		command = { type = add_division value = infantry when = 9 }
-		command = { type = manpowerpool value = 30 }
-		command = { type = dissent value = -3 }
+                command = { type = add_division value = infantry when = 9 }
+                command = { type = manpowerpool value = 30 }
+                command = { type = dissent value = -3 }
 	}
 }
 
-# ###
-# #############################
-# ### Alsace-Lorraine - Damocles project version
-# #############################
-# ###
+####
+##############################
+#### Alsace-Lorraine - Damocles project version
+##############################
+####
 
 event = {
-	id = 932941
-	random = no
-	country = FRA
-	
-	decision = {
-		event = 300389
-		NOT = {
-			alliance = { country = GER country = FRA }
-			atwar = FRA
-			ispuppet = GER
-			ispuppet = FRA
-		}
-		owned = { province = 106 data = GER }
-		owned = { province = 96 data = GER }
-		owned = { province = 105 data = GER }
-		owned = { province = 104 data = GER }
-		owned = { province = 107 data = GER }
-	}
-	
-	decision_trigger = {
-		nuke = 2
-		garrison = { country = FRA province = 97 size = 1 } # 
-		garrison = { country = FRA province = 95 size = 1 } # 
-		garrison = { country = FRA province = 100 size = 1 } # 
-		garrison = { country = FRA province = 103 size = 1 } # 
-	}
-	
-	trigger = {
-		event = 300389
-		nuke = 2
-		NOT = {
-			alliance = { country = GER country = FRA }
-			atwar = FRA
-			ispuppet = GER
-			ispuppet = FRA
-		}
-		owned = { province = 106 data = GER }
-		owned = { province = 96 data = GER }
-		owned = { province = 105 data = GER }
-		owned = { province = 104 data = GER }
-		owned = { province = 107 data = GER }
-		garrison = { country = FRA province = 97 size = 1 } # 
-		garrison = { country = FRA province = 95 size = 1 } # 
-		garrison = { country = FRA province = 100 size = 1 } # 
-		garrison = { country = FRA province = 103 size = 1 } # 
-		OR = {
-			AND = {
-				month = 3
-				NOT = { month = 6 }
-				random = 15
-			}
-			AND = {
-				month = 6
-				NOT = { month = 8 }
-				random = 50
-			}
-			AND = {
-				month = 8
-				NOT = { month = 9 }
-				random = 75
-			}
-		}
-	}
-	
+    id = 932941
+    random = no
+    country = FRA
 
-	name = "EVT_932941_NAME"
-	desc = "EVT_932941_DESC"
-	style = 2
-	picture = "alsaceorwar"
-	decision_picture = "decision_alsaceorwar"
-	
-	date = { day = 14 month = june year = 1940 }
-	offset = 21
-	deathdate = { day = 1 month = december year = 1963 }
-	
-	action_a = {
-		ai_chance = 80
-		name = "EVT_932941_OPTIONA"
-		command = { type = trigger which = 9445531 }
-		command = { type = relation which = GER value = -15 }
-		command = { type = relation which = AUS value = -15 }
-		command = { type = relation which = ITA value = -15 }
-		command = { type = relation which = HUN value = -15 }
-		command = { type = sleepevent which = 9445530 }
-	}
-	
-	action_b = {
-		ai_chance = 0
-		name = "EVT_932941_OPTIONB"
-		command = { type = relation which = GER value = 15 }
-		command = { type = relation which = AUS value = 5 }
-		command = { type = relation which = ITA value = 5 }
-		command = { type = relation which = HUN value = 5 }
-		
-		command = { type = relation which = ENG value = -10 }
-		command = { type = relation which = SPR value = -10 }
-		command = { type = relation which = GEO value = -10 }
-		command = { type = relation which = RSI value = -10 }
-		command = { type = removeclaim which = 104 }
-		command = { type = removeclaim which = 105 }
-		command = { type = removecore which = 106 }
-		command = { type = removeclaim which = 107 }
-		command = { type = removecore which = 96 }
-		command = { type = domestic which = interventionism value = -1 }
-		command = { type = sleepevent which = 9445530 }
-		command = { type = dissent value = 10 }
-	}
-	
+    decision = {
+        event = 300389  
+        NOT = {
+                alliance = { country = GER country = FRA }
+                atwar = FRA
+                ispuppet = GER
+                ispuppet = FRA
+        }
+        owned = { province = 106 data = GER }
+        owned = { province = 96 data = GER }
+        owned = { province = 105 data = GER }
+        owned = { province = 104 data = GER }
+        owned = { province = 107 data = GER }          
+    }
+    
+    decision_trigger = {
+        nuke = 2 
+        garrison = { country = FRA province = 97 size = 1 } #
+        garrison = { country = FRA province = 95 size = 1 } #
+        garrison = { country = FRA province = 100 size = 1 } #
+        garrison = { country = FRA province = 103 size = 1 } #
+    }
+    
+    trigger = {
+        event = 300389 
+   	nuke = 2  
+        NOT = {
+                alliance = { country = GER country = FRA }
+                atwar = FRA
+                ispuppet = GER
+                ispuppet = FRA
+        }
+        owned = { province = 106 data = GER }
+        owned = { province = 96 data = GER }
+        owned = { province = 105 data = GER }
+        owned = { province = 104 data = GER }
+        owned = { province = 107 data = GER }          
+        garrison = { country = FRA province = 97 size = 1 } #
+        garrison = { country = FRA province = 95 size = 1 } #
+        garrison = { country = FRA province = 100 size = 1 } #
+        garrison = { country = FRA province = 103 size = 1 } #
+        OR = {
+              AND = {
+                     month = 3
+                     NOT = { month = 6 }
+                     random = 15
+              }
+              AND = {
+                     month = 6
+                     NOT = {  month = 8 }
+                     random = 50
+              }
+              AND = {
+                     month = 8
+                     NOT = { month = 9 }
+                     random = 75
+              }
+       }
+}
+
+
+    name = "EVT_932941_NAME"
+    desc = "EVT_9998_DESC"
+    style = 2
+    picture = "alsaceorwar"
+    decision_picture = "decision_alsaceorwar"
+
+    date = { day = 14 month = june year = 1940 }
+    offset = 21
+    deathdate = { day = 1 month = december year = 1963 }
+
+    action_a = {
+    ai_chance = 80
+    name = "EVT_932941_OPTIONA"
+    command = { type = trigger which = 9445531 }
+    command = { type = relation which = GER value = -15 }
+    command = { type = relation which = AUS value = -15 }
+    command = { type = relation which = ITA value = -15 }
+    command = { type = relation which = HUN value = -15 }
+    command = { type = sleepevent which = 9445530 }
+    }
+
+   action_b = {
+   ai_chance = 0
+   name = "EVT_932941_OPTIONB"
+    command = { type = relation which = GER value = 15 }
+    command = { type = relation which = AUS value = 5 }
+    command = { type = relation which = ITA value = 5 }
+    command = { type = relation which = HUN value = 5 }
+
+    command = { type = relation which = ENG value = -10 }
+    command = { type = relation which = SPR value = -10 }
+    command = { type = relation which = GEO value = -10 }
+    command = { type = relation which = RSI value = -10 }
+    command = { type = removeclaim which = 104 }
+    command = { type = removeclaim which = 105 }
+    command = { type = removecore which = 106 }
+    command = { type = removeclaim which = 107 }
+    command = { type = removecore which = 96 }
+    command = { type = domestic which = interventionism value = -1 }
+    command = { type = sleepevent which = 9445530 }
+    command = { type = dissent value = 10 }
+    }
+
 }

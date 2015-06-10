@@ -1,640 +1,640 @@
-# ############################################
-# ##### The fate of Puerto Rico #
-# ############################################
+#############################################
+###### The fate of Puerto Rico # 
+#############################################
 event = {
-	id = 9000875
-	random = no
-	country = USA
-	trigger = {
+        id = 9000875
+        random = no
+        country = USA
+        trigger = {
 		OR = {
-			exists = CSA
-			exists = TEX
+	                exists = CSA
+        	        exists = TEX
 		}
-		OR = {
-			war = { country = USA country = CSA }
-			war = { country = USA country = TEX }
-		}
-		control = { province = 1765 data = USA } #  Puerto Rico
-		NOT = {
+                OR = { 
+                        war = { country = USA country = CSA }
+                        war = { country = USA country = TEX }
+                }
+                control = { province = 1765 data = USA } # Puerto Rico
+                NOT = { 
 			# US Eastern Coast & Panama
-			war = { country = USA country = CAN }
-			control = { province = 1953 data = USA }
-			control = { province = 1952 data = USA }
-			control = { province = 1960 data = USA }
-			control = { province = 1963 data = USA }
-			control = { province = 1812 data = USA }
-			control = { province = 1809 data = USA }
-			control = { province = 1795 data = USA }
-			control = { province = 1797 data = USA }
-			control = { province = 1789 data = USA }
-			control = { province = 1931 data = USA }
-			control = { province = 1944 data = USA }
-			control = { province = 889 data = USA }
-		}
-		
-	}
-	
-	name = "EVT_9000875_NAME"
-	desc = "EVT_9000875_DESC"
-	style = 2
-	picture = "caribbean"
-	
-	date = { day = 1 month = january year = 1936 }
-	offset = 10
-	deathdate = { day = 1 month = january year = 1960 }
-	
-	action_a = {
-		name = "EVT_9000875_OPTIONA"
-		ai_chance = 50
-		command = { type = dissent value = 3 }
-		command = { type = secedeprovince which = CAN value = 1765 }
-		command = { type = trigger which = 9000876 }
-	}
-	action_b = {
-		name = "EVT_9000875_OPTIONB"
-		ai_chance = 50
-		command = { type = province_keypoints which = 1765 value = 1 }
-		command = { type = construct which = IC where = 1765 value = -1 }
-		command = { type = add_corps which = "Puerto Rico National Guard" value = land where = 1765 }
-		command = { type = add_division which = "Puerto Rico National Guard" value = militia when = 4 }
-		command = { type = construct which = coastal_fort where = 1765 value = 1 }
-		command = { type = dissent value = -3 }
-	}
+                        war = { country = USA country = CAN }
+                        control = { province = 1953 data = USA }
+                        control = { province = 1952 data = USA }
+                        control = { province = 1960 data = USA }
+                        control = { province = 1963 data = USA }
+                        control = { province = 1812 data = USA }
+                        control = { province = 1809 data = USA }
+                        control = { province = 1795 data = USA }
+                        control = { province = 1797 data = USA }
+                        control = { province = 1789 data = USA }
+                        control = { province = 1931 data = USA }
+                        control = { province = 1944 data = USA }
+                        control = { province = 889 data = USA }
+                }
+
+        }
+ 
+        name = "EVT_9000875_NAME"
+        desc = "EVT_9000875_DESC"
+        style = 2
+        picture = "caribbean"
+ 
+        date = { day = 1 month = january year = 1936 }
+        offset = 10
+        deathdate = { day = 1 month = january year = 1960 }
+ 
+        action_a = {
+                name = "EVT_9000875_OPTIONA"
+                ai_chance = 50
+                command = { type = dissent value = 3 }
+                command = { type = secedeprovince which = CAN value = 1765 }
+                command = { type = trigger which = 9000876 }
+        }
+        action_b = {
+                name = "EVT_9000875_OPTIONB"
+                ai_chance = 50
+                command = { type = province_keypoints which = 1765 value = 1 }
+                command = { type = construct which = IC where = 1765 value = -1 }
+                command = { type = add_corps which = "Puerto Rico National Guard" value = land where = 1765 }
+                command = { type = add_division which = "Puerto Rico National Guard" value = militia when = 4 }
+                command = { type = construct which = coastal_fort where = 1765 value = 1 }
+                command = { type = dissent value = -3 }
+        }
 }
 
-# ############################################
-# #####  # Puerto Rico given to the Entente
-# ############################################
+#############################################
+######  # Puerto Rico given to the Entente
+#############################################
 event = {
-	id = 9000876
-	random = no
-	country = CAN
-	
-	name = "EVT_9000876_NAME"
-	desc = "EVT_9000876_DESC"
-	style = 2
-	picture = "Caribbean"
-	
-	action_a = {
-		name = "EVT_9000876_OPTIONA"
-		ai_chance = 60
-		command = { type = secedeprovince which = GUY value = 1765 }
-		command = { type = relation which = GUY value = 15 }
-		command = { type = trigger which = 9000877 }
-	}
-	action_b = {
-		name = "EVT_9000876_OPTIONB"
-		ai_chance = 40
-		command = { type = province_keypoints which = 1765 value = 1 }
-		command = { type = construct which = naval_base where = 1765 value = 4 }
-		command = { type = construct which = IC where = 1765 value = -1 }
-	}
+        id = 9000876
+        random = no
+        country = CAN
+ 
+        name = "EVT_9000876_NAME"
+        desc = "EVT_9000876_DESC"
+        style = 2
+        picture = "Caribbean"
+ 
+        action_a = {
+                name = "EVT_9000876_OPTIONA"
+                ai_chance = 60
+                command = { type = secedeprovince which = GUY value = 1765 }
+	        command = { type = relation which = GUY value = 15 }
+                command = { type = trigger which = 9000877 }
+        }
+        action_b = {
+                name = "EVT_9000876_OPTIONB"
+                ai_chance = 40
+                command = { type = province_keypoints which = 1765 value = 1 }
+                command = { type = construct which = naval_base where = 1765 value = 4 }
+                command = { type = construct which = IC where = 1765 value = -1 }
+        }
 }
 
 event = {
-	id = 9000877
-	random = no
-	country = GUY
-	
-	name = "EVT_9000877_NAME"
-	desc = "EVT_9000877_DESC"
-	style = 2
-	picture = "Caribbean"
-	
-	action_a = {
-		name = "EVT_9000877_OPTIONA"
-		command = { type = dissent value = -2 }
-		command = { type = addcore which = 1765 }
-		command = { type = waketeam which = 15215 }
-		command = { type = relation which = CAN value = 15 }
-	}
+        id = 9000877
+        random = no
+        country = GUY
+ 
+        name = "EVT_9000877_NAME"
+        desc = "EVT_9000877_DESC"
+        style = 2
+        picture = "Caribbean"
+ 
+        action_a = {
+                name = "EVT_9000877_OPTIONA"
+                command = { type = dissent value = -2 }
+                command = { type = addcore which = 1765 }
+                command = { type = waketeam which = 15215 }
+	        command = { type = relation which = CAN value = 15 }
+        }
 }
 
-# ############################################
-# ##### Post-Civil War; USA want Puerto Rico back #
-# ############################################
+#############################################
+###### Post-Civil War; USA want Puerto Rico back # 
+#############################################
 event = {
-	id = 9000878
-	random = no
-	country = USA
-	trigger = {
+        id = 9000878
+        random = no
+        country = USA
+        trigger = {
 		flag = END_ACW
-		exists = CAN
-		owned = { province = 1765 data = CAN } #  Puerto Rico
-		NOT = { puppet = { country = USA country = CAN } }
-	}
-	
-	name = "EVT_9000878_NAME"
-	desc = "EVT_9000878_DESC"
-	style = 2
-	picture = "caribbean"
-	
-	date = { day = 1 month = january year = 1936 }
-	offset = 30
-	deathdate = { day = 1 month = january year = 1960 }
-	
-	action_a = {
-		name = "EVT_9000878_OPTIONA"
-		ai_chance = 60
-		command = { type = trigger which = 9000879 }
-	}
-	action_b = {
-		name = "EVT_9000878_OPTIONB"
-		ai_chance = 40
-		command = { type = dissent value = 5 }
-		command = { type = removecore which = 895 }
-		command = { type = relation which = CAN value = 5 }
-	}
+                exists = CAN
+                owned = { province = 1765 data = CAN } # Puerto Rico
+                NOT = { puppet = { country = USA country = CAN  } }
+        }
+ 
+        name = "EVT_9000878_NAME"
+        desc = "EVT_9000878_DESC"
+        style = 2
+        picture = "caribbean"
+ 
+        date = { day = 1 month = january year = 1936 }
+        offset = 30
+        deathdate = { day = 1 month = january year = 1960 }
+ 
+        action_a = {
+                name = "EVT_9000878_OPTIONA"
+                ai_chance = 60
+                command = { type = trigger which = 9000879 }
+        }
+        action_b = {
+                name = "EVT_9000878_OPTIONB"
+                ai_chance = 40
+                command = { type = dissent value = 5 }
+ 		command = { type = removecore which = 895 } 
+	        command = { type = relation which = CAN value = 5 }
+        }
 }
 
 event = {
-	id = 9000879
-	random = no
-	country = CAN
-	
-	name = "EVT_9000879_NAME"
-	desc = "EVT_9000879_DESC"
-	style = 2
-	picture = "Caribbean"
-	
-	action_a = {
-		name = "EVT_9000879_OPTIONA"
-		ai_chance = 75
-		command = { type = relation which = USA value = 25 }
-		command = { type = secedeprovince which = USA value = 1765 }
-		command = { type = trigger which = 9000880 }
-	}
-	action_b = {
-		name = "EVT_9000879_OPTIONB"
-		ai_chance = 25
-		command = { type = relation which = USA value = -75 }
-		command = { type = trigger which = 9000881 }
-	}
+        id = 9000879
+        random = no
+        country = CAN
+ 
+        name = "EVT_9000879_NAME"
+        desc = "EVT_9000879_DESC"
+        style = 2
+        picture = "Caribbean"
+ 
+        action_a = {
+                name = "EVT_9000879_OPTIONA"
+                ai_chance = 75
+	        command = { type = relation which = USA value = 25 }
+                command = { type = secedeprovince which = USA value = 1765 }
+                command = { type = trigger which = 9000880 }
+        }
+        action_b = {
+                name = "EVT_9000879_OPTIONB"
+                ai_chance = 25
+	        command = { type = relation which = USA value = -75 }
+                command = { type = trigger which = 9000881 }
+        }
 }
 
 event = {
-	id = 9000880
-	random = no
-	country = USA
-	
-	name = "EVT_9000880_NAME"
-	desc = "EVT_9000880_DESC"
-	style = 2
-	picture = "Caribbean"
-	
-	action_a = {
-		name = "EVT_9000880_OPTIONA"
-		command = { type = dissent value = -5 }
-		command = { type = relation which = CAN value = 25 }
-	}
+        id = 9000880
+        random = no
+        country = USA
+ 
+        name = "EVT_9000880_NAME"
+        desc = "EVT_9000880_DESC"
+        style = 2
+        picture = "Caribbean"
+ 
+        action_a = {
+                name = "EVT_9000880_OPTIONA"
+                command = { type = dissent value = -5 }
+	        command = { type = relation which = CAN value = 25 }
+        }
 }
 
 event = {
-	id = 9000881
-	random = no
-	country = USA
-	
-	name = "EVT_9000881_NAME"
-	desc = "EVT_9000881_DESC"
-	style = 2
-	picture = "Caribbean"
-	
-	action_a = {
-		name = "EVT_9000881_OPTIONA"
-		ai_chance = 40
-		command = { type = relation which = CAN value = -50 }
-		command = { type = dissent value = -1 } #  Jingo!
+        id = 9000881
+        random = no
+        country = USA
+ 
+        name = "EVT_9000881_NAME"
+        desc = "EVT_9000881_DESC"
+        style = 2
+        picture = "Caribbean"
+ 
+        action_a = {
+                name = "EVT_9000881_OPTIONA"
+                ai_chance = 40
+	        command = { type = relation which = CAN value = -50 }
+                command = { type = dissent value = -1 } # Jingo!
 		command = { type = domestic which = defense_lobby value = 2 }
 		command = { type = domestic which = interventionism value = 1 }
-	}
-	action_b = {
-		name = "EVT_9000881_OPTIONB"
-		ai_chance = 60
-		command = { type = relation which = CAN value = -50 }
-		command = { type = removecore which = 1765 }
-		command = { type = dissent value = 5 }
+        }
+        action_b = {
+                name = "EVT_9000881_OPTIONB"
+                ai_chance = 60
+	        command = { type = relation which = CAN value = -50 }
+ 		command = { type = removecore which = 1765 } 
+                command = { type = dissent value = 5 }
 		command = { type = domestic which = interventionism value = -1 }
-	}
+        }
 }
 
 # Federation variant
 event = {
-	id = 9000882
-	random = no
-	country = USA
-	trigger = {
+        id = 9000882
+        random = no
+        country = USA
+        trigger = {
 		flag = END_ACW
-		exists = GUY
-		owned = { province = 1765 data = GUY } #  Puerto Rico
-		NOT = { puppet = { country = USA country = CAN } }
-	}
-	
-	name = "EVT_9000882_NAME"
-	desc = "EVT_9000882_DESC"
-	style = 2
-	picture = "caribbean"
-	
-	date = { day = 1 month = january year = 1936 }
-	offset = 30
-	deathdate = { day = 1 month = january year = 1960 }
-	
-	action_a = {
-		name = "EVT_9000882_OPTIONA"
-		ai_chance = 80
-		command = { type = trigger which = 9000883 }
-	}
-	action_b = {
-		name = "EVT_9000882_OPTIONB"
-		ai_chance = 20
-		command = { type = dissent value = 5 }
-		command = { type = removecore which = 895 }
-		command = { type = relation which = GUY value = 5 }
-	}
+                exists = GUY
+                owned = { province = 1765 data = GUY } # Puerto Rico
+                NOT = { puppet = { country = USA country = CAN  } }
+        }
+ 
+        name = "EVT_9000882_NAME"
+        desc = "EVT_9000882_DESC"
+        style = 2
+        picture = "caribbean"
+ 
+        date = { day = 1 month = january year = 1936 }
+        offset = 30
+        deathdate = { day = 1 month = january year = 1960 }
+ 
+        action_a = {
+                name = "EVT_9000882_OPTIONA"
+                ai_chance = 80
+                command = { type = trigger which = 9000883 }
+        }
+        action_b = {
+                name = "EVT_9000882_OPTIONB"
+                ai_chance = 20
+                command = { type = dissent value = 5 }
+ 		command = { type = removecore which = 895 } 
+	        command = { type = relation which = GUY value = 5 }
+        }
 }
 
 event = {
-	id = 9000883
-	random = no
-	country = GUY
-	
-	name = "EVT_9000883_NAME"
-	desc = "EVT_9000883_DESC"
-	style = 2
-	picture = "Caribbean"
-	
-	action_a = {
-		name = "EVT_9000883_OPTIONA"
-		ai_chance = 30
-		command = { type = relation which = USA value = 25 }
-		command = { type = secedeprovince which = USA value = 1765 }
-		command = { type = removecore which = 1765 }
-		command = { type = trigger which = 9000884 }
-	}
-	action_b = {
-		name = "EVT_9000883_OPTIONB"
-		ai_chance = 70
-		command = { type = relation which = USA value = -75 }
-		command = { type = trigger which = 9000885 }
-	}
+        id = 9000883
+        random = no
+        country = GUY
+ 
+        name = "EVT_9000883_NAME"
+        desc = "EVT_9000883_DESC"
+        style = 2
+        picture = "Caribbean"
+ 
+        action_a = {
+                name = "EVT_9000883_OPTIONA"
+                ai_chance = 30
+	        command = { type = relation which = USA value = 25 }
+                command = { type = secedeprovince which = USA value = 1765 }
+ 		command = { type = removecore which = 1765 } 
+                command = { type = trigger which = 9000884 }
+        }
+        action_b = {
+                name = "EVT_9000883_OPTIONB"
+                ai_chance = 70
+	        command = { type = relation which = USA value = -75 }
+                command = { type = trigger which = 9000885 }
+        }
 }
 
 event = {
-	id = 9000884
-	random = no
-	country = USA
-	
-	name = "EVT_9000884_NAME"
-	desc = "EVT_9000884_DESC"
-	style = 2
-	picture = "Caribbean"
-	
-	action_a = {
-		name = "EVT_9000884_OPTIONA"
-		command = { type = dissent value = -5 }
-		command = { type = relation which = GUY value = 25 }
-	}
+        id = 9000884
+        random = no
+        country = USA
+ 
+        name = "EVT_9000884_NAME"
+        desc = "EVT_9000884_DESC"
+        style = 2
+        picture = "Caribbean"
+ 
+        action_a = {
+                name = "EVT_9000884_OPTIONA"
+                command = { type = dissent value = -5 }
+	        command = { type = relation which = GUY value = 25 }
+        }
 }
 
 event = {
-	id = 9000885
-	random = no
-	country = USA
-	
-	name = "EVT_9000885_NAME"
-	desc = "EVT_9000885_DESC"
-	style = 2
-	picture = "Caribbean"
-	
-	action_a = {
-		name = "EVT_9000885_OPTIONA"
-		ai_chance = 60
-		command = { type = relation which = GUY value = -50 }
-		command = { type = relation which = CAN value = -25 }
-		command = { type = dissent value = -1 } #  Jingo!
+        id = 9000885
+        random = no
+        country = USA
+ 
+        name = "EVT_9000885_NAME"
+        desc = "EVT_9000885_DESC"
+        style = 2
+        picture = "Caribbean"
+ 
+        action_a = {
+                name = "EVT_9000885_OPTIONA"
+                ai_chance = 60
+	        command = { type = relation which = GUY value = -50 }
+	        command = { type = relation which = CAN value = -25 }
+                command = { type = dissent value = -1 } # Jingo!
 		command = { type = domestic which = defense_lobby value = 2 }
 		command = { type = domestic which = interventionism value = 1 }
-	}
-	action_b = {
-		name = "EVT_9000885_OPTIONB"
-		ai_chance = 40
-		command = { type = relation which = GUY value = -50 }
-		command = { type = relation which = CAN value = -25 }
-		command = { type = removecore which = 1765 }
-		command = { type = dissent value = 5 }
+        }
+        action_b = {
+                name = "EVT_9000885_OPTIONB"
+                ai_chance = 40
+	        command = { type = relation which = GUY value = -50 }
+	        command = { type = relation which = CAN value = -25 }
+ 		command = { type = removecore which = 1765 } 
+                command = { type = dissent value = 5 }
 		command = { type = domestic which = interventionism value = -1 }
-	}
+        }
 }
 
-# ############################################
-# ##### Post-Civil War; AUS wants Puerto Rico back #
-# ############################################
+#############################################
+###### Post-Civil War; AUS wants Puerto Rico back # 
+#############################################
 event = {
-	id = 9000886
-	random = no
-	country = TEX
-	trigger = {
+        id = 9000886
+        random = no
+        country = TEX
+        trigger = {
 		flag = END_ACW
-		exists = CAN
-		owned = { province = 1765 data = CAN } #  Puerto Rico
-	}
-	
-	name = "EVT_9000886_NAME"
-	desc = "EVT_9000886_DESC"
-	style = 2
-	picture = "caribbean"
-	
-	date = { day = 1 month = january year = 1936 }
-	offset = 30
-	deathdate = { day = 1 month = january year = 1960 }
-	
-	action_a = {
-		name = "EVT_9000886_OPTIONA"
-		ai_chance = 80
-		command = { type = trigger which = 9000887 }
-	}
-	action_b = {
-		name = "EVT_9000886_OPTIONB"
-		ai_chance = 20
-		command = { type = dissent value = 5 }
-		command = { type = removecore which = 1765 }
-		command = { type = relation which = CAN value = 5 }
-	}
+                exists = CAN
+                owned = { province = 1765 data = CAN } # Puerto Rico
+        }
+ 
+        name = "EVT_9000886_NAME"
+        desc = "EVT_9000886_DESC"
+        style = 2
+        picture = "caribbean"
+ 
+        date = { day = 1 month = january year = 1936 }
+        offset = 30
+        deathdate = { day = 1 month = january year = 1960 }
+ 
+        action_a = {
+                name = "EVT_9000886_OPTIONA"
+                ai_chance = 80
+                command = { type = trigger which = 9000887 }
+        }
+        action_b = {
+                name = "EVT_9000886_OPTIONB"
+                ai_chance = 20
+                command = { type = dissent value = 5 }
+ 		command = { type = removecore which = 1765 } 
+	        command = { type = relation which = CAN value = 5 }
+        }
 }
 
 event = {
-	id = 9000887
-	random = no
-	country = CAN
-	
-	name = "EVT_9000887_NAME"
-	desc = "EVT_9000887_DESC"
-	style = 2
-	picture = "Caribbean"
-	
-	action_a = {
-		name = "EVT_9000887_OPTIONA"
-		ai_chance = 25
-		command = { type = relation which = TEX value = 25 }
-		command = { type = secedeprovince which = TEX value = 1765 }
-		command = { type = trigger which = 9000888 }
-	}
-	action_b = {
-		name = "EVT_9000887_OPTIONB"
-		ai_chance = 75
-		command = { type = relation which = TEX value = -75 }
-		command = { type = trigger which = 9000889 }
-	}
+        id = 9000887
+        random = no
+        country = CAN
+ 
+        name = "EVT_9000887_NAME"
+        desc = "EVT_9000887_DESC"
+        style = 2
+        picture = "Caribbean"
+ 
+        action_a = {
+                name = "EVT_9000887_OPTIONA"
+                ai_chance = 25
+	        command = { type = relation which = TEX value = 25 }
+                command = { type = secedeprovince which = TEX value = 1765 }
+                command = { type = trigger which = 9000888 }
+        }
+        action_b = {
+                name = "EVT_9000887_OPTIONB"
+                ai_chance = 75
+	        command = { type = relation which = TEX value = -75 }
+                command = { type = trigger which = 9000889 }
+        }
 }
 
 event = {
-	id = 9000888
-	random = no
-	country = TEX
-	
-	name = "EVT_9000888_NAME"
-	desc = "EVT_9000888_DESC"
-	style = 2
-	picture = "Caribbean"
-	
-	action_a = {
-		name = "EVT_9000888_OPTIONA"
-		command = { type = dissent value = -5 }
-		command = { type = relation which = CAN value = 25 }
-	}
+        id = 9000888
+        random = no
+        country = TEX
+ 
+        name = "EVT_9000888_NAME"
+        desc = "EVT_9000888_DESC"
+        style = 2
+        picture = "Caribbean"
+ 
+        action_a = {
+                name = "EVT_9000888_OPTIONA"
+                command = { type = dissent value = -5 }
+	        command = { type = relation which = CAN value = 25 }
+        }
 }
 
 event = {
-	id = 9000889
-	random = no
-	country = TEX
-	
-	name = "EVT_9000889_NAME"
-	desc = "EVT_9000889_DESC"
-	style = 2
-	picture = "Caribbean"
-	
-	action_a = {
-		name = "EVT_9000889_OPTIONA"
-		ai_chance = 80
-		command = { type = relation which = CAN value = -50 }
-		command = { type = dissent value = -1 } #  Jingo!
+        id = 9000889
+        random = no
+        country = TEX
+ 
+        name = "EVT_9000889_NAME"
+        desc = "EVT_9000889_DESC"
+        style = 2
+        picture = "Caribbean"
+ 
+        action_a = {
+                name = "EVT_9000889_OPTIONA"
+                ai_chance = 80
+	        command = { type = relation which = CAN value = -50 }
+                command = { type = dissent value = -1 } # Jingo!
 		command = { type = domestic which = defense_lobby value = 2 }
 		command = { type = domestic which = interventionism value = 1 }
-	}
-	action_b = {
-		name = "EVT_9000889_OPTIONB"
-		ai_chance = 20
-		command = { type = relation which = CAN value = -50 }
-		command = { type = removecore which = 1765 }
-		command = { type = dissent value = 5 }
+        }
+        action_b = {
+                name = "EVT_9000889_OPTIONB"
+                ai_chance = 20
+	        command = { type = relation which = CAN value = -50 }
+ 		command = { type = removecore which = 1765 } 
+                command = { type = dissent value = 5 }
 		command = { type = domestic which = interventionism value = -1 }
-	}
+        }
 }
 
 # Federation variant
 event = {
-	id = 9000890
-	random = no
-	country = TEX
-	trigger = {
+        id = 9000890
+        random = no
+        country = TEX
+        trigger = {
 		flag = END_ACW
-		exists = GUY
-		owned = { province = 1765 data = GUY } #  Puerto Rico
-	}
-	
-	name = "EVT_9000890_NAME"
-	desc = "EVT_9000890_DESC"
-	style = 2
-	picture = "caribbean"
-	
-	date = { day = 1 month = january year = 1936 }
-	offset = 30
-	deathdate = { day = 1 month = january year = 1960 }
-	
-	action_a = {
-		name = "EVT_9000890_OPTIONA"
-		ai_chance = 95
-		command = { type = trigger which = 9000891 }
-	}
-	action_b = {
-		name = "EVT_9000890_OPTIONB"
-		ai_chance = 5
-		command = { type = dissent value = 5 }
-		command = { type = removecore which = 1765 }
-		command = { type = relation which = GUY value = 5 }
-	}
+                exists = GUY
+                owned = { province = 1765 data = GUY } # Puerto Rico
+        }
+ 
+        name = "EVT_9000890_NAME"
+        desc = "EVT_9000890_DESC"
+        style = 2
+        picture = "caribbean"
+ 
+        date = { day = 1 month = january year = 1936 }
+        offset = 30
+        deathdate = { day = 1 month = january year = 1960 }
+ 
+        action_a = {
+                name = "EVT_9000890_OPTIONA"
+                ai_chance = 95
+                command = { type = trigger which = 9000891 }
+        }
+        action_b = {
+                name = "EVT_9000890_OPTIONB"
+                ai_chance = 5
+                command = { type = dissent value = 5 }
+ 		command = { type = removecore which = 1765 } 
+	        command = { type = relation which = GUY value = 5 }
+        }
 }
 
 event = {
-	id = 9000891
-	random = no
-	country = GUY
-	
-	name = "EVT_9000891_NAME"
-	desc = "EVT_9000891_DESC"
-	style = 2
-	picture = "Caribbean"
-	
-	action_a = {
-		name = "EVT_9000891_OPTIONA"
-		ai_chance = 15
-		command = { type = relation which = TEX value = 25 }
-		command = { type = secedeprovince which = TEX value = 1765 }
-		command = { type = removecore which = 895 }
-		command = { type = trigger which = 9000892 }
-	}
-	action_b = {
-		name = "EVT_9000891_OPTIONB"
-		ai_chance = 85
-		command = { type = relation which = TEX value = -75 }
-		command = { type = trigger which = 9000893 }
-	}
+        id = 9000891
+        random = no
+        country = GUY
+ 
+        name = "EVT_9000891_NAME"
+        desc = "EVT_9000891_DESC"
+        style = 2
+        picture = "Caribbean"
+ 
+        action_a = {
+                name = "EVT_9000891_OPTIONA"
+                ai_chance = 15
+	        command = { type = relation which = TEX value = 25 }
+                command = { type = secedeprovince which = TEX value = 1765 }
+ 		command = { type = removecore which = 895 } 
+                command = { type = trigger which = 9000892 }
+        }
+        action_b = {
+                name = "EVT_9000891_OPTIONB"
+                ai_chance = 85
+	        command = { type = relation which = TEX value = -75 }
+                command = { type = trigger which = 9000893 }
+        }
 }
 
 event = {
-	id = 9000892
-	random = no
-	country = TEX
-	
-	name = "EVT_9000892_NAME"
-	desc = "EVT_9000892_DESC"
-	style = 2
-	picture = "Caribbean"
-	
-	action_a = {
-		name = "EVT_9000892_OPTIONA"
-		command = { type = dissent value = -5 }
-		command = { type = relation which = GUY value = 25 }
-	}
+        id = 9000892
+        random = no
+        country = TEX
+ 
+        name = "EVT_9000892_NAME"
+        desc = "EVT_9000892_DESC"
+        style = 2
+        picture = "Caribbean"
+ 
+        action_a = {
+                name = "EVT_9000892_OPTIONA"
+                command = { type = dissent value = -5 }
+	        command = { type = relation which = GUY value = 25 }
+        }
 }
 
 event = {
-	id = 9000893
-	random = no
-	country = TEX
-	
-	name = "EVT_9000893_NAME"
-	desc = "EVT_9000893_DESC"
-	style = 2
-	picture = "Caribbean"
-	
-	action_a = {
-		name = "EVT_9000893_OPTIONA"
-		ai_chance = 90
-		command = { type = relation which = GUY value = -50 }
-		command = { type = relation which = CAN value = -25 }
-		command = { type = dissent value = -1 } #  Jingo!
+        id = 9000893
+        random = no
+        country = TEX
+ 
+        name = "EVT_9000893_NAME"
+        desc = "EVT_9000893_DESC"
+        style = 2
+        picture = "Caribbean"
+ 
+        action_a = {
+                name = "EVT_9000893_OPTIONA"
+                ai_chance = 90
+	        command = { type = relation which = GUY value = -50 }
+	        command = { type = relation which = CAN value = -25 }
+                command = { type = dissent value = -1 } # Jingo!
 		command = { type = domestic which = defense_lobby value = 2 }
 		command = { type = domestic which = interventionism value = 1 }
-	}
-	action_b = {
-		name = "EVT_9000893_OPTIONB"
-		ai_chance = 10
-		command = { type = relation which = GUY value = -50 }
-		command = { type = relation which = CAN value = -25 }
-		command = { type = removecore which = 1765 }
-		command = { type = dissent value = 5 }
+        }
+        action_b = {
+                name = "EVT_9000893_OPTIONB"
+                ai_chance = 10
+	        command = { type = relation which = GUY value = -50 }
+	        command = { type = relation which = CAN value = -25 }
+ 		command = { type = removecore which = 1765 } 
+                command = { type = dissent value = 5 }
 		command = { type = domestic which = interventionism value = -1 }
-	}
+        }
 }
 
-# ############################################
-# ##### Ultimate capture of Puerto Rico #
-# ############################################
+#############################################
+###### Ultimate capture of Puerto Rico # 
+#############################################
 event = {
-	id = 9000894
-	random = no
-	country = USA
-	trigger = {
+        id = 9000894
+        random = no
+        country = USA
+        trigger = {
 		OR = {
-			exists = CSA
-			exists = TEX
+	                exists = CSA
+        	        exists = TEX
 		}
-		OR = {
-			war = { country = USA country = CSA }
-			war = { country = USA country = TEX }
-		}
-		event = 9000875 #  Fate of Puerto Rico
-		control = { province = 1765 data = USA } #  Puerto Rico
-		NOT = {
+                OR = { 
+                        war = { country = USA country = CSA }
+                        war = { country = USA country = TEX }
+                }
+		event = 9000875 # Fate of Puerto Rico
+                control = { province = 1765 data = USA } # Puerto Rico
+                NOT = { 
 			control = { province = 1953 data = USA }
-			control = { province = 1952 data = USA }
-			control = { province = 1960 data = USA }
-			control = { province = 1963 data = USA }
-			control = { province = 1812 data = USA }
-			control = { province = 1809 data = USA }
-			control = { province = 1795 data = USA }
-			control = { province = 1797 data = USA }
-			control = { province = 1789 data = USA }
-			control = { province = 1931 data = USA }
-			control = { province = 1944 data = USA }
-			control = { province = 889 data = USA }
+                        control = { province = 1952 data = USA }
+                        control = { province = 1960 data = USA }
+                        control = { province = 1963 data = USA }
+                        control = { province = 1812 data = USA }
+                        control = { province = 1809 data = USA }
+                        control = { province = 1795 data = USA }
+                        control = { province = 1797 data = USA }
+                        control = { province = 1789 data = USA }
+                        control = { province = 1931 data = USA }
+                        control = { province = 1944 data = USA }
+                        control = { province = 889 data = USA }
 			# US Urban Areas
-			control = { province = 1922 data = USA }
-			control = { province = 1912 data = USA }
-			control = { province = 1833 data = USA }
-			control = { province = 1820 data = USA }
-			
-		}
-	}
-	
-	name = "EVT_9000894_NAME"
-	desc = "EVT_9000894_DESC"
-	style = 2
-	picture = "caribbean"
-	
-	date = { day = 1 month = january year = 1936 }
-	offset = 10
-	deathdate = { day = 1 month = january year = 1960 }
-	
-	action_a = {
-		name = "EVT_9000894_OPTIONA"
-		command = { type = dissent value = 2 }
-		command = { type = secedeprovince which = CAN value = 1765 }
-		command = { type = trigger which = 9000895 }
-	}
+                        control = { province = 1922 data = USA }
+                        control = { province = 1912 data = USA }
+                        control = { province = 1833 data = USA }
+                        control = { province = 1820 data = USA }
+                        
+                }
+        }
+ 
+        name = "EVT_9000894_NAME"
+        desc = "EVT_9000894_DESC"
+        style = 2
+        picture = "caribbean"
+ 
+        date = { day = 1 month = january year = 1936 }
+        offset = 10
+        deathdate = { day = 1 month = january year = 1960 }
+ 
+        action_a = {
+                name = "EVT_9000894_OPTIONA"
+                command = { type = dissent value = 2 }
+                command = { type = secedeprovince which = CAN value = 1765 }
+                command = { type = trigger which = 9000895 }
+        }
 }
 
 event = {
-	id = 9000895
-	random = no
-	country = CAN
-	
-	name = "EVT_9000895_NAME"
-	desc = "EVT_9000895_DESC"
-	style = 2
-	picture = "Caribbean"
-	
-	action_a = {
-		name = "EVT_9000895_OPTIONA"
-		ai_chance = 60
-		command = { type = secedeprovince which = GUY value = 1765 }
-		command = { type = relation which = GUY value = 15 }
-		command = { type = trigger which = 9000896 }
-	}
-	action_b = {
-		name = "EVT_9000895_OPTIONB"
-		ai_chance = 40
-		command = { type = province_keypoints which = 1765 value = 1 }
-		command = { type = construct which = naval_base where = 1765 value = 4 }
-		command = { type = construct which = IC where = 1765 value = -1 }
-	}
+        id = 9000895
+        random = no
+        country = CAN
+ 
+        name = "EVT_9000895_NAME"
+        desc = "EVT_9000895_DESC"
+        style = 2
+        picture = "Caribbean"
+ 
+        action_a = {
+                name = "EVT_9000895_OPTIONA"
+                ai_chance = 60
+                command = { type = secedeprovince which = GUY value = 1765 }
+	        command = { type = relation which = GUY value = 15 }
+                command = { type = trigger which = 9000896 }
+        }
+        action_b = {
+                name = "EVT_9000895_OPTIONB"
+                ai_chance = 40
+                command = { type = province_keypoints which = 1765 value = 1 }
+                command = { type = construct which = naval_base where = 1765 value = 4 }
+                command = { type = construct which = IC where = 1765 value = -1 }
+        }
 }
 
 event = {
-	id = 9000896
-	random = no
-	country = GUY
-	
-	name = "EVT_9000896_NAME"
-	desc = "EVT_9000896_DESC"
-	style = 2
-	picture = "Caribbean"
-	
-	action_a = {
-		name = "EVT_9000896_OPTIONA"
-		command = { type = dissent value = -2 }
-		command = { type = addcore which = 1765 }
-		command = { type = relation which = CAN value = 15 }
-	}
+        id = 9000896
+        random = no
+        country = GUY
+ 
+        name = "EVT_9000896_NAME"
+        desc = "EVT_9000896_DESC"
+        style = 2
+        picture = "Caribbean"
+ 
+        action_a = {
+                name = "EVT_9000896_OPTIONA"
+                command = { type = dissent value = -2 }
+                command = { type = addcore which = 1765 }
+	        command = { type = relation which = CAN value = 15 }
+        }
 }

@@ -15,8 +15,8 @@ event = {
 	NOT = { ispuppet = GUA } 
         }
 
-	name = "The 1937 Congressional Syndicalist Union"
-	desc = "The third Congressional Syndicalist Union has started, and there are three parties that represent our great nation. The Partido Socialista, which espouses a blend of British Syndicalism and Zapatismo. There is also the Partido de los Trabajadores, which is currently in power and supports Orthodox Syndicalism. Finally, there is the Partido Reformista, which supports Social Democracy. Which party will gain a majority?..."
+	name = "EVT_56700_NAME"
+	desc = "EVT_56700_DESC"
 	picture = "Peace_conference"
 
 	date = { day = 1 month = august year = 1937 }
@@ -24,7 +24,7 @@ event = {
 	deathdate = { day = 29 month = august year = 1937 }
 
 	action_a = {
-		name = "Let's get to work!"
+		name = "EVT_56700_OPTIONA"
 		command = { type = dissent value = -1 }
 	}
 }
@@ -37,8 +37,8 @@ event = {
 
 	trigger = { event = 56700 }
 
-	name = "Internal economic development"
-	desc = "The first policy that is under question is that of internal economic development. The Socialists wish to maintain the status quo, the Worker's Party wish to centralise the economic decisions and the Reformists wish to expand the collective's autonomy."
+	name = "EVT_56701_NAME"
+	desc = "EVT_56701_DESC"
 	picture = "Peace_conference"
 
 	date = { day = 3 month = august year = 1937 }
@@ -47,18 +47,18 @@ event = {
 
 	action_a = {
 		ai_chance = 35
-		name = "The Socialist Party - The status quo is fine"
+		name = "EVT_56701_OPTIONA"
 		command = { type = setflag which = GUA_ECO_LWR }
 	}
 	action_b = {
 		ai_chance = 40
-		name = "The Worker's Party - Centralise the economy"
+		name = "EVT_56701_OPTIONB"
 		command = { type = domestic which = free_market value = -1 }
 		command = { type = setflag which = GUA_ECO_LE }
 	}
 	action_c = {
 		ai_chance = 25
-		name = "The Reformist Party - Increase the collective's autonomy"
+		name = "EVT_56701_OPTIONC"
 		command = { type = domestic which = free_market value = 1 }
 		command = { type = setflag which = GUA_ECO_SD }
 	}
@@ -72,8 +72,8 @@ event = {
 
 	trigger = { event = 56701 }
 
-	name = "Relations with the major Capitalist nations"
-	desc = "The next policy that is under question is that of trade with the important Capitalist nations. The Socialists wish to maintain the status quo, the Worker's Party wish to strengthen ties with them and the Reformists wish to end trade with them."
+	name = "EVT_56702_NAME"
+	desc = "EVT_56702_DESC"
 	picture = "Peace_conference"
 
 	date = { day = 5 month = august year = 1937 }
@@ -82,13 +82,13 @@ event = {
 
 	action_a = {
 		ai_chance = 40
-		name = "The Socialist Party - The status quo is fine"
+		name = "EVT_56702_OPTIONA"
 		command = { type = dissent value = 1 }
 		command = { type = setflag which = GUA_CAP_LWR }
 	}
 	action_b = {
 		ai_chance = 20
-		name = "The Worker's Party - Strengthen ties with them"
+		name = "EVT_56702_OPTIONB"
 		command = { type = domestic which = free_market value = 2 }
 		command = { type = dissent value = 3 }
 		command = { type = relation which = GER value = 50 }
@@ -100,7 +100,7 @@ event = {
 	}
 	action_c = {
 		ai_chance = 40
-		name = "The Reformist Party - End trade with them"
+		name = "EVT_56702_OPTIONC"
 		command = { type = domestic which = free_market value = 1 }
 		command = { type = dissent value = 2 }
 		command = { type = end_trades which = GER }
@@ -125,8 +125,8 @@ event = {
 
 	trigger = { event = 56702 }
 
-	name = "Status of the Maya"
-	desc = "The next policy that is under question is our stance on the Maya. The Socialists wish to give them increased cultural autonomy, the Worker's Party wish to abolish State protection of their languages to begin their absorption into the State and the Reformists wish to encourage economic and cultural autonomy."
+	name = "EVT_56703_NAME"
+	desc = "EVT_56703_DESC"
 	picture = "Peace_conference"
 
 	date = { day = 7 month = august year = 1937 }
@@ -135,21 +135,21 @@ event = {
 
 	action_a = {
 		ai_chance = 50
-		name = "The Socialist Party - Give them increased cultural autonomy"
+		name = "EVT_56703_OPTIONA"
 		command = { type = domestic which = freedom value = 1 }
 		command = { type = dissent value = -1 }
 		command = { type = setflag which = GUA_MAY_LWR }
 	}
 	action_b = {
 		ai_chance = 20
-		name = "The Worker's Party - Abolish State protection of their languages"
+		name = "EVT_56703_OPTIONB"
 		command = { type = domestic which = freedom value = -2 }
 		command = { type = dissent value = 5 }
 		command = { type = setflag which = GUA_MAY_LE }
 	}
 	action_c = {
 		ai_chance = 30
-		name = "The Reformist Party - Encourage economic and cultural autonomy"
+		name = "EVT_56703_OPTIONC"
 		command = { type = domestic which = freedom value = 2 }
 		command = { type = dissent value = 2 }
 		command = { type = setflag which = GUA_MAY_SD }
@@ -164,8 +164,8 @@ event = {
 
 	trigger = { event = 56703 }
 
-	name = "Army funding"
-	desc = "The final policy that is under question is our stance of Army funding. Both the Socialists and the Worker's Party wish to expand military expenditure while the Reformists wish to reduce the military budget."
+	name = "EVT_56704_NAME"
+	desc = "EVT_56704_DESC"
 	picture = "Peace_conference"
 
 	date = { day = 9 month = august year = 1937 }
@@ -174,7 +174,7 @@ event = {
 
 	action_a = {
 		ai_chance = 75
-		name = "The Socialist and Worker's Parties - Increase the budget"
+		name = "EVT_56704_OPTIONA"
 		command = { type = domestic which = defense_lobby value = 2 }
 		command = { type = dissent value = -1 }
 		command = { type = setflag which = GUA_ARM_LWR }
@@ -182,7 +182,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 25
-		name = "The Reformist Party - Decrease the budget"
+		name = "EVT_56704_OPTIONB"
 		command = { type = domestic which = defense_lobby value = -2 }
 		command = { type = dissent value = 2 }
 		command = { type = setflag which = GUA_ARM_SD }
@@ -215,8 +215,8 @@ event = {
 	flag = GUA_MAY_LWR } }
 	event = 56704 }
 
-	name = "The Socialist Party secures a majority!"
-	desc = "The outcome of the Congressional Syndicalist Union has ended with a Socialist Party majority!"
+	name = "EVT_56705_NAME"
+	desc = "EVT_56705_DESC"
 	picture = "Peace_conference"
 
 	date = { day = 11 month = august year = 1937 }
@@ -224,7 +224,7 @@ event = {
 	deathdate = { day = 29 month = september year = 1937 }
 
 	action_a = {
-		name = "Congratulations Camarada Romualdo"
+		name = "EVT_56705_OPTIONA"
 		command = { type = headofstate which = 46014 } #Romualdo Jímenez Oreamurio
 		command = { type = headofgovernment which = 46023 } #Francisco Javier Arana
 		command = { type = foreignminister which = 46003 } #Laura H. de Salazar
@@ -281,8 +281,8 @@ event = {
 	flag = GUA_MAY_LE } }
 	event = 56704 }
 
-	name = "The Worker's Party secures a majority!"
-	desc = "The outcome of the Congressional Syndicalist Union has ended with a Worker's Party majority!"
+	name = "EVT_56706_NAME"
+	desc = "EVT_56706_DESC"
 	picture = "Peace_conference"
 
 	date = { day = 11 month = august year = 1937 }
@@ -290,7 +290,7 @@ event = {
 	deathdate = { day = 29 month = september year = 1937 }
 
 	action_a = {
-		name = "Congratulations Camarada Fortuny"
+		name = "EVT_56706_OPTIONA"
 		command = { type = headofstate which = 46000 } #Jose Manuel Fortuny
 		command = { type = headofgovernment which = 46001 } #Víctor Manuel Gutiérrez
 		command = { type = foreignminister which = 46031 } #Luis Cardenal
@@ -347,8 +347,8 @@ event = {
 	flag = GUA_MAY_SD } }
 	event = 56704 }
 
-	name = "The Reformist Party secures a majority!"
-	desc = "The outcome of the Congressional Syndicalist Union has ended with a Reformist Party majority!"
+	name = "EVT_56707_NAME"
+	desc = "EVT_56707_DESC"
 	picture = "Peace_conference"
 
 	date = { day = 11 month = august year = 1937 }
@@ -356,7 +356,7 @@ event = {
 	deathdate = { day = 29 month = september year = 1937 }
 
 	action_a = {
-		name = "Congratulations Camarada Menéndez"
+		name = "EVT_56707_OPTIONA"
 		command = { type = headofstate which = 46013 } #Andrés Ignacio Menéndez
 		command = { type = headofgovernment which = 46024 } #Jose Figueres Ferrer
 		command = { type = foreignminister which = 46032 } #Julio Enrique Ávila
@@ -400,8 +400,8 @@ event = {
 	event = 56706
 	event = 56707 } } }
 
-	name = "The Congress is a draw!"
-	desc = "The outcome of the Congressional Syndicalist Union has ended with no clear majority. However, the Worker's and Socalist parties have worked out a comprise cabient. The Socialists have gotten command of the Head of Government, the Foreign and the Economic offices. The remaining positions have been filled with the Worker's Party."
+	name = "EVT_56708_NAME"
+	desc = "EVT_56708_DESC"
 	picture = "Peace_conference"
 
 	date = { day = 12 month = august year = 1937 }
@@ -409,7 +409,7 @@ event = {
 	deathdate = { day = 29 month = september year = 1937 }
 
 	action_a = {
-		name = "Thankfully there is a coalition now..."
+		name = "EVT_56708_OPTIONA"
 		command = { type = headofstate which = 46014 } #Romualdo Jímenez Oreamurio
 		command = { type = headofgovernment which = 46001 } #Víctor Manuel Gutiérrez
 		command = { type = foreignminister which = 46031 } #Luis Cardenal
@@ -457,8 +457,8 @@ event = {
 	NOT = { ispuppet = GUA } 
         }
 
-	name = "The 1942 Congressional Syndicalist Union"
-	desc = "The fourth Congressional Syndicalist Union has started, and the three parties that represent our great nation are again vying for control of the government."
+	name = "EVT_56709_NAME"
+	desc = "EVT_56709_DESC"
 	picture = "Peace_conference"
 
 	date = { day = 1 month = august year = 1942 }
@@ -466,7 +466,7 @@ event = {
 	deathdate = { day = 29 month = september year = 1942 }
 
 	action_a = {
-		name = "Let's get to work!"
+		name = "EVT_56709_OPTIONA"
 		command = { type = dissent value = -1 }
 	}
 }
@@ -479,8 +479,8 @@ event = {
 
 	trigger = { event = 56709 }
 
-	name = "Internal economic development"
-	desc = "The first policy that is under question is that of internal economic development. The Socialists wish to expand the port and airports in Guatemala, the Worker's Party wish to industrialise Guatemala City, and the Reformists wish to expand the farms and mines."
+	name = "EVT_56710_NAME"
+	desc = "EVT_56710_DESC"
 	picture = "Peace_conference"
 
 	date = { day = 3 month = august year = 1942 }
@@ -489,7 +489,7 @@ event = {
 
 	action_a = {
 		ai_chance = 35
-		name = "The Socialist Party - Expand Guatemala's naval and airport facilities"
+		name = "EVT_56710_OPTIONA"
 		command = { type = construct which = naval_base where = 2088 value = 2 }
 		command = { type = construct which = air_base where = 2088 value = 2 }
 		command = { type = supplies value = -500 }
@@ -498,7 +498,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 30
-		name = "The Worker's Party - Expand the industrial complexes in Guatemala City"
+		name = "EVT_56710_OPTIONB"
 		command = { type = construct which = ic where = 2088 value = 1 }
 		command = { type = supplies value = -500 }
 		command = { type = money value = -30 }
@@ -506,7 +506,7 @@ event = {
 	}
 	action_c = {
 		ai_chance = 35
-		name = "The Reformist Party - Increase the collective's autonomy"
+		name = "EVT_56710_OPTIONC"
 		command = { type = add_prov_resource which = -1 value = 2 where = metal }
 		command = { type = add_prov_resource which = -1 value = 5 where = rare_materials }
 		command = { type = supplies value = -500 }
@@ -523,8 +523,8 @@ event = {
 
 	trigger = { event = 56710 }
 
-	name = "Foreign Policy"
-	desc = "The next policy that is under question is that of our general Foreign policy. The Socialist and Worker's Parties both wish to promote the Revolution, but the Worker's Party is more militant about it, and the Reformists think the Revolution must be promoted peaceably."
+	name = "EVT_56711_NAME"
+	desc = "EVT_56711_DESC"
 	picture = "Peace_conference"
 
 	date = { day = 5 month = august year = 1942 }
@@ -533,19 +533,19 @@ event = {
 
 	action_a = {
 		ai_chance = 40
-		name = "The Socialist Party - The Revolution must be protected"
+		name = "EVT_56711_OPTIONA"
 		command = { type = domestic which = defense_lobby value = 1 }
 		command = { type = setflag which = GUA_FOR_LWR }
 	}
 	action_b = {
 		ai_chance = 45
-		name = "The Worker's Party - We must spread the Revolution!"
+		name = "EVT_56711_OPTIONB"
 		command = { type = domestic which = defense_lobby value = 2 }
 		command = { type = setflag which = GUA_FOR_LE }
 	}
 	action_c = {
 		ai_chance = 15
-		name = "The Reformist Party - The Revolution must be promoted peaceably"
+		name = "EVT_56711_OPTIONC"
 		command = { type = domestic which = defense_lobby value = -2 }
 		command = { type = setflag which = GUA_FOR_SD }
 	}
@@ -559,8 +559,8 @@ event = {
 
 	trigger = { event = 56711 }
 
-	name = "The Catholic Church"
-	desc = "The final policy that is under question is that of our stance of the Catholic Church. The Socialist and Worker's Parties both wish to close down the religious schools, but the Worker's Party also want to liquidation of the Church officals, and the Reformists think the Church and its schools should be left alone."
+	name = "EVT_56712_NAME"
+	desc = "EVT_56712_DESC"
 	picture = "Peace_conference"
 
 	date = { day = 7 month = august year = 1942 }
@@ -569,19 +569,19 @@ event = {
 
 	action_a = {
 		ai_chance = 40
-		name = "The Socialist Party - Close down the Religious schools"
+		name = "EVT_56712_OPTIONA"
 		command = { type = domestic which = freedom value = -1 }
 		command = { type = setflag which = GUA_CAT_LWR }
 	}
 	action_b = {
 		ai_chance = 45
-		name = "The Worker's Party - A liquidation of the Church is needed!"
+		name = "EVT_56712_OPTIONB"
 		command = { type = domestic which = freedom value = -2 }
 		command = { type = setflag which = GUA_CAT_LE }
 	}
 	action_c = {
 		ai_chance = 15
-		name = "The Reformist Party - Leave the Church alone"
+		name = "EVT_56712_OPTIONC"
 		command = { type = domestic which = freedom value = 2 }
 		command = { type = setflag which = GUA_CAT_LE }
 	}
@@ -605,8 +605,8 @@ event = {
 	flag = GUA_CAT_LWR } }
 	event = 56712 }
 
-	name = "The Socialist Party secures a majority!"
-	desc = "The outcome of the Congressional Syndicalist Union has ended with a Socialist Party majority!"
+	name = "EVT_56713_NAME"
+	desc = "EVT_56713_DESC"
 	picture = "Peace_conference"
 
 	date = { day = 9 month = august year = 1942 }
@@ -614,7 +614,7 @@ event = {
 	deathdate = { day = 29 month = september year = 1942 }
 
 	action_a = {
-		name = "Congratulations Camarada Romualdo"
+		name = "EVT_56713_OPTIONA"
 		command = { type = headofstate which = 46014 } #Romualdo Jímenez Oreamurio
 		command = { type = headofgovernment which = 46023 } #Francisco Javier Arana
 		command = { type = foreignminister which = 46003 } #Laura H. de Salazar
@@ -668,8 +668,8 @@ event = {
 	flag = GUA_MAY_LE } }
 	event = 56704 }
 
-	name = "The Worker's Party secures a majority!"
-	desc = "The outcome of the Congressional Syndicalist Union has ended with a Worker's Party majority!"
+	name = "EVT_56714_NAME"
+	desc = "EVT_56714_DESC"
 	picture = "Peace_conference"
 
 	date = { day = 11 month = august year = 1942 }
@@ -677,7 +677,7 @@ event = {
 	deathdate = { day = 29 month = september year = 1942 }
 
 	action_a = {
-		name = "Congratulations Camarada Fortuny"
+		name = "EVT_56714_OPTIONA"
 		command = { type = headofstate which = 46000 } #Jose Manuel Fortuny
 		command = { type = headofgovernment which = 46001 } #Víctor Manuel Gutiérrez
 		command = { type = foreignminister which = 46031 } #Luis Cardenal
@@ -734,8 +734,8 @@ event = {
 	flag = GUA_MAY_SD } }
 	event = 56704 }
 
-	name = "The Reformist Party secures a majority!"
-	desc = "The outcome of the Congressional Syndicalist Union has ended with a Reformist Party majority!"
+	name = "EVT_56715_NAME"
+	desc = "EVT_56715_DESC"
 	picture = "Peace_conference"
 
 	date = { day = 11 month = august year = 1942 }
@@ -743,7 +743,7 @@ event = {
 	deathdate = { day = 29 month = september year = 1942 }
 
 	action_a = {
-		name = "Congratulations Camarada Menéndez"
+		name = "EVT_56715_OPTIONA"
 		command = { type = headofstate which = 46013 } #Andrés Ignacio Menéndez
 		command = { type = headofgovernment which = 46024 } #Jose Figueres Ferrer
 		command = { type = foreignminister which = 46032 } #Julio Enrique Ávila
@@ -791,8 +791,8 @@ event = {
         } 
         }
 
-	name = "The Congress is a draw!"
-	desc = "The outcome of the Congressional Syndicalist Union has ended with no clear majority. However, the Reformist and Socalist parties have worked out a comprise cabient. The Reformists have gotten command of the Head of Government, the Foreign and the Economic offices. The remaining positions have been filled with the Socialist Party members."
+	name = "EVT_56716_NAME"
+	desc = "EVT_56716_DESC"
 	picture = "Peace_conference"
 
 	date = { day = 12 month = august year = 1942 }
@@ -800,7 +800,7 @@ event = {
 	deathdate = { day = 29 month = september year = 1942 }
 
 	action_a = {
-		name = "Thankfully there is a coalition now..."
+		name = "EVT_56716_OPTIONA"
 		command = { type = headofstate which = 46000 } #Jose Manuel Fortuny
 		command = { type = headofgovernment which = 46024 } #Jose Figueres Ferrer
 		command = { type = foreignminister which = 46032 } #Julio Enrique Ávila
@@ -848,8 +848,8 @@ event = {
 	NOT = { ispuppet = GUA } 
         }
 
-	name = "The 1947 Congressional Syndicalist Union"
-	desc = "The fifth Congressional Syndicalist Union has started, and the three parties that represent our great nation are again vying for control of the government."
+	name = "EVT_56717_NAME"
+	desc = "EVT_56717_DESC"
 	picture = "Peace_conference"
 
 	date = { day = 1 month = august year = 1947 }
@@ -858,7 +858,7 @@ event = {
 
 	action_a = {
 		ai_chance = 33
-		name = "The Socialist Party gains a majority!"
+		name = "EVT_56717_OPTIONA"
 		command = { type = headofstate which = 46017 } #Jacopo Arbenz Guzman
 		command = { type = headofgovernment which = 46023 } #Francisco Javier Arana
 		command = { type = foreignminister which = 46003 } #Laura H. de Salazar
@@ -874,7 +874,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 34
-                name = "The Workers Party gains a majority!"
+                name = "EVT_56717_OPTIONB"
 		command = { type = headofstate which = 46000 } #Jose Manuel Fortuny
 		command = { type = headofgovernment which = 46001 } #Víctor Manuel Gutiérrez
 		command = { type = foreignminister which = 46031 } #Luis Cardenal
@@ -890,7 +890,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 33
-                name = "The Reformist Party gains a majority!"
+                name = "EVT_56717_OPTIONC"
 		command = { type = headofstate which = 46013 } #Andrés Ignacio Menéndez
 		command = { type = headofgovernment which = 46024 } #Jose Figueres Ferrer
 		command = { type = foreignminister which = 46032 } #Julio Enrique Ávila
@@ -923,8 +923,8 @@ event = {
 	NOT = { ispuppet = GUA } 
         }
 
-	name = "The 1952 Congressional Syndicalist Union"
-	desc = "The sixth Congressional Syndicalist Union has started, and the three parties that represent our great nation are again vying for control of the government."
+	name = "EVT_56718_NAME"
+	desc = "EVT_56718_DESC"
 	picture = "Peace_conference"
 
 	date = { day = 1 month = august year = 1952 }
@@ -933,7 +933,7 @@ event = {
 
 	action_a = {
 		ai_chance = 33
-		name = "The Socialist Party gains a majority!"
+		name = "EVT_56718_OPTIONA"
 		command = { type = headofstate which = 46017 } #Jacopo Arbenz Guzman
 		command = { type = headofgovernment which = 46023 } #Francisco Javier Arana
 		command = { type = foreignminister which = 46003 } #Laura H. de Salazar
@@ -949,7 +949,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 34
-                name = "The Workers Party gains a majority!"
+                name = "EVT_56718_OPTIONB"
 		command = { type = headofstate which = 46000 } #Jose Manuel Fortuny
 		command = { type = headofgovernment which = 46001 } #Víctor Manuel Gutiérrez
 		command = { type = foreignminister which = 46031 } #Luis Cardenal
@@ -965,7 +965,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 33
-                name = "The Reformist Party gains a majority!"
+                name = "EVT_56718_OPTIONC"
 		command = { type = headofstate which = 46013 } #Andrés Ignacio Menéndez
 		command = { type = headofgovernment which = 46024 } #Jose Figueres Ferrer
 		command = { type = foreignminister which = 46032 } #Julio Enrique Ávila
@@ -998,8 +998,8 @@ event = {
 	NOT = { ispuppet = GUA } 
         }
 
-	name = "The 1957 Congressional Syndicalist Union"
-	desc = "The seventh Congressional Syndicalist Union has started, and the three parties that represent our great nation are again vying for control of the government."
+	name = "EVT_56719_NAME"
+	desc = "EVT_56719_DESC"
 	picture = "Peace_conference"
 
 	date = { day = 1 month = august year = 1957 }
@@ -1008,7 +1008,7 @@ event = {
 
 	action_a = {
 		ai_chance = 33
-		name = "The Socialist Party gains a majority!"
+		name = "EVT_56719_OPTIONA"
 		command = { type = headofstate which = 46017 } #Jacopo Arbenz Guzman
 		command = { type = headofgovernment which = 46023 } #Francisco Javier Arana
 		command = { type = foreignminister which = 46003 } #Laura H. de Salazar
@@ -1024,7 +1024,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 34
-                name = "The Workers Party gains a majority!"
+                name = "EVT_56719_OPTIONB"
 		command = { type = headofstate which = 46000 } #Jose Manuel Fortuny
 		command = { type = headofgovernment which = 46001 } #Víctor Manuel Gutiérrez
 		command = { type = foreignminister which = 46031 } #Luis Cardenal
@@ -1040,7 +1040,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 33
-                name = "The Reformist Party gains a majority!"
+                name = "EVT_56719_OPTIONC"
 		command = { type = headofstate which = 46013 } #Andrés Ignacio Menéndez
 		command = { type = headofgovernment which = 46024 } #Jose Figueres Ferrer
 		command = { type = foreignminister which = 46032 } #Julio Enrique Ávila
@@ -1078,8 +1078,8 @@ event = {
 
         }
  
-        name = "Union with Centroamerica"
-        desc = "With a socialist regime established in our country, it is an open question whether we should federate with the Centroamerican Republic. Lacking strong industry or a resource base to support it, we may soon find ourselves overwhelmed by the reactionaries, should we remain alone against them."
+        name = "EVT_61062_NAME"
+        desc = "EVT_61062_DESC"
         style = 2
         picture = "comunista"
  
@@ -1089,18 +1089,18 @@ event = {
  
         action_a = {
                 ai_chance = 35
-                name = "We shall join Centroamerica (Game Over)"
+                name = "EVT_61062_OPTIONA"
                 command = { type = trigger which = 61063 }
         }
         action_b = {
                 ai_chance = 35
-                name = "We shall federate with Centroamerica"
+                name = "EVT_61062_OPTIONB"
                 command = { type = relation which = GUA value = 200 }
                 command = { type = trigger which = 61064 }
         }
         action_c = {
                 ai_chance = 30
-                name = "We shall remain independent"
+                name = "EVT_61062_OPTIONC"
                 command = { type = relation which = GUA value = -100 }
         }
 
@@ -1111,14 +1111,14 @@ event = {
         random = no
         country = GUA
  
-        name = "Union with Panama"
-        desc = "The new government in Panama has declared its wish to become a part of our republic. The question is - how should they be incorporated?"
+        name = "EVT_61063_NAME"
+        desc = "EVT_61063_DESC"
         style = 2
         picture = "comunista"
  
  
         action_a = {
-                name = "Full integration"
+                name = "EVT_61063_OPTIONA"
                 ai_chance = 50
                 command = { type = inherit which = PAN }
                 command = { type = addcore which = 2078 }
@@ -1127,7 +1127,7 @@ event = {
                 command = { type = dissent value = -5 }
         }
         action_b = {
-                name = "Grant them limited authonomy"
+                name = "EVT_61063_OPTIONB"
                 ai_chance = 50
                 command = { type = inherit which = PAN }
                 command = { type = addcore which = 2078 }
@@ -1144,14 +1144,14 @@ event = {
         random = no
         country = GUA
  
-        name = "Federation with Panama"
-        desc = "The new government in Panama has declared its wish to federate with our republic."
+        name = "EVT_61064_NAME"
+        desc = "EVT_61064_DESC"
         style = 2
         picture = "comunista"
  
  
         action_a = {
-                name = "Excellent"
+                name = "EVT_61064_OPTIONA"
                 command = { type = relation which = PAN value = 200 }
                 command = { type = alliance which = PAN }
                 command = { type = dissent value = -2 }
@@ -1177,8 +1177,8 @@ event = {
 
         }
  
-        name = "Union with Centroamerica"
-        desc = "With a socialist regime established in our country, it is an open question whether we should federate with the Centroamerican Republic. Lacking strong industry or a resource base to support it, we may soon find ourselves overwhelmed by the reactionaries, should we remain alone against them."
+        name = "EVT_61065_NAME"
+        desc = "EVT_61065_DESC"
         style = 2
         picture = "comunista"
  
@@ -1188,18 +1188,18 @@ event = {
  
         action_a = {
                 ai_chance = 35
-                name = "We shall join Centroamerica (Game Over)"
+                name = "EVT_61065_OPTIONA"
                 command = { type = trigger which = 61066 }
         }
         action_b = {
                 ai_chance = 35
-                name = "We shall federate with Centroamerica"
+                name = "EVT_61065_OPTIONB"
                 command = { type = relation which = GUA value = 200 }
                 command = { type = trigger which = 61067 }
         }
         action_c = {
                 ai_chance = 30
-                name = "We shall remain independent"
+                name = "EVT_61065_OPTIONC"
                 command = { type = relation which = GUA value = -100 }
         }
 
@@ -1210,14 +1210,14 @@ event = {
         random = no
         country = GUA
  
-        name = "Federation with Honduras"
-        desc = "The new government in Honduras has declared its wish to become a part of our republic. The question is - how should they be incorporated?"
+        name = "EVT_61066_NAME"
+        desc = "EVT_61066_DESC"
         style = 2
         picture = "comunista"
  
  
         action_a = {
-                name = "Full integration"
+                name = "EVT_61066_OPTIONA"
                 ai_chance = 50
                 command = { type = inherit which = HON }
                 command = { type = addcore which = 2084 }
@@ -1227,7 +1227,7 @@ event = {
                 command = { type = dissent value = -5 }
         }
         action_b = {
-                name = "Grant them limited authonomy"
+                name = "EVT_61066_OPTIONB"
                 ai_chance = 50
                 command = { type = inherit which = HON }
                 command = { type = addcore which = 2084 }
@@ -1242,14 +1242,14 @@ event = {
         random = no
         country = GUA
  
-        name = "Union with Honduras"
-        desc = "The new government in Honduras has declared its wish to federate with our republic."
+        name = "EVT_61067_NAME"
+        desc = "EVT_61067_DESC"
         style = 2
         picture = "comunista"
  
  
         action_a = {
-                name = "Excellent"
+                name = "EVT_61067_OPTIONA"
                 command = { type = relation which = HON value = 200 }
                 command = { type = alliance which = HON }
                 command = { type = dissent value = -2 }
@@ -1276,8 +1276,8 @@ event = {
 
         }
  
-        name = "Union with Centroamerica"
-        desc = "With a socialist regime established in our country, it is an open question whether we should federate with the Centroamerican Republic. Lacking strong industry or a resource base to support it, we may soon find ourselves overwhelmed by the reactionaries, should we remain alone against them."
+        name = "EVT_61068_NAME"
+        desc = "EVT_61068_DESC"
         style = 2
         picture = "comunista"
  
@@ -1287,18 +1287,18 @@ event = {
  
         action_a = {
                 ai_chance = 35
-                name = "We shall join Centroamerica (Game Over)"
+                name = "EVT_61068_OPTIONA"
                 command = { type = trigger which = 61069 }
         }
         action_b = {
                 ai_chance = 35
-                name = "We shall federate with Centroamerica"
+                name = "EVT_61068_OPTIONB"
                 command = { type = relation which = GUA value = 200 }
                 command = { type = trigger which = 61070 }
         }
         action_c = {
                 ai_chance = 30
-                name = "We shall remain independent"
+                name = "EVT_61068_OPTIONC"
                 command = { type = relation which = GUA value = -100 }
         }
 
@@ -1309,14 +1309,14 @@ event = {
         random = no
         country = GUA
  
-        name = "Union with the United Provinces"
-        desc = "The new government in the United Provinces has declared its wish to become a part of our republic. The question is - how should they be incorporated?"
+        name = "EVT_61069_NAME"
+        desc = "EVT_61069_DESC"
         style = 2
         picture = "comunista"
  
  
         action_a = {
-                name = "Full integration"
+                name = "EVT_61069_OPTIONA"
                 ai_chance = 50
                 command = { type = inherit which = NIC }
                 command = { type = addcore which = 2080 }
@@ -1330,7 +1330,7 @@ event = {
                 command = { type = dissent value = -5 }
         }
         action_b = {
-                name = "Grant them limited authonomy"
+                name = "EVT_61069_OPTIONB"
                 ai_chance = 50
                 command = { type = inherit which = NIC }
                 command = { type = addcore which = 2080 }
@@ -1350,14 +1350,14 @@ event = {
         random = no
         country = GUA
  
-        name = "Federation with the United Provinces"
-        desc = "The new government in the United Provinces has declared its wish to federate with our republic."
+        name = "EVT_61070_NAME"
+        desc = "EVT_61070_DESC"
         style = 2
         picture = "comunista"
  
  
         action_a = {
-                name = "Excellent"
+                name = "EVT_61070_OPTIONA"
                 command = { type = relation which = NIC value = 200 }
                 command = { type = alliance which = NIC }
                 command = { type = dissent value = -2 }
@@ -1396,15 +1396,15 @@ trigger = {
 	}
 } 
  
-name = "United Provinces Regime surrenders!"
-desc = "After long war, we conquered whole United Provinces expect one province which is behind Panama Canal, unfortunately not controlled by us. The UP regime decided to surrender seeing that resistance is futile."
+name = "EVT_63100_NAME"
+desc = "EVT_63100_DESC"
 
 date = { day = 1 month = january year = 1936 }
 offset = 10
 deathdate = { day = 29 month = december year = 1970 }
  
 action_a = {
-name = "Now we are united"
+name = "EVT_63100_OPTIONA"
 command = { type = peace which = NIC value = 1 }
 command = { type = inherit which = NIC }
 }

@@ -13,13 +13,13 @@ event = {
 			 save_date = yes
              picture = "vietmin"
 
-             name = "Unrest and Sedition in Indochina"
-             desc = "Our control with Indochina has never been very strong, but recently our colonial officers report a stark rise in guerrilla attacks on our schutztruppen and strikes organized by the local trade unions. As if that wasn’t enough, intelligence suggests the recently reunited Indian sub-continent as the source of much of the rebellious natives resources and weapons."
+             name = "EVT_105250_NAME"
+             desc = "EVT_105250_DESC"
 
 
                 action_a = {
 	        ai_chance =  100
-	        name = "This colony has been nothing but trouble!"
+	        name = "EVT_105250_OPTIONA"
                  command = { type = relation which = PRK value = -100 }
                  command = { type = province_revoltrisk which = 1403 value = 15 }
                  command = { type = province_revoltrisk which = 1399 value = 15 }
@@ -46,13 +46,13 @@ event = {
 			 save_date = yes
              picture = "vietmin"
 
-             name = "Ho Chi Minh Proclaims Indochina Independent!"
-             desc = "Our control with Indochina has never been very strong, but recently our colonial officers report a stark rise in guerrilla attacks on our schutztruppen and strikes organized by the local trade unions. From his exile in Calcutta, Ho Chi Minh has proclaimed Indochina to be an independent federal socialist republic! This would seem to be the signal for all out rebellion, we must be vigilant!"
+             name = "EVT_105251_NAME"
+             desc = "EVT_105251_DESC"
 
 
                 action_a = {
 	        ai_chance =  100
-	        name = "He shall be caught!"
+	        name = "EVT_105251_OPTIONA"
                  command = { type = relation which = PRK value = -100 }
                  command = { type = province_revoltrisk which = 1403 value = 30 }
                  command = { type = province_revoltrisk which = 1399 value = 30 }
@@ -90,15 +90,15 @@ trigger = {
 
 }
 
-name = "Revolt in Indochina!"
-desc = "Today local garrisons from Cochinchina to Tonkin have begun an armed rising against our colonial officials! Aided by revolutionaries and volunteers from India they pose a grave danger towards the future of German Indochina!"
+name = "EVT_105252_NAME"
+desc = "EVT_105252_DESC"
 
 date = { day = 1 month = january year = 1936 }
 offset = 100
 deathdate = { day = 1 month = december year = 1960 }
 
                 action_a = {
-                name = "Mein Gott!"
+                name = "EVT_105252_OPTIONA"
                 command = { type = independence which = BRU value = 1 when = 0 }
                 command = { type = secedeprovince which = BRU value = 1397 }
                 command = { type = secedeprovince which = BRU value = 1403 }
@@ -127,15 +127,15 @@ trigger = {
 
 }
 
-name = "Revolt in Indochina!"
-desc = "Today local garrisons from Cochinchina to Tonkin have begun an armed rising against our colonial officials! Aided by revolutionaries and volunteers from India they pose a grave danger towards the future of German Indochina!"
+name = "EVT_105253_NAME"
+desc = "EVT_105253_DESC"
 
 date = { day = 1 month = january year = 1936 }
 offset = 50
 deathdate = { day = 1 month = december year = 1960 }
 
                 action_a = {
-                name = "How horrible!"
+                name = "EVT_105253_OPTIONA"
                 command = { type = independence which = BRU value = 1 when = 0 }
                 command = { type = secedeprovince which = BRU value = 1397 }
                 command = { type = secedeprovince which = BRU value = 1403 }
@@ -153,13 +153,13 @@ event = {
 			 save_date = yes
              picture = "vietmin3"
 
-             name = "Revolution in Indochina!"
-             desc = "The peoples of Indochina unite to cast off the exploitation of German imperialism!"
+             name = "EVT_105254_NAME"
+             desc = "EVT_105254_DESC"
 
 
                 action_a = {
 	        ai_chance =  100
-	        name = "Onwards, to liberty!"
+	        name = "EVT_105254_OPTIONA"
                  command = { type = relation which = PRK value = 200 }
 				 command = { type = set_domestic which = democratic value = 2 }
                  command = { type = set_domestic which = political_left value = 8 }
@@ -210,8 +210,8 @@ event = {
 			 save_date = yes
              picture = "vietmin2"
 
-             name = "Revolution in Indochina"
-             desc = "In no small part thanks to our patronage, the Indochinese revolutionaries have risen against German colonial rule. Should we continue our military support, dispatch further volunteers or maybe even intervene directly? This is the Asiatic Revolution's first hour of glory, we must not spill it!"
+             name = "EVT_105255_NAME"
+             desc = "EVT_105255_DESC"
 
 
 			action = {
@@ -220,7 +220,7 @@ event = {
 			war = { country = BRU country = GER } 
 			war = { country = PRK country = GER } 
 			}
-	        name = "We must intervene directly!"
+	        name = "EVT_105255_OPTIONA"
                  command = { type = relation which = BRU value = 200 }
 				 command = { type = alliance which = BRU }
 				 command = { type = local_setflag which = PRK_BRU_Alliance }
@@ -229,7 +229,7 @@ event = {
 		
 			action = {
 	        ai_chance =  30
-	        name = "Dispatch volunteers and material to our proletarian friends!"
+	        name = "EVT_105255_OPTIONB"
                  command = { type = relation which = BRU value = 200 }
 				 command = { type = relation which = GER value = -50 }
 				 command = { type = money value = -100 }
@@ -241,7 +241,7 @@ event = {
 		
 			action = {
 	        ai_chance =  0
-	        name = "Dispatch instructors and take control of their military!"
+	        name = "EVT_105255_OPTIONC"
                  command = { type = relation which = BRU value = 200 }
 				 command = { type = relation which = GER value = -75 }
 				 command = { type = money value = -100 }
@@ -254,7 +254,7 @@ event = {
 		}				 
 			action = {
 	        ai_chance =  1
-	        name = "Indochina is a silly place."
+	        name = "EVT_105255_OPTIOND"
                  command = { type = relation which = BRU value = -200 }
 		         command = { type = dissent value = 5 }
 		}
@@ -269,13 +269,13 @@ event = {
 			 save_date = yes
              picture = "vietmin3"
 
-             name = "Indian Volunteers Arrive"
-             desc = "Indian volunteers and material arrived today at our capital. Now we shall finally be free of the German scum!"
+             name = "EVT_105256_NAME"
+             desc = "EVT_105256_DESC"
 
 
                 action_a = {
 	        ai_chance =  100
-	        name = "Workers of the World, Unite!"
+	        name = "EVT_105256_OPTIONA"
                  command = { type = relation which = PRK value = 200 }
 		         command = { type = money value = 100 }
 		         command = { type = manpowerpool value = 10 }
@@ -314,8 +314,8 @@ trigger = {
  }
 }
 
-name = "Indochina is in Full Rebellion"
-desc = "The uprisings in Indochina have worsened. Hanoi and Saigon have fallen to them and we are struggling to cope. Although many oppose such a move it may be necessary to give up control of the region."
+name = "EVT_105257_NAME"
+desc = "EVT_105257_DESC"
 style = 2
 picture = "vietmin4"
 
@@ -324,13 +324,13 @@ offset = 80
 deathdate = { day = 29 month = december year = 1960 }
         
 action_a = {
- name = "No, we will keep fighting these rebels!"
+ name = "EVT_105257_OPTIONA"
  ai_chance = 85
  command = { type = dissent value = 3 }
 
 }
 action_b = {
- name = "We have no choice but to let them go."
+ name = "EVT_105257_OPTIONB"
  ai_chance = 15
  command = { type = secedeprovince which = BRU value = 1392 }
  command = { type = secedeprovince which = BRU value = 1393 }
@@ -378,8 +378,8 @@ trigger = {
  }
 }
 
-name = "Indochina is in Full Rebellion"
-desc = "The uprisings in Indochina have worsened. What with our forces tied down in the war we are unable to deal with them  effectively. It maybe time to admit defeat here."
+name = "EVT_105258_NAME"
+desc = "EVT_105258_DESC"
 style = 2
 picture = "vietmin4"
 
@@ -389,14 +389,14 @@ deathdate = { day = 29 month = december year = 1960 }
 
 
 action_a = {
- name = "No, we will keep fighting these rebels!"
+ name = "EVT_105258_OPTIONA"
  ai_chance = 30
 
  command = { type = dissent value = 2 }
 
 }
 action_b = {
- name = "We have no choice but to let them go."
+ name = "EVT_105258_OPTIONB"
  ai_chance = 70
  command = { type = secedeprovince which = BRU value = 1392 }
  command = { type = secedeprovince which = BRU value = 1393 }
@@ -420,13 +420,13 @@ event = {
 id = 105259
 random = no
 country = BRU
-name = "Major Victory"
-desc = "We have now complete control over German Indochina. Now, we can finally create an independent People's Republic!"
+name = "EVT_105259_NAME"
+desc = "EVT_105259_DESC"
 style = 2
 picture = "vietmin4"
 
 action_a = { 
-name = "Excellent!"
+name = "EVT_105259_OPTIONA"
  command = { type = set_relation which = PRK value = 200 }
  command = { type = peace which = GER value = 0 }
 }
@@ -450,8 +450,8 @@ trigger = {
 
 }
 
-name = "The Indochinese Revolt Succeeds"
-desc = "With the selfless help of our brave volunteers, the peoples of Indochina have finally thrown of the yoke of colonial exploitation! This is a great day for all the socialist nations of the world! Ho Chi Minh’s stern, but emotional voice echoes from every radio across the free world, broadcasting the news that every people has a right to self-determination!"
+name = "EVT_105260_NAME"
+desc = "EVT_105260_DESC"
 
 date = { day = 1 month = january year = 1936 }
 offset = 20
@@ -459,7 +459,7 @@ deathdate = { day = 1 month = december year = 1960 }
 
                 action = {
 				ai_chance = 99
-                name = "Bring the Indochinese Republic into our alliance!"
+                name = "EVT_105260_OPTIONA"
 				command = { type = alliance which = BRU }
 		        command = { type = manpowerpool value = 8 }		# Soldiers return home
 		        command = { type = dissent value = -1 }
@@ -471,7 +471,7 @@ deathdate = { day = 1 month = december year = 1960 }
 
                 action = {
 				ai_chance = 1
-                name = "Congratulate them warmly and leave them to their own affairs."
+                name = "EVT_105260_OPTIONB"
 		        command = { type = manpowerpool value = 8 }		# Soldiers return home
 		        command = { type = dissent value = -1 }
 		        command = { type = gain_tech which = -2 } 		# get blueprints for a random tech currently being researched
@@ -488,8 +488,8 @@ event = {
 id = 105261
 random = no
 country = GER
-name = "Victory in Indochina"
-desc = "Our glorious army has managed to thwart the syndicalist revolt in Indochina! This is a glorious day for Germany!"
+name = "EVT_105261_NAME"
+desc = "EVT_105261_DESC"
 style = 2
 picture = "Vietmin"
 
@@ -510,7 +510,7 @@ control = { province = 1391 data = BRU }
 }
 
 action_a = {
- name = "Sehr gut, kamaraden!"
+ name = "EVT_105261_OPTIONA"
 command = { type = inherit which = BRU }
 command = { type = trigger which = 105262 }
 command = { type = industrial_modifier which = total value = 3 }
@@ -526,12 +526,12 @@ country = PRK
 style = 2
 picture = "vietmin"
 
-name = "The Indochinese Revolution is Defeated"
-desc = "The Revolution in Indochina was crushed by the German imperialists... The only thing we gained from this failed endeavour is some combat experience for our officers that advised the fallen freedom fighters."
+name = "EVT_105262_NAME"
+desc = "EVT_105262_DESC"
 
 
 action_a = {
-name = "The tree of liberty must be watered by the blood of martyrs."
+name = "EVT_105262_OPTIONA"
 command = { type = relation which = GER value = -50 }
 command = { type = dissent value = 3 }
  	command = { type = add_leader_skill which = -1 value = 2 }

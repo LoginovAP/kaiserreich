@@ -3,14 +3,14 @@ event = {
 	random = no
 	country = U00
 
-	name = "Prime Minister"
-	desc = "As the foundation of the Commonwealth is now complete, it is now time to decide who will become the Prime Minister."
+	name = "EVT_9981000_NAME"
+	desc = "EVT_9981000_DESC"
 	style = 2
 	picture = "regency"
 
 	action_a = {
 		ai_chance = 20
-		name = "Janusz Radziwill, the leader of the aristocrats"
+		name = "EVT_9981000_OPTIONA"
 		command = { type = set_domestic which = democratic value = 4 }
 		command = { type = set_domestic which = political_left value = 1 }
 		command = { type = headofstate which = 920910 } #Mindaugas III
@@ -25,7 +25,7 @@ event = {
 
 	action_b = {
 		ai_chance = 50
-		name = "Stanislaw Narutowicz, the leader of the conservatives"
+		name = "EVT_9981000_OPTIONB"
 		command = { type = set_domestic which = democratic value = 5 }
 		command = { type = set_domestic which = political_left value = 1 }
 		command = { type = headofstate which = 920910 } #Mindaugas III
@@ -43,7 +43,7 @@ event = {
 
 	action_c = {
 		ai_chance = 20
-		name = "Juozas Ambrazevicius, the Lithaunian historian"
+		name = "EVT_9981000_OPTIONC"
 		command = { type = set_domestic which = democratic value = 5 }
 		command = { type = set_domestic which = political_left value = 1 }
 		command = { type = headofstate which = 920910 } #Mindaugas III
@@ -63,7 +63,7 @@ event = {
 
 	action_d = {
 		ai_chance = 20
-		name = "Let the people vote for the Prime Minister"
+		name = "EVT_9981000_OPTIOND"
 		command = { type = set_domestic which = democratic value = 10 }
 		command = { type = set_domestic which = political_left value = 1 }
 		command = { type = headofstate which = 920910 } #Mindaugas III
@@ -80,12 +80,12 @@ event = {
 	country = U00
 	style = 2
 
-	name = "The Capital"
-	desc = "With the rebirth of the Commonwealth we must decide where our capital should be. Historically the Commonwealth was based in Warsaw, but Vilnius could also be used. Which city shall become our capital?"
+	name = "EVT_9981001_NAME"
+	desc = "EVT_9981001_DESC"
 
 	action_a = {
 		ai_chance = 90
-		name = "Warsaw"
+		name = "EVT_9981001_OPTIONA"
 		command = { type = alliance which = GER }
 		command = { type = capital which = 232 }
                 command = { type = relation which = GER value = 200 }
@@ -107,7 +107,7 @@ event = {
 
 	action_b = {
 		ai_chance = 10
-		name = "Vilnius"
+		name = "EVT_9981001_OPTIONB"
 		command = { type = alliance which = GER }
                 command = { type = relation which = GER value = 200 }
 		command = { trigger = { alliance = { country = GER country = UKR } } type = relation which = UKR value = 150 }
@@ -136,8 +136,8 @@ event = {
 
 	trigger = { event = 9981000 }
 
-	name = "The head of the Army"
-	desc = "As a part of the formation of our government, we have to decide who will lead the army."
+	name = "EVT_9981002_NAME"
+	desc = "EVT_9981002_DESC"
 	style = 2
 
 	date = { day = 1 month = january year = 1936 }
@@ -145,7 +145,7 @@ event = {
 	deathdate = { day = 29 month = december year = 1963 }
 
 	action_a = {
-		name = "Wladyslaw Sikorski, School of Manoeuvre" 
+		name = "EVT_9981002_OPTIONA" 
 		ai_chance = 70
 		command = { type = chiefofstaff which = 920916 } #Sikorski
 		command = { type = chiefofarmy which = 921094 } #Sikorski
@@ -161,7 +161,7 @@ event = {
 		command = { type = supplies value = 1000 }
 	}
 	action_b = {
-		name = "Stasys Rastikis, School of Fire Support" 
+		name = "EVT_9981002_OPTIONB" 
 		ai_chance = 20
 		command = { type = chiefofstaff which = 921075 } #Rastikis
 		command = { type = chiefofarmy which = 920917 } #Rastikis
@@ -177,7 +177,7 @@ event = {
 		command = { type = supplies value = 1000 }
 	}
 	action_c = {
-		name = "Antoni Szylling, School of Defence" 
+		name = "EVT_9981002_OPTIONC" 
 		ai_chance = 10
 		command = { type = chiefofstaff which = 921071 } #Szylling
 		command = { type = chiefofarmy which = 921090 } #Szylling
@@ -212,18 +212,18 @@ event = {
 	offset = 30
 	deathdate = { day = 7 month = august year = 1960 }
 
-	name = "Language question"
-	desc = "Our policy on the offical language of the Commonwealth has to be formed. While varying areas speak Polish or Lithuanian, we need to decide the working language of our government. Polish is the obvious choice, as the majority of our nation speaks it, but bilingualism would satisfy the Lithuanian minority who are afraid of Polish domination. What should we do?"
+	name = "EVT_9981003_NAME"
+	desc = "EVT_9981003_DESC"
         picture = "constitutional"
 
 	action_a = {
 		ai_chance = 60
-		name = "The government will be bilingual!"
+		name = "EVT_9981003_OPTIONA"
 		command = { type = trigger which = 9981004 }
 	}
 	action_b = {
 		ai_chance = 40
-		name = "Use only Polish for the government"
+		name = "EVT_9981003_OPTIONB"
 		command = { type = trigger which = 9981005 }
 	}
 }
@@ -235,11 +235,11 @@ event = {
 	style = 2
         picture = "FAUD1"
 
-	name = "Dmowski's speech"
-	desc = "Roman Dmowski, leader of Polish National-Radical Party, recently said that the status of bilingualism is an abomination for Poles. He has encouraged people to destroy all signs with this 'peasant dialect' on them."
+	name = "EVT_9981004_NAME"
+	desc = "EVT_9981004_DESC"
 
 	action_a = {
-		name = "He doesn't matter anymore"
+		name = "EVT_9981004_OPTIONA"
 		command = { type = dissent value = 2 }
 	}
 }
@@ -251,11 +251,11 @@ event = {
 	style = 2
         picture = "FAUD1"
 
-	name = "Voldemaras's speech"
-	desc = "Augustinas Voldemaras, leader of the Lithaunian natioanlists, has declared that the usage of only Polish in the government is treachery against the Lithaunian nation."
+	name = "EVT_9981005_NAME"
+	desc = "EVT_9981005_DESC"
 
 	action_a = {
-		name = "He doesn't matter anymore"
+		name = "EVT_9981005_OPTIONA"
 		command = { type = dissent value = 5 }
 		command = { type = sleepevent which = 9981007 }
 		command = { type = sleepevent which = 9981008 }
@@ -280,11 +280,11 @@ event = {
 	offset = 30
 	deathdate = { day = 7 month = august year = 1960 }
 
-	name = "National Armed Forces"
-	desc = "Roman Dmowski said that the National-Radical Party, a paramilitary organisation created a few months ago, has to begun to fight against the 'government under Jewish and Lithaunian peasant influence, which threatens the Polish nation.' The number of his supporters is growing very fast."
+	name = "EVT_9981006_NAME"
+	desc = "EVT_9981006_DESC"
 
 	action_a = {
-		name = "Smash those rebels"
+		name = "EVT_9981006_OPTIONA"
 		command = { type = dissent value = 1 }
 	}
 }
@@ -302,11 +302,11 @@ event = {
 	offset = 30
 	deathdate = { day = 7 month = august year = 1960 }
 
-	name = "Dmowski is dead!"
-	desc = "Dmowski, who has been a thorn in our side by setting up opposition against the Commonwealth, was killed in one of clashes between the army and his men. His death has sparked a fire of Polish nationalism, this is not going to end well."
+	name = "EVT_9981007_NAME"
+	desc = "EVT_9981007_DESC"
 
 	action_a = {
-		name = "Damn it..."
+		name = "EVT_9981007_OPTIONA"
 		command = { type = dissent value = 3 }
 	}
 }
@@ -324,12 +324,12 @@ event = {
 	offset = 30
 	deathdate = { day = 7 month = august year = 1960 }
 
-	name = "March of the National-Radicals"
-	desc = "After Dmowski's death, Adam Doboszynski took leadership of the National-Radical Party and organised a march to the capital of the Commonwealth, demanding both punishment for the murderers of Dmowski and a government lead by himself and his supporters. The situation is very dire, there are thousands of supporters of the National-Radical Party in the capital. What should we do?"
+	name = "EVT_9981008_NAME"
+	desc = "EVT_9981008_DESC"
 
 	action_a = {
 		ai_chance = 50
-		name = "We cannot oppose them, Doboszynski is the new prime minister"
+		name = "EVT_9981008_OPTIONA"
 		command = { type = end_puppet }
 		command = { type = leave_alliance when = 1 } 
 		command = { type = end_access which = AUS }
@@ -398,7 +398,7 @@ command = { type = event which = 9981051 where = GER when = 1  }
 
 	action_b = {
 		ai_chance = 50
-		name = "Crush them!"
+		name = "EVT_9981008_OPTIONB"
 		command = { type = dissent value = 5 }
                 
 	}
@@ -420,18 +420,18 @@ event = {
 	offset = 2
 	deathdate = { day = 7 month = august year = 1960 }
 
-	name = "Doboszynski's coup!"
-	desc = "After our refusal to their demands, the Polish nationalists have made an attempt to take power into their hands. Only our armed forces can save us now...."
+	name = "EVT_9981009_NAME"
+	desc = "EVT_9981009_DESC"
 
 	action_a = {
-		name = "Doboszynski's coup was a success!"
+		name = "EVT_9981009_OPTIONA"
                 ai_chance = 50
 		command = { type = country which = POL }
 		command = { type = trigger which = 99801010 }
 	}
 
         action_b = {
-		name = "The armed forces crushed this rebellion!"
+		name = "EVT_9981009_OPTIONB"
                 ai_chance = 50
 		command = { type = dissent value = 2 }
 	}
@@ -443,11 +443,11 @@ event = {
 	country = POL
 	style = 2
 
-	name = "New government"
-	desc = "The National-Radical Party took power in the Commonwealth and restored Poland."
+	name = "EVT_99801010_NAME"
+	desc = "EVT_99801010_DESC"
 
 	action_a = {
-		name = "Ok"
+		name = "EVT_99801010_OPTIONA"
 		command = { type = end_puppet }
 		command = { type = leave_alliance }
 		command = { type = end_access which = AUS }
@@ -527,13 +527,13 @@ event = {
    country = GER
    
    
-   name = "Nationalists takeover in the Commonwealth!"
-   desc = "Today the rightful King of the Commonwealth of Poland and Lithuania, Mindaugas III, was captured by Adam Doboszynski and his Polish nationalist henchmen. Doboszynski officially withdrew the Commonwealth from Mitteleuropa and declared that the Commonwealth is now free from 'German domination.' We need to respond to this crisis immediately, so what should we do?"
+   name = "EVT_9981051_NAME"
+   desc = "EVT_9981051_DESC"
    style = 2
    picture = "diplomatic_campaign"
 
    action_a = {
-        name = "There is nothing we can do..."
+        name = "EVT_9981051_OPTIONA"
                 ai_chance = 30
 		command = { type = end_mastery which = U00 } 
 		command = { type = end_access which = U00 }
@@ -549,7 +549,7 @@ event = {
    }
 
    action_b = {
-        name = "Such betrayal will not be tolerated!"
+        name = "EVT_9981051_OPTIONB"
                 ai_chance = 70
                 trigger = {
                 control = { province = 163 data = GER } 
@@ -595,8 +595,8 @@ event = {
         flag = COM_DEMOCRACY 
         }
 
-	name = "The Sejim Elections"
-	desc = "Under our constitution, elections must be held every four years. There are four main political parties that have a chance of winning at the ballot box, who will it be?"
+	name = "EVT_9981011_NAME"
+	desc = "EVT_9981011_DESC"
 	picture = "election" 
 
 	date = { day = 18 month = january year = 1936 }
@@ -605,7 +605,7 @@ event = {
 
 	action_a = {
 		ai_chance = 50
-		name = "The Patriotic Party"
+		name = "EVT_9981011_OPTIONA"
  		command = { type = dissent value = -2 }
 		command = { type = set_domestic which = democratic value = 4 }
 		command = { type = set_domestic which = political_left value = 3 }
@@ -617,7 +617,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 40
-		name = "The People's Coalition"
+		name = "EVT_9981011_OPTIONB"
  		command = { type = dissent value = -2 }
 		command = { type = set_domestic which = democratic value = 10 }
 		command = { type = set_domestic which = political_left value = 8 }
@@ -630,7 +630,7 @@ event = {
 	}
 	action_c = {
 		ai_chance = 5
-		name = "The National-Radical Party of Poland"
+		name = "EVT_9981011_OPTIONC"
 		command = { type = set_domestic which = democratic value = 1 }
 		command = { type = set_domestic which = freedom value = 1 }
 		command = { type = set_domestic which = political_left value = 1 }
@@ -694,7 +694,7 @@ command = { type = peace which = KOR value = 1 }
 
 	action_d = {
 		ai_chance = 5
-		name = "The Syndicalist Party of the Commonwealth"
+		name = "EVT_9981011_OPTIOND"
 		command = { type = dissent value = 5 }
 		command = { type = end_puppet }
 		command = { type = leave_alliance }
@@ -772,13 +772,13 @@ event = {
    country = GER
    
    
-   name = "Syndicalist takeover in the Commonwealth!"
-   desc = "Terrible news! A Syndicalist party has recently gained a majority during the last elections in the Commonwealth of Poland and Lithuania. The new Syndicalist government offically withdrew the Commonwealth from Mitteleuropa and declared that the Commonwealth is now free from 'German domination.' We need to respond to this crisis immediately, so what should we do?"
+   name = "EVT_9981052_NAME"
+   desc = "EVT_9981052_DESC"
    style = 2
    picture = "diplomatic_campaign"
 
    action_a = {
-        name = "There is nothing we can do..."
+        name = "EVT_9981052_OPTIONA"
                 ai_chance = 30
 		command = { type = end_mastery which = U00 } 
 		command = { type = end_access which = U00 }
@@ -789,7 +789,7 @@ event = {
    }
 
    action_b = {
-        name = "Such betrayal will not be tolerated!"
+        name = "EVT_9981052_OPTIONB"
                 ai_chance = 70
                 trigger = {
                 control = { province = 163 data = GER } 
@@ -827,8 +827,8 @@ event = {
         event = { id = 9981011 days = 1460 } #4 years
  }
 
-	name = "The Sejim Elections"
-	desc = "Under our constitution, elections must be held every four years. There are three main political parties that have a chance to win at the ballot box, who will it be?"
+	name = "EVT_9981012_NAME"
+	desc = "EVT_9981012_DESC"
 	picture = "election" 
 
 	date = { day = 1 month = january year = 1936 }
@@ -837,7 +837,7 @@ event = {
 
 	action_a = {
 		ai_chance = 20
-		name = "The King shall put an end to this chaos"
+		name = "EVT_9981012_OPTIONA"
 		command = { type = dissent value = 15 }
 		command = { type = set_domestic which = democratic value = 3 }
 		command = { type = set_domestic which = political_left value = 3 }
@@ -850,7 +850,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 40
-		name = "The Patriotic Party"
+		name = "EVT_9981012_OPTIONB"
  		command = { type = dissent value = -2 }
 		command = { type = set_domestic which = democratic value = 4 }
 		command = { type = set_domestic which = political_left value = 3 }
@@ -862,7 +862,7 @@ event = {
 	}
 	action_c = {
 		ai_chance = 10
-		name = "The Democratic Party"
+		name = "EVT_9981012_OPTIONC"
 		command = { type = dissent value = -3 }
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 5 }
@@ -874,7 +874,7 @@ event = {
 	}
 	action_d = {
 		ai_chance = 30
-		name = "The People's Coalition"
+		name = "EVT_9981012_OPTIOND"
  		command = { type = dissent value = -2 }
 		command = { type = set_domestic which = democratic value = 10 }
 		command = { type = set_domestic which = political_left value = 8 }
@@ -903,8 +903,8 @@ event = {
         event = { id = 9981012 days = 1460 } #4 years
  }
 
-	name = "The Sejim Elections"
-	desc = "Under our constitution, elections must be held every four years. There are three main political parties that have a chance to win at the ballot box, who will it be?"
+	name = "EVT_9981013_NAME"
+	desc = "EVT_9981013_DESC"
 	picture = "election" 
 
 	date = { day = 1 month = january year = 1936 }
@@ -913,7 +913,7 @@ event = {
 
 	action_a = {
 		ai_chance = 20
-		name = "The King shall put an end to this chaos"
+		name = "EVT_9981013_OPTIONA"
 		command = { type = dissent value = 15 }
 		command = { type = set_domestic which = democratic value = 3 }
 		command = { type = set_domestic which = political_left value = 3 }
@@ -926,7 +926,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 40
-		name = "The Patriotic Party"
+		name = "EVT_9981013_OPTIONB"
  		command = { type = dissent value = -2 }
 		command = { type = set_domestic which = democratic value = 4 }
 		command = { type = set_domestic which = political_left value = 3 }
@@ -938,7 +938,7 @@ event = {
 	}
 	action_c = {
 		ai_chance = 10
-		name = "The Democratic Party"
+		name = "EVT_9981013_OPTIONC"
 		command = { type = dissent value = -3 }
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 5 }
@@ -950,7 +950,7 @@ event = {
 	}
 	action_d = {
 		ai_chance = 30
-		name = "The People's Coalition"
+		name = "EVT_9981013_OPTIOND"
  		command = { type = dissent value = -2 }
 		command = { type = set_domestic which = democratic value = 10 }
 		command = { type = set_domestic which = political_left value = 8 }
@@ -980,8 +980,8 @@ event = {
         event = { id = 9981013 days = 1460 } #4 years
  }
 
-	name = "The Sejim Elections"
-	desc = "Under our constitution, elections must be held every four years. There are three main political parties that have a chance to win at the ballot box, who will it be?"
+	name = "EVT_9981014_NAME"
+	desc = "EVT_9981014_DESC"
 	picture = "election" 
 
 	date = { day = 1 month = january year = 1936 }
@@ -990,7 +990,7 @@ event = {
 
 	action_a = {
 		ai_chance = 20
-		name = "The King shall put an end to this chaos"
+		name = "EVT_9981014_OPTIONA"
 		command = { type = dissent value = 15 }
 		command = { type = set_domestic which = democratic value = 3 }
 		command = { type = set_domestic which = political_left value = 3 }
@@ -1003,7 +1003,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 40
-		name = "The Patriotic Party"
+		name = "EVT_9981014_OPTIONB"
  		command = { type = dissent value = -2 }
 		command = { type = set_domestic which = democratic value = 4 }
 		command = { type = set_domestic which = political_left value = 3 }
@@ -1015,7 +1015,7 @@ event = {
 	}
 	action_c = {
 		ai_chance = 10
-		name = "The Democratic Party"
+		name = "EVT_9981014_OPTIONC"
 		command = { type = dissent value = -3 }
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 5 }
@@ -1027,7 +1027,7 @@ event = {
 	}
 	action_d = {
 		ai_chance = 30
-		name = "The People's Coalition"
+		name = "EVT_9981014_OPTIOND"
  		command = { type = dissent value = -2 }
 		command = { type = set_domestic which = democratic value = 10 }
 		command = { type = set_domestic which = political_left value = 8 }
@@ -1057,8 +1057,8 @@ event = {
         event = { id = 9981014 days = 1460 } #4 years
  }
 
-	name = "The Sejim Elections"
-	desc = "Under our constitution, elections must be held every four years. There are three main political parties that have a chance to win at the ballot box, who will it be?"
+	name = "EVT_9981015_NAME"
+	desc = "EVT_9981015_DESC"
 	picture = "election" 
 
 	date = { day = 1 month = january year = 1936 }
@@ -1067,7 +1067,7 @@ event = {
 
 	action_a = {
 		ai_chance = 20
-		name = "The King shall put an end to this chaos"
+		name = "EVT_9981015_OPTIONA"
 		command = { type = dissent value = 15 }
 		command = { type = set_domestic which = democratic value = 3 }
 		command = { type = set_domestic which = political_left value = 3 }
@@ -1080,7 +1080,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 40
-		name = "The Patriotic Party"
+		name = "EVT_9981015_OPTIONB"
  		command = { type = dissent value = -2 }
 		command = { type = set_domestic which = democratic value = 4 }
 		command = { type = set_domestic which = political_left value = 3 }
@@ -1092,7 +1092,7 @@ event = {
 	}
 	action_c = {
 		ai_chance = 10
-		name = "The Democratic Party"
+		name = "EVT_9981015_OPTIONC"
 		command = { type = dissent value = -3 }
 		command = { type = set_domestic which = democratic value = 7 }
 		command = { type = set_domestic which = political_left value = 5 }
@@ -1104,7 +1104,7 @@ event = {
 	}
 	action_d = {
 		ai_chance = 30
-		name = "The People's Coalition"
+		name = "EVT_9981015_OPTIOND"
  		command = { type = dissent value = -2 }
 		command = { type = set_domestic which = democratic value = 10 }
 		command = { type = set_domestic which = political_left value = 8 }
@@ -1199,15 +1199,15 @@ event = {
 	}
         }
 
-	name = "Status of Galicia"
-	desc = "With the reunification process of our countries complete, we can finally intensify our efforts to reclaim vital parts of our homeland. The lands of Galicia-Lodomeria were part of our country. Now, they are under the direct control of Vienna. We can try to bring back Galicia-Lodomeria through direct negotiations with Vienna." 
+	name = "EVT_9981029_NAME"
+	desc = "EVT_9981029_DESC" 
 	style = 2
 	picture = "galicia"
         decision_picture = "decision_galicia"
 
 	action_a = {
 	ai_chance = 99
-	name = "Start talks in Vienna"
+	name = "EVT_9981029_OPTIONA"
 	command = { trigger = { control = { province = 235 data = GLD } puppet = { country = GLD country = AUS  } } type = trigger which = 9981030 }
         command = { trigger = { control = { province = 235 data = AUS } NOT = { exists = GLD } } type = trigger which = 9981030 }
         command = { trigger = { control = { province = 235 data = U24 } NOT = { exists = GLD } } type = trigger which = 9981031 }
@@ -1215,7 +1215,7 @@ event = {
 	}
 	action_b = {
 	ai_chance = 1
-	name = "We don't need that"
+	name = "EVT_9981029_OPTIONB"
 	command = { type = relation which = GLD value = 50 }
 	command = { type = relation which = AUS value = 50 }
         command = { type = relation which = U24 value = 50 }
@@ -1229,22 +1229,22 @@ event = {
 	id = 9981030
 	random = no
 	country = AUS
-	name = "Commonwealth asks about Galicia"
-	desc = "The lands of Galicia-Lodomeria were part of the Polish-Lithuanian Commonwealth. Now, that it has been reformed, they have claimed that region, demanding the transfer of Galicia-Lodomeria in exchange for a large ammount of industrial goods, money, and a treaty of mutual protection and recognition of borders."
+	name = "EVT_9981030_NAME"
+	desc = "EVT_9981030_DESC"
 	style = 2
 	picture = "galicia"
 
 
 	action_a = {
 	ai_chance = 70
-	name = "Never! It's part of our monarchy!"
+	name = "EVT_9981030_OPTIONA"
 	command = { type = relation which = U00 value = -50 }
         command = { type = dissent value = -2 }
         command = { type = trigger which = 9981034 }
 	}
 	action_b = {
 	ai_chance = 30
-	name = "Let them go"
+	name = "EVT_9981030_OPTIONB"
 	command = { type = trigger which = 9981033 }
         command = { type = money value = 600 }
         command = { type = resource which = supplies value = 2000 }
@@ -1270,22 +1270,22 @@ event = {
 	id = 9981031
 	random = no
 	country = U24
-	name = "Commonwealth asks about Galicia"
-	desc = "The lands of Galicia-Lodomeria were part of the Polish-Lithuanian Commonwealth. Now, that it has been reformed, they have claimed that that region, demanding the transfer of Galicia-Lodomeria in exchange for a large ammount of industrial goods, money, and a treaty of mutual protection and recognition of borders."
+	name = "EVT_9981031_NAME"
+	desc = "EVT_9981031_DESC"
 	style = 2
 	picture = "galicia"
 
 
 	action_a = {
 	ai_chance = 99
-	name = "Never! It's part of our monarchy!"
+	name = "EVT_9981031_OPTIONA"
 	command = { type = relation which = U00 value = -50 }
         command = { type = dissent value = -2 }
         command = { type = trigger which = 9981034 }
 	}
 	action_b = {
 	ai_chance = 1
-	name = "Let them go"
+	name = "EVT_9981031_OPTIONB"
 	command = { type = trigger which = 9981033 }
         command = { type = money value = 600 }
         command = { type = resource which = supplies value = 2000 }
@@ -1310,22 +1310,22 @@ event = {
 	id = 9981032
 	random = no
 	country = U25
-	name = "Commonwealth asks about Galicia"
-	desc = "The lands of Galicia-Lodomeria were part of the Polish-Lithuanian Commonwealth. Now, that it has been reformed, they have claimed that that region, demanding the transfer of Galicia-Lodomeria in exchange for a large ammount of industrial goods, money, and a treaty of mutual protection and recognition of borders."
+	name = "EVT_9981032_NAME"
+	desc = "EVT_9981032_DESC"
 	style = 2
 	picture = "galicia"
 
 
 	action_a = {
 	ai_chance = 99
-	name = "Never! It's part of our monarchy!"
+	name = "EVT_9981032_OPTIONA"
 	command = { type = relation which = U00 value = -50 }
         command = { type = dissent value = -2 }
         command = { type = trigger which = 9981034 }
 	}
 	action_b = {
 	ai_chance = 1
-	name = "Let them go"
+	name = "EVT_9981032_OPTIONB"
 	command = { type = trigger which = 9981033 }
         command = { type = money value = 600 }
         command = { type = resource which = supplies value = 2000 }
@@ -1352,12 +1352,12 @@ event = {
 	country = U00
 	style = 2
 
-	name = "Galicia is ours!"
-	desc = "The Austrians have agreed and Galicia is part of our homeland once again!"
+	name = "EVT_9981033_NAME"
+	desc = "EVT_9981033_DESC"
 	picture = "galicia"
 
 	action_a = {
-		name = "Great!"
+		name = "EVT_9981033_OPTIONA"
 		command = { type = inherit which = GLD }
                 command = { type = money value = -600 }
                 command = { type = resource which = supplies value = -2000 }
@@ -1388,13 +1388,13 @@ event = {
 	country = U00
 	style = 2
 
-	name = "Austrians refuse our demands!"
-	desc = "Austrians refused our demands, stating that kingdom of Galicia-Lodomeria is an integral part of their country! What shall we do?"
+	name = "EVT_9981034_NAME"
+	desc = "EVT_9981034_DESC"
 	picture = "galicia"
 
 	action_a = {
                 ai_chance = 1
-		name = "Leave them be...!"
+		name = "EVT_9981034_OPTIONA"
                 command = { type = dissent value = 1 }
                 command = { type = relation which = GLD value = -50 }
 	        command = { type = relation which = AUS value = -50 }
@@ -1404,7 +1404,7 @@ event = {
 
         action_b = {
                 ai_chance = 99
-		name = "Ask Germany for help!"
+		name = "EVT_9981034_OPTIONB"
                 trigger = {
                 exists = GER
                 control = { province = 163 data = GER }
@@ -1450,7 +1450,7 @@ event = {
 
           action_c = {
                 ai_chance = 50
-		name = "Ask Russia for help!"
+		name = "EVT_9981034_OPTIONC"
                 trigger = {
                 exists = RUS
                 control = { province = 553 data = RUS }
@@ -1501,7 +1501,7 @@ event = {
 
         action_d = {
                 ai_chance = 40
-		name = "War will solve this!"
+		name = "EVT_9981034_OPTIOND"
                 trigger = {
                 NOT = { 
                 ispuppet = U00
@@ -1545,13 +1545,13 @@ event = {
 
 	
 	
-	name = "Support the Commonwealth?"
-	desc = "A diplomatic conflict erupted over the status of Galicia between Warsaw and Vienna. The leadership of the Commonwealth, knowing that they can´t win Galicia back without diplomatic and military aid are asking us for support...." 
+	name = "EVT__NAME"
+	desc = "EVT__DESC" 
 	style = 2
 	picture = "galicia"
 	
 	action = {
-		name = "Support the Commonwealth!" 
+		name = "EVT__OPTIONA" 
 		ai_chance = 60
 		command = { type = belligerence value = 2 }
                 command = { type = dissent value = 1 }
@@ -1568,7 +1568,7 @@ event = {
                 
 	}
 	action = {
-		name = "Do not support the Commonwealth" 
+		name = "EVT__OPTIONB" 
 		ai_chance = 40
 		command = { type = dissent value = 5 }
 		command = { type = relation which = U00 value = -20 }
@@ -1587,13 +1587,13 @@ event = {
 
 	
 	
-	name = "Support the Commonwealth?"
-	desc = "A diplomatic conflict erupted over the status of Galicia between Warsaw and Vienna. The leadership of the Commonwealth, knowing that they can´t win Galicia back without diplomatic and military aid are asking us for support...." 
+	name = "EVT__NAME"
+	desc = "EVT__DESC" 
 	style = 2
 	picture = "galicia"
 	
 	action = {
-		name = "Support the Commonwealth!" 
+		name = "EVT__OPTIONA" 
 		ai_chance = 80
 		command = { type = belligerence value = 2 }
                 command = { type = dissent value = 1 }
@@ -1610,7 +1610,7 @@ event = {
                 
 	}
 	action = {
-		name = "Do not support the Commonwealth" 
+		name = "EVT__OPTIONB" 
 		ai_chance = 20
 		command = { type = dissent value = 5 }
 		command = { type = relation which = U00 value = -20 }
@@ -1629,20 +1629,20 @@ event = {
 
 	
 	
-	name = "Russia supports the Commonwealth!"
-	desc = "The desperate leadership of Commonwealth, fearing Austrian armed forces, have asked Russia for support in their effort to regain Galicia. Unfortunately Russia responded positively to their begging, and issued a demand regarding the transfer of Galicia to the Commonwealth. What shall we do now?" 
+	name = "EVT__NAME"
+	desc = "EVT__DESC" 
 	style = 2
 	picture = "soviet_replacement"
 	
 	action = {
-		name = "Ignore Russian demands!" 
+		name = "EVT__OPTIONA" 
 		ai_chance = 30
 		command = { type = trigger which = 9981043 } 
 		command = { type = belligerence value = 2 }
                 command = { type = dissent value = 2 }
 	}
 	action = {
-		name = "Agree to their demands" 
+		name = "EVT__OPTIONB" 
 		ai_chance = 70
 		command = { type = dissent value = 5 }
 		command = { type = trigger which = 9981033 }
@@ -1667,20 +1667,20 @@ event = {
 
 	
 	
-	name = "Russia supports the Commonwealth!"
-	desc = "The desperate leadership of the Commonwealth, fearing Austro-Hungarian armed forces, have asked Russia for support in their effort to regain Galicia. Unfortunately Russia responded positively to their begging, and issued a demand regarding the transfer of Galicia to the Commonwealth. What shall we do now?" 
+	name = "EVT__NAME"
+	desc = "EVT__DESC" 
 	style = 2
 	picture = "soviet_replacement"
 	
 	action = {
-		name = "Ignore Russian demands!" 
+		name = "EVT__OPTIONA" 
 		ai_chance = 60
 		command = { type = trigger which = 9981043 } 
 		command = { type = belligerence value = 2 }
                 command = { type = dissent value = 2 }
 	}
 	action = {
-		name = "Agree with their demands" 
+		name = "EVT__OPTIONB" 
 		ai_chance = 40
 		command = { type = dissent value = 5 }
 		command = { type = trigger which = 9981033 }
@@ -1705,20 +1705,20 @@ event = {
 
 	
 	
-	name = "Russia supports the Commonwealth!"
-	desc = "The desperate leadership of the Commonwealth, fearing the armed forces of the Danubian Federation, have asked Russia for support in their effort to regain Galicia. Unfortunately Russia responded positively to their begging, and issued a demand regarding the transfer of Galicia to the Commonwealth. What shall we do now?" 
+	name = "EVT__NAME"
+	desc = "EVT__DESC" 
 	style = 2
 	picture = "soviet_replacement"
 	
 	action = {
-		name = "Ignore Russian demands!" 
+		name = "EVT__OPTIONA" 
 		ai_chance = 60
 		command = { type = trigger which = 9981043 } 
 		command = { type = belligerence value = 2 }
                 command = { type = dissent value = 2 }
 	}
 	action = {
-		name = "Agree with their demands" 
+		name = "EVT__OPTIONB" 
 		ai_chance = 40
 		command = { type = dissent value = 5 }
 		command = { type = trigger which = 9981033 }
@@ -1744,20 +1744,20 @@ event = {
 
 	
 	
-	name = "Germany supports the Commonwealth!"
-	desc = "The desperate leadership of the Commonwealth, fearing Austrian armed forces, have asked the German Empire for support in their effort to regain Galicia. Unfortunately the Germans responded positively to their begging, and issued a demand regarding the transfer of control over Galicia to the Commonwealth. What shall we do now?" 
+	name = "EVT__NAME"
+	desc = "EVT__DESC" 
 	style = 2
 	picture = "German_mobilization2"
 	
 	action = {
-		name = "Ignore German demands!" 
+		name = "EVT__OPTIONA" 
 		ai_chance = 30
 		command = { type = trigger which = 9981044 } 
 		command = { type = belligerence value = 2 }
                 command = { type = dissent value = 2 }
 	}
 	action = {
-		name = "Agree with their demands" 
+		name = "EVT__OPTIONB" 
 		ai_chance = 70
 		command = { type = dissent value = 5 }
 		command = { type = trigger which = 9981033 }
@@ -1782,20 +1782,20 @@ event = {
 
 	
 	
-	name = "Germany supports the Comomnwealth!"
-	desc = "The desperate leadership of the Commonwealth, fearing Austro-Hungarian armed forces, have asked the German Empire for support in their effort to regain Galicia. Unfortunately the Germans responded positively to their begging, and issued a demand regarding the transfer of control over Galicia to the Commonwealth. What shall we do now?" 
+	name = "EVT__NAME"
+	desc = "EVT__DESC" 
 	style = 2
 	picture = "German_mobilization2"
 	
 	action = {
-		name = "Ignore German demands!" 
+		name = "EVT__OPTIONA" 
 		ai_chance = 60
 		command = { type = trigger which = 9981044 } 
 		command = { type = belligerence value = 2 }
                 command = { type = dissent value = 2 }
 	}
 	action = {
-		name = "Agree with their demands" 
+		name = "EVT__OPTIONB" 
 		ai_chance = 40
 		command = { type = dissent value = 5 }
 		command = { type = trigger which = 9981033 }
@@ -1820,20 +1820,20 @@ event = {
 
 	
 	
-	name = "Germany supports the Commonwealth!"
-	desc = "The desperate leadership of the Commonwealth, fearing the armed forces of the Danubian Federation, have asked the German Empire for support in their effort to regain Galicia. Unfortunately the Germans responded positively to their begging, and issued a demand regarding the transfer of control over Galicia to the Commonwealth. What shall we do now?" 
+	name = "EVT__NAME"
+	desc = "EVT__DESC" 
 	style = 2
 	picture = "German_mobilization2"
 	
 	action = {
-		name = "Ignore German demands!" 
+		name = "EVT__OPTIONA" 
 		ai_chance = 60
 		command = { type = trigger which = 9981044 } 
 		command = { type = belligerence value = 2 }
                 command = { type = dissent value = 2 }
 	}
 	action = {
-		name = "Agree with their demands" 
+		name = "EVT__OPTIONB" 
 		ai_chance = 40
 		command = { type = dissent value = 5 }
 		command = { type = trigger which = 9981033 }
@@ -1859,12 +1859,12 @@ style = 2
 picture = "German_mobilization2"
 
 
-name = "The Austrians ignore our demands"
-desc = "Our demands regarding the status of Galicia has been ignored by arrogant leaders in Vienna. Now we can either honour our agreement with the Commonwealth and force the Austrians to give up Galicia through military might or back down, for now..."
+name = "EVT_9981043_NAME"
+desc = "EVT_9981043_DESC"
 
 action_a = {
 ai_chance = 60
-name = "They have made their choice, war it is!"
+name = "EVT_9981043_OPTIONA"
 trigger = {
 NOT = {
 atwar = RUS
@@ -1883,7 +1883,7 @@ command = { type = sleepevent which = 9981045 }
 
 action_b = {
 ai_chance = 40
-name = "Back Down! We've changed our minds!"
+name = "EVT_9981043_OPTIONB"
 command = { type = dissent value = 3 }
 command = { type = relation which = U00 value = -90 }
 command = { type = sleepevent which = 9981045 }
@@ -1891,7 +1891,7 @@ command = { type = sleepevent which = 9981045 }
 
 action_c = {
 ai_chance = 50
-name = "Back Down! For now..."
+name = "EVT_9981043_OPTIONC"
 trigger = {
 atwar = RUS
 }
@@ -1908,12 +1908,12 @@ style = 2
 picture = "German_mobilization2"
 
 
-name = "The Austrians ignore our demands"
-desc = "Our demands regarding the status of Galicia has been ignored by arrogant leaders in Vienna. Now we can either honour our agreement with the Commonwealth and force the Austrians to give up Galicia through military might or back down, for now..."
+name = "EVT_9981044_NAME"
+desc = "EVT_9981044_DESC"
 
 action_a = {
 ai_chance = 60
-name = "They have made their choice, war it is!"
+name = "EVT_9981044_OPTIONA"
 trigger = {
 NOT = {
 atwar = GER
@@ -1931,7 +1931,7 @@ command = { type = sleepevent which = 9981046 }
 
 action_b = {
 ai_chance = 40
-name = "Back Down! We've changed our minds!"
+name = "EVT_9981044_OPTIONB"
 command = { type = dissent value = 3 }
 command = { type = relation which = U00 value = -90 }
 command = { type = sleepevent which = 9981046 }
@@ -1939,7 +1939,7 @@ command = { type = sleepevent which = 9981046 }
 
 action_c = {
 ai_chance = 50
-name = "Back Down! For now..."
+name = "EVT_9981044_OPTIONC"
 trigger = {
 atwar = GER
 }
@@ -2046,15 +2046,15 @@ event = {
         }
 
 
-	name = "Operation Carpathian Storm"
-	desc = "Our armed forces, together with the armed forces of the Commonwealth are finally prepared to drive hostile forces from Galicia and reclaim this region for the Polish-Lithuanian Commonwealth."
+	name = "EVT_9981045_NAME"
+	desc = "EVT_9981045_DESC"
 	style = 2
 	picture = "soviet_replacement"
         decision_picture = "decision_fall_gelb"
 
 	action_a = {
 	ai_chance = 99
-	name = "Proceed with the operation!"
+	name = "EVT_9981045_OPTIONA"
 	command = { type = alliance which = U00 }
         command = { trigger = { control = { province = 235 data = AUS } } type = war which = AUS }
         command = { trigger = { control = { province = 235 data = GLD } } type = war which = GLD }
@@ -2063,7 +2063,7 @@ event = {
 	}
 	action_b = {
 	ai_chance = 1
-	name = "We don't need that"
+	name = "EVT_9981045_OPTIONB"
 	command = { type = relation which = GLD value = 50 }
 	command = { type = relation which = AUS value = 50 }
         command = { type = relation which = U24 value = 50 }
@@ -2167,15 +2167,15 @@ event = {
         event = 9981044
         }
 
-	name = "Fall Weiss"
-	desc = "Our armed forces, together with the armed forces of the Commonwealth are finally prepared to drive hostile forces from Galicia and reclaim this region for the Polish-Lithuanian Commonwealth."
+	name = "EVT_9981046_NAME"
+	desc = "EVT_9981046_DESC"
 	style = 2
 	picture = "German_mobilization2"
         decision_picture = "decision_fall_gelb"
 
 	action_a = {
 	ai_chance = 99
-	name = "Proceed with the operation!"
+	name = "EVT_9981046_OPTIONA"
 	command = { type = alliance which = U00 }
         command = { trigger = { control = { province = 235 data = AUS } } type = war which = AUS }
         command = { trigger = { control = { province = 235 data = GLD } } type = war which = GLD }
@@ -2185,7 +2185,7 @@ event = {
 
 	action_b = {
 	ai_chance = 1
-	name = "We don't need that"
+	name = "EVT_9981046_OPTIONB"
 	command = { type = relation which = GLD value = 50 }
 	command = { type = relation which = AUS value = 50 }
         command = { type = relation which = U24 value = 50 }
@@ -2221,12 +2221,12 @@ date = { day = 7 month = january year = 1936 }
 offset = 50
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Foreign policy"
-desc = "With the Commonwealth finally free from capitalist opression we can now freely decide our stance towards the international community. While many are arguing for an immediate alliance with other Syndicalist nations, it might be wise to remain neutral to rebuild our country."
+name = "EVT_9981047_NAME"
+desc = "EVT_9981047_DESC"
 
         action_a = {
 		ai_chance = 95
-		name = "We must join arms with France"
+		name = "EVT_9981047_OPTIONA"
                 command = { type = leave_alliance }
 		command = { type = trigger which = 9981048 }
 		command = { type = domestic which = defense_lobby value = 1 }
@@ -2235,7 +2235,7 @@ desc = "With the Commonwealth finally free from capitalist opression we can now 
 	}
 	action_b = {
 		ai_chance = 5
-		name = "Isolationism, we must organize our country"
+		name = "EVT_9981047_OPTIONB"
 		command = { type = dissent value = -5 }
 		command = { type = domestic which = defense_lobby value = -1 }
 		command = { type = domestic which = interventionism value = -1 }
@@ -2249,12 +2249,12 @@ event = {
 	style = 2
 	picture = "diplomatic_campaign"
 
-	name = "Commonwealth wants to join the Syndicalists"
-	desc = "The Government of the Commonwealth has annouced that they want to join the Syndicalist bloc. It's not a sudden move because pro-Syndicalist policy is popular in many circles including the government and army. Do we want Polish workers and peasants joing the crusade against bloodthirsty Germans and rotten imperialist Canadian pigs?"
+	name = "EVT_9981048_NAME"
+	desc = "EVT_9981048_DESC"
 
 	action_a = {
 		ai_chance = 100
-		name = "YES!"
+		name = "EVT_9981048_OPTIONA"
 		command = { type = alliance which = U00 }
 		command = { type = relation which = U00 value = 100 }
 		command = { type = dissent value = -7 }
@@ -2263,7 +2263,7 @@ event = {
 	}
 	action_b = {
 		ai_chance = 0
-		name = "Rather not."
+		name = "EVT_9981048_OPTIONB"
 		command = { type = dissent value = 1 }
 		command = { type = relation which = U00 value = -100 }
 	}
@@ -2275,11 +2275,11 @@ event = {
 	style = 2
 	picture = "diplomatic_campaign"
 
-	name = "We join the Syndicalist bloc"
-	desc = "The French and British are happy to see us joining the common case - destroying the evil imperialists. Now we are part of the Syndicalist bloc."
+	name = "EVT_9981049_NAME"
+	desc = "EVT_9981049_DESC"
 
 	action_a = {
-		name = "This time we will win!"
+		name = "EVT_9981049_OPTIONA"
 		command = { type = dissent value = -3 }
 		command = { type = relation which = CAN value = -150 }
 		command = { type = relation which = GER value = -150 }
@@ -2311,11 +2311,11 @@ event = {
 	offset = 1
 	deathdate = { day = 29 month = december year = 1963 }
 
-	name = "Anniversary of the Lublin Union"
-	desc = "Today we celebrate the anniversary of the signature of the Lublin Union, which, for the first time in history, created a united Polish-Lithuanian state."
+	name = "EVT_9981050_NAME"
+	desc = "EVT_9981050_DESC"
 
 	action_a = {
-		name = "Commonwealth is Eternal"
+		name = "EVT_9981050_OPTIONA"
 		command = { type = dissent value = -1 }
 	}
 }
