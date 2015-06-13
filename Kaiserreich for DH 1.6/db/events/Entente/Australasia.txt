@@ -341,7 +341,7 @@ picture = "Mannix"
 style = 2
 
 name = "EVT_123105_NAME"
-desc = EVT_123105_DESC
+desc = "EVT_123105_DESC"
 
 #The Archbishop of Melbourne, Daniel Mannix had always been a thorn in the side of the Re-British Australian Government, 
 #and notably was one of the key players fighting against Hughes' Conscription Plebiscites in World War 1, only escaping retribution 
@@ -349,19 +349,34 @@ desc = EVT_123105_DESC
 #sniper and he was later pronounced dead. Exacerbating the matter worse this has happened in the high-time of nationalism between 
 #Australia and New Zealand Days. In this chaos now, we can't be sure who did the deed, but the public is sure. We must now officially 
 #announce the results of our 'inquest' into the matter. There is the option of blaming a rogue faction of the party, however this is likely to 
-#backfire on us!"EVT_123105_DESC"Blame a rogue faction within the government"
+#backfire on us!"
+
+trigger = {
+	flag = aust_hughes
+		NOT = {
+		atwar = AST
+ 		}
+	}
+
+date = { day = 27 month = january year = 1937 } # Australia Day, 26th
+offset = 2
+deathdate = { day = 29 month = january year = 1937 } # New Zealand Day, 29th (Until 1934) in this timeline, not yet changed.
+
+action_a = {
+ai_chance = 10
+name = "EVT_123105_OPTIONA"
 	command = { type = dissent value = 5 }
 	command = { type = local_setflag which = aust_infighting }
 	}
 action_b = {
 ai_chance = 45
-name = "EVT_123105_OPTIONA"
+name = "EVT_123105_OPTIONB"
 	command = { type = dissent value = 10 }
 	command = { type = setflag which = aust_blameinternal }
 	}
 action_c = {
 ai_chance = 45
-name = "EVT_123105_OPTIONB"
+name = "EVT_123105_OPTIONC"
 	command = { type = dissent value = 3 }
 	command = { type = setflag which = aust_blameforeign }
 	}
