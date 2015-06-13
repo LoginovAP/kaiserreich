@@ -1059,17 +1059,17 @@ command = { type = dissent value = 5 }
 event = {
 	id = 901937
 	country = MON
-	picture= "EVT_901937_DESC"
+	picture= "gerarmedfor"
         persistent = yes
         style = 2
 
-	name= "Independent Mongolia"
-	desc= "Our Russian overlords have installed a new government to supervise our internal development."
+	name = "EVT_901937_NAME"
+	desc = "EVT_901937_DESC"
 
 
 
 action_a = {
-name = "EVT_901937_NAME"
+name = "EVT_901937_OPTIONA"
 
         command = { type = ai which = "kaiserreich/Mongolia.ai" }
         command = { type = wakeminister which = 94131 }
@@ -6338,14 +6338,14 @@ event = {
 event = {
 	id = 901935
 	country = BLR
-	picture= "EVT_901935_DESC"
-	name= "Independent Belarus"
-	desc= "Belarus is once again independent under Russian supervision."
+	picture= "gerarmedfor"
+	name = "EVT_901935_NAME"
+	desc = "EVT_901935_DESC"
 
 
 
 action_a = {
-name = "EVT_901935_NAME"
+name = "EVT_901935_OPTIONA"
 
         command = { type = ai which = "kaiserreich/Weissruthenien.ai" }
 	command = { type = add_division value = infantry when = 9 }		
@@ -7114,14 +7114,14 @@ command = { type = secedeprovince which = UKR value = 249 }
 event = {
 	id = 901936
 	country = UKR
-	picture= "EVT_901936_DESC"
-	name= "Independent Malorossia"
-	desc= "Malorossia is once again independent under Russian supervision."
+	picture= "gerarmedfor"
+	name = "EVT_901936_NAME"
+	desc = "EVT_901936_DESC"
 
 
 
 action_a = {
-name = "EVT_901936_NAME"
+name = "EVT_901936_OPTIONA"
 
         command = { type = ai which = "kaiserreich/Ukraine.ai" }
 	command = { type = add_division value = infantry when = 9 }		
@@ -12634,14 +12634,14 @@ command = { type = trigger which = 901954 }
 event = {
 	id = 901954
 	country = BLR
-	picture= "EVT_901954_DESC"
-	name= "Russian protectorate"
-	desc= "Our government was reorganized to the Russian's liking."
+	picture= "gerarmedfor"
+	name = "EVT_901954_NAME"
+	desc = "EVT_901954_DESC"
 
 
 
 action_a = {
-name = "EVT_901954_NAME"
+name = "EVT_901954_OPTIONA"
 
         command = { type = ai which = "kaiserreich/Weissruthenien.ai" }	
 	command = { type = add_division value = interceptor when = 8 }	
@@ -13033,14 +13033,14 @@ command = { type = trigger which = 901960 }
 event = {
 	id = 901960
 	country = UKR
-	picture= "EVT_901960_DESC"
-	name= "Russian protectorate"
-	desc= "Our government was reorganized to the Russian's liking."
+	picture= "gerarmedfor"
+	name = "EVT_901960_NAME"
+	desc = "EVT_901960_DESC"
 
 
 
 action_a = {
-name = "EVT_901960_NAME"
+name = "EVT_901960_OPTIONA"
 
         command = { type = ai which = "kaiserreich/Ukraine.ai" }	
 	command = { type = add_division value = interceptor when = 8 }	
@@ -13611,7 +13611,7 @@ event = {
 
 	action_a = {
 		ai_chance = 60
-		name = "Demand their incorporation!"
+		name = "EVT_902000_OPTIONA"
                 trigger = {
                 flag = RUS_EXP
                 }
@@ -13622,7 +13622,7 @@ event = {
 
 	action_b = {
 		ai_chance = 40
-		name = "Try to establish control over Armenian government!"
+		name = "EVT_902000_OPTIONB"
                 command = { type = dissent value = -1 }
                 command = { type = relation which = ARM value = -20 }
                 command = { type = trigger which = 902007 }
@@ -13630,7 +13630,7 @@ event = {
 
         action = {
 		ai_chance = 20
-		name = "EVT_902000_OPTIONA"
+		name = "EVT_902000_OPTIONC"
                 trigger = {
                 flag = RUS_EXP
                 }
@@ -13648,7 +13648,7 @@ event = {
 	          }
                   }
                 ai_chance = 20
-                name = "EVT_902000_OPTIONB"
+                name = "EVT_902000_OPTIOND"
                 command = { type = setflag which = ARM_RUSCOU }
                 }
 
@@ -13663,7 +13663,7 @@ event = {
                 }
                 }
 		ai_chance = 0
-		name = "EVT_902000_OPTIONC"
+		name = "EVT_902000_OPTIONE"
                 command = { type = belligerence which = RUS value = -2  }
                 command = { type = setflag which = RUS_DKC }
                 command = { type = clrflag which = RUS_ETC } 
@@ -13672,7 +13672,7 @@ event = {
 
         action = {
 		ai_chance = 0
-		name = "EVT_902000_OPTIOND"
+		name = "EVT_902000_OPTIONF"
                 command = { type = belligerence which = RUS value = -3  }
                 command = { type = dissent value = 4 }
 }
@@ -14007,12 +14007,12 @@ control = { province = 504 data = KYG }	#Alma-Ata is controlled by Turkestan
 	offset = 20
 	deathdate = { day = 29 month = december year = 1970 }
 
-	name = "EVT__NAME"
-	desc = "EVT__DESC"
+	name = "EVT_9020010_NAME"
+	desc = "EVT_9020010_DESC"
 
 	action_a = {
 		ai_chance = 100
-		name = "EVT__OPTIONA"
+		name = "EVT_9020010_OPTIONA"
                 command = { type = war which = KYG }
 				command = { type = dissent value = -5 }
 				
@@ -14020,7 +14020,7 @@ control = { province = 504 data = KYG }	#Alma-Ata is controlled by Turkestan
 
 	action_b = {
 		ai_chance = 0
-		name = "EVT__OPTIONB" #Why would you break the event-chain, dumb-ass?
+		name = "EVT_9020010_OPTIONB" #Why would you break the event-chain, dumb-ass?
                 command = { type = dissent value = 5 }	
                 command = { type = relation which = KYG value = 80 }
                 command = { type = domestic which = interventionism value = -2 }
