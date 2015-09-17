@@ -1,0 +1,639 @@
+#################################################################
+#	Japan Foreign Policy Events
+#	Events by Hasagwan, Kibbles, thegreatplant, Capt. Rhodes and Arturius
+#	last edit: 15.09.2009
+#################################################################
+
+# reserved ID's: 340200 - 340299
+
+
+##  General choice of foreign policy
+# 	340200	Foreign Policy - National Populist
+# 	340201	Foreign Policy - Democratic
+
+##  Expansion Path
+# 	340202 Whereto?	# fourth option inactive
+#	340203 Whereto? - After desist from Russia
+
+## Japan Russian Cooperation (by viader)
+#	340210
+#	340211
+#	340212
+#	340213
+#	340214
+#	340215
+
+## 	Isolationist Path # not ready yet?
+
+
+
+
+
+## General Choice of Foreign Policy
+
+#  Foreign Policy - National Populist
+
+event = {
+id = 340200
+country = JAP
+style = 2
+picture = "Japan"
+
+trigger = {
+OR = {
+government = fascist
+government = communist
+}
+control = { province = 1228 data = -3 }
+control = { province = 1219 data = -3 }
+NOT = {
+ispuppet = JAP
+atwar = JAP
+event = 340201
+war = { country = JAP country = KOR }
+war = { country = JAP country = PRI }
+war = { country = JAP country = U30 }
+war = { country = JAP country = MAN }
+}
+}
+
+date = { day = 1 month = march year = 1937 }
+offset = 5
+deathdate = { day = 10 month = december year = 1944 }
+
+name = "The Rising Sun"
+desc = "With the political problems at home surpressed, it is time for the Land of the Rising Sun to look beyond her borders. We have many choices, each with their own rewards and challenges. Once we decide which path to take, we can later go more into depth on how to obtain it."
+
+action_a = {
+ai_chance = 100
+name = "Let the sun rise!"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = belligerence value = 5 }
+command = { type = dissent value = -5 }
+command = { type = setflag which = JAP_EXP }
+command = { type = sleepevent which = 340201 }
+}
+
+action_b = {
+ai_chance = 0
+name = "We must return to our old ways of isolationism, Japan is a world in itself"
+command = { type = domestic which = interventionism value = -9 }
+command = { type = domestic which = defense_lobby value = -9 }
+command = { type = relation which = GER value = 25 }
+command = { type = relation which = MON value = 25 }
+command = { type = relation which = CSX value = 25 }
+command = { type = setflag which = JAP_ISO }
+command = { type = dissent value = 5 }
+command = { type = belligerence value = -25 }
+command = { type = sleepevent which = 340201 }
+}
+}
+
+#  Foreign Policy - Democratic
+
+event = {
+id = 340201
+country = JAP
+style = 2
+picture = "Japan"
+
+trigger = {
+government = democratic
+control = { province = 1228 data = -3 }
+control = { province = 1219 data = -3 }
+NOT = {
+ispuppet = JAP
+atwar = JAP
+event = 340200
+war = { country = JAP country = KOR }
+war = { country = JAP country = PRI }
+war = { country = JAP country = U30 }
+war = { country = JAP country = MAN }
+}
+}
+
+date = { day = 1 month = march year = 1937 }
+offset = 5
+deathdate = { day = 10 month = december year = 1944 }
+
+name = "The Rising Sun"
+desc = "With the political problems at home surpressed, it is time for the Land of the Rising Sun to look beyond her borders. We have many choices, each with their own rewards and challenges. Once we decide which path to take, we can later go more into depth on how to obtain it."
+
+action_a = {
+ai_chance = 90
+name = "Let the sun rise!"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = belligerence value = 5 }
+command = { type = dissent value = 1 }
+command = { type = setflag which = JAP_EXP }
+command = { type = sleepevent which = 340200 }
+}
+
+action_b = {
+ai_chance = 10
+name = "We must return to our old ways of isolationism, Japan is a world in itself"
+command = { type = domestic which = interventionism value = -9 }
+command = { type = domestic which = defense_lobby value = -9 }
+command = { type = relation which = GER value = 25 }
+command = { type = relation which = MON value = 25 }
+command = { type = relation which = CSX value = 25 }
+command = { type = dissent value = 1 }
+command = { type = setflag which = JAP_ISO }
+command = { type = belligerence value = -25 }
+command = { type = sleepevent which = 340200 }
+}
+}
+
+### Expansion Path
+
+# Whereto?
+
+
+event = {
+id = 340202
+country = JAP
+style = 2
+picture = "Japan"
+
+trigger = {
+flag = JAP_EXP
+}
+
+date = { day = 1 month = march year = 1937 }
+offset = 5
+deathdate = { day = 10 month = december year = 1944 }
+
+name = "The Rising Sun"
+desc = "With the political problems at home surpressed, it is time for the Land of the Rising Sun to look beyond her borders. We have many choices, each with their own rewards and challenges. Once we decide which path to take, we can later go more into depth on how to obtain it."
+
+action_a = {
+trigger = {
+exists = GER
+OR = {
+control = { province = 1328 data = GER }
+control = { province = 1432 data = GER }
+control = { province = 1395 data = GER }
+}
+}
+ai_chance = 40
+name = "We must bring down the German goliath !"
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = relation which = GER value = -50 }
+command = { type = relation which = CAN value = 25 }
+command = { type = relation which = AST value = 25 }
+command = { type = setflag which = JAP_GER }
+}
+action_b = {
+trigger = {
+OR = {
+NOT = {
+control = { province = 1162 data = -3 }
+}
+NOT = {
+control = { province = 1124 data = -3 }
+}
+}
+}
+
+ai_chance = 35
+name = "North of us is a great untamed land which is ripe for the taking!"
+command = { type = relation which = RUS value = -50 }
+command = { type = relation which = MON value = -50 }
+command = { type = relation which = GER value = 25 }
+command = { type = setflag which = JAP_RUS }
+}
+
+action_c = {
+ai_chance = 5
+name = "Colonialism has served us well in the past, it will serve now as well !"
+trigger = {
+OR = {
+NOT = {
+control = { province = 1565 data = -3 }
+}
+NOT = {
+control = { province = 1647 data = -3 }
+}
+NOT = {
+control = { province = 1734 data = -3 }
+}
+NOT = {
+control = { province = 1705 data = -3 }
+}
+}
+}
+command = { type = relation which = USA value = -50 }
+command = { type = relation which = AST value = -50 }
+command = { type = relation which = GER value = 25 }
+command = { type = setflag which = JAP_COLONY }
+}
+
+}
+
+# Whereto? - After desist from Russia
+
+
+event = {
+id = 340203
+country = JAP
+style = 2
+picture = "Japan"
+
+name = "The Rising Sun"
+desc = "With the political problems at home surpressed, it is time for the Land of the Rising Sun to look beyond her borders. We have many choices, each with their own rewards and challenges. Once we decide which path to take, we can later go more into depth on how to obtain it."
+
+action_a = {
+trigger = {
+exists = GER
+OR = {
+control = { province = 1328 data = GER }
+control = { province = 1432 data = GER }
+control = { province = 1395 data = GER }
+NOT = {
+control = { province = 1247 data = -3 }
+}
+}
+}
+ai_chance = 90 # ai_chance = 35
+name = "We must bring down the German goliath if we want to carve an Empire!"
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = relation which = GER value = -50 }
+command = { type = relation which = CAN value = 25 }
+command = { type = relation which = AST value = 25 }
+command = { type = setflag which = JAP_GER }
+}
+action_b = {
+ai_chance = 10 # ai_chance = 30
+name = "Colonialism has served us well in the past, let us look beyond to greener lands!"
+trigger = {
+OR = {
+NOT = {
+control = { province = 1565 data = -3 }
+}
+NOT = {
+control = { province = 1647 data = -3 }
+}
+NOT = {
+control = { province = 1734 data = -3 }
+}
+NOT = {
+control = { province = 1705 data = -3 }
+}
+}
+}
+command = { type = relation which = USA value = -50 }
+command = { type = relation which = AST value = -50 }
+command = { type = relation which = GER value = 25 }
+command = { type = setflag which = JAP_COLONY }
+}
+}
+
+
+event = {
+id = 340204
+country = JAP
+style = 2
+picture = "Japan"
+
+
+name = "The Rising Sun"
+desc = "With Siberia secured, it is time for the Land of the Rising Sun to look beyond her borders. We have many choices, each with their own rewards and challenges. Once we decide which path to take, we can later go more into depth on how to obtain it."
+
+action_a = {
+trigger = {
+exists = GER
+OR = {
+control = { province = 1328 data = GER }
+control = { province = 1432 data = GER }
+control = { province = 1395 data = GER }
+NOT = {
+control = { province = 1247 data = -3 }
+}
+}
+}
+ai_chance = 90 # ai_chance = 35
+name = "We must bring down the German goliath if we want to carve an Empire!"
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = relation which = GER value = -50 }
+command = { type = relation which = CAN value = 25 }
+command = { type = relation which = AST value = 25 }
+command = { type = clrflag which  = RUS_DEFEATED_BY_JAP }
+command = { type = setflag which = JAP_GER }
+}
+action_b = {
+ai_chance = 10 # ai_chance = 30
+name = "Colonialism has served us well in the past, let us look beyond to greener lands!"
+trigger = {
+OR = {
+NOT = {
+control = { province = 1565 data = -3 }
+}
+NOT = {
+control = { province = 1647 data = -3 }
+}
+NOT = {
+control = { province = 1734 data = -3 }
+}
+NOT = {
+control = { province = 1705 data = -3 }
+}
+}
+}
+command = { type = relation which = USA value = -50 }
+command = { type = relation which = AST value = -50 }
+command = { type = relation which = GER value = 25 }
+command = { type = clrflag which = RUS_DEFEATED_BY_JAP }
+command = { type = setflag which = JAP_COLONY }
+}
+
+action_c = {
+ai_chance = 10
+name = "Abandon expansionism, we have achieved our goals !"
+command = { type = domestic which = interventionism value = -9 }
+command = { type = domestic which = defense_lobby value = -9 }
+command = { type = relation which = GER value = 25 }
+command = { type = relation which = MON value = 25 }
+command = { type = relation which = CSX value = 25 }
+command = { type = clrflag which = JAP_EXP }
+command = { type = clrflag which = JAP_MONRUS_CAMP }
+command = { type = clrflag which = JAP_MON_CAMP }
+command = { type = clrflag which = JAP_RUS_CAMP }
+command = { type = clrflag which = JAP_SIB_CAMP }
+command = { type = setflag which = JAP_ISO }
+command = { type = belligerence value = -25 }
+}
+}
+
+
+event = {
+id = 340205
+country = JAP
+style = 2
+picture = "Japan"
+
+
+name = "The Rising Sun"
+desc = "With territory of China secured, it is time for the Land of the Rising Sun to look beyond her borders. We have many choices, each with their own rewards and challenges. Once we decide which path to take, we can later go more into depth on how to obtain it."
+
+action_a = {
+trigger = {
+OR = {
+NOT = {
+control = { province = 1162 data = -3 }
+}
+NOT = {
+control = { province = 1124 data = -3 }
+}
+}
+}
+
+ai_chance = 35
+name = "North of us is a great untamed land which is ripe for the taking!"
+command = { type = relation which = RUS value = -50 }
+command = { type = relation which = MON value = -50 }
+command = { type = relation which = GER value = 25 }
+command = { type = setflag which = JAP_RUS }
+command = { type = clrflag which = JAP_GER1 }
+command = { type = clrflag which = JAP_GER2 }
+}
+
+action_b = {
+ai_chance = 10 # ai_chance = 30
+name = "Colonialism has served us well in the past, let us look beyond to greener lands!"
+trigger = {
+OR = {
+NOT = {
+control = { province = 1565 data = -3 }
+}
+NOT = {
+control = { province = 1647 data = -3 }
+}
+NOT = {
+control = { province = 1734 data = -3 }
+}
+NOT = {
+control = { province = 1705 data = -3 }
+}
+}
+}
+command = { type = relation which = USA value = -50 }
+command = { type = relation which = AST value = -50 }
+command = { type = relation which = GER value = 25 }
+command = { type = clrflag which = RUS_DEFEATED_BY_JAP }
+command = { type = clrflag which = JAP_GER1 }
+command = { type = clrflag which = JAP_GER2 }
+command = { type = setflag which = JAP_COLONY }
+}
+
+action_c = {
+ai_chance = 10
+name = "Abandon expansionism, we have achieved our goals !"
+command = { type = domestic which = interventionism value = -9 }
+command = { type = domestic which = defense_lobby value = -9 }
+command = { type = relation which = GER value = 25 }
+command = { type = relation which = MON value = 25 }
+command = { type = relation which = CSX value = 25 }
+command = { type = clrflag which = JAP_EXP }
+command = { type = clrflag which = JAP_GER1 }
+command = { type = clrflag which = JAP_GER2 }
+command = { type = setflag which = JAP_ISO }
+command = { type = belligerence value = -25 }
+}
+}
+
+
+event = {
+id = 340206
+country = JAP
+style = 2
+picture = "Japan"
+
+
+name = "The Rising Sun"
+desc = "With southern pacific secured, it is time for the Land of the Rising Sun to look beyond her borders. We have many choices, each with their own rewards and challenges. Once we decide which path to take, we can later go more into depth on how to obtain it."
+
+action_a = {
+trigger = {
+OR = {
+NOT = {
+control = { province = 1162 data = -3 }
+}
+NOT = {
+control = { province = 1124 data = -3 }
+}
+}
+}
+
+ai_chance = 35
+name = "North of us is a great untamed land which is ripe for the taking!"
+command = { type = relation which = RUS value = -50 }
+command = { type = relation which = MON value = -50 }
+command = { type = relation which = GER value = 25 }
+command = { type = setflag which = JAP_RUS }
+}
+
+action_b = {
+trigger = {
+exists = GER
+OR = {
+control = { province = 1328 data = GER }
+control = { province = 1432 data = GER }
+control = { province = 1395 data = GER }
+NOT = {
+control = { province = 1247 data = -3 }
+}
+}
+}
+ai_chance = 90 # ai_chance = 35
+name = "We must bring down the German goliath if we want to carve an Empire!"
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = relation which = GER value = -50 }
+command = { type = relation which = CAN value = 25 }
+command = { type = relation which = AST value = 25 }
+command = { type = clrflag which  = RUS_DEFEATED_BY_JAP }
+command = { type = setflag which = JAP_GER }
+}
+
+action_c = {
+ai_chance = 10
+name = "Abandon expansionism, we have achieved our goals !"
+command = { type = domestic which = interventionism value = -9 }
+command = { type = domestic which = defense_lobby value = -9 }
+command = { type = relation which = GER value = 25 }
+command = { type = relation which = MON value = 25 }
+command = { type = relation which = CSX value = 25 }
+command = { type = clrflag which = JAP_EXP }
+command = { type = setflag which = JAP_ISO }
+command = { type = belligerence value = -25 }
+}
+}
+
+
+# Whereto? - After desist from Southern Pacific
+
+
+event = {
+id = 340209
+country = JAP
+style = 2
+picture = "Japan"
+
+name = "The Rising Sun"
+desc = "With Southern pacific too well protected, we must change course of our expansionism and maybe return to southern pacific, once German Empire is occupied elsewhere...."
+
+action_a = {
+trigger = {
+exists = GER
+OR = {
+control = { province = 1328 data = GER }
+control = { province = 1432 data = GER }
+control = { province = 1395 data = GER }
+NOT = {
+control = { province = 1247 data = -3 }
+}
+}
+}
+ai_chance = 90 # ai_chance = 35
+name = "We must bring down the German goliath if we want to carve an Empire!"
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = relation which = GER value = -50 }
+command = { type = relation which = CAN value = 25 }
+command = { type = relation which = AST value = 25 }
+command = { type = setflag which = JAP_GER }
+}
+action_b = {
+trigger = {
+OR = {
+NOT = {
+control = { province = 1162 data = -3 }
+}
+NOT = {
+control = { province = 1124 data = -3 }
+}
+}
+}
+
+ai_chance = 35
+name = "North of us is a great untamed land which is ripe for the taking!"
+command = { type = relation which = RUS value = -50 }
+command = { type = relation which = MON value = -50 }
+command = { type = relation which = GER value = 25 }
+command = { type = setflag which = JAP_RUS }
+}
+}
+
+
+
+event = {
+id = 340207
+country = JAP
+style = 2
+picture = "ekonomija"
+
+trigger = {
+NOT = {
+ispuppet = JAP
+}
+OR = {
+puppet = { country = MAN country = JAP  }
+control = { province = 1208 data = -3 }
+}
+}
+
+date = { day = 7 month = january year = 1936 }
+offset = 5
+deathdate = { day = 29 month = december year = 1936 }
+
+name = "EVT_661961_NAME" #Economic exploatation of Fengtieng republic
+desc = "EVT_661961_DESC"
+
+action = {
+name = "EVT_661961_actionnameA"
+command = { type = relation which = MAN value = -10 }
+command = { type = dissent value = -1 }
+command = { type = belligerence which = JAP value = 2  }
+command = { type = money value = 200 }
+command = { type = supplies value = 1000 }
+command = { type = oilpool value = 1000 }
+command = { type = metalpool value = 1000 }
+command = { type = rarematerialspool value = 1000 }
+command = { trigger = { ai = JAP } type = free_ic value = 5 }
+command = { trigger = { NOT = { ai = JAP } } type = free_ic value = 2 }
+}
+
+
+}
+
+
+event = {
+id = 340208
+country = JAP
+style = 2
+picture = "ekonomija"
+
+trigger = {
+event = 340207
+NOT = {
+puppet = { country = MAN country = JAP  }
+control = { province = 1208 data = -3 }
+}
+}
+
+date = { day = 1 month = february year = 1936 }
+offset = 5
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "Economic exploatation of Fengtieng republic is no longer possible"
+desc = "Terrible news ! Due to loss of control over Fengtieng republic, we can no longer exploitate its industry to suppor our own."
+
+action = {
+name = "Drat !"
+command = { type = dissent value = 1 }
+command = { trigger = { ai = JAP } type = free_ic value = -5 }
+command = { trigger = { NOT = { ai = JAP } } type = free_ic value = -2 }
+}
+
+
+}

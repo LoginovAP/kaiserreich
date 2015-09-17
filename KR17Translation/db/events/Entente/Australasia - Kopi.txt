@@ -1,0 +1,836 @@
+event = {
+id = 123000
+country = AST
+style = 2
+picture = "minister_died"
+
+name = "The Death of Stanley Bruce"
+desc = "Stanley Bruce's plane, while on a trip to Canada in preparations for this year's Empire Day. has crashed into the sea. Although the death is not suspicious as such, groups resisting British authority have had to accelerate any plans they may have had and take power immediately."
+
+trigger = {
+headofstate = 56510
+headofgovernment = 56511
+NOT = {
+OR = {
+government = democratic
+government = communist
+}
+}
+}
+
+date = { day = 1 month = march year = 1936 }
+offset = 4
+deathdate = { day = 7 month = march year = 1936 }
+
+action_a = {
+name = "Page rises up and calls for elections"
+ai_chance = 25
+command = { type = set_domestic which = democratic value = 10 }
+command = { type = set_domestic which = political_left value = 2 }
+command = { type = headofstate which = 56200 }
+command = { type = headofgovernment which = 56201 }
+command = { type = foreignminister which = 56202 }
+command = { type = armamentminister which = 56203 }
+command = { type = ministerofsecurity which = 56204 }
+command = { type = ministerofintelligence which = 56205 }
+command = { type = chiefofstaff which = 56206 }
+command = { type = chiefofarmy which = 56207 }
+command = { type = chiefofnavy which = 56208 }
+command = { type = chiefofair which = 56209 }
+command = { type = sleepminister which = 56510 }
+command = { type = setflag which = aust_elect }
+}
+action_b = {
+name = "Sharkey introduces Syndicalism to Australasia"
+ai_chance = 5
+command = { type = dissent value = 20 }
+command = { type = set_domestic which = democratic value = 1 }
+command = { type = set_domestic which = political_left value = 9 }
+command = { type = domestic which = free_market value = -2 }
+command = { type = headofstate which = 56700 }
+command = { type = headofgovernment which = 56701 }
+command = { type = foreignminister which = 56702 }
+command = { type = armamentminister which = 56703 }
+command = { type = ministerofsecurity which = 56704 }
+command = { type = ministerofintelligence which = 56705 }
+command = { type = chiefofstaff which = 56706 }
+command = { type = chiefofarmy which = 56707 }
+command = { type = chiefofnavy which = 56708 }
+command = { type = chiefofair which = 56709 }
+command = { type = sleepminister which = 56510 }
+command = { type = sleepevent which = 2000005 }
+command = { type = leave_alliance }
+command = { type = set_relation which = CAN value = -70 }
+command = { type = relation which = PAK value = -20 }
+command = { type = relation which = VIC value = -30 }
+command = { type = relation which = GUY value = -30 }
+command = { type = relation which = GER value = -30 }
+command = { type = relation which = ENG value = 70 }
+command = { type = relation which = FRA value = 70 }
+}
+action_c = {
+name = "A Populist Republic with Curtin at the reigns"
+ai_chance = 10
+command = { type = set_domestic which = democratic value = 3 }
+command = { type = set_domestic which = political_left value = 2 }
+command = { type = headofstate which = 56400 }
+command = { type = headofgovernment which = 56401 }
+command = { type = foreignminister which = 56402 }
+command = { type = armamentminister which = 56403 }
+command = { type = ministerofsecurity which = 56404 }
+command = { type = ministerofintelligence which = 56405 }
+command = { type = chiefofstaff which = 56406 }
+command = { type = chiefofarmy which = 56407 }
+command = { type = chiefofnavy which = 56408 }
+command = { type = chiefofair which = 56409 }
+command = { type = setflag which = aust_synd }
+command = { type = sleepminister which = 56510 }
+command = { type = sleepevent which = 2000005 }
+}
+action_d = {
+name = "Hughes crushes the coup and restores order"
+ai_chance = 60
+command = { type = dissent value = 5 }
+command = { type = set_domestic which = democratic value = 3 }
+command = { type = set_domestic which = political_left value = 4 }
+command = { type = headofstate which = 56500 }
+command = { type = headofgovernment which = 56501 }
+command = { type = setflag which = aust_hughes }
+command = { type = sleepminister which = 56510 }
+command = { type = sleepevent which = 2000005 }
+}
+}
+
+event = {
+id = 123010
+country = AST
+picture = "politics4"
+style = 2
+
+
+name = "The Australasian Elections"
+desc = "Time has passed since Page took power after the death of Bruce, and the Elections have come as promised. Now Australasia makes its choice. Lang has opted for a greater Australasia with socialist values. Curtin and his nationalists have 'contented' for now with being democratically elected. Page is also running; hoping to be elected in his own elections."
+
+trigger = {
+flag = aust_elect
+}
+
+date = { day = 1 month = june year = 1936 }
+offset = 15
+deathdate = { day = 29 month = june year = 1936 }
+
+action_a = {
+ai_chance = 70
+name = "Earle Page, Conservative Party"
+command = { type = set_domestic which = democratic value = 10 }
+command = { type = set_domestic which = political_left value = 2 }
+command = { type = set_domestic which = free_market value = 8 }
+command = { type = set_domestic which = freedom value = 9 }
+command = { type = set_domestic which = interventionism value = 2 }
+command = { type = set_domestic which = defense_lobby value = 3 }
+command = { type = dissent value = -2 }
+command = { type = clrflag which = aust_elect }
+command = { type = setflag which = aust_page }
+}
+action_b = {
+ai_chance = 15
+name = "John Curtin, Nationalist Party"
+command = { type = set_domestic which = democratic value = 7 }
+command = { type = set_domestic which = political_left value = 1 }
+command = { type = set_domestic which = free_market value = 6 }
+command = { type = set_domestic which = freedom value = 3 }
+command = { type = set_domestic which = interventionism value = 7 }
+command = { type = set_domestic which = defense_lobby value = 8 }
+command = { type = dissent value = -3 }
+command = { type = headofstate which = 56300 }
+command = { type = headofgovernment which = 56301 }
+command = { type = foreignminister which = 56302 }
+command = { type = armamentminister which = 56303 }
+command = { type = ministerofsecurity which = 56304 }
+command = { type = ministerofintelligence which = 56305 }
+command = { type = chiefofstaff which = 56306 }
+command = { type = chiefofarmy which = 56307 }
+command = { type = chiefofnavy which = 56308 }
+command = { type = chiefofair which = 56309 }
+command = { type = clrflag which = aust_elect }
+command = { type = setflag which = aust_curtb }
+}
+action_c = {
+ai_chance = 15
+name = "Jack Lang, Worker's Party"
+command = { type = set_domestic which = democratic value = 10 }
+command = { type = set_domestic which = political_left value = 9 }
+command = { type = set_domestic which = free_market value = 8 }
+command = { type = set_domestic which = freedom value = 10 }
+command = { type = set_domestic which = interventionism value = 6 }
+command = { type = set_domestic which = defense_lobby value = 7 }
+command = { type = dissent value = 3 }
+command = { type = headofstate which = 56600 }
+command = { type = headofgovernment which = 56601 }
+command = { type = foreignminister which = 56602 }
+command = { type = armamentminister which = 56603 }
+command = { type = ministerofsecurity which = 56604 }
+command = { type = ministerofintelligence which = 56605 }
+command = { type = chiefofstaff which = 56606 }
+command = { type = chiefofarmy which = 56607 }
+command = { type = chiefofnavy which = 56608 }
+command = { type = chiefofair which = 56609 }
+command = { type = clrflag which = aust_elect }
+command = { type = setflag which = aust_lang }
+}
+}
+
+event = {
+id = 123100
+country = AST
+style = 2
+picture = "news_paper"
+
+name = "Charge the Conspirators"
+desc = "The coup attempt is crushed and the alleged conspirators have been tried and found guilty in a kangaroo court. They could be executed at the cost of public opinion, they could be jailed for life, or they could be exiled where they may plot against us!"
+
+trigger = {
+flag = aust_hughes
+}
+
+date = { day = 15 month = march year = 1936 }
+offset = 5
+deathdate = { day = 29 month = march year = 1936 }
+
+action_a = {
+ai_chance = 50
+name = "Hang 'em High"
+command = { type = dissent value = 7 }
+}
+
+action_b = {
+ai_chance = 10
+name = "They'll never see the light of day!"
+command = { type = dissent value = 4 }
+}
+action_c = {
+ai_chance = 40
+name = "Exile the bastards!"
+command = { type = setflag which = aust_exiledrebel }
+}
+}
+event = {
+id = 123101
+country = AST
+style = 2
+picture = "great_war_manifestion"
+
+name = "Public Demonstrations"
+desc = "Coinciding public demonstrations have been held in the major cities to protest the Government's actions and to demand the resignation of Hughes and the installation of elections. This has shut down the major cities... at least until the rioters grow bored."
+
+trigger = {
+flag = aust_hughes
+random = 20
+}
+
+date = { day = 1 month = july year = 1936 }
+offset = 5
+deathdate = { day = 29 month = august year = 1936 }
+
+action_a = {
+ai_chance = 70
+name = "Send in the batons and sabres!"
+command = { type = dissent value = 10 }
+}
+action_b = {
+ai_chance = 30
+name = "We can do nothing"
+command = { type = dissent value = 5 }
+command = { type = local_setflag which = aust_riot }
+command = { type = peacetime_ic_mod value = -40 }
+}
+}
+
+event = {
+id = 123102
+country = AST
+style = 2
+picture = "failed_coup"
+####persistent = yes
+
+name = "The demonstrations cease"
+desc = "The demonstrators have packed up their bags and gone home and the cities' productions have returned to normal"
+
+trigger = {
+OR = {
+local_flag = aust_riot
+atwar = yes
+}
+}
+
+date = { day = 15 month = july year = 1936 }
+offset = 30
+deathdate = { day = 29 month = august year = 1936 }
+
+action_a = {
+name = "About bloody time"
+command = { type = peacetime_ic_mod value = 40 }
+command = { type = clrflag which = aust_riot }
+command = { type = sleepevent which = 123102 }
+}
+}
+
+event = {
+id = 123103
+country = AST
+style = 2
+picture = "major_worker_strike"
+
+name = "The Dockworker's Union Strike"
+desc = "After a series of unfortunate accidents, the dockworkers in Sydney, Auckland, and Melbourne have set up a massive illegal union and are demanding more pay and more rights."
+
+trigger = {
+flag = aust_hughes
+random = 10
+}
+
+date = { day = 1 month = october year = 1936 }
+offset = 5
+deathdate = { day = 10 month = december year = 1936 }
+
+action_a = {
+ai_chance = 90
+name = "No extortion! Jail the ringleaders."
+command = { type = dissent value = 10 }
+}
+action_b = {
+ai_chance = 10
+name = "They'll come back, ignore them."
+command = { type = dissent value = 5 }
+command = { type = peacetime_ic_mod value = -35 }
+command = { type = local_setflag which = aust_dockstrike }
+}
+}
+event = {
+id = 123104
+country = AST
+style = 2
+picture = "dd_transfer"
+
+name = "The Dock Strike has ended"
+desc = "As predicted, after weeks without a job in these hard times, nearly all of the workers have grudgingly gone back to work and our country is back at its normal economic level."
+
+trigger = {
+OR = {
+local_flag = aust_dockstrike
+atwar = AST
+}
+}
+
+date = { day = 15 month = october year = 1936 }
+offset = 30
+deathdate = { day = 29 month = november year = 1936 }
+
+action_a = {
+name = "Extortion never works!"
+command = { type = peacetime_ic_mod value = 15 }
+command = { type = clrflag which = aust_dockstrike }
+command = { type = sleepevent which = 123104 }
+}
+}
+
+event = {
+id = 123105
+country = AST
+picture = "Mannix"
+style = 2
+
+name = "The Assassination of Archbishop Mannix"
+desc = EVT_123105_DESC
+
+#The Archbishop of Melbourne, Daniel Mannix had always been a thorn in the side of the Re-British Australian Government,
+#and notably was one of the key players fighting against Hughes' Conscription Plebiscites in World War 1, only escaping retribution
+#while hiding behind the cloth. While at a public rally to denounce the current Government, three bullets pierced his chest from an unknown
+#sniper and he was later pronounced dead. Exacerbating the matter worse this has happened in the high-time of nationalism between
+#Australia and New Zealand Days. In this chaos now, we can't be sure who did the deed, but the public is sure. We must now officially
+#announce the results of our 'inquest' into the matter. There is the option of blaming a rogue faction of the party, however this is likely to
+#backfire on us!"
+
+trigger = {
+flag = aust_hughes
+NOT = {
+atwar = AST
+}
+}
+
+date = { day = 27 month = january year = 1937 } # Australia Day, 26th
+offset = 2
+deathdate = { day = 29 month = january year = 1937 } # New Zealand Day, 29th (Until 1934) in this timeline, not yet changed.
+
+action_a = {
+ai_chance = 10
+name = "Blame a rogue faction within the government"
+command = { type = dissent value = 5 }
+command = { type = local_setflag which = aust_infighting }
+}
+action_b = {
+ai_chance = 45
+name = "Blame the revolutionists!"
+command = { type = dissent value = 10 }
+command = { type = setflag which = aust_blameinternal }
+}
+action_c = {
+ai_chance = 45
+name = "Blame foreign interests trying to instigate revolt"
+command = { type = dissent value = 3 }
+command = { type = setflag which = aust_blameforeign }
+}
+}
+
+event = {
+id = 123106
+country = AST
+style = 2
+picture = "prison"
+
+name = "Fleeing Persecution"
+desc = "After several public inquisitions and being blamed for the assassination of Mannix, several of the party members and officials have fled, either into exile or to be hidden in the expanding underground. This has backfired on us enraging the public."
+
+trigger = {
+flag = aust_infighting
+random = 40
+}
+
+date = { day = 1 month = february year = 1937 }
+offset = 4
+deathdate = { day = 10 month = february year = 1937 }
+
+action_a = {
+name = "Damnit!"
+command = { type = dissent value = 7 }
+}
+}
+
+event = {
+id = 123120
+country = AST
+style = 2
+picture = "great_war_manifestion"
+
+name = "Crisis Point"
+desc = "Public dissent is beginning to climb into dangerous levels and a coup seems close, we need to take precautions in the matter."
+
+trigger = {
+OR = {
+AND = {
+flag = aust_blameforeign
+flag = aust_exiledrebel
+dissent = 10
+}
+AND = {
+OR = {
+flag = aust_blameforeign
+flag = aust_exiledrebel
+}
+dissent = 15
+}
+dissent = 20
+}
+}
+
+date = { day = 20 month = january year = 1937 }
+offset = 5
+deathdate = { day = 1 month = february year = 1937 }
+
+action_a = {
+ai_chance = 100
+name = "A coup is nearing!"
+command = { type = setflag which = aust_coupable }
+}
+}
+
+event = {
+id = 123130
+country = GER
+style = 2
+name = "An Australasian Incursion?"
+desc = "Public dissent and demonstrations have hit a peak in Australasia, this may be the perfect chance to support a pro-German uprising within Australasia!"
+
+trigger = {
+flag = aust_coupable
+random = 15
+}
+
+date = { day = 1 month = february year = 1937 }
+offset = 15
+deathdate = { day = 15 month = march year = 1937 }
+
+action_a = {
+ai_chance = 10
+name = "No, we can't disrupt the balance in the Pacific"
+command = { type = relation which = CAN value = 50 }
+}
+action_b = {
+ai_chance = 90
+name = "Better to have them in our camp than the Entente"
+command = { type = trigger which = 123131 }
+command = { type = relation which = CAN value = -100 }
+command = { type = supplies value = -500 }
+command = { type = manpowerpool value = -50 }
+}
+}
+
+event = {
+id = 123131
+country = AST
+style = 2
+name = "The German Coup"
+desc = "The Germans, seeing an opportunity, have attempted to use a coup to install a pro-German government in Australasia!"
+
+action_a = {
+ai_chance = 80
+name = "Install the pro-German government!"
+command = { type = trigger which = 123132 }
+command = { type = dissent value = -25 }
+command = { type = leave_alliance }
+command = { type = end_access which = CAN }
+command = { type = relation which = GER value = 150 }
+command = { type = sleepevent which = 123133 }
+command = { type = sleepevent which = 123136 }
+}
+action_b = {
+ai_chance = 20
+name = "Crush the coup"
+command = { type = dissent value = 2 }
+}
+}
+
+event = {
+id = 123132
+country = GER
+style = 2
+name = "The Australasian Coup Succeeds"
+desc = "The coup in Australasia has succeeded and now we have an excellent addition to our alliance."
+
+action_a = {
+ai_chance = 100
+name = "Perfect!"
+command = { type = coup_nation which = AST }
+command = { type = alliance which = AST }
+command = { type = end_guarantee which = CAN where = AST }
+command = { type = clrflag which = aust_coupable }
+}
+}
+
+event = {
+id = 123133
+country = JAP
+style = 2
+name = "An Australasian Incursion?"
+desc = "Public dissent and demonstrations have hit a peak in Australasia, this may be the perfect chance to support a pro-Japanese uprising within Australasia!"
+
+trigger = {
+flag = aust_coupable
+random = 15
+}
+
+date = { day = 1 month = february year = 1937 }
+offset = 15
+deathdate = { day = 15 month = march year = 1937 }
+
+action_a = {
+ai_chance = 10
+name = "Australasia has no use for us"
+command = { type = relation which = CAN value = 50 }
+}
+action_b = {
+ai_chance = 90
+name = "Support a coup"
+command = { type = trigger which = 123134 }
+command = { type = relation which = CAN value = -100 }
+command = { type = supplies value = -500 }
+command = { type = manpowerpool value = -50 }
+}
+}
+
+event = {
+id = 123134
+country = AST
+style = 2
+name = "The Japanese Coup"
+desc = "The Japanese, seeing an opportunity, have attempted to use a coup to install a pro-Japanese government in Australasia!"
+
+action_a = {
+ai_chance = 80
+name = "Become a part of the Co-Prosperity Sphere!"
+command = { type = trigger which = 123135 }
+command = { type = dissent value = -25 }
+command = { type = leave_alliance }
+command = { type = end_access which = CAN }
+command = { type = relation which = JAP value = 150 }
+command = { type = sleepevent which = 123130 }
+command = { type = sleepevent which = 123136 }
+}
+action_b = {
+ai_chance = 20
+name = "Crush the coup"
+command = { type = dissent value = 2 }
+}
+}
+
+event = {
+id = 123135
+country = JAP
+style = 2
+name = "The Australasian Coup Succeeds"
+desc = "The coup in Australasia has succeeded and now we have an excellent addition to our empire."
+
+action_a = {
+ai_chance = 100
+name = "Perfect!"
+command = { type = coup_nation which = AST }
+command = { type = alliance which = AST }
+command = { type = end_guarantee which = GER where = AST }
+command = { type = end_guarantee which = CAN where = AST }
+command = { type = clrflag which = aust_coupable }
+}
+}
+
+event = {
+id = 123136
+country = FRA
+style = 2
+name = "An Australasian Incursion?"
+desc = "Public dissent and demonstrations have hit a peak in Australasia, this may be the perfect chance to support a Syndicalist uprising within Australasia!"
+picture = "tuc2"
+
+trigger = {
+flag = aust_coupable
+random = 15
+}
+
+date = { day = 1 month = february year = 1937 }
+offset = 15
+deathdate = { day = 15 month = march year = 1937 }
+
+action_a = {
+ai_chance = 10
+name = "We cannot afford to"
+command = { type = relation which = CAN value = 50 }
+}
+action_b = {
+ai_chance = 90
+name = "Support a coup"
+command = { type = trigger which = 123137 }
+command = { type = relation which = CAN value = -100 }
+command = { type = supplies value = -500 }
+command = { type = manpowerpool value = -50 }
+}
+}
+
+event = {
+id = 123137
+country = AST
+style = 2
+name = "The Syndicalist Coup"
+desc = "The French, seeing an opportunity, have attempted to use a coup to install a Syndicalist government in Australasia!"
+picture = "tuc2"
+
+action_a = {
+ai_chance = 80
+name = "For the revolution!"
+command = { type = trigger which = 123138 }
+command = { type = dissent value = -25 }
+command = { type = leave_alliance }
+command = { type = end_access which = CAN }
+command = { type = relation which = FRA value = 150 }
+command = { type = relation which = ENG value = 150 }
+command = { type = sleepevent which = 123130 }
+command = { type = sleepevent which = 123133 }
+command = { type = embargo which = ENG where = AST value = 0 }
+command = { type = embargo which = FRA where = AST value = 0 }
+command = { type = embargo which = RSI where = AST value = 0 }
+command = { type = embargo which = GEO where = AST value = 0 }
+command = { type = embargo which = PRK where = AST value = 0 }
+}
+action_b = {
+ai_chance = 20
+name = "Crush this coup"
+command = { type = dissent value = 2 }
+}
+}
+
+event = {
+id = 123138
+country = FRA
+style = 2
+name = "The Australasian Coup Succeeds"
+desc = "The coup in Australasia has succeeded and now we have an excellent syndicate for the global revolution."
+picture = "tuc2"
+
+action_a = {
+ai_chance = 100
+name = "Perfect!"
+command = { type = coup_nation which = AST }
+command = { type = alliance which = AST }
+command = { type = end_guarantee which = GER where = AST }
+command = { type = end_guarantee which = CAN where = AST }
+command = { type = embargo which = FRA where = AST value = 0 }
+command = { type = clrflag which = aust_coupable }
+command = { type = event which = 123139 where = ENG when = 5 }
+}
+}
+
+event = {
+id = 123139
+country = ENG
+style = 2
+name = "Australasia Joins the Internationale"
+desc = "Glorious news from Down Under! A group of bold revolutionaries have taken control over the pacific federation and instituted a regime of peace and love! The Revolution marches on!"
+picture = "tuc2"
+
+action_a = {
+ai_chance = 100
+name = "Perfect!"
+command = { type = relation which = AST value = 150 }
+command = { type = embargo which = ENG where = AST value = 0 }
+}
+}
+
+
+
+
+
+
+
+
+
+event = {
+id = 123140
+country = AST
+style = 2
+name = "The Australasian Civil War"
+desc = "The recent troubles, and the complete and utter lack of the government being able to deal with it has risen tensions beyond the point of extreme crisis. Almost a year after the death of Stanley Bruce, the country is falling apart at the seams and parts of the army and the general populous are now rising up against the government!"
+
+trigger = {
+OR = {
+AND = {
+flag = aust_blameinternal
+flag = aust_exiledrebel
+flag = aust_dissent1
+}
+AND = {
+OR = {
+flag = aust_blameinternal
+flag = aust_exiledrebel
+}
+flag = aust_dissent2
+}
+flag = aust_dissent3
+}
+}
+
+date = { day = 15 month = march year = 1937 }
+offset = 1
+deathdate = { day = 20 month = march year = 1937 }
+
+action_a = {
+name = "So be it"
+command = { type = leave_alliance }
+command = { type = independence which = NZL value = 0 when = 0 }
+command = { type = dissent value = 20 }
+command = { type = war which = NZL }
+}
+}
+
+
+event = {
+id = 123141
+random = no
+country = AST
+style = 2
+picture = "diplomatic_campaign"
+
+trigger = {
+government = communist
+control = { province = 55 data = FRA }
+NOT = {
+atwar = AST
+}
+NOT = {
+alliance = { country = CAN country = AST }
+alliance = { country = GER country = AST }
+alliance = { country = JAP country = AST }
+alliance = { country = FRA country = AST }
+alliance = { country = RUS country = AST }
+alliance = { country = SOV country = AST }
+ispuppet = AST
+ispuppet = FRA
+}
+participant = { country = FRA value = 3 } #Commune of France is part of Syndicalist Internationale
+}
+
+name = "Foreign policy"
+desc = "With Australasia finally free from capitalist opression we can now freely decide our stance towards the international community. While many are arguing for an immediate alliance with other Syndicalist nations, it might be wise enough to remain neutral to rebuild our country."
+
+date = { day = 3 month = january year = 1936 }
+offset = 40
+deathdate = { day = 10 month = december year = 1960 }
+
+action_a = {
+ai_chance = 95
+name = "We must join arms with France"
+command = { type = trigger which = 123142 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = dissent value = 4 }
+}
+action_b = {
+ai_chance = 5
+name = "Isolationism, we must organize our country"
+command = { type = dissent value = -5 }
+command = { type = domestic which = defense_lobby value = -1 }
+command = { type = domestic which = interventionism value = -1 }
+}
+}
+
+event = {
+id = 123142
+random = no
+country = FRA
+style = 2
+picture = "diplomatic_campaign"
+
+name = "Australasia wants to join the Syndicalists"
+desc = "The government of the Australasian Confederation has annouced recently that they want to join the Syndcialist bloc. It's not a sudden move because pro-Syndicalist policy is popular in many circles including the government and the army. Do we want Australian workers joing the crusade against bloodthirsty Germans and rotten imperialist Canadian pigs?"
+
+action_a = {
+ai_chance = 100
+name = "YES!"
+command = { type = alliance which = AST }
+command = { type = relation which = AST value = 100 }
+command = { type = dissent value = -7 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = trigger which = 123143 }
+}
+action_b = {
+ai_chance = 0
+name = "Rather not."
+command = { type = dissent value = 1 }
+command = { type = relation which = AST value = -100 }
+}
+}
+event = {
+id = 123143
+random = no
+country = AST
+style = 2
+picture = "diplomatic_campaign"
+
+name = "We join the syndicalist bloc"
+desc = "French and British are happy to see us joining the common cause - destroying the evil imperialists. Now we are part of the Syndicalist bloc."
+
+action_a = {
+name = "This time we will win!"
+command = { type = dissent value = -3 }
+command = { type = relation which = CAN value = -150 }
+command = { type = relation which = GER value = -150 }
+command = { type = end_trades which = CAN where = AST }
+command = { type = end_trades which = GER where = AST }
+}
+}

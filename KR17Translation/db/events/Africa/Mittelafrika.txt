@@ -1,0 +1,2093 @@
+################################
+#### Mittelafrika: Portugese Relations and Native unrest events
+#### Event-IDs 55600 and onward
+#############################
+
+
+
+
+###########################################
+# Portuguese-Mittelafrikan relations
+###########################################
+event = {
+id = 55600
+random = no
+country = CON
+style = 2
+picture = "angola"
+decision_picture = "decision_peace_conference"
+
+decision = {
+exists = POR
+control = { province = 892 data = POR }
+control = { province = 854 data = POR }
+control = { province = 893 data = POR }
+control = { province = 888 data = POR }
+control = { province = 895 data = POR }
+control = { province = 887 data = POR }
+control = { province = 891 data = POR }
+control = { province = 890 data = POR }
+control = { province = 855 data = POR }
+control = { province = 856 data = POR }
+control = { province = 857 data = POR }
+control = { province = 853 data = POR }
+}
+
+decision_trigger = {
+NOT = {
+atwar = CON
+government = communist
+alliance = { country = CON country = POR }
+alliance = { country = GER country = POR }
+war = { country = CON country = POR }
+war = { country = GER country = POR }
+}
+}
+
+trigger = {
+exists = POR
+control = { province = 892 data = POR }
+control = { province = 854 data = POR }
+control = { province = 893 data = POR }
+control = { province = 888 data = POR }
+control = { province = 895 data = POR }
+control = { province = 887 data = POR }
+control = { province = 891 data = POR }
+control = { province = 890 data = POR }
+control = { province = 855 data = POR }
+control = { province = 856 data = POR }
+control = { province = 857 data = POR }
+control = { province = 853 data = POR }
+NOT = {
+atwar = CON
+government = communist
+alliance = { country = CON country = POR }
+alliance = { country = GER country = POR }
+war = { country = CON country = POR }
+war = { country = GER country = POR }
+}
+}
+
+name = "The Fate of the Portuguese Colonies"
+desc = "Ever since the end of the Great War, Mittelafrika has been on the rise, and has been pressuring the Portuguese into handing over its draining colonies. Now, the question has come up again in the governnment. Should we try to convince the Portuguese to negotiate with us or should we leave them be?"
+
+date = { day = 1 month = february year = 1936 }
+offset = 50
+deathdate = { day = 29 month = december year = 1939 }
+
+action_a = {
+ai_chance = 35
+name = "Press for Peaceful Negotiations with the Portuguese"
+command = { type = trigger which = 55601 }
+command = { type = dissent value = -3 }
+command = { type = domestic which = defense_lobby value = -1 }
+}
+
+action_b = {
+ai_chance = 35
+name = "We want to talk, threaten them with force!"
+command = { type = trigger which = 55602 }
+command = { type = belligerence which = CON value = 5 }
+command = { type = dissent value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+}
+
+action_c = {
+ai_chance = 20
+name = "Run this by Germany first"
+command = { type = setflag which = CON_GER_POR }
+command = { type = belligerence which = CON value = 3 }
+command = { type = dissent value = -1 }
+}
+
+action_d = {
+ai_chance = 10
+name = "We should focus our attention elsewhere"
+command = { type = sleepevent which = 55601 }
+}
+}
+
+event = {
+id = 55599
+random = no
+country = GER
+style = 2
+picture = "goring"
+
+trigger = {
+flag = CON_GER_POR
+NOT = {
+atwar = CON
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 5
+deathdate = { day = 29 month = december year = 1939 }
+
+name = "The Portuguese Colonies in Afrika"
+desc = "Ever since the end of the Great War, Mittleafrika has been hounding Portugal for the African colonies of Angola and Mozambique. Goring once again desires these lands and has come to us seeking permission to use force against Portugal if they refuse."
+
+action_a = {
+ai_chance = 50
+name = "Give Goring the Green Light"
+command = { type = trigger which = 55601 }
+command = { type = belligerence which = GER value = 3 }
+command = { type = dissent value = 1 }
+command = { type = relation which = POR value = -50 }
+command = { type = relation which = CON value = 25 }
+command = { type = relation which = SAF value = -25 }
+command = { type = relation which =  EGY value = -15 }
+command = { type = relation which =  VIC value = -15 }
+command = { type = sleepevent which = 55594 }
+}
+
+action_b = {
+ai_chance = 50
+name =  "Portugal's Colonies will remain Untouched!"
+command = { type = trigger which = 55598 }
+command = { type = belligerence which = GER value = -3 }
+command = { type = dissent value = -1 }
+command = { type = relation which = POR value = 50 }
+command = { type = relation which = CON value = -25 }
+command = { type = relation which = SAF value = 25 }
+command = { type = relation which =  EGY value = 15 }
+command = { type = relation which =  VIC value = 15 }
+command = { type = sleepevent which = 55594 }
+}
+}
+
+event = {
+id = 55594
+random = no
+country = GER
+style = 2
+picture = "goring"
+
+trigger = { flag = CON_GER_POR
+atwar = yes
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 5
+deathdate = { day = 29 month = december year = 1939 }
+
+name = "The Portuguese Colonies in Afrika"
+desc = "Ever since the end of the Great War, Mittleafrika has been hounding Portugal for the African colonies of Angola and Mozambique. Goring once again desires these lands and has come to us seeking permission to use force against Portugal if they refuse."
+
+action_a = {
+ai_chance = 30
+name = "Give Goring the Green Light"
+command = { type = trigger which = 55601 }
+command = { type = belligerence which = GER value = 3 }
+command = { type = dissent value = 1 }
+command = { type = relation which = POR value = -50 }
+command = { type = relation which = CON value = 25 }
+command = { type = relation which = SAF value = -25 }
+command = { type = relation which = EGY value = -15 }
+command = { type = relation which = VIC value = -15 }
+command = { type = sleepevent which = 55599 }
+}
+
+action_b = {
+ai_chance = 70
+name =  "Portugal's Colonies will be Untouched!"
+command = { type = trigger which = 55598 }
+command = { type = belligerence which = GER value = -3 }
+command = { type = dissent value = -1 }
+command = { type = relation which = POR value = 50 }
+command = { type = relation which = CON value = -25 }
+command = { type = relation which = SAF value = 25 }
+command = { type = relation which = EGY value = 15 }
+command = { type = relation which = VIC value = 15 }
+command = { type = sleepevent which = 55599 }
+}
+}
+
+event = {
+id = 55598
+random = no
+country = CON
+style = 2
+picture = "goring"
+
+name = "The Kaiser Disapproves"
+desc = "The Kaiser refuses to give us permission to take Portugal's colonies, they are non-negotiable."
+
+action_a = {
+ai_chance = 60
+name = "Words cannot stop Mittelafrika"
+command = { type = trigger which = 55597 }
+command = { type = relation which = GER value = -25 }
+command = { type = relation which = POR value = -25 }
+command = { type = relation which = SAF value = -15 }
+command = { type = relation which = EGY value = -15 }
+command = { type = relation which = VIC value = -15 }
+command = { type = belligerence which = CON value = 3 }
+command = { type = dissent value = 3 }
+command = { type = domestic which = defense_lobby value = 1 }
+}
+
+action_b = {
+ai_chance = 40
+name =  "We must obey the Kaiser...For now"
+command = { type = dissent value = -1 }
+command = { type = relation which = GER value = 25 }
+command = { type = relation which = POR value = 25 }
+command = { type = relation which = SAF value = 25 }
+}
+}
+
+event = {
+id = 55597
+random = no
+country = POR
+style = 2
+picture = "goring"
+
+name = "Mittelafrika Presses for Negotiations"
+desc = "Ever since the end of the Great War, Mittleafrika has been hounding us for our precious African colonies. Goring once again desires our lands. What should we tell the Kraut?"
+
+action_a = {
+ai_chance = 10
+name = "We'll talk, but we want a fair deal!"
+command = { type = trigger which = 55608 }
+command = { type = relation which = CON value = 25 }
+command = { type = relation which = GER value = -25 }
+command = { type = dissent value = 5 }
+}
+
+action_b = {
+ai_chance = 90
+name =  "We've said it hundreds of times, we'll say it again, No!"
+command = { type = trigger which = 55596 }
+command = { type = dissent value = -3 }
+command = { type = relation which = CON value = -25 }
+command = { type = relation which = GER value = 25 }
+command = { type = end_non_aggression which = POR where = CON }
+
+}
+}
+
+event = {
+id = 55596
+random = no
+country = CON
+style = 2
+picture = "mittelafrika"
+
+name = "The Portuguese Refuse to come to the Table"
+desc = "The Portuguese government has refused to sit down with us and work this thing out, we may have to put this situation into our military's hands."
+
+action_a = {
+ai_chance = 40
+name = "What they won't give, we take! To War!"
+command = { type = war which = POR }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+
+command = { type = relation which = GER value = -200 }
+command = { type = relation which = SAF value = -100 }
+command = { type = relation which = CON value = 50 }
+command = { type = relation which = ETH value = -25 }
+command = { type = relation which = SOM value = -25 }
+command = { type = relation which = EGY value = 50 }
+command = { type = trigger which = 55595 }
+}
+
+action_b = {
+ai_chance = 60
+name = "Damnit! Berlin is always interfering!"
+command = { type = dissent value = 10 }
+}
+
+}
+
+event = {
+id = 55595
+random = no
+country = SAF
+style = 2
+picture = "mittelafrika"
+
+trigger ={
+exists = CON
+control = { province = 883 data = CON }
+NOT = {
+alliance = { country = GER country = CON }
+alliance = { country = SAF country = CON }
+ispuppet = SAF
+atwar = SAF
+}
+
+}
+
+name = "Mittelafrika attacks Portugal without German Consent"
+desc = "Mittelafrika, against the Kaiser's consent has attacked Portugal with the aim of taking the colonies of Angola and Mozambique. This may be the perfect opportunity to retake Namibia."
+
+action_a = {
+ai_chance = 50
+name = "Namibia will soon be ours! To War!"
+command = { type = war which = CON }
+command = { type = relation which = GER value = -50 }
+command = { type = relation which = ETH value = 25 }
+command = { type = relation which = SOM value = 25 }
+command = { type = relation which = EGY value = 25 }
+command = { type = relation which = POR value = 50 }
+command = { type = addcore  which = 885   }
+command = { type = addcore  which = 886   }
+command = { type = addcore  which = 882   }
+command = { type = addcore  which = 883   }
+command = { type = addcore  which = 884   }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = add_division value = cavalry when = 8 }
+}
+
+action_b = {
+ai_chance = 50
+name = "Wait for a better chance"
+command = { type = relation which = CON value = 25 }
+command = { type = relation which = POR value = -25 }
+}
+}
+
+event = {
+id = 55601
+random = no
+country = POR
+style = 2
+picture = "Goring"
+
+name = "Mittelafrika Presses for Negotiations"
+desc = "Ever since the end of the Great War, Mittleafrika has been hounding us for our precious African colonies. Goring once again desires our lands. What should we tell the Kraut?"
+
+action_a = {
+ai_chance = 30
+name = "We'll talk, but we want a fair deal!"
+command = { type = trigger which = 55608 }
+command = { type = relation which = CON value = 25 }
+command = { type = relation which = GER value = 25 }
+command = { type = dissent value = 5 }
+
+}
+action_b = {
+ai_chance = 60
+name =  "We've said it hundreds of times, we'll say it again, No!"
+command = { type = trigger which = 55609 }
+command = { type = dissent value = -3 }
+command = { type = relation which = CON value = -25 }
+command = { type = relation which = GER value = -25 }
+
+}
+action_c = {
+ai_chance = 10
+name = "Goring's off his rocker, send a complaint to Berlin!"
+command = { type = trigger which = 55603 }
+command = { type = dissent value = -1 }
+command = { type = relation which = CON value = -25 } #That hurt Goring, don't you have a conscience? You monster!
+}
+}
+
+event = {
+id = 55602
+random = no
+country = POR
+style = 2
+picture = "Goring"
+
+name = "Mittelafrika Presses for Negotiations"
+desc = "Ever since the end of the Great War, Mittleafrika has been hounding us for our precious African colonies. Goring once again desires our lands, but this time he is threatening us with force."
+
+action_a = {
+ai_chance = 50
+name = "Alright, we'll talk, but we want a fair deal!"
+command = { type = trigger which = 55608 }
+command = { type = relation which = CON value = 25 }
+command = { type = relation which = GER value = 25 }
+command = { type = dissent value = 1 }
+}
+
+action_b = {
+ai_chance = 20
+name =  "We've said it hundreds of times, we'll say it again, No!"
+command = { type = trigger which = 55607 }
+command = { type = dissent value = -1 }
+command = { type = relation which = CON value = -25 }
+command = { type = relation which = GER value = -25 }
+}
+
+action_c = {
+ai_chance = 30
+name = "Goring's off his rocker, send a complaint to Berlin!"
+command = { type = trigger which = 55603 }
+command = { type = dissent value = -1 }
+command = { type = relation which = CON value = -25 } #That hurt Goring. Don't you have a conscious? You monster!
+}
+}
+
+event = {
+id = 55603
+random = no
+country = GER
+style = 2
+picture = "Goring"
+
+name = "The Portuguese Lodge a Complaint"
+desc = "Ever since the end of the Great War, our Mittleafrikan conglomerate has been pressuring Portugal into handing over its colonies. Recently, Goring and Mittelafrika have threatened Portugal with force without first coming to us and now Portugal is concerned."
+
+action_a = {
+ai_chance = 50
+name = "He may be a son of a bitch, but he's our son of a bitch!"
+command = { type = dissent value = 3 }
+command = { type = trigger which = 55606 }
+command = { type = relation which = SAF value = -50 }
+command = { type = relation which = POR value = -50 }
+command = { type = relation which = CON value = 50 }
+command = { type = relation which = ETH value = -25 }
+command = { type = relation which = SOM value = -25 }
+command = { type = relation which = EGY value = 50 }
+}
+
+action_b = {
+ai_chance = 50
+name = "They have reason to be concerned! Hear them out"
+command = { type = dissent value = -1 }
+command = { type = event which = 55604 where = GER when = 5  }
+command = { type = relation which = SAF value = 50 }
+command = { type = relation which = POR value = 50 }
+command = { type = relation which = CON value = -50 }
+command = { type = relation which = ETH value = 25 }
+command = { type = relation which = SOM value = 25 }
+command = { type = relation which = EGY value = 50 }
+}
+}
+
+event = {
+id = 55604
+random = no
+country = GER
+style = 2
+picture = "news_paper"
+
+name = "Investigation into Mittelafrika"
+desc = "The Kaiser felt it was in the best interest of the State to launch an inquiry into Mittelafrika, what we found is alarming. Money laundering, political murders, corruption, embezzelment and more. The source of the corruption was traced to Goring and his self appointed cabinet."
+
+action_a = {
+ai_chance = 80
+name = "How embarrasing! Demand Goring's resignation, now!"
+command = { type = trigger which = 55605 }
+command = { type = relation which = POR value = 25 }
+command = { type = relation which = CON value = -25 }
+command = { type = dissent value = -1 }
+}
+
+action_b = {
+ai_chance = 20
+name = "We'll look the other way for now..."
+command = { type = trigger which = 55606 }
+command = { type = dissent value = 1 }
+command = { type = relation which = POR value = -25 }
+command = { type = relation which = CON value = 25 }
+
+}
+}
+
+event = {
+id = 55605
+random = no
+country = CON
+style = 2
+picture = "news_paper"
+
+name = "The Kaiser Demands Goring's Resignation"
+desc = "Berlin was so outraged at Goring's political gamble that the Kaiser is demanding his resignation from his post as Governor of Mittelafrika by tommorow. Refusing may anger the Germans in Europe and the colonies, but accepting will weaken us. We face a crossroad, which path do we take?"
+
+action_a = {
+ai_chance = 100
+name = "We can find a new Governor, Remove Goring, Quick!"
+command = { type = sleepminister which = 574001 } #Goring imprisoned/executed#
+command = { type = sleepminister which = 574036 } #Goring imprisoned/executed#
+command = { type = sleepleader which = 574012 }
+command = { type = sleepleader which = 574024 }
+command = { type = relation which = POR value = 25 }
+command = { type = relation which = GER value = 50 }
+command = { type = trigger which = 55619 }
+}
+
+action_b = {
+ai_chance = 0
+name = "Goring ain't going nowhere, baby! Governor for Life!"
+command = { type = set_relation which = GER value = -100 }
+command = { type = relation which = POR value = -25 }
+command = { type = dissent value = 40 }
+command = { type = leave_alliance }
+command = { type = end_guarantee which = GER where = CON }
+command = { type = end_trades which = GER where = CON }
+command = { type = end_puppet }
+command = { type = trigger which = 55628 }
+command = { type = trigger which = 55629 }
+}
+}
+
+event = {
+id = 55606
+random = no
+country = POR
+style = 2
+picture = "wilhelmii"
+
+name = "The Kaiser ignores our Request"
+desc = "The Kaiser has refused to take responsibility for the monster they have created and are letting him go ahead with his dangerous ambitions. Now, do we come to the table or tell him where he can take his negotiatons?"
+
+action_a = {
+ai_chance = 80
+name = "Damnit! We'll talk!"
+command = { type = trigger which = 55608 }
+command = { type = relation which = CON value = -25 }
+command = { type = relation which = GER value = -25 }
+command = { type = dissent value = 3 }
+}
+
+action_b = {
+ai_chance = 20
+name = "For the last time, No Negotations!"
+command = { type = dissent value = -1 }
+command = { type = relation which = CON value = -25 }
+command = { type = relation which = GER value = -25 }
+command = { type = trigger which = 55607 }
+}
+}
+
+event = {
+id = 55607
+random = no
+country = CON
+style = 2
+picture = "mittelafrika"
+
+name = "The Portuguese Refuse to come to the Table"
+desc = "The Portuguese government has refused to sit down with us and work this thing out, we may have to put this situation into our military's hands."
+
+action_a = {
+ai_chance = 70
+name = "What they won't give, we take! To War!"
+command = { type = war which = POR }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = relation which = SAF value = -25 }
+command = { type = relation which = EGY value = -25 }
+command = { type = relation which = SOM value = -25 }
+command = { type = relation which = VIC value = -25 }
+}
+
+action_b = {
+ai_chance = 10
+name = "Damnit!"
+command = { type = dissent value = 3 }
+command = { type = relation which = POR value = -25 }
+}
+
+action_c = {
+ai_chance = 20
+name = "Give up on the colonies, we should focus elsewhere"
+command = { type = dissent value = -3 }
+}
+}
+
+event = {
+id = 55608
+random = no
+country = CON
+style = 2
+picture = "Japanese-Russian Meeting"
+
+name = "The Negotiations Begin!"
+desc = "Portugal has agreed to talk, now all that is left is for us to work out who gets what and for how much."
+
+action_a = {
+ai_chance = 40
+name = "Angola is our goal, along with Sao Tome and Principe"
+command = { type = trigger which = 55610 }
+
+}
+action_b = {
+ai_chance = 40
+name = "We have only enough for Mozambique"
+command = { type = trigger which = 55611 }
+
+}
+action_c = {
+ai_chance = 20
+name = "We want to buy Angola and Mozambique!"
+command = { type = trigger which = 55612 }
+}
+}
+
+event = {
+id = 55609
+random = no
+country = CON
+style = 2
+picture = "failed_objective"
+
+name = "The Portuguese Refuse to come to the Table"
+desc = "The Portuguese government has refused to sit down with us and work this thing out, we've tried and we've tried but they won't budge."
+
+action_a = {
+ai_chance = 70
+name = "What they won't give, we take! To War!"
+command = { type = war which = POR }
+command = { type = domestic which = defense_lobby value = 2 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = relation which = SAF value = -25 }
+command = { type = relation which = EGY value = -25 }
+command = { type = relation which = SOM value = -25 }
+command = { type = relation which = VIC value = -25 }
+}
+
+action_c = {
+ai_chance = 30
+name = "Give up on the colonies, we should focus elsewhere"
+command = { type = dissent value = -3 }
+
+}
+}
+
+event = {
+id = 55610
+random = no
+country = POR
+style = 2
+picture = "angola"
+
+name = "Mittelafrika's Offer"
+desc = "Mittelafrika has set its sights on purchasing Angola, Sao Tome and Principe. We can still back out if we feel uncomfortable selling sizeable chunks of our empire to the Krauts."
+
+action_a = {
+ai_chance = 75
+name = "Yes"
+command = { type = trigger which = 55613 }
+command = { type = money value = 250 }
+command = { type = supplies value = 5500 }
+
+command = { type = secedeprovince which = CON value = 888 } #Angola!
+command = { type = secedeprovince which = CON value = 892 }
+command = { type = secedeprovince which = CON value = 895 }
+command = { type = secedeprovince which = CON value = 887 }
+command = { type = secedeprovince which = CON value = 891 }
+command = { type = secedeprovince which = CON value = 890 }
+command = { type = secedeprovince which = CON value = 893 } #Cabana
+command = { type = secedeprovince which = CON value = 912 } #São Tomé
+}
+
+action_b = {
+ai_chance = 25
+name = "Not a Chance"
+command = { type = trigger which = 55607 }
+command = { type = dissent value = -1 }
+command = { type = end_non_aggression which = POR where = CON }
+}
+}
+
+event = {
+id = 55611
+random = no
+country = POR
+style = 2
+picture = "mozambique"
+
+name = "Mittelafrika's Offer"
+desc = "Mittelafrika has set its sights on purchasing Mozambique. We can still back out if we feel uncomfortable selling sizeable chunks of our empire to the Krauts."
+
+action_a = {
+ai_chance = 80
+name = "Yes"
+command = { type = trigger which = 55614 }
+command = { type = money value = 100 }
+command = { type = supplies value = 4500 }
+
+command = { type = secedeprovince which = CON value = 856 } #Mozam
+command = { type = secedeprovince which = CON value = 855 }
+command = { type = secedeprovince which = CON value = 857 }
+command = { type = secedeprovince which = CON value = 858 }
+command = { type = secedeprovince which = CON value = 853 }
+command = { type = secedeprovince which = CON value = 854 }
+
+}
+
+action_b = {
+ai_chance = 20
+name = "Not a Chance"
+command = { type = trigger which = 55607 }
+command = { type = dissent value = -1 }
+command = { type = end_non_aggression which = POR where = CON }
+}
+}
+
+event = {
+id = 55612
+random = no
+country = POR
+style = 2
+picture = "failed_objective"
+
+name = "Mittelafrika's Offer"
+desc = "Mittelafrika has set its sights on purchasing Angola and Mozambique, along with Sao Tome and Principe. We can still back out if we feel uncomfortable selling sizeable chunks of our empire to the Krauts."
+
+action_a = {
+ai_chance = 70
+name = "Yes"
+command = { type = money value = 200 }
+command = { type = trigger which = 55615 }
+command = { type = supplies value = 5500 }
+
+command = { type = secedeprovince which = CON value = 856 } #Mozam
+command = { type = secedeprovince which = CON value = 855 }
+command = { type = secedeprovince which = CON value = 857 }
+command = { type = secedeprovince which = CON value = 858 }
+command = { type = secedeprovince which = CON value = 853 }
+command = { type = secedeprovince which = CON value = 854 }
+command = { type = secedeprovince which = CON value = 888 } #Angola!
+command = { type = secedeprovince which = CON value = 892 }
+command = { type = secedeprovince which = CON value = 895 }
+command = { type = secedeprovince which = CON value = 887 }
+command = { type = secedeprovince which = CON value = 891 }
+command = { type = secedeprovince which = CON value = 890 }
+command = { type = secedeprovince which = CON value = 893 } #Cabana
+command = { type = secedeprovince which = CON value = 912 } #São Tomé
+}
+
+
+action_b = {
+ai_chance = 30
+name = "Not a Chance"
+command = { type = trigger which = 55607 }
+command = { type = dissent value = -1 }
+command = { type = end_non_aggression which = POR where = CON }
+}
+}
+
+event = {
+id = 55613
+random = no
+country = CON
+style = 2
+picture = "angola"
+
+name = "The Negotiations are a Success"
+desc = "Our forces crossed the border into Angola after having bought it from the Portuguese, we are facing light resistance. After the partisans are smashed and the natives learn to respect the new authority we will exert full control over our new territory."
+
+action_a = {
+name = "What Goring Wants, Goring Gets"
+command = { type = dissent value = -3 }
+command = { type = money value = -250 }
+command = { type = supplies value = -5500 }
+command = { type = sleepevent which = 55617 }
+command = { type = sleepevent which = 55618 }
+}
+}
+
+event = {
+id = 55614
+random = no
+country = CON
+style = 2
+picture = "Mozambique"
+
+name = "The Negotiations are a Success"
+desc = "Our forces crossed the border into Mozambique after having bought it from the Portuguese, we are facing light resistance. After the partisans are smashed and the natives learn to respect the new authority we will exert full control over our new territory."
+
+action_a = {
+name = "Mozambique is now finally ours!"
+command = { type = dissent value = -3 }
+command = { type = money value = -100 }
+command = { type = supplies value = -4500 }
+command = { type = sleepevent which = 55616 }
+command = { type = sleepevent which = 55618 }
+}
+}
+
+event = {
+id = 55615
+random = no
+country = CON
+style = 2
+picture = "constitutional"
+
+name = "The Negotiations are a Success"
+desc = "Our forces crossed the border into Mozambique and Angola after having bought it from the Portuguese, we are facing light resistance. After the partisans are smashed and the natives learn to respect the new authority we will exert full control over our new territory."
+
+action_a = {
+name = "Mozambique and Angola are finally ours!"
+command = { type = dissent value = -3 }
+command = { type = money value = -100 }
+command = { type = supplies value = -5500 }
+command = { type = sleepevent which = 55616 }
+command = { type = sleepevent which = 55617 }
+}
+}
+
+event = {
+id = 55616
+random = no
+country = CON
+style = 2
+picture = "soldiers"
+
+trigger = { owned = { province = 892 data = CON } }
+
+date = { day = 1 month = january year = 1936 }
+offset = 250
+deathdate = { day = 29 month = december year = 1939 }
+
+name = "The People of Angola are now under control"
+desc = "As predicted, the people of Angola have, with time, submitted to their new colonial masters. We now exert full control over Angola."
+
+action_a = {
+name = "Now, the territory is truly ours!"
+command = { type = dissent value = -3 }
+command = { type = addcore which = 888 }
+command = { type = addcore which = 892 }
+command = { type = addcore which = 895 }
+command = { type = addcore which = 887 }
+command = { type = addcore which = 891 }
+command = { type = addcore which = 890 }
+command = { type = addcore which = 893 }
+command = { type = addcore which = 912 } #São Tomé
+}
+}
+
+event = {
+id = 55617
+random = no
+country = CON
+style = 2
+picture = "soldiers"
+
+trigger = { owned = { province = 854 data = CON } }
+
+date = { day = 1 month = january year = 1936 }
+offset = 250
+deathdate = { day = 29 month = december year = 1939 }
+
+name = "The People of Mozambique are now under control"
+desc = "As predicted, the people of Mozambique have, with time, submitted to their colonial masters. We now exert full control over the new colonies."
+
+action_a = {
+name = "Now, the territory is truly ours!"
+command = { type = dissent value = -3 }
+command = { type = addcore which = 856 }
+command = { type = addcore which = 855 }
+command = { type = addcore which = 857 }
+command = { type = addcore which = 858 }
+command = { type = addcore which = 853 }
+command = { type = addcore which = 854 }
+}
+}
+
+event = {
+id = 55618
+random = no
+country = CON
+style = 2
+picture = "soldiers"
+
+trigger = {
+owned = { province = 854 data = CON }
+owned = { province = 892 data = CON }
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 300
+deathdate = { day = 29 month = december year = 1939 }
+
+name = "The People of Angola and Mozambique Are Now Under Control"
+desc = "As predicted, the people of Angola and Mozambique have, with time, submitted to their colonial masters. We now exert full control over the new colonies."
+
+action_a = {
+name = "Now, the territory is truly ours!"
+command = { type = dissent value = -3 }
+command = { type = addcore which = 888 }
+command = { type = addcore which = 892 }
+command = { type = addcore which = 895 }
+command = { type = addcore which = 887 }
+command = { type = addcore which = 891 }
+command = { type = addcore which = 890 }
+command = { type = addcore which = 893 }
+command = { type = addcore which = 912 } #São Tomé
+command = { type = addcore which = 856 }
+command = { type = addcore which = 855 }
+command = { type = addcore which = 857 }
+command = { type = addcore which = 858 }
+command = { type = addcore which = 853 }
+command = { type = addcore which = 854 }
+command = { type = sleepevent which = 55616 }
+command = { type = sleepevent which = 55617 }
+}
+}
+
+event = {
+id = 55619
+random = no
+country = CON
+style = 2
+picture = "goringdead"
+
+name = "The New Governor"
+desc = "We must find a new governor after the German government got rid of Goring, but who will be his replacement?" #Only two ministers, one left, one right
+
+action_a = {
+ai_chance = 50
+name = "Ernst Junger, the famous writer!"
+command = { type = set_domestic which = political_left value = 4 }
+command = { type = set_domestic which = democratic value = 4 }
+command = { type = headofstate which = 574049 }
+command = { type = headofgovernment which = 574050 }
+command = { type = dissent value = -1 }
+}
+
+action_b = {
+ai_chance = 50
+name = "Joseph Kasa-Vubu Will Lead Mittelafrika From this Day Forward!" #Left, More Likely to Seperate from Germany
+command = { type = set_domestic which = political_left value = 5 }
+command = { type = set_domestic which = democratic value = 6 }
+command = { type = headofstate which = 574012 }
+command = { type = headofgovernment which = 574014 }
+command = { type = dissent value = -3 }
+command = { type = event which = 55648 where = CON when = 5  }
+}
+}
+
+event = {
+id = 55648
+country = CON
+picture = "diplomatic_campaign"
+style = 2
+
+
+name = "Status of Mittelafrika"
+desc = "Now that Joseph Kasa-Vubu is firmly in control of Mittelafrika, it is perhaps time to reconsider the country's foreign policy commitments.  Integration within Germany's Mitteleuropa is no longer as beneficial as it initially was, and there are other powers which share our ideological values."
+
+action_a = {
+ai_chance =  60
+name = "We will orientate towards the Syndicalist powers"
+command = { type = name where = CON which = CON_SYN_NAME }
+command = { type = flag_ext where = CON which = "_syn" }
+command = { type = set_domestic which = political_left value = 9 }
+command = { type = set_domestic which = democratic value = 3 }
+command = { type = headofstate which = 574012 }
+command = { type = headofgovernment which = 574014 }
+command = { type = leave_alliance }
+command = { type = end_puppet }
+command = { type = end_access which = GER }
+command = { type = end_guarantee which = GER where = CON }
+command = { type = set_domestic which = interventionism value = 1 }
+command = { type = peace which = FRA value = 1 }
+command = { type = peace which = ENG value = 1 }
+command = { type = peace which = RSI value = 1 }
+command = { type = peace which = CSA value = 1 }
+command = { type = peace which = SOV value = 1 }
+command = { type = relation which = GER value = -50 }
+command = { type = relation which = AUS value = -50 }
+command = { type = relation which = HUN value = -50 }
+command = { type = relation which = BLR value = -50 }
+command = { type = relation which = LIT value = -50 }
+command = { type = embargo which = CON where = ENG value = 0 }
+command = { type = embargo which = CON where = GEO value = 0 }
+command = { type = embargo which = FRA where = CON value = 0 }
+command = { type = embargo which = CON where = FRA value = 0 }
+command = { type = embargo which = CON where = CSA value = 0 }
+command = { type = embargo which = CON where = RSI value = 0 }
+command = { type = trigger which = 908042 }
+}
+
+action_b = {
+ai_chance =  35
+name = "We shall stay within the German sphere of influence"
+command = { type = set_domestic which = interventionism value = 5 }
+command = { type = dissent value = 10 }
+command = { type = relation which = GER value = 100 }
+command = { type = relation which = AUS value = 100 }
+command = { type = relation which = HUN value = 100 }
+command = { type = relation which = BLR value = 100 }
+command = { type = relation which = LIT value = 100 }
+command = { type = relation which = GEO value = -200 }
+command = { type = relation which = FRA value = -120 }
+command = { type = relation which = ENG value = -120 }
+command = { type = relation which = RSI value = -120  }
+}
+
+action_c = {
+ai_chance =  5
+name = "We shall build socialism in Africa by ourselves"
+command = { type = name where = CON which = CON_SYN_NAME }
+command = { type = flag_ext where = CON which = "_syn" }
+command = { type = set_domestic which = political_left value = 9 }
+command = { type = set_domestic which = democratic value = 3 }
+command = { type = headofstate which = 574012 }
+command = { type = headofgovernment which = 574014 }
+command = { type = leave_alliance }
+command = { type = end_puppet }
+command = { type = end_access which = GER }
+command = { type = end_guarantee which = GER where = CON }
+command = { type = set_domestic which = interventionism value = 1 }
+command = { type = peace which = FRA value = 1 }
+command = { type = peace which = ENG value = 1 }
+command = { type = peace which = RSI value = 1 }
+command = { type = peace which = CSA value = 1 }
+command = { type = relation which = GER value = -50 }
+command = { type = relation which = AUS value = -50 }
+command = { type = relation which = HUN value = -50 }
+command = { type = relation which = BLR value = -50 }
+command = { type = relation which = LIT value = -50 }
+command = { type = embargo which = CON where = ENG value = 0 }
+command = { type = embargo which = CON where = GEO value = 0 }
+command = { type = embargo which = FRA where = CON value = 0 }
+command = { type = embargo which = CON where = FRA value = 0 }
+command = { type = embargo which = CON where = CSA value = 0 }
+command = { type = embargo which = CON where = RSI value = 0 }
+command = { type = trigger which = 908042 }
+}
+}
+
+event = {
+id = 55620
+random = no
+country = GER
+style = 2
+picture = "shang2"
+
+trigger = {
+owned = { province = 1372 data = GER }
+exists = EAF
+exists = CGX
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 29 month = december year = 1967 }
+
+name = "The Status of Macao"
+desc = "As we are in ownership of Macao, the question is what to do with it. We can either hand it over to the AOG or the Legiation Cities, or if we so desired keep it as our own colony under direct control of the Kaiser."
+
+action_a = {
+ai_chance = 40
+name = "It shall be incorporated as a Legation City"
+trigger = {
+exists = EAF
+NOT = {
+war = { country = EAF country = GER }
+}
+}
+command = { type = relation which = EAF value = 25 }
+command = { type = relation which = CGX value = -10 }
+command = { type = secedeprovince which = EAF value = 1372 }
+}
+action_b = {
+ai_chance = 40
+name = "Hand administration of the peninsula to the AOG"
+trigger = {
+exists = CGX
+NOT = {
+war = { country = CGX country = GER }
+}
+puppet = { country = CGX country = GER  }
+}
+command = { type = relation which = EAF value = -10 }
+command = { type = relation which = CGX value = 25 }
+command = { type = secedeprovince which = CGX value = 1372 }
+}
+action_c = {
+ai_chance = 20
+name = "It may prove to be useful, directly control it"
+command = { type = relation which = EAF value = -5 }
+command = { type = relation which = CGX value = -5 }
+}
+}
+
+event = {
+id = 55621
+country = POR
+picture = "mittelafrika"
+style = 2
+
+trigger = {
+war = { country = POR country = CON }
+NOT = {
+ispuppet = POR
+alliance = { country = POR country = GER }
+alliance = { country = POR country = EUS }
+alliance = { country = POR country = RUS }
+alliance = { country = POR country = CAN }
+alliance = { country = POR country = U07 }
+alliance = { country = POR country = FRA }
+alliance = { country = POR country = SPR }
+}
+#Angola
+control = { province = 888 data = CON }
+control = { province = 892 data = CON }
+control = { province = 895 data = CON }
+control = { province = 887 data = CON }
+control = { province = 891 data = CON }
+control = { province = 890 data = CON }
+control = { province = 893 data = CON }
+#Mozambique
+control = { province = 853 data = CON }
+control = { province = 854 data = CON }
+control = { province = 855 data = CON }
+control = { province = 856 data = CON }
+control = { province = 857 data = CON }
+control = { province = 858 data = CON }
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 25
+deathdate = { day = 29 month = december year = 1967 }
+
+name = "The End of the Colonial War"
+desc = "We have been beaten by the Germans in Africa, and we wouldn't want to bring the fight home so it would be best if we surrendered our colonies in exchange for peace."
+
+action_a = {
+ai_chance = 90
+name = "Give up the colonies in exchange for peace"
+
+
+
+#Azores
+command = { type = removecore which = 995 }
+
+# Bissao
+command = { type = removecore which = 963 }
+
+# Cape Verde Islands
+command = { type = removecore which = 992 }
+# Sao Tome
+
+command = { type = removecore which = 912 }
+
+#Angola
+command = { type = removecore which = 888 }
+command = { type = removecore which = 892 }
+command = { type = removecore which = 895 }
+command = { type = removecore which = 887 }
+command = { type = removecore which = 891 }
+command = { type = removecore which = 890 }
+command = { type = removecore which = 893 }
+#Mozambique
+command = { type = removecore which = 853 }
+command = { type = removecore which = 854 }
+command = { type = removecore which = 855 }
+command = { type = removecore which = 856 }
+command = { type = removecore which = 857 }
+command = { type = removecore which = 858 }
+
+command = { type = removecore which = 1372 }
+
+
+# Sao Tome
+command = { type = secedeprovince which = GER value = 912 }
+
+# Bissao
+command = { type = secedeprovince which = GER value = 963 }
+
+# Cape Verde Islands
+command = { type = secedeprovince which = GER value = 992 }
+
+#Angola
+
+command = { type = secedeprovince which = CON value = 888 }
+command = { type = secedeprovince which = CON value = 892 }
+command = { type = secedeprovince which = CON value = 895 }
+command = { type = secedeprovince which = CON value = 887 }
+command = { type = secedeprovince which = CON value = 891 }
+command = { type = secedeprovince which = CON value = 890 }
+command = { type = secedeprovince which = CON value = 893 }
+#Mozambique
+command = { type = secedeprovince which = CON value = 853 }
+command = { type = secedeprovince which = CON value = 854 }
+command = { type = secedeprovince which = CON value = 855 }
+command = { type = secedeprovince which = CON value = 856 }
+command = { type = secedeprovince which = CON value = 857 }
+command = { type = secedeprovince which = CON value = 858 }
+
+
+command = { type = secedeprovince which = GER value = 1372 } #Macao
+command = { type = secedeprovince which = GER value = 1617 } #East Timor
+command = { type = secedeprovince which = GER value = 995 }
+
+command = { type = peace which = GER value = 0 }
+command = { type = peace which = CON value = 0 }
+command = { type = peace which = CGX value = 0 }
+
+command = { type = dissent value = 5 }
+}
+action_b = {
+ai_chance = 10
+name = "Never!"
+command = { type = dissent value = 15 }
+}
+}
+
+##########
+### New events by asd - to avoid Germany fighting endless war against Portugal
+##########
+
+# Germany joins the war - Portugal has a chance to give up
+
+event = {
+id = 55622
+country = POR
+picture = "mittelafrika"
+style = 2
+
+trigger = {
+OR = { event = 55609
+event = 55595
+event = 55607
+event = 55609 }
+war = { country = POR country = CON }
+war = { country = POR country = GER }
+NOT = {
+ispuppet = POR
+alliance = { country = POR country = EUS }
+alliance = { country = POR country = RUS }
+alliance = { country = POR country = CAN }
+alliance = { country = POR country = U07 }
+alliance = { country = POR country = FRA }
+alliance = { country = POR country = SPR }
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 25
+deathdate = { day = 29 month = december year = 1967 }
+
+name = "Mitteleuropa joins the war"
+desc = "Bad news - Germany has decided to help their allies and join the war. We could fight a colonial war against Mittelafrika, but we stand no chance against the whole of Mitteleuropa. It would probably be best for us to give up our colonies in Africa instead of fighting a losing war."
+
+action_a = {
+ai_chance = 70
+name = "Give up the colonies in exchange for peace"
+#Angola
+command = { type = removecore which = 888 }
+command = { type = removecore which = 892 }
+command = { type = removecore which = 895 }
+command = { type = removecore which = 887 }
+command = { type = removecore which = 891 }
+command = { type = removecore which = 890 }
+command = { type = removecore which = 893 }
+#Mozambique
+command = { type = removecore which = 853 }
+command = { type = removecore which = 854 }
+command = { type = removecore which = 855 }
+command = { type = removecore which = 856 }
+command = { type = removecore which = 857 }
+command = { type = removecore which = 858 }
+
+
+#Angola
+
+command = { type = secedeprovince which = CON value = 888 }
+command = { type = secedeprovince which = CON value = 892 }
+command = { type = secedeprovince which = CON value = 895 }
+command = { type = secedeprovince which = CON value = 887 }
+command = { type = secedeprovince which = CON value = 891 }
+command = { type = secedeprovince which = CON value = 890 }
+command = { type = secedeprovince which = CON value = 893 }
+#Mozambique
+command = { type = secedeprovince which = CON value = 853 }
+command = { type = secedeprovince which = CON value = 854 }
+command = { type = secedeprovince which = CON value = 855 }
+command = { type = secedeprovince which = CON value = 856 }
+command = { type = secedeprovince which = CON value = 857 }
+command = { type = secedeprovince which = CON value = 858 }
+
+command = { type = peace which = GER value = 0 }
+command = { type = peace which = CON value = 0 }
+command = { type = peace which = CGX value = 0 }
+
+command = { type = dissent value = 5 }
+
+command = { type = sleepevent which = 55621 } #Only one peace treaty
+command = { type = sleepevent which = 55623 }
+command = { type = sleepevent which = 55624 }
+}
+action_b = {
+ai_chance = 30
+name = "Never!"
+command = { type = dissent value = 10 }
+}
+}
+
+# Mittelafrika captured colonies with German help
+
+event = {
+id = 55623
+country = POR
+picture = "mittelafrika"
+style = 2
+
+trigger = {
+NOT = {
+ispuppet = POR
+alliance = { country = POR country = EUS }
+alliance = { country = POR country = RUS }
+alliance = { country = POR country = CAN }
+alliance = { country = POR country = U07 }
+alliance = { country = POR country = FRA }
+alliance = { country = POR country = SPR }
+}
+war = { country = POR country = CON }
+war = { country = POR country = GER }
+#Angola
+OR = { control = { province = 888 data = CON }
+control = { province = 888 data = GER } }
+OR = { control = { province = 892 data = CON }
+control = { province = 892 data = GER } }
+OR = { control = { province = 895 data = CON }
+control = { province = 895 data = GER } }
+OR = { control = { province = 887 data = CON }
+control = { province = 887 data = GER } }
+OR = { control = { province = 891 data = CON }
+control = { province = 891 data = GER } }
+OR = { control = { province = 890 data = CON }
+control = { province = 890 data = GER } }
+OR = { control = { province = 893 data = CON }
+control = { province = 893 data = GER } }
+#Mozambique
+OR = { control = { province = 854 data = CON }
+control = { province = 854 data = GER } }
+OR = { control = { province = 853 data = CON }
+control = { province = 853 data = GER } }
+OR = { control = { province = 855 data = CON }
+control = { province = 855 data = GER } }
+OR = { control = { province = 856 data = CON }
+control = { province = 856 data = GER } }
+OR = { control = { province = 857 data = CON }
+control = { province = 857 data = GER } }
+OR = { control = { province = 858 data = CON }
+control = { province = 858 data = GER } }
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 25
+deathdate = { day = 29 month = december year = 1967 }
+
+name = "The End of the Colonial War"
+desc = "We have been beaten by the Germans in Africa, and we wouldn't want to bring the fight home so it would be best if we surrendered our colonies in exchange for peace."
+
+action_a = {
+ai_chance = 100
+name = "Give up the colonies in exchange for peace"
+
+#Angola
+command = { type = removecore which = 888 }
+command = { type = removecore which = 892 }
+command = { type = removecore which = 895 }
+command = { type = removecore which = 887 }
+command = { type = removecore which = 891 }
+command = { type = removecore which = 890 }
+command = { type = removecore which = 893 }
+#Mozambique
+command = { type = removecore which = 853 }
+command = { type = removecore which = 854 }
+command = { type = removecore which = 855 }
+command = { type = removecore which = 856 }
+command = { type = removecore which = 857 }
+command = { type = removecore which = 858 }
+
+
+#Angola
+
+command = { type = secedeprovince which = CON value = 888 }
+command = { type = secedeprovince which = CON value = 892 }
+command = { type = secedeprovince which = CON value = 895 }
+command = { type = secedeprovince which = CON value = 887 }
+command = { type = secedeprovince which = CON value = 891 }
+command = { type = secedeprovince which = CON value = 890 }
+command = { type = secedeprovince which = CON value = 893 }
+#Mozambique
+command = { type = secedeprovince which = CON value = 853 }
+command = { type = secedeprovince which = CON value = 854 }
+command = { type = secedeprovince which = CON value = 855 }
+command = { type = secedeprovince which = CON value = 856 }
+command = { type = secedeprovince which = CON value = 857 }
+command = { type = secedeprovince which = CON value = 858 }
+
+command = { type = secedeprovince which = CON value = 893 } #Cabana
+command = { type = secedeprovince which = GER value = 912 }
+
+command = { type = secedeprovince which = GER value = 1372 } #Macao
+command = { type = secedeprovince which = GER value = 1617 } #East Timor
+
+command = { type = peace which = GER value = 0 }
+command = { type = peace which = CON value = 0 }
+command = { type = peace which = CGX value = 0 }
+
+command = { type = dissent value = 5 }
+
+command = { type = sleepevent which = 55621 } #Only one peace treaty
+command = { type = sleepevent which = 55622 }
+command = { type = sleepevent which = 55624 }
+}
+action_b = {
+ai_chance = 0
+name = "Never!"
+command = { type = dissent value = 15 }
+}
+}
+
+# Germans captured Lissabon - worst peace treaty for Portugal
+
+event = {
+id = 55624
+country = POR
+picture = "mittelafrika"
+style = 2
+
+trigger = {
+NOT = {
+ispuppet = POR
+alliance = { country = POR country = EUS }
+alliance = { country = POR country = RUS }
+alliance = { country = POR country = CAN }
+alliance = { country = POR country = U07 }
+alliance = { country = POR country = FRA }
+alliance = { country = POR country = SPR }
+}
+OR = { event = 55609
+event = 55595
+event = 55607
+event = 55609 }
+war = { country = POR country = CON }
+war = { country = POR country = GER }
+control = { province = 476 data = GER } # Lissabon
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 25
+deathdate = { day = 29 month = december year = 1967 }
+
+name = "The End of the Colonial War"
+desc = "Looks like fighting a war against Mitteleuropa wasn't a good idea. Germans have invaded our homeland and captured our capital, forcing us to sign a humiliating peace treaty. We have lost almost all our colonies and we have to pay war reparations to Germany."
+
+action_a = {
+name = "Nothing can be done"
+#Angola
+command = { type = removecore which = 888 }
+command = { type = removecore which = 892 }
+command = { type = removecore which = 895 }
+command = { type = removecore which = 887 }
+command = { type = removecore which = 891 }
+command = { type = removecore which = 890 }
+command = { type = removecore which = 893 }
+#Mozambique
+command = { type = removecore which = 853 }
+command = { type = removecore which = 854 }
+command = { type = removecore which = 855 }
+command = { type = removecore which = 856 }
+command = { type = removecore which = 857 }
+command = { type = removecore which = 858 }
+
+command = { type = removecore which = 992 }
+command = { type = removecore which = 995 }
+
+
+#Angola
+
+command = { type = secedeprovince which = CON value = 888 }
+command = { type = secedeprovince which = CON value = 892 }
+command = { type = secedeprovince which = CON value = 895 }
+command = { type = secedeprovince which = CON value = 887 }
+command = { type = secedeprovince which = CON value = 891 }
+command = { type = secedeprovince which = CON value = 890 }
+command = { type = secedeprovince which = CON value = 893 }
+#Mozambique
+command = { type = secedeprovince which = CON value = 853 }
+command = { type = secedeprovince which = CON value = 854 }
+command = { type = secedeprovince which = CON value = 855 }
+command = { type = secedeprovince which = CON value = 856 }
+command = { type = secedeprovince which = CON value = 857 }
+command = { type = secedeprovince which = CON value = 858 }
+
+command = { type = secedeprovince which = CON value = 893 } #Cabana
+command = { type = secedeprovince which = GER value = 912 }
+command = { type = secedeprovince which = GER value = 992 }
+command = { type = secedeprovince which = GER value = 995 }
+
+command = { type = secedeprovince which = GER value = 1372 } #Macao
+command = { type = secedeprovince which = GER value = 1617 } #East Timor
+
+command = { type = peace which = GER value = 0 }
+command = { type = peace which = CON value = 0 }
+command = { type = peace which = CGX value = 0 }
+
+command = { type = money value = -100 } # War reparations
+command = { type = supplies value = -500 } # War reparations
+
+command = { type = dissent value = 15 }
+
+command = { type = sleepevent which = 55621 } #Only one peace treaty
+command = { type = sleepevent which = 55622 }
+command = { type = sleepevent which = 55623 }
+
+}
+}
+
+
+event = {
+id = 55628
+random = no
+country = GER
+trigger = {
+NOT = {
+atwar = GER
+}
+}
+
+name = "Mittelafrika opposes our rule!"
+desc = "Goring and Mittelafrika decided to oppose our decision and escape from our rule! What should we do? Should we fight a war to regain our control over them or should we let them go? Mittelafrika has worsened our economy and it could be wise to forget about them."
+style = 2
+
+action_a = {
+name = "Forget about Mittelafrika, focus on our economy!"
+ai_chance = 80
+command = { type = industrial_modifier which = total value = 2 }
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = CON value = 25 }
+}
+action_b = {
+name = "Mittelafrika belongs to us!"
+ai_chance = 20
+command = { type = war which = CON }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = relation which = CON value = -50 }
+command = { type = trigger which = 55630 }
+}
+}
+
+event = {
+id = 55629
+random = no
+country = GER
+trigger = { atwar = GER }
+
+name = "Mittelafrika opposes our rule!"
+desc = "Goring and Mittelafrika decided to oppose our decision and escape from our rule! What should we do? Should we fight a war to regain our control over them or should we let them go? Mittelafrika has worsened our economy and it could be wise to forget about them."
+style = 2
+
+action_a = {
+name = "Forget about Mittelafrika, focus on our economy!"
+ai_chance = 100
+command = { type = industrial_modifier which = total value = 2 }
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = CON value = 25 }
+}
+action_b = {
+name = "Mittelafrika belongs to us!"
+ai_chance = 0
+command = { type = war which = CON }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = relation which = CON value = -50 }
+command = { type = trigger which = 55630 }
+}
+}
+
+event = {
+id = 55630
+random = no
+country = CON
+
+name = "Germany declared war upon us!"
+desc = "Germany declared war upon us! What should we do? "
+style = 2
+
+action_a = {
+name = "We will fight for our freedom!"
+ai_chance = 10
+command = { type = domestic which = defense_lobby value = 2 }
+}
+
+action_b = {
+name = "Beg for forgiveness! Replace Goring with Ernst Junger"
+ai_chance = 90
+command = { type = peace which = GER value = 0 }
+command = { type = sleepminister which = 574001 } #Goring imprisoned/executed#
+command = { type = sleepminister which = 574036 } #Goring imprisoned/executed#
+command = { type = domestic which = political_left value = -1 }
+command = { type = domestic which = democratic value = -1 }
+command = { type = headofstate which = 574049 }
+command = { type = headofgovernment which = 574050 }
+command = { type = trigger which = 55631 }
+}
+}
+
+event = {
+id = 55631
+random = no
+country = GER
+
+name = "Mittelafrika submits!"
+desc = "Mittelafrika decided to submit and replaced Goring with Ernst Junger, who promised to be a loyal subject of Germany."
+style = 2
+
+action_a = {
+name = "Good, but we'll keep a close eye now"
+command = { type = make_puppet which = CON }
+command = { type = dissent value = -1 }
+}
+}
+
+event = {
+id = 55632
+random = no
+country = CON
+trigger = {
+war = { country = CON country = GER }
+lost_national = { country = CON value = 30 }
+control = { province = 850 data = GER } #Dar es Salaam
+}
+
+name = "Germany is crushing us!"
+desc = "Germany is crushing our armies, we've already lost control over Dar es Salaam and other provinces of the country. Maybe if we offer an unconditional surrender they will spare us!"
+style = 2
+
+date = { day = 0 month = january year = 1936 }
+offset = 30
+deathdate = { day = 29 month = december year = 1967 }
+
+action_a = {
+name = "Offer unconditional surrender"
+ai_chance = 100
+command = { type = sleepminister which = 574001 } #Goring imprisoned/executed#
+command = { type = sleepminister which = 574036 } #Goring imprisoned/executed#
+command = { type = trigger which = 55633 }
+}
+action_b = {
+name = "We'll fight to the death!"
+ai_chance = 0
+command = { type = domestic which = defense_lobby value = 2 }
+command = { type = dissent value = 5 }
+}
+}
+
+
+event = {
+id = 55633
+random = no
+country = GER
+
+name = "Mittelafrika begs for peace!"
+desc = "Our army conquered Dar es Salaam and is crushing Mittelafrika. They offered an unconditional surrender, what should we do?"
+style = 2
+
+action_a = {
+name = "Set up a friendly government... more friendly this time!"
+ai_chance = 80
+command = { type = coup_nation which = CON }
+command = { type = make_puppet which = CON }
+command = { type = set_relation which = CON value = 100 }
+command = { type = dissent value = -1 }
+}
+action_b = {
+name = "We can't trust them, military occupation"
+ai_chance = 20
+command = { type = inherit which = CON }
+command = { type = domestic which = defense_lobby value = 2 }
+command = { type = dissent value = -1 }
+}
+}
+
+
+### New events by Yuriswe
+event = {
+id = 55639
+country = CON
+style = 2
+picture = "venezuelan_oil"
+
+trigger = {
+random = 50
+control = { province = 932 data = CON }
+control = { province = 934 data = CON }
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 340
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "Oil in Nigeria"
+desc = "Our geologists have concluded that the oilfields on the coast of Nigeria are gigantic. Exploiting this new resource should advance our economy greatly."
+
+action_a = {
+name = "Fund the exploitation of the new great oilfields"
+ai_chance = 90
+command = { type = supplies value = -400 }
+command = { type = add_prov_resource which = 932 value = 15 where = oil }
+command = { type = add_prov_resource which = 934 value = 15 where = oil }
+}
+action_b = {
+name = "We cannot afford all the necessary work"
+ai_chance = 10
+command = { type = supplies value = -40 }
+command = { type = add_prov_resource which = 932 value = 1 where = oil }
+command = { type = add_prov_resource which = 934 value = 1 where = oil }
+}
+}
+
+#########################################################################
+### Mittelafrikan raw material and civi unrest events. by Andromedos, id 55630
+#########################################################################
+event = {
+id = 55641
+random = no
+country = GER
+
+trigger = {
+random = 50
+}
+
+name = EVT_55641_NAME
+desc = EVT_55641_DESC
+picture = "minister_died"
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 250
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+name = "May he rest in peace..."
+command = { type = sleepminister which = 58 }
+command = { type = trigger which = 55642  }
+command = { type = trigger which = 55640  }
+}
+}
+
+event = {
+id = 55642
+random = no
+country = CON
+
+trigger = {
+headofstate = 574001
+}
+
+name = EVT_55642_NAME
+desc = EVT_55642_DESC
+picture = "minister_died"
+style = 2
+
+action_a = {
+name = "Finally! Cut social security, reinstate forced labour!"
+ai_chance = 80
+command = { type = dissent value = 5 }
+command = { type = setflag which = CON_SOC_NO }
+command = { type = sleepevent which = 55640 }
+}
+action_b = {
+name = "Keep social standards!"
+ai_chance = 20
+command = { type = dissent value = 2 }
+command = { type = sleepevent which = 55640 }
+}
+}
+
+event = {
+id = 55640
+random = no
+country = CON
+
+trigger = {
+NOT = { headofstate = 574001 }
+}
+
+name = "Wilhelm Solf died"
+desc = "Today, Wilhelm Solf died. The first governour of Mittelafrika and longtime Reich Secretary for the colonies, Solf has created most of Mittelafrika's laws and social security system, including the ban on forced labour."
+picture = "minister_died"
+style = 2
+
+action_a = {
+name = "May he rest in peace..."
+command = { type = sleepevent which = 55642 }
+}
+}
+
+event = {
+id = 55634
+random = no
+country = CON
+
+trigger = {
+headofstate = 574001
+flag = CON_SOC_NO
+NOT = {
+atwar = CON
+}
+control = { province = 898 data = CON }
+control = { province = 861 data = CON }
+}
+
+name = "Expansion of the Katanga mines"
+desc = "The region of Katanga, on the upper reaches of the Congo river, has an abundance of valuable metals and rare materials. If we increase mining operations in Katanga, we will greatly strengthen our economy and position on the world market for raw materials. The initial investments can be greatly decreased by using forced labour."
+style = 2
+
+date = { day = 1 month = june year = 1936 }
+offset = 30
+deathdate = { day = 29 month = december year= 1960 }
+
+action_a = {
+name = "Expand the mines, use forced labour!"
+ai_chance = 90
+command = { type = setflag which = CON_Dam_A  }
+command = { type = dissent value = 5 }
+command = { type = metalpool value = -400 } #can't take more since CON is a puppet
+command = { type = energypool value = -100 } # dito, and lack of Congo Energy
+command = { type = money value = -70 } # not too much, tends to screw up AI, and forced labor
+
+command = { type = peacetime_ic_mod value = 3 }
+command = { type = add_prov_resource which = 898 value = 5 where = metal  }
+command = { type = add_prov_resource which = 898 value = 8 where = rare_materials  }
+command = { type = construct which = ic where = 898 value = 2 }
+command = { type = add_prov_resource which = 861 value = 5 where = metal  }
+command = { type = add_prov_resource which = 861 value = 12 where = rare_materials  }
+command = { type = clrflag which = CON_SOC_NO }
+##### I know it should take time to expand the mining facilities, but I'll shorten it for now. Makes things run a bit smoother in this case.
+}
+action_b = {
+name = "The world market has little demand for raw materials."
+ai_chance = 10
+command = { type = dissent value = 1 } #unemployment
+command = { type = peacetime_ic_mod value = -2 }
+command = { type = clrflag which = CON_SOC_NO }
+}
+}
+
+event = {
+id = 55635
+random = no
+country = CON
+
+trigger = {
+headofstate = 574001
+flag = CON_Dam_A
+NOT = {
+atwar = CON
+}
+control = { province = 897 data = CON }
+}
+
+name = "The Kolwezi Dam"
+desc = "Thanks to our efforts, the raw material production in Katanga has greatly increased. But the province still lacks sufficient power plants for all the new mines, factories, and infrastructure. Constructing a hydropower plant near Kolwezi should solve that problem. But the resulting reservoir would displace thousands of natives from their homes."
+style = 2
+picture = "mittelafrika"
+
+date = { day = 5 month = september year = 1936 }
+offset = 30
+deathdate = { day = 29 month = december year= 1960 }
+
+action_a = {
+name = "Begin construction, the rabble has to yield for progress!"
+ai_chance = 90
+command = { type = setflag which = CON_Dam_B  }
+command = { type = add_prov_resource which = 897 value = 10 where = energy  }
+command = { type = construct which = ic where = 897 value = 1 }
+command = { type = dissent value = 5 }
+command = { type = metalpool value = -300 } #can't take more since CON is a puppet
+command = { type = energypool value = -100 } # dito, and lack of Congo Energy
+command = { type = money value = -20 } # not too much, tends to screw up AI, and forced labor
+# Again no construction time. This is more about the revolts, less about the resources...
+}
+action_b = {
+name = "Cancel the project, we cannot afford it."
+ai_chance = 10
+command = { type = peacetime_ic_mod value = -3 } #mines and factories lack Energy
+}
+}
+
+event = {
+id = 55636
+random = no
+country = CON
+
+trigger = {
+headofstate = 574001
+flag = CON_Dam_A
+flag = CON_Dam_B
+}
+
+name = "Civil unrest in Katanga!"
+desc = "The population of Katanga is revolting! The people are rallying against our troops, destroying infrastructure, and lynching any European they can get their hands on!"
+style = 2
+picture = "mittelafrika"
+
+date = { day = 1 month = january year = 1937 }
+offset = 60
+deathdate = { day = 29 month = december year= 1960 }
+
+action_a = {
+name = "We'll teach these savages a lesson!"
+command = { type = removecore which = 897 }
+command = { type = removecore which = 898 }
+command = { type = removecore which = 861 }
+command = { type = revolt which = 897 }
+command = { type = revolt which = 898 }
+command = { type = revolt which = 861 }
+command = { type = addclaim which = 897 }
+command = { type = addclaim which = 898 }
+command = { type = addclaim which = 861 }
+command = { type = clrflag which = CON_Dam_A  }
+command = { type = clrflag which = CON_Dam_B  }
+command = { type = setflag which = CON_Rise_Kat  }
+}
+}
+
+event = {
+id = 55637
+random = no
+country = CON
+
+trigger = {
+flag = CON_Rise_Kat
+control = { province = 897 data = CON }
+control = { province = 898 data = CON }
+control = { province = 861 data = CON }
+}
+
+name = "The Katanga revolt has been put down!"
+desc = "Our valiant soldiers have finally ended the vile rebellion in Katanga! The rabblerousers and ringleaders have met their just punishment, and the mines are under our control again. Only minor resistance remains."
+style = 2
+picture = "militaryparade1"
+
+date = { day = 1 month = january year = 1936 }
+offset = 35
+deathdate = { day = 29 month = december year= 1960 }
+
+action_a = {
+name = "Nobody rises against Hermann Göring!"
+command = { type = addcore which = 897 }
+command = { type = addcore which = 898 }
+command = { type = addcore which = 861 }
+command = { type = dissent value = 2 }
+command = { type = clrflag which = CON_Rise_Kat  }
+#command = { type = setflag which = CON_revolt_1  }
+}
+}
+
+
+event = {
+id = 55638
+random = no
+country = CON
+style = 2
+
+name = "Auf den Marmorklippen, A Book by Ernst Júnger."
+desc = "One of the most important politicians in our nation is also a very good writer. This is his latest book."
+picture = "soviet_directive"
+
+date = { day = 22 month = May year = 1939 }
+
+action_a = {
+name = "This one I will buy."
+command = { type = dissent value = -1  }
+}
+}
+
+
+event = {
+id = 55645
+random = no
+country = CON
+style = 2
+picture = "diplomatic_campaign"
+
+trigger = {
+government = communist
+NOT = {
+atwar = CON
+}
+event = 777168
+NOT = {
+alliance = { country = CAN country = CON }
+alliance = { country = GER country = CON }
+alliance = { country = JAP country = CON }
+alliance = { country = FRA country = CON }
+alliance = { country = RUS country = CON }
+alliance = { country = SOV country = CON }
+ispuppet = CON
+}
+participant = { country = FRA value = 3 } #Commune of France is part of Syndicalist Internationale
+}
+
+name = "Foreign policy"
+desc = "With the Central African states finally free from German capitalist oppression we can now freely decide our stance towards the international community. While many are arguing for an immediate alliance with other syndicalist nations, it might be wise enough to remain neutral to rebuild our country."
+
+date = { day = 3 month = january year = 1936 }
+offset = 40
+deathdate = { day = 10 month = december year = 1960 }
+
+action_a = {
+ai_chance = 95
+name = "We must join arms with France"
+command = { type = trigger which = 55646 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = dissent value = 4 }
+}
+action_b = {
+ai_chance = 5
+name = "Isolationism, we must organize our country"
+command = { type = dissent value = -5 }
+command = { type = domestic which = defense_lobby value = -1 }
+command = { type = domestic which = interventionism value = -1 }
+}
+}
+
+event = {
+id = 55646
+random = no
+country = FRA
+style = 2
+picture = "diplomatic_campaign"
+
+name = "Mittelafrika wants to join the Syndicalists"
+desc = "The government of the United Central African states has annouced recently that they want to join the Syndicalist bloc. It's not a sudden move because pro-syndicalist policy is popular in many circles including the government and army. Do we want African workers joining the crusade against bloodthirsty Germans and rotten imperialist Canadian pigs?"
+
+action_a = {
+ai_chance = 100
+name = "YES!"
+command = { type = alliance which = CON }
+command = { type = relation which = CON value = 100 }
+command = { type = dissent value = -7 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = trigger which = 55647 }
+}
+action_b = {
+ai_chance = 0
+name = "Rather not."
+command = { type = dissent value = 1}
+command = { type = relation which = CON value = -100 }
+}
+}
+event = {
+id = 55647
+random = no
+country = CON
+style = 2
+picture = "diplomatic_campaign"
+
+name = "We join the syndicalist bloc"
+desc = "French and British are happy to see us joining the common cause - destroying the evil imperialists. Now we are part of the syndicalist bloc."
+
+action_a = {
+name = "This time we will win!"
+command = { type = dissent value = -3 }
+command = { type = relation which = CAN value = -150 }
+command = { type = relation which = GER value = -150 }
+command = { type = end_trades which = CAN where = CON }
+command = { type = end_trades which = GER where = CON }
+}
+}

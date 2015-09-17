@@ -1,0 +1,1937 @@
+################################################################################?#
+#Domestic Reform Done - Princely India goes on the offenseive /By Milites
+################################################################################?#
+event = {
+id = 101150
+picture = "federationpolitics"
+decision_picture = "decision_regalosman"
+style = 2
+country = IND
+
+
+decision = {
+flag = princelyreform_done
+exists = PAK
+exists = PRK
+NOT = {
+alliance = { country = IND country = PAK }
+alliance = { country = IND country = PRK }
+atwar = IND
+}
+}
+
+decision_trigger = {
+control = { province = 1487 data = IND } #Hyderabad
+OR = {
+control = { province = 1507 data = IND } #Mysore
+control = { province = 1495 data = IND } #Trivandrum
+}
+}
+
+
+trigger = {
+flag = princelyreform_done
+exists = PAK
+exists = PRK
+NOT = {
+alliance = { country = IND country = PAK }
+alliance = { country = IND country = PRK }
+atwar = IND
+}
+control = { province = 1487 data = IND } #Hyderabad
+OR = {
+control = { province = 1507 data = IND } #Mysore
+control = { province = 1495 data = IND } #Trivandrum
+}
+}
+
+name = "Direction of Princely India's Foreign Policy"
+desc = "Through a series of successful internal reforms, Princely India has emerged from the mid thirties as a serious and prepared contender for all-Indian supremacy. However, both of our rivals in Delhi and Calcutta have initiated reform programmes of their own and could thus prove a too strong enemy if confronted at the same time. We must pick our battles and decide on a course to bring both traitors and socialists back under one true nationalist Indian government."
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+ai_chance = 75
+name = "Radical Socialism must be eradicated from the sub-continent!"
+command = { type = belligerence which = IND value = 5 }
+command = { type = dissent value = -5 }
+command = { type = relation which = PRK value = -50 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = event which = 101151 where = IND when = 7 }
+}
+action_b = {
+ai_chance = 24
+name = "The rotten remnant of British colonialism must be swept away!"
+command = { type = belligerence which = IND value = 5 }
+command = { type = dissent value = -5 }
+command = { type = relation which = PAK value = -50 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = setflag which = IND_focus_Delhi }
+}
+
+action_c = {
+ai_chance = 1
+name = "I'd rather go tiger hunting... mmm... tiger."
+command = { type = belligerence which = IND value = -5 }
+command = { type = dissent value = 10 }
+command = { type = relation which = PAK value = 50 }
+command = { type = relation which = PRK value = 50 }
+command = { type = relation which = cAN value = 20 }
+command = { type = domestic which = interventionism value = -5 }
+command = { type = domestic which = defense_lobby value = -2 }
+command = { type = sleepevent which = 101151 }
+}
+}
+################################################################################?#
+#Princely India targets Calcutta
+################################################################################?#
+event = {
+id = 101151
+country = IND
+style = 2
+picture = "regalosman"
+
+
+name = "Toppeling Indian Socialism"
+desc = "Our government has decided to strike against the inane leftists in Calcutta as our first step towards national unification. Several paths lay before the cabinet as potential options for removing the Socialist regime from the eastern provinces. Some suggest we begin to foster dissatisfaction amongst the largely conservative peasants of Orissa and thus weaken the internal strength of the Syndicalist state whilst others wish direct confrontation - either in accord with Delhi or alone."
+
+action_a = {
+ai_chance = 75
+name = "Instigate unrest against the collective farms in Orissa!"
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = setflag which = Orissa_unrest }
+command = { type = relation which = PRK value = -25 }
+}
+
+action_b = {
+ai_chance = 24
+name = "Try to partition the Bhartiya Commune with Delhi."
+trigger = { exists = PAK }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = dissent value = 5 }
+command = { type = relation which = PRK value = -50 }
+command = { type = relation which = PAK value = 50 }
+command = { type = event which = 101158 where = PAK when = 3 }
+}
+
+action_c = {
+ai_chance = 1
+name = "The National Government shall openly sweep Syndicalism away!"
+command = { type = war which = PRK }
+command = { type = dissent value = 2 }
+command = { type = domestic which = defense_lobby value = 2 }
+command = { type = relation which = PRK value = -50 }
+command = { type = relation which = PAK value = -50 }
+command = { type = event which = 101176 where = PAK when = 3 }
+}
+
+
+}
+################################################################################?#
+#Unrest in Orissa
+################################################################################?#
+event = {
+id = 101152
+random = no
+country = PRK
+style = 2
+
+trigger = {
+flag = Orissa_unrest
+owned = { province = 1447 data = PRK }
+control = { province = 1447 data = PRK }
+owned = { province = 1471 data = PRK }
+control = { province = 1471 data = PRK }
+OR = {
+government = communist
+}
+}
+
+
+name = "Reactionary Riots in Orissa"
+desc = "Troubling news is trickling in from Orissa where conservative and reactionary peasant leaders are resisting the work of our political commissars. The ryots are protesting against the restrictive directives issued against religious superstitions and poor conditions at the collective farms. The revolt is hastily gaining popular support even in urban centres and we have it on good authority that operatives from the Hyderabad Government are aiding these rebels!"
+picture = "reactionaryprotests"
+
+date = { day = 1 month = january year = 1936 }
+offset = 15
+deathdate = { day = 29 month = december year = 1960 }
+
+
+
+action_a = {
+ai_chance =  75
+name = "Let the People's Police enforce the will of the proletariat!"
+command = { type = dissent value = 5  }
+command = { type = setflag which = Orissa_unrest_army }
+}
+action_b = {
+ai_chance =  24
+name = "Hyderabad has crossed the line! War with the bastards!"
+command = { type = dissent value = 10 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = war which = IND }
+command = { type = event which = 101157 where = IND when = 1 }
+}
+action_c = {
+ai_chance =  1
+name = "Cave in to the demands of the rioters."
+command = { type = dissent value = 15  }
+command = { type = domestic which = free_market value = 2 }
+command = { type = domestic which = freedom value = 1 }
+}
+
+
+}
+
+event = {
+id = 101153
+random = no
+country = IND
+style = 2
+
+trigger = {
+flag = Orissa_unrest_army
+flag = Orissa_unrest
+owned = { province = 1447 data = PRK }
+control = { province = 1447 data = PRK }
+owned = { province = 1471 data = PRK }
+control = { province = 1471 data = PRK }
+}
+
+
+name = "The Ryots of Orissa are Oppressed!"
+desc = "Conservative and religious peasants have commenced a full scale uprising against Socialist practices in Orissa. Already their leaders have requested our assistance in the form of volunteers, arms and munitions. However, some ministers argue that we need to intervene more... directly in this conflict."
+picture = "reactionaryprotests"
+
+date = { day = 1 month = january year = 1936 }
+offset = 30
+deathdate = { day = 29 month = december year = 1960 }
+
+
+
+action_a = {
+ai_chance =  55
+name = "Provide arms and training for the heroic resistance!"
+command = { type = dissent value = 5  }
+command = { type = event which = 101154 where = PRK when = 3 }
+}
+action_b = {
+ai_chance =  45
+name = "In the name of national unification, we must intervene directly!"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = war which = PRK }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = addclaim which = 1439 }
+command = { type = addclaim which = 1440 }
+command = { type = addclaim which = 1441 }
+command = { type = addclaim which = 1442 }
+command = { type = addclaim which = 1443 }
+command = { type = addclaim which = 1444 }
+command = { type = addclaim which = 1445 }
+command = { type = addclaim which = 1446 }
+command = { type = addclaim which = 1447 }
+command = { type = addclaim which = 1448 }
+command = { type = addclaim which = 1449 }
+command = { type = addclaim which = 1450 }
+command = { type = addclaim which = 1458 }
+command = { type = addclaim which = 1465 }
+command = { type = addclaim which = 1469 }
+command = { type = addclaim which = 1470 }
+command = { type = addclaim which = 1471 }
+command = { type = addclaim which = 1472 }
+command = { type = addclaim which = 1473 }
+command = { type = addclaim which = 1474 }
+command = { type = addclaim which = 1475 }
+command = { type = addclaim which = 1476 }
+command = { type = addclaim which = 1477 }
+command = { type = addclaim which = 1493 }
+command = { type = addclaim which = 1452 }
+command = { type = addclaim which = 1462 }
+command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+command = { trigger = { ai = yes } type = add_division value = infantry when = 9 }
+command = { trigger = { ai = yes } type = add_division value = infantry when = 9 }
+command = { trigger = { ai = yes } type = add_division value = militia when = 8 }
+command = { trigger = { ai = yes } type = add_division value = militia when = 8 }
+}
+
+
+}
+
+event = {
+id = 101154
+country = PRK
+style = 2
+picture = "regalosman"
+
+
+name = "Hyderabad Funds Rebel Partisans in Orissa"
+desc = "Our operatives in the national intelligence unit have uncovered hard evidence of Princely 'volunteers' and weapons amongst the rebels in Orissa. We must act swiftly to preserve the progress of Socialism - both in Orissa and the rest of our glorious republic as well!"
+
+action_a = {
+ai_chance = 60
+name = "We cannot let the Zamindari system return! Attack!"
+command = { type = war which = IND }
+command = { type = event which = 101157 where = IND when = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = relation which = IND value = -25 }
+command = { type = relation which = PAK value = -20 }
+command = { type = event which = 101157 where = IND when = 1 }
+command = { type = clrflag which = Orissa_unrest_army }
+command = { type = clrflag which = Orissa_unrest }
+}
+
+action_b = {
+ai_chance = 40
+name = "The People's Police are adequately fashioned to combat these thugs."
+command = { type = event which = 101155 where = PRK when = 7 }
+}
+
+}
+
+event = {
+id = 101155
+country = PRK
+style = 2
+picture = "reactionaryprotests"
+
+
+name = "Hyderabad Funds Rebel Partisans in Orissa"
+desc = "Our operatives in the national intelligence unit have uncovered hard evidence of Princely 'volunteers' and weapons amongst the rebels in Orissa. We must act swiftly to preserve the progress of Socialism - both in Orissa and the rest of our glorious republic as well!"
+
+action_a = {
+ai_chance = 30
+name = "We cannot let the Zamindari system return! Attack!"
+command = { type = war which = IND }
+command = { type = event which = 101157 where = IND when = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = relation which = IND value = -25 }
+command = { type = relation which = PAK value = -20 }
+command = { type = clrflag which = Orissa_unrest_army }
+command = { type = clrflag which = Orissa_unrest }
+}
+
+action_b = {
+ai_chance = 70
+name = "The People's Police are adequately fashioned to combat these thugs."
+command = { type = dissent value = 10  }
+command = { type = setflag which = Orissa_unrest_army_police }
+}
+
+}
+
+event = {
+id = 101156
+random = no
+country = PRK
+style = 2
+
+trigger = {
+flag = Orissa_unrest
+flag = Orissa_unrest_army
+flag = Orissa_unrest_army_police
+owned = { province = 1447 data = PRK }
+control = { province = 1447 data = PRK }
+owned = { province = 1471 data = PRK }
+control = { province = 1471 data = PRK }
+OR = {
+government = communist
+}
+}
+
+
+name = "Orissa is in the Hands of the Rebels!"
+desc = "Damnations! Backed by Princely agents and supplied with firepower from Hyderebad, the rabid reactionary rebels have completely driven our police and paramilitary units away from the rural districts of the province, confining them to the cities. We have no choice but to commit the army to this horrid situation!"
+picture = "reactionaryprotests"
+
+date = { day = 1 month = january year = 1936 }
+offset = 15
+deathdate = { day = 29 month = december year = 1960 }
+
+
+
+action_a = {
+ai_chance =  100
+name = "Send in the army and sweep this rabble out of India!"
+command = { type = dissent value = 5  }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = secedeprovince which = IND value = 1493 }
+command = { type = secedeprovince which = IND value = 1474 }
+command = { type = secedeprovince which = IND value = 1475 }
+command = { type = revolt which = -1 }
+command = { type = revolt which = -1 }
+command = { type = revolt which = -1 }
+command = { type = war which = IND }
+command = { type = event which = 101157 where = IND when = 1 }
+command = { type = clrflag which = Orissa_unrest_army_police }
+command = { type = clrflag which = Orissa_unrest_army }
+command = { type = clrflag which = Orissa_unrest }
+}
+action_b = {
+ai_chance =  1
+name = "My dear, I honestly don't give a damn about Bihar."
+command = { type = dissent value = 10 }
+}
+
+}
+
+event = {
+id = 101157
+country = IND
+style = 2
+picture = "Nepalarmy"
+
+
+name = "The Bhartiya Commune Attacks Us!"
+desc = "Our involvement with the rural revolt in Orissa has finally goaded the inane leftists into attacking us. As we are not seen as the obvious aggressors, we might stand a chance of avoiding Delhi involving itself in the conflict. This might just be the Crossing of the Rubicon for Princely India!Glory to the national government!"
+
+action_a = {
+ai_chance = 100
+name = "The Ancién Regime will be restored in the East!"
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = relation which = PAK value = -20 }
+command = { type = addclaim which = 1439 }
+command = { type = addclaim which = 1440 }
+command = { type = addclaim which = 1441 }
+command = { type = addclaim which = 1442 }
+command = { type = addclaim which = 1443 }
+command = { type = addclaim which = 1444 }
+command = { type = addclaim which = 1445 }
+command = { type = addclaim which = 1446 }
+command = { type = addclaim which = 1447 }
+command = { type = addclaim which = 1448 }
+command = { type = addclaim which = 1449 }
+command = { type = addclaim which = 1450 }
+command = { type = addclaim which = 1458 }
+command = { type = addclaim which = 1465 }
+command = { type = addclaim which = 1469 }
+command = { type = addclaim which = 1470 }
+command = { type = addclaim which = 1471 }
+command = { type = addclaim which = 1472 }
+command = { type = addclaim which = 1473 }
+command = { type = addclaim which = 1474 }
+command = { type = addclaim which = 1475 }
+command = { type = addclaim which = 1476 }
+command = { type = addclaim which = 1477 }
+command = { type = addclaim which = 1493 }
+command = { type = addclaim which = 1452 }
+command = { type = addclaim which = 1462 }
+command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+command = { trigger = { ai = yes } type = add_division value = infantry when = 9 }
+command = { trigger = { ai = yes } type = add_division value = infantry when = 9 }
+command = { trigger = { ai = yes } type = add_division value = militia when = 8 }
+command = { trigger = { ai = yes } type = add_division value = militia when = 8 }
+}
+
+}
+
+event = {
+id = 101158
+country = PAK
+style = 2
+picture = "Bengal"
+
+
+name = "Hyderabad and the Pact Against the Bhartiya Commune"
+desc = "We have been contacted clandestinely by agents of the Hyderabad government asking us to cooperate in overthrowing the socialist regime in the Bengal. This is a tricky situation, since we do not recognize the princely regime and openly contest their claim to all-Indian sovereignty. However, such a pact could serve a useful purpose in removing the radical leftist state and set the stage for a final confrontation with the traitorous princes of the South."
+
+action_a = {
+ai_chance = 65
+name = "Respond positively to these overtures."
+command = { type = relation which = IND value = 35 }
+command = { type = relation which = PRK value = -20 }
+command = { type = event which = 101159 where = IND when = 3 }
+command = { type = addclaim which = 1439 }
+command = { type = addclaim which = 1440 }
+command = { type = addclaim which = 1441 }
+command = { type = addclaim which = 1442 }
+command = { type = addclaim which = 1443 }
+command = { type = addclaim which = 1444 }
+command = { type = addclaim which = 1445 }
+command = { type = addclaim which = 1446 }
+command = { type = addclaim which = 1447 }
+command = { type = addclaim which = 1448 }
+command = { type = addclaim which = 1449 }
+command = { type = addclaim which = 1450 }
+command = { type = addclaim which = 1458 }
+command = { type = addclaim which = 1465 }
+command = { type = addclaim which = 1469 }
+command = { type = addclaim which = 1470 }
+command = { type = addclaim which = 1471 }
+command = { type = addclaim which = 1472 }
+command = { type = addclaim which = 1473 }
+command = { type = addclaim which = 1474 }
+command = { type = addclaim which = 1475 }
+command = { type = addclaim which = 1476 }
+command = { type = addclaim which = 1477 }
+command = { type = addclaim which = 1493 }
+command = { type = addclaim which = 1452 }
+command = { type = addclaim which = 1462 }
+command = { type = setflag which = PAK_IND_PACT_YES }
+}
+
+action_b = {
+ai_chance = 35
+name = "Make promises and hedge bets."
+command = { type = event which = 101159 where = IND when = 3 }
+command = { type = relation which = IND value = 10 }
+command = { type = relation which = PRK value = -10 }
+command = { type = setflag which = PAK_IND_PACT_MAYBE }
+}
+
+
+action_c = {
+ai_chance = 10
+name = "No deals with scheeming princes!"
+command = { type = relation which = PRK value = 20 }
+command = { type = relation which = IND value = -25 }
+command = { type = event which = 101161 where = IND when = 5 }
+}
+
+
+}
+
+event = {
+id = 101159
+country = IND
+style = 2
+picture = "Bengal"
+
+
+name = "The Delhi Government Accepts the Pact"
+desc = "Today we have scored an important diplomatic victory! The Delhi Government has accepted our proposal to dismantle the socialist mongrels in Calcutta and thus secured our Northern flank. The path to national unification has been cleared and our armed forces are itching for a chance to prove their worth!"
+
+action_a = {
+ai_chance = 99
+name = "Then let us attack!"
+command = { type = war which = PRK }
+command = { type = relation which = PAK value = 35 }
+command = { type = relation which = PRK value = -20 }
+command = { type = addclaim which = 1439 }
+command = { type = addclaim which = 1440 }
+command = { type = addclaim which = 1441 }
+command = { type = addclaim which = 1442 }
+command = { type = addclaim which = 1443 }
+command = { type = addclaim which = 1444 }
+command = { type = addclaim which = 1445 }
+command = { type = addclaim which = 1446 }
+command = { type = addclaim which = 1447 }
+command = { type = addclaim which = 1448 }
+command = { type = addclaim which = 1449 }
+command = { type = addclaim which = 1450 }
+command = { type = addclaim which = 1458 }
+command = { type = addclaim which = 1465 }
+command = { type = addclaim which = 1469 }
+command = { type = addclaim which = 1470 }
+command = { type = addclaim which = 1471 }
+command = { type = addclaim which = 1472 }
+command = { type = addclaim which = 1473 }
+command = { type = addclaim which = 1474 }
+command = { type = addclaim which = 1475 }
+command = { type = addclaim which = 1476 }
+command = { type = addclaim which = 1477 }
+command = { type = addclaim which = 1493 }
+command = { type = addclaim which = 1452 }
+command = { type = addclaim which = 1462 }
+command = { type = event which = 101160 where = PAK when = 2 }
+command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+command = { trigger = { ai = yes } type = add_division value = infantry when = 9 }
+command = { trigger = { ai = yes } type = add_division value = infantry when = 9 }
+command = { trigger = { ai = yes } type = add_division value = militia when = 8 }
+command = { trigger = { ai = yes } type = add_division value = militia when = 8 }
+}
+
+action_b = {
+ai_chance = 1
+name = "Abbandon the idea.. for now."
+command = { type = relation which = PAK value = -50 }
+command = { type = relation which = PRK value = 50 }
+}
+
+
+}
+
+event = {
+id = 101160
+country = PAK
+style = 2
+picture = "regalosman"
+
+
+name = "Honouring the Delhi-Hyderabad Pact"
+desc = "In accordance with the secret negotiations between our two governments, Princely India has gone ahead and declared war upon the socialist regime in Calcutta. Should we honour the deal and launch an offensive of our own or employ a more cloak and dagger method of approach?"
+
+action_a = {
+ai_chance = 99
+name = "Honour the pact and attack the Bhartiya Commune!"
+trigger = { flag = PAK_IND_PACT_YES }
+command = { type = war which = PRK }
+command = { type = relation which = IND value = 25 }
+command = { type = relation which = PRK value = -200 }
+command = { type = addclaim which = 1439 }
+command = { type = addclaim which = 1440 }
+command = { type = addclaim which = 1441 }
+command = { type = addclaim which = 1442 }
+command = { type = addclaim which = 1443 }
+command = { type = addclaim which = 1444 }
+command = { type = addclaim which = 1445 }
+command = { type = addclaim which = 1446 }
+command = { type = addclaim which = 1447 }
+command = { type = addclaim which = 1448 }
+command = { type = addclaim which = 1449 }
+command = { type = addclaim which = 1450 }
+command = { type = addclaim which = 1458 }
+command = { type = addclaim which = 1465 }
+command = { type = addclaim which = 1469 }
+command = { type = addclaim which = 1470 }
+command = { type = addclaim which = 1471 }
+command = { type = addclaim which = 1472 }
+command = { type = addclaim which = 1473 }
+command = { type = addclaim which = 1474 }
+command = { type = addclaim which = 1475 }
+command = { type = addclaim which = 1476 }
+command = { type = addclaim which = 1477 }
+command = { type = addclaim which = 1493 }
+command = { type = addclaim which = 1452 }
+command = { type = addclaim which = 1462 }
+command = { type = clrflag which = PAK_IND_PACT_YES }
+}
+
+action_b = {
+ai_chance = 60
+name = "Honour the pact and attack the Bhartiya Commune!"
+trigger = { flag = PAK_IND_PACT_MAYBE }
+command = { type = war which = PRK }
+command = { type = relation which = IND value = 25 }
+command = { type = relation which = PRK value = -200 }
+command = { type = addclaim which = 1439 }
+command = { type = addclaim which = 1440 }
+command = { type = addclaim which = 1441 }
+command = { type = addclaim which = 1442 }
+command = { type = addclaim which = 1443 }
+command = { type = addclaim which = 1444 }
+command = { type = addclaim which = 1445 }
+command = { type = addclaim which = 1446 }
+command = { type = addclaim which = 1447 }
+command = { type = addclaim which = 1448 }
+command = { type = addclaim which = 1449 }
+command = { type = addclaim which = 1450 }
+command = { type = addclaim which = 1458 }
+command = { type = addclaim which = 1465 }
+command = { type = addclaim which = 1469 }
+command = { type = addclaim which = 1470 }
+command = { type = addclaim which = 1471 }
+command = { type = addclaim which = 1472 }
+command = { type = addclaim which = 1473 }
+command = { type = addclaim which = 1474 }
+command = { type = addclaim which = 1475 }
+command = { type = addclaim which = 1476 }
+command = { type = addclaim which = 1477 }
+command = { type = addclaim which = 1493 }
+command = { type = addclaim which = 1452 }
+command = { type = addclaim which = 1462 }
+command = { type = clrflag which = PAK_IND_PACT_MAYBE }
+}
+
+action_c = {
+ai_chance = 39
+name = "Strike the princes in the back!"
+trigger = { flag = PAK_IND_PACT_MAYBE }
+command = { type = war which = IND }
+command = { type = relation which = PRK value = 25 }
+command = { type = relation which = IND value = -200 }
+command = { type = addclaim which = 1520 }
+command = { type = addclaim which = 1517 }
+command = { type = addclaim which = 1516 }
+command = { type = addclaim which = 1515 }
+command = { type = addclaim which = 1514 }
+command = { type = addclaim which = 1512 }
+command = { type = addclaim which = 1508 }
+command = { type = addclaim which = 1498 }
+command = { type = addclaim which = 1496 }
+command = { type = addclaim which = 1492 }
+command = { type = addclaim which = 1491 }
+command = { type = addclaim which = 1490 }
+command = { type = addclaim which = 1489 }
+command = { type = addclaim which = 1488 }
+command = { type = addclaim which = 1487 }
+command = { type = addclaim which = 1486 }
+command = { type = addclaim which = 1485 }
+command = { type = addclaim which = 1484 }
+command = { type = addclaim which = 1482 }
+command = { type = addclaim which = 1478 }
+command = { type = addclaim which = 1501 }
+command = { type = addclaim which = 1502 }
+command = { type = addclaim which = 1503 }
+command = { type = addclaim which = 1507 }
+command = { type = addclaim which = 1495 }
+command = { type = addclaim which = 1497 }
+command = { type = clrflag which = PAK_IND_PACT_MAYBE }
+}
+
+action_d = {
+ai_chance = 1
+name = "Time to hunt some tiger. Mmmm... tiger."
+command = { type = relation which = IND value = -50 }
+command = { type = relation which = PRK value = 50 }
+}
+
+
+}
+
+event = {
+id = 101161
+country = IND
+style = 2
+picture = "Bengal"
+
+
+name = "The Delhi Government Refuses the Pact"
+desc = "Damnations! The lapdogs in Delhi have refused any form of cooperation in destroying the Bhartiya Commune."
+
+action_a = {
+ai_chance = 99
+name = "Then we shall attack the Bolshevik menace on our own!"
+command = { type = war which = PRK }
+command = { type = relation which = PAK value = 35 }
+command = { type = relation which = PRK value = -20 }
+command = { type = addclaim which = 1439 }
+command = { type = addclaim which = 1440 }
+command = { type = addclaim which = 1441 }
+command = { type = addclaim which = 1442 }
+command = { type = addclaim which = 1443 }
+command = { type = addclaim which = 1444 }
+command = { type = addclaim which = 1445 }
+command = { type = addclaim which = 1446 }
+command = { type = addclaim which = 1447 }
+command = { type = addclaim which = 1448 }
+command = { type = addclaim which = 1449 }
+command = { type = addclaim which = 1450 }
+command = { type = addclaim which = 1458 }
+command = { type = addclaim which = 1465 }
+command = { type = addclaim which = 1469 }
+command = { type = addclaim which = 1470 }
+command = { type = addclaim which = 1471 }
+command = { type = addclaim which = 1472 }
+command = { type = addclaim which = 1473 }
+command = { type = addclaim which = 1474 }
+command = { type = addclaim which = 1475 }
+command = { type = addclaim which = 1476 }
+command = { type = addclaim which = 1477 }
+command = { type = addclaim which = 1493 }
+command = { type = addclaim which = 1452 }
+command = { type = addclaim which = 1462 }
+command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+command = { trigger = { ai = yes } type = add_division value = infantry when = 9 }
+command = { trigger = { ai = yes } type = add_division value = infantry when = 9 }
+command = { trigger = { ai = yes } type = add_division value = militia when = 8 }
+command = { trigger = { ai = yes } type = add_division value = militia when = 8 }
+}
+
+action_b = {
+ai_chance = 1
+name = "Abbandon the idea.. for now."
+command = { type = relation which = PAK value = 20 }
+command = { type = relation which = PRK value = 20 }
+}
+
+
+}
+################################################################################?#
+#Hyderabad defeats Calcutta on its own
+################################################################################?#
+event = {
+id = 101162
+picture = "federationpolitics"
+decision_picture = "decision_regalosman"
+style = 2
+country = IND
+
+
+decision = {
+flag = princelyreform_done
+exists = PAK
+OR = {
+AND = {
+NOT = {
+war = { country = IND country = BUR }
+exists = PRK
+war = { country = IND country = PAK }
+alliance = { country = IND country = PAK }
+}
+owned = { province = 1447 data = IND } #Calcutta
+control = { province = 1447 data = IND } #Calcutta
+control = { province = 1487 data = IND } #Hyderabad
+
+control = { province = 1507 data = IND } #Mysore
+control = { province = 1495 data = IND } #Trivandrum
+}
+AND = {
+flag = IND_focus_Delhi
+exists = PRK
+NOT = {
+war = { country = IND country = PRK }
+war = { country = IND country = PAK }
+}
+}
+}
+}
+
+decision_trigger = {
+control = { province = 1487 data = IND } #Hyderabad
+OR = {
+control = { province = 1507 data = IND } #Mysore
+control = { province = 1495 data = IND } #Trivandrum
+}
+}
+
+
+trigger = {
+flag = princelyreform_done
+exists = PAK
+OR = {
+AND = {
+NOT = {
+war = { country = IND country = BUR }
+exists = PRK
+war = { country = IND country = PAK }
+alliance = { country = IND country = PAK }
+}
+owned = { province = 1447 data = IND } #Calcutta
+control = { province = 1447 data = IND } #Calcutta
+control = { province = 1487 data = IND } #Hyderabad
+
+control = { province = 1507 data = IND } #Mysore
+control = { province = 1495 data = IND } #Trivandrum
+}
+AND = {
+flag = IND_focus_Delhi
+exists = PRK
+NOT = {
+war = { country = IND country = PRK }
+war = { country = IND country = PAK }
+}
+}
+}
+}
+
+name = "Dealing With the Delhi Government"
+desc = "We have decided to turn our focus on eliminating the colonial lapdogs in Delhi. Several paths could lead to the collapse of the last remnant of the British Raj. However, the close relations between Delhi and the Entente might prove a challenge too steep if charged head on."
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+ai_chance = 75
+name = "Let us end this once and for all!"
+command = { type = belligerence which = IND value = 5 }
+command = { type = dissent value = -5 }
+command = { type = war which = PAK }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = addclaim which = 1513 }
+command = { type = addclaim which = 1459 }
+command = { type = addclaim which = 1533 }
+command = { type = addclaim which = 1538 }
+command = { type = addclaim which = 1532 }
+command = { type = addclaim which = 1519 }
+command = { type = addclaim which = 1522 }
+command = { type = addclaim which = 1479 }
+command = { type = addclaim which = 1480 }
+command = { type = addclaim which = 1481 }
+command = { type = addclaim which = 1483 }
+command = { type = addclaim which = 1466 }
+command = { type = addclaim which = 1453 }
+command = { type = addclaim which = 1454 }
+command = { type = addclaim which = 1463 }
+command = { type = addclaim which = 1460 }
+command = { type = addclaim which = 1464 }
+command = { type = addclaim which = 1461 }
+command = { type = addclaim which = 1468 }
+command = { type = addclaim which = 1518 }
+command = { type = addclaim which = 1521 }
+command = { type = addclaim which = 1523 }
+command = { type = addclaim which = 1524 }
+command = { type = addclaim which = 1525 }
+command = { type = addclaim which = 1526 }
+command = { type = addclaim which = 1527 }
+command = { type = addclaim which = 1528 }
+command = { type = addclaim which = 1530 }
+command = { type = addclaim which = 1531 }
+command = { type = addclaim which = 1534 }
+command = { type = addclaim which = 1535 }
+command = { type = addclaim which = 1536 }
+command = { type = addclaim which = 1539 }
+command = { type = addclaim which = 1540 }
+command = { type = addclaim which = 1529 }
+command = { type = addclaim which = 1537 }
+command = { type = addclaim which = 1451 }
+command = { type = addclaim which = 1467 }
+}
+action_b = {
+ai_chance = 24
+name = "Let us attempt to sway the Northern nationalist princes."
+command = { type = belligerence which = IND value = 5 }
+command = { type = dissent value = 2 }
+command = { type = relation which = PAK value = -50 }
+command = { type = relation which = CAN value = -50 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = event which = 101163 where = IND when = 7 }
+}
+
+action_c = {
+ai_chance = 1
+name = "Our resources are stretched, let us wait and regroup."
+command = { type = belligerence which = IND value = -5 }
+command = { type = dissent value = 10 }
+command = { type = relation which = PAK value = 50 }
+command = { type = relation which = cAN value = 20 }
+command = { type = domestic which = interventionism value = -5 }
+command = { type = domestic which = defense_lobby value = -2 }
+}
+}
+################################################################################?#
+#Scheeming in the North
+################################################################################?#
+event = {
+id = 101163
+country = IND
+style = 2
+picture = "Gangasinghevent"
+
+
+name = "The National Government Speaks Softly to Northern Princes"
+desc = "EVT_101163_DESC"
+
+action_a = {
+ai_chance = 40
+name = "Hari Singh of Kashmir is a good reactionary, court him!"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = setflag which = IND_Kashmir }
+command = { type = relation which = PAK value = -50 }
+command = { type = event which = 101164 where = PAK when = 4 }
+}
+
+action_b = {
+ai_chance = 50
+name = "Court both the powerful princes of Baroda and Kashmir!"
+command = { type = domestic which = interventionism value = 2 }
+command = { type = setflag which = IND_Kashmir_Baroda }
+command = { type = relation which = PAK value = -100 }
+command = { type = event which = 101164 where = PAK when = 4 }
+}
+
+action_c = {
+ai_chance = 10
+name = "Abbandon this scheeming and declare war!"
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = war which = PAK }
+command = { type = relation which = PAK value = -200 }
+command = { type = relation which = CAN value = -100 }
+command = { type = addclaim which = 1513 }
+command = { type = addclaim which = 1459 }
+command = { type = addclaim which = 1533 }
+command = { type = addclaim which = 1538 }
+command = { type = addclaim which = 1532 }
+command = { type = addclaim which = 1519 }
+command = { type = addclaim which = 1522 }
+command = { type = addclaim which = 1479 }
+command = { type = addclaim which = 1480 }
+command = { type = addclaim which = 1481 }
+command = { type = addclaim which = 1483 }
+command = { type = addclaim which = 1466 }
+command = { type = addclaim which = 1453 }
+command = { type = addclaim which = 1454 }
+command = { type = addclaim which = 1463 }
+command = { type = addclaim which = 1460 }
+command = { type = addclaim which = 1464 }
+command = { type = addclaim which = 1461 }
+command = { type = addclaim which = 1468 }
+command = { type = addclaim which = 1518 }
+command = { type = addclaim which = 1521 }
+command = { type = addclaim which = 1523 }
+command = { type = addclaim which = 1524 }
+command = { type = addclaim which = 1525 }
+command = { type = addclaim which = 1526 }
+command = { type = addclaim which = 1527 }
+command = { type = addclaim which = 1528 }
+command = { type = addclaim which = 1530 }
+command = { type = addclaim which = 1531 }
+command = { type = addclaim which = 1534 }
+command = { type = addclaim which = 1535 }
+command = { type = addclaim which = 1536 }
+command = { type = addclaim which = 1539 }
+command = { type = addclaim which = 1540 }
+command = { type = addclaim which = 1529 }
+command = { type = addclaim which = 1537 }
+command = { type = addclaim which = 1451 }
+command = { type = addclaim which = 1467 }
+}
+
+
+}
+
+event = {
+id = 101164
+country = PAK
+style = 2
+picture = "diarchy"
+
+
+name = "Treason and Sedition Amongst our Princes!"
+desc = "EVT_101164_DESC"
+
+action = {
+ai_chance = 40
+name = "Rush troops to Kashmir and arrest the Maharaja!"
+trigger = { flag = IND_Kashmir }
+command = { type = dissent value = 5 }
+command = { type = relation which = IND value = -50 }
+command = { type = setflag which = IND_Kashmir_fail }
+command = { type = event which = 101166 where = IND when = 4 }
+}
+
+action = {
+ai_chance = 60
+name = "Hari Singh delcares for Hyderabad and revolts!"
+trigger = { flag = IND_Kashmir }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = relation which = IND value = -100 }
+command = { type = removecore which = 1540 }
+command = { type = removecore which = 1539 }
+command = { type = secedeprovince which = IND value = 1540 }
+command = { type = secedeprovince which = IND value = 1539 }
+command = { type = addclaim which = 1540 }
+command = { type = addclaim which = 1539 }
+command = { type = remove_division which = "1st Jammu and Kashmir Infantry" value = PAK }
+command = { type = trigger which = 101165 }
+}
+
+action = {
+ai_chance = 50
+name = "Declare martial law in Baroda and Kashmir and arrest the princes!"
+trigger = { flag = IND_Kashmir_Baroda }
+command = { type = domestic which = defense_lobby value = 2 }
+command = { type = sleepminister which = 564043 }
+command = { type = sleepminister which = 564052 }
+command = { type = sleepleader which = 564034 }
+command = { type = dissent value = 10 }
+command = { type = trigger which = 101166 }
+}
+
+action = {
+ai_chance = 50
+name = "Baroda and Kashmir secedes and declares for Hyderabad!"
+trigger = { flag = IND_Kashmir_Baroda }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = relation which = IND value = -100 }
+command = { type = removecore which = 1540 }
+command = { type = removecore which = 1539 }
+command = { type = secedeprovince which = IND value = 1540 }
+command = { type = secedeprovince which = IND value = 1539 }
+command = { type = addclaim which = 1540 }
+command = { type = addclaim which = 1539 }
+command = { type = removecore which = 1521 }
+command = { type = removecore which = 1518 }
+command = { type = secedeprovince which = IND value = 1521 }
+command = { type = secedeprovince which = IND value = 1518 }
+command = { type = addclaim which = 1521 }
+command = { type = addclaim which = 1518 }
+command = { type = remove_division which = "1st Jammu and Kashmir Infantry" value = PAK }
+command = { type = sleepminister which = 564043 }
+command = { type = sleepminister which = 564052 }
+command = { type = sleepleader which = 564034 }
+command = { type = trigger which = 101165 }
+}
+
+
+}
+event = {
+id = 101165
+country = IND
+style = 2
+picture = "diarchy"
+
+
+name = "Results of our Scheming"
+desc = "For better or worse our underhand plot to turn some of the Northern princes against their own government has come to an end. It is now time to bring forth the daggers and cut away the last stain of British colonialism on the Indian sub-continent!"
+
+action = {
+ai_chance = 100
+name = "Rush to the aid of Kashmir - declare war!"
+trigger = { flag = IND_Kashmir }
+command = { type = add_corps which = "Army of the State of Jammu and Kashmir" value = land where = 1540 }
+command = { type = add_division which = "1st Jammu and Kashmir Infantry" value = infantry when = 8 }
+command = { type = addcore which = 1540 }
+command = { type = addcore which = 1539 }
+command = { type = addclaim which = 1513 }
+command = { type = addclaim which = 1459 }
+command = { type = addclaim which = 1533 }
+command = { type = addclaim which = 1538 }
+command = { type = addclaim which = 1532 }
+command = { type = addclaim which = 1519 }
+command = { type = addclaim which = 1522 }
+command = { type = addclaim which = 1479 }
+command = { type = addclaim which = 1480 }
+command = { type = addclaim which = 1481 }
+command = { type = addclaim which = 1483 }
+command = { type = addclaim which = 1466 }
+command = { type = addclaim which = 1453 }
+command = { type = addclaim which = 1454 }
+command = { type = addclaim which = 1463 }
+command = { type = addclaim which = 1460 }
+command = { type = addclaim which = 1464 }
+command = { type = addclaim which = 1461 }
+command = { type = addclaim which = 1468 }
+command = { type = addclaim which = 1518 }
+command = { type = addclaim which = 1521 }
+command = { type = addclaim which = 1523 }
+command = { type = addclaim which = 1524 }
+command = { type = addclaim which = 1525 }
+command = { type = addclaim which = 1526 }
+command = { type = addclaim which = 1527 }
+command = { type = addclaim which = 1528 }
+command = { type = addclaim which = 1530 }
+command = { type = addclaim which = 1531 }
+command = { type = addclaim which = 1534 }
+command = { type = addclaim which = 1535 }
+command = { type = addclaim which = 1536 }
+command = { type = addclaim which = 1529 }
+command = { type = addclaim which = 1537 }
+command = { type = addclaim which = 1451 }
+command = { type = addclaim which = 1467 }
+command = { type = dissent value = -5 }
+command = { type = war which = PAK }
+command = { type = relation which = PAK value = -50 }
+command = { type = trigger which = 1011660 }
+
+}
+
+action = {
+ai_chance = 100
+name = "Baroda and Kashmir join the National Government - to war!"
+trigger = { flag = IND_Kashmir_Baroda }
+command = { type = add_corps which = "Army of the State of Jammu and Kashmir" value = land where = 1540 }
+command = { type = add_division which = "1st Jammu and Kashmir Infantry" value = infantry when = 8 }
+command = { type = add_corps which = "Army of the State of Baroda" value = land where = 1521 }
+command = { type = add_division which = "1st Baroda Royal Infantry" value = infantry when = 8 }
+command = { type = add_corps which = "Gujarati Militia" value = land where = 1518 }
+command = { type = add_division which = "1st Gujarati Volunteers" value = militia when = 4 }
+command = { type = war which = PAK }
+command = { type = addcore which = 1540 }
+command = { type = addcore which = 1539 }
+command = { type = addclaim which = 1513 }
+command = { type = addclaim which = 1459 }
+command = { type = addclaim which = 1533 }
+command = { type = addclaim which = 1538 }
+command = { type = addclaim which = 1532 }
+command = { type = addclaim which = 1519 }
+command = { type = addclaim which = 1522 }
+command = { type = addclaim which = 1479 }
+command = { type = addclaim which = 1480 }
+command = { type = addclaim which = 1481 }
+command = { type = addclaim which = 1483 }
+command = { type = addclaim which = 1466 }
+command = { type = addclaim which = 1453 }
+command = { type = addclaim which = 1454 }
+command = { type = addclaim which = 1463 }
+command = { type = addclaim which = 1460 }
+command = { type = addclaim which = 1464 }
+command = { type = addclaim which = 1461 }
+command = { type = addclaim which = 1468 }
+command = { type = addcore which = 1518 }
+command = { type = addcore which = 1521 }
+command = { type = addclaim which = 1523 }
+command = { type = addclaim which = 1524 }
+command = { type = addclaim which = 1525 }
+command = { type = addclaim which = 1526 }
+command = { type = addclaim which = 1527 }
+command = { type = addclaim which = 1528 }
+command = { type = addclaim which = 1530 }
+command = { type = addclaim which = 1531 }
+command = { type = addclaim which = 1534 }
+command = { type = addclaim which = 1535 }
+command = { type = addclaim which = 1536 }
+command = { type = addclaim which = 1529 }
+command = { type = addclaim which = 1537 }
+command = { type = addclaim which = 1451 }
+command = { type = addclaim which = 1467 }
+command = { type = trigger which = 1011660 }
+}
+
+}
+event = {
+id = 101166
+country = IND
+style = 2
+picture = "diarchy"
+
+
+name = "The Princely Plot is Thwarted"
+desc = "For better or worse our underhand plot to turn some of the Northern princes against their own government has come to an end. It is now time to bring forth the daggers and cut away the last stain of British colonialism on the Indian sub-continent!"
+
+action = {
+ai_chance = 100
+name = "Then we must crush the pretenders by brute force!"
+trigger = { flag = IND_Kashmir }
+command = { type = addclaim which = 1540 }
+command = { type = addclaim which = 1539 }
+command = { type = addclaim which = 1513 }
+command = { type = addclaim which = 1459 }
+command = { type = addclaim which = 1533 }
+command = { type = addclaim which = 1538 }
+command = { type = addclaim which = 1532 }
+command = { type = addclaim which = 1519 }
+command = { type = addclaim which = 1522 }
+command = { type = addclaim which = 1479 }
+command = { type = addclaim which = 1480 }
+command = { type = addclaim which = 1481 }
+command = { type = addclaim which = 1483 }
+command = { type = addclaim which = 1466 }
+command = { type = addclaim which = 1453 }
+command = { type = addclaim which = 1454 }
+command = { type = addclaim which = 1463 }
+command = { type = addclaim which = 1460 }
+command = { type = addclaim which = 1464 }
+command = { type = addclaim which = 1461 }
+command = { type = addclaim which = 1468 }
+command = { type = addclaim which = 1518 }
+command = { type = addclaim which = 1521 }
+command = { type = addclaim which = 1523 }
+command = { type = addclaim which = 1524 }
+command = { type = addclaim which = 1525 }
+command = { type = addclaim which = 1526 }
+command = { type = addclaim which = 1527 }
+command = { type = addclaim which = 1528 }
+command = { type = addclaim which = 1530 }
+command = { type = addclaim which = 1531 }
+command = { type = addclaim which = 1534 }
+command = { type = addclaim which = 1535 }
+command = { type = addclaim which = 1536 }
+command = { type = addclaim which = 1529 }
+command = { type = addclaim which = 1537 }
+command = { type = addclaim which = 1451 }
+command = { type = addclaim which = 1467 }
+command = { type = dissent value = -5 }
+command = { type = war which = PAK }
+command = { type = relation which = PAK value = -50 }
+command = { type = trigger which = 1011660 }
+
+}
+
+action = {
+ai_chance = 100
+name = "Then we must crush the pretenders by brute force!"
+trigger = { flag = IND_Kashmir_Baroda }
+command = { type = war which = PAK }
+command = { type = addclaim which = 1540 }
+command = { type = addclaim which = 1539 }
+command = { type = addclaim which = 1513 }
+command = { type = addclaim which = 1459 }
+command = { type = addclaim which = 1533 }
+command = { type = addclaim which = 1538 }
+command = { type = addclaim which = 1532 }
+command = { type = addclaim which = 1519 }
+command = { type = addclaim which = 1522 }
+command = { type = addclaim which = 1479 }
+command = { type = addclaim which = 1480 }
+command = { type = addclaim which = 1481 }
+command = { type = addclaim which = 1483 }
+command = { type = addclaim which = 1466 }
+command = { type = addclaim which = 1453 }
+command = { type = addclaim which = 1454 }
+command = { type = addclaim which = 1463 }
+command = { type = addclaim which = 1460 }
+command = { type = addclaim which = 1464 }
+command = { type = addclaim which = 1461 }
+command = { type = addclaim which = 1468 }
+command = { type = addclaim which = 1518 }
+command = { type = addclaim which = 1521 }
+command = { type = addclaim which = 1523 }
+command = { type = addclaim which = 1524 }
+command = { type = addclaim which = 1525 }
+command = { type = addclaim which = 1526 }
+command = { type = addclaim which = 1527 }
+command = { type = addclaim which = 1528 }
+command = { type = addclaim which = 1530 }
+command = { type = addclaim which = 1531 }
+command = { type = addclaim which = 1534 }
+command = { type = addclaim which = 1535 }
+command = { type = addclaim which = 1536 }
+command = { type = addclaim which = 1529 }
+command = { type = addclaim which = 1537 }
+command = { type = addclaim which = 1451 }
+command = { type = addclaim which = 1467 }
+command = { type = dissent value = -5 }
+command = { type = trigger which = 1011660 }
+}
+
+action = {
+ai_chance = 1
+name = "Sweet Gods that was a foolish idea..."
+command = { type = dissent value = 20 }
+}
+
+}
+
+event = {
+id = 1011660
+country = PAK
+style = 2
+picture = "diarchy"
+
+
+name = "The Gun-Salute State Attacks"
+desc = "The traitors of the Princely state have attacked us! We must fight for our claim to all-Indian representation!"
+
+action = {
+ai_chance = 100
+name = "Down with the Nizam!"
+command = { type = addclaim which = 1520 }
+command = { type = addclaim which = 1517 }
+command = { type = addclaim which = 1516 }
+command = { type = addclaim which = 1515 }
+command = { type = addclaim which = 1514 }
+command = { type = addclaim which = 1512 }
+command = { type = addclaim which = 1508 }
+command = { type = addclaim which = 1498 }
+command = { type = addclaim which = 1496 }
+command = { type = addclaim which = 1487 }
+command = { type = addclaim which = 1485 }
+command = { type = addclaim which = 1484 }
+command = { type = addclaim which = 1482 }
+command = { type = addclaim which = 1478 }
+command = { type = addclaim which = 1501 }
+command = { type = addclaim which = 1502 }
+command = { type = addclaim which = 1503 }
+command = { type = addclaim which = 1504 }
+command = { type = addclaim which = 1505 }
+command = { type = addclaim which = 1507 }
+command = { type = addclaim which = 1495 }
+command = { type = addclaim which = 1497 }
+command = { type = addclaim which = 1486 }
+command = { type = addclaim which = 1488 }
+command = { type = addclaim which = 1489 }
+command = { type = addclaim which = 1491 }
+command = { type = addclaim which = 1492 }
+command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+command = { trigger = { ai = yes } type = add_division value = infantry when = 9 }
+command = { trigger = { ai = yes } type = add_division value = infantry when = 9 }
+command = { trigger = { ai = yes } type = add_division value = infantry when = 9 }
+command = { trigger = { ai = yes } type = add_division value = infantry when = 9 }
+command = { trigger = { ai = yes } type = add_division value = militia when = 8 }
+command = { trigger = { ai = yes } type = add_division value = militia when = 8 }
+command = { type = dissent value = -5 }
+}
+}
+################################################################################?#
+#Going after the BC if Delhi already done for
+################################################################################?#
+event = {
+id = 101167
+picture = "federationpolitics"
+decision_picture = "decision_regalosman"
+style = 2
+country = IND
+
+
+decision = {
+flag = princelyreform_done
+flag = IND_focus_Delhi
+exists = PRK
+NOT = {
+exists = PAK
+alliance = { country = IND country = PAK }
+alliance = { country = IND country = PRK }
+}
+}
+
+decision_trigger = {
+flag = IND_focus_Delhi
+control = { province = 1487 data = IND } #Hyderabad
+OR = {
+control = { province = 1507 data = IND } #Mysore
+control = { province = 1495 data = IND } #Trivandrum
+}
+}
+
+
+trigger = {
+flag = IND_focus_Delhi
+flag = princelyreform_done
+exists = PRK
+NOT = {
+alliance = { country = IND country = PAK }
+exists = PAK
+}
+control = { province = 1487 data = IND } #Hyderabad
+OR = {
+control = { province = 1507 data = IND } #Mysore
+control = { province = 1495 data = IND } #Trivandrum
+}
+}
+
+name = "Direction of Princely India's Foreign Policy"
+desc = "Through a series of successful internal reforms, Princely India has emerged from the mid thirties as a serious and prepared contender for all-Indian supremacy. We have crushed the Delhi government and now we have to do the same with the Socialists in the eastern provinces."
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+ai_chance = 100
+name = "Radical Socialism must be eradicated from the sub-continent!"
+command = { type = belligerence which = IND value = 5 }
+command = { type = dissent value = -5 }
+command = { type = relation which = PRK value = -50 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = event which = 101151 where = IND when = 7 }
+}
+
+action_b = {
+ai_chance = 0
+name = "I'd rather go tiger hunting... mmm... tiger."
+command = { type = belligerence which = IND value = -5 }
+command = { type = dissent value = 10 }
+command = { type = relation which = PAK value = 50 }
+command = { type = relation which = PRK value = 50 }
+command = { type = relation which = cAN value = 20 }
+command = { type = domestic which = interventionism value = -5 }
+command = { type = domestic which = defense_lobby value = -2 }
+command = { type = sleepevent which = 101151 }
+}
+}
+################################################################################?#
+#Choosing the Sides
+################################################################################?#
+event = {
+id = 101180
+picture = "federationpolitics"
+decision_picture = "decision_regalosman"
+style = 2
+country = IND
+
+
+decision = {
+flag = princelyreform_done
+NOT = {
+exists = PAK
+exists = PRK
+alliance = { country = GER country = IND}
+alliance = { country = JAP country = IND}
+alliance = { country = RUS country = IND}
+}
+}
+
+decision_trigger = {
+core = { province = 1459 data = IND }
+owned = { province = 1459 data = IND }
+control = { province = 1459 data = IND }
+core = { province = 1447 data = IND }
+owned = { province = 1447 data = IND }
+control = { province = 1447 data = IND }
+core = { province = 1487 data = IND }
+owned = { province = 1487 data = IND }
+control = { province = 1487 data = IND }
+core = { province = 1517 data = IND }
+owned = { province = 1517 data = IND }
+control = { province = 1517 data = IND }
+}
+
+
+trigger = {
+flag = princelyreform_done
+NOT = {
+exists = PAK
+exists = PRK
+alliance = { country = GER country = IND}
+alliance = { country = JAP country = IND}
+alliance = { country = RUS country = IND}
+}
+core = { province = 1459 data = IND }
+owned = { province = 1459 data = IND }
+control = { province = 1459 data = IND }
+core = { province = 1447 data = IND }
+owned = { province = 1447 data = IND }
+control = { province = 1447 data = IND }
+core = { province = 1487 data = IND }
+owned = { province = 1487 data = IND }
+control = { province = 1487 data = IND }
+core = { province = 1517 data = IND }
+owned = { province = 1517 data = IND }
+control = { province = 1517 data = IND }
+}
+
+name = "Princely India and Her Place in the Sun"
+desc = "We have consolidated India and enforced Princely cohesion throughout the sub-continent. The time has now come for the National Government to descide on our country's role in the world of international diplomacy. Shall we join one of the grand alliances and strenghten the nation's international reputation?"
+
+date = { day = 3 month = july year = 1941 }
+offset = 200
+deathdate = { day = 10 month = july year = 1962 }
+
+action_a = {
+ai_chance = 45
+trigger = {
+exists = JAP
+NOT = { ispuppet = JAP }
+NOT = { war = { country = IND country = JAP } }
+NOT = { participant = { country = JAP value = 1 } }
+NOT = { participant = { country = JAP value = 2 } }
+}
+name = "Align with the Japanese for the glory of Asia!"
+command = { type = trigger which = 101181 }
+command = { type = dissent value = 2 }
+}
+
+action_b = {
+ai_chance = 35
+trigger = {
+exists = GER
+NOT = { ispuppet = GER }
+NOT = { war = { country = IND country = GER } }
+participant = { country = GER value = 2 }
+}
+name = "We can cooperate with the German Empire!"
+command = { type = trigger which = 101182 }
+command = { type = dissent value = 5 }
+}
+
+action_c = {
+ai_chance = 25
+trigger = {
+exists = RUS
+NOT = { flag = RUS_ISO }
+NOT = { ispuppet = RUS }
+NOT = { war = { country = RUS country = IND } }
+NOT = { participant = { country = IND value = 1 } }
+NOT = { participant = { country = IND value = 2 } }
+}
+name = "Alongside Russia we shall bring order to all of Asia!"
+command = { type = trigger which = 101183 }
+command = { type = dissent value = 5 }
+}
+
+action_d = {
+ai_chance = 3
+name = "Let us rebuild India in splendid isolation."
+command = { type = belligerence which = IND value = -20  }
+command = { type = dissent value = -10 }
+}
+}
+
+event = {
+id = 101181
+country = JAP
+style = 2
+picture = "Bengal"
+
+
+name = "Princely India Wants to Join Our Alliance"
+desc = "The national government in Hyderabad has recently united the successor states of the subcontinent. The new Indian government has expressed its desire to join our alliance and help furthering the awakening of the people's of Asia. What is the oppinion of the Imperial cabinnet?"
+
+action_a = {
+ai_chance = 99
+name = "Outstanding, the Co-Prosperity Sphere welcomes them!"
+command = { type = alliance which = IND }
+command = { type = relation which = IND value = 200 }
+command = { type = dissent value = -3 }
+command = { type = domestic which = defense_lobby value = -1 }
+}
+
+action_b = {
+ai_chance = 1
+name = "India's s not really my cup of tea."
+command = { type = relation which = IND value = -20 }
+}
+
+
+}
+
+event = {
+id = 101182
+country = GER
+style = 2
+picture = "Bengal"
+
+
+name = "Princely India Wants to Join Our Alliance"
+desc = "The national government in Hyderabad has recently united the successor states of the subcontinent. The new Indian government has expressed its desire to join the Mitteleuropa System and continue to fight Syndicalism in Asia. However, it is expected that the Indians will demand concessions regarding our colonies in the sub-continent."
+
+action_a = {
+ai_chance = 80
+name = "Wunderbar, the Kaiserreich salutes its new ally!"
+command = { type = alliance which = IND }
+command = { type = relation which = IND value = 200 }
+command = { type = dissent value = -3 }
+command = { type = domestic which = defense_lobby value = -1 }
+}
+
+action_b = {
+ai_chance = 20
+name = "India's s not really my cup of tea."
+command = { type = relation which = IND value = -20 }
+}
+
+
+}
+
+event = {
+id = 101183
+country = RUS
+style = 2
+picture = "Bengal"
+
+
+name = "Princely India Wants to Join Our Alliance"
+desc = "The national government in Hyderabad has recently united the successor states of the subcontinent. The new Indian government has expressed its desire to join our alliance to further stability and national harmony throughout Eurasia. With such an alliance, the sepoy and cossack will surely dominate the continent!"
+
+action_a = {
+ai_chance = 75
+name = "This alliance shall mark our victory in the Great Game, accept!"
+command = { type = alliance which = IND }
+command = { type = relation which = IND value = 200 }
+command = { type = dissent value = -3 }
+command = { type = domestic which = defense_lobby value = -1 }
+}
+
+action_b = {
+ai_chance = 25
+name = "India's s not really my cup of tea."
+command = { type = relation which = IND value = -20 }
+}
+
+
+}
+################################################################################?#
+#German colonies in the area if allied
+################################################################################?#
+event = {
+id = 101184
+random = no
+country = IND
+style = 2
+
+trigger = {
+alliance = { country = IND country = GER }
+NOT = {
+exists = U42
+ispuppet = IND
+}
+AND = {
+control = { province = 1421 data = GER }
+control = { province = 1509 data = GER }
+control = { province = 1510 data = GER }
+control = { province = 1511 data = GER }
+control = { province = 1612 data = GER }
+}
+}
+
+
+name = "The Status of the German Colonies Near India"
+desc = "After succesfully concluding an alliance with the German Empire, some members of our government believe that we should use our newfound cordial relations to request that the Kaiserreich return the territories it snatched from the British when the Raj collapsed. However, the Indo-German alliance is still fragile and some fear that pressuring the Germans might endanger our newfound international strenght."
+picture = "Ceylon"
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1966 }
+
+action_a = {
+ai_chance = 20
+name = "Request the return of the Andaman and Laccadive Islands."
+command = { type = relation which = GER value = -10 }
+command = { type = dissent value = -2 }
+command = { type = event which = 101185 where = GER when = 3 }
+command = { type = setflag which = IND_And_Lac }
+
+}
+action_b = {
+ai_chance = 60
+name = "Request the return of the atolls as well as Ceylon."
+command = { type = relation which = GER value = -20 }
+command = { type = dissent value = -3 }
+command = { type = event which = 101185 where = GER when = 3 }
+command = { type = setflag which = IND_Ceylon }
+
+}
+action_c = {
+ai_chance = 20
+name = "There's no need to antagonize the Germans."
+command = { type = relation which = GER value = 50 }
+command = { type = dissent value = 4 }
+}
+}
+
+event = {
+id = 101185
+random = no
+country = GER
+style = 2
+picture = "Ceylon"
+
+
+name = "Princely India and the Return of our Indian Colonies"
+desc = "The Hyderabad government has just proposed a deal that would transfer some of the territories we snatched after the collapse of the British Raj back to the Indian government. This could be a good way to improve relations with the national government, but could also set a dangerous precedent in our other colonies."
+
+action = {
+trigger = { flag = IND_And_Lac }
+ai_chance = 75
+name = "Hand over the isles to the Indians."
+command = { type = relation which = IND value = 100 }
+command = { type = secedeprovince which = IND value = 1421 }
+command = { type = secedeprovince which = IND value = 1611 }
+command = { type = secedeprovince which = IND value = 1612 }
+command = { type = trigger which = 101186 }
+command = { type = dissent value = 3 }
+}
+
+action = {
+trigger = { flag = IND_And_Lac }
+ai_chance = 25
+name = "Nein, these naval bases are vital to the Kaiserliche Marine!"
+command = { type = relation which = IND value = -20 }
+}
+
+action = {
+trigger = { flag = IND_Ceylon }
+ai_chance = 75
+name = "Hand over Ceylon and the isles to the Indians."
+command = { type = relation which = IND value = 120 }
+command = { type = dissent value = 5 }
+command = { type = domestic which = defense_lobby value = -1 }
+command = { type = secedeprovince which = IND value = 1421 }
+command = { type = secedeprovince which = IND value = 1611 }
+command = { type = secedeprovince which = IND value = 1612 }
+command = { type = secedeprovince which = IND value = 1509 }
+command = { type = secedeprovince which = IND value = 1510 }
+command = { type = secedeprovince which = IND value = 1511 }
+command = { type = trigger which = 101186 }
+}
+
+action = {
+trigger = { flag = IND_Ceylon }
+ai_chance = 40
+name = "Nein, these naval bases are vital to the Kaiserliche Marine!"
+command = { type = relation which = IND value = -25 }
+}
+
+
+}
+
+event = {
+id = 101186
+random = no
+country = IND
+style = 2
+picture = "Ceylon"
+
+name = "The Transfer of the German Colonies"
+desc = "We have managed to convience the Germans to return some of the colonies taken by the Reich after the Raj collapsed. This is both a great sign of Indo-German friendship, but also proof that we truly have obtained the mandate as legal successor to the British. Glory to India!"
+
+action = {
+trigger = { flag = IND_And_Lac }
+ai_chance = 100
+name = "Huzzah!"
+command = { type = relation which = GER value = 25 }
+command = { type = addcore which = 1421 }
+command = { type = addcore which = 1611 }
+command = { type = addcore which = 1612 }
+command = { type = dissent value = -1 }
+command = { type = clrflag which = IND_And_Lac }
+}
+
+action = {
+trigger = { flag = IND_Ceylon }
+ai_chance = 85
+name = "Merge the isles into the Federation!"
+command = { type = relation which = GER value = 120 }
+command = { type = dissent value = -3 }
+command = { type = addcore which = 1421 }
+command = { type = addcore which = 1611 }
+command = { type = addcore which = 1612 }
+command = { type = addcore which = 1509 }
+command = { type = addcore which = 1510 }
+command = { type = addcore which = 1511 }
+command = { type = clrflag which = IND_Ceylon }
+}
+
+action = {
+trigger = { flag = IND_Ceylon }
+ai_chance = 15
+name = "Grant Ceylon wide internal autonomy and incorporate the atolls."
+command = { type = addcore which = 1421 }
+command = { type = addcore which = 1611 }
+command = { type = addcore which = 1612 }
+command = { type = independence which = U42 value = 1 when = 0 }
+command = { type = supplies value = 1000 }
+command = { type = dissent value = -5 }
+command = { type = make_puppet which = U42 }
+command = { type = relation which = GER value = 25 }
+command = { type = relation which = U42 value = 200 }
+command = { type = clrflag which = IND_Ceylon }
+}
+
+}
+################################################################################?#
+#Demand Bhutan give up on Indian territory
+################################################################################?#
+event = {
+id = 101187
+random = no
+country = IND
+style = 2
+
+trigger = {
+
+control = { province = 1447 data = IND }
+control = { province = 1455 data = BHU }
+control = { province = 1459 data = IND }
+control = { province = 1487 data = IND }
+local_flag = Assam_pacified_princely
+NOT = {
+exists = PRK
+exists = PAK
+war = { country = IND country = BUR }
+}
+}
+
+
+name = "Dealing With Bhutan"
+desc = "In the aftermath of the Raj's collapse, the small and virtually isolated Kingdom of Bhutan utilized the chaotic situation in Northern Assam to seize several districts at the foothills of the Himalayas. With the Bhartiya Commune pacified and Assam integrated into our fair state many of the hawks within the cabinet are demanding the return of this unlawfully occupied territory. Some are even calling for the inclusion of Bhutan into a wider customs union combined with a military treaty."
+picture = "Bhutan"
+
+date = { day = 1 month = january year = 1936 }
+offset = 30
+deathdate = { day = 29 month = december year = 1960 }
+
+
+action = {
+ai_chance =  60
+name = "Demand the return of the occupied districts!"
+command = { type = relation which = BHU value = -25 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = event which = 101188 where = BHU when = 7 }
+command = { type = addcore which = 1455 }
+}
+
+action = {
+ai_chance =  39
+name = "Claim the districts and press for a friendly government!"
+command = { type = relation which = BHU value = -50 }
+command = { type = addcore which = 1455 }
+command = { type = domestic which = interventionism value = 2 }
+command = { type = dissent value = 3  }
+command = { type = event which = 101189 where = BHU when = 7 }
+}
+
+action = {
+ai_chance =  1
+name = "Bah, we have enough trouble on our plate already."
+command = { type = domestic which = interventionism value = -2 }
+command = { type = dissent value = 10 }
+}
+
+}
+
+event = {
+id = 101188
+random = no
+country = BHU
+style = 2
+picture = "Bhutan"
+
+name = "The Demands of the Hyderabad Government"
+desc = "We are under pressure from the resurgent Indian government in Hyderabad to secede the districts we conquered in the aftermath of the British Raj's collapse."
+
+action_a = {
+ai_chance =  80
+name = "We have no choice but to comply."
+command = { type = removecore which = 1455 }
+command = { type = secedeprovince which = IND value = 1455 }
+command = { type = dissent value = 5 }
+}
+
+action = {
+ai_chance =  20
+name = "Mighty Bhutan shall defend her conquests - to war!"
+command = { type = war which = IND }
+command = { type = domestic which = interventionism value = 2 }
+command = { type = dissent value = 10 }
+}
+
+}
+
+
+event = {
+id = 101189
+random = no
+country = BHU
+style = 2
+picture = "Bhutan"
+
+name = "The Demands of the Hyderabad Government"
+desc = "We are under pressure from the resurgent Indian government in Delhi to secede the districts we conquered in the aftermath of the British Raj's collapse. Furthermore the Indians demand that we surrender our de facto independence."
+
+action_a = {
+ai_chance =  70
+name = "We have no choice but to comply."
+command = { type = removecore which = 1455 }
+command = { type = secedeprovince which = IND value = 1455 }
+command = { type = event which = 101190 where = IND when = 2 }
+command = { type = dissent value = 5 }
+}
+
+action = {
+ai_chance =  30
+name = "Mighty Bhutan shall defend her conquests - to war!"
+command = { type = war which = IND }
+command = { type = domestic which = interventionism value = 2 }
+command = { type = dissent value = 10 }
+}
+
+}
+
+
+event = {
+id = 101190
+random = no
+country = IND
+style = 2
+picture = "Bhutan"
+
+name = "Bhutan Caves In"
+desc = "The government of Bhutan has capitulated itself and accepted all of our demands regarding the nature of their government and the status of their illegally occupied Indian territories. Even now, our troops are moving north to secure all vital positions in support of a new friendly Bhutanese cabinet. The sub-continent is on its way to complete unification!"
+
+action_a = {
+ai_chance =  99
+name = "Behold the power of India resurgent!"
+command = { type = make_puppet which = BHU  }
+command = { type = alliance which = BHU }
+command = { type = relation which = BHU value = 200 }
+command = { type = dissent value = -2 }
+}
+
+action_b = {
+ai_chance =  1
+name = "We do not need any form of union with these yak-people."
+command = { type = relation which = BHU value = 100 }
+command = { type = domestic which = interventionism value = -2 }
+command = { type = dissent value = 10 }
+}
+
+}

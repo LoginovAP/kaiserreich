@@ -1,0 +1,969 @@
+########
+###
+### KAISERREICH AUSTRALASIA
+### by Milites
+###
+############
+###
+###### Opening domestic events
+###
+### AST 123000 : Death of King George V
+### AST 123001 : A Special Conference of the Australasian Labour Party
+### AST 123002 : The Government and Additional Funding for Military Training
+### AST 123003 : Charles Vyner Brooke Backs the New Guard
+### AST 123016 : The Great Schism of the Australasian Labour Party
+###
+###### Bruce and Hughes Campaign for Conscription
+###
+### AST 123004 : Campaign for the Introduction of Conscription?
+### AST 123005 : Announce a Plebiscite on Conscription?
+###
+###### Plebiscite Events
+###
+### AST 123006 : Conscription Plebiscite: New South Wales
+### AST 123007 : Conscription Plebiscite: Northern Territory
+### AST 123008 : Conscription Plebiscite: Western Australia
+### AST 123009 : Conscription Plebiscite: South Australia
+### AST 123010 : Conscription Plebiscite: Queensland
+### AST 123011 : Conscription Plebiscite: NZ - North Island
+### AST 123012 : Conscription Plebiscite: NZ - South Island
+### AST 123013 : Conscription Plebiscite: Results - YES
+### AST 123014 : Conscription Plebiscite: Results - NO
+###
+###### New Zealand votes NO Australia votes YES
+###
+### AST 123015 : Conscription Plebiscite: NZ Votes No
+#### This should later lead to the possibility of NZ seceding from AST
+###
+###### Conscription is implemented - Elections!
+###
+### AST 123017 : Federal Election 1937
+###
+###
+###
+###
+###
+###
+###
+###
+###
+######
+
+event = {
+id = 123000
+random = no
+country = AST
+style = 2
+picture = "GeorgeV_Funeral"
+
+trigger = {
+headofstate = 56510
+}
+
+date = { day = 19 month = january year = 1936 }
+
+name = "The Passing of King George V"
+desc = "The ousted king of Britain, George V, has finally succumbed to the illness that had plagued him since revolution swept through the home isles. His son, Edward, has ascended the throne of the British Empire, including that of the Antipodean dominions."
+
+action_a = {
+name = "The Entente enters a state of mourning..."
+command = { type = dissent value = 1 }
+}
+}
+
+event = {
+id = 123001
+random =  no
+country = AST
+
+trigger = {
+headofstate = 56510
+}
+
+name = "A Special Conference of the Australasian Labour Party"
+desc = "EVT_123001_DESC"
+style = 2
+picture = "JackLang"
+
+date = { day = 24 month = february year = 1936 }
+
+action = {
+ai_chance = 100
+name = "Let the leftists squabble amongst themselves!"
+command = { type = dissent value = 1 }
+}
+
+}
+
+event = {
+id = 123002
+random =  no
+country = AST
+
+trigger = {
+headofstate = 56510
+}
+
+name = "The Government and Additional Funding for Military Training"
+desc = "EVT_123002_DESC"
+style = 2
+picture = "Australian_troops1"
+
+date = { day = 8 month = july year = 1936 }
+
+action = {
+ai_chance = 100
+name = "Direct extra funds to military training!"
+command = { type = relative_manpower value = 2 }
+command = { type = manpowerpool value = 10 }
+command = { type = domestic which = professional_army value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = money value = -50 }
+command = { type = dissent value = 1 }
+command = { type = local_setflag which = AST_conscription }
+}
+
+action = {
+ai_chance = 0
+name = "We shan't compromise the volunteer nature of the army!"
+command = { type = domestic which = professional_army value = -1 }
+command = { type = domestic which = defense_lobby value = -1 }
+command = { type = dissent value = -1 }
+command	= { type = local_setflag which = AST_conscription_campaign_no }
+}
+}
+
+event = {
+id = 123003
+random =  no
+country = AST
+
+trigger = {
+headofstate = 56510
+}
+
+name = "Charles Vyner Brooke Backs the New Guard"
+desc = "EVT_123003_DESC"
+style = 2
+picture = "Vynerbrooke"
+
+date = { day = 15 month = june year = 1936 }
+
+action = {
+ai_chance = 100
+name = "What's a Bruce to do?"
+command = { type = dissent value = 2 }
+}
+
+}
+
+### Conscription events
+
+event = {
+id = 123004
+random = no
+country = AST
+
+decision = {
+headofstate = 56510
+event = 123002 #Extra funding for military training
+local_flag = AST_conscription
+
+}
+
+decision_trigger = {
+supplies = 500
+money = 200
+}
+
+trigger = {
+headofstate = 56510
+event = 123002 #Extra funding for military training
+local_flag = AST_conscription
+}
+
+name = "Campaign for the Introduction of Conscription?"
+desc = "EVT_123004_DESC"
+style = 2
+picture = "australian_troops2"
+
+date = { day = 12 month = august year = 1936 }
+offset = 5
+deathdate = { day = 29 month = december year = 1963 }
+
+action = {
+name = "We shall campaign vigorously!"
+ai_chance = 50
+command = { type = dissent value = 6 }
+command = { type = money value = -200 }
+command = { type = supplies value = -500 }
+command = { type = relation which = JAP value = -5 }
+command = { type = relation which = GER value = -5 }
+command = { type = relation which = CAN value = 10 }
+command = { type = relation which = PAK value = 10 }
+command = { type = domestic which = defense_lobby value = 1 }
+command	= { type = local_setflag which = AST_conscription_campaign }
+}
+action = {
+name = "Launch a moderate campaign to avoid a national schism."
+ai_chance = 25
+command = { type = dissent value = 4 }
+command = { type = money value = -100 }
+command = { type = supplies value = -250 }
+command = { type = relation which = CAN value = 5 }
+command = { type = relation which = PAK value = 5 }
+command	= { type = local_setflag which = AST_conscription_campaign_mild }
+
+}
+action = {
+ai_chance = 25
+name = "A volunteer force is adequate to defend the peaceful Antipodes."
+command = { type = dissent value = 2 }
+command = { type = relation which = CAN value = -5 }
+command = { type = relation which = PAK value = -5 }
+command = { type = relation which = JAP value = 10 }
+command = { type = relation which = GER value = 10 }
+command = { type = domestic which = defense_lobby value = -1 }
+command	= { type = local_setflag which = AST_conscription_campaign_no }
+}
+}
+
+## Starting the Plebiscite
+
+event = {
+id = 123005
+random = no
+country = AST
+style = 2
+picture = "Australasia"
+
+trigger = {
+headofstate = 56510
+event = 123004 #Campaigning?
+OR = {
+local_flag = AST_conscription_campaign
+local_flag = AST_conscription_campaign_mild
+}
+}
+
+date = { day = 2 month = september year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "Announce a Plebiscite on Conscription?"
+desc = "With the government having launched a campaign to entice Australasia to the idea of conscription the populace look kindlier on the need for a stronger national defence. However, the issue needs to be resolved by plebiscite if the cabinet is to draw true strength from the campaign."
+
+action = {
+name = "Yes! Bring the question to the polls!"
+ai_chance = 75
+command = { type = dissent value = 2 }
+command = { type = domestic which = defense_lobby value = 1 }
+command	= { type = local_setflag which = AST_conscription_plebiscite_yes }
+}
+action = {
+name = "Try to formulate federal legalisation on the issue instead."
+ai_chance = 25
+command = { type = dissent value = 4 }
+command = { type = domestic which = defense_lobby value = -1 }
+command	= { type = local_setflag which = AST_conscription_plebiscite_no }
+}
+}
+
+event = {
+id = 123006
+random = no
+country = AST
+style = 2
+picture = "Australasia"
+
+trigger = {
+event = 123005
+local_flag = AST_conscription_plebiscite_yes
+}
+
+date = { day = 2 month = september year = 1936 }
+offset = 4
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "Conscription Plebiscite: New South Wales"
+desc = "As the announced plebiscite get rolling the good people of New South Wales hurries to the polls."
+
+action = {
+trigger = { local_flag = AST_conscription_campaign }
+name = "Vote YES!"
+ai_chance = 60
+command = { type = dissent value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = event which = 123007 where = AST when = 3 }
+command	= { type = local_setflag which = Pleb_NSW_Yes }
+}
+action = {
+trigger = { local_flag = AST_conscription_campaign }
+name = "Vote NO!"
+ai_chance = 40
+command = { type = dissent value = 1 }
+command = { type = event which = 123007 where = AST when = 3 }
+command	= { type = local_setflag which = Pleb_NSW_No }
+}
+
+action = {
+trigger = { local_flag = AST_conscription_campaign_mild }
+name = "Vote YES!"
+ai_chance = 50
+command = { type = dissent value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = event which = 123007 where = AST when = 3 }
+command	= { type = local_setflag which = Pleb_NSW_Yes }
+}
+
+action = {
+trigger = { local_flag = AST_conscription_campaign_mild }
+name = "Vote NO!"
+ai_chance = 50
+command = { type = dissent value = 1 }
+command = { type = event which = 123007 where = AST when = 3 }
+command	= { type = local_setflag which = Pleb_NSW_No }
+}
+
+}
+
+event = {
+id = 123007
+country = AST
+style = 2
+picture = "Australasia"
+
+name = "Conscription Plebiscite: Northern Territory"
+desc = "As the announced plebiscite get rolling the good people of the Northern Territory hurry to the polls."
+
+action = {
+trigger = { local_flag = AST_conscription_campaign }
+name = "Vote YES!"
+ai_chance = 60
+command = { type = dissent value = 1 }
+command = { type = event which = 123008 where = AST when = 3 }
+command	= { type = local_setflag which = Pleb_NT_Yes }
+}
+action = {
+trigger = { local_flag = AST_conscription_campaign }
+name = "Vote NO!"
+ai_chance = 40
+command = { type = dissent value = 1 }
+command = { type = event which = 123008 where = AST when = 3 }
+command	= { type = local_setflag which = Pleb_NT_No }
+}
+
+action = {
+trigger = { local_flag = AST_conscription_campaign_mild }
+name = "Vote YES!"
+ai_chance = 50
+command = { type = dissent value = 1 }
+command = { type = event which = 123008 where = AST when = 3 }
+command	= { type = local_setflag which = Pleb_NT_Yes }
+}
+
+action = {
+trigger = { local_flag = AST_conscription_campaign_mild }
+name = "Vote NO!"
+ai_chance = 50
+command = { type = dissent value = 1 }
+command = { type = event which = 123008 where = AST when = 3 }
+command	= { type = local_setflag which = Pleb_NT_No }
+}
+
+}
+
+event = {
+id = 123008
+country = AST
+style = 2
+picture = "Australasia"
+
+name = "Conscription Plebiscite: Western Australia"
+desc = "As the announced plebiscite get rolling the good people of Western Australia hurry to the polls."
+
+action = {
+trigger = { local_flag = AST_conscription_campaign }
+name = "Vote YES!"
+ai_chance = 60
+command = { type = dissent value = 1 }
+command = { type = event which = 123009 where = AST when = 3 }
+command	= { type = local_setflag which = Pleb_WA_Yes }
+}
+action = {
+trigger = { local_flag = AST_conscription_campaign }
+name = "Vote NO!"
+ai_chance = 40
+command = { type = dissent value = 1 }
+command = { type = event which = 123009 where = AST when = 3 }
+command	= { type = local_setflag which = Pleb_WA_No }
+}
+
+action = {
+trigger = { local_flag = AST_conscription_campaign_mild }
+name = "Vote YES!"
+ai_chance = 50
+command = { type = dissent value = 1 }
+command = { type = event which = 123009 where = AST when = 3 }
+command	= { type = local_setflag which = Pleb_WA_Yes }
+}
+
+action = {
+trigger = { local_flag = AST_conscription_campaign_mild }
+name = "Vote NO!"
+ai_chance = 50
+command = { type = dissent value = 1 }
+command = { type = event which = 123009 where = AST when = 3 }
+command	= { type = local_setflag which = Pleb_WA_No }
+}
+
+}
+
+event = {
+id = 123009
+country = AST
+style = 2
+picture = "Australasia"
+
+name = "Conscription Plebiscite: South Australia"
+desc = "As the announced plebiscite get rolling the good people of South Australia hurry to the polls."
+
+action = {
+trigger = { local_flag = AST_conscription_campaign }
+name = "Vote YES!"
+ai_chance = 60
+command = { type = dissent value = 1 }
+command = { type = event which = 123010 where = AST when = 4 }
+command	= { type = local_setflag which = Pleb_SA_Yes }
+}
+action = {
+trigger = { local_flag = AST_conscription_campaign }
+name = "Vote NO!"
+ai_chance = 40
+command = { type = dissent value = 1 }
+command = { type = event which = 123010 where = AST when = 4 }
+command	= { type = local_setflag which = Pleb_SA_No }
+}
+
+action = {
+trigger = { local_flag = AST_conscription_campaign_mild }
+name = "Vote YES!"
+ai_chance = 50
+command = { type = dissent value = 1 }
+command = { type = event which = 123010 where = AST when = 4 }
+command	= { type = local_setflag which = Pleb_SA_Yes }
+}
+
+action = {
+trigger = { local_flag = AST_conscription_campaign_mild }
+name = "Vote NO!"
+ai_chance = 50
+command = { type = dissent value = 1 }
+command = { type = event which = 123010 where = AST when = 4 }
+command	= { type = local_setflag which = Pleb_SA_No }
+}
+
+}
+
+event = {
+id = 123010
+country = AST
+style = 2
+picture = "Australasia"
+
+name = "Conscription Plebiscite: Queensland"
+desc = "As the announced plebiscite get rolling the good people of Queensland hurry to the polls."
+
+action = {
+trigger = { local_flag = AST_conscription_campaign }
+name = "Vote YES!"
+ai_chance = 60
+command = { type = dissent value = 1 }
+command = { type = event which = 123011 where = AST when = 3 }
+command	= { type = local_setflag which = Pleb_QL_Yes }
+}
+action = {
+trigger = { local_flag = AST_conscription_campaign }
+name = "Vote NO!"
+ai_chance = 40
+command = { type = dissent value = 1 }
+command = { type = event which = 123011 where = AST when = 3 }
+command	= { type = local_setflag which = Pleb_QL_No }
+}
+
+action = {
+trigger = { local_flag = AST_conscription_campaign_mild }
+name = "Vote YES!"
+ai_chance = 50
+command = { type = dissent value = 1 }
+command = { type = event which = 123011 where = AST when = 3 }
+command	= { type = local_setflag which = Pleb_QL_Yes }
+}
+
+action = {
+trigger = { local_flag = AST_conscription_campaign_mild }
+name = "Vote NO!"
+ai_chance = 50
+command = { type = dissent value = 1 }
+command = { type = event which = 123011 where = AST when = 3 }
+command	= { type = local_setflag which = Pleb_QL_No }
+}
+
+}
+
+event = {
+id = 123011
+country = AST
+style = 2
+picture = "NZL_North"
+
+name = "Conscription Plebiscite: NZ - North Island"
+desc = "As the announced plebiscite get rolling the good people of New Zealand's Northern Island hurry to the polls."
+
+action = {
+trigger = { local_flag = AST_conscription_campaign }
+name = "Vote YES!"
+ai_chance = 60
+command = { type = dissent value = 1 }
+command = { type = event which = 123012 where = AST when = 4 }
+command	= { type = local_setflag which = Pleb_NZN_Yes }
+}
+action = {
+trigger = { local_flag = AST_conscription_campaign }
+name = "Vote NO!"
+ai_chance = 40
+command = { type = dissent value = 1 }
+command = { type = event which = 123012 where = AST when = 4 }
+command	= { type = local_setflag which = Pleb_NZN_No }
+}
+
+action = {
+trigger = { local_flag = AST_conscription_campaign_mild }
+name = "Vote YES!"
+ai_chance = 50
+command = { type = dissent value = 1 }
+command = { type = event which = 123012 where = AST when = 4 }
+command	= { type = local_setflag which = Pleb_NZN_Yes }
+}
+
+action = {
+trigger = { local_flag = AST_conscription_campaign_mild }
+name = "Vote NO!"
+ai_chance = 50
+command = { type = dissent value = 1 }
+command = { type = event which = 123012 where = AST when = 4 }
+command	= { type = local_setflag which = Pleb_NZN_No }
+}
+
+}
+
+event = {
+id = 123012
+country = AST
+style = 2
+picture = "NZL_South"
+save_date = yes
+
+name = "Conscription Plebiscite: NZ - South Island"
+desc = "As the announced plebiscite get rolling the good people of New Zealand's Southern Island hurry to the polls."
+
+action = {
+trigger = { local_flag = AST_conscription_campaign }
+name = "Vote YES!"
+ai_chance = 60
+command = { type = dissent value = 1 }
+command = { type = event which = 123012 where = AST when = 3 }
+command	= { type = local_setflag which = Pleb_NZS_Yes }
+}
+action = {
+trigger = { local_flag = AST_conscription_campaign }
+name = "Vote NO!"
+ai_chance = 40
+command = { type = dissent value = 1 }
+command = { type = event which = 123012 where = AST when = 3 }
+command	= { type = local_setflag which = Pleb_NZS_No }
+}
+
+action = {
+trigger = { local_flag = AST_conscription_campaign_mild }
+name = "Vote YES!"
+ai_chance = 50
+command = { type = dissent value = 1 }
+command = { type = event which = 123012 where = AST when = 3 }
+command	= { type = local_setflag which = Pleb_NZS_Yes }
+}
+
+action = {
+trigger = { local_flag = AST_conscription_campaign_mild }
+name = "Vote NO!"
+ai_chance = 50
+command = { type = dissent value = 1 }
+command = { type = event which = 123012 where = AST when = 3 }
+command	= { type = local_setflag which = Pleb_NZS_No }
+}
+
+}
+
+event = {
+id = 123013
+random =  no
+country = AST
+trigger = {
+NOT = { event = 123014 }
+event = { id = 123012 days = 4 }
+OR = {
+AND = {
+local_flag = Pleb_NSW_Yes
+local_flag = Pleb_NT_Yes
+local_flag = Pleb_WA_Yes
+local_flag = Pleb_SA_Yes
+local_flag = Pleb_QL_Yes
+local_flag = Pleb_NZN_Yes
+local_flag = Pleb_NZS_Yes
+} #Complete support
+AND = {
+local_flag = Pleb_NSW_Yes
+local_flag = Pleb_NT_Yes
+local_flag = Pleb_WA_Yes
+local_flag = Pleb_SA_Yes
+local_flag = Pleb_QL_Yes
+local_flag = Pleb_NZN_Yes
+}
+AND = {
+local_flag = Pleb_NSW_Yes
+local_flag = Pleb_NT_Yes
+local_flag = Pleb_WA_Yes
+local_flag = Pleb_SA_Yes
+local_flag = Pleb_QL_Yes
+local_flag = Pleb_NZS_Yes
+}
+AND = {
+local_flag = Pleb_NSW_Yes
+local_flag = Pleb_NT_Yes
+local_flag = Pleb_WA_Yes
+local_flag = Pleb_SA_Yes
+local_flag = Pleb_NZN_Yes
+local_flag = Pleb_NZS_Yes
+}
+AND = {
+local_flag = Pleb_NSW_Yes
+local_flag = Pleb_NT_Yes
+local_flag = Pleb_WA_Yes
+local_flag = Pleb_QL_Yes
+local_flag = Pleb_NZN_Yes
+local_flag = Pleb_NZS_Yes
+}
+AND = {
+local_flag = Pleb_NSW_Yes
+local_flag = Pleb_WA_Yes
+local_flag = Pleb_SA_Yes
+local_flag = Pleb_QL_Yes
+local_flag = Pleb_NZN_Yes
+local_flag = Pleb_NZS_Yes
+}
+AND = {
+local_flag = Pleb_NT_Yes
+local_flag = Pleb_WA_Yes
+local_flag = Pleb_SA_Yes
+local_flag = Pleb_QL_Yes
+local_flag = Pleb_NZN_Yes
+local_flag = Pleb_NZS_Yes
+} #6/7 support
+AND = {
+local_flag = Pleb_NSW_Yes
+local_flag = Pleb_NT_Yes
+local_flag = Pleb_WA_Yes
+local_flag = Pleb_SA_Yes
+local_flag = Pleb_QL_Yes
+}
+AND = {
+local_flag = Pleb_NSW_Yes
+local_flag = Pleb_NT_Yes
+local_flag = Pleb_WA_Yes
+local_flag = Pleb_SA_Yes
+local_flag = Pleb_NZS_Yes
+}
+AND = {
+local_flag = Pleb_NSW_Yes
+local_flag = Pleb_NT_Yes
+local_flag = Pleb_WA_Yes
+local_flag = Pleb_NZN_Yes
+local_flag = Pleb_NZS_Yes
+}
+AND = {
+local_flag = Pleb_NSW_Yes
+local_flag = Pleb_SA_Yes
+local_flag = Pleb_QL_Yes
+local_flag = Pleb_NZN_Yes
+local_flag = Pleb_NZS_Yes
+}
+AND = {
+local_flag = Pleb_NT_Yes
+local_flag = Pleb_WA_Yes
+local_flag = Pleb_SA_Yes
+local_flag = Pleb_QL_Yes
+local_flag = Pleb_NZN_Yes
+} # 5/7 Support
+AND = {
+local_flag = Pleb_NSW_Yes
+local_flag = Pleb_NT_Yes
+local_flag = Pleb_WA_Yes
+local_flag = Pleb_SA_Yes
+}
+AND = {
+local_flag = Pleb_NSW_Yes
+local_flag = Pleb_NT_Yes
+local_flag = Pleb_WA_Yes
+local_flag = Pleb_NZS_Yes
+}
+AND = {
+local_flag = Pleb_NSW_Yes
+local_flag = Pleb_NT_Yes
+local_flag = Pleb_NZN_Yes
+local_flag = Pleb_NZS_Yes
+}
+AND = {
+local_flag = Pleb_NSW_Yes
+local_flag = Pleb_QL_Yes
+local_flag = Pleb_NZN_Yes
+local_flag = Pleb_NZS_Yes
+} #4/7 Support
+}
+}
+
+name = "Conscription Plebiscite: Result - YES"
+desc = "The people of the Antipodean dominions have overwhelmingly backed the government in its desire to introduce conscription to our fair Confederation. This will greatly strengthen the current cabinet at the expense of the extremist factions of parliament and it is expected that Bruce will soon call for fresh elections to stabilize his mandate even further."
+style = 2
+picture = "Australian_troops1"
+
+date = { day = 1 month = january year = 1936 }
+offset = 5
+deathdate = { day = 29 month = december year= 1960 }
+
+action_a = {
+name = "Hurray, hurray, hurray!"
+ai_chance = 100
+command = { type = dissent value = -5  }
+command = { type = domestic which = professional_army value = -2 }
+command = { type = manpowerpool value = 15 }
+command = { type = relative_manpower value = 30 }
+command = { trigger = { local_flag = Pleb_NZN_NO
+local_flag = Pleb_NZS_NO
+} type = event which = 123015 where = AST when = 1 }	# New Zealand votes NO
+command = { type = local_clrflag  which =  Pleb_NSW_Yes }
+command = { type = local_clrflag  which =  Pleb_NT_Yes }
+command = { type = local_clrflag  which =  Pleb_WA_Yes }
+command = { type = local_clrflag  which =  Pleb_SA_Yes }
+command = { type = local_clrflag  which =  Pleb_QL_Yes }
+command = { type = local_clrflag  which =  Pleb_NZN_Yes }
+command = { type = local_clrflag  which =  Pleb_NZS_Yes }
+command = { type = local_clrflag  which =  Pleb_NSW_No }
+command = { type = local_clrflag  which =  Pleb_NT_No }
+command = { type = local_clrflag  which =  Pleb_WA_No }
+command = { type = local_clrflag  which =  Pleb_SA_No }
+command = { type = local_clrflag  which =  Pleb_QL_No }
+command = { type = local_clrflag  which =  Pleb_NZN_No }
+command = { type = local_clrflag  which =  Pleb_NZS_No }
+command	= { type = local_setflag which = AST_conscription_success }
+}
+
+}
+
+event = {
+id = 123014
+random =  no
+country = AST
+trigger = {
+NOT = { event = 123013 }
+event = { id = 123012 days = 6 }
+}
+
+name = "Conscription Plebiscite: Result - NO"
+desc = "The government has been completely defeated at the voting polls. Conscription has been absolutely refused by the Antipodean citizens, leaving the cabinet's prestige deeply damaged."
+style = 2
+picture = "Australian_troops1"
+
+date = { day = 1 month = january year = 1936 }
+offset = 5
+deathdate = { day = 29 month = december year= 1960 }
+
+action_a = {
+name = "Ack! What a humiliation! Bloody hell!"
+ai_chance = 100
+command = { type = dissent value = 10  }
+command = { type = domestic which = professional_army value = 1 }
+command = { type = local_clrflag  which =  Pleb_NSW_Yes }
+command = { type = local_clrflag  which =  Pleb_NT_Yes }
+command = { type = local_clrflag  which =  Pleb_WA_Yes }
+command = { type = local_clrflag  which =  Pleb_SA_Yes }
+command = { type = local_clrflag  which =  Pleb_QL_Yes }
+command = { type = local_clrflag  which =  Pleb_NZN_Yes }
+command = { type = local_clrflag  which =  Pleb_NZS_Yes }
+command = { type = local_clrflag  which =  Pleb_NSW_No }
+command = { type = local_clrflag  which =  Pleb_NT_No }
+command = { type = local_clrflag  which =  Pleb_WA_No }
+command = { type = local_clrflag  which =  Pleb_SA_No }
+command = { type = local_clrflag  which =  Pleb_QL_No }
+command = { type = local_clrflag  which =  Pleb_NZN_No }
+command = { type = local_clrflag  which =  Pleb_NZS_No }
+command	= { type = local_setflag which = AST_conscription_failure }
+
+}
+
+}
+
+event = {
+id = 123015
+country = AST
+style = 2
+picture = "NZL"
+
+name = "Conscription Plebiscite: NZ Votes No"
+desc = "EVT_123015_DESC"
+
+action = {
+name = "Exempt New Zealand from national conscription!"
+ai_chance = 60
+command = { type = dissent value = 2 }
+command = { type = relative_manpower value = -5 }
+}
+action = {
+name = "Implement conscription moderately on the Kiwis"
+ai_chance = 30
+command = { type = dissent value = 5 }
+command = { type = relative_manpower value = -2 }
+
+}
+
+action = {
+name = "The Antipodes are in this together! Enforce conscription!"
+ai_chance = 10
+command = { type = dissent value = 10 }
+command = { type = revolt which = 1721 }
+command = { type = revolt which = 1722 }
+command	= { type = local_setflag which = AST_conscription_NZ_Riots }
+}
+
+}
+
+### Further 1936 Domestic Events
+
+event = {
+id = 123016
+random =  no
+country = AST
+
+trigger = {
+headofstate = 56510
+}
+
+name = "The Great Schism of the Australasian Labour Party"
+desc = "EVT_123016_DESC"
+style = 2
+picture = "AST_labour"
+
+date = { day = 21 month = august year = 1936 }
+
+action = {
+ai_chance = 100
+name = "This is both disturbing and encouraging!"
+command = { type = dissent value = 1 }
+}
+
+}
+
+## Federal Election 1937
+
+event = {
+id = 123017
+random = no
+country = AST
+style = 2
+save_date = yes
+picture = "AST_politics"
+
+trigger = {
+headofstate = 56510
+event = 123013
+local_flag = AST_conscription_success
+}
+
+date = { day = 5 month = january year = 1937 }
+offset = 5
+deathdate = { day = 29 month = march year = 1937 }
+
+name = "Confederate Election 1937"
+desc = "Riding on a wave on support and prestige following last year's plebiscite, Governor-General Stanley Bruce has called for fresh elections to our Confederation's parliament."
+
+action = {
+name = "Bruce and Hughes solidify their mandate once more!"
+ai_chance = 80
+command = { type = set_domestic which = democratic value = 4 }
+command = { type = set_domestic which = political_left value = 4 }
+command = { type = headofstate which = 56510 } #Stanley Bruce
+command = { type = headofgovernment which = 56511 } #Billy Hughes
+command = { type = foreignminister which =  56003 } #George F. Pearce
+command = { type = armamentminister which = 56149 }	#Earl Page
+command = { type = ministerofsecurity which = 56504 } #Adam Hamilton
+command = { type = dissent value = -3 }
+command	= { type = local_setflag which = AST_Bruce }
+}
+action = {
+name = "Labour overcomes its infighting and scores a majority!"
+ai_chance = 10
+command = { type = event which = 123018 where = AST when = 1 }	# Who takes the premiership?
+command = { type = dissent value = 10 }
+command	= { type = local_setflag which = AST_Labour }
+}
+action = {
+name = "The revanchist Centre Party and its 'New Guard' triumphs!?"
+ai_chance = 10
+command = { type = set_domestic which = democratic value = 3 }
+command = { type = set_domestic which = political_left value = 3 }
+command = { type = headofstate which = 56510 } #Stanley Bruce
+command = { type = headofgovernment which = 56809 } #Charles Brooke
+command = { type = foreignminister which =  56401 } #Hattil Foll
+command = { type = armamentminister which = 56403 }	#John Latham
+command = { type = ministerofsecurity which = 56099 } #Thomas Blamey
+command = { type = dissent value = 5 }
+command	= { type = local_setflag which = AST_Brooke }
+}
+}
+
+event = {
+id = 123018
+country = AST
+style = 2
+picture = "AST_labour"
+
+name = "Labour Victory"
+desc = "After Labour's surprising victory in the last election two figures are struggling for both leadership of the party as well as the premiership. Who will triumph?"
+
+action = {
+name = "John Curtin's silent strength unites Labour!"
+ai_chance = 50
+command = { type = set_domestic which = democratic value = 7 }
+command = { type = set_domestic which = political_left value = 8 }
+command = { type = headofstate which = 56810 } #Stanley Bruce ML
+command = { type = headofgovernment which = 56301 } #John J. Curtin
+command = { type = foreignminister which =  56402 } #Herbert Evatt
+command = { type = armamentminister which = 56811 }	#Joseph Chifley
+command = { type = ministerofsecurity which = 56604 } #H.C. Barnard
+command = { type = dissent value = -3 }
+command	= { type = local_setflag which = AST_Curtin }
+}
+
+action = {
+name = "Lang's scheming secures him the premiership!"
+ai_chance = 50
+command = { type = set_domestic which = democratic value = 8 }
+command = { type = set_domestic which = political_left value = 6 }
+command = { type = headofstate which = 56810 } #Stanley Bruce ML
+command = { type = headofgovernment which = 56601 } #Jack Lang
+command = { type = foreignminister which =  56402 } #Herbert Evatt
+command = { type = armamentminister which = 56085 }	#Hubert P. Lazzarini
+command = { type = ministerofsecurity which = 56604 } #H.C. Barnard
+command = { type = dissent value = 5 }
+command	= { type = local_setflag which = AST_Lang }
+}
+}

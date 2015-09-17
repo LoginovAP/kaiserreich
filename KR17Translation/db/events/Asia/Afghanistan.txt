@@ -1,0 +1,567 @@
+################################################################################?#
+#Afghanistan Post Loss of Peshawar/Quetta
+################################################################################?#
+event = {
+id = 777001
+country = AFG
+style = 2
+picture = "afghanwar"
+
+name = "Domestic Reaction to Afghan Defeat"
+desc = "The defeat of our armies has sent shockwaves through Afghanistan! Our secret service reports huge dissatisfaction with the royal government amongst both the peasants and the army! Even worse radical clerics are drumming up support for a general insurrection against the royal reform programme! These are truly dark times for our small kingdom."
+
+action_a = {
+ai_chance = 30
+name = "The King can do as he likes! Surpress any rebellion!" #Amanullah Joffrey Baratheon!
+command = { type = switch_allegiance which = 10000 value = 4 where = REB } #Herat Army defects
+command = { type = revolt which = 2170 }
+command = { type = revolt which = 2171 }
+command = { type = revolt which = 2172 }
+command = { type = dissent value = 50 }
+command = { type = setflag which = AFG_Chaos }
+}
+
+action_b = {
+ai_chance = 35
+name = "Habibullah Kalakani raises the flag of Islamic revolt!"
+command = { type = set_domestic which = democratic value = 1 }
+command = { type = set_domestic which = political_left value = 2 }
+command = { type = headofstate which = 54084 }
+command = { type = headofgovernment which = 54085 }
+command = { type = revolt which = -1 }
+command = { type = revolt which = -1 }
+command = { type = revolt which = -1 }
+command = { type = flag_ext where = AFG which = "_isl" }
+command = { type = dissent value = 20 }
+}
+
+action_c = {
+ai_chance = 35
+name = "Mohammed Nadir deposes Amanullah and proclaims himself king!" #Status of reform in Afghanistan events to follow.
+command = { type = headofstate which = 54083 }
+command = { type = headofgovernment which = 54086 }
+command = { type = flag_ext where = AFG which = "_nad" }
+command = { type = dissent value = 20 }
+command = { type = revolt which = -1 }
+command = { type = revolt which = -1 }
+command = { type = revolt which = -1 }
+}
+}
+################################################################################?#
+#Habibullah Kalakani approaches Turkestan
+################################################################################?#
+event = {
+id = 777002
+random = no
+country = AFG
+style = 2
+
+trigger = {
+headofgovernment = 54085
+headofstate = 54084
+owned = { province = 2170 data = AFG }
+control = { province = 2170 data = AFG }
+owned = { province = 2172 data = AFG }
+control = { province = 2172 data = AFG }
+owned = { province = 1100 data = KYG }
+control = { province = 1100 data = KYG }
+exists = KYG
+NOT = {
+dissent = 10
+war = { country = PAK country = AFG }
+war = { country = PRK country = AFG }
+war = { country = IND country = AFG }
+war = { country = KYG country = AFG }
+ispuppet = AFG
+ispuppet = KYG
+}
+}
+
+
+name = "The Foreign Relations of the Emirate of Afghanistan"
+desc = "Habibullah Kalakani has finaly brought Islamic order to the people of Afghanistan and established himself as the undisputed ruler of our nation. After our defeat by the Indian government, his majesty has proposed to court the Islamic Federation of Turkestan for an alliance to safeguard us from further military conflict with the Indians."
+picture = "KYG_BUKHARA"
+
+date = { day = 1 month = january year = 1936 }
+offset = 100
+deathdate = { day = 29 month = december year = 1963 }
+
+
+action = {
+ai_chance =  70
+name = "Let us align with the Islamic Federation of Turkestan!"
+command = { type = event which = 777003 where = KYG when = 7 }
+command = { type = domestic which = interventionism value = 2 }
+command = { type = relation which = KYG value = 100 }
+command = { type = dissent value = -1  }
+}
+
+action = {
+ai_chance =  30
+name = "As long as the country lies in ruins, we can't engage in foreign policy."
+command = { type = domestic which = interventionism value = -1 }
+command = { type = dissent value = 2  }
+}
+
+}
+
+event = {
+id = 777003
+country = KYG
+style = 2
+picture = "afghanwar"
+
+
+name = "Alliance Negotiations with the Islamic Emirate of Afghanistan"
+desc = "In Afghanistan, the degenerate monarchy of Amanullah has been overthrown by an islamic revolt spearheaded by Habibullah Kalakani. Finally in total control of the country, Habibullah has approached us with an offer of alliance, hoping that the might of the Islamic Federation will dissuade enemies both foreign and domestic from attempting to overthrow his most righteous regime."
+
+action_a = {
+ai_chance = 70
+name = "A most righteous proposition! We accept!"
+command = { type = alliance which = AFG }
+command = { type = event which = 777004 where = AFG when = 4 }
+command = { type = domestic which = interventionism value = 2 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = relation which = AFG value = 100 }
+command = { type = sleepevent which = 750510 }
+}
+
+action_b = {
+ai_chance = 30
+name = "We shan't have anything to do with usurpers!"
+command = { type = domestic which = defense_lobby value = -1 }
+command = { type = relation which = AFG value = -100 }
+}
+
+
+}
+
+event = {
+id = 777004
+country = AFG
+style = 2
+picture = "KYG_BUKHARA"
+
+
+name = "Formation of the Bukhara-Kabul Pact"
+desc = "Today, delegations from both Afghanistan and Turkestan met in Bukhara to formalise a binding treaty of alliance between the two nations. Glory to the people of God! Takbir!"
+
+action_a = {
+ai_chance = 100
+name = "Who can withstand the faithful when the faithful are united?"
+command = { type = relation which = KYG value = 200 }
+command = { type = addclaim which = 1529 }
+command = { type = addclaim which = 1537 }
+command = { type = removeclaim which = 1104 }
+command = { type = removeclaim which = 1098 }
+}
+
+
+}
+################################################################################?#
+#Indian conquest of Afghanistan
+################################################################################?#
+
+event = {
+id = 777500
+tag = { IND PAK PRK }
+persistent = yes
+style = 2
+
+
+trigger = {
+control = { province = 2171 data = -1 } #Kabul
+
+NOT = {
+war = { country = -1 country = PER }
+war = { country = -1 country = TRK }
+war = { country = -1 country = TIB }
+exists = AFG
+}
+}
+
+name = "The Annexation of Afghanistan"
+desc = "Our victorious troops have eradicated any Afghan hopes of ever meddling further with the geo-political situation on the subcontinent. All that remains for us to do, is decide what to do with the vanquished."
+picture = "afghanwar"
+
+date = { day = 1 month = january year = 1936 }
+offset = 5
+deathdate = { day = 1 month = december year = 1963 }
+
+action = {
+trigger = { government = communist }
+ai_chance = 99
+name = "Establish a workers' republic to guard the Khyber Pass!"
+command = { type = addcore which = 1529 }
+command = { type = addcore which = 1537 }
+command = { type = independence which = AFG value = 1 when = 0 }
+command = { type = make_puppet which = AFG }
+command = { type = trigger which = 777501 }
+command = { type = supplies value = 1000 }
+command = { type = alliance which = AFG }
+command = { type = dissent value = -5 }
+}
+action = {
+trigger = { country = IND }
+ai_chance = 60
+name = "Restore Amanullah Khan to an 'independent' Afghanistan."
+command = { type = addcore which = 1529 }
+command = { type = addcore which = 1537 }
+command = { type = independence which = AFG value = 1 when = 0 }
+command = { type = make_puppet which = AFG }
+command = { type = supplies value = 1000 }
+command = { type = dissent value = -5 }
+command = { type = alliance which = AFG }
+command = { type = trigger which = 777502 }
+}
+action = {
+trigger = { country = IND }
+ai_chance = 39
+name = "Install Amanullah's brother as king of a loyal puppet state!"
+command = { type = addcore which = 1529 }
+command = { type = addcore which = 1537 }
+command = { type = independence which = AFG value = 1 when = 0 }
+command = { type = make_puppet which = AFG }
+command = { type = supplies value = 1000 }
+command = { type = dissent value = -5 }
+command = { type = alliance which = AFG }
+command = { type = trigger which = 777503 }
+}
+
+action = {
+trigger = { country = PAK }
+ai_chance = 10
+name = "Restore Amanullah Khan to an 'independent' Afghanistan."
+command = { type = addcore which = 1529 }
+command = { type = addcore which = 1537 }
+command = { type = waketeam which = 12525 }
+command = { type = independence which = AFG value = 1 when = 0 }
+command = { type = make_puppet which = AFG }
+command = { type = supplies value = 1000 }
+command = { type = dissent value = 5 }
+command = { type = alliance which = AFG }
+command = { type = trigger which = 777502 }
+}
+
+action = {
+trigger = { country = PAK }
+ai_chance = 60
+name = "Install Amanullah's brother as king of a loyal puppet state!"
+command = { type = addcore which = 1529 }
+command = { type = addcore which = 1537 }
+command = { type = waketeam which = 12525 }
+command = { type = independence which = AFG value = 1 when = 0 }
+command = { type = make_puppet which = AFG }
+command = { type = supplies value = 1000 }
+command = { type = dissent value = -2 }
+command = { type = alliance which = AFG }
+command = { type = trigger which = 777503 }
+}
+
+action = {
+trigger = { country = PAK }
+ai_chance = 30
+name = "Let Mohammed Nadir impose a new dynasty on the Afghans!"
+command = { type = addcore which = 1529 }
+command = { type = addcore which = 1537 }
+command = { type = waketeam which = 12525 }
+command = { type = independence which = AFG value = 1 when = 0 }
+command = { type = make_puppet which = AFG }
+command = { type = supplies value = 1000 }
+command = { type = dissent value = -2 }
+command = { type = alliance which = AFG }
+command = { type = trigger which = 777504 }
+}
+
+action = {
+name = "Maintain military occupation."
+ai_chance = 1
+command = { type = supplies value = 1000 }
+command = { type = dissent value = -5 }
+}
+}
+
+event = {
+id = 777501
+country = AFG
+persistent = yes
+style = 2
+picture = "afghanwar"
+
+name = "A Red Afghanistan is Born"
+desc = "We have been defeated. Afghanistan can into socialism. But cannot into Mughal."
+
+action_a = {
+ai_chance = 100
+name = "Too bad."
+command = { type = add_corps which = "Afghan People's Army" value = land where = 2171 }
+command = { type = add_division which = "Kabul Military District" value = infantry when = 4 }
+command = { type = add_division which = "Herat Police Battalion" value = militia when = 4 }
+command = { type = add_division which = "Kandahar Police Battalion" value = militia when = 4 }
+command = { type = relation which = PRK value = 200 }
+command = { type = relation which = FRA value = 200 }
+command = { type = relation which = ENG value = 200 }
+command = { type = relation which = RSI value = 200 }
+command = { type = relation which = GEO value = 200 }
+command = { type = relation which = CSA value = 200 }
+command = { type = flag_ext where = AFG which = "_syn" }
+command = { type = dissent value = 10 }
+}
+}
+
+event = {
+id = 777502
+persistent = yes
+country = AFG
+style = 2
+picture = "afghanwar"
+
+name = "The Indian Government Imposes Amanullah"
+desc = "We have been defeated. Afghanistan cannot into Mughal."
+
+action_a = {
+ai_chance = 100
+name = "Too bad."
+command = { type = headofstate which = 54081 }
+command = { type = add_corps which = "Afghan National Army" value = land where = 2171 }
+command = { type = add_division which = "Kabul Military District" value = infantry when = 4 }
+command = { type = add_division which = "Herat Police Battalion" value = militia when = 4 }
+command = { type = add_division which = "Kandahar Police Battalion" value = militia when = 4 }
+command = { type = relation which = GUY value = 200 }
+command = { type = relation which = LIB value = 200 }
+command = { type = relation which = VIC value = 200 }
+command = { type = relation which = AST value = 200 }
+command = { type = relation which = CAN value = 200 }
+command = { type = relation which = PAK value = 200 }
+command = { type = dissent value = 10 }
+}
+}
+
+event = {
+id = 777503
+persistent = yes
+country = AFG
+style = 2
+picture = "afghanwar"
+
+name = "The Indian Government Imposes Inayatullah"
+desc = "We have been defeated. Afghanistan cannot into Mughal."
+
+action_a = {
+ai_chance = 100
+name = "Too bad."
+command = { type = headofstate which = 54011 }
+command = { type = add_corps which = "Afghan National Army" value = land where = 2171 }
+command = { type = add_division which = "Kabul Military District" value = infantry when = 4 }
+command = { type = add_division which = "Herat Police Battalion" value = militia when = 4 }
+command = { type = add_division which = "Kandahar Police Battalion" value = militia when = 4 }
+command = { type = relation which = GUY value = 200 }
+command = { type = relation which = LIB value = 200 }
+command = { type = relation which = VIC value = 200 }
+command = { type = relation which = AST value = 200 }
+command = { type = relation which = CAN value = 200 }
+command = { type = relation which = PAK value = 200 }
+command = { type = dissent value = 10 }
+}
+}
+
+event = {
+id = 777504
+persistent = yes
+country = AFG
+style = 2
+picture = "afghanwar"
+
+name = "The Indian Government Imposes Mohammed Nadir"
+desc = "We have been defeated. Afghanistan cannot into Mughal."
+
+action_a = {
+ai_chance = 100
+name = "Too bad."
+command = { type = headofstate which = 54083 }
+command = { type = headofgovernment which = 54086 }
+command = { type = add_corps which = "Afghan National Army" value = land where = 2171 }
+command = { type = add_division which = "Kabul Military District" value = infantry when = 4 }
+command = { type = add_division which = "Herat Police Battalion" value = militia when = 4 }
+command = { type = add_division which = "Kandahar Police Battalion" value = militia when = 4 }
+command = { type = relation which = GUY value = 200 }
+command = { type = relation which = LIB value = 200 }
+command = { type = relation which = VIC value = 200 }
+command = { type = relation which = AST value = 200 }
+command = { type = relation which = CAN value = 200 }
+command = { type = relation which = PAK value = 200 }
+command = { type = flag_ext where = AFG which = "_nad" }
+command = { type = dissent value = 10 }
+}
+}
+################################################################################?#
+#Chaos in Afghanistan!
+################################################################################?#
+event = {
+id = 777505
+random = no
+country = AFG
+style = 2
+
+trigger = {
+headofstate = 54081
+flag = AFG_Chaos
+OR = {
+control = { province = 2171 data = REB }
+control = { province = 2172 data = REB }
+}
+OR = {
+control = { province = 2171 data = REB }
+control = { province = 2169 data = REB }
+}
+NOT = {
+war = { country = PAK country = AFG }
+war = { country = PRK country = AFG }
+war = { country = IND country = AFG }
+war = { country = KYG country = AFG }
+}
+}
+
+
+name = "Afghanistan in Chaos!"
+desc = "Despite our best efforts, rebel forces have pushed the troops of king Amanullah out of Kabul and are in effect in control of the country!"
+picture = "afghanwar"
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 29 month = december year = 1960 }
+
+
+action = {
+ai_chance =  50
+name = "Habibullah Kalakani's troops triumph by Islamic virtue!"
+command = { type = set_domestic which = democratic value = 1 }
+command = { type = set_domestic which = political_left value = 2 }
+command = { type = headofstate which = 54084 }
+command = { type = headofgovernment which = 54085 }
+command = { type = flag_ext where = AFG which = "_isl" }
+command = { type = add_division value = militia when = 4 }
+command = { type = add_division value = militia when = 4 }
+command = { type = clrflag which = AFG_Chaos }
+command = { type = dissent value = -10  }
+command = { type = trigger which = 777506 }
+}
+
+action = {
+ai_chance =  50
+name = "General Nadir's brigades defeat all opposition and proclaim him king!"
+command = { type = headofstate which = 54083 }
+command = { type = headofgovernment which = 54086 }
+command = { type = flag_ext where = AFG which = "_nad" }
+command = { type = domestic which = interventionism value = -1 }
+command = { type = add_division value = militia when = 4 }
+command = { type = add_division value = militia when = 4 }
+command = { type = clrflag which = AFG_Chaos }
+command = { type = dissent value = -15  }
+command = { type = trigger which = 777506 }
+}
+
+}
+
+event = {
+id = 777506
+country = REB
+style = 2
+picture = "afghanwar"
+
+name = "Order in Afghanistan"
+desc = "Afghanistan cannot into revolt."
+
+action_a = {
+ai_chance = 100
+name = "Here's to hoping for a better tomorrow."
+command = { type = control which = AFG value = 2168 }
+command = { type = control which = AFG value = 2169 }
+command = { type = control which = AFG value = 2170 }
+command = { type = control which = AFG value = 2171 }
+command = { type = control which = AFG value = 2172 }
+command = { type = control which = AFG value = 2173 }
+command = { type = remove_division which = -1 value = -1	}
+command = { type = remove_division which = -1 value = -1	}
+command = { type = remove_division which = -1 value = -1	}
+command = { type = remove_division which = -1 value = -1	}
+command = { type = remove_division which = -1 value = -1	}
+command = { type = remove_division which = -1 value = -1	}
+command = { type = remove_division which = -1 value = -1	}
+command = { type = remove_division which = -1 value = -1	}
+command = { type = remove_division which = -1 value = -1	}
+}
+}
+event = {
+id = 777507
+country = AFG
+random = no
+style = 2
+picture = "afghanwar"
+
+
+date = { day = 1 month = january year = 1936 }
+offset = 15
+deathdate = { day = 29 month = december year = 1937 }
+
+trigger = {
+war = { country = AFG country = PAK }
+
+}
+
+name = "Shia Muslims Flee The War"
+desc = "For decades the situation of the Shia minority in Afghanistan have been bad, the post-war situation wasn't gold, and another war could possibly only make it worse. Shia imams in the provinces of Herat and Farah have encouraged the shia minority to flee into their friendly neighbor Persia. Let's hope the Persians send them back, we need that manpower."
+
+action_a = {
+name = "Traitors!"
+command = { type = manpowerpool value = -5 }
+command = { type = event which = 777508 where = PER when = 7 }
+
+}
+}
+
+event = {
+id = 777508
+country = PER
+random = no
+style = 2
+picture = "afghanwar"
+
+
+name = "Refugees from Afghanistan"
+desc = "Yet another war has started between Afghanistan and Dehli. The Shia minority in Afghanistan fears this will only make their situation worse, therefor they have decided to start a new life here, however this situation might be more problematic then what we think. If we accept these people into our nation the government of Afghanistan will be deeply upset with us. "
+
+action_a = {
+name = "They shall be more than welcome, settle them in Mashad!"
+ai_chance = 70
+command = { type = manpowerpool value = 5 }
+command = { type = relation which = AFG value = -30 }
+}
+
+action_b = {
+name = "This would be meddling in Afghan domestic politics, refuse them!"
+ai_chance = 30
+command = { type = manpowerpool value = -5 }
+command = { type = event which = 777509 where = AFG when = 7 }
+command = { type = relation which = AFG value = 30 }
+
+}
+}
+
+event = {
+id = 777509
+country = AFG
+random = no
+style = 2
+picture = "afghanwar"
+
+
+name = "Persia Closes Its Borders"
+desc = "The Persians made the right choice and sent our people back home"
+
+action_a = {
+name = "Hurrah!"
+command = { type = manpowerpool value = 5 }
+
+}
+}

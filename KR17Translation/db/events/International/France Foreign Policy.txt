@@ -1,0 +1,170 @@
+######
+# Commune of France - Domestic Policy
+# Cleaned up June 2015
+######
+### Exporting the Revolution
+#
+# 1150000 : FRA : Status of Transylvania
+#
+#
+### Others
+#
+# 56009 : FRA : Accept Colombia into the Internationale? - triggered by event 56008 in Colombia.txt
+#
+######
+
+## Transylvania
+
+event = {
+id = 1150000
+random = no
+country = FRA
+
+decision = {
+flag = GER_Capitulation
+alliance = { country = FRA country = HUN }
+OR = {
+exists = URU
+exists = ROM
+}
+NOT = {
+alliance = { country = FRA country = ROM }
+alliance = { country = FRA country = URU }
+war = { country = FRA country = BUL }
+war = { country = FRA country = ROM }
+war = { country = FRA country = URU }
+war = { country = FRA country = UKR }
+war = { country = FRA country = HUN }
+war = { country = FRA country = POL }
+war = { country = FRA country = RUS }
+war = { country = BUL country = ROM }
+war = { country = BUL country = URU }
+ispuppet = FRA
+ispuppet = URU
+ispuppet = ROM
+
+}
+OR = {
+control = { province = 314 data = ROM }
+control = { province = 314 data = URU }
+}
+}
+
+decision_trigger = {
+control = { province = 287 data = FRA }
+control = { province = 288 data = FRA }
+}
+
+trigger = {
+flag = GER_Capitulation
+alliance = { country = FRA country = HUN }
+OR = {
+exists = URU
+exists = ROM
+}
+NOT = {
+alliance = { country = FRA country = ROM }
+alliance = { country = FRA country = URU }
+war = { country = FRA country = ROM }
+war = { country = FRA country = URU }
+war = { country = FRA country = UKR }
+war = { country = FRA country = HUN }
+war = { country = FRA country = POL }
+war = { country = FRA country = RUS }
+war = { country = FRA country = BUL }
+ispuppet = FRA
+ispuppet = URU
+ispuppet = ROM
+war = { country = BUL country = ROM }
+war = { country = BUL country = URU }
+}
+OR = {
+control = { province = 314 data = ROM }
+control = { province = 314 data = URU }
+}
+}
+
+
+name = "Status of Transylvania"
+desc = "The forces of the revolution have taken control over the region of Transylvania - a province with a varied populace of Germans, Romanians and Hungarians. Consequently, administration of the area could be a tricky issue. Some suggest simply handing the territory over to the Hungarians - others argue that this would be a perfect opportunity to liberate the Romanians!"
+style = 2
+picture = "negotiaton"
+decision_picture = "decision_diplomatic_campaign"
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1963 }
+
+action = {
+ai_chance = 70
+name = "This is the first step to liberate all of Romania!"
+trigger = {
+exists = ROM
+NOT = {
+exists = URU
+}
+}
+command = { type = war which = ROM }
+command = { type = belligerence which = FRA value = -5  }
+}
+
+action = {
+ai_chance = 70
+name = "This is the first step to liberate all of Romania!"
+trigger = {
+exists = URU
+NOT = {
+exists = ROM
+}
+}
+command = { type = war which = URU }
+command = { type = belligerence which = FRA value = -5  }
+}
+
+action = {
+
+ai_chance = 30
+name = "Hand the provinces over to the Hungarians!"
+trigger = {
+puppet = { country = HUN country = FRA  }
+}
+command = { type = secedearea which = HUN value = Transylvania when = 1 }
+command = { type = belligerence which = FRA value = -5 }
+
+}
+
+action = {
+
+ai_chance = 0
+name = "The Internationale shall govern Transylvania directly!"
+command = { type = belligerence which = FRA value = -5 }
+}
+}
+
+
+event = {
+id = 56009
+random = no
+country = FRA
+style = 2
+
+trigger = {
+government = communist
+}
+
+name = "Accept Colombia into the Internationale?"
+desc = "Columbia has decided to fully join our struggle against the capitalist oppressors. Shall we accept them as the newest members of the Internationale?"
+
+action_a = {
+ai_chance = 90
+name = "Accept"
+command = { type = alliance which = COL }
+
+}
+
+action_b = {
+ai_chance = 10
+name = "There is no need for an alliance"
+command = { type = dissent value = 3 }
+}
+}
