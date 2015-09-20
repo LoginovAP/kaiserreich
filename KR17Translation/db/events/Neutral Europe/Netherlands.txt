@@ -3,22 +3,22 @@ id = 6552900
 random = no
 country = HOL
 
-name = "Zuiderzee works"
-desc = "After the completion of the Afsluitdijk, the large enclosing dam, the draining of the polders at the Northwest of the Zuiderzee could continue. The Dutch government has voted a budget of 126 millions of guilders for the project."
+name = "EVT_6552900_NAME"
+desc = "EVT_6552900_DESC"
 style = 2
 picture = "mining"
 
 date = { day = 5 month = january year = 1936 }
 
 action_a = {
-name = "Go ahead with the project."
+name = "EVT_6552900_OPTIONA"
 ai_chance = 70
 command = { type = dissent value = -1  }
 command = { type = money value = -100 }
 }
 
 action_b = {
-name = "We have no interest in this."
+name = "EVT_6552900_OPTIONB"
 ai_chance = 30
 command = { type = sleepevent which = 6552901 }
 }
@@ -32,14 +32,14 @@ country = HOL
 trigger = { control = { province = 122 data = HOL } }
 
 
-name = "Reclaimed Land"
-desc = "The Zuiderzeeworks are bearing fruit as the first harvest is collected in Noordoostpolder."
+name = "EVT_6552901_NAME"
+desc = "EVT_6552901_DESC"
 style = 2
 
 date = { day = 1 month = july year = 1941 }
 
 action_a = {
-name = "God created the world but the Netherlands were created by the Dutch!"
+name = "EVT_6552901_OPTIONA"
 command = { type = dissent value = -1 }
 command = { type = free_supplies value = 2 }
 
@@ -53,14 +53,14 @@ random = no
 country = HOL
 style = 2
 
-name = "The Berlin Stock Market Crashes!"
-desc = "On February 3rd, 1936, the Berlin stock market crashed, plunging the world into a depression. Our nation has strong economic ties with Germany and many German companies are shutting down their Dutch factories."  # it was feb. 3rd,right?
+name = "EVT_6552902_NAME"
+desc = "EVT_6552902_DESC"  # it was feb. 3rd,right?
 picture = "politics2"
 
 date = { day = 5 month = february year = 1936 }
 
 action_a = {
-name = "This could be bad"
+name = "EVT_6552902_OPTIONA"
 command = { type = dissent value = 15 }
 }
 }
@@ -71,14 +71,14 @@ random = no
 country = HOL
 style = 2
 
-name = "Worsening Living Standards."
-desc = "Ever since February 3rd, Black Monday, and the collapse of the Berlin Stock Market, the economy of the Netherlands has been suffering. Our reliance on Germany has resulted in many of our workers becoming unemployed as German companies choose to cut jobs in Holland first, spreading Syndicalist ideas among the population, and the Social Democratic Workers' Party has been gaining in numbers. Many of their ideas have merit, but in order to pass them we would have to bring them into the governing coalition."
+name = "EVT_6552903_NAME"
+desc = "EVT_6552903_DESC"
 
 date = { day = 4 month = may year = 1936 }
 
 action_a = {
 ai_chance = 45
-name = "Invite the Social Democrats to enact reforms"
+name = "EVT_6552903_OPTIONA"
 command = { type = setflag which = HOL_democrat }
 command = { type = dissent value = 5 }
 command = { type = set_domestic which = democratic value = 9 }
@@ -87,7 +87,7 @@ command = { type = set_domestic which = free_market value = 7 }
 }
 action_b = {
 ai_chance = 55
-name = "There is no need to compromise with socialists"
+name = "EVT_6552903_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = setflag which = HOL_strike }
 }
@@ -101,8 +101,8 @@ style = 2
 
 trigger = { flag = HOL_democrat }
 
-name = "Dutch Elections"
-desc = "Inviting the SDAP into the government, and giving people the (rightful) impression that they are responsible for most of the reforms that have kept a modicum of prosperity, has contributed to their success. It's unlikely that the right will be able to once again form a coalition that can keep them out of government, though some have recommended manipulating the elections to keep us in power, which the people might tolerate as long as their standard of living is maintained."
+name = "EVT_6552904_NAME"
+desc = "EVT_6552904_DESC"
 
 date = { day = 22 month = july year = 1937 }
 offset = 2
@@ -110,7 +110,7 @@ deathdate = { day = 24 month = july year = 1937 }
 
 action_a = {
 ai_chance = 40
-name = "Left - SDAP. They gave us a Plan for Labor!"
+name = "EVT_6552904_OPTIONA"
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 9 }
 command = { type = headofgovernment which = 8043   }
@@ -121,7 +121,7 @@ command = { type = setflag which = HOL_labor }
 }
 action_b = {
 ai_chance = 30
-name = "Middle - SDAP secures a minority."
+name = "EVT_6552904_OPTIONB"
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 6 }
 command = { type = headofgovernment which = 8002   }
@@ -132,7 +132,7 @@ command = { type = setflag which = HOL_labormin }
 }
 action_c = {
 ai_chance = 30
-name = "Right - A coalition is formed by the CHU, ARP, and the KVP!"
+name = "EVT_6552904_OPTIONC"
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 2 }
 command = { type = headofgovernment which = 8048   }
@@ -152,8 +152,8 @@ persistent =  yes
 
 trigger = { flag = HOL_strike }
 
-name = "Labor strikes"
-desc = "The failure of the government to act has led to labor strikes. Most are confident that they'll blow over once the German economy recovers."
+name = "EVT_6552905_NAME"
+desc = "EVT_6552905_DESC"
 
 date = { day = 20 month = may year = 1936 }
 offset = 60
@@ -162,13 +162,13 @@ picture = "Strike1"
 
 action_a = {
 ai_chance = 90
-name = "The police will control them"
+name = "EVT_6552905_OPTIONA"
 command = { type = dissent value = 5 }
 }
 
 action_b = {
 ai_chance = 10
-name = "The people are right - we must act!"
+name = "EVT_6552905_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = clrflag which = HOL_strike }
 command = { type = setflag which = HOL_right }
@@ -183,8 +183,8 @@ style = 2
 
 trigger = { flag = HOL_strike }
 
-name = "The Zwolle Massacre"
-desc = "A Socialist rally outside Zwolle was met by local police, who moved to disperse it. However, one of the strikers threw a bomb into the midst of the police, who returned fire into the crowd with their pistols. 4 policemen and two dozen strikers were left dead, and the next day the local authorities hanged 4 SDAP leaders, all of whom were on the speaker's podium at the time. There are growing calls to compromise with the SDAP, as more and more of the population turns against the government."
+name = "EVT_6552906_NAME"
+desc = "EVT_6552906_DESC"
 
 date = { day = 20 month = july year = 1937 }
 offset = 3
@@ -194,12 +194,12 @@ deathdate = { day = 25 month = july year = 1937 }
 
 action_a = {
 ai_chance = 40
-name = "We shall stand fast!"
+name = "EVT_6552906_OPTIONA"
 command = { type = dissent value = 15 }
 }
 action_b = {
 ai_chance = 60
-name = "Blood has been spilled, we must give in to the SDAP"
+name = "EVT_6552906_OPTIONB"
 command = { type = dissent value = 3 }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 9 }
@@ -218,15 +218,15 @@ style = 2
 
 trigger = { flag = HOL_labor }
 
-name = "The Plan for Labor"
-desc = "Now that the SDAP is in power, after being denied for twenty years by various right-wing coalitions, it can begin to implement its Plan for Labor, created after Black Monday to improve economic conditions. The Plan for Labor includes ideas to increase employment, nationalize vital industries, and implementing a system of unemployment benefits, by devaluating the Gilder and allowing the national debt to rise, alongside other more extreme methods."
+name = "EVT_6552907_NAME"
+desc = "EVT_6552907_DESC"
 picture = "economic"
 date = { day = 1 month = january year = 1936 }
 offset = 55
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "We've waited a long time for this day"
+name = "EVT_6552907_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = set_domestic which = free_market value = 3 }
 command = { type = domestic which = professional_army value = -1 }
@@ -247,8 +247,8 @@ flag = HOL_strike
 government = communist
 }
 
-name = "Syndicalist forces in the Netherlands"
-desc = "Labor strikes, and brutal crackdowns by the police, have fostered the growth of a large revolutionary movement in the Netherlands. If we give them support in the form of training and equipment, they may be able to overthrow the government."
+name = "EVT_6552908_NAME"
+desc = "EVT_6552908_DESC"
 
 date = { day = 20 month = january year = 1937 }
 offset = 10
@@ -256,14 +256,14 @@ deathdate = { day = 29 month = december year = 1938 }
 
 action_a = {
 ai_chance = 80
-name = "Give aid in overthrowing the reactionaries"
+name = "EVT_6552908_OPTIONA"
 command = { type = manpowerpool value = -10 }
 command = { type = resource which = supplies value = -1000 }
 command = { type = trigger which = 6552949 }
 }
 action_b = {
 ai_chance = 20
-name = "There are some things that just shouldn't be tried..."
+name = "EVT_6552908_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = domestic which = interventionism value = -1 }
 }
@@ -275,14 +275,14 @@ random = no
 country = ENG
 style = 2
 
-name = "Joint French-British action against Dutch reactionaries"
-desc = "Commune of France decided to support Dutch comrades in their fight against reactionary government and they are asking us for our help. Together we can help the Dutch proletariat to rise and smash monarchists and capitalists. On the other side this might rise the tensions in relations with Germany, leading even to war."
+name = "EVT_6552949_NAME"
+desc = "EVT_6552949_DESC"
 
 picture = "urbanwarfare2"
 
 action_a = {
 ai_chance = 100
-name = "Let's do this!"
+name = "EVT_6552949_OPTIONA"
 command = { type = manpowerpool value = -10 }
 command = { type = money value = -200}
 command = { type = resource which = supplies value = -1000 }
@@ -290,7 +290,7 @@ command = { type = setflag which = HOL_revolution }
 }
 action_b = {
 ai_chance = 0
-name = "There are some things that just shouldn't be tried..."
+name = "EVT_6552949_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = domestic which = interventionism value = -1 }
 }
@@ -311,8 +311,8 @@ ispuppet = HOL
 }
 }
 
-name = "Syndicalist Revolution!"
-desc = "Events in the Netherlands have reached the boiling point, and socialists have stormed the capital with French equipment and volunteers!"
+name = "EVT_6552909_NAME"
+desc = "EVT_6552909_DESC"
 picture = "Riot2"
 
 date = { day = 20 month = january year = 1937 }
@@ -325,7 +325,7 @@ trigger = {
 dissent = 25
 }
 ai_chance = 90
-name = "The government falls!"
+name = "EVT_6552909_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = set_domestic which = democratic value = 2 }
 command = { type = set_domestic which = political_left value = 9 }
@@ -353,7 +353,7 @@ dissent = 25
 }
 }
 ai_chance = 50
-name = "The government falls!"
+name = "EVT_6552909_OPTIONB"
 command = { type = dissent value = -5 }
 command = { type = set_domestic which = democratic value = 2 }
 command = { type = set_domestic which = political_left value = 9 }
@@ -381,7 +381,7 @@ dissent = 25
 }
 }
 ai_chance = 50
-name = "The Socialists are crushed!"
+name = "EVT_6552909_OPTIONC"
 command = { type = dissent value = 5 }
 command = { type = domestic which = political_left value = -1 }
 command = { type = domestic which = democratic value = -2 }
@@ -399,7 +399,7 @@ trigger = {
 dissent = 25
 }
 ai_chance = 10
-name = "The Socialists are crushed!"
+name = "EVT_6552909_OPTIOND"
 command = { type = dissent value = 5 }
 command = { type = domestic which = political_left value = -1 }
 command = { type = domestic which = democratic value = -2 }
@@ -429,14 +429,14 @@ control = { province = 1762 data = HOL }
 control = { province = 1999 data = HOL }
 }
 
-name = "Syndicalist takeover in the Netherlands"
-desc = "Terrible news. Syndicalist parties in the Netherlands with direct support from France were able to seize power. Their colonial empire can be now used as a springboard to spread vile Syndicalist influence into different parts of world. To prevent syndicalism from gaining influence in the Caribbean, we must seize the Caribbean Netherlands."
+name = "EVT_6552931_NAME"
+desc = "EVT_6552931_DESC"
 style = 2
 picture = "Riot2"
 
 action_a = {
 ai_chance = 100
-name = "Seize control of the Caribbean Netherlands!"
+name = "EVT_6552931_OPTIONA"
 command = { type = addcore which = 1762 }
 command = { type = addcore which = 1999 }
 command = { type = addcore which = 1761 }
@@ -446,7 +446,7 @@ command = { type = trigger which = 6552932 }
 }
 action_b = {
 ai_chance = 0
-name = "Rather not"
+name = "EVT_6552931_OPTIONB"
 command = { type = relation which = HOL value = 100 }
 command = { type = dissent value = 5 }
 
@@ -458,14 +458,14 @@ id = 6552932
 random = no
 country = HOL
 
-name = "Caribbean Federation takes control of the Caribbean Netherlands!"
-desc = "With our state in chaos following the Syndicalist takeover, the Caribbean Federation used this opportunity to seize control of the Caribbean Netherlands. Currently there is very little that we can do to stop the Caribbean Federation."
+name = "EVT_6552932_NAME"
+desc = "EVT_6552932_DESC"
 style = 2
 picture = "Riot2"
 
 action_a = {
 ai_chance = 100
-name = "There is nothing we can do"
+name = "EVT_6552932_OPTIONA"
 command = { type = secedeprovince which = GUY value = 1999 }
 command = { type = secedeprovince which = GUY value = 1761 }
 command = { type = secedeprovince which = GUY value = 1762 }
@@ -474,7 +474,7 @@ command = { type = dissent value = 1 }
 }
 action_b = {
 ai_chance = 0
-name = "This means WAR!"
+name = "EVT_6552932_OPTIONB"
 command = { type = war which = GUY }
 command = { type = dissent value = 5 }
 
@@ -499,21 +499,21 @@ control = { province = 1632 data = HOL }
 control = { province = 1636 data = HOL }
 }
 
-name = "Syndicalist takeover in the Netherlands"
-desc = "Terrible news. Syndicalist parties in the Netherlands with direct support from France were able to seize power.  The large Dutch colonial empire can be now used as a springboard to spread vile Syndicalist influence into different parts of world. To prevent Syndicalism from gaining influence in the Pacific, we must seize Borneo, Sumatra, and parts of Western New Guinea."
+name = "EVT_6552933_NAME"
+desc = "EVT_6552933_DESC"
 style = 2
 picture = "Riot2"
 
 action_a = {
 ai_chance = 100
-name = "Seize control of parts of the Dutch East Indies!"
+name = "EVT_6552933_OPTIONA"
 command = { type = relation which = HOL value = -100 }
 command = { type = trigger which = 6552934 }
 
 }
 action_b = {
 ai_chance = 0
-name = "Rather not"
+name = "EVT_6552933_OPTIONB"
 command = { type = relation which = HOL value = 100 }
 command = { type = dissent value = 5 }
 
@@ -525,14 +525,14 @@ id = 6552934
 random = no
 country = HOL
 
-name = "German Empire takes control of parts of the Dutch East Indies!"
-desc = "With our state in chaos following the Syndicalist takeover, the German Empire used this opportunity to seize control of parts of the Dutch East Indies. Currently there is very little that we can do to stop the German Empire."
+name = "EVT_6552934_NAME"
+desc = "EVT_6552934_DESC"
 style = 2
 picture = "Riot2"
 
 action_a = {
 ai_chance = 100
-name = "There is nothing we can do"
+name = "EVT_6552934_OPTIONA"
 command = { type = secedeprovince which = GER value = 1640 }
 command = { type = secedeprovince which = GER value = 1634 }
 command = { type = secedeprovince which = GER value = 1642 }
@@ -561,7 +561,7 @@ command = { type = dissent value = 1 }
 
 action_b = {
 ai_chance = 0
-name = "This means WAR!"
+name = "EVT_6552934_OPTIONB"
 command = { type = war which = GER }
 command = { type = dissent value = 5 }
 
@@ -584,14 +584,14 @@ control = { province = 1705 data = AST }
 control = { province = 1615 data = HOL }
 }
 
-name = "Syndicalist takeover in the Netherlands"
-desc = "Terrible news. Syndicalist parties in the Netherlands with direct support from France were able to seize power.  The large Dutch colonial empire can be now used as a springboard to spread vile Syndicalist influence into different parts of world. To prevent Syndicalism from gaining influence in Pacific area, we must seize Borneo, Sumatra, and parts of Western New Guinea."
+name = "EVT_6552935_NAME"
+desc = "EVT_6552935_DESC"
 style = 2
 picture = "Riot2"
 
 action_a = {
 ai_chance = 100
-name = "Seize control of parts of the Dutch East Indies!"
+name = "EVT_6552935_OPTIONA"
 command = { type = addcore which = 1597 }
 command = { type = addcore which = 1598 }
 command = { type = addcore which = 1618 }
@@ -603,7 +603,7 @@ command = { type = trigger which = 6552936 }
 }
 action_b = {
 ai_chance = 0
-name = "Rather not"
+name = "EVT_6552935_OPTIONB"
 command = { type = relation which = HOL value = 100 }
 command = { type = dissent value = 5 }
 
@@ -615,14 +615,14 @@ id = 6552936
 random = no
 country = HOL
 
-name = "Australasian Confederation takes control of parts of the Dutch East Indies!"
-desc = "With our state in chaos following the Syndicalist takeover, the Australasian Confederation used this opportunity to seize control of parts of Dutch East Indies. Currently there is very little that we can do to stop the Australasian Confederation at this point."
+name = "EVT_6552936_NAME"
+desc = "EVT_6552936_DESC"
 style = 2
 picture = "Riot2"
 
 action_a = {
 ai_chance = 100
-name = "There is nothing we can do"
+name = "EVT_6552936_OPTIONA"
 command = { type = secedeprovince which = AST value = 1597 }
 command = { type = secedeprovince which = AST value = 1598 }
 command = { type = secedeprovince which = AST value = 1618 }
@@ -636,7 +636,7 @@ command = { type = dissent value = 1 }
 }
 action_b = {
 ai_chance = 0
-name = "This means WAR!"
+name = "EVT_6552936_OPTIONB"
 command = { type = war which = AST }
 command = { type = dissent value = 5 }
 
@@ -649,14 +649,14 @@ random = no
 country = HOL
 one_action = yes
 
-name = "Fate of the royal family"
-desc = "Following the successful takeover of the Netherlands by Syndicalist militias together with parts of  thearmed forces, Royal family used the ensuing chaos to avoid capture. We have received info that they are planning to escape to the remaining parts of the Dutch colonial empire to lead their fight against us from there. Our militia together with parts of army plans to capture them before they flee from the Netherlands."
+name = "EVT_6552937_NAME"
+desc = "EVT_6552937_DESC"
 style = 2
 picture = "Riot2"
 
 action_a = {
 ai_chance = 100
-name = "The royal family successfully escapes the Netherlands!"
+name = "EVT_6552937_OPTIONB"
 command = { type = dissent value = 3 }
 command = { trigger = { control = { province = 1654 data = HOL } NOT = { exists = INO } } type = independence which = INO value = 1 when = 0 }
 command = { type = end_mastery which = INO }
@@ -675,7 +675,7 @@ command = { trigger = { exists = INO } type = event which = 6552938 where = INO 
 
 action_b = {
 ai_chance = 0
-name = "The royal family is captured and killed by the militia!"
+name = "EVT_6552937_OPTIONC"
 command = { type = dissent value = 1 }
 command = { type = alliance which = FRA }
 command = { type = sleepminister which = 8001 }
@@ -700,11 +700,11 @@ country = INO
 style = 2
 
 picture= "gerarmedfor"
-name = "Netherland exile government"
-desc = "After narrowly escaping capture by Syndicalist militia the royal family, together with many senior leaders, arrived in Java, declaring the creation of the Kingdom of Netherlands in exile which will one day liberate our homeland from Syndicalism!"
+name = "EVT_6552938_NAME"
+desc = "EVT_6552938_DESC"
 
 action_a = {
-name = "A new beginning !"
+name = "EVT_6552938_OPTIONA"
 command = { type = set_domestic which = democratic value = 7     }
 command = { type = set_domestic which = political_left value = 3  }
 command = { type = capital which = 1647 }
@@ -773,8 +773,8 @@ ispuppet = INO
 }
 }
 
-name = "Netherlands in exile foreign policy"
-desc = "The recent takeover by Syndicalist scum left remnants of the once proud Dutch colonial Empire in precarious positions. In order to liberate our homeland from the Syndicalist usurpers we need to join one of major alliances. Which alliance shall we try to join?"
+name = "EVT_6552939_NAME"
+desc = "EVT_6552939_DESC"
 picture = "diplomatic_campaign"
 
 date = { day = 1 month = january year = 1936 }
@@ -788,7 +788,7 @@ NOT = { ispuppet = CAN }
 participant = { country = CAN value = 1 }
 control = { province = 2108 data = CAN }
 }
-name = "We have special bonds with the Entente"
+name = "EVT_6552939_OPTIONA"
 command = { trigger = { NOT = { alliance = { country = CAN country = U07 } } } type = trigger which = 6552940 }
 command = { trigger = { alliance = { country = CAN country = U07 } } type = trigger which = 6552946 }
 command = { type = domestic which = interventionism value = 1 }
@@ -802,7 +802,7 @@ NOT = { ispuppet = GER }
 participant = { country = GER value = 2 }
 control = { province = 163 data = GER }
 }
-name = "We can cooperate with Germany"
+name = "EVT_6552939_OPTIONB"
 command = { type = trigger which = 6552942 }
 command = { type = domestic which = interventionism value = 1 }
 }
@@ -817,14 +817,14 @@ participant = { country = JAP value = 3 }
 }
 control = { province = 1552 data = JAP }
 }
-name = "We can cooperate with Japan"
+name = "EVT_6552939_OPTIONC"
 command = { type = trigger which = 6552944 }
 command = { type = domestic which = interventionism value = 1 }
 }
 
 action = {
 ai_chance = 0
-name = "We don't need any allies"
+name = "EVT_6552939_OPTIOND"
 command = { type = dissent value = 10 }
 command = { type = domestic which = interventionism value = -2 }
 }
@@ -840,12 +840,12 @@ country = CAN
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Dutch government-in-exile wants to join the Entente"
-desc = "The Dutch government-in-exile has announced recently that they want to join the Entente. It's not a sudden move because pro-Entente policy is popular in many circles including the ruling cabinet and the army. Do we want to allow the exiled royals to join our alliance?"
+name = "EVT_6552940_NAME"
+desc = "EVT_6552940_DESC"
 
 action_a = {
 ai_chance = 94
-name = "YES!"
+name = "EVT_6552940_OPTIONA"
 command = { type = alliance which = INO }
 command = { type = relation which = INO value = 200 }
 command = { type = dissent value = -3 }
@@ -855,7 +855,7 @@ command = { type = trigger which = 6552941 }
 
 action_b = {
 ai_chance = 5
-name = "Rather not."
+name = "EVT_6552940_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = relation which = INO value = -100 }
 }
@@ -868,12 +868,12 @@ country = U07
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Dutch government-in-exile wants to join the Entente"
-desc = "The Dutch government-in-exile has announced recently that they want to join the Entente. It's not a sudden move because pro-Entente policy is popular in many circles including the ruling cabinet and the army. Do we want to allow the exiled royals to join our alliance?"
+name = "EVT_6552946_NAME"
+desc = "EVT_6552946_DESC"
 
 action_a = {
 ai_chance = 94
-name = "YES!"
+name = "EVT_6552946_OPTIONA"
 command = { type = alliance which = INO }
 command = { type = relation which = INO value = 200 }
 command = { type = dissent value = -3 }
@@ -883,7 +883,7 @@ command = { type = trigger which = 6552941 }
 
 action_b = {
 ai_chance = 5
-name = "Rather not."
+name = "EVT_6552946_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = relation which = INO value = -100 }
 }
@@ -896,11 +896,11 @@ country = INO
 style = 2
 picture = "diplomatic_campaign"
 
-name = "We join the Entente Cordiale"
-desc = "Canadians are happy to see us joining the common cause - destroying the evil Syndicalists and liberating Europe from German hegemony. Now we are part of the Entente Cordiale"
+name = "EVT_6552941_NAME"
+desc = "EVT_6552941_DESC"
 
 action_a = {
-name = "Now our future is secured !"
+name = "EVT_6552941_OPTIONA"
 command = { type = dissent value = -3 }
 command = { type = relation which = FRA value = -150 }
 command = { type = relation which = ENG value = -150 }
@@ -924,12 +924,12 @@ country = GER
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Dutch government-in-exile wants to join Mitteleuropa"
-desc = "The Dutch government-in-exile has announced recently that they want to join Mitteleuropa. It's not a sudden move because pro-German policy is popular in many circles including the ruling cabinet and the army. Do we want to allow the exiled royals to join our alliance?"
+name = "EVT_6552942_NAME"
+desc = "EVT_6552942_DESC"
 
 action_a = {
 ai_chance = 94
-name = "YES!"
+name = "EVT_6552942_OPTIONA"
 command = { type = alliance which = INO }
 command = { type = relation which = INO value = 200 }
 command = { type = dissent value = -3 }
@@ -962,7 +962,7 @@ command = { type = trigger which = 6552943 }
 
 action_b = {
 ai_chance = 5
-name = "Rather not."
+name = "EVT_6552942_OPTIONB"
 command = { type = dissent value = 1}
 command = { type = relation which = INO value = -100 }
 }
@@ -975,11 +975,11 @@ country = INO
 style = 2
 picture = "diplomatic_campaign"
 
-name = "We join the German bloc"
-desc = "Germans are happy to see us joining the common cause - destroying the evil Syndicalists. Now we are part of Mittleeuropa"
+name = "EVT_6552943_NAME"
+desc = "EVT_6552943_DESC"
 
 action_a = {
-name = "Now our future is secured !"
+name = "EVT_6552943_OPTIONA"
 command = { type = dissent value = -3 }
 command = { type = relation which = FRA value = -150 }
 command = { type = relation which = ENG value = -150 }
@@ -1014,12 +1014,12 @@ country = JAP
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Dutch government-in-exile wants to join our alliance"
-desc = "The Dutch government-in-exile has announced recently that they want to join our alliance. It's not a sudden move because pro-Japanese policy is popular in many circles including the ruling cabinet and army. Do we want to allow the exiled royals to join our alliance?"
+name = "EVT_6552944_NAME"
+desc = "EVT_6552944_DESC"
 
 action_a = {
 ai_chance = 94
-name = "YES!"
+name = "EVT_6552944_OPTIONA"
 command = { type = alliance which = INO }
 command = { type = relation which = INO value = 100 }
 command = { type = dissent value = -3 }
@@ -1029,7 +1029,7 @@ command = { type = trigger which = 6552945 }
 
 action_b = {
 ai_chance = 5
-name = "Rather not."
+name = "EVT_6552944_OPTIONB"
 command = { type = dissent value = 1}
 command = { type = relation which = POR value = -100 }
 }
@@ -1042,11 +1042,11 @@ country = INO
 style = 2
 picture = "diplomatic_campaign"
 
-name = "We join the Japanese bloc"
-desc = "Japans are happy to see us joining the common cause - destroying the evil Syndicalists and ending German hegemony. Now we are part of the Greater East Asian Co-prosperity Sphere."
+name = "EVT_6552945_NAME"
+desc = "EVT_6552945_DESC"
 
 action_a = {
-name = "Now our future is secured !"
+name = "EVT_6552945_OPTIONA"
 command = { type = dissent value = -3 }
 command = { type = relation which = FRA value = -150 }
 command = { type = relation which = ENG value = -150 }
@@ -1066,8 +1066,8 @@ style = 2
 
 trigger = { flag = HOL_labormin }
 
-name = "The Plan for Labor"
-desc = "Now that the SDAP has a say in government, it can begin to slowly implement its revised Plan for Labor, with more extreme measures removed. The Plan for Labor includes ideas to increase employment, nationalize vital industry and implement a system of unemployment benefits."
+name = "EVT_6552910_NAME"
+desc = "EVT_6552910_DESC"
 
 date = { day = 1 month = january year = 1936 }
 offset = 55
@@ -1075,7 +1075,7 @@ deathdate = { day = 29 month = december year = 1960 }
 picture = "economic"
 
 action_a = {
-name = "Splendid."
+name = "EVT_6552910_OPTIONA"
 command = { type = dissent value = -2 }
 command = { type = set_domestic which = free_market value = 5 }
 command = { type = domestic which = professional_army value = -1 }
@@ -1096,8 +1096,8 @@ flag = HOL_labor
 }
 }
 
-name = "New Jobs and Industries"
-desc = "Ever since The Plan for Labor has been implemented there has been an increase of jobs and factories. This has resulted in numerous benefits over the past months."
+name = "EVT_6552911_NAME"
+desc = "EVT_6552911_DESC"
 
 date = { day = 1 month = january year = 1936 }
 offset = 125
@@ -1105,7 +1105,7 @@ deathdate = { day = 29 month = december year = 1960 }
 picture = "factory"
 
 action_a = {
-name = "Splendid."
+name = "EVT_6552911_OPTIONA"
 command = { type = construct which = ic where = -4 value = 1 }
 command = { type = construct which = ic where = -4 value = 1 }
 command = { type = construct which = ic where = -4 value = 1 }
@@ -1126,11 +1126,11 @@ deathdate = { day = 29 month = december year = 1960 }
 
 picture = "factory"
 
-name = "Status of the Economy"
-desc = "Ever since the Berlin stock market crashed, there has been a sharp rise in unemployment and living conditions have begun to worsen. Our current administration has pledged to our citizens that we shall act, and a series of economic programs are slowly being implemented. The programs aim at creating large subsidized workplaces for the unemployed, removing the gold standard, and an increase in military production and recruits."
+name = "EVT_6552912_NAME"
+desc = "EVT_6552912_DESC"
 
 action_a = {
-name = "Splendid."
+name = "EVT_6552912_OPTIONA"
 command = { type = construct which = ic where = -4 value = 1 }
 command = { type = manpowerpool value = 30 }
 }
@@ -1152,19 +1152,19 @@ date = { day = 20 month = august year = 1937 }
 offset = 3
 deathdate = { day = 25 month = august year = 1937 }
 
-name = "Naval Expansion"
-desc = "There has been talk of having the German shipbuilding company, Blomm & Voss, construct several battle cruisers for our navy. The production of these ships would take a year and a half, but our own industries would be free to produce other things as a result."
+name = "EVT_6552913_NAME"
+desc = "EVT_6552913_DESC"
 picture = "cruiseroverhaul"
 
 action_a = {
 ai_chance = 90
-name = "Yes - Issue the order."
+name = "EVT_6552913_OPTIONA"
 command = { type = trigger which = 6552914 }
 }
 
 action_b = {
 ai_chance = 10
-name = "No - We don't have the money for this."
+name = "EVT_6552913_OPTIONB"
 command = { type = dissent value = 2 }
 }
 }
@@ -1175,13 +1175,13 @@ random = no
 country = GER
 style = 2
 
-name = "Dutch Naval Expansion"
-desc = "The Dutch government has shown interest in having one our companies, Blomm & Voss, construct three battlecruisers for the Koninklijke Marin. While we would receive a large sum of resources and money after the completion, this would draw resources away from existing projects."
+name = "EVT_6552914_NAME"
+desc = "EVT_6552914_DESC"
 picture = "cruiseroverhaul"
 
 action_a = {
 ai_chance = 70
-name = "Yes - The Dutch are our friends!"
+name = "EVT_6552914_OPTIONA"
 command = { type = trigger which = 6552915 }
 command = { type = relation which = HOL value = 25 }
 command = { type = free_supplies value = -5 }
@@ -1189,7 +1189,7 @@ command = { type = free_supplies value = -5 }
 
 action_b = {
 ai_chance = 30
-name = "No - We can't be bothered with this."
+name = "EVT_6552914_OPTIONB"
 command = { type = trigger which = 6552916 }
 command = { type = relation which = HOL value = -25 }
 command = { type = dissent value = 2 }
@@ -1202,12 +1202,12 @@ random = no
 country = HOL
 style = 2
 
-name = "The Germans Accept!"
-desc = "Blomm & Voss has informed us that production of our three battle cruisers has begun, and that they will be delivered to our ports once completed."
+name = "EVT_6552915_NAME"
+desc = "EVT_6552915_DESC"
 picture = "cruiseroverhaul"
 
 action_a = {
-name = "Perfect!"
+name = "EVT_6552915_OPTIONA"
 command = { type = dissent value = -1 }
 }
 }
@@ -1219,12 +1219,12 @@ random = no
 country = HOL
 style = 2
 
-name = "The Germans Decline."
-desc = "The German government has informed us that they are not willing to produce our battle cruisers."
+name = "EVT_6552916_NAME"
+desc = "EVT_6552916_DESC"
 picture = "cruiseroverhaul"
 
 action_a = {
-name = "How unfortunate..."
+name = "EVT_6552916_OPTIONA"
 command = { type = dissent value = 1 }
 }
 }
@@ -1241,12 +1241,12 @@ date = { day = 20 month = february year = 1939 }
 offset = 3
 deathdate = { day = 25 month = february year = 1939 }
 
-name = "Production has been completed!"
-desc = "Blomm & Voss has completed construction of the three battle cruisers that are to be delivered to the Dutch."
+name = "EVT_6552917_NAME"
+desc = "EVT_6552917_DESC"
 picture = "cruiseroverhaul"
 
 action_a = {
-name = "Splendid! Inform them immediately."
+name = "EVT_6552917_OPTIONA"
 command = { type = free_supplies value = 5 }
 command = { type = supplies value = 3000 }
 command = { type = metalpool value = 500 }
@@ -1262,12 +1262,12 @@ random = no
 country = HOL
 style = 2
 
-name = "Our ships have arrived!"
-desc = "The battle cruisers we had issued a year and a half ago are finally completed, and have arrived in our docks."
+name = "EVT_6552918_NAME"
+desc = "EVT_6552918_DESC"
 picture = "cruiseroverhaul"
 
 action_a = {
-name = "Perfect."
+name = "EVT_6552918_OPTIONA"
 command = { type = add_division which = "Wilhelmina" value = battlecruiser when = 2 }
 command = { type = add_division which = "Willem j'Oranje" value = battlecruiser when = 2 }
 command = { type = add_division which = "Juliana" value = battlecruiser when = 2 }
@@ -1292,19 +1292,19 @@ date = { day = 20 month = august year = 1937 }
 offset = 3
 deathdate = { day = 25 month = august year = 1937 }
 
-name = "Naval Expansion"
-desc = "There has been talk of having the German shipbuilding company, Blomm & Voss, construct several battle cruisers for our navy. The production of these ships would take a year and a half, but our own industries would be free to produce other things as a result."
+name = "EVT_6552919_NAME"
+desc = "EVT_6552919_DESC"
 picture = "cruiseroverhaul"
 
 action_a = {
 ai_chance = 70
-name = "Yes - Issue the order."
+name = "EVT_6552919_OPTIONA"
 command = { type = trigger which = 6552920 }
 }
 
 action_b = {
 ai_chance = 30
-name = "No - We don't have the money for this."
+name = "EVT_6552919_OPTIONB"
 command = { type = dissent value = 2 }
 }
 }
@@ -1315,13 +1315,13 @@ random = no
 country = GER
 style = 2
 
-name = "Dutch Naval Expansion"
-desc = "The Dutch government has shown interest in having one our companies, Blomm & Voss, construct three battle cruisers for the Koninklijke Marin. While we would receive a large sum of resources and money after the completion, this would draw resources away from existing projects."
+name = "EVT_6552920_NAME"
+desc = "EVT_6552920_DESC"
 picture = "cruiseroverhaul"
 
 action_a = {
 ai_chance = 60
-name = "Yes - We could always use the money."
+name = "EVT_6552920_OPTIONA"
 command = { type = trigger which = 6552915 }
 command = { type = relation which = HOL value = 25 }
 command = { type = free_supplies value = -5 }
@@ -1329,7 +1329,7 @@ command = { type = free_supplies value = -5 }
 
 action_b = {
 ai_chance = 40
-name = "No - We can't be bothered with this."
+name = "EVT_6552920_OPTIONB"
 command = { type = trigger which = 6552916 }
 command = { type = relation which = HOL value = -25 }
 }
@@ -1353,19 +1353,19 @@ date = { day = 20 month = august year = 1937 }
 offset = 3
 deathdate = { day = 25 month = august year = 1937 }
 
-name = "Naval Expansion"
-desc = "There has been talk of having the French shipbuilding company, AC de St-Nazaire-Penhoet, construct several battle cruisers for our navy. The production of these ships would take a year and a half, but our own industries would be free to produce other things as a result."
+name = "EVT_6552921_NAME"
+desc = "EVT_6552921_DESC"
 picture = "cruiseroverhaul"
 
 action_a = {
 ai_chance = 70
-name = "Yes - Issue the order."
+name = "EVT_6552921_OPTIONA"
 command = { type = trigger which = 6552922 }
 }
 
 action_b = {
 ai_chance = 30
-name = "No - We don't have the money for this."
+name = "EVT_6552921_OPTIONB"
 command = { type = dissent value = 2 }
 }
 }
@@ -1376,13 +1376,13 @@ random = no
 country = FRA
 style = 2
 
-name = "Dutch Naval Expansion"
-desc = "The Dutch government has shown interest in having one our companies, AC de St-Nazaire-Penhoet, construct three battle cruisers for the Koninklijke Marin. While we would receive a large sum of resources and money after the completion, this would draw resources away from existing projects."
+name = "EVT_6552922_NAME"
+desc = "EVT_6552922_DESC"
 picture = "cruiseroverhaul"
 
 action_a = {
 ai_chance = 80
-name = "Yes - The Dutch are our friends!"
+name = "EVT_6552922_OPTIONA"
 command = { type = trigger which = 6552923 }
 command = { type = relation which = HOL value = 25 }
 command = { type = free_supplies value = -5 }
@@ -1390,7 +1390,7 @@ command = { type = free_supplies value = -5 }
 
 action_b = {
 ai_chance = 20
-name = "No - We can't be bothered with this."
+name = "EVT_6552922_OPTIONB"
 command = { type = trigger which = 6552924 }
 command = { type = relation which = HOL value = -25 }
 }
@@ -1402,12 +1402,12 @@ random = no
 country = HOL
 style = 2
 
-name = "The French Accept!"
-desc = "AC de St-Nazaire-Penhoet has informed us that production of our three battle cruisers has begun, and that they will be delivered to our ports once completed."
+name = "EVT_6552923_NAME"
+desc = "EVT_6552923_DESC"
 picture = "cruiseroverhaul"
 
 action_a = {
-name = "Perfect!"
+name = "EVT_6552923_OPTIONA"
 command = { type = dissent value = -1 }
 }
 }
@@ -1419,12 +1419,12 @@ random = no
 country = HOL
 style = 2
 
-name = "The French Decline."
-desc = "The French government has informed us that they are not willing to produce our battle cruisers."
+name = "EVT_6552924_NAME"
+desc = "EVT_6552924_DESC"
 picture = "cruiseroverhaul"
 
 action_a = {
-name = "How unfortunate..."
+name = "EVT_6552924_OPTIONA"
 command = { type = dissent value = 1 }
 }
 }
@@ -1441,12 +1441,12 @@ date = { day = 20 month = february year = 1939 }
 offset = 3
 deathdate = { day = 25 month = february year = 1939 }
 
-name = "Production has been completed!"
-desc = "AC de St-Nazaire-Penhoet has completed construction of the three battle cruisers that are to be delivered to the Dutch."
+name = "EVT_6552925_NAME"
+desc = "EVT_6552925_DESC"
 picture = "cruiseroverhaul"
 
 action_a = {
-name = "Splendid! Inform them immediately."
+name = "EVT_6552925_OPTIONA"
 command = { type = free_supplies value = 5 }
 command = { type = supplies value = 3000 }
 command = { type = metalpool value = 500 }
@@ -1523,8 +1523,8 @@ belligerence = { country = RSI value = 5 }
 }
 }
 
-name = "Conscription system"
-desc = "With belligerent regimes emerging in Europe it is perhaps now time to improve our obsolete drafting system to gain more recruits into all branches of our armed forces."
+name = "EVT_6552926_NAME"
+desc = "EVT_6552926_DESC"
 style = 2
 picture = "English_recruitment_office"
 decision_picture = "decision_english_recruitment_office"
@@ -1534,7 +1534,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Draft all able men into the armed forces!"
+name = "EVT_6552926_OPTIONA"
 ai_chance = 5
 command = { type = manpowerpool value = 700 }
 command = { trigger = { ai = no } type = money value = -500 }
@@ -1543,7 +1543,7 @@ command = { type = dissent value = 25 }
 }
 
 action_b = {
-name = "Enact three year conscription!"
+name = "EVT_6552926_OPTIONB"
 ai_chance = 50
 command = { type = manpowerpool value = 300 }
 command = { trigger = { ai = no } type = money value = -200 }
@@ -1552,7 +1552,7 @@ command = { type = dissent value = 10 }
 }
 
 action_c = {
-name = "This is not needed"
+name = "EVT_6552926_OPTIONC"
 ai_chance = 45
 command = { type = dissent value = -3 }
 }
@@ -1579,13 +1579,13 @@ date = { day = 1 month = february year = 1938 }
 offset = 2
 deathdate = { day = 29 month = april year = 1941 }
 
-name = "A greater autonomy for the Netherlands East Indies ?"
-desc = "The people of the Netherlands East Indies have been calling for their independence. While maintaining colonies has been difficult these past years, we would lose many of our resources that are generated from the area. Increasing hostilities in the area have also threatened our colony."
+name = "EVT_6552927_NAME"
+desc = "EVT_6552927_DESC"
 picture = "indonesie_relief"
 
 action_a = {
 ai_chance = 60
-name = "Yes - Indonesia has been a burden."
+name = "EVT_6552927_OPTIONA"
 command = { type = independence which = INO value = 1 when = 0 }
 command = { type = make_puppet which = INO }
 command = { type = name where = INO which = INO_HOL_NAME }
@@ -1600,7 +1600,7 @@ command = { type = trigger which = 6552930 }
 
 action_b = {
 ai_chance = 40
-name = " Bah! Indonesia shall always be Dutch!"
+name = "EVT_6552927_OPTIONB"
 command = { type = dissent value = 6 } #Natives won't be too happy.
 command = { type = sleepevent which = 6552928 }
 command = { type = sleepevent which = 6552929 }
@@ -1629,13 +1629,13 @@ date = { day = 1 month = february year = 1938 }
 offset = 2
 deathdate = { day = 29 month = april year = 1941 }
 
-name = "A greater autonomy for the Netherlands East Indies ?"
-desc = "The people of the Netherlands East Indies have been calling for their independence. While maintaining colonies has been difficult these past years, we would lose many of our resources that are generated from the area. Increasing hostilities in the area have also threatened our colony."
+name = "EVT_6552928_NAME"
+desc = "EVT_6552928_DESC"
 picture = "indonesie_relief"
 
 action_a = {
 ai_chance = 50
-name = "Yes - Indonesia has been a burden."
+name = "EVT_6552928_OPTIONA"
 command = { type = independence which = INO value = 1 when = 0 }
 command = { type = make_puppet which = INO }
 command = { type = name where = INO which = INO_HOL_NAME }
@@ -1650,7 +1650,7 @@ command = { type = trigger which = 6552930 }
 
 action_b = {
 ai_chance = 50
-name = " Bah! Indonesia shall always be Dutch!"
+name = "EVT_6552928_OPTIONB"
 command = { type = dissent value = 6 } #Natives won't be too happy.
 command = { type = sleepevent which = 6552927 }
 command = { type = sleepevent which = 6552929 }
@@ -1678,13 +1678,13 @@ date = { day = 1 month = february year = 1938 }
 offset = 2
 deathdate = { day = 29 month = april year = 1941 }
 
-name = "A greater autonomy for the Netherlands East Indies ?"
-desc = "The people of the Netherlands East Indies have been calling for their independence. While maintaining colonies has been difficult these past years, we would lose many of our resources that are generated from the area. Increasing hostilities in the area have also threatened our colony."
+name = "EVT_6552929_NAME"
+desc = "EVT_6552929_DESC"
 picture = "indonesie_relief"
 
 action_a = {
 ai_chance = 20
-name = "Yes - Indonesia has been a burden."
+name = "EVT_6552929_OPTIONA"
 command = { type = independence which = INO value = 1 when = 0 }
 command = { type = make_puppet which = INO }
 command = { type = name where = INO which = INO_HOL_NAME }
@@ -1699,7 +1699,7 @@ command = { type = trigger which = 6552930 }
 
 action_b = {
 ai_chance = 80
-name = " Bah! Indonesia shall always be Dutch!"
+name = "EVT_6552929_OPTIONB"
 command = { type = dissent value = 6 } #Natives won't be too happy.
 command = { type = sleepevent which = 6552927 }
 command = { type = sleepevent which = 6552928 }
@@ -1713,11 +1713,11 @@ country = INO
 style = 2
 
 picture= "gerarmedfor"
-name = "The Dutch East Indies"
-desc = "No one will see this..."
+name = "EVT_6552930_NAME"
+desc = "EVT_6552930_DESC"
 
 action_a = {
-name = "A new beginning!"
+name = "EVT_6552930_OPTIONA"
 command = { type = set_relation which = HOL value = 150 }
 command = { type = set_relation which = JAP value = 50 }
 command = { type = set_relation which = GER value = 50 }
@@ -1740,8 +1740,8 @@ id = 6552947
 random = no
 country = HOL
 
-name = "Wilhelmina passed away"
-desc = "Our beloved queen Wilhelmina has passed away! Now it is her daughter, Juliana, to take up the mantle as our new glorious queen !"
+name = "EVT_6552947_NAME"
+desc = "EVT_6552947_DESC"
 picture = "Wilhelm_II"
 style = 2
 
@@ -1756,7 +1756,7 @@ headofstate = 8185
 date = { day = 28 month = november year = 1962 }
 
 action_a = {
-name = "The Queen is dead! Long live the Queen!"
+name = "EVT_6552947_OPTIONA"
 command = { trigger = { government = fascist } type = headofstate which = 8200 } #Juliana PA
 command = { trigger = { government = democratic } type = headofstate which = 8187 } #Juliana SC
 command = { type = sleepminister which = 8001 }
@@ -1776,8 +1776,8 @@ id = 6552948
 random = no
 country = HOL
 
-name = "Wilhelmina passed away"
-desc = "The former queen of Netherlands Wilhelmina has passed away. Her daughter Juliana has become the head of the Orange-Nassau house."
+name = "EVT_6552948_NAME"
+desc = "EVT_6552948_DESC"
 picture = "Wilhelm_II"
 style = 2
 
@@ -1793,7 +1793,7 @@ headofstate = 8185
 date = { day = 28 month = november year = 1962 }
 
 action_a = {
-name = "Why should this interests us ?"
+name = "EVT_6552948_OPTIONA"
 command = { type = sleepminister which = 8001 }
 command = { type = sleepminister which = 8037 }
 command = { type = sleepminister which = 8185 }

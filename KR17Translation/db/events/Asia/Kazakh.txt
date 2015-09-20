@@ -5,8 +5,8 @@ country = KAZ
 style = 2
 
 
-name = "The Peoples of Alash Orda"
-desc = "Our population is divided into three separate communities, and if it is to remain stable, it is necessary for our government to favour one of these groups above the others.  Make this decision carefully, as it may lead to international complications."
+name = "EVT_750400_NAME"
+desc = "EVT_750400_DESC"
 
 date = { day = 1 month = july year = 1936 }
 offset = 30
@@ -15,7 +15,7 @@ deathdate = { day = 29 month = september year = 1936 }
 
 action_a = {
 ai_chance = 40
-name = "The Kazakhs and Turkmen: they make up the majority of our population"
+name = "EVT_750400_OPTIONA"
 command = { type = headofgovernment which = 520013 }
 command = { type = dissent value = -10 }
 command = { type = relation which = TRA value = -80 }
@@ -29,7 +29,7 @@ command = { type = sleepevent which = 750464 }
 
 action_b = {
 ai_chance = 35
-name = "The ethnic Russians: they control the economy"
+name = "EVT_750400_OPTIONB"
 command = { type = headofgovernment which = 520041 }
 command = { type = construct which = ic where = 1116 value = 1 }
 command = { type = construct which = ic where = 1117 value = 1 }
@@ -44,7 +44,7 @@ command = { type = setflag which = KAZ_RUS  }
 
 action_c = {
 ai_chance = 25
-name = "Our security depends upon the Cossacks"
+name = "EVT_750400_OPTIONC"
 command = { type = headofgovernment which = 520014 }
 command = { type = add_division  value = cavalry when = 6 }
 command = { type = add_division  value = cavalry when = 6 }
@@ -83,8 +83,8 @@ alliance = { country = TRA country = KAZ }
 }
 }
 
-name = "The Alash Orda's Cossacks are oppressed!"
-desc = "The leaders of the Kazakh Republic's Cossack communities have complained to us that they are oppressed under the government's ethnicities policy."
+name = "EVT_750401_NAME"
+desc = "EVT_750401_DESC"
 
 
 date = { day = 1 month = august year = 1936 }
@@ -94,7 +94,7 @@ deathdate = { day = 1 month = january year = 1949 }
 action_a = {
 
 ai_chance = 30
-name = "Encourage them to secede and join our Union"
+name = "EVT_750401_OPTIONA"
 command = { type = addcore which = 660 } #Volzhsky
 command = { type = addcore which = 706 } #Astrakhan
 command = { type = addcore which = 1113 } #Uralsk
@@ -106,7 +106,7 @@ command = { type = relation which = KAZ value = -120 }
 
 action_b = {
 ai_chance = 40
-name = "Pledge to defend the security of the Cossacks"
+name = "EVT_750401_OPTIONB"
 command = { type = addcore which = 660 } #Volzhsky
 command = { type = addcore which = 706 } #Astrakhan
 command = { type = addcore which = 1113 } #Uralsk
@@ -117,7 +117,7 @@ command = { type = relation which = KAZ value = -60 }
 
 action_c = {
 ai_chance = 30
-name = "Send them away: this is no concern of ours."
+name = "EVT_750401_OPTIONC"
 command = { type = domestic which = interventionism value = -2 }
 command = { type = relation which = KAZ value = 60 }
 command = { type = dissent value = 10 }
@@ -135,21 +135,21 @@ style = 2
 picture = "Cossacks10"
 
 
-name = "The Don-Kuban Union is stirring up seperatism!"
-desc = "The leaders of our country's Cossack garrisons have been encouraged to secede and join the Don-Kuban Union, where they feel their interests will be better protected!  What should we do?"
+name = "EVT_750402_NAME"
+desc = "EVT_750402_DESC"
 
 
 
 action_a = {
 ai_chance = 60
-name = "We shall fight all who threaten the unity of our state!"
+name = "EVT_750402_OPTIONA"
 command = { type = war which = TRA }
 command = { type = dissent value = 15 }
 }
 
 action_b = {
 ai_chance = 30
-name = "Let them go, but maintain links with the Cossack leaders"
+name = "EVT_750402_OPTIONB"
 command = { type = secedeprovince which = TRA value = 1113 }
 command = { type = secedeprovince which = TRA value = 706 }
 command = { type = secedeprovince which = TRA value = 660 }
@@ -159,7 +159,7 @@ command = { type = domestic which = interventionism value = 1 }
 
 action_c = {
 ai_chance = 10
-name = "Let the Cossacks leave"
+name = "EVT_750402_OPTIONC"
 command = { type = secedeprovince which = TRA value = 1113 }
 command = { type = secedeprovince which = TRA value = 706 }
 command = { type = secedeprovince which = TRA value = 660 }
@@ -192,8 +192,8 @@ ispuppet = KYG
 }
 }
 
-name = "The Alash Orda's Turkmen are oppressed!"
-desc = "The leaders of Alash Orda's Turkmen communities have complained to us that they are oppressed under the government's ethnicities policy."
+name = "EVT_750403_NAME"
+desc = "EVT_750403_DESC"
 
 
 date = { day = 1 month = april year = 1937 }
@@ -202,7 +202,7 @@ deathdate = { day = 29 month = december year = 1952 }
 
 action_a = {
 ai_chance = 70
-name = "We shall fight to liberate our Islamic brothers!"
+name = "EVT_750403_OPTIONA"
 command = { type = war which = KAZ }
 command = { type = trigger which = 750500 }
 command = { type = belligerence which = KYG value = 10 }
@@ -211,7 +211,7 @@ command = { type = relation which = KAZ value = -200 }
 
 action_b = {
 ai_chance = 15
-name = "We pledge to defend the interests of Orda's Muslims"
+name = "EVT_750403_OPTIONB"
 command = { type = addcore which = 1118 }
 command = { type = addcore which = 1110 }
 command = { type = addcore which = 1112 }
@@ -223,7 +223,7 @@ command = { type = relation which = KAZ value = -60 }
 
 action_c = {
 ai_chance = 15
-name = "Do nothing"
+name = "EVT_750403_OPTIONC"
 command = { type = domestic which = interventionism value = -2 }
 command = { type = relation which = KAZ value = 60 }
 command = { type = dissent value = 10 }
@@ -260,8 +260,8 @@ alliance = { country = RUS country = KAZ }
 }
 }
 
-name = "The Alash Orda's Russians are oppressed!"
-desc = "The leaders of Alash Orda's Russian community have complained to us that they are oppressed under the government's ethnicities policy."
+name = "EVT_750404_NAME"
+desc = "EVT_750404_DESC"
 
 
 date = { day = 1 month = may year = 1937 }
@@ -270,7 +270,7 @@ deathdate = { day = 1 month = january year = 1960 }
 
 action_a = {
 ai_chance = 40
-name = "Encourage them to secede and rejoin Russia"
+name = "EVT_750404_OPTIONA"
 command = { type = addcore which = 1113 }
 command = { type = addcore which = 706 }
 command = { type = addcore which = 1115 }
@@ -300,7 +300,7 @@ command = { type = relation which = KAZ value = -120 }
 
 action_b = {
 ai_chance = 20
-name = "Pledge to defend the Russian community"
+name = "EVT_750404_OPTIONB"
 command = { type = addcore which = 1113 }
 command = { type = addcore which = 706 }
 command = { type = addcore which = 1115 }
@@ -329,7 +329,7 @@ command = { type = relation which = KAZ value = -60 }
 
 action_c = {
 ai_chance = 20
-name = "The Kazakhs have overstepped the mark: this means war!"
+name = "EVT_750404_OPTIONC"
 trigger = {
 flag = RUS_EXP
 }
@@ -361,7 +361,7 @@ command = { type = war which = KAZ }
 
 action_d = {
 ai_chance = 10
-name = "Do nothing"
+name = "EVT_750404_OPTIOND"
 trigger = {
 flag = RUS_REAL
 }
@@ -380,19 +380,19 @@ country = KAZ
 style = 2
 
 
-name = "Russia is stirring up seperatism!"
-desc = "The resurgent Russian state is encouraging our ethnic Russian community to secede from our country and be incorporated into a greater Russia.  What shall we do?"
+name = "EVT_750406_NAME"
+desc = "EVT_750406_DESC"
 
 action_a = {
 ai_chance = 40
-name = "We shall fight to maintain the integrity of our lands!"
+name = "EVT_750406_OPTIONA"
 command = { type = war which = RUS }
 command = { type = dissent value = 15 }
 }
 
 action_b = {
 ai_chance = 30
-name = "Let them go, back maintain our interests in the area"
+name = "EVT_750406_OPTIONB"
 command = { type = secedeprovince which = RUS value = 1113 }
 command = { type = secedeprovince which = RUS  value = 706 }
 command = { type = secedeprovince which = RUS value = 1115 }
@@ -421,7 +421,7 @@ command = { type = domestic which = interventionism value = 1 }
 
 action_c = {
 ai_chance = 30
-name = "We can do nothing against the Russians"
+name = "EVT_750406_OPTIONC"
 command = { type = secedeprovince which = RUS value = 1113 }
 command = { type = secedeprovince which = RUS  value = 706 }
 command = { type = secedeprovince which = RUS value = 1115 }
@@ -497,8 +497,8 @@ ispuppet = RUS
 }
 
 
-name = "The Return of the Tsar"
-desc = "A new Tsar has been crowned in Russia! Our powerful Russian population is very pleased, and are considering whether they should direct our state into closer relations with the new Empire."
+name = "EVT_750451_NAME"
+desc = "EVT_750451_DESC"
 
 date = { day = 1 month = january year = 1936 }
 offset = 60
@@ -506,7 +506,7 @@ deathdate = { day = 1 month = december year = 1960 }
 
 action_a = {
 ai_chance = 35
-name = "We shall serve the new Tsar, but on our own terms."
+name = "EVT_750451_OPTIONA"
 command = { type = leave_alliance }
 command = { type = trigger which = 750452  }
 command = { type = sleepevent which = 750460 }
@@ -514,7 +514,7 @@ command = { type = sleepevent which = 750460 }
 
 action_b = {
 ai_chance = 35
-name = "All Russians and Kazakhs must be ruled by the Tsar"
+name = "EVT_750451_OPTIONB"
 command = { type = leave_alliance }
 command = { type = trigger which = 750453  }
 command = { type = sleepevent which = 750460 }
@@ -523,7 +523,7 @@ command = { type = sleepevent which = 750460 }
 action_c = {
 ai_chance = 40
 trigger = { NOT = { flag = KAZ_RUS } }
-name = "He is the Tsar of Russia, not of Kazakhstan!"
+name = "EVT_750451_OPTIONC"
 command = { type = trigger which = 750454  }
 command = { type = dissent value = 10 }
 command = { type = sleepevent which = 750460 }
@@ -538,12 +538,12 @@ country = RUS
 style = 2
 picture = "crownofrussia"
 
-name = "The Alash Orda's resolve"
-desc = "The Alash Orda has offered to serve us and accept the authority of the new Tsar, but ask for us to respect their independence.  How should we respond?"
+name = "EVT_750452_NAME"
+desc = "EVT_750452_DESC"
 
 action_a = {
 ai_chance =  65
-name = "We welcome the return of our allies"
+name = "EVT_750452_OPTIONA"
 command = { type = relation which = KAZ value = 200 }
 command = { type = alliance which =  KAZ }
 command = { type = setflag which = RUS_CENASIAPEACE } #With Alash-Orda Russian border is stable
@@ -553,14 +553,14 @@ command = { type = sleepevent which = 750464 }
 
 action_b = {
 ai_chance = 5
-name = "We must decline their offer politely"
+name = "EVT_750452_OPTIONB"
 command = { type = relation which = KAZ value = -80 }
 command = { type = domestic which = interventionism value = -1 }
 }
 
 action_c = {
 ai_chance = 30
-name = "Upstarts!  Your lands are rightfully Russian lands!"
+name = "EVT_750452_OPTIONC"
 command = { type = relation which = KAZ value = -200 }
 command = { type = addcore which = 1113 }
 command = { type = addcore which = 660  }
@@ -595,12 +595,12 @@ picture = "crownofrussia"
 country = RUS
 style = 2
 
-name = "The Submission of the Kazakhs"
-desc = "The Russians who dominate the Alash Orda's political and economic affairs have decided to ask for their state to be incorporated into the Russian Empire.  What should we do?"
+name = "EVT_750453_NAME"
+desc = "EVT_750453_DESC"
 
 action_a = {
 ai_chance = 80
-name = "Welcome their return."
+name = "EVT_750453_OPTIONA"
 command = { type = inherit which = KAZ  }
 command = { type = addcore which = 1113 }
 command = { type = addcore which = 706 }
@@ -645,7 +645,7 @@ command = { type = sleepevent which = 750464 }
 
 action_b = {
 ai_chance = 20
-name = "We need friends, not serfs: you may serve as an independent nation."
+name = "EVT_750453_OPTIONB"
 command = { type = relation which = KAZ value = 200 }
 command = { type = alliance which =  KAZ  }
 command = { type = make_puppet which = KAZ }
@@ -656,7 +656,7 @@ command = { type = sleepevent which = 750464 }
 
 action_c = {
 ai_chance = 0
-name = "We must decline - Central Asia is a wasteland we have no need of"
+name = "EVT_750453_OPTIONC"
 command = { type = relation which = KAZ value = -80 }
 command = { type = domestic which = interventionism value = -1 }
 }
@@ -669,18 +669,18 @@ picture = "crownofrussia"
 country = RUS
 style = 2
 
-name = "The Alash Orda's Resolve"
-desc = "Despite being dominated by ethnic Russians, Alash Orda has proclaimed that they owe nothing to the Russian Empire, and the new Tsar.  How should we respond?"
+name = "EVT_750454_NAME"
+desc = "EVT_750454_DESC"
 
 action_a = {
 ai_chance = 30
-name = "They have a point - he's just the Tsar of Russia"
+name = "EVT_750454_OPTIONA"
 command = { type = relation which = KAZ value = -50 }
 }
 
 action_b = {
 ai_chance = 30
-name = "Send gifts to show the Tsar's generosity."
+name = "EVT_750454_OPTIONB"
 command = { type = relation which = KAZ value = 100 }
 command = { type = belligerence which = RUS value = -5 }
 command = { type = money value = -120  }
@@ -688,7 +688,7 @@ command = { type = money value = -120  }
 
 action_c = {
 ai_chance = 40
-name = "What the Tsar has given them, the Tsar shall take away!"
+name = "EVT_750454_OPTIONC"
 command = { type = relation which = KAZ value = -200 }
 command = { type = addcore which = 1113 }
 command = { type = addcore which = 706 }
@@ -743,8 +743,8 @@ ispuppet = RUS
 }
 }
 
-name = "Russia Resurgent"
-desc = "Our Russian neighbours seem to be taking a more active role in global affairs.  We should approach them while they are busy elsewhere, before they decide to deal with us themselves."
+name = "EVT_750460_NAME"
+desc = "EVT_750460_DESC"
 
 date = { day = 3 month = august year = 1937 }
 offset = 60
@@ -752,14 +752,14 @@ deathdate = { day = 4 month = october year = 1950 }
 
 action_a = {
 ai_chance = 15
-name = "We are willing to submit to the Russians for security"
+name = "EVT_750460_OPTIONA"
 command = { type = trigger which = 750461 }
 command = { type = sleepevent which = 750451 }
 }
 
 action_b = {
 ai_chance = 35
-name = "We should approach the Russians as allies"
+name = "EVT_750460_OPTIONB"
 trigger = {
 NOT = {
 alliance = { country = CAN country = RUS }
@@ -776,7 +776,7 @@ command = { type = sleepevent which = 750451 }
 action_c = {
 ai_chance = 50
 trigger = { NOT = { flag = KAZ_RUS } }
-name = "Russia may do what it wants: we will follow our own course"
+name = "EVT_750460_OPTIONC"
 command = { type = trigger which = 750463 }
 command = { type = sleepevent which = 750451 }
 }
@@ -791,12 +791,12 @@ country = RUS
 style = 2
 picture = "Kazakhstan2"
 
-name = "The Kazakh's Resolve"
-desc = "In the interests of its security, Alash Orda has offered to become an autonomous Republic under Russian domination.  How should we respond?"
+name = "EVT_750461_NAME"
+desc = "EVT_750461_DESC"
 
 action_a = {
 ai_chance = 55
-name = "Excellent: Kazakhstan shall be a Russian colony"
+name = "EVT_750461_OPTIONA"
 command = { type = relation which = KAZ value = 200 }
 command = { type = alliance which =  KAZ }
 command = { type = make_puppet which = KAZ }
@@ -810,13 +810,13 @@ command = { type = sleepevent which = 750464 }
 
 action_b = {
 ai_chance = 1
-name = "We are sorry, our interests lie elsewhere"
+name = "EVT_750461_OPTIONB"
 command = { type = relation which = KAZ value = -80 }
 }
 
 action_c = {
 ai_chance = 30
-name = "Autonomous?!?  No, Russia shall rule the Kazakhs directly!"
+name = "EVT_750461_OPTIONC"
 command = { type = trigger which = 750406   }
 command = { type = relation which = KAZ value = -200 }
 command = { type = addcore which = 1113 }
@@ -850,12 +850,12 @@ country = RUS
 style = 2
 picture = "Kazakhstan2"
 
-name = "An alliance with the Kazakhs?"
-desc = "Alash Orda has offered to enter into a full alliance with Russia, to promote stability in the region."
+name = "EVT_750462_NAME"
+desc = "EVT_750462_DESC"
 
 action_a = {
 ai_chance = 40
-name = "Yes, Russia needs a strong ally in central Asia"
+name = "EVT_750462_OPTIONA"
 command = { type = relation which = KAZ value = 200 }
 command = { type = alliance which =  KAZ }
 command = { type = setflag which = RUS_CENASIAPEACE } #With Alash-Orda Russian border is stable
@@ -863,13 +863,13 @@ command = { type = setflag which = RUS_CENASIAPEACE } #With Alash-Orda Russian b
 
 action_b = {
 ai_chance = 25
-name = "Russia has no need of an alliance with the Kazakhs"
+name = "EVT_750462_OPTIONB"
 command = { type = relation which = KAZ value = -80 }
 }
 
 action_c = {
 ai_chance = 35
-name = "Stability shall only reach Central Asia when it is ruled by Russia!"
+name = "EVT_750462_OPTIONC"
 command = { type = trigger which = 750406  }
 command = { type = relation which = KAZ value = -200 }
 command = { type = addcore which = 1113 }
@@ -903,18 +903,18 @@ country = RUS
 style = 2
 picture = "Kazakhstan2"
 
-name = "The Resolve of Alash Orda"
-desc = "Alash Orda has asserted that they are free from Russia's sphere of influence!  What should we do?"
+name = "EVT_750463_NAME"
+desc = "EVT_750463_DESC"
 
 action_a = {
 ai_chance = 5
-name = "We are strong enough to ignore them"
+name = "EVT_750463_OPTIONA"
 command = { type = relation which = KAZ value = -80 }
 }
 
 action_b = {
 ai_chance = 25
-name = "Send gifts to bring them on our side"
+name = "EVT_750463_OPTIONB"
 command = { type = relation which = KAZ value = 100 }
 command = { type = belligerence which = RUS value = -5 }
 command = { type = money value = -120  }
@@ -922,7 +922,7 @@ command = { type = money value = -120  }
 
 action_c = {
 ai_chance = 50
-name = "The Kazakhs are wrong: they occupy Russian lands!"
+name = "EVT_750463_OPTIONC"
 command = { type = trigger which = 750406 }
 command = { type = relation which = KAZ value = -200 }
 command = { type = addcore which = 1113 }
@@ -938,7 +938,7 @@ command = { type = belligerence which = RUS value = 5 }
 
 action_d = {
 ai_chance = 25
-name = "Russia shall prove where its interests lie: we shall march to Alma-ata!"
+name = "EVT_750463_OPTIOND"
 trigger = {
 flag = RUS_EXP
 }
@@ -982,15 +982,15 @@ puppet = { country = KAZ country = RUS  }
 }
 
 
-name = "The Tsar Comes to the Alma-Ata!"
-desc = "The Tsar has come to Alma-ata to be formally recognised as the Overlord of the Kazakh and Turkmen Steppes.  A grand parade of our nation's Kazakhs, Turkmen, Cossacks, and Russians has been organised, highlighting the diversity of the Tsar's new subjects!  All rejoice!"
+name = "EVT_750469_NAME"
+desc = "EVT_750469_DESC"
 
 date = { day = 1 month = january year = 1937 }
 offset = 60
 deathdate = { day = 1 month = december year = 1949 }
 
 action_a = {
-name = "God Save The Tsar!"
+name = "EVT_750469_OPTIONA"
 command = { type = set_domestic which =   democratic value =   4   }
 command = { type = set_domestic which = political_left value =   3  }
 command = { type = headofstate which = 520040 }
@@ -1012,11 +1012,11 @@ picture = "crownofrussia"
 country = RUS
 style = 2
 
-name = "The Tsar Comes to Alma-Ata"
-desc = "To fulfil the agreement with Alash Orda, the Tsar has come to Alma-ata to be formally recognised as the Overlord of the Kazakh and Turkmen Steppes.  A grand parade of Kazakhs, Turkmen, Cossacks, and Russians has been organised, highlighting the diversity of the Tsar's new subjects!  The whole ceremony has been relayed across the Empire by radio broadcast, and our subjects flock to watch the newsreels in the cinema!"
+name = "EVT_750470_NAME"
+desc = "EVT_750470_DESC"
 
 action_a = {
-name = "God Save The Tsar!  A Triumph of Propaganda!"
+name = "EVT_750470_OPTIONA"
 command = { type = dissent value = -10 }
 }
 
@@ -1053,8 +1053,8 @@ war = { country = KYG country = RUS }
 }
 }
 
-name = "Help from Russia?"
-desc = "We are faced with the threat of annihilation at the hands of Turkestan.  Russia may be willing to help us, but we may have to make serious concessions.  It may however be the only way to save ourselves from rule by Turkestan's fanatics..."
+name = "EVT_750471_NAME"
+desc = "EVT_750471_DESC"
 picture = "politics2"
 
 date = { day = 1 month = january year = 1936 }
@@ -1063,21 +1063,21 @@ deathdate = { day = 29 month = december year = 1949 }
 
 action_a = {
 ai_chance =  20
-name = "Beg the Russians for military aid"
+name = "EVT_750471_OPTIONA"
 command = { type = trigger which = 750472 }
 command = { type = domestic which = interventionism value = 1 }
 }
 
 action_b = {
 ai_chance =  60
-name = "Offer to submit to the Russians"
+name = "EVT_750471_OPTIONB"
 command = { type = trigger which = 750474 }
 }
 
 
 action_c = {
 ai_chance =  20
-name = "We shall fight on our own!"
+name = "EVT_750471_OPTIONC"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = trigger which = 750475 }
 }
@@ -1092,12 +1092,12 @@ country = RUS
 style = 2
 picture = "PustPodoidut"
 
-name = "Alash Orda desires aid"
-desc = "Alash Orda is fighting for its life against Turkestan, and has sent its representative to us to beg for military assistance.  This could be an excellent opportunity to cement our authority in Central Asia."
+name = "EVT_750472_NAME"
+desc = "EVT_750472_DESC"
 
 action_a = {
 ai_chance = 35
-name = "They may have war material and volunteers"
+name = "EVT_750472_OPTIONA"
 command = { type = relation which = KAZ value = 100 }
 command = { type = supplies value = -500 }
 command = { type = money value = -100  }
@@ -1106,7 +1106,7 @@ command = { type = trigger which = 750473 }
 
 action_b = {
 ai_chance = 25
-name = "We shall fight on the side of the Kazakhs"
+name = "EVT_750472_OPTIONB"
 command = { type = relation which = KAZ value = 200 }
 command = { type = alliance which =  KAZ }
 command = { type = war which = KYG }
@@ -1115,14 +1115,14 @@ command = { type = trigger which = 750473 }
 
 action_c = {
 ai_chance = 15
-name = "We have no interests in Central Asia"
+name = "EVT_750472_OPTIONC"
 command = { type = relation which = KAZ value = -80 }
 command = { type = domestic which = interventionism value = -1 }
 }
 
 action_d = {
 ai_chance = 25
-name = "The Kazakhs are too weak: Russia shall take over their lands"
+name = "EVT_750472_OPTIOND"
 command = { type = war which = KAZ }
 command = { type = relation which = KAZ value = -200 }
 command = { type = relation which = KYG value = -100 }
@@ -1155,13 +1155,13 @@ random = no
 country = KAZ
 
 
-name = "Aid from Russia!"
-desc = "The Russians have sent troops and volunteers to help us in the fight against Turkestan!"
+name = "EVT_750473_NAME"
+desc = "EVT_750473_DESC"
 style = 2
 picture = "SCW_German Intervention"
 
 action_a = {
-name = "OK" # Great!
+name = "EVT_750473_OPTIONA" # Great!
 command = { type = supplies value = 1000 }
 command = { type = add_division value = infantry when = 8 }
 command = { type = add_division value = infantry when = 8 }
@@ -1182,12 +1182,12 @@ style = 2
 picture = "PustPodoidut"
 
 
-name = "The Submission of the Kazakhs"
-desc = "The Kazakhs are in danger of being eliminated by the forces of Turkestan.  They have come to the conclusion that only by being incorporated into Russia will they be able to live in peace and freedom.  If we accept them, we will be fighting Turkestan ourselves..."
+name = "EVT_750474_NAME"
+desc = "EVT_750474_DESC"
 
 action_a = {
 ai_chance = 65
-name = "We shall welcome the Kazakhs and defend their rights."
+name = "EVT_750474_OPTIONA"
 command = { type = inherit which = KAZ  }
 command = { type = war which = KYG }
 command = { type = addcore which = 1113 }
@@ -1232,7 +1232,7 @@ command = { type = dissent value = 4 }  # Integration
 
 action_b = {
 ai_chance = 35
-name = "We cannot risk such entanglements"
+name = "EVT_750474_OPTIONB"
 command = { type = relation which = KAZ value = -80 }
 command = { type = domestic which = interventionism value = -1 }
 }
@@ -1250,13 +1250,13 @@ style = 2
 picture = "PustPodoidut"
 
 
-name = "War in Central Asia"
-desc = "The recent outbreak of hostilities in Central Asia is worrying to say the least, and brings great destablisation to our frontiers.  The Kazakhs have recently proclaimed that they shall fight on their own against Turkestan, but it seems that they are too weak to survive for very long.  This is an opportunity we could use to extend our influence into traditionally Russian lands..."
+name = "EVT_750475_NAME"
+desc = "EVT_750475_DESC"
 
 
 action_a = {
 ai_chance = 25
-name = "We have no interests in Central Asia"
+name = "EVT_750475_OPTIONA"
 command = { type = dissent value = 10 }
 command = { type = relation which = KAZ value = -80 }
 command = { type = domestic which = interventionism value = -1 }
@@ -1264,13 +1264,13 @@ command = { type = domestic which = interventionism value = -1 }
 
 action_b = {
 ai_chance = 25
-name = "Should Turkestan come near our borders, we shall fight them"
+name = "EVT_750475_OPTIONB"
 command = { type = war which = KYG }
 }
 
 action_c = {
 ai_chance = 30
-name = "The Kazakhs are too weak: Russia shall take over their lands"
+name = "EVT_750475_OPTIONC"
 command = { type = war which = KAZ }
 command = { type = domestic which = interventionism value = 1 }
 command = { type = relation which = KAZ value = -200 }
@@ -1298,7 +1298,7 @@ command = { type = addcore which = 1140 }
 
 action_d = {
 ai_chance = 20
-name = "Only Russian armies can bring order to Central Asia!"
+name = "EVT_750475_OPTIOND"
 command = { type = war which = KAZ }
 command = { type = war which = KYG }
 command = { type = domestic which = interventionism value = 2 }
@@ -1343,12 +1343,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 25
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Fate of the Islamic Federation of Turkestan"
-desc = "After the armies of the Alash Orda claimed victory in Central Asia, Ismail Enver held a very emotional and moving speech in Samarkand in which he stated his relief over the ending of the 'Kardesh Harbi', or the Brother War. Afterwards he anounced his plans for the future of the former Islamic Federation of Turkestan and the entirety of Central Asia."
+name = "EVT_750476_NAME"
+desc = "EVT_750476_DESC"
 
 action_a = {
 ai_chance = 80
-name = "Once more we will be: one nation, in one state, with one language!"
+name = "EVT_750476_OPTIONA"
 command = { type = belligerence which = KAZ value = 5 }
 command = { type = relation which = RUS value = -50 }
 command = { type = relation which = TRA value = -50 }
@@ -1369,7 +1369,7 @@ command = { type = addcore which = 1112 }
 
 action_b = {
 ai_chance = 15
-name = "We will stand by our brothers on their way to becoming a secular republic!"
+name = "EVT_750476_OPTIONB"
 command = { type = independence which = KYG value = 1 when = 1 }
 command = { type = belligerence which = KAZ value = -10 }
 command = { type = secedeprovince which = KYG value = 1103 }
@@ -1389,7 +1389,7 @@ command = { type = trigger which = 750477 }
 
 action_c = {
 ai_chance = 5
-name = "Turkestan will recieve autonomy, but we will keep an eye on them"
+name = "EVT_750476_OPTIONC"
 command = { type = independence which = KYG value = 1 when = 0 }
 command = { type = belligerence which = KAZ value = -5 }
 command = { type = relation which = RUS value = -25 }
@@ -1414,11 +1414,11 @@ id = 750477
 country = KYG
 style = 2
 
-name = "Alasha-Orda grants us our freedom"
-desc = "After the armies of the Alash Orda claimed victory in Central Asia, Ismail Enver held a very emotional and moving speech in Samarkand in which he stated his relief over the ending of the 'Kardesh Harbi', or the Brother War. Afterwards he anounced his plans for the future of the former Islamic Federation of Turkestan and the entirety Central Asia which was to create a secular, independent, and moderate Turkestan."
+name = "EVT_750477_NAME"
+desc = "EVT_750477_DESC"
 
 action_a = {
-name = "We will rule the Republic of Turkestan with a new point of view!"
+name = "EVT_750477_OPTIONA"
 command = { type = relation which = KAZ value = 100 }
 command = { type = relation which = RUS value = 50 }
 command = { type = relation which = TRA value = 50 }
@@ -1442,10 +1442,10 @@ id = 750478
 country = KYG
 style = 2
 
-name = "Alasha Orda grants us partial-independence"
-desc = "After the armies of the Alash Orda claimed victory in Central Asia, Ismail Enver held a very emotional and moving speech in Samarkand in which he stated his relief over the ending of the 'Kardesh Harbi', or the Brother War. Afterwards he announced his plans for the future of the former Islamic Federation of Turkestan and the entirety of Central Asia which was was to create a secular, independent, and moderate Turkestan."
+name = "EVT_750478_NAME"
+desc = "EVT_750478_DESC"
 action_a = {
-name = "We will keep Alasha Orda's interests at heart"
+name = "EVT_750478_OPTIONA"
 command = { type = relation which = KAZ value = 100 }
 command = { type = relation which = RUS value = -50 }
 command = { type = relation which = TRA value = -50 }

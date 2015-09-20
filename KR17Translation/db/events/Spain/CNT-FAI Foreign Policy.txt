@@ -23,12 +23,12 @@ date = { day = 7 month = january year = 1936 }
 offset = 30
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "What now?"
-desc = "With our victory in the Civil War we are now recovering and it is time to choose the direction of our Nation and Union. The civil strife and problems are still rampant throughout Spain and we must decide which path to take in the days ahead. Shall we become aggressive in our promotion of Anarchy or should we heal the rifts in our country first?"
+name = "EVT_3967084_NAME"
+desc = "EVT_3967084_DESC"
 
 action_a = {
 ai_chance = 60
-name = "To survive we must spread!"
+name = "EVT_3967084_OPTIONA"
 command = { type = setflag which = cnt_expand }
 command = { type = dissent value = 5 }
 command = { type = relation which = FRA value = 20 }
@@ -41,7 +41,7 @@ command = { type = relation which = VIC value = -20 }
 
 action_b = {
 ai_chance = 40
-name = "We must reorganize our own country"
+name = "EVT_3967084_OPTIONB"
 command = { type = setflag which = cnt_internal }
 command = { type = dissent value = -5 }
 }
@@ -102,18 +102,18 @@ date = { day = 1 month = january year = 1936 }
 offset = 40
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Portuguese Anarchists"
-desc = "For years, our organization has been closely tied to both the leading Anarcho-Syndicalist group in Portugal, the União Anarquista Portuguesa, and their own branch of the CGT, the Confederação Geral do Trabalho. With our securing of Spain, we think it is time to start using the Portuguese Anarchists to start causing fatal trouble in that ailing nation."
+name = "EVT_3967063_NAME"
+desc = "EVT_3967063_DESC"
 
 action_a = {
-name = "Send the word and support to the UAP."
+name = "EVT_3967063_OPTIONA"
 ai_chance = 90
 command = { type = domestic which = interventionism value = 1 }
 command = { type = setflag which = portan }
 command = { type = supplies value = -100 }
 }
 action_b = {
-name = "We should leave Portugal alone"
+name = "EVT_3967063_OPTIONB"
 ai_chance = 10
 command = { type = domestic which = interventionism value = -1 }
 command = { type = dissent value = 3 }
@@ -135,18 +135,18 @@ date = { day = 7 month = january year = 1936 }
 offset = 30
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Anarchist Riots"
-desc = "Inspired by the success of the FAI in the Spanish Revolution and its swelling membership, our local anarcho-syndicalist group, the União Anarquista Portuguesa, has been causing strikes and protests across the nation. Today, a major strike and protest took place on the streets of Lisbon, which soon turned violent. Rumors say the anarchists are plotting to coup the government!"
+name = "EVT_3967064_NAME"
+desc = "EVT_3967064_DESC"
 
 action_a = {
-name = "Turn the UAP illegal and wrest control of the streets"
+name = "EVT_3967064_OPTIONA"
 ai_chance = 80
 command = { type = trigger which = 3967066 }
 command = { type = clrflag  which = portan }
 }
 
 action_b = {
-name = "The UAP succedes in their coup"
+name = "EVT_3967064_OPTIONB"
 ai_chance = 20
 command = { type = trigger which = 3967065 }
 command = { type = clrflag  which = portan }
@@ -159,11 +159,11 @@ country = POR
 style = 2
 picture = "SCW1"
 
-name = "Anarchist Coup!"
-desc = "The União Anarquista Portuguesa has succeded on their coup against Salazar's government. A true government of all workers has been established!"
+name = "EVT_3967065_NAME"
+desc = "EVT_3967065_DESC"
 
 action = {
-name = "The UAP establishes a new Portuguese Republic"
+name = "EVT_3967065_OPTIONA"
 ai_chance = 90
 command = { type = set_domestic which = political_left value = 7 }
 command = { type = set_domestic which = democratic value = 2 }
@@ -175,7 +175,7 @@ command = { trigger = { NOT = { ispuppet = SPR } } type = trigger which = 396706
 }
 
 action = {
-name = "Propose integration into the FAI"
+name = "EVT_3967065_OPTIONB"
 ai_chance = 10
 trigger = {
 exists = SPR
@@ -199,17 +199,17 @@ country = SPR
 style = 2
 picture = "SCW1"
 
-name = "Revolution in Portugal"
-desc = "The Uniao Anarquista Portuguesa has succeded on their coup against Salazar's dictatorship in Portugal. With help from the CNT-FAI, a true government of all workers has been established! The world is a dangerous place for the freedom-loving peoples, however - should we invite Portugal into a defensive pact?"
+name = "EVT_39670651_NAME"
+desc = "EVT_39670651_DESC"
 
 action = {
-name = "Attempt to bring them into an alliance"
+name = "EVT_39670651_OPTIONA"
 ai_chance = 100
 command = { type = domestic which = interventionism value = 1 }
 command = { type = trigger which = 39670652 }
 }
 action = {
-name = "We're not interested on that, really"
+name = "EVT_39670651_OPTIONB"
 ai_chance = 0
 command = { type = domestic which = interventionism value = -1 }
 }
@@ -221,17 +221,17 @@ country = POR
 style = 2
 picture = "SCW1"
 
-name = "Revolution in Portugal"
-desc = "Our brothers in Spain, the Federación Anarquista Ibérica, has congratulated us on our victorious revolution! The world is a dangerous place for the freedom-loving peoples, however - the Spanish have proposed a defensive pact between our nations!"
+name = "EVT_39670652_NAME"
+desc = "EVT_39670652_DESC"
 
 action = {
-name = "Accept their offer"
+name = "EVT_39670652_OPTIONA"
 ai_chance = 100
 command = { type = domestic which = interventionism value = 1 }
 command = { type = trigger which = 39670653 }
 }
 action = {
-name = "We're not interested on that, really"
+name = "EVT_39670652_OPTIONB"
 ai_chance = 0
 command = { type = domestic which = interventionism value = -1 }
 }
@@ -243,11 +243,11 @@ country = SPR
 style = 2
 picture = "SCW1"
 
-name = "The Treaty of Barcelona"
-desc = "The Portuguese have accepted our offer and a defensive pact has been signed between our countries!"
+name = "EVT_39670653_NAME"
+desc = "EVT_39670653_DESC"
 
 action = {
-name = "Great!"
+name = "EVT_39670653_OPTIONA"
 ai_chance = 100
 command = { type = alliance which = POR }
 }
@@ -259,11 +259,11 @@ country = SPR
 style = 2
 picture = "SCW1"
 
-name = "Revolution in Portugal"
-desc = "The União Anarquista Portuguesa has succeded on their coup against Salazar's dictatorship in Portugal. With help from the CNT-FAI, a true government of all workers has been established! The UAP has now proposed a complete integration of Portugal into our Federation."
+name = "EVT_39670654_NAME"
+desc = "EVT_39670654_DESC"
 
 action = {
-name = "Accept their offer - Integrate the Portuguese nation"
+name = "EVT_39670654_OPTIONA"
 ai_chance = 90
 command = { type = domestic which = interventionism value = 1 }
 command = { type = inherit which = POR }
@@ -280,7 +280,7 @@ command = { type = province_keypoints which = 995 value = -1 }
 command = { type = event which = 39670751 where = SPR when = 1 }
 }
 action = {
-name = "Rather not - Maybe an alliance instead?"
+name = "EVT_39670654_OPTIONB"
 ai_chance = 10
 command = { type = domestic which = interventionism value = -1 }
 command = { type = setflag which = POR_SYN }
@@ -294,17 +294,17 @@ country = POR
 style = 2
 picture = "SCW1"
 
-name = "Revolution in Portugal"
-desc = "Our brothers in Spain, the FAI, have declined our proposal for full integration into their Federation. They now propose a defensive pact between Spain and Portugal."
+name = "EVT_39670655_NAME"
+desc = "EVT_39670655_DESC"
 
 action = {
-name = "Accept their offer"
+name = "EVT_39670655_OPTIONA"
 ai_chance = 100
 command = { type = domestic which = interventionism value = 1 }
 command = { type = trigger which = 39670653 }
 }
 action = {
-name = "We're not interested on that, really"
+name = "EVT_39670655_OPTIONB"
 ai_chance = 0
 command = { type = domestic which = interventionism value = -1 }
 }
@@ -320,18 +320,18 @@ country = SPR
 style = 2
 picture = "urbanwarfare5"
 
-name = "Suppression of the UAP"
-desc = "An emergency CNT-FAI meeting has been called to discuss the problem in Portugal. With the increased violent action from the UAP, the Portuguese government has decided to crack down on the organization. With the fear and anger of its members, the UAP is calling for action. "
+name = "EVT_3967066_NAME"
+desc = "EVT_3967066_DESC"
 
 action_a = {
-name = "Invade Portugal! Viva la Revolución!"
+name = "EVT_3967066_OPTIONA"
 ai_chance = 90
 command = { type = war which = POR }
 command = { type = clrflag  which = portan }
 }
 
 action_b = {
-name = "Let the UAP take care of this alone"
+name = "EVT_3967066_OPTIONB"
 ai_chance = 10
 command = { type = dissent value = 5 }
 command = { type = revolt which = 481 }
@@ -368,11 +368,11 @@ date = { day = 7 month = january year = 1936 }
 offset = 5
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Fall of Portugal"
-desc = "Our Revolutionary army has secured the Portuguese mainland! We can now force their government to submit."
+name = "EVT_3967067_NAME"
+desc = "EVT_3967067_DESC"
 
 action = {
-name = "Integrate the Portuguese nation"
+name = "EVT_3967067_OPTIONA"
 ai_chance = 70
 command = { type = addcore which = 481 }
 command = { type = addcore which = 476 }
@@ -386,7 +386,7 @@ command = { type = headofgovernment which = 11405 }
 command = { type = trigger which = 39670672 }
 }
 action = {
-name = "Establish a friendly regime in Portugal"
+name = "EVT_3967067_OPTIONB"
 ai_chance = 30
 command = { type = coup_nation which = POR }
 command = { type = make_puppet which = POR }
@@ -404,11 +404,11 @@ country = POR
 style = 2
 picture = "SCW1"
 
-name = "A Friendly Regime in Portugal"
-desc = "With help from our Spanish comrades, a true government of all workers has been established!"
+name = "EVT_39670671_NAME"
+desc = "EVT_39670671_DESC"
 
 action = {
-name = "Trabalhadores do Mundo, Uni-Vos!"
+name = "EVT_39670671_OPTIONA"
 command = { type = set_domestic which = political_left value = 7 }
 command = { type = set_domestic which = democratic value = 2 }
 command = { type = headofstate which = 9094 }
@@ -423,17 +423,17 @@ country = POR
 style = 2
 picture = "urbanwarfare3"
 
-name = "Portugal under occupation"
-desc = "The Portuguese mainland has been overrun by the Spanish anarchists and added to their godless Federación. While our people is suffering under the occupation, our remaining cabinet has been moved to the Azores, together with the remnants of our navy. We now must face a decision: either setup a government-in-exile in the Ultramar - our overseas provinces - and wait for a proper moment to retake the homeland, or submit to the CNT-FAI..."
+name = "EVT_39670672_NAME"
+desc = "EVT_39670672_DESC"
 
 action = {
-name = "There's no point fighting on, surrender to Spain"
+name = "EVT_39670672_OPTIONA"
 ai_chance = 25
 command = { type = trigger which = 39670673 }
 command = { type = setflag which = porcol }
 }
 action = {
-name = "The war must go on until we're back into Lisbon"
+name = "EVT_39670672_OPTIONB"
 ai_chance = 5
 command = { type = capital which = 305 }
 command = { type = dissent value = 5 }
@@ -454,7 +454,7 @@ trigger = { NOT = {
 alliance = { country = POR country = CAN }
 alliance = { country = POR country = GER }
 } }
-name = "Form a government-in-exile, seek peace with the CNT-FAI"
+name = "EVT_39670672_OPTIONC"
 command = { type = capital which = 305 }
 command = { type = dissent value = 5 }
 command = { type = domestic which = interventionism value = 2 }
@@ -487,11 +487,11 @@ country = SPR
 style = 2
 picture = "urbanwarfare3"
 
-name = "Portugal surrenders"
-desc = "The Portuguese government has laid down their arms and formally surrendered to us."
+name = "EVT_39670673_NAME"
+desc = "EVT_39670673_DESC"
 
 action = {
-name = "Good! Long live the Revolution!"
+name = "EVT_39670673_OPTIONA"
 command = { type = inherit which = POR }
 command = { type = province_keypoints which = 995 value = -1 }
 command = { type = event which = 39670751 where = SPR when = 1 }
@@ -504,11 +504,11 @@ country = SPR
 style = 2
 picture = "urbanwarfare3"
 
-name = "Portuguese Government in Exile"
-desc = "The former Portuguese government has fled to their overseas provinces and setup a new government-in-exile, modeled after the regime of National France. They are seeking peace with us... With the Portuguese mainland occupied and our own peoples too tired from war, this could be a nice offer - what use would we make of their far-off territories now, anyway?"
+name = "EVT_39670674_NAME"
+desc = "EVT_39670674_DESC"
 
 action = {
-name = "The war must go on until their complete defeat"
+name = "EVT_39670674_OPTIONA"
 ai_chance = 10
 command = { type = domestic which = interventionism value = 1 }
 command = { type = domestic which = defense_lobby value =1 }
@@ -516,7 +516,7 @@ command = { type = war which = POR }
 command = { type = dissent value = 5 }
 }
 action = {
-name = "Accept their offer and sign a peace treaty"
+name = "EVT_39670674_OPTIONB"
 ai_chance = 90
 command = { type = dissent value = 2 }
 command = { type = peace which = POR value = 0 }
@@ -548,12 +548,12 @@ date = { day = 7 month = january year = 1936 }
 offset = 10
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Portugal is weak, we could grab Angola!"
-desc = "Portugal is under attack from the CNT-FAI. Their colonies here in Afrika are weak and underprotected - should we grab Angola now before it falls into CNT hands?"
+name = "EVT_3967103_NAME"
+desc = "EVT_3967103_DESC"
 
 action_a = {
 ai_chance = 60
-name = "We must get it!"
+name = "EVT_3967103_OPTIONA"
 command = { type = relation which = SPR value = -50 }
 command = { type = relation which = POR value = -50 }
 command = { type = trigger which = 3967104 }
@@ -561,7 +561,7 @@ command = { type = trigger which = 3967104 }
 
 action_b = {
 ai_chance = 40
-name = "Leave it alone"
+name = "EVT_3967103_OPTIONB"
 command = { type = relation which = POR value = 10 }
 }
 }
@@ -574,11 +574,11 @@ country = POR
 style = 2
 picture = "angola"
 
-name = "Mittelafrika takes Angola"
-desc = "Mittelafrika has sent its troops into Angola, Sao Tome and Principe. ."
+name = "EVT_3967104_NAME"
+desc = "EVT_3967104_DESC"
 
 action_a = {
-name = "Curse them!"
+name = "EVT_3967104_OPTIONA"
 command = { type = secedeprovince which = CON value = 888 } #Angola!
 command = { type = secedeprovince which = CON value = 892 }
 command = { type = secedeprovince which = CON value = 895 }
@@ -610,12 +610,12 @@ date = { day = 7 month = january year = 1936 }
 offset = 10
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Portugal is weak, we could grab Mozambique"
-desc = "Portugal is under attack from the CNT-FAI. Their colonies here in Afrika are weak and underprotected - should we grab Mozambique now before it falls into CNT hands?"
+name = "EVT_3967105_NAME"
+desc = "EVT_3967105_DESC"
 
 action_a = {
 ai_chance = 60
-name = "We must get it!"
+name = "EVT_3967105_OPTIONA"
 command = { type = relation which = SPR value = -50 }
 command = { type = relation which = POR value = -50 }
 command = { type = trigger which = 3967107 }
@@ -623,7 +623,7 @@ command = { type = trigger which = 3967107 }
 
 action_b = {
 ai_chance = 40
-name = "Leave it alone"
+name = "EVT_3967105_OPTIONB"
 command = { type = relation which = POR value = 10 }
 }
 }
@@ -636,11 +636,11 @@ country = POR
 style = 2
 picture = "angola"
 
-name = "Mittelafrika takes Mozambique"
-desc = "Mittelafrika has sent its troops into Mozambique. ."
+name = "EVT_3967107_NAME"
+desc = "EVT_3967107_DESC"
 
 action_a = {
-name = "Curse them!"
+name = "EVT_3967107_OPTIONA"
 command = { type = secedeprovince which = CON value = 856 } #Mozam
 command = { type = secedeprovince which = CON value = 855 }
 command = { type = secedeprovince which = CON value = 857 }
@@ -684,16 +684,16 @@ date = { day = 7 month = january year = 1936 }
 offset = 30
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "CNT-FAI and Angola"
-desc = "Following the fall of Portugal, we ended up in control of their former colony of Angola"
+name = "EVT_3967068_NAME"
+desc = "EVT_3967068_DESC"
 
 action_a = {
-name = "Keep it as ours."
+name = "EVT_3967068_OPTIONA"
 ai_chance = 40
 command = { type = dissent value = 5 }
 }
 action_b = {
-name = "Release them!"
+name = "EVT_3967068_OPTIONB"
 ai_chance = 60
 command = { type = independence which = ANG value = 1 when = 0 }
 command = { type = dissent value = -5 }
@@ -708,16 +708,16 @@ country = SPR
 style = 2
 picture = "urbanwarfare3"
 
-name = "Fate of Angola"
-desc = "What shall be done with the liberated colony of Angola?"
+name = "EVT_3967069_NAME"
+desc = "EVT_3967069_DESC"
 
 action_a = {
-name = "Give them freedom."
+name = "EVT_3967069_OPTIONA"
 ai_chance = 20
 command = { type = dissent value = 5 }
 }
 action_b = {
-name = "They need our watchful eyes"
+name = "EVT_3967069_OPTIONB"
 ai_chance = 80
 command = { type = make_puppet which = ANG }
 command = { type = dissent value = -5 }
@@ -759,16 +759,16 @@ date = { day = 7 month = january year = 1936 }
 offset = 30
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "CNT-FAI and Mozambique"
-desc = "Following our annexation of Portugal, we ended up controlling their former colony of Mozambique."
+name = "EVT_3967108_NAME"
+desc = "EVT_3967108_DESC"
 
 action_a = {
-name = "Keep it as ours."
+name = "EVT_3967108_OPTIONA"
 ai_chance = 40
 command = { type = dissent value = 5 }
 }
 action_b = {
-name = "Release them!"
+name = "EVT_3967108_OPTIONB"
 ai_chance = 60
 command = { type = independence which = MOZ value = 1 when = 0 }
 command = { type = dissent value = -5 }
@@ -783,16 +783,16 @@ country = SPR
 style = 2
 picture = "urbanwarfare3"
 
-name = "Fate of Mozambique"
-desc = "What shall be done with the liberated colony of Mozambique?"
+name = "EVT_3967109_NAME"
+desc = "EVT_3967109_DESC"
 
 action_a = {
-name = "Give them freedom."
+name = "EVT_3967109_OPTIONA"
 ai_chance = 20
 command = { type = dissent value = 5 }
 }
 action_b = {
-name = "They need our watchful eyes"
+name = "EVT_3967109_OPTIONB"
 ai_chance = 80
 command = { type = make_puppet which = MOZ }
 command = { type = dissent value = -5 }
@@ -832,11 +832,11 @@ date = { day = 7 month = january year = 1936 }
 offset = 1
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Fate of Macao"
-desc = "The collapse of Portugal has allowed Macao to be open for occupation!"
+name = "EVT_3967070_NAME"
+desc = "EVT_3967070_DESC"
 
 action_a = {
-name = "Welcome them."
+name = "EVT_3967070_OPTIONA"
 command = { type = trigger which = 3967072 }
 }
 }
@@ -875,11 +875,11 @@ date = { day = 7 month = january year = 1936 }
 offset = 1
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Fate of East Timor"
-desc = "The collapse of Portugal has allowed East Timor to be open for occupation!"
+name = "EVT_3967071_NAME"
+desc = "EVT_3967071_DESC"
 
 action_a = {
-name = "Welcome them."
+name = "EVT_3967071_OPTIONA"
 command = { type = trigger which = 3967073 }
 }
 }
@@ -891,11 +891,11 @@ style = 2
 picture = "urbanwarfare3"
 
 
-name = "Fate of Macao"
-desc = "The collapse of Portugal has allowed Macao to be occupied by the Legation Cities!"
+name = "EVT_3967072_NAME"
+desc = "EVT_3967072_DESC"
 
 action_a = {
-name = "There's nothing we can do."
+name = "EVT_3967072_OPTIONA"
 command = { type = secedeprovince which = EAF value = 1372 }
 }
 }
@@ -907,11 +907,11 @@ style = 2
 picture = "urbanwarfare3"
 
 
-name = "Fate of East Timor"
-desc = "The collapse of Portugal has allowed East Timor to be occupied by the Dutch!"
+name = "EVT_3967073_NAME"
+desc = "EVT_3967073_DESC"
 
 action_a = {
-name = "There's nothing we can do."
+name = "EVT_3967073_OPTIONA"
 command = { type = secedeprovince which = HOL value = 1617 }
 }
 }
@@ -927,8 +927,8 @@ style = 2
 picture = "urbanwarfare3"
 one_action = yes
 
-name = "Unrest in Africa"
-desc = "As news of the annexation of Portugal has reached their former colonies in Africa, colonial administrators and border guards are now attempting to seize control of the local governments before socialist-sympathizing units and militias disarm them!"
+name = "EVT_39670751_NAME"
+desc = "EVT_39670751_DESC"
 
 action = {
 trigger = { OR = {
@@ -949,7 +949,7 @@ control = { province = 857 data = SPR }
 control = { province = 858 data = SPR }	#Mozambique
 }
 }
-name = "Reactionary officers revolt in Angola"
+name = "EVT_39670751_OPTIONB"
 ai_chance = 100
 command = { type = trigger which = 39670761 }
 }
@@ -972,7 +972,7 @@ control = { province = 857 data = SPR }
 control = { province = 858 data = SPR }	#Mozambique
 }
 }
-name = "Revolutionary officers revolt in Mozambique"
+name = "EVT_39670751_OPTIONC"
 ai_chance = 100
 command = { type = trigger which = 396707911 }
 }
@@ -995,7 +995,7 @@ control = { province = 857 data = SPR }
 control = { province = 858 data = SPR }	#Mozambique
 }
 }
-name = "Reactionary officers revolt in Angola and Mozambique"
+name = "EVT_39670751_OPTIOND"
 ai_chance = 100
 command = { type = trigger which = 39670821 }
 }
@@ -1018,7 +1018,7 @@ control = { province = 857 data = SPR }
 control = { province = 858 data = SPR }	#Mozambique
 }
 }
-name = "Revolts eclode in Bissau and the Cape Verde islands"
+name = "EVT_39670751_OPTIONE"
 ai_chance = 100
 command = { type = dissent value = 1 }
 command = { type = revolt which = 963 }
@@ -1033,17 +1033,17 @@ style = 2
 picture = "urbanwarfare3"
 one_action = yes
 
-name = "Revolts in Angola"
-desc = "Reactionary army officers and bureaucrats are now staging an uprising against the new socialist order in the former Portuguese colony of Angola!"
+name = "EVT_39670761_NAME"
+desc = "EVT_39670761_DESC"
 
 action = {
 ai_chance = 20
-name = "The revolt is defeated and the reactionaries are arrested"
+name = "EVT_39670761_OPTIONB"
 command = { type = dissent value = -2 }
 }
 action = {
 ai_chance = 80
-name = "The revolters succeed and declare the independence of Angola"
+name = "EVT_39670761_OPTIONC"
 command = { type = dissent value = 2 }
 command = { type = independence which = ANG value = 1 when = 0 }
 command = { type = trigger which = 39670771 }
@@ -1055,11 +1055,11 @@ id = 39670771
 country = ANG
 style = 2
 
-name = "Independence of Portuguese Africa"
-desc = "Nobody will read this."
+name = "EVT_39670771_NAME"
+desc = "EVT_39670771_DESC"
 
 action = {
-name = "Yeah, nobody!"
+name = "EVT_39670771_OPTIONA"
 command = { type = country which = POR }
 command = { type = trigger which = 39670781 }
 }
@@ -1070,11 +1070,11 @@ id = 39670781
 country = POR
 style = 2
 
-name = "Portuguese Government in Exile is setup in Africa"
-desc = "Nobody will read this."
+name = "EVT_39670781_NAME"
+desc = "EVT_39670781_DESC"
 
 action = {
-name = "Yeah, nobody!"
+name = "EVT_39670781_OPTIONA"
 command = { type = capital which = 895 }
 command = { type = domestic which = interventionism value = 2 }
 command = { type = domestic which = defense_lobby value = 2 }
@@ -1100,17 +1100,17 @@ style = 2
 picture = "urbanwarfare3"
 one_action = yes
 
-name = "Revolts in Mozambique"
-desc = "Reactionary army officers and bureaucrats are now staging an uprising against the new socialist order in the former Portuguese colony of Mozambique!"
+name = "EVT_396707911_NAME"
+desc = "EVT_396707911_DESC"
 
 action = {
 ai_chance = 20
-name = "The revolt is defeated and the reactionaries are arrested"
+name = "EVT_396707911_OPTIONB"
 command = { type = dissent value = -2 }
 }
 action = {
 ai_chance = 80
-name = "The revolters succeed and declare the independence of Mozambique"
+name = "EVT_396707911_OPTIONC"
 command = { type = dissent value = 2 }
 command = { type = independence which = MOZ value = 1 when = 0 }
 command = { type = trigger which = 39670801 }
@@ -1122,11 +1122,11 @@ id = 39670801
 country = MOZ
 style = 2
 
-name = "Freedom in Mozambique"
-desc = "Nobody will read this."
+name = "EVT_39670801_NAME"
+desc = "EVT_39670801_DESC"
 
 action = {
-name = "Yeah, nobody!"
+name = "EVT_39670801_OPTIONA"
 command = { type = country which = POR }
 command = { type = trigger which = 39670811 }
 }
@@ -1137,11 +1137,11 @@ id = 39670811
 country = POR
 style = 2
 
-name = "Portuguese Government in Exile is setup in Mozambique"
-desc = "Nobody will read this."
+name = "EVT_39670811_NAME"
+desc = "EVT_39670811_DESC"
 
 action = {
-name = "Yeah, nobody!"
+name = "EVT_39670811_OPTIONA"
 command = { type = capital which = 855 }
 command = { type = domestic which = interventionism value = 2 }
 command = { type = domestic which = defense_lobby value = 2 }
@@ -1167,17 +1167,17 @@ style = 2
 picture = "urbanwarfare3"
 one_action = yes
 
-name = "Revolts in Portuguese Africa"
-desc = "Reactionary army officers and bureaucrats are now staging an uprising against the new socialist order in the former Portuguese colonies of Angola and Mozambique!"
+name = "EVT_39670821_NAME"
+desc = "EVT_39670821_DESC"
 
 action = {
 ai_chance = 20
-name = "The revolt is defeated and the reactionaries are arrested"
+name = "EVT_39670821_OPTIONB"
 command = { type = dissent value = -2 }
 }
 action = {
 ai_chance = 80
-name = "The revolters succeed and declare the independence of Portuguese Africa"
+name = "EVT_39670821_OPTIONC"
 command = { type = dissent value = 2 }
 command = { type = independence which = ANG value = 1 when = 0 }
 command = { type = secedeprovince which = ANG value = 853 }
@@ -1209,17 +1209,17 @@ date = { day = 7 month = january year = 1936 }
 offset = 250
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Revolts in the Azores"
-desc = "Reactionary officers have staged an uprising in the Azores and pledged loyalty to the Portuguese government-in-exile!"
+name = "EVT_3967083_NAME"
+desc = "EVT_3967083_DESC"
 
 action = {
 ai_chance = 50
-name = "The revolt is put down and order is restored"
+name = "EVT_3967083_OPTIONB"
 command = { type = relation which = POR value = -10 }
 }
 action = {
 ai_chance = 50
-name = "The revolt succeedes, the Portuguese assume control"
+name = "EVT_3967083_OPTIONC"
 command = { type = secedeprovince which = POR value = 995 }
 command = { type = relation which = POR value = -20 }
 }
@@ -1244,17 +1244,17 @@ date = { day = 7 month = january year = 1936 }
 offset = 250
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Revolts in the Madeira"
-desc = "Reactionary officers have staged an uprising in the Madeira Island and pledged loyalty to the Portuguese government-in-exile!"
+name = "EVT_39670841_NAME"
+desc = "EVT_39670841_DESC"
 
 action = {
 ai_chance = 50
-name = "The revolt is put down and order is restored"
+name = "EVT_39670841_OPTIONB"
 command = { type = relation which = POR value = -10 }
 }
 action = {
 ai_chance = 50
-name = "The revolt succeedes, the Portuguese assume control"
+name = "EVT_39670841_OPTIONC"
 command = { type = secedeprovince which = POR value = 994 }
 command = { type = relation which = POR value = -20 }
 }
@@ -1279,17 +1279,17 @@ date = { day = 7 month = january year = 1936 }
 offset = 250
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Revolts in Cape Verde"
-desc = "Reactionary officers have staged an uprising in the Cape Verde archipelago and pledged loyalty to the Portuguese government-in-exile!"
+name = "EVT_39670851_NAME"
+desc = "EVT_39670851_DESC"
 
 action = {
 ai_chance = 50
-name = "The revolt is put down and order is restored"
+name = "EVT_39670851_OPTIONB"
 command = { type = relation which = POR value = -10 }
 }
 action = {
 ai_chance = 50
-name = "The revolt succeedes, the Portuguese assume control"
+name = "EVT_39670851_OPTIONC"
 command = { type = secedeprovince which = POR value = 992 }
 command = { type = relation which = POR value = -20 }
 }
@@ -1314,17 +1314,17 @@ date = { day = 7 month = january year = 1936 }
 offset = 250
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Revolts in Guinea"
-desc = "Reactionary officers have staged an uprising in former Portuguese Guinea and pledged loyalty to the Portuguese government-in-exile!"
+name = "EVT_39670861_NAME"
+desc = "EVT_39670861_DESC"
 
 action = {
 ai_chance = 50
-name = "The revolt is put down and order is restored"
+name = "EVT_39670861_OPTIONB"
 command = { type = relation which = POR value = -10 }
 }
 action = {
 ai_chance = 50
-name = "The revolt succeedes, the Portuguese assume control"
+name = "EVT_39670861_OPTIONC"
 command = { type = secedeprovince which = POR value = 963 }
 command = { type = relation which = POR value = -20 }
 }
@@ -1349,17 +1349,17 @@ date = { day = 7 month = january year = 1936 }
 offset = 250
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Revolts in São Tomé and Príncipe"
-desc = "Reactionary officers have staged an uprising in the São Tomé and Príncipe islands and pledged loyalty to the Portuguese government-in-exile!"
+name = "EVT_39670871_NAME"
+desc = "EVT_39670871_DESC"
 
 action = {
 ai_chance = 50
-name = "The revolt is put down and order is restored"
+name = "EVT_39670871_OPTIONB"
 command = { type = relation which = POR value = -10 }
 }
 action = {
 ai_chance = 50
-name = "The revolt succeedes, the Portuguese assume control"
+name = "EVT_39670871_OPTIONC"
 command = { type = secedeprovince which = POR value = 912 }
 command = { type = relation which = POR value = -20 }
 }
@@ -1384,17 +1384,17 @@ date = { day = 7 month = january year = 1936 }
 offset = 250
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Revolts in Macao"
-desc = "Reactionary officers have staged an uprising in Macao and pledged loyalty to the Portuguese government-in-exile!"
+name = "EVT_39670881_NAME"
+desc = "EVT_39670881_DESC"
 
 action = {
 ai_chance = 90
-name = "The revolt is put down and order is restored"
+name = "EVT_39670881_OPTIONB"
 command = { type = relation which = POR value = -10 }
 }
 action = {
 ai_chance = 10
-name = "The revolt succeedes, the Portuguese assume control"
+name = "EVT_39670881_OPTIONC"
 command = { type = secedeprovince which = POR value = 1372 }
 command = { type = relation which = POR value = -20 }
 }
@@ -1419,17 +1419,17 @@ date = { day = 7 month = january year = 1936 }
 offset = 250
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Revolts in Portuguese Timor"
-desc = "Reactionary officers have staged an uprising in Timor and pledged loyalty to the Portuguese government-in-exile!"
+name = "EVT_39670891_NAME"
+desc = "EVT_39670891_DESC"
 
 action = {
 ai_chance = 80
-name = "The revolt is put down and order is restored"
+name = "EVT_39670891_OPTIONB"
 command = { type = relation which = POR value = -10 }
 }
 action = {
 ai_chance = 20
-name = "The revolt succeedes, the Portuguese assume control"
+name = "EVT_39670891_OPTIONC"
 command = { type = secedeprovince which = POR value = 1617 }
 command = { type = relation which = POR value = -20 }
 }
@@ -1454,17 +1454,17 @@ date = { day = 7 month = january year = 1936 }
 offset = 250
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Revolts in Goa"
-desc = "Reactionary officers have staged an uprising in former Portuguese India and pledged loyalty to the Portuguese government-in-exile!"
+name = "EVT_39670832_NAME"
+desc = "EVT_39670832_DESC"
 
 action = {
 ai_chance = 50
-name = "The revolt is put down and order is restored"
+name = "EVT_39670832_OPTIONB"
 command = { type = relation which = POR value = -10 }
 }
 action = {
 ai_chance = 50
-name = "The revolt succeedes, the Portuguese assume control"
+name = "EVT_39670832_OPTIONC"
 command = { type = secedeprovince which = POR value = 1513 }
 command = { type = relation which = POR value = -20 }
 }
@@ -1518,11 +1518,11 @@ date = { day = 7 month = january year = 1936 }
 offset = 80
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Moroccans"
-desc = "Our holds in Northern and Southern Morocco, while behind mainland Iberia, have been progressing greatly in the advancement of the region. Recently, the communes there have made contact with a fledgling Moroccan syndicalist group in German occupied Morocco. The communes are asking if we can aid them as we aided the UAP"
+name = "EVT_91270_NAME"
+desc = "EVT_91270_DESC"
 
 action_a = {
-name = "Supply them with advisors and aid!"
+name = "EVT_91270_OPTIONA"
 ai_chance = 80
 command = { type = supplies value = -100 }
 command = { type = relation which = GER value = -20 }
@@ -1532,7 +1532,7 @@ command = { type = manpowerpool value = -5 }
 }
 
 action_b = {
-name = "This isn't worth tangling with Germany"
+name = "EVT_91270_OPTIONB"
 ai_chance = 20
 command = { type = domestic which = interventionism value = -1 }
 }
@@ -1552,24 +1552,24 @@ date = { day = 7 month = january year = 1936 }
 offset = 60
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Moroccan Rebellion"
-desc = "Good news from Morocco. The syndicalist movement we've been supplying has grown very strong! So strong, that they have organized a major protest and strike, paralyzing the colony. Some are calling for the CNT-FAI to send an ultimatum to Germany..."
+name = "EVT_91271_NAME"
+desc = "EVT_91271_DESC"
 
 action_a = {
-name = "Send the Ultimatum"
+name = "EVT_91271_OPTIONA"
 ai_chance = 40
 command = { type = domestic which = interventionism value = 1 }
 command = { type = trigger which = 91272 }
 }
 action_b = {
-name = "No! They're on their own now."
+name = "EVT_91271_OPTIONB"
 ai_chance = 50
 command = { type = domestic which = interventionism value = -1 }
 command = { type = trigger which = 91273 }
 }
 
 action_c = {
-name = "Intervention is the key now."
+name = "EVT_91271_OPTIONC"
 ai_chance = 10
 command = { type = domestic which = interventionism value = 1 }
 command = { type = war which = GER }
@@ -1583,18 +1583,18 @@ country = GER
 style = 2
 picture = "Gibraltar"
 
-name = "The Moroccan Rebellion"
-desc = "Bad news from Morocco. A syndicalist movement, feeding itself with Moroccan nationalism, has grown considerably recently, most likely through aid from the CNT-FAI. So much so, that the group has staged massive protests and strikes today, paralyzing the colony. the CNT-FAI has sent a message to give Morocco independence. Should we risk war over one of our lesser colonies?"
+name = "EVT_91272_NAME"
+desc = "EVT_91272_DESC"
 
 action_a = {
-name = "No! Who do they think they are?"
+name = "EVT_91272_OPTIONA"
 ai_chance = 60
 command = { type = relation which = SPR value = -20 }
 command = { type = trigger which = 91276 }
 }
 
 action_b = {
-name = "They are right... it is time for Morocco to be on its own."
+name = "EVT_91272_OPTIONB"
 ai_chance = 40
 command = { type = trigger which = 91274 }
 command = { type = independence which = MOR value = 1 when = 0 }
@@ -1608,11 +1608,11 @@ country = GER
 style = 2
 picture = "Gibraltar"
 
-name = "The Moroccan Rebellion"
-desc = "Bad news from Morocco. A syndicalist movement, feeding itself with Moroccan nationalism, has grown considerably recently, most likely through aid from the CNT-FAI. So much so, that the group has staged massive protests and strikes today, paralyzing the colony."
+name = "EVT_91273_NAME"
+desc = "EVT_91273_DESC"
 
 action_a = {
-name = "Crush the dissenters!"
+name = "EVT_91273_OPTIONA"
 command = { type = relation which = SPR value = -20 }
 command = { type = revolt which = 717 }
 command = { type = revolt which = 718 }
@@ -1627,11 +1627,11 @@ country = MOR
 style = 2
 picture = "algeria2"
 
-name = "Freedom!"
-desc = "Alas, through struggle of the Moroccan people with the help from the CNT-FAI, we are finally a free nation."
+name = "EVT_91274_NAME"
+desc = "EVT_91274_DESC"
 
 action_a = {
-name = "Yay!"
+name = "EVT_91274_OPTIONA"
 command = { type = trigger which = 91275 }
 }
 }
@@ -1642,11 +1642,11 @@ country = SPR
 style = 2
 picture = "algeria2"
 
-name = "Moroccan Freedom"
-desc = "At last, the people of Morocco have thrown off the chains of their oppressive rulers, the Germans, and fully embrace the bosom of anarcho-syndicalism. But, shall we keep our lands in Northern and Southern Morocco, or give it to the new Moroccan nation?"
+name = "EVT_91275_NAME"
+desc = "EVT_91275_DESC"
 
 action_a = {
-name = "The Moroccans deserve it."
+name = "EVT_91275_OPTIONA"
 ai_chance = 70
 command = { type = removecore which = 715 }
 command = { type = removecore which = 716 }
@@ -1662,7 +1662,7 @@ command = { type = make_puppet which = MOR }
 }
 
 action_b = {
-name = "Freedom is enough."
+name = "EVT_91275_OPTIONB"
 ai_chance = 30
 command = { type = make_puppet which = MOR }
 }
@@ -1674,18 +1674,18 @@ country = SPR
 style = 2
 picture = "algeria2"
 
-name = "The Germans Refuse"
-desc = "The German officials have refused to give up their stranglehold on Morocco!"
+name = "EVT_91276_NAME"
+desc = "EVT_91276_DESC"
 
 action_a = {
-name = "Send word to our allies. This means war!"
+name = "EVT_91276_OPTIONA"
 ai_chance = 30
 command = { type = war which = GER }
 command = { type = setflag which = morocco2 }
 }
 
 action_b = {
-name = "The Moroccans are on their own."
+name = "EVT_91276_OPTIONB"
 ai_chance = 70
 command = { type = trigger which = 91273 }
 }
@@ -1712,11 +1712,11 @@ date = { day = 7 month = january year = 1936 }
 offset = 3
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Moroccan War"
-desc = "It appears our close friends, the CNT-FAI, have gotten themselves in a terrible conflict with Germany over Morocco. With Germany sending supplies and troops to Morocco, it may be the perfect time to join with the CNT-FAI to crush the German scum, once and for all."
+name = "EVT_91277_NAME"
+desc = "EVT_91277_DESC"
 
 action_a = {
-name = "War!"
+name = "EVT_91277_OPTIONA"
 ai_chance = 60
 command = { type = alliance which = SPR }
 command = { type = war which = GER }
@@ -1724,7 +1724,7 @@ command = { type = trigger which = 91278 }
 }
 
 action_b = {
-name = "No! They're on their own now."
+name = "EVT_91277_OPTIONB"
 ai_chance = 40
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = SPR value = -100 }
@@ -1737,16 +1737,16 @@ country = AUS
 style = 2
 picture = "argentina_tank1"
 
-name = "The French Attack!"
-desc = "It appears France is openly aiding the CNT-FAI in their war against Germany. Is it time for us to put our differences aside and join with Germany?"
+name = "EVT_91278_NAME"
+desc = "EVT_91278_DESC"
 
 action_a = {
-name = "Join with Germany!"
+name = "EVT_91278_OPTIONA"
 ai_chance = 60
 command = { type = trigger which = 91279 }
 }
 action_b = {
-name = "No! They're on their own now."
+name = "EVT_91278_OPTIONB"
 ai_chance = 40
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = GER value = -100 }
@@ -1759,11 +1759,11 @@ country = GER
 style = 2
 picture = "argentina_tank1"
 
-name = "The Austrians Ally"
-desc = "Seeing France supporting the CNT-FAI's belligerence, Austria has decided to forget former problems with us and join us to fight the syndicalists."
+name = "EVT_91279_NAME"
+desc = "EVT_91279_DESC"
 
 action_a = {
-name = "Welcome them!"
+name = "EVT_91279_OPTIONA"
 command = { type = alliance which = AUS }
 }
 }
@@ -1805,8 +1805,8 @@ exists = EUS
 }
 }
 
-name = "Germany and France at War"
-desc = "After France refused German ultimatum to pull from its troops from the disputed territory, German Empire declared war upon it. If France falls, we will be alone on this continent and it is being questioned if we could even keep up our industrial capacity without the resources France trades."
+name = "EVT_900822_NAME"
+desc = "EVT_900822_DESC"
 
 date = { day = 1 month = january year = 1936 }
 offset = 10
@@ -1814,7 +1814,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
 ai_chance = 97
-name = "This is the first stage of the Worldwide Revolution!"
+name = "EVT_900822_OPTIONA"
 command = { type = trigger which = 900823 }
 command = { type = belligerence which = SPR value = 3 }
 command = { type = dissent value = -10 }
@@ -1833,7 +1833,7 @@ command = { type = domestic which = defense_lobby value = 1 }
 }
 action_b = {
 ai_chance = 3
-name = "We cannot get involved, we're safe behind Pyrenees"
+name = "EVT_900822_OPTIONB"
 command = { type = belligerence which = SPR value = -5 }
 command = { type = dissent value = 15 }
 command = { type = relation which = FRA value = -100 }
@@ -1853,11 +1853,11 @@ picture = "news_paper"
 country = FRA
 style = 2
 
-name = "Spain joins in the fight"
-desc = "The Spanish syndicalist have joined our side in the war."
+name = "EVT_900823_NAME"
+desc = "EVT_900823_DESC"
 
 action_a = {
-name = "United we shall win !"
+name = "EVT_900823_OPTIONA"
 command = { type = alliance which = SPR }
 command = { type = dissent value = -10 }
 }
@@ -1876,12 +1876,12 @@ date = { day = 7 month = january year = 1936 }
 offset = 60
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Aiding our Friends"
-desc = "Several countries either directly helped us in our war efforts or where at least with us in spirit. It has been proposed that we return these favors in order to bring the workers of the world together!"
+name = "EVT_3967093_NAME"
+desc = "EVT_3967093_DESC"
 
 action_a = {
 ai_chance = 75
-name = "Send forth workers to unite the world"
+name = "EVT_3967093_OPTIONA"
 command = { type = setflag which = cnt_helphands }
 command = { type = manpowerpool value = -100 }
 command = { type = resource which = supplies value = -5000 } # % of max daily income
@@ -1897,7 +1897,7 @@ command = { type = relation which = GEO value = 50 }
 
 action_b = {
 ai_chance = 25
-name = "We must rebuild here first"
+name = "EVT_3967093_OPTIONB"
 command = { type = dissent value = -5 }
 }
 }
@@ -1916,11 +1916,11 @@ date = { day = 7 month = january year = 1936 }
 offset = 60
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "CNT-FAI lends us a hand!"
-desc = "In an effort to build better connections between the workers of the world the CNT-FAI of Iberia have sent workers with mining and industrial knowledge to assist us in growing and prospering"
+name = "EVT_3967094_NAME"
+desc = "EVT_3967094_DESC"
 
 action_a = {
-name = "Workers of the world Unite!"
+name = "EVT_3967094_OPTIONA"
 command = { type = add_prov_resource which = -1 value = 2 where = energy }
 command = { type = add_prov_resource which = -1 value = 2 where = metal }
 command = { type = add_prov_resource which = -1 value = 1 where = rare_materials }
@@ -1944,11 +1944,11 @@ date = { day = 7 month = january year = 1936 }
 offset = 60
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "CNT-FAI lends us a hand!"
-desc = "In an effort to build better connections between the workers of the world the CNT-FAI of Iberia have sent workers with mining and industrial knowledge to assist us in growing and prospering"
+name = "EVT_3967095_NAME"
+desc = "EVT_3967095_DESC"
 
 action_a = {
-name = "Workers of the world Unite!"
+name = "EVT_3967095_OPTIONA"
 command = { type = add_prov_resource which = -1 value = 1 where = energy }
 command = { type = add_prov_resource which = -1 value = 1 where = metal }
 command = { type = add_prov_resource which = -1 value = 1 where = rare_materials }
@@ -1972,11 +1972,11 @@ date = { day = 7 month = january year = 1936 }
 offset = 60
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "CNT-FAI lends us a hand!"
-desc = "In an effort to build better connections between the workers of the world the CNT-FAI of Iberia have sent workers with mining and industrial knowledge to assist us in growing and prospering"
+name = "EVT_3967096_NAME"
+desc = "EVT_3967096_DESC"
 
 action_a = {
-name = "Workers of the world Unite!"
+name = "EVT_3967096_OPTIONA"
 command = { type = add_prov_resource which = -1 value = 1 where = energy }
 command = { type = add_prov_resource which = -1 value = 1 where = metal }
 command = { type = add_prov_resource which = -1 value = 1 where = rare_materials }
@@ -2000,11 +2000,11 @@ date = { day = 7 month = january year = 1936 }
 offset = 60
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "CNT-FAI lends us a hand!"
-desc = "In an effort to build better connections between the workers of the world the CNT-FAI of Iberia have sent workers with mining and industrial knowledge to assist us in growing and prospering"
+name = "EVT_3967097_NAME"
+desc = "EVT_3967097_DESC"
 
 action_a = {
-name = "Workers of the world Unite!"
+name = "EVT_3967097_OPTIONA"
 command = { type = add_prov_resource which = -1 value = 1 where = energy }
 command = { type = add_prov_resource which = -1 value = 1 where = metal }
 command = { type = add_prov_resource which = -1 value = 1 where = rare_materials }
@@ -2028,11 +2028,11 @@ date = { day = 7 month = january year = 1936 }
 offset = 60
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "CNT-FAI lends us a hand!"
-desc = "In an effort to build better connections between the workers of the world the CNT-FAI of Iberia have sent workers with mining and industrial knowledge to assist us in growing and prospering"
+name = "EVT_3967098_NAME"
+desc = "EVT_3967098_DESC"
 
 action_a = {
-name = "Workers of the world Unite!"
+name = "EVT_3967098_OPTIONA"
 command = { type = add_prov_resource which = -1 value = 1 where = energy }
 command = { type = add_prov_resource which = -1 value = 1 where = metal }
 command = { type = add_prov_resource which = -1 value = 1 where = rare_materials }
@@ -2056,11 +2056,11 @@ date = { day = 7 month = january year = 1936 }
 offset = 60
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "CNT-FAI lends us a hand!"
-desc = "In an effort to build better connections between the workers of the world the CNT-FAI of Iberia have sent workers with mining and industrial knowledge to assist us in growing and prospering"
+name = "EVT_3967099_NAME"
+desc = "EVT_3967099_DESC"
 
 action_a = {
-name = "Workers of the world Unite!"
+name = "EVT_3967099_OPTIONA"
 command = { type = add_prov_resource which = -1 value = 1 where = energy }
 command = { type = add_prov_resource which = -1 value = 1 where = metal }
 command = { type = add_prov_resource which = -1 value = 1 where = rare_materials }
@@ -2084,11 +2084,11 @@ date = { day = 7 month = january year = 1936 }
 offset = 60
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "CNT-FAI lends us a hand!"
-desc = "In an effort to build better connections between the workers of the world the CNT-FAI of Iberia have sent workers with mining and industrial knowledge to assist us in growing and prospering"
+name = "EVT_3967100_NAME"
+desc = "EVT_3967100_DESC"
 
 action_a = {
-name = "Workers of the world Unite!"
+name = "EVT_3967100_OPTIONA"
 command = { type = add_prov_resource which = -1 value = 1 where = energy }
 command = { type = add_prov_resource which = -1 value = 1 where = metal }
 command = { type = add_prov_resource which = -1 value = 1 where = rare_materials }
@@ -2112,11 +2112,11 @@ date = { day = 7 month = january year = 1936 }
 offset = 60
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "CNT-FAI lends us a hand!"
-desc = "In an effort to build better connections between the workers of the world the CNT-FAI of Iberia have sent workers with mining and industrial knowledge to assist us in growing and prospering"
+name = "EVT_3967110_NAME"
+desc = "EVT_3967110_DESC"
 
 action_a = {
-name = "Workers of the world Unite!"
+name = "EVT_3967110_OPTIONA"
 command = { type = add_prov_resource which = -1 value = 1 where = energy }
 command = { type = add_prov_resource which = -1 value = 1 where = metal }
 command = { type = add_prov_resource which = -1 value = 1 where = rare_materials }
@@ -2141,11 +2141,11 @@ date = { day = 7 month = january year = 1936 }
 offset = 60
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "CNT-FAI lends us a hand!"
-desc = "In an effort to build better connections between the workers of the world the CNT-FAI of Iberia have sent workers with mining and industrial knowledge to assist us in growing and prospering"
+name = "EVT_3967111_NAME"
+desc = "EVT_3967111_DESC"
 
 action_a = {
-name = "Workers of the world Unite!"
+name = "EVT_3967111_OPTIONA"
 command = { type = add_prov_resource which = -1 value = 1 where = energy }
 command = { type = add_prov_resource which = -1 value = 1 where = metal }
 command = { type = add_prov_resource which = -1 value = 1 where = rare_materials }
@@ -2171,11 +2171,11 @@ date = { day = 7 month = january year = 1936 }
 offset = 60
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "CNT-FAI lends us a hand!"
-desc = "In an effort to build better connections between the workers of the world the CNT-FAI of Iberia have sent workers with mining and industrial knowledge to assist us in growing and prospering"
+name = "EVT_3967112_NAME"
+desc = "EVT_3967112_DESC"
 
 action_a = {
-name = "Workers of the world Unite!"
+name = "EVT_3967112_OPTIONA"
 command = { type = add_prov_resource which = -1 value = 1 where = energy }
 command = { type = add_prov_resource which = -1 value = 1 where = metal }
 command = { type = add_prov_resource which = -1 value = 1 where = rare_materials }

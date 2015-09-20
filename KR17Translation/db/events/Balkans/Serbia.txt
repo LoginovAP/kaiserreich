@@ -8,15 +8,15 @@ NOT = { government = communist }
 NOT = { ispuppet = SER }
 headofstate = 547054 } #Petar Bojovic
 
-name = "The decision of Bojovic"
-desc = "With the Ausgliech happening within a week, Petar Bojovic, the Regent of the Kingdom of Serbia for now a decade, has the chance to finally free Serbia of any Austrian pretensions. The most obvious choice is to install Aleksandar, the former Crown Prince of Serbia, as the new King. However, there are rumblings that the Kingdom should formally abolished, and Bojovic could just as well keep power..."
+name = "EVT_3500500_NAME"
+desc = "EVT_3500500_DESC"
 style = 2
 picture = "diet"
 
 date = { day = 8 month = february year = 1937 }
 
 action_a = {
-name = "Crown Prince Aleksandar shall become the King"
+name = "EVT_3500500_OPTIONA"
 ai_chance = 65
 command = { type = dissent value = 2 }
 command = { type = relation which = AUS value = -50 }
@@ -25,7 +25,7 @@ command = { type = name where = SER which = SER_KIN_NAME }
 }
 
 action_b = {
-name = "Slobodan Jovanovic will create a Republic"
+name = "EVT_3500500_OPTIONB"
 ai_chance = 25
 command = { type = dissent value = 7 }
 command = { type = set_domestic which = democratic value = 7 }
@@ -36,7 +36,7 @@ command = { type = setflag which = SER_REP }
 }
 
 action_c = {
-name = "Bojovic shall continue to guide the nation"
+name = "EVT_3500500_OPTIONC"
 ai_chance = 10
 command = { type = dissent value = 5 }
 }
@@ -47,14 +47,14 @@ id = 3500501
 random = no
 country = SER
 
-name = "The form of Monarchy"
-desc = "Crown Prince Aleksandar, the legitimate King of Serbia, has finally been allowed to take the throne. However, he has been pressed on how exactly he will rule, within the confines of a constitution or by royal prerogative. He is expected to answer the Assembly shortly."
+name = "EVT_3500501_NAME"
+desc = "EVT_3500501_DESC"
 picture = "tsar"
 style = 2
 
 action_a = {
 ai_chance = 60
-name = "Absolutism will keep us strong"
+name = "EVT_3500501_OPTIONA"
 command = { type = dissent value = 2 }
 command = { type = headofstate which = 547060 } #Aleksandar II
 command = { type = headofgovernment which = 547074 } #Petar Zivkovic
@@ -67,7 +67,7 @@ command = { type = set_domestic which = political_left value = 3 }
 
 action_b = {
 ai_chance = 40
-name = "Constitutionalism is for the best"
+name = "EVT_3500501_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = headofstate which = 547059 } #Aleksandar II
 command = { type = headofgovernment which = 547069 } #Nikola Uzunovic
@@ -114,8 +114,8 @@ event = 901035 } #Germany favours Hungary
 atwar = no
 }
 
-name = "Reaserting control over Serbia"
-desc = "With the end of the Ausgliech, we can once again focus our attention towards the Balkans. Serbia, used the opportunity after the last Ausgleich to escape from our sphere of influence. Now we have a chance to restore our influence within Serbia by diplomatic means..."
+name = "EVT_3500502_NAME"
+desc = "EVT_3500502_DESC"
 picture = "austvict"
 decision_picture = "decision_peace_conference"
 
@@ -135,7 +135,7 @@ puppet = { country = MTN country = AUS }
 }
 }
 }
-name = "Demand that Danilo Petrovic become their King!"
+name = "EVT_3500502_OPTIONA"
 command = { type = relation which = SER value = -50 }
 command = { type = trigger which = 3500504 }
 command = { type = sleepevent which = 85650 }
@@ -153,7 +153,7 @@ puppet = { country = MTN country = U24 }
 }
 }
 }
-name = "Demand that Mihailo Petrovic become their King!"
+name = "EVT_3500502_OPTIONB"
 command = { type = relation which = SER value = -50 }
 command = { type = trigger which = 3500621 }
 command = { type = sleepevent which = 85650 }
@@ -172,7 +172,7 @@ puppet = { country = MTN country = AUS }
 }
 }
 }
-name = "Demand their submission!"
+name = "EVT_3500502_OPTIONC"
 command = { type = relation which = SER value = -50 }
 command = { trigger = { NOT = { exists = BOS } owned = { province = 355 data = SER } } type = addclaim  which =  357 }
 command = { trigger = { NOT = { exists = BOS } owned = { province = 355 data = SER } } type = addclaim  which =  353 }
@@ -191,7 +191,7 @@ command = { type = trigger which = 3500523 }
 
 action_c = {
 ai_chance = 50
-name = "Leave them be"
+name = "EVT_3500502_OPTIOND"
 command = { type = dissent value = 2 }
 }
 }
@@ -240,8 +240,8 @@ deathdate = { day = 10 month = december year = 1942 }
 
 
 
-name = "Reaserting control over Serbia"
-desc = "With the end of the Ausgliech, we can once again focus our attention towards the Balkans. Serbia, used the opportunity after the last Ausgleich to escape from our sphere of influence. Now we have a chance to restore our influence within Serbia by diplomatic means..."
+name = "EVT_3500503_NAME"
+desc = "EVT_3500503_DESC"
 picture = "austvict"
 decision_picture = "decision_peace_conference"
 
@@ -257,7 +257,7 @@ puppet = { country = MTN country = U24 }
 }
 }
 }
-name = "Demand that Danilo Petrovic become their King!"
+name = "EVT_3500503_OPTIONA"
 command = { type = relation which = SER value = -50 }
 command = { type = trigger which = 3500504 }
 command = { type = sleepevent which = 85650 }
@@ -275,7 +275,7 @@ puppet = { country = MTN country = U24 }
 }
 }
 }
-name = "Demand that Mihailo Petrovic become their King!"
+name = "EVT_3500503_OPTIONB"
 command = { type = relation which = SER value = -50 }
 command = { type = trigger which = 3500621 }
 command = { type = sleepevent which = 85650 }
@@ -294,14 +294,14 @@ puppet = { country = MTN country = U24 }
 }
 }
 }
-name = "Demand their submission!"
+name = "EVT_3500503_OPTIONC"
 command = { type = relation which = SER value = -50 }
 command = { type = trigger which = 3500523 }
 }
 
 action_c = {
 ai_chance = 10
-name = "Leave them be"
+name = "EVT_3500503_OPTIOND"
 command = { type = dissent value = 2 }
 }
 }
@@ -350,8 +350,8 @@ deathdate = { day = 10 month = december year = 1942 }
 
 
 
-name = "Reaserting control over Serbia"
-desc = "With the end of the Ausgliech, we can once again focus our attention towards the Balkans. Serbia, used the opportunity after the last Ausgleich to escape from our sphere of influence. Now we have a chance to restore our influence within Serbia by diplomatic means..."
+name = "EVT_3500521_NAME"
+desc = "EVT_3500521_DESC"
 picture = "austvict"
 decision_picture = "decision_peace_conference"
 
@@ -368,7 +368,7 @@ puppet = { country = MTN country = U25 }
 }
 }
 }
-name = "Demand that Danilo Petrovic become their King!"
+name = "EVT_3500521_OPTIONA"
 command = { type = relation which = SER value = -50 }
 command = { type = trigger which = 3500504 }
 command = { type = sleepevent which = 85650 }
@@ -387,7 +387,7 @@ puppet = { country = MTN country = U24 }
 }
 }
 }
-name = "Demand that Mihailo Petrovic become their King!"
+name = "EVT_3500521_OPTIONB"
 command = { type = relation which = SER value = -50 }
 command = { type = trigger which = 3500621 }
 command = { type = sleepevent which = 85650 }
@@ -406,14 +406,14 @@ puppet = { country = MTN country = U25 }
 }
 }
 }
-name = "Demand their submission!"
+name = "EVT_3500521_OPTIONC"
 command = { type = relation which = SER value = -50 }
 command = { type = trigger which = 3500523 }
 }
 
 action_c = {
 ai_chance = 10
-name = "Leave them be"
+name = "EVT_3500521_OPTIOND"
 command = { type = dissent value = 2 }
 }
 }
@@ -425,13 +425,13 @@ random = no
 country = SER
 style = 2
 
-name = "The Austrian demand"
-desc = "The Austrian delegation has come to us and have demanded that Danilo Petrovic-Njegos, the former Crown Prince of Montenegro, become our King. There is very little we can do against the Austrians..."
+name = "EVT_3500504_NAME"
+desc = "EVT_3500504_DESC"
 picture = "vienna_diktat"
 
 action_a = {
 ai_chance = 60
-name = "Danilo is our King..."
+name = "EVT_3500504_OPTIONA"
 command = { type = dissent value = 5 }
 command = { type = set_domestic which = democratic value = 3 }
 command = { type = set_domestic which = political_left value = 3 }
@@ -557,7 +557,7 @@ war = { country = RUS country = JAP }
 }
 }
 }
-name = "Seek Russia's support"
+name = "EVT_3500504_OPTIONB"
 command = { type = dissent value = -5 }
 command = { type = add_division value = cavalry when = 8 }
 command = { type = add_division value = infantry when = 9 }
@@ -568,7 +568,7 @@ command = { type = trigger which = 3500533 }
 }
 action_c = {
 ai_chance = 40
-name = "Never!"
+name = "EVT_3500504_OPTIONC"
 command = { type = dissent value = -2 }
 command = { type = relation which = AUS value = -50 }
 command = { type = relation which = U24 value = -50 }
@@ -587,13 +587,13 @@ random = no
 country = SER
 style = 2
 
-name = "The Austrian demand"
-desc = "The Austrian delegation has come to us and have demanded that Mihailo, a member of the Montenegrin Petrovic-Njegos dynasty, become our King. There is very little we can do against the Austrians..."
+name = "EVT_3500621_NAME"
+desc = "EVT_3500621_DESC"
 picture = "vienna_diktat"
 
 action_a = {
 ai_chance = 60
-name = "Mihailo is our King..."
+name = "EVT_3500621_OPTIONA"
 command = { type = dissent value = 5 }
 command = { type = set_domestic which = democratic value = 3 }
 command = { type = set_domestic which = political_left value = 3 }
@@ -719,7 +719,7 @@ war = { country = RUS country = JAP }
 }
 }
 }
-name = "Seek Russia's support"
+name = "EVT_3500621_OPTIONB"
 command = { type = dissent value = -5 }
 command = { type = add_division value = cavalry when = 8 }
 command = { type = add_division value = infantry when = 9 }
@@ -730,7 +730,7 @@ command = { type = trigger which = 3500533 }
 }
 action_c = {
 ai_chance = 40
-name = "Never!"
+name = "EVT_3500621_OPTIONC"
 command = { type = dissent value = -2 }
 command = { type = relation which = AUS value = -50 }
 command = { type = relation which = U24 value = -50 }
@@ -749,13 +749,13 @@ random = no
 country = SER
 style = 2
 
-name = "The Austrian demand"
-desc = "The Austrian delegation has come to us and have demanded our complete submission before the Austrian Empire. There is very little we can do against the Austrians..."
+name = "EVT_3500523_NAME"
+desc = "EVT_3500523_DESC"
 picture = "vienna_diktat"
 
 action_a = {
 ai_chance = 60
-name = "Capitulate before them..."
+name = "EVT_3500523_OPTIONA"
 command = { type = dissent value = 5 }
 command = { type = set_domestic which = democratic value = 3 }
 command = { type = set_domestic which = political_left value = 3 }
@@ -870,7 +870,7 @@ alliance = { country = AUS country = RUS }
 NOT = { AND = { ai = yes war = { country = RUS country = GER } } }
 NOT = { AND = { ai = yes war = { country = RUS country = JAP } } }
 }
-name = "Seek Russia's support"
+name = "EVT_3500523_OPTIONB"
 command = { type = dissent value = -5 }
 command = { type = add_division value = cavalry when = 6 }
 command = { type = add_division value = infantry when = 9 }
@@ -883,7 +883,7 @@ command = { type = trigger which = 3500533 }
 
 action_c = {
 ai_chance = 40
-name = "Never!"
+name = "EVT_3500523_OPTIONC"
 command = { type = dissent value = -2 }
 command = { type = relation which = AUS value = -50 }
 command = { type = relation which = U24 value = -50 }
@@ -902,13 +902,13 @@ country = RUS
 
 
 
-name = "Support Serbia?"
-desc = "The independence of Serbia is endangered by a resurgent Austria, which became very belligerent after the conclusion of Ausgleich. Currently they have issued an ultimatum to Serbia, in which they demand the complete submission of Serbia before Austria. The Serbian leaders, knowing that they can´t win this war are, once again, asking Russia for support..."
+name = "EVT_3500533_NAME"
+desc = "EVT_3500533_DESC"
 style = 2
 picture = "German_mobilization2"
 
 action = {
-name = "Support Serbia!"
+name = "EVT_3500533_OPTIONA"
 ai_chance = 60
 command = { type = belligerence value = 2 }
 command = { type = dissent value = 2 }
@@ -918,7 +918,7 @@ command = { trigger = { event = 3500503 } type = trigger which = 3500535 }
 command = { trigger = { event = 3500521 } type = trigger which = 3500536 }
 }
 action = {
-name = "Do not support Serbia"
+name = "EVT_3500533_OPTIONB"
 ai_chance = 40
 command = { type = dissent value = 5 }
 command = { type = relation which = SER value = -20 }
@@ -934,13 +934,13 @@ country = AUS
 
 
 
-name = "Russia supports Serbia!"
-desc = "The desperate Serbian leaders, fearing Austrian armed forces, have asked Russia for support. Unfortunately Russia responded positively to their beggings, and now the independence of Serbia is guaranteed by Russia. What shall we do now?"
+name = "EVT_3500534_NAME"
+desc = "EVT_3500534_DESC"
 style = 2
 picture = "German_mobilization2"
 
 action = {
-name = "Ignore the Russian guarantee!"
+name = "EVT_3500534_OPTIONA"
 ai_chance = 30
 trigger = {
 alliance = { country = AUS country = HUN }
@@ -951,7 +951,7 @@ command = { type = belligerence value = 2 }
 command = { type = dissent value = 2 }
 }
 action = {
-name = "Leave Serbia... For now..."
+name = "EVT_3500534_OPTIONB"
 ai_chance = 70
 command = { type = dissent value = 5 }
 command = { type = relation which = SER value = 20 }
@@ -964,13 +964,13 @@ country = U24
 
 
 
-name = "Russia supports Serbia!"
-desc = "The desperate Serbian leaders, fearing Austro-Hungarian armed forces, have asked Russia for support. Unfortunately Russia responded positively to their beggings, and now the independence of Serbia is guaranteed by Russia. What shall we do now?"
+name = "EVT_3500535_NAME"
+desc = "EVT_3500535_DESC"
 style = 2
 picture = "German_mobilization2"
 
 action = {
-name = "Ignore the Russian guarantee!"
+name = "EVT_3500535_OPTIONA"
 ai_chance = 60
 command = { type = war which = SER }
 command = { type = trigger which = 3500537 }
@@ -978,7 +978,7 @@ command = { type = belligerence value = 2 }
 command = { type = dissent value = 2 }
 }
 action = {
-name = "Leave Serbia... For now..."
+name = "EVT_3500535_OPTIONB"
 ai_chance = 40
 command = { type = dissent value = 5 }
 command = { type = relation which = SER value = 20 }
@@ -991,13 +991,13 @@ country = U25
 
 
 
-name = "Russia supports Serbia!"
-desc = "The desperate Serbian leaders, fearing the armed forces of the Danubian federation, have asked Russia state for support. Unfortunately Russia responded positively to their beggings, and now the independence of Serbia is guaranteed by Russia. What shall we do now?"
+name = "EVT_3500536_NAME"
+desc = "EVT_3500536_DESC"
 style = 2
 picture = "German_mobilization2"
 
 action = {
-name = "Ignore the Russian guarantee!"
+name = "EVT_3500536_OPTIONA"
 ai_chance = 60
 command = { type = war which = SER }
 command = { type = trigger which = 3500537 }
@@ -1005,7 +1005,7 @@ command = { type = belligerence value = 2 }
 command = { type = dissent value = 2 }
 }
 action = {
-name = "Leave Serbia... For now..."
+name = "EVT_3500536_OPTIONB"
 ai_chance = 40
 command = { type = dissent value = 5 }
 command = { type = relation which = SER value = 20 }
@@ -1019,12 +1019,12 @@ style = 2
 picture = "German_mobilization2"
 
 
-name = "The Austrians ignore our guarantee"
-desc = "Our guarantee of Serbian independence has been ignored by Vienna. Currently their armed forces are making their way to the Serbian capital of Belgrade. We can either go through with it and declare war, bringing Serbia into our alliance or we can stand down and let Serbia fall."
+name = "EVT_3500537_NAME"
+desc = "EVT_3500537_DESC"
 
 action_a = {
 ai_chance = 70
-name = "They have made their choice, war it is!"
+name = "EVT_3500537_OPTIONA"
 command = { trigger = { event = 3500534 } type = war which = AUS }
 command = { trigger = { event = 3500535 } type = war which = U24 }
 command = { trigger = { event = 3500536 } type = war which = U25 }
@@ -1033,7 +1033,7 @@ command = { type = dissent value = -5 }
 }
 action_b = {
 ai_chance = 30
-name = "Back Down! We've changed our minds!"
+name = "EVT_3500537_OPTIONB"
 command = { type = dissent value = 3 }
 }
 }
@@ -1045,12 +1045,12 @@ random = no
 country = AUS
 style = 2
 
-name = "The Serbians have folded"
-desc = "The Serbians have wisely folded before our might and Serbia is once again part of our sphere of influence."
+name = "EVT_3500505_NAME"
+desc = "EVT_3500505_DESC"
 picture = "diplomatic_campaign"
 
 action_a = {
-name = "Very good"
+name = "EVT_3500505_OPTIONA"
 command = { type = make_puppet which = SER }
 command = { type = relation which = SER value = 20 }
 }
@@ -1062,12 +1062,12 @@ random = no
 country = U24
 style = 2
 
-name = "The Serbians have folded"
-desc = "The Serbians have wisely folded before our might and Serbia is once again part of our sphere of influence."
+name = "EVT_3500506_NAME"
+desc = "EVT_3500506_DESC"
 picture = "diplomatic_campaign"
 
 action_a = {
-name = "Very good"
+name = "EVT_3500506_OPTIONA"
 command = { type = make_puppet which = SER }
 command = { type = relation which = SER value = 20 }
 }
@@ -1079,12 +1079,12 @@ random = no
 country = U25
 style = 2
 
-name = "The Serbians have folded"
-desc = "The Serbians have wisely folded before our might and Serbia is once again part of our sphere of influence."
+name = "EVT_3500522_NAME"
+desc = "EVT_3500522_DESC"
 picture = "diplomatic_campaign"
 
 action_a = {
-name = "Very good"
+name = "EVT_3500522_OPTIONA"
 command = { type = make_puppet which = SER }
 command = { type = relation which = SER value = 20 }
 }
@@ -1096,13 +1096,13 @@ random = no
 country = AUS
 style = 2
 
-name = "The Serbians resist us!"
-desc = "The Serbians have unwisely refused our righteous demand for their submission before our empire! How shall we react?"
+name = "EVT_3500507_NAME"
+desc = "EVT_3500507_DESC"
 picture = "diplomatic_campaign"
 
 action_a = {
 ai_chance = 50
-name = "They shall suffer!"
+name = "EVT_3500507_OPTIONA"
 trigger = {
 puppet = { country = HUN country = AUS  }
 }
@@ -1112,7 +1112,7 @@ command = { type = war which = SER }
 
 action_b = {
 ai_chance = 50
-name = "Leave them alone"
+name = "EVT_3500507_OPTIONB"
 command = { type = dissent value = 2 }
 }
 }
@@ -1123,18 +1123,18 @@ random = no
 country = U24
 style = 2
 
-name = "The Serbians resist us!"
-desc = "The Serbians have unwisely refused our righteous demand for their submission before our empire! How shall we react?"
+name = "EVT_3500508_NAME"
+desc = "EVT_3500508_DESC"
 picture = "diplomatic_campaign"
 
 action_a = {
 ai_chance = 70
-name = "They shall suffer!"
+name = "EVT_3500508_OPTIONA"
 command = { type = war which = SER }
 }
 action_b = {
 ai_chance = 50
-name = "Leave them alone"
+name = "EVT_3500508_OPTIONB"
 command = { type = dissent value = 2 }
 }
 }
@@ -1145,18 +1145,18 @@ random = no
 country = U25
 style = 2
 
-name = "The Serbians resist us!"
-desc = "The Serbians have unwisely refused our righteous demand for their submission before our empire! How shall we react?"
+name = "EVT_3500509_NAME"
+desc = "EVT_3500509_DESC"
 picture = "diplomatic_campaign"
 
 action_a = {
 ai_chance = 70
-name = "They shall suffer!"
+name = "EVT_3500509_OPTIONA"
 command = { type = war which = SER }
 }
 action_b = {
 ai_chance = 50
-name = "Leave them alone"
+name = "EVT_3500509_OPTIONB"
 command = { type = dissent value = 2 }
 }
 }
@@ -1211,21 +1211,21 @@ date = { day = 8 month = january year = 1937 }
 offset = 10
 deathdate = { day = 10 month = december year = 1942 }
 
-name = "Reaserting control over Montenegro"
-desc = "With the end of the Ausgliech, we can once again focus our attention towards the Balkans. Montenegro, used the opportunity during the Austro-Hungarian civil war to secede from our empire. Now with our power over the Danubian basin secured we can demand their reintegration..."
+name = "EVT_3500524_NAME"
+desc = "EVT_3500524_DESC"
 picture = "austvict"
 decision_picture = "decision_peace_conference"
 
 action_a = {
 ai_chance = 90
-name = "Demand their submission!"
+name = "EVT_3500524_OPTIONA"
 command = { type = relation which = MTN value = -50 }
 command = { type = trigger which = 3500526 }
 }
 
 action_b = {
 ai_chance = 10
-name = "Leave them be"
+name = "EVT_3500524_OPTIONB"
 command = { type = dissent value = 2 }
 }
 }
@@ -1280,21 +1280,21 @@ date = { day = 8 month = january year = 1937 }
 offset = 10
 deathdate = { day = 10 month = december year = 1942 }
 
-name = "Reaserting control over Montenegro"
-desc = "With the end of the Ausgliech, we can once again focus our attention towards the Balkans. Montenegro, used the opportunity during the Austro-Hungarian civil war to secede from our empire. Now with our power over the Danubian basin secured we can demand their reintegration..."
+name = "EVT_3500525_NAME"
+desc = "EVT_3500525_DESC"
 picture = "austvict"
 decision_picture = "decision_peace_conference"
 
 action_a = {
 ai_chance = 90
-name = "Demand their submission!"
+name = "EVT_3500525_OPTIONA"
 command = { type = relation which = MTN value = -50 }
 command = { type = trigger which = 3500526 }
 }
 
 action_b = {
 ai_chance = 10
-name = "Leave them be"
+name = "EVT_3500525_OPTIONB"
 command = { type = dissent value = 2 }
 }
 }
@@ -1306,13 +1306,13 @@ random = no
 country = MTN
 style = 2
 
-name = "The Austrian demand"
-desc = "The Austrian delegation has come to us and have demanded our complete submission before the Austrian empire. There is very little we can do against the Austrians..."
+name = "EVT_3500526_NAME"
+desc = "EVT_3500526_DESC"
 picture = "vienna_diktat"
 
 action_a = {
 ai_chance = 90
-name = "Capitulate before them..."
+name = "EVT_3500526_OPTIONA"
 command = { type = dissent value = 5 }
 command = { trigger = { event = 3500524 } type = trigger which = 3500527 }
 command = { trigger = { event = 3500525 } type = trigger which = 3500528 }
@@ -1321,7 +1321,7 @@ command = { trigger = { event = 3500525 } type = trigger which = 3500528 }
 
 action_b = {
 ai_chance = 10
-name = "Never!"
+name = "EVT_3500526_OPTIONB"
 command = { type = dissent value = -2 }
 command = { type = relation which = AUS value = -50 }
 command = { type = relation which = U24 value = -50 }
@@ -1338,13 +1338,13 @@ random = no
 country = U24
 style = 2
 
-name = "The Montenegrians have folded"
-desc = "The Montenegrians have wisely folded before our might. We can now decide if Montengro will once again be directly integrated into our empire or remain independent..."
+name = "EVT_3500527_NAME"
+desc = "EVT_3500527_DESC"
 picture = "diplomatic_campaign"
 
 action_a = {
 ai_chance = 100
-name = "Annex it!"
+name = "EVT_3500527_OPTIONA"
 command = { type = inherit which = MTN  }
 command = { type = addclaim  which =  332 }
 command = { type = addclaim  which =  335 }
@@ -1353,7 +1353,7 @@ command = { type = 	province_revoltrisk which = 335 value = 50 }
 }
 action_b = {
 ai_chance = 0
-name = "Montenegro shall remain independent!"
+name = "EVT_3500527_OPTIONB"
 command = { type = make_puppet which = MTN }
 command = { type = relation which = MTN value = 20 }
 }
@@ -1365,13 +1365,13 @@ random = no
 country = U25
 style = 2
 
-name = "The Montenegrians have folded"
-desc = "The Montenegrians have wisely folded before our might. We can now decide if Montengro will once again be directly integrated into our empire or remain independent..."
+name = "EVT_3500528_NAME"
+desc = "EVT_3500528_DESC"
 picture = "diplomatic_campaign"
 
 action_a = {
 ai_chance = 100
-name = "Annex it!"
+name = "EVT_3500528_OPTIONA"
 command = { type = inherit which = MTN  }
 command = { type = addclaim  which =  332 }
 command = { type = addclaim  which =  335 }
@@ -1380,7 +1380,7 @@ command = { type = 	province_revoltrisk which = 335 value = 50 }
 }
 action_b = {
 ai_chance = 0
-name = "Montenegro shall remain independent!"
+name = "EVT_3500528_OPTIONB"
 command = { type = make_puppet which = MTN }
 command = { type = relation which = MTN value = 20 }
 }
@@ -1392,20 +1392,20 @@ random = no
 country = U24
 style = 2
 
-name = "The Montenegrians resist us!"
-desc = "The Montenegrians have unwisely refused our righteous demand for their submission before our empire! How shall we react?"
+name = "EVT_3500529_NAME"
+desc = "EVT_3500529_DESC"
 picture = "diplomatic_campaign"
 
 action_a = {
 ai_chance = 90
-name = "They shall suffer!"
+name = "EVT_3500529_OPTIONA"
 command = { type = war which = MTN }
 command = { type = addclaim  which =  332 }
 command = { type = addclaim  which =  335 }
 }
 action_b = {
 ai_chance = 10
-name = "Leave them alone"
+name = "EVT_3500529_OPTIONB"
 command = { type = dissent value = 2 }
 }
 }
@@ -1416,20 +1416,20 @@ random = no
 country = U25
 style = 2
 
-name = "The Montenegrians resist us!"
-desc = "The Montenegrians have unwisely refused our righteous demand for their submission before our empire! How shall we react?"
+name = "EVT_3500530_NAME"
+desc = "EVT_3500530_DESC"
 picture = "diplomatic_campaign"
 
 action_a = {
 ai_chance = 90
-name = "They shall suffer!"
+name = "EVT_3500530_OPTIONA"
 command = { type = war which = MTN }
 command = { type = addclaim  which =  332 }
 command = { type = addclaim  which =  335 }
 }
 action_b = {
 ai_chance = 10
-name = "Leave them alone"
+name = "EVT_3500530_OPTIONB"
 command = { type = dissent value = 2 }
 }
 }
@@ -1451,8 +1451,8 @@ random = 40
 owned = { province = 332 data = U24 }
 control = { province = 332 data = U24 }
 }
-name = "Resistance in Montenegro supressed"
-desc = "With the remaining Montengrian armed bands destroyed by gendarmerie, this territory is now fully absorbed into our empire."
+name = "EVT_3500531_NAME"
+desc = "EVT_3500531_DESC"
 
 picture = "militaryparade1"
 
@@ -1462,7 +1462,7 @@ offset = 300
 deathdate = { day = 1 month = january year = 1960 }
 
 action_a = {
-name = " Great!"
+name = "EVT_3500531_OPTIONA"
 command = { type = addcore which = 332 }
 command = { type = addcore which = 335 }
 command = { type = 	province_revoltrisk which = 332 value = -50 }
@@ -1490,8 +1490,8 @@ random = 40
 owned = { province = 332 data = U25 }
 control = { province = 332 data = U25 }
 }
-name = "Resistance in Montenegro supressed"
-desc = "With the remaining Montengrian armed bands destroyed by gendarmerie, this territory is now fully absorbed into our empire."
+name = "EVT_3500532_NAME"
+desc = "EVT_3500532_DESC"
 
 picture = "militaryparade1"
 
@@ -1501,7 +1501,7 @@ offset = 300
 deathdate = { day = 1 month = january year = 1960 }
 
 action_a = {
-name = " Great!"
+name = "EVT_3500532_OPTIONA"
 command = { type = addcore which = 332 }
 command = { type = addcore which = 335 }
 command = { type = 	province_revoltrisk which = 332 value = -50 }
@@ -1527,14 +1527,14 @@ headofstate = 547059
 }
 } #Aleksandar II
 
-name = "The King has died!"
-desc = "Aleksandar II, our King, has died in his sleep. A week of mourning has been declared and his son Petar has assumed the throne."
+name = "EVT_3500510_NAME"
+desc = "EVT_3500510_DESC"
 #	picture = "Tsarfuneral"
 
 date = { day = 8 month = may year = 1943 }
 
 action_a = {
-name = "Long live Petar II"
+name = "EVT_3500510_OPTIONA"
 command = { type = sleepminister which = 547059 } #Aleksander II
 command = { type = sleepminister which = 547060 } #Aleksander II
 command = { type = sleepminister which = 20106 } #Aleksander II
@@ -1556,14 +1556,14 @@ NOT = {
 headofstate = 547059 #Aleksander II
 headofstate = 547060 } }  #Aleksander II
 
-name = "The former Crown Prince Aleksandar has died"
-desc = "The son of Petar I, our King during the Weltkrieg, Aleksandar, has died in his sleep. His son Petar has become the head of the Karadjordjevic house."
+name = "EVT_3500511_NAME"
+desc = "EVT_3500511_DESC"
 picture = "minister_died"
 
 date = { day = 8 month = may year = 1943 }
 
 action_a = {
-name = "Good, he's gone!"
+name = "EVT_3500511_OPTIONA"
 command = { type = sleepminister which = 547059 } #Aleksander II
 command = { type = sleepminister which = 547060 } #Aleksander II
 command = { type = sleepminister which = 20106 } #Aleksander II
@@ -1585,14 +1585,14 @@ headofstate = 547052
 }
 } #Danilo I
 
-name = "The King has died!"
-desc = "Danilo I, our King, has died in his sleep. A week of mourning has been declared and his nephew Mihailo has assumed the throne."
+name = "EVT_3500512_NAME"
+desc = "EVT_3500512_DESC"
 picture = "minister_died"
 
 date = { day = 24 month = september year = 1939 }
 
 action_a = {
-name = "Long live Mihailo I"
+name = "EVT_3500512_OPTIONA"
 command = { type = sleepminister which = 547057 } #Danilo I
 command = { type = sleepminister which = 547052 } #Danilo I
 command = { type = sleepminister which = 544036 } #Danilo I
@@ -1622,14 +1622,14 @@ headofstate = 547052
 }
 } #Danilo I
 
-name = "The former Crown Prince of Montenegro has died"
-desc = "The former Crown Prince of Montenegro, Danilo, has died in his sleep. His nephew Mihailo has assumed leadership of the Montenegrin Royal House."
+name = "EVT_3500513_NAME"
+desc = "EVT_3500513_DESC"
 picture = "minister_died"
 
 date = { day = 24 month = september year = 1939 }
 
 action_a = {
-name = "Why does this concern us?"
+name = "EVT_3500513_OPTIONA"
 command = { type = sleepminister which = 547057 } #Danilo I
 command = { type = sleepminister which = 547052 } #Danilo I
 command = { type = sleepminister which = 544036 } #Danilo I
@@ -1651,15 +1651,15 @@ style = 2
 
 trigger = { headofstate = 547001 } #Petar Bojovic
 
-name = "Petar Bojovic has died!"
-desc = "The leader of our nation for almost two decades has died today. In his last will he specified for Draza Mihailovic to become the new Regent of Serbia. However, several ministers are calling for the former Royal House of Serbia, the Karadjordjevics, to be restored to the Throne. What shall we do?"
+name = "EVT_3500514_NAME"
+desc = "EVT_3500514_DESC"
 picture = "minister_died"
 
 date = { day = 20 month = january year = 1945 }
 
 action_a = {
 ai_chance = 30
-name = "Draza Mihailovic is the new Regent!"
+name = "EVT_3500514_OPTIONA"
 command = { type = sleepminister which = 547054 } #Petar Bojovic
 command = { type = sleepminister which = 547064 } #Petar Bojovic
 command = { type = sleepminister which = 20112 } #Petar Bojovic
@@ -1669,7 +1669,7 @@ command = { type = dissent value = 1 }
 }
 action_b = {
 ai_chance = 70
-name = "Petar Karadjordjevic shall become King"
+name = "EVT_3500514_OPTIONB"
 command = { type = sleepminister which = 547054 } #Petar Bojovic
 command = { type = sleepminister which = 547064 } #Petar Bojovic
 command = { type = sleepminister which = 20112 } #Petar Bojovic
@@ -1685,13 +1685,13 @@ random = no
 country = SER
 style = 2
 
-name = "The form of Monarchy"
-desc = "Petar Karadjordjevic, grandson of our last King, has finally been allowed to take the throne. However, he has been pressed on how exactly he will rule, within the confines of a constitution or by royal prerogative. He is expected to answer the Assembly shortly."
+name = "EVT_3500515_NAME"
+desc = "EVT_3500515_DESC"
 picture = "tsar"
 
 action_a = {
 ai_chance = 60
-name = "Absolutism will keep us strong"
+name = "EVT_3500515_OPTIONA"
 command = { type = dissent value = 2 }
 command = { type = headofstate which = 547042 } #Petar II
 command = { type = headofgovernment which = 547062 } #Dusan Simovic
@@ -1700,7 +1700,7 @@ command = { type = set_domestic which = political_left value = 3 }
 }
 action_b = {
 ai_chance = 40
-name = "Constitutionalism is for the best"
+name = "EVT_3500515_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = headofstate which = 547041 } #Petar II
 command = { type = set_domestic which = democratic value = 5 }
@@ -1718,14 +1718,14 @@ style = 2
 
 trigger = { NOT = { headofstate = 547054 } } #Petar Bojovic
 
-name = "Petar Bojovic has died!"
-desc = "The former Regent of our nation has died today and a day of mourning has been declared."
+name = "EVT_3500516_NAME"
+desc = "EVT_3500516_DESC"
 picture = "minister_died"
 
 date = { day = 20 month = january year = 1945 }
 
 action_a = {
-name = "We will miss him"
+name = "EVT_3500516_OPTIONA"
 command = { type = sleepminister which = 547054 } #Petar Bojovic
 command = { type = sleepminister which = 547064 } #Petar Bojovic
 command = { type = dissent value = 1 }
@@ -1749,8 +1749,8 @@ owned = { province = 350 data = SER }
 }
 }
 
-name = "Serbia gains access to the Adriatic sea"
-desc = "At last we have been able to fufill the dream of countless Serbian generations, free access to the Adriatic sea!"
+name = "EVT_3500517_NAME"
+desc = "EVT_3500517_DESC"
 picture = "panamacanal"
 
 date = { day = 1 month = january year = 1936 }
@@ -1758,7 +1758,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1966 }
 
 action_a = {
-name = "Good"
+name = "EVT_3500517_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = waketeam which = 15815 }
 }
@@ -1778,8 +1778,8 @@ headofstate = 544036 # Danilo I
 }
 
 
-name = "Danilo I Petrovic-Njegos passed away"
-desc = "The potential successor to the Montenegrian and Serbian throne has passed away. A day of national mourning is declared..."
+name = "EVT_3240518_NAME"
+desc = "EVT_3240518_DESC"
 picture = "minister_died"
 
 
@@ -1787,7 +1787,7 @@ date = { day = 24 month = september year = 1939 }
 
 
 action_a = {
-name = "Memento mori"
+name = "EVT_3240518_OPTIONA"
 command = { type = dissent value = 1  }
 command = { type = sleepevent which = 3240519 }
 command = { type = sleepminister which = 547057 } #Danilo I
@@ -1805,8 +1805,8 @@ id = 3240519
 random = no
 country = MTN
 
-name = "Danilo I Petrovic-Njegos passed away"
-desc = "Our beloved king and son of Nikola I, Danilo I Petrovic-Njegos has passed away! Now it is his nephew, Mihailo, who will take up the mantle as our glorious king Mihailo I. Long live Mihailo I!!"
+name = "EVT_3240519_NAME"
+desc = "EVT_3240519_DESC"
 picture = "minister_died"
 style = 2
 
@@ -1820,7 +1820,7 @@ headofstate = 544036 # Danilo I
 date = { day = 24 month = september year = 1939 }
 
 action_a = {
-name = "The King is dead! Long live the King!"
+name = "EVT_3240519_OPTIONA"
 command = { trigger = { government = fascist } type = headofstate which = 544035 }
 command = { trigger = { government = democratic } type = headofstate which = 544037 }
 command = { type = sleepminister which = 547057 } #Danilo I
@@ -1841,14 +1841,14 @@ style = 2
 
 
 
-name = "Milutin Nedic has died!"
-desc = "The hero of the Balkan wars and the Weltkrieg has died today. A day of national mourning is declared.."
+name = "EVT_3500520_NAME"
+desc = "EVT_3500520_DESC"
 picture = "minister_died"
 
 date = { day = 25 month = january year = 1949 }
 
 action_a = {
-name = "We will miss him"
+name = "EVT_3500520_OPTIONA"
 command = { type = sleepleader which = 547024 } #Milutin Nedic
 command = { type = sleepminister which = 547008 } #Milutin Nedic
 command = { type = dissent value = 1 }
@@ -1871,8 +1871,8 @@ ideology = paternal_autocrat
 }
 }
 
-name = "The King calls for Elections!"
-desc = "After Vojvoda Petar Bojovic stepped down as regent in favour of prince Aleksandar, the new king of Serbia called for elections to be held in accordance with his wish for a constitutional monarchy. Belgrade is draped in red, white and blue colours as the day of the elections draws nearer."
+name = "EVT_3500600_NAME"
+desc = "EVT_3500600_DESC"
 picture = "rusdumaelect"
 
 date = { day = 1 month = january year = 1936 }
@@ -1881,7 +1881,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance =  40
-name = "The Democratic Party will bring liberal values to Serbia!"
+name = "EVT_3500600_OPTIONA"
 command = { type = dissent value = -2  }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 6 }
@@ -1896,7 +1896,7 @@ command = { type = ministerofsecurity which = 547028 } # Milorad Draskovic
 
 action_b = {
 ai_chance =  60
-name = "The People's Radical Party scores a landslide!"
+name = "EVT_3500600_OPTIONB"
 command = { type = dissent value = -3 }
 command = { type = set_domestic which = democratic value = 6 }
 command = { type = set_domestic which = political_left value = 4 }
@@ -1912,7 +1912,7 @@ command = { type = set_domestic which = free_market value = 5 }
 
 action_c = {
 ai_chance =  1
-name = "The King shall put an end to this chaotic democracy"
+name = "EVT_3500600_OPTIONC"
 command = { type = dissent value = 15 }
 command = { type = set_domestic which = democratic value = 4 }
 command = { type = set_domestic which = political_left value = 3 }
@@ -1947,8 +1947,8 @@ ideology = paternal_autocrat
 }
 
 
-name = "The President calls for Elections!"
-desc = "After Vojvoda Petar Bojovic stepped down as regent in favour of provisional president Jovanovic, the president called for elections to be held in accordance with his wish for a parliamentary republic. Belgrade is draped in red, white and blue colours as the day of the elections draws nearer."
+name = "EVT_3500601_NAME"
+desc = "EVT_3500601_DESC"
 picture = "rusdumaelect"
 
 date = { day = 1 month = january year = 1936 }
@@ -1957,7 +1957,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance =  50
-name = "The Democratic Party will bring liberal values to Serbia!"
+name = "EVT_3500601_OPTIONA"
 command = { type = dissent value = -3  }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 6 }
@@ -1972,7 +1972,7 @@ command = { type = set_domestic which = free_market value = 5 }
 
 action_b = {
 ai_chance =  50
-name = "The People's Radical Party scores a landslide!"
+name = "EVT_3500601_OPTIONB"
 command = { type = dissent value = -2 }
 command = { type = set_domestic which = democratic value = 6 }
 command = { type = set_domestic which = political_left value = 4 }
@@ -1987,7 +1987,7 @@ command = { type = set_domestic which = free_market value = 5 }
 
 action_c = {
 ai_chance =  1
-name = "The Army shall put an end to this chaotic democracy"
+name = "EVT_3500601_OPTIONC"
 command = { type = dissent value = 15 }
 command = { type = set_domestic which = democratic value = 4 }
 command = { type = set_domestic which = political_left value = 3 }
@@ -2016,8 +2016,8 @@ ideology = paternal_autocrat
 }
 }
 
-name = "Parliamentary elections"
-desc = "According to the Constitution, the elections are to be held every four years. The term of the current National Assembly has expired and the time has come to elect a new National Assembly. There are 120 seats available in the National Assembly and various political parties have begun their campaigns. But currently only two parties have a chance of gaining a majority and thus forming a new government. Which one shall prevail?"
+name = "EVT_3500603_NAME"
+desc = "EVT_3500603_DESC"
 picture = "rusdumaelect"
 
 date = { day = 1 month = january year = 1936 }
@@ -2026,7 +2026,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance =  40
-name = "The Democratic Party will bring liberal values to Serbia!"
+name = "EVT_3500603_OPTIONA"
 command = { type = dissent value = -2  }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 6 }
@@ -2041,7 +2041,7 @@ command = { type = ministerofsecurity which = 547028 } # Milorad Draskovic
 
 action_b = {
 ai_chance =  60
-name = "The People's Radical Party scores a landslide!"
+name = "EVT_3500603_OPTIONB"
 command = { type = dissent value = -3 }
 command = { type = set_domestic which = democratic value = 6 }
 command = { type = set_domestic which = political_left value = 4 }
@@ -2057,7 +2057,7 @@ command = { type = set_domestic which = free_market value = 5 }
 
 action_c = {
 ai_chance =  1
-name = "The King shall put an end to this chaotic democracy"
+name = "EVT_3500603_OPTIONC"
 command = { type = dissent value = 15 }
 command = { type = set_domestic which = democratic value = 4 }
 command = { type = set_domestic which = political_left value = 3 }
@@ -2090,8 +2090,8 @@ ideology = paternal_autocrat
 }
 }
 
-name = "Parliamentary elections"
-desc = "According to the Constitution, the elections are to be held every four years. The term of the current National Assembly has expired and the time has come to elect a new National Assembly. There are 120 seats available in the National Assembly and various political parties have begun their campaigns. But currently only two parties have a chance of gaining a majority and thus forming a new government. Which one shall prevail?"
+name = "EVT_3500604_NAME"
+desc = "EVT_3500604_DESC"
 picture = "rusdumaelect"
 
 date = { day = 1 month = january year = 1936 }
@@ -2101,7 +2101,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance =  50
-name = "The Democratic Party will bring liberal values to Serbia!"
+name = "EVT_3500604_OPTIONA"
 command = { type = dissent value = -3  }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 6 }
@@ -2116,7 +2116,7 @@ command = { type = set_domestic which = free_market value = 5 }
 
 action_b = {
 ai_chance =  50
-name = "The People's Radical Party scores a landslide!"
+name = "EVT_3500604_OPTIONB"
 command = { type = dissent value = -2 }
 command = { type = set_domestic which = democratic value = 6 }
 command = { type = set_domestic which = political_left value = 4 }
@@ -2131,7 +2131,7 @@ command = { type = set_domestic which = free_market value = 5 }
 
 action_c = {
 ai_chance =  1
-name = "The Army shall put an end to this chaotic democracy"
+name = "EVT_3500604_OPTIONC"
 command = { type = dissent value = 15 }
 command = { type = set_domestic which = democratic value = 4 }
 command = { type = set_domestic which = political_left value = 3 }
@@ -2161,8 +2161,8 @@ ideology = paternal_autocrat
 }
 
 
-name = "Parliamentary elections"
-desc = "According to the Constitution, the elections are to be held every four years. The term of the current National Assembly has expired and the time has come to elect a new National Assembly. There are 120 seats available in the National Assembly and various political parties have begun their campaigns. But currently only two parties have a chance of gaining a majority and thus forming a new government. Which one shall prevail?"
+name = "EVT_3500606_NAME"
+desc = "EVT_3500606_DESC"
 picture = "rusdumaelect"
 
 date = { day = 1 month = january year = 1936 }
@@ -2171,7 +2171,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance =  40
-name = "The Democratic Party will bring liberal values to Serbia!"
+name = "EVT_3500606_OPTIONA"
 command = { type = dissent value = -2  }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 6 }
@@ -2186,7 +2186,7 @@ command = { type = ministerofsecurity which = 547028 } # Milorad Draskovic
 
 action_b = {
 ai_chance =  60
-name = "The People's Radical Party scores a landslide!"
+name = "EVT_3500606_OPTIONB"
 command = { type = dissent value = -3 }
 command = { type = set_domestic which = democratic value = 6 }
 command = { type = set_domestic which = political_left value = 4 }
@@ -2202,7 +2202,7 @@ command = { type = set_domestic which = free_market value = 5 }
 
 action_c = {
 ai_chance =  1
-name = "The King shall put an end to this chaotic democracy"
+name = "EVT_3500606_OPTIONC"
 command = { type = dissent value = 15 }
 command = { type = set_domestic which = democratic value = 4 }
 command = { type = set_domestic which = political_left value = 3 }
@@ -2235,8 +2235,8 @@ ideology = paternal_autocrat
 }
 }
 
-name = "Parliamentary elections"
-desc = "According to the Constitution, the elections are to be held every four years. Term of the current National Assembly has expired and the time has come to elect a new National Assembly. There are 120 seats in the National Assembly available and various political parties have begun their campaigns. But currently only two parties have chance of gaining majority and thus forming new government. Which one shall prevail ? "
+name = "EVT_3500607_NAME"
+desc = "EVT_3500607_DESC"
 picture = "rusdumaelect"
 
 date = { day = 1 month = january year = 1936 }
@@ -2245,7 +2245,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance =  50
-name = "The Democratic Party will bring liberal values to Serbia!"
+name = "EVT_3500607_OPTIONA"
 command = { type = dissent value = -3  }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 6 }
@@ -2260,7 +2260,7 @@ command = { type = set_domestic which = free_market value = 5 }
 
 action_b = {
 ai_chance =  50
-name = "The People's Radical Party scores a landslide!"
+name = "EVT_3500607_OPTIONB"
 command = { type = dissent value = -2 }
 command = { type = set_domestic which = democratic value = 6 }
 command = { type = set_domestic which = political_left value = 4 }
@@ -2275,7 +2275,7 @@ command = { type = set_domestic which = free_market value = 5 }
 
 action_c = {
 ai_chance =  1
-name = "The Army shall put an end to this chaotic democracy"
+name = "EVT_3500607_OPTIONC"
 command = { type = dissent value = 15 }
 command = { type = set_domestic which = democratic value = 4 }
 command = { type = set_domestic which = political_left value = 3 }
@@ -2304,8 +2304,8 @@ ideology = paternal_autocrat
 }
 }
 
-name = "Parliamentary elections"
-desc = "According to the Constitution, the elections are to be held every four years. The term of the current National Assembly has expired and the time has come to elect a new National Assembly. There are 120 seats available in the National Assembly and various political parties have begun their campaigns. But currently only two parties have a chance of gaining a majority and thus forming a new government. Which one shall prevail?"
+name = "EVT_3500608_NAME"
+desc = "EVT_3500608_DESC"
 picture = "rusdumaelect"
 
 date = { day = 1 month = january year = 1936 }
@@ -2314,7 +2314,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance =  40
-name = "The Democratic Party will bring liberal values to Serbia!"
+name = "EVT_3500608_OPTIONA"
 command = { type = dissent value = -2  }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 6 }
@@ -2329,7 +2329,7 @@ command = { type = ministerofsecurity which = 547028 } # Milorad Draskovic
 
 action_b = {
 ai_chance =  60
-name = "The People's Radical Party scores a landslide!"
+name = "EVT_3500608_OPTIONB"
 command = { type = dissent value = -3 }
 command = { type = set_domestic which = democratic value = 6 }
 command = { type = set_domestic which = political_left value = 4 }
@@ -2345,7 +2345,7 @@ command = { type = set_domestic which = free_market value = 5 }
 
 action_c = {
 ai_chance =  1
-name = "The King shall put an end to this chaotic democracy"
+name = "EVT_3500608_OPTIONC"
 command = { type = dissent value = 15 }
 command = { type = set_domestic which = democratic value = 4 }
 command = { type = set_domestic which = political_left value = 3 }
@@ -2378,8 +2378,8 @@ ideology = paternal_autocrat
 }
 }
 
-name = "Parliamentary elections"
-desc = "According to the Constitution, the elections are to be held every four years. Term of the current National Assembly has expired and the time has come to elect a new National Assembly. There are 120 seats in the National Assembly available and various political parties have begun their campaigns. But currently only two parties have chance of gaining majority and thus forming new government. Which one shall prevail ? "
+name = "EVT_3500609_NAME"
+desc = "EVT_3500609_DESC"
 picture = "rusdumaelect"
 
 date = { day = 1 month = january year = 1936 }
@@ -2388,7 +2388,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance =  50
-name = "The Democratic Party will bring liberal values to Serbia!"
+name = "EVT_3500609_OPTIONA"
 command = { type = dissent value = -3  }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 6 }
@@ -2403,7 +2403,7 @@ command = { type = set_domestic which = free_market value = 5 }
 
 action_b = {
 ai_chance =  50
-name = "The People's Radical Party scores a landslide!"
+name = "EVT_3500609_OPTIONB"
 command = { type = dissent value = -2 }
 command = { type = set_domestic which = democratic value = 6 }
 command = { type = set_domestic which = political_left value = 4 }
@@ -2418,7 +2418,7 @@ command = { type = set_domestic which = free_market value = 5 }
 
 action_c = {
 ai_chance =  1
-name = "The Army shall put an end to this chaotic democracy"
+name = "EVT_3500609_OPTIONC"
 command = { type = dissent value = 15 }
 command = { type = set_domestic which = democratic value = 4 }
 command = { type = set_domestic which = political_left value = 3 }
@@ -2445,8 +2445,8 @@ ispuppet = SER
 }
 }
 
-name = "Foreign policy"
-desc = "Our regime is established, and we can now begin to consider our stance with regard to the rest of the world. We can once again try to pursue the Greater Serbia policy - to enlarge Serbia with territories containing Serbian populations, which is greatly popular in political and military circles, or we might try to create a federation of the Southern Slavic nation under the leadership of Serbia."
+name = "EVT_3500620_NAME"
+desc = "EVT_3500620_DESC"
 picture = "balkanpenins"
 
 date = { day = 10 month = february year = 1937 }
@@ -2456,7 +2456,7 @@ deathdate = { day = 15 month = april year = 1937 }
 
 action_a = {
 ai_chance = 0
-name = "Isolationism will protect Serbia"
+name = "EVT_3500620_OPTIONA"
 command = { type = set_domestic which = interventionism value = 1 }
 command = { type = dissent value = 10 }
 command = { type = belligerence which = SER value = -10  }
@@ -2476,7 +2476,7 @@ command = { type = sleepevent which = 901171 }
 
 action_b = {
 ai_chance = 70
-name = "Our aim is Greater Serbia"
+name = "EVT_3500620_OPTIONB"
 command = { type = set_domestic which = interventionism value = 6 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = belligerence which = SER value = 4  }
@@ -2513,7 +2513,7 @@ command = { type = setflag which = SER_GRS }
 
 action_c = {
 ai_chance = 30
-name = "Our aim is the Slavic Federation"
+name = "EVT_3500620_OPTIONC"
 command = { type = set_domestic which = interventionism value = 9 }
 command = { type = domestic which = defense_lobby value = 3 }
 command = { type = dissent value = 5 }
@@ -2567,8 +2567,8 @@ country = SER
 style = 2
 
 
-name = "Status of the Orthodox Church"
-desc = "The Orthodox Church, under the leadership of the vocal Patriarch Varnava Rosic, is demanding a reclarification of its legal status in the Serbian state.  He wants a constitutional ammendment passed on the issue of the national religion."
+name = "EVT_3500622_NAME"
+desc = "EVT_3500622_DESC"
 picture = "serbiaort"
 
 date = { day = 4 month = august year = 1937 }
@@ -2579,7 +2579,7 @@ deathdate = { day = 29 month = december year = 1966 }
 
 action_a = {
 ai_chance = 70
-name = "Orthodoxy is our State Religion"
+name = "EVT_3500622_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = relation which = RUS value = 30 }
 command = { type = relation which = ROM value = 30 }
@@ -2593,7 +2593,7 @@ command = { type = relation which = BUL value = 10 }
 
 action_b = {
 ai_chance = 30
-name = "We are modern and secular"
+name = "EVT_3500622_OPTIONB"
 command = { type = dissent value = 3  }
 command = { type = relation which = RUS value = -20 }
 command = { type = relation which = ROM value = -20 }
@@ -2607,7 +2607,7 @@ command = { type = relation which = BUL value = -10 }
 
 action_c = {
 ai_chance = 0
-name = "The Orthodox Church must have a role in Government!"
+name = "EVT_3500622_OPTIONC"
 trigger = {
 NOT = {
 government = communist
@@ -2649,8 +2649,8 @@ exists = YUG
 }
 }
 
-name = "Federation of the Southern Slavic Nations?"
-desc = "Serbia has succesfully prevailed against everyone who was trying to prevent the unification of the western Balkans under our banner. We can now create Yugoslavia to finally unite the Slavic nations of the Balkan peninsula and bring peace to this troubled region!"
+name = "EVT_3500623_NAME"
+desc = "EVT_3500623_DESC"
 style = 2
 picture = "balkanpenins"
 
@@ -2660,7 +2660,7 @@ deathdate = { day = 29 month = december year = 1970 }
 
 action_a = {
 ai_chance = 99
-name = "Create Kingdom of Serbs, Croats and Slovenes!"
+name = "EVT_3500623_OPTIONA"
 command = { type = dissent value = 3 }
 
 command = {
@@ -2759,7 +2759,7 @@ command = { trigger = { control = { province = 406 data = SER } } type = provinc
 
 action_c = {
 ai_chance = 1
-name = "We are not ready for this"
+name = "EVT_3500623_OPTIONB"
 command = { type = dissent value = 1 }
 }
 }
@@ -2813,8 +2813,8 @@ control = { province = 332 data = MTN }
 
 
 
-name = "Status of Montenegro"
-desc = "Now with our state finally stabilized, we must choose our stance towards the independent state of Montenegro. We can either try to bring them into the fold using the direct threat of military power or via more a subtle way of negotiations. Another option is to create an independent military bloc with Montenegro. What shall we do?"
+name = "EVT_3500625_NAME"
+desc = "EVT_3500625_DESC"
 
 date = { day = 1 month = january year = 1938 }
 offset = 30
@@ -2822,7 +2822,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action = {
 ai_chance = 20
-name = "War will resolve this!"
+name = "EVT_3500625_OPTIONA"
 trigger = {
 NOT = { puppet = { country = MTN country = SER  } }
 NOT = { alliance = { country = SER country = MTN } }
@@ -2833,7 +2833,7 @@ command = { type = dissent value = 4 }
 }
 action = {
 ai_chance = 25
-name = "Threaten them with force!"
+name = "EVT_3500625_OPTIONB"
 trigger = {
 NOT = { puppet = { country = MTN country = SER  } }
 NOT = { alliance = { country = SER country = MTN } }
@@ -2844,7 +2844,7 @@ command = { type = trigger which = 3500626 }
 }
 action = {
 ai_chance = 25
-name = "Negotiate with them"
+name = "EVT_3500625_OPTIONC"
 trigger = {
 NOT = { alliance = { country = AUS country = MTN } }
 }
@@ -2858,13 +2858,13 @@ NOT = { alliance = { country = MTN country = OTT } }
 NOT = { alliance = { country = MTN country = BUL } }
 NOT = { alliance = { country = MTN country = FRA } }
 }
-name = "Offer an alliance to Montenegro"
+name = "EVT_3500625_OPTIOND"
 command = { type = trigger which = 3500631 }
 command = { type = relation which = MTN value = 20 }
 }
 action = {
 ai_chance = 1
-name = "We don't care about Montenegro"
+name = "EVT_3500625_OPTIONE"
 command = { type = belligerence which = SER value = -3  }
 command = { type = dissent value = 4 }
 }
@@ -2876,19 +2876,19 @@ country = MTN
 style = 2
 picture = "Peace_conference"
 
-name = "Serbian demands"
-desc = "The increasingly powerful Serbian state has once again set its sights upon the shores of the Adriatic Sea. Now Serbia issued a series of demands towards our state which, if accepted, will result in our incorporation into Serbia. However any effort to resist the powerful Serbian state without international backing is futile from the start..."
+name = "EVT_3500626_NAME"
+desc = "EVT_3500626_DESC"
 
 action_a = {
 ai_chance = 30
-name = "Accept their terms"
+name = "EVT_3500626_OPTIONA"
 command = { type = trigger which = 3500627 }
 command = { type = dissent value = 4 }
 }
 
 action_b = {
 ai_chance = 70
-name = "Never!"
+name = "EVT_3500626_OPTIONB"
 command = { type = dissent value = -2 }
 command = { type = relation which = SER value = -20 }
 command = { trigger = { alliance = { country = SER country = MTN } } type = leave_alliance }
@@ -2902,12 +2902,12 @@ country = SER
 style = 2
 picture = "TH_ChetCit"
 
-name = "Montenegrin submission"
-desc = "Seeing no other options, the Montenegrin leaders accepted our demands"
+name = "EVT_3500627_NAME"
+desc = "EVT_3500627_DESC"
 
 
 action = {
-name = "Hooray!"
+name = "EVT_3500627_OPTIONA"
 command = { type = dissent value = 2 }
 command = { type = inherit which = MTN  }
 command = { type = addclaim which = 332  }
@@ -2921,12 +2921,12 @@ country = SER
 style = 2
 picture = "Army"
 
-name = "Montenegrian resistance"
-desc = "The mad Montenegrin leaders rejected our rightful demands. How shall we react to this insolence?"
+name = "EVT_3500628_NAME"
+desc = "EVT_3500628_DESC"
 
 action_a = {
 ai_chance = 85
-name = "War will solve this!"
+name = "EVT_3500628_OPTIONA"
 command = { type = dissent value = -1 }
 command = { type = war which = MTN }
 command = { type = addclaim which = 332  }
@@ -2935,7 +2935,7 @@ command = { type = addclaim which = 335  }
 
 action_b = {
 ai_chance = 15
-name = "Back down!"
+name = "EVT_3500628_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = relation which = MTN value = 20 }
 
@@ -2948,12 +2948,12 @@ country = MTN
 style = 2
 picture = "Peace_conference"
 
-name = "Negotiations with Serbs"
-desc = "The increasingly powerful Serbian state has once again set its sights upon the shores of the Adriatic Sea. Serbia displayed willingness to negotiate the terms of our gradual integration into Serbia. How shall we react?"
+name = "EVT_3500629_NAME"
+desc = "EVT_3500629_DESC"
 
 action_a = {
 ai_chance = 70
-name = "Agree, but Danilo must rule Serbia"
+name = "EVT_3500629_OPTIONA"
 trigger = {
 OR = {
 headofstate = 544011
@@ -2968,7 +2968,7 @@ command = { type = trigger which = 3500630 }
 
 action_b = {
 ai_chance = 70
-name = "Agree, but Mihailo must rule Serbia"
+name = "EVT_3500629_OPTIONB"
 trigger = {
 OR = {
 headofstate = 544035
@@ -2983,7 +2983,7 @@ command = { type = trigger which = 3500630 }
 
 action_c = {
 ai_chance = 30
-name = "Agree, but demand concessions!"
+name = "EVT_3500629_OPTIONC"
 command = { type = relation which = SER value = -5 }
 command = { trigger = { alliance = { country = SER country = MTN } } type = leave_alliance }
 command = { type = trigger which = 3500637 }
@@ -2991,7 +2991,7 @@ command = { type = trigger which = 3500637 }
 
 action_d = {
 ai_chance = 30
-name = "Never!"
+name = "EVT_3500629_OPTIOND"
 command = { type = relation which = SER value = -40 }
 command = { trigger = { alliance = { country = SER country = MTN } } type = leave_alliance }
 command = { type = trigger which = 3500628 }
@@ -3006,14 +3006,14 @@ style = 2
 
 
 
-name = "Montenegrian demands!"
-desc = "Montenegro has decided to accept our offer, expressing willingness to allow the incorporation of Montenegro into our motherland if a member of the Montenegrin royal family is crowned as the king of Serbia. How shall we react?"
+name = "EVT_3500630_NAME"
+desc = "EVT_3500630_DESC"
 
 picture = "Peace_conference"
 
 action_a = {
 ai_chance = 30
-name = "Accept the demand!"
+name = "EVT_3500630_OPTIONA"
 trigger = {
 NOT = {
 headofstate = 547059
@@ -3038,7 +3038,7 @@ command = { type = addcore which = 335  }
 
 action_b = {
 ai_chance = 10
-name = "What is this lunacy?  Send in the troops"
+name = "EVT_3500630_OPTIONB"
 command = { type = war which = MTN }
 command = { type = relation which = MTN value = -100 }
 command = { type = relation which = CRO value = -50 }
@@ -3047,7 +3047,7 @@ command = { type = belligerence which = SER  value = 5 }
 
 action_c = {
 ai_chance = 20
-name = "Refuse the offer"
+name = "EVT_3500630_OPTIONC"
 command = { type = relation which = MTN value = -40 }
 
 }
@@ -3061,14 +3061,14 @@ style = 2
 
 
 
-name = "Montenegrian demands!"
-desc = "Montenegro has decided to accept our offer, expressing willingness to allow the incorporation of Montenegro into our motherland, in return for several concessions meant as a way to protect Montenegrins from gradual assimilation. How shall we react?"
+name = "EVT_3500637_NAME"
+desc = "EVT_3500637_DESC"
 
 picture = "Peace_conference"
 
 action_a = {
 ai_chance = 30
-name = "Accept the demands!"
+name = "EVT_3500637_OPTIONA"
 command = { type = dissent value = 5 }
 command = { type = domestic which = freedom value = 2 }
 command = { type = inherit which = MTN }
@@ -3079,7 +3079,7 @@ command = { type = addcore which = 335  }
 
 action_b = {
 ai_chance = 10
-name = "What is this lunacy?  Send in the troops"
+name = "EVT_3500637_OPTIONB"
 command = { type = war which = MTN }
 command = { type = relation which = MTN value = -100 }
 command = { type = relation which = CRO value = -50 }
@@ -3088,7 +3088,7 @@ command = { type = belligerence which = SER  value = 5 }
 
 action_c = {
 ai_chance = 20
-name = "Refuse the offer"
+name = "EVT_3500637_OPTIONC"
 command = { type = relation which = MTN value = -40 }
 
 }
@@ -3102,19 +3102,19 @@ country = MTN
 style = 2
 picture = "Peace_conference"
 
-name = "Serbia offers us an alliance!"
-desc = "The Serbs have sent word that they consider our two states to be alike, and that we should join their bloc to promote our mutual interests.  What should we do?"
+name = "EVT_3500631_NAME"
+desc = "EVT_3500631_DESC"
 
 action_a = {
 ai_chance = 80
-name = "Of course, all Slavs together!"
+name = "EVT_3500631_OPTIONA"
 command = { type = relation which = SER value = 200 }
 command = { type = trigger which = 3500632 }
 }
 
 action_b = {
 ai_chance = 20
-name = "We cannot trust the treacherous Serbs!"
+name = "EVT_3500631_OPTIONB"
 command = { type = relation which = SER value = -200 }
 command = { type = trigger which = 3500633  }
 }
@@ -3127,11 +3127,11 @@ country = SER
 style = 2
 picture = "TH_ChetCit"
 
-name = "A new power in the east!"
-desc = "The government of Montenegro have accepted our offer and joined our bloc. With such a powerful alliance emerging on the Balkan peninsula the future of our state looks promising..."
+name = "EVT_3500632_NAME"
+desc = "EVT_3500632_DESC"
 
 action_a = {
-name = "Excellent!"
+name = "EVT_3500632_OPTIONA"
 command = { type = alliance which = MTN }
 command = { type = relation which = MTN value = 200 }
 }
@@ -3144,18 +3144,18 @@ country = SER
 style = 2
 picture = "Peace_conference"
 
-name = "Montenegro turned us down!"
-desc = "In their arrogance, the government of Montenegro turned down our offer, saying that the ideological and national rift between us is too great for an alliance to form. How shall we react to this humiliation?"
+name = "EVT_3500633_NAME"
+desc = "EVT_3500633_DESC"
 
 action_a = {
 ai_chance = 95
-name = "They will pay for their foolishness!"
+name = "EVT_3500633_OPTIONA"
 command = { type = war which = MTN }
 }
 
 action_d = {
 ai_chance = 5
-name = "Let them rot"
+name = "EVT_3500633_OPTIONB"
 command = { type = dissent value = 5 }
 command = { type = relation which = MTN value = 10 }
 }
@@ -3183,13 +3183,13 @@ date = { day = 1 month = january year = 1936 }
 offset = 60
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "Bosnian minority is causing problems!"
-desc = "Yesterday, various politicians and major Islamic religious figures have ignited strikes and riots through parts of Bosnia and Hercegovina. Production in cities, factories, and oil refineries has been stopped, and school pupils are on hunger strike. The leaders of this city-wide strike have annouced that they will fight for an independent Bosnia, no matter what repression they will meet."
+name = "EVT_3500634_NAME"
+desc = "EVT_3500634_DESC"
 picture = "Politics6"
 
 action_a = {
 ai_chance = 30
-name = "Negotiate"
+name = "EVT_3500634_OPTIONA"
 command = { type = money value = -5 }
 command = { type = domestic which = freedom value = 1 }
 command = { type = supplies value = -500 }
@@ -3198,7 +3198,7 @@ command = { type = setflag which = BOS_NEG }
 
 action_b ={
 ai_chance = 70
-name = "Send the army to Sarajevo"
+name = "EVT_3500634_OPTIONB"
 command = { type = dissent value = 5 }
 command = { type = removecore which = 355 }
 command = { type = province_revoltrisk which = 355 value = 80 }
@@ -3228,12 +3228,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 300
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "Bosniak minority supressed!"
-desc = "After a long and brutal contest in the mountainous parts of Bosnia and Hercegovina we have finally subdued this troublesome minority. At least for now..."
+name = "EVT_3500635_NAME"
+desc = "EVT_3500635_DESC"
 picture = "militaryparade1"
 
 action_a = {
-name = "Bosniaks will trouble us no more!"
+name = "EVT_3500635_OPTIONA"
 command = { type = province_revoltrisk which = 355 value = 0 }
 command = { type = addcore   which =  355  }
 command = { type = dissent value = -5 }
@@ -3263,13 +3263,13 @@ date = { day = 1 month = january year = 1936 }
 offset = 10
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "Negotiations with Bosniak leaders"
-desc = "In effort to prevent potential conflict which could disrupt the stability of the newly-acquired territories of Bosnia-Hercegovina we have entered negotiations with various Bosniak leaders. What shall we offer them?"
+name = "EVT_3500636_NAME"
+desc = "EVT_3500636_DESC"
 picture = "Politics6"
 
 action_a = {
 ai_chance = 50
-name = "Offer them religious and cultural autonomy"
+name = "EVT_3500636_OPTIONA"
 command = { type = domestic which = freedom value = 2 }
 command = { type = dissent value = 3 }
 command = { type = money value = -20 }
@@ -3278,7 +3278,7 @@ command = { type = clrflag which = BOS_NEG }
 
 action_b = {
 ai_chance = 50
-name = "Demand the end of the strikes and riots instead!"
+name = "EVT_3500636_OPTIONB"
 command = { type = dissent value = 5 }
 command = { type = removecore which = 355 }
 command = { type = province_revoltrisk which = 355 value = 80 }
@@ -3310,11 +3310,11 @@ date = { day = 0 month = january year = 1936 }
 offset = 1
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "Vidovdan"
-desc = "Vidovdan represents the day to commemorate Saint Prince Lazar and the Serbian holy martyrs who gave their lives to defend the true faith during the epic Battle of Kosovo against the Ottoman Empire on June 28, 1389. It is regarded as a National Holiday in Serbia."
+name = "EVT_3500638_NAME"
+desc = "EVT_3500638_DESC"
 
 action_a = {
-name = "Serbia will never forget its heroes!"
+name = "EVT_3500638_OPTIONA"
 command = { type = dissent value = -1 }
 }
 }
@@ -3357,13 +3357,13 @@ date = { day = 1 month = january year = 1936 }
 offset = 20
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "Start the colonization of Northern Albania?"
-desc = "Now that we have achieved our historical dream of liberating Skadar,Drac and gaining access to the Adriatic sea,we must decide what to do with the Albanian majority which is hostile to us. Majority of military officers as well as right winged parties request direct colonization of this province as a mean to fully integrate it into motherland. However doing so would significantly anger local Albanian population and would request permanent military presence for a long time."
+name = "EVT_3500639_NAME"
+desc = "EVT_3500639_DESC"
 picture = "kolonizacija"
 decision_picture = "decision_kolonizacija"
 
 action_a = {
-name = "Start the colonization,Serbs must become a majority!"
+name = "EVT_3500639_OPTIONA"
 ai_chance = 90
 command = { type = dissent value = 5 }
 command = { type = province_revoltrisk which = 361 value = 50 }
@@ -3375,7 +3375,7 @@ command = { type = revolt which = 361 }
 }
 
 action_b = {
-name = "Serbs and Albanians should live together as friends."
+name = "EVT_3500639_OPTIONB"
 ai_chance = 10
 command = { type = dissent value = 4 }
 }
@@ -3404,12 +3404,12 @@ ispuppet = SER
 
 }
 
-name = "Colonists in Skadar."
-desc = "After a few months The Royal Office of Immigration and Settlement has reported the first results of our colonization program. The area that attracted the most colonists appears to be Skadar. "
+name = "EVT_3500640_NAME"
+desc = "EVT_3500640_DESC"
 picture = "kolonizacija"
 
 action_a = {
-name = "Good!"
+name = "EVT_3500640_OPTIONA"
 command = { type = money value = -10 }
 command = { type = dissent value = 3 }
 command = { type = revolt which = 361 }
@@ -3436,12 +3436,12 @@ ispuppet = SER
 }
 }
 
-name = "Skadar is Serbian !"
-desc = "After years since the start of our colonization program, the number of ethnic Serbs in Skadar has increased sharply.We are no longer a minority here!"
+name = "EVT_3500641_NAME"
+desc = "EVT_3500641_DESC"
 picture = "kolonizacija"
 
 action_a = {
-name = "Skadar je ponovo Srpski!"
+name = "EVT_3500641_OPTIONA"
 command = { type = money value = -10 }
 command = { type = dissent value = 5 }
 command = { type = addcore which = 361 } #Shkoder
@@ -3472,13 +3472,13 @@ ispuppet = SER
 }
 }
 
-name = "Expand the colonization Tirana?"
-desc = "With Skadar becoming Serbian in majority,we can move on to the heart of Albania itself.This time though,we will face even more hostilities from the locals,since our aggressive colonization united them against us.What should we do ?"
+name = "EVT_3500642_NAME"
+desc = "EVT_3500642_DESC"
 picture = "kolonizacija"
 
 
 action_a = {
-name = "Tirana will also be Serbian!"
+name = "EVT_3500642_OPTIONA"
 ai_chance = 60
 command = { type = dissent value = 10 }
 command = { type = belligerence which = SER value = 5  }
@@ -3490,7 +3490,7 @@ command = { type = revolt which = 359 }
 }
 
 action_b = {
-name = "We already had enough,leave the Albanians alone"
+name = "EVT_3500642_OPTIONB"
 ai_chance = 40
 command = { type = dissent value = 5 }
 }
@@ -3511,8 +3511,8 @@ exists = ALB
 }
 }
 
-name = "Tirana is Serbian !"
-desc = "After years since the start of our colonization program, the number of ethnic Serbs in Tirana has increased sharply.We are no longer a minority here!"
+name = "EVT_3500643_NAME"
+desc = "EVT_3500643_DESC"
 picture = "kolonizacija"
 
 date = { day = 1 month = july year = 1936 }
@@ -3520,7 +3520,7 @@ offset = 100
 deathdate = { day = 1 month = november year = 1966 }
 
 action_a = {
-name = "Tirana je Srpska!"
+name = "EVT_3500643_OPTIONA"
 command = { type = money value = -10 }
 command = { type = dissent value = 5 }
 command = { type = addcore which = 359 } #Tirana
@@ -3554,8 +3554,8 @@ trigger = {
 NOT = { atwar = SER }
 }
 
-name = "The new economic policy"
-desc = "Now that we have decided our new political course,it's time to concentrate on our fledgling economy.As a nation of peasants,we can choose to improve and modernize our agriculture.Or we can push for a modern industrial complex in order to challange other advanced nations."
+name = "EVT_3500644_NAME"
+desc = "EVT_3500644_DESC"
 style = 2
 picture = "ekonomija"
 decision_picture = "decision_selo"
@@ -3565,7 +3565,7 @@ offset = 30
 deathdate = { day = 10 month = december year = 1942 }
 
 action_a = {
-name = "Farming is good for us,support our peasants"
+name = "EVT_3500644_OPTIONA"
 ai_chance = 50
 command = { type = local_setflag which = SER_agriculture }
 command = { type = gain_tech which = 5030 }
@@ -3577,7 +3577,7 @@ command = { type = money value = -120 }
 }
 
 action_b = {
-name = "Modern industry is the way of the future"
+name = "EVT_3500644_OPTIONB"
 ai_chance = 50
 command = { type = local_setflag which = SER_industry }
 command = { type = gain_tech which = 5060 }
@@ -3598,8 +3598,8 @@ local_flag = SER_agriculture
 event = { id = 3500644 days = 540 } #1,5 years
 }
 
-name = "The growth of agriculture."
-desc = "Our efforts are beginning to show results. The state of our Agriculture has improved dramatically,and the whole Serbian economical system is getting benefits from it. "
+name = "EVT_3500645_NAME"
+desc = "EVT_3500645_DESC"
 style = 2
 picture = "peasants"
 
@@ -3608,7 +3608,7 @@ offset = 30
 deathdate = { day = 29 month = december year= 1960 }
 
 action_a = {
-name = "Excellent"
+name = "EVT_3500645_OPTIONA"
 command = { type = relative_manpower value = 10 }
 command = { type = industrial_modifier which = total value = 3 }
 command = { type = manpowerpool value = 25 }
@@ -3627,8 +3627,8 @@ local_flag = SER_industry
 event = { id = 3500644 days = 540 } #1,5 years
 }
 
-name = "The growth of industry."
-desc = "Our efforts are beginning to show results. The state of our industry has improved dramatically,and the whole Serbian economical system is getting benefits from it. "
+name = "EVT_3500646_NAME"
+desc = "EVT_3500646_DESC"
 style = 2
 picture = "ekonomija"
 
@@ -3637,7 +3637,7 @@ offset = 30
 deathdate = { day = 29 month = december year= 1960 }
 
 action_a = {
-name = "Excellent"
+name = "EVT_3500646_OPTIONA"
 command = { type = add_prov_resource which = -1 value = 7 where = metal }
 command = { type = add_prov_resource which = -1 value = 4 where = rare_materials }
 command = { type = add_prov_resource which = -1 value = 5 where = energy }
@@ -3659,8 +3659,8 @@ local_flag = SER_industry
 control = { province = 339 data = SER }
 }
 
-name = "The expansion of the Bor mining complex"
-desc = "As a part of our industrialization program,a new larger pit has been officially opened today at the Bor mining complex. This expansion and modernization of our production capacities will enormously help to support our growing industry."
+name = "EVT_3500659_NAME"
+desc = "EVT_3500659_DESC"
 style = 2
 picture = "bor"
 
@@ -3669,7 +3669,7 @@ offset = 150
 deathdate = { day = 29 month = december year= 1960 }
 
 action_a = {
-name = "Excellent"
+name = "EVT_3500659_OPTIONA"
 command = { type = add_prov_resource which = 339 value = 10 where = metal }
 command = { type = add_prov_resource which = 339 value = 1 where = rare_materials }
 command = { type = add_prov_resource which = 339 value = 5 where = energy }
@@ -3723,8 +3723,8 @@ NOT = { atwar = SER }
 event = 3500517
 }
 
-name = "The birth of the Serbian navy"
-desc = "Now that we have finally gained access to the sea, we need to think about protecting our coast. If we focus our newly gained resources, we will be able to produce destroyers and cruisers, which will form the backbone of our navy."
+name = "EVT_3500647_NAME"
+desc = "EVT_3500647_DESC"
 style = 2
 picture = "mornarica"
 decision_picture = "decision_mornarica"
@@ -3734,7 +3734,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "We have waited long enough !"
+name = "EVT_3500647_OPTIONA"
 ai_chance = 75
 command = { type = money value = -100 }
 command = { type = metalpool value = -500 }
@@ -3748,7 +3748,7 @@ command = { type = dissent value = 2 }
 }
 
 action_b = {
-name = "This is too expensive !"
+name = "EVT_3500647_OPTIONB"
 ai_chance = 25
 command = { type = belligerence which = SER value = -1 }
 command = { type = dissent value = -2 }
@@ -3778,13 +3778,13 @@ date = { day = 1 month = june year = 1936 }
 offset = 30
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The first ships are ready."
-desc = "After a long wait, all preparations are being made for the inauguration of our new vessels. This is the first step on our road to rule the Adriatic sea !"
+name = "EVT_3500648_NAME"
+desc = "EVT_3500648_DESC"
 style = 2
 picture = "mornarica"
 
 action_a = {
-name = "A useful addition to our forces."
+name = "EVT_3500648_OPTIONA"
 command = { type = add_division which = "1.Razaracka Flota" value = destroyer when = 5 }
 command = { type = add_division which = "2.Razaracka Flota" value = destroyer when = 5 }
 command = { type = add_division which = "Morava" value = light_cruiser when = 4 }
@@ -3838,25 +3838,25 @@ date = { day = 1 month = june year = 1936 }
 offset = 30
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "The flag ship of the Serbian navy."
-desc = "Even though our navy started of well,we still lack the means for producing larger ships. In order to reach full capability,our navy requiers a flag ship,which will be the pride of our country. Our naval officers have already made a proposal to buy and overhaul a Canadian old cruiser. What shall we do ?"
+name = "EVT_3500649_NAME"
+desc = "EVT_3500649_DESC"
 style = 2
 picture = "mornarica"
 
 action_a = {
-name = "Make a bid for the ship and the overhaul"
+name = "EVT_3500649_OPTIONA"
 ai_chance = 60
 command = { type = trigger which = 3500650 }
 
 }
 action_b = {
-name = "Only pay for the ship"
+name = "EVT_3500649_OPTIONB"
 ai_chance = 40
 command = { type = trigger which = 3500651 }
 }
 
 action_c = {
-name = "Our navy is fine as it is"
+name = "EVT_3500649_OPTIONC"
 ai_chance = 20
 command = { type = dissent value = 1 }
 command = { type = belligerence which = SER value = -1 }
@@ -3870,13 +3870,13 @@ random = no
 country = CAN
 
 
-name = "Serbians offer to buy an overhauled HMS Lion"
-desc = "Serbia,which is in a process of industrialization and rearmament,has offered to buy and pay for the overhaul of our HMS Lion battlecruiser which will become the flagship of their navy.How shall we respond ?"
+name = "EVT_3500650_NAME"
+desc = "EVT_3500650_DESC"
 style = 2
 picture = "mornarica"
 
 action_a = {
-name = "We could profit from selling this old junk."
+name = "EVT_3500650_OPTIONA"
 ai_chance = 80
 command = { type = relation which = SER value = 20 }
 command = { type = remove_division which = 20001 value = 110 } # HMS Lion
@@ -3889,7 +3889,7 @@ command = { type = event which = 3500652 where = SER when = 350  }
 }
 
 action_b = {
-name = "Nay,every ship is needed!"
+name = "EVT_3500650_OPTIONB"
 ai_chance = 20
 command = { type = relation which = SER value = -50 }
 }
@@ -3903,13 +3903,13 @@ country = CAN
 
 
 
-name = "Serbians offer to buy HMS Lion"
-desc = "Serbia,which is in a process of industrialization and rearmament,has offered to buy our HMS Lion battlecruiser which will become the flagship of their navy.How shall we respond ?"
+name = "EVT_3500651_NAME"
+desc = "EVT_3500651_DESC"
 style = 2
 picture = "mornarica"
 
 action_a = {
-name = "We could profit from selling this old junk."
+name = "EVT_3500651_OPTIONA"
 ai_chance = 80
 command = { type = relation which = SER value = 20 }
 command = { type = remove_division which = 20001 value = 110 } # HMS Lion
@@ -3922,7 +3922,7 @@ command = { type = event which = 3500653 where = SER when = 10  }
 }
 
 action_b = {
-name = "Nay,every ship is needed!"
+name = "EVT_3500651_OPTIONB"
 ai_chance = 20
 command = { type = relation which = SER value = -50 }
 }
@@ -3936,13 +3936,13 @@ country = SER
 
 
 
-name = "The Serbian pride arrives !"
-desc = "After a long wait,our new modernized flagship is finally in our waters. We have renamed it to Car Dusan Silni,after our famous emperor.May it bring the same glory and might to our nation,as he did in our past!"
+name = "EVT_3500652_NAME"
+desc = "EVT_3500652_DESC"
 style = 2
 picture = "mornarica"
 
 action_a = {
-name = "A day for a celebration!"
+name = "EVT_3500652_OPTIONA"
 command = { type = relation which = CAN value = 20 }
 command = { type = add_division which = "Car Dusan Silni" value = battlecruiser when = 2 }
 command = { type = metalpool value = -1000 }
@@ -3962,13 +3962,13 @@ id = 3500653
 random = no
 country = SER
 
-name = "The Serbian pride arrives !"
-desc = "After a long wait,our new flagship is finally in our waters. We have renamed it to Car Dusan Silni,after our famous emperor.May it bring the same glory and might to our nation,as he did in our past!"
+name = "EVT_3500653_NAME"
+desc = "EVT_3500653_DESC"
 style = 2
 picture = "mornarica"
 
 action_a = {
-name = "A day for a celebration!"
+name = "EVT_3500653_OPTIONA"
 
 command = { type = relation which = CAN value = 20 }
 command = { type = add_division which = "Car Dusan Silni" value = battlecruiser when = 0 }
@@ -4026,7 +4026,7 @@ core = { province = 355 data = SER }
 }
 
 
-name = "The agrarian reform in Bosnia"
+name = "EVT_3500657_NAME"
 desc = "3500657desc"
 style = 2
 picture = "agreforma"
@@ -4037,7 +4037,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Start with the reform at once!"
+name = "EVT_3500657_OPTIONA"
 ai_chance = 75
 command = { type = money value = -300 }
 command = { type = province_revoltrisk which = 354 value = 10 }
@@ -4058,7 +4058,7 @@ command = { type = sleepevent which = 9120026 }
 }
 
 action_b = {
-name = "We must not upset the Muslim elite."
+name = "EVT_3500657_OPTIONB"
 ai_chance = 25
 command = { type = domestic which = freedom value = -1 }
 command = { type = dissent value = 6 }
@@ -4093,8 +4093,8 @@ event = { id = 9120026 days = 660 } #2 years
 }
 }
 
-name = "Positive effects of the agrarian reform"
-desc = "Our decision to implement the reform has proven correct in the long term. The agrarian system is much more productive and profitable,and this reflects positivly on our entire economy."
+name = "EVT_3500658_NAME"
+desc = "EVT_3500658_DESC"
 style = 2
 picture = "agreforma"
 
@@ -4103,7 +4103,7 @@ offset = 50
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "We knew it!"
+name = "EVT_3500658_OPTIONA"
 command = { type = industrial_modifier which = total value = 2 }
 command = { type = construct which = ic where = 355 value = 1 }
 command = { type = dissent value = -3 }
@@ -4135,8 +4135,8 @@ random = no
 country = SER
 
 
-name = "The oppening of the new parliament building"
-desc = "Construction on the building started in 1907, with the cornerstone being laid by King Peter I. Weltkrieg delayed the construction, and the original plans to the building were lost,but the reconstruction of the plans were made by Pavle Ilkic. The interior was designed by Nikolaj Krasnov in the manner of academic traditionalism. The construction of the building was completed in 1936 and the first session in the new edifice was held on October 20 of the same year."
+name = "EVT_3500660_NAME"
+desc = "EVT_3500660_DESC"
 style = 2
 picture = "domj"
 
@@ -4144,7 +4144,7 @@ date = { day = 19 month = october year = 1936 }
 
 
 action = {
-name = "Welcome"
+name = "EVT_3500660_OPTIONA"
 command = { trigger = { ai = no } type = money value = -50 }
 command = { type = dissent value = -1 }
 }
@@ -4164,7 +4164,7 @@ headofstate = 547060
 }
 }
 
-name = "Monument to the Unknown Hero"
+name = "EVT_3500661_NAME"
 desc = "3500661desc"
 style = 2
 picture = "avala"
@@ -4173,7 +4173,7 @@ date = { day = 28 month = june year = 1938 }
 
 
 action = {
-name = "Welcome"
+name = "EVT_3500661_OPTIONA"
 command = { trigger = { ai = no } type = money value = -50 }
 command = { type = dissent value = -1 }
 }
@@ -4233,12 +4233,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 10
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "Montenegrin Resistance"
-desc = "Our small nation is under attack by the vile Serbs. With their troops advancing towards our capital, some volunteer militias are being organized as a last line of defense. But we could do more. Maybe it's time to call for help from the major power in the region: Our former masters, the Austrians!"
+name = "EVT_3500700_NAME"
+desc = "EVT_3500700_DESC"
 
 action = {
 ai_chance = 50
-name = "Call up the volunteers"
+name = "EVT_3500700_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = morale which = land value = 5 }
 command = { type = add_corps which = "Volonterski vojsku" value = land where = 332 }
@@ -4248,7 +4248,7 @@ command = { type = add_division which = "3. Vojska volontera" value = militia wh
 }
 action = {
 ai_chance = 50
-name = "We need help from the Austrians"
+name = "EVT_3500700_OPTIONB"
 command = { type = dissent value = 5 }
 command = { trigger = { exists = AUS } type = event which = 3500701 where = AUS when = 0 }
 command = { trigger = { exists = U24 } type = event which = 3500701 where = U24 when = 0 }
@@ -4262,18 +4262,18 @@ country = AUS
 style = 2
 random = no
 
-name = "A plea from Montenegro"
-desc = "The independent state of Montenegro, previously a part of our Empire, is under attack from the Serbians and pledged for our intervention. We could use the opportunity to either gain a new ally or to press them back into our fold. Or maybe we could take the chance and attack both Montenegro and Serbia to reassert our mastery over the Balkans!"
+name = "EVT_3500701_NAME"
+desc = "EVT_3500701_DESC"
 
 action = {
 ai_chance = 10
-name = "Send some volunteers to Montenegro"
+name = "EVT_3500701_OPTIONA"
 command = { type = trigger which = 3500702 }
 command = { type = relation which = MTN value = 50 }
 }
 action = {
 ai_chance = 30
-name = "Invite Montenegro to an alliance, Serbia is a menace to the region"
+name = "EVT_3500701_OPTIONB"
 command = { type = relation which = MTN value = 100 }
 command = { type = removecore which = 332 }
 command = { type = removecore which = 335 }
@@ -4283,7 +4283,7 @@ command = { type = alliance which = MTN }
 }
 action = {
 ai_chance = 40
-name = "Montenegro must be brought back into the fold"
+name = "EVT_3500701_OPTIONC"
 command = { type = relation which = MTN value = -100 }
 command = { trigger = { exists = AUS } type = event which = 3500703 where = AUS when = 0 }
 command = { trigger = { exists = U24 } type = event which = 3500703 where = U24 when = 0 }
@@ -4291,13 +4291,13 @@ command = { trigger = { exists = U25 } type = event which = 3500703 where = U25 
 }
 action = {
 ai_chance = 10
-name = "Seize the chance and attack Montenegro"
+name = "EVT_3500701_OPTIOND"
 command = { type = dissent value = 2 }
 command = { type = war which = MTN }
 }
 action = {
 ai_chance = 10
-name = "Use the opportunity to attack both Montenegro and Serbia"
+name = "EVT_3500701_OPTIONE"
 command = { type = dissent value = 5 }
 command = { type = war which = MTN }
 command = { type = war which = SER }
@@ -4310,11 +4310,11 @@ country = MTN
 style = 2
 random = no
 
-name = "Volunteers from Austria"
-desc = "After hearing our pleas, Austria has quickly assembled a small volunteer unit, which is ready to move to the frontlines!"
+name = "EVT_3500702_NAME"
+desc = "EVT_3500702_DESC"
 
 action = {
-name = "Well, it IS something, at least!"
+name = "EVT_3500702_OPTIONA"
 command = { type = add_corps which = "Vojska austrijskih volontera" value = land where = 332 }
 command = { type = add_division which = "1. Austrijski Volonteri" value = infantry when = 10 }
 }
@@ -4326,17 +4326,17 @@ country = AUS
 style = 2
 random = no
 
-name = "The Future of Montenegro"
-desc = "We have decided that the fate of Montenegro lies within Vienna's sphere of influence. How shall we proceed? We can either attempt to rule them directly or make them an autonomous region of the Crown."
+name = "EVT_3500703_NAME"
+desc = "EVT_3500703_DESC"
 
 action = {
 ai_chance = 60
-name = "Direct annexation"
+name = "EVT_3500703_OPTIONA"
 command = { type = trigger which = 3500704 }
 }
 action = {
 ai_chance = 40
-name = "Offer them an autonomous status"
+name = "EVT_3500703_OPTIONB"
 command = { type = trigger which = 3500707 }
 }
 }
@@ -4347,19 +4347,19 @@ country = MTN
 style = 2
 random = no
 
-name = "Ultimatum from Vienna"
-desc = "The Emperor in Vienna has decided to help us on our war against Serbia, on one simple but outrageous condition: We must renounce our independence and rejoin Austria!"
+name = "EVT_3500704_NAME"
+desc = "EVT_3500704_DESC"
 
 action = {
 ai_chance = 90
-name = "We'd rather die than submit to the Austrians"
+name = "EVT_3500704_OPTIONA"
 command = { trigger = { exists = AUS } type = event which = 3500705 where = AUS when = 0 }
 command = { trigger = { exists = U24 } type = event which = 3500705 where = U24 when = 0 }
 command = { trigger = { exists = U25 } type = event which = 3500705 where = U25 when = 0 }
 }
 action = {
 ai_chance = 10
-name = "This is likely our only chance to survive, submit"
+name = "EVT_3500704_OPTIONB"
 command = { trigger = { exists = AUS } type = event which = 3500706 where = AUS when = 0 }
 command = { trigger = { exists = U24 } type = event which = 3500706 where = U24 when = 0 }
 command = { trigger = { exists = U25 } type = event which = 3500706 where = U25 when = 0 }
@@ -4372,18 +4372,18 @@ country = AUS
 style = 2
 random = no
 
-name = "The Montenegrins refuse"
-desc = "The government of Montenegro has refused our offer and said they'd rather die than rejoin Austria..."
+name = "EVT_3500705_NAME"
+desc = "EVT_3500705_DESC"
 
 action = {
 ai_chance = 70
-name = "So be it - Invade Montenegro"
+name = "EVT_3500705_OPTIONA"
 command = { type = dissent value = 2 }
 command = { type = war which = MTN }
 }
 action = {
 ai_chance = 30
-name = "Leave them be, then"
+name = "EVT_3500705_OPTIONB"
 command = { type = dissent value = 5 }
 command = { type = domestic which = interventionism value = -2 }
 }
@@ -4395,11 +4395,11 @@ country = AUS
 style = 2
 random = no
 
-name = "The Montenegrins accept"
-desc = "The government of Montenegro has accepted our offer. As soon as their puny king officially surrendered the state to Austria, our troops crossed the borders and fired the first rounds against Serbian soldiers..."
+name = "EVT_3500706_NAME"
+desc = "EVT_3500706_DESC"
 
 action = {
-name = "For the glory of Austria, attack!"
+name = "EVT_3500706_OPTIONA"
 command = { type = inherit which = MTN }
 command = { type = war which = SER }
 }
@@ -4411,19 +4411,19 @@ country = MTN
 style = 2
 random = no
 
-name = "Ultimatum from Vienna"
-desc = "The Emperor in Vienna has decided to help us on our war against Serbia, on one simple but outrageous condition: We must renounce our sovereignity and rejoin Austria as a crown land..."
+name = "EVT_3500707_NAME"
+desc = "EVT_3500707_DESC"
 
 action = {
 ai_chance = 40
-name = "We'd rather die than submit to the Austrians"
+name = "EVT_3500707_OPTIONA"
 command = { trigger = { exists = AUS } type = event which = 3500705 where = AUS when = 0 }
 command = { trigger = { exists = U24 } type = event which = 3500705 where = U24 when = 0 }
 command = { trigger = { exists = U25 } type = event which = 3500705 where = U25 when = 0 }
 }
 action = {
 ai_chance = 60
-name = "This is likely our only chance to survive, submit"
+name = "EVT_3500707_OPTIONB"
 command = { trigger = { exists = AUS } type = event which = 3500708 where = AUS when = 0 }
 command = { trigger = { exists = U24 } type = event which = 3500708 where = U24 when = 0 }
 command = { trigger = { exists = U25 } type = event which = 3500708 where = U25 when = 0 }
@@ -4437,11 +4437,11 @@ country = AUS
 style = 2
 random = no
 
-name = "The Montenegrins Accept"
-desc = "The government of Montenegro has accepted our offer. As soon as their puny king officially surrendered the state to Austria, our troops crossed the borders and fired the first rounds against Serbian soldiers..."
+name = "EVT_3500708_NAME"
+desc = "EVT_3500708_DESC"
 
 action = {
-name = "For the glory of Austria, attack!"
+name = "EVT_3500708_OPTIONA"
 command = { type = make_puppet which = MTN }
 command = { type = alliance which = MTN }
 command = { type = war which = SER }

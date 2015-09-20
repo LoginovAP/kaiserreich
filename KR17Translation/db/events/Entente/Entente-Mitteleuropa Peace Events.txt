@@ -123,8 +123,8 @@ lost_IC = { value = 65 }
 }
 }
 
-name = "Seeking an Armistice With the Entente"
-desc = "We have suffered a crushing defeat by the accursed Entente Cordiale. The Kaiserreich is torn asunder by internal conflict and rioting is becoming very common in the larger cities. Should we approach the British about the terms of an armistice?"
+name = "EVT_200200_NAME"
+desc = "EVT_200200_DESC"
 style = 2
 picture = "POWs"
 
@@ -133,7 +133,7 @@ offset = 3
 deathdate = { day = 29 month = december year = 1969 }
 
 action = {
-name = "Seek terms with the Entente" # the Darkest Hour of the Kaiserreich
+name = "EVT_200200_OPTIONA" # the Darkest Hour of the Kaiserreich
 ai_chance = 80
 command = { type = dissent value = 10 }
 command = { trigger = { exists = U24 } type = end_access which = U24 }
@@ -158,7 +158,7 @@ command = { trigger = { alliance = { country = U07 country = U25 } } type = acce
 }
 
 action = {
-name = "A peace with perfidious Albion would only be the peace of the grave!"
+name = "EVT_200200_OPTIONB"
 ai_chance = 20
 command = { type = dissent value = 10 }
 }
@@ -170,13 +170,13 @@ country = U07
 
 # Triggered by 200200
 
-name = "Armistice With Germany"
+name = "EVT_200201_NAME"
 desc = "EVT_200201_DESC"
 style = 2
 picture = "Entente1"
 
 action = {
-name = "Hurrah!"
+name = "EVT_200201_OPTIONA"
 command = { type = dissent value = -3 }
 command = { trigger = { puppet = { country = BEL country = GER } } type = event which = 200250 where = U07 when = 7 } # The Fate of Belgium
 command = { trigger = { puppet = { country = BEL country = GER } } type = inherit which = BEL }
@@ -195,13 +195,13 @@ country = RUS
 
 # Triggered by 200200
 
-name = "Armistice With Germany"
+name = "EVT_200202_NAME"
 desc = "EVT_200202_DESC"
 style = 2
 picture = "Entente3"
 
 action = {
-name = "Finally the shame of Brest-Litovsk is no more!"
+name = "EVT_200202_OPTIONA"
 command = { type = dissent value = -3 }
 }
 }
@@ -212,13 +212,13 @@ country = VIC
 
 # Triggered by 200200
 
-name = "Armistice With Germany"
+name = "EVT_200203_NAME"
 desc = "EVT_200203_DESC"
 style = 2
 picture = "Entente1"
 
 action = {
-name = "Le Prussianisme has been dealt its final blow!"
+name = "EVT_200203_OPTIONA"
 command = { type = dissent value = -3 }
 }
 }
@@ -229,13 +229,13 @@ country = U24
 
 # Triggered by 200200
 
-name = "Armistice With Germany"
-desc = "After a long and bitter struggle, the Entente has finally brought the German Empire to its knees. Austria-Hungary will be rewarded!"
+name = "EVT_200210_NAME"
+desc = "EVT_200210_DESC"
 style = 2
 picture = "austrohunarmy_march"
 
 action = {
-name = "We have torn down the proud Hohenzollerns!!"
+name = "EVT_200210_OPTIONA"
 command = { type = dissent value = -3 }
 }
 }
@@ -246,13 +246,13 @@ country = U25
 
 # Triggered by 200200
 
-name = "Armistice With Germany"
-desc = "After a long and bitter struggle, the Entente has finally brought the German Empire to its knees. The Danubian Federation will be rewarded!"
+name = "EVT_200211_NAME"
+desc = "EVT_200211_DESC"
 style = 2
 picture = "austrohunarmy_march"
 
 action = {
-name = "We have torn down the proud Hohenzollerns!!"
+name = "EVT_200211_OPTIONA"
 command = { type = dissent value = -3 }
 }
 }
@@ -265,14 +265,14 @@ country = U07
 
 # Triggered by 200201
 
-name = "The London Peace Conference"
+name = "EVT_200204_NAME"
 desc = "EVT_200204_DESC"
 style = 2
 picture = "Entente4"
 
 action = {
 ai_chance = 93
-name = "Impose harsh conditions!"
+name = "EVT_200204_OPTIONA"
 command = { trigger = { alliance = { country = U07 country = RUS } } type = trigger which = 200205 } #RUS claims on Germany
 command = { trigger = { alliance = { country = U07 country = VIC } } type = trigger which = 200206 } #VIC claims on Germany
 command = { trigger = { alliance = { country = U07 country = U24 } } type = trigger which = 200212 } #U24 claims on Germany
@@ -283,7 +283,7 @@ command = { type = dissent value = -20 }
 }
 action_b = {
 ai_chance = 7
-name = "Impose mild conditions!"
+name = "EVT_200204_OPTIONB"
 command = { trigger = { alliance = { country = U07 country = RUS } } type = trigger which = 200205 } #RUS claims on Germany
 command = { trigger = { alliance = { country = U07 country = VIC } } type = trigger which = 200206 } #VIC claims on Germany
 command = { trigger = { alliance = { country = U07 country = U24 } } type = trigger which = 200212 } #U24 claims on Germany
@@ -300,21 +300,21 @@ country = RUS
 
 # Triggered by 200204
 
-name = "The London Peace Conference - Russian Terms"
+name = "EVT_200205_NAME"
 desc = "EVT_200205_DESC"
 style = 2
 picture = "Entente3"
 
 action_a = {
 ai_chance = 60
-name = "Demand a complete reversal of the Brest-Litovsk Treaty!"
+name = "EVT_200205_OPTIONA"
 command = { type = belligerence which = RUS value = 5  }
 command = { type = setflag which = LPC_RUS_MILD }
 command = { type = dissent value = -10 }
 }
 action_b = {
 ai_chance = 40
-name = "Demand our 1914 borders AND East Prussia!"
+name = "EVT_200205_OPTIONB"
 command = { type = belligerence which = RUS value = 10  }
 command = { type = setflag which = LPC_RUS_HARSH }
 command = { type = dissent value = -10 }
@@ -327,21 +327,21 @@ country = VIC
 
 # Triggered by 200204
 
-name = "The London Peace Conference - French Terms"
+name = "EVT_200206_NAME"
 desc = "EVT_200206_DESC"
 style = 2
 picture = "Entente4"
 
 action_a = {
 ai_chance = 30
-name = "Demand the return of our colonies and Alsace-Lorraine!"
+name = "EVT_200206_OPTIONA"
 command = { type = belligerence which = VIC value = 5  }
 command = { type = setflag which = LPC_VIC_MILD }
 command = { type = dissent value = -10 }
 }
 action_b = {
 ai_chance = 70
-name = "Demand Alsace-Lorraine, our colonies AND occupy the Rhineland!"
+name = "EVT_200206_OPTIONB"
 command = { type = belligerence which = RUS value = 10  }
 command = { type = setflag which = LPC_VIC_HARSH }
 command = { type = dissent value = -10 }
@@ -354,21 +354,21 @@ country = U24
 
 # Triggered by 200204
 
-name = "The London Peace Conference - Austro-Hungarian Terms"
-desc = "Austria-Hungary played a vital part in defeating the German Empire. What should we demand?"
+name = "EVT_200212_NAME"
+desc = "EVT_200212_DESC"
 style = 2
 picture = "Entente4"
 
 action_a = {
 ai_chance = 30
-name = "Demand the annexation of the Catholic Kingdom of Bavaria!"
+name = "EVT_200212_OPTIONA"
 command = { type = belligerence which = U24 value = 5  }
 command = { type = setflag which = LPC_U24_MILD }
 command = { type = dissent value = -10 }
 }
 action_b = {
 ai_chance = 70
-name = "Demand the annexation of the Bavaria, Wurttemberg and Baden!"
+name = "EVT_200212_OPTIONB"
 command = { type = belligerence which = U24 value = 10  }
 command = { type = setflag which = LPC_U24_HARSH }
 command = { type = dissent value = -10 }
@@ -381,21 +381,21 @@ country = U25
 
 # Triggered by 200204
 
-name = "The London Peace Conference - Danubian Terms"
-desc = "The Danubian peoples played a vital part in defeating the German Empire. What should we demand?"
+name = "EVT_200213_NAME"
+desc = "EVT_200213_DESC"
 style = 2
 picture = "Entente4"
 
 action_a = {
 ai_chance = 30
-name = "Demand the annexation of the Catholic Kingdom of Bavaria!"
+name = "EVT_200213_OPTIONA"
 command = { type = belligerence which = U24 value = 5  }
 command = { type = setflag which = LPC_U25_MILD }
 command = { type = dissent value = -10 }
 }
 action_b = {
 ai_chance = 70
-name = "Demand the annexation of the Bavaria, Wurttemberg and Baden!"
+name = "EVT_200213_OPTIONB"
 command = { type = belligerence which = U24 value = 10  }
 command = { type = setflag which = LPC_U25_HARSH }
 command = { type = dissent value = -10 }
@@ -408,14 +408,14 @@ country = GER
 
 # Triggered by 200204
 
-name = "The London Peace Conference - Results"
-desc = "We have been presented with the terms of the victorious Entente and must now follow them. This is the darkest hour of the Kaiserreich."
+name = "EVT_200207_NAME"
+desc = "EVT_200207_DESC"
 style = 2
 picture = "Entente4"
 
 action_a = {
 ai_chance = 100
-name = "Vae Victis."
+name = "EVT_200207_OPTIONA"
 command = { type = belligerence which = GER value = -10  }
 #Guinea + Solomon + Bismarck Archipelago to Australian Federation if possible, otherwise to U07
 command = { trigger = { alliance = { country = U07 country = AST } } type = secederegion which = AST value = "New Guinea" }
@@ -563,14 +563,14 @@ country = CON
 
 # Triggered by 200207
 
-name = "The Maiming of Mittelafrika"
-desc = "As per the London Peace Treaty, we must secede large tracts of former French colonies to the National French fools."
+name = "EVT_200208_NAME"
+desc = "EVT_200208_DESC"
 style = 2
 picture = "Entente4"
 
 action_a = {
 ai_chance = 100
-name = "It was fun while it lasted."
+name = "EVT_200208_OPTIONA"
 command = { type = secedearea which = U07 value = "GOLD COAST" when = 1 }
 command = { type = secedearea which = VIC value = "Slave Coast" when = 1 }
 command = { type = secedearea which = VIC value = "Ivory Coast" when = 1 }
@@ -593,14 +593,14 @@ country = RUS
 
 # Triggered by 200207
 
-name = "Dividends from the Treaty of London"
-desc = "With the ink still wet on the peace treaty, Russian troops move in to assume absolute control!"
+name = "EVT_200209_NAME"
+desc = "EVT_200209_DESC"
 style = 2
 picture = "Entente4"
 
 action_a = {
 ai_chance = 100
-name = "It will all belong to Mother Russia!"
+name = "EVT_200209_OPTIONA"
 command = { trigger = { OR = { alliance = { country = GER country = UKR } puppet = { country = UKR country = GER } } } type = inherit which = UKR }
 command = { trigger = { OR = { alliance = { country = GER country = BLR } puppet = { country = BLR country = GER } } } type = inherit which = BLR }
 command = { trigger = { OR = { alliance = { country = GER country = LAT } puppet = { country = LAT country = GER } } } type = inherit which = LAT }
@@ -627,14 +627,14 @@ country = U24
 
 # Triggered by 200207
 
-name = "Dividends from the Treaty of London" #Austro-Hungarian claims
-desc = "With the ink still wet on the peace treaty, Austro-Hungarian troops move in to assume absolute control!"
+name = "EVT_200214_NAME" #Austro-Hungarian claims
+desc = "EVT_200214_DESC"
 style = 2
 picture = "Entente4"
 
 action_a = {
 ai_chance = 100
-name = "Bavarians are just Austrians with better beer after all."
+name = "EVT_200214_OPTIONA"
 command = { type = dissent value = -5 }
 command = { trigger = { flag = LPC_U24_MILD } type = addclaim which = 174 } # Bayreuth
 command = { trigger = { flag = LPC_U24_MILD } type = addclaim which = 175 } # Regensburg
@@ -664,14 +664,14 @@ country = U25
 
 # Triggered by 200207
 
-name = "Dividends from the Treaty of London" #Danubian claims
-desc = "With the ink still wet on the peace treaty, the troops of the Danubian Federation move in to assume absolute control!"
+name = "EVT_200215_NAME" #Danubian claims
+desc = "EVT_200215_DESC"
 style = 2
 picture = "Entente4"
 
 action_a = {
 ai_chance = 100
-name = "Bavarians are just Austrians with better beer after all."
+name = "EVT_200215_OPTIONA"
 command = { type = dissent value = -5 }
 command = { trigger = { flag = LPC_U25_MILD } type = addclaim which = 174 } # Bayreuth
 command = { trigger = { flag = LPC_U25_MILD } type = addclaim which = 175 } # Regensburg
@@ -702,21 +702,21 @@ country = RUS
 
 # Triggered by 200204
 
-name = "The London Peace Conference - Russian Terms"
+name = "EVT_200216_NAME"
 desc = "EVT_200205_DESC"
 style = 2
 picture = "Entente3"
 
 action_a = {
 ai_chance = 70
-name = "Demand a complete reversal of the Brest-Litovsk Treaty!"
+name = "EVT_200216_OPTIONA"
 command = { type = belligerence which = RUS value = 5  }
 command = { type = setflag which = LPC_RUS_MILD }
 command = { type = dissent value = -10 }
 }
 action_b = {
 ai_chance = 30
-name = "Demand our 1914 borders AND East Prussia!"
+name = "EVT_200216_OPTIONB"
 command = { type = belligerence which = RUS value = 10  }
 command = { type = setflag which = LPC_RUS_HARSH }
 command = { type = dissent value = -10 }
@@ -729,21 +729,21 @@ country = VIC
 
 # Triggered by 200204
 
-name = "The London Peace Conference - French Terms"
+name = "EVT_200217_NAME"
 desc = "EVT_200206_DESC"
 style = 2
 picture = "Entente4"
 
 action_a = {
 ai_chance = 70
-name = "Demand the return of our colonies and Alsace-Lorraine!"
+name = "EVT_200217_OPTIONA"
 command = { type = belligerence which = VIC value = 5  }
 command = { type = setflag which = LPC_VIC_MILD }
 command = { type = dissent value = -10 }
 }
 action_b = {
 ai_chance = 30
-name = "Demand Alsace-Lorraine, our colonies AND occupy the Rhineland!"
+name = "EVT_200217_OPTIONB"
 command = { type = belligerence which = RUS value = 10  }
 command = { type = setflag which = LPC_VIC_HARSH }
 command = { type = dissent value = -10 }
@@ -756,21 +756,21 @@ country = U24
 
 # Triggered by 200204
 
-name = "The London Peace Conference - Austro-Hungarian Terms"
-desc = "Austria-Hungary played a vital part in defeating the German Empire. What should we demand?"
+name = "EVT_200218_NAME"
+desc = "EVT_200218_DESC"
 style = 2
 picture = "Entente4"
 
 action_a = {
 ai_chance = 70
-name = "Demand the annexation of the Catholic Kingdom of Bavaria!"
+name = "EVT_200218_OPTIONA"
 command = { type = belligerence which = U24 value = 5  }
 command = { type = setflag which = LPC_U24_MILD }
 command = { type = dissent value = -10 }
 }
 action_b = {
 ai_chance = 30
-name = "Demand the annexation of the Bavaria, Württemberg and Baden!"
+name = "EVT_200218_OPTIONB"
 command = { type = belligerence which = U24 value = 10  }
 command = { type = setflag which = LPC_U24_HARSH }
 command = { type = dissent value = -10 }
@@ -783,21 +783,21 @@ country = U25
 
 # Triggered by 200204
 
-name = "The London Peace Conference - Danubian Terms"
-desc = "The Danubian peoples played a vital part in defeating the German Empire. What should we demand?"
+name = "EVT_200219_NAME"
+desc = "EVT_200219_DESC"
 style = 2
 picture = "Entente4"
 
 action_a = {
 ai_chance = 70
-name = "Demand the annexation of the Catholic Kingdom of Bavaria!"
+name = "EVT_200219_OPTIONA"
 command = { type = belligerence which = U24 value = 5  }
 command = { type = setflag which = LPC_U25_MILD }
 command = { type = dissent value = -10 }
 }
 action_b = {
 ai_chance = 30
-name = "Demand the annexation of the Bavaria, Württemberg and Baden!"
+name = "EVT_200219_OPTIONB"
 command = { type = belligerence which = U24 value = 10  }
 command = { type = setflag which = LPC_U25_HARSH }
 command = { type = dissent value = -10 }
@@ -810,14 +810,14 @@ country = GER
 
 # Triggered by 200204
 
-name = "The London Peace Conference - Results"
-desc = "We have been presented with the terms of the victorious Entente and must now follow them. This is the darkest hour of the Kaiserreich."
+name = "EVT_200220_NAME"
+desc = "EVT_200220_DESC"
 style = 2
 picture = "Entente4"
 
 action_a = {
 ai_chance = 100
-name = "Vae Victis."
+name = "EVT_200220_OPTIONA"
 command = { type = belligerence which = GER value = -10  }
 #Guinea + Solomon + Bismarck Archipelago to Australian Federation if possible, otherwise to U07
 command = { trigger = { alliance = { country = U07 country = AST } } type = secederegion which = AST value = "New Guinea" }
@@ -950,14 +950,14 @@ country = U07
 
 # Triggered by 200201
 
-name = "The Fate of Belgium"
-desc = "With the defeat of the Kaiserreich, we have torn down the unpopular German satrapy of Flanders-Wallonia. Should we restore gallant little Belgium to its rightful place in the Entente?"
+name = "EVT_200250_NAME"
+desc = "EVT_200250_DESC"
 style = 2
 picture = "Belprop"
 
 action_a = {
 ai_chance = 100
-name = "Gallant little Belgium rises once again!"
+name = "EVT_200250_OPTIONA"
 command = { type = belligerence which = U07 value = -5  }
 command = { type = independence which = BEL value = 1 when = 0 }
 command = { type = make_puppet which = BEL }
@@ -970,7 +970,7 @@ command = { type = dissent value = -10 }
 }
 action_b = {
 ai_chance = 0
-name = "Maintain a military occupation of the Channel Ports!"
+name = "EVT_200250_OPTIONB"
 command = { type = belligerence which = U07 value = 10  }
 command = { type = dissent value = 10 }
 }
@@ -982,14 +982,14 @@ country = BEL
 
 # Triggered by 200201
 
-name = "Independent Belgium"
-desc = "Flemmings and Walloons rally round the king!"
+name = "EVT_200251_NAME"
+desc = "EVT_200251_DESC"
 style = 2
 picture = "Belprop"
 
 action_a = {
 ai_chance = 100
-name = "Gallant little Belgium rises once again!"
+name = "EVT_200251_OPTIONA"
 command = { type = set_relation which = U07 value = 200 }
 command = { type = set_relation which = VIC value = 200 }
 command = { type = set_relation which = RUS value = 200 }

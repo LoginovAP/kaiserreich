@@ -13,11 +13,11 @@ date = { day = 10 month = march year = 1936 }
 offset = 30
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Antihaitianismo"
-desc = "Since the XIXth century, Haiti and our Republic have considered themselves rivals over political mastery of Hispaniola. Over the past few decades, a large Haitian minority has settled on the border areas of the Dominican Republic, often being accused of criminal activity. Under the current dictatorship of Rafael Trujillo, this 'anti-haitianismo' policy has gained much ground, including promises for further 'dominicanization' of the border areas - that is, the forced eviction of Haitian settlers."
+name = "EVT_55550_NAME"
+desc = "EVT_55550_DESC"
 
 action = {
-name = "Continue the Anti-Haitian policies"
+name = "EVT_55550_OPTIONA"
 ai_chance = 95
 command = { type = relation which = HAI value = -50 }
 command = { type = setflag which = hispaniola_persecution }
@@ -25,7 +25,7 @@ command = { type = dissent value = 1 }
 }
 
 action = {
-name = "We'd better cease this persecution"
+name = "EVT_55550_OPTIONB"
 ai_chance = 5
 command = { type = dissent value = 2 }
 command = { type = relation which = HAI value = 10 }
@@ -48,11 +48,11 @@ date = { day = 1 month = january year = 1937 }
 offset = 50
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Massacre in Bánica"
-desc = "Over the past months, our president Rafael Trujillo has steped-up his anti-Haitian policies, including giving security forces a free-reign on dealing with illegal migrant workers on the border areas. Today, in Dajabón, he has declared that the 'Haitian question' is being solved, as army troops have massacred roughly three hundred Haitians settlers in the border town of San Francisco de Bánica."
+name = "EVT_55551_NAME"
+desc = "EVT_55551_DESC"
 
 action = {
-name = "Praise the officers who took part on the operation and continue our repressive policies"
+name = "EVT_55551_OPTIONA"
 ai_chance = 90
 command = { type = relation which = HAI value = -50 }
 command = { type = dissent value = 1 }
@@ -60,7 +60,7 @@ command = { type = trigger which = 55552 }
 }
 
 action = {
-name = "Maybe we've gone too far this time, apologise to the Haitians"
+name = "EVT_55551_OPTIONB"
 ai_chance = 10
 command = { type = dissent value = 4 }
 command = { type = domestic which = freedom value = 1 }
@@ -75,17 +75,17 @@ country = HAI
 style = 2
 picture = "Army"
 
-name = "Haitians massacred in Bánica"
-desc = "Dominican president Rafael Trujillo has steped-up his anti-Haitian policies, including giving security forces a free-reign on dealing with illegal migrant workers on the border areas. Today, in Dajabón, he has declared that the 'Haitian question' is being solved, as army troops have massacred roughly three hundred Haitians settlers in the border town of San Francisco de Bánica. Not only that, but the officers who took part in this operation were decorated - a signal that more repression is sure to come."
+name = "EVT_55552_NAME"
+desc = "EVT_55552_DESC"
 
 action = {
-name = "Demand apologies and compensation"
+name = "EVT_55552_OPTIONA"
 ai_chance = 90
 command = { type = trigger which = 55553 }
 }
 
 action = {
-name = "There's nothing that we can do, right now"
+name = "EVT_55552_OPTIONB"
 ai_chance = 10
 command = { type = dissent value = 8 }
 command = { type = setflag which = haiti_dissent }
@@ -97,16 +97,16 @@ id = 55553
 country = DOM
 style = 2
 
-name = "Compensation to Haiti?"
-desc = "As news of the Bánica massacre reached Port-au-Prince, the outraged Haitian government has demanded apologies and heavy monetary compensation."
+name = "EVT_55553_NAME"
+desc = "EVT_55553_DESC"
 
 action = {
-name = "They must be joking"
+name = "EVT_55553_OPTIONA"
 ai_chance = 95
 command = { type = trigger which = 55555 }
 }
 action = {
-name = "We must accept their demands"
+name = "EVT_55553_OPTIONB"
 ai_chance = 5
 command = { type = dissent value = 5 }
 command = { type = clrflag which = hispaniola_persecution }
@@ -120,11 +120,11 @@ id = 55554
 country = HAI
 style = 2
 
-name = "The Dominican Republic has accepted our demands"
-desc = "As news of the Bánica massacre reached Port-au-Prince, our outraged government has demanded apologies and heavy monetary compensation. The Dominicans have bowed to our demands!"
+name = "EVT_55554_NAME"
+desc = "EVT_55554_DESC"
 
 action = {
-name = "Great!"
+name = "EVT_55554_OPTIONA"
 command = { type = dissent value = -1 }
 command = { type = money value = 100 }
 }
@@ -135,11 +135,11 @@ id = 55555
 country = HAI
 style = 2
 
-name = "The Dominicans have refused our demands"
-desc = "As news of the Bánica massacre reached Port-au-Prince, the outraged Haitian government has demanded apologies and heavy monetary compensation. Our demands have been reject, however. What shall we do?"
+name = "EVT_55555_NAME"
+desc = "EVT_55555_DESC"
 
 action = {
-name = "Ready the troops and call up the reserves, we must attack!"
+name = "EVT_55555_OPTIONA"
 ai_chance = 10
 command = { type = domestic which = defense_lobby value = 2 }
 command = { type = domestic which = interventionism value = 2 }
@@ -150,7 +150,7 @@ command = { type = dissent value = -10 }
 }
 
 action = {
-name = "There is nothing that we can do right now"
+name = "EVT_55555_OPTIONB"
 ai_chance = 90
 command = { type = dissent value = 8 }
 command = { type = setflag which = haiti_dissent }
@@ -163,16 +163,16 @@ country = HAI
 style = 2
 picture = "Army"
 
-name = "Haitians massacred in Bánica"
-desc = "News have reached Port-au-Prince that Dominican army troops, ordered to deal with Haitian migrant workers, have massacred roughly three hundred Haitians settlers in the border town of San Francisco de Bánica. The Dominican foreign office was quick, however, to clarify that the troops weren't acting under orders from the central government, and have sent apologies to us..."
+name = "EVT_55556_NAME"
+desc = "EVT_55556_DESC"
 
 action = {
-name = "Apologies are not enough - demand monetary compensation"
+name = "EVT_55556_OPTIONA"
 ai_chance = 50
 command = { type = trigger which = 55553 }
 }
 action = {
-name = "Demand Trujillo step down as President"
+name = "EVT_55556_OPTIONB"
 ai_chance = 50
 command = { type = trigger which = 55557 }
 command = { type = domestic which = defense_lobby value = 1 }
@@ -185,12 +185,12 @@ id = 55557
 country = DOM
 style = 2
 
-name = "Haitian demands"
-desc = "As news of the Bánica massacre reached Port-au-Prince, the outraged Haitian government has demanded that president Trujillo steps down, under threat of war!"
+name = "EVT_55557_NAME"
+desc = "EVT_55557_DESC"
 
 action = {
 ai_chance = 60
-name = "Resign, but appoint Peynado in my place"
+name = "EVT_55557_OPTIONA"
 command = { type = headofstate which = 49031 } # Peynado
 command = { type = headofgovernment which = 49002 } # Peynado
 command = { type = domestic which = defense_lobby value = -1 }
@@ -198,7 +198,7 @@ command = { type = dissent value = 10 }
 command = { type = trigger which = 555581 }
 }
 action = {
-name = "Their Demands are unreasonable!"
+name = "EVT_55557_OPTIONB"
 ai_chance = 50
 command = { type = trigger which = 55558 }
 }
@@ -210,11 +210,11 @@ country = HAI
 style = 2
 picture = "constitutional"
 
-name = "The Dominican Republic refuses our demands"
-desc = "Trujillo has refused the demands we have sent. What course of action should we take?"
+name = "EVT_55558_NAME"
+desc = "EVT_55558_DESC"
 
 action = {
-name = "Justice must prevail, ready the troops!"
+name = "EVT_55558_OPTIONA"
 ai_chance = 75
 command = { type = domestic which = defense_lobby value = 2 }
 command = { type = domestic which = interventionism value = 2 }
@@ -224,7 +224,7 @@ command = { type = add_division value = infantry when = 5 }
 command = { type = dissent value = -10 }
 }
 action = {
-name = "They will just see it, one day!"
+name = "EVT_55558_OPTIONB"
 ai_chance = 25
 command = { type = dissent value = 8 }
 command = { type = setflag which = haiti_dissent }
@@ -239,11 +239,11 @@ country = HAI
 style = 2
 picture = "constitutional"
 
-name = "The Republic accepts our Demands"
-desc = "Trujillo has accepted our demands.  He has been replaced with Jacinto Bienvenido Peynado as president of the Dominican Republic."
+name = "EVT_555581_NAME"
+desc = "EVT_555581_DESC"
 
 action = {
-name = "Conflict is avoided through dplomacy!"
+name = "EVT_555581_OPTIONA"
 command = { type = dissent value = -1 }
 }
 }
@@ -263,11 +263,11 @@ date = { day = 1 month = october year = 1937 }
 offset = 50
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Parsley Massacre"
-desc = "Our security forces, under president Trujillo's orders, have continued the persecution of Haitians on the border areas. Over the past few days, army troops have massacred nearly twenty-thousand Haitian migrant workers, mostly sugarcane and coffee planters, in the vicinity of Dajabón. Dozens of villages have been razed and its inhabitants killed, rumors says, over the inability of French- and Creole-speaking Haitians to properly pronounce the Spanish word for'parsley' - 'perejil'."
+name = "EVT_55559_NAME"
+desc = "EVT_55559_DESC"
 
 action = {
-name = "Hmm, let's see how this develops..."
+name = "EVT_55559_OPTIONA"
 command = { type = relation which = HAI value = -100 }
 command = { type = clrflag which = hispaniola_persecution }
 command = { type = trigger which = 55560 }
@@ -280,11 +280,11 @@ country = HAI
 style = 2
 picture = "parsley"
 
-name = "The Parsley Massacre"
-desc = "Dominican troops under president Trujillo's orders have continued the persecution of Haitians on the border areas. Over the past few days, their forces have massacred nearly twenty-thousand Haitian migrant workers, mostly sugarcane and coffee planters, in the vicinity of Dajabón. Dozens of villages have been razed and its inhabitants killed,with guns, machetes, clubs and knives by Dominican soldiers and irregular militias, some while trying to flee to Haiti by crossing the Artibonite River."
+name = "EVT_55560_NAME"
+desc = "EVT_55560_DESC"
 
 action = {
-name = "Demand Trujillo step down as President"
+name = "EVT_55560_OPTIONA"
 ai_chance = 45
 command = { type = trigger which = 55561 }
 command = { type = domestic which = defense_lobby value = 1 }
@@ -293,7 +293,7 @@ command = { type = dissent value = -5 }
 }
 
 action = {
-name = "Justice must prevail, ready the troops!"
+name = "EVT_55560_OPTIONB"
 ai_chance = 50
 command = { type = domestic which = defense_lobby value = 2 }
 command = { type = domestic which = interventionism value = 2 }
@@ -304,7 +304,7 @@ command = { type = dissent value = -10 }
 }
 
 action = {
-name = "There is nothing that we can do, unfortunately"
+name = "EVT_55560_OPTIONC"
 ai_chance = 5
 command = { type = dissent value = 15 }
 command = { type = setflag which = haiti_dissent }
@@ -317,12 +317,12 @@ country = DOM
 style = 2
 picture = "parsley"
 
-name = "Haiti demands the resignation of President Trujillo"
-desc = "As news of the Parsley Massacre reached Haiti, their government has demanded that President Trujillo resigns! How outrageous!"
+name = "EVT_55561_NAME"
+desc = "EVT_55561_DESC"
 
 action = {
 ai_chance = 30
-name = "Resign, but appoint Peynado in my place"
+name = "EVT_55561_OPTIONA"
 command = { type = headofstate which = 49031 } # Peynado
 command = { type = headofgovernment which = 49002 } # Peynado
 command = { type = domestic which = defense_lobby value = -1 }
@@ -331,7 +331,7 @@ command = { type = dissent value = 10 }
 
 action = {
 ai_chance = 60
-name = "This is our chance to unite all of Hispaniola under one flag!"
+name = "EVT_55561_OPTIONB"
 command = { type = domestic which = interventionism value = 2 }
 command = { type = domestic which = defense_lobby value = 2 }
 command = { type = build_division which = infantry }
@@ -342,7 +342,7 @@ command = { type = dissent value = -10 }
 
 action = {
 ai_chance = 10
-name = "Their Demands are Unreasonable!"
+name = "EVT_55561_OPTIONC"
 command = { type = trigger which = 55562 }
 }
 }
@@ -352,11 +352,11 @@ id = 55562
 country = HAI
 style = 2
 
-name = "The Dominican Republic refuses our demands"
-desc = "Trujillo has refused our demands. What course of action should we take?"
+name = "EVT_55562_NAME"
+desc = "EVT_55562_DESC"
 
 action = {
-name = "Justice must prevail, ready the troops!"
+name = "EVT_55562_OPTIONA"
 ai_chance = 85
 command = { type = domestic which = defense_lobby value = 2 }
 command = { type = domestic which = interventionism value = 2 }
@@ -367,7 +367,7 @@ command = { type = dissent value = -10 }
 }
 
 action = {
-name = "They will just see it, one day!"
+name = "EVT_55562_OPTIONB"
 ai_chance = 15
 command = { type = dissent value = 8 }
 command = { type = setflag which = haiti_dissent }
@@ -390,12 +390,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 25
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Haitian-Dominican War - Caribbean Intervention"
-desc = "Talks have broken down between Haiti and the Dominican Republic, and now the entire island of Hispaniola has been thrown into war. We have made ourselves the protectors of the Caribbean, ensuring peace and tranquility, and we have failed. Now, it is time to correct our mistake - action must be taken."
+name = "EVT_55563_NAME"
+desc = "EVT_55563_DESC"
 
 action = {
 ai_chance = 25
-name = "Send Supplies and Volunteers to the Haitians"
+name = "EVT_55563_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = relation which = DOM value = -50 }
@@ -408,7 +408,7 @@ command = { type = trigger which = 55564 }
 }
 action = {
 ai_chance = 25
-name = "Support the Dominicans"
+name = "EVT_55563_OPTIONB"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = relation which = DOM value = 50 }
@@ -421,7 +421,7 @@ command = { type = trigger which = 55565 }
 }
 action = {
 ai_chance = 50
-name = "This is not our business"
+name = "EVT_55563_OPTIONC"
 command = { type = domestic which = interventionism value = -1 }
 }
 action = {
@@ -432,7 +432,7 @@ ideology =  social_conservative
 }
 }
 ai_chance = 0
-name = "The Federation must expand - Seize Hispaniola!"
+name = "EVT_55563_OPTIOND"
 command = { type = add_corps which = "1st Transport Fleet" value = naval where = 1997 }
 command = { type = add_division which = "Bermuda Transport" value = transport when = 1 }
 command = { type = add_division which = "Long Island Transport" value = transport when = 1 }
@@ -454,11 +454,11 @@ country = HAI
 style = 2
 picture = "lend_lease"
 
-name = "The Federation intervenes"
-desc = "The Caribbean Federation has decided to send up supplies and volunteers to aid in our war effort against the Dominican Republic. They have sent two divisons of militia and one divison of infantry, as well as supplies and resources."
+name = "EVT_55564_NAME"
+desc = "EVT_55564_DESC"
 
 action = {
-name = "Great!"
+name = "EVT_55564_OPTIONA"
 command = { type = supplies value = 500 }
 command = { type = oilpool value = 150 }
 command = { type = add_division value = militia when = 4 }
@@ -473,11 +473,11 @@ country = DOM
 style = 2
 picture = "lend_lease"
 
-name = "The Federation intervenes"
-desc = "The Caribbean Federation has decided to send up supplies and volunteers to aid in our war effort against Haiti. They have sent two divisons of militia and one divison of infantry, as well as supplies and resources."
+name = "EVT_55565_NAME"
+desc = "EVT_55565_DESC"
 
 action = {
-name = "Great!"
+name = "EVT_55565_OPTIONA"
 command = { type = supplies value = 500 }
 command = { type = oilpool value = 150 }
 command = { type = add_division value = militia when = 4 }
@@ -501,11 +501,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 25
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Republic is defeated"
-desc = "Our long time enemies, the Dominican Republic, have been defeated. We can either liberate them with a government on our model, or take steps to formally annex them into our nation."
+name = "EVT_55566_NAME"
+desc = "EVT_55566_DESC"
 
 action = {
-name = "Establish a puppet regime in the Dominican Republic"
+name = "EVT_55566_OPTIONA"
 ai_chance = 30
 command = { type = belligerence which = -3 }
 command = { type = independence which = DOM value = 1 when = 0 }
@@ -515,7 +515,7 @@ command = { type = trigger which = 55567 }
 }
 
 action = {
-name = "We've fought for that territory, we're keeping it"
+name = "EVT_55566_OPTIONB"
 ai_chance = 70
 command = { type = belligerence value = 3 }
 command = { type = addclaim which = 1780 }
@@ -528,11 +528,11 @@ event = {
 id = 55567
 country = DOM
 
-name = "Rebuilding the Republic"
-desc = "..."
+name = "EVT_55567_NAME"
+desc = "EVT_55567_DESC"
 
 action = {
-name = "..."
+name = "EVT_55567_OPTIONA"
 command = { type = sleepminister which = 49001 } #Trujillo
 command = { type = sleepminister which = 49005 } #Trujillo
 command = { type = sleepminister which = 49007 } #Trujillo
@@ -568,11 +568,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 25
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Republic is victorious"
-desc = "Haiti has been defeated and now we control the entire island of Hispaniola! We have found little resistance to our occupation and the Haitian government has fled to Jamaica. The factories were taken intact and will soon be operational. Now we can either liberate them with a government on our model, or take steps to formally annex them into our nation."
+name = "EVT_55568_NAME"
+desc = "EVT_55568_DESC"
 
 action = {
-name = "Establish a puppet regime in Haiti"
+name = "EVT_55568_OPTIONA"
 ai_chance = 30
 command = { type = belligerence which = -3 }
 command = { type = independence which = HAI value = 1 when = 0 }
@@ -582,7 +582,7 @@ command = { type = trigger which = 55569 }
 }
 
 action = {
-name = "All of Hispaniola is now under our flag"
+name = "EVT_55568_OPTIONB"
 ai_chance = 70
 command = { type = belligerence value = 3 }
 command = { type = addclaim which = 1781 }
@@ -595,11 +595,11 @@ event = {
 id = 55569
 country = HAI
 
-name = "Rebuilding Haiti"
-desc = "..."
+name = "EVT_55569_NAME"
+desc = "EVT_55569_DESC"
 
 action = {
-name = "..."
+name = "EVT_55569_OPTIONA"
 command = { type = sleepminister which = 78001 }
 command = { type = sleepminister which = 78002 }
 command = { type = sleepminister which = 78009 }
@@ -625,12 +625,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 250
 deathdate = { day = 29 month = december year = 1977 }
 
-name = "Military coup!"
-desc = "Following our inability to properly deal with the Dominicans following the massacres of Haitian workers there, several military leaders under the leadership of Alfred Auguste Nemours have revolted! Army units are now about to march on the streets of Port-au-Prince!"
+name = "EVT_55570_NAME"
+desc = "EVT_55570_DESC"
 
 action = {
 ai_chance = 50
-name = "The presidential palace is raided, the coup is succesfull"
+name = "EVT_55570_OPTIONA"
 command = { type = relation which = DOM value = -50 }
 command = { type = dissent value = 3 }
 command = { type = clrflag which = haiti_dissent }
@@ -651,7 +651,7 @@ command = { type = setflag which = haiti_dictatorship }
 
 action = {
 ai_chance = 50
-name = "Loyal units repel the attack, the Republic is safe for now"
+name = "EVT_55570_OPTIONB"
 command = { type = relation which = DOM value = 10 }
 command = { type = dissent value = -1 }
 command = { type = clrflag which = haiti_dissent }
@@ -683,12 +683,12 @@ date = { day = 1 month = march year = 1936 }
 offset = 5
 deathdate = { day = 29 month = december year = 1936 }
 
-name = "Haitian 1936 Referendum"
-desc = "In late 1935, Sténio Vincent, president of Haiti since 1930, had announced for today a referendum on whether he would be allowed to continue holding the post until 1944. If not, presidential elections will be called next year."
+name = "EVT_55571_NAME"
+desc = "EVT_55571_DESC"
 
 action = {
 ai_chance = 40
-name = "Yes - Allow Sténio Vicent to hold the presidency for another term"
+name = "EVT_55571_OPTIONA"
 command = { type = dissent value = 5 }
 command = { type = domestic which = freedom value = -2 }
 command = { type = sleepevent which = 55572 }
@@ -696,7 +696,7 @@ command = { type = sleepevent which = 55572 }
 
 action = {
 ai_chance = 60
-name = "No - Call for elections in 1937"
+name = "EVT_55571_OPTIONB"
 command = { type = dissent value = -5 }
 command = { type = domestic which = freedom value = 2 }
 }
@@ -721,12 +721,12 @@ date = { day = 1 month = march year = 1937 }
 offset = 5
 deathdate = { day = 29 month = december year = 1937 }
 
-name = "Haitian Elections, 1937"
-desc = "According to the results of the 1936 referendum, presidential elections were called. Sténio Vincent himself is running, under his National Party ticket, but is opposed by Élie Lescot, of the conservative Patriotic Coalition. The underdog Social-Democrats have also fielded Démosthenes Pétrus Calixte, a former Garde commander, but are not expected to pose a serious threat..."
+name = "EVT_55572_NAME"
+desc = "EVT_55572_DESC"
 
 action = {
 ai_chance = 50
-name = "National Party - Sténio Vincent"
+name = "EVT_55572_OPTIONA"
 command = { type = dissent value = 1 }
 command = { type = set_domestic which = democratic value = 4 }
 command = { type = set_domestic which = political_left value = 3 }
@@ -735,7 +735,7 @@ command = { type = headofgovernment which = 78002 } #Vincent
 }
 action = {
 ai_chance = 45
-name = "Patriotic Coalition - Élie Lescot"
+name = "EVT_55572_OPTIONB"
 command = { type = set_domestic which = democratic value = 3 }
 command = { type = set_domestic which = political_left value = 2 }
 command = { type = headofstate which = 78001 }
@@ -743,7 +743,7 @@ command = { type = headofgovernment which = 78002 }
 }
 action = {
 ai_chance = 5
-name = "Social Democratic Party - Démosthenes Pétrus Calixte"
+name = "EVT_55572_OPTIONC"
 command = { type = set_domestic which = democratic value = 9 }
 command = { type = set_domestic which = political_left value = 9 }
 command = { type = headofstate which = 78037 }
@@ -770,12 +770,12 @@ date = { day = 1 month = march year = 1944 }
 offset = 5
 deathdate = { day = 29 month = december year = 1944 }
 
-name = "Haitian Elections, 1944"
-desc = "Today, it's election day in Haiti, as voters all over the countries are ready to select the next president. Three main parties are participating: the National Party, supported by the military, with Franck Lavaud... The Patriotic Coalition, with Élie Lescot... And the Social Democrats, with Démosthenes Pétrus Calixte."
+name = "EVT_55573_NAME"
+desc = "EVT_55573_DESC"
 
 action = {
 ai_chance = 40
-name = "National Party - Franck Lavaud"
+name = "EVT_55573_OPTIONA"
 command = { type = dissent value = 1 }
 command = { type = set_domestic which = democratic value = 4 }
 command = { type = set_domestic which = political_left value = 3 }
@@ -784,7 +784,7 @@ command = { type = headofgovernment which = 78147 }
 }
 action = {
 ai_chance = 45
-name = "Patriotic Coalition - Élie Lescot"
+name = "EVT_55573_OPTIONB"
 command = { type = set_domestic which = democratic value = 3 }
 command = { type = set_domestic which = political_left value = 2 }
 command = { type = headofstate which = 78001 }
@@ -792,7 +792,7 @@ command = { type = headofgovernment which = 78002 }
 }
 action = {
 ai_chance = 15
-name = "Social Democratic Party - Démosthenes Pétrus Calixte"
+name = "EVT_55573_OPTIONC"
 command = { type = set_domestic which = democratic value = 9 }
 command = { type = set_domestic which = political_left value = 9 }
 command = { type = headofstate which = 78037 }
@@ -819,12 +819,12 @@ date = { day = 1 month = march year = 1951 }
 offset = 5
 deathdate = { day = 29 month = december year = 1951 }
 
-name = "Haitian Elections, 1951"
-desc = "Once again, it's election day in Haiti. Three main candidates are disputing the votes: Frank Lavaud, of the National Party... Paul Magloire, of the Patriotic Coalition... And Dumarsais Estimé, of the Social Democratic Party"
+name = "EVT_55574_NAME"
+desc = "EVT_55574_DESC"
 
 action = {
 ai_chance = 40
-name = "National Party - Franck Lavaud"
+name = "EVT_55574_OPTIONA"
 command = { type = dissent value = 1 }
 command = { type = set_domestic which = democratic value = 4 }
 command = { type = set_domestic which = political_left value = 3 }
@@ -833,7 +833,7 @@ command = { type = headofgovernment which = 78147 }
 }
 action = {
 ai_chance = 45
-name = "Patriotic Coalition - Élie Lescot"
+name = "EVT_55574_OPTIONB"
 command = { type = set_domestic which = democratic value = 3 }
 command = { type = set_domestic which = political_left value = 2 }
 command = { type = headofstate which = 78001 }
@@ -841,7 +841,7 @@ command = { type = headofgovernment which = 78043 }
 }
 action = {
 ai_chance = 15
-name = "Social Democratic Party - Dumarsais Estimé"
+name = "EVT_55574_OPTIONC"
 command = { type = set_domestic which = democratic value = 9 }
 command = { type = set_domestic which = political_left value = 9 }
 command = { type = headofstate which = 78034 }
@@ -868,12 +868,12 @@ date = { day = 1 month = march year = 1958 }
 offset = 5
 deathdate = { day = 29 month = december year = 1958 }
 
-name = "Haitian Elections, 1958"
-desc = "Once again, it's election day in Haiti. This time, four main candidates are disputing the votes: François Duvalier, of the National Party... Louis Dejoie, of the Patriotic Coalition... Clement Jumelle, of the liberal Industrial Party... And Max Hudicourt, of the Social Democratic Party"
+name = "EVT_55575_NAME"
+desc = "EVT_55575_DESC"
 
 action = {
 ai_chance = 30
-name = "National Party  - François Duvalier"
+name = "EVT_55575_OPTIONA"
 command = { type = dissent value = 1 }
 command = { type = set_domestic which = democratic value = 4 }
 command = { type = set_domestic which = political_left value = 3 }
@@ -882,7 +882,7 @@ command = { type = headofgovernment which = 78149 }
 }
 action = {
 ai_chance = 30
-name = "Patriotic Coalition -  Louis Dejoie"
+name = "EVT_55575_OPTIONB"
 command = { type = set_domestic which = democratic value = 3 }
 command = { type = set_domestic which = political_left value = 2 }
 command = { type = headofstate which = 78033 }
@@ -890,7 +890,7 @@ command = { type = headofgovernment which = 78040 }
 }
 action = {
 ai_chance = 25
-name = "Industrial Party - Clement Jumelle"
+name = "EVT_55575_OPTIONC"
 command = { type = set_domestic which = democratic value = 9 }
 command = { type = set_domestic which = political_left value = 5 }
 command = { type = headofstate which = 78150}
@@ -898,7 +898,7 @@ command = { type = headofgovernment which = 78151 }
 }
 action = {
 ai_chance = 15
-name = "Social Democratic Party - Max Hudicourt"
+name = "EVT_55575_OPTIOND"
 command = { type = set_domestic which = democratic value = 9 }
 command = { type = set_domestic which = political_left value = 9 }
 command = { type = headofstate which = 78143 }
@@ -922,11 +922,11 @@ date = { day = 3 month = january year = 1936 }
 offset = 25
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "AI_EVENT"
-desc = "..."
+name = "EVT_55555990_NAME"
+desc = "EVT_55555990_DESC"
 
 action_a = {
-name = "Collapse"
+name = "EVT_55555990_OPTIONA"
 command = { type = max_organization which = land value = -50 }
 command = { type = remove_division which = -1 }
 command = { type = remove_division which = -1 }
@@ -954,11 +954,11 @@ date = { day = 3 month = january year = 1936 }
 offset = 25
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "AI_EVENT"
-desc = "..."
+name = "EVT_55555991_NAME"
+desc = "EVT_55555991_DESC"
 
 action_a = {
-name = "Collapse"
+name = "EVT_55555991_OPTIONA"
 command = { type = max_organization which = land value = -50 }
 command = { type = remove_division which = -1 }
 command = { type = remove_division which = -1 }
@@ -986,8 +986,8 @@ government = communist
 }
 }
 
-name = "American Union Refugees"
-desc = "The surrender of the AUS meant that thousands of refugees fled the country. Many of them used Florida to pass through to Cuba to escape capture. The refugees brought with them a lot of posessions and money that they had managed to liberate from the AUS before the surrender. They are more than willing to share some of the wealth with the people of Cuba."
+name = "EVT_55555992_NAME"
+desc = "EVT_55555992_DESC"
 style = 2
 
 date = { day = 1 month = july year = 1937 }
@@ -995,7 +995,7 @@ offset = 2
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Their loss is our gain"
+name = "EVT_55555992_OPTIONA"
 command = { type = money value = 100 }
 command = { type = manpowerpool value = 20 }
 command = { type = supplies value = 30 }

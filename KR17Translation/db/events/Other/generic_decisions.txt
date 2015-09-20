@@ -1656,13 +1656,13 @@ persistent = yes
 
 trigger = { domestic = { type = free_market value = 4 } }
 
-name = "Free Market Stimulates Research"
-desc = "Private investors decided to focus their investments on military and industrial researches. Thanks to their capitals, we have been able to fund new researches in our universities and research centres."
+name = "EVT_9000046_NAME"
+desc = "EVT_9000046_DESC"
 style = 2
 picture = "invest_research"
 
 action = {
-name = "Ok"
+name = "EVT_9000046_OPTIONA"
 command = { type = research_mod value = 1 }
 command = { type = dissent value = -1 }
 }
@@ -1678,13 +1678,13 @@ domestic = { type = free_market value = 4 }
 atwar = yes
 }
 
-name = "Free Market Stimulates Military Investment"
-desc = "Private investors decided to focus their investments on our military projects. Thanks to their capitals, we have been able to open new industries that will be able to deliver new military applications soon."
+name = "EVT_9000047_NAME"
+desc = "EVT_9000047_DESC"
 style = 2
 picture = "new_deal"
 
 action = {
-name = "Ok"
+name = "EVT_9000047_OPTIONA"
 command = { type = construct which = ic where = -4 value = 1 }
 command = { type = dissent value = -1 }
 }
@@ -1701,8 +1701,8 @@ decision = { atwar = yes convoypool = 100 }
 decision_trigger = { money = 500 supplies = 500 }
 trigger = { ai = no }
 
-name = "Convert Convoys Into Transports"
-desc = "Our country's navy needs more transport ships in order to transport troops for the upcoming military operations. We have the possibility to mobilize the merchant navy and press its ships into military service, but they will not be available for convoy duties anymore."
+name = "EVT_9000051_NAME"
+desc = "EVT_9000051_DESC"
 style = 2
 picture = "Convoys"
 decision_picture = "decision_convoys"
@@ -1712,7 +1712,7 @@ offset = 180
 deathdate = { day = 29 month = december year = 1999 }
 
 action = {
-name = "Ok"
+name = "EVT_9000051_OPTIONA"
 command = { type = transport_pool which = -1 value = -50 }
 command = { trigger = { technology = 3810 NOT = { technology = 3820 } } type = add_division value = transport when = 0 }
 command = { trigger = { technology = 3820 NOT = { technology = 3830 } } type = add_division value = transport when = 1 }
@@ -1777,8 +1777,8 @@ atwar = yes
 }
 
 
-name = "Women's role in the army"
-desc = "With one of the leading socialist countries openly allowing women into army we have to make a decision about our nation as well. Allowing women to serve in our armed forces will surely boost our manpower - but elements unwilling to change the status quo have to be taken into consideration as well."
+name = "EVT_1000033_NAME"
+desc = "EVT_1000033_DESC"
 
 date = { day = 1 month = may year = 1936 }
 offset = 50
@@ -1786,7 +1786,7 @@ deathdate = { day = 1 month = january year = 1970 }
 
 action_a = {
 ai_chance = 30
-name = "They can serve the same way the men do"
+name = "EVT_1000033_OPTIONA"
 command = { type = dissent value = 10 }
 command = { type = relative_manpower value = 50 }
 command = { type = local_setflag which = WOMEN_ARMY }
@@ -1794,7 +1794,7 @@ command = { type = local_setflag which = WOMEN_ARMY }
 
 action_b = {
 ai_chance = 60
-name = "We allow only volunteer service"
+name = "EVT_1000033_OPTIONB"
 command = { type = dissent value = 6 }
 command = { type = relative_manpower value = 20 }
 command = { type = local_setflag which = WOMEN_ARMY }
@@ -1802,7 +1802,7 @@ command = { type = local_setflag which = WOMEN_ARMY }
 
 action_c = {
 ai_chance = 10
-name = "This is unacceptable"
+name = "EVT_1000033_OPTIONC"
 command = { type = dissent value = -1 }
 command = { type = local_setflag which = WOMEN_NOARMY }
 }

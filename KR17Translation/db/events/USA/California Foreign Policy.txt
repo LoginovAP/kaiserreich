@@ -13,8 +13,8 @@ lost_national = { country = MEX value = 20 }
 war = { country = CAL country = MEX }
 control = { province = 1977 data = CAL }
 }
-name = "Mexico Surrenders"
-desc = "The war between the PSA and Mexico has been a disaster for the Mexicans. PSA forces have occupied most of the country and there is no way that the Mexican army can hold anymore. Surrender seems like the only option."
+name = "EVT_903950_NAME"
+desc = "EVT_903950_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -22,12 +22,12 @@ offset = 1
 deathdate = { day = 29 month = december year = 1954 }
 
 action_a = {
-name = "We surrender"
+name = "EVT_903950_OPTIONA"
 ai_chance = 99
 command = { type = trigger which = 903951 }
 }
 action_b = {
-name = "We shall never surrender!"
+name = "EVT_903950_OPTIONB"
 ai_chance = 1
 command = { type = dissent value = -1 }
 }
@@ -40,12 +40,12 @@ random = no
 country = CAL
 picture = "diplomatic_campaign"
 
-name = "Mexico Surrenders"
-desc = "With no hope of victory the Mexican government has decided to capitulate. The PSA now must decide what they wish to do with the defeated nation."
+name = "EVT_903951_NAME"
+desc = "EVT_903951_DESC"
 style = 2
 
 action_a = {
-name = "We only want South California"
+name = "EVT_903951_OPTIONA"
 ai_chance = 15
 command = { type = peace which = MEX value = 0 }
 command = { type = addcore which = 1979 } #Mexicali
@@ -54,14 +54,14 @@ command = { type = dissent value = -2 }
 command = { type = trigger which = 903952 }
 }
 action_b = {
-name = "Let us setup a friendly government"
+name = "EVT_903951_OPTIONB"
 ai_chance = 50
 command = { type = peace which = MEX value = 0 }
 command = { type = make_puppet which = MEX }
 command = { type = dissent value = -1 }
 }
 action_c = {
-name = "We only want South California and a friendly government!"
+name = "EVT_903951_OPTIONC"
 ai_chance = 10
 command = { type = peace which = MEX value = 0 }
 command = { type = make_puppet which = MEX }
@@ -71,7 +71,7 @@ command = { type = dissent value = -5 }
 command = { type = trigger which = 903952 }
 }
 action_d = {
-name = "Peace is all we want"
+name = "EVT_903951_OPTIOND"
 ai_chance = 25
 command = { type = peace which = MEX value = 0 }
 
@@ -84,12 +84,12 @@ random = no
 country = MEX
 picture = "diplomatic_campaign"
 
-name = "The loss of South California"
-desc = "The war between the PSA and Mexico has been a disaster for the Mexicans. PSA forces have occupied most of the country and there is no way that the Mexican army can hold anymore. Surrender seems like the only option."
+name = "EVT_903952_NAME"
+desc = "EVT_903952_DESC"
 style = 2
 
 action_a = {
-name = "It's the price we have to pay"
+name = "EVT_903952_OPTIONA"
 command = { type = secedeprovince which = CAL value = 1979 } #Mexicali
 command = { type = secedeprovince which = CAL value = 1981 } #La Paz
 command = { type = dissent value = 4 }
@@ -116,8 +116,8 @@ alliance = { country = CAL country = RUS }
 }
 }
 
-name = "PSA foreign policy"
-desc = "We have decide as soon as posiblle our main goals in foreign policy. Are we going to with US or we will forge our future alone...or with someone else?"
+name = "EVT_903953_NAME"
+desc = "EVT_903953_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1937 }
@@ -126,7 +126,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
 ai_chance = 35
-name = "Start searching for friendly powers"
+name = "EVT_903953_OPTIONA"
 trigger = {
 NOT = {
 alliance = { country = CAL country = USA }
@@ -143,7 +143,7 @@ command = { type = set_domestic which = defense_lobby value = 6 }
 
 action_b = {
 ai_chance = 5
-name = "We don't need friends or foes"
+name = "EVT_903953_OPTIONB"
 command = { type = set_domestic which = interventionism value = 0 }
 command = { type = set_domestic which = defense_lobby value = 0 }
 }
@@ -155,7 +155,7 @@ event = 903965
 }
 }
 ai_chance = 20
-name = "Rejoin the US with autonomy"
+name = "EVT_903953_OPTIONC"
 command = { type = trigger which = 903955 }
 }
 
@@ -167,7 +167,7 @@ event = 903965
 }
 }
 ai_chance = 15
-name = "We are coming back to the Union"
+name = "EVT_903953_OPTIOND"
 command = { type = trigger which = 903956 }
 }
 }
@@ -180,13 +180,13 @@ random = no
 country = USA
 picture = "diplomatic_campaign"
 
-name = "PSA demands autonomy within the USA"
-desc = "Senate of the PSA decided yesterday about submitting to us, however at the price of accepting their independence. Incorporationists insist on annexation while the majority of congressmen favour accepting their bid. What we should do?"
+name = "EVT_903955_NAME"
+desc = "EVT_903955_DESC"
 style = 2
 
 action_a = {
 ai_chance = 70
-name = "Grant them autonomy!"
+name = "EVT_903955_OPTIONA"
 command = { type = removecore which = 1890 }
 command = { type = removecore which = 1884 }
 command = { type = removecore which = 1885 }
@@ -233,13 +233,13 @@ command = { type = dissent value = 1 }
 
 action_b = {
 ai_chance = 0
-name = "Leave them as they are"
+name = "EVT_903955_OPTIONB"
 command = { type = dissent value = 10 }
 }
 
 action_c = {
 ai_chance = 30
-name = "Fools! Your future is in the Union!"
+name = "EVT_903955_OPTIONC"
 command = { type = addcore which = 1890 }
 command = { type = addcore which = 1884 }
 command = { type = addcore which = 1885 }
@@ -281,12 +281,12 @@ random = no
 country = USA
 picture = "diplomatic_campaign"
 
-name = "PSA comes back to Union"
-desc = "The Senate of PSA decided yesterday that it will totally submit to us. PSA leaders accepted the inevitable and they should be honoured about that."
+name = "EVT_903956_NAME"
+desc = "EVT_903956_DESC"
 style = 2
 
 action_a = {
-name = "Welcome back brothers"
+name = "EVT_903956_OPTIONA"
 command = { type = inherit which = CAL }
 command = { type = addcore which = 1890 }
 command = { type = addcore which = 1884 }
@@ -340,13 +340,13 @@ date = { day = 1 month = january year = 1937 }
 offset = 5
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Foreign policy - choosing ally"
-desc = "Only four countries except the USA are powerful enough to secure our independence: Germany, Canada, Japan and Russia. Germany is the world superpower however it's relatively weak in the Pacific where it loses the competition to Japan. Let's not forget that we are bordering Canada and distant Russia could be a good partner too."
+name = "EVT_903954_NAME"
+desc = "EVT_903954_DESC"
 style = 2
 
 action_a = {
 ai_chance = 50
-name = "Canada"
+name = "EVT_903954_OPTIONA"
 trigger = {
 exists = CAN
 control = { province = 2089 data = CAN }
@@ -383,7 +383,7 @@ command = { trigger = { ai = yes alliance = { country = CAN country = MON } } ty
 
 action_b = {
 ai_chance = 25
-name = "Japan"
+name = "EVT_903954_OPTIONB"
 trigger = {
 exists = JAP
 control = { province = 1552 data = JAP }
@@ -401,7 +401,7 @@ command = { type = trigger which = 903962 }
 
 action_c = {
 ai_chance = 20
-name ="Germany"
+name ="EVT_903954_OPTIONC"
 trigger = {
 exists = GER
 control = { province = 163 data = GER }
@@ -416,7 +416,7 @@ command = { type = trigger which = 903960 }
 
 action_d = {
 ai_chance = 5
-name = "Russia"
+name = "EVT_903954_OPTIOND"
 trigger = {
 exists = RUS
 control = { province = 572 data = RUS }
@@ -439,21 +439,21 @@ id = 903957
 random = no
 country = USA
 
-name = "Our protest against PSA in Entente"
-desc = "PSA wants to join the Entente - if they join then we can forget about any actions against the PSA."
+name = "EVT_903957_NAME"
+desc = "EVT_903957_DESC"
 style = 2
 picture = "diplomatic_campaign"
 
 action_a = {
 ai_chance = 25
-name = "We don't care"
+name = "EVT_903957_OPTIONA"
 command = { type = dissent value = 2 }
 command = { type = trigger which = 903963 }
 }
 
 action_b = {
 ai_chance = 75
-name = "Outrageous! Send a letter to the King"
+name = "EVT_903957_OPTIONB"
 command = { type = trigger which = 903958 }
 }
 }
@@ -466,19 +466,19 @@ style = 2
 persistent = yes
 picture = "diplomatic_campaign"
 
-name = "PSA wants to join Entente"
-desc = "The Pacific States of America expressed their desire to become a member of our alliance. How shall we react?"
+name = "EVT_903963_NAME"
+desc = "EVT_903963_DESC"
 
 action_a = {
 ai_chance = 90
-name = "Welcome"
+name = "EVT_903963_OPTIONA"
 command = { type = dissent value = -2 }
 command = { type = alliance which = CAL }
 }
 
 action_b = {
 ai_chance = 10
-name = "We don´t need them"
+name = "EVT_903963_OPTIONB"
 command = { type = dissent value = 2 }
 }
 
@@ -492,8 +492,8 @@ style = 2
 persistent = yes
 picture = "diplomatic_campaign"
 
-name = "USA protests against alliance with PSA"
-desc = "The USA, terrified by PSA plans, presses us not to accept them into the Entente. The American president wrote a personal letter to the King, in which he declares the PSA as a part of Amercia's sphere of influence and threatens us with breaking off diplomatic relations. Without the USA our economy will collapse!"
+name = "EVT_903958_NAME"
+desc = "EVT_903958_DESC"
 
 action_a = {
 ai_chance = 75
@@ -506,7 +506,7 @@ command = { type = relation which = CAL value = -50 }
 
 action_b = {
 ai_chance = 25
-name = "We don't care about the USA's opinon"
+name = "EVT_903958_OPTIONA"
 command = { type = dissent value = 2 }
 command = { type = alliance which = CAL }
 command = { type = relation which = USA value = -50 }
@@ -521,11 +521,11 @@ country = CAL
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Canada banned us from Entente"
-desc = "The Canadians, in fear of breaking all relations with US, decided to not allow us to enter the Entente. It's a shameful day for the Entente!"
+name = "EVT_903959_NAME"
+desc = "EVT_903959_DESC"
 
 action_a = {
-name = "We can't do anything about it"
+name = "EVT_903959_OPTIONA"
 command = { type = relation which = CAN value = -50 }
 }
 }
@@ -537,12 +537,12 @@ country = GER
 style = 2
 picture = "diplomatic_campaign"
 
-name = "PSA wants an alliance with us"
-desc = "The Pacific States decided yesterday to form an alliance with us. How should we respond?"
+name = "EVT_903960_NAME"
+desc = "EVT_903960_DESC"
 
 action_a = {
 ai_chance = 0
-name = "Form an alliance"
+name = "EVT_903960_OPTIONA"
 command = { type = alliance which = CAL }
 command = { type = relation which = CAL  value = 200 }
 command = { type = relation which = USA  value = -50 }
@@ -550,13 +550,13 @@ command = { type = relation which = USA  value = -50 }
 
 action_b = {
 ai_chance = 70
-name = "They are useless"
+name = "EVT_903960_OPTIONB"
 command = { type = relation which = CAL  value = -50 }
 command = { type = relation which = USA  value = 50 }
 }
 action_c = {
 ai_chance = 30
-name = "Just guarantee their independence"
+name = "EVT_903960_OPTIONC"
 command = { type = guarantee which = GER where = CAL }
 command = { type = relation which = CAL  value = 30 }
 command = { type = relation which = USA  value = -30 }
@@ -570,12 +570,12 @@ country = RUS
 style = 2
 picture = "diplomatic_campaign"
 
-name = "PSA wants an alliance with us"
-desc = "Pacific States decided yesterday to form an alliance with us. How should we respond?"
+name = "EVT_903961_NAME"
+desc = "EVT_903961_DESC"
 
 action_a = {
 ai_chance = 0
-name = "Form an alliance"
+name = "EVT_903961_OPTIONA"
 command = { type = alliance which = CAL }
 command = { type = relation which = CAL  value = 200 }
 command = { type = relation which = USA  value = -100 }
@@ -583,13 +583,13 @@ command = { type = relation which = USA  value = -100 }
 
 action_b = {
 ai_chance = 70
-name = "Pacific? It's too far"
+name = "EVT_903961_OPTIONB"
 command = { type = relation which = CAL  value = -50 }
 command = { type = relation which = USA  value = 50 }
 }
 action_c = {
 ai_chance = 30
-name = "Just guarantee their independence"
+name = "EVT_903961_OPTIONC"
 command = { type = guarantee which = RUS where = CAL }
 command = { type = relation which = CAL  value = 30 }
 command = { type = relation which = USA  value = -30 }
@@ -603,12 +603,12 @@ country = JAP
 style = 2
 picture = "diplomatic_campaign"
 
-name = "PSA wants an alliance with us"
-desc = "Pacific States decided yesterday to form an alliance with us. How should we respond?"
+name = "EVT_903962_NAME"
+desc = "EVT_903962_DESC"
 
 action_a = {
 ai_chance = 50
-name = "Form an alliance"
+name = "EVT_903962_OPTIONA"
 command = { type = alliance which = CAL }
 command = { type = relation which = CAL  value = 200 }
 command = { type = relation which = USA  value = -100 }
@@ -616,14 +616,14 @@ command = { type = relation which = USA  value = -100 }
 
 action_b = {
 ai_chance = 0
-name = "America? It's too far"
+name = "EVT_903962_OPTIONB"
 command = { type = relation which = CAL  value = -50 }
 command = { type = relation which = USA  value = 50 }
 }
 
 action_c = {
 ai_chance = 50
-name = "Just guarantee their independence"
+name = "EVT_903962_OPTIONC"
 command = { type = guarantee which = JAP where = CAL }
 command = { type = relation which = CAL  value = 30 }
 command = { type = relation which = USA  value = -30 }
@@ -657,19 +657,19 @@ date = { day = 1 month = january year = 1936 }
 offset = 25
 deathdate = { day = 1 month = january year = 1960 }
 
-name = "The Treaty of Sacramento"
-desc = "We've been beaten by the armed forces of the Pacific States. How did this happen? They've seized the whole Rocky Mountains region!"
+name = "EVT_903967_NAME"
+desc = "EVT_903967_DESC"
 picture = "FaRpeace"
 
 action_a = {
 ai_chance = 99
-name =  "Offer peace treaty, recognize Californian teritorial gains"
+name =  "EVT_903967_OPTIONA"
 command = { type = trigger which = 903964 }
 command = { type = dissent value = 2 }
 }
 action_b = {
 ai_chance = 1
-name = "No, the war will continue until we march through Sacramento!"
+name = "EVT_903967_OPTIONB"
 command = { type = dissent value = 5 }
 }
 }
@@ -682,13 +682,13 @@ country = CAL
 style = 2
 
 
-name = "The Treaty of Sacramento"
-desc = "We've succesfully beaten the armed forces of the United states and conquered the Rocky Mountains. Now the humiliated American leadership offers us peace in which they promise to recognize our territorial gains and withdraw from the disputed teritory. How shall we react?"
+name = "EVT_903964_NAME"
+desc = "EVT_903964_DESC"
 picture = "FaRpeace"
 
 action_a = {
 ai_chance = 100
-name =  "Accept the proposal, this is more than we hoped!"
+name =  "EVT_903964_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = peace which = USA value = 0 }
 command = { type = addcore which = 1861 }
@@ -715,7 +715,7 @@ command = { type = trigger which = 903965 }
 }
 action_b = {
 ai_chance = 0
-name = "No, the war will continue until our army marches through Washington!"
+name = "EVT_903964_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = addcore which = 1861 }
 command = { type = addcore which = 1870 }
@@ -744,12 +744,12 @@ country = USA
 style = 2
 
 
-name = "The Treaty of Sacramento"
-desc = "According to the Treaty of Saramento, we must withdraw our force from the remaining parts of the Rocky Mountains area..."
+name = "EVT_903965_NAME"
+desc = "EVT_903965_DESC"
 picture = "FaRpeace"
 
 action_a = {
-name =  "How humiliating !"
+name =  "EVT_903965_OPTIONA"
 command = { type = secedeprovince which = CAL value = 1861 }
 command = { type = secedeprovince which = CAL value = 1870 }
 command = { type = secedeprovince which = CAL value = 1871 }
@@ -776,12 +776,12 @@ country = USA
 style = 2
 
 
-name = "PSA refused to sign peace treaty!"
-desc = "The Pacific States refused our generous peace offer and renewed military actions..."
+name = "EVT_903966_NAME"
+desc = "EVT_903966_DESC"
 picture = "FaRpeace"
 
 action_a = {
-name =  "They will pay for this..."
+name =  "EVT_903966_OPTIONA"
 command = { type = dissent value = 1 }
 }
 

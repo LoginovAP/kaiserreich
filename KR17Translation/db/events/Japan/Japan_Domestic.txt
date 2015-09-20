@@ -31,8 +31,8 @@ ideology = Nazi
 atwar = yes
 }
 
-name = "Imperial Rule Assistance Society"
-desc = "All political parties have been voluntarily disbanded in the interest of the Emperor of Japan, seated on the throne and representing a divine succession that has been unbroken for ages. Our Imperial subjects must do their duties faithfully and diligently. Our Empire needs to mobilize against all enemies who don't accept our generous offers of friendship and fail to comprehend our Empire's far-sighted goal of world peace."
+name = "EVT_340100_NAME"
+desc = "EVT_340100_DESC"
 picture = "Japan_Victory2"
 
 date = { day = 1 month = january year = 1937 }
@@ -40,7 +40,7 @@ offset = 2
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Glory to the Rising Sun! Banzai! Banzai!"
+name = "EVT_340100_OPTIONA"
 command = { type = set_domestic which = defense_lobby value = 10 }
 command = { type = set_domestic which = interventionism value = 10 }
 command = { type = set_domestic which = freedom value = 3 }
@@ -55,26 +55,26 @@ random = no
 country = JAP
 style = 2
 
-name = "Civil disobedience in Niigata"
+name = "EVT_340101_NAME"
 desc = "EVT_91824_DESC"
 picture = "Japan_Invasion"
 
 date = { day = 15 month = may year = 1936 }
 
 action_a = {
-name = "Send in the army"
+name = "EVT_340101_OPTIONA"
 ai_chance = 50
 command = { type = dissent value = 5 }
 command = { type = domestic which = freedom value = -2 }
 command = { type = domestic which = defense_lobby value = 1 }
 }
 action_b = {
-name = "Increase the police forces"
+name = "EVT_340101_OPTIONB"
 ai_chance = 30
 command = { type = dissent value = 5 }
 }
 action_c = {
-name = "Negotiate with the dissenters"
+name = "EVT_340101_OPTIONC"
 ai_chance = 20
 command = { type = dissent value = 10 }
 command = { type = domestic which = political_left value = 1 }
@@ -90,14 +90,14 @@ random = no
 country = JAP
 picture = "Japan_Occupation"
 
-name = "Spread of the Niigata riots"
-desc = "Despite our efforts, the uprising of workers in Niigata Prefecture is still ongoing. Not only that but it has escalated out of our control: Inspired by the Nagaoka protests, trade unions in cities all across the Home Islands have begun spreading rumors about a nationwide general strike."
+name = "EVT_340002_NAME"
+desc = "EVT_340002_DESC"
 style = 2
 
 date = { day = 20 month = july year = 1936 }
 
 action_a = {
-name = "Declare Martial Law"
+name = "EVT_340002_OPTIONA"
 ai_chance = 50
 command = { type = manpowerpool value = -50 }
 command = { type = dissent value = -5 }
@@ -108,14 +108,14 @@ command = { type = setflag which = jap_martial_law }
 }
 
 action_b = {
-name = "Increase the police force"
+name = "EVT_340002_OPTIONB"
 ai_chance = 50
 command = { type = ministerofsecurity which = 55751 }
 command = { type = dissent value = 5 }
 command = { type = domestic which = freedom value = -1 }
 }
 action_c = {
-name = "Negotiation is still the best way"
+name = "EVT_340002_OPTIONC"
 ai_chance = 0
 command = { type = ministerofsecurity which = 55746 }
 command = { type = dissent value = 10 }
@@ -132,14 +132,14 @@ style = 2
 
 trigger = { NOT = { flag = jap_martial_law } }
 
-name = "Dissenters' demands"
+name = "EVT_340102_NAME"
 desc = "EVT_91825_DESC"
 picture = "Japanese Parliament"
 
 date = { day = 5 month = august year = 1936 }
 
 action_a = {
-name = "Try to appease dissenters"
+name = "EVT_340102_OPTIONA"
 ai_chance = 40
 command = { type = headofstate which = 55601 } #Hirohito SC
 command = { type = headofgovernment which = 55611 }
@@ -159,7 +159,7 @@ command = { type = sleepevent which = 340103 }
 }
 
 action_b = {
-name = "Refuse such preposterous ideas!"
+name = "EVT_340102_OPTIONB"
 ai_chance = 60
 command = { type = dissent value = 10 }
 command = { type = domestic which = freedom value = -1 }
@@ -180,14 +180,14 @@ government = communist
 }
 }
 
-name = "The death of Prime Minister Inukai"
-desc = "After the turmoil that has engulfed our great nation, a small group of dissidents have assassinated the Prime Minister. The great tragedy is that it was in front of H.I.M. and now His Majesty has taken a direct interest in what is to be done."
+name = "EVT_340103_NAME"
+desc = "EVT_340103_DESC"
 picture = "Japanese Parliament"
 
 date = { day = 15 month = august year = 1936 }
 
 action_a = {
-name = "Reform and set up a democratic government"
+name = "EVT_340103_OPTIONA"
 ai_chance = 40
 command = { type = headofstate which = 55601 } #Hirohito SC
 command = { type = headofgovernment which = 55611 }
@@ -204,7 +204,7 @@ command = { type = sleepevent which = 340104 }
 command = { type = setflag which = jap_democratic }
 }
 action_b = {
-name = "Dissolve the Diet and establish a military council"
+name = "EVT_340103_OPTIONB"
 ai_chance = 60
 command = { type = sleepminister which = 55602 }
 command = { type = headofstate which = 55600 } #Hirohito FA
@@ -235,14 +235,14 @@ style = 2
 
 trigger = { flag = jap_martial_law }
 
-name = "Ending the martial law?"
-desc = "As the Niigata Riots were beginning to take form, we decided to introduce a series of special pieces of legislation which would, in practice, allow for martial law to be implemented in certain regions. Now that the riots have begun to fade and the workers are returning to their factories, it would be wise to return these areas to normal governance."
+name = "EVT_341104_NAME"
+desc = "EVT_341104_DESC"
 picture = "niigatariots"
 
 date = { day = 2 month = december year = 1936 }
 
 action_a = {
-name = "Revoke martial law"
+name = "EVT_341104_OPTIONA"
 ai_chance = 20
 command = { type = clrflag which = jap_martial_law }
 command = { type = headofstate which = 55601 } #Hirohito SC
@@ -261,7 +261,7 @@ command = { type = setflag which = jap_democratic }
 }
 
 action_b = {
-name = "Extend martial law to all of Japan"
+name = "EVT_341104_OPTIONB"
 ai_chance = 80
 command = { type = dissent value = 5 }
 command = { type = setflag which = jap_military_council }
@@ -296,14 +296,14 @@ flag = jap_military_council
 government = fascist
 }
 
-name = "Kodoha or Toseiha"
-desc = "Unfortunately the two factions cannot agree on anything and now H.I.M. must choose which shall lead in his name."
+name = "EVT_340104_NAME"
+desc = "EVT_340104_DESC"
 picture = "Japanese Parliament"
 
 date = { day = 13 month = december year = 1936 }
 
 action_a = {
-name = "Kodoha, to return to the true origins of the samurai"
+name = "EVT_340104_OPTIONA"
 ai_chance = 50
 command = { type = setflag which = kodoha }
 command = { type = headofgovernment which = 55969 }
@@ -320,7 +320,7 @@ command = { type = domestic which = political_left value = -3 }
 }
 
 action_b = {
-name = "Toseiha, for the protection of the Empire"
+name = "EVT_340104_OPTIONB"
 ai_chance = 50
 command = { type = setflag which = toseiha }
 command = { type = headofgovernment which = 55809 }
@@ -351,20 +351,20 @@ headofstate = 55778
 }
 }
 
-name = "The Emperor has been shot!"
-desc = "His Imperial Majesty Hirohito has been shot by a radical Syndicalist who was infuriated by the miltary takeover of the nation, His Majesty is in critical condition and the doctors are not sure if he will live..."
+name = "EVT_9999901_NAME"
+desc = "EVT_9999901_DESC"
 picture = "assassinationofker"
 
 date = { day = 20 month = october year = 1937 }
 
 action_a = {
-name = "Hirohito makes a miraculous revovery!"
+name = "EVT_9999901_OPTIONA"
 ai_chance = 50
 command = { type = dissent value = -5 }
 }
 
 action_b = {
-name = "His Majesty is dead, Prince Chichibu becomes regent."
+name = "EVT_9999901_OPTIONB"
 ai_chance = 50
 command = { type = dissent value = 5 }
 command = { type = sleepminister which = 55600 }
@@ -387,21 +387,21 @@ flag = kodoha
 }
 
 
-name = "A second Meiji restoration?"
-desc = "It has been three years since Prince Chichibu became regent for his nephew Akihito but now many in the radical Kodoha clique, which the regent supports, have now told the regent they would help him in overthrow his nephew and become Emperor himself."
+name = "EVT_9999902_NAME"
+desc = "EVT_9999902_DESC"
 picture = "japsun"
 
 date = { day = 20 month = october year = 1940 }
 
 action_a = {
-name = "All hail Emperor Yasuhito!"
+name = "EVT_9999902_OPTIONA"
 ai_chance = 70
 command = { type = headofstate which = 55968 } #Emperor Chichibu
 command = { type = dissent value = -5 }
 }
 
 action_b = {
-name = "That would be wrong. He is the true emperor."
+name = "EVT_9999902_OPTIONB"
 ai_chance = 30
 command = { type = dissent value = 5 }
 }
@@ -412,8 +412,8 @@ id = 9999903
 random = no
 country = JAP
 
-name = "Prime Minister Hayashi Senjuro is dead!"
-desc = "Prime Minister Hayashi has died today. The Emperor should appoint a new member of the Toseiha for the position but will he?"
+name = "EVT_9999903_NAME"
+desc = "EVT_9999903_DESC"
 picture = "minister_died"
 style = 2
 
@@ -426,7 +426,7 @@ government = fascist
 date = { day = 4 month = february year = 1943 }
 
 action_a = {
-name = "The Emperor appoints Hideki Tojo."
+name = "EVT_9999903_OPTIONA"
 ai_chance = 40
 command = { type = dissent value = -1 }
 command = { type = headofgovernment which = 55812 }
@@ -437,7 +437,7 @@ command = { type = sleepevent which = 9999904 }
 }
 
 action_b = {
-name = "The Emperor appoints Tetsuzan Nagata."
+name = "EVT_9999903_OPTIONB"
 ai_chance = 40
 command = { type = dissent value = -1 }
 command = { type = headofgovernment which = 55970 }
@@ -448,7 +448,7 @@ command = { type = sleepevent which = 9999904 }
 }
 
 action_c = {
-name = "The Kodoha faction takes control!"
+name = "EVT_9999903_OPTIONC"
 ai_chance = 20
 command = { type = dissent value = 5 }
 command = { type = setflag which = kodoha }
@@ -484,15 +484,15 @@ headofgovernment = 55809
 }
 }
 
-name = "Hayashi Senjuro dies"
-desc = "A member of the Toseiha and a General in our army, Hayashi Senjuro, has died today."
+name = "EVT_9999904_NAME"
+desc = "EVT_9999904_DESC"
 style = 2
 picture = "minister_died"
 
 date = { day = 4 month = february year = 1943 }
 
 action_a = {
-name = "Yasuraka ni nemuru"
+name = "EVT_9999904_OPTIONA"
 command = { type = sleepminister which = 55809 }
 command = { type = sleepminister which = 55718 }
 command = { type = sleepminister which = 55729 }
@@ -512,15 +512,15 @@ headofstate = 55968
 }
 }
 
-name = "Prince Chichibu is dead!"
-desc = "The brother of the Emperor and a member of the Kohoda clique has died today."
+name = "EVT_9999905_NAME"
+desc = "EVT_9999905_DESC"
 style = 2
 picture = "minister_died"
 
 date = { day = 4 month = january year = 1953 }
 
 action_a = {
-name = "Yasuraka ni nemuru"
+name = "EVT_9999905_OPTIONA"
 command = { type = sleepminister which = 55967 }
 command = { type = sleepminister which = 55968 }
 command = { type = sleepevent which = 9999906 }
@@ -538,15 +538,15 @@ trigger = {
 headofstate = 55967
 }
 
-name = "Prince Chichibu is dead!"
-desc = "Regent for his nephew since the assassination of Emperor Showa, has died today, Akihito will now assume full powers as Emperor."
+name = "EVT_9999906_NAME"
+desc = "EVT_9999906_DESC"
 style = 2
 picture = "minister_died"
 
 date = { day = 4 month = january year = 1953 }
 
 action_a = {
-name = "All Hail Emperor Akihito!"
+name = "EVT_9999906_OPTIONA"
 command = { type = sleepminister which = 55967 }
 command = { type = sleepminister which = 55968 }
 command = { type = headofstate which = 55971 }
@@ -565,15 +565,15 @@ trigger = {
 headofstate = 55968
 }
 
-name = "Emperor Yasuhito is dead!"
-desc = "Having assumed the Throne in a so called 2nd Meiji Restoration, Emperor Yasuhito could not escape from those who called him a usurper and in the west he was called 'the Japanese Richard III', his posthumous name will be Go-Meiji, however with no children of his own, Akihito will now finnaly become Emperor."
+name = "EVT_9999907_NAME"
+desc = "EVT_9999907_DESC"
 style = 2
 picture = "minister_died"
 
 date = { day = 4 month = january year = 1953 }
 
 action_a = {
-name = "All Hail Emperor Akihito!"
+name = "EVT_9999907_OPTIONA"
 command = { type = sleepminister which = 55967 }
 command = { type = sleepminister which = 55968 }
 command = { type = headofstate which = 55971 }
@@ -590,14 +590,14 @@ random = no
 country = JAP
 style = 2
 
-name = "Dissolving the Japanese-Entente Accords"
-desc = "Japan had fought with France and England in the Weltkreig. However the lack of success had all but destroyed Japan’s willingness to stay with their allies. His Majesty the Emperor, wishing to give Japan as many choices as possible, decided to dissolve the accords and with it many of our relations with the Entente."
+name = "EVT_340105_NAME"
+desc = "EVT_340105_DESC"
 picture = "Japanese Parliament"
 
 date = { day = 5 month = august year = 1936 }
 
 action_a = {
-name = "It is time to find our own path"
+name = "EVT_340105_OPTIONA"
 command = { type = relation which = GER value = 20 }
 command = { type = relation which = CAN value = -25 }
 command = { type = relation which = AST value = -25 }
@@ -620,15 +620,15 @@ ideology = paternal_autocrat
 }
 }
 
-name = "1936 Japanese General election"
-desc = "The time has come for a new general election. With the main and opposition parties now running, the choices are more varied than they have been since the late 19th century. After the elections were complete, His Majesty the Emperor has asked the new Prime Minister to form his cabinet."
+name = "EVT_340106_NAME"
+desc = "EVT_340106_DESC"
 picture = "Japanese Voting"
 
 date = { day = 13 month = december year = 1936 }
 
 action_a = {
 ai_chance = 50
-name = "Conservative Seiyukai defends the absolute majority"
+name = "EVT_340106_OPTIONA"
 command = { type = headofstate which = 55601 }
 command = { type = headofgovernment which = 55757 }
 command = { type = foreignminister which = 55759 }
@@ -639,7 +639,7 @@ command = { type = domestic which = free_market value = 8 }
 }
 action_b = {
 ai_chance = 50
-name = "Liberal Minseito gains a major victory"
+name = "EVT_340106_OPTIONB"
 command = { type = headofstate which = 55601 }
 command = { type = headofgovernment which = 55611 }
 command = { type = foreignminister which = 55612 }
@@ -667,7 +667,7 @@ ideology = paternal_autocrat
 }
 }
 
-name = "1940 Japanese General election"
+name = "EVT_340121_NAME"
 desc = "EVT_755819_DESC"
 picture = "Japanese Voting"
 
@@ -675,7 +675,7 @@ date = { day = 20 month = february year = 1940 }
 
 action_a = {
 ai_chance = 40
-name = "Conservative Seiyukai defends the absolute majority"
+name = "EVT_340121_OPTIONA"
 command = { type = headofstate which = 55601 }
 command = { type = headofgovernment which = 55757 }
 command = { type = foreignminister which = 55759 }
@@ -689,7 +689,7 @@ command = { type = set_domestic which = political_left value = 2 }
 
 action_b = {
 ai_chance = 40
-name = "Liberal Minseito gains a major victory"
+name = "EVT_340121_OPTIONB"
 command = { type = headofstate which = 55601 }
 command = { type = headofgovernment which = 55611 }
 command = { type = foreignminister which = 55612 }
@@ -704,7 +704,7 @@ command = { type = dissent value = 1 }
 
 action_c = {
 ai_chance = 20
-name = "Socialist Taishuto sweeps the rural areas"
+name = "EVT_340121_OPTIONC"
 command = { type = headofstate which = 55778 }
 command = { type = headofgovernment which = 55677 }
 command = { type = foreignminister which = 55678 }
@@ -734,15 +734,15 @@ ideology = paternal_autocrat
 }
 }
 
-name = "1944 Japanese General election"
-desc = "Every four years according to our constition we hold a general election and the winner chooses the prime minister to serve in the Emperor's cabinet. Who shall win?"
+name = "EVT_340124_NAME"
+desc = "EVT_340124_DESC"
 picture = "Japanese Voting"
 
 date = { day = 20 month = february year = 1944 }
 
 action_a = {
 ai_chance = 40
-name = "Conservative Seiyukai defends the absolute majority"
+name = "EVT_340124_OPTIONA"
 command = { type = headofstate which = 55601 }
 command = { type = headofgovernment which = 55783 }
 command = { type = foreignminister which = 55821 }
@@ -756,7 +756,7 @@ command = { type = set_domestic which = political_left value = 1 }
 
 action_b = {
 ai_chance = 40
-name = "Liberal Minseito gains a major victory"
+name = "EVT_340124_OPTIONB"
 command = { type = headofstate which = 55601 }
 command = { type = headofgovernment which = 55788 }
 command = { type = foreignminister which = 55617 }
@@ -771,7 +771,7 @@ command = { type = dissent value = 1 }
 
 action_c = {
 ai_chance = 20
-name = "Socialist Taishuto sweeps the rural areas"
+name = "EVT_340124_OPTIONC"
 command = { type = headofstate which = 55778 }
 command = { type = headofgovernment which = 55790 }
 command = { type = foreignminister which = 55678 }
@@ -799,15 +799,15 @@ ideology = paternal_autocrat
 }
 }
 
-name = "1948 Japanese General election"
-desc = "Every four years according to our constition we hold a general election and the winner chooses the prime minister to serve in the Emperor's cabinet. Who shall win?"
+name = "EVT_340125_NAME"
+desc = "EVT_340125_DESC"
 picture = "Japanese Voting"
 
 date = { day = 20 month = february year = 1948 }
 
 action_a = {
 ai_chance = 40
-name = "Conservative Seiyukai defends the absolute majority"
+name = "EVT_340125_OPTIONA"
 command = { type = headofstate which = 55601 }
 command = { type = headofgovernment which = 55783 }
 command = { type = foreignminister which = 55821 }
@@ -821,7 +821,7 @@ command = { type = set_domestic which = political_left value = 1 }
 
 action_b = {
 ai_chance = 40
-name = "Liberal Minseito gains a major victory"
+name = "EVT_340125_OPTIONB"
 command = { type = headofstate which = 55601 }
 command = { type = headofgovernment which = 55788 }
 command = { type = foreignminister which = 55617 }
@@ -836,7 +836,7 @@ command = { type = dissent value = 1 }
 
 action_c = {
 ai_chance = 20
-name = "Socialist Taishuto sweeps the rural areas"
+name = "EVT_340125_OPTIONC"
 command = { type = headofstate which = 55778 }
 command = { type = headofgovernment which = 55790 }
 command = { type = foreignminister which = 55678 }
@@ -865,15 +865,15 @@ ideology = paternal_autocrat
 }
 }
 
-name = "1952 Japanese General election"
-desc = "Every four years according to our constition we hold a general election and the winner chooses the prime minister to serve in the Emperor's cabinet. Who shall win?"
+name = "EVT_340126_NAME"
+desc = "EVT_340126_DESC"
 picture = "Japanese Voting"
 
 date = { day = 20 month = february year = 1952 }
 
 action_a = {
 ai_chance = 40
-name = "Conservative Seiyukai defends he absolute majority"
+name = "EVT_340126_OPTIONA"
 command = { type = headofstate which = 55601 }
 command = { type = headofgovernment which = 55783 }
 command = { type = foreignminister which = 55821 }
@@ -887,7 +887,7 @@ command = { type = set_domestic which = political_left value = 1 }
 
 action_b = {
 ai_chance = 40
-name = "Liberal Minseito gains the major victory"
+name = "EVT_340126_OPTIONB"
 command = { type = headofstate which = 55601 }
 command = { type = headofgovernment which = 55788 }
 command = { type = foreignminister which = 55617 }
@@ -902,7 +902,7 @@ command = { type = dissent value = 1 }
 
 action_c = {
 ai_chance = 20
-name = "Socialist Taishuto sweeps the rural areas"
+name = "EVT_340126_OPTIONC"
 command = { type = headofstate which = 55778 }
 command = { type = headofgovernment which = 55790 }
 command = { type = foreignminister which = 55678 }
@@ -930,15 +930,15 @@ ideology = paternal_autocrat
 }
 }
 
-name = "1956 Japanese General election"
-desc = "Every four years according to our constition we hold a general election and the winner chooses the prime minister to serve in the Emperor's cabinet. Who shall win?"
+name = "EVT_340127_NAME"
+desc = "EVT_340127_DESC"
 picture = "Japanese Voting"
 
 date = { day = 20 month = february year = 1956 }
 
 action_a = {
 ai_chance = 40
-name = "Conservative Seiyukai defends the absolute majority"
+name = "EVT_340127_OPTIONA"
 command = { type = headofstate which = 55601 }
 command = { type = headofgovernment which = 55783 }
 command = { type = foreignminister which = 55821 }
@@ -952,7 +952,7 @@ command = { type = set_domestic which = political_left value = 1 }
 
 action_b = {
 ai_chance = 40
-name = "Liberal Minseito gains a major victory"
+name = "EVT_340127_OPTIONB"
 command = { type = headofstate which = 55601 }
 command = { type = headofgovernment which = 55788 }
 command = { type = foreignminister which = 55617 }
@@ -967,7 +967,7 @@ command = { type = dissent value = 1 }
 
 action_c = {
 ai_chance = 20
-name = "Socialist Taishuto sweeps the rural areas"
+name = "EVT_340127_OPTIONC"
 command = { type = headofstate which = 55778 }
 command = { type = headofgovernment which = 55790 }
 command = { type = foreignminister which = 55678 }
@@ -995,15 +995,15 @@ ideology = paternal_autocrat
 }
 }
 
-name = "1960 Japanese General election"
-desc = "Every four years according to our constition we hold a general election and the winner chooses the prime minister to serve in the Emperor's cabinet. Who shall win?"
+name = "EVT_340128_NAME"
+desc = "EVT_340128_DESC"
 picture = "Japanese Voting"
 
 date = { day = 20 month = february year = 1960 }
 
 action_a = {
 ai_chance = 40
-name = "Conservative Seiyukai defends he absolute majority"
+name = "EVT_340128_OPTIONA"
 command = { type = headofstate which = 55601 }
 command = { type = headofgovernment which = 55783 }
 command = { type = foreignminister which = 55821 }
@@ -1017,7 +1017,7 @@ command = { type = set_domestic which = political_left value = 1 }
 
 action_b = {
 ai_chance = 40
-name = "Liberal Minseito gains a major victory"
+name = "EVT_340128_OPTIONB"
 command = { type = headofstate which = 55601 }
 command = { type = headofgovernment which = 55788 }
 command = { type = foreignminister which = 55617 }
@@ -1032,7 +1032,7 @@ command = { type = dissent value = 1 }
 
 action_c = {
 ai_chance = 20
-name = "Socialist Taishuto sweeps the rural areas"
+name = "EVT_340128_OPTIONC"
 command = { type = headofstate which = 55778 }
 command = { type = headofgovernment which = 55790 }
 command = { type = foreignminister which = 55678 }
@@ -1052,8 +1052,8 @@ id = 340129
 random = no
 country = JAP
 
-name = "A New 1281"
-desc = "Our mortal enemies have made successful landings on our sacred islands! The nation must fully mobilize in order to stop them!..."
+name = "EVT_340129_NAME"
+desc = "EVT_340129_DESC"
 style = 2
 picture = "Milice"
 
@@ -1070,7 +1070,7 @@ region = { region = Japan country = -2 data = 1 value = 10 }
 }
 
 action_a = {
-name = "We will stop them !" #
+name = "EVT_340129_OPTIONA" #
 command = { type = dissent value = -5 }
 command = { trigger = { control = { province = 1552 data = JAP } } type = construct which = land_fort where = 1552 value = 3 }
 command = { trigger = { control = { province = 1549 data = JAP } } type = construct which = land_fort where = 1549 value = 2 }
@@ -1118,14 +1118,14 @@ control = { province = 1363 data = JAP }
 control = { province = 1364 data = JAP }
 }
 
-name = "Status of Taiwan"
-desc = "A decision on Taiwan's status must be made. The island have been under Japanese control since 1895 and though the Japanese language is wide-spread throughout the island, Chinese is still the most commonly used language. The Qing Empire, as well as every nationalist faction on the Chinese mainland, claims Taiwan and as long as Chinese is the most popular language, we fear that the Taiwanese people might seek protection from the Qing Empire if an opportunity is given. Something must be done!"
+name = "EVT_340130_NAME"
+desc = "EVT_340130_DESC"
 style = 2
 
 date = { day = 15 month = may year = 1936 }
 
 action_a = {
-name = "Fully integrate Taiwan into the Empire!"
+name = "EVT_340130_OPTIONA"
 ai_chance = 75
 command = { type = addclaim which = 1361 }
 command = { type = addclaim which = 1362 }
@@ -1142,13 +1142,13 @@ command = { type = dissent value = 5 }
 }
 
 action_b = {
-name = "No change is needed"
+name = "EVT_340130_OPTIONB"
 ai_chance = 20
 command = { type = dissent value = 1 }
 }
 
 action_c = {
-name = "They shall be granted independence... On our terms"
+name = "EVT_340130_OPTIONC"
 ai_chance = 5
 command = { type = dissent value = 10 }
 command = { type = removeclaim which = 1361 }
@@ -1187,15 +1187,15 @@ core = { province = 1361 data = JAP }
 }
 }
 
-name = "Integration of Taiwan"
-desc = "Our policies on Taiwan were succesful and now Taiwan is now firmly integrated into our glorious Empire!"
+name = "EVT_340131_NAME"
+desc = "EVT_340131_DESC"
 
 date = { day = 1 month = january year = 1936 }
 offset = 20
 deathdate = { day = 29 month = december year = 1966 }
 
 action_a = {
-name = "Good"
+name = "EVT_340131_OPTIONA"
 command = { type = dissent value = 5 }
 command = { type = addcore which = 1361 }
 command = { type = addcore which = 1362 }

@@ -8,12 +8,12 @@ date = { day = 11 month = january year = 1936 }
 offset = 30
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "The State of the Catholic Church in Ireland"
-desc = "We have been debating the state of the church for some time. Now, it is time to make our decision."
+name = "EVT_979000_NAME"
+desc = "EVT_979000_DESC"
 
 action_a = {
 ai_chance = 20
-name = "Ireland will be forever more, a Secular and Strong government!"
+name = "EVT_979000_OPTIONA"
 command = { type = domestic which = freedom value = 2 }
 command = { type = relation which = ITA value = -25 }
 command = { type = sleepevent which = 3967101 }
@@ -23,14 +23,14 @@ command = { type = setflag which = IRE_Secular }
 
 action_b = {
 ai_chance = 75
-name = "God and Government were made for each other"
+name = "EVT_979000_OPTIONB"
 command = { type = relation which = ITA value = 50 }
 command = { type = dissent value = -3 }
 }
 
 action_c = {
 ai_chance = 5
-name = "God? We dont need to discuss something that doesn't exist!"
+name = "EVT_979000_OPTIONC"
 command = { type = domestic which = freedom value = -2 }
 command = { type = relation which = ITA value = -100 }
 command = { type = dissent value = 10 }
@@ -47,24 +47,24 @@ picture = "Mining"
 
 date = { day = 4 month = march year = 1936 }
 
-name = "Bord na Mona"
-desc = "The Midland of Ireland has an ample amount of peat that we can use as a substitute for coal. This would cut our dependency on foreign countries, and make our nation more independent."
+name = "EVT_979001_NAME"
+desc = "EVT_979001_DESC"
 
 action_a = {
 ai_chance = 70
-name = "A State Controlled Peat Mining Company is in Order"
+name = "EVT_979001_OPTIONA"
 command = { type = add_prov_resource which = 34 value = 10 where = energy }
 command = { type = domestic which = free_market value = -1 }
 }
 action_b = {
 ai_chance = 15
-name = "A Semi-State Controlled Peat Mining Company is in Order"
+name = "EVT_979001_OPTIONB"
 command = { type = add_prov_resource which = 34 value = 10 where = energy }
 
 }
 action_c = {
 ai_chance = 15
-name = "Leave the Peat Mining to Private Corporations"
+name = "EVT_979001_OPTIONC"
 command = { type = add_prov_resource which = 34 value = 10 where = energy }
 command = { type = domestic which = free_market value = 1 }
 
@@ -89,11 +89,11 @@ picture = "politics2"
 
 #triggered by 6656220 - the Irish capitulation
 
-name = "A new Irish government"
-desc = "We granted Ireland independence, but we're going to have a close eye on their government."
+name = "EVT_979002_NAME"
+desc = "EVT_979002_DESC"
 
 action_a = {
-    name = "A good choice"
+    name = "EVT_979002_OPTIONA"
     command = { type = make_puppet which = IRE }
     command = { type = dissent value = -2 }
     command = { type = trigger which = 979003 }
@@ -106,11 +106,11 @@ country = IRE
 style = 2
 picture = "politics2"
 
-name = "A new Syndicalist government"
-desc = "The victorious Union of Britain liberated us from the oppressive forces of capitalism! Now, a new Irish government will be formed, for our country and for Syndicalism!"
+name = "EVT_979003_NAME"
+desc = "EVT_979003_DESC"
 
 action_a = {
-    name = "For Syndicalism!"
+    name = "EVT_979003_OPTIONA"
     command = { type = flag_ext where = IRE which = _syn }  
     command = { type = headofstate which = 25039 } #Jim Larkin sr.
     command = { type = headofgovernment which = 25050 } #Peadar O'Donnell
@@ -147,8 +147,8 @@ trigger = {
     random = 25
 }
 
-name = "Bombing campaign in Ireland!"
-desc = "The Irish didn't accept our rule and started a bombing campaign! The so-called Irish Republican Army said that they won't stop unless we grant independence to Ireland."
+name = "EVT_979004_NAME"
+desc = "EVT_979004_DESC"
 picture = "allied_offensive_italy"
 
 date = { day = 1 month = january year = 1936 }
@@ -157,7 +157,7 @@ deathdate = { day = 1 month = december year = 1963 }
 
 action_a = {
     ai_chance = 90
-    name = "We will not listen to their demands!"
+    name = "EVT_979004_OPTIONA"
     command = { type = construct which = ic where = 31 value = -1 } #Cork
         command = { type = construct which = infrastructure where = 32 value = -10 } #Galway
     command = { type = dissent value = 1 }
@@ -165,7 +165,7 @@ action_a = {
 
 action_b = {
     ai_chance = 10
-    name = "Grant them independence, but under our control!"
+    name = "EVT_979004_OPTIONB"
         command = { type = removeclaim which = 31 }
     command = { type = removeclaim which = 30 }
     command = { type = removeclaim which = 34 }
@@ -202,8 +202,8 @@ trigger = {
     random = 25
 }
 
-name = "Bombing campaign in Ireland!"
-desc = "The Irish didn't accept our rule and started a bombing campaign! The so-called Irish Republican Army said that they won't stop unless we grant independence to Ireland."
+name = "EVT_979005_NAME"
+desc = "EVT_979005_DESC"
 picture = "allied_offensive_italy"
 
 date = { day = 1 month = january year = 1936 }
@@ -212,7 +212,7 @@ deathdate = { day = 1 month = december year = 1963 }
 
 action_a = {
     ai_chance = 70
-    name = "We will not listen to their demands!"
+    name = "EVT_979005_OPTIONA"
     command = { type = construct which = ic where = 34 value = -1 } #Dublin
         command = { type = construct which = infrastructure where = 30 value = -10 } #Sligo
     command = { type = dissent value = 3 }
@@ -220,7 +220,7 @@ action_a = {
 
 action_b = {
     ai_chance = 30
-    name = "Grant them independence, but under our control!"
+    name = "EVT_979005_OPTIONB"
         command = { type = removeclaim which = 31 }
     command = { type = removeclaim which = 30 }
     command = { type = removeclaim which = 34 }
@@ -257,8 +257,8 @@ trigger = {
     random = 25
 }
 
-name = "Bombing campaign in Ireland!"
-desc = "The Irish didn't accept our rule and started a bombing campaign! The so-called Irish Republican Army said that they won't stop unless we grant independence to Ireland."
+name = "EVT_979006_NAME"
+desc = "EVT_979006_DESC"
 picture = "allied_offensive_italy"
 
 date = { day = 1 month = january year = 1936 }
@@ -267,7 +267,7 @@ deathdate = { day = 1 month = december year = 1963 }
 
 action_a = {
     ai_chance = 50
-    name = "We will not listen to their demands!"
+    name = "EVT_979006_OPTIONA"
     command = { type = construct which = ic where = 36 value = -1 } #Belfast
         command = { type = construct which = infrastructure where = 33 value = -10 } #Portadown
         command = { type = construct which = infrastructure where = 35 value = -10 } #Letterkenny
@@ -275,7 +275,7 @@ action_a = {
     }
 action_b = {
     ai_chance = 50
-    name = "Grant them independence, but under our control!"
+    name = "EVT_979006_OPTIONB"
         command = { type = removeclaim which = 31 }
     command = { type = removeclaim which = 30 }
     command = { type = removeclaim which = 34 }
@@ -312,8 +312,8 @@ trigger = {
     random = 25
 }
 
-name = "Revolts in Ireland!"
-desc = "The Irish didn't accept our rule and revolts are starting in all the major cities! The so-called Irish Republican Army said that they won't stop unless we grant independence to Ireland."
+name = "EVT_979007_NAME"
+desc = "EVT_979007_DESC"
 picture = "allied_offensive_italy"
 
 date = { day = 1 month = january year = 1936 }
@@ -322,7 +322,7 @@ deathdate = { day = 1 month = december year = 1963 }
 
 action_a = {
     ai_chance = 30
-    name = "We will crush the revolters!"
+    name = "EVT_979007_OPTIONA"
     command = { type = province_revoltrisk which = 31 value = 15 } #Cork
     command = { type = province_revoltrisk which = 30 value = 10 } #Galway
     command = { type = province_revoltrisk which = 34 value = 10 } #Sligo
@@ -338,7 +338,7 @@ action_a = {
 
 action_b = {
     ai_chance = 70
-    name = "Grant them independence, but under our control!"
+    name = "EVT_979007_OPTIONB"
         command = { type = removeclaim which = 31 }
     command = { type = removeclaim which = 30 }
     command = { type = removeclaim which = 34 }
@@ -364,13 +364,13 @@ country = IRE
 picture = "Burning"
 style = 2
 
-name = "St. Joseph's Orphanage is destroyed!"
-desc = "Today is a sad day in County Cavan. A fire at St. Joseph's Orphanage killed 36 people (35 of whom were children)."
+name = "EVT_979008_NAME"
+desc = "EVT_979008_DESC"
 
 date = { day = 23 month = february year = 1943 }
 
 action_a = {
-	name = "Those poor children!"
+	name = "EVT_979008_OPTIONA"
 	command = { type = dissent value = 1  }
 	command = { type = money value = -5  }
 	command = { type = supplies value = -5  }
@@ -394,18 +394,18 @@ date = { day = 17 month = March year = 1938 }
 offset = 30
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "Explosion in The Irish Press "
-desc = "Reports have just come in of an explosion in the Irish Press building in Dublin, it is believed that as many as forty-three people were killed. The Ulster Volunteer Force has taken credit for the attack."
+name = "EVT_775491_NAME"
+desc = "EVT_775491_DESC"
 style = 2
 
 action_a = {
-name = "Bloody hell!"
+name = "EVT_775491_OPTIONA"
 ai_chance = 50
 command = { type = dissent value = 4 }
 }
 
 action_b = {
-name = "Scour Ulster until you find the perpretrators!"
+name = "EVT_775491_OPTIONB"
 ai_chance = 50
 command = { type = supplies value = -50 }
 command = { type = dissent value = 1 }
@@ -430,8 +430,8 @@ event = {
      headofstate = 25001
      }
 
-     name = "Irish 1937 elections"
-     desc = "Like every elections since 1921, even this elections are marred by perpetual manipulations from the ruling Fine Gael party, Taoiseach, and the leader of our nation Michael Collins, who despite his high popularity among the citizens wants to remain in power at any costs..."
+     name = "EVT_676000_NAME"
+     desc = "EVT_676000_DESC"
 
     date = { day = 1 month = december year = 1937 }
     offset = 5
@@ -440,7 +440,7 @@ event = {
 
      action_a = {
          ai_chance = 75
-         name = "Fine Gael party wins by manipulation"
+         name = "EVT_676000_OPTIONA"
          command = { type = dissent value = 4 }
          command = { type = set_domestic which = democratic value = 5 }
          command = { type = set_domestic which = political_left value = 2 }
@@ -459,7 +459,7 @@ event = {
 
      action_b = {
          ai_chance = 25
-         name = "The democratic opposition wins despite manipulation!"
+         name = "EVT_676000_OPTIONB"
          command = { type = dissent value = -3 }
          command = { type = trigger which = 676009 }
              }
@@ -471,13 +471,13 @@ event = {
      country = IRE
      style = 2
 
-     name = "Opposition wins elections!"
-     desc = "It seems that despite our manipulations the opposition was able to gain a majority in the Oireachtas ( national assembly ) and is planning to fully restore democracy in Ireland. What shall we do?"
+     name = "EVT_676009_NAME"
+     desc = "EVT_676009_DESC"
      picture = "Belgrade"
 
      action_a = {
          ai_chance = 60
-         name = "Collins disbands the Oireachtas!"
+         name = "EVT_676009_OPTIONA"
          command = { type = set_domestic which = democratic value = 3 }
          command = { type = set_domestic which = political_left value = 3 }
          command = { type = set_domestic which = freedom value = 2 }
@@ -498,7 +498,7 @@ event = {
      }
      action_b = {
          ai_chance = 40
-         name = "We can not stop the inevitable...."
+         name = "EVT_676009_OPTIONB"
          command = { type = trigger which = 676011 }
          }
 }
@@ -509,13 +509,13 @@ event = {
      country = IRE
      style = 2
 
-     name = "Opposition wins elections!"
-     desc = "It seems that despite our manipulations the opposition was able to gain a majority in the Oireachtas ( national assembly ) and is planning to fully restore democracy in Ireland. What shall we do?"
+     name = "EVT_676010_NAME"
+     desc = "EVT_676010_DESC"
      picture = "Belgrade"
 
      action_a = {
          ai_chance = 60
-         name = "Collins disbands the Oireachtas!"
+         name = "EVT_676010_OPTIONA"
          command = { type = set_domestic which = democratic value = 3 }
          command = { type = set_domestic which = political_left value = 3 }
          command = { type = set_domestic which = freedom value = 2 }
@@ -535,7 +535,7 @@ event = {
      }
      action_b = {
          ai_chance = 40
-         name = "We can not stop the inevitable...."
+         name = "EVT_676010_OPTIONB"
          command = { type = trigger which = 676012 }
          }
 }
@@ -546,13 +546,13 @@ event = {
     country = IRE
     style = 2
 
-    name = "Victory of the opposition"
-    desc = "With the fall of the government set up by Michael Collins, the opposition splits into different factions on the matter of ideology. The question is, which shall take power?"
+    name = "EVT_676011_NAME"
+    desc = "EVT_676011_DESC"
     picture = "Belgrade"
 
      action_a = {
          ai_chance = 40
-         name = "Moderate conservatives form the National Centre Party"
+         name = "EVT_676011_OPTIONA"
          command = { type = dissent value = 5 }
          command = { type = end_puppet }
          command = { type = set_domestic which = democratic value = 7 }
@@ -571,7 +571,7 @@ event = {
 
      action_b = {
          ai_chance = 40
-         name = "A coalition of liberals and social democrats revive Sinn Féin"
+         name = "EVT_676011_OPTIONB"
          command = { type = dissent value = -1 }
          command = { type = end_puppet }
          command = { type = set_domestic which = democratic value = 8 }
@@ -590,7 +590,7 @@ event = {
 
      action_c = {
          ai_chance = 20
-         name = "Syndicalists take power under the name Saor Éire"   
+         name = "EVT_676011_OPTIONC"   
          command = { type = flag_ext where = IRE which = _syn }       
          command = { type = dissent value = 5 }
          command = { type = leave_alliance }
@@ -630,13 +630,13 @@ event = {
     country = IRE
     style = 2
 
-    name = "Victory of the opposition"
-    desc = "With the fall of the government set up by Michael Collins, the opposition splits into different factions on the matter of ideology. The question is, which shall take power?"
+    name = "EVT_676012_NAME"
+    desc = "EVT_676012_DESC"
     picture = "Belgrade"
 
      action_a = {
          ai_chance = 40
-         name = "Moderate conservatives form the National Centre Party"
+         name = "EVT_676012_OPTIONA"
          command = { type = dissent value = 5 }
          command = { type = end_puppet }
          command = { type = set_domestic which = democratic value = 7 }
@@ -655,7 +655,7 @@ event = {
 
      action_b = {
          ai_chance = 40
-         name = "A coalition of liberals and social democrats revive Sinn Féin" 
+         name = "EVT_676012_OPTIONB" 
          command = { type = dissent value = -1 }
          command = { type = end_puppet }
          command = { type = set_domestic which = democratic value = 8 }
@@ -674,7 +674,7 @@ event = {
 
      action_c = {
          ai_chance = 20
-         name = "Syndicalists take power under the name Saor Éire"   
+         name = "EVT_676012_OPTIONC"   
          command = { type = flag_ext where = IRE which = _syn }       
          command = { type = dissent value = 5 }
          command = { type = leave_alliance }
@@ -723,8 +723,8 @@ headofstate = 25162
 }
 }
 
-    name = "Elections of 1942"
-    desc = "Under our current Constitutional Republic, elections must be held every five years.  The political factions in our country have consolidated into four different groups, each of which has a chance of winning at the ballot box."
+    name = "EVT_676130_NAME"
+    desc = "EVT_676130_DESC"
 
 picture = "politics2"
 
@@ -735,7 +735,7 @@ picture = "politics2"
 
 action_a = {
     ai_chance =  30
-    name = "Sinn Féin - the social democrats win!"
+    name = "EVT_676130_OPTIONA"
     command = { type = set_domestic which = democratic value = 8 }
     command = { type = set_domestic which = political_left value = 9 }
     command = { type = headofstate which = 25032 } #Cathal Brugha
@@ -752,7 +752,7 @@ action_a = {
     
 action_b = {
     ai_chance =  30
-    name = "Fianna Fáil - the liberals win!"
+    name = "EVT_676130_OPTIONB"
     command = { type = set_domestic which = democratic value = 10 }
     command = { type = set_domestic which = political_left value = 4 }
     command = { type = headofstate which = 25036 } #Sean T O'Kelly
@@ -770,7 +770,7 @@ action_b = {
 
 action_c = {
     ai_chance =  30
-    name = "National Centre Party - the conservatives win!"
+    name = "EVT_676130_OPTIONC"
     command = { type = set_domestic which = democratic value = 7 }
     command = { type = set_domestic which = political_left value = 3 }
     command = { type = headofstate which = 25037 } #Frank McDermott
@@ -787,7 +787,7 @@ action_c = {
 
 action_d = {
     ai_chance =  10
-    name = "Saor Éire - the syndicalists win!"
+    name = "EVT_676130_OPTIOND"
         command = { type = flag_ext where = IRE which = _syn }  
         command = { type = leave_alliance }
         command = { type = end_puppet }
@@ -834,8 +834,8 @@ headofstate = 25162
 }
 }
 
-    name = "Elections of 1942"
-    desc = "Under our current Constitutional Monarchy, elections must be held every five years.  The political factions in our country have consolidated into four different groups, each of which has a chance of winning at the ballot box."
+    name = "EVT_676131_NAME"
+    desc = "EVT_676131_DESC"
 
 picture = "politics2"
 
@@ -846,7 +846,7 @@ picture = "politics2"
 
 action_a = {
     ai_chance =  30
-    name = "Sinn Féin - the social democrats win!"
+    name = "EVT_676131_OPTIONA"
     trigger = {
     NOT = {
     flag = IRE_SF_SYN
@@ -868,7 +868,7 @@ action_a = {
     
 action_b = {
     ai_chance =  30
-    name = "Fianna Fáil - the liberals win!"
+    name = "EVT_676131_OPTIONB"
     command = { type = set_domestic which = democratic value = 10 }
     command = { type = set_domestic which = political_left value = 4 }
     command = { type = headofstate which = 25161 } #Brian III
@@ -886,7 +886,7 @@ action_b = {
 
 action_c = {
     ai_chance =  30
-    name = "National Centre Party - the conservatives win!"
+    name = "EVT_676131_OPTIONC"
     command = { type = set_domestic which = democratic value = 7 }
     command = { type = set_domestic which = political_left value = 3 }
     command = { type = headofstate which = 25161 } #Brian III
@@ -913,8 +913,8 @@ government = democratic
 headofstate = 25160
 }
 
-    name = "Elections of 1942"
-    desc = "Under our current Constitutional Monarchy, elections must be held every five years.  The political factions in our country have consolidated into four different groups, each of which has a chance of winning at the ballot box."
+    name = "EVT_676132_NAME"
+    desc = "EVT_676132_DESC"
 
 picture = "politics2"
 
@@ -925,7 +925,7 @@ picture = "politics2"
 
 action_a = {
     ai_chance =  30
-    name = "Sinn Féin - the social democrats win!"
+    name = "EVT_676132_OPTIONA"
     trigger = {
     NOT = {
     flag = IRE_SF_SYN
@@ -948,7 +948,7 @@ action_a = {
     
 action_b = {
     ai_chance =  30
-    name = "Fianna Fáil - the liberals win!"
+    name = "EVT_676132_OPTIONB"
     command = { type = set_domestic which = democratic value = 10 }
     command = { type = set_domestic which = political_left value = 4 }
     command = { type = headofstate which = 25160 } #Edward VIII
@@ -966,7 +966,7 @@ action_b = {
 
 action_c = {
     ai_chance =  30
-    name = "National Centre Party - the conservatives win!"
+    name = "EVT_676132_OPTIONC"
     command = { type = set_domestic which = democratic value = 7 }
     command = { type = set_domestic which = political_left value = 3 }
     command = { type = headofstate which = 25160 } #Edward VIII
@@ -997,8 +997,8 @@ headofstate = 25162
 }
 }
 
-    name = "Elections of 1948"
-    desc = "Under our current Constitutional Republic, elections must be held every five years.  The political factions in our country have consolidated into four different groups, each of which has a chance of winning at the ballot box."
+    name = "EVT_676134_NAME"
+    desc = "EVT_676134_DESC"
 
 picture = "politics2"
 
@@ -1009,7 +1009,7 @@ picture = "politics2"
 
 action_a = {
     ai_chance =  30
-    name = "Sinn Féin - the social democrats win!"
+    name = "EVT_676134_OPTIONA"
     command = { type = set_domestic which = democratic value = 8 }
     command = { type = set_domestic which = political_left value = 9 }
     command = { type = headofstate which = 25032 } #Cathal Brugha
@@ -1026,7 +1026,7 @@ action_a = {
     
 action_b = {
     ai_chance =  30
-    name = "Fianna Fáil - the liberals win!"
+    name = "EVT_676134_OPTIONB"
     command = { type = set_domestic which = democratic value = 10 }
     command = { type = set_domestic which = political_left value = 4 }
     command = { type = headofstate which = 25036 } #Sean T O'Kelly
@@ -1044,7 +1044,7 @@ action_b = {
 
 action_c = {
     ai_chance =  30
-    name = "National Centre Party - the conservatives win!"
+    name = "EVT_676134_OPTIONC"
     command = { type = set_domestic which = democratic value = 7 }
     command = { type = set_domestic which = political_left value = 3 }
     command = { type = headofstate which = 25037 } #Frank McDermott
@@ -1061,7 +1061,7 @@ action_c = {
 
 action_d = {
     ai_chance =  10
-    name = "Saor Éire - the syndicalists win!"
+    name = "EVT_676134_OPTIOND"
         command = { type = flag_ext where = IRE which = _syn }  
         command = { type = set_relation which = FRA value = 150 }
         command = { type = set_relation which = RSI value = 150 }
@@ -1108,8 +1108,8 @@ headofstate = 25162
 }
 }
 
-    name = "Elections of 1948"
-    desc = "Under our current Constitutional Monarchy, elections must be held every five years.  The political factions in our country have consolidated into four different groups, each of which has a chance of winning at the ballot box."
+    name = "EVT_676135_NAME"
+    desc = "EVT_676135_DESC"
 
 picture = "politics2"
 
@@ -1120,7 +1120,7 @@ picture = "politics2"
 
 action_a = {
     ai_chance =  30
-    name = "Sinn Féin - the social democrats win!"
+    name = "EVT_676135_OPTIONA"
     trigger = {
     NOT = {
     flag = IRE_SF_SYN
@@ -1142,7 +1142,7 @@ action_a = {
     
 action_b = {
     ai_chance =  30
-    name = "Fianna Fáil - the liberals win!"
+    name = "EVT_676135_OPTIONB"
     command = { type = set_domestic which = democratic value = 10 }
     command = { type = set_domestic which = political_left value = 4 }
     command = { type = headofstate which = 25161 } #Brian III
@@ -1160,7 +1160,7 @@ action_b = {
 
 action_c = {
     ai_chance =  30
-    name = "National Centre Party - the conservatives win!"
+    name = "EVT_676135_OPTIONC"
     command = { type = set_domestic which = democratic value = 7 }
     command = { type = set_domestic which = political_left value = 3 }
     command = { type = headofstate which = 25161 } #Brian III
@@ -1187,8 +1187,8 @@ government = democratic
 headofstate = 25160
 }
 
-    name = "Elections of 1948"
-    desc = "Under our current Constitutional Monarchy, elections must be held every five years.  The political factions in our country have consolidated into four different groups, each of which has a chance of winning at the ballot box."
+    name = "EVT_676136_NAME"
+    desc = "EVT_676136_DESC"
 
 picture = "politics2"
 
@@ -1199,7 +1199,7 @@ picture = "politics2"
 
 action_a = {
     ai_chance =  30
-    name = "Sinn Féin - the social democrats win!"
+    name = "EVT_676136_OPTIONA"
     trigger = {
     NOT = {
     flag = IRE_SF_SYN
@@ -1222,7 +1222,7 @@ action_a = {
     
 action_b = {
     ai_chance =  30
-    name = "Fianna Fáil - the liberals win!"
+    name = "EVT_676136_OPTIONB"
     command = { type = set_domestic which = democratic value = 10 }
     command = { type = set_domestic which = political_left value = 4 }
     command = { type = headofstate which = 25160 } #Edward VIII
@@ -1240,7 +1240,7 @@ action_b = {
 
 action_c = {
     ai_chance =  30
-    name = "National Centre Party - the conservatives win!"
+    name = "EVT_676136_OPTIONC"
     command = { type = set_domestic which = democratic value = 7 }
     command = { type = set_domestic which = political_left value = 3 }
     command = { type = headofstate which = 25160 } #Edward VIII
@@ -1271,8 +1271,8 @@ headofstate = 25162
 }
 }
 
-    name = "Elections of 1953"
-    desc = "Under our current Constitutional Republic, elections must be held every five years.  The political factions in our country have consolidated into four different groups, each of which has a chance of winning at the ballot box."
+    name = "EVT_676138_NAME"
+    desc = "EVT_676138_DESC"
 
 picture = "politics2"
 
@@ -1283,7 +1283,7 @@ picture = "politics2"
 
 action_a = {
     ai_chance =  30
-    name = "Sinn Féin - the social democrats win!"
+    name = "EVT_676138_OPTIONA"
     command = { type = set_domestic which = democratic value = 8 }
     command = { type = set_domestic which = political_left value = 9 }
     command = { type = headofstate which = 25032 } #Cathal Brugha
@@ -1300,7 +1300,7 @@ action_a = {
     
 action_b = {
     ai_chance =  30
-    name = "Fianna Fáil - the liberals win!"
+    name = "EVT_676138_OPTIONB"
     command = { type = set_domestic which = democratic value = 10 }
     command = { type = set_domestic which = political_left value = 4 }
     command = { type = headofstate which = 25036 } #Sean T O'Kelly
@@ -1317,7 +1317,7 @@ action_b = {
         
 action_c = {
     ai_chance =  30
-    name = "National Centre Party - the conservatives win!"
+    name = "EVT_676138_OPTIONC"
     command = { type = set_domestic which = democratic value = 7 }
     command = { type = set_domestic which = political_left value = 3 }
     command = { type = headofstate which = 25037 } #Frank McDermott
@@ -1334,7 +1334,7 @@ action_c = {
 
 action_d = {
     ai_chance =  10
-    name = "Saor Éire - the syndicalists win!"
+    name = "EVT_676138_OPTIOND"
         command = { type = flag_ext where = IRE which = _syn }  
         command = { type = leave_alliance }
         command = { type = end_puppet }
@@ -1381,8 +1381,8 @@ headofstate = 25162
 }
 }
 
-    name = "Elections of 1953"
-    desc = "Under our current Constitutional Monarchy, elections must be held every five years.  The political factions in our country have consolidated into four different groups, each of which has a chance of winning at the ballot box."
+    name = "EVT_676139_NAME"
+    desc = "EVT_676139_DESC"
 
 picture = "politics2"
 
@@ -1393,7 +1393,7 @@ picture = "politics2"
 
 action_a = {
     ai_chance =  30
-    name = "Sinn Féin - the social democrats win!"
+    name = "EVT_676139_OPTIONA"
     trigger = {
     NOT = {
     flag = IRE_SF_SYN
@@ -1415,7 +1415,7 @@ action_a = {
     
 action_b = {
     ai_chance =  30
-    name = "Fianna Fáil - the liberals win!"
+    name = "EVT_676139_OPTIONB"
     command = { type = set_domestic which = democratic value = 10 }
     command = { type = set_domestic which = political_left value = 4 }
     command = { type = headofstate which = 25161 } #Brian III
@@ -1432,7 +1432,7 @@ action_b = {
         
 action_c = {
     ai_chance =  30
-    name = "National Centre Party - the conservatives win!"
+    name = "EVT_676139_OPTIONC"
     command = { type = set_domestic which = democratic value = 7 }
     command = { type = set_domestic which = political_left value = 3 }
     command = { type = headofstate which = 25161 } #Brian III
@@ -1459,8 +1459,8 @@ government = democratic
 headofstate = 25160
 }
 
-    name = "Elections of 1953"
-    desc = "Under our current Constitutional Monarchy, elections must be held every five years.  The political factions in our country have consolidated into four different groups, each of which has a chance of winning at the ballot box."
+    name = "EVT_676140_NAME"
+    desc = "EVT_676140_DESC"
 
 picture = "politics2"
 
@@ -1471,7 +1471,7 @@ picture = "politics2"
 
 action_a = {
     ai_chance =  30
-    name = "Sinn Féin - the social democrats win!"
+    name = "EVT_676140_OPTIONA"
     trigger = {
     NOT = {
     flag = IRE_SF_SYN
@@ -1494,7 +1494,7 @@ action_a = {
     
 action_b = {
     ai_chance =  30
-    name = "Fianna Fáil - the liberals win!"
+    name = "EVT_676140_OPTIONB"
     command = { type = set_domestic which = democratic value = 10 }
     command = { type = set_domestic which = political_left value = 4 }
     command = { type = headofstate which = 25160 } #Edward VIII
@@ -1511,7 +1511,7 @@ action_b = {
         
 action_c = {
     ai_chance =  30
-    name = "National Centre Party - the conservatives win!"
+    name = "EVT_676140_OPTIONC"
     command = { type = set_domestic which = democratic value = 7 }
     command = { type = set_domestic which = political_left value = 3 }
     command = { type = headofstate which = 25160 } #Edward VIII
@@ -1542,8 +1542,8 @@ headofstate = 25162
 }
 }
 
-    name = "Elections of 1958"
-    desc = "Under our current Constitutional Republic, elections must be held every five years.  The political factions in our country have consolidated into four different groups, each of which has a chance of winning at the ballot box."
+    name = "EVT_676141_NAME"
+    desc = "EVT_676141_DESC"
 
 picture = "politics2"
 
@@ -1553,7 +1553,7 @@ picture = "politics2"
 
 action_a = {
     ai_chance =  30
-    name = "Sinn Féin - the social democrats win!"
+    name = "EVT_676141_OPTIONA"
     command = { type = set_domestic which = democratic value = 8 }
     command = { type = set_domestic which = political_left value = 9 }
     command = { type = headofstate which = 25032 } #Cathal Brugha
@@ -1570,7 +1570,7 @@ action_a = {
     
 action_b = {
     ai_chance =  30
-    name = "Fianna Fáil - the liberals win!"
+    name = "EVT_676141_OPTIONB"
     command = { type = set_domestic which = democratic value = 10 }
     command = { type = set_domestic which = political_left value = 4 }
     command = { type = headofstate which = 25036 } #Sean T O'Kelly
@@ -1587,7 +1587,7 @@ action_b = {
         
 action_c = {
     ai_chance =  30
-    name = "National Centre Party - the conservatives win!"
+    name = "EVT_676141_OPTIONC"
     command = { type = set_domestic which = democratic value = 7 }
     command = { type = set_domestic which = political_left value = 3 }
     command = { type = headofstate which = 25037 } #Frank McDermott
@@ -1604,7 +1604,7 @@ action_c = {
 
 action_d = {
     ai_chance =  10
-    name = "Saor Éire - the syndicalists win!"
+    name = "EVT_676141_OPTIOND"
         command = { type = flag_ext where = IRE which = _syn }  
         command = { type = leave_alliance }
         command = { type = end_puppet }
@@ -1651,8 +1651,8 @@ headofstate = 25162
 }
 }
 
-    name = "Elections of 1958"
-    desc = "Under our current Constitutional Monarchy, elections must be held every five years.  The political factions in our country have consolidated into four different groups, each of which has a chance of winning at the ballot box."
+    name = "EVT_676142_NAME"
+    desc = "EVT_676142_DESC"
 
 picture = "politics2"
 
@@ -1662,7 +1662,7 @@ picture = "politics2"
 
 action_a = {
     ai_chance =  30
-    name = "Sinn Féin - the social democrats win!"
+    name = "EVT_676142_OPTIONA"
     trigger = {
     NOT = {
     flag = IRE_SF_SYN
@@ -1684,7 +1684,7 @@ action_a = {
     
 action_b = {
     ai_chance =  30
-    name = "Fianna Fáil - the liberals win!"
+    name = "EVT_676142_OPTIONB"
     command = { type = set_domestic which = democratic value = 10 }
     command = { type = set_domestic which = political_left value = 4 }
     command = { type = headofstate which = 25161 } #Brian III
@@ -1701,7 +1701,7 @@ action_b = {
         
 action_c = {
     ai_chance =  30
-    name = "National Centre Party - the conservatives win!"
+    name = "EVT_676142_OPTIONC"
     command = { type = set_domestic which = democratic value = 7 }
     command = { type = set_domestic which = political_left value = 3 }
     command = { type = headofstate which = 25161 } #Brian III
@@ -1728,8 +1728,8 @@ government = democratic
 headofstate = 25160
 }
 
-    name = "Elections of 1958"
-    desc = "Under our current Constitutional Monarchy, elections must be held every five years.  The political factions in our country have consolidated into four different groups, each of which has a chance of winning at the ballot box."
+    name = "EVT_676143_NAME"
+    desc = "EVT_676143_DESC"
 
 picture = "politics2"
 
@@ -1739,7 +1739,7 @@ picture = "politics2"
 
 action_a = {
     ai_chance =  30
-    name = "Sinn Féin - the social democrats win!"
+    name = "EVT_676143_OPTIONA"
     trigger = {
     NOT = {
     flag = IRE_SF_SYN
@@ -1762,7 +1762,7 @@ action_a = {
     
 action_b = {
     ai_chance =  30
-    name = "Fianna Fáil - the liberals win!"
+    name = "EVT_676143_OPTIONB"
     command = { type = set_domestic which = democratic value = 10 }
     command = { type = set_domestic which = political_left value = 4 }
     command = { type = headofstate which = 25160 } #Edward VIII
@@ -1779,7 +1779,7 @@ action_b = {
         
 action_c = {
     ai_chance =  30
-    name = "National Centre Party - the conservatives win!"
+    name = "EVT_676143_OPTIONC"
     command = { type = set_domestic which = democratic value = 7 }
     command = { type = set_domestic which = political_left value = 3 }
     command = { type = headofstate which = 25160 } #Edward VIII
@@ -1810,8 +1810,8 @@ headofstate = 25162
 }
 }
 
-    name = "Elections of 1963"
-    desc = "Under our current Constitutional Republic, elections must be held every five years.  The political factions in our country have consolidated into four different groups, each of which has a chance of winning at the ballot box."
+    name = "EVT_676144_NAME"
+    desc = "EVT_676144_DESC"
 
 picture = "politics2"
 
@@ -1822,7 +1822,7 @@ picture = "politics2"
 
 action_a = {
     ai_chance =  30
-    name = "Sinn Féin - the social democrats win!"
+    name = "EVT_676144_OPTIONA"
     command = { type = set_domestic which = democratic value = 8 }
     command = { type = set_domestic which = political_left value = 9 }
     command = { type = headofstate which = 25032 } #Cathal Brugha
@@ -1839,7 +1839,7 @@ action_a = {
     
 action_b = {
     ai_chance =  30
-    name = "Fianna Fáil - the liberals win!"
+    name = "EVT_676144_OPTIONB"
     command = { type = set_domestic which = democratic value = 10 }
     command = { type = set_domestic which = political_left value = 4 }
     command = { type = headofstate which = 25036 } #Sean T O'Kelly
@@ -1856,7 +1856,7 @@ action_b = {
         
 action_c = {
     ai_chance =  30
-    name = "National Centre Party - the conservatives win!"
+    name = "EVT_676144_OPTIONC"
     command = { type = set_domestic which = democratic value = 7 }
     command = { type = set_domestic which = political_left value = 3 }
     command = { type = headofstate which = 25037 } #Frank McDermott
@@ -1873,7 +1873,7 @@ action_c = {
 
 action_d = {
     ai_chance =  10
-    name = "Saor Éire - the syndicalists win!"
+    name = "EVT_676144_OPTIOND"
         command = { type = flag_ext where = IRE which = _syn }  
         command = { type = leave_alliance }
         command = { type = end_puppet }
@@ -1920,8 +1920,8 @@ headofstate = 25162
 }
 }
 
-    name = "Elections of 1963"
-    desc = "Under our current Constitutional Monarchy, elections must be held every five years.  The political factions in our country have consolidated into four different groups, each of which has a chance of winning at the ballot box."
+    name = "EVT_676145_NAME"
+    desc = "EVT_676145_DESC"
 
 picture = "politics2"
 
@@ -1932,7 +1932,7 @@ picture = "politics2"
 
 action_a = {
     ai_chance =  30
-    name = "Sinn Féin - the social democrats win!"
+    name = "EVT_676145_OPTIONA"
     trigger = {
     NOT = {
     flag = IRE_SF_SYN
@@ -1954,7 +1954,7 @@ action_a = {
     
 action_b = {
     ai_chance =  30
-    name = "Fianna Fáil - the liberals win!"
+    name = "EVT_676145_OPTIONB"
     command = { type = set_domestic which = democratic value = 10 }
     command = { type = set_domestic which = political_left value = 4 }
     command = { type = headofstate which = 25161 } #Brian III
@@ -1971,7 +1971,7 @@ action_b = {
         
 action_c = {
     ai_chance =  30
-    name = "National Centre Party - the conservatives win!"
+    name = "EVT_676145_OPTIONC"
     command = { type = set_domestic which = democratic value = 7 }
     command = { type = set_domestic which = political_left value = 3 }
     command = { type = headofstate which = 25161 } #Brian III
@@ -1998,8 +1998,8 @@ government = democratic
 headofstate = 25160
 }
 
-    name = "Elections of 1963"
-    desc = "Under our current Constitutional Monarchy, elections must be held every five years.  The political factions in our country have consolidated into four different groups, each of which has a chance of winning at the ballot box."
+    name = "EVT_676146_NAME"
+    desc = "EVT_676146_DESC"
 
 picture = "politics2"
 
@@ -2010,7 +2010,7 @@ picture = "politics2"
 
 action_a = {
     ai_chance =  30
-    name = "Sinn Féin - the social democrats win!"
+    name = "EVT_676146_OPTIONA"
     trigger = {
     NOT = {
     flag = IRE_SF_SYN
@@ -2033,7 +2033,7 @@ action_a = {
     
 action_b = {
     ai_chance =  30
-    name = "Fianna Fáil - the liberals win!"
+    name = "EVT_676146_OPTIONB"
     command = { type = set_domestic which = democratic value = 10 }
     command = { type = set_domestic which = political_left value = 4 }
     command = { type = headofstate which = 25160 } #Edward VIII
@@ -2050,7 +2050,7 @@ action_b = {
         
 action_c = {
     ai_chance =  30
-    name = "National Centre Party - the conservatives win!"
+    name = "EVT_676146_OPTIONC"
     command = { type = set_domestic which = democratic value = 7 }
     command = { type = set_domestic which = political_left value = 3 }
     command = { type = headofstate which = 25160 } #Edward VIII
@@ -2077,8 +2077,8 @@ event = {
      headofstate = 25001
      }
 
-     name = "Irish 1942 elections"
-     desc = "Like every elections since 1921, even this elections are marred by perpetual manipulations from the ruling Fine Gael party, Taoiseach, and the leader of our nation Michael Collins, who despite his high popularity among the citizens wants to remain in power at any costs..."
+     name = "EVT_676025_NAME"
+     desc = "EVT_676025_DESC"
 
      date = { day = 1 month = december year = 1942 }
      offset = 5
@@ -2087,7 +2087,7 @@ event = {
 
      action_a = {
          ai_chance = 90
-         name = "Collins and the Fine Gael party wins"
+         name = "EVT_676025_OPTIONA"
          command = { type = dissent value = 5 }
          command = { type = set_domestic which = democratic value = 5 }
          command = { type = set_domestic which = political_left value = 2 }
@@ -2106,7 +2106,7 @@ event = {
          }
      action_b = {
          ai_chance = 10
-         name = "The democratic opposition wins despite manipulation!"
+         name = "EVT_676025_OPTIONB"
          command = { type = dissent value = -3 }
          command = { type = trigger which = 676009 }
              }
@@ -2125,8 +2125,8 @@ event = {
      headofstate = 25001
      }
 
-     name = "Irish 1948 elections"
-     desc = "Like every elections since 1921, even this elections are marred by perpetual manipulations from the ruling Fine Gael party, Taoiseach, and the leader of our nation Michael Collins, who despite his high popularity among the citizens wants to remain in power at any costs..."
+     name = "EVT_676026_NAME"
+     desc = "EVT_676026_DESC"
 
      date = { day = 1 month = december year = 1948 }
      offset = 5
@@ -2135,7 +2135,7 @@ event = {
 
      action_a = {
          ai_chance = 70
-         name = "Collins and Fine Gael party"
+         name = "EVT_676026_OPTIONA"
          command = { type = dissent value = 10 } #People are fed up with Collnis
          command = { type = set_domestic which = democratic value = 5 }
          command = { type = set_domestic which = political_left value = 2 }
@@ -2152,7 +2152,7 @@ event = {
          }
      action_b = {
          ai_chance = 40
-         name = "Democratic opposition wins!"
+         name = "EVT_676026_OPTIONB"
          command = { type = dissent value = -3 }
          command = { type = trigger which = 676010 }
              }
@@ -2169,8 +2169,8 @@ event = {
      headofstate = 25001
      }
 
-     name = "Irish 1953 elections"
-     desc = "Like every elections since 1921, even this elections are marred by perpetual manipulations from the ruling Fine Gael party, Taoiseach, and the leader of our nation Michael Collins, who despite his high popularity among the citizens wants to remain in power at any costs..."
+     name = "EVT_676027_NAME"
+     desc = "EVT_676027_DESC"
 
      date = { day = 1 month = december year = 1953 }
      offset = 5
@@ -2179,7 +2179,7 @@ event = {
 
      action_a = {
          ai_chance = 50
-         name = "Collins and Fine Gael party"
+         name = "EVT_676027_OPTIONA"
          command = { type = dissent value = 15 } #People are fed up with Collnis
          command = { type = set_domestic which = democratic value = 5 }
          command = { type = set_domestic which = political_left value = 2 }
@@ -2196,7 +2196,7 @@ event = {
          }
      action_b = {
          ai_chance = 50
-         name = "Democratic opposition wins!"
+         name = "EVT_676027_OPTIONB"
          command = { type = dissent value = -3 }
          command = { type = trigger which = 676010 }
              }
@@ -2216,14 +2216,14 @@ event = {
      headofstate = 25001
      }
 
-     name = "Michael Collins was killed!"
-     desc = "Michael Collins died when bomb in his car exploded. The ruling Fine Gael party, despite its control over the state, is completely paralyzed by recent events and will be unable to hold its power against continual assault from the opposition. The country is in chaos and various political forces prepare for the worst..."
+     name = "EVT_676028_NAME"
+     desc = "EVT_676028_DESC"
 
      date = { day = 10 month = april year = 1953 }
 
      action_a = {
          ai_chance = 40
-         name = "Moderate conservatives form the National Centre Party"
+         name = "EVT_676028_OPTIONA"
          command = { type = sleepminister which = 25001 } #Collins
          command = { type = dissent value = 5 }
          command = { type = end_puppet }
@@ -2243,7 +2243,7 @@ event = {
 
      action_b = {
          ai_chance = 40
-         name = "A coalition of liberals and social democrats revive Sinn Féin"
+         name = "EVT_676028_OPTIONB"
          command = { type = dissent value = -1 }
          command = { type = end_puppet }
          command = { type = set_domestic which = democratic value = 8 }
@@ -2263,7 +2263,7 @@ event = {
 
      action_c = {
          ai_chance = 20
-         name = "Syndicalists take power under the name Saor Éire"   
+         name = "EVT_676028_OPTIONC"   
          command = { type = flag_ext where = IRE which = _syn }     
          command = { type = dissent value = 5 }
          command = { type = leave_alliance }
@@ -2311,13 +2311,13 @@ event = {
          }
          }
 
-     name = "Michael Collins dies!"
-     desc = "A long-time leader of the Irish nation died today in his manor in the suburbs of Dublin. Despite his controversial domestic policies and falsification of elections he will be always remembered as the man who brought independence to Ireland."
+     name = "EVT_676029_NAME"
+     desc = "EVT_676029_DESC"
 
      date = { day = 20 month = october year = 1962 }
 
      action_a = {
-         name = "Memento mori"
+         name = "EVT_676029_OPTIONA"
          command = { type = sleepminister which = 25001 } #Collins
          }
      }
@@ -2336,13 +2336,13 @@ headofstate = 25039
 }
 }
 
-name = "James Larkin Snr. dies!"
-desc = "James 'Jim' Larkin Snr., General Secretary of the Workers' Union of Ireland, died today in his sleep. His son, James Larkin Jnr., succeeds him as the next General Secretary of the Workers' Union of Ireland."
+name = "EVT_676030_NAME"
+desc = "EVT_676030_DESC"
 
 date = { day = 29 month = january year = 1947 } #30 January 1947
 
 action_a = {
-name = "Memento mori"
+name = "EVT_676030_OPTIONA"
 command = { type = sleepminister which = 25039 } #Larkin Snr.
 }
 }
@@ -2361,13 +2361,13 @@ event = 676030
 headofstate = 25039
 }
 
-name = "James Larkin Snr. dies!"
-desc = "Comrádaí James 'Jim' Larkin Snr., Cathaoirleach of our nation, died today in his sleep. His son, Comrádaí James Larkin Jnr., succeeds him as the next Cathaoirleach of Ireland."
+name = "EVT_676031_NAME"
+desc = "EVT_676031_DESC"
 
 date = { day = 29 month = january year = 1947 } #30 January 1947
 
 action_a = {
-name = "Memento mori"
+name = "EVT_676031_OPTIONA"
 command = { type = sleepminister which = 25039 } #Larkin Snr.
 command = { type = headofstate which = 25041 } #Larkin Jnr.
 }
@@ -2387,13 +2387,13 @@ headofgovernment = 25002
 }
 }
 
-name = "Eoin O'Duffy dies!"
-desc = "Eoin O'Duffy, former Taoiseach of our nation during the reign of Collins, died today in his sleep."
+name = "EVT_676032_NAME"
+desc = "EVT_676032_DESC"
 
 date = { day = 29 month = november year = 1944 } #30 November 1944
 
 action_a = {
-name = "Memento mori"
+name = "EVT_676032_OPTIONA"
 command = { type = sleepminister which = 25002 } #O'Duffy Head of Government
 command = { type = sleepminister which = 25138 } #O'Duffy Chief of Army
 command = { type = sleepminister which = 25084 } #O'Duffy Minister of Armament
@@ -2414,13 +2414,13 @@ event = 676032
 headofgovernment = 25002
 }
 
-name = "Eoin O'Duffy dies!"
-desc = "Eoin O'Duffy, Taoiseach of our nation, died today in his sleep. Collins appointed Richard Mulcahy as his successor."
+name = "EVT_676033_NAME"
+desc = "EVT_676033_DESC"
 
 date = { day = 29 month = november year = 1944 } #30 November 1944
 
 action_a = {
-name = "Memento mori"
+name = "EVT_676033_OPTIONA"
 command = { type = sleepminister which = 25002 } #O'Duffy Head of Government
 command = { type = sleepminister which = 25138 } #O'Duffy Chief of Army
 command = { type = sleepminister which = 25084 } #O'Duffy Minister of Armament
@@ -2443,13 +2443,13 @@ headofgovernment = 25042
 }
 }
 
-name = "Thomas Johnson dies!"
-desc = "Thomas Johnson, trade unionist and one of the Sinn Féin party's main leaders, died today in his sleep."
+name = "EVT_676034_NAME"
+desc = "EVT_676034_DESC"
 
 date = { day = 16 month = january year = 1963 } #17 January 1963
 
 action_a = {
-name = "Memento mori"
+name = "EVT_676034_OPTIONA"
 command = { type = sleepminister which = 25042 } #Johnson Head of Government
 command = { type = sleepminister which = 25053 } #Johnson Foreign Minister
 }
@@ -2469,13 +2469,13 @@ event = 676034
 headofgovernment = 25042
 }
 
-name = "Thomas Johnson dies!"
-desc = "Thomas Johnson, Taoiseach of our nation, died today in his sleep. Brugha appointed Brendan Corish as his successor."
+name = "EVT_676035_NAME"
+desc = "EVT_676035_DESC"
 
 date = { day = 16 month = january year = 1963 } #17 January 1963
 
 action_a = {
-name = "Memento mori"
+name = "EVT_676035_OPTIONA"
 command = { type = sleepminister which = 25042 } #Johnson Head of Government
 command = { type = sleepminister which = 25053 } #Johnson Foreign Minister
 command = { type = headofgovernment which = 25169 } #Brendan Corish
@@ -2496,11 +2496,11 @@ picture = "Board Meeting"
 
 date = { day = 26 month = October year = 1936 }
 
-name = "Hydro-Industry"
-desc = "Following the successful handling of our peat industry representatives from Bord na Mona have come forward with a proposal to dam the river Shannon to help produce more electricity and further reduce our ties to foreign coal."
+name = "EVT_9000056_NAME"
+desc = "EVT_9000056_DESC"
 
 action_a = {
-name = "Of course we shall invest"
+name = "EVT_9000056_OPTIONA"
 ai_chance = 60
 command = { type = dissent value = -1 }
 command = { type = add_prov_resource which = 32 value = 10 where = energy } #Galway
@@ -2509,7 +2509,7 @@ command = { type = money value = -100 }
 }
 
 action_b = {
-name = "We shall invest heavily in this project"
+name = "EVT_9000056_OPTIONB"
 ai_chance = 10
 command = { type = dissent value = 2 }
 command = { type = add_prov_resource which = 32 value = 10 where = energy } #Galway
@@ -2519,7 +2519,7 @@ command = { type = construct which = ic where = 32 value = 2 }
 }
 
 action_c = {
-name = "We can not afford this, turn them down"
+name = "EVT_9000056_OPTIONC"
 ai_chance = 30
 command = { type = dissent value = 2 }
 }
@@ -2543,18 +2543,18 @@ date = { day = 15 month = july year = 1938 }
 offset = 50
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "Scouring of Ulster"
-desc = "While on the search for the people behind the Irish Press bombings our forces have managed to upset the hornet's nest that is Ulster. While there have only been a few clashes in the area the events are reminding people, both in Ulster and outside it, of the Northern Campaign. Some people do not want a repeat of those events and are calling for negotiations."
+name = "EVT_9000057_NAME"
+desc = "EVT_9000057_DESC"
 
 action_a = {
-name = "Negotiate"
+name = "EVT_9000057_OPTIONA"
 ai_chance = 50
 command = { type = dissent value = 1 }
 command = { type = event which = 9000060 where = IRE when = 2  }
 }
 
 action_b = {
-name = "We will not negotiate"
+name = "EVT_9000057_OPTIONB"
 ai_chance = 50
 command = { type = dissent value = 2 }
 command = { type = event which = 9000058 where = IRE when = 2  }
@@ -2569,11 +2569,11 @@ style = 2
 picture = "FORA"
 
 
-name = "Ulster Rising"
-desc = "Our failure to negotiate with the Unionists of Ulster, as well as the increasingly militant actions of our forces in the area, have forced the Unionists to action!"
+name = "EVT_9000058_NAME"
+desc = "EVT_9000058_DESC"
 
 action_a = {
-name = "Damn."
+name = "EVT_9000058_OPTIONA"
 command = { type = revolt which = 35 } #Derry
 command = { type = revolt which = 36 } #Belfast
 command = { type = dissent value = 2 }
@@ -2589,11 +2589,11 @@ style = 2
 picture = "negotiaton"
 
 
-name = "Negotiating with the Unionists"
-desc = "The negotiations with the Unionists have begun. While they would like a seperate nation they understand that this is not an option and as such are asking for more liberties in the area and an end to the military occupation."
+name = "EVT_9000060_NAME"
+desc = "EVT_9000060_DESC"
 
 action_a = {
-name = "We accept these requests"
+name = "EVT_9000060_OPTIONA"
 ai_chance = 50
 command = { type = dissent value = 2 }
 command = { type = remove_division which = 12700 value = 335 }
@@ -2604,7 +2604,7 @@ command = { type = clrflag which = IRE_UVF2 }
 }
 
 action_b = {
-name = "They want what? Unacceptable"
+name = "EVT_9000060_OPTIONB"
 ai_chance = 50
 command = { type = dissent value = 2 }
 command = { type = event which = 9000058 where = IRE when = 2  }
@@ -2633,12 +2633,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 10
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "Ireland and the American Civil War"
-desc = "Since the outbreak of hostilities in the United States, many citizens of Irish descent have decided to return to their ancestral homeland to try and escape the chaos unfolding in America."
+name = "EVT_9000061_NAME"
+desc = "EVT_9000061_DESC"
 
 action_a = {
 ai_chance = 99
-name = "Ah, to be back now in Carrickfergus on that long road down to the salty sea"
+name = "EVT_9000061_OPTIONA"
 command = { type = dissent value = 1 }
 command = { type = relative_manpower value = 10 }
 command = { type = relation which = CSA value = 10 }
@@ -2648,7 +2648,7 @@ command = { type = setflag which = IRE_Refugees }
 }
 action_b = {
 ai_chance = 1
-name = "But the sea is wide and I can't swim over, neither have I wings to fly"
+name = "EVT_9000061_OPTIONB"
 command = { type = dissent value = 3 }
 command = { type = relation which = CSA value = -25 }
 command = { type = relation which = USA value = -25 }
@@ -2671,8 +2671,8 @@ control = { province = 1789 data = TEX }
 }
 }
 
-name = "The Fall of Boston"
-desc = "The war in America finally spread to the heart of New England and the young nation's capital, Boston, has fallen into the hands of their enemies. This has lead to a large number of the local Irish population to look to Ireland for safety as others have already done. The question is, are we willing or able to accept such a sudden influx of immigrants?"
+name = "EVT_9000062_NAME"
+desc = "EVT_9000062_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -2680,7 +2680,7 @@ offset = 1
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-    name = "We will welcome them"
+    name = "EVT_9000062_OPTIONA"
     ai_chance = 60
     command = { type = manpowerpool value = 25 }
     command = { type = supplies which = -1000 }
@@ -2689,12 +2689,12 @@ action_a = {
     command = { type = setflag which = IRE_Boston }
 }
 action_b = {
-    name = "They will be processed normally just like any other migrant"
+    name = "EVT_9000062_OPTIONB"
     ai_chance = 35
     command = { type = dissent value = 5 }
 }
 action_c = {
-    name = "No, we are full!"
+    name = "EVT_9000062_OPTIONC"
     ai_chance = 5
     command = { type = relative_manpower value = -5 }
     command = { type = dissent value = 10 }
@@ -2716,8 +2716,8 @@ trigger = {
 flag = IRE_Refugees
 }
 
-name = "Immigration and the Economy"
-desc = "The influx of American capital and technical expertise, not to mention cheap labour, has had a positive effect on our economy."
+name = "EVT_9000063_NAME"
+desc = "EVT_9000063_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -2725,7 +2725,7 @@ offset = 120
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Great!"
+name = "EVT_9000063_OPTIONA"
 command = { type = construct which = IC where = 34 value = 1 } #Dublin
 command = { type = construct which = IC where = 36 value = 1 } #Belfast
 command = { type = setflag which = IRE_Intergration1 }
@@ -2743,8 +2743,8 @@ event = { id = 9000063 }
 flag = IRE_Boston
 }
 
-name = "Boston Irish"
-desc = "The Boston Irish after coming to our country largely settled in Belfast and have contributed significantly to the cities industrial capacity. Despite this, their presence alongside other Irish-American immigrants, has only increased the secterian tensions there."
+name = "EVT_9000064_NAME"
+desc = "EVT_9000064_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -2752,7 +2752,7 @@ offset = 100
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Great!"
+name = "EVT_9000064_OPTIONA"
 command = { type = construct which = IC where = 36 value = 1 } #Belfast
 command = { type = dissent value = 3 }
 }
@@ -2771,7 +2771,7 @@ government = communist
 }
 }
 
-name = "Problems with Integration"
+name = "EVT_9000065_NAME"
 desc = "EVT_9000065_DESC"
 style = 2
 
@@ -2780,13 +2780,13 @@ offset = 150
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-    name = "Something must be done!"
+    name = "EVT_9000065_OPTIONA"
     ai_chance = 60
     command = { type = dissent value = 5 }
     command = { type = setflag which = IRE_Intergration2 }
 }
 action_b = {
-    name = "Ah sure, it'll sort itself out"
+    name = "EVT_9000065_OPTIONB"
     ai_chance = 40
     command = { type = dissent value = 15 }
     command = { type = clrflag which = IRE_Intergration1 }
@@ -2807,8 +2807,8 @@ government = communist
 }
 }
 
-name = "Government Reaction"
-desc = "A debate was held today in the Dáil as to what should be done to rectify the present situation. The majority blame the problems on the immigrants for exposing the country to Syndicalist influence and that there should be a crack down upon Trade-Unionists activities. However, a vocal minority call for restraint, arguing for attempts to find ways to encourage cultural unity in Ireland."
+name = "EVT_9000066_NAME"
+desc = "EVT_9000066_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -2816,13 +2816,13 @@ offset = 10
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-    name = "Root the bastards out!"
+    name = "EVT_9000066_OPTIONA"
     ai_chance = 60
     command = { type = dissent value = 10 }
     command = { type = setflag which = IRE_ICA }
 }
 action_b = {
-    name = "Finance a commision to investigate possible solutions"
+    name = "EVT_9000066_OPTIONB"
     ai_chance = 40
     command = { type = money value = -15 }
     command = { type = dissent value = -1 } #Dosent make much short term difference.
@@ -2847,8 +2847,8 @@ government = communist
 }
 }
 
-name = "Return of the Irish Citizen Army"
-desc = "The Irish Citizen Army, a prominant orginisation during the struggles against Britain and a forerunner of the IRA has been reformed by radical trade unionists. It cites Collins' many abuses, the lack of democracy, workers rights and the treatment of the immigrant community."
+name = "EVT_9000067_NAME"
+desc = "EVT_9000067_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -2856,7 +2856,7 @@ offset = 5
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-     name = "They are no threat."
+     name = "EVT_9000067_OPTIONA"
      command = { type = dissent value = 1 }
 }
 }
@@ -2875,8 +2875,8 @@ government = communist
 }
 }
 
-name = "ICA Repression"
-desc = "Where shall we focus our efforts in dealing with the socialists? Ulster is an obvious choice due to the various elements hostile to the government, but any move solely to the north might bring us into open conflict with the Unionists. A nation wide operation would likely be more effective in the long run."
+name = "EVT_9000068_NAME"
+desc = "EVT_9000068_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -2884,13 +2884,13 @@ offset = 30
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-     name = "Unionists, Unionists, what's the difference?"
+     name = "EVT_9000068_OPTIONA"
      ai_chance = 60
      command = { type = dissent value = 3 }
      command = { type = trigger which = 9000069 }
 }
 action_b = {
-     name = "Conduct a nation-wide search"
+     name = "EVT_9000068_OPTIONB"
      ai_chance = 40
      command = { type = supplies which = -1000 }
      command = { type = dissent value = 5 }
@@ -2904,12 +2904,12 @@ country = IRE
 style = 2
 picture = "Romcivwar"
 
-name = "Orangemen Rising"
-desc = "Our decision to focus upon Ulster, as well as the increasingly militant actions of our forces in the area, have forced the Unionists to action! They have attacked not just our forces and the Catholic community but also have targeted the Irish-Americans."
+name = "EVT_9000069_NAME"
+desc = "EVT_9000069_DESC"
 style = 2
 
 action_a = {
-name = "Damn."
+name = "EVT_9000069_OPTIONA"
 command = { type = revolt which = 35 } #Derry
 command = { type = revolt which = 36 } #Belfast
 command = { type = dissent value = 2 }
@@ -2931,8 +2931,8 @@ government = communist
 }
 }
 
-name = "Opposition backs the ICA"
-desc = "Trade Unionists across the country have united behind the ICA, as well as calls of support from the more left wing of the democratic opposition."
+name = "EVT_9000070_NAME"
+desc = "EVT_9000070_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -2940,7 +2940,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Down with this sort of thing!"
+name = "EVT_9000070_OPTIONA"
 command = { type = dissent value = 2 }
 command = { type = setflag which = IRE_ICA3 }
 }
@@ -2961,8 +2961,8 @@ government = communist
 }
 }
 
-name = "Pro-ICA Demonstration"
-desc = "A large rally was held today in support of the ICA and other left wing groups."
+name = "EVT_9000071_NAME"
+desc = "EVT_9000071_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -2970,7 +2970,7 @@ offset = 150
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Break it up!"
+name = "EVT_9000071_OPTIONA"
 command = { type = dissent value = 1 }
 }
 }
@@ -2989,8 +2989,8 @@ government = communist
 }
 }
 
-name = "Bank Robbery"
-desc = "Today members of the ICA engaged in an act of thievery to fund their illegal activities."
+name = "EVT_9000072_NAME"
+desc = "EVT_9000072_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -2998,7 +2998,7 @@ offset = 300
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Damn!"
+name = "EVT_9000072_OPTIONA"
 command = { type = money value = -15 }
 }
 }
@@ -3017,8 +3017,8 @@ government = communist
 }
 }
 
-name = "ICA Assasination"
-desc = "Today a local party official was shot by an ICA hit squad."
+name = "EVT_9000073_NAME"
+desc = "EVT_9000073_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -3026,7 +3026,7 @@ offset = 450
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Find who did this!"
+name = "EVT_9000073_OPTIONA"
 command = { type = dissent value = 2 }
 }
 }
@@ -3045,8 +3045,8 @@ government = communist
 }
 }
 
-name = "ICA Bombing"
-desc = "Today a bomb was set off at a local party office, undoubtedly by the ICA. The local party official and several bystanders were killed."
+name = "EVT_9000074_NAME"
+desc = "EVT_9000074_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -3054,7 +3054,7 @@ offset = 600
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Hunt them down!"
+name = "EVT_9000074_OPTIONA"
 command = { type = dissent value = 3 }
 }
 }
@@ -3070,8 +3070,8 @@ flag = IRE_ICA3
 flag = IRE_ENGCOU
 }
 
-name = "Dealing with the ICA?"
-desc = "Support in Ireland for the ICA has grown significantly recently. If we were to help them in their struggle, they would have a chance at overthrowing Collins' dictatorship. While any government they formed would be far more independent than one we would have set up, it would undoubtedly be a friend to the workers of Britain."
+name = "EVT_9000075_NAME"
+desc = "EVT_9000075_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -3079,14 +3079,14 @@ offset = 20
 deathdate = { day = 30 month = december year = 1963 }
 
 action_a = {
-     name = "Solidarity!"
+     name = "EVT_9000075_OPTIONA"
      ai_chance = 90
      command = { type = supplies which = -2000 }
      command = { type = manpowerpool value = -5 }
      command = { type = setflag which = IRE_CIV }
 }
 action_b = {
-     name = "It's not worth the effort"
+     name = "EVT_9000075_OPTIONB"
      ai_chance = 10
      command = { type = dissent value = 2 }
 }
@@ -3103,8 +3103,8 @@ flag = IRE_CIV
 headofstate = 25001
 }
 
-name = "The Irish Civil War"
-desc = "Fighting has broken out across the country as the forces of Fine Gael clash with the opposition."
+name = "EVT_9000076_NAME"
+desc = "EVT_9000076_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -3113,7 +3113,7 @@ deathdate = { day = 30 month = december year = 1963 }
 
 action_a = {
 ai_chance = 50
-name = "Victory for Collins!"
+name = "EVT_9000076_OPTIONA"
 command = { type = dissent value = -25 }
 command = { type = clrflag which = IRE_CIV }
 command = { type = clrflag which = IRE_ICA3 }
@@ -3125,7 +3125,7 @@ command = { type = event which = 9000077 where = ENG when = 1  }
 
 action_b = {
 ai_chance = 50
-name = "Victory for the Revolution!"
+name = "EVT_9000076_OPTIONB"
 command = { type = flag_ext where = IRE which = _syn }  
 command = { type = leave_alliance }
 command = { type = end_puppet }
@@ -3170,12 +3170,12 @@ event = {
      style = 2
          picture = "Helmets"
 
-     name = "Fine Gael defeat the ICA"
-     desc = "Unfortunately, the IRA proved too much for the rebels and we must now decide how to proceed."
+     name = "EVT_9000077_NAME"
+     desc = "EVT_9000077_DESC"
 
      action = {
          ai_chance = 20
-         name = "War will solve this !"
+         name = "EVT_9000077_OPTIONA"
                  trigger = {
                  local_flag = IREUOB_ALONE
                  }
@@ -3189,14 +3189,14 @@ event = {
 
          action = {
          ai_chance = 20
-         name = "Threaten them with war !"
+         name = "EVT_9000077_OPTIONB"
                  command = { type = event which = 100211 where = IRE when = 1  }
                  command = { type = dissent value = 1 }
          }
 
      action = {
          ai_chance = 5
-         name = "Actually, the entire dealing with Ireland was a mistake..."
+         name = "EVT_9000077_OPTIONC"
                  command = { type = dissent value = 2 }
                  command = { type = relation which = ENG value = -20 }
                  }
@@ -3208,11 +3208,11 @@ event = {
      style = 2
          picture = "SovietResistance"
 
-     name = "The ICA defeats Fine Gael!"
-     desc = "The Civil War in Ireland is over and the forces of the revolution have triupmhed. We now have a friendly nation guarding our western shores."
+     name = "EVT_9000078_NAME"
+     desc = "EVT_9000078_DESC"
 
 action_a = {
-name = "Excellent."
+name = "EVT_9000078_OPTIONA"
 command = { type = dissent value = -5 }
 }
 }
@@ -3241,12 +3241,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 30
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "Foreign policy"
-desc = "With Ireland finally free from capitalist oppression we can now freely decide our stance towards the international community. While many are arguing for the immediate alliance with the other Syndicalist nations, it might be wise enough to remain neutral to rebuild our country."
+name = "EVT_9000079_NAME"
+desc = "EVT_9000079_DESC"
 
          action_a = {
          ai_chance = 95
-         name = "We must join arms with France"
+         name = "EVT_9000079_OPTIONA"
          command = { type = trigger which = 9000080 }
          command = { type = domestic which = defense_lobby value = 1 }
          command = { type = domestic which = interventionism value = 1 }
@@ -3254,7 +3254,7 @@ desc = "With Ireland finally free from capitalist oppression we can now freely d
      }
      action_b = {
          ai_chance = 5
-         name = "Isolationism, we must organize our country"
+         name = "EVT_9000079_OPTIONB"
          command = { type = dissent value = -5 }
          command = { type = domestic which = defense_lobby value = -1 }
          command = { type = domestic which = interventionism value = -1 }
@@ -3268,12 +3268,12 @@ event = {
      style = 2
      picture = "diplomatic_campaign"
 
-     name = "Ireland wants to join the Internationale"
-     desc = "The government of Ireland has announced recently that they wish to join the Internationale after their recent Syndicalist coup. Do we want the Irish workers joining our crusade against the forces of imperialism and capitalism?"
+     name = "EVT_9000080_NAME"
+     desc = "EVT_9000080_DESC"
 
      action_a = {
          ai_chance = 100
-         name = "YES!"
+         name = "EVT_9000080_OPTIONA"
          command = { type = alliance which = IRE }
          command = { type = relation which = IRE value = 150 }
          command = { type = dissent value = -4 }
@@ -3282,7 +3282,7 @@ event = {
      }
      action_b = {
          ai_chance = 0
-         name = "Rather not"
+         name = "EVT_9000080_OPTIONB"
          command = { type = dissent value = 1 }
          command = { type = relation which = IRE value = -100 }
      }
@@ -3295,11 +3295,11 @@ event = {
      style = 2
      picture = "diplomatic_campaign"
 
-     name = "We join the Internationale"
-     desc = "The French and Italians are happy to see us joining the common cause - the spreading of the revolution throughout the world. Now we are part of the Internationale."
+     name = "EVT_9000082_NAME"
+     desc = "EVT_9000082_DESC"
 
      action_a = {
-         name = "Rise up the starry plough!"
+         name = "EVT_9000082_OPTIONA"
          command = { type = dissent value = -3 }
          command = { type = relation which = CAN value = -150 }
          command = { type = relation which = GER value = -150 }
@@ -3327,8 +3327,8 @@ trigger = {
 flag = IRE_Gael1
 }
 
-name = "Result of the Commission"
-desc = "The findings of the Commission is that since the creation of an independent Irish State, efforts to promote Irish culture have been lacking. It points to the reliance on the Catholic Church and the lipservice approach to the use of Irish as an official language. The solution would be to forge a common Irish identity by drawing upon it's Celtic past, secular in nature, applied equally across the nation. However this would take time to implement, be costly and upset conservative elements."
+name = "EVT_9000083_NAME"
+desc = "EVT_9000083_DESC"
 style = 2
 
 date = { day = 7 month = january year = 1936 }
@@ -3336,14 +3336,14 @@ offset = 30
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-    name = "Create Foras na Gaelige!"
+    name = "EVT_9000083_OPTIONA"
     ai_chance = 90
     command = { type = domestic which = freedom value = -1 }
     command = { type = money value = -750 }
     command = { type = setflag which = IRE_Gael2 }
 }
 action_b = {
-    name = "It's not worth the effort"
+    name = "EVT_9000083_OPTIONB"
     ai_chance = 10
     command = { type = dissent value = 2 }
     command = { type = setflag which = IRE_ICA }
@@ -3361,8 +3361,8 @@ flag = IRE_Gael2
 Not = { flag = IRE_Secular }
 }
 
-name = "Secularisation of the Irish State"
-desc = "One of the main obstacles to the unity of Ireland was the conflict between Catholic and Protestant. By establishing a clear divide between Church and State in the Irish Republic it is hoped that our citizens will no longer have to choose between their faith and their nation."
+name = "EVT_9000084_NAME"
+desc = "EVT_9000084_DESC"
 style = 2
 
 date = { day = 7 month = january year = 1936 }
@@ -3370,7 +3370,7 @@ offset = 15
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-    name = "Ireland will be forever more, a Secular and Strong government!"
+    name = "EVT_9000084_OPTIONA"
     ai_chance = 99
     command = { type = domestic which = freedom value = 2 }
     command = { type = relation which = ITA value = -50 }
@@ -3379,7 +3379,7 @@ action_a = {
     command = { type = setflag which = IRE_Secular }
 }
 action_b = {
-    name = "This was a bad idea"
+    name = "EVT_9000084_OPTIONB"
     ai_chance = 1
     command = { type = clrflag which = IRE_Gael1 }
     command = { type = clrflag which = IRE_Gael2 }
@@ -3398,7 +3398,7 @@ flag = IRE_Gael2
 flag = IRE_Secular
 }
 
-name = "Promoting of the Irish language"
+name = "EVT_9000085_NAME"
 desc = "EVT_9000085_DESC"
 style = 2
 
@@ -3407,7 +3407,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-    name = "This would be beneficial."
+    name = "EVT_9000085_OPTIONA"
     ai_chance = 100
     command = { type = setflag which = IRE_Gael3 }
 }
@@ -3423,7 +3423,7 @@ trigger = {
 flag = IRE_Gael3
 }
 
-name = "An Caighdeán Oifigiúil"
+name = "EVT_9000086_NAME"
 desc = "EVT_9000086_DESC"
 style = 2
 
@@ -3432,7 +3432,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-    name = "Create the official standard."
+    name = "EVT_9000086_OPTIONA"
     ai_chance = 100
     command = { type = setflag which = IRE_Gael4 }
     command = { type = setflag which = IRE_Ulster }
@@ -3450,7 +3450,7 @@ trigger = {
 flag = IRE_Gael4
 }
 
-name = "Education and Caighdeán Oifigiúil."
+name = "EVT_9000087_NAME"
 desc = "EVT_9000087_DESC"
 style = 2
 
@@ -3460,7 +3460,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 20
-name = "Limit it to Schools only"
+name = "EVT_9000087_OPTIONA"
 command = { type = domestic which = freedom value = 1 }
 command = { type = dissent value = -1 }
 command = { type = setflag which = IRE_Gael5 }
@@ -3468,7 +3468,7 @@ command = { type = setflag which = IRE_Gael5 }
 
 action_b = {
 ai_chance = 75
-name = "Make it a requirement for higher education"
+name = "EVT_9000087_OPTIONB"
 command = { type = domestic which = freedom value = -1 }
 command = { type = dissent value = 3 }
 command = { type = setflag which = IRE_Gael5 }
@@ -3476,7 +3476,7 @@ command = { type = setflag which = IRE_Gael5 }
 
 action_c = {
 ai_chance = 5
-name = "No, we have gone far enough! Think of the children?"
+name = "EVT_9000087_OPTIONC"
 command = { type = dissent value = -5 }
 command = { type = clrflag which = IRE_Gael1 }
 command = { type = clrflag which = IRE_Gael2 }
@@ -3497,14 +3497,14 @@ trigger = {
 flag = IRE_Gael5
 }
 
-name = "Seachtain na Gaeilge."
-desc = "Since 1903, the Seachtain na Gaeilge has been held over the first 2 weeks of March in the run up to St. Patricks Day to promote the Irish language. Began by Conradh na Gaeilge a precursor to our current Foras na Gaelige, it is now officially sponsored and this year's festval looks to be the biggest ever. Street Céilís are being held in every town and village in Ireland. Hopefully this will grow into a new annual tradition that will show to the Irish people and the world our unity."
+name = "EVT_9000088_NAME"
+desc = "EVT_9000088_DESC"
 style = 2
 
 date = { day = 1 month = march year = 1938 }
 
 action_a = {
-    name = "Croí na Teanga – It's You!"
+    name = "EVT_9000088_OPTIONA"
     ai_chance = 100
 command = { type = clrflag which = IRE_Gael1 }
 command = { type = clrflag which = IRE_Gael2 }
@@ -3530,8 +3530,8 @@ trigger = {
 flag = IRE_Ulster
 }
 
-name = "Unionists demand recognition of Ulster-Scots"
-desc = "In response to our attempts to revive the Irish language, the Unionists have demanded that we recognise Ulster-Scots as a minority language. What is our response?"
+name = "EVT_9000089_NAME"
+desc = "EVT_9000089_DESC"
 style = 2
 
 date = { day = 7 month = january year = 1936 }
@@ -3539,12 +3539,12 @@ offset = 40
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-    name = "Compromise. Establish Tha Boord o Ulstèr-Scotch"
+    name = "EVT_9000089_OPTIONA"
     ai_chance = 60
     command = { type = dissent value = 2 }
 }
 action_b = {
-    name = "Ignore them"
+    name = "EVT_9000089_OPTIONB"
     ai_chance = 40
     command = { type = setflag which = IRE_UVF }
     command = { type = dissent value = 10 }
@@ -3562,8 +3562,8 @@ trigger = {
 flag = IRE_UVF
 }
 
-name = "Unionist Demonstration"
-desc = "A large rally was held today by the Orange Order in protest of the government."
+name = "EVT_9000090_NAME"
+desc = "EVT_9000090_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -3571,7 +3571,7 @@ offset = 150
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Break it up!"
+name = "EVT_9000090_OPTIONA"
 command = { type = dissent value = 1 }
 }
 }
@@ -3587,8 +3587,8 @@ trigger = {
 flag = IRE_UVF
 }
 
-name = "Bank Robbery"
-desc = "Today members of the UVF engaged in an act of thievery to fund their illegal activities."
+name = "EVT_9000091_NAME"
+desc = "EVT_9000091_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -3596,7 +3596,7 @@ offset = 300
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Damn!"
+name = "EVT_9000091_OPTIONA"
 command = { type = money value = -15 }
 }
 }
@@ -3612,8 +3612,8 @@ trigger = {
 flag = IRE_UVF
 }
 
-name = "UVF Assasination"
-desc = "Today a local party official was shot by an UVF hit squad."
+name = "EVT_9000092_NAME"
+desc = "EVT_9000092_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -3621,7 +3621,7 @@ offset = 450
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Find who did this!"
+name = "EVT_9000092_OPTIONA"
 command = { type = dissent value = 2 }
 }
 }
@@ -3637,8 +3637,8 @@ trigger = {
 flag = IRE_UVF
 }
 
-name = "UVF Bombing"
-desc = "Today a bomb was set off at a local party office, undoubtedly by the UVF. The local party official and several bystanders were killed."
+name = "EVT_9000093_NAME"
+desc = "EVT_9000093_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -3646,7 +3646,7 @@ offset = 600
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Hunt them down!"
+name = "EVT_9000093_OPTIONA"
 command = { type = dissent value = 3 }
 }
 }
@@ -3668,7 +3668,7 @@ government = communist
 }
 }
 
-name = "The Army Comrades Association"
+name = "EVT_9000095_NAME"
 desc = "EVT_9000095_DESC"
 style = 2
 
@@ -3677,13 +3677,13 @@ offset = 40
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-     name = "Yes, we need help with the Reds"
+     name = "EVT_9000095_OPTIONA"
      ai_chance = 75
      command = { type = dissent value = 2 }
      command = { type = setflag which = IRE_ACA }
 }
 action_b = {
-     name = "Ignore them"
+     name = "EVT_9000095_OPTIONB"
      ai_chance = 25
      command = { type = dissent value = 1 }
 }
@@ -3707,8 +3707,8 @@ government = democratic
 }
 }
 
-name = "Eoin O'Duffy and the ACA"
-desc = "Eoin O'Duffy, Taoiseach under Michael Collins, has for some time been closely associated with the Army Comrades Association. The ACA played a valuable part in the Civil War and now Eoin O'Duffy is arguing for them to be made a permanent part of our security forces. The motion is likely to pass but the question remains how best to incorporate the ACA?"
+name = "EVT_9000096_NAME"
+desc = "EVT_9000096_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -3717,7 +3717,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 35
-name = "Have the best form a National Guard, incorporate the rest"
+name = "EVT_9000096_OPTIONA"
 command = { type = add_division which = "National Guard" value = infantry when = 9 }
 command = { type = manpowerpool value = 5 }
 command = { type = supplies which = -750 }
@@ -3728,7 +3728,7 @@ command = { type = setflag which = IRE_ACA2 }
 
 action_b = {
 ai_chance = 40
-name = "Take them as they are"
+name = "EVT_9000096_OPTIONB"
 command = { type = add_division which = "1st ACA Battalion" value = militia when = 4 }
 command = { type = add_division which = "2nd ACA Battalion" value = militia when = 4 }
 command = { type = supplies which = -1000 }
@@ -3739,7 +3739,7 @@ command = { type = setflag which = IRE_ACA2 }
 
 action_c = {
 ai_chance = 25
-name = "The motion is defeated in the Dáil"
+name = "EVT_9000096_OPTIONC"
 command = { type = dissent value = 2 }
 }
 }
@@ -3762,8 +3762,8 @@ flag = IRE_ACABB
 }
 }
 
-name = "Dissolution of the ACA"
-desc = "The end of Collins' regime was taken as an opportunity for the newly empowered former opposition to enact revenge on the hated ACA."
+name = "EVT_9000097_NAME"
+desc = "EVT_9000097_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -3771,7 +3771,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Good riddance."
+name = "EVT_9000097_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = relative_manpower value = -1 }
 }
@@ -3795,7 +3795,7 @@ government = democratic
 }
 }
 
-name = "The Boy Scouts of Ireland"
+name = "EVT_9000098_NAME"
 desc = "EVT_9000098_DESC"
 style = 2
 
@@ -3804,13 +3804,13 @@ offset = 20
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-    name = "Physically strong, mentally awake and morally straight"
+    name = "EVT_9000098_OPTIONA"
     ai_chance = 90
     command = { type = setflag which = IRE_LIY1 }
     command = { type = trigger which = 9000099 }
 }
 action_b = {
-    name = "It's not worth the effort"
+    name = "EVT_9000098_OPTIONB"
     ai_chance = 10
     command = { }
 }
@@ -3822,19 +3822,19 @@ country = IRE
 style = 2
 picture = "womens_organisation"
 
-name = "The Girl Scouts of Ireland"
+name = "EVT_9000099_NAME"
 desc = "EVT_9000099_DESC"
 style = 2
 
 action_a = {
-    name = "All are equal in The Leauge of Irish Youth!"
+    name = "EVT_9000099_OPTIONA"
     ai_chance = 40
 command = { type = clrflag which = IRE_LIY1 }
     command = { type = setflag which = IRE_LIY2 }
     command = { type = dissent value = 5 }
 }
 action_b = {
-    name = "Stick with the original plan"
+    name = "EVT_9000099_OPTIONB"
     ai_chance = 60
     command = { type = dissent value = -3 }
 }
@@ -3854,8 +3854,8 @@ government = democratic
 }
 }
 
-name = "Young Ireland"
-desc = "With the situation in Europe and around the world rapidly deteriorating, some hawkish members of government are now in favour of forming a senior paramilitary wing of the Ceithern to better safeguard Ireland in these dark times."
+name = "EVT_9000100_NAME"
+desc = "EVT_9000100_DESC"
 style = 2
 
 date = { day = 7 month = january year = 1937 }
@@ -3863,7 +3863,7 @@ offset = 100
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-     name = "Drastic times need drastic measures"
+     name = "EVT_9000100_OPTIONA"
      ai_chance = 70
      command = { type = add_division which = "An Éire Óg Brigade" value = bergsjaeger when = 8 }
      command = { type = relative_manpower value = 2 }
@@ -3871,7 +3871,7 @@ action_a = {
      command = { type = sleepevent which = 9000101 }
 }
 action_b = {
-     name = "No that is a step too far"
+     name = "EVT_9000100_OPTIONB"
      ai_chance = 30
      command = { type = dissent value = -2 }
 }
@@ -3891,8 +3891,8 @@ government = democratic
 }
 }
 
-name = "Young Ireland"
-desc = "With the situation in Europe and around the world rapidly deteriorating, some hawkish members of government are now in favour of forming a senior paramilitary wing of the Ceithern to better safeguard Ireland in these dark times."
+name = "EVT_9000101_NAME"
+desc = "EVT_9000101_DESC"
 style = 2
 
 date = { day = 7 month = january year = 1937 }
@@ -3900,7 +3900,7 @@ offset = 100
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-     name = "Drastic times need drastic measures"
+     name = "EVT_9000101_OPTIONA"
      ai_chance = 70
      command = { type = add_division which = "An Éire Óg Brigade" value = bergsjaeger when = 8 }
      command = { type = relative_manpower value = 4 }
@@ -3910,7 +3910,7 @@ action_a = {
      command = { type = setflag which = IRE_LIY3 }
 }
 action_b = {
-     name = "No that is a step too far"
+     name = "EVT_9000101_OPTIONB"
      ai_chance = 30
      command = { type = dissent value = -3 }
 }
@@ -3928,8 +3928,8 @@ flag = IRE_LIY3
 NOT = { local_flag = WOMEN_ARMY }
 }
 
-name = "Women's role in the army"
-desc = "With the outbreak of hostilities the nation is preparing itself for the struggle ahead. Recently there have been repeated calls for the admission of women into the military on a standard basis. They point to the women already serving in the Young Ireland Brigade and the many more who received practical training in the Ceithern as examples. What shall we do?"
+name = "EVT_9000102_NAME"
+desc = "EVT_9000102_DESC"
 
 date = { day = 1 month = may year = 1936 }
 offset = 50
@@ -3937,7 +3937,7 @@ deathdate = { day = 1 month = january year = 1970 }
 
 action_a = {
 ai_chance = 15
-name = "They will serve the same way the men do"
+name = "EVT_9000102_OPTIONA"
      command = { type = dissent value = 16 }
      command = { type = relative_manpower value = 50 }
      command = { type = local_setflag which = WOMEN_ARMY }
@@ -3945,7 +3945,7 @@ name = "They will serve the same way the men do"
 
 action_b = {
 ai_chance = 40
-name = "Allow volunteer service"
+name = "EVT_9000102_OPTIONB"
      command = { type = dissent value = 8 }
      command = { type = relative_manpower value = 20 }
      command = { type = local_setflag which = WOMEN_ARMY }
@@ -3953,7 +3953,7 @@ name = "Allow volunteer service"
 
 action_c = {
 ai_chance = 45
-name = "This is unacceptable"
+name = "EVT_9000102_OPTIONC"
      command = { type = dissent value = 4 }
      }
 }
@@ -3989,11 +3989,11 @@ date = { day = 0 month = january year = 1936 }
 offset = 1
 deathdate = { day = 29 month = december year = 1963 }
     
-name = "Anniversary of the 1916 Easter Rising!"
-desc = "On Monday, the 24th of April 1916, members of the Irish Volunteers, Irish Citizen Army and Cumann na mBan seized key locations in Dublin and declared a free Irish republic. Surrounded by the vastly superior numbers and artillery of the British Army, they fought on for six days before eventually surrendering. Most of the leaders of the Rising were executed. Although a loss at the time, it would subsequently lead to Ireland's war of independence and freedom after seven hundred years under British rule."
+name = "EVT_9000094_NAME"
+desc = "EVT_9000094_DESC"
 
 action = {
-name = "For slavery fled, O glorious dead, when you fell in the foggy dew."
+name = "EVT_9000094_OPTIONA"
 command = { type = dissent value = -1 }
 }
 }
@@ -4017,7 +4017,7 @@ government = democratic
 }
 }
 
-name = "The Army Comrades Association"
+name = "EVT_9000103_NAME"
 desc = "EVT_9000103_DESC"
 style = 2
 
@@ -4026,7 +4026,7 @@ offset = 40
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-     name = "Yes, the extra security will benefit the Republic"
+     name = "EVT_9000103_OPTIONA"
      ai_chance = 75
      command = { type = dissent value = 7 }
      command = { type = setflag which = IRE_ACA }
@@ -4034,7 +4034,7 @@ command = { type = sleepevent which = 9000095 }
 command = { type = sleepevent which = 9000096 }
 }
 action_b = {
-     name = "Ignore them"
+     name = "EVT_9000103_OPTIONB"
      ai_chance = 25
      command = { type = dissent value = 5 }
 }
@@ -4058,8 +4058,8 @@ government = democratic
 }
 }
 
-name = "Eoin O'Duffy and the ACA"
-desc = "Eoin O'Duffy, Taoiseach under Michael Collins, has for some time been closely associated with the Army Comrades Association. Eoin O'Duffy is arguing for them to be made a permanent part of our security forces. While they have been useful thus far in support of the Gardaí their usefulness as military assets is less certain. The motion is likely to pass but the question remains whether to incorporate the ACA?"
+name = "EVT_9000104_NAME"
+desc = "EVT_9000104_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -4068,7 +4068,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 75
-name = "Yes, Ireland will be defended"
+name = "EVT_9000104_OPTIONA"
 command = { type = relative_manpower value = 1 }
 command = { type = add_division which = "1st ACA Battalion" value = militia when = 4 }
 command = { type = add_division which = "2nd ACA Battalion" value = militia when = 4 }
@@ -4079,7 +4079,7 @@ command = { type = setflag which = IRE_ACA2 }
 
 action_c = {
 ai_chance = 25
-name = "The motion is defeated in the Dáil"
+name = "EVT_9000104_OPTIONB"
 command = { type = dissent value = -2 }
 }
 }
@@ -4101,8 +4101,8 @@ government = democratic
 }
 }
 
-name = "The Blueblouses"
-desc = "Eoin O'Duffy has today been petitioned by several local branches of the female wing of the ACA, known as Blueblouses (a play on the nickname of the ACA, Blueshirts). They are asking to serve alongside other members of the ACA in our military. Should we allow this?"
+name = "EVT_9000105_NAME"
+desc = "EVT_9000105_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -4111,7 +4111,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 75
-name = "We see no reason why not"
+name = "EVT_9000105_OPTIONA"
 command = { type = relative_manpower value = 1 }
 command = { type = dissent value = 2 }
 command = { type = setflag which = IRE_ACABB }
@@ -4119,7 +4119,7 @@ command = { type = setflag which = IRE_ACABB }
 
 action_c = {
 ai_chance = 25
-name = "No, they have other roles to play in our Republic"
+name = "EVT_9000105_OPTIONB"
 command = { type = dissent value = 1 }
 }
 }
@@ -4136,8 +4136,8 @@ flag = IRE_ACABB
 NOT = { local_flag = WOMEN_ARMY }
 }
 
-name = "Women's role in the army"
-desc = "With the outbreak of hostilities the nation is preparing itself for the struggle ahead. Recently there have been repeated calls from the Blueblouses of the ACA for the admision of women into the military on a standard basis. They point to the women already serving in the ACA as well as the Easter Rising. What shall we do?"
+name = "EVT_9000106_NAME"
+desc = "EVT_9000106_DESC"
 
 date = { day = 1 month = may year = 1936 }
 offset = 50
@@ -4145,7 +4145,7 @@ deathdate = { day = 1 month = january year = 1970 }
 
 action_a = {
 ai_chance = 15
-name = "They will serve the same way the men do"
+name = "EVT_9000106_OPTIONA"
      command = { type = dissent value = 20 }
      command = { type = relative_manpower value = 50 }
      command = { type = local_setflag which = WOMEN_ARMY }
@@ -4154,7 +4154,7 @@ command = { type = sleepevent which = 9000102 }
 
 action_b = {
 ai_chance = 40
-name = "Allow volunteer service"
+name = "EVT_9000106_OPTIONB"
      command = { type = dissent value = 15 }
      command = { type = relative_manpower value = 20 }
      command = { type = local_setflag which = WOMEN_ARMY }
@@ -4163,7 +4163,7 @@ command = { type = sleepevent which = 9000102 }
 
 action_c = {
 ai_chance = 45
-name = "This is unacceptable"
+name = "EVT_9000106_OPTIONC"
      command = { type = dissent value = -5 }
      }
 }
@@ -4185,8 +4185,8 @@ headofstate = 25001
 }
 }
 
-name = "Dissolution of the ACA"
-desc = "The end of Collins' regime was taken as an opportunity for the newly empowered former opposition to enact revenge on the hated ACA."
+name = "EVT_9000107_NAME"
+desc = "EVT_9000107_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -4194,7 +4194,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Good riddance."
+name = "EVT_9000107_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = relative_manpower value = -2 }
 }
@@ -4232,8 +4232,8 @@ guarantee = { country = GER country = IRE }
 }
 }
 
-name = "Irish Foreign Policy"
-desc = "After our recent victory at the polls, we must decide on how to react to the continuing descent into chaos around us in the world. Many in our government are in favour of seeking the protection of Germany while some want to maintain our neutrality. A small minority even recommend a reconciliation with the Royalists across the Atlantic to better protect against the common threat, the Union of Britain. We have thus far avoided British interference but the future remains uncertain."
+name = "EVT_9000108_NAME"
+desc = "EVT_9000108_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1938 }
@@ -4242,7 +4242,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
      action = {
          ai_chance = 60
-         name = "The Republic will turn to the Reich!"
+         name = "EVT_9000108_OPTIONA"
                  command = { type = dissent value = -3 }
                  command = { type = event which = 9000157 where = GER when = 1  }
           command = { type = setflag which = IRE_FP }
@@ -4250,7 +4250,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
      action = {
          ai_chance = 10
-         name = "Ireland must align with Canada & the Exiles!"
+         name = "EVT_9000108_OPTIONB"
                  command = { type = dissent value = 5 }
                  command = { type = event which = 9000164 where = CAN when = 1  }
          command = { type = setflag which = IRE_FP }
@@ -4258,7 +4258,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
          action = {
          ai_chance = 30
-         name = "Maintain Irish neutrality"
+         name = "EVT_9000108_OPTIONC"
                  command = { type = dissent value = -1 }
          command = { type = setflag which = IRE_ISO }
          command = { type = setflag which = IRE_FP }
@@ -4287,8 +4287,8 @@ flag = IRE_FP
 }
 }
 
-name = "Irish Foreign Policy"
-desc = "After our recent victory at the polls, we must decide on how to react to the continuing descent into chaos around us in the world. Having already faced down British aggression in recent years without foreign backing there is a general consensus that we should not rock the boat, but a vocal minority in the Dáil cry out for the need for allies to protect Ireland."
+name = "EVT_9000109_NAME"
+desc = "EVT_9000109_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1938 }
@@ -4302,7 +4302,7 @@ deathdate = { day = 30 month = december year = 1938 }
          event = 100182 #The Kaiser let us down
          }
          }
-         name = "The Republic will turn to the Reich!"
+         name = "EVT_9000109_OPTIONA"
                  command = { type = dissent value = 2 }
                  command = { type = event which = 9000157 where = GER when = 1  }
           command = { type = setflag which = IRE_FP }
@@ -4313,7 +4313,7 @@ deathdate = { day = 30 month = december year = 1938 }
          trigger = {
          event = 100182 #The Kaiser let us down
          }
-         name = "The Republic will turn to the Reich!"
+         name = "EVT_9000109_OPTIONB"
                  command = { type = dissent value = 7 }
                  command = { type = event which = 9000162 where = GER when = 1  }
           command = { type = setflag which = IRE_FP }
@@ -4326,7 +4326,7 @@ deathdate = { day = 30 month = december year = 1938 }
          event = 100175 #The Canadians let us down
          }
          }
-         name = "Ireland must align with Canada & the Exiles!"
+         name = "EVT_9000109_OPTIONC"
                  command = { type = dissent value = 6 }
                  command = { type = event which = 9000164 where = CAN when = 1  }
          command = { type = setflag which = IRE_FP }
@@ -4334,7 +4334,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
          action = {
          ai_chance = 20
-         name = "Ourselves, alone"
+         name = "EVT_9000109_OPTIOND"
                  command = { type = dissent value = -3 }
          command = { type = setflag which = IRE_ISO }
          command = { type = setflag which = IRE_FP }
@@ -4366,8 +4366,8 @@ flag = IRE_FP
 }
 }
 
-name = "Irish Foreign Policy"
-desc = "After our recent victory at the polls, we must decide on how to react to the continuing descent into chaos around us in the world. Since the Canadians helped to defend our island from Syndicalist aggression, pro Entente feelings have been on the rise. However there are still those sceptical of joining arms with the royalists who just a few decades ago were our hated enemies."
+name = "EVT_9000110_NAME"
+desc = "EVT_9000110_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1938 }
@@ -4376,7 +4376,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
      action = {
          ai_chance = 15
-         name = "The Republic will turn to the Reich!"
+         name = "EVT_9000110_OPTIONA"
                  command = { type = dissent value = 2 }
                  command = { type = event which = 9000163 where = GER when = 1  }
           command = { type = setflag which = IRE_FP }
@@ -4384,7 +4384,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
      action = {
          ai_chance = 60
-         name = "Ireland must align with Canada & the Exiles!"
+         name = "EVT_9000110_OPTIONB"
                  command = { type = dissent value = 6 }
                  command = { type = event which = 9000169 where = CAN when = 1  }
          command = { type = setflag which = IRE_FP }
@@ -4392,7 +4392,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
          action = {
          ai_chance = 25
-         name = "Maintain Irish neutrality"
+         name = "EVT_9000110_OPTIONC"
                  command = { type = dissent value = -3 }
          command = { type = setflag which = IRE_ISO }
          command = { type = setflag which = IRE_FP }
@@ -4424,8 +4424,8 @@ flag = IRE_FP
 }
 }
 
-name = "Irish Foreign Policy"
-desc = "After our recent victory at the polls, we must decide on how to react to the continuing descent into chaos around us in the world. Pro German feelings have been common in Ireland for some time now, but have grown since the Kaiser aided us against the Union of Britain. As such, the most clear choice of ally in these dark times would be Germany but some want to pursue isolationism or, God forbid, reconciling with the Royalists across the Atlantic."
+name = "EVT_9000111_NAME"
+desc = "EVT_9000111_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1938 }
@@ -4434,7 +4434,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
      action = {
          ai_chance = 90
-         name = "The Republic will turn to the Reich!"
+         name = "EVT_9000111_OPTIONA"
                  command = { type = dissent value = -5 }
                  command = { type = event which = 9000161 where = GER when = 1  }
           command = { type = setflag which = IRE_FP }
@@ -4442,7 +4442,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
      action = {
          ai_chance = 5
-         name = "Ireland must align with Canada & the Exiles!"
+         name = "EVT_9000111_OPTIONB"
                  command = { type = dissent value = 10 }
                  command = { type = event which = 9000170 where = CAN when = 1  }
          command = { type = setflag which = IRE_FP }
@@ -4450,7 +4450,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
          action = {
          ai_chance = 5
-         name = "Maintain Irish neutrality"
+         name = "EVT_9000111_OPTIONC"
                  command = { type = dissent value = 2 }
          command = { type = setflag which = IRE_ISO }
          command = { type = setflag which = IRE_FP }
@@ -4485,8 +4485,8 @@ guarantee = { country = GER country = IRE }
 }
 }
 
-name = "Irish Foreign Policy"
-desc = "After our recent victory overthrowing Collins' regime we now have to decide what direction new President of the Republic Frank McDermott will take Ireland. Amongst the National Centre Party pro Entente feelings are strong, however this is not universally felt so a policy of isolationism may be best."
+name = "EVT_9000112_NAME"
+desc = "EVT_9000112_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1938 }
@@ -4495,7 +4495,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
      action = {
          ai_chance = 75
-         name = "Ireland must align with Canada & the Exiles!"
+         name = "EVT_9000112_OPTIONA"
                  command = { type = dissent value = 3 }
                  command = { type = event which = 9000164 where = CAN when = 1  }
          command = { type = setflag which = IRE_FP }
@@ -4503,7 +4503,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
          action = {
          ai_chance = 25
-         name = "Maintain Irish neutrality"
+         name = "EVT_9000112_OPTIONB"
                  command = { type = dissent value = -3 }
          command = { type = setflag which = IRE_ISO }
          command = { type = setflag which = IRE_FP }
@@ -4535,8 +4535,8 @@ flag = IRE_FP
 }
 }
 
-name = "Irish Foreign Policy"
-desc = "After our recent victory overthrowing Collins' regime we now have to decide what direction new President of the Republic Frank McDermott will take Ireland. Amongst the National Centre Party pro Entente feelings are strong which have begun to spread since the Canadians helped against the Syndicalists. It seems very likley that Ireland will align with the Royalists across the Atlantic."
+name = "EVT_9000113_NAME"
+desc = "EVT_9000113_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1938 }
@@ -4545,7 +4545,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
      action = {
          ai_chance = 99
-         name = "Ireland must align with Canada & the Exiles!"
+         name = "EVT_9000113_OPTIONA"
                  command = { type = dissent value = 3 }
                  command = { type = event which = 9000169 where = CAN when = 1  }
          command = { type = setflag which = IRE_FP }
@@ -4553,7 +4553,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
          action = {
          ai_chance = 1
-         name = "Maintain Irish neutrality"
+         name = "EVT_9000113_OPTIONB"
                  command = { type = dissent value = -3 }
          command = { type = setflag which = IRE_ISO }
          command = { type = setflag which = IRE_FP }
@@ -4582,8 +4582,8 @@ flag = IRE_FP
 }
 }
 
-name = "Irish Foreign Policy"
-desc = "After our recent victory overthrowing Collins' regime we now have to decide what direction new President of the Republic Frank McDermott will take Ireland. Amongst the National Centre Party pro Entente feelings are strong but this does not extend to the general population and an isolationist course seems the safest one."
+name = "EVT_9000114_NAME"
+desc = "EVT_9000114_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1938 }
@@ -4597,7 +4597,7 @@ deathdate = { day = 30 month = december year = 1938 }
          event = 100175 #The Canadians let us down
          }
          }
-         name = "Ireland must align with Canada & the Exiles!"
+         name = "EVT_9000114_OPTIONA"
                  command = { type = dissent value = 2 }
                  command = { type = event which = 9000164 where = CAN when = 1  }
          command = { type = setflag which = IRE_FP }
@@ -4608,7 +4608,7 @@ deathdate = { day = 30 month = december year = 1938 }
          trigger = {
          event = 100175 #The Canadians let us down
          }
-         name = "Ireland must align with Canada & the Exiles!"
+         name = "EVT_9000114_OPTIONB"
                  command = { type = dissent value = 5 }
                  command = { type = event which = 9000168 where = CAN when = 1  }
          command = { type = setflag which = IRE_FP }
@@ -4621,7 +4621,7 @@ deathdate = { day = 30 month = december year = 1938 }
          event = 100175 #The Canadians let us down
          }
          }
-         name = "Ourselves, alone"
+         name = "EVT_9000114_OPTIONC"
                  command = { type = dissent value = -3 }
          command = { type = setflag which = IRE_ISO }
          command = { type = setflag which = IRE_FP }
@@ -4631,7 +4631,7 @@ deathdate = { day = 30 month = december year = 1938 }
          trigger = {
          event = 100175 #The Canadians let us down
          }
-         name = "Ourselves, alone"
+         name = "EVT_9000114_OPTIOND"
                  command = { type = dissent value = -3 }
          command = { type = setflag which = IRE_ISO }
          command = { type = setflag which = IRE_FP }
@@ -4663,8 +4663,8 @@ flag = IRE_FP
 }
 }
 
-name = "Irish Foreign Policy"
-desc = "After our recent victory overthrowing Collins' regime we now have to decide what direction new President of the Republic Frank McDermott will take Ireland. Amongst the National Centre Party pro Entente feelings are strong but it was not the Canadians who aided us against the Syndicalists. The public and the other parties are in favour of Ireland joining with Germany but the government will likley propose an isolationist course."
+name = "EVT_9000115_NAME"
+desc = "EVT_9000115_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1938 }
@@ -4673,7 +4673,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
      action = {
          ai_chance = 25
-         name = "Ireland must align with Canada & the Exiles!"
+         name = "EVT_9000115_OPTIONA"
                  command = { type = dissent value = 6 }
                  command = { type = event which = 9000170 where = CAN when = 1  }
          command = { type = setflag which = IRE_FP }
@@ -4681,7 +4681,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
          action = {
          ai_chance = 60
-         name = "Maintain Irish neutrality"
+         name = "EVT_9000115_OPTIONB"
                  command = { type = dissent value = 1 }
          command = { type = setflag which = IRE_ISO }
          command = { type = setflag which = IRE_FP }
@@ -4689,7 +4689,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
          action = {
          ai_chance = 15
-         name = "Perhaps Germany is the best option..."
+         name = "EVT_9000115_OPTIONC"
                  command = { type = dissent value = -3 }
          command = { type = event which = 9000161 where = GER when = 1  }
          command = { type = setflag which = IRE_FP }
@@ -4724,7 +4724,7 @@ guarantee = { country = GER country = IRE }
 }
 }
 
-name = "Irish Foreign Policy"
+name = "EVT_9000116_NAME"
 desc = "EVT_9000116_DESC"
 style = 2
 
@@ -4734,7 +4734,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
      action = {
          ai_chance = 5
-         name = "Left-wing Sinn Féin William Norton carries the Dáil - France!"
+         name = "EVT_9000116_OPTIONA"
                  command = { type = dissent value = 5 }
                  command = { type = event which = 9000117 where = IRE when = 1  }
          command = { type = setflag which = IRE_FP }
@@ -4742,7 +4742,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
          action = {
          ai_chance = 40
-         name = "Nationalist Sinn Féin encourage closer bonds with Germany"
+         name = "EVT_9000116_OPTIONB"
                  command = { type = dissent value = 1 }
                  command = { type = event which = 9000157 where = GER when = 1  }
          command = { type = setflag which = IRE_FP }
@@ -4750,7 +4750,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
          action = {
          ai_chance = 20
-         name = "The need for Isolationism is felt in the Dáil"
+         name = "EVT_9000116_OPTIONC"
                  command = { type = dissent value = -1 }
          command = { type = setflag which = IRE_ISO }
          command = { type = setflag which = IRE_FP }
@@ -4758,7 +4758,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
          action = {
          ai_chance = 35
-         name = "We must deal with Britain"
+         name = "EVT_9000116_OPTIOND"
                  command = { type = dissent value = -3 }
          command = { type = setflag which = IRE_NORM }
          command = { type = setflag which = IRE_FP }
@@ -4771,13 +4771,13 @@ random = no
 country = IRE
 style = 2
 
-name = "Fianna Fáil threatens to leave"
-desc = "In reaction to Sinn Féin's intentions to align to the Internationale, Fianna Fáil has threatened to leave the government. Sinn Féin has in turn begun secret talks with Saor Éire to form a new coalition government. However, some of the more nationalistic members of Sinn Féin could perhaps be persuaded to oust the trade unionists in their midst.."
+name = "EVT_9000117_NAME"
+desc = "EVT_9000117_DESC"
 picture = "Belgrade"
 
        action_a = {
            ai_chance = 30
-           name = "The trade unionists are removed from Sinn Féin"
+           name = "EVT_9000117_OPTIONA"
            command = { type = dissent value = 2 }
            command = { type = armamentminister which = 25068 } #Sean Lester
            command = { type = trigger which = 9000118 } # 2nd Foreign Policy Choice
@@ -4785,7 +4785,7 @@ picture = "Belgrade"
 
        action_b = {
            ai_chance = 70
-           name = "Sinn Féin and Saor Éire enter a coalition"
+           name = "EVT_9000117_OPTIONB"
            command = { type = dissent value = 5 }
            command = { type = set_domestic which = democratic value = 6 }
            command = { type = set_domestic which = political_left value = 10 }
@@ -4812,13 +4812,13 @@ country = IRE
 style = 2
 picture = "parliamentary_scandal"
 
-name = "Coalition Chooses New Direction"
-desc = "With Sinn Féin having ousted the trade unionists from the party the Nationalist faction has become the dominant force in the coalition. Isolationists and proponents of rapproachment still have some support but the Nationalists look set to carry the Dáil."
+name = "EVT_9000118_NAME"
+desc = "EVT_9000118_DESC"
 style = 2
 
          action = {
          ai_chance = 70
-         name = "Nationalist Sinn Féin encourage closer bonds with Germany"
+         name = "EVT_9000118_OPTIONA"
                  command = { type = dissent value = -1 }
                  command = { type = event which = 9000157 where = GER when = 1  }
          command = { type = setflag which = IRE_FP }
@@ -4826,7 +4826,7 @@ style = 2
 
          action = {
          ai_chance = 20
-         name = "The need for Isolationism is felt in the Dáil"
+         name = "EVT_9000118_OPTIONB"
                  command = { type = dissent value = 1 }
          command = { type = setflag which = IRE_ISO }
          command = { type = setflag which = IRE_FP }
@@ -4834,7 +4834,7 @@ style = 2
 
          action = {
          ai_chance = 10
-         name = "We must deal with Britain"
+         name = "EVT_9000118_OPTIONC"
                  command = { type = dissent value = 3 }
          command = { type = setflag which = IRE_NORM }
          command = { type = setflag which = IRE_FP }
@@ -4863,7 +4863,7 @@ flag = IRE_FP
 }
 }
 
-name = "Irish Foreign Policy"
+name = "EVT_9000119_NAME"
 desc = "EVT_9000119_DESC"
 style = 2
 
@@ -4878,7 +4878,7 @@ deathdate = { day = 30 month = december year = 1938 }
          event = 100182 #The Kaiser let us down
          }
          }
-         name = "Nationalist Sinn Féin encourage closer bonds with Germany"
+         name = "EVT_9000119_OPTIONA"
                  command = { type = dissent value = -1 }
                  command = { type = event which = 9000157 where = GER when = 1  }
          command = { type = setflag which = IRE_FP }
@@ -4889,7 +4889,7 @@ deathdate = { day = 30 month = december year = 1938 }
          trigger = {
          event = 100182 #The Kaiser let us down
          }
-         name = "Nationalist Sinn Féin encourage closer bonds with Germany"
+         name = "EVT_9000119_OPTIONB"
                  command = { type = dissent value = 3 }
                  command = { type = event which = 9000162 where = GER when = 1  }
          command = { type = setflag which = IRE_FP }
@@ -4902,7 +4902,7 @@ deathdate = { day = 30 month = december year = 1938 }
          event = 100182 #The Kaiser let us down
          }
          }
-         name = "The need for Isolationism is felt in the Dáil"
+         name = "EVT_9000119_OPTIONC"
                  command = { type = dissent value = -1 }
          command = { type = setflag which = IRE_ISO }
          command = { type = setflag which = IRE_FP }
@@ -4913,7 +4913,7 @@ deathdate = { day = 30 month = december year = 1938 }
          trigger = {
          event = 100182 #The Kaiser let us down
          }
-         name = "The need for Isolationism is felt in the Dáil"
+         name = "EVT_9000119_OPTIOND"
                  command = { type = dissent value = -2 }
          command = { type = setflag which = IRE_ISO }
          command = { type = setflag which = IRE_FP }
@@ -4921,7 +4921,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
          action = {
          ai_chance = 35
-         name = "We must deal with Britain"
+         name = "EVT_9000119_OPTIONE"
                  command = { type = dissent value = 3 }
          command = { type = setflag which = IRE_NORM }
          command = { type = setflag which = IRE_FP }
@@ -4953,7 +4953,7 @@ flag = IRE_FP
 }
 }
 
-name = "Irish Foreign Policy"
+name = "EVT_9000120_NAME"
 desc = "EVT_9000120_DESC"
 style = 2
 
@@ -4963,7 +4963,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
          action = {
          ai_chance = 90
-         name = "Nationalist Sinn Féin encourage closer bonds with Germany"
+         name = "EVT_9000120_OPTIONA"
                  command = { type = dissent value = -5 }
                  command = { type = event which = 9000161 where = GER when = 1  }
          command = { type = setflag which = IRE_FP }
@@ -4971,7 +4971,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
          action = {
          ai_chance = 5
-         name = "The need for Isolationism is felt in the Dáil"
+         name = "EVT_9000120_OPTIONB"
                  command = { type = dissent value = -2 }
          command = { type = setflag which = IRE_ISO }
          command = { type = setflag which = IRE_FP }
@@ -4979,7 +4979,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
          action = {
          ai_chance = 5
-         name = "We must deal with Britain"
+         name = "EVT_9000120_OPTIONC"
                  command = { type = dissent value = 3 }
          command = { type = setflag which = IRE_NORM }
          command = { type = setflag which = IRE_FP }
@@ -5011,7 +5011,7 @@ flag = IRE_FP
 }
 }
 
-name = "Irish Foreign Policy"
+name = "EVT_9000121_NAME"
 desc = "EVT_9000121_DESC"
 style = 2
 
@@ -5021,7 +5021,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
          action = {
          ai_chance = 25
-         name = "Nationalist Sinn Féin encourage closer bonds with Germany"
+         name = "EVT_9000121_OPTIONA"
                  command = { type = dissent value = 2 }
                  command = { type = event which = 9000163 where = GER when = 1  }
          command = { type = setflag which = IRE_FP }
@@ -5029,7 +5029,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
          action = {
          ai_chance = 5
-         name = "The need for Isolationism is felt in the Dáil"
+         name = "EVT_9000121_OPTIONB"
                  command = { type = dissent value = 3 }
          command = { type = setflag which = IRE_ISO }
          command = { type = setflag which = IRE_FP }
@@ -5037,7 +5037,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
          action = {
          ai_chance = 5
-         name = "We must deal with Britain"
+         name = "EVT_9000121_OPTIONC"
                  command = { type = dissent value = 5 }
          command = { type = setflag which = IRE_NORM }
          command = { type = setflag which = IRE_FP }
@@ -5045,7 +5045,7 @@ deathdate = { day = 30 month = december year = 1938 }
 
          action = {
          ai_chance = 65
-         name = "Canada has proven to be a friend"
+         name = "EVT_9000121_OPTIOND"
                  command = { type = dissent value = 1 }
                  command = { type = event which = 9000169 where = CAN when = 1  }
          command = { type = setflag which = IRE_FP }
@@ -5065,8 +5065,8 @@ trigger = {
 flag = IRE_ISO
 }
 
-name = "Defence of Ireland"
-desc = "Now that we have decided on a policy of isolationism we must enact measures that will see to Ireland's defence against outside aggression. To that end two actions have been proposed. The first is to construct a defensive line down Ireland's eastern shore while the second is to expand the army by raising more reserve units. While both would allow for the greatest level of protection, the cost could prove too much."
+name = "EVT_9000122_NAME"
+desc = "EVT_9000122_DESC"
 
 date = { day = 1 month = may year = 1936 }
 offset = 20
@@ -5074,7 +5074,7 @@ deathdate = { day = 1 month = january year = 1970 }
 
 action_a = {
 ai_chance = 40
-name = "Construct An Balla Éireannach!"
+name = "EVT_9000122_OPTIONA"
       command = { type = setflag which = IRE_ISO1 }
     command = { type = sleepevent which = 9000127 }
     command = { type = sleepevent which = 9000131 }
@@ -5082,7 +5082,7 @@ name = "Construct An Balla Éireannach!"
 
 action_b = {
 ai_chance = 40
-name = "Expand the IRA Reserves"
+name = "EVT_9000122_OPTIONB"
       command = { type = setflag which = IRE_ISO2 }
     command = { type = sleepevent which = 9000123 }
     command = { type = sleepevent which = 9000131 }
@@ -5090,7 +5090,7 @@ name = "Expand the IRA Reserves"
 
 action_c = {
 ai_chance = 20
-name = "Raise the Irish Wall and the men to protect our Republic!"
+name = "EVT_9000122_OPTIONC"
       command = { type = setflag which = IRE_ISO3 }
     command = { type = sleepevent which = 9000123 }
     command = { type = sleepevent which = 9000127 }
@@ -5109,8 +5109,8 @@ trigger = {
 flag = IRE_ISO1
 }
 
-name = "Construction of An Balla Éireannach Begins"
-desc = "We have made our preparations and are now set to begin construction of the defences our Republic needs. While some argue that it will cost too much, the public are fully behind this great undertaking."
+name = "EVT_9000123_NAME"
+desc = "EVT_9000123_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -5120,7 +5120,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 95
-name = "Lay down the concrete"
+name = "EVT_9000123_OPTIONA"
 command = { type = supplies value = -1500 }
 command = { type = money value = -150 }
 command = { type = construct which = land_fort where = 34 value = 1 } # Dublin
@@ -5129,7 +5129,7 @@ command = { type = domestic which = interventionism value = -1 }
 
 action_b = {
 ai_chance = 5
-name = "Maybe this wasn't the best idea?"
+name = "EVT_9000123_OPTIONB"
 command = { type = dissent value = 5 }
 command = { type = clrflag which = IRE_ISO1 }
 }
@@ -5145,8 +5145,8 @@ flag = IRE_ISO1
 event = { id = 9000123 days = 200 }
 }
 
-name = "First stage of the Wall complete"
-desc = "The first stage of An Balla Éireannach has been completed but there is more to be done. While costs mount and naysayers increase the benefits are now there to be seen by all, at least in part."
+name = "EVT_9000124_NAME"
+desc = "EVT_9000124_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -5156,7 +5156,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 90
-name = "Keep building"
+name = "EVT_9000124_OPTIONA"
 command = { type = supplies value = -1000 }
 command = { type = money value = -200 }
 command = { type = construct which = coastal_fort where = 36 value = 1 } # Belfast
@@ -5167,7 +5167,7 @@ command = { type = domestic which = interventionism value = -1 }
 
 action_b = {
 ai_chance = 10
-name = "But, the budget?"
+name = "EVT_9000124_OPTIONB"
 command = { type = dissent value = 3 }
 command = { type = clrflag which = IRE_ISO1 }
 }
@@ -5183,8 +5183,8 @@ flag = IRE_ISO1
 event = { id = 9000123 days = 400 }
 }
 
-name = "Second stage of An Balla Éireannach complete"
-desc = "Now the Wall is nearing completion. Costs have begun to take their toll but the people are still with us and so we should see this through to the end."
+name = "EVT_9000125_NAME"
+desc = "EVT_9000125_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -5194,7 +5194,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 85
-name = "Almost there"
+name = "EVT_9000125_OPTIONA"
 command = { type = supplies value = -1000 }
 command = { type = money value = -200 }
 command = { type = construct which = land_fort where = 36 value = 1 } # Belfast
@@ -5205,7 +5205,7 @@ command = { type = domestic which = interventionism value = -1 }
 
 action_b = {
 ai_chance = 15
-name = "No we can't afford this"
+name = "EVT_9000125_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = clrflag which = IRE_ISO1 }
 }
@@ -5222,8 +5222,8 @@ event = 9000124
 event = 9000125
 }
 
-name = "An Balla Éireannach Complete"
-desc = "The years of hard work have finally paid off. The Irish Wall, our Balla Éireannach, is complete and we are ready for anything the world can throw at us."
+name = "EVT_9000126_NAME"
+desc = "EVT_9000126_DESC"
 style = 2
 
 date = { day = 1 month = may year = 1936 }
@@ -5231,7 +5231,7 @@ offset = 50
 deathdate = { day = 1 month = january year = 1970 }
 
 action_a = {
-name = "Now we are safe."
+name = "EVT_9000126_OPTIONA"
 command = { type = supplies value = -1500 }
 command = { type = money value = -150 }
 command = { type = dissent value = -5 }
@@ -5253,8 +5253,8 @@ trigger = {
 flag = IRE_ISO2
 }
 
-name = "Start expanding the IRA"
-desc = "To increase our ability to resist an attack from a hostile power we have decided to expand the numbers of the Irish Republican Army. Many have come forward to help defend our state."
+name = "EVT_9000127_NAME"
+desc = "EVT_9000127_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -5264,7 +5264,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 95
-name = "Join up to defend our nation!"
+name = "EVT_9000127_OPTIONA"
 command = { type = supplies value = -1000 }
 command = { type = money value = -75 }
 command = { type = add_division which = "1st IRA Reserve Division" value = militia when = 4 }
@@ -5273,7 +5273,7 @@ command = { type = domestic which = interventionism value = -1 }
 
 action_b = {
 ai_chance = 5
-name = "Maybe this wasn't the best idea?"
+name = "EVT_9000127_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = clrflag which = IRE_ISO2}
 }
@@ -5289,8 +5289,8 @@ flag = IRE_ISO2
 event = { id = 9000127 days = 150 }
 }
 
-name = "Conscription?"
-desc = "While the initial influx of new recruits had been substantial to begin with, it has decreased to a trickle so members in the Dáil have recommended that we institute conscription. The need for a larger defense force is apparent but conscription may be hard for the public to accept."
+name = "EVT_9000128_NAME"
+desc = "EVT_9000128_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -5300,7 +5300,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 90
-name = "Use conscription"
+name = "EVT_9000128_OPTIONA"
 command = { type = supplies value = -1000 }
 command = { type = money value = -75 }
 command = { type = dissent value = 1 }
@@ -5310,7 +5310,7 @@ command = { type = domestic which = interventionism value = -1 }
 
 action_b = {
 ai_chance = 10
-name = "We can't go that far"
+name = "EVT_9000128_OPTIONB"
 command = { type = dissent value = -3 }
 command = { type = clrflag which = IRE_ISO2 }
 }
@@ -5326,8 +5326,8 @@ flag = IRE_ISO2
 event = { id = 9000127 days = 300 }
 }
 
-name = "Continue conscription"
-desc = "Conscription has enabled us to keep up the expansion of the IRA, but it is taking it's toll on the general population as more people begin to resent the drafting of Ireland's young men."
+name = "EVT_9000129_NAME"
+desc = "EVT_9000129_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -5337,7 +5337,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 85
-name = "Almost there"
+name = "EVT_9000129_OPTIONA"
 command = { type = supplies value = -1000 }
 command = { type = money value = -75 }
 command = { type = dissent value = 3 }
@@ -5347,7 +5347,7 @@ command = { type = domestic which = interventionism value = -1 }
 
 action_b = {
 ai_chance = 15
-name = "Nevermind..."
+name = "EVT_9000129_OPTIONB"
 command = { type = dissent value = -1 }
 command = { type = clrflag which = IRE_ISO2 }
 }
@@ -5364,8 +5364,8 @@ event = 9000128
 event = 9000129
 }
 
-name = "Expansion of the IRA complete"
-desc = "Our expansion of the Irish Republican Army is now complete and we are ready to defend our shores against foreign threats. Conscription has created tensions but at least our nation is defended."
+name = "EVT_9000130_NAME"
+desc = "EVT_9000130_DESC"
 style = 2
 
 date = { day = 1 month = may year = 1936 }
@@ -5373,7 +5373,7 @@ offset = 150
 deathdate = { day = 1 month = january year = 1970 }
 
 action_a = {
-name = "Let them come!"
+name = "EVT_9000130_OPTIONA"
 command = { type = dissent value = 5 }
 command = { type = supplies value = -1500 }
 command = { type = money value = -75 }
@@ -5395,8 +5395,8 @@ trigger = {
 flag = IRE_ISO3
 }
 
-name = "Expansion of the IRA and construction of Irish Wall"
-desc = "Our government has decided to both expand the IRA and to construct a series of defensive fortifications. While this will provide the utmost defence for Ireland, the costs involved make many sceptical it can be done."
+name = "EVT_9000131_NAME"
+desc = "EVT_9000131_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -5406,7 +5406,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 90
-name = "Begin the project"
+name = "EVT_9000131_OPTIONA"
 command = { type = supplies value = -2500 }
 command = { type = money value = -250 }
 command = { type = construct which = land_fort where = 34 value = 1 } # Dublin
@@ -5417,7 +5417,7 @@ command = { type = domestic which = interventionism value = -1 }
 
 action_b = {
 ai_chance = 10
-name = "Maybe this wasn't the best idea?"
+name = "EVT_9000131_OPTIONB"
 command = { type = dissent value = -2 }
 command = { type = clrflag which = IRE_ISO3}
 }
@@ -5433,8 +5433,8 @@ flag = IRE_ISO3
 event = { id = 9000131 days = 200 }
 }
 
-name = "First stage of expansion"
-desc = "Our undertaking has run into difficulties. Costs continue to mount building An Balla Éireannach and the number of recruits available have been exhausted without beginning conscription. There is growing unrest related to our drive but we must press on if Ireland is to be safe."
+name = "EVT_9000132_NAME"
+desc = "EVT_9000132_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -5444,7 +5444,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 80
-name = "Keep it up"
+name = "EVT_9000132_OPTIONA"
 command = { type = supplies value = -2000 }
 command = { type = money value = -300 }
 command = { type = construct which = coastal_fort where = 36 value = 1 } # Belfast
@@ -5457,7 +5457,7 @@ command = { type = domestic which = interventionism value = -1 }
 
 action_b = {
 ai_chance = 20
-name = "The cost is ruinous"
+name = "EVT_9000132_OPTIONB"
 command = { type = dissent value = -4 }
 command = { type = clrflag which = IRE_ISO2 }
 }
@@ -5473,8 +5473,8 @@ flag = IRE_ISO3
 event = { id = 9000131 days = 400 }
 }
 
-name = "Second stage of expansion"
-desc = "There are now regular calls for the Wall project to be scrapped and conscription to be repealed but as the more hawkish members in the Dáil point out, that we have put too much effort to turn back now."
+name = "EVT_9000133_NAME"
+desc = "EVT_9000133_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -5484,7 +5484,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 70
-name = "Almost there"
+name = "EVT_9000133_OPTIONA"
 command = { type = supplies value = -2000 }
 command = { type = money value = -300 }
 command = { type = construct which = land_fort where = 36 value = 1 } # Belfast
@@ -5497,7 +5497,7 @@ command = { type = domestic which = interventionism value = -1 }
 
 action_b = {
 ai_chance = 30
-name = "Give in to public pressure"
+name = "EVT_9000133_OPTIONB"
 command = { type = dissent value = -6 }
 command = { type = clrflag which = IRE_ISO2 }
 }
@@ -5514,8 +5514,8 @@ event = 9000132
 event = 9000133
 }
 
-name = "Completion of Ireland's defence"
-desc = "After so much cost and effort we have finally completed An Balla Éireannach and the IRA has never been so large. While the public may resent the burdens place upon them, in time the benefits will be felt. Our independence is now secure."
+name = "EVT_9000134_NAME"
+desc = "EVT_9000134_DESC"
 style = 2
 
 date = { day = 1 month = may year = 1936 }
@@ -5523,7 +5523,7 @@ offset = 50
 deathdate = { day = 1 month = january year = 1970 }
 
 action_a = {
-name = "At last!"
+name = "EVT_9000134_OPTIONA"
 command = { type = dissent value = 10 }
 command = { type = supplies value = -1500 }
 command = { type = money value = -150 }
@@ -5546,8 +5546,8 @@ trigger = {
 flag = IRE_ISO4
 }
 
-name = "Autarky"
-desc = "Our policy of Isolationism has proven to be a success. We have maintained our independence through these dark times and have grown to be largely self sufficient economically as well."
+name = "EVT_9000135_NAME"
+desc = "EVT_9000135_DESC"
 style = 2
 
 date = { day = 1 month = may year = 1936 }
@@ -5555,7 +5555,7 @@ offset = 1000
 deathdate = { day = 1 month = january year = 1970 }
 
 action_a = {
-name = "Ourselves, Alone!"
+name = "EVT_9000135_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = supplies value = 3000 }
 command = { type = money value = 500 }
@@ -5578,8 +5578,8 @@ trigger = {
 flag = IRE_NORM
 }
 
-name = "Irish Diplomatic Mission to Britain"
-desc = "We have decided that the best way to secure Ireland's future independence is to engage with and establish an accord with the British. Headed by the Minister for External Affairs, Éamon de Valera and including one of the signatories of the first Anglo-Irish Treaty, Robert Barton our diplomatic mission has set off for London."
+name = "EVT_9000136_NAME"
+desc = "EVT_9000136_DESC"
 
 date = { day = 1 month = january year = 1938 }
 offset = 30
@@ -5587,7 +5587,7 @@ deathdate = { day = 30 month = december year = 1963 }
 
 
      action = {
-         name = "Good Luck!"
+         name = "EVT_9000136_OPTIONA"
                  command = { type = dissent value = -1 }
                  command = { type = event which = 9000137 where = ENG when = 1  }
          }
@@ -5599,19 +5599,19 @@ country = ENG
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Irish Diplomatic Mission to Britain Arrives"
-desc = "The Irish diplomatic mission has arrived in London today and has made it clear to the TUC that they look set to negotiate some sort of lasting accomodation between Britain and Ireand. Should we see if we can come to some arrangment or should we send them back to Ireland?"
+name = "EVT_9000137_NAME"
+desc = "EVT_9000137_DESC"
 
      action = {
          ai_chance = 75
-         name = "We will negotiate"
+         name = "EVT_9000137_OPTIONA"
                  command = { type = dissent value = 2 }
           command = { type = setflag which = IREUOB_DET1 }
          }
 
      action = {
          ai_chance = 25
-         name = "Send them away!"
+         name = "EVT_9000137_OPTIONB"
                  command = { type = dissent value = 1 }
                  command = { type = event which = 9000138 where = IRE when = 1  }
          }
@@ -5623,11 +5623,11 @@ country = IRE
 style = 2
 picture = "Peace_conference"
 
-name = "The British Won't Talk."
-desc = "Our mission returned today empty handed, turned away by the British before negotiations even began. The Isolationists have carried the Dáil and the government has embarked upon a new defensive course."
+name = "EVT_9000138_NAME"
+desc = "EVT_9000138_DESC"
 
      action = {
-         name = "Damned British!"
+         name = "EVT_9000138_OPTIONA"
                  command = { type = dissent value = 5 }
          command = { type = relation which = ENG value = -100 }
                  command = { type = setflag which = IRE_ISO }
@@ -5648,15 +5648,15 @@ event = 100012
 }
 }
 
-name = "The Start of Negotiations"
-desc = "The British have agreed to talk. Our demands are that in return for Ireland's continued neutrality regarding any involvment Britain might have on the continent, they must recognise and gaurantee Irish independence from Britain and refrain from involvment in Irish affairs. In addition to this there is the issue of tarriffs both nations impose on each other, hampering trade and potential economic growth. We would like to see these lifted, for the benefit of all."
+name = "EVT_9000139_NAME"
+desc = "EVT_9000139_DESC"
 
 date = { day = 1 month = january year = 1938 }
 offset = 5
 deathdate = { day = 30 month = december year = 1963 }
 
      action = {
-         name = "A fair proposal?"
+         name = "EVT_9000139_OPTIONA"
          command = { type = trigger which = 9000142 } # British receive terms
          }
 }
@@ -5675,15 +5675,15 @@ event = 100011
 }
 }
 
-name = "The Start of Negotiations"
-desc = "The British have agreed to talk. Our demands are that in return for Ireland's continued neutrality regarding any involvment Britain might have on the continent, they must recognise and gaurantee Irish independence from Britain and refrain from involvment in Irish affairs. In addition to this there is the issue of tarriffs both nations impose on each other, hampering trade and potential economic growth. We would like to see these lifted, for the benefit of all."
+name = "EVT_9000140_NAME"
+desc = "EVT_9000140_DESC"
 
 date = { day = 1 month = january year = 1938 }
 offset = 5
 deathdate = { day = 30 month = december year = 1963 }
 
      action = {
-         name = "A fair proposal?"
+         name = "EVT_9000140_OPTIONA"
          command = { type = trigger which = 9000143 } # British receive terms
          }
 }
@@ -5702,15 +5702,15 @@ event = 100012
 }
 }
 
-name = "The Start of Negotiations"
-desc = "The British have agreed to talk. Our demands are that in return for Ireland's continued neutrality regarding any involvment Britain might have on the continent, they must recognise and gaurantee Irish independence from Britain and refrain from involvment in Irish affairs. In addition to this there is the issue of tarriffs both nations impose on each other, hampering trade and potential economic growth. We would like to see these lifted, for the benefit of all."
+name = "EVT_9000141_NAME"
+desc = "EVT_9000141_DESC"
 
 date = { day = 1 month = january year = 1938 }
 offset = 5
 deathdate = { day = 30 month = december year = 1963 }
 
      action = {
-         name = "A fair proposal?"
+         name = "EVT_9000141_OPTIONA"
          command = { type = trigger which = 9000144 } # British receive terms
          }
 }
@@ -5721,25 +5721,25 @@ country = ENG
 style = 2
 picture = "parliamentary_scandal"
 
-name = "Irish Proposals"
-desc = "The Irish have presented our negotiators with their proposals. They want us to garuantee their indepence and stay out of Irish affairs in return for their continued neutrality. They also ask for the tarriffs to be dropped between our nations. In return for this some are suggesting that we request an access amendment to any treaty."
+name = "EVT_9000142_NAME"
+desc = "EVT_9000142_DESC"
 
      action = {
          ai_chance = 40
-         name = "We accept the Irish proposals"
+         name = "EVT_9000142_OPTIONA"
                  command = { type = dissent value = -1 }
           command = { type = trigger which = 9000145 }
          }
 
      action = {
          ai_chance = 50
-         name = "Ask for military access as part of any treaty"
+         name = "EVT_9000142_OPTIONB"
                  command = { type = trigger which = 9000148 }
          }
 
      action = {
          ai_chance = 10
-         name = "We cannot accept"
+         name = "EVT_9000142_OPTIONC"
                  command = { type = dissent value = 1 }
                  command = { type = event which = 9000147 where = IRE when = 1  }
          }
@@ -5751,25 +5751,25 @@ country = ENG
 style = 2
 picture = "parliamentary_scandal"
 
-name = "Irish Proposals"
-desc = "The Irish have presented our negotiators with their proposals. They want us to garuantee their indepence and stay out of Irish affairs in return for their continued neutrality. They also ask for the tarriffs to be dropped between our nations. In return for this some are suggesting that we request an access amendment to any treaty."
+name = "EVT_9000143_NAME"
+desc = "EVT_9000143_DESC"
 
      action = {
          ai_chance = 65
-         name = "Of course we accept the Irish proposals!"
+         name = "EVT_9000143_OPTIONA"
                  command = { type = dissent value = -3 }
           command = { type = trigger which = 9000145 }
          }
 
      action = {
          ai_chance = 30
-         name = "Ask for military access as part of any treaty"
+         name = "EVT_9000143_OPTIONB"
                  command = { type = trigger which = 9000148 }
          }
 
      action = {
          ai_chance = 5
-         name = "We cannot accept"
+         name = "EVT_9000143_OPTIONC"
                  command = { type = dissent value = 4 }
                  command = { type = event which = 9000147 where = IRE when = 1  }
          }
@@ -5781,31 +5781,31 @@ country = ENG
 style = 2
 picture = "parliamentary_scandal"
 
-name = "Irish Proposals"
-desc = "The Irish have presented our negotiators with their proposals. They want us to garuantee their indepence and stay out of Irish affairs in return for their continued neutrality. They also ask for the tarriffs to be dropped between our nations. In return for this some are suggesting that we request an access amendment to any treaty while others are demading compensation for unpaid land annuities owed to the Royalists that the Irish stopped paying after 1925."
+name = "EVT_9000144_NAME"
+desc = "EVT_9000144_DESC"
 
      action = {
          ai_chance = 25
-         name = "We accept the Irish proposals!"
+         name = "EVT_9000144_OPTIONA"
                  command = { type = dissent value = 1 }
           command = { type = trigger which = 9000145 }
          }
 
      action = {
          ai_chance = 30
-         name = "Ask for military access as part of any treaty"
+         name = "EVT_9000144_OPTIONB"
                  command = { type = trigger which = 9000148 }
          }
 
      action = {
          ai_chance = 25
-         name = "Demand a reimbursment for non-payment of land annuities and military access"
+         name = "EVT_9000144_OPTIONC"
                  command = { type = trigger which = 9000149 }
          }
 
      action = {
          ai_chance = 20
-         name = "We cannot accept"
+         name = "EVT_9000144_OPTIOND"
                  command = { type = dissent value = -2 }
                  command = { type = event which = 9000147 where = IRE when = 1  }
          }
@@ -5817,11 +5817,11 @@ country = IRE
 style = 2
 picture = "Peace_conference"
 
-name = "The British Agree"
-desc = "The Unionists have agreed to our proposals, the mission was a success!"
+name = "EVT_9000145_NAME"
+desc = "EVT_9000145_DESC"
 
      action = {
-         name = "Excellent!"
+         name = "EVT_9000145_OPTIONA"
                  command = { type = dissent value = -5 }
          command = { type = trigger which = 9000146 }
          command = { type = relation which = ENG value = 100 }
@@ -5835,11 +5835,11 @@ country = ENG
 style = 2
 picture = "Peace_conference"
 
-name = "The 2nd Anglo-Irish Treaty"
-desc = "We have signed a treaty garuanteeing Irish neutrality. While they may not be allies, they shall not be enemies."
+name = "EVT_9000146_NAME"
+desc = "EVT_9000146_DESC"
 
      action = {
-         name = "Excellent!"
+         name = "EVT_9000146_OPTIONA"
                  command = { type = dissent value = -2 }
          command = { type = guarantee which = ENG where = IRE }
          command = { type = non_aggression which = ENG where = IRE }
@@ -5852,11 +5852,11 @@ country = IRE
 style = 2
 picture = "Peace_conference"
 
-name = "Talks break down."
-desc = "Our mission returned today empty handed, unable to reach an agreement with the Syndicalists. The Isolationists have carried the Dáil and the government has embarked upon a new defensive course."
+name = "EVT_9000147_NAME"
+desc = "EVT_9000147_DESC"
 
      action = {
-         name = "Damned British!"
+         name = "EVT_9000147_OPTIONA"
                  command = { type = dissent value = 5 }
          command = { type = relation which = ENG value = -100 }
                  command = { type = setflag which = IRE_ISO }
@@ -5869,12 +5869,12 @@ country = IRE
 style = 2
 picture = "Peace_conference"
 
-name = "The British Price"
-desc = "The Unionists have agreed to our proposals, on the provision that we allow them access to our ports and airbases."
+name = "EVT_9000148_NAME"
+desc = "EVT_9000148_DESC"
 
      action = {
      ai_chance = 40
-         name = "A price worth paying"
+         name = "EVT_9000148_OPTIONA"
                  command = { type = dissent value = 1 }
          command = { type = trigger which = 9000146 }
          command = { type = access which = ENG }
@@ -5884,13 +5884,13 @@ desc = "The Unionists have agreed to our proposals, on the provision that we all
 
      action = {
          ai_chance = 50
-         name = "Demand economic aid in exchange"
+         name = "EVT_9000148_OPTIONB"
                  command = { type = trigger which = 9000150 }
          }
 
      action = {
          ai_chance = 10
-         name = "This is unacceptable!"
+         name = "EVT_9000148_OPTIONC"
                  command = { type = event which = 9000147 where = IRE when = 1  }
          }
 }
@@ -5901,12 +5901,12 @@ country = IRE
 style = 2
 picture = "Peace_conference"
 
-name = "The British Price"
-desc = "The Unionists have agreed to our proposals, on the provision that we allow them access to our ports and airbases. In addition, they want us to recompense them for lost revenue from the unpaid land annuities since 1925."
+name = "EVT_9000149_NAME"
+desc = "EVT_9000149_DESC"
 
      action = {
      ai_chance = 10
-         name = "A price worth paying"
+         name = "EVT_9000149_OPTIONA"
                  command = { type = dissent value = 6 }
          command = { type = trigger which = 9000154 }
          command = { type = access which = ENG }
@@ -5917,13 +5917,13 @@ desc = "The Unionists have agreed to our proposals, on the provision that we all
 
      action = {
          ai_chance = 60
-         name = "Demand economic aid in exchange"
+         name = "EVT_9000149_OPTIONB"
                  command = { type = trigger which = 9000151 }
          }
 
      action = {
          ai_chance = 30
-         name = "This is unacceptable!"
+         name = "EVT_9000149_OPTIONC"
                  command = { type = event which = 9000147 where = IRE when = 1  }
          }
 }
@@ -5934,18 +5934,18 @@ country = ENG
 style = 2
 picture = "diplomatic_campaign"
 
-name = "The Irish Counter-Offer"
-desc = "The Irish diplomatic mission has responded by asking for economic aid in return for allowing us military access."
+name = "EVT_9000150_NAME"
+desc = "EVT_9000150_DESC"
 
      action = {
          ai_chance = 90
-         name = "We accept"
+         name = "EVT_9000150_OPTIONA"
      command = { type = trigger which = 9000152 }
          }
 
      action = {
          ai_chance = 10
-         name = "They ask for too much"
+         name = "EVT_9000150_OPTIONB"
                  command = { type = event which = 9000147 where = IRE when = 1  }
          }
 }
@@ -5956,18 +5956,18 @@ country = ENG
 style = 2
 picture = "diplomatic_campaign"
 
-name = "The Irish Counter-Offer"
-desc = "The Irish diplomatic mission has responded by asking for economic aid in return for allowing us military access and the land annuitie repayment."
+name = "EVT_9000151_NAME"
+desc = "EVT_9000151_DESC"
 
      action = {
          ai_chance = 70
-         name = "We accept"
+         name = "EVT_9000151_OPTIONA"
      command = { type = trigger which = 9000155 }
          }
 
      action = {
          ai_chance = 30
-         name = "They ask for too much"
+         name = "EVT_9000151_OPTIONB"
                  command = { type = event which = 9000147 where = IRE when = 1  }
          }
 }
@@ -5978,11 +5978,11 @@ country = IRE
 style = 2
 picture = "Peace_conference"
 
-name = "The British Agree"
-desc = "The Unionists have agreed to our proposals, the mission was a success!"
+name = "EVT_9000152_NAME"
+desc = "EVT_9000152_DESC"
 
      action = {
-         name = "Excellent!"
+         name = "EVT_9000152_OPTIONA"
                  command = { type = dissent value = -2 }
          command = { type = trigger which = 9000153 }
          command = { type = access which = ENG }
@@ -6001,11 +6001,11 @@ country = ENG
 style = 2
 picture = "Peace_conference"
 
-name = "The 2nd Anglo-Irish Treaty"
-desc = "We have signed a treaty garuanteeing Irish neutrality. While they may not be allies, they shall not be enemies."
+name = "EVT_9000153_NAME"
+desc = "EVT_9000153_DESC"
 
      action = {
-         name = "Excellent!"
+         name = "EVT_9000153_OPTIONA"
                  command = { type = dissent value = -1 }
                 command = { type = energypool value = -1000 }
                 command = { type = metalpool value = -500 }
@@ -6021,11 +6021,11 @@ country = ENG
 style = 2
 picture = "Peace_conference"
 
-name = "The 2nd Anglo-Irish Treaty"
-desc = "We have signed a treaty garuanteeing Irish neutrality. While they may not be allies, they shall not be enemies."
+name = "EVT_9000154_NAME"
+desc = "EVT_9000154_DESC"
 
      action = {
-         name = "Excellent!"
+         name = "EVT_9000154_OPTIONA"
                  command = { type = dissent value = -1 }
          command = { type = money value = 500 }
          command = { type = guarantee which = ENG where = IRE }
@@ -6039,11 +6039,11 @@ country = IRE
 style = 2
 picture = "Peace_conference"
 
-name = "The British Agree"
-desc = "The Unionists have agreed to our proposals, the mission was a success!"
+name = "EVT_9000155_NAME"
+desc = "EVT_9000155_DESC"
 
      action = {
-         name = "Excellent!"
+         name = "EVT_9000155_OPTIONA"
                  command = { type = dissent value = 1 }
          command = { type = trigger which = 9000156 }
          command = { type = access which = ENG }
@@ -6063,11 +6063,11 @@ country = ENG
 style = 2
 picture = "Peace_conference"
 
-name = "The 2nd Anglo-Irish Treaty"
-desc = "We have signed a treaty garuanteeing Irish neutrality. While they may not be allies, they shall not be enemies."
+name = "EVT_9000156_NAME"
+desc = "EVT_9000156_DESC"
 
      action = {
-         name = "Excellent!"
+         name = "EVT_9000156_OPTIONA"
                  command = { type = dissent value = -2 }
          command = { type = money value = 500 }
                 command = { type = energypool value = -1000 }
@@ -6088,12 +6088,12 @@ random = no
 country = GER
 style = 2
 
-name = "Ireland in Mitteleuropa?"
-desc = "The government of Ireland has approached us asking to join our alliance. How should we respond?"
+name = "EVT_9000157_NAME"
+desc = "EVT_9000157_DESC"
 picture = "foreign_policy"
 
 action_a = {
-    name = "Jawohl!"
+    name = "EVT_9000157_OPTIONA"
     ai_chance = 70
     command = { type = alliance which = IRE }
     command = { type = relation which = IRE value = 50 }
@@ -6101,7 +6101,7 @@ action_a = {
     }
 
 action_b = {
-    name = "Nein, but what about a friendship treaty?"
+    name = "EVT_9000157_OPTIONB"
     ai_chance = 25
     command = { type = guarantee which = GER where = IRE }
     command = { type = domestic which = interventionism value = -1 }
@@ -6109,7 +6109,7 @@ action_b = {
     }
 
 action_c = {
-    name = "Who needs you?"
+    name = "EVT_9000157_OPTIONC"
     ai_chance = 5
     command = { type = relation which = IRE value = -50 }
     command = { type = event which = 9000160 where = IRE when = 1  }
@@ -6122,12 +6122,12 @@ random = no
 country = IRE
 style = 2
 
-name = "The Germans accepted our request!"
-desc = "Germany accepted our request, we will now join Mitteleurope, standing together against the Syndicalists."
+name = "EVT_9000158_NAME"
+desc = "EVT_9000158_DESC"
 picture = "foreign_policy"
 
 action_a = {
-    name = "Great!"
+    name = "EVT_9000158_OPTIONA"
     command = { type = relation which = GER value = 50 }
     command = { type = dissent value = -1 }
     }
@@ -6139,19 +6139,19 @@ random = no
 country = IRE
 style = 2
 
-name = "The Germans offer a different proposal"
-desc = "Germany rejected our request, but said that they will guarantee our independence and proposed a non-aggression pact. It's not what we asked, but maybe this is a better solution."
+name = "EVT_9000159_NAME"
+desc = "EVT_9000159_DESC"
 picture = "foreign_policy"
 
 action_a = {
-    name = "Ok..."
+    name = "EVT_9000159_OPTIONA"
     ai_chance = 80
     command = { type = non_aggression which = GER where = IRE }
     command = { type = dissent value = -1 }
     }
 
 action_b = {
-    name = "Bah, we don't need this..."
+    name = "EVT_9000159_OPTIONB"
     ai_chance = 20
     command = { type = end_guarantee which = GER where = IRE }
     command = { type = relation which = GER value = -100 }
@@ -6165,12 +6165,12 @@ random = no
 country = IRE
 style = 2
 
-name = "The Germans rejected our request!"
-desc = "The Germans rejected our request, we will never trust them again!"
+name = "EVT_9000160_NAME"
+desc = "EVT_9000160_DESC"
 picture = "foreign_policy"
 
 action_a = {
-    name = "Their loss!"
+    name = "EVT_9000160_OPTIONA"
     command = { type = relation which = GER value = -100 }
     command = { type = dissent value = 1 }
     }
@@ -6183,12 +6183,12 @@ random = no
 country = GER
 style = 2
 
-name = "Ireland in Mitteleuropa?"
-desc = "The government of Ireland has approached us asking to fully join our alliance. This is no surprise given the support we gave them in the past. How should we respond?"
+name = "EVT_9000161_NAME"
+desc = "EVT_9000161_DESC"
 picture = "foreign_policy"
 
 action_a = {
-    name = "Jawohl!"
+    name = "EVT_9000161_OPTIONA"
     ai_chance = 90
     command = { type = alliance which = IRE }
     command = { type = relation which = IRE value = 50 }
@@ -6196,7 +6196,7 @@ action_a = {
     }
 
 action_b = {
-    name = "Nein, but what about a friendship treaty?"
+    name = "EVT_9000161_OPTIONB"
     ai_chance = 10
     command = { type = guarantee which = GER where = IRE }
     command = { type = domestic which = interventionism value = -1 }
@@ -6204,7 +6204,7 @@ action_b = {
     }
 
 action_c = {
-    name = "Who needs you?"
+    name = "EVT_9000161_OPTIONC"
     ai_chance = 0
     command = { type = relation which = IRE value = -50 }
     command = { type = event which = 9000160 where = IRE when = 1  }
@@ -6218,12 +6218,12 @@ random = no
 country = GER
 style = 2
 
-name = "Ireland in Mitteleuropa?"
-desc = "The government of Ireland has approached us asking to join our alliance. This has come as a surprise given how we turned them down when they last asked for aid against the Union of Britain. How should we respond?"
+name = "EVT_9000162_NAME"
+desc = "EVT_9000162_DESC"
 picture = "foreign_policy"
 
 action_a = {
-    name = "Jawohl!"
+    name = "EVT_9000162_OPTIONA"
     ai_chance = 10
     command = { type = alliance which = IRE }
     command = { type = relation which = IRE value = 50 }
@@ -6231,7 +6231,7 @@ action_a = {
     }
 
 action_b = {
-    name = "Nein, but what about a friendship treaty?"
+    name = "EVT_9000162_OPTIONB"
     ai_chance = 30
     command = { type = guarantee which = GER where = IRE }
     command = { type = domestic which = interventionism value = -1 }
@@ -6239,7 +6239,7 @@ action_b = {
     }
 
 action_c = {
-    name = "Who needs you?"
+    name = "EVT_9000162_OPTIONC"
     ai_chance = 60
     command = { type = relation which = IRE value = -50 }
     command = { type = event which = 9000160 where = IRE when = 1  }
@@ -6253,12 +6253,12 @@ random = no
 country = GER
 style = 2
 
-name = "Ireland in Mitteleuropa?"
-desc = "The government of Ireland has approached us asking to join our alliance. This has come as a surprise given how when threatened by the Union of Britain they turned to the Entente for protection, not us. How should we respond?"
+name = "EVT_9000163_NAME"
+desc = "EVT_9000163_DESC"
 picture = "foreign_policy"
 
 action_a = {
-    name = "Jawohl!"
+    name = "EVT_9000163_OPTIONA"
     ai_chance = 40
     command = { type = alliance which = IRE }
     command = { type = relation which = IRE value = 50 }
@@ -6266,7 +6266,7 @@ action_a = {
     }
 
 action_b = {
-    name = "Nein, but what about a friendship treaty?"
+    name = "EVT_9000163_OPTIONB"
     ai_chance = 30
     command = { type = guarantee which = GER where = IRE }
     command = { type = domestic which = interventionism value = -1 }
@@ -6274,7 +6274,7 @@ action_b = {
     }
 
 action_c = {
-    name = "Who needs you?"
+    name = "EVT_9000163_OPTIONC"
     ai_chance = 30
     command = { type = relation which = IRE value = -50 }
     command = { type = event which = 9000160 where = IRE when = 1  }
@@ -6291,12 +6291,12 @@ random = no
 country = CAN
 style = 2
 
-name = "Ireland in the Entente?"
-desc = "The government of Ireland has approached us asking to join our alliance. How should we respond?"
+name = "EVT_9000164_NAME"
+desc = "EVT_9000164_DESC"
 picture = "foreign_policy"
 
 action_a = {
-    name = "Yes! One step closer to London"
+    name = "EVT_9000164_OPTIONA"
     ai_chance = 70
     command = { type = alliance which = IRE }
     command = { type = relation which = IRE value = 50 }
@@ -6304,7 +6304,7 @@ action_a = {
     }
 
 action_b = {
-    name = "No, but what about a friendship treaty?"
+    name = "EVT_9000164_OPTIONB"
     ai_chance = 25
     command = { type = guarantee which = CAN where = IRE }
     command = { type = domestic which = interventionism value = -1 }
@@ -6312,7 +6312,7 @@ action_b = {
     }
 
 action_c = {
-    name = "Who needs you?"
+    name = "EVT_9000164_OPTIONC"
     ai_chance = 5
     command = { type = relation which = IRE value = -50 }
     command = { type = event which = 9000167 where = IRE when = 1  }
@@ -6325,12 +6325,12 @@ random = no
 country = IRE
 style = 2
 
-name = "The Canadians accepted our request!"
-desc = "The Royalists in Canada accepted our request, we will now join the Entente, standing together against the Syndicalists."
+name = "EVT_9000165_NAME"
+desc = "EVT_9000165_DESC"
 picture = "foreign_policy"
 
 action_a = {
-    name = "Great!"
+    name = "EVT_9000165_OPTIONA"
     command = { type = relation which = CAN value = 50 }
     command = { type = dissent value = -1 }
     }
@@ -6342,19 +6342,19 @@ random = no
 country = IRE
 style = 2
 
-name = "The Canadians offer a different proposal"
-desc = "Canada rejected our request, but said that they will guarantee our independence and proposed a non-aggression pact. It's not what we asked, but maybe this is a better solution."
+name = "EVT_9000166_NAME"
+desc = "EVT_9000166_DESC"
 picture = "foreign_policy"
 
 action_a = {
-    name = "Ok..."
+    name = "EVT_9000166_OPTIONA"
     ai_chance = 80
     command = { type = non_aggression which = CAN where = IRE }
     command = { type = dissent value = -1 }
     }
 
 action_b = {
-    name = "Bah, we don't need this..."
+    name = "EVT_9000166_OPTIONB"
     ai_chance = 20
     command = { type = end_guarantee which = CAN where = IRE }
     command = { type = relation which = CAN value = -100 }
@@ -6368,12 +6368,12 @@ random = no
 country = IRE
 style = 2
 
-name = "The Canadians rejected our request!"
-desc = "The Canadians rejected our request, we will never trust them again!"
+name = "EVT_9000167_NAME"
+desc = "EVT_9000167_DESC"
 picture = "foreign_policy"
 
 action_a = {
-    name = "Their loss!"
+    name = "EVT_9000167_OPTIONA"
     command = { type = relation which = CAN value = -100 }
     command = { type = dissent value = 1 }
     }
@@ -6386,12 +6386,12 @@ random = no
 country = CAN
 style = 2
 
-name = "Ireland in the Entente?"
-desc = "The government of Ireland has approached us asking to join our alliance. This has come as a surprise given that we turned the Irish away when they were last threatened by the Union of Britain. How should we respond?"
+name = "EVT_9000168_NAME"
+desc = "EVT_9000168_DESC"
 picture = "foreign_policy"
 
 action_a = {
-    name = "Yes! One step closer to London"
+    name = "EVT_9000168_OPTIONA"
     ai_chance = 10
     command = { type = alliance which = IRE }
     command = { type = relation which = IRE value = 50 }
@@ -6399,7 +6399,7 @@ action_a = {
     }
 
 action_b = {
-    name = "No, but what about a friendship treaty?"
+    name = "EVT_9000168_OPTIONB"
     ai_chance = 30
     command = { type = guarantee which = CAN where = IRE }
     command = { type = domestic which = interventionism value = -1 }
@@ -6407,7 +6407,7 @@ action_b = {
     }
 
 action_c = {
-    name = "Who needs you?"
+    name = "EVT_9000168_OPTIONC"
     ai_chance = 60
     command = { type = relation which = IRE value = -50 }
     command = { type = event which = 9000167 where = IRE when = 1  }
@@ -6421,12 +6421,12 @@ random = no
 country = CAN
 style = 2
 
-name = "Ireland in the Entente?"
-desc = "The government of Ireland has approached us asking to join our alliance. This has not come as a surprise given that we came to Ireland's aid when they were last threatened by the Union of Britain. How should we respond?"
+name = "EVT_9000169_NAME"
+desc = "EVT_9000169_DESC"
 picture = "foreign_policy"
 
 action_a = {
-    name = "Yes! One step closer to London"
+    name = "EVT_9000169_OPTIONA"
     ai_chance = 90
     command = { type = alliance which = IRE }
     command = { type = relation which = IRE value = 50 }
@@ -6434,7 +6434,7 @@ action_a = {
     }
 
 action_b = {
-    name = "No, but what about a friendship treaty?"
+    name = "EVT_9000169_OPTIONB"
     ai_chance = 10
     command = { type = guarantee which = CAN where = IRE }
     command = { type = domestic which = interventionism value = -1 }
@@ -6442,7 +6442,7 @@ action_b = {
     }
 
 action_c = {
-    name = "Who needs you?"
+    name = "EVT_9000169_OPTIONC"
     ai_chance = 0
     command = { type = relation which = IRE value = -50 }
     command = { type = event which = 9000167 where = IRE when = 1  }
@@ -6456,12 +6456,12 @@ random = no
 country = CAN
 style = 2
 
-name = "Ireland in the Entente?"
-desc = "The government of Ireland has approached us asking to join our alliance. This has come as a surprise given that when they were last threatened by the Union of Britain they turned to the Germans, noy us. How should we respond?"
+name = "EVT_9000170_NAME"
+desc = "EVT_9000170_DESC"
 picture = "foreign_policy"
 
 action_a = {
-    name = "Yes! One step closer to London"
+    name = "EVT_9000170_OPTIONA"
     ai_chance = 40
     command = { type = alliance which = IRE }
     command = { type = relation which = IRE value = 50 }
@@ -6469,7 +6469,7 @@ action_a = {
     }
 
 action_b = {
-    name = "No, but what about a friendship treaty?"
+    name = "EVT_9000170_OPTIONB"
     ai_chance = 30
     command = { type = guarantee which = CAN where = IRE }
     command = { type = domestic which = interventionism value = -1 }
@@ -6477,7 +6477,7 @@ action_b = {
     }
 
 action_c = {
-    name = "Who needs you?"
+    name = "EVT_9000170_OPTIONC"
     ai_chance = 30
     command = { type = relation which = IRE value = -50 }
     command = { type = event which = 9000167 where = IRE when = 1  }
@@ -6503,7 +6503,7 @@ event = 9000177
 }
 }
 
-name = "End of the Trade War"
+name = "EVT_9000171_NAME"
 desc = "EVT_9000171_DESC"
 style = 2
 
@@ -6513,7 +6513,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 
 action_a = {
-name = "Great!"
+name = "EVT_9000171_OPTIONA"
 command = { type = construct which = IC where = 34 value = 1 } #Dublin
 command = { type = construct which = IC where = 36 value = 1 } #Belfast
 command = { type = relation which = ENG value = 30 }
@@ -6527,12 +6527,12 @@ id = 9000172
 country = ENG
 picture = "UKMap"
 
-name = "End of the Trade War"
+name = "EVT_9000172_NAME"
 desc = "EVT_9000171_DESC"
 style = 2
 
 action_a = {
-name = "Great!"
+name = "EVT_9000172_OPTIONA"
 command = { type = construct which = IC where = 11 value = 1 } #Glasgow
 command = { type = construct which = IC where = 17 value = 1 } #Liverpool
 command = { type = relation which = IRE value = 30 }
@@ -6560,7 +6560,7 @@ event = 9000177
 }
 }
 
-name = "End of the Trade War"
+name = "EVT_9000173_NAME"
 desc = "EVT_9000173_DESC"
 style = 2
 
@@ -6570,7 +6570,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 
 action_a = {
-name = "Great!"
+name = "EVT_9000173_OPTIONA"
 command = { type = construct which = IC where = 34 value = 1 } #Dublin
 command = { type = construct which = IC where = 36 value = 1 } #Belfast
 command = { type = relation which = ENG value = 30 }
@@ -6584,12 +6584,12 @@ id = 9000174
 country = ENG
 picture = "UKMap"
 
-name = "End of the Trade War"
+name = "EVT_9000174_NAME"
 desc = "EVT_9000173_DESC"
 style = 2
 
 action_a = {
-name = "Great!"
+name = "EVT_9000174_OPTIONA"
 command = { type = construct which = IC where = 11 value = 1 } #Glasgow
 command = { type = construct which = IC where = 17 value = 1 } #Liverpool
 command = { type = relation which = IRE value = 30 }
@@ -6613,7 +6613,7 @@ event = 9000177
 }
 }
 
-name = "End of the Trade War"
+name = "EVT_9000175_NAME"
 desc = "EVT_9000175_DESC"
 style = 2
 
@@ -6623,7 +6623,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 
 action_a = {
-name = "Great!"
+name = "EVT_9000175_OPTIONA"
 command = { type = construct which = IC where = 34 value = 1 } #Dublin
 command = { type = construct which = IC where = 36 value = 1 } #Belfast
 command = { type = relation which = U07 value = 15 }
@@ -6637,12 +6637,12 @@ id = 9000176
 country = U07
 picture = "UKMap"
 
-name = "End of the Trade War"
+name = "EVT_9000176_NAME"
 desc = "EVT_9000175_DESC"
 style = 2
 
 action_a = {
-name = "Great!"
+name = "EVT_9000176_OPTIONA"
 command = { type = construct which = IC where = 11 value = 1 } #Glasgow
 command = { type = construct which = IC where = 17 value = 1 } #Liverpool
 command = { type = relation which = IRE value = 15 }
@@ -6666,7 +6666,7 @@ event = 9000175
 }
 }
 
-name = "End of the Trade War"
+name = "EVT_9000177_NAME"
 desc = "EVT_9000177_DESC"
 style = 2
 
@@ -6676,7 +6676,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 
 action_a = {
-name = "Great!"
+name = "EVT_9000177_OPTIONA"
 command = { type = construct which = IC where = 34 value = 1 } #Dublin
 command = { type = construct which = IC where = 36 value = 1 } #Belfast
 command = { type = relation which = U07 value = 50 }
@@ -6690,12 +6690,12 @@ id = 9000178
 country = U07
 picture = "UKMap"
 
-name = "End of the Trade War"
+name = "EVT_9000178_NAME"
 desc = "EVT_9000177_DESC"
 style = 2
 
 action_a = {
-name = "Great!"
+name = "EVT_9000178_OPTIONA"
 command = { type = construct which = IC where = 11 value = 1 } #Glasgow
 command = { type = construct which = IC where = 17 value = 1 } #Liverpool
 command = { type = relation which = IRE value = 50 }
@@ -6718,7 +6718,7 @@ event = 9000173
 }
 }
 
-name = "Harland & Wolff Co."
+name = "EVT_9000179_NAME"
 desc = "EVT_9000179_DESC"
 style = 2
 
@@ -6728,14 +6728,14 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 50
-name = "Consult with the British"
+name = "EVT_9000179_OPTIONA"
 command = { type = trigger which = 9000180 }
 }
 
 
 action_b = {
 ai_chance = 50
-name = "No, we shall not share our national assets with the British"
+name = "EVT_9000179_OPTIONB"
 command = { type = dissent value = 1 }
 }
 }
@@ -6745,13 +6745,13 @@ id = 9000180
 country = ENG
 picture = "Rebecca"
 
-name = "An offer from the Irish"
-desc = "The Irish government has contacted us about the possibility of the Harland & Wolff Shipyards producing ships for the Republican Navy. How should we respond?"
+name = "EVT_9000180_NAME"
+desc = "EVT_9000180_DESC"
 style = 2
 
 action_a = {
 ai_chance = 50
-name = "We accept!"
+name = "EVT_9000180_OPTIONA"
 command = { type = waketeam which = 329 } #Harland & Wolff
 command = { type = money value = -100 }
 command = { type = trade which = ENG where = IRE money = -1 when = 7200 value = 1 }    
@@ -6761,7 +6761,7 @@ command = { type = trigger which = 9000181 }
 
 action_b = {
 ai_chance = 50
-name = "No, turn them down"
+name = "EVT_9000180_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = trigger which = 9000182 }
 }
@@ -6772,12 +6772,12 @@ id = 9000181
 country = IRE
 picture = "uobnavy"
 
-name = "The British Accept!"
-desc = "The British have accepted our offer. H&W will now produce ships for the Republican Navy."
+name = "EVT_9000181_NAME"
+desc = "EVT_9000181_DESC"
 style = 2
 
 action_a = {
-name = "Great!"
+name = "EVT_9000181_OPTIONA"
 command = { type = construct which = IC where = 36 value = 1 } #Belfast
 command = { type = money value = 100 }
 command = { type = relation which = ENG value = 15 }
@@ -6790,12 +6790,12 @@ id = 9000182
 country = IRE
 picture = "uobnavy"
 
-name = "The British Turn Us Down."
-desc = "The British have rejected our offer. H&W will not produce ships for the Republican Navy."
+name = "EVT_9000182_NAME"
+desc = "EVT_9000182_DESC"
 style = 2
 
 action_a = {
-name = "Bloody Hell!"
+name = "EVT_9000182_OPTIONA"
 command = { type = relation which = ENG value = -15 }
 command = { type = dissent value = 3 }
 }
@@ -6814,7 +6814,7 @@ event = 9000177
 }
 }
 
-name = "Harland & Wolff Co."
+name = "EVT_9000183_NAME"
 desc = "EVT_9000183_DESC"
 style = 2
 
@@ -6824,14 +6824,14 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 50
-name = "Consult with the British"
+name = "EVT_9000183_OPTIONA"
 command = { type = trigger which = 9000184 }
 }
 
 
 action_b = {
 ai_chance = 50
-name = "No, we shall not share our national assets with the British"
+name = "EVT_9000183_OPTIONB"
 command = { type = dissent value = 1 }
 }
 }
@@ -6841,13 +6841,13 @@ id = 9000184
 country = U07
 picture = "Rebecca"
 
-name = "An offer from the Irish"
-desc = "The Irish government has contacted us about the possibility of the Harland & Wolff Shipyards producing ships for the Royal Navy. How should we respond?"
+name = "EVT_9000184_NAME"
+desc = "EVT_9000184_DESC"
 style = 2
 
 action_a = {
 ai_chance = 50
-name = "We accept!"
+name = "EVT_9000184_OPTIONA"
 command = { type = waketeam which = 557409 } #Harland & Wolff
 command = { type = money value = -100 }
 command = { type = trade which = U07 where = IRE money = -1 when = 7200 value = 1 }    
@@ -6857,7 +6857,7 @@ command = { type = trigger which = 9000185 }
 
 action_b = {
 ai_chance = 50
-name = "No, turn them down"
+name = "EVT_9000184_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = trigger which = 9000186 }
 }
@@ -6868,12 +6868,12 @@ id = 9000185
 country = IRE
 picture = "uobnavy"
 
-name = "The British Accept!"
-desc = "The British have accepted our offer. H&W will now produce ships for the Royal Navy."
+name = "EVT_9000185_NAME"
+desc = "EVT_9000185_DESC"
 style = 2
 
 action_a = {
-name = "Great!"
+name = "EVT_9000185_OPTIONA"
 command = { type = construct which = IC where = 36 value = 1 } #Belfast
 command = { type = money value = 100 }
 command = { type = relation which = U07 value = 15 }
@@ -6886,12 +6886,12 @@ id = 9000186
 country = IRE
 picture = "uobnavy"
 
-name = "The British Turn Us Down."
-desc = "The British have rejected our offer. H&W will not produce ships for the Royal Navy."
+name = "EVT_9000186_NAME"
+desc = "EVT_9000186_DESC"
 style = 2
 
 action_a = {
-name = "Bloody Hell!"
+name = "EVT_9000186_OPTIONA"
 command = { type = relation which = U07 value = -15 }
 command = { type = dissent value = 3 }
 }
@@ -6929,8 +6929,8 @@ exists = SCO
 }
 }
 
-name = "The Celtic Fringe"
-desc = "The nations of the Celtic Fringe share much in culture and history. Once that included language but as time went on, due to several reasons, English and French became the norm in those countries. Since their re-establishment Scotland, Brittany and Wales have become host to several organisations who look across the sea to Ireland as a model to follow in restoring their own native languages."
+name = "EVT_9000187_NAME"
+desc = "EVT_9000187_DESC"
 style = 2
 
 date = { day = 7 month = january year = 1936 }
@@ -6938,7 +6938,7 @@ offset = 75
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Interesting."
+name = "EVT_9000187_OPTIONA"
 command = { type = setflag which = IRE_GaelCF }
 command = { type = dissent value = -1 }
 }
@@ -6958,8 +6958,8 @@ war = { country = IRE country = U17 }
 exists = IRE
 }
 
-name = "Mae'r Sefydliad Cymreig"
-desc = "Looking to developments in Ireland as an example, a number of Welsh cultural societies are lobbying the government for support in forming Mae'r Sefydliad Cymreig (The Welsh Institute) along the Irish model. Should we offer official support?"
+name = "EVT_9000188_NAME"
+desc = "EVT_9000188_DESC"
 style = 2
 
 date = { day = 7 month = january year = 1936 }
@@ -6968,7 +6968,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 80
-name = "Offer official support"
+name = "EVT_9000188_OPTIONA"
 command = { type = domestic which = freedom value = 1 }
 command = { type = dissent value = -2 }
 command = { type = relation which = IRE value = 50 }
@@ -6979,7 +6979,7 @@ command = { type = relation which = U21 value = 50 }
 
 action_b = {
 ai_chance = 20
-name = "No this is not needed"
+name = "EVT_9000188_OPTIONB"
 command = { type = domestic which = freedom value = -1 }
 command = { type = dissent value = 3 }
 command = { type = relation which = IRE value = -50 }
@@ -7003,8 +7003,8 @@ war = { country = IRE country = SCO }
 exists = IRE
 }
 
-name = "An Albannach Institiud"
-desc = "Looking to developments in Ireland as an example, a number of Scots-Gaelic cultural societies are lobbying the government for support in forming An Albannach Institiud (The Scottish Institute) along the Irish model. Should we offer official support?"
+name = "EVT_9000189_NAME"
+desc = "EVT_9000189_DESC"
 style = 2
 
 date = { day = 7 month = january year = 1936 }
@@ -7013,7 +7013,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 80
-name = "Offer official support"
+name = "EVT_9000189_OPTIONA"
 command = { type = domestic which = freedom value = 1 }
 command = { type = dissent value = -2 }
 command = { type = relation which = IRE value = 50 }
@@ -7023,7 +7023,7 @@ command = { type = relation which = U21 value = 50 }
 
 action_b = {
 ai_chance = 20
-name = "No this is not needed"
+name = "EVT_9000189_OPTIONB"
 command = { type = domestic which = freedom value = -1 }
 command = { type = dissent value = 3 }
 command = { type = relation which = IRE value = -50 }
@@ -7046,8 +7046,8 @@ war = { country = IRE country = U21 }
 exists = IRE
 }
 
-name = "Ofis Publik ar Brezhoneg"
-desc = "Looking to developments in Ireland as an example, a number of Breton cultural societies are lobbying the government for support in forming the Ofis Publik ar Brezhoneg (Public Office for the Breton Language) along the Irish model. Should we offer official support?"
+name = "EVT_9000190_NAME"
+desc = "EVT_9000190_DESC"
 style = 2
 
 date = { day = 7 month = january year = 1936 }
@@ -7056,7 +7056,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 80
-name = "Offer official support"
+name = "EVT_9000190_OPTIONA"
 command = { type = domestic which = freedom value = 1 }
 command = { type = dissent value = -2 }
 command = { type = relation which = IRE value = 50 }
@@ -7066,7 +7066,7 @@ command = { type = relation which = SCO value = 50 }
 
 action_b = {
 ai_chance = 20
-name = "No this is not needed"
+name = "EVT_9000190_OPTIONB"
 command = { type = domestic which = freedom value = -1 }
 command = { type = dissent value = 3 }
 command = { type = relation which = IRE value = -50 }
@@ -7084,14 +7084,14 @@ id = 9000191
 country = IRE
 picture = "unemployment"
 
-name = "Black Monday hits Ireland!"
-desc = "On the 3rd of February, the German stock market collapsed, plunging the world into depression. Ireland has relied on trade with Germany and its sphere of influence since the British Revolution when Ireland declared itself a republic and was shunned by the Entente as a result. The crisis has had a bad effect on the Irish economy and there are concerns that the power of the democratic opposition and even the Syndicalists may increase, especially as the economies of the Internationale have remained untouched."
+name = "EVT_9000191_NAME"
+desc = "EVT_9000191_DESC"
 style = 2
 
 date = { day = 26 month = february year = 1936 }
 
 action_a = {
-name = "This could be bad."
+name = "EVT_9000191_OPTIONA"
 command = { type = dissent value = 5 }
 command = { type = peacetime_ic_mod value = -5 }
   }
@@ -7102,8 +7102,8 @@ id = 9000192
 country = IRE
 picture = "ekonomija"
 
-name = "Economic Reforms"
-desc = "With Black Monday having hit Ireland, some deputies in the Dáil have called for reform of Ireland's economy and increased industrialisation. Others wish for an improvement of Ireland's agriculture which they argue has been the Irish way of life for centuries."
+name = "EVT_9000192_NAME"
+desc = "EVT_9000192_DESC"
 style = 2
 
 date = { day = 1 month = march year = 1936 }
@@ -7111,7 +7111,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1963 }
  
 action_a = {
-name = "Our agriculture must be improved to combat this crisis"
+name = "EVT_9000192_OPTIONA"
 ai_chance = 60
 command = { type = setflag which = IRE_agriculture }
 command = { type = gain_tech which = 5020 }
@@ -7123,7 +7123,7 @@ command = { type = money value = -120 }
      }
 
 action_b = {
-name = "Modern industry is the way of the future"
+name = "EVT_9000192_OPTIONB"
 ai_chance = 40
 command = { type = setflag which = IRE_industry }
 command = { type = gain_tech which = 5050 }
@@ -7144,8 +7144,8 @@ trigger = {
 flag = IRE_agriculture
  }
 
-name = "Agricultural Reforms"
-desc = "Our efforts are beginning to show results. The state of our agriculture has improved dramatically, and the whole Irish economical system has benefited from it. The effects of Black Monday are at last starting to fade."
+name = "EVT_9000193_NAME"
+desc = "EVT_9000193_DESC"
 style = 2
 picture = "peasants"
 
@@ -7154,7 +7154,7 @@ offset = 30
 deathdate = { day = 29 month = december year= 1963 }
 
 action_a = {
-name = "Excellent"
+name = "EVT_9000193_OPTIONA"
 command = { type = relative_manpower value = 3 }
 command = { type = industrial_modifier which = total value = 1 }
 command = { type = manpowerpool value = 5 }
@@ -7173,8 +7173,8 @@ trigger = {
 flag = IRE_industry
  }
 
-name = "Industrial Reforms"
-desc = "Our efforts are beginning to show results. The state of our industry has improved dramatically, and the whole Irish economical system has benefited from it. The effects of Black Monday are at last starting to fade."
+name = "EVT_9000194_NAME"
+desc = "EVT_9000194_DESC"
 style = 2
 picture = "ekonomija"
 
@@ -7183,7 +7183,7 @@ offset = 30
 deathdate = { day = 29 month = december year= 1963 }
 
 action_a = {
-name = "Excellent"
+name = "EVT_9000194_OPTIONA"
 command = { type = add_prov_resource which = -1 value = 7 where = metal }
 command = { type = add_prov_resource which = -1 value = 4 where = rare_materials }
 command = { type = add_prov_resource which = -1 value = 5 where = energy }
@@ -7214,8 +7214,8 @@ event = 9000197
 }
 }
 
-name = "Ireland's National Flag"
-desc = "During Collins' regime, the democratic opposition used the Sunburst Flag, a flag with roots in Gaelic mythology that was adopted by Irish nationalists during the 19th century, as a symbol of their movement. With the fall of Fine Gael, we must decide if we should adopt the Sunburst Flag as our new national flag, or keep the Tricolour, which has been used since the Easter Rising."
+name = "EVT_9000195_NAME"
+desc = "EVT_9000195_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -7224,14 +7224,14 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 25
-name = "A new flag for a new government"
+name = "EVT_9000195_OPTIONA"
 command = { type = flag_ext where = IRE which = _dem }  
 }
 
 
 action_b = {
 ai_chance = 75
-name = "Keep the Tricolour"
+name = "EVT_9000195_OPTIONB"
 command = { type = dissent value = -1 }
 }
 }
@@ -7250,8 +7250,8 @@ event = 9000197
 }
 }
 
-name = "Ireland's National Flag"
-desc = "During Collins' regime, the democratic opposition used the Sunburst Flag, a flag with roots in Gaelic mythology that was adopted by Irish nationalists during the 19th century, as a symbol of their movement. With the fall of Fine Gael, we must decide if we should adopt the Sunburst Flag as our new national flag, or keep the Tricolour, which has been used since the Easter Rising."
+name = "EVT_9000196_NAME"
+desc = "EVT_9000196_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -7260,14 +7260,14 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 75
-name = "A new flag for a new government"
+name = "EVT_9000196_OPTIONA"
 command = { type = flag_ext where = IRE which = _dem }  
 }
 
 
 action_b = {
 ai_chance = 25
-name = "Keep the Tricolour"
+name = "EVT_9000196_OPTIONB"
 command = { type = dissent value = -1 }
 }
 }
@@ -7287,8 +7287,8 @@ event = 9000196
 }
 }
 
-name = "Ireland's National Flag"
-desc = "During Collins' regime, the democratic opposition used the Sunburst Flag, a flag with roots in Gaelic mythology that was adopted by Irish nationalists during the 19th century, as a symbol of their movement. With the fall of Fine Gael, we must decide if we should adopt the Sunburst Flag as our new national flag, or keep the Tricolour, which has been used since the Easter Rising."
+name = "EVT_9000197_NAME"
+desc = "EVT_9000197_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -7297,14 +7297,14 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 50
-name = "A new flag for a new government"
+name = "EVT_9000197_OPTIONA"
 command = { type = flag_ext where = IRE which = _dem }  
 }
 
 
 action_b = {
 ai_chance = 50
-name = "Keep the Tricolour"
+name = "EVT_9000197_OPTIONB"
 command = { type = dissent value = -1 }
 }
 }
@@ -7322,8 +7322,8 @@ flag = IRE_SF_SYN
 }
 }
 
-name = "Legality of the Sinn Féin party"
-desc = "British authorities have put pressure on us to ban Sinn Féin, a social democratic party made up of trade unionists and Irish nationalists who they say represent a threat to the stability of the new Irish state as well as the British Empire, and accuse of having links to illegal organisations who wish to revive the Irish Republic."
+name = "EVT_9000198_NAME"
+desc = "EVT_9000198_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -7332,7 +7332,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 80
-name = "Ban them!"
+name = "EVT_9000198_OPTIONA"
 command = { type = setflag which = IRE_SF_BAN }
 command = { type = dissent value = 5 }  
 command = { type = relation which = U07 value = 25 }
@@ -7340,7 +7340,7 @@ command = { type = relation which = U07 value = 25 }
 
 action_b = {
 ai_chance = 20
-name = "We are a democratic nation"
+name = "EVT_9000198_OPTIONB"
 command = { type = dissent value = -2 }
 command = { type = relation which = U07 value = -25 }
 }

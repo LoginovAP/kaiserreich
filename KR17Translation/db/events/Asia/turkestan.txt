@@ -11,8 +11,8 @@ trigger = {
 war = { country = KAZ country = KYG }
 }
 
-name = "The Hour is at Hand!"
-desc = "We are now at war with the infidels in Kazakhstan.  Should we send out a call to all of the Turkmen tribes to engage in a Holy War?"
+name = "EVT_750500_NAME"
+desc = "EVT_750500_DESC"
 
 date = { day = 1 month = january year = 1936 }
 offset = 30
@@ -21,7 +21,7 @@ deathdate = { day = 9 month = december year = 1960 }
 
 action_a = {
 ai_chance = 60
-name = "Call up the tribes!"
+name = "EVT_750500_OPTIONA"
 command = { type = trigger which = 555410 }
 command = { type = add_division value = cavalry when = 6  }
 command = { type = add_division value = cavalry when = 6  }
@@ -62,7 +62,7 @@ command = { type = belligerence which = KYG value = 10  }
 
 action_b = {
 ai_chance = 40
-name = "Our armies are large enough already"
+name = "EVT_750500_OPTIONB"
 command = { type = trigger which = 555410 }
 command = { type = dissent value = -5 }
 command = { type = addcore which = 1113 }
@@ -112,8 +112,8 @@ ispuppet = KYG
 }
 }
 
-name = "Skirmishes on the frontier"
-desc = "There has been a small skirmish between one of our border patrols and Kazakh police.  Eight of our brave soldiers were killed, and many are saying that it is time to launch a war to avenge their deaths, and liberate the Muslims of the Orda from rule by apostates!"
+name = "EVT_750501_NAME"
+desc = "EVT_750501_DESC"
 
 date = { day = 1 month = august year = 1937 }
 offset = 200
@@ -122,14 +122,14 @@ deathdate = { day = 9 month = november year = 1938  }
 
 action_a = {
 ai_chance = 60
-name = "We must move into Kazakhstan!"
+name = "EVT_750501_OPTIONA"
 command = { type = war which = KAZ  }
 command = { type = trigger which = 750500 }
 }
 
 action_b = {
 ai_chance = 40
-name = "The time is not yet right"
+name = "EVT_750501_OPTIONB"
 command = { type = dissent value = 3 }
 }
 
@@ -153,8 +153,8 @@ ispuppet = KYG
 }
 }
 
-name = "Call for war"
-desc = "An influential congress of clerics has issued a stern denouncement of our government's policy of co-existence with Alash Orda to the north.  They have stated that it is time for us to fight and establish Islamic rule over the whole of Central Asia."
+name = "EVT_750508_NAME"
+desc = "EVT_750508_DESC"
 
 date = { day = 1 month = august year = 1938 }
 offset = 100
@@ -163,14 +163,14 @@ deathdate = { day = 9 month = august year = 1948 }
 
 action_a = {
 ai_chance = 80
-name = "We must move into Kazakhstan!"
+name = "EVT_750508_OPTIONA"
 command = { type = war which = KAZ  }
 command = { type = trigger which = 750500 }
 }
 
 action_b = {
 ai_chance = 20
-name = "The time is not yet right"
+name = "EVT_750508_OPTIONB"
 command = { type = dissent value = 5 }
 }
 
@@ -193,14 +193,14 @@ ispuppet = PER
 }
 }
 
-name = "War in Central Asia!"
-desc = "Our two giant neighbours, Turkestan and Alash Orda, are at war.  If Turkestan wins, they could turn on Persia next.  Should we send aid across the Caspian Sea to the Kazakhs?"
+name = "EVT_750502_NAME"
+desc = "EVT_750502_DESC"
 style = 2
 picture = "SCW_French_Intervention"
 
 
 action_a = {
-name = "Help Alash Orda"
+name = "EVT_750502_OPTIONA"
 ai_chance = 48
 command = { type = domestic which = interventionism value = 1 }
 command = { type = relation which = KYG value = -50 }
@@ -214,7 +214,7 @@ command = { type = trigger which = 750503 }
 }
 action_b = {
 ai_chance = 0
-name = "Send aid, and intervene against Turkestan"
+name = "EVT_750502_OPTIONB"
 command = { type = domestic which = interventionism value = 2 }
 command = { type = relation which = KYG  value = -90 }
 command = { type = relation which = KAZ value = 90 }
@@ -227,7 +227,7 @@ command = { type = war which = KYG }
 
 action_c = {
 ai_chance = 50
-name = "Do nothing"
+name = "EVT_750502_OPTIONC"
 command = { type = relation which = KYG value = 50 }
 command = { type = relation which = KAZ value = -50 }
 }
@@ -240,13 +240,13 @@ random = no
 country = KAZ
 
 
-name = "Aid from Persia!"
-desc = "The Persians send aid!"
+name = "EVT_750503_NAME"
+desc = "EVT_750503_DESC"
 style = 2
 picture = "SCW_German Intervention"
 
 action_a = {
-name = "OK" # Great!
+name = "EVT_750503_OPTIONA" # Great!
 command = { type = supplies value = 200 }
 command = { type = add_division value = infantry when = 7 }
 
@@ -270,8 +270,8 @@ ispuppet = AFG
 }
 }
 
-name = "War in Central Asia!"
-desc = "Our two giant neighbours, Turkestan and Alash Orda, are at war.  If Turkestan wins, they could turn on Afghanistan next.  But we could only help the Kazakhs by declaring war on Turkestan ourselves - a very risky proposition!"
+name = "EVT_750504_NAME"
+desc = "EVT_750504_DESC"
 style = 2
 picture = "SCW_French_Intervention"
 
@@ -279,7 +279,7 @@ picture = "SCW_French_Intervention"
 
 action_a = {
 ai_chance = 0
-name = "It is time to fight!"
+name = "EVT_750504_OPTIONA"
 command = { type = domestic which = interventionism value = 2 }
 command = { type = relation which = KYG  value = -90 }
 command = { type = relation which = KAZ value = 90 }
@@ -289,7 +289,7 @@ command = { type = war which = KYG }
 
 action_c = {
 ai_chance = 97
-name = "Do nothing"
+name = "EVT_750504_OPTIONB"
 command = { type = relation which = KYG value = 50 }
 command = { type = relation which = KAZ value = -50 }
 }
@@ -312,13 +312,13 @@ ispuppet = CXB
 }
 }
 
-name = "War in Central Asia!"
-desc = "Our two giant neighbours, Turkestan and the Kazakh Republic, are at war.  If Turkestan wins, they could turn on us next.  We have always been friends with the Kazakhs - should we help them?"
+name = "EVT_750506_NAME"
+desc = "EVT_750506_DESC"
 style = 2
 picture = "SCW_French_Intervention"
 
 action_a = {
-name = "Send aid to Kazakhstan"
+name = "EVT_750506_OPTIONA"
 ai_chance = 70
 command = { type = domestic which = interventionism value = 1 }
 command = { type = relation which = KYG value = -50 }
@@ -331,7 +331,7 @@ command = { type = trigger which = 750507 }
 
 action_b = {
 ai_chance = 0
-name = "Help and Intervene"
+name = "EVT_750506_OPTIONB"
 command = { type = domestic which = interventionism value = 2 }
 command = { type = leave_alliance } ## To avoid general chinese invasion!
 command = { type = relation which = KYG  value = -90 }
@@ -345,7 +345,7 @@ command = { type = war which = KYG }
 
 action_c = {
 ai_chance = 20
-name = "Do nothing"
+name = "EVT_750506_OPTIONC"
 command = { type = relation which = KYG value = 50 }
 command = { type = relation which = KAZ value = -50 }
 }
@@ -358,13 +358,13 @@ random = no
 country = KAZ
 
 
-name = "Aid from Xibei San Ma!"
-desc = "The Western Warlords have sent aid!"
+name = "EVT_750507_NAME"
+desc = "EVT_750507_DESC"
 style = 2
 picture = "SCW_German Intervention"
 
 action_a = {
-name = "OK" # Great!
+name = "EVT_750507_OPTIONA" # Great!
 command = { type = supplies value = 200 }
 command = { type = add_division value = infantry when = 7 }
 command = { type = add_division value = militia when = 4 }
@@ -386,8 +386,8 @@ ispuppet = KYG
 }
 }
 
-name = "We are Victorious!"
-desc = "Kazakhstan has been fully subjugated by Turkestan!  The foul state of the infidels is no more!"
+name = "EVT_750509_NAME"
+desc = "EVT_750509_DESC"
 style = 2
 picture = "VIC"
 
@@ -396,7 +396,7 @@ offset = 40
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "This is merely the first step to rebuilding the Caliphate"
+name = "EVT_750509_OPTIONA"
 ai_chance = 85
 command = { type = ai which = "switch\Caliphate_KYG.ai" }
 command = { type = belligerence which = KYG value = 10  }
@@ -421,7 +421,7 @@ command = { type = setflag which = KYG_EXP  }
 }
 
 action_b = {
-name = "We must now only promote where we rule"
+name = "EVT_750509_OPTIONB"
 ai_chance = 15
 command = { type = belligerence which = KYG value = -10  }
 command = { type = dissent value = 5 }
@@ -456,8 +456,8 @@ exists = IND
 }
 }
 
-name = "Delhi at war"
-desc = "Delhi, a former British colony, is engaged in a major war and may not be able to defend its interests in Asia!  This could be our chance to expand, if not into India then at least into Persia and Afghanistan!"
+name = "EVT_750510_NAME"
+desc = "EVT_750510_DESC"
 
 date = { day = 1 month = november year = 1938 }
 offset = 90
@@ -466,7 +466,7 @@ deathdate = { day = 29 month = november year = 1949 }
 
 action_a = {
 ai_chance = 10
-name = "We shall march all the way to Tehran and Delhi!"
+name = "EVT_750510_OPTIONA"
 command = { type = war which = PAK }
 command = { type = war which = PER }
 command = { trigger = { NOT = { alliance = { country = KYG country = AFG } } } type = war which = AFG }
@@ -475,14 +475,14 @@ command = { type = relation which = PAK value = -150 }
 
 action_b = {
 ai_chance = 40
-name = "Only move against Persia"
+name = "EVT_750510_OPTIONB"
 command = { type = war which = PER }
 command = { trigger = { NOT = { war = { country = PAK country = AFG } } } type = trigger which = 750511 }
 }
 
 action_c = {
 ai_chance = 30
-name = "The time is not yet right"
+name = "EVT_750510_OPTIONC"
 command = { type = relation which = PAK value = 20 }
 }
 }
@@ -495,8 +495,8 @@ random = no
 country = PAK
 style = 2
 
-name = "Turkestan moves into Persia"
-desc = "We have always attempted to maintain stability on the frontiers of northern-west of India, but our forces are severely overstretched at the moment.  Can we risk a war against Turkestan as well?"
+name = "EVT_750511_NAME"
+desc = "EVT_750511_DESC"
 
 
 action_a = {
@@ -507,14 +507,14 @@ exists = IND
 exists = PRK
 }
 }
-name = "We shall protect them."
+name = "EVT_750511_OPTIONA"
 command = { type = war which = KYG  }
 command = { type = alliance which = PER }
 }
 
 action_b = {
 ai_chance = 50
-name = "We shall wait this out."
+name = "EVT_750511_OPTIONB"
 command = { type = end_guarantee which = PAK where = PER }
 command = { type = end_guarantee which = PAK where = AFG }
 }
@@ -527,7 +527,7 @@ exists = IND
 exists = PRK
 }
 }
-name = "We must occupy Persia before Turkestan."
+name = "EVT_750511_OPTIONC"
 command = { type = war which = PER }
 }
 }
@@ -550,8 +550,8 @@ ispuppet = KYG
 }
 }
 
-name = "Russia at war"
-desc = "The Russians are engaged in a major war, and may not be able to defend their interests in Turania!  This could be our chance to expand the Caliphate into Russian Tartary!"
+name = "EVT_750512_NAME"
+desc = "EVT_750512_DESC"
 
 date = { day = 1 month = july year = 1938 }
 offset = 90
@@ -560,13 +560,13 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 60
-name = "Yes, smash the Russians!"
+name = "EVT_750512_OPTIONA"
 command = { type = war which = RUS }
 }
 
 action_b = {
 ai_chance = 40
-name = "The time is not yet right"
+name = "EVT_750512_OPTIONB"
 command = { type = relation which = RUS value = 20 }
 }
 }
@@ -585,8 +585,8 @@ style = 2
 
 trigger = { headofstate = 521071 }
 
-name = "The Emir is dead"
-desc = "Mohammed Alim Khan, the Emir of Bukhara and grand Head of State of the Islamic Federation of Turkestan, has passed away today due to natural causes. The Council of State is now deliberating on who will be the next supreme ruler of the country: will the Emir's son, Crown Prince Shahmurad, inherit his father's position? Will the ambitious Ibrahim Bek be able to finally assume supreme power in Turkestan? Or will the shadowy clerical faction under Mufti Ishan Babakhan triumph?"
+name = "EVT_750520_NAME"
+desc = "EVT_750520_DESC"
 
 date = { day = 1 month =january year = 1943 }
 offset = 200
@@ -594,7 +594,7 @@ deathdate = { day = 1 month = january year = 1970 }
 
 action = {
 ai_chance = 80
-name = "Crown Prince Shahmurad assumes power"
+name = "EVT_750520_OPTIONA"
 command = { type = dissent value = -2 }
 command = { type = headofstate which = 521074 }
 command = { type = sleepminister which = 521071 }
@@ -604,7 +604,7 @@ command = { type = event which = 750690 where = KYG when = 80 }
 
 action = {
 ai_chance = 5
-name = "Ibrahim Bek consolidates his dictatorship"
+name = "EVT_750520_OPTIONB"
 command = { type = dissent value = 5 }
 command = { type = domestic which = freedom value = -1 }
 command = { type = headofstate which = 521077 }
@@ -614,7 +614,7 @@ command = { type = sleepleader which = 521023 }
 
 action = {
 ai_chance = 15
-name = "Mufti Ishan Babakhan will bring the rule of Islam to the land"
+name = "EVT_750520_OPTIONC"
 command = { type = dissent value = 5 }
 command = { type = domestic which = freedom value = -1 }
 command = { type = headofstate which = 12099 }
@@ -630,11 +630,11 @@ random = no
 country = KYG
 style = 2
 
-name = "The Mechanical Horse"
-desc = "Shahmurad Alim Khan, the Emir of Bukhara and grand Head of State of the Islamic Federation of Turkestan, introduces the mechanical horse to the skeptical people of Turkestan. The Emir first encountered the internal combustion engine on a visit to Berlin and very quickly realized that the horse had had it's day. Once crowned Emir, Shahmurad Alim Khan became a relentless promoter of the engine to his people and more specifically it's military."
+name = "EVT_750690_NAME"
+desc = "EVT_750690_DESC"
 
 action = {
-name = "Woah won't work no more!"
+name = "EVT_750690_OPTIONA"
 command = { type = dissent value = 2 } # initial resistance to the idea
 command = { type = waketeam which = 11705 } # wake the team
 }
@@ -664,8 +664,8 @@ ispuppet = KYG
 }
 }
 
-name = "Fundamentalism in the Islamic Federation of Turkestan"
-desc = "Following our latest series of conquests, the shadowy clerical faction of our Council of State, under the leadership of Grand Mufti Ishan Babakhan, has called for a formal adoption of several aspects of sharia law in the country, and also for even more agressive expansionist projects. They also aim to question and confront the religious authority of Ottoman Caliph in Istambul, a move which would increase Turkestan's relevance in the world stage..."
+name = "EVT_750521_NAME"
+desc = "EVT_750521_DESC"
 
 date = { day = 1 month =january year = 1936 }
 offset = 100
@@ -673,20 +673,20 @@ deathdate = { day = 1 month = january year = 1970 }
 
 action = {
 ai_chance = 40
-name = "We must restrain the clericals' influence"
+name = "EVT_750521_OPTIONA"
 command = { type = dissent value = 5 }
 command = { type = domestic which = freedom value = 2 }
 }
 
 action = {
 ai_chance = 40
-name = "We must endorse their policies if we want to further expand"
+name = "EVT_750521_OPTIONB"
 command = { type = trigger which = 750522 }
 }
 
 action = {
 ai_chance = 20
-name = "A Compromise , make Babakhan chief of the Security Services"
+name = "EVT_750521_OPTIONC"
 command = { type = dissent value = 2 }
 command = { type = domestic which = freedom value = -1 }
 command = { type = ministerofsecurity which = 521080 }
@@ -700,12 +700,12 @@ random = no
 country = KYG
 style = 2
 
-name = "The Grand Mufti in Power"
-desc = "As the Council of Ministers decided to officially adopt fundamentalist legislation, Grand Mufti Ishan Babakhan has astonished all as he requested that supreme leadership of the government be granted to him!"
+name = "EVT_750522_NAME"
+desc = "EVT_750522_DESC"
 
 action = {
 ai_chance = 60
-name = "Yes, a true muslim as the true leader of Turkestan"
+name = "EVT_750522_OPTIONA"
 command = { type = dissent value = 5 }
 command = { type = headofgovernment which = 521079 }
 command = { type = domestic which = freedom value = -2 }
@@ -713,7 +713,7 @@ command = { type = setflag which = TURKESTAN_FUNDAMENTALIST }
 }
 action = {
 ai_chance = 20
-name = "That's too much, make him head of the Security Services instead"
+name = "EVT_750522_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = domestic which = freedom value = -1 }
 command = { type = ministerofsecurity which = 521080 }
@@ -721,7 +721,7 @@ command = { type = setflag which = TURKESTAN_FUNDAMENTALIST }
 }
 action = {
 ai_chance = 20
-name = "Abandon all plans and reduce clerical influence in the Council"
+name = "EVT_750522_OPTIONC"
 command = { type = dissent value = 5 }
 command = { type = domestic which = freedom value = 2 }
 }
@@ -749,8 +749,8 @@ government = democratic
 }
 }
 
-name = "The Supreme Authority of Sunni Islam"
-desc = "Since 1517, the Ottoman Sultans has held the title of Caliph, as spiritual rulers of Sunni Islam. Even if the title has been historically disputed many times and the Sultan's religious authority is slim outside Turkey, the position of Caliph has great symbolic importance. By breaking any spiritual ties to the Ottoman Caliphate, we will have free reign to further expand our interests. One possible move would be arranging a ressurgence of the rival Sharifian Caliphate, headed by the Hashemite Dinasty."
+name = "EVT_750523_NAME"
+desc = "EVT_750523_DESC"
 
 date = { day = 1 month =january year = 1936 }
 offset = 200
@@ -761,7 +761,7 @@ ai_chance = 5
 trigger = {
 exists = OTT
 }
-name = "The Sultan still has much influence, we shouldn't break those ties"
+name = "EVT_750523_OPTIONA"
 command = { type = dissent value = 2 }
 command = { type = relation which = OTT value = 50 }
 }
@@ -781,14 +781,14 @@ puppet = { country = OTT country = SAU }
 ispuppet = SAU
 }
 }
-name = "Contact the Hashemites, attempt to restore the Sharifian Caliphate"
+name = "EVT_750523_OPTIONB"
 command = { type = trigger which = 750524 }
 command = { type = relation which = OTT value = -50 }
 }
 
 action = {
 ai_chance = 25
-name = "Establish a new Caliphate in Bukhara"
+name = "EVT_750523_OPTIONC"
 command = { type = dissent value = -5 }
 command = { type = relation which = OTT value = -50 }
 command = { type = relation which = SAU value = -50 }
@@ -803,12 +803,12 @@ random = no
 country = SAU
 style = 2
 
-name = "The Sharifian Caliphate"
-desc = "The Caliphate, currently based in Constantinople, is the traditional leadership of Sunni Muslims worldwide. Despite formal submission to the Ottomans, the Sharif of Mecca has been, since the 10th Century, a Hashemite. Based on this fact, the idea of proclaiming a Sharifian Caliphate has been gaining ground lately. Now, as the Turkestani have broken their symbolic ties to the Ottoman Caliph, they have approached us with a proposal to establish a Caliphate based in Arabia..."
+name = "EVT_750524_NAME"
+desc = "EVT_750524_DESC"
 
 action = {
 ai_chance = 20
-name = "We should not upset the Ottomans any further"
+name = "EVT_750524_OPTIONA"
 command = { type = dissent value = 3 }
 command = { type = relation which = OTT value = 10 }
 command = { type = relation which = KYG value = -50 }
@@ -817,7 +817,7 @@ command = { type = trigger which = 750525 }
 
 action = {
 ai_chance = 80
-name = "Accept their proposal and establish a new Caliphate"
+name = "EVT_750524_OPTIONB"
 command = { type = event which = 750526 where = KYG when = 1  }
 command = { type = event which = 750527 where = SAU when = 1  }
 command = { type = event which = 750528 where = OTT when = 3  }
@@ -832,18 +832,18 @@ random = no
 country = KYG
 style = 2
 
-name = "The Hashemites Refuse"
-desc = "The House of Hashim, out of fear from Ottoman Reprisals, has refused our proposal to establish a Sharifian Caliphate rivalling Constantinople. Those cowards... Our clericals have come up with a much more interesting idea: establishing our own autonomous Caliphate in Bukhara."
+name = "EVT_750525_NAME"
+desc = "EVT_750525_DESC"
 
 action = {
 ai_chance = 10
-name = "We should take care of our internal issues instead"
+name = "EVT_750525_OPTIONA"
 command = { type = dissent value = 3 }
 }
 
 action = {
 ai_chance = 40
-name = "Establish a new Caliphate in Bukhara"
+name = "EVT_750525_OPTIONB"
 command = { type = dissent value = -5 }
 command = { type = relation which = OTT value = -50 }
 command = { type = relation which = SAU value = -50 }
@@ -858,11 +858,11 @@ random = no
 country = KYG
 style = 2
 
-name = "The Hashemites Accept"
-desc = "The House of Hashim has accepted our proposal and have established a new Caliphate in Arabia, rivalling the Ottomans in Constantinople. We may have crippled a bit of the Ottomans' prestige, but it will not come cheaply..."
+name = "EVT_750526_NAME"
+desc = "EVT_750526_DESC"
 
 action = {
-name = "Great!"
+name = "EVT_750526_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = relation which = OTT value = -50 }
 command = { type = relation which = SAU value = 50 }
@@ -875,11 +875,11 @@ random = no
 country = SAU
 style = 2
 
-name = "Establishment of the Sharifian Caliphate"
-desc = "The House of Hashim, reminding the world of their role as Sharifs of Mecca since the 10th Century and their descendancy from Prophet Muhammed himself, have declared the Ottoman Sultan as unfit to act as Caliph of All Faithfull and proclaimed a new Sharifian Caliphate. Abdullah bin Ali, head of the Hashemites, has proclaimed himself as Caliph of all Sunni Muslims, a move which will surelly rise Arabia's status in the world stage, but shall also upset the Ottomans very much..."
+name = "EVT_750527_NAME"
+desc = "EVT_750527_DESC"
 
 action = {
-name = "Great!"
+name = "EVT_750527_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = relation which = OTT value = -50 }
 command = { type = relation which = KYG value = 50 }
@@ -893,12 +893,12 @@ random = no
 country = OTT
 style = 2
 
-name = "A Rival Hashemite Caliphate"
-desc = "Based on a proposal from Turkestan, the House of Hashim, reminding the world of their role as Sharifs of Mecca since the 10th Century and their descendancy from Prophet Muhammed himself, have declared the Ottoman Sultan as unfit to act as Caliph of All Faithfull and proclaimed a new Sharifian Caliphate. Abdullah bin Ali, head of the Hashemites, has proclaimed himself as Caliph of all Sunni Muslims. What an outrage! We demand an immediate intervention to correct this grave insult against Islam!"
+name = "EVT_750528_NAME"
+desc = "EVT_750528_DESC"
 
 action = {
 ai_chance = 20
-name = "The Hashemites must be removed from Arabia"
+name = "EVT_750528_OPTIONA"
 command = { type = war which = SAU }
 command = { type = trigger which = 750529 }
 }
@@ -908,7 +908,7 @@ ai_chance = 80
 trigger = {
 NOT = { ispuppet = OTT atwar = OTT }
 }
-name = "Ignore them, no true Muslim will accept their mock Caliphate"
+name = "EVT_750528_OPTIONB"
 command = { type = dissent value = 5 }
 }
 }
@@ -920,19 +920,19 @@ random = no
 country = KYG
 style = 2
 
-name = "Ottoman-Hashemite War"
-desc = "After the House of Hashim proclaimed the establishment of the Sharifian Caliphate, the decadent Ottoman Sultan declared war on our brothers. We now have the moral duty to support them against the invaders from Constantinople!"
+name = "EVT_750529_NAME"
+desc = "EVT_750529_DESC"
 
 action = {
 ai_chance = 95
-name = "For Islam, join their struggle"
+name = "EVT_750529_OPTIONA"
 command = { trigger = { NOT = { alliance = { country = EGY country = SAU } } } type = trigger which = 750530 }
 command = { trigger = { alliance = { country = EGY country = SAU } } type = war which = OTT }
 }
 
 action = {
 ai_chance = 5
-name = "We are not ready for a war against the Ottomans"
+name = "EVT_750529_OPTIONB"
 command = { type = dissent value = 10 }
 }
 }
@@ -944,18 +944,18 @@ random = no
 country = SAU
 style = 2
 
-name = "An offer from Turkestan"
-desc = "Upon hearing the news of the Ottoman invasion, our brothers from Turkestan have offered to join us on this war effort!"
+name = "EVT_750530_NAME"
+desc = "EVT_750530_DESC"
 
 action = {
 ai_chance = 99
-name = "Allahu Akbar! Welcome our brothers into an alliance!"
+name = "EVT_750530_OPTIONA"
 command = { type = alliance which = KYG }
 }
 
 action = {
 ai_chance = 1
-name = "We can fight the Ottomans alone!"
+name = "EVT_750530_OPTIONB"
 command = { type = dissent value = 5 }
 command = { type = morale which = land value = 5 }
 }
@@ -968,11 +968,11 @@ random = no
 country = KYG
 style = 2
 
-name = "Establishment of the Caliphate of Bukhara"
-desc = "Based on a proposal from the Council of Ministers, the Imans of Turkestan have declared the Ottoman Sultan unfit to act as Caliph of All Faithfull and proclaimed a new Caliphate of Bukhara. Our Grand Mufti Ishan Babakhan has proclaimed himself as Caliph of all Sunni Muslims, a move which will surelly rise Turkestan's status in the world stage, but shall also upset the Ottomans very much..."
+name = "EVT_750531_NAME"
+desc = "EVT_750531_DESC"
 
 action = {
-name = "Great!"
+name = "EVT_750531_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = capital which = 1100 } # Bukhara
 command = { type = event which = 750548 where = KYG when = 50 }	#The Conference of Bukhara
@@ -1031,11 +1031,11 @@ random = no
 country = OTT
 style = 2
 
-name = "Turkestan establishes the Caliphate of Bukhara"
-desc = "Based on a proposal from their Council of Ministers, the Imans of Turkestan have declared the Ottoman Sultan unfit to act as Caliph of All Faithfull and proclaimed a new Caliphate of Bukhara. Grand Mufti Ishan Babakhan has proclaimed himself as Caliph of all Sunni Muslims. What an outrage! If only there was a way to immediatly correct this grave insult against Islam...!"
+name = "EVT_750532_NAME"
+desc = "EVT_750532_DESC"
 
 action = {
-name = "How they dare !"
+name = "EVT_750532_OPTIONA"
 command = { type = dissent value = 2 }
 }
 }
@@ -1047,8 +1047,8 @@ random = no
 country = AFG
 style = 2
 
-name = "Turkestan establishes the Caliphate of Bukhara"
-desc = "Based on a proposal from their Council of Ministers, the Imans of Turkestan have declared the Ottoman Sultan unfit to act as Caliph of All Faithfull and proclaimed a new Caliphate of Bukhara. Grand Mufti Ishan Babakhan has proclaimed himself as Caliph of all Sunni Muslims. This morning, representatives from Bukhara have arrived in Kabul to seek recognition from our Islamic leaders."
+name = "EVT_750533_NAME"
+desc = "EVT_750533_DESC"
 
 action = {
 ai_chance = 80
@@ -1058,7 +1058,7 @@ government = communist
 government = democratic
 }
 }
-name = "Recognize the Caliph of Bukhara as worldwide leader of Sunni Islam"
+name = "EVT_750533_OPTIONA"
 command = { type = dissent value = 5 }
 command = { type = relation which = OTT value = -50 }
 command = { type = relation which = KYG value = 50 }
@@ -1067,7 +1067,7 @@ command = { type = trigger which = 750534 }
 
 action = {
 ai_chance = 20
-name = "The Ottoman Caliph is the world's greatest Muslim leader"
+name = "EVT_750533_OPTIONB"
 command = { type = dissent value = -5 }
 command = { type = relation which = OTT value = 50 }
 command = { type = relation which = KYG value = -100 }
@@ -1082,11 +1082,11 @@ random = no
 country = KYG
 style = 2
 
-name = "Recognition from Afghanistan"
-desc = "The government of Afghanistan has recognized the Caliph of Bukhara as the worldwide leader of Sunni Islam!"
+name = "EVT_750534_NAME"
+desc = "EVT_750534_DESC"
 
 action = {
-name = "Great!"
+name = "EVT_750534_OPTIONA"
 command = { type = dissent value = -1 }
 command = { type = relation which = AFG value = 90 }
 }
@@ -1099,11 +1099,11 @@ random = no
 country = KYG
 style = 2
 
-name = "Recognition from Afghanistan - Failure!"
-desc = "The government of Afghanistan has failed to recognize the Caliph of Bukhara as the worldwide leader of Sunni Islam! What an insult!"
+name = "EVT_750535_NAME"
+desc = "EVT_750535_DESC"
 
 action = {
-name = "They will just see it, one day"
+name = "EVT_750535_OPTIONA"
 command = { type = dissent value = 1 }
 command = { type = relation which = AFG value = -90 }
 }
@@ -1116,8 +1116,8 @@ random = no
 country = AZB
 style = 2
 
-name = "Turkestan establishes the Caliphate of Bukhara"
-desc = "Based on a proposal from their Council of Ministers, the Imans of Turkestan have declared the Ottoman Sultan unfit to act as Caliph of All Faithfull and proclaimed a new Caliphate of Bukhara. Grand Mufti Ishan Babakhan has proclaimed himself as Caliph of all Sunni Muslims. This morning, representatives from Bukhara have arrived in Baku to seek recognition from our Islamic leaders."
+name = "EVT_750536_NAME"
+desc = "EVT_750536_DESC"
 
 action = {
 ai_chance = 20
@@ -1127,7 +1127,7 @@ government = communist
 government = democratic
 }
 }
-name = "Recognize the new Caliphate of Bukhara"
+name = "EVT_750536_OPTIONA"
 command = { type = dissent value = 3 }
 command = { type = relation which = OTT value = -50 }
 command = { type = relation which = KYG value = 50 }
@@ -1136,7 +1136,7 @@ command = { type = trigger which = 750537 }
 
 action = {
 ai_chance = 80
-name = "No, we still recognize the Ottoman Caliphate"
+name = "EVT_750536_OPTIONB"
 command = { type = dissent value = -2 }
 command = { type = relation which = OTT value = 50 }
 command = { type = relation which = KYG value = -100 }
@@ -1151,11 +1151,11 @@ random = no
 country = KYG
 style = 2
 
-name = "Recognition from Azerbaijan"
-desc = "The government of Azerbaijan has recognized the Caliph of Bukhara as the worldwide leader of Sunni Islam!"
+name = "EVT_750537_NAME"
+desc = "EVT_750537_DESC"
 
 action = {
-name = "Great!"
+name = "EVT_750537_OPTIONA"
 command = { type = dissent value = -1 }
 command = { type = relation which = AZB value = 90 }
 }
@@ -1168,11 +1168,11 @@ random = no
 country = KYG
 style = 2
 
-name = "Recognition from Azerbaijan - Failure!"
-desc = "The government of Azerbaijan has failed to recognize the Caliph of Bukhara as the worldwide leader of Sunni Islam! What an insult!"
+name = "EVT_750538_NAME"
+desc = "EVT_750538_DESC"
 
 action = {
-name = "They will just see it, one day"
+name = "EVT_750538_OPTIONA"
 command = { type = dissent value = 1 }
 command = { type = relation which = AZB value = -90 }
 }
@@ -1185,8 +1185,8 @@ random = no
 country = SIK
 style = 2
 
-name = "Turkestan establishes the Caliphate of Bukhara"
-desc = "Based on a proposal from their Council of Ministers, the Imans of Turkestan have declared the Ottoman Sultan unfit to act as Caliph of All Faithfull and proclaimed a new Caliphate of Bukhara. Grand Mufti Ishan Babakhan has proclaimed himself as Caliph of all Sunni Muslims. This morning, representatives from Bukhara have arrived in Sinkiang to seek recognition from our Islamic leaders."
+name = "EVT_750539_NAME"
+desc = "EVT_750539_DESC"
 
 action = {
 ai_chance = 90
@@ -1196,7 +1196,7 @@ government = communist
 government = democratic
 }
 }
-name = "Recognize the new Caliphate of Bukhara"
+name = "EVT_750539_OPTIONA"
 command = { type = dissent value = 3 }
 command = { type = relation which = OTT value = -50 }
 command = { type = relation which = KYG value = 50 }
@@ -1205,7 +1205,7 @@ command = { type = trigger which = 750540 }
 
 action = {
 ai_chance = 10
-name = "No, we bow to the Ottoman Caliph only"
+name = "EVT_750539_OPTIONB"
 command = { type = dissent value = -2 }
 command = { type = relation which = OTT value = 50 }
 command = { type = relation which = KYG value = -100 }
@@ -1220,11 +1220,11 @@ random = no
 country = KYG
 style = 2
 
-name = "Recognition from Sinkiang"
-desc = "The government of Sinkiang has recognized the Caliph of Bukhara as the worldwide leader of Sunni Islam!"
+name = "EVT_750540_NAME"
+desc = "EVT_750540_DESC"
 
 action = {
-name = "Great!"
+name = "EVT_750540_OPTIONA"
 command = { type = dissent value = -1 }
 command = { type = relation which = SIK value = 90 }
 }
@@ -1237,11 +1237,11 @@ random = no
 country = KYG
 style = 2
 
-name = "Recognition from Sinkiang - Failure!"
-desc = "The government of Sinkiang has failed to recognize the Caliph of Bukhara as the worldwide leader of Sunni Islam! What an insult!"
+name = "EVT_750541_NAME"
+desc = "EVT_750541_DESC"
 
 action = {
-name = "They will just see it, one day"
+name = "EVT_750541_OPTIONA"
 command = { type = dissent value = 1 }
 command = { type = relation which = SIK value = -90 }
 }
@@ -1254,8 +1254,8 @@ random = no
 country = CXB
 style = 2
 
-name = "Turkestan establishes the Caliphate of Bukhara"
-desc = "Based on a proposal from their Council of Ministers, the Imans of Turkestan have declared the Ottoman Sultan unfit to act as Caliph of All Faithfull and proclaimed a new Caliphate of Bukhara. Grand Mufti Ishan Babakhan has proclaimed himself as Caliph of all Sunni Muslims. This morning, representatives from Bukhara have arrived in our capital to seek recognition from our Islamic leaders."
+name = "EVT_750542_NAME"
+desc = "EVT_750542_DESC"
 
 action = {
 ai_chance = 90
@@ -1265,7 +1265,7 @@ government = communist
 government = democratic
 }
 }
-name = "We recognize Bukhara as the leader of the world's Sunni Muslims"
+name = "EVT_750542_OPTIONA"
 command = { type = dissent value = 3 }
 command = { type = relation which = OTT value = -50 }
 command = { type = relation which = KYG value = 50 }
@@ -1273,7 +1273,7 @@ command = { type = trigger which = 750543 }
 }
 action = {
 ai_chance = 10
-name = "This is too dangerous - Keep recognizing the Ottoman Caliphate"
+name = "EVT_750542_OPTIONB"
 command = { type = dissent value = -2 }
 command = { type = relation which = OTT value = 50 }
 command = { type = relation which = KYG value = -100 }
@@ -1288,11 +1288,11 @@ random = no
 country = KYG
 style = 2
 
-name = "Recognition from Xibei Lianbang Yiyuan"
-desc = "The government of Xibei Lianbang Yiyuan has recognized the Caliph of Bukhara as the worldwide leader of Sunni Islam!"
+name = "EVT_750543_NAME"
+desc = "EVT_750543_DESC"
 
 action = {
-name = "Great!"
+name = "EVT_750543_OPTIONA"
 command = { type = dissent value = -1 }
 command = { type = relation which = CXB value = 90 }
 }
@@ -1305,11 +1305,11 @@ random = no
 country = KYG
 style = 2
 
-name = "Recognition from Xibei Lianbang Yiyuan - Failure!"
-desc = "The government of Xibei Lianbang Yiyuan has failed to recognize the Caliph of Bukhara as the worldwide leader of Sunni Islam! What an insult!"
+name = "EVT_750544_NAME"
+desc = "EVT_750544_DESC"
 
 action = {
-name = "They will just see it, one day"
+name = "EVT_750544_OPTIONA"
 command = { type = dissent value = 1 }
 command = { type = relation which = CXB value = -90 }
 }
@@ -1322,8 +1322,8 @@ random = no
 country = PER
 style = 2
 
-name = "Turkestan establishes the Caliphate of Bukhara"
-desc = "Based on a proposal from their Council of Ministers, the Imans of Turkestan have declared the Ottoman Sultan unfit to act as Caliph of All Faithfull and proclaimed a new Caliphate of Bukhara. Grand Mufti Ishan Babakhan has proclaimed himself as Caliph of all Sunni Muslims. This morning, representatives from Bukhara have arrived in Teheran to seek recognition from our Islamic leaders."
+name = "EVT_750545_NAME"
+desc = "EVT_750545_DESC"
 
 action = {
 ai_chance = 5
@@ -1333,7 +1333,7 @@ government = communist
 government = democratic
 }
 }
-name = "Recognize the Caliph of Bukhara as leader of Persia's Sunni Muslims"
+name = "EVT_750545_OPTIONA"
 command = { type = dissent value = 1 }
 command = { type = relation which = OTT value = -50 }
 command = { type = relation which = KYG value = 50 }
@@ -1342,7 +1342,7 @@ command = { type = trigger which = 750546 }
 
 action = {
 ai_chance = 95
-name = "Uh... They do know that we're Shia Muslims, right?"
+name = "EVT_750545_OPTIONB"
 command = { type = dissent value = -1 }
 command = { type = relation which = OTT value = 50 }
 command = { type = relation which = KYG value = -100 }
@@ -1357,11 +1357,11 @@ random = no
 country = KYG
 style = 2
 
-name = "Recognition from Persia"
-desc = "The government of Persia has recognized the Caliph of Bukhara as the worldwide leader of Sunni Islam!"
+name = "EVT_750546_NAME"
+desc = "EVT_750546_DESC"
 
 action = {
-name = "Great!"
+name = "EVT_750546_OPTIONA"
 command = { type = dissent value = -1 }
 command = { type = relation which = PER value = 90 }
 }
@@ -1374,11 +1374,11 @@ random = no
 country = KYG
 style = 2
 
-name = "Recognition from Persia - Failure!"
-desc = "The government of Persia has failed to recognize the Caliph of Bukhara as the worldwide leader of Sunni Islam! What an insult!"
+name = "EVT_750547_NAME"
+desc = "EVT_750547_DESC"
 
 action = {
-name = "They will just see it, one day"
+name = "EVT_750547_OPTIONA"
 command = { type = dissent value = 1 }
 command = { type = relation which = PER value = -90 }
 }
@@ -1391,12 +1391,12 @@ random = no
 country = KYG
 style = 2
 
-name = "The Conference of Bukhara"
-desc = "After several countries have recognized the new Caliphate of Bukhara, our foreign minister has proposed to setup a grand conference in our holy city in order do strenghten ties between Turkestan and these new friends."
+name = "EVT_750548_NAME"
+desc = "EVT_750548_DESC"
 
 action = {
 ai_chance = 10
-name = "This was a mistake. Cancel conference..."
+name = "EVT_750548_OPTIONA"
 command = { type = domestic which = interventionism value = -2 }
 }
 
@@ -1409,7 +1409,7 @@ event = 750540 #SIK
 event = 750543 #CXB
 event = 750546 #PER
 } }
-name = "This shall be a great event!"
+name = "EVT_750548_OPTIONB"
 command = { type = dissent value = -5 }
 command = { type = money value = -300 }
 command = { type = event which = 750554 where = KYG when = 25 }
@@ -1428,19 +1428,19 @@ random = no
 country = AFG
 style = 2
 
-name = "The Conference of Bukhara"
-desc = "After several countries have recognized the new Caliphate of Bukhara, the Turkestani government has called for a grand Conference in Bukhara, in order to strenghten cultural, commercial and political ties between the Muslim nations of Asia."
+name = "EVT_750549_NAME"
+desc = "EVT_750549_DESC"
 
 action = {
 ai_chance = 0
-name = "We have no interest in this type of Conference"
+name = "EVT_750549_OPTIONA"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = KYG value = -50 }
 }
 
 action = {
 ai_chance = 100
-name = "Pack our bags, we're going to Bukhara"
+name = "EVT_750549_OPTIONB"
 command = { type = dissent value = -5 }
 command = { type = relation which = KYG value = 50 }
 command = { type = setflag which = BUKHARA_AFG }
@@ -1454,18 +1454,18 @@ random = no
 country = AZB
 style = 2
 
-name = "The Conference of Bukhara"
-desc = "After several countries have recognized the new Caliphate of Bukhara, the Turkestani government has called for a grand Conference in Bukhara, in order to strenghten cultural, commercial and political ties between the Muslim nations of Asia."
+name = "EVT_750550_NAME"
+desc = "EVT_750550_DESC"
 
 action = {
 ai_chance = 5
-name = "We have no interest in this type of Conference"
+name = "EVT_750550_OPTIONA"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = KYG value = -50 }
 }
 action = {
 ai_chance = 95
-name = "We shall participate"
+name = "EVT_750550_OPTIONB"
 command = { type = dissent value = -5 }
 command = { type = relation which = KYG value = 50 }
 command = { type = setflag which = BUKHARA_AZB }
@@ -1479,18 +1479,18 @@ random = no
 country = SIK
 style = 2
 
-name = "The Conference of Bukhara"
-desc = "After several countries have recognized the new Caliphate of Bukhara, the Turkestani government has called for a grand Conference in Bukhara, in order to strenghten cultural, commercial and political ties between the Muslim nations of Asia."
+name = "EVT_750551_NAME"
+desc = "EVT_750551_DESC"
 
 action = {
 ai_chance = 5
-name = "Sinkiang has no interest in this type of Conference"
+name = "EVT_750551_OPTIONA"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = KYG value = -50 }
 }
 action = {
 ai_chance = 95
-name = "Sinkiang will be a part of this meeting"
+name = "EVT_750551_OPTIONB"
 command = { type = dissent value = -5 }
 command = { type = relation which = KYG value = 50 }
 command = { type = setflag which = BUKHARA_SIK }
@@ -1504,18 +1504,18 @@ random = no
 country = CXB
 style = 2
 
-name = "The Conference of Bukhara"
-desc = "After several countries have recognized the new Caliphate of Bukhara, the Turkestani government has called for a grand Conference in Bukhara, in order to strenghten cultural, commercial and political ties between the Muslim nations of Asia."
+name = "EVT_750552_NAME"
+desc = "EVT_750552_DESC"
 
 action = {
 ai_chance = 5
-name = "We have no interest in this type of Conference"
+name = "EVT_750552_OPTIONA"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = KYG value = -50 }
 }
 action = {
 ai_chance = 95
-name = "We will send a delegation to Bukhara"
+name = "EVT_750552_OPTIONB"
 command = { type = dissent value = -5 }
 command = { type = relation which = KYG value = 50 }
 command = { type = setflag which = BUKHARA_CXB }
@@ -1529,18 +1529,18 @@ random = no
 country = PER
 style = 2
 
-name = "The Conference of Bukhara"
-desc = "After several countries have recognized the new Caliphate of Bukhara, the Turkestani government has called for a grand Conference in Bukhara, in order to strenghten cultural, commercial and political ties between the Muslim nations of Asia."
+name = "EVT_750553_NAME"
+desc = "EVT_750553_DESC"
 
 action = {
 ai_chance = 50
-name = "We have no interest in this type of Conference"
+name = "EVT_750553_OPTIONA"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = KYG value = -50 }
 }
 action = {
 ai_chance = 50
-name = "We will send some representatives, sure"
+name = "EVT_750553_OPTIONB"
 command = { type = dissent value = 5 }
 command = { type = relation which = KYG value = 50 }
 command = { type = setflag which = BUKHARA_PER }
@@ -1554,12 +1554,12 @@ random = no
 country = KYG
 style = 2
 
-name = "Beginning of the Conference of Bukhara"
-desc = "As delegations from many different countries have arrived in our capital, our greatest religious and political leaders have declared the conference open!"
+name = "EVT_750554_NAME"
+desc = "EVT_750554_DESC"
 
 action = {
 ai_chance = 5
-name = "Keep debates limited to trade and cultural affairs"
+name = "EVT_750554_OPTIONA"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = dissent value = 1 }
 command = { type = event which = 750561 where = KYG when = 3 }
@@ -1576,7 +1576,7 @@ flag = BUKHARA_CXB
 flag = BUKHARA_PER
 }
 }
-name = "We must debate the political situation in Central Asia"
+name = "EVT_750554_OPTIONB"
 command = { type = dissent value = -1 }
 command = { type = domestic which = interventionism value = 1 }
 command = { type = event which = 750555 where = KYG when = 1 }
@@ -1593,18 +1593,18 @@ random = no
 country = KYG
 style = 2
 
-name = "Conference of Bukhara - Syndicalism in Central Asia"
-desc = "The first day of the Conference of Bukhara was marked by great debates regarding the presence of socialist-sympatizing bandits within the borders of the Central Asian countries. Regularly, both Russian- and Bharat-trained syndicalist cadres attempt to organize trade unions, strikes and illegal newspapers, even threatening to overthrown our governments! The government of Turkestan has proposed to strenghten cross-border cooperation between our security services to better hunt down these red infidels!"
+name = "EVT_750555_NAME"
+desc = "EVT_750555_DESC"
 
 action = {
 ai_chance = 5
-name = "These few syndicalists in Central Asia are harmless, let them be"
+name = "EVT_750555_OPTIONA"
 command = { type = domestic which = freedom value = 2 }
 command = { type = dissent value = 5 }
 }
 action = {
 ai_chance = 95
-name = "We must enforce cross-border cooperation against those bandits"
+name = "EVT_750555_OPTIONB"
 command = { type = domestic which = freedom value = -1 }
 command = { type = relation which = FRA value = -50 }
 command = { type = relation which = PRK value = -50 }
@@ -1623,18 +1623,18 @@ random = no
 country = AFG
 style = 2
 
-name = "Conference of Bukhara - Syndicalism in Central Asia"
-desc = "The first day of the Conference of Bukhara was marked by great debates regarding the presence of socialist-sympatizing bandits within the borders of the Central Asian countries. Regularly, both Russian- and Bharat-trained syndicalist cadres attempt to organize trade unions, strikes and illegal newspapers, even threatening to overthrown our governments! The government of Turkestan has proposed to strenghten cross-border cooperation between our security services to better hunt down these red infidels!"
+name = "EVT_750556_NAME"
+desc = "EVT_750556_DESC"
 
 action = {
 ai_chance = 5
-name = "These few syndicalists in Afghanistan are harmless, let them be"
+name = "EVT_750556_OPTIONA"
 command = { type = domestic which = freedom value = 2 }
 command = { type = relation which = KYG value = -10 }
 }
 action = {
 ai_chance = 95
-name = "We shall comence a new round of arrests agains the socialists"
+name = "EVT_750556_OPTIONB"
 command = { type = domestic which = freedom value = -1 }
 command = { type = relation which = KYG value = 10 }
 command = { type = relation which = FRA value = -50 }
@@ -1649,18 +1649,18 @@ random = no
 country = AZB
 style = 2
 
-name = "Conference of Bukhara - Syndicalism in Central Asia"
-desc = "The first day of the Conference of Bukhara was marked by great debates regarding the presence of socialist-sympatizing bandits within the borders of the Central Asian countries. Regularly, both Russian- and Bharat-trained syndicalist cadres attempt to organize trade unions, strikes and illegal newspapers, even threatening to overthrown our governments! The government of Turkestan has proposed to strenghten cross-border cooperation between our security services to better hunt down these red infidels!"
+name = "EVT_750557_NAME"
+desc = "EVT_750557_DESC"
 
 action = {
 ai_chance = 25
-name = "These few syndicalists in Azerbaijan are harmless, let them be"
+name = "EVT_750557_OPTIONA"
 command = { type = domestic which = freedom value = 2 }
 command = { type = relation which = KYG value = -10 }
 }
 action = {
 ai_chance = 75
-name = "Sure, abide to the Conference's rullings"
+name = "EVT_750557_OPTIONB"
 command = { type = domestic which = freedom value = -1 }
 command = { type = relation which = KYG value = 10 }
 command = { type = relation which = FRA value = -50 }
@@ -1675,18 +1675,18 @@ random = no
 country = SIK
 style = 2
 
-name = "Conference of Bukhara - Syndicalism in Central Asia"
-desc = "The first day of the Conference of Bukhara was marked by great debates regarding the presence of socialist-sympatizing bandits within the borders of the Central Asian countries. Regularly, both Russian- and Bharat-trained syndicalist cadres attempt to organize trade unions, strikes and illegal newspapers, even threatening to overthrown our governments! The government of Turkestan has proposed to strenghten cross-border cooperation between our security services to better hunt down these red infidels!"
+name = "EVT_750558_NAME"
+desc = "EVT_750558_DESC"
 
 action = {
 ai_chance = 25
-name = "This is not worth the trouble"
+name = "EVT_750558_OPTIONA"
 command = { type = domestic which = freedom value = 2 }
 command = { type = relation which = KYG value = -10 }
 }
 action = {
 ai_chance = 75
-name = "Follow the Conference's recomendations"
+name = "EVT_750558_OPTIONB"
 command = { type = domestic which = freedom value = -1 }
 command = { type = relation which = KYG value = 10 }
 command = { type = relation which = FRA value = -50 }
@@ -1701,18 +1701,18 @@ random = no
 country = CXB
 style = 2
 
-name = "Conference of Bukhara - Syndicalism in Central Asia"
-desc = "The first day of the Conference of Bukhara was marked by great debates regarding the presence of socialist-sympatizing bandits within the borders of the Central Asian countries. Regularly, both Russian- and Bharat-trained syndicalist cadres attempt to organize trade unions, strikes and illegal newspapers, even threatening to overthrown our governments! The government of Turkestan has proposed to strenghten cross-border cooperation between our security services to better hunt down these red infidels!"
+name = "EVT_750559_NAME"
+desc = "EVT_750559_DESC"
 
 action = {
 ai_chance = 15
-name = "This would get us into too much trouble"
+name = "EVT_750559_OPTIONA"
 command = { type = domestic which = freedom value = 2 }
 command = { type = relation which = KYG value = -10 }
 }
 action = {
 ai_chance = 85
-name = "Follow Turkestan's recomendations, hunt the red infidels"
+name = "EVT_750559_OPTIONB"
 command = { type = domestic which = freedom value = -1 }
 command = { type = relation which = KYG value = 10 }
 command = { type = relation which = FRA value = -50 }
@@ -1727,18 +1727,18 @@ random = no
 country = PER
 style = 2
 
-name = "Conference of Bukhara - Syndicalism in Central Asia"
-desc = "The first day of the Conference of Bukhara was marked by great debates regarding the presence of socialist-sympatizing bandits within the borders of the Central Asian countries. Regularly, both Russian- and Bharat-trained syndicalist cadres attempt to organize trade unions, strikes and illegal newspapers, even threatening to overthrown our governments! The government of Turkestan has proposed to strenghten cross-border cooperation between our security services to better hunt down these red infidels!"
+name = "EVT_750560_NAME"
+desc = "EVT_750560_DESC"
 
 action = {
 ai_chance = 35
-name = "This is not worth the trouble"
+name = "EVT_750560_OPTIONA"
 command = { type = domestic which = freedom value = 2 }
 command = { type = relation which = KYG value = -10 }
 }
 action = {
 ai_chance = 65
-name = "Announce incresead persecution of syndicalists and socialists"
+name = "EVT_750560_OPTIONB"
 command = { type = dissent value = 5 }
 command = { type = domestic which = freedom value = -1 }
 command = { type = relation which = KYG value = 10 }
@@ -1754,17 +1754,17 @@ random = no
 country = KYG
 style = 2
 
-name = "Conference of Bukhara - Technological Cooperation"
-desc = "On the third day of the Conference, representatives of the major industries of Central Asia took the stage to debate on the poor technological situation of our countries. By the end of the day, Turkestan's Minister of Industry proposed the establishment of a great scientifical board between our countries in order to benefit our universities and research centres."
+name = "EVT_750561_NAME"
+desc = "EVT_750561_DESC"
 
 action = {
 ai_chance = 5
-name = "This would be such a waste of money"
+name = "EVT_750561_OPTIONA"
 command = { type = dissent value = 1 }
 }
 action = {
 ai_chance = 95
-name = "Establish the Islamic Technological Cooperation Society"
+name = "EVT_750561_OPTIONB"
 command = { type = money value = -200 }
 command = { type = research_mod value = 5 }
 command = { trigger = { flag = BUKHARA_AFG } type = event which = 750562 where = AFG when = 1 }
@@ -1782,17 +1782,17 @@ random = no
 country = AFG
 style = 2
 
-name = "Conference of Bukhara - Technological Cooperation"
-desc = "On the third day of the Conference, representatives of the major industries of Central Asia took the stage to debate on the poor technological situation of our countries. By the end of the day, Turkestan's Minister of Industry proposed the establishment of a great scientifical board between our countries in order to benefit our universities and research centres."
+name = "EVT_750562_NAME"
+desc = "EVT_750562_DESC"
 
 action = {
 ai_chance = 5
-name = "This would be such a waste of money"
+name = "EVT_750562_OPTIONA"
 command = { type = dissent value = 1 }
 }
 action = {
 ai_chance = 95
-name = "Join the Islamic Technological Cooperation Society"
+name = "EVT_750562_OPTIONB"
 command = { type = money value = -200 }
 command = { type = research_mod value = 5 }
 }
@@ -1805,17 +1805,17 @@ random = no
 country = AZB
 style = 2
 
-name = "Conference of Bukhara - Technological Cooperation"
-desc = "On the third day of the Conference, representatives of the major industries of Central Asia took the stage to debate on the poor technological situation of our countries. By the end of the day, Turkestan's Minister of Industry proposed the establishment of a great scientifical board between our countries in order to benefit our universities and research centres."
+name = "EVT_750563_NAME"
+desc = "EVT_750563_DESC"
 
 action = {
 ai_chance = 5
-name = "This would be such a waste of money"
+name = "EVT_750563_OPTIONA"
 command = { type = dissent value = 1 }
 }
 action = {
 ai_chance = 95
-name = "Join the Islamic Technological Cooperation Society"
+name = "EVT_750563_OPTIONB"
 command = { type = money value = -200 }
 command = { type = research_mod value = 5 }
 }
@@ -1828,17 +1828,17 @@ random = no
 country = SIK
 style = 2
 
-name = "Conference of Bukhara - Technological Cooperation"
-desc = "On the third day of the Conference, representatives of the major industries of Central Asia took the stage to debate on the poor technological situation of our countries. By the end of the day, Turkestan's Minister of Industry proposed the establishment of a great scientifical board between our countries in order to benefit our universities and research centres."
+name = "EVT_750564_NAME"
+desc = "EVT_750564_DESC"
 
 action = {
 ai_chance = 5
-name = "This would be such a waste of money"
+name = "EVT_750564_OPTIONA"
 command = { type = dissent value = 1 }
 }
 action = {
 ai_chance = 95
-name = "Join the Islamic Technological Cooperation Society"
+name = "EVT_750564_OPTIONB"
 command = { type = money value = -200 }
 command = { type = research_mod value = 5 }
 }
@@ -1851,17 +1851,17 @@ random = no
 country = CXB
 style = 2
 
-name = "Conference of Bukhara - Technological Cooperation"
-desc = "On the third day of the Conference, representatives of the major industries of Central Asia took the stage to debate on the poor technological situation of our countries. By the end of the day, Turkestan's Minister of Industry proposed the establishment of a great scientifical board between our countries in order to benefit our universities and research centres."
+name = "EVT_750565_NAME"
+desc = "EVT_750565_DESC"
 
 action = {
 ai_chance = 5
-name = "This would be such a waste of money"
+name = "EVT_750565_OPTIONA"
 command = { type = dissent value = 1 }
 }
 action = {
 ai_chance = 95
-name = "Join the Islamic Technological Cooperation Society"
+name = "EVT_750565_OPTIONB"
 command = { type = money value = -200 }
 command = { type = research_mod value = 5 }
 }
@@ -1874,17 +1874,17 @@ random = no
 country = PER
 style = 2
 
-name = "Conference of Bukhara - Technological Cooperation"
-desc = "On the third day of the Conference, representatives of the major industries of Central Asia took the stage to debate on the poor technological situation of our countries. By the end of the day, Turkestan's Minister of Industry proposed the establishment of a great scientifical board between our countries in order to benefit our universities and research centres."
+name = "EVT_750566_NAME"
+desc = "EVT_750566_DESC"
 
 action = {
 ai_chance = 5
-name = "This would be such a waste of money"
+name = "EVT_750566_OPTIONA"
 command = { type = dissent value = 1 }
 }
 action = {
 ai_chance = 95
-name = "Join the Islamic Technological Cooperation Society"
+name = "EVT_750566_OPTIONB"
 command = { type = money value = -200 }
 command = { type = research_mod value = 5 }
 }
@@ -1897,19 +1897,19 @@ random = no
 country = KYG
 style = 2
 
-name = "Conference of Bukhara - A Military Alliance"
-desc = "The fifth day of the Bukhara Conference was marked by a grand meeting of the top political and military leaders of all participating countries. During a day-long debate, the Turkestani leaders reviewed the political situation of Central Asia, constantly threatned by foreign powers, and the status of Muslim minorities abroad. In order to ensure our collective security, they reasoned, the countries of Central Asia must form a pact of mutual defense!"
+name = "EVT_750567_NAME"
+desc = "EVT_750567_DESC"
 
 action = {
 ai_chance = 5
-name = "We have no interest in any alliances"
+name = "EVT_750567_OPTIONA"
 command = { type = domestic which = interventionism value = -2 }
 command = { type = domestic which = defense_lobby value = -2 }
 command = { type = dissent value = 5 }
 }
 action = {
 ai_chance = 95
-name = "Promote a military alliance in Central Asia"
+name = "EVT_750567_OPTIONB"
 command = { type = domestic which = interventionism value = 2 }
 command = { type = domestic which = defense_lobby value = 2 }
 command = { trigger = { flag = BUKHARA_AFG NOT = { ispuppet = AFG alliance = { country = AFG country = PAK } } } type = event which = 750568 where = AFG when = 1 }
@@ -1927,19 +1927,19 @@ random = no
 country = AFG
 style = 2
 
-name = "Conference of Bukhara - A Military Alliance"
-desc = "The fifth day of the Bukhara Conference was marked by a grand meeting of the top political and military leaders of all participating countries. During a day-long debate, the Turkestani leaders reviewed the political situation of Central Asia, constantly threatned by foreign powers, and the status of Muslim minorities abroad. In order to ensure our collective security, they reasoned, the countries of Central Asia must form a pact of mutual defense!"
+name = "EVT_750568_NAME"
+desc = "EVT_750568_DESC"
 
 action = {
 ai_chance = 10
-name = "We have no interest in any alliances"
+name = "EVT_750568_OPTIONA"
 command = { type = domestic which = interventionism value = -2 }
 command = { type = domestic which = defense_lobby value = -2 }
 }
 
 action = {
 ai_chance = 90
-name = "Support Turkestan's plans for a military alliance in Central Asia"
+name = "EVT_750568_OPTIONB"
 command = { type = domestic which = interventionism value = 2 }
 command = { type = domestic which = defense_lobby value = 2 }
 command = { type = event which = 7505681 where = KYG when = 1 }
@@ -1959,11 +1959,11 @@ random = no
 country = KYG
 style = 2
 
-name = "Conference of Bukhara - Afghanistan joins the alliance"
-desc = "Following a series of debates on collective security in Central Asia, the leaders of Afghanistan have agreeded to join a military alliance with us!"
+name = "EVT_7505681_NAME"
+desc = "EVT_7505681_DESC"
 
 action = {
-name = "Great!"
+name = "EVT_7505681_OPTIONA"
 command = { type = alliance which = AFG }
 command = { type = relation which = AFG value = 100 }
 }
@@ -1976,18 +1976,18 @@ random = no
 country = AZB
 style = 2
 
-name = "Conference of Bukhara - A Military Alliance"
-desc = "The fifth day of the Bukhara Conference was marked by a grand meeting of the top political and military leaders of all participating countries. During a day-long debate, the Turkestani leaders reviewed the political situation of Central Asia, constantly threatned by foreign powers, and the status of Muslim minorities abroad. In order to ensure our collective security, they reasoned, the countries of Central Asia must form a pact of mutual defense!"
+name = "EVT_750569_NAME"
+desc = "EVT_750569_DESC"
 
 action = {
 ai_chance = 10
-name = "We have no interest in any alliances"
+name = "EVT_750569_OPTIONA"
 command = { type = domestic which = interventionism value = -2 }
 command = { type = domestic which = defense_lobby value = -2 }
 }
 action = {
 ai_chance = 90
-name = "Support Turkestan's plans for a military alliance in Central Asia"
+name = "EVT_750569_OPTIONB"
 command = { type = domestic which = interventionism value = 2 }
 command = { type = domestic which = defense_lobby value = 2 }
 command = { type = event which = 7505691 where = KYG when = 1 }
@@ -2006,11 +2006,11 @@ random = no
 country = KYG
 style = 2
 
-name = "Conference of Bukhara - Azerbaijan joins the alliance"
-desc = "Following a series of debates on collective security in Central Asia, the leaders of Azerbaijan have agreeded to join a military alliance with us!"
+name = "EVT_7505691_NAME"
+desc = "EVT_7505691_DESC"
 
 action = {
-name = "Great!"
+name = "EVT_7505691_OPTIONA"
 command = { type = alliance which = AZB }
 command = { type = relation which = AZB value = 100 }
 }
@@ -2023,19 +2023,19 @@ random = no
 country = SIK
 style = 2
 
-name = "Conference of Bukhara - A Military Alliance"
-desc = "The fifth day of the Bukhara Conference was marked by a grand meeting of the top political and military leaders of all participating countries. During a day-long debate, the Turkestani leaders reviewed the political situation of Central Asia, constantly threatned by foreign powers, and the status of Muslim minorities abroad. In order to ensure our collective security, they reasoned, the countries of Central Asia must form a pact of mutual defense!"
+name = "EVT_750570_NAME"
+desc = "EVT_750570_DESC"
 
 action = {
 ai_chance = 10
-name = "We have no interest in any alliances"
+name = "EVT_750570_OPTIONA"
 command = { type = domestic which = interventionism value = -2 }
 command = { type = domestic which = defense_lobby value = -2 }
 }
 
 action = {
 ai_chance = 90
-name = "Support Turkestan's plans for a military alliance in Central Asia"
+name = "EVT_750570_OPTIONB"
 command = { type = domestic which = interventionism value = 2 }
 command = { type = domestic which = defense_lobby value = 2 }
 command = { type = event which = 7505701 where = KYG when = 1 }
@@ -2054,11 +2054,11 @@ random = no
 country = KYG
 style = 2
 
-name = "Conference of Bukhara - Sinkiang joins the alliance"
-desc = "Following a series of debates on collective security in Central Asia, the leaders of Sinkiang have agreeded to join a military alliance with us!"
+name = "EVT_7505701_NAME"
+desc = "EVT_7505701_DESC"
 
 action = {
-name = "Great!"
+name = "EVT_7505701_OPTIONA"
 command = { type = alliance which = SIK }
 command = { type = relation which = SIK value = 100 }
 }
@@ -2071,19 +2071,19 @@ random = no
 country = CXB
 style = 2
 
-name = "Conference of Bukhara - A Military Alliance"
-desc = "The fifth day of the Bukhara Conference was marked by a grand meeting of the top political and military leaders of all participating countries. During a day-long debate, the Turkestani leaders reviewed the political situation of Central Asia, constantly threatned by foreign powers, and the status of Muslim minorities abroad. In order to ensure our collective security, they reasoned, the countries of Central Asia must form a pact of mutual defense!"
+name = "EVT_750571_NAME"
+desc = "EVT_750571_DESC"
 
 action = {
 ai_chance = 10
-name = "We have no interest in any alliances"
+name = "EVT_750571_OPTIONA"
 command = { type = domestic which = interventionism value = -2 }
 command = { type = domestic which = defense_lobby value = -2 }
 }
 
 action = {
 ai_chance = 90
-name = "Support Turkestan's plans for a military alliance in Central Asia"
+name = "EVT_750571_OPTIONB"
 command = { type = domestic which = interventionism value = 2 }
 command = { type = domestic which = defense_lobby value = 2 }
 command = { type = event which = 7505711 where = KYG when = 1 }
@@ -2102,11 +2102,11 @@ random = no
 country = KYG
 style = 2
 
-name = "Conference of Bukhara - Xibei Lianbang joins the alliance"
-desc = "Following a series of debates on collective security in Central Asia, the leaders of Xibei Lianbang have agreeded to join a military alliance with us!"
+name = "EVT_7505711_NAME"
+desc = "EVT_7505711_DESC"
 
 action = {
-name = "Great!"
+name = "EVT_7505711_OPTIONA"
 command = { type = alliance which = CXB }
 command = { type = relation which = CXB value = 100 }
 }
@@ -2119,18 +2119,18 @@ random = no
 country = PER
 style = 2
 
-name = "Conference of Bukhara - A Military Alliance"
-desc = "The fifth day of the Bukhara Conference was marked by a grand meeting of the top political and military leaders of all participating countries. During a day-long debate, the Turkestani leaders reviewed the political situation of Central Asia, constantly threatned by foreign powers, and the status of Muslim minorities abroad. In order to ensure our collective security, they reasoned, the countries of Central Asia must form a pact of mutual defense!"
+name = "EVT_750572_NAME"
+desc = "EVT_750572_DESC"
 
 action = {
 ai_chance = 10
-name = "We have no interest in any alliances"
+name = "EVT_750572_OPTIONA"
 command = { type = domestic which = interventionism value = -2 }
 command = { type = domestic which = defense_lobby value = -2 }
 }
 action = {
 ai_chance = 90
-name = "Support Turkestan's plans for a military alliance in Central Asia"
+name = "EVT_750572_OPTIONB"
 command = { type = domestic which = interventionism value = 2 }
 command = { type = domestic which = defense_lobby value = 2 }
 command = { type = event which = 7505721 where = KYG when = 1 }
@@ -2149,11 +2149,11 @@ random = no
 country = KYG
 style = 2
 
-name = "Conference of Bukhara - Persia joins the alliance"
-desc = "Following a series of debates on collective security in Central Asia, the leaders of Persia have agreeded to join a military alliance with us!"
+name = "EVT_7505721_NAME"
+desc = "EVT_7505721_DESC"
 
 action = {
-name = "Great!"
+name = "EVT_7505721_OPTIONA"
 command = { type = alliance which = PER }
 command = { type = relation which = PER value = 100 }
 }
@@ -2166,11 +2166,11 @@ random = no
 country = KYG
 style = 2
 
-name = "The end of the Conference of Bukhara "
-desc = "The eighth and final day of the Conference of Bukhara was marked by a series of festivities all across the city. By the end of the day, all representatives signed a document pledging for great degrees of cooperation and overall protection of Islam."
+name = "EVT_750573_NAME"
+desc = "EVT_750573_DESC"
 
 action = {
-name = "It was a good week, after all"
+name = "EVT_750573_OPTIONA"
 command = { trigger = { flag = BUKHARA_AFG } type = event which = 750575 where = AFG when = 1 }
 command = { trigger = { flag = BUKHARA_AZB } type = event which = 750576 where = AZB when = 1 }
 command = { trigger = { flag = BUKHARA_SIK } type = event which = 750577 where = SIK when = 1 }
@@ -2186,11 +2186,11 @@ random = no
 country = AFG
 style = 2
 
-name = "The end of the Conference of Bukhara "
-desc = "The eighth and final day of the Conference of Bukhara was marked by a series of festivities all across the city. By the end of the day, all representatives signed a document pledging for great degrees of cooperation and overall protection of Islam."
+name = "EVT_750575_NAME"
+desc = "EVT_750575_DESC"
 
 action = {
-name = "It was a good week, after all"
+name = "EVT_750575_OPTIONA"
 command = {  }
 }
 }
@@ -2202,11 +2202,11 @@ random = no
 country = AZB
 style = 2
 
-name = "The end of the Conference of Bukhara "
-desc = "The eighth and final day of the Conference of Bukhara was marked by a series of festivities all across the city. By the end of the day, all representatives signed a document pledging for great degrees of cooperation and overall protection of Islam."
+name = "EVT_750576_NAME"
+desc = "EVT_750576_DESC"
 
 action = {
-name = "It was a good week, after all"
+name = "EVT_750576_OPTIONA"
 command = {  }
 }
 }
@@ -2218,11 +2218,11 @@ random = no
 country = SIK
 style = 2
 
-name = "The end of the Conference of Bukhara "
-desc = "The eighth and final day of the Conference of Bukhara was marked by a series of festivities all across the city. By the end of the day, all representatives signed a document pledging for great degrees of cooperation and overall protection of Islam."
+name = "EVT_750577_NAME"
+desc = "EVT_750577_DESC"
 
 action = {
-name = "It was a good week, after all"
+name = "EVT_750577_OPTIONA"
 command = {  }
 }
 }
@@ -2234,11 +2234,11 @@ random = no
 country = CXB
 style = 2
 
-name = "The end of the Conference of Bukhara "
-desc = "The eighth and final day of the Conference of Bukhara was marked by a series of festivities all across the city. By the end of the day, all representatives signed a document pledging for great degrees of cooperation and overall protection of Islam."
+name = "EVT_750578_NAME"
+desc = "EVT_750578_DESC"
 
 action = {
-name = "It was a good week, after all"
+name = "EVT_750578_OPTIONA"
 command = {  }
 }
 }
@@ -2250,11 +2250,11 @@ random = no
 country = PER
 style = 2
 
-name = "The end of the Conference of Bukhara "
-desc = "The eighth and final day of the Conference of Bukhara was marked by a series of festivities all across the city. By the end of the day, all representatives signed a document pledging for great degrees of cooperation and overall protection of Islam."
+name = "EVT_750579_NAME"
+desc = "EVT_750579_DESC"
 
 action = {
-name = "It was a good week, after all"
+name = "EVT_750579_OPTIONA"
 command = {  }
 }
 }
@@ -2281,22 +2281,22 @@ exists = PER
 control = { province = 1085 data = -1 } #tehran
 }
 
-name = "Fate of Persia"
-desc = "The time has come to deal with the occupied Persian lands. Moderate members of our government favours a strong Persia, acting as buffer state between us and Ottomans. Armed forces demand annexation of the northeastern Persia for security reasons, while religious leaders are arguing either for incorporation of all Sunni lands or incorporation of the whole Persia."
+name = "EVT_750691_NAME"
+desc = "EVT_750691_DESC"
 
 date = { day = 1 month = january year = 1936 }
 offset = 30
 deathdate = { day = 29 month = december year = 1965 }
 
 action = {
-name = "Continue with military occupation..."
+name = "EVT_750691_OPTIONA"
 ai_chance = 0
 command = { type = dissent value = 2 }
 }
 
 
 action = {
-name = "Create friendly Persian state"
+name = "EVT_750691_OPTIONB"
 ai_chance = 25
 command = { type = dissent value = 3 }
 command = { type = independence which = PER value = 1 when = 0 }
@@ -2305,7 +2305,7 @@ command = { type = event which = 750692 where = PER when = 1 }
 }
 
 action = {
-name = "Annex the northeastern Persia and liberate rest"
+name = "EVT_750691_OPTIONC"
 ai_chance = 25
 command = { type = dissent value = 3 }
 command = { type = addclaim which = 1080 }
@@ -2318,7 +2318,7 @@ command = { type = event which = 750692 where = PER when = 1 }
 }
 
 action = {
-name = "Annex sunni lands and liberate rest"
+name = "EVT_750691_OPTIOND"
 ai_chance = 70
 command = { type = dissent value = 5 }
 command = { type = relation which = OTT value = -25 }
@@ -2339,7 +2339,7 @@ command = { type = event which = 750692 where = PER when = 1 }
 }
 
 action = {
-name = "Fully integrate Persia into our state !"
+name = "EVT_750691_OPTIONE"
 ai_chance = 20
 command = { type = dissent value = 15 }
 command = { type = relation which = OTT value = -25 }
@@ -2393,8 +2393,8 @@ random = no
 country = PER
 style = 2
 
-name = "Arise Persia"
-desc = "You shouldn't be seeing this"
+name = "EVT_750692_NAME"
+desc = "EVT_750692_DESC"
 
 
 action = {
@@ -2419,15 +2419,15 @@ headofgovernment = 12100    #Ishan Babakhan
 }
 }
 
-name = "The Grand Mufti is dead"
-desc = "The Grand Mufti of Bukhara, Ishan Babakhan ibn Abdulmazhidhan, has died today of old age. According to his last will and testament, his offices will now pass to his son, Ziyauddin ibn Ishan Babakhan."
+name = "EVT_11750580_NAME"
+desc = "EVT_11750580_DESC"
 
 date = { day = 1 month =january year = 1956 }
 offset = 300
 deathdate = { day = 1 month = january year = 1970 }
 
 action = {
-name = "Oh, no!"
+name = "EVT_11750580_OPTIONA"
 command = { type = dissent value = 5 }
 command = { trigger = { headofstate = 12099 } type = headofstate which = 12097 }
 command = { trigger = { headofgovernment = 12100 } type = headofgovernment which = 12098 }
@@ -2451,15 +2451,15 @@ headofgovernment = 12100    #Ishan Babakhan
 }
 }
 
-name = "The Grand Mufti is dead"
-desc = "The Grand Mufti of Bukhara, Ishan Babakhan ibn Abdulmazhidhan, one of the most important clerics of our country, has died today of old age."
+name = "EVT_11750581_NAME"
+desc = "EVT_11750581_DESC"
 
 date = { day = 1 month =january year = 1956 }
 offset = 300
 deathdate = { day = 1 month = january year = 1970 }
 
 action = {
-name = "Oh, no!"
+name = "EVT_11750581_OPTIONA"
 command = { type = dissent value = 1 }
 command = { type = sleepminister which = 12099 }
 command = { type = sleepminister which = 12100 }
@@ -2493,12 +2493,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 20
 deathdate = { day = 29 month = december year = 1970 }
 
-name = "Treaty of Abu Dhabi"
-desc = "With our victorious armed forces occupiyng almost the entire Northwestern India the Grand Mufti arranged a peace conference with Delhi in Abu Dhabi to end this conflict. The terms are simple, Delhi is to secede any majority Muslim lands to Turkestan and sign a non-agression pact with Turkestan."
+name = "EVT_750607_NAME"
+desc = "EVT_750607_DESC"
 
 action_a = {
 ai_chance = 100
-name = "Offer an unequal peace"
+name = "EVT_750607_OPTIONA"
 command = { trigger = { NOT = { puppet = { country = AFG country = KYG  } } } type = addclaim which = 2168 }
 command = { trigger = { NOT = { puppet = { country = AFG country = KYG  } } } type = addclaim which = 2173 }
 command = { trigger = { NOT = { puppet = { country = AFG country = KYG  } } } type = addclaim which = 2172 }
@@ -2519,7 +2519,7 @@ command = { type = event which = 750608 where = PAK when = 1 }
 
 action_b = {
 ai_chance = 0
-name = "Total conquest"
+name = "EVT_750607_OPTIONB"
 command = { type = dissent value = 1 }
 }
 }
@@ -2531,12 +2531,12 @@ country = PAK
 style = 2
 picture = "KYG_BUKHARA"
 
-name = "Treaty of Abu Dhabi"
-desc = "Fanatical armies of Turkestan have soundly beaten our armed forces and conquered the NorthWestern India, including our capital New Delhi. Now victorious leadership of Turkestan offers us peace in which we will be forced to withdrawn from large parts of our territory, but our independece will be preserved. How shall we react ?"
+name = "EVT_750608_NAME"
+desc = "EVT_750608_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Do we have an option ?"
+name = "EVT_750608_OPTIONA"
 command = { type = peace which = KYG value = 0 }
 command = { type = secedeprovince which = KYG value = 1538 }
 command = { type = secedeprovince which = KYG value = 1533 }
@@ -2559,7 +2559,7 @@ command = { type = dissent value = 2 }
 
 action = {
 ai_chance = 5
-name = "There shall be no surrender"
+name = "EVT_750608_OPTIONB"
 command = { type = dissent value = 5 }
 }
 }

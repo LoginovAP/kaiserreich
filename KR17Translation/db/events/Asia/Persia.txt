@@ -9,11 +9,11 @@ trigger = { headofstate = 53001 }
 
 date = { day = 26 month = july year = 1944 }
 
-name = "Our glorious Shah is dead!"
-desc = "Today our beloved Shah, His Highness Reza Pahlavi, died peacefully in his grand palace. Long live our new shah, his son, Mohammad Reza Pahlavi!"
+name = "EVT_700626_NAME"
+desc = "EVT_700626_DESC"
 
 action_a = {
-name = "Long live the Shah!"
+name = "EVT_700626_OPTIONA"
 command = { type = dissent value = 1  }
 command = { type = sleepminister which = 53001 }
 command = { type = headofstate which = 53032 }
@@ -38,11 +38,11 @@ date = { day = 26 month = july year = 1944 }
 offset = 1
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "Our general Reza Pahlavi is dead!"
-desc = "Today our general Reza Pahlavi has died. He will be missed!"
+name = "EVT_700638_NAME"
+desc = "EVT_700638_DESC"
 
 action_a = {
-name = "Oh Allah why!"
+name = "EVT_700638_OPTIONA"
 command = { type = dissent value = 1  }
 command = { type = sleepminister which = 53001 }
 command = { type = sleepminister which = 53007 }
@@ -55,8 +55,8 @@ id = 700627
 country = PER
 random = no
 
-name = "The Shah's Tobacco Monopoly"
-desc = "The Shah, as a heavy smoker, is fond of tobacco and thinks it's a great idea to nationalize the tobacco plantations and therefore earn money while smoking! But his advisors think it's too expensive and not necessary."
+name = "EVT_700627_NAME"
+desc = "EVT_700627_DESC"
 style = 2
 picture = "Industry"
 
@@ -64,13 +64,13 @@ date = { day = 27 month = september year = 1937 }
 
 action_a = {
 ai_chance = 80
-name = "What an excellent idea!"
+name = "EVT_700627_OPTIONA"
 command = { type = free_money value = 0.5 }
 command = { type = money value = -50 }
 }
 action_b = {
 ai_chance = 20
-name = "Too expensive for our empire!"
+name = "EVT_700627_OPTIONB"
 command = { type = dissent value = 1 }
 }
 }
@@ -94,8 +94,8 @@ control = { province = 145 data = GER }
 control = { province = 163 data = GER }
 }
 
-name = "German Oil Pressure!"
-desc = "Since Romania stopped supplying Germany with oil they are now seeking even more oil from us! This is an excellent way for us to gain extra money!"
+name = "EVT_700630_NAME"
+desc = "EVT_700630_DESC"
 style = 2
 picture = "oil_supply"
 
@@ -105,14 +105,14 @@ deathdate = { day = 29 month = december year = 1966 }
 
 action_a = {
 ai_chance = 30
-name = "You already get enough oil!"
+name = "EVT_700630_OPTIONA"
 command = { type = relation which = GER value = -30 }
 command = { type = add_prov_resource which = 1825 value = 20 where = oil }
 }
 
 action_b = {
 ai_chance = 70
-name = "This is an interesting proposition."
+name = "EVT_700630_OPTIONB"
 command = { type = relation which = GER value = 30 }
 command = { type = trigger which = 700631 }
 }
@@ -123,21 +123,21 @@ id = 700631
 country = GER
 random = no
 
-name = "The Persian Oil."
-desc = "Persia is acting friendly and may offer us more oil! But only if we give them proper monetary compensation in return...."
+name = "EVT_700631_NAME"
+desc = "EVT_700631_DESC"
 style = 2
 picture = "oil_supply"
 
 action_a = {
 ai_chance = 30
-name = "We can manage withour their oil if they are so demanding!"
+name = "EVT_700631_OPTIONA"
 command = { type = relation which = PER value = 5 }
 command = { type = trigger which = 700633 }
 }
 
 action_b = {
 ai_chance = 70
-name = "Sure, grant them what they want!"
+name = "EVT_700631_OPTIONB"
 command = { type = relation which = PER value = 30 }
 command = { type = trigger which = 700632 }
 command = { type = trade which = PER where = GER oil = -5 money = 1 when = 7200 value = 1 }	#forced trade for 20 years!
@@ -149,13 +149,13 @@ id = 700632
 country = PER
 random = no
 
-name = "Germany Accepts Our Deal!"
-desc = "German Empire accepted our offer of mutually beneficial economical relations between our great nations."
+name = "EVT_700632_NAME"
+desc = "EVT_700632_DESC"
 style = 2
 picture = "oil_supply"
 
 action_a = {
-name = "They gave us money and blueprints!"
+name = "EVT_700632_OPTIONA"
 command = { type = relation which = GER value = 30 }
 command = { type = gain_tech which = 5327 }
 command = { type = gain_tech which = 5330 }
@@ -168,13 +168,13 @@ id = 700633
 country = PER
 random = no
 
-name = "Germany Declines Our Deal!"
-desc = "Germany turned down on our proposition."
+name = "EVT_700633_NAME"
+desc = "EVT_700633_DESC"
 style = 2
 picture = "oil_supply"
 
 action_a = {
-name = "Their loss!"
+name = "EVT_700633_OPTIONA"
 command = { type = relation which = GER value = -5 }
 }
 }
@@ -192,8 +192,8 @@ lost_national = { country = PER value = 5 }
 }
 }
 
-name = "Expanding Oil Production"
-desc = "With new money comes new opportunities to expand our rather small ammount of oil refineries. Shall we use the newly acquired money to build some more oil refineries?"
+name = "EVT_700634_NAME"
+desc = "EVT_700634_DESC"
 style = 2
 picture = "oil_supply"
 
@@ -203,12 +203,12 @@ deathdate = { day = 29 month = december year = 1966 }
 
 action_a = {
 ai_chance = 70
-name = "It will be well spent money"
+name = "EVT_700634_OPTIONA"
 command = { type = money value = -300 }
 }
 action_b = {
 ai_chance = 30
-name = "The money could be used for better things!"
+name = "EVT_700634_OPTIONB"
 command = { type = sleepevent which = 700635 }
 command = { type = sleepevent which = 700636 }
 command = { type = sleepevent which = 700637 }
@@ -225,8 +225,8 @@ event = { id = 700634 days = 200 }
 control = { province = 1084 data = PER }
 }
 
-name = "The first refinery is finished."
-desc = "The first of three oil refineries is done, let's hope no problems will be discovered."
+name = "EVT_700635_NAME"
+desc = "EVT_700635_DESC"
 style = 2
 picture = "oil_supply"
 
@@ -235,7 +235,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1966 }
 
 action_a = {
-name = "Excellent"
+name = "EVT_700635_OPTIONA"
 command = { type = construct which = ic where = 1084 value = 1 } #Kermanshah
 }
 }
@@ -250,8 +250,8 @@ event = { id = 700634 days = 400 }
 control = { province = 1083 data = PER }
 }
 
-name = "The second refinery is finished."
-desc = "The second of three oil refineries is done, soon our oil production will be of the best quality ever."
+name = "EVT_700636_NAME"
+desc = "EVT_700636_DESC"
 style = 2
 picture = "oil_supply"
 
@@ -260,7 +260,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1966 }
 
 action_a = {
-name = "Excellent"
+name = "EVT_700636_OPTIONA"
 command = { type = construct which = ic where = 1083 value = 1 } #Tabriz
 }
 }
@@ -275,8 +275,8 @@ event = { id = 700634 days = 600 }
 control = { province = 1085 data = PER }
 }
 
-name = "The last oil refinery is finished!"
-desc = "Our government's decision to build these three oil refineries turns out to have been a successful one, our production of oil increased by 35 percent!"
+name = "EVT_700637_NAME"
+desc = "EVT_700637_DESC"
 style = 2
 picture = "oil_supply"
 
@@ -285,7 +285,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1966 }
 
 action_a = {
-name = "Excellent"
+name = "EVT_700637_OPTIONA"
 command = { type = construct which = ic where = 1085 value = 1 } #Teheran
 }
 }
@@ -309,8 +309,8 @@ control = { province = 1036 data = PER }
 control = { province = 1034 data = PER }
 }
 
-name = "The Persian Restoration !"
-desc = "Ever since the loss against Russia in 1828 Persia had waited for the right moment to regain its former imperial territory, namely Azerbaijan, Armenia and the Herat Region in Afghanistan. With our recent success in the war against the Ottoman Empire, this could easily become a reality!"
+name = "EVT_700648_NAME"
+desc = "EVT_700648_DESC"
 style = 2
 picture = "event_PER"
 
@@ -319,7 +319,7 @@ offset = 90
 deathdate = { day = 29 month = december year = 1966 }
 
 action_a = {
-name = "We shall restore Persia to its former glory!"
+name = "EVT_700648_OPTIONA"
 ai_chance = 70
 command = { type = dissent value = 1  }
 command = { type = relation which = GER value = -10 }
@@ -334,7 +334,7 @@ command = { type = domestic which = interventionism value = 8 }
 
 }
 action_b = {
-name = "It's too risky."
+name = "EVT_700648_OPTIONB"
 ai_chance = 30
 command = { type = relation which = GER value = 30 }
 command = { type = relation which = RUS value = 30 }
@@ -387,8 +387,8 @@ control = { province = 1036 data = PER }
 control = { province = 1034 data = PER }
 }
 
-name = "Status of Azerbaijan"
-desc = "Following the complete breakdown of the Ottoman Empire and its influence in the middle east, Azerbaijan, once a province of our empire, now stands alone. Without any kind of international protection, it should be easy to force Azerbaijan to submit before us!"
+name = "EVT_700649_NAME"
+desc = "EVT_700649_DESC"
 style = 2
 picture = "caucasusgeo"
 decision_picture = "decision_status_geo"
@@ -399,7 +399,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action = {
 ai_chance = 20
-name = "War will resolve this!"
+name = "EVT_700649_OPTIONA"
 command = { type = belligerence which = PER value = 10  }
 command = { type = war which = AZB }
 command = { type = dissent value = 4 }
@@ -407,7 +407,7 @@ command = { type = dissent value = 4 }
 
 action = {
 ai_chance = 25
-name = "Threaten them with force!"
+name = "EVT_700649_OPTIONB"
 command = { type = belligerence which = PER value = 5  }
 command = { type = dissent value = 1 }
 command = { type = trigger which = 700650 }
@@ -415,13 +415,13 @@ command = { type = trigger which = 700650 }
 
 action = {
 ai_chance = 25
-name = "Negotiate with them"
+name = "EVT_700649_OPTIONC"
 command = { type = trigger which = 700653 }
 }
 
 action = {
 ai_chance = 1
-name = "We don't care about Azerbaijan"
+name = "EVT_700649_OPTIOND"
 command = { type = belligerence which = PER value = -3  }
 command = { type = dissent value = 4 }
 }
@@ -434,19 +434,19 @@ country = AZB
 style = 2
 picture = "caucasusgeo"
 
-name = "Persian demands"
-desc = "The increasingly powerful Persian Empire has once again set its sights on the Caucasus. Now the Persian Empire issued a series of demands towards our state which, if accepted, will result in our incorporation into their empire. However an effort to resist the powerful Persian state without international backing is futile from the start..."
+name = "EVT_700650_NAME"
+desc = "EVT_700650_DESC"
 
 action_a = {
 ai_chance = 30
-name = "Accept their terms"
+name = "EVT_700650_OPTIONA"
 command = { type = trigger which = 700651 }
 command = { type = dissent value = 4 }
 }
 
 action_b = {
 ai_chance = 70
-name = "Never !"
+name = "EVT_700650_OPTIONB"
 command = { type = dissent value = -2 }
 command = { type = relation which = PER value = -20 }
 command = { type = trigger which = 700652 }
@@ -466,7 +466,7 @@ ispuppet = RUS
 atwar = RUS
 }
 }
-name = "Turn to Russia for protection!"
+name = "EVT_700650_OPTIONC"
 command = { type = dissent value = -2 }
 command = { type = relation which = PER value = -20 }
 command = { type = trigger which = 700655 }
@@ -479,12 +479,12 @@ country = PER
 style = 2
 picture = "caucasusgeo"
 
-name = "Azerbaijani submission"
-desc = "Seeing no other options, the leadership of Azerbaijan accepted our demands, resulting in the incorporation of this state into our growing empire."
+name = "EVT_700651_NAME"
+desc = "EVT_700651_DESC"
 
 
 action = {
-name = "Hooray!"
+name = "EVT_700651_OPTIONA"
 command = { type = dissent value = 2 }
 command = { type = inherit which = AZB  }
 }
@@ -496,19 +496,19 @@ country = PER
 style = 2
 picture = "Army"
 
-name = "Azerbaijani resistance"
-desc = "Mad Azerbaijani leadership rejected our rightful demands. How shall we react to this insolence?"
+name = "EVT_700652_NAME"
+desc = "EVT_700652_DESC"
 
 action_a = {
 ai_chance = 85
-name = "War will solve this!"
+name = "EVT_700652_OPTIONA"
 command = { type = dissent value = -1 }
 command = { type = war which = AZB }
 }
 
 action_b = {
 ai_chance = 15
-name = "Back down!"
+name = "EVT_700652_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = relation which = AZB value = 20 }
 }
@@ -520,18 +520,18 @@ country = AZB
 style = 2
 picture = "Peace_conference"
 
-name = "Negotiations with Persians"
-desc = "The increasingly powerful Persian Empire has once again set its sight on the Caucasus. The Persian Empire has displayed willingness to negotiate with our state on the terms of our peaceful incorporation into the Persian sphere of influence. It would be foolish to refuse them outright, since without international protection, we can not hope to face the powerful Persian army. How shall we respond?"
+name = "EVT_700653_NAME"
+desc = "EVT_700653_DESC"
 
 action_a = {
 ai_chance = 70
-name = "Accept Persian demands"
+name = "EVT_700653_OPTIONA"
 command = { type = trigger which = 700654 }
 }
 
 action_b = {
 ai_chance = 30
-name = "Never!"
+name = "EVT_700653_OPTIONB"
 command = { type = relation which = PER value = -40 }
 command = { type = trigger which = 700652 }
 }
@@ -549,7 +549,7 @@ ispuppet = RUS
 atwar = RUS
 }
 }
-name = "Turn to Russia for protection!"
+name = "EVT_700653_OPTIONC"
 command = { type = dissent value = -2 }
 command = { type = relation which = PER value = -20 }
 command = { type = trigger which = 700655 }
@@ -564,12 +564,12 @@ style = 2
 
 
 
-name = "Azerbaijani submission!"
-desc = "Azerbaijan has decided to accept our demands, and will become a protectorate of our motherland."
+name = "EVT_700654_NAME"
+desc = "EVT_700654_DESC"
 picture = "Peace_conference"
 
 action_a = {
-name = "Excellent !"
+name = "EVT_700654_OPTIONA"
 command = { type = dissent value = -10 }
 command = { type = removeclaim which = 712 }
 command = { type = removeclaim which = 713 }
@@ -584,14 +584,14 @@ id = 700655
 country = RUS
 random = no
 
-name = "Persian Empire threatens Azerbaijan !"
-desc = "In 1828 Persia renounced all their claims over the Erivan Khanate, which includes Armenia, the Nakhcivan Khanate and the Talysh Khanate, which includes Azerbaijan. But after the recent gains of Baghdad and Mosul, Persia feels powerful enough to ignore this treaty. They are planning to once again reassert their influence over Azerbaijan. Frightened about Persian demands, Azerbaijan officially asked our state for help against Persian threats. What shall we do?"
+name = "EVT_700655_NAME"
+desc = "EVT_700655_DESC"
 style = 2
 picture = "oil_supply"
 
 
 action_a = {
-name = "Let them have it."
+name = "EVT_700655_OPTIONA"
 ai_chance = 30
 command = { type = relation which = PER value = 30 }
 command = { type = relation which = AZB value = -30 }
@@ -600,7 +600,7 @@ command = { type = trigger which = 700656 }
 }
 
 action_b = {
-name = "We shall protect Azerbaijan!"
+name = "EVT_700655_OPTIONB"
 ai_chance = 70
 command = { type = relation which = PER value = -30 }
 command = { type = relation which = AZB value = 30 }
@@ -617,19 +617,19 @@ country = AZB
 style = 2
 picture = "caucasusgeo"
 
-name = "Russia abandons us!"
-desc = "Our attempt to protect our independence with Russian influence ended in failure. But what is worse, Persia was informed about our dealings with Russia and their failure and is planning to launch an assault upon us, if we do not comply with their demands..."
+name = "EVT_700656_NAME"
+desc = "EVT_700656_DESC"
 
 action_a = {
 ai_chance = 70
-name = "Surrender before Persia"
+name = "EVT_700656_OPTIONA"
 command = { type = trigger which = 700651 }
 command = { type = dissent value = 4 }
 }
 
 action_b = {
 ai_chance = 30
-name = "Never!"
+name = "EVT_700656_OPTIONB"
 command = { type = dissent value = -2 }
 command = { type = relation which = PER value = -20 }
 command = { type = trigger which = 700652 }
@@ -641,14 +641,14 @@ id = 700657
 country = PER
 random = no
 
-name = "Russia announces protection over Azerbaijan"
-desc = "Russia has recently announced, that in case of any kind of intervention into Azerbaijan, they would back this state. What shall we do now?"
+name = "EVT_700657_NAME"
+desc = "EVT_700657_DESC"
 style = 2
 picture = "soviet_replacement"
 
 
 action_a = {
-name = "Ignore threats, continue with our plans!"
+name = "EVT_700657_OPTIONA"
 ai_chance = 5
 command = { type = relation which = RUS value = -30 }
 command = { trigger = { alliance = { country = PER country = EGY } } type = leave_alliance }
@@ -658,7 +658,7 @@ command = { type = trigger which = 700658 }
 }
 
 action_b = {
-name = "We cannot risk a war with Russia"
+name = "EVT_700657_OPTIONB"
 ai_chance = 95
 command = { type = relation which = RUS value = 30 }
 command = { type = dissent value = 3  }
@@ -672,14 +672,14 @@ id = 700658
 country = RUS
 random = no
 
-name = "Persia Refused!"
-desc = "Persia refused to back down from their planned invasion of Azerbaijan! Even now, Persian armed forces are advancing upon Baku. What shall we do now?"
+name = "EVT_700658_NAME"
+desc = "EVT_700658_DESC"
 style = 2
 picture = "caucasusgeo"
 
 
 action_a = {
-name = "Save the Azer people!"
+name = "EVT_700658_OPTIONA"
 ai_chance = 70
 command = { type = dissent value = 1  }
 command = { type = war which = PER }
@@ -687,7 +687,7 @@ command = { trigger = { NOT = { alliance = { country = RUS country = GER } allia
 }
 
 action_b = {
-name = "We cannot risk a war with Persia"
+name = "EVT_700658_OPTIONB"
 ai_chance = 30
 command = { type = relation which = PER value = 30 }
 command = { type = dissent value = 3  }
@@ -701,14 +701,14 @@ id = 700659
 country = RUS
 random = no
 
-name = "Persia backs down"
-desc = "Thanks to our masterful use of diplomacy backed by the mighty Russian armed forces, Persia had no other option but to abandon its expansionist plans on the Caucasus!"
+name = "EVT_700659_NAME"
+desc = "EVT_700659_DESC"
 style = 2
 picture = "caucasusgeo"
 
 
 action_a = {
-name = "Hurrah!"
+name = "EVT_700659_OPTIONA"
 command = { type = dissent value = -1  }
 command = { type = relation which = AZB value = 30 }
 }
@@ -719,14 +719,14 @@ id = 700670
 country = PER
 random = no
 
-name = "Russia backs down"
-desc = "Thanks to our masterful use of diplomacy backed by the mighty Persian armed forces, Russia had no other option but to abandon its futile attempts to protect Azerbaijan!"
+name = "EVT_700670_NAME"
+desc = "EVT_700670_DESC"
 style = 2
 picture = "caucasusgeo"
 
 
 action_a = {
-name = "Hurrah!"
+name = "EVT_700670_OPTIONA"
 command = { type = dissent value = -1  }
 }
 }
@@ -747,8 +747,8 @@ owned = { province = 2172 data = -1 } #Herat
 control = { province = 2172 data = -1 }
 }
 
-name = "Integration of the Herat Region"
-desc = "The civilian population of the Herat Region finally accepted the new reality established via military occupation and the Herat Region is finally under our firm and complete control."
+name = "EVT_700671_NAME"
+desc = "EVT_700671_DESC"
 picture = "soldiers"
 
 date = { day = 1 month = january year = 1936 }
@@ -756,7 +756,7 @@ offset = 100
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = " Great !"
+name = "EVT_700671_OPTIONA"
 command = { type = dissent value = 1 }
 command = { type = addcore which = 2172 }
 }
@@ -773,8 +773,8 @@ owned = { province = 711 data = -1 } #Yerevan
 control = { province = 711 data = -1 }
 }
 
-name = "Integration of Armenia"
-desc = "The civilian population of Armenia finally accepted the new reality established via military occupation and Armenia is finally under our firm and complete control."
+name = "EVT_700672_NAME"
+desc = "EVT_700672_DESC"
 picture = "soldiers"
 
 date = { day = 1 month = january year = 1936 }
@@ -782,7 +782,7 @@ offset = 100
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = " Great !"
+name = "EVT_700672_OPTIONA"
 command = { type = dissent value = 3 }
 command = { type = addcore which = 711 }
 command = { type = addcore which = 714 }
@@ -800,8 +800,8 @@ owned = { province = 713 data = -1 } #Baku
 control = { province = 713 data = -1 }
 }
 
-name = "Integration of Azerbaijan"
-desc = "The civilian population of Azerbaijan finally accepted the new reality established via military occupation and Azerbaijan is finally under our firm and complete control."
+name = "EVT_700673_NAME"
+desc = "EVT_700673_DESC"
 picture = "soldiers"
 
 date = { day = 1 month = january year = 1936 }
@@ -809,7 +809,7 @@ offset = 100
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = " Great !"
+name = "EVT_700673_OPTIONA"
 command = { type = dissent value = 3 }
 command = { type = addcore which = 712 }
 command = { type = addcore which = 713 }
@@ -828,14 +828,14 @@ trigger = {
 control = { province = 1085 data = PER }
 }
 
-name = "The Persian Constitutionalist Movement"
+name = "EVT_701000_NAME"
 desc = "EVT_701000_DESC"
 picture = "persianconstitutuin"
 
 date = { day = 1 month = february year = 1936 }
 
 action_a = {
-name = "The fruits of the revolution mustn't be squandered."
+name = "EVT_701000_OPTIONA"
 command = { type = dissent value = 1 }
 }
 }
@@ -850,14 +850,14 @@ trigger = {
 control = { province = 1080 data = PER }
 }
 
-name = "Veresk Bridge Inaugurated"
-desc = "A marvel of engineering the Veresk Bridge has finally been inaugurated by Ahmad Shah Qajar himself. Designed and constructed by a team of German and Austro-Hungarian engineers the bridge serves as an important knot in the Trans-Persian railway net, connecting Tehran to the shores of the Caspian Sea."
+name = "EVT_701001_NAME"
+desc = "EVT_701001_DESC"
 picture = "vereshkbridge"
 
 date = { day = 12 month = april year = 1936 }
 
 action_a = {
-name = "Infrastructure is important."
+name = "EVT_701001_OPTIONA"
 command = { type = construct which = infrastructure where = 1080 value = 10 }
 command = { type = dissent value = -1 }
 }
@@ -873,7 +873,7 @@ trigger = {
 control = { province = 1085 data = PER }
 }
 
-name = "Disagreements Within the Army"
+name = "EVT_701002_NAME"
 desc = "EVT_701002_DESC"
 picture = "persianarmy"
 
@@ -881,7 +881,7 @@ date = { day = 7 month = march year = 1936 }
 
 action_a = {
 ai_chance =  50
-name = "Support the Gendarmerie (firepower doctrine)"
+name = "EVT_701002_OPTIONA"
 command = { type = chiefofstaff which = 53202 }
 command = { type = waketeam which = 6115 }
 command = { type = activate which = 6010 }
@@ -895,7 +895,7 @@ command = { type = dissent value = 2 }
 }
 action_b = {
 ai_chance =  50
-name = "Support the Cossack Brigade officers (light infantry)"
+name = "EVT_701002_OPTIONB"
 command = { type = chiefofstaff which = 53007 }
 command = { type = waketeam which = 6108 }
 command = { type = activate which = 6390 }
@@ -910,7 +910,7 @@ command = { type = dissent value = 2 }
 }
 action_c = {
 ai_chance =  0
-name = "Combined arms, motorized infantry and tanks are the future!"
+name = "EVT_701002_OPTIONC"
 command = { type = activate which = 6210 }
 command = { type = gain_tech which = 6210  }
 command = { type = dissent value = 15 }
@@ -928,14 +928,14 @@ trigger = {
 control = { province = 1085 data = PER }
 }
 
-name = "The Establishment of the Ministry of Energy"
-desc = "Today his majesty declared the establishment of the All Persian ministry of energy. The new ministry has been created to coordinate and improve the usage of our nation's rich amount of national resources."
+name = "EVT_701003_NAME"
+desc = "EVT_701003_DESC"
 picture = "industry2"
 
 date = { day = 2 month = december year = 1936 }
 
 action_a = {
-name = "Infrastructure is important."
+name = "EVT_701003_OPTIONA"
 command = { type = waketeam which = 6116 }
 command = { type = construct which = infrastructure where = -1 value = 10 }
 }
@@ -960,7 +960,7 @@ government = democratic
 ideology = paternal_autocrat
 }
 }
-name = "The Election to the Eleventh Majles"
+name = "EVT_701100_NAME"
 desc = "EVT_701100_DESC"
 picture = "persianconstitutuin"
 
@@ -970,7 +970,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
 ai_chance =  40
-name = "The Revival Party and Teymourtash defies the clergy!"
+name = "EVT_701100_OPTIONA"
 command = { type = dissent value = 5  }
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 5 }
@@ -985,7 +985,7 @@ command = { type = local_setflag which = PER_Revivalparty }
 }
 action_b = {
 ai_chance =  25
-name = "The Traditionalists secure a majority in parliament!"
+name = "EVT_701100_OPTIONB"
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 3 }
 command = { type = set_domestic which = freedom value = 5 }
@@ -1000,7 +1000,7 @@ command = { type = dissent value = -2 }
 
 action_c = {
 ai_chance =  25
-name = "Mosaddegh's National Front carries the day!"
+name = "EVT_701100_OPTIONC"
 command = { type = dissent value = 3  }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 6 }
@@ -1016,7 +1016,7 @@ command = { type = local_setflag which = PER_Mossadegh }
 
 action_d = {
 ai_chance =  10
-name = "The Leftist Democrat Party surprises all!"
+name = "EVT_701100_OPTIOND"
 command = { type = dissent value = 3  }
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 8 }
@@ -1050,8 +1050,8 @@ government = democratic
 ideology = paternal_autocrat
 }
 }
-name = "The Election to the 12th Majles"
-desc = "Four years have passed since the last session of the Majles, Persia's parliament, was inaugurated and as such the good people of our proud nation once more line up for the voting booth?"
+name = "EVT_701101_NAME"
+desc = "EVT_701101_DESC"
 picture = "persianconstitutuin"
 
 date = { day = 1 month = may year = 1937 }
@@ -1060,7 +1060,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
 ai_chance =  40
-name = "The Revival Party and Teymourtash defies the clergy!"
+name = "EVT_701101_OPTIONA"
 command = { type = dissent value = 5  }
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 5 }
@@ -1075,7 +1075,7 @@ command = { type = local_setflag which = PER_Revivalparty }
 }
 action_b = {
 ai_chance =  25
-name = "The Traditionalists secure a majority in parliament!"
+name = "EVT_701101_OPTIONB"
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 3 }
 command = { type = set_domestic which = freedom value = 5 }
@@ -1090,7 +1090,7 @@ command = { type = dissent value = -2 }
 
 action_c = {
 ai_chance =  25
-name = "Mosaddegh's National Front carries the day!"
+name = "EVT_701101_OPTIONC"
 command = { type = dissent value = 3  }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 6 }
@@ -1106,7 +1106,7 @@ command = { type = local_setflag which = PER_Mossadegh }
 
 action_d = {
 ai_chance =  10
-name = "The Leftist Democrat Party surprises all!"
+name = "EVT_701101_OPTIOND"
 command = { type = dissent value = 3  }
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 8 }
@@ -1140,8 +1140,8 @@ government = democratic
 ideology = paternal_autocrat
 }
 }
-name = "The Election to the 13th Majles"
-desc = "Four years have passed since the last session of the Majles, Persia's parliament, was inaugurated and as such the good people of our proud nation once more line up for the voting booth?"
+name = "EVT_701102_NAME"
+desc = "EVT_701102_DESC"
 picture = "persianconstitutuin"
 
 date = { day = 1 month = may year = 1937 }
@@ -1150,7 +1150,7 @@ deathdate = { day = 29 month = december year = 1964 }
 
 action_a = {
 ai_chance =  20
-name = "The Revival Party and Teymourtash defies the clergy!"
+name = "EVT_701102_OPTIONA"
 command = { type = dissent value = 5  }
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 5 }
@@ -1164,7 +1164,7 @@ command = { type = domestic which = free_market value = 2 }
 }
 action_b = {
 ai_chance =  25
-name = "The Traditionalists secure a majority in parliament!"
+name = "EVT_701102_OPTIONB"
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 3 }
 command = { type = set_domestic which = freedom value = 5 }
@@ -1178,7 +1178,7 @@ command = { type = dissent value = -2 }
 
 action_c = {
 ai_chance =  25
-name = "Mosaddegh's National Front carries the day!"
+name = "EVT_701102_OPTIONC"
 command = { type = dissent value = 3  }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 6 }
@@ -1193,7 +1193,7 @@ command = { type = ministerofsecurity which = 53200 } # Abol-Ghasem Kashani
 
 action_d = {
 ai_chance =  30
-name = "The Leftist Democrat Party surprises all!"
+name = "EVT_701102_OPTIOND"
 command = { type = dissent value = 3  }
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 8 }
@@ -1226,8 +1226,8 @@ government = democratic
 ideology = paternal_autocrat
 }
 }
-name = "The Election to the 14th Majles"
-desc = "Four years have passed since the last session of the Majles, Persia's parliament, was inaugurated and as such the good people of our proud nation once more line up for the voting booth?"
+name = "EVT_701103_NAME"
+desc = "EVT_701103_DESC"
 picture = "persianconstitutuin"
 
 date = { day = 1 month = may year = 1937 }
@@ -1236,7 +1236,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
 ai_chance =  20
-name = "The Revival Party and Teymourtash defies the clergy!"
+name = "EVT_701103_OPTIONA"
 command = { type = dissent value = 5  }
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 5 }
@@ -1250,7 +1250,7 @@ command = { type = domestic which = free_market value = 2 }
 }
 action_b = {
 ai_chance =  25
-name = "The Traditionalists secure a majority in parliament!"
+name = "EVT_701103_OPTIONB"
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 3 }
 command = { type = set_domestic which = freedom value = 5 }
@@ -1264,7 +1264,7 @@ command = { type = dissent value = -2 }
 
 action_c = {
 ai_chance =  45
-name = "Mosaddegh's National Front carries the day!"
+name = "EVT_701103_OPTIONC"
 command = { type = dissent value = 3  }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 6 }
@@ -1279,7 +1279,7 @@ command = { type = ministerofsecurity which = 53200 } # Abol-Ghasem Kashani
 
 action_d = {
 ai_chance =  30
-name = "The Leftist Democrat Party surprises all!"
+name = "EVT_701103_OPTIOND"
 command = { type = dissent value = 3  }
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 8 }
@@ -1312,8 +1312,8 @@ government = democratic
 ideology = paternal_autocrat
 }
 }
-name = "The Election to the 15th Majles"
-desc = "Four years have passed since the last session of the Majles, Persia's parliament, was inaugurated and as such the good people of our proud nation once more line up for the voting booth?"
+name = "EVT_701104_NAME"
+desc = "EVT_701104_DESC"
 picture = "persianconstitutuin"
 
 date = { day = 1 month = may year = 1937 }
@@ -1322,7 +1322,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
 ai_chance =  20
-name = "The Revival Party and Teymourtash defies the clergy!"
+name = "EVT_701104_OPTIONA"
 command = { type = dissent value = 5  }
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 5 }
@@ -1336,7 +1336,7 @@ command = { type = domestic which = free_market value = 2 }
 }
 action_b = {
 ai_chance =  25
-name = "The Traditionalists secure a majority in parliament!"
+name = "EVT_701104_OPTIONB"
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 3 }
 command = { type = set_domestic which = freedom value = 5 }
@@ -1350,7 +1350,7 @@ command = { type = dissent value = -2 }
 
 action_c = {
 ai_chance =  45
-name = "Mosaddegh's National Front carries the day!"
+name = "EVT_701104_OPTIONC"
 command = { type = dissent value = 3  }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 6 }
@@ -1365,7 +1365,7 @@ command = { type = ministerofsecurity which = 53200 } # Abol-Ghasem Kashani
 
 action_d = {
 ai_chance =  30
-name = "The Leftist Democrat Party surprises all!"
+name = "EVT_701104_OPTIOND"
 command = { type = dissent value = 3  }
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 8 }
@@ -1398,8 +1398,8 @@ government = democratic
 ideology = paternal_autocrat
 }
 }
-name = "The Election to the 16th Majles"
-desc = "Four years have passed since the last session of the Majles, Persia's parliament, was inaugurated and as such the good people of our proud nation once more line up for the voting booth?"
+name = "EVT_701105_NAME"
+desc = "EVT_701105_DESC"
 picture = "persianconstitutuin"
 
 date = { day = 1 month = may year = 1937 }
@@ -1408,7 +1408,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
 ai_chance =  20
-name = "The Revival Party and Teymourtash defies the clergy!"
+name = "EVT_701105_OPTIONA"
 command = { type = dissent value = 5  }
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 5 }
@@ -1422,7 +1422,7 @@ command = { type = domestic which = free_market value = 2 }
 }
 action_b = {
 ai_chance =  25
-name = "The Traditionalists secure a majority in parliament!"
+name = "EVT_701105_OPTIONB"
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 3 }
 command = { type = set_domestic which = freedom value = 5 }
@@ -1436,7 +1436,7 @@ command = { type = dissent value = -2 }
 
 action_c = {
 ai_chance =  45
-name = "Mosaddegh's National Front carries the day!"
+name = "EVT_701105_OPTIONC"
 command = { type = dissent value = 3  }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 6 }
@@ -1451,7 +1451,7 @@ command = { type = ministerofsecurity which = 53200 } # Abol-Ghasem Kashani
 
 action_d = {
 ai_chance =  30
-name = "The Leftist Democrat Party surprises all!"
+name = "EVT_701105_OPTIOND"
 command = { type = dissent value = 3  }
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 8 }
@@ -1484,8 +1484,8 @@ government = democratic
 ideology = paternal_autocrat
 }
 }
-name = "The Election to the 17th Majles"
-desc = "Four years have passed since the last session of the Majles, Persia's parliament, was inaugurated and as such the good people of our proud nation once more line up for the voting booth?"
+name = "EVT_701106_NAME"
+desc = "EVT_701106_DESC"
 picture = "persianconstitutuin"
 
 date = { day = 1 month = may year = 1937 }
@@ -1494,7 +1494,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
 ai_chance =  20
-name = "The Revival Party and Teymourtash defies the clergy!"
+name = "EVT_701106_OPTIONA"
 command = { type = dissent value = 5  }
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 5 }
@@ -1508,7 +1508,7 @@ command = { type = domestic which = free_market value = 2 }
 }
 action_b = {
 ai_chance =  25
-name = "The Traditionalists secure a majority in parliament!"
+name = "EVT_701106_OPTIONB"
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 3 }
 command = { type = set_domestic which = freedom value = 5 }
@@ -1522,7 +1522,7 @@ command = { type = dissent value = -2 }
 
 action_c = {
 ai_chance =  45
-name = "Mosaddegh's National Front carries the day!"
+name = "EVT_701106_OPTIONC"
 command = { type = dissent value = 3  }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 6 }
@@ -1537,7 +1537,7 @@ command = { type = ministerofsecurity which = 53200 } # Abol-Ghasem Kashani
 
 action_d = {
 ai_chance =  30
-name = "The Leftist Democrat Party surprises all!"
+name = "EVT_701106_OPTIOND"
 command = { type = dissent value = 3  }
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 8 }

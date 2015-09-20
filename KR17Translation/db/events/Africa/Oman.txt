@@ -9,8 +9,8 @@ atwar = OTT
 }
 
 
-name = "Status of Oman"
-desc = "For many years, the Ottomans have been free to impose their will on us. Today, problems have arisen for the Ottomans, and Said ibn Timur wishes to claim the throne once and for all and establish a free Oman."
+name = "EVT_77099_NAME"
+desc = "EVT_77099_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -18,7 +18,7 @@ offset = 4
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Declare complete independence from Ottomans!"
+name = "EVT_77099_OPTIONA"
 ai_chance = 95
 command = { type = add_division value = militia when = 4 }
 command = { type = add_division value = militia when = 4 }
@@ -33,7 +33,7 @@ command = { type = trigger which = 77100 }
 }
 
 action_b = {
-name = "Time is not right!"
+name = "EVT_77099_OPTIONB"
 ai_chance = 5
 command = { type = dissent value = 1 }
 }
@@ -44,18 +44,18 @@ id = 77100
 random = no
 country = OTT
 
-name = "Oman declares independence !"
-desc = "For many years, we have ruled over Oman. But today, with our country engaged in a lenghty conflict, Oman decided to use this opportunity to break from our dominance. How should we react to this mess?"
+name = "EVT_77100_NAME"
+desc = "EVT_77100_DESC"
 style = 2
 
 action_a = {
-name = "Let them go"
+name = "EVT_77100_OPTIONA"
 ai_chance = 95
 command = { type = end_mastery which = OMN }
 }
 
 action_b = {
-name = "Blasphemy! Crush this upstart!"
+name = "EVT_77100_OPTIONB"
 ai_chance = 5
 command = { type = end_mastery which = OMN }
 command = { type = war which = OMN }
@@ -73,8 +73,8 @@ NOT = { ispuppet = OMN }
 control = { province = 1051 data = OMN }
 }
 
-name = "Hadhramaut in conflict!"
-desc = "The Sultanates of Qu'aiti and Kathiri have begun a power struggle over Hadhramaut. This is not the first time they have fought, as shortly after the British Revolution they jointly destroyed the Mahra Sultanate. With Hadhramaut once more in flames, we must end this bloodshed!"
+name = "EVT_7400_NAME"
+desc = "EVT_7400_DESC"
 style = 2
 picture = "desertcalvarly"
 
@@ -84,7 +84,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 50
-name = "Send out our diplomats"
+name = "EVT_7400_OPTIONA"
 command = { type = dissent value = 3 }
 command = { type = trigger which = 7401 }
 command = { type = sleepevent which = 7402 }
@@ -92,7 +92,7 @@ command = { type = sleepevent which = 7407 }
 }
 action_b = {
 ai_chance = 50
-name = "Send out the troops!"
+name = "EVT_7400_OPTIONB"
 command = { type = dissent value = 4 }
 }
 }
@@ -102,13 +102,13 @@ id = 7401
 random = no
 country = OMN
 
-name = "Negotiations with the Hadhramaut Sultans"
-desc = "After the Sultans of Qu'aiti and Kathiri arrived in Muscat, an agreement has been worked out. The Sultan of Muscat and Oman and his son, will remain in control of governance and military affiars. The Sultan of Qu'aiti will take care of military intellgence and state security. Finally, the Sultan of Kathiri will handle all foriegn and economic matters."
+name = "EVT_7401_NAME"
+desc = "EVT_7401_DESC"
 style = 0
 picture = "Diet"
 
 action_a = {
-name = "Hurrah for diplomacy!"
+name = "EVT_7401_OPTIONA"
 command = { type = dissent value = -1 }
 command = { type = foreignminister which = 92065 } #Djaffar ibn al-Mansur
 command = { type = armamentminister which = 92067 } #Djaffar ibn al-Mansur
@@ -134,8 +134,8 @@ atwar = SAU
 }
 }
 
-name = "Rising conflict in Hadhramaut"
-desc = "Our neighbor to the south, the Sultanate of Muscat and Oman, has been in conflict with the two Sultanates of Hadhramaut. As the two Sultans are also feuding over dominance in the region, we have a chance to expand our influence. Several of our ministers are calling for us to make the Sultans stop fighting in the name of Arab unity, and a few are calling for us to annex the Hadhramaut area. What shall we do?"
+name = "EVT_7402_NAME"
+desc = "EVT_7402_DESC"
 style = 2
 picture = "war_refugees"
 
@@ -145,19 +145,19 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 60
-name = "Demand the Sultans stop this conflict!"
+name = "EVT_7402_OPTIONA"
 command = { type = dissent value = -1 }
 command = { type = trigger which = 7403 }
 }
 action_b = {
 ai_chance = 30
-name = "Demand Hadhramaut becomes ours!"
+name = "EVT_7402_OPTIONB"
 command = { type = dissent value = -2 }
 command = { type = trigger which = 7405 }
 }
 action_c = {
 ai_chance = 10
-name = "We have other things to do"
+name = "EVT_7402_OPTIONC"
 command = { type = dissent value = 2 }
 }
 }
@@ -167,14 +167,14 @@ id = 7403
 random = no
 country = OMN
 
-name = "The Hashemite ultimatium"
-desc = "The Hashmites have sent us an ultimatim in which they demand that in the name of Arab unity we cease all conflict with the Sultans of Hadhramaut, and also end the conflict between the two Sultans. Bowing down to them would ruin our already weak standing in the world... What shall we do?"
+name = "EVT_7403_NAME"
+desc = "EVT_7403_DESC"
 style = 2
 picture = "tuaregs"
 
 action_a = {
 ai_chance = 50
-name = "Begin negotiations with the Sultans"
+name = "EVT_7403_OPTIONA"
 command = { type = dissent value = 3 }
 command = { type = relation which = SAU value = 10 }
 command = { type = relation which = GER value = -20 }
@@ -184,7 +184,7 @@ command = { type = trigger which = 7401 }
 
 action_b = {
 ai_chance = 50
-name = "No, we refuse this threat!"
+name = "EVT_7403_OPTIONB"
 command = { type = dissent value = 3 }
 command = { type = relation which = SAU value = -20 }
 command = { type = relation which = GER value = 10 }
@@ -198,20 +198,20 @@ id = 7404
 random = no
 country = SAU
 
-name = "Oman has rejected our ultimatium"
-desc = "The Sultan of Oman and Muscat has sent us a curt reply telling us not to interfere with Omani bussiness. What shall we do now?"
+name = "EVT_7404_NAME"
+desc = "EVT_7404_DESC"
 style = 2
 picture = "india"
 
 action_a = {
 ai_chance = 60
-name = "Then it is war!"
+name = "EVT_7404_OPTIONA"
 command = { type = war which = OMN }
 }
 
 action_b = {
 ai_chance = 40
-name = "There's nothing we can do"
+name = "EVT_7404_OPTIONB"
 command = { type = dissent value = 3 }
 }
 }
@@ -221,20 +221,20 @@ id = 7405
 random = no
 country = OMN
 
-name = "The Hashemites have demanded Hadhramaut!"
-desc = "The Hashemites have sent an ultimatium to us, demanding that we cede the suzerainty rights over Hadhramaut to them!"
+name = "EVT_7405_NAME"
+desc = "EVT_7405_DESC"
 style = 2
 picture = "tuaregs"
 
 action_a = {
 ai_chance = 70
-name = "This means war!"
+name = "EVT_7405_OPTIONA"
 command = { type = war which = SAU }
 }
 
 action_b = {
 ai_chance = 30
-name = "There's nothing we can do"
+name = "EVT_7405_OPTIONB"
 command = { type = dissent value = 5 }
 command = { type = trigger which = 7406 }
 command = { type = secedeprovince which = SAU value = 1051 }
@@ -246,13 +246,13 @@ id = 7406
 random = no
 country = SAU
 
-name = "Hadhramaut is ours!"
-desc = "The Omanis have folded to our righteous demand and ceded control of Hadhramaut to us. With the arrival of our troops in the area the two fueding Sultans have promised to end their feud, at least for the time being."
+name = "EVT_7406_NAME"
+desc = "EVT_7406_DESC"
 style = 2
 picture = "Desert_Fighting"
 
 action_a = {
-name = "Party at Al Mukalla anyone?"
+name = "EVT_7406_OPTIONA"
 command = { type = dissent value = -1 }
 command = { type = addcore   which = 1051   }
 }
@@ -269,8 +269,8 @@ atwar = no
 control = { province = 1051 data = OMN }
 }
 
-name = "Peace in Hadhramaut"
-desc = "Our troops have finally managed to end the fighting in Hadhramaut and once more ensured peace in the area."
+name = "EVT_7407_NAME"
+desc = "EVT_7407_DESC"
 style = 2
 picture = "POWs6"
 
@@ -279,7 +279,7 @@ offset = 100
 deathdate = { day = 1 month = january year = 1966 }
 
 action_a = {
-name = "Finally!"
+name = "EVT_7407_OPTIONA"
 command = { type = dissent value = -1 }
 }
 }
@@ -291,8 +291,8 @@ country = OMN
 
 trigger = { event = 7401 }
 
-name = "Djaffar ibn al-Mansur has died!"
-desc = "The Sultan of Kathiri, Djaffar ibn al-Mansur, has died! His son, al-Husayn ibn Ali has become the new Sultan of Kathiri, and assumed the positions his father held in the central government."
+name = "EVT_7408_NAME"
+desc = "EVT_7408_DESC"
 style = 2
 picture = "minister_died"
 
@@ -301,7 +301,7 @@ offset = 100
 deathdate = { day = 1 month = january year = 1948 }
 
 action_a = {
-name = "Memento mori"
+name = "EVT_7408_OPTIONA"
 command = { type = sleepminister which = 92065 } #Djaffar ibn al-Mansur
 command = { type = sleepminister which = 92067 } #Djaffar ibn al-Mansur
 command = { type = foreignminister which = 92066 } #al-Husayn ibn Ali
@@ -317,8 +317,8 @@ country = OMN
 
 trigger = { NOT = { event = 7401 } }
 
-name = "Djaffar ibn al-Mansur has died!"
-desc = "The Sultan of Kathiri, Djaffar ibn al-Mansur, has died! His son, al-Husayn ibn Ali has become the new Sultan of Kathiri."
+name = "EVT_7409_NAME"
+desc = "EVT_7409_DESC"
 style = 2
 picture = "minister_died"
 
@@ -327,7 +327,7 @@ offset = 100
 deathdate = { day = 1 month = january year = 1948 }
 
 action_a = {
-name = "Memento mori"
+name = "EVT_7409_OPTIONA"
 command = { type = sleepminister which = 92065 } #Djaffar ibn al-Mansur
 command = { type = sleepminister which = 92067 } #Djaffar ibn al-Mansur
 command = { type = dissent value = 1 }

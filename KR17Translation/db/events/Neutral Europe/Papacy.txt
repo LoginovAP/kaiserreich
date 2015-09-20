@@ -151,8 +151,8 @@ year = 1939
 }
 }
 
-name = "The Death of Pius XI"
-desc = "Earlier today His Holiness Pope Pius XI passed away to the Afterlife. He had been in declining health for the past several years, and now The Holy Father will soon rest among his predecessors in the Tomb of the Popes."
+name = "EVT_91500_NAME"
+desc = "EVT_91500_DESC"
 
 picture = "PiusXI"
 
@@ -161,7 +161,7 @@ offset = 31
 deathdate = { day = 29 month = september year = 1946 }
 
 action_a = {
-name = "All Christendom Mourns the death of the His Holiness"
+name = "EVT_91500_OPTIONA"
 command = { type = headofstate which = 3256 } #The College of Cardinals
 command = { type = headofgovernment which = 3502 } #Don Luigi Sturzo
 command = { type = sleepminister which = 3219 } #Pius XI
@@ -185,13 +185,13 @@ ispuppet = AUS
 }
 }
 
-name = "The Death of Pius XI"
-desc = "With the passing of the Pope, what action should we take? Mourn the death of the Pope or attempt to install Duke Giuseppe di Toscana on the throne?"
+name = "EVT_91501_NAME"
+desc = "EVT_91501_DESC"
 picture = "PiusXI"
 
 action_a = {
 ai_chance =  75
-name = "Send our Condolences to Rome"
+name = "EVT_91501_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = relation which = ITA value = 50 }
 command = { type = relation which = EUS value = 20 }
@@ -204,7 +204,7 @@ command = { type = relation which = BRA value = 20 }
 }
 action_b = {
 ai_chance =  25
-name = "Press the claims of Duke Giuseppe di Toscana"
+name = "EVT_91501_OPTIONB"
 command = { type = end_non_aggression which = AUS where = ITA }
 command = { type = end_non_aggression which = ITA where = AUS }
 command = { type = trigger which = 91502 } ## ITA - Austria interferes
@@ -226,13 +226,13 @@ random = no
 country = ITA
 style = 2
 
-name = "Austria interferes!"
-desc = "Austria has attempted to install Duke Giuseppe di Toscana as King of the Italian Federation, interfering with the Papal Election."
+name = "EVT_91502_NAME"
+desc = "EVT_91502_DESC"
 picture = "politics2"
 
 action_a = {
 ai_chance =  60
-name = "An emergency Conclave Elects Cardinal Innitzer as Julius IV"
+name = "EVT_91502_OPTIONA"
 command = { type = set_domestic which = democratic value = 2 }
 command = { type = set_domestic which = political_left value = 1 }
 command = { type = set_domestic which = freedom value = 3 }
@@ -255,7 +255,7 @@ command = { type = trigger which = 91503 }
 }
 action_b = {
 ai_chance =  30
-name = "Elect Giuseppe, we are an Austrian Dominion once again"
+name = "EVT_91502_OPTIONB"
 ### PA government
 command = { type = set_domestic which = democratic value = 3 }
 command = { type = set_domestic which = political_left value = 4 }
@@ -273,7 +273,7 @@ command = { type = trigger which = 91504 }
 }
 action_c = {
 ai_chance =  30
-name = "Innitzer shall crown Giuseppe as King of Italy!"
+name = "EVT_91502_OPTIONC"
 command = { type = set_domestic which = democratic value = 3 }
 command = { type = set_domestic which = political_left value = 1 }
 command = { type = headofstate which = 3257  } #Josef I von Österreich-Toskana
@@ -295,13 +295,13 @@ random = no
 country = AUS
 style = 2
 
-name = "The Papacy under Innitzer resists!"
-desc = "Innitzer is resiting our noble rule, the stubborn Papacy has refused. What course of action shall we take now?"
+name = "EVT_91503_NAME"
+desc = "EVT_91503_DESC"
 picture = "politics2"
 
 action_a = {
 ai_chance =  65
-name = "If they won't give their independence, we shall take it! To War!"
+name = "EVT_91503_OPTIONA"
 command = { type = end_guarantee which = GER where = ITA }
 command = { type = end_non_aggression which = AUS where = ITA }
 command = { type = war which = ITA }
@@ -318,7 +318,7 @@ command = { type = relation which = BRA value = -100 }
 }
 action_b = {
 ai_chance =  20
-name = "Italy is not worth the trouble, back down"
+name = "EVT_91503_OPTIONB"
 command = { type = non_aggression which = AUS where = ITA }
 command = { type = dissent value = 10 }
 command = { type = relation which = ITA value = -100 }
@@ -326,7 +326,7 @@ command = { type = domestic which = interventionism value = -2 }
 }
 action_c = {
 ai_chance =  15
-name = "Beg the Conclave for Forgiveness!"
+name = "EVT_91503_OPTIONC"
 command = { type = guarantee which = AUS where = ITA }
 command = { type = non_aggression which = AUS where = ITA }
 command = { type = dissent value = 5  }
@@ -349,13 +349,13 @@ random = no
 country = AUS
 style = 2
 
-name = "Italy submits! Giuseppe takes the throne!"
-desc = "Italy caved in to the Austrian Empire as expected."
+name = "EVT_91504_NAME"
+desc = "EVT_91504_DESC"
 picture = "politics2"
 
 action_a = {
 ai_chance =  100
-name = "Hurrah!"
+name = "EVT_91504_OPTIONA"
 command = { type = make_puppet which = ITA }
 command = { type = relation which = ITA value = 150 }
 command = { type = alliance which = ITA }
@@ -364,7 +364,7 @@ command = { type = dissent value = 2  }
 
 action_b = {
 ai_chance = 0
-name = "Great news, in exchange we will return Venetia!"
+name = "EVT_91504_OPTIONB"
 command = { type = removecore which = 400 }
 command = { type = removecore which = 394 }
 command = { type = removecore which = 405 }
@@ -382,27 +382,27 @@ random = no
 country = AUS
 style = 2
 
-name = "Innitzer proclaims Giuseppe as King!"
-desc = "Innitzer proclaims Giuseppe as King of Italy with the blessing of the Pope."
+name = "EVT_91505_NAME"
+desc = "EVT_91505_DESC"
 picture = "politics2"
 
 action_a = {
 ai_chance =  80
-name = "Hurrah!"
+name = "EVT_91505_OPTIONA"
 command = { type = relation which = ITA value = 150 }
 command = { type = guarantee which = AUS where = ITA  }
 }
 
 action_b = {
 ai_chance =  20
-name = "Keep our Distance"
+name = "EVT_91505_OPTIONB"
 command = { type = relation which = ITA value = -50 }
 command = { type = dissent value = 5  }
 }
 
 action_c = {
 ai_chance = 10
-name = "Demand Innitzer step down!"
+name = "EVT_91505_OPTIONC"
 command = { type = relation which = ITA value = -80 }
 command = { type = end_non_aggression which = AUS where = ITA }
 command = { type = end_non_aggression which = ITA where = AUS }
@@ -417,13 +417,13 @@ random = no
 country = ITA
 style = 2
 
-name = "Austria wants Innitzer gone!"
-desc = "While Austria is pleased with the crowning of Josef, they also want Innitzer to step down from the Papacy and for cardinal Elia Dalla Costa to replace him!"
+name = "EVT_3968544_NAME"
+desc = "EVT_3968544_DESC"
 picture = "politics2"
 
 action_a = {
 ai_chance =  20
-name = "Refuse and overthrow the false king!"
+name = "EVT_3968544_OPTIONA"
 command = { type = set_domestic which = democratic value = 2 }
 command = { type = set_domestic which = political_left value = 1 }
 command = { type = set_domestic which = freedom value = 3 }
@@ -442,7 +442,7 @@ command = { type = dissent value = -5 }
 }
 action_b = {
 ai_chance =  80
-name = "As our new overlords wish..."
+name = "EVT_3968544_OPTIONB"
 command = { type = set_domestic which = democratic value = 3 }
 command = { type = set_domestic which = political_left value = 4 }
 command = { type = headofstate which = 3257 } #Josef I von Österreich-Toskana
@@ -477,8 +477,8 @@ alliance = { country = GER country = AUS }
 }
 }
 
-name = "What to do with the Hapsburg puppet?"
-desc = "With Austria in disarray, now would be the perfect time to reclaim our rightful territory. Our king however is an Austrian puppet and wouldn't dare move against his masters. Shall we overthrow the king and restore Papal power so we may claim our rightful land?"
+name = "EVT_3968545_NAME"
+desc = "EVT_3968545_DESC"
 picture = "politics2"
 
 date = { day = 1  month = january year = 1936 }
@@ -487,7 +487,7 @@ deathdate = { day = 29 month = december year = 1939 }
 
 action_a = {
 ai_chance = 50
-name = "The king is overthrown and the Papacy is restored"
+name = "EVT_3968545_OPTIONA"
 command = { type = set_domestic which = democratic value = 2 }
 command = { type = set_domestic which = political_left value = 1 }
 command = { type = set_domestic which = freedom value = 3 }
@@ -506,7 +506,7 @@ command = { type = end_non_aggression which = AUS where = ITA }
 }
 action_b = {
 ai_chance = 50
-name = "Innitzer is executed and his coup is crushed"
+name = "EVT_3968545_OPTIONB"
 command = { type = dissent value = 5 } # Even though it's justified, you still killed the pope.
 command = { type = sleepminister which = 3251 } #Julius IV
 command = { type = sleepminister which = 3252 } #Julius IV
@@ -521,18 +521,18 @@ random = no
 country = ITA
 style = 2
 
-name = "The future of the Papacy"
-desc = "After the traitorous Innitzer attempted a coup, many are questioning the Papacy's loyalty to the kingdom. Many say we should re-consider the Papacy's role in our glorious kingdom, but changing the role of the Papacy in our government might make our pious population angry... "
+name = "EVT_3968546_NAME"
+desc = "EVT_3968546_DESC"
 picture = "politics2"
 
 action_a = {
 ai_chance = 5
-name = "Install a loyal pope"
+name = "EVT_3968546_OPTIONA"
 command = { type = headofgovernment which = 3245 }
 }
 action_b = {
 ai_chance = 95
-name = "Force the Papacy into a purely ceremonial role"
+name = "EVT_3968546_OPTIONB"
 command = { type = headofgovernment which = 3522 } #Josef von Österreich-Toskana
 command = { type = dissent value = 10 } #Marginalizing the Papacy makes the people very unhappy.
 }
@@ -555,8 +555,8 @@ random= 50
 }
 
 
-name = "The Papal Conclave"
-desc = "The Holy See has came together to elect a new Pope following Pope Pius XI's death. The candidates are..."
+name = "EVT_91506_NAME"
+desc = "EVT_91506_DESC"
 picture = "whitesmoke"
 
 date = { day = 1 month = january year = 1936 }
@@ -565,7 +565,7 @@ deathdate = { day = 29 month = december year = 1949 }
 
 action_a = {
 ai_chance =  30
-name = "Eugenio Cardinal Pacelli (Pius XII)"
+name = "EVT_91506_OPTIONA"
 command = { type = headofstate which = 3234} #Pius XII (Eugenio Pacelli)
 command = { type = headofgovernment which = 3235 } #Luigi  Maglione
 command = { type = foreignminister which = 3237 } #Luigi Maglione
@@ -576,7 +576,7 @@ command = { type = trigger which = 91511  }
 }
 action_b = {
 ai_chance =  20
-name = "Elia Cardinal dalla Costa (Stephen X)"
+name = "EVT_91506_OPTIONB"
 command = { type = set_domestic which = democratic value = 4 }
 command = { type = set_domestic which = political_left value = 4 }
 command = { type = dissent value = 5  }
@@ -592,7 +592,7 @@ command = { type = trigger which = 3968553  } #A King for Italy?
 }
 action_c = {
 ai_chance =  15
-name = "Achille Liènart (John XXIII)"
+name = "EVT_91506_OPTIONC"
 command = { type = end_guarantee which = GER where = ITA }
 command = { type = end_guarantee which = AUS where = ITA }
 command = { type = set_domestic which = democratic value = 7 }
@@ -616,7 +616,7 @@ command = { type = chiefofair which = 3410 } #Amedeo, Duca d'Aosta
 }
 action_d = {
 ai_chance =  35
-name = "Theodor Cardinal Innitzer (Julius IV)"
+name = "EVT_91506_OPTIOND"
 command = { type = set_domestic which = democratic value = 3 }
 command = { type = set_domestic which = political_left value = 1 }
 command = { type = set_domestic which = interventionism value = 9 }
@@ -648,20 +648,20 @@ trigger = {
 exists = ITA
 }
 
-name = "Condemn Pope John XXIII?"
-desc = "The New Pope could prove dangerous, but the majority of the population is Catholic. We would not want to upset the majority. What course of action should we take?"
+name = "EVT_91508_NAME"
+desc = "EVT_91508_DESC"
 style = 2
 picture = "Kaiserreich_ITA_John_XXIII"
 
 action_a = {
-name = "Religion is - always had been - the enemy of the Proletariat"
+name = "EVT_91508_OPTIONA"
 ai_chance =  20
 command = { type = trigger which = 91512 }
 command = { type = dissent value = 15 }
 command = { type = relation which = ITA value = -50 }
 }
 action_b = {
-name = "Pope John XXIII is a friend of the Proletariat and a friend of the Republic"
+name = "EVT_91508_OPTIONB"
 ai_chance =  80
 command = { type = relation which = ITA value = 50 }
 }
@@ -676,19 +676,19 @@ trigger = {
 exists = ITA
 }
 
-name = "Condemn Pope Julius IV?"
-desc = "The New Pope has taken a stance against the spread of Syndicalism and Socialism, trying to slow the inevitable."
+name = "EVT_91509_NAME"
+desc = "EVT_91509_DESC"
 style = 2
 picture = "Rhineland"
 
 action_a = {
-name = "Religion is - always had been - the enemy of the Proletariat"
+name = "EVT_91509_OPTIONA"
 ai_chance =  95
 command = { type = trigger which = 91512 }
 command = { type = relation which = ITA value = -50 }
 }
 action_b = {
-name = "Maybe we can come to terms with this new Pope?"
+name = "EVT_91509_OPTIONB"
 ai_chance =  5
 command = { type = dissent value = 10 }   # Don't be silly!
 }
@@ -703,13 +703,13 @@ trigger = {
 exists = ITA
 }
 
-name = "Condemn Pope Stephen X?"
-desc = "The New Pope could prove dangerous, but the majority of the population is Catholic. We would not want to upset the majority. What course of action should we take?"
+name = "EVT_91510_NAME"
+desc = "EVT_91510_DESC"
 style = 2
 picture = "Rhineland"
 
 action_a = {
-name = "Religion is - always had been - the enemy of the Proletariat"
+name = "EVT_91510_OPTIONA"
 ai_chance =  60
 command = { type = trigger which = 91512 }
 command = { type = dissent value = 5 }
@@ -717,7 +717,7 @@ command = { type = relation which = ITA value = -50 }
 command = { type = relation which = AUS value = -50 }
 }
 action_b = {
-name = "At least we're finally rid of Papal control..."
+name = "EVT_91510_OPTIONB"
 ai_chance =  40
 command = { type = relation which = ITA value = 50 }
 command = { type = relation which = AUS value = 50 }
@@ -734,20 +734,20 @@ trigger = {
 exists = ITA
 }
 
-name = "Condemn Pope Pius XII?"
-desc = "The New Pope has taken a stance against the spread of Syndicalism and Socialism, trying to slow the inevitable."
+name = "EVT_91511_NAME"
+desc = "EVT_91511_DESC"
 style = 2
 picture = "PiusXII"
 
 action_a = {
-name = "Religion is - and has always been - the enemy of the proletariat"
+name = "EVT_91511_OPTIONA"
 ai_chance =  65
 command = { type = trigger which = 91512 }
 command = { type = dissent value = 5 }
 command = { type = relation which = ITA value = -50 }
 }
 action_b = {
-name = "We must remain at terms with the church"
+name = "EVT_91511_OPTIONB"
 ai_chance =  35
 command = { type = relation which = ITA value = -50 }
 }
@@ -758,13 +758,13 @@ id = 91512
 random = no
 country = ITA
 
-name = "The Commune Condemns the Pope"
-desc = "The Syndicalist Italian Commune in the south has condemned the Holy Father and the Church in a speech. We must react to this insult."
+name = "EVT_91512_NAME"
+desc = "EVT_91512_DESC"
 style = 2
 picture = "Rhineland"
 
 action_a = {
-name = "Issue an encyclical against syndicalism"
+name = "EVT_91512_OPTIONA"
 ai_chance =  90
 command = { type = trigger which = 91513 }
 command = { type = relation which = RSI value = -50 }
@@ -773,7 +773,7 @@ command = { type = relation which = ENG value = -25 } #European nation
 command = { type = relation which = PRK value = -10 } #Asian backwater
 }
 action_b = {
-name = "Love thy enemies"
+name = "EVT_91512_OPTIONB"
 ai_chance =  10
 command = { type = dissent value = 5 }
 }
@@ -784,13 +784,13 @@ id = 91513
 random = no
 country = RSI
 
-name = "Papal encyclical against syndicalism"
-desc = "The pope has issued an encyclical against Syndicalism, our mainly Catholic population is growing increasingly restless..."
+name = "EVT_91513_NAME"
+desc = "EVT_91513_DESC"
 style = 2
 picture = "Rhineland"
 
 action_a = {
-name = "Confiscate church property !"
+name = "EVT_91513_OPTIONA"
 ai_chance =  85
 command = { type = dissent value = 5 }
 command = { type = relation which = ITA value = -200 }
@@ -798,7 +798,7 @@ command = { type = money value = 100 } #confiscated property
 command = { type = setflag which = RSI_church_ban }
 }
 action_b = {
-name = "Let it go no further"
+name = "EVT_91513_OPTIONB"
 ai_chance =  15
 command = { type = dissent value = 10 }
 }
@@ -816,8 +816,8 @@ control = { province = 416 data = ITA }
 NOT = { war = { country = ITA country = RSI } }
 }
 
-name = "The Exodus"
-desc = "Ever since the Catholic Church issued and encyclical against Syndicalism, our population has begun to emigrate north into Papal Italy. The main artery for this so-called 'exodus' is the small port of Anzio."
+name = "EVT_91514_NAME"
+desc = "EVT_91514_DESC"
 style = 2
 picture = "Rhineland"
 
@@ -826,7 +826,7 @@ offset = 180
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Seal off the border and occupy Anzio"
+name = "EVT_91514_OPTIONA"
 ai_chance =  95
 command = { type = dissent value = 10 }
 command = { type = relation which = ITA value = -100 }
@@ -835,7 +835,7 @@ command = { type = trigger which = 91515 }
 command = { type = trigger which = 91516 }
 }
 action_b = {
-name = "Let it go no further"
+name = "EVT_91514_OPTIONB"
 ai_chance =  5
 command = { type = dissent value = 10 }
 }
@@ -846,13 +846,13 @@ id = 91515
 random = no
 country = ITA
 
-name = "The Exodus"
-desc = "Ever since the Catholic Church issued an encyclical against Syndicalism, thousands of our brothers in the south have moved north to liberty."
+name = "EVT_91515_NAME"
+desc = "EVT_91515_DESC"
 style = 2
 picture = "Rhineland"
 
 action_a = {
-name = "Welcome"
+name = "EVT_91515_OPTIONA"
 command = { type = manpowerpool value = 30 }
 }
 }
@@ -862,20 +862,20 @@ id = 91516
 random = no
 country = ITA
 
-name = "The Battle of Anzio"
-desc = "In responce to the mass flight north, the Syndicalists sealed the border. In the early morning hours of the following day, Syndicalist Italian troops attacked Anzio - a main artery of the exodus and are quickly overrunning the city. We can either let this happen or meet force with force!"
+name = "EVT_91516_NAME"
+desc = "EVT_91516_DESC"
 style = 2
 picture = "Rhineland"
 
 action_a = {
-name = "We have lost this battle"
+name = "EVT_91516_OPTIONA"
 ai_chance = 70
 command = { type = secedeprovince which = RSI value = 416 }
 command = { type = dissent value = 2 }
 command = { type = trigger which = 91517 }
 }
 action_b = {
-name = "Deus vult!"
+name = "EVT_91516_OPTIONB"
 ai_chance = 30
 command = { type = dissent value = -5 }
 command = { type = end_guarantee which = GER where = ITA }
@@ -889,13 +889,13 @@ id = 91517
 random = no
 country = RSI
 
-name = "The Battle of Anzio"
-desc = "Our troops have occupied Anzio, our losses were very light."
+name = "EVT_91517_NAME"
+desc = "EVT_91517_DESC"
 style = 2
 picture = "Rhineland"
 
 action_a = {
-name = "Good"
+name = "EVT_91517_OPTIONA"
 command = { type = belligerence value = 5 }
 command = { }
 }
@@ -911,8 +911,8 @@ event = 91517 #The Battle of Anzio
 exists = ITA
 }
 
-name = "The NeoSanfedisti"
-desc = "The NeoSanfedisti - literally 'the new holy faithful men', named after an eighteenth-century Italian terrorist organization - began attacking government installations all over southern Italy. Aiming to create as much havoc as they could in the name of the oppressed catholic church, the NeoSanfedisti tied up massive amounts of troops."
+name = "EVT_91518_NAME"
+desc = "EVT_91518_DESC"
 style = 2
 picture = "Rhineland"
 
@@ -921,7 +921,7 @@ offset = 900
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "We will not be intimidated"
+name = "EVT_91518_OPTIONA"
 command = { type = dissent value = 5 }
 command = { type = construct which = ic where = -1 value = -1 }
 command = { type = construct which = ic where = -1 value = -1 }
@@ -1018,8 +1018,8 @@ alliance = { country = ITA country = POR }
 random = 50
 }
 
-name = "The future of the Italian Federation"
-desc = "Now that Piux XII has been elected as the new Pope the policy of the new government has to be decided. Isolationism will focus on defending from external threats. Focusing on faith would mean no involvement whatsoever in politics. Seeking protection from a greater power could help in case of attack, if we don't join other alliances. Finally, developing the country will please the people and make our nation stronger."
+name = "EVT_91560_NAME"
+desc = "EVT_91560_DESC"
 picture = "PiusXII"
 
 date = { day = 1 month = january year = 1936 }
@@ -1027,7 +1027,7 @@ offset = 15
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Isolationism and status quo"
+name = "EVT_91560_OPTIONA"
 ai_chance = 25
 command = { type = setflag which = IF_ISO_1 }
 command = { type = sleepevent which = 91287 }
@@ -1037,7 +1037,7 @@ command = { type = sleepevent which = 91247 }
 command = { type = sleepevent which = 91248 }
 }
 action_b = {
-name = "Faith, not politics"
+name = "EVT_91560_OPTIONB"
 ai_chance = 25
 command = { type = relation which = AUS value = 30 }
 command = { type = relation which = SPA value = 30 }
@@ -1051,12 +1051,12 @@ command = { type = relation which = FRA value = -20 }
 command = { type = relation which = RSI value = -20 }
 }
 action_c = {
-name = "Seek protection from a greater power"
+name = "EVT_91560_OPTIONC"
 ai_chance = 25
 command = { type = setflag which = IF_PRO }
 }
 action_d = {
-name = "Focus on developing the country"
+name = "EVT_91560_OPTIOND"
 ai_chance = 25
 command = { type = setflag which = IF_IND_AGR }
 }
@@ -1106,8 +1106,8 @@ alliance = { country = ITA country = POR }
 random = 50
 }
 
-name = "The future of the Italian Federation"
-desc = "Now that Stephen X has been elected as the new Pope the policy of the new government has to be decided. Isolationism will focus on defending from external threats. Focusing on faith would mean no involvement whatsoever in politics. Seeking protection from a greater power could help in case of attack, if we don't join other alliances. Finally, developing the country will please the people and make our nation stronger."
+name = "EVT_91561_NAME"
+desc = "EVT_91561_DESC"
 picture = "politics4"
 
 date = { day = 1 month = january year = 1936 }
@@ -1115,7 +1115,7 @@ offset = 15
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Isolationism and status quo"
+name = "EVT_91561_OPTIONA"
 ai_chance = 20
 command = { type = setflag which = IF_ISO_1 }
 command = { type = sleepevent which = 91287 }
@@ -1125,7 +1125,7 @@ command = { type = sleepevent which = 91247 }
 command = { type = sleepevent which = 91248 }
 }
 action_b = {
-name = "Faith, not politics"
+name = "EVT_91561_OPTIONB"
 ai_chance = 25
 command = { type = relation which = AUS value = 30 }
 command = { type = relation which = SPA value = 30 }
@@ -1139,12 +1139,12 @@ command = { type = relation which = FRA value = -20 }
 command = { type = relation which = RSI value = -20 }
 }
 action_c = {
-name = "Seek protection from a greater power"
+name = "EVT_91561_OPTIONC"
 ai_chance = 50
 command = { type = setflag which = IF_PRO }
 }
 action_d = {
-name = "Focus on developing the country"
+name = "EVT_91561_OPTIOND"
 ai_chance = 5
 command = { type = setflag which = IF_IND_AGR }
 }
@@ -1184,8 +1184,8 @@ alliance = { country = ITA country = POR }
 random = 50
 }
 
-name = "The future of the Italian Federation"
-desc = "Now that John XXIII has been elected as the new Pope the policy of the new government has to be decided. Isolationism will focus on defending from external threats. Focusing on faith would mean no involvement whatsoever in politics. Seeking protection from a greater power could help in case of attack, if we don't join other alliances. Finally, developing the country will please the people and make our nation stronger."
+name = "EVT_91562_NAME"
+desc = "EVT_91562_DESC"
 picture = "Kaiserreich_ITA_John_XXIII"
 
 date = { day = 1 month = january year = 1936 }
@@ -1193,7 +1193,7 @@ offset = 15
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Isolationism and status quo"
+name = "EVT_91562_OPTIONA"
 ai_chance = 5
 command = { type = setflag which = IF_ISO_1 }
 command = { type = sleepevent which = 91287 }
@@ -1203,7 +1203,7 @@ command = { type = sleepevent which = 91247 }
 command = { type = sleepevent which = 91248 }
 }
 action_b = {
-name = "Faith, not politics"
+name = "EVT_91562_OPTIONB"
 ai_chance = 15
 command = { type = relation which = AUS value = 30 }
 command = { type = relation which = SPA value = 30 }
@@ -1217,12 +1217,12 @@ command = { type = relation which = FRA value = -20 }
 command = { type = relation which = RSI value = -20 }
 }
 action_c = {
-name = "Seek protection from a greater power"
+name = "EVT_91562_OPTIONC"
 ai_chance = 30
 command = { type = setflag which = IF_PRO }
 }
 action_d = {
-name = "Focus on developing the country"
+name = "EVT_91562_OPTIOND"
 ai_chance = 50
 command = { type = setflag which = IF_IND_AGR }
 }
@@ -1263,8 +1263,8 @@ alliance = { country = ITA country = POR }
 random = 50
 }
 
-name = "The future of the Italian Federation"
-desc = "Now that Julius IV has been elected as the new Pope the policy of the new government has to be decided. Isolationism will focus on defending from external threats. Focusing on faith would mean no involvement whatsoever in politics. Seeking protection from a greater power could help in case of attack, if we don't join other alliances. Finally, developing the country will please the people and make our nation stronger."
+name = "EVT_91563_NAME"
+desc = "EVT_91563_DESC"
 picture = "politics4"
 
 date = { day = 1 month = january year = 1936 }
@@ -1272,7 +1272,7 @@ offset = 15
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Isolationism and status quo"
+name = "EVT_91563_OPTIONA"
 ai_chance = 25
 command = { type = setflag which = IF_ISO_1 }
 command = { type = sleepevent which = 91287 }
@@ -1282,7 +1282,7 @@ command = { type = sleepevent which = 91247 }
 command = { type = sleepevent which = 91248 }
 }
 action_b = {
-name = "Faith, not politics"
+name = "EVT_91563_OPTIONB"
 ai_chance = 5
 command = { type = relation which = AUS value = 30 }
 command = { type = relation which = SPA value = 30 }
@@ -1296,12 +1296,12 @@ command = { type = relation which = FRA value = -20 }
 command = { type = relation which = RSI value = -20 }
 }
 action_c = {
-name = "Seek protection from a greater power"
+name = "EVT_91563_OPTIONC"
 ai_chance = 45
 command = { type = setflag which = IF_PRO }
 }
 action_d = {
-name = "Focus on developing the country"
+name = "EVT_91563_OPTIOND"
 ai_chance = 25
 command = { type = setflag which = IF_IND_AGR }
 }
@@ -1342,8 +1342,8 @@ alliance = { country = ITA country = POR }
 random = 50
 }
 
-name = "The future of the Italian Federation"
-desc = "Now that Julius IV has been elected as the new Pope the policy of the new government has to be decided. Isolationism will focus on defending from external threats. Focusing on faith would mean no involvement whatsoever in politics. Seeking protection from a greater power could help in case of attack, if we don't join other alliances. Finally, developing the country will please the people and make our nation stronger."
+name = "EVT_91564_NAME"
+desc = "EVT_91564_DESC"
 picture = "politics4"
 
 date = { day = 1 month = january year = 1936 }
@@ -1351,7 +1351,7 @@ offset = 15
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Isolationism and status quo"
+name = "EVT_91564_OPTIONA"
 ai_chance = 30
 command = { type = setflag which = IF_ISO_1 }
 command = { type = sleepevent which = 91287 }
@@ -1361,7 +1361,7 @@ command = { type = sleepevent which = 91247 }
 command = { type = sleepevent which = 91248 }
 }
 action_b = {
-name = "Faith, not politics"
+name = "EVT_91564_OPTIONB"
 ai_chance = 5
 command = { type = relation which = AUS value = 30 }
 command = { type = relation which = SPA value = 30 }
@@ -1375,12 +1375,12 @@ command = { type = relation which = FRA value = -20 }
 command = { type = relation which = RSI value = -20 }
 }
 action_c = {
-name = "Seek protection from a greater power"
+name = "EVT_91564_OPTIONC"
 ai_chance = 60
 command = { type = setflag which = IF_PRO }
 }
 action_d = {
-name = "Focus on developing the country"
+name = "EVT_91564_OPTIOND"
 ai_chance = 5
 command = { type = setflag which = IF_IND_AGR }
 }
@@ -1421,8 +1421,8 @@ alliance = { country = ITA country = POR }
 random = 50
 }
 
-name = "The future of the Italian Federation"
-desc = "Now that Julius IV has been elected as the new Pope the policy of the new government has to be decided. Isolationism will focus on defending from external threats. Focusing on faith would mean no involvement whatsoever in politics. Seeking protection from a greater power could help in case of attack, if we don't join other alliances. Finally, developing the country will please the people and make our nation stronger."
+name = "EVT_91565_NAME"
+desc = "EVT_91565_DESC"
 picture = "politics4"
 
 date = { day = 1 month = january year = 1936 }
@@ -1430,7 +1430,7 @@ offset = 15
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Isolationism and status quo"
+name = "EVT_91565_OPTIONA"
 ai_chance = 30
 command = { type = setflag which= IF_ISO_1 }
 command = { type = sleepevent which = 91287 }
@@ -1440,7 +1440,7 @@ command = { type = sleepevent which = 91247 }
 command = { type = sleepevent which = 91248 }
 }
 action_b = {
-name = "Faith, not politics"
+name = "EVT_91565_OPTIONB"
 ai_chance = 25
 command = { type = relation which = AUS value = 30 }
 command = { type = relation which = SPA value = 30 }
@@ -1454,12 +1454,12 @@ command = { type = relation which = FRA value = -20 }
 command = { type = relation which = RSI value = -20 }
 }
 action_c = {
-name = "Seek protection from a greater power"
+name = "EVT_91565_OPTIONC"
 ai_chance = 40
 command = { type = setflag which = IF_PRO }
 }
 action_d = {
-name = "Focus on developing the country"
+name = "EVT_91565_OPTIOND"
 ai_chance = 5
 command = { type = setflag which = IF_IND_AGR }
 }
@@ -1500,8 +1500,8 @@ alliance = { country = ITA country = POR }
 random = 50
 }
 
-name = "The future of the Italian Federation"
-desc = "Now that Piux XII has been elected as the new Pope the policy of the new government has to be decided. Focusing on faith would mean no involvement whatsoever in politics whereas developing the country will please the people and make our nation stronger."
+name = "EVT_91566_NAME"
+desc = "EVT_91566_DESC"
 picture = "PiusXII"
 
 date = { day = 1 month = january year = 1936 }
@@ -1509,7 +1509,7 @@ offset = 15
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Faith, not politics"
+name = "EVT_91566_OPTIONA"
 ai_chance = 50
 command = { type = relation which = AUS value = 30 }
 command = { type = relation which = SPA value = 30 }
@@ -1523,7 +1523,7 @@ command = { type = relation which = FRA value = -20 }
 command = { type = relation which = RSI value = -20 }
 }
 action_b = {
-name = "Focus on developing the country"
+name = "EVT_91566_OPTIONB"
 ai_chance = 50
 command = { type = setflag which = IF_IND_AGR }
 }
@@ -1575,8 +1575,8 @@ alliance = { country = ITA country = POR }
 random = 50
 }
 
-name = "The future of the Italian Federation"
-desc = "Now that Stephen X has been elected as the new Pope the policy of the new government has to be decided. Focusing on faith would mean no involvement whatsoever in politics whereas developing the country will please the people and make our nation stronger."
+name = "EVT_91567_NAME"
+desc = "EVT_91567_DESC"
 picture = "politics4"
 
 date = { day = 1 month = january year = 1936 }
@@ -1585,7 +1585,7 @@ deathdate = { day = 29 month = december year = 1947 }
 
 
 action_a = {
-name = "Faith, not politics"
+name = "EVT_91567_OPTIONA"
 ai_chance = 70
 command = { type = relation which = AUS value = 30 }
 command = { type = relation which = SPA value = 30 }
@@ -1599,7 +1599,7 @@ command = { type = relation which = FRA value = -20 }
 command = { type = relation which = RSI value = -20 }
 }
 action_b = {
-name = "Focus on developing the country"
+name = "EVT_91567_OPTIONB"
 ai_chance = 30
 command = { type = setflag which = IF_IND_AGR }
 }
@@ -1641,8 +1641,8 @@ alliance = { country = ITA country = POR }
 random = 50
 }
 
-name = "The future of the Italian Federation"
-desc = "Now that John XXIII has been elected as the new Pope the policy of the new government has to be decided. Focusing on faith would mean no involvement whatsoever in politics whereas developing the country will please the people and make our nation stronger."
+name = "EVT_91568_NAME"
+desc = "EVT_91568_DESC"
 picture = "Kaiserreich_ITA_John_XXIII"
 
 date = { day = 1 month = january year = 1936 }
@@ -1651,7 +1651,7 @@ deathdate = { day = 29 month = december year = 1947 }
 
 
 action_a = {
-name = "Faith, not politics"
+name = "EVT_91568_OPTIONA"
 ai_chance = 20
 command = { type = relation which = AUS value = 30 }
 command = { type = relation which = SPA value = 30 }
@@ -1665,7 +1665,7 @@ command = { type = relation which = FRA value = -20 }
 command = { type = relation which = RSI value = -20 }
 }
 action_b = {
-name = "Focus on developing the country"
+name = "EVT_91568_OPTIONB"
 ai_chance = 80
 command = { type = setflag which = IF_IND_AGR }
 }
@@ -1708,8 +1708,8 @@ alliance = { country = ITA country = POR }
 random = 50
 }
 
-name = "The future of the Italian Federation"
-desc = "Now that Julius IV has been elected as the new Pope the policy of the new government has to be decided. Focusing on faith would mean no involvement whatsoever in politics whereas developing the country will please the people and make our nation stronger."
+name = "EVT_91569_NAME"
+desc = "EVT_91569_DESC"
 picture = "politics4"
 
 date = { day = 1 month = january year = 1936 }
@@ -1717,7 +1717,7 @@ offset = 15
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Faith, not politics"
+name = "EVT_91569_OPTIONA"
 ai_chance = 30
 command = { type = relation which = AUS value = 30 }
 command = { type = relation which = SPA value = 30 }
@@ -1731,7 +1731,7 @@ command = { type = relation which = FRA value = -20 }
 command = { type = relation which = RSI value = -20 }
 }
 action_b = {
-name = "Focus on developing the country"
+name = "EVT_91569_OPTIONB"
 ai_chance = 70
 command = { type = setflag which = IF_IND_AGR }
 }
@@ -1774,8 +1774,8 @@ alliance = { country = ITA country = POR }
 random = 50
 }
 
-name = "The future of the Italian Federation"
-desc = "Now that Julius IV has been elected as the new Pope the policy of the new government has to be decided. Focusing on faith would mean no involvement whatsoever in politics whereas developing the country will please the people and make our nation stronger."
+name = "EVT_91570_NAME"
+desc = "EVT_91570_DESC"
 picture = "politics4"
 
 date = { day = 1 month = january year = 1936 }
@@ -1783,7 +1783,7 @@ offset = 15
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Faith, not politics"
+name = "EVT_91570_OPTIONA"
 ai_chance = 40
 command = { type = relation which = AUS value = 30 }
 command = { type = relation which = SPA value = 30 }
@@ -1797,7 +1797,7 @@ command = { type = relation which = FRA value = -20 }
 command = { type = relation which = RSI value = -20 }
 }
 action_b = {
-name = "Focus on developing the country"
+name = "EVT_91570_OPTIONB"
 ai_chance = 60
 command = { type = setflag which = IF_IND_AGR }
 }
@@ -1840,8 +1840,8 @@ alliance = { country = ITA country = POR }
 random = 50
 }
 
-name = "The future of the Italian Federation"
-desc = "Now that Julius IV has been elected as the new Pope the policy of the new government has to be decided. Focusing on faith would mean no involvement whatsoever in politics whereas developing the country will please the people and make our nation stronger."
+name = "EVT_91571_NAME"
+desc = "EVT_91571_DESC"
 picture = "politics4"
 
 date = { day = 1 month = january year = 1936 }
@@ -1850,7 +1850,7 @@ deathdate = { day = 29 month = december year = 1947 }
 
 
 action_a = {
-name = "Faith, not politics"
+name = "EVT_91571_OPTIONA"
 ai_chance = 70
 command = { type = relation which = AUS value = 30 }
 command = { type = relation which = SPA value = 30 }
@@ -1864,7 +1864,7 @@ command = { type = relation which = FRA value = -20 }
 command = { type = relation which = RSI value = -20 }
 }
 action_b = {
-name = "Focus on developing the country"
+name = "EVT_91571_OPTIONB"
 ai_chance = 30
 command = { type = setflag which = IF_IND_AGR }
 }
@@ -1882,8 +1882,8 @@ random = 15
 
 }
 
-name = "Isolationist Path"
-desc = "The new government decided to focus on defending the country from external threats. The first step is to build new forts on the provinces bordering our unfriendly neighbors."
+name = "EVT_91572_NAME"
+desc = "EVT_91572_DESC"
 picture = "fortification"
 
 date = { day = 1 month = january year = 1936 }
@@ -1891,7 +1891,7 @@ offset = 15
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Build the new forts!"
+name = "EVT_91572_OPTIONA"
 ai_chance = 95
 command = { trigger = { control = { province = 87 data = ITA } } type = construct which = land_fort where = 87 value = 1 } #Nice
 command = { trigger = { control = { province = 396 data = ITA } } type = construct which = land_fort where = 396 value = 1 } #Grenoble
@@ -1908,7 +1908,7 @@ command = { type = clrflag which = IF_ISO_1 }
 command = { type = setflag which = IF_ISO_2 }
 }
 action_b = {
-name = "It wasn't such a good idea"
+name = "EVT_91572_OPTIONB"
 ai_chance = 5
 command = { type = dissent value = 2 }
 command = { type = clrflag which = IF_ISO_1 }
@@ -1927,8 +1927,8 @@ random = 15
 
 }
 
-name = "Isolationist Path"
-desc = "The new government decided to focus on defending the country from external threats. The second step is to position new garrison troops in three key provinces, to improve our defense system."
+name = "EVT_91573_NAME"
+desc = "EVT_91573_DESC"
 picture = "fortification2"
 
 date = { day = 1 month = january year = 1936 }
@@ -1936,7 +1936,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Welcome the new garrisons!"
+name = "EVT_91573_OPTIONA"
 ai_chance = 95
 command = { type = add_corps which = "Presidio di Nizza" value = land where = 87 } #Nice
 command = { type = add_division which = "1a Difensori della Patria" value = garrison when = 1 }
@@ -1950,7 +1950,7 @@ command = { type = clrflag which = IF_ISO_2 }
 command = { type = setflag which = IF_ISO_3 }
 }
 action_b = {
-name = "It wasn't such a good idea"
+name = "EVT_91573_OPTIONB"
 ai_chance = 5
 command = { type = dissent value = 2 }
 command = { type = clrflag which = IF_ISO_2 }
@@ -1969,8 +1969,8 @@ random = 15
 
 }
 
-name = "Isolationist Path"
-desc = "The new government decided to focus on defending the country from external threats. The third and last step is to improve our fortifications."
+name = "EVT_91574_NAME"
+desc = "EVT_91574_DESC"
 picture = "fortification3"
 
 date = { day = 1 month = january year = 1936 }
@@ -1978,7 +1978,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Build the new forts!"
+name = "EVT_91574_OPTIONA"
 ai_chance = 95
 command = { trigger = { control = { province = 87 data = ITA } } type = construct which = land_fort where = 87 value = 1 } #Nice
 command = { trigger = { control = { province = 396 data = ITA } } type = construct which = land_fort where = 396 value = 1 } #Grenoble
@@ -1994,7 +1994,7 @@ command = { type = domestic which = interventionism value = -1 }
 command = { type = clrflag which = IF_ISO_3 }
 }
 action_b = {
-name = "It wasn't such a good idea"
+name = "EVT_91574_OPTIONB"
 ai_chance = 5
 command = { type = dissent value = 2 }
 command = { type = clrflag which = IF_ISO_3 }
@@ -2018,8 +2018,8 @@ flag = IF_PRO
 random = 50
 }
 
-name = "Seeking protection"
-desc = "The new government decided to look for protection from a greater power. Who could help us in time of troubles? Remember that even if another country accepts our proposal, they won't help us if we join an alliance with other countries."
+name = "EVT_91575_NAME"
+desc = "EVT_91575_DESC"
 picture = "foreign_policy"
 
 date = { day = 1 month = january year = 1936 }
@@ -2027,25 +2027,25 @@ offset = 5
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Germany, the greatest empire!"
+name = "EVT_91575_OPTIONA"
 ai_chance = 33
 command = { type = trigger which = 91581 }
 command = { type = clrflag which = IF_PRO }
 }
 action_b = {
-name = "Austria, our neighbor!"
+name = "EVT_91575_OPTIONB"
 ai_chance = 33
 command = { type = trigger which = 91582 }
 command = { type = clrflag which = IF_PRO }
 }
 action_c = {
-name = "The Entente, the alliance of democratic countries"
+name = "EVT_91575_OPTIONC"
 ai_chance = 33
 command = { type = trigger which = 91583 }
 command = { type = clrflag which = IF_PRO }
 }
 action_d = {
-name = "It was a bad idea, we'd better focus on our country"
+name = "EVT_91575_OPTIOND"
 ai_chance = 1
 command = { type = dissent value = 1 }
 command = { type = clrflag which = IF_PRO }
@@ -2081,8 +2081,8 @@ flag = IF_PRO
 random = 50
 }
 
-name = "Seeking protection"
-desc = "The new government decided to look for protection from a greater power. Who could help us in time of troubles? Remember that even if another country accepts our proposal, they won't help us if we join an alliance with other countries."
+name = "EVT_91576_NAME"
+desc = "EVT_91576_DESC"
 picture = "foreign_policy"
 
 date = { day = 1 month = january year = 1936 }
@@ -2090,25 +2090,25 @@ offset = 5
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Germany, the greatest empire!"
+name = "EVT_91576_OPTIONA"
 ai_chance = 20
 command = { type = trigger which = 91581 }
 command = { type = clrflag which = IF_PRO }
 }
 action_b = {
-name = "Austria, our neighbor!"
+name = "EVT_91576_OPTIONB"
 ai_chance = 70
 command = { type = trigger which = 91582 }
 command = { type = clrflag which = IF_PRO }
 }
 action_c = {
-name = "The Entente, the alliance of democratic countries"
+name = "EVT_91576_OPTIONC"
 ai_chance = 9
 command = { type = trigger which = 91583 }
 command = { type = clrflag which = IF_PRO }
 }
 action_d = {
-name = "It was a bad idea, we'd better focus our country"
+name = "EVT_91576_OPTIOND"
 ai_chance = 1
 command = { type = dissent value = 1 }
 command = { type = clrflag which = IF_PRO }
@@ -2134,8 +2134,8 @@ flag = IF_PRO
 random = 50
 }
 
-name = "Seeking protection"
-desc = "The new government decided to look for protection from a greater power. Who could help us in time of troubles? Remember that even if another country accepts our proposal, they won't help us if we join an alliance with other countries."
+name = "EVT_91577_NAME"
+desc = "EVT_91577_DESC"
 picture = "foreign_policy"
 
 date = { day = 1 month = january year = 1936 }
@@ -2144,19 +2144,19 @@ deathdate = { day = 29 month = december year = 1960 }
 
 
 action_a = {
-name = "Austria, our neighbor!"
+name = "EVT_91577_OPTIONA"
 ai_chance = 19
 command = { type = trigger which = 91582 }
 command = { type = clrflag which = IF_PRO }
 }
 action_b = {
-name = "The Entente, the alliance of democratic countries"
+name = "EVT_91577_OPTIONB"
 ai_chance = 80
 command = { type = trigger which = 91583 }
 command = { type = clrflag which = IF_PRO }
 }
 action_c = {
-name = "It was a bad idea, we'd better focus our country"
+name = "EVT_91577_OPTIONC"
 ai_chance = 1
 command = { type = dissent value = 1 }
 command = { type = clrflag which = IF_PRO }
@@ -2181,8 +2181,8 @@ flag = IF_PRO
 random = 50
 }
 
-name = "Seeking protection"
-desc = "The new government decided to look for protection from a greater power. Who could help us in time of troubles? Remember that even if another country accepts our proposal, they won't help us if we join an alliance with other countries."
+name = "EVT_91578_NAME"
+desc = "EVT_91578_DESC"
 picture = "foreign_policy"
 
 date = { day = 1 month = january year = 1936 }
@@ -2190,25 +2190,25 @@ offset = 5
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Germany, the greatest empire!"
+name = "EVT_91578_OPTIONA"
 ai_chance = 59
 command = { type = trigger which = 91581 }
 command = { type = clrflag which = IF_PRO }
 }
 action_b = {
-name = "Austria, our neighbor!"
+name = "EVT_91578_OPTIONB"
 ai_chance = 20
 command = { type = trigger which = 91582 }
 command = { type = clrflag which = IF_PRO }
 }
 action_c = {
-name = "The Entente, the alliance of democratic countries"
+name = "EVT_91578_OPTIONC"
 ai_chance = 20
 command = { type = trigger which = 91583 }
 command = { type = clrflag which = IF_PRO }
 }
 action_d = {
-name = "It was a bad idea, we'd better focus our country"
+name = "EVT_91578_OPTIOND"
 ai_chance = 1
 command = { type = dissent value = 1 }
 command = { type = clrflag which = IF_PRO }
@@ -2234,8 +2234,8 @@ flag = IF_PRO
 random = 50
 }
 
-name = "Seeking protection"
-desc = "The new government decided to look for protection from a greater power. Who could help us in time of troubles? Remember that even if another country accepts our proposal, they won't help us if we join an alliance with other countries."
+name = "EVT_91579_NAME"
+desc = "EVT_91579_DESC"
 picture = "foreign_policy"
 
 date = { day = 1 month = january year = 1936 }
@@ -2244,19 +2244,19 @@ deathdate = { day = 29 month = december year = 1960 }
 
 
 action_a = {
-name = "Germany, the greatest empire!"
+name = "EVT_91579_OPTIONA"
 ai_chance = 69
 command = { type = trigger which = 91581 }
 command = { type = clrflag which = IF_PRO }
 }
 action_b = {
-name = "The Entente, the alliance of democratic countries"
+name = "EVT_91579_OPTIONB"
 ai_chance = 30
 command = { type = trigger which = 91583 }
 command = { type = clrflag which = IF_PRO }
 }
 action_c = {
-name = "It was a bad idea, we'd better focus our country"
+name = "EVT_91579_OPTIONC"
 ai_chance = 1
 command = { type = dissent value = 1 }
 command = { type = clrflag which = IF_PRO }
@@ -2283,8 +2283,8 @@ flag = IF_PRO
 random = 50
 }
 
-name = "Seeking protection"
-desc = "The new government decided to look for protection from a greater power. Who could help us in time of troubles? Remember that even if another country accepts our proposal, they won't help us if we join an alliance with other countries."
+name = "EVT_91580_NAME"
+desc = "EVT_91580_DESC"
 picture = "foreign_policy"
 
 date = { day = 1 month = january year = 1936 }
@@ -2292,25 +2292,25 @@ offset = 5
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Germany, the greatest empire!"
+name = "EVT_91580_OPTIONA"
 ai_chance = 20
 command = { type = trigger which = 91581 }
 command = { type = clrflag which = IF_PRO }
 }
 action_b = {
-name = "Austria, our neighbor!"
+name = "EVT_91580_OPTIONB"
 ai_chance = 70
 command = { type = trigger which = 91582 }
 command = { type = clrflag which = IF_PRO }
 }
 action_c = {
-name = "The Entente, the alliance of democratic countries"
+name = "EVT_91580_OPTIONC"
 ai_chance = 9
 command = { type = trigger which = 91583 }
 command = { type = clrflag which = IF_PRO }
 }
 action_d = {
-name = "It was a bad idea, we'd better focus our country"
+name = "EVT_91580_OPTIOND"
 ai_chance = 1
 command = { type = dissent value = 1 }
 command = { type = clrflag which = IF_PRO }
@@ -2325,18 +2325,18 @@ random = no
 country = GER
 style = 2
 
-name = "The Italian Federation seeks our protection"
-desc = "The Italian Federation seeks our protection: they will grant us military access, but if they are attacked we should help them."
+name = "EVT_91581_NAME"
+desc = "EVT_91581_DESC"
 picture = "foreign_policy"
 
 action_a = {
-name = "It's a good offer"
+name = "EVT_91581_OPTIONA"
 ai_chance = 50
 command = { type = guarantee which = GER where = ITA }
 command = { type = trigger which = 91584 }
 }
 action_b = {
-name = "We have enough troubles without them"
+name = "EVT_91581_OPTIONB"
 ai_chance = 50
 command = { type = end_guarantee which = GER where = ITA }
 command = { type = trigger which = 91585 }
@@ -2350,18 +2350,18 @@ random = no
 country = AUS
 style = 2
 
-name = "The Italian Federation seeks our protection"
-desc = "The Italian Federation seeks our protection: they will grant us military access, but if they are attacked we should help them."
+name = "EVT_91582_NAME"
+desc = "EVT_91582_DESC"
 picture = "foreign_policy"
 
 action_a = {
-name = "It's a good offer"
+name = "EVT_91582_OPTIONA"
 ai_chance = 70
 command = { type = guarantee which = AUS where = ITA }
 command = { type = trigger which = 91586 }
 }
 action_b = {
-name = "We have enough troubles without them"
+name = "EVT_91582_OPTIONB"
 ai_chance = 30
 command = { type = end_guarantee which = AUS where = ITA }
 command = { type = trigger which = 91587 }
@@ -2375,18 +2375,18 @@ random = no
 country = CAN
 style = 2
 
-name = "The Italian Federation seeks our protection"
-desc = "The Italian Federation seeks our protection: they will grant us military access, but if they are attacked we should help them."
+name = "EVT_91583_NAME"
+desc = "EVT_91583_DESC"
 picture = "foreign_policy"
 
 action_a = {
-name = "It's a good offer"
+name = "EVT_91583_OPTIONA"
 ai_chance = 30
 command = { type = guarantee which = CAN where = ITA }
 command = { type = trigger which = 91588 }
 }
 action_b = {
-name = "We have enough troubles without them"
+name = "EVT_91583_OPTIONB"
 ai_chance = 70
 command = { type = end_guarantee which = CAN where = ITA }
 command = { type = trigger which = 91589 }
@@ -2399,12 +2399,12 @@ random = no
 country = ITA
 style = 2
 
-name = "Germany accepted our offer!"
-desc = "Germany accepted our offer: we will grant them military access and they will help us if under attack."
+name = "EVT_91584_NAME"
+desc = "EVT_91584_DESC"
 picture = "foreign_policy"
 
 action_a = {
-name = "Great!"
+name = "EVT_91584_OPTIONA"
 command = { type = access which = GER }
 command = { type = dissent value = -1 }
 command = { type = setflag which = IF_GER_PRO }
@@ -2417,12 +2417,12 @@ random = no
 country = ITA
 style = 2
 
-name = "Germany rejected our offer!"
-desc = "Germany rejected our offer, we stand on our own."
+name = "EVT_91585_NAME"
+desc = "EVT_91585_DESC"
 picture = "foreign_policy"
 
 action_a = {
-name = "Oh, no!"
+name = "EVT_91585_OPTIONA"
 command = { type = dissent value = 1 }
 }
 }
@@ -2433,12 +2433,12 @@ random = no
 country = ITA
 style = 2
 
-name = "Austria accepted our offer!"
-desc = "Austria accepted our offer: we will grant them military access and they will help us if under attack."
+name = "EVT_91586_NAME"
+desc = "EVT_91586_DESC"
 picture = "foreign_policy"
 
 action_a = {
-name = "Great!"
+name = "EVT_91586_OPTIONA"
 command = { type = access which = AUS }
 command = { type = dissent value = -1 }
 command = { type = setflag which = IF_AUS_PRO }
@@ -2451,12 +2451,12 @@ random = no
 country = ITA
 style = 2
 
-name = "Austria rejected our offer!"
-desc = "Austria rejected our offer, we stand on our own."
+name = "EVT_91587_NAME"
+desc = "EVT_91587_DESC"
 picture = "foreign_policy"
 
 action_a = {
-name = "Oh, no!"
+name = "EVT_91587_OPTIONA"
 command = { type = dissent value = 1 }
 }
 }
@@ -2467,12 +2467,12 @@ random = no
 country = ITA
 style = 2
 
-name = "The Entente accepted our offer!"
-desc = "The Entente accepted our offer: we will grant them military access and they will help us if under attack."
+name = "EVT_91588_NAME"
+desc = "EVT_91588_DESC"
 picture = "foreign_policy"
 
 action_a = {
-name = "Great!"
+name = "EVT_91588_OPTIONA"
 command = { type = access which = CAN }
 command = { type = dissent value = -1 }
 command = { type = setflag which = IF_CAN_PRO }
@@ -2485,12 +2485,12 @@ random = no
 country = ITA
 style = 2
 
-name = "The Entente rejected our offer!"
-desc = "The Entente rejected our offer, we stand on our own."
+name = "EVT_91589_NAME"
+desc = "EVT_91589_DESC"
 picture = "foreign_policy"
 
 action_a = {
-name = "Oh, no!"
+name = "EVT_91589_OPTIONA"
 command = { type = dissent value = 1 }
 }
 }
@@ -2525,8 +2525,8 @@ alliance = { country = ITA country = POR }
 }
 
 
-name = "The Italian Federation is under attack"
-desc = "The Italian Federation is under attack: should we honor our promise and help them? Or maybe it is not worth the trouble?"
+name = "EVT_91590_NAME"
+desc = "EVT_91590_DESC"
 picture = "foreign_policy"
 
 date = { day = 1 month = january year = 1936 }
@@ -2534,13 +2534,13 @@ offset = 2
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "We are men of honor!"
+name = "EVT_91590_OPTIONA"
 ai_chance = 90
 command = { type = alliance which = ITA }
 command = { type = trigger which = 91593 }
 }
 action_b = {
-name = "Who cares about them?"
+name = "EVT_91590_OPTIONB"
 ai_chance = 10
 command = { type = end_guarantee which = GER where = ITA }
 command = { type = dissent value = 1 }
@@ -2579,8 +2579,8 @@ alliance = { country = ITA country = POR }
 }
 
 
-name = "The Italian Federation is under attack"
-desc = "The Italian Federation is under attack: should we honor our promise and help them? Or maybe it is not worth the trouble?"
+name = "EVT_91591_NAME"
+desc = "EVT_91591_DESC"
 picture = "foreign_policy"
 
 date = { day = 1 month = january year = 1936 }
@@ -2588,13 +2588,13 @@ offset = 2
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "We are men of honor!"
+name = "EVT_91591_OPTIONA"
 ai_chance = 90
 command = { type = alliance which = ITA }
 command = { type = trigger which = 91595 }
 }
 action_b = {
-name = "Who cares about them?"
+name = "EVT_91591_OPTIONB"
 ai_chance = 10
 command = { type = end_guarantee which = AUS where = ITA }
 command = { type = dissent value = 1 }
@@ -2632,8 +2632,8 @@ alliance = { country = ITA country = POR }
 }
 
 
-name = "The Italian Federation is under attack"
-desc = "The Italian Federation is under attack: should we honor our promise and help them? Or maybe it is not worth the trouble?"
+name = "EVT_91592_NAME"
+desc = "EVT_91592_DESC"
 picture = "foreign_policy"
 
 date = { day = 1 month = january year = 1936 }
@@ -2641,13 +2641,13 @@ offset = 2
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "We are men of honor!"
+name = "EVT_91592_OPTIONA"
 ai_chance = 90
 command = { type = alliance which = ITA }
 command = { type = trigger which = 91597 }
 }
 action_b = {
-name = "Who cares about them?"
+name = "EVT_91592_OPTIONB"
 ai_chance = 10
 command = { type = end_guarantee which = CAN where = ITA }
 command = { type = dissent value = 1 }
@@ -2661,12 +2661,12 @@ random = no
 country = ITA
 style = 2
 
-name = "Germany kept their promise!"
-desc = "Germany kept their promise: we are now part of their alliance!"
+name = "EVT_91593_NAME"
+desc = "EVT_91593_DESC"
 picture = "foreign_policy"
 
 action_a = {
-name = "Great!"
+name = "EVT_91593_OPTIONA"
 command = { type = dissent value = -2 }
 command = { type = clrflag which = IF_GER_PRO }
 }
@@ -2678,12 +2678,12 @@ random = no
 country = ITA
 style = 2
 
-name = "Germany betrayed us!"
-desc = "Germany betrayed us: their lies deceived us, they will not join our fight against our enemy!"
+name = "EVT_91594_NAME"
+desc = "EVT_91594_DESC"
 picture = "foreign_policy"
 
 action_a = {
-name = "Oh, no!"
+name = "EVT_91594_OPTIONA"
 command = { type = end_access which = GER }
 command = { type = dissent value = 2 }
 command = { type = clrflag which = IF_GER_PRO }
@@ -2696,12 +2696,12 @@ random = no
 country = ITA
 style = 2
 
-name = "Austria kept their promise!"
-desc = "Austria kept their promise: we are now part of their alliance!"
+name = "EVT_91595_NAME"
+desc = "EVT_91595_DESC"
 picture = "foreign_policy"
 
 action_a = {
-name = "Great!"
+name = "EVT_91595_OPTIONA"
 command = { type = dissent value = -2 }
 command = { type = clrflag which = IF_AUS_PRO }
 }
@@ -2713,13 +2713,13 @@ random = no
 country = ITA
 style = 2
 
-name = "Austria betrayed us!"
-desc = "Austria rejected our offer, we stand on our own."
+name = "EVT_91596_NAME"
+desc = "EVT_91596_DESC"
 picture = "foreign_policy"
 
 
 action_a = {
-name = "Oh, no!"
+name = "EVT_91596_OPTIONA"
 command = { type = end_access which = AUS }
 command = { type = dissent value = 2 }
 command = { type = clrflag which = IF_AUS_PRO }
@@ -2732,12 +2732,12 @@ random = no
 country = ITA
 style = 2
 
-name = "The Entente kept their promise!"
-desc = "The Entente kept their promise: we are now part of their alliance!"
+name = "EVT_91597_NAME"
+desc = "EVT_91597_DESC"
 picture = "foreign_policy"
 
 action_a = {
-name = "Great!"
+name = "EVT_91597_OPTIONA"
 command = { type = dissent value = -2 }
 command = { type = clrflag which = IF_CAN_PRO }
 }
@@ -2749,13 +2749,13 @@ random = no
 country = ITA
 style = 2
 
-name = "The Entente betrayed us!"
-desc = "The Entente betrayed us: their lies deceived us, they will not join our fight against our enemy!"
+name = "EVT_91598_NAME"
+desc = "EVT_91598_DESC"
 picture = "foreign_policy"
 
 
 action_a = {
-name = "Oh, no!"
+name = "EVT_91598_OPTIONA"
 command = { type = end_access which = CAN }
 command = { type = dissent value = 2 }
 command = { type = clrflag which = IF_CAN_PRO }
@@ -2773,8 +2773,8 @@ flag = IF_IND_AGR
 random = 50
 }
 
-name = "Developing the country"
-desc = "The new government decided to focus on developing the country. There are two possible choices: focusing on industrialization or focusing on agriculture and natural resources."
+name = "EVT_91599_NAME"
+desc = "EVT_91599_DESC"
 picture = "failed_objective"
 
 date = { day = 1 month = january year = 1936 }
@@ -2782,13 +2782,13 @@ offset = 5
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Industrialization!"
+name = "EVT_91599_OPTIONA"
 ai_chance = 50
 command = { type = setflag which = IF_IND_1 }
 command = { type = clrflag which = IF_IND_AGR }
 }
 action_b = {
-name = "Agriculture and natural resources!"
+name = "EVT_91599_OPTIONB"
 ai_chance = 50
 command = { type = setflag which = IF_AGR_1 }
 command = { type = clrflag which = IF_IND_AGR }
@@ -2806,8 +2806,8 @@ flag = IF_IND_1
 random = 15
 }
 
-name = "Industrialization Path"
-desc = "The new government decided to focus on industrialization. The first step consists of building new factories."
+name = "EVT_91600_NAME"
+desc = "EVT_91600_DESC"
 picture = "Industry"
 
 date = { day = 1 month = january year = 1936 }
@@ -2815,7 +2815,7 @@ offset = 15
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Build new factories!"
+name = "EVT_91600_OPTIONA"
 ai_chance = 95
 command = { type = construct which = ic where = 407 value = 1 } #Milan
 command = { type = construct which = ic where = 396 value = 1 } #Genoa
@@ -2827,7 +2827,7 @@ command = { type = clrflag which = IF_IND_1 }
 command = { type = setflag which = IF_IND_2 }
 }
 action_b = {
-name = "It wasn't such a good idea"
+name = "EVT_91600_OPTIONB"
 ai_chance = 5
 command = { type = dissent value = 2 }
 command = { type = clrflag which = IF_IND_1 }
@@ -2848,8 +2848,8 @@ flag = IF_IND_2
 random = 15
 }
 
-name = "Industrialization Path"
-desc = "The new government decided to focus on industrialization. The second step consists of improving the infrastructure of our country."
+name = "EVT_91601_NAME"
+desc = "EVT_91601_DESC"
 picture = "factory"
 
 date = { day = 1 month = january year = 1936 }
@@ -2857,7 +2857,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Improve the infrastructure!"
+name = "EVT_91601_OPTIONA"
 ai_chance = 95
 command = { type = construct which = infrastructure where = 412 value = 20 } #Rome
 command = { type = construct which = infrastructure where = 414 value = 20 } #Florence
@@ -2875,7 +2875,7 @@ command = { type = clrflag which = IF_IND_2 }
 command = { type = setflag which = IF_IND_3 }
 }
 action_b = {
-name = "It wasn't such a good idea"
+name = "EVT_91601_OPTIONB"
 ai_chance = 5
 command = { type = dissent value = 2 }
 command = { type = clrflag which = IF_IND_2 }
@@ -2893,8 +2893,8 @@ flag = IF_IND_3
 random = 15
 }
 
-name = "Industrialization Path"
-desc = "The new government decided to focus on industrialization. The third and last step consists of building more factories."
+name = "EVT_91602_NAME"
+desc = "EVT_91602_DESC"
 picture = "Industry2"
 
 date = { day = 1 month = january year = 1936 }
@@ -2903,7 +2903,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 
 action_a = {
-name = "Build more factories!"
+name = "EVT_91602_OPTIONA"
 ai_chance = 95
 command = { type = construct which = ic where = 419 value = 1 } #Rome
 command = { type = construct which = ic where = 410 value = 1 } #Florence
@@ -2914,7 +2914,7 @@ command = { type = dissent value = -1 }
 command = { type = clrflag which = IF_IND_3 }
 }
 action_b = {
-name = "It wasn't such a good idea"
+name = "EVT_91602_OPTIONB"
 ai_chance = 5
 command = { type = dissent value = 2 }
 command = { type = clrflag which = IF_IND_3 }
@@ -2932,8 +2932,8 @@ flag = IF_AGR_1
 random = 15
 }
 
-name = "Agriculture and natural resources"
-desc = "The new government decided to focus on agriculture and natural resources. The first step consists of improving our agriculture."
+name = "EVT_91603_NAME"
+desc = "EVT_91603_DESC"
 picture = "agriculture1"
 
 date = { day = 1 month = january year = 1936 }
@@ -2941,7 +2941,7 @@ offset = 15
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Improve our agriculture!"
+name = "EVT_91603_OPTIONA"
 ai_chance = 95
 command = { type = gain_tech which = 5030 } #Agrichemistry
 command = { type = gain_tech which = 5040 } #Agricultural Production
@@ -2951,7 +2951,7 @@ command = { type = clrflag which = IF_AGR_1 }
 command = { type = setflag which = IF_AGR_2 }
 }
 action_b = {
-name = "It wasn't such a good idea"
+name = "EVT_91603_OPTIONB"
 ai_chance = 5
 command = { type = dissent value = 2 }
 command = { type = clrflag which = IF_AGR_1 }
@@ -2970,8 +2970,8 @@ flag = IF_AGR_2
 random = 15
 }
 
-name = "Agriculture and natural resources"
-desc = "The new government decided to focus on agriculture and natural resources. The second step consists of building new dams and new mines, to increase our supply of energy, metal and, rare materials."
+name = "EVT_91604_NAME"
+desc = "EVT_91604_DESC"
 picture = "mining"
 
 date = { day = 1 month = january year = 1936 }
@@ -2979,7 +2979,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Improve our natural resources!"
+name = "EVT_91604_OPTIONA"
 ai_chance = 95
 command = { type = add_prov_resource which = 396 value = 6 where = energy } #Milan
 command = { type = add_prov_resource which = 434 value = 3 where = metal } #Sardinia
@@ -2991,7 +2991,7 @@ command = { type = clrflag which = IF_AGR_2 }
 command = { type = setflag which = IF_AGR_3 }
 }
 action_b = {
-name = "It wasn't such a good idea"
+name = "EVT_91604_OPTIONB"
 ai_chance = 5
 command = { type = dissent value = 2 }
 command = { type = clrflag which = IF_AGR_2 }
@@ -3010,8 +3010,8 @@ random = 15
 }
 
 
-name = "Agriculture and natural resources"
-desc = "The new government decided to focus on agriculture and natural resources. The third and last step consists of building more dams and mines, to further increase our supply of energy, metal, and rare materials."
+name = "EVT_91605_NAME"
+desc = "EVT_91605_DESC"
 picture = "agriculture2"
 
 date = { day = 1 month = january year = 1936 }
@@ -3020,7 +3020,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 
 action_a = {
-name = "Improve our natural resources!"
+name = "EVT_91605_OPTIONA"
 ai_chance = 95
 command = { type = add_prov_resource which = 398 value = 6 where = energy } #Turin
 command = { type = add_prov_resource which = 411 value = 3 where = metal } #Bologna
@@ -3031,7 +3031,7 @@ command = { type = dissent value = -1 }
 command = { type = clrflag which = IF_AGR_3 }
 }
 action_b = {
-name = "It wasn't such a good idea"
+name = "EVT_91605_OPTIONB"
 ai_chance = 5
 command = { type = dissent value = 2 }
 command = { type = clrflag which = IF_AGR_3 }
@@ -3047,8 +3047,8 @@ trigger = {
 owned = { province = 400 data = ITA } #Venice
 }
 
-name = "Venice is under our control!"
-desc = "Venice is now under our control and every Italian patriot is celebrating the return of our core provinces to the motherland!"
+name = "EVT_91606_NAME"
+desc = "EVT_91606_DESC"
 picture = "Kaiserreich_RSI_Venice"
 
 date = { day = 1 month = january year = 1936 }
@@ -3056,7 +3056,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Great!"
+name = "EVT_91606_OPTIONA"
 command = { type = addcore which = 400 } #Venice
 command = { type = addcore which = 394 }
 command = { type = addcore which = 405 }
@@ -3074,8 +3074,8 @@ trigger = {
 owned = { province = 401 data = ITA } #Trento
 }
 
-name = "Trento is under our control!"
-desc = "Trento is now under our control and every Italian patriot is celebrating the return of our core provinces to the motherland!"
+name = "EVT_91607_NAME"
+desc = "EVT_91607_DESC"
 picture = "Kaiserreich_RSI_Trento"
 
 date = { day = 1 month = january year = 1936 }
@@ -3083,7 +3083,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Great!"
+name = "EVT_91607_OPTIONA"
 command = { type = addcore which = 401 } #Trento
 command = { type = addcore which = 402 }
 command = { type = dissent value = -1 }
@@ -3108,8 +3108,8 @@ ideology = social_liberal
 }
 }
 
-name = "Revolution"
-desc = "The internal dissent has grown too far, the people are revolting against our government, asking for democracy and free elections! What should we do? Should we suffocate the revolution with their blood or should we listen to their demands?"
+name = "EVT_91608_NAME"
+desc = "EVT_91608_DESC"
 picture = "Riot2"
 
 date = { day = 1  month = january year = 1936 }
@@ -3118,7 +3118,7 @@ deathdate = { day = 29 month = december year = 1967 }
 
 action_a = {
 ai_chance = 10
-name = "Kill all those who oppose the government!"
+name = "EVT_91608_OPTIONA"
 command = { type = domestic which = freedom value = -3 }
 command = { type = domestic which = democratic value = -1 }
 command = { type = manpowerpool value = -100 }
@@ -3126,7 +3126,7 @@ command = { type = dissent value = 15 }
 }
 action_b = {
 ai_chance = 90
-name = "Ok, democracy and free elections!"
+name = "EVT_91608_OPTIONB"
 command = { type = leave_alliance }
 command = { type = domestic which = freedom value = 3 }
 command = { type = set_domestic which = democratic value = 8 }
@@ -3160,8 +3160,8 @@ event = 3968553 #A King for Italy?
 }
 }
 
-name = "Democratic Elections"
-desc = "Since we now are a democratic country, it is time for free elections! There are four parties at the election: the Italian Popular Party (Partito Popolare Italiano) led by De Gasperi and Gronchi, the Liberal Party (Partito Liberale) lead by Bonomi and Ruini, the Democratic Party (Partito Democratico) led by Orlando and Parri and the Italian Socialist Party (Partito Socialista Italiano) led by Secchia and Vassalli. Who will win the elections?"
+name = "EVT_91609_NAME"
+desc = "EVT_91609_DESC"
 picture = "election"
 
 date = { day = 1  month = january year = 1936 }
@@ -3170,7 +3170,7 @@ deathdate = { day = 29 month = december year = 1967 }
 
 action_a = {
 ai_chance = 20
-name = "The Italian Popular Party (Social-Conservative)!"
+name = "EVT_91609_OPTIONA"
 command = { type = dissent value = -2 }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 2 }
@@ -3188,7 +3188,7 @@ command = { type = setflag which = ITA_REV_SC }
 }
 action_b = {
 ai_chance = 40
-name = "The Liberal Party (Social-Liberal)!"
+name = "EVT_91609_OPTIONB"
 command = { type = dissent value = -2 }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 6 }
@@ -3206,7 +3206,7 @@ command = { type = setflag which = ITA_REV_SL }
 }
 action_c = {
 ai_chance = 30
-name = "The Democratic Party (Social-Democrat)!"
+name = "EVT_91609_OPTIONC"
 command = { type = dissent value = -2 }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 9 }
@@ -3224,7 +3224,7 @@ command = { type = setflag which = ITA_REV_SD }
 }
 action_d = {
 ai_chance = 10
-name = "The Italian Socialist Party (Radical Socialist)!"
+name = "EVT_91609_OPTIOND"
 command = { type = dissent value = -2 }
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 9 }
@@ -3306,8 +3306,8 @@ event = 3968504
 }
 }
 
-name = "The Death of Pius XII"
-desc = "Earlier today His Holiness Pope Pius XII was killed by a deranged individual, who claimed that the end of the world was drawing near before shooting and fatally wounding the Pope and being subsequently killed by the Swiss Guard. The Holy Father will soon rest among his predecessors in the Tomb of the Popes."
+name = "EVT_3968500_NAME"
+desc = "EVT_3968500_DESC"
 picture = "PiusXII"
 
 date = { day = 1 month = january year = 1948 }
@@ -3315,7 +3315,7 @@ offset = 30
 deathdate = { day = 29 month = september year = 1964 }
 
 action_a = {
-name = "All Christendom Mourns the death of the His Holiness"
+name = "EVT_3968500_OPTIONA"
 command = { type = headofstate which = 3256 } #The College of Cardinals
 command = { type = headofgovernment which = 3502 } #Don Luigi Sturzo
 command = { type = sleepminister which = 3234 } #Pius XII
@@ -3344,8 +3344,8 @@ event = 3968504
 }
 }
 
-name = "The Death of John XXIII"
-desc = "Earlier today His Holiness Pope John XXIII was killed by a deranged individual, who claimed that the end of the world was drawing near before shooting and fatally wounding the Pope and being subsequently killed by the Swiss Guard. The Holy Father will soon rest among his predecessors in the Tomb of the Popes."
+name = "EVT_3968501_NAME"
+desc = "EVT_3968501_DESC"
 picture = "Kaiserreich_ITA_John_XXIII"
 
 date = { day = 1 month = january year = 1948 }
@@ -3353,7 +3353,7 @@ offset = 30
 deathdate = { day = 29 month = september year = 1964 }
 
 action_a = {
-name = "All Christendom Mourns the death of the His Holiness"
+name = "EVT_3968501_OPTIONA"
 command = { type = headofstate which = 3256 } #The College of Cardinals
 command = { type = headofgovernment which = 3502 } #Don Luigi Sturzo
 command = { type = sleepminister which = 3249 } #John XXIII (Liènart)
@@ -3389,15 +3389,15 @@ event = 3968504
 }
 }
 
-name = "The Death of Stephen X"
-desc = "Earlier today His Holiness Pope Stephen X was killed by a deranged individual, who claimed that the end of the world was drawing near before shooting and fatally wounding the Pope and being subsequently killed by the Swiss Guard. The Holy Father will soon rest among his predecessors in the Tomb of the Popes."
+name = "EVT_3968502_NAME"
+desc = "EVT_3968502_DESC"
 
 date = { day = 1 month = january year = 1948 }
 offset = 30
 deathdate = { day = 29 month = september year = 1964 }
 
 action_a = {
-name = "All Christendom Mourns the death of the His Holiness"
+name = "EVT_3968502_OPTIONA"
 command = { trigger = { headofstate = 3285 } type = local_setflag which = ITA_STEPHENX_HOS }
 command = { type = headofgovernment which = 3258 } #The College of Cardinals
 command = { type = sleepminister which = 3245} #Stephen X
@@ -3422,15 +3422,15 @@ event = 3968504
 }
 }
 
-name = "The Death of Julius IV"
-desc = "Earlier today His Holiness Pope Julius IV was killed by a deranged individual, who claimed that the end of the world was drawing near before shooting and fatally wounding the Pope and being subsequently killed by the Swiss Guard. The Holy Father will soon rest among his predecessors in the Tomb of the Popes."
+name = "EVT_3968503_NAME"
+desc = "EVT_3968503_DESC"
 
 date = { day = 1 month = january year = 1948 }
 offset = 30
 deathdate = { day = 29 month = september year = 1964 }
 
 action_a = {
-name = "All Christendom Mourns the death of the His Holiness"
+name = "EVT_3968503_OPTIONA"
 command = { type = headofstate which = 3256 } #The College of Cardinals
 command = { type = headofgovernment which = 3502 } #Don Luigi Sturzo
 command = { type = sleepminister which = 3251 } #Julius IV
@@ -3459,15 +3459,15 @@ event = 3968503
 }
 }
 
-name = "The Death of Julius IV"
-desc = "Earlier today His Holiness Pope Julius IV was killed by a deranged individual, who claimed that the end of the world was drawing near before shooting and fatally wounding the Pope and being subsequently killed by the Swiss Guard. The Holy Father will soon rest among his predecessors in the Tomb of the Popes."
+name = "EVT_3968504_NAME"
+desc = "EVT_3968504_DESC"
 
 date = { day = 1 month = january year = 1948 }
 offset = 30
 deathdate = { day = 29 month = september year = 1964 }
 
 action_a = {
-name = "All Christendom Mourns the death of the His Holiness"
+name = "EVT_3968504_OPTIONA"
 command = { type = headofgovernment which = 3258 } #The College of Cardinals
 command = { type = sleepminister which = 3251 } #Julius IV
 command = { type = sleepminister which = 3252 } #Julius IV
@@ -3487,8 +3487,8 @@ random= 50
 event = 3968500 #Pius XII dead
 }
 
-name = "The Papal Conclave"
-desc = "For the fifth time in this century, the College of the Cardinals convened to elect the new head of the Holy Roman Catholic Church. The candidates are..."
+name = "EVT_3968505_NAME"
+desc = "EVT_3968505_DESC"
 picture = "whitesmoke"
 
 date = { day = 1 month = january year = 1948 }
@@ -3497,7 +3497,7 @@ deathdate = { day = 29 month = december year = 1964 }
 
 action_a = {
 ai_chance =  30
-name = "Alfredo Ottaviani (Gregorius XVII)"
+name = "EVT_3968505_OPTIONA"
 command = { type = set_domestic which = democratic value = 2 }
 command = { type = set_domestic which = political_left value = 3 }
 command = { type = headofstate which = 3259 } #Gregorius XVII
@@ -3509,7 +3509,7 @@ command = { type = ministerofintelligence which = 3283 } #Antonio Cardinal Bacci
 }
 action_b = {
 ai_chance =  40
-name = "Angelo Giuseppe Roncalli (John XXIII)"
+name = "EVT_3968505_OPTIONB"
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 7}
 command = { type = headofstate which = 3263 } #John XXIII
@@ -3521,7 +3521,7 @@ command = { type = ministerofintelligence which = 3231 } #Giovanni Cardinal Mont
 }
 action_c = {
 ai_chance =  30
-name = "Giovanni Battista Montini (Paulus VI)"
+name = "EVT_3968505_OPTIONC"
 command = { type = set_domestic which = democratic value = 4 }
 command = { type = set_domestic which = political_left value = 4 }
 command = { type = headofstate which = 3261 } #Paulus VI
@@ -3545,8 +3545,8 @@ random= 50
 event = 3968501 #John XXIII dead
 }
 
-name = "The Papal Conclave"
-desc = "For the fifth time in this century, the College of the Cardinals convened to elect the new head of the Holy Roman Catholic Church. The candidates are..."
+name = "EVT_3968506_NAME"
+desc = "EVT_3968506_DESC"
 picture = "whitesmoke"
 
 date = { day = 1 month = january year = 1948 }
@@ -3556,7 +3556,7 @@ deathdate = { day = 29 month = december year = 1964 }
 
 action_a = {
 ai_chance =  20
-name = "Eugenio Pacelli (Pius XII)"
+name = "EVT_3968506_OPTIONA"
 command = { type = set_domestic which = democratic value = 3 }
 command = { type = set_domestic which = political_left value = 4 }
 command = { type = headofstate which = 3234} #Pius XII (Eugenio Pacelli)
@@ -3568,7 +3568,7 @@ command = { type = ministerofintelligence which = 3506 } #Don Luigi Sturzo
 }
 action_b = {
 ai_chance =  25
-name = "Alfredo Ottaviani (Gregorius XVII)"
+name = "EVT_3968506_OPTIONB"
 command = { type = set_domestic which = democratic value = 2 }
 command = { type = set_domestic which = political_left value = 3 }
 command = { type = headofstate which = 3259 } #Gregorius XVII
@@ -3580,7 +3580,7 @@ command = { type = ministerofintelligence which = 3283 } #Antonio Cardinal Bacci
 }
 action_c = {
 ai_chance =  30
-name = "Angelo Giuseppe Roncalli (John XXIV)"
+name = "EVT_3968506_OPTIONC"
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 7 }
 command = { type = headofstate which = 3265 } #John XXIV
@@ -3592,7 +3592,7 @@ command = { type = ministerofintelligence which = 3231 } #Giovanni Cardinal Mont
 }
 action_d = {
 ai_chance =  25
-name = "Giovanni Battista Montini (Paulus VI)"
+name = "EVT_3968506_OPTIOND"
 command = { type = set_domestic which = democratic value = 4 }
 command = { type = set_domestic which = political_left value = 4 }
 command = { type = headofstate which = 3261 } #Paulus VI
@@ -3622,8 +3622,8 @@ local_flag = ITA_STEPHENX_HOS
 }
 }
 
-name = "The Papal Conclave"
-desc = "For the fifth time in this century, the College of the Cardinals convened to elect the new head of the Holy Roman Catholic Church. The candidates are..."
+name = "EVT_3968507_NAME"
+desc = "EVT_3968507_DESC"
 picture = "whitesmoke"
 
 date = { day = 1 month = january year = 1948 }
@@ -3632,7 +3632,7 @@ deathdate = { day = 29 month = december year = 1964 }
 
 action_a = {
 ai_chance =  20
-name = "Eugenio Pacelli (Pius XII)"
+name = "EVT_3968507_OPTIONA"
 command = { type = set_domestic which = democratic value = 3 }
 command = { type = set_domestic which = political_left value = 4 }
 command = { type = headofstate which = 3234} #Pius XII (Eugenio Pacelli)
@@ -3645,7 +3645,7 @@ command = { trigger = { local_flag = ITA_STEPHENX_HOS } type = local_clrflag whi
 }
 action_b = {
 ai_chance =  25
-name = "Alfredo Ottaviani (Gregorius XVII)"
+name = "EVT_3968507_OPTIONB"
 command = { type = set_domestic which = democratic value = 2 }
 command = { type = set_domestic which = political_left value = 3 }
 command = { type = headofstate which = 3259 } #Gregorius XVII
@@ -3658,7 +3658,7 @@ command = { trigger = { local_flag = ITA_STEPHENX_HOS } type = local_clrflag whi
 }
 action_c = {
 ai_chance =  30
-name = "Angelo Giuseppe Roncalli (John XXIII)"
+name = "EVT_3968507_OPTIONC"
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 7 }
 command = { type = headofstate which = 3263 } #John XXIII
@@ -3671,7 +3671,7 @@ command = { trigger = { local_flag = ITA_STEPHENX_HOS } type = local_clrflag whi
 }
 action_d = {
 ai_chance =  25
-name = "Giovanni Battista Montini (Paulus VI)"
+name = "EVT_3968507_OPTIOND"
 command = { type = set_domestic which = democratic value = 4 }
 command = { type = set_domestic which = political_left value = 4 }
 command = { type = headofstate which = 3261 } #Paulus VI
@@ -3702,8 +3702,8 @@ event = 3968504 #Julius IV solo HoG dead
 }
 }
 
-name = "The Papal Conclave"
-desc = "For the fifth time in this century, the College of the Cardinals convened to elect the new head of the Holy Roman Catholic Church. The candidates are..."
+name = "EVT_3968508_NAME"
+desc = "EVT_3968508_DESC"
 picture = "whitesmoke"
 
 date = { day = 1 month = january year = 1948 }
@@ -3713,7 +3713,7 @@ deathdate = { day = 29 month = december year = 1964 }
 #no slider changes as the Pope is HoG and not HoS
 action_a = {
 ai_chance =  20
-name = "Eugenio Pacelli (Pius XII)"
+name = "EVT_3968508_OPTIONA"
 command = { type = headofgovernment which = 3236 } #Pius XII
 command = { type = foreignminister which = 3271 } #Augusto Cardinal da Silva
 command = { type = armamentminister which = 3272 } #Adeodato Cardinal Piazza
@@ -3722,7 +3722,7 @@ command = { type = ministerofintelligence which = 3506 } #Don Luigi Sturzo
 }
 action_b = {
 ai_chance =  25
-name = "Alfredo Ottaviani (Gregorius XVII)"
+name = "EVT_3968508_OPTIONB"
 command = { type = headofgovernment which = 3260 } #Gregorius XVII
 command = { type = foreignminister which = 3280 } #Marcel Cardinal Lefebvre
 command = { type = armamentminister which = 3281 } #Antonio Cardinal Bacci
@@ -3731,7 +3731,7 @@ command = { type = ministerofintelligence which = 3284 } #Giuseppe Cardinal Siri
 }
 action_c = {
 ai_chance =  30
-name = "Angelo Giuseppe Roncalli (John XXIV)"
+name = "EVT_3968508_OPTIONC"
 command = { type = headofgovernment which = 3264 } #John XXIII
 command = { type = foreignminister which = 3274 } #Monsignor Angelo dell'Acqua
 command = { type = armamentminister which = 3275 } #Giacomo Cardinal Lercaro
@@ -3740,7 +3740,7 @@ command = { type = ministerofintelligence which = 3231 } #Giovanni Cardinal Mont
 }
 action_d = {
 ai_chance =  25
-name = "Giovanni Battista Montini (Paulus VI)"
+name = "EVT_3968508_OPTIOND"
 command = { type = headofgovernment which = 3262 } #Paulus VI
 command = { type = foreignminister which =  3277 } #Alfredo Ildefonso Cardinal Schuster
 command = { type = armamentminister which = 3275 } #Giacomo Cardinal Lercaro
@@ -3755,14 +3755,14 @@ random = no
 country = ITA
 style = 2
 
-name = "One of our cardinals has died"
-desc = "Donato Raffaele Sbarretti Tazza, an influential cardinal of the Holy Roman Catholic Church and a minister of the Italian Federation, died today. According to his will, he will be buried in the parish church of Montefranco, where he had been born."
+name = "EVT_3968509_NAME"
+desc = "EVT_3968509_DESC"
 picture = "minister_died"
 
 date = { day = 1 month = april year = 1939 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968509_OPTIONA"
 command = { type = sleepminister which = 3229 } #Donato Cardinal Sbarretti
 }
 }
@@ -3773,14 +3773,14 @@ random = no
 country = ITA
 style = 2
 
-name = "One of our cardinals has died"
-desc = "Lorenzo Lauri, an influential cardinal of the Holy Roman Catholic Church and a minister of the Italian Federation, died today, a week before his 77th birthday."
+name = "EVT_3968510_NAME"
+desc = "EVT_3968510_DESC"
 picture = "minister_died"
 
 date = { day = 7 month = october year = 1941 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968510_OPTIONA"
 command = { type = sleepminister which = 3240 } #Lorenzo Cardinal Lauri
 }
 }
@@ -3791,14 +3791,14 @@ random = no
 country = ITA
 style = 2
 
-name = "One of our ministers has died"
-desc = "One of our ministers, Count Bernardo Attolico, died today."
+name = "EVT_3968511_NAME"
+desc = "EVT_3968511_DESC"
 picture = "minister_died"
 
 date = { day = 6 month = february year = 1942 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968511_OPTIONA"
 command = { type = sleepminister which = 3523 } #Bernardo Attolico
 }
 }
@@ -3809,14 +3809,14 @@ random = no
 country = ITA
 style = 2
 
-name = "One of our ministers has died"
-desc = "One of our ministers, Pier Federico Martinetti, died today from pneumonia."
+name = "EVT_3968512_NAME"
+desc = "EVT_3968512_DESC"
 picture = "minister_died"
 
 date = { day = 22 month = march year = 1943 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968512_OPTIONA"
 command = { type = sleepminister which = 3513 } #Pier Federico Martinetti
 }
 }
@@ -3827,14 +3827,14 @@ random = no
 country = ITA
 style = 2
 
-name = "One of our ministers has died"
-desc = "One of our ministers, Marcello Soleri, died today."
+name = "EVT_3968513_NAME"
+desc = "EVT_3968513_DESC"
 picture = "minister_died"
 
 date = { day = 22 month = july year = 1945 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968513_OPTIONA"
 command = { type = sleepminister which = 3403 } #Marcello Soleri
 command = { type = sleepminister which = 3407 } #Marcello Soleri
 }
@@ -3846,14 +3846,14 @@ random = no
 country = ITA
 style = 2
 
-name = "One of our cardinals has died"
-desc = "Luigi Maglione, an influential cardinal of the Holy Roman Catholic Church and a minister of the Italian Federation, died today from neuritis and circulatory ailments."
+name = "EVT_3968514_NAME"
+desc = "EVT_3968514_DESC"
 picture = "minister_died"
 
 date = { day = 21 month = august year = 1944 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968514_OPTIONA"
 command = { type = sleepminister which = 3235} #Luigi Cardinal Maglione
 command = { type = sleepminister which = 3237} #Luigi Cardinal Maglione
 }
@@ -3865,14 +3865,14 @@ random = no
 country = ITA
 style = 2
 
-name = "One of our ministers has died"
-desc = "One of our ministers, Pietro d'Acquarone, died today."
+name = "EVT_3968515_NAME"
+desc = "EVT_3968515_DESC"
 picture = "minister_died"
 
 date = { day = 12 month = february year = 1948 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968515_OPTIONA"
 command = { type = sleepminister which = 3054 } #Pietro d'Acquarone
 }
 }
@@ -3891,14 +3891,14 @@ event = 3968517 #osef von Österreich-Toskana NOT HoS
 }
 }
 
-name = "The King of Italy has died" #(Josef von Österreich-Toskana HoS)
-desc = "Today the King of Italy, Josef I, succumbed to the illness that has been damaging his health since 1942. The best Italian and Austrian doctors were able to alleviate the symptoms of the disease and probably prolonged his life for many years, but today, at the age of 77, the old king lost his final battle. The new King of Italy will be his nephew Gottfried, the eldest son of his younger brother Peter Ferdinand who died last year."
+name = "EVT_3968516_NAME" #(Josef von Österreich-Toskana HoS)
+desc = "EVT_3968516_DESC"
 picture = "minister_died"
 
 date = { day = 10 month = june year = 1949 }
 
 action_a = {
-name = "Long live the new King!"
+name = "EVT_3968516_OPTIONA"
 command = { type = headofstate which = 3267 } #Gottfried von Österreich-Toskana
 command = { type = sleepminister which = 3221 } #Josef von Österreich-Toskana
 command = { type = sleepminister which = 3223 } #Josef von Österreich-Toskana
@@ -3921,14 +3921,14 @@ event = 3968516 #osef von Österreich-Toskana  HoS
 }
 }
 
-name = "One of our ministers has died" #Josef von Österreich-Toskana NOT HoS
-desc = "One of our ministers, Josef von Österreich-Toskana, died today. He was the Habsburg claimant to the throne of Italy and has been suffering for a serious illness for many years."
+name = "EVT_3968517_NAME" #Josef von Österreich-Toskana NOT HoS
+desc = "EVT_3968517_DESC"
 picture = "minister_died"
 
 date = { day = 10 month = june year = 1949 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968517_OPTIONA"
 command = { type = sleepminister which = 3221 } #Josef von Österreich-Toskana
 command = { type = sleepminister which = 3223 } #Josef von Österreich-Toskana
 command = { type = sleepminister which = 3224 } #Josef von Österreich-Toskana
@@ -3943,14 +3943,14 @@ random = no
 country = ITA
 style = 2
 
-name = "One of our ministers has died"
-desc = "One of our ministers and also a daring military leader, Francesco Grazioli, died today."
+name = "EVT_3968518_NAME"
+desc = "EVT_3968518_DESC"
 picture = "minister_died"
 
 date = { day = 19 month = february year = 1951 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968518_OPTIONA"
 command = { type = sleepminister which = 3007 } #Francesco Grazioli
 command = { type = sleepleader which = 6085 } #Francesco Grazioli
 }
@@ -3963,14 +3963,14 @@ random = no
 country = ITA
 style = 2
 
-name = "One of our ministers has died"
-desc = "One of our ministers, Ivanoe Bonomi, the leader of the Liberal Party, died today."
+name = "EVT_3968519_NAME"
+desc = "EVT_3968519_DESC"
 picture = "minister_died"
 
 date = { day = 19 month = april year = 1951 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968519_OPTIONA"
 command = { type = sleepminister which = 3301 } #Ivanoe Bonomi
 command = { type = sleepminister which = 3312 } #Ivanoe Bonomi
 command = { type = sleepminister which = 3313 } #Ivanoe Bonomi
@@ -3984,14 +3984,14 @@ random = no
 country = ITA
 style = 2
 
-name = "One of our ministers has died"
-desc = "One of our ministers, Conte Stefano Jacini, a friend of the late Pius XI and once Prime Minister of the Italian Federation, died today."
+name = "EVT_3968520_NAME"
+desc = "EVT_3968520_DESC"
 picture = "minister_died"
 
 date = { day = 29 month = may year = 1951 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968520_OPTIONA"
 command = { type = sleepminister which = 3046 } #Stefano Jacini
 command = { type = sleepminister which = 3098 } #Stefano Jacini
 }
@@ -4003,14 +4003,14 @@ random = no
 country = ITA
 style = 2
 
-name = "One of our ministers has died"
-desc = "One of our ministers, Carlo Sforza, died today."
+name = "EVT_3968521_NAME"
+desc = "EVT_3968521_DESC"
 picture = "minister_died"
 
 date = { day = 3 month = september year = 1952 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968521_OPTIONA"
 command = { type = sleepminister which = 3303 } #Carlo Sforza
 command = { type = sleepminister which = 3306 } #Carlo Sforza
 }
@@ -4022,14 +4022,14 @@ random = no
 country = ITA
 style = 2
 
-name = "One of our ministers has died"
-desc = "One of our ministers, Vittorio Emanuele Orlando, the leader of the the Democratic Party, died today."
+name = "EVT_3968522_NAME"
+desc = "EVT_3968522_DESC"
 picture = "minister_died"
 
 date = { day = 1 month = december year = 1952 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968522_OPTIONA"
 command = { type = sleepminister which = 3401 } #Vittorio Emanuele Orlando
 }
 }
@@ -4040,14 +4040,14 @@ random = no
 country = ITA
 style = 2
 
-name = "One of our ministers has died"
-desc = "One of our ministers, Vito Reale, died today."
+name = "EVT_3968523_NAME"
+desc = "EVT_3968523_DESC"
 picture = "minister_died"
 
 date = { day = 27 month = april year = 1953 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968523_OPTIONA"
 command = { type = sleepminister which = 3515 } #Vito Reale
 }
 }
@@ -4058,14 +4058,14 @@ random = no
 country = ITA
 style = 2
 
-name = "One of our ministers has died"
-desc = "One of our ministers, Alcide de Gasperi, the leader of the Italian Popular Party, died today."
+name = "EVT_3968524_NAME"
+desc = "EVT_3968524_DESC"
 picture = "minister_died"
 
 date = { day = 18 month = april year = 1954 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968524_OPTIONA"
 command = { type = sleepminister which = 3501 } #Alcide de Gasperi
 command = { type = sleepminister which = 3503 } #Alcide de Gasperi
 command = { type = sleepminister which = 3512 } #Alcide de Gasperi
@@ -4078,14 +4078,14 @@ random = no
 country = ITA
 style = 2
 
-name = "One of our ministers has died"
-desc = "One of our ministers and an important military chief, Luigi Gasparotto, died today."
+name = "EVT_3968525_NAME"
+desc = "EVT_3968525_DESC"
 picture = "minister_died"
 
 date = { day = 28 month = june year = 1954 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968525_OPTIONA"
 command = { type = sleepminister which = 3307 } #Luigi Gasparotto
 command = { type = sleepminister which = 3308 } #Luigi Gasparotto
 command = { type = sleepminister which = 3310 } #Luigi Gasparotto
@@ -4098,14 +4098,14 @@ random = no
 country = ITA
 style = 2
 
-name = "One of our ministers has died"
-desc = "One of our ministers, Conte Alessandro Casati, died today."
+name = "EVT_3968526_NAME"
+desc = "EVT_3968526_DESC"
 picture = "minister_died"
 
 date = { day = 3 month = june year = 1955 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968526_OPTIONA"
 command = { type = sleepminister which = 3324 } #Conte Alessandro Casati
 command = { type = sleepminister which = 3334 } #Conte Alessandro Casati
 }
@@ -4126,14 +4126,14 @@ event = 3968504	#The Death of Julius IV
 }
 }
 
-name = "One of our cardinals has died"
-desc = "Theodor Innitzer, an influential cardinal of the Holy Roman Catholic Church and a minister of the Italian Federation, died today."
+name = "EVT_3968527_NAME"
+desc = "EVT_3968527_DESC"
 picture = "minister_died"
 
 date = { day = 8 month = october year = 1955 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968527_OPTIONA"
 command = { type = sleepminister which = 3251 } #Julius IV
 command = { type = sleepminister which = 3252 } #Julius IV
 command = { type = sleepminister which = 3255 } #Innitzer
@@ -4146,14 +4146,14 @@ random = no
 country = ITA
 style = 2
 
-name = "One of our ministers has died"
-desc = "One of our ministers and also a daring military leader, Alberto Pariani, died today."
+name = "EVT_3968528_NAME"
+desc = "EVT_3968528_DESC"
 picture = "minister_died"
 
 date = { day = 19 month = september year = 1955 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968528_OPTIONA"
 command = { type = sleepminister which = 3008 } #Alberto Pariani
 command = { type = sleepminister which = 3065 } #Alberto Pariani
 command = { type = sleepleader which = 6112 } #Alberto Pariani
@@ -4166,14 +4166,14 @@ random = no
 country = ITA
 style = 2
 
-name = "One of our ministers has died"
-desc = "One of our ministers, Ezio Vanoni, died today from an heart attack."
+name = "EVT_3968529_NAME"
+desc = "EVT_3968529_DESC"
 picture = "minister_died"
 
 date = { day = 14 month = february year = 1956 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968529_OPTIONA"
 command = { type = sleepminister which = 3526 } #Ezio Vanoni
 }
 }
@@ -4184,14 +4184,14 @@ random = no
 country = ITA
 style = 2
 
-name = "One of our ministers has died"
-desc = "One of our ministers and also a daring military leader, Pietro Badoglio, died today."
+name = "EVT_3968530_NAME"
+desc = "EVT_3968530_DESC"
 picture = "minister_died"
 
 date = { day = 1 month = november year = 1956 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968530_OPTIONA"
 command = { type = sleepminister which = 3507 } #Pietro Badoglio
 command = { type = sleepleader which = 6013 } #Pietro Badoglio
 }
@@ -4203,14 +4203,14 @@ random = no
 country = ITA
 style = 2
 
-name = "One of our cardinals has died"
-desc = "Pedro Segura y Sáenz, an influential cardinal of the Holy Roman Catholic Church and a minister of the Italian Federation, died today from a kidney ailment in Madrid, at age 76. He will be buried in Cerro del Sagrado Corazón."
+name = "EVT_3968531_NAME"
+desc = "EVT_3968531_DESC"
 picture = "minister_died"
 
 date = { day = 7 month = april year = 1957 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968531_OPTIONA"
 command = { type = sleepminister which = 3253 } #Pedro Segura y Sáenz
 }
 }
@@ -4229,14 +4229,14 @@ event = 3968500	#The Death of Pius XII
 }
 }
 
-name = "One of our cardinals has died"
-desc = "Eugenio Pacelli, an influent cardinal of the Holy Roman Catholic Church and a minister of the Italian Federation, died today of acute heart failure brought on by a sudden myocardial infarction."
+name = "EVT_3968532_NAME"
+desc = "EVT_3968532_DESC"
 picture = "minister_died"
 
 date = { day = 8 month = october year = 1958 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968532_OPTIONA"
 command = { type = sleepminister which = 3234 } #Pius XII
 command = { type = sleepminister which = 3236 } #Pius XII
 command = { type = sleepminister which = 3225 } #Eugenio Pacelli
@@ -4252,14 +4252,14 @@ random = no
 country = ITA
 style = 2
 
-name = "One of our ministers has died"
-desc = "One of our ministers and also a daring military leader, Vittorio Ambrosio, died today."
+name = "EVT_3968533_NAME"
+desc = "EVT_3968533_DESC"
 picture = "minister_died"
 
 date = { day = 18 month = november year = 1958 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968533_OPTIONA"
 command = { type = sleepminister which = 3128 } #Vittorio Ambrosio
 command = { type = sleepminister which = 3143 } #Vittorio Ambrosio
 command = { type = sleepleader which = 6003 } #Vittorio Ambrosio
@@ -4272,14 +4272,14 @@ random = no
 country = ITA
 style = 2
 
-name = "One of our ministers has died"
-desc = "One of our ministers, Elias I di Borbone-Parma, died today."
+name = "EVT_3968534_NAME"
+desc = "EVT_3968534_DESC"
 picture = "minister_died"
 
 date = { day = 29 month = june year = 1959 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968534_OPTIONA"
 command = { type = sleepminister which = 3254 } #Elias I di Borbone-Parma
 }
 }
@@ -4290,14 +4290,14 @@ random = no
 country = ITA
 style = 2
 
-name = "One of our ministers has died"
-desc = "One of our ministers, Don Luigi Sturzo, an influential clerical figure even if not a cardinal, died today."
+name = "EVT_3968535_NAME"
+desc = "EVT_3968535_DESC"
 picture = "minister_died"
 
 date = { day = 7 month = august year = 1959 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968535_OPTIONA"
 command = { type = sleepminister which = 3502 } #Don Luigi Sturzo
 command = { type = sleepminister which = 3506 } #Don Luigi Sturzo
 }
@@ -4309,14 +4309,14 @@ random = no
 country = ITA
 style = 2
 
-name = "One of our cardinals has died"
-desc = "Domenico Tardini, an influential cardinal of the Holy Roman Catholic Church and a minister of the Italian Federation, died today from neuritis and circulatory ailments."
+name = "EVT_3968536_NAME"
+desc = "EVT_3968536_DESC"
 picture = "minister_died"
 
 date = { day = 18 month = july year = 1961 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968536_OPTIONA"
 command = { type = sleepminister which = 3232 } #Domenico Tardini
 command = { type = sleepminister which = 3239 } #Domenico Tardini
 command = { type = sleepminister which = 3241 } #Domenico Tardini
@@ -4329,14 +4329,14 @@ random = no
 country = ITA
 style = 2
 
-name = "One of our ministers has died"
-desc = "One of our ministers, Giuseppe Bastianini, died today."
+name = "EVT_3968537_NAME"
+desc = "EVT_3968537_DESC"
 picture = "minister_died"
 
 date = { day = 16 month = december year = 1961 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968537_OPTIONA"
 command = { type = sleepminister which = 3053 } #Giuseppe Bastianini
 }
 }
@@ -4351,8 +4351,8 @@ trigger = {
 random = 5 #Unknown date of death in Kaiserreich timeline, but old enough to die
 }
 
-name = "One of our ministers has died"
-desc = "One of our ministers, Guido Buffarini-Guidi, died today."
+name = "EVT_3968538_NAME"
+desc = "EVT_3968538_DESC"
 picture = "minister_died"
 
 date = { day = 1 month = january year = 1955 } #60 years old
@@ -4360,7 +4360,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968538_OPTIONA"
 command = { type = sleepminister which = 3005 } #Guido Buffarini-Guidi
 }
 }
@@ -4376,8 +4376,8 @@ trigger = {
 random = 5 #Unknown date of death in Kaiserreich timeline, but old enough to die
 }
 
-name = "One of our ministers has died"
-desc = "One of our ministers and also a daring military leader, Ugo Cavallero, died today."
+name = "EVT_3968539_NAME"
+desc = "EVT_3968539_DESC"
 picture = "minister_died"
 
 date = { day = 1 month = january year = 1940 } #60 years old
@@ -4385,7 +4385,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968539_OPTIONA"
 command = { type = sleepminister which = 3124 } #Ugo Cavallero
 command = { type = sleepleader which = 6041 } #Ugo Cavallero
 }
@@ -4402,8 +4402,8 @@ trigger = {
 random = 5 #Unkown date of death in Kaiserreich timeline, but old enough to die
 }
 
-name = "One of our ministers has died"
-desc = "One of our ministers and also a daring military leader, Amedeo Duca d'Aosta, died today."
+name = "EVT_3968540_NAME"
+desc = "EVT_3968540_DESC"
 picture = "minister_died"
 
 date = { day = 1 month = january year = 1958 } #60 years old
@@ -4411,7 +4411,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968540_OPTIONA"
 command = { type = sleepminister which = 3408 } #Amedeo Duca d'Aosta
 command = { type = sleepminister which = 3410 } #Amedeo Duca d'Aosta
 command = { type = sleepleader which = 6004 } #Amedeo Duca d'Aosta
@@ -4429,8 +4429,8 @@ trigger = {
 random = 5 #Unkown date of death in Kaiserreich timeline, but old enough to die
 }
 
-name = "One of our ministers has died"
-desc = "One of our ministers and also a daring military leader, Aimone Duca di Spoleto, died today."
+name = "EVT_3968541_NAME"
+desc = "EVT_3968541_DESC"
 picture = "minister_died"
 
 date = { day = 1 month = january year = 1960 } #60 years old
@@ -4438,7 +4438,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968541_OPTIONA"
 command = { type = sleepminister which = 3409 } #Aimone, Duca di Spoleto
 command = { type = sleepleader which = 6151 } #Aimone, Duca di Spoleto
 }
@@ -4455,8 +4455,8 @@ trigger = {
 random = 5 #Unkown date of death in Kaiserreich timeline, but old enough to die
 }
 
-name = "One of our ministers has died"
-desc = "One of our ministers and also a daring military leader, Carlo Bergamini, died today."
+name = "EVT_3968542_NAME"
+desc = "EVT_3968542_DESC"
 picture = "minister_died"
 
 date = { day = 1 month = january year = 1948 } #60 years old
@@ -4464,7 +4464,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "He rests in Heaven now."
+name = "EVT_3968542_OPTIONA"
 command = { type = sleepminister which = 3419 } #Carlo Bergamini
 command = { type = sleepleader which = 6153 } #Carlo Bergamini
 }
@@ -4479,8 +4479,8 @@ trigger = {
 owned = { province = 403 data = ITA } #Capodistria
 }
 
-name = "Pola is under our control!"
-desc = "Pola is now under our control and every Italian patriot is celebrating the return of our core provinces back to the motherland!"
+name = "EVT_3968543_NAME"
+desc = "EVT_3968543_DESC"
 picture = "Kaiserreich_RSI_Venice"
 
 date = { day = 1 month = january year = 1936 }
@@ -4488,7 +4488,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Great!"
+name = "EVT_3968543_OPTIONA"
 command = { type = addcore which = 403 } #Capodistria
 command = { type = addcore which = 406 } #Pola
 command = { type = dissent value = -2 }
@@ -4514,8 +4514,8 @@ atwar = no
 random = 30
 }
 
-name = "Transfer the Capital to Firenze?"
-desc = "As Josef I von Österreich-Toskana is the new King of Italy and also the Grand Duke of Tuscany, some have proposed moving the capital from Rome to Florence. This move will probably be viewed favorably by the Austrians, but also with stern opposition by the Italians (especially considering that the Pope will remain in Rome)."
+name = "EVT_3968547_NAME"
+desc = "EVT_3968547_DESC"
 picture = "Kaiserreich_RSI_Colosseo"
 
 
@@ -4524,7 +4524,7 @@ offset = 180
 deathdate = { day = 29 month = december year = 1945 }
 
 action_a = {
-name = "Roma is and will always be our capital!"
+name = "EVT_3968547_OPTIONA"
 ai_chance =  90
 command = { type = capital which = 419 } #Roma
 command = { trigger = { exists = AUS } type = relation which = AUS value = -10 }
@@ -4532,7 +4532,7 @@ command = { trigger = { exists = U24 } type = relation which = U24 value = -10 }
 command = { trigger = { exists = U25 } type = relation which = U25 value = -10 }
 }
 action_b = {
-name = "Firenze shall be the new capital!"
+name = "EVT_3968547_OPTIONB"
 ai_chance =  10
 command = { type = capital which = 410 } #Firenze
 command = { type = province_keypoints which = 410 value = 3 } # Firenze
@@ -4548,15 +4548,15 @@ id = 3968548
 random = no
 country = ITA
 
-name = "Black Monday hits Italian Federation!"
-desc = "Almost two weeks ago, the Berlin Stock Exchange plunged into bottomless depth, throwing Germany's economy into an unprecedented crisis. Now the crash's shock waves have reached the Italian Federation. German and Austrian-owned companies have closed down or laid-off their workers, the Italian lira is losing value, and industrial exports are shrinking..."
+name = "EVT_3968548_NAME"
+desc = "EVT_3968548_DESC"
 style = 2
 picture = "stockcrashrus"
 
 date = { day = 20 month = february year = 1936 }
 
 action_a = {
-name = "Let's hope the government will save us from the worst..."
+name = "EVT_3968548_OPTIONA"
 command = { type = peacetime_ic_mod value = -2 }
 command = { type = dissent value = 5 }
 command = { type = money value = -50 }
@@ -4568,7 +4568,7 @@ id = 3968549
 random = no
 country = ITA
 
-name = "Quadragesimo Quinto Anno"
+name = "EVT_3968549_NAME"
 desc = "EVT_3968549_DESC"
 style = 2
 picture = "quadragesimo_quinto_anno"
@@ -4609,12 +4609,12 @@ date = { day = 1 month = january year = 1937 }
 offset = 185
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "The issue of the fortifications in Central Italy"
-desc = "Now that the Italian peninsula is once again a united country, we do not need fortresses in the middle of our united country. The question is, what should we do with them? We can destroy them and recover the materials, convert them to improve the local infrastructures, or keep them as memorials of war."
+name = "EVT_3968550_NAME"
+desc = "EVT_3968550_DESC"
 picture = "Bank"
 
 action = {
-name = "Destroy them and recover the materials"
+name = "EVT_3968550_OPTIONA"
 ai_chance = 50
 command = { type = dissent value = -1 }
 command = { type = construct which = land_fort where = 418 value = -2 } #Gaeta
@@ -4637,7 +4637,7 @@ command = { trigger = { event = 91574 } type = metalpool value = 800 }
 command = { trigger = { event = 91574 } type = money value = 30 }
 }
 action = {
-name = "Destroy them and use the material to improve our country!"
+name = "EVT_3968550_OPTIONB"
 ai_chance = 50
 command = { type = dissent value = -1 }
 command = { type = construct which = land_fort where = 418 value = -2 } #Gaeta
@@ -4658,7 +4658,7 @@ command = { trigger = { event = 91572 } type = construct which = infrastructure 
 command = { trigger = { event = 91574 } type = construct which = ic where = 418 value = 1 } #Gaeta #IC only if you dismantle the forts already built by IF
 }
 action = {
-name = "Keep them and never forget!"
+name = "EVT_3968550_OPTIONC"
 ai_chance = 0
 command = { type = belligerence value = 1 }
 command = { }
@@ -4893,8 +4893,8 @@ headofstate = 3285
 }
 }
 
-name = "Donations from the Faithful"
-desc = "With the very seat of God's church under threat from non-believers for the first time in centuries, donations have been pouring in from Catholics throughout the world. Their effect on our material situation is minimal, but the gifts have greatly boosted morale."
+name = "EVT_694209001_NAME"
+desc = "EVT_694209001_DESC"
 style = 2
 picture = "supplies1"
 
@@ -4903,7 +4903,7 @@ offset = 30
 deathdate = { day = 30 month = december year = 1963 }
 
 action = {
-name = "Every bit counts"
+name = "EVT_694209001_OPTIONA"
 command = { type = dissent value = -2 }
 command = { type = money value = 100 }
 command = { type = supplies value = 100 }

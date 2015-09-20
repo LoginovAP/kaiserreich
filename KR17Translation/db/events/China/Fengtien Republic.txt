@@ -18,8 +18,8 @@ ispuppet = CSX
 }
 }
 
-name = "Zhang Zuelin's decision"
-desc = "For years we have bent under the weight of Japanese control. The Qing Emperor, Pu Yi, has been a friend and if things had gone differently  we might have supported him in his ascension. Now the Japanese are attacking him and despite their promise to crush him quickly and effortlessly his troops are on our territory. We must make a decision with regards to our future!"
+name = "EVT_627078_NAME"
+desc = "EVT_627078_DESC"
 
 date = { day = 10 month = november year = 1936 }
 offset = 15
@@ -27,7 +27,7 @@ deathdate = { day = 29 month = december year = 1967 }
 
 action = {
 ai_chance = 30
-name = "We must continue our support the Japanese"
+name = "EVT_627078_OPTIONA"
 trigger = {
 OR = {
 puppet = { country = MAN country = JAP  }
@@ -39,7 +39,7 @@ command = { type = dissent value = 3 }
 
 action = {
 ai_chance = 10
-name = "We must continue in our struggle"
+name = "EVT_627078_OPTIONB"
 trigger = {
 NOT = {
 puppet = { country = MAN country = JAP  }
@@ -51,7 +51,7 @@ command = { type = dissent value = 3 }
 
 action = {
 ai_chance = 20
-name = "We must ally with Japan"
+name = "EVT_627078_OPTIONC"
 trigger = {
 exists = JAP
 NOT = {
@@ -74,7 +74,7 @@ command = { type = trigger which = 925045 }
 
 action = {
 ai_chance = 20
-name = "Back out of the fighting"
+name = "EVT_627078_OPTIOND"
 trigger = {
 OR = {
 puppet = { country = MAN country = JAP  }
@@ -100,7 +100,7 @@ command = { type = addcore which = 1216 }
 
 action = {
 ai_chance = 30
-name = "We must fight for Pu Yi and China!"
+name = "EVT_627078_OPTIONE"
 command = { type = event which = 627066 where = CSX when = 2  }
 command = { type = relation which = JAP value = -150 }
 command = { type = relation which = CSX value = 100 }
@@ -114,7 +114,7 @@ command = { type = addcore which = 1216 }
 
 action = {
 ai_chance = 20
-name = "Support Pu Yi in secret"
+name = "EVT_627078_OPTIONF"
 trigger = {
 OR = {
 puppet = { country = MAN country = JAP  }
@@ -139,12 +139,12 @@ country = JAP
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Manchuria wants to form an alliance"
-desc = "The government of Manchuria has annouced recently that they want to form an alliance with us in order to protect their independence in struggle against the remaining Chinese factions. What shall we do?"
+name = "EVT_925045_NAME"
+desc = "EVT_925045_DESC"
 
 action_a = {
 ai_chance = 94
-name = "YES!"
+name = "EVT_925045_OPTIONA"
 command = { type = alliance which = MAN }
 command = { type = relation which = MAN value = 100 }
 command = { type = dissent value = -3 }
@@ -153,7 +153,7 @@ command = { type = domestic which = defense_lobby value = 1 }
 
 action_b = {
 ai_chance = 5
-name = "Rather not."
+name = "EVT_925045_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = relation which = MAN value = -100 }
 }
@@ -165,19 +165,19 @@ country = JAP
 style = 2
 picture = "Japan"
 
-name = "Zhang Zuelin's Betrayal"
-desc = "Zhang Zuelin has declared his independence and decided to back out of our alliance and war against the Germans. We must react quickly and with force!"
+name = "EVT_627061_NAME"
+desc = "EVT_627061_DESC"
 
 action_a = {
 ai_chance = 70
-name = "We must destroy him!"
+name = "EVT_627061_OPTIONA"
 command = { type = war which = MAN }
 command = { type = trigger which = 627076 }
 }
 
 action_b = {
 ai_chance = 10
-name = "Maybe it is time to back down fully"
+name = "EVT_627061_OPTIONB"
 command = { trigger = { war = { country = JAP country = GER } NOT = { alliance = { country = JAP country = FRA } alliance = { country = JAP country = RUS } alliance = { country = JAP country = SOV } alliance = { country = JAP country = USA } alliance = { country = JAP country = CAN } } }  type = trigger which = 627064 }
 command = { type = secedeprovince which = MAN value = 1240 }
 command = { type = secedeprovince which = MAN value = 1236 }
@@ -190,7 +190,7 @@ command = { type = secedeprovince which = MAN value = 1247 }
 
 action_c = {
 ai_chance = 20
-name = "Let him go"
+name = "EVT_627061_OPTIONC"
 command = { type = dissent value = 3 }
 }
 }
@@ -201,25 +201,24 @@ country = CSX
 style = 2
 picture = "Chinese Officers"
 
-name = "Zhang Zueling has refused to fight!"
-desc = "Zhang Zueling has thrown off the yoke of Japan and has decided to stop fighting and attempt to eject the Japanese military from his territory.
-We have control over some of his territory - and he has offered to restart ties with us."
+name = "EVT_627062_NAME"
+desc = "EVT_627062_DESC"
 
 action_a = {
 ai_chance = 60
-name = "Push him to join us!"
+name = "EVT_627062_OPTIONA"
 command = { type = trigger which = 627065 }
 }
 
 action_b = {
 ai_chance = 20
-name = "Let him be"
+name = "EVT_627062_OPTIONB"
 command = { type = dissent value = 3 }
 }
 
 action_c = {
 ai_chance = 20
-name = "Without the Japanese he is nothing!"
+name = "EVT_627062_OPTIONC"
 command = { type = war which = MAN }
 }
 }
@@ -231,11 +230,11 @@ country = CSX
 style = 2
 picture = "China_Army"
 
-name = "Manchuria Declares for the Qing!"
-desc = "Zhang Zueling has decided to switch his allegiance to us instead of his Japanese Masters!"
+name = "EVT_627066_NAME"
+desc = "EVT_627066_DESC"
 
 action_a = {
-name = "How Great is China!"
+name = "EVT_627066_OPTIONA"
 command = { type = addcore which = 1202 }
 command = { type = addcore which = 1204 }
 command = { type = addcore which = 1212 }
@@ -287,18 +286,18 @@ country = GER
 style = 2
 picture = "Japan"
 
-name = "Japan seeks to negotiate"
-desc = "When Zhang Zueling switched sides in the war Japan decided that it had lost any grounds to continue fighting. They are proposing a peace deal."
+name = "EVT_627064_NAME"
+desc = "EVT_627064_DESC"
 
 action_a = {
 ai_chance = 70
-name = "We never wanted this war to begin with"
+name = "EVT_627064_OPTIONA"
 command = { type = setflag which = JAP_GER_Warnegotiations }
 }
 
 action_b = {
 ai_chance = 30
-name = "We will finish what they started!"
+name = "EVT_627064_OPTIONB"
 command = { type = dissent value = 3 }
 }
 }
@@ -309,18 +308,18 @@ country = MAN
 style = 2
 picture = "China_Rally"
 
-name = "The Qing are pushing us"
-desc = "As soon as we backed out of the war the Qing demanded that we surrender to them. Is this worth independance or not?"
+name = "EVT_627065_NAME"
+desc = "EVT_627065_DESC"
 
 action_a = {
 ai_chance = 40
-name = "Accept the Qing demand"
+name = "EVT_627065_OPTIONA"
 command = { type = trigger which = 627068 }
 }
 
 action_b = {
 ai_chance = 60
-name = "Politely refuse and end the matter"
+name = "EVT_627065_OPTIONB"
 command = { type = dissent value = 3 }
 command = { type = setflag which = CSX_MAN_refusal }
 }
@@ -338,19 +337,19 @@ date = { day = 1 month = january year = 1936 }
 offset = 25
 deathdate = { day = 29 month = december year= 1960 }
 
-name = "Our negotiators are meeting with the Japanese"
-desc = "Our negotiation team is meeting with the Japanese envoy, how should we start the negotiations? Should we go easy and just get this war over as soon as possible or should we try to crush their spirit once and for all!"
+name = "EVT_627067_NAME"
+desc = "EVT_627067_DESC"
 
 action_a = {
 ai_chance = 50
-name = "Go easy on them and make small demands"
+name = "EVT_627067_OPTIONA"
 command = { type = trigger which = 627071 }
 command = { type = clrflag which = JAP_GER_Warnegotiations }
 }
 
 action_b = {
 ai_chance = 50
-name = "We must bring them to their knees!"
+name = "EVT_627067_OPTIONB"
 command = { type = trigger which = 627072 }
 command = { type = clrflag which = JAP_GER_Warnegotiations }
 }
@@ -362,11 +361,11 @@ country = CSX
 style = 2
 picture = "China_Rally"
 
-name = "The Fengtien have submitted!"
-desc = "Zhang Zueling has surrendered to our demands!"
+name = "EVT_627068_NAME"
+desc = "EVT_627068_DESC"
 
 action_a = {
-name = "Hooray!"
+name = "EVT_627068_OPTIONA"
 command = { type = addcore which = 1202 }
 command = { type = addcore which = 1204 }
 command = { type = addcore which = 1212 }
@@ -420,24 +419,24 @@ date = { day = 1 month = january year = 1936 }
 offset = 25
 deathdate = { day = 29 month = december year= 1960 }
 
-name = "Zhang Zueling has refused our demands"
-desc = "when Zueling dropped out of the war a problem faced the warring powers, no front line. Now Zueling has refused our demands. Should we the reopen conflict?"
+name = "EVT_627069_NAME"
+desc = "EVT_627069_DESC"
 
 action_a = {
 ai_chance = 30
-name = "We must continue this war!"
+name = "EVT_627069_OPTIONA"
 command = { type = war which = MAN }
 }
 
 action_b = {
 ai_chance = 30
-name = "We will guard our beaches and let the Germans fight"
+name = "EVT_627069_OPTIONB"
 command = { type = dissent value = 3 }
 }
 
 action_c = {
 ai_chance = 30
-name = "If we dropped out too....."
+name = "EVT_627069_OPTIONC"
 trigger = {
 war = { country = JAP country = CSX }
 }
@@ -455,11 +454,11 @@ country = MAN
 style = 2
 picture = "Chinese Infantry"
 
-name = "OH NO! My troops are defecting!"
-desc = "Yes, it's true half my army has defected! Of course I still support my fabulous Japanese masters! I would never help the enemy..."
+name = "EVT_627070_NAME"
+desc = "EVT_627070_DESC"
 
 action_a = {
-name = "We switch sides, I mean defectors should be shot!"
+name = "EVT_627070_OPTIONA"
 command = { type = switch_allegiance which = -1 where = CSX }
 command = { type = switch_allegiance which = -1 where = CSX }
 command = { type = switch_allegiance which = -1 where = CSX }
@@ -479,11 +478,11 @@ country = CSX
 style = 2
 picture = "China_Rally"
 
-name = "Zhang Zueling is playing games"
-desc = "We have recieved a communication from the Fengtein army that half of their forces are joining us.... Unless this is false or a ruse this is a great day indeed!"
+name = "EVT_627075_NAME"
+desc = "EVT_627075_DESC"
 
 action_a = {
-name = "keep them under watch but let them fight!"
+name = "EVT_627075_OPTIONA"
 command = { type = addcore which = 1202 }
 command = { type = addcore which = 1204 }
 command = { type = addcore which = 1212 }
@@ -534,12 +533,12 @@ country = JAP
 style = 2
 picture = "Japan"
 
-name = "We have sat down at the table"
-desc = "When we offered a negotiated peace we thought the Germans would be fierce in their demands. However, they have come to the table wishing to talk sense."
+name = "EVT_627071_NAME"
+desc = "EVT_627071_DESC"
 
 action_a = {
 ai_chance = 75
-name = "Peace with Honor!"
+name = "EVT_627071_OPTIONA"
 command = { type = peace which = GER value = 0 }
 command = { type = peace which = CSX value = 0 }
 command = { type = money value = -250 } #minor reperations#
@@ -557,7 +556,7 @@ command = { type = dissent value = 5 }
 
 action_b = {
 ai_chance = 25
-name = "There will be no peace!"
+name = "EVT_627071_OPTIONB"
 command = { type = dissent value = 2 }
 }
 }
@@ -568,12 +567,12 @@ country = JAP
 style = 2
 picture = "Japan"
 
-name = "We have sat down at the table"
-desc = "We have sat down and the German's demands are unreasonable in any respect."
+name = "EVT_627072_NAME"
+desc = "EVT_627072_DESC"
 
 action_a = {
 ai_chance = 25
-name = "We must have peace!"
+name = "EVT_627072_OPTIONA"
 command = { type = peace which = GER value = 0 }
 command = { type = peace which = CSX value = 0 }
 command = { type = money value = -1000 }
@@ -596,7 +595,7 @@ command = { type = secedeprovince which = MAN value = 1247 }
 
 action_b = {
 ai_chance = 75
-name = "NEVER!"
+name = "EVT_627072_OPTIONB"
 command = { type = dissent value = -5 }
 }
 }
@@ -607,18 +606,18 @@ country = GER
 style = 2
 picture = "Chinese Infantry"
 
-name = "The Qing have abandoned us!"
-desc = "After the Fengtein dropped away from Japan, the Qing have decided to back away from us and sign a ceasefire with the treacherous Japanese!"
+name = "EVT_627073_NAME"
+desc = "EVT_627073_DESC"
 
 action_a = {
 ai_chance = 30
-name = "We will destory them too!"
+name = "EVT_627073_OPTIONA"
 command = { type = war which = CSX }
 }
 
 action_b = {
 ai_chance = 70
-name = "Goodbye!"
+name = "EVT_627073_OPTIONB"
 command = { type = end_guarantee which = GER where = CSX }
 }
 }
@@ -629,18 +628,18 @@ country = JAP
 style = 2
 picture = "Japan"
 
-name = "The Qing have followed the Fengtein"
-desc = "The Qing have called for a complete end to hostilities, with the loss of Fengtein we have no border and the Germans are our primary concern anyways"
+name = "EVT_627074_NAME"
+desc = "EVT_627074_DESC"
 
 action_a = {
 ai_chance = 70
-name = "We can always come back later"
+name = "EVT_627074_OPTIONA"
 command = { type = dissent value = -1 }
 }
 
 action_b = {
 ai_chance = 30
-name = "We must continue this war!"
+name = "EVT_627074_OPTIONB"
 command = { type = war which = CSX }
 }
 }
@@ -651,12 +650,12 @@ country = MAN
 style = 2
 picture = "Chinese Officers"
 
-name = "Japan has attacked us!"
-desc = "AFter our betrayal the Japanese have decided to add us to their enemies!"
+name = "EVT_627076_NAME"
+desc = "EVT_627076_DESC"
 
 action_a = {
 ai_chance = 70
-name = "We must turn to the Qing, There is refuge"
+name = "EVT_627076_OPTIONA"
 trigger = {
 exists = CSX
 NOT = {
@@ -668,7 +667,7 @@ command = { type = event which = 627066 where = CSX when = 2  }
 
 action_b = {
 ai_chance = 30
-name = "We brought this upon ourselves"
+name = "EVT_627076_OPTIONB"
 command = { type = dissent value = 5 }
 command = { type = addcore which = 1240 }
 command = { type = addcore which = 1236 }
@@ -687,13 +686,12 @@ country = MAN
 style = 2
 picture = "Chinese Officers"
 
-name = "The Qing have followed our lead"
-desc = "After we dropped out and refused to join the Qing they followed suit and now have reapproached us, since we are both now banished from the powers
-maybe we should join together"
+name = "EVT_627077_NAME"
+desc = "EVT_627077_DESC"
 
 action_a = {
 ai_chance = 70
-name = "We must turn to the Qing, There is peace and power"
+name = "EVT_627077_OPTIONA"
 trigger = {
 exists = CSX
 NOT = {
@@ -705,7 +703,7 @@ command = { type = event which = 627066 where = CSX when = 2  }
 
 action_b = {
 ai_chance = 30
-name = "Well good for them!"
+name = "EVT_627077_OPTIONB"
 command = { type = dissent value = 2 }
 }
 }
@@ -730,8 +728,8 @@ ispuppet = PRI
 puppet = { country = MAN country = JAP  }
 }
 
-name = "Kolchak has broken away from Japanese rule!"
-desc = "With Kolchak breaking away from the Japanese maybe we should consider our options. We could join him or we could look to the Qing."
+name = "EVT_627079_NAME"
+desc = "EVT_627079_DESC"
 
 date = { day = 1 month = january year = 1936 }
 offset = 20
@@ -739,14 +737,14 @@ deathdate = { day = 1 month = january year = 1960 }
 
 action_a = {
 ai_chance = 20
-name = "Stay with Japan"
+name = "EVT_627079_OPTIONA"
 command = { type = dissent value = 1 }
 command = { type = clrflag which = PRI_breaksaway }
 }
 
 action_b = {
 ai_chance = 30
-name = "Talk with Kolchak"
+name = "EVT_627079_OPTIONB"
 command = { type = peace which = PRI value = 1 }
 command = { type = end_puppet }
 command = { type = trigger which = 627080 }
@@ -770,7 +768,7 @@ NOT = {
 ispuppet = CSX
 }
 }
-name = "Approach Pu Yi"
+name = "EVT_627079_OPTIONC"
 command = { type = peace which = CSX value = 1 }
 command = { type = end_puppet }
 command = { type = trigger which = 627081 }
@@ -793,12 +791,12 @@ country = PRI
 style = 2
 picture = "Chinese Officers"
 
-name = "Zhang Zueling wishes to join us!"
-desc = "Almost as soon as we broke away from Japan the Fengtien approached us about an alliance! Together we shall have the power to overcome the Japanese."
+name = "EVT_627080_NAME"
+desc = "EVT_627080_DESC"
 
 action_a = {
 ai_chance = 70
-name = "Accept"
+name = "EVT_627080_OPTIONA"
 command = { type = alliance which = MAN }
 command = { type = relation which = MAN value = 150 }
 command = { type = relation which = JAP value = -100 }
@@ -806,7 +804,7 @@ command = { type = relation which = JAP value = -100 }
 
 action_b = {
 ai_chance = 30
-name = "Turn him down"
+name = "EVT_627080_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = trigger which = 627082 }
 }
@@ -827,11 +825,11 @@ date = { day = 1 month = january year = 1936 }
 offset =  15
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Remove our support"
-desc = "Zueling has betrayed us - me must immediately remove all aid from his pitiful country."
+name = "EVT_627083_NAME"
+desc = "EVT_627083_DESC"
 
 action_a = {
-name = "Order the removal of support!"
+name = "EVT_627083_OPTIONA"
 command = { type = manpowerpool value = 20 }
 command = { type = secedeprovince which = MAN value = 1240 }
 command = { type = secedeprovince which = MAN value = 1236 }
@@ -851,11 +849,11 @@ country = MAN
 style = 2
 picture = "Japan"
 
-name = "Japan has removed support from our country"
-desc = "Japan has ordered all development agencies, firms, and military aides to leave our country."
+name = "EVT_627084_NAME"
+desc = "EVT_627084_DESC"
 
 action_a = {
-name = "Well what did you expect?"
+name = "EVT_627084_OPTIONA"
 command = { type = sleepteam which = 6405 }
 command = { type = sleepteam which = 6400 }
 command = { type = sleepteam which = 6401 }
@@ -889,12 +887,12 @@ country = CSX
 style = 2
 picture = "Chinese Officers"
 
-name = "Zhang Zueling wishes to join us!"
-desc = "Almost as soon as they broke away from Japan the Fengtien approached us about joining the Empire."
+name = "EVT_627081_NAME"
+desc = "EVT_627081_DESC"
 
 action_a = {
 ai_chance = 90
-name = "Accept"
+name = "EVT_627081_OPTIONA"
 command = { type = addcore which = 1202 }
 command = { type = addcore which = 1204 }
 command = { type = addcore which = 1212 }
@@ -939,7 +937,7 @@ command = { type = trigger which = 627086 }
 
 action_b = {
 ai_chance = 10
-name = "Turn him down"
+name = "EVT_627081_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = trigger which = 627085 }
 }
@@ -951,12 +949,12 @@ country = MAN
 style = 2
 picture = "Chinese Officers"
 
-name = "Kolchak has refused our offer"
-desc = "With Kolchak's refusal we are treading deep water... Japan may attack us if we don't find support soon."
+name = "EVT_627082_NAME"
+desc = "EVT_627082_DESC"
 
 action_a = {
 ai_chance = 30
-name = "We will be independent no matter what!"
+name = "EVT_627082_OPTIONA"
 command = { type = trigger which = 627087 }
 command = { type = addcore which = 1240 }
 command = { type = addcore which = 1235 }
@@ -966,7 +964,7 @@ command = { type = addcore which = 1216 }
 
 action_c = {
 ai_chance = 70
-name = "Approach Pu Yi"
+name = "EVT_627082_OPTIONB"
 trigger = {
 exists = CSX
 NOT = {
@@ -987,12 +985,12 @@ country = MAN
 style = 2
 picture = "Chinese Officers"
 
-name = "The Qing have turned us down!"
-desc = "With Pu Yi's refusal we are treading deep water... Japan may attack us if we don't find support soon."
+name = "EVT_627085_NAME"
+desc = "EVT_627085_DESC"
 
 action_a = {
 ai_chance = 70
-name = "Approach Kolchak"
+name = "EVT_627085_OPTIONA"
 command = { type = trigger which = 627080 }
 command = { type = addcore which = 1240 }
 command = { type = addcore which = 1235 }
@@ -1002,7 +1000,7 @@ command = { type = addcore which = 1216 }
 
 action_b = {
 ai_chance = 30
-name = "We will be independent no matter what!"
+name = "EVT_627085_OPTIONB"
 command = { type = trigger which = 627087 }
 command = { type = addcore which = 1240 }
 command = { type = addcore which = 1235 }
@@ -1017,12 +1015,12 @@ country = JAP
 style = 2
 picture = "Japan"
 
-name = "Zhang Zueling has also betrayed us!"
-desc = "Zhang Zueling has betrayed us and joined the Qing Empire. This is an delicate situation."
+name = "EVT_627086_NAME"
+desc = "EVT_627086_DESC"
 
 action_a = {
 ai_chance = 50
-name = "We cannot risk further entaglements"
+name = "EVT_627086_OPTIONA"
 command = { type = dissent value = 2 }
 command = { type = secedeprovince which = MAN value = 1240 }
 command = { type = secedeprovince which = MAN value = 1236 }
@@ -1040,7 +1038,7 @@ NOT = {
 war = { country = JAP country = CSX }
 }
 }
-name = "Maybe the Qing would like to take his place as our ally"
+name = "EVT_627086_OPTIONB"
 command = { type = trigger which = 627088 }
 command = { type = secedeprovince which = MAN value = 1240 }
 command = { type = secedeprovince which = MAN value = 1236 }
@@ -1053,7 +1051,7 @@ command = { type = secedeprovince which = MAN value = 1247 }
 
 action_c = {
 ai_chance = 20
-name = "We cannot be made fools of"
+name = "EVT_627086_OPTIONC"
 command = { type = war which = CSX }
 }
 }
@@ -1064,18 +1062,18 @@ country = JAP
 style = 2
 picture = "Japan"
 
-name = "Zhang Zueling has been left out to dry"
-desc = "Zhang Zueling has betrayed us and attempted to form alliances with his neighbors, but no one is stupid enough!"
+name = "EVT_627087_NAME"
+desc = "EVT_627087_DESC"
 
 action_a = {
 ai_chance = 80
-name = "We cannot be made fools of"
+name = "EVT_627087_OPTIONA"
 command = { type = war which = MAN }
 }
 
 action_b = {
 ai_chance = 20
-name = "We cannot risk further entaglements"
+name = "EVT_627087_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = secedeprovince which = MAN value = 1240 }
 command = { type = secedeprovince which = MAN value = 1236 }
@@ -1093,12 +1091,12 @@ country = CSX
 style = 2
 picture = "Japan"
 
-desc = "Japan offered as an alliance!"
-name = "After Zhang Zueling and the Fengtein joined our glorious Empire, the Japanese saw fit to offer us an alliance to shore up their power in the region"
+desc = "EVT_627088_DESC"
+name = "EVT_627088_NAME"
 
 action_a = {
 ai_chance = 30
-name = "Accept!"
+name = "EVT_627088_OPTIONA"
 command = { type = leave_alliance when = 1 }
 command = { type = alliance which = JAP }
 command = { type = relation which = GER value = -50 }
@@ -1110,7 +1108,7 @@ command = { type = relation which = JAP value = 100 }
 
 action_b = {
 ai_chance = 70
-name = "Turn them down"
+name = "EVT_627088_OPTIONB"
 command = { type = relation which = JAP value = -50 }
 command = { type = relation which = CHC value = 15 }
 }
@@ -1130,14 +1128,14 @@ headofgovernment = 58002 # Yan Xishan
 }
 
 date = { day = 22 month = july year = 1960 }
-name = "Our beloved prime minister is dead!"
-desc = "Today our loyal advisor, his highness Yan Xishan died peacefully in his home. With his death various possibilities open up for our state, including the first truly democratic elections, if the ruling nobility allows that.."
+name = "EVT_95048_NAME"
+desc = "EVT_95048_DESC"
 
 
 
 action_a = {
 ai_chance = 35
-name = "Run an election for the nobles!"
+name = "EVT_95048_OPTIONA"
 command = { type = dissent value = 5  }
 command = { type = sleepminister which = 58002 }
 command = { type = headofgovernment which = 58015 }
@@ -1150,7 +1148,7 @@ command = { type = sleepevent which = 95060 }
 
 action_b = {
 ai_chance = 35
-name = "Let Japan decide our fate!"
+name = "EVT_95048_OPTIONB"
 trigger = { puppet = { country = MAN country = JAP  } }
 command = { type = relation which = JAP value = 50 }
 command = { type = sleepminister which = 58002 }
@@ -1162,7 +1160,7 @@ command = { type = sleepevent which = 95060 }
 
 action_c = {
 ai_chance = 30
-name = "Let the people of our great republic decide!!"
+name = "EVT_95048_OPTIONC"
 command = { type = relation which = JAP value = -50 }
 command = { type = sleepminister which = 58002 }
 command = { type = domestic which = freedom value = 1 }
@@ -1187,8 +1185,8 @@ random = 10
 }
 
 
-name = "Our beloved prime minister was assasinated !"
-desc = "Today our loyal advisor, his highness Yan Xishan was assasinated by an unknown gunman. With his death various possibilities open up for our state, including the first truly democratic elections, if the ruling nobility allows that..."
+name = "EVT_95060_NAME"
+desc = "EVT_95060_DESC"
 
 date = { day = 1 month = january year = 1938 }
 offset = 180
@@ -1196,7 +1194,7 @@ deathdate = { day = 10 month = november year = 1970 }
 
 action_a = {
 ai_chance = 35
-name = "Run an election for the nobles!"
+name = "EVT_95060_OPTIONA"
 command = { type = dissent value = 5  }
 command = { type = sleepminister which = 58002 }
 command = { type = headofgovernment which = 58015 }
@@ -1209,7 +1207,7 @@ command = { type = sleepevent which = 95048 }
 
 action_b = {
 ai_chance = 35
-name = "Let Japan decide our fate!"
+name = "EVT_95060_OPTIONB"
 trigger = { puppet = { country = MAN country = JAP  } }
 command = { type = relation which = JAP value = 50 }
 command = { type = sleepminister which = 58002 }
@@ -1221,7 +1219,7 @@ command = { type = sleepevent which = 95048 }
 
 action_c = {
 ai_chance = 30
-name = "Let the people of our great republic decide!!"
+name = "EVT_95060_OPTIONC"
 command = { type = relation which = JAP value = -50 }
 command = { type = sleepminister which = 58002 }
 command = { type = domestic which = freedom value = 1 }
@@ -1243,27 +1241,27 @@ country = JAP
 picture = "election"
 style = 2
 
-name = "Our dear puppet need our help."
-desc = "Yesterday the prime minister of our puppet Fengtian Republic died. They have now decided that we, as their leader should decide who will rule them."
+name = "EVT_95049_NAME"
+desc = "EVT_95049_DESC"
 
 
 action_a = {
 ai_chance = 0
-name = "Let's make them one of us forever!"
+name = "EVT_95049_OPTIONA"
 command = { type = belligerence value = 5 }
 command = { type = trigger which = 95055 }
 }
 
 action_b = {
 ai_chance = 60
-name = "Let the young general Zhang Xueliang rule the territory for us!"
+name = "EVT_95049_OPTIONB"
 command = { type = relation which = MAN value = 20 }
 command = { type = trigger which = 95051 }
 }
 
 action_c = {
 ai_chance = 20
-name = "This is ridiculous! Let them decide themself"
+name = "EVT_95049_OPTIONC"
 command = { type = relation which = MAN value = 30 }
 command = { type = trigger which = 95052 }
 }
@@ -1276,13 +1274,13 @@ country = MAN
 picture = "election"
 style = 2
 
-name = "A free election for the people!!"
-desc = "For the first time the people of Fengtian Republic may vote in a free and fair election."
+name = "EVT_95050_NAME"
+desc = "EVT_95050_DESC"
 
 
 action_a = {
 ai_chance = 35
-name = "We need new blood in politics! Make Zhang Xueliang our new leader"
+name = "EVT_95050_OPTIONA"
 command = { type = dissent value = -5  }
 command = { type = headofgovernment which = 58014 }
 command = { type = domestic which = free_market value = 2 }
@@ -1292,7 +1290,7 @@ command = { type = domestic which = democratic value = 2 }
 
 action_b = {
 ai_chance = 35
-name = "Experienced politicians are always the best ones!"
+name = "EVT_95050_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = headofgovernment which = 58015 }
 command = { type = domestic which = professional_army value = 2 }
@@ -1301,7 +1299,7 @@ command = { type = domestic which = democratic value = -2 }
 
 action_c = {
 ai_chance = 30
-name = "Let the Methodist Feng Yuxiang become our new ruler!"
+name = "EVT_95050_OPTIONC"
 command = { type = relation which = CHC value = 50 }
 command = { type = relation which = ITA value = 50 }
 command = { type = relation which = JAP value = -20 }
@@ -1320,12 +1318,12 @@ country = MAN
 picture = "election"
 style = 2
 
-name = "Japan says Zhang Xueliang is the man for us!"
-desc = "Zhang Xueliang, a young beloved general, is now our new ruler."
+name = "EVT_95051_NAME"
+desc = "EVT_95051_DESC"
 
 
 action_a = {
-name = "Hurrah for Japan and our new leader!"
+name = "EVT_95051_OPTIONA"
 command = { type = dissent value = -5  }
 command = { type = headofgovernment which = 58014 }
 
@@ -1339,13 +1337,13 @@ country = MAN
 picture = "election"
 style = 2
 
-name = "Japan tell us we can choose! Hurrah for our lords!"
-desc = "Now when Japan let us choose our own leader we are entering a new era of freedom."
+name = "EVT_95052_NAME"
+desc = "EVT_95052_DESC"
 
 
 action_a = {
 ai_chance = 35
-name = "We need new blood in politics! Make Zhang Xueliang our new leader"
+name = "EVT_95052_OPTIONA"
 command = { type = dissent value = -5  }
 command = { type = headofgovernment which = 58014 }
 command = { type = domestic which = free_market value = 2 }
@@ -1355,7 +1353,7 @@ command = { type = domestic which = democratic value = 2 }
 
 action_b = {
 ai_chance = 35
-name = "Experienced politicians are always the best ones!"
+name = "EVT_95052_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = headofgovernment which = 58015 }
 command = { type = relation which = JAP value = 50 }
@@ -1365,7 +1363,7 @@ command = { type = domestic which = democratic value = -2 }
 
 action_c = {
 ai_chance = 30
-name = "Let the Methodist Feng Yuxiang become our new ruler!!"
+name = "EVT_95052_OPTIONC"
 command = { type = relation which = CHC value = 50 }
 command = { type = relation which = ITA value = 50 }
 command = { type = relation which = JAP value = -20 }
@@ -1386,13 +1384,13 @@ country = CHC
 picture = "church2"
 style = 2
 
-name = "The Fengtien Republic has a christian leader."
-desc = "During their election the other day, the people of Fengtien Republic has chosen their new wise leader. He has the same views as us shall we ask them for an alliance?"
+name = "EVT_95053_NAME"
+desc = "EVT_95053_DESC"
 
 
 action_a = {
 ai_chance = 70
-name = "Yes, ask them if they want to become our great friend."
+name = "EVT_95053_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = relation which = MAN value = 50 }
 command = { type = trigger which = 95054 }
@@ -1400,7 +1398,7 @@ command = { type = trigger which = 95054 }
 
 action_b = {
 ai_chance = 30
-name = "No! They may look like us on the outside, but on the inside we are the only true Christians!"
+name = "EVT_95053_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = relation which = MAN value = -10 }
 }
@@ -1413,13 +1411,13 @@ country = MAN
 picture = "church2"
 style = 2
 
-name = "The The Pure Kingdom Upon the Heavens asks for an alliance"
-desc = "Because of our recent election of our Methodist ruler the Heavanly Kingdom is asking for an alliance. What should we reply?"
+name = "EVT_95054_NAME"
+desc = "EVT_95054_DESC"
 
 
 action_a = {
 ai_chance = 65
-name = "Christianity in China needs this."
+name = "EVT_95054_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = relation which = CHC value = 150 }
 command = { type = relation which = JAP value = -15 }
@@ -1428,14 +1426,14 @@ command = { type = alliance which = CHC }
 
 action_b = {
 ai_chance = 20
-name = "No! This might upset the Japanese!"
+name = "EVT_95054_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = relation which = CHC value = -10 }
 }
 
 action_c = {
 ai_chance = 70
-name = "Alliance? Maybe, but we would work better as one nation!"
+name = "EVT_95054_OPTIONC"
 command = { type = dissent value = -1 }
 command = { type = relation which = CHC value = -10 }
 command = { type = trigger which = 95056 }
@@ -1451,12 +1449,12 @@ country = MAN
 picture = "japan"
 style = 2
 
-name = "Japan demands our incorporation into empire"
-desc = "Japan has made the decision to incorporate our mighty republic into the empire. But will our lords and people comply with such a decision? Or should we use this oportunity to break all ties with the Japanese empire?"
+name = "EVT_95055_NAME"
+desc = "EVT_95055_DESC"
 
 
 action_a = {
-name = "We must obey"
+name = "EVT_95055_OPTIONA"
 ai_chance = 60
 command = { type = trigger which = 95063 }
 command = { type = dissent value = 10 }
@@ -1464,7 +1462,7 @@ command = { type = dissent value = 10 }
 
 }
 action_b = {
-name = "It is time to throw off the Japanese yoke!"
+name = "EVT_95055_OPTIONB"
 ai_chance = 40
 command = { type = end_puppet }
 command = { type = relation which = JAP value = -250 }
@@ -1485,12 +1483,12 @@ country = JAP
 picture = "japan"
 style = 2
 
-name = "Fengtien Republic accepts the inevitable"
-desc = "The Fengtien Republic accepted our decision of merging their republic with our empire."
+name = "EVT_95063_NAME"
+desc = "EVT_95063_DESC"
 
 
 action_a = {
-name = "Excellent."
+name = "EVT_95063_OPTIONA"
 command = { type = dissent value = 15 }
 command = { type = addclaim which = 1202 }
 command = { type = addclaim which = 1204 }
@@ -1532,19 +1530,19 @@ country = JAP
 picture = "japan"
 style = 2
 
-name = "Fengtien Republic rejects our decision"
-desc = "The Fengtien Republic rejected our decision to incorporate them into our empire as extremely offensive. Currently they are using this oportunity to sever all ties with us. How shall we react?"
+name = "EVT_95064_NAME"
+desc = "EVT_95064_DESC"
 
 
 action_a = {
-name = "Accept their decision"
+name = "EVT_95064_OPTIONA"
 ai_chance = 30
 command = { type = domestic which = interventionism value = -1 }
 command = { type = dissent value = 5 }
 
 }
 action_b = {
-name = "Destroy them"
+name = "EVT_95064_OPTIONB"
 ai_chance = 70
 command = { type = war which = MAN }
 
@@ -1559,19 +1557,19 @@ country = CHC
 picture = "Republican China"
 style = 2
 
-name = "Fengtien Republic would like us to join them as one Christian nation. Could that work?"
-desc = "A day ago we asked the new leader of the Fengtien Republic to start an alliance with us. They now think that we would fit better as one nation under the Christian banner."
+name = "EVT_95056_NAME"
+desc = "EVT_95056_DESC"
 
 
 action_a = {
-name = "As Christians we must accept this offer."
+name = "EVT_95056_OPTIONA"
 ai_chance = 70
 command = { type = trigger which = 95057 }
 }
 
 action_b = {
 ai_chance = 25
-name = "No. an alliance is best for us."
+name = "EVT_95056_OPTIONB"
 command = { type = dissent value = -1 }
 command = { type = relation which = MAN value = 50 }
 command = { type = alliance which = MAN }
@@ -1579,7 +1577,7 @@ command = { type = alliance which = MAN }
 }
 action_c = {
 ai_chance = 5
-name = "This is outragous! Cut all relations with Fengtien Republic!"
+name = "EVT_95056_OPTIONC"
 command = { type = dissent value = 8 }
 command = { type = relation which = MAN value = -150 }
 
@@ -1595,12 +1593,12 @@ country = MAN
 picture = "Republican Flag"
 style = 2
 
-name = "Two republics as one!"
-desc = "The Shangqing Tiango or Heavenly Kingdom has accepted our annexation offer. This is a great chance to start a new era in Chinese politics!"
+name = "EVT_95057_NAME"
+desc = "EVT_95057_DESC"
 
 
 action_a = {
-name = "We live & rule togheter as one government in one republic!"
+name = "EVT_95057_OPTIONA"
 command = { type = inherit which = CHC   }
 command = { type = dissent value = 10 }
 command = { type = relation which = JAP value = -150 }
@@ -1796,10 +1794,10 @@ date = { day = 1 month = january year = 1936 }
 offset =  10
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "China reunited!"
-desc = "We had to fight fiercely on the battlefields and in the conference rooms but we have reached our goal. China is now reunited and stronger than ever! The last hundred years was just a nightmare! Time for a big festival to celebrate becoming a Great Power!"
+name = "EVT_925044_NAME"
+desc = "EVT_925044_DESC"
 action_a = {
-name = "China forever!"
+name = "EVT_925044_OPTIONA"
 command = { type = dissent value = 5 }
 command = { type = free_ic value = -7 }
 command = { type = industrial_modifier which = total value = -10 }
@@ -1989,25 +1987,25 @@ date = { day = 1 month = january year = 1936 }
 offset = 15
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "The capital"
-desc = "With the ousting of the Manchurian Qing dynasty from Peking and the ascendency of Shanqing supremacy over all Chinese lands between the Yellow and Yangtze rivers, enforcing the Mandate from Yan'an has become somewhat cumbersome. Perhaps it is time for The Pure Kingdom Upon the Heavens to find a new administrative nucleus?"
+name = "EVT_925046_NAME"
+desc = "EVT_925046_DESC"
 picture = "news_paper"
 
 action_a = {
 ai_chance = 25
-name = "We should stay in Changchun"
+name = "EVT_925046_OPTIONA"
 command = { type = capital which = 1208 }
 }
 
 action_b = {
 ai_chance = 25
-name = "Beijing is our new capital"
+name = "EVT_925046_OPTIONB"
 command = { type = capital which = 1247 }
 }
 
 action_c = {
 ai_chance = 25
-name = "Nanjing is our new capital"
+name = "EVT_925046_OPTIONC"
 command = { type = capital which = 1337 }
 }
 }

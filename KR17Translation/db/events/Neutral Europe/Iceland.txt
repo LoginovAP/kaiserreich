@@ -13,8 +13,8 @@ ispuppet = ICL
 }
 }
 
-name = "Fuel shortage"
-desc = "Due to the recent economic downturn the government cannot afford much needed fuel for our economy, mainly fishning fleet."
+name = "EVT_83100_NAME"
+desc = "EVT_83100_DESC"
 style = 2
 
 date = { day = 5 month = october year = 1938 }
@@ -22,7 +22,7 @@ offset = 3
 deathdate = { day = 30 month = december year = 1963 }
 
 action_a = {
-name = "Blast! No money"
+name = "EVT_83100_OPTIONA"
 command = { type = oilpool value = -200 }
 command = { type = dissent value = 1 }
 }
@@ -46,8 +46,8 @@ government = communist
 }
 }
 
-name = "Deal with Iceland"
-desc = "Due to the financial pressure that Iceland is under and the fact that they have very little fuel, it seems that this would be the best time to offer them a deal for fuel. We could use this as our first stepping stone to a longer deal that will benefit us"
+name = "EVT_830100_NAME"
+desc = "EVT_830100_DESC"
 style = 2
 picture = "diplomatic_campaign"
 
@@ -56,14 +56,14 @@ offset = 3
 deathdate = { day = 29 month = december year= 1960 }
 
 action_a = {
-name = "Approach them with a deal"
+name = "EVT_830100_OPTIONA"
 ai_chance = 90
 command = { type = trigger which = 83101 }
 command = { type = domestic which = interventionism value = 1 }
 }
 
 action_b = {
-name = "Not really the time"
+name = "EVT_830100_OPTIONB"
 ai_chance = 10
 command = { type = domestic which = interventionism value = -1 }
 command = { type = dissent value = 2 }
@@ -77,14 +77,14 @@ id = 83101
 country = ICL
 random = no
 
-name = "Canadian Fuel for Rights"
-desc = "The Canadians have approached us with a deal to bring much needed fuel into Iceland. We will need to give up some of our fishing rights off the coast of Greenland but we can avert a crisis."
+name = "EVT_83101_NAME"
+desc = "EVT_83101_DESC"
 style = 2
 picture = "diplomatic_campaign"
 
 action_a = {
 ai_chance = 95
-name = "Accept the deal"
+name = "EVT_83101_OPTIONA"
 command = { type = dissent value = 1 }
 command = { type = oilpool value = 50 }
 command = { type = local_setflag which = canicedeal }
@@ -96,7 +96,7 @@ command = { type = relation which = ENG value = -40 }
 
 action_b = {
 ai_chance = 5
-name = "The price is too high"
+name = "EVT_83101_OPTIONB"
 command = { type = sleepevent which = 830102 }
 command = { type = relation which = CAN value = -20 }
 command = { type = relation which = ENG value = 20 }
@@ -110,13 +110,13 @@ id = 830101
 random = no
 country = CAN
 
-name = "Iceland Accepts"
-desc = "Iceland has accepted the deal. We are in business and we may extend our fishing operations around coast of Greenland as well begin with plan to extend our influence over Iceland in order to make it base for future invasion of British isles."
+name = "EVT_830101_NAME"
+desc = "EVT_830101_DESC"
 style = 2
 picture = "diplomatic_campaign"
 
 action_a = {
-name = "Great News"
+name = "EVT_830101_OPTIONA"
 command = { type = oilpool value = -50 }
 command = { type = relation which = ICL value = 40 }
 command = { type = relation which = ENG value = -40 }
@@ -131,13 +131,13 @@ id = 830102
 random = no
 country = CAN
 
-name = "The Iceland refused our offer"
-desc = "Damn those Icelanders ! They have refused our offer to supply them with fuel in return for them giving up fishing rights around the coast Greenland. We must find other way to allow us to extend our influence over Iceland."
+name = "EVT_830102_NAME"
+desc = "EVT_830102_DESC"
 style = 2
 picture = "diplomatic_campaign"
 
 action_a = {
-name = "Too bad"
+name = "EVT_830102_OPTIONA"
 command = { type = relation which = ICL value = -20 }
 command = { type = dissent value = 1 }
 }
@@ -149,13 +149,13 @@ id = 100100
 random = no
 country = ENG
 
-name = "Royalist Meddle in Iceland"
-desc = "The Royalists are using the Icelanders' fuel crisis to meddle in Iceland's affairs. This is obviously the first move in a plot to gain foothold on Iceland and use it as base for another foolish attempt to retake British isles. Republican navy was ordered on full alert in response to this threat..."
+name = "EVT_100100_NAME"
+desc = "EVT_100100_DESC"
 style = 2
 picture = "Iceland"
 
 action_a = {
-name = "We need to keep our eyes on this"
+name = "EVT_100100_OPTIONA"
 command = { type = relation which = CAN value = -10 }
 command = { type = relation which = ICL value = -10 }
 }
@@ -177,8 +177,8 @@ government = communist
 }
 }
 
-name = "The Fishermen Protest"
-desc = "Fishermen have begun protesting against our decision to give up our fishing rights off the coast of Greenland, we were forced to accept in treaty we have signed with Canada. If they would only see reason.."
+name = "EVT_83102_NAME"
+desc = "EVT_83102_DESC"
 style = 2
 picture = "FORA"
 
@@ -187,7 +187,7 @@ offset = 3
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Blasted fishermen"
+name = "EVT_83102_OPTIONA"
 command = { type = dissent value = 1 }
 command = { type = event which = 83103 where = ICL when = 5  }
 }
@@ -200,14 +200,14 @@ country = ICL
 random = no
 
 
-name = "Opposition Demands the End to the Deal"
-desc = "The opposition part has demanded that we cancel the deal with Canada to address the concerns of the fishermen. If we cancel the deal we will be forced to look elsewhere for fuel but if we don't we will have to face a crisis at home."
+name = "EVT_83103_NAME"
+desc = "EVT_83103_DESC"
 style = 2
 picture = "FORA"
 
 action_a = {
 ai_chance = 90
-name = "We need that fuel"
+name = "EVT_83103_OPTIONA"
 command = { type = dissent which = 2 }
 command = { type = local_clrflag which = canicedeal }
 command = { type = relation which = CAN value = 40 }
@@ -217,7 +217,7 @@ command = { type = event which = 83104 where = ICL when = 5  }
 
 action_b = {
 ai_chance = 10
-name = "Cancel the deal"
+name = "EVT_83103_OPTIONB"
 command = { type = local_clrflag which = canicedeal }
 command = { type = relation which = CAN value = -40 }
 command = { type = relation which = ENG value = 60 }
@@ -231,13 +231,13 @@ id = 830103
 random = no
 country = CAN
 
-name = "Iceland Cancels Deal"
-desc = "Bowing to pressue at home the Icelandic government has cancelled the deal they had with us. This is most unfortunate for our ambitions we have with Iceland....."
+name = "EVT_830103_NAME"
+desc = "EVT_830103_DESC"
 style = 2
 picture = "diplomatic_campaign"
 
 action_a = {
-name = "Too bad"
+name = "EVT_830103_OPTIONA"
 command = { type = relation which = ICL value = -20 }
 command = { type = dissent value = 1 }
 }
@@ -250,13 +250,13 @@ id = 83104
 country = ICL
 random = no
 
-name = "The Reykjavik Riots"
-desc = "Our refusal to cancel the deal with Canada has led to large riots in Reykjavik called by independence party, socialists and various labour unions. They are demanding immediate end to our deal regarding fishning right along the coast of Greenland as well as end to unwelcomed Canadian meddling in our national affairs."
+name = "EVT_83104_NAME"
+desc = "EVT_83104_DESC"
 style = 2
 picture = "FORA"
 
 action_a = {
-name = "Damn those rioters !"
+name = "EVT_83104_OPTIONA"
 command = { type = dissent value = 4 }
 command = { type = trigger which = 830104 }
 command = { type = trigger which = 100101 }
@@ -269,13 +269,13 @@ id = 830104
 random = no
 country = CAN
 
-name = "The Reykjavik Riots"
-desc = "It appears that there are severe internal problems in Iceland. We should keep an eye on this as it could be due to Syndicalist involvement from mainland Europe...."
+name = "EVT_830104_NAME"
+desc = "EVT_830104_DESC"
 style = 2
 picture = "FORA"
 
 action_a = {
-name = "Troubling news"
+name = "EVT_830104_OPTIONA"
 command = { }
 }
 }
@@ -287,13 +287,13 @@ random = no
 country = ENG
 
 
-name = "The Reykjavik Riots"
-desc = "The workers have begun to rise up against the oppressive Icelandic government. Such an opportunity to take direct influence over Iceland and push back royalists ambitions must be used before it is too late..."
+name = "EVT_100101_NAME"
+desc = "EVT_100101_DESC"
 style = 2
 picture = "FORA"
 
 action_a = {
-name = "Power to the workers"
+name = "EVT_100101_OPTIONA"
 ai_chance = 100
 command = { type = supplies value = -20 }
 command = { type = domestic which = interventionism value = 1 }
@@ -301,7 +301,7 @@ command = { type = relation which = ICL value = -10 }
 }
 
 action_b = {
-name = "It is too risky...." # is this sufficient ? - perhaps better version is needed
+name = "EVT_100101_OPTIONB" # is this sufficient ? - perhaps better version is needed
 ai_chance = 0
 command = { type = domestic which = interventionism value = -1 }
 command = { type = sleepevent which = 100103 }
@@ -325,8 +325,8 @@ ispuppet = ICL
 }
 }
 
-name = "Modifying the Deal"
-desc = "With all the riots in Reykjavik and our inablity to restore order we are hoping to modify the deal with Canada so we can quell some of the dissent in the city. We have offered Canada the ability to station troops in Iceland to hopefully restore order."
+name = "EVT_83105_NAME"
+desc = "EVT_83105_DESC"
 style = 2
 picture = "FORA"
 
@@ -335,7 +335,7 @@ offset = 3
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Send the request"
+name = "EVT_83105_OPTIONA"
 ai_chance = 90
 command = { type = dissent value = 1 }
 command = { type = relation which = ENG value = -20 }
@@ -343,7 +343,7 @@ command = { type = event which = 830105 where = CAN when = 1  }
 }
 
 action_b = {
-name = "We shall solve this on our own" # is this sufficient ? - perhaps better version is needed
+name = "EVT_83105_OPTIONB" # is this sufficient ? - perhaps better version is needed
 ai_chance = 10
 command = { type = event which = 100106 where = ICL when = 3  }
 }
@@ -356,13 +356,13 @@ id = 830105
 random = no
 country = CAN
 
-name = "Send the Troops to Iceland"
-desc = "Iceland wishes to modify the treaty with us to gain the fishing rights back. In return they are offering us the ability to station our land, naval and air forces there. Just what we wanted...."
+name = "EVT_830105_NAME"
+desc = "EVT_830105_DESC"
 style = 2
 picture = "American_Infantry"
 
 action_a = {
-name = "Accept their proposition"
+name = "EVT_830105_OPTIONA"
 ai_chance = 99
 command = { type = domestic which = interventionism value = 1 }
 command = { type = relation which = ENG value = -20 }
@@ -373,7 +373,7 @@ command = { type = event which = 83150 where = ICL when = 1  }
 }
 
 action_b = {
-name = "Refuse such proposal"
+name = "EVT_830105_OPTIONB"
 ai_chance = 1
 command = { type = domestic which = interventionism value = 1 }
 command = { type = relation which = ENG value = 20 }
@@ -389,13 +389,13 @@ id = 100102
 random = no
 country = ENG
 
-name = "The Royalists Have Sent Troops to Iceland"
-desc = "The Royalists have used their deal with government of Iceland to move their forces onto Iceland to use it as base for their further incursions against British isles. This is unacceptable."
+name = "EVT_100102_NAME"
+desc = "EVT_100102_DESC"
 style = 2
 picture = "Iceland"
 
 action_a = {
-name = "Outrageous"
+name = "EVT_100102_OPTIONA"
 command = { type = relation which = ICL value = -20 }
 command = { type = dissent value = 1 }
 }
@@ -408,13 +408,13 @@ id = 83150
 random = no
 country = ICL
 
-name = "Our offer was accepted"
-desc = "Government of Canada has accepted our proposal and modified our existing treaty allowing us to regain fishing rights around coast of Greenland in return for allowing Canadian troops being stationed on Iceland."
+name = "EVT_83150_NAME"
+desc = "EVT_83150_DESC"
 style = 2
 picture = "American_Infantry"
 
 action_a = {
-name = "Excellent"
+name = "EVT_83150_OPTIONA"
 command = { type = relation which = CAN value = 20 }
 command = { type = dissent value = -1 }
 command = { type = access which = CAN }
@@ -494,8 +494,8 @@ garrison = { country = ENG province = 2663 type = naval size = 3 area = no }
 }
 }
 
-name = "Blockading Iceland"
-desc = "The Royalist incursion in Iceland is unacceptable. If we do not act now, while their control over island is tenuous and syndicalist movement in Iceland is still strong they solidify their control over island, making it permanent base for their further incursions against us. A blockade is probably the best approach to remove the Royalists and their influence from Iceland."
+name = "EVT_100103_NAME"
+desc = "EVT_100103_DESC"
 style = 2
 picture = "uobnavy"
 
@@ -504,7 +504,7 @@ offset = 3
 deathdate = { day = 30 month = december year= 1963 }
 
 action_a = {
-name = "Go ahead with the blockade"
+name = "EVT_100103_OPTIONA"
 ai_chance = 95
 command = { type = trigger which = 83107 }
 command = { type = trigger which = 830106 }
@@ -515,7 +515,7 @@ command = { type = setflag which = BNBI }
 }
 
 action_b = {
-name = "We are not ready for this"
+name = "EVT_100103_OPTIONB"
 ai_chance = 5
 command = { type = dissent value = 1 }
 }
@@ -528,13 +528,13 @@ id = 830106
 random = no
 country = CAN
 
-name = "Union of Britain Blockades Iceland"
-desc = "In protest to our treaty with Iceland, which allowed us to station troops on Iceland, the syndicalists bastards have set a blockade around Iceland !"
+name = "EVT_830106_NAME"
+desc = "EVT_830106_DESC"
 style = 2
 picture = "uobnavy"
 
 action_a = {
-name = "We must respond"
+name = "EVT_830106_OPTIONA"
 command = { type = relation which = ENG value = -40 }
 command = { type = event which = 830107 where = CAN when = 1  }
 }
@@ -548,12 +548,12 @@ country = ICL
 random = no
 # triggered by UB blockade event
 
-name = "Union of Britain Blockades Iceland"
-desc = "In response to our decision to allow Canadian armed forces on our island, the Union of Britain has begun a blockade of the island and will not allow any supplies to be ferried into the country."
+name = "EVT_83107_NAME"
+desc = "EVT_83107_DESC"
 style = 2
 
 action_a = {
-name = "A blockade is upon us"
+name = "EVT_83107_OPTIONA"
 command = { type = dissent value = 1 }
 command = { type = supplies value = -500 } # there should be some event for ending blockade when iceland calls for an early elections and non-syndicalsit party wins
 command = { type = industrial_modifier which = total value = -2 }
@@ -585,20 +585,20 @@ random = no
 country = CAN
 
 
-name = "Responding to the Blockade"
-desc = "We must respond to this contentious act. The King is demanding war but the PM is considering a more subtle approach that will avoid open conflict. What should we do?"
+name = "EVT_830107_NAME"
+desc = "EVT_830107_DESC"
 style = 2
 picture = "uobnavy"
 
 action_a = {
-name = "War with the Bastards"
+name = "EVT_830107_OPTIONA"
 ai_chance = 15
 command = { type = war which = ENG }
 command = { type = alliance which = ICL }
 }
 
 action_b = {
-name = "Covert operations will do"
+name = "EVT_830107_OPTIONB"
 ai_chance = 85
 command = { type = dissent value = 1 }
 }
@@ -621,8 +621,8 @@ ispuppet = ICL
 }
 }
 
-name = "The National Crisis"
-desc = "The blockade has caused a crisis in the cabinet and the members of the Popular Unity Party have demanded an election. The fisherman throughout the country have sided with the opposition. What should we do?"
+name = "EVT_83108_NAME"
+desc = "EVT_83108_DESC"
 style = 2
 
 date = { day = 1 month = december year = 1938 }
@@ -631,14 +631,14 @@ deathdate = { day = 30 month = december year = 1963 }
 
 action_a = {
 ai_chance = 25
-name = "Hold an election"
+name = "EVT_83108_OPTIONA"
 command = { type = local_setflag which = electice }
 command = { type = dissent value = -1 }
 }
 
 action_b = {
 ai_chance = 75
-name = "No elections"
+name = "EVT_83108_OPTIONB"
 command = { type = local_setflag which = electno }
 command = { type = dissent value = 3 }
 }
@@ -663,8 +663,8 @@ ispuppet = ICL
 }
 }
 
-name = "The Opposition Walks out in Protest"
-desc = "After the government's failure to call an election the Popular Unity Party and the Nationalist Party members left the government. Protests are mounting and several armed people have been seen outside of the government buildings."
+name = "EVT_83109_NAME"
+desc = "EVT_83109_DESC"
 style = 2
 
 date = { day = 22 month = december year = 1938 }
@@ -672,7 +672,7 @@ offset = 3
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "This is trouble"
+name = "EVT_83109_OPTIONA"
 command = { type = dissent value = 3 }
 command = { type = local_clrflag which = electno }
 }
@@ -693,8 +693,8 @@ ispuppet = ICL
 }
 }
 
-name = "The People Storm the Government"
-desc = "The members of the Popular Unity Party and the Nationalist Party have agitated the crowd into a near frenzy. The protestors have stormed the government buildings and they are barely being kept out."
+name = "EVT_83110_NAME"
+desc = "EVT_83110_DESC"
 style = 2
 
 date = { day = 1 month = december year = 1938 }
@@ -710,13 +710,13 @@ ispuppet = CAN
 government = { type = communist country = CAN }
 }
 }
-name = "Ask Canada for help"
+name = "EVT_83110_OPTIONA"
 command = { type = trigger which = 830108 }
 }
 
 action_b = {
 ai_chance = 10
-name = "We can take care of this"
+name = "EVT_83110_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = event which = 100106 where = ICL when = 3  }
 }
@@ -730,20 +730,20 @@ id = 830108
 random = no
 country = CAN
 
-name = "Icelands Government asks for Help"
-desc = "With the violence of the protests, and what could possibly be Union involvement, the Icelandic government has asked us to send in our troops to quell the uprising. The King is anxious to support the government but the PM would like to avoid an open conflict on the island"
+name = "EVT_830108_NAME"
+desc = "EVT_830108_DESC"
 style = 2
 picture = "diplomatic_campaign"
 
 action_a = {
-name = "Send in the troops"
+name = "EVT_830108_OPTIONA"
 ai_chance = 75
 command = { type = trigger which = 100104 }
 command = { type = trigger which = 83106 }
 }
 
 action_b = {
-name = "Refuse their request"
+name = "EVT_830108_OPTIONB"
 ai_chance = 25
 command = { type = dissent value = 2 }
 command = { type = trigger which = 83112 }
@@ -757,12 +757,12 @@ country = ICL
 random = no
 
 
-name = "Canadian Troops Enter Reykjavik"
-desc = "In accordance with our request, the government of Canada has sent much needed elements of its armed forces to help us protect our island from syndicalism."
+name = "EVT_83106_NAME"
+desc = "EVT_83106_DESC"
 style = 2
 
 action_a = {
-name = "Excellent !"
+name = "EVT_83106_OPTIONA"
 command = { }
 }
 }
@@ -774,19 +774,19 @@ id = 100104
 random = no
 country = ENG
 
-name = "Royalists Intervene in Iceland"
-desc = "The Icelandic government has requested the Royalists' help in putting down the just cause of the people of Iceland. We must act for the workers."
+name = "EVT_100104_NAME"
+desc = "EVT_100104_DESC"
 style = 2
 picture = "Iceland"
 
 action_a = {
-name = "Help the workers of Iceland"
+name = "EVT_100104_OPTIONA"
 ai_chance = 90
 command = { type = trigger which = 83113 }
 }
 
 action_b = {
-name = "The workers will triumph without our help"
+name = "EVT_100104_OPTIONB"
 ai_chance = 10
 command = { type = dissent value = 3 }
 command = { type = trigger which = 83111 }
@@ -801,12 +801,12 @@ country = ICL
 random = no
 # triggered by 830108
 
-name = "Canada does not Intervene"
-desc = "Our request for aid from Canada has been denied. The troops are leaving and the protestors have seized most of Iceland. We should leave with the Canadians."
+name = "EVT_83112_NAME"
+desc = "EVT_83112_DESC"
 style = 2
 
 action_a = {
-name = "Time to pack"
+name = "EVT_83112_OPTIONA"
 command = { type = setflag which = canicelose }
 command = { type = trigger which = 100106 }
 command = { type = trigger which = 830110 }
@@ -819,12 +819,12 @@ id = 83111
 country = ICL
 random = no
 
-name = "Canada Secures Reykjavik"
-desc = "Thanks to the Canadian troops we have been able to secure Iceland. We will not forget their help."
+name = "EVT_83111_NAME"
+desc = "EVT_83111_DESC"
 style = 2
 
 action_a = {
-name = "Back to business"
+name = "EVT_83111_OPTIONA"
 command = { type = setflag which = canicewin }
 command = { type = trigger which = 100105 }
 command = { type = trigger which = 830109 }
@@ -838,13 +838,13 @@ id = 100105
 random = no
 country = ENG
 
-name = "Royalists Secure Iceland"
-desc = "The Royalists troops have overcome the protestors and have secured Iceland"
+name = "EVT_100105_NAME"
+desc = "EVT_100105_DESC"
 style = 2
 picture = "Iceland"
 
 action_a = {
-name = "Terrible news"
+name = "EVT_100105_OPTIONA"
 command = { }
 }
 }
@@ -856,13 +856,13 @@ id = 100106
 random = no
 country = ENG
 
-name = "The Workers Triumph in Iceland"
-desc = "The workers of Iceland have triumphed over the oppressive Icelandic government. This is good news for us"
+name = "EVT_100106_NAME"
+desc = "EVT_100106_DESC"
 style = 2
 picture = "FORA"
 
 action_a = {
-name = "The workers triumph again"
+name = "EVT_100106_OPTIONA"
 command = { type = trigger which = 83117  }
 }
 }
@@ -874,13 +874,13 @@ id = 830109
 random = no
 country = CAN
 
-name = "We Have Secured Reykjavik"
-desc = "With as little force as possible we have secured the city and brought the protests to an end. Many of the opposition leaders have fled to England."
+name = "EVT_830109_NAME"
+desc = "EVT_830109_DESC"
 style = 2
 picture = "militaryparade1"
 
 action_a = {
-name = "A great day"
+name = "EVT_830109_OPTIONA"
 command = { type = event which = 830114 where = CAN when = 1  }
 }
 }
@@ -892,13 +892,13 @@ id = 830110
 random = no
 country = CAN
 
-name = "The Icelandic Government Falls"
-desc = "With our troops off the island there was nothing to stop the protestors. They have taken the island and are forming a socialist government."
+name = "EVT_830110_NAME"
+desc = "EVT_830110_DESC"
 style = 2
 picture = "FORA"
 
 action_a = {
-name = "Not what we had hoped"
+name = "EVT_830110_OPTIONA"
 command = { type = dissent value = 1 }
 }
 }
@@ -916,12 +916,12 @@ random = no
 picture = "urbanwarfare5"
 # trigger event = 100104
 
-name = "Canadian and British Forces Clash"
-desc = "Both Canada and Britain have intervened in the struggle. The British are helping the opposition while Canadian forces are helping us. There seems to be a lot of firing and only time will tell who wins this battle."
+name = "EVT_83113_NAME"
+desc = "EVT_83113_DESC"
 style = 2
 
 action_a = {
-name = "Keep your fingers crossed"
+name = "EVT_83113_OPTIONA"
 command = { type = setflag which = canengice }
 command = { type = event which = 100107 where = ENG when = 1  }
 command = { type = event which = 830111 where = CAN when = 1  }
@@ -935,13 +935,13 @@ id = 100107
 random = no
 country = ENG
 
-name = "Royalist and Union forces Clash"
-desc = "For the first time since the Glorious Revolution our forces and the forces of the Royalists are engaged in combat through the shore regions of Iceland. If we can with help of the revolting Icelanders fully secure Reykjavik, victory will be ours..."
+name = "EVT_100107_NAME"
+desc = "EVT_100107_DESC"
 style = 2
 picture = "urbanwarfare5"
 
 action_a = {
-name = "Victory or death"
+name = "EVT_100107_OPTIONA"
 command = { }
 }
 }
@@ -954,13 +954,13 @@ id = 830111
 random = no
 country = CAN
 
-name = "Battle in Reykjavik"
-desc = "For the first time since the revolution Union and Royalist forces are engaged in combat through the shore regions of Iceland. If we can with help of the current government of Iceland to fully secure Reykjavik, victory will be ours..."
+name = "EVT_830111_NAME"
+desc = "EVT_830111_DESC"
 style = 2
 picture = "urbanwarfare5"
 
 action_a = {
-name = "Get them"
+name = "EVT_830111_OPTIONA"
 command = { }
 }
 }
@@ -980,8 +980,8 @@ event = 830111
 event = 100107
 }
 
-name = "Canadian Troops win the Skirmish"
-desc = "After a brief skirmish with British forces the Canadian troops have won the day and helped us secure Iceland. A marvelous turn of events."
+name = "EVT_83114_NAME"
+desc = "EVT_83114_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1939 }
@@ -989,7 +989,7 @@ offset = 3
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Back to business"
+name = "EVT_83114_OPTIONA"
 command = { type = sleepevent which = 83115 }
 command = { type = relation which = CAN value = 250 }
 command = { type = setflag which = canicewin }
@@ -1011,8 +1011,8 @@ event = 830111
 event = 100107
 }
 
-name = "British Troops win the Skirmish"
-desc = "After a brief skirmish with British forces, Canadian troops have been pushed back and the British forces are helping the opposition and protestors take the government. All is lost and we must escape."
+name = "EVT_83115_NAME"
+desc = "EVT_83115_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1939 }
@@ -1020,7 +1020,7 @@ offset = 3
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Pack your bags"
+name = "EVT_83115_OPTIONA"
 command = { type = sleepevent which = 83114 }
 command = { type = setflag which = canicelose }
 command = { type = trigger which = 83117  }
@@ -1043,8 +1043,8 @@ flag = canicewin
 event = 830112
 }
 
-name = "Royalists seize Iceland"
-desc = "Our forces have been defeated by the Royalists. They have obviously used some sort of trickery to do this but the facts are we are out and must respond. Some demand war others think we should leave"
+name = "EVT_100108_NAME"
+desc = "EVT_100108_DESC"
 style = 2
 picture = "Iceland"
 
@@ -1053,7 +1053,7 @@ offset = 1
 deathdate = { day = 29 month = december year= 1960 }
 
 action_a = {
-name = "We shall burn the Royalists out of Iceland"
+name = "EVT_100108_OPTIONA"
 ai_chance = 10
 command = { type = war which = CAN }
 command = { type = war which = ICL }
@@ -1076,7 +1076,7 @@ command = { type = clrflag which = canengice }
 }
 
 action_b = {
-name = "Raise the blockade and evacuate"
+name = "EVT_100108_OPTIONB"
 ai_chance = 90
 command = { type = dissent value = 2 }
 command = { type = embargo which = ENG where = ICL value = 0 }
@@ -1105,13 +1105,13 @@ id = 830112
 random = no
 country = CAN
 
-name = "Canadian Forces Win"
-desc = "We have triumphed over protestors supported by parts of the Union forces. Iceland is ours."
+name = "EVT_830112_NAME"
+desc = "EVT_830112_DESC"
 style = 2
 picture = "urbanwarfare5"
 
 action_a = {
-name = "A great day for us"
+name = "EVT_830112_OPTIONA"
 command = { type = event which = 830114 where = CAN when = 1  }
 }
 }
@@ -1124,20 +1124,20 @@ id = 830114
 country = CAN
 random = no
 
-name = "Icelandic Government"
-desc = "The Canadian government is now in a position to install its own type of government in Iceland. The King believes that we should side with the Icelandic Nationalist Party to ensure that Iceland remains free of socialist influence. The PM is hesitant to back an extreme party like that and believes we should not interfere and allow Iceland to remain a democracy."
+name = "EVT_830114_NAME"
+desc = "EVT_830114_DESC"
 style = 2
 picture = "politics4"
 
 action_a = {
 ai_chance = 75
-name = "Democracy is important. Side with the PM"
+name = "EVT_830114_OPTIONA"
 command = { type = domestic which = freedom value = 1 }
 }
 
 action_b = {
 ai_chance = 25
-name = "The King is right, lets not take the chance"
+name = "EVT_830114_OPTIONB"
 command = { type = trigger which = 83118 }
 command = { type = domestic which = freedom value = -1 }
 }
@@ -1151,12 +1151,12 @@ country = ICL
 random = no
 picture = "politics4"
 
-name = "Icelandic Government"
-desc = "The Canadian government has installed the Nationalist Party in Iceland. The strong presence of this party will allow Iceland to hopefully prosper in the face of Socialist agitation."
+name = "EVT_83118_NAME"
+desc = "EVT_83118_DESC"
 style = 2
 
 action_a = {
-name = "All hail the Nationalists"
+name = "EVT_83118_OPTIONA"
 command = { type = set_domestic which = democratic value = 4 }
 command = { type = set_domestic which = political_left value = 1 }
 command = { type = set_domestic which = freedom value = 3 }
@@ -1183,8 +1183,8 @@ flag = canengice
 event = 100106
 }
 
-name = "Canadian Forces Fail"
-desc = "Government of Iceland has been defeated by protestors suuported by parts of the Union forces despite our continuous support and are being forced to retreat. We must either avenge this humiliation or helplesly watch as another country fall to syndicalist scum."
+name = "EVT_830113_NAME"
+desc = "EVT_830113_DESC"
 style = 2
 picture = "urbanwarfare5"
 
@@ -1193,7 +1193,7 @@ offset = 1
 deathdate = { day = 29 month = december year= 1963 }
 
 action_a = {
-name = "War with the Union"
+name = "EVT_830113_OPTIONA"
 ai_chance = 45
 command = { type = war which = ENG }
 command = { type = embargo which = ENG where = ICL value = 0 }
@@ -1215,7 +1215,7 @@ command = { type = clrflag which = canengice }
 }
 
 action_b = {
-name = "It is too risky"
+name = "EVT_830113_OPTIONB"
 ai_chance = 55
 command = { type = dissent value = 2 }
 command = { type = embargo which = ENG where = ICL value = 0 }
@@ -1259,8 +1259,8 @@ ideology = nazi
 }
 }
 
-name = "The Icelandic Election"
-desc = "The economic problems combined with the british naval blockade and widespread protests forced our government to set up an early elections. The entire nation is eagerly awaiting result of this crucial elecdtions...."
+name = "EVT_83116_NAME"
+desc = "EVT_83116_DESC"
 style = 2
 
 date = { day = 17 month = february year = 1939 }
@@ -1268,7 +1268,7 @@ offset = 5
 deathdate = { day = 29 month = december year= 1963 }
 
 action_a = {
-name = "Reelect the Progressive Party"
+name = "EVT_83116_OPTIONA"
 ai_chance = 10
 command = { type = set_domestic which = democratic value = 10 }
 command = { type = set_domestic which = political_left value = 7 }
@@ -1293,7 +1293,7 @@ command = { type = embargo which = RUS where = ICL value = 0 }
 }
 
 action_b = {
-name = "Elect the Popular Unity Party"
+name = "EVT_83116_OPTIONB"
 ai_chance = 35
 command = { type = set_domestic which = democratic value = 2 }
 command = { type = set_domestic which = political_left value = 9 }
@@ -1321,7 +1321,7 @@ command = { type = end_access which = CAN }
 }
 
 action_c = {
-name = "Elect the Independence Party"
+name = "EVT_83116_OPTIONC"
 ai_chance = 20
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 5 }
@@ -1348,7 +1348,7 @@ command = { type = embargo which = RUS where = ICL value = 0 }
 }
 
 action_d = {
-name = "Elect the Nationalist Party"
+name = "EVT_83116_OPTIOND"
 ai_chance = 35
 command = { type = set_domestic which = democratic value = 4 }
 command = { type = set_domestic which = political_left value = 1 }
@@ -1382,12 +1382,12 @@ country = ICL
 random = no
 picture = "politics4"
 
-name = "The People Take the Government"
-desc = "With the help of the workers of Britain, the Popular Unity Party has taken control of Iceland."
+name = "EVT_83117_NAME"
+desc = "EVT_83117_DESC"
 style = 2
 
 action_a = {
-name = "The Glory of the Workers"
+name = "EVT_83117_OPTIONA"
 command = { type = set_domestic which = democratic value = 2 }
 command = { type = set_domestic which = political_left value = 9 }
 command = { type = set_domestic which = freedom value = 1 }
@@ -1431,8 +1431,8 @@ government = communist
 }
 }
 
-name = "The Deal With Canada"
-desc = "With the security of Iceland assured Canada has approached us to renew the deal signed by the previous government. This is a lucrative deal but will require us to join an alliance with them."
+name = "EVT_83119_NAME"
+desc = "EVT_83119_DESC"
 style = 2
 picture = "Iceland"
 
@@ -1442,7 +1442,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 80
-name = "Great deal for us"
+name = "EVT_83119_OPTIONA"
 command = { type = trigger which = 83120 }
 command = { type = metalpool value = 1000 }
 command = { type = energypool value = 1150 }
@@ -1451,7 +1451,7 @@ command = { type = oilpool value = 500 }
 
 action_b = {
 ai_chance = 20
-name = "Fresh start. No deal with Canada"
+name = "EVT_83119_OPTIONB"
 command = { type = dissent value = 1 }
 }
 }
@@ -1461,13 +1461,13 @@ id = 83120
 country = CAN
 random = no
 
-name = "Alliance with Iceland"
-desc = "With control of Iceland now in the hands of the National Party, they approached us to form a defensive alliance in the North Atlantic."
+name = "EVT_83120_NAME"
+desc = "EVT_83120_DESC"
 style = 2
 picture = "Iceland"
 
 action_a = {
-name = "Our position in the Atlantic is secured"
+name = "EVT_83120_OPTIONA"
 command = { type = alliance which = ICL }
 command = { type = relation which = ICL value = 80 }
 command = { type = dissent value = -1 }
@@ -1491,8 +1491,8 @@ ispuppet = ICL
 }
 }
 
-name = "Alliance with Britain"
-desc = "With control of Iceland now in the hands of the Popular Unity Party, the Socialists in England have approached us to form a defensive alliance in the North Atlantic."
+name = "EVT_83121_NAME"
+desc = "EVT_83121_DESC"
 style = 2
 picture = "Iceland"
 
@@ -1502,7 +1502,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 95
-name = "Behold the power of the workers"
+name = "EVT_83121_OPTIONA"
 command = { type = trigger which = 83122 }
 command = { type = metalpool value = 1000 }
 command = { type = energypool value = 1150 }
@@ -1512,7 +1512,7 @@ command = { type = relation which = ENG value = 80 }
 
 action_b = {
 ai_chance = 5
-name = "Iceland needs no help"
+name = "EVT_83121_OPTIONB"
 command = { type = dissent value = 1 }
 }
 }
@@ -1522,13 +1522,13 @@ id = 83122
 country = ENG
 random = no
 
-name = "Alliance with Iceland"
-desc = "With control of Iceland now in the hands of the Popular Unity Party, they approached us to form a defensive alliance in the North Atlantic."
+name = "EVT_83122_NAME"
+desc = "EVT_83122_DESC"
 style = 2
 picture = "Iceland"
 
 action_a = {
-name = "Behold the power of the workers"
+name = "EVT_83122_OPTIONA"
 command = { type = alliance which = ICL }
 command = { type = relation which = ICL value = 80 }
 command = { type = dissent value = -1 }
@@ -1564,8 +1564,8 @@ atwar = ICL
 }
 }
 
-name = "Joining the Internationale?"
-desc = "Britain decided to leave their alliance with Iceland and joined arms with France in their anti-imperialist war against Germany. Should we follow suit? Our population is divided: joining the war means we'd have to raise a proper army. Also, Iceland would be easy prey to German forces. A different proposal is granting French and British vessels access to our harbours. This way, we'd help in the war effort without compromising our own security."
+name = "EVT_781000_NAME"
+desc = "EVT_781000_DESC"
 style = 2
 picture = "Iceland"
 
@@ -1575,7 +1575,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 15
-name = "We must join the struggle"
+name = "EVT_781000_OPTIONA"
 command = { type = trigger which = 781001 }
 command = { type = relation which = FRA value = 100 }
 command = { type = relation which = ENG value = 100 }
@@ -1587,7 +1587,7 @@ command = { type = add_division which = "Herfylkingin Íslands" value = infantry 
 
 action_b = {
 ai_chance = 35
-name = "Offer France and Britain access to Icelandic waters"
+name = "EVT_781000_OPTIONB"
 command = { type = trigger which = 781002 }
 command = { type = relation which = FRA value = 50 }
 command = { type = relation which = ENG value = 50 }
@@ -1597,7 +1597,7 @@ command = { type = dissent value = 3 }
 
 action_c = {
 ai_chance = 50
-name = "We'd gain nothing by joining this war, let's stay neutral"
+name = "EVT_781000_OPTIONC"
 command = { type = dissent value = -1 }
 command = { type = relation which = FRA value = -20 }
 command = { type = relation which = ENG value = -20 }
@@ -1610,14 +1610,14 @@ id = 781001
 country = FRA
 random = no
 
-name = "Iceland joins the struggle"
-desc = "The tiny Republic of Iceland, whose people have recently deposed the bourgeois Danish government on their island and fought off a royalist Canadian intervention with help from the Union of Britain, have expressed their support to our anti-imperialist struggle and wish to join the Internationale! They may not have too much of an army, but their harbours would be great staging points for patrols of the North Atlantic, which would be useful to keep both the German and Canadian Navies in check."
+name = "EVT_781001_NAME"
+desc = "EVT_781001_DESC"
 style = 2
 picture = "Iceland"
 
 action_a = {
 ai_chance = 99
-name = "Welcome them"
+name = "EVT_781001_OPTIONA"
 command = { type = alliance which = ICL }
 command = { type = dissent value = -1 }
 command = { type = relation which = ICL value = 200 }
@@ -1625,7 +1625,7 @@ command = { type = relation which = ICL value = 200 }
 
 action_b = {
 ai_chance = 1
-name = "Hmm... No"
+name = "EVT_781001_OPTIONB"
 command = { type = relation which = ICL value = -50 }
 }
 }
@@ -1635,14 +1635,14 @@ id = 781002
 country = FRA
 random = no
 
-name = "Iceland offers access to their harbours"
-desc = "Tiny Iceland, whose people have recently deposed the bourgeois Danish government on their island and fought off a royalist Canadian intervention with help from the Union of Britain, have expressed their support to our anti-imperialist struggle! They may not have too much of an army, but they've offered us access to their harbours. These would be great staging points for patrols of the North Atlantic, which would be useful to keep both the German and Canadian Navies in check."
+name = "EVT_781002_NAME"
+desc = "EVT_781002_DESC"
 style = 2
 picture = "Iceland"
 
 action_a = {
 ai_chance = 99
-name = "Great"
+name = "EVT_781002_OPTIONA"
 command = { type = relation which = ICL value = 100 }
 command = { type = trigger which = 781003 }
 command = { type = trigger which = 781004 }
@@ -1650,7 +1650,7 @@ command = { type = trigger which = 781004 }
 
 action_b = {
 ai_chance = 1
-name = "Hmm... No"
+name = "EVT_781002_OPTIONB"
 command = { type = relation which = ICL value = -50 }
 }
 }
@@ -1660,21 +1660,21 @@ id = 781003
 country = ENG
 random = no
 
-name = "Iceland offers access to their harbours"
-desc = "Tiny Iceland, whose people have recently deposed the bourgeois Danish government on their island and fought off a royalist Canadian intervention with help from the Union of Britain, have expressed their support to our anti-imperialist struggle! They may not have too much of an army, but they've offered us access to their harbours. These would be great staging points for patrols of the North Atlantic, which would be useful to keep both the German and Canadian Navies in check."
+name = "EVT_781003_NAME"
+desc = "EVT_781003_DESC"
 style = 2
 picture = "Iceland"
 
 action_a = {
 ai_chance = 99
-name = "Great"
+name = "EVT_781003_OPTIONA"
 command = { type = relation which = ICL value = 100 }
 command = { type = trigger which = 781005 }
 }
 
 action_b = {
 ai_chance = 1
-name = "Hmm... No"
+name = "EVT_781003_OPTIONB"
 command = { type = relation which = ICL value = -50 }
 }
 }
@@ -1685,13 +1685,13 @@ id = 781004
 country = ICL
 random = no
 
-name = "France accepted our offer"
-desc = "Our offer to support France by allowing their forces to use our harbors and airports has been accepted."
+name = "EVT_781004_NAME"
+desc = "EVT_781004_DESC"
 style = 2
 picture = "Iceland"
 
 action_a = {
-name = "Great"
+name = "EVT_781004_OPTIONA"
 command = { type = access which = FRA }
 command = { type = relation which = ICL value = 100 }
 }
@@ -1703,13 +1703,13 @@ id = 781005
 country = ICL
 random = no
 
-name = "England accepted our offer"
-desc = "Our offer to support England by allowing their forces to use our harbors and airports has been accepted."
+name = "EVT_781005_NAME"
+desc = "EVT_781005_DESC"
 style = 2
 picture = "Iceland"
 
 action_a = {
-name = "Great"
+name = "EVT_781005_OPTIONA"
 command = { type = access which = ENG }
 command = { type = relation which = ICL value = 100 }
 }

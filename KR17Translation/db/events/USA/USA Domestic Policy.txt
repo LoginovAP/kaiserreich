@@ -14,8 +14,8 @@ headofstate = 6208
 flag = ACW_CSA
 exists = FRA
 }
-name = "The CSA Escapes to France"
-desc = "After the CSA was defeated, Reed and the CSA evacuated to France to continue the effort against the USA. Reed would continue to be dangerous from outside the country but for now he was defeated along with radical socialism in America."
+name = "EVT_800320_NAME"
+desc = "EVT_800320_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -23,7 +23,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1954 }
 
 action_a = {
-name = "He can run for now."
+name = "EVT_800320_OPTIONA"
 command = { type = relation which = FRA value = -25 }
 }
 }
@@ -38,7 +38,7 @@ picture = "kaicharlescoughlin"
 
 #Triggered by 906500; db/events/kaiserreich/Papacy/Papacy
 
-name = "Father Charles Coughlin's CBS Radio Broadcasts"
+name = "EVT_906501_NAME"
 desc = "EVT_906500_DESC"
 
 #Three years from today, Father Charles Coughlin started doing weekly radio broadcast on CBS and more than 50 million turn on their
@@ -50,13 +50,13 @@ desc = "EVT_906500_DESC"
 
 action_a = {
 ai_chance = 50
-name = "Coughlin is a becoming a dangerous proposition, shut him down"
+name = "EVT_906501_OPTIONA"
 command = { type = relation which = ITA value = 20 }
 command = { type = dissent value = 5 }
 }
 action_b = {
 ai_chance = 50
-name = "There is nothing we can do"
+name = "EVT_906501_OPTIONB"
 command = { type = relation which = ITA value = -15 }
 command = { type = dissent value = 3 }
 }
@@ -68,14 +68,14 @@ random = no
 country = USA
 style = 2
 
-name = "The 100th anniversary of The Battle of The Alamo"
-desc = "Today marks the 100th Anniversary of the Battle of the Alamo where over 200 brave Texans fought and died for freedom of the newly created Republic of Texas."
+name = "EVT_658639_NAME"
+desc = "EVT_658639_DESC"
 picture = "battleofalamo"
 
 date = { day = 6 month = March year = 1936 }
 
 action_a = {
-name = "Remember the Alamo!"
+name = "EVT_658639_OPTIONA"
 command = { type = dissent value = -1 }
 }
 }
@@ -87,13 +87,13 @@ random = 2
 country = USA
 ##triggered by 9000853 in New England file
 
-name = "New England Rejoins the Union"
-desc = "After a bitter war the United States has triumphed over its enemies. The state of New England that broke away from the United States has now been added back to the Union."
+name = "EVT_906502_NAME"
+desc = "EVT_906502_DESC"
 style = 2
 
 action = {
 ai_chance = 100
-name = "Welcome back"
+name = "EVT_906502_OPTIONA"
 command = { type = inherit which = U10 }
 command = { Type = dissent value = -5 }
 }
@@ -123,12 +123,12 @@ exists = TEX
 exists = CSA
 }
 }
-name = "Form of government"
-desc = "Now when we destroyed the rebellious CSA and AUS we can think about domestic affairs. Democracy was and is really an important value in American lives since the foundation of our country but with crises and rebellions support for democracy has significantly diminished. MacArthur, beloved by many, must decide whether he wants to restore democracy or to establish a dictatorship."
+name = "EVT_906508_NAME"
+desc = "EVT_906508_DESC"
 
 action_a = {
 ai_chance = 50
-name = "It's out of question - Viva La Democracy!"
+name = "EVT_906508_OPTIONA"
 command = { type = headofstate which = 6242 }
 command = { type = set_domestic which = democratic value = 10 }
 command = { type = set_domestic which = political_left value = 6 }
@@ -139,7 +139,7 @@ command = { type = sleepevent which = 906531 }
 
 action_b = {
 ai_chance = 50
-name = "Mac Arthur...sounds good for a dictator"
+name = "EVT_906508_OPTIONB"
 command = { type = dissent value = 10 }
 }
 }
@@ -156,7 +156,7 @@ government = fascist
 headofstate = 6208 #fascist MacArthur
 }
 
-name = "Forging new USA - internal policy"
+name = "EVT_906531_NAME"
 desc = "EVT_755818_DESC"
 picture = "macarthurdic"
 
@@ -166,7 +166,7 @@ deathdate = { day = 1 month = january year = 1960 }
 
 action_a = {
 ai_chance = 50
-name = "MacArthur doesn't need to be President to exercise power!"
+name = "EVT_906531_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = setflag which = USA_MIN_JUNTA }
 command = { type = set_domestic which = democratic value = 5 }
@@ -175,7 +175,7 @@ command = { type = set_domestic which = political_left value = 5 }
 
 action_b = {
 ai_chance = 20
-name = "MacArthur will be President but he will leave day-to-day ruling to Senate and House"
+name = "EVT_906531_OPTIONB"
 command = { type = dissent value = -10 }
 command = { type = setflag which = USA_MAX_JUNTA }
 command = { type = set_domestic which = democratic value = 4 }
@@ -184,7 +184,7 @@ command = { type = set_domestic which = political_left value = 3 }
 
 action_c = {
 ai_chance = 20
-name = "One nation, one country, one ruler"
+name = "EVT_906531_OPTIONC"
 command = { type = dissent value = 5 }
 command = { type = setflag which = USA_TOTALITARIAN }
 command = { type = set_domestic which = democratic value = 2 }
@@ -208,13 +208,13 @@ date = { day = 1 month = january year = 1940 }
 offset = 30
 deathdate = { day = 1 month = january year = 1960 }
 
-name = "1940 presidential elections"
-desc = "The Patriotic Party connected with Mac Arthur and his cabinet has a great chance of winning the Presidential elections. The voters are stunned with pro-government propaganda and police actions against the opposition are working. It seems that the government will win and MacArthur's puppet will be the new President."
+name = "EVT_906532_NAME"
+desc = "EVT_906532_DESC"
 picture = "us1936elections"
 
 action_a ={
 ai_chance = 15
-name = "Democrat"
+name = "EVT_906532_OPTIONA"
 command = { type = headofstate which = 6236 } # Garner
 command = { type = headofgovernment which = 6044 } # Henry Wallace
 command = { type = setflag which = OPPOSITION_WINS }
@@ -223,7 +223,7 @@ command = { type = dissent value = -5 }
 
 action_b = {
 ai_chance = 15
-name = "Republican"
+name = "EVT_906532_OPTIONB"
 command = { type = headofstate which = 6239 } # Knox
 command = { type = headofgovernment which = 6241 } # Dewey
 command = { type = setflag which = OPPOSITION_WINS }
@@ -232,7 +232,7 @@ command = { type = dissent value = -5 }
 
 action_c = {
 ai_chance = 70
-name = "Patriotic"
+name = "EVT_906532_OPTIONC"
 command = { type = headofstate which = 6256 } #Eisenhower
 command = { type = dissent value = 5 }
 }
@@ -254,13 +254,13 @@ date = { day = 1 month = january year = 1944 }
 offset = 30
 deathdate = { day = 1 month = january year = 1960 }
 
-name = "1944 presidential elections"
-desc = "The Patriotic Party connected with MacArthur and his cabinet has a great chance of winning the Presidential elections. The voters are stunned with pro-government propaganda and police actions against the opposition are working. It seems that the government will once again win and MacArthur's puppet will be the new President."
+name = "EVT_906529_NAME"
+desc = "EVT_906529_DESC"
 picture = "us1936elections"
 
 action_a ={
 ai_chance = 15
-name = "Democrat"
+name = "EVT_906529_OPTIONA"
 command = { type = headofstate which = 6243 } # Hull
 command = { type = headofgovernment which = 6046 } # Truman
 command = { type = setflag which = OPPOSITION_WINS }
@@ -269,7 +269,7 @@ command = { type = dissent value = -5 }
 
 action_b = {
 ai_chance = 15
-name = "Republican"
+name = "EVT_906529_OPTIONB"
 command = { type = headofstate which = 6038 } # Dewey
 command = { type = headofgovernment which = 6050 } # Bricker
 command = { type = setflag which = OPPOSITION_WINS }
@@ -278,7 +278,7 @@ command = { type = dissent value = -5 }
 
 action_c = {
 ai_chance = 70
-name = "Patriotic"
+name = "EVT_906529_OPTIONC"
 command = { type = headofstate which = 6256 } #Eisenhower
 command = { type = dissent value = 5 }
 }
@@ -300,13 +300,13 @@ date = { day = 1 month = january year = 1948 }
 offset = 30
 deathdate = { day = 1 month = january year = 1960 }
 
-name = "1948 presidential elections"
-desc = "The Patriotic Party connected with MacArthur and his cabinet has a great chance of winning the Presidential elections. The voters are stunned with pro-government propaganda and police actions against the opposition are working. It seems that the government will once again win and MacArthur's puppet will be the new President."
+name = "EVT_906530_NAME"
+desc = "EVT_906530_DESC"
 picture = "us1936elections"
 
 action_a ={
 ai_chance = 15
-name = "Democrat"
+name = "EVT_906530_OPTIONA"
 command = { type = headofstate which = 6032 } # Walace
 command = { type = headofgovernment which = 6247 } # Harriman
 command = { type = setflag which = OPPOSITION_WINS }
@@ -315,7 +315,7 @@ command = { type = dissent value = -5 }
 
 action_b = {
 ai_chance = 15
-name = "Republican"
+name = "EVT_906530_OPTIONB"
 command = { type = headofstate which = 6038 } # Dewey
 command = { type = headofgovernment which = 6050 } # Bricker
 command = { type = setflag which = OPPOSITION_WINS }
@@ -324,7 +324,7 @@ command = { type = dissent value = -5 }
 
 action_c = {
 ai_chance = 70
-name = "Patriotic"
+name = "EVT_906530_OPTIONC"
 command = { type = headofstate which = 6256 } #Eisenhower
 command = { type = dissent value = 5 }
 }
@@ -348,13 +348,13 @@ government = fascist
 flag = OPPOSITION_WINS
 }
 
-name = "Opposition wins elections!"
-desc = "People still don't think we are suited enough to form an cabinet. Even our forgeries during elections didn't help us to achieve victory. Now when the new President will be appointed the Army and MacArthur will loose significant authority. It's also inevitable that future President will abide by the Constitution and there will no place for an old general..."
+name = "EVT_906533_NAME"
+desc = "EVT_906533_DESC"
 picture = "macarthurdic"
 
 action_a = {
 ai_chance = 30
-name = "Democratize!"
+name = "EVT_906533_OPTIONA"
 command = { type = set_domestic which = democratic value = 9 }
 command = { type = clrflag which = USA_MIN_JUNTA }
 command = { type = clrflag which = USA_MAX_JUNTA }
@@ -364,7 +364,7 @@ command = { type = dissent value = -20 }
 
 action_b = {
 ai_chance = 70
-name = "MacArthur declares martial law, and becomes the new President"
+name = "EVT_906533_OPTIONB"
 command = { type = headofstate which = 6208 }
 command = { type = headofgovernment which = 6257 }
 command = { type = dissent value = 10 }
@@ -395,12 +395,12 @@ headofstate = 6208 #fascist MacArthur
 flag = USA_TOTALITARIAN
 }
 
-name = "Opposition becomes more radical"
-desc = "Yesterday pro-democratic politicians like Garner started plotting to overthrow the government. Various organizations are sprouting across the whole USA, due to MacArthur's move. What's worse, old enemies like the Syndicalists and nationalists are emerging back from their political graves. Let's not forget about the typical American who is now dirty poor and desperate. Everything is against us..."
+name = "EVT_906534_NAME"
+desc = "EVT_906534_DESC"
 picture = "CSA"
 
 action_a = {
-name = "Should I worry?"
+name = "EVT_906534_OPTIONA"
 command = { type = dissent value = 10 }
 }
 }
@@ -425,13 +425,13 @@ random = 40
 event = 906512
 }
 
-name = "Mac Arthur was killed!"
-desc = "Today MacArthur has been killed during a visit to a farm belonging to an immigrant from Europe, Boleslaw Gebert. Nobody knows who will take the Presidential seat, since the Consitution was thrown away and there are no sucession plans. The country is on the verge of chaos!"
+name = "EVT_906535_NAME"
+desc = "EVT_906535_DESC"
 picture = "macarthurdic"
 
 action_a = {
 ai_chance = 30
-name = "Eisenhower wins the struggle for the power!"
+name = "EVT_906535_OPTIONA"
 command = { type = sleepminister which = 6181 }
 command = { type = sleepminister which = 6182 }
 command = { type = sleepminister which = 6208 }
@@ -448,7 +448,7 @@ command = { type = dissent value = 10 }
 
 action_b = {
 ai_chance = 40
-name = "Chaos overtakes Washington"
+name = "EVT_906535_OPTIONB"
 command = { type = sleepminister which = 6181 }
 command = { type = sleepminister which = 6182 }
 command = { type = sleepminister which = 6208 }
@@ -462,7 +462,7 @@ command = { type = dissent value = 15 }
 
 action_c = {
 ai_chance = 40
-name = "Pro-democratic circles retake Washington!"
+name = "EVT_906535_OPTIONC"
 command = { type = sleepminister which = 6181 }
 command = { type = sleepminister which = 6182 }
 command = { type = sleepminister which = 6208 }
@@ -488,12 +488,12 @@ random = no
 country = USA
 style = 2
 
-name = "Dissolution of the United States!"
-desc = "With the power vaccum left after MacArthur's death, officers and governors started fighting to get as much power as they could while many saw this as an option to secede from tyrranical Union. The result of this is a shattered Union, probably with no chance to be reborn. The USA with its great history and influence on international affairs has died."
+name = "EVT_906536_NAME"
+desc = "EVT_906536_DESC"
 picture = "CSA"
 
 action_a = {
-name= "So the USA is no longer a superpower?"
+name = "EVT_906536_OPTIONA"
 command = { type = dissent value = 15 }
 command = { type = set_domestic which = democratic value = 2 }
 command = { type = set_domestic which = political_left value = 0  }
@@ -844,20 +844,20 @@ date = { day = 1 month = january year = 1938 }
 offset = 60
 deathdate = { day = 29 month = december year = 1945 }
 
-name = "Freedom of speech?"
-desc = "Freedom of spech was one of the most important freedoms which distiniguished America from rest of the countries. Now the government plans to limit freedom of speech to promote 'peace and stability in all circles,'  but its real goal is to stop everybody's mouths and to hide abuses of power."
+name = "EVT_906537_NAME"
+desc = "EVT_906537_DESC"
 picture = "diplomatic_campaign"
 
 action_a = {
 ai_chance = 75
-name = "Censor the press"
+name = "EVT_906537_OPTIONA"
 command = { type = domestic which = freedom value = -1 }
 command = { type = domestic which = democratic value = -2 }
 }
 
 action_b = {
 ai_chance = 25
-name = "Don't censor the press"
+name = "EVT_906537_OPTIONB"
 command = { type = dissent value = -3}
 }
 }
@@ -887,20 +887,20 @@ date = { day = 1 month = january year = 1938 }
 offset = 60
 deathdate = { day = 29 month = december year = 1945 }
 
-name = "Removing opposition"
-desc = "The opposition circles, to which many artists, professors, intellectuals, and businessmen belong have been active during the last few days. We should block their mouths by sending them to Canada or Mexico, if they don't want to obey!"
+name = "EVT_906538_NAME"
+desc = "EVT_906538_DESC"
 picture = "Depression1"
 
 action_a = {
 ai_chance = 25
-name = "Send them to jails!"
+name = "EVT_906538_OPTIONA"
 command = { type = dissent value = 5 }
 command = { type = domestic which = democratic value = -2 }
 }
 
 action_b = {
 ai_chance = 25
-name = "Exile them to Canada!"
+name = "EVT_906538_OPTIONB"
 trigger = {
 NOT = {
 war = { country = USA country = CAN }
@@ -914,7 +914,7 @@ command = { type = relation which = CAN value = -10 }
 
 action_c = {
 ai_chance = 50
-name = "Do nothing"
+name = "EVT_906538_OPTIONC"
 command = { type = dissent value = -3 }
 }
 }
@@ -925,12 +925,12 @@ random = no
 country = CAN
 style = 2
 
-name = "Refugees from USA"
-desc = "MacArthur's madness must be stopped. He decided to throw away all protestors from the whole United States."
+name = "EVT_906539_NAME"
+desc = "EVT_906539_DESC"
 picture = "Depression1"
 
 action_a = {
-name = "We welcome them"
+name = "EVT_906539_OPTIONA"
 command = { type = manpowerpool value = 40 }
 command = { type = money value = 50 }
 command = { type = dissent value = 1 }
@@ -960,13 +960,13 @@ offset = 60
 deathdate = { day = 29 month = december year = 1945 }
 
 
-name = "Education reforms"
-desc = "We need to reform the educational system. Schools are poor, and teachers keen to the old, democratic USA. We need to reshape the programs to create a new United States of America. We have fought in battlefields, now it is time for the battle for children's minds."
+name = "EVT_906540_NAME"
+desc = "EVT_906540_DESC"
 picture = "Depression1"
 
 action_a = {
 ai_chance = 60
-name = "Army education is the future of the United States"
+name = "EVT_906540_OPTIONA"
 command = { type = domestic which = freedom value = -1 }
 command = { type = domestic which = professional_army value = 2 }
 command = { type = money value = -100 }
@@ -974,13 +974,13 @@ command = { type = money value = -100 }
 
 action_b = {
 ai_chance = 40
-name = "Patriotic education is enough"
+name = "EVT_906540_OPTIONB"
 command = { type = domestic which = freedom value = -1 }
 command = { type = money value = -25 }
 }
 
 action_c = {
-name = "Do nothing"
+name = "EVT_906540_OPTIONC"
 command = { type = dissent value = 1 }
 }
 }
@@ -1002,8 +1002,8 @@ flag = USA_TOTALITARIAN
 }
 }
 
-name = "Confiscation of big fortunes"
-desc = "It is true that many capitalists who are United States citizens hate us. They say that we are destroyers of democracy and we are worse than the Bolsheviks or the Confederacy Nationalists from the deep South. But we are only patriots from officer circles who are keen on restoring the United States's glory, even at the cost of democracy. If we confiscate their fortunes, we will have one less enemy."
+name = "EVT_906541_NAME"
+desc = "EVT_906541_DESC"
 picture = "money_devaluation"
 
 date = { day = 1 month = january year = 1938 }
@@ -1013,14 +1013,14 @@ deathdate = { day = 29 month = december year = 1945 }
 
 action_a = {
 ai_chance = 50
-name = "Confiscate, Rockefellers are enemies of the average Joe"
+name = "EVT_906541_OPTIONA"
 command = { type = domestic which = democratic value = -1 }
 command = { type = domestic which = free_market value = -2 }
 }
 
 action_b = {
 ai_chance = 50
-name = "Don't confiscate, we are not Bolsheviks"
+name = "EVT_906541_OPTIONB"
 command = { type = domestic which = free_market value = 1 }
 }
 }
@@ -1044,13 +1044,13 @@ flag = USA_TOTALITARIAN
 }
 }
 
-name = "Delegalization of the Unions?"
-desc = "Many unions are prodemocratic and their supporters are known for sorrowful cries for restoring 'real' democracy in the United States of America. We need to take over the unions or allow only our unions to operate."
+name = "EVT_906542_NAME"
+desc = "EVT_906542_DESC"
 picture = "diplomatic_campaign"
 
 action_a = {
 ai_chance = 70
-name = "Trade unions must be under our strict control"
+name = "EVT_906542_OPTIONA"
 command = { type = domestic which = freedom value = -1 }
 command = { type = domestic which = democratic value = -1 }
 command = { type = dissent value = 3 }
@@ -1058,7 +1058,7 @@ command = { type = dissent value = 3 }
 
 action_b ={
 ai_chance = 30
-name = "Workers need free institutions"
+name = "EVT_906542_OPTIONB"
 command = { type = dissent value = -3 }
 }
 }
@@ -1082,20 +1082,20 @@ date = { day = 1 month = january year = 1939 }
 offset = 60
 deathdate = { day = 29 month = december year = 1945 }
 
-name = "Changes in Constitution?"
-desc = "Many people from government are beliving that we should change the Constitution. Two paragraphs are necessary to achieve domination in USA - first about candidacy of president and second about choosing the president. If we allow unlimited candidacies and change the way of choosing the president to only by the House and Senate then we will dominate America!"
+name = "EVT_906543_NAME"
+desc = "EVT_906543_DESC"
 picture = "diplomatic_campaign"
 
 action_a = {
 ai_chance = 99
-name = "Change, otherwise we won't stand long"
+name = "EVT_906543_OPTIONA"
 command = { type = dissent value = 5 }
 command = { type = domestic which = freedom value = -1 }
 }
 
 action_b = {
 ai_chance = 0
-name = "No change in policy!"
+name = "EVT_906543_OPTIONB"
 command = { type = dissent value = 1 }
 }
 }
@@ -1111,8 +1111,8 @@ government = fascist
 flag = USA_MAX_JUNTA
 }
 
-name = "Elections to Senate and Lower House - 1940"
-desc = "The government has a hard time - people from the whole USA are accusing government of breaking the Constitution. If we want to survive we need to manipulate the elections. There are signs from radical circles that MacArthur should take all power and abolish the Constitution. The MacArthur party, the Patriotic Party has a chance of getting many seats but not enough to nominate a new President."
+name = "EVT_906544_NAME"
+desc = "EVT_906544_DESC"
 picture = "congress1"
 
 date = { day = 1 month = january year = 1940 }
@@ -1122,7 +1122,7 @@ deathdate = { day = 29 month = december year = 1941 }
 
 action_a = {
 ai_chance = 30
-name = "Mac Arthur throws away the Constitution!"
+name = "EVT_906544_OPTIONA"
 command = { type = clrflag which = USA_MIN_JUNTA }
 command = { type = setflag which = USA_TOTALITARIAN }
 command = { type = set_domestic which = democratic value = 2 }
@@ -1131,13 +1131,13 @@ command = { type = set_domestic which = political_left value = 0 }
 
 action_b = {
 ai_chance = 70
-name = "Patriotic Party wins by manipulation"
+name = "EVT_906544_OPTIONB"
 command = { type = dissent value = 2 }
 }
 
 action_c = {
 ai_chance = 5
-name = "Democratic opposition is fully allowed to run and wins!"
+name = "EVT_906544_OPTIONC"
 command = { type = set_domestic which = democratic value = 9 }
 command = { type = set_domestic which = freedom value = 9 }
 command = { type = set_domestic which = political_left value = 5 }
@@ -1163,8 +1163,8 @@ government = fascist
 flag = USA_MAX_JUNTA
 }
 
-name = "Boycott of elections"
-desc = "Democratic and Republican parties have annouced a boycott of the undemocratic elections. They say that the elections are a parody, and manipulation is common."
+name = "EVT_906545_NAME"
+desc = "EVT_906545_DESC"
 picture = "congress1"
 
 date = { day = 1 month = january year = 1944 }
@@ -1172,7 +1172,7 @@ offset = 60
 deathdate = { day = 29 month = december year = 1945 }
 
 action_a = {
-name = "Too bad, Patriotic Party will have long-desired majority"
+name = "EVT_906545_OPTIONA"
 command = { type = dissent value = 3 }
 }
 }
@@ -1189,8 +1189,8 @@ event = 906545
 flag = USA_MAX_JUNTA
 }
 
-name = "Elections to Senate and Lower House - 1944"
-desc = "Nobody trusts us, citizens behave apathically when they hear about elections. In this atmosphere we can have a majority in both chambers of Congress."
+name = "EVT_906546_NAME"
+desc = "EVT_906546_DESC"
 picture = "congress1"
 
 date = { day = 1 month = january year = 1944 }
@@ -1200,7 +1200,7 @@ deathdate = { day = 29 month = december year = 1945 }
 
 action_a = {
 ai_chance = 5
-name = "MacArthur throws away the Constitution!"
+name = "EVT_906546_OPTIONA"
 command = { type = clrflag which = USA_MIN_JUNTA }
 command = { type = clrflag which = USA_MAX_JUNTA }
 command = { type = setflag which = USA_TOTALITARIAN }
@@ -1210,13 +1210,13 @@ command = { type = set_domestic which = political_left value = 0 }
 
 action_b = {
 ai_chance = 90
-name = "Patriotic Party wins a majority by manipulation and fraud"
+name = "EVT_906546_OPTIONB"
 command = { type = dissent value = 1 }
 }
 
 action_c = {
 ai_chance = 5
-name = "Democratic opposition is fully allowed to run and wins!"
+name = "EVT_906546_OPTIONC"
 command = { type = set_domestic which = democratic value = 9 }
 command = { type = set_domestic which = freedom value = 9 }
 command = { type = set_domestic which = political_left value = 5 }
@@ -1242,8 +1242,8 @@ government = fascist
 flag = USA_MAX_JUNTA
 }
 
-name = "Elections to Senate and Lower House - 1948"
-desc = "Everyone knows that the elections are false, but nobody is willing to overthrow the regime."
+name = "EVT_906526_NAME"
+desc = "EVT_906526_DESC"
 picture = "congress1"
 
 date = { day = 1 month = january year = 1948 }
@@ -1253,7 +1253,7 @@ deathdate = { day = 1 month = january year = 1949 }
 
 action_a = {
 ai_chance = 5
-name = "MacArthur throws away the Constitution!"
+name = "EVT_906526_OPTIONA"
 command = { type = clrflag which = USA_MIN_JUNTA }
 command = { type = clrflag which = USA_MAX_JUNTA }
 command = { type = setflag which = USA_TOTALITARIAN }
@@ -1263,13 +1263,13 @@ command = { type = set_domestic which = political_left value = 0 }
 
 action_b = {
 ai_chance = 80
-name = "Patriotic Party wins a majority by manipulation and fraud"
+name = "EVT_906526_OPTIONB"
 command = { type = dissent value = 1 }
 }
 
 action_c = {
 ai_chance = 15
-name = "Democratic opposition is fully allowed to run and wins!"
+name = "EVT_906526_OPTIONC"
 command = { type = set_domestic which = democratic value = 9 }
 command = { type = set_domestic which = freedom value = 9 }
 command = { type = set_domestic which = political_left value = 3 }
@@ -1301,8 +1301,8 @@ event = 906535
 }
 }
 
-name = "Mac Arthur dies!"
-desc = "Today, after a long and devastating disease, MacArthur, the true leader of the United States for more than 14 years has died. His death brought many troubles for the longtime ruling military junta currently headed by Eisenhower. Without the support of MacArthur the position of Eisenhower looks unstable..."
+name = "EVT_906527_NAME"
+desc = "EVT_906527_DESC"
 picture = "minister_died"
 
 date = { day = 1 month = january year = 1952 }
@@ -1311,7 +1311,7 @@ deathdate = { day = 29 month = december year = 1955 }
 
 action_a = {
 ai_chance = 50
-name = "Democratic opposition takes power"
+name = "EVT_906527_OPTIONA"
 command = { type = clrflag which = USA_MIN_JUNTA }
 command = { type = dissent value = -10 }
 command = { type = set_domestic which = democratic value = 9 }
@@ -1330,7 +1330,7 @@ command = { type = ministerofsecurity which = 6253 } # Lodge
 
 action_b = {
 ai_chance = 25
-name = "Eisenhower retains power!"
+name = "EVT_906527_OPTIONB"
 command = { type = clrflag which = USA_MIN_JUNTA }
 command = { type = clrflag which = USA_MAX_JUNTA }
 command = { type = setflag which = USA_TOTALITARIAN }
@@ -1344,7 +1344,7 @@ command = { type = sleepminister which = 6238 }
 
 action_c = {
 ai_chance = 10
-name = "Chaos overtakes Washington"
+name = "EVT_906527_OPTIONC"
 command = { type = sleepminister which = 6181 }
 command = { type = sleepminister which = 6182 }
 command = { type = sleepminister which = 6208 }
@@ -1373,8 +1373,8 @@ flag = USA_TOTALITARIAN
 }
 }
 
-name = "Mac Arthur dies!"
-desc = "Today, after a long and devastating disease, MacArthur, the leader of the United states for more than 14 years has died. Who will rule the nation?"
+name = "EVT_906528_NAME"
+desc = "EVT_906528_DESC"
 picture = "minister_died"
 
 date = { day = 1 month = january year = 1952 }
@@ -1383,7 +1383,7 @@ deathdate = { day = 29 month = december year = 1955 }
 
 action_a = {
 ai_chance = 30
-name = "Democratic opposition takes power"
+name = "EVT_906528_OPTIONA"
 command = { type = clrflag which = USA_MAX_JUNTA }
 command = { type = dissent value = -10 }
 command = { type = set_domestic which = democratic value = 9 }
@@ -1405,7 +1405,7 @@ command = { type = ministerofsecurity which = 6253 } # Lodge
 
 action_b = {
 ai_chance = 35
-name = "Radical officers get into power!"
+name = "EVT_906528_OPTIONB"
 command = { type = clrflag which = USA_MAX_JUNTA }
 command = { type = setflag which = USA_TOTALITARIAN }
 command = { type = set_domestic which = democratic value = 2 }
@@ -1421,7 +1421,7 @@ command = { type = sleepteam which = 123 }
 
 action_c = {
 ai_chance = 40
-name = "Chaos overtakes Washington"
+name = "EVT_906528_OPTIONC"
 command = { type = sleepminister which = 6181 }
 command = { type = sleepminister which = 6182 }
 command = { type = sleepminister which = 6208 }
@@ -1460,13 +1460,13 @@ date = { day = 1 month = january year = 1936 }
 offset = 70
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Choosing the sides"
-desc = "Although the independence of the Federate Union is for the moment secured we must look to the bigger players on the international scene if we want to secure the long-term survival of our state..."
+name = "EVT_906547_NAME"
+desc = "EVT_906547_DESC"
 picture = "diplomatic_campaign"
 
 action_a = {
 ai_chance = 70
-name = "Join forces with the Entete"
+name = "EVT_906547_OPTIONA"
 trigger = {
 exists = CAN
 NOT = { ispuppet = CAN }
@@ -1482,7 +1482,7 @@ command = { type = relation which = CAN value = 20 }
 
 action_b = {
 ai_chance = 50
-name = "Join forces with Mitteleuropa"
+name = "EVT_906547_OPTIONB"
 trigger = {
 exists = GER
 NOT = { ispuppet = GER }
@@ -1500,7 +1500,7 @@ command = { type = relation which = GER value = 20 }
 
 action_c = {
 ai_chance = 10
-name = "Join forces with Russia"
+name = "EVT_906547_OPTIONC"
 trigger = {
 exists = RUS
 control = { province = 691 data = RUS }
@@ -1528,7 +1528,7 @@ command = { type = relation which = RUS value = 20 }
 
 action_d = {
 ai_chance = 15
-name = "Isolationism will protect us..."
+name = "EVT_906547_OPTIOND"
 command = { type = dissent value = -1 }
 command = { type = belligerence which = TEX value = -10  }
 }
@@ -1540,12 +1540,12 @@ country = CAN
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Alliance with Federate Union?"
-desc = "The government of the Federate Union has annouced recently that they want to join the Entente. It's not a sudden move because pro-Entente policy is popular in many circles including the ruling cabinet and the army. Do we want to create the Great Alliance between Federate Union and the British Empire in exile?"
+name = "EVT_906548_NAME"
+desc = "EVT_906548_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Accept their offer!"
+name = "EVT_906548_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = alliance which = U06 }
@@ -1555,7 +1555,7 @@ command = { type = relation which = USA value = -10 }
 
 action_b = {
 ai_chance = 5
-name = "Refuse their alliance, we don't need anyone!"
+name = "EVT_906548_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = U06 value = -25 }
 command = { type = relation which = USA value = 10 }
@@ -1569,12 +1569,12 @@ country = U07
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Alliance with Federate Union?"
-desc = "The government of the Federate Union has annouced recently that they want to join the Entente. It's not a sudden move because pro-Entente policy is popular in many circles including the ruling cabinet and army. Do we want to create the Great Alliance between Federate Union and the British Empire?"
+name = "EVT_906549_NAME"
+desc = "EVT_906549_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Accept their offer!"
+name = "EVT_906549_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = alliance which = U06 }
@@ -1584,7 +1584,7 @@ command = { type = relation which = USA value = -10 }
 
 action_b = {
 ai_chance = 5
-name = "Refuse their alliance, we don't need anyone!"
+name = "EVT_906549_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = U06 value = -25 }
 command = { type = relation which = USA value = 10 }
@@ -1597,12 +1597,12 @@ country = GER
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Alliance with Federate Union?"
-desc = "The government of the Federate Union has annouced recently that they want to join Mitteleuropa. It's not a sudden move because pro-Mitteleuropa policy is popular in many circles including the ruling cabinet and army. Do we want to create the Great Alliance between Federate Union and the German Empire?"
+name = "EVT_906550_NAME"
+desc = "EVT_906550_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Accept their offer!"
+name = "EVT_906550_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = alliance which = U06 }
@@ -1612,7 +1612,7 @@ command = { type = relation which = USA value = -10 }
 
 action_b = {
 ai_chance = 5
-name = "Refuse their alliance, we don't need anyone!"
+name = "EVT_906550_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = U06 value = -25 }
 command = { type = relation which = USA value = 10 }
@@ -1626,12 +1626,12 @@ country = RUS
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Alliance with the Federate Union?"
-desc = "The Federate Union wants to secure their independence via forming a new alliance with us. How we shall respond?"
+name = "EVT_906551_NAME"
+desc = "EVT_906551_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Accept their offer!"
+name = "EVT_906551_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = alliance which = U06 }
@@ -1641,7 +1641,7 @@ command = { type = relation which = USA value = -10 }
 
 action_b = {
 ai_chance = 5
-name = "Refuse their alliance, we don't need anyone!"
+name = "EVT_906551_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = U06 value = -25 }
 command = { type = relation which = USA value = 10 }
@@ -1674,13 +1674,13 @@ date = { day = 1 month = january year = 1936 }
 offset = 70
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Choosing the sides"
-desc = "Although the independence of New England is for the moment secured we must look to bigger players on the international scene if we want to secure the long-term survival of our state..."
+name = "EVT_906552_NAME"
+desc = "EVT_906552_DESC"
 picture = "diplomatic_campaign"
 
 action_a = {
 ai_chance = 70
-name = "Join forces with the Entete"
+name = "EVT_906552_OPTIONA"
 trigger = {
 exists = CAN
 NOT = { ispuppet = CAN }
@@ -1696,7 +1696,7 @@ command = { type = relation which = CAN value = 20 }
 
 action_b = {
 ai_chance = 50
-name = "Join forces with Mitteleuropa"
+name = "EVT_906552_OPTIONB"
 trigger = {
 exists = GER
 NOT = { ispuppet = GER }
@@ -1714,7 +1714,7 @@ command = { type = relation which = GER value = 20 }
 
 action_c = {
 ai_chance = 10
-name = "Join forces with Russia"
+name = "EVT_906552_OPTIONC"
 trigger = {
 exists = RUS
 control = { province = 691 data = RUS }
@@ -1742,7 +1742,7 @@ command = { type = relation which = RUS value = 20 }
 
 action_d = {
 ai_chance = 15
-name = "Isolationism will protect us.."
+name = "EVT_906552_OPTIOND"
 command = { type = dissent value = -1 }
 command = { type = belligerence which = U10 value = -10  }
 }
@@ -1754,12 +1754,12 @@ country = CAN
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Alliance with New England?"
-desc = "The government of New England has annouced recently that they want to join the Entente. It's not a sudden move because pro-Entente policy is popular in many circles including the ruling cabinet and army. Do we want to create the Great Alliance between New England and the British Empire in exile?"
+name = "EVT_906553_NAME"
+desc = "EVT_906553_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Accept their offer !"
+name = "EVT_906553_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = alliance which = U10 }
@@ -1769,7 +1769,7 @@ command = { type = relation which = USA value = -10 }
 
 action_b = {
 ai_chance = 5
-name = "Refuse their alliance, we don't need anyone!"
+name = "EVT_906553_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = U10 value = -25 }
 command = { type = relation which = USA value = 10 }
@@ -1783,12 +1783,12 @@ country = U07
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Alliance with New England?"
-desc = "The government of New England has annouced recently that they want to join the Entente. It's not a sudden move because pro-Entente policy is popular in many circles including the ruling cabinet and army. Do we want to create the Great Alliance between New England and the British Empire?"
+name = "EVT_906554_NAME"
+desc = "EVT_906554_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Accept their offer !"
+name = "EVT_906554_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = alliance which = U10 }
@@ -1798,7 +1798,7 @@ command = { type = relation which = USA value = -10 }
 
 action_b = {
 ai_chance = 5
-name = "Refuse their alliance, we don't need anyone!"
+name = "EVT_906554_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = U10 value = -25 }
 command = { type = relation which = USA value = 10 }
@@ -1811,12 +1811,12 @@ country = GER
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Alliance with New England?"
-desc = "The government of New England has annouced recently that they want to join Mitteleuropa. It's not a sudden move because pro-Mitteleuropa policy is popular in many circles including the ruling cabinet and army. Do we want to create the Great Alliance between New England and the German Empire?"
+name = "EVT_906555_NAME"
+desc = "EVT_906555_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Accept their offer!"
+name = "EVT_906555_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = alliance which = U10 }
@@ -1826,7 +1826,7 @@ command = { type = relation which = USA value = -10 }
 
 action_b = {
 ai_chance = 5
-name = "Refuse their alliance, we don't need anyone!"
+name = "EVT_906555_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = U10 value = -25 }
 command = { type = relation which = USA value = 10 }
@@ -1840,12 +1840,12 @@ country = RUS
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Alliance with New England ?"
-desc = "New England want to secure their independence via forming a new alliance with us. How we shall respond?"
+name = "EVT_906556_NAME"
+desc = "EVT_906556_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Accept their offer!"
+name = "EVT_906556_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = alliance which = U10 }
@@ -1855,7 +1855,7 @@ command = { type = relation which = USA value = -10 }
 
 action_b = {
 ai_chance = 5
-name = "Refuse their alliance, we don't need anyone!"
+name = "EVT_906556_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = U10 value = -25 }
 command = { type = relation which = USA value = 10 }
@@ -1888,13 +1888,13 @@ date = { day = 1 month = january year = 1936 }
 offset = 50
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Choosing the sides"
-desc = "Although the independence of Pacific States is for the moment secured, we must look to bigger players on the international scene if we want to secure the long-term survival of our state..."
+name = "EVT_906557_NAME"
+desc = "EVT_906557_DESC"
 picture = "diplomatic_campaign"
 
 action = {
 ai_chance = 70
-name = "Join forces with the Entete"
+name = "EVT_906557_OPTIONA"
 trigger = {
 exists = CAN
 NOT = { ispuppet = CAN }
@@ -1911,7 +1911,7 @@ command = { type = relation which = CAN value = 20 }
 
 action = {
 ai_chance = 50
-name = "Join forces with Mitteleuropa"
+name = "EVT_906557_OPTIONB"
 trigger = {
 exists = GER
 NOT = { ispuppet = GER }
@@ -1928,7 +1928,7 @@ command = { type = relation which = GER value = 20 }
 
 action = {
 ai_chance = 30
-name = "Join forces with Japan"
+name = "EVT_906557_OPTIONC"
 trigger = {
 exists = JAP
 NOT = { ispuppet = JAP }
@@ -1948,7 +1948,7 @@ command = { type = relation which = JAP value = 20 }
 
 action = {
 ai_chance = 10
-name = "Join forces with Russia"
+name = "EVT_906557_OPTIOND"
 trigger = {
 exists = RUS
 control = { province = 691 data = RUS }
@@ -1976,7 +1976,7 @@ command = { type = relation which = RUS value = 20 }
 
 action = {
 ai_chance = 15
-name = "Isolationism will protect us.."
+name = "EVT_906557_OPTIONE"
 command = { type = dissent value = -1 }
 command = { type = belligerence which = CAL value = -10  }
 }
@@ -1988,12 +1988,12 @@ country = CAN
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Alliance with the Pacific States?"
-desc = "The government of the Pacific States has annouced recently that they want to join the Entente. It's not a sudden move because pro-Entente policy is popular in many circles including the ruling cabinet and army. Do we want to create the Great Alliance between the PSA and the British Empire in exile?"
+name = "EVT_906558_NAME"
+desc = "EVT_906558_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Accept their offer!"
+name = "EVT_906558_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = alliance which = CAL }
@@ -2003,7 +2003,7 @@ command = { type = relation which = USA value = -10 }
 
 action_b = {
 ai_chance = 5
-name = "Refuse their alliance, we don't need anyone!"
+name = "EVT_906558_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = CAL value = -25 }
 command = { type = relation which = USA value = 10 }
@@ -2017,12 +2017,12 @@ country = U07
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Alliance with the Pacific States?"
-desc = "The government of the Pacific States has annouced recently that they want to join the Entente. It's not a sudden move because pro-Entente policy is popular in many circles including the ruling cabinet and army. Do we want to create the Great Alliance between the PSA and the British Empire?"
+name = "EVT_906559_NAME"
+desc = "EVT_906559_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Accept their offer!"
+name = "EVT_906559_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = alliance which = CAL }
@@ -2032,7 +2032,7 @@ command = { type = relation which = USA value = -10 }
 
 action_b = {
 ai_chance = 5
-name = "Refuse their alliance, we don't need anyone!"
+name = "EVT_906559_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = CAL value = -25 }
 command = { type = relation which = USA value = 10 }
@@ -2045,12 +2045,12 @@ country = GER
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Alliance with the Pacific States?"
-desc = "The government of the Pacific States has annouced recently that they want to join Mitteleuropa. It's not a sudden move because pro-Mitteleuropa policy is popular in many circles including the ruling cabinet and army. Do we want to create the Great Alliance between the PSA and the German Empire?"
+name = "EVT_906560_NAME"
+desc = "EVT_906560_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Accept their offer!"
+name = "EVT_906560_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = alliance which = CAL }
@@ -2060,7 +2060,7 @@ command = { type = relation which = USA value = -10 }
 
 action_b = {
 ai_chance = 5
-name = "Refuse their alliance, we don't need anyone!"
+name = "EVT_906560_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = CAL value = -25 }
 command = { type = relation which = USA value = 10 }
@@ -2074,12 +2074,12 @@ country = JAP
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Alliance with the Pacific States?"
-desc = "The Pacific States want to secure their independence via forming a new alliance with us. How we shall respond?"
+name = "EVT_906561_NAME"
+desc = "EVT_906561_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Accept their offer!"
+name = "EVT_906561_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = alliance which = CAL }
@@ -2089,7 +2089,7 @@ command = { type = relation which = USA value = -10 }
 
 action_b = {
 ai_chance = 5
-name = "Refuse their alliance, we don't need anyone!"
+name = "EVT_906561_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = CAL value = -25 }
 command = { type = relation which = USA value = 10 }
@@ -2102,12 +2102,12 @@ country = RUS
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Alliance with Pacific States?"
-desc = "The Pacific States want to secure their independence via forming a new alliance with us. How we shall respond?"
+name = "EVT_906562_NAME"
+desc = "EVT_906562_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Accept their offer!"
+name = "EVT_906562_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = alliance which = CAL }
@@ -2117,7 +2117,7 @@ command = { type = relation which = USA value = -10 }
 
 action_b = {
 ai_chance = 5
-name = "Refuse their alliance, we don't need anyone!"
+name = "EVT_906562_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = CAL value = -25 }
 command = { type = relation which = USA value = 10 }
@@ -2150,13 +2150,13 @@ date = { day = 1 month = january year = 1936 }
 offset = 70
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Choosing the sides"
-desc = "Although the independence of the Great Lakes Federation is for the moment secured, we must look to the bigger players on the international scene if we want to secure the long-term survival of our state..."
+name = "EVT_906568_NAME"
+desc = "EVT_906568_DESC"
 picture = "diplomatic_campaign"
 
 action_a = {
 ai_chance = 70
-name = "Join forces with the Entete"
+name = "EVT_906568_OPTIONA"
 trigger = {
 exists = CAN
 NOT = { ispuppet = CAN }
@@ -2172,7 +2172,7 @@ command = { type = relation which = CAN value = 20 }
 
 action_b = {
 ai_chance = 50
-name = "Join forces with Mitteleuropa"
+name = "EVT_906568_OPTIONB"
 trigger = {
 exists = GER
 NOT = { ispuppet = GER }
@@ -2190,7 +2190,7 @@ command = { type = relation which = GER value = 20 }
 
 action_c = {
 ai_chance = 10
-name = "Join forces with Russia"
+name = "EVT_906568_OPTIONC"
 trigger = {
 exists = RUS
 control = { province = 691 data = RUS }
@@ -2218,7 +2218,7 @@ command = { type = relation which = RUS value = 20 }
 
 action_d = {
 ai_chance = 15
-name = "Isolationism will protect us.."
+name = "EVT_906568_OPTIOND"
 command = { type = dissent value = -1 }
 command = { type = belligerence which = U32 value = -10  }
 }
@@ -2230,12 +2230,12 @@ country = CAN
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Alliance with the Great Lakes Federation?"
-desc = "The government of the Great Lakes Federation has annouced recently that they want to join the Entente. It's not a sudden move because pro-Entente policy is popular in many circles including the ruling cabinet and army. Do we want to create the Great Alliance between the Great Lakes Federation and the British Empire in exile?"
+name = "EVT_906569_NAME"
+desc = "EVT_906569_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Accept their offer!"
+name = "EVT_906569_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = alliance which = U32 }
@@ -2245,7 +2245,7 @@ command = { type = relation which = USA value = -10 }
 
 action_b = {
 ai_chance = 5
-name = "Refuse their alliance, we don't need anyone!"
+name = "EVT_906569_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = U32 value = -25 }
 command = { type = relation which = USA value = 10 }
@@ -2259,12 +2259,12 @@ country = U07
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Alliance with the Great Lakes Federation?"
-desc = "The government of the Great Lakes Federation has annouced recently that they want to join the Entente. It's not a sudden move because pro-Entente policy is popular in many circles including the ruling cabinet and army. Do we want to create the Great Alliance between the Great Lakes Federation and the British Empire?"
+name = "EVT_906565_NAME"
+desc = "EVT_906565_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Accept their offer!"
+name = "EVT_906565_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = alliance which = U32 }
@@ -2274,7 +2274,7 @@ command = { type = relation which = USA value = -10 }
 
 action_b = {
 ai_chance = 5
-name = "Refuse their alliance, we don't need anyone!"
+name = "EVT_906565_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = U32 value = -25 }
 command = { type = relation which = USA value = 10 }
@@ -2287,12 +2287,12 @@ country = GER
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Alliance with Great Lakes Federation?"
-desc = "The government of the Great Lakes Federation has annouced recently that they want to join Mitteleuropa. It's not a sudden move because pro-Mitteleuropa policy is popular in many circles including the ruling cabinet and army. Do we want to create the Great Alliance between Great Lakes Federation and the German Empire?"
+name = "EVT_906566_NAME"
+desc = "EVT_906566_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Accept their offer!"
+name = "EVT_906566_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = alliance which = U32 }
@@ -2302,7 +2302,7 @@ command = { type = relation which = USA value = -10 }
 
 action_b = {
 ai_chance = 5
-name = "Refuse their alliance, we don't need anyone!"
+name = "EVT_906566_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = U32 value = -25 }
 command = { type = relation which = USA value = 10 }
@@ -2316,12 +2316,12 @@ country = RUS
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Alliance with the Great Lakes Federation?"
-desc = "The Great Lakes Federation want to secure their independence via forming a new alliance with us. How we shall respond?"
+name = "EVT_906567_NAME"
+desc = "EVT_906567_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Accept their offer!"
+name = "EVT_906567_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = alliance which = U32 }
@@ -2331,7 +2331,7 @@ command = { type = relation which = USA value = -10 }
 
 action_b = {
 ai_chance = 5
-name = "Refuse their alliance, we don't need anyone!"
+name = "EVT_906567_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = U32 value = -25 }
 command = { type = relation which = USA value = 10 }
@@ -2354,15 +2354,15 @@ flag = END_ACW
 headofstate = 6235 # Curtis
 }
 
-name = "The Elections of 1940: Knox vs. Garner"
-desc = "The Civil War is finally at an end and many Americans see the upcoming elections as a sign the country is finally recovering. President Curtis will not seek reelection because of his weak health. Vice president Knox is leading the polls, but the tough Texan Garner is not willing to go down without a fight..."
+name = "EVT_9993711_NAME"
+desc = "EVT_9993711_DESC"
 picture = "us1936elections"
 
 
 date = { day = 5 month = november year = 1940 }
 
 action_a = {
-name = "Frank Knox/Thomas Dewey (Rep.)"
+name = "EVT_9993711_OPTIONA"
 ai_chance = 60
 command = { type = headofstate which = 6239 } # Knox
 command = { type = headofgovernment which = 6241 } # Dewey
@@ -2377,7 +2377,7 @@ command = { type = sleepevent which = 9993713 }
 command = { type = sleepevent which = 9993714 }
 }
 action_b = {
-name = "John Nance Garner/Henry Wallace (Dem.)"
+name = "EVT_9993711_OPTIONB"
 ai_chance = 40
 command = { type = headofstate which = 6236 } # Garner
 command = { type = headofgovernment which = 6044 } # Henry Wallace
@@ -2405,15 +2405,15 @@ flag = END_ACW
 headofstate = 6293 # Knox (Curtis can die in office).
 }
 
-name = "The Elections of 1940: Knox vs. Garner"
-desc = "The Civil War is finally at an end and many Americans see the upcoming elections as a sign the country is finally recovering. Frank Knox, who became president after the death of president Curtis in office, is leading the polls, but the tough Texan Garner is not willing to go down without a fight..."
+name = "EVT_9993712_NAME"
+desc = "EVT_9993712_DESC"
 picture = "us1936elections"
 
 
 date = { day = 5 month = november year = 1940 }
 
 action_a = {
-name = "Frank Knox/Thomas Dewey (Rep.)"
+name = "EVT_9993712_OPTIONA"
 ai_chance = 60
 command = { type = headofstate which = 6239 } # Knox
 command = { type = headofgovernment which = 6241 } # Dewey
@@ -2428,7 +2428,7 @@ command = { type = sleepevent which = 9993713 }
 command = { type = sleepevent which = 9993714 }
 }
 action_b = {
-name = "John Nance Garner/Henry Wallace (Dem.)"
+name = "EVT_9993712_OPTIONB"
 ai_chance = 40
 command = { type = headofstate which = 6236 } # Garner
 command = { type = headofgovernment which = 6044 } # Henry Wallace
@@ -2455,15 +2455,15 @@ flag = END_ACW
 headofstate = 6236 # Garner.
 }
 
-name = "The Elections of 1940: Garner vs. Knox"
-desc = "The Civil War is finally at an end and many Americans see the upcoming elections as a sign the country is finally recovering. President Garner has lead the country through this great ordeal and hopes to win reelection. The Republicans have nominated equally tough Frank Knox to show the nation they too can take a tough stance."
+name = "EVT_9993713_NAME"
+desc = "EVT_9993713_DESC"
 picture = "us1936elections"
 
 
 date = { day = 5 month = november year = 1940 }
 
 action_a = {
-name = "John Nance Garner/Henry Wallace (Dem.)"
+name = "EVT_9993713_OPTIONA"
 ai_chance = 60
 command = { type = headofstate which = 6236 } # Garner
 command = { type = headofgovernment which = 6044 } # Henry Wallace
@@ -2478,7 +2478,7 @@ command = { type = sleepevent which = 9993712 }
 command = { type = sleepevent which = 9993714 }
 }
 action_b = {
-name = "Frank Knox/Thomas Dewey (Rep.)"
+name = "EVT_9993713_OPTIONB"
 ai_chance = 40
 command = { type = headofstate which = 6239 } # Knox
 command = { type = headofgovernment which = 6241 } # Dewey
@@ -2505,15 +2505,15 @@ flag = END_ACW
 headofstate = 6242 # MacArthur.
 }
 
-name = "The Elections of 1940: MacArthur vs. Garner"
-desc = "The Civil War is finally at an end and General MacArthur has put down his dictatorial powers in order to restore democracy. The Republicans have asked the General to run for president on their behalf. However, many wonder if MacArthur will be as able a leader in times of peace as he was in times of war."
+name = "EVT_9993714_NAME"
+desc = "EVT_9993714_DESC"
 picture = "us1936elections"
 
 
 date = { day = 5 month = november year = 1940 }
 
 action_a = {
-name = "Douglas MacArthur/Frank Knox (Rep.)"
+name = "EVT_9993714_OPTIONA"
 ai_chance = 70
 command = { type = headofstate which = 6242 } # Mac
 command = { type = headofgovernment which = 6048 } # Knox
@@ -2528,7 +2528,7 @@ command = { type = sleepevent which = 9993712 }
 command = { type = sleepevent which = 9993713 }
 }
 action_b = {
-name = "John Nance Garner/Henry Wallace (Dem.)"
+name = "EVT_9993714_OPTIONB"
 ai_chance = 30
 command = { type = headofstate which = 6236 } # Garner
 command = { type = headofgovernment which = 6044 } # Henry Wallace
@@ -2559,15 +2559,15 @@ flag = END_ACW
 headofstate = 6239 # Knox
 }
 
-name = "The Elections of 1944: Dewey vs. Hull"
-desc = "President Knox has decided not to run for reelection because of his steadily worsening health. His VP, Thomas Dewey quickly won the Republican nomination. The Democrats nominated experienced Cordell Hull to run against the young Dewey."
+name = "EVT_9993715_NAME"
+desc = "EVT_9993715_DESC"
 picture = "us1936elections"
 
 
 date = { day = 5 month = november year = 1944 }
 
 action_a = {
-name = "Thomas E. Dewey/John Bricker (Rep.)"
+name = "EVT_9993715_OPTIONA"
 ai_chance = 60
 command = { type = headofstate which = 6038 } # Dewey
 command = { type = headofgovernment which = 6050 } # Bricker
@@ -2582,7 +2582,7 @@ command = { type = sleepevent which = 9993717 }
 command = { type = sleepevent which = 9993718 }
 }
 action_b = {
-name = "Cordell Hull/Harry S. Truman (Dem.)"
+name = "EVT_9993715_OPTIONB"
 ai_chance = 40
 command = { type = headofstate which = 6243 } # Hull
 command = { type = headofgovernment which = 6046 } # Truman
@@ -2610,15 +2610,15 @@ flag = END_ACW
 headofstate = 6038 # Dewey (Knox can die in office).
 }
 
-name = "The Elections of 1944: Dewey vs. Hull"
-desc = "President Knox suffered a fatal heart attack while in office, and Thomas Dewey served out his term. As acting president Dewey was the natural choice to run for the Republicans. The Democrats hope the experienced Cordell Hull could convince the electorate that Dewey lacked the experience needed to lead the nation."
+name = "EVT_9993716_NAME"
+desc = "EVT_9993716_DESC"
 picture = "us1936elections"
 
 
 date = { day = 5 month = november year = 1944 }
 
 action_a = {
-name = "Thomas Dewey/John Bricker (Rep.)"
+name = "EVT_9993716_OPTIONA"
 ai_chance = 60
 command = { type = headofstate which = 6038 } # Dewey
 command = { type = headofgovernment which = 6250 } # Bricker
@@ -2633,7 +2633,7 @@ command = { type = sleepevent which = 9993717 }
 command = { type = sleepevent which = 9993718 }
 }
 action_b = {
-name = "Cordell Hull/Harry S Truman (Dem.)"
+name = "EVT_9993716_OPTIONB"
 ai_chance = 40
 command = { type = headofstate which = 6243 } # Hull
 command = { type = headofgovernment which = 6046 } # Truman
@@ -2660,15 +2660,15 @@ flag = END_ACW
 headofstate = 6236 # Garner
 }
 
-name = "The Elections of 1944: Wallace vs. Taft"
-desc = "After two succesful terms, it was time for the Democrats to find a new man to lead them. Henry Wallace was the natural choice to run for president. Wallace's opponent, the formidable senator Robert Taft, was quick to accuse Wallace of being a 'Syndicalist sympathiser'and a new Reed. This started of the dirtiest campaign in American history."
+name = "EVT_9993717_NAME"
+desc = "EVT_9993717_DESC"
 picture = "us1936elections"
 
 
 date = { day = 5 month = november year = 1944 }
 
 action_a = {
-name = "Henry Wallace/Alben W. Barkley (Dem.)"
+name = "EVT_9993717_OPTIONA"
 ai_chance = 50
 command = { type = headofstate which = 6032 } # Wallace
 command = { type = headofgovernment which = 6047 } # Barkley
@@ -2683,7 +2683,7 @@ command = { type = sleepevent which = 9993716 }
 command = { type = sleepevent which = 9993718 }
 }
 action_b = {
-name = "Robert Taft/Strom Thurmond (Rep.)"
+name = "EVT_9993717_OPTIONB"
 ai_chance = 50
 command = { type = headofstate which = 6244 } # Taft
 command = { type = headofgovernment which = 6051 } # Thurmond
@@ -2710,15 +2710,15 @@ flag = END_ACW
 headofstate = 6242 # MacArthur
 }
 
-name = "The Elections of 1944: MacArthur vs. Hull"
-desc = "President MacArthur proved to be an able but controversial leader. His unforgiving stance against former Syndicalists and American Firsters alike lead many to believe it was Mac himself who prevented the nation from fully recovering. Cordell Hull promised to become a president for all Americans and his message was catching on..."
+name = "EVT_9993718_NAME"
+desc = "EVT_9993718_DESC"
 picture = "us1936elections"
 
 
 date = { day = 5 month = november year = 1944 }
 
 action_a = {
-name = "Douglas MacArthur/John Bricker (Rep.)"
+name = "EVT_9993718_OPTIONA"
 ai_chance = 40
 command = { type = headofstate which = 6242 } # MacArthur
 command = { type = headofgovernment which = 6050 } # Bricker
@@ -2733,7 +2733,7 @@ command = { type = sleepevent which = 9993716 }
 command = { type = sleepevent which = 9993717 }
 }
 action_b = {
-name = "Cordell Hull/Averell Harriman (Dem.)"
+name = "EVT_9993718_OPTIONB"
 ai_chance = 60
 command = { type = headofstate which = 6243 } # Hull
 command = { type = headofgovernment which = 6247 } # Harriman
@@ -2764,15 +2764,15 @@ flag = END_ACW
 headofstate = 6038 # Dewey
 }
 
-name = "The Elections of 1948: Dewey vs. Wallace"
-desc = "With the experience Hull being unable to beat Dewey four years earlier, the Democrats now tried to win the presidency with the dynamic reformer Henry Wallace."
+name = "EVT_9993719_NAME"
+desc = "EVT_9993719_DESC"
 picture = "us1936elections"
 
 
 date = { day = 5 month = november year = 1948 }
 
 action_a = {
-name = "Thomas Dewey/John Bricker (Rep.)"
+name = "EVT_9993719_OPTIONA"
 ai_chance = 60
 command = { type = headofstate which = 6038 } # Dewey
 command = { type = headofgovernment which = 6050 } # Bricker
@@ -2788,7 +2788,7 @@ command = { type = sleepevent which = 9993722 }
 command = { type = sleepevent which = 9993723 }
 }
 action_b = {
-name = "Henry Wallace/Averell Harriman (Dem.)"
+name = "EVT_9993719_OPTIONB"
 ai_chance = 40
 command = { type = headofstate which = 6032 } # Walace
 command = { type = headofgovernment which = 6247 } # Harriman
@@ -2816,15 +2816,15 @@ flag = END_ACW
 headofstate = 6242 # MacArthur
 }
 
-name = "The Elections of 1948: Bricker vs. Wallace"
-desc = "MacArthur's second tenure in office was rife with conflicts between the general and the Republican party. In the end MacArthur left the world of politics desillusioned, refusing to support any candidate. The Republican favourite son Bricker won the nomination, but could the GOP fend off Wallace once again?"
+name = "EVT_9993720_NAME"
+desc = "EVT_9993720_DESC"
 picture = "us1936elections"
 
 
 date = { day = 5 month = november year = 1948 }
 
 action_a = {
-name = "John Bricker/Strom Thurmond (Rep.)"
+name = "EVT_9993720_OPTIONA"
 ai_chance = 40
 command = { type = headofstate which = 6250 } # Bricker
 command = { type = headofgovernment which = 6051 } # Thurmond
@@ -2840,7 +2840,7 @@ command = { type = sleepevent which = 9993722 }
 command = { type = sleepevent which = 9993723 }
 }
 action_b = {
-name = "Henry Wallace/Adlai Stevenson (Dem.)"
+name = "EVT_9993720_OPTIONB"
 ai_chance = 60
 command = { type = headofstate which = 6032 } # Walace
 command = { type = headofgovernment which = 6251 } # Stevenson
@@ -2868,15 +2868,15 @@ flag = END_ACW
 headofstate = 6242 # Taft
 }
 
-name = "The Elections of 1948: Taft vs. Barkley"
-desc = "The election of President Taft in 1944 proved that the country wished for stability above all else. In order to beat Taft, the Democrats nominated experienced Kentucky senator Alben W. Barkley."
+name = "EVT_9993721_NAME"
+desc = "EVT_9993721_DESC"
 picture = "us1936elections"
 
 
 date = { day = 5 month = november year = 1948 }
 
 action_a = {
-name = "Robert Taft/John Bricker (Rep.)"
+name = "EVT_9993721_OPTIONA"
 ai_chance = 60
 command = { type = headofstate which = 6244 } # Taft
 command = { type = headofgovernment which = 6050 } # Bricker
@@ -2892,7 +2892,7 @@ command = { type = sleepevent which = 9993722 }
 command = { type = sleepevent which = 9993723 }
 }
 action_b = {
-name = "Alben W. Barkley/Adlai Stevenson (Dem.)"
+name = "EVT_9993721_OPTIONB"
 ai_chance = 40
 command = { type = headofstate which = 6252 } # Barkley
 command = { type = headofgovernment which = 6251 } # Stevenson
@@ -2920,15 +2920,15 @@ flag = END_ACW
 headofstate = 6243 # Hull
 }
 
-name = "The Elections of 1948: Harriman vs. Thurmond"
-desc = "Cordell Hull retired from politics after just one term in the White House, citing ill health as the reason. His former VP, Averell Harriman however is seen as a dangerous liberal by most Republicans. They hope Senator Taft can prevent this man from ruining the country."
+name = "EVT_9993722_NAME"
+desc = "EVT_9993722_DESC"
 picture = "us1936elections"
 
 
 date = { day = 5 month = november year = 1948 }
 
 action_a = {
-name = "W. Averell Harriman/Adlai Stevenson (Dem.)"
+name = "EVT_9993722_OPTIONA"
 ai_chance = 50
 command = { type = headofstate which = 6252 } # Harriman
 command = { type = headofgovernment which = 6251 } # Stevenson
@@ -2944,7 +2944,7 @@ command = { type = sleepevent which = 9993721 }
 command = { type = sleepevent which = 9993723 }
 }
 action_b = {
-name = "Robert Taft/Strom Thurmond (Rep.)"
+name = "EVT_9993722_OPTIONB"
 ai_chance = 50
 command = { type = headofstate which = 6244 } # Taft
 command = { type = headofgovernment which = 6051 } # Thurmond
@@ -2972,15 +2972,15 @@ flag = END_ACW
 headofstate = 6032 # Wallace
 }
 
-name = "The Elections of 1948: Wallace vs. Thurmond"
-desc = "President Wallace had tried hard to reform America in a country where all Americans could live side by side once again. However, many of his reforms had proven to be very unpopular, especially his attempts at ending segregation in the South. The Republicans tried to take advantage of the controvesy by nominating Strom Thurmond as their candidate."
+name = "EVT_9993723_NAME"
+desc = "EVT_9993723_DESC"
 picture = "us1936elections"
 
 
 date = { day = 5 month = november year = 1948 }
 
 action_a = {
-name = "Henry Wallace/Harry Truman (Dem.)"
+name = "EVT_9993723_OPTIONA"
 ai_chance = 50
 command = { type = headofstate which = 6032 } # Walace
 command = { type = headofgovernment which = 6046 } # Truman
@@ -2996,7 +2996,7 @@ command = { type = sleepevent which = 9993721 }
 command = { type = sleepevent which = 9993722 }
 }
 action_b = {
-name = "Strom Thurmond/John Bricker (Rep.)"
+name = "EVT_9993723_OPTIONB"
 ai_chance = 50
 command = { type = headofstate which = 6255 } # Thurmoud
 command = { type = headofgovernment which = 6050 } # Bricker
@@ -3026,7 +3026,7 @@ picture = "minister_died"
 date = { day = 27 month = august year = 1936 }
 
 action_a = {
-name = "OK"
+name = "EVT_658601_OPTIONA"
 command = { type = sleepminister which = 6004 } #George H. Dern
 }
 }
@@ -3044,7 +3044,7 @@ picture = "minister_died"
 date = { day = 16 month = february year = 1936 }
 
 action_a = {
-name = "OK"
+name = "EVT_658602_OPTIONA"
 command = { type = sleepminister which = 6231 } #Roy D. Chapin
 }
 }
@@ -3062,7 +3062,7 @@ picture = "minister_died"
 date = { day = 21 month = september year = 1938 }
 
 action_a = {
-name = "OK"
+name = "EVT_658603_OPTIONA"
 command = { type = sleepminister which = 6010 } #Oscar Westover
 }
 }
@@ -3081,7 +3081,7 @@ picture = "minister_died"
 date = { day = 7 month = july year = 1939 }
 
 action_a = {
-name = "OK"
+name = "EVT_658604_OPTIONA"
 command = { type = sleepminister which = 6009 } #Claude A. Swanson
 }
 }
@@ -3100,7 +3100,7 @@ picture = "minister_died"
 date = { day = 11 month = april year = 1943 }
 
 action_a = {
-name = "OK"
+name = "EVT_658605_OPTIONA"
 command = { type = sleepminister which = 6085 } #Daniel C. Roper
 }
 }
@@ -3119,7 +3119,7 @@ picture = "minister_died"
 date = { day = 29 month = january year = 1944 }
 
 action_a = {
-name = "OK"
+name = "EVT_658606_OPTIONA"
 command = { type = sleepminister which = 6078 } #Harry Hopkins
 }
 }
@@ -3138,7 +3138,7 @@ picture = "minister_died"
 date = { day = 2 month = july year = 1944 }
 
 action_a = {
-name = "OK"
+name = "EVT_658607_OPTIONA"
 command = { type = sleepminister which = 6093 } #Norman H. Davis
 }
 }
@@ -3156,7 +3156,7 @@ picture = "minister_died"
 date = { day = 4 month = october year = 1944 }
 
 action_a = {
-name = "OK"
+name = "EVT_658608_OPTIONA"
 command = { type = sleepminister which = 6067 } #Al Smith
 }
 }
@@ -3174,7 +3174,7 @@ picture = "minister_died"
 date = { day = 13 month = march year = 1945 }
 
 action_a = {
-name = "OK"
+name = "EVT_658609_OPTIONA"
 command = { type = sleepminister which = 6007 } #Malin Craig
 command = { type = sleepminister which = 6008 } #Malin Craig
 command = { type = sleepleader which = 60112 } #Malin Craig
@@ -3195,7 +3195,7 @@ picture = "minister_died"
 date = { day = 25 month = july year = 1945 }
 
 action_a = {
-name = "OK"
+name = "EVT_658610_OPTIONA"
 command = { type = sleepminister which = 6104 } #Victor Selden Clark
 }
 }
@@ -3206,14 +3206,14 @@ random = no
 country = USA
 style = 2
 
-name = "Henry Ford has died!"
-desc = "The father of the Ford Motor Company, Henry Ford, has died! He was known throughout the world for 'Fordism', high wages for workers and cheap, mass produced goods. He will clearly be missed."
+name = "EVT_658611_NAME"
+desc = "EVT_658611_DESC"
 picture = "minister_died"
 
 date = { day = 7 month = april year = 1947 }
 
 action_a = {
-name = "Memento Mori"
+name = "EVT_658611_OPTIONA"
 command = { type = sleepminister which = 6096 } #Henry Ford
 }
 }
@@ -3231,7 +3231,7 @@ picture = "minister_died"
 date = { day = 12 month = november year = 1947 }
 
 action_a = {
-name = "OK"
+name = "EVT_658612_OPTIONA"
 command = { type = sleepminister which = 6065 } #John Bassett Moore
 }
 }
@@ -3251,7 +3251,7 @@ picture = "minister_died"
 date = { day = 22 month = may year = 1949 }
 
 action_a = {
-name = "OK"
+name = "EVT_658613_OPTIONA"
 command = { type = sleepminister which = 6155 } #James Forrestal
 }
 }
@@ -3270,7 +3270,7 @@ picture = "minister_died"
 date = { day = 26 month = june year = 1949 }
 
 action_a = {
-name = "OK"
+name = "EVT_658614_OPTIONA"
 command = { type = sleepminister which = 6232 } #Ray L. Wilbur
 }
 }
@@ -3288,7 +3288,7 @@ picture = "minister_died"
 date = { day = 19 month = july year = 1949 }
 
 action_a = {
-name = "OK"
+name = "EVT_658615_OPTIONA"
 command = { type = sleepminister which = 6107 } #Frank Murphy
 }
 }
@@ -3306,7 +3306,7 @@ picture = "minister_died"
 date = { day = 29 month = october year = 1949 }
 
 action_a = {
-name = "OK"
+name = "EVT_658616_OPTIONA"
 command = { type = sleepminister which = 6060 } #Edward Stettinius
 }
 }
@@ -3324,7 +3324,7 @@ picture = "minister_died"
 date = { day = 29 month = may year = 1950 }
 
 action_a = {
-name = "OK"
+name = "EVT_658617_OPTIONA"
 command = { type = sleepminister which = 6097 } #William Lemke
 }
 }
@@ -3342,7 +3342,7 @@ picture = "minister_died"
 date = { day = 20 month = october year = 1950 }
 
 action_a = {
-name = "OK"
+name = "EVT_658618_OPTIONA"
 command = { type = sleepminister which = 6061 } #Henry L. Stimson
 command = { type = sleepminister which = 6207 } #Henry L. Stimson
 }
@@ -3361,7 +3361,7 @@ picture = "minister_died"
 date = { day = 18 month = april year = 1951 }
 
 action_a = {
-name = "OK"
+name = "EVT_658619_OPTIONA"
 command = { type = sleepminister which = 6066 } #Arthur Vandenberg
 }
 }
@@ -3380,7 +3380,7 @@ picture = "minister_died"
 date = { day = 22 month = january year = 1952 }
 
 action_a = {
-name = "OK"
+name = "EVT_658620_OPTIONA"
 command = { type = sleepminister which = 6083 } #Robert P. Patterson
 }
 }
@@ -3398,7 +3398,7 @@ picture = "minister_died"
 date = { day = 3 month = february year = 1952 }
 
 action_a = {
-name = "OK"
+name = "EVT_658621_OPTIONA"
 command = { type = sleepminister which = 6199 } #Harold Ickes
 }
 }
@@ -3416,7 +3416,7 @@ picture = "minister_died"
 date = { day = 13 month = june year = 1952 }
 
 action_a = {
-name = "OK"
+name = "EVT_658622_OPTIONA"
 command = { type = sleepminister which = 6075 } #Robert Minor
 }
 }
@@ -3434,7 +3434,7 @@ picture = "minister_died"
 date = { day = 1 month = august year = 1952 }
 
 action_a = {
-name = "OK"
+name = "EVT_658623_OPTIONA"
 command = { type = sleepminister which = 6160 } #Andrew Higgins
 }
 }
@@ -3452,7 +3452,7 @@ picture = "minister_died"
 date = { day = 4 month = may year = 1953 }
 
 action_a = {
-name = "OK"
+name = "EVT_658624_OPTIONA"
 command = { type = sleepminister which = 6206 } #Robert F. Wagner
 }
 }
@@ -3470,7 +3470,7 @@ picture = "minister_died"
 date = { day = 8 month = september year = 1953 }
 
 action_a = {
-name = "OK"
+name = "EVT_658625_OPTIONA"
 command = { type = sleepminister which = 6091 } #Fred M. Vinson
 }
 }
@@ -3488,7 +3488,7 @@ picture = "minister_died"
 date = { day = 2 month = april year = 1954 }
 
 action_a = {
-name = "OK"
+name = "EVT_658626_OPTIONA"
 command = { type = sleepminister which = 6130 } #Hoyt Vandenberg
 command = { type = sleepleader which = 60358 } #Hoyt Vandenberg
 }
@@ -3508,7 +3508,7 @@ picture = "minister_died"
 date = { day = 10 month = june year = 1954 }
 
 action_a = {
-name = "OK"
+name = "EVT_658627_OPTIONA"
 command = { type = sleepminister which = 6234 } #Charles F. Adams III
 }
 }
@@ -3526,7 +3526,7 @@ picture = "minister_died"
 date = { day = 13 month = june year = 1954 }
 
 action_a = {
-name = "OK"
+name = "EVT_658628_OPTIONA"
 command = { type = sleepminister which = 6110 } #Hugh S. Gibson
 }
 }
@@ -3544,7 +3544,7 @@ picture = "minister_died"
 date = { day = 9 month = october year = 1954 }
 
 action_a = {
-name = "OK"
+name = "EVT_658629_OPTIONA"
 command = { type = sleepminister which = 6108 } #Robert H. Jackson
 }
 }
@@ -3562,7 +3562,7 @@ picture = "minister_died"
 date = { day = 13 month = february year = 1955 }
 
 action_a = {
-name = "OK"
+name = "EVT_658630_OPTIONA"
 command = { type = sleepleader which = 60336 } #Brehon B. Somervell
 }
 }
@@ -3580,7 +3580,7 @@ picture = "minister_died"
 date = { day = 11 month = june year = 1958 }
 
 action_a = {
-name = "OK"
+name = "EVT_658631_OPTIONA"
 command = { type = sleepminister which = 6114 } #William Aalto
 }
 }
@@ -3598,7 +3598,7 @@ picture = "minister_died"
 date = { day = 21 month = june year = 1958 }
 
 action_a = {
-name = "OK"
+name = "EVT_658632_OPTIONA"
 command = { type = sleepminister which = 6183 } #Robert L. Ghormley
 }
 }
@@ -3617,7 +3617,7 @@ picture = "minister_died"
 date = { day = 3 month = february year = 1959 }
 
 action_a = {
-name = "OK"
+name = "EVT_658633_OPTIONA"
 command = { type = sleepminister which = 6124 } #Vincent Astor
 }
 }
@@ -3635,7 +3635,7 @@ picture = "minister_died"
 date = { day = 8 month = february year = 1959 }
 
 action_a = {
-name = "OK"
+name = "EVT_658634_OPTIONA"
 command = { type = sleepminister which = 6128 } #William J. Donovan
 command = { type = sleepleader which = 60134 } #William J. Donovan
 }
@@ -3655,7 +3655,7 @@ picture = "minister_died"
 date = { day = 20 month = june year = 1959 }
 
 action_a = {
-name = "OK"
+name = "EVT_658636_OPTIONA"
 command = { type = sleepminister which = 6176 } #William D. Leahy
 command = { type = sleepminister which = 6162 } #William D. Leahy
 command = { type = sleepleader which = 60429 } #William D. Leahy
@@ -3676,7 +3676,7 @@ picture = "minister_died"
 date = { day = 16 month = august year = 1959 }
 
 action_a = {
-name = "OK"
+name = "EVT_658637_OPTIONA"
 command = { type = sleepminister which = 6197 } #William Halsey
 }
 }
@@ -3694,7 +3694,7 @@ picture = "minister_died"
 date = { day = 16 month = october year = 1959 }
 
 action_a = {
-name = "OK"
+name = "EVT_658638_OPTIONA"
 command = { type = sleepminister which = 6064 } #George C. Marshall
 command = { type = sleepminister which = 6136 } #George C. Marshall
 command = { type = sleepminister which = 6144 } #George C. Marshall

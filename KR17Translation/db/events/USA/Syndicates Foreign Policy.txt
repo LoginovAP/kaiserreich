@@ -74,8 +74,8 @@ month = 10
 }
 }
 
-name = "The CSA and New England"
-desc = "A level of stability had returned to the countryside in America. The CSA government had turned its attention to the small state of New England. New England had been propped up by its masters in the Entente but now the CSA government looked to reintegrate the state into the CSA but there was a possibility that it could lead to war with the Entente."
+name = "EVT_911000_NAME"
+desc = "EVT_911000_DESC"
 style = 2
 picture = "American_Infantry"
 decision_picture = "decision_grand_offensive2"
@@ -85,7 +85,7 @@ offset = 25
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Demand the surrender of New England"
+name = "EVT_911000_OPTIONA"
 ai_chance = 99
 command = { type = relation which = CAN value = -100 }
 command = { type = relation which = U10 value = -100 }
@@ -106,7 +106,7 @@ command = { type = addcore which = 1800 }
 command = { type = setflag which = CSA_NE_DEM }
 }
 action_b = {
-name = "Not worth a war"
+name = "EVT_911000_OPTIONB"
 ai_chance = 1
 command = { type = domestic which = interventionism value = -1 }
 command = { type = dissent value = 5 }
@@ -122,8 +122,8 @@ trigger = {
 flag = CSA_NE_DEM
 alliance = { country = U10 country = CAN }
 }
-name = "The CSA Demands New England"
-desc = "The CSA government demanded the full integration of New England into the CSA. Without the support of Canada, New England would not be able to resist the CSA and would surely capitulate. A refusal of the CSA demands would lead to war with the CSA and possibly all of the syndicate nations."
+name = "EVT_911001_NAME"
+desc = "EVT_911001_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -131,14 +131,14 @@ offset = 3
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "We stand with our friends"
+name = "EVT_911001_OPTIONA"
 ai_chance = 99
 command = { type = clrflag which = CSA_NE_DEM }
 command = { type = setflag which = WE_STAND_ON }
 command = { type = domestic which = defense_lobby value = 2 }
 }
 action_b = {
-name = "They are on their own"
+name = "EVT_911001_OPTIONB"
 ai_chance = 1
 command = { type = dissent value = 5 }
 command = { type = domestic which = interventionism value = -2 }
@@ -155,8 +155,8 @@ flag = CSA_NE_DEM
 NOT = { alliance = { country = U10 country = CAN }
 }
 }
-name = "New England Stands Alone"
-desc = "The Canadian government had abandoned New England to the CSA. There were only two options."
+name = "EVT_911002_NAME"
+desc = "EVT_911002_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -164,12 +164,12 @@ offset = 1
 deathdate = { day = 29 month = december year = 1954 }
 
 action_a = {
-name = "We cannot resist the CSA"
+name = "EVT_911002_OPTIONA"
 ai_chance = 99
 command = { type = trigger which = 911003 }
 }
 action_b = {
-name = "To hell with the CSA"
+name = "EVT_911002_OPTIONB"
 ai_chance = 1
 command = { type = leave_alliance }
 command = { type = trigger which = 911004 }
@@ -183,12 +183,12 @@ random = no
 country = CSA
 # triggered by CSA INHERITS
 
-name = "New England Endgame"
-desc = "New England has surrendered to our demands."
+name = "EVT_911003_NAME"
+desc = "EVT_911003_DESC"
 style = 2
 
 action_a = {
-name = "Endgame"
+name = "EVT_911003_OPTIONA"
 command = { type = inherit which = U10 }
 }
 }
@@ -200,17 +200,17 @@ random = no
 country = CSA
 # triggered by #refusal by NE
 
-name = "New England Refuses to Surrender"
-desc = "The fools in New England have refused to surrender to the CSA. The government of the people is demanding war to destroy the small nation and make the American mainland whole."
+name = "EVT_911004_NAME"
+desc = "EVT_911004_DESC"
 style = 2
 
 action_a = {
-name = "They will rue this day"
+name = "EVT_911004_OPTIONA"
 ai_chance = 99
 command = { type = war which = U10 }
 }
 action_b = {
-name = "War is not the answer"
+name = "EVT_911004_OPTIONB"
 ai_chance = 1
 command = { type = dissent value = 5 }
 command = { type = domestic which = interventionism value = -1 }
@@ -225,8 +225,8 @@ country = U10
 trigger = {
 flag = WE_STAND_ON
 }
-name = "The CSA Demand"
-desc = "The Entente has backed the people of New England against the threat of the CSA. With this assurance, most of the people in New England are willing to fight for their independence."
+name = "EVT_911005_NAME"
+desc = "EVT_911005_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -234,12 +234,12 @@ offset = 2
 deathdate = { day = 29 month = december year = 1954 }
 
 action_a = {
-name = "We will resist to the end"
+name = "EVT_911005_OPTIONA"
 ai_chance = 99
 command = { type = trigger which = 911004 }
 }
 action_b = {
-name = "We will give in"
+name = "EVT_911005_OPTIONB"
 ai_chance = 1
 command = { type = trigger which = 911003 }
 }
@@ -262,8 +262,8 @@ atwar = CSA
 }
 }
 
-name = "The Pacific Question"
-desc = "The CSA had been victorious in the war and now was forced to deal with the PSA. The Pacific States were rich in resources and the government was unfriendly to the CSA so removing that threat was an option but some less radical elements believed that the CSA had been at war enough and that a further war would put unnecessary strain on the delicate hold the government had."
+name = "EVT_911006_NAME"
+desc = "EVT_911006_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -271,13 +271,13 @@ offset = 30
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "War will end this!"
+name = "EVT_911006_OPTIONA"
 ai_chance = 90
 command = { type = dissent value = 3 }
 command = { type = war which = CAL }
 }
 action_b = {
-name = "We should try and coexist with neighbours."
+name = "EVT_911006_OPTIONB"
 ai_chance = 10
 command = { type = relation which = CAL value = 100 }
 command = { type = dissent value = 1 }
@@ -300,8 +300,8 @@ atwar = CSA
 }
 }
 
-name = "The Reed Doctrine"
-desc = "With the Combined Syndicates of America firmly established, defeating the capitalist oppressors in Central and South America is necessary to ensure the security of the new state. A strong position would allow for intervention against the capitalists before they could successfully strengthen their positions in the Western hemisphere. Some were concerned that the CSA was spreading itself thin and that internal issues should be addressed first."
+name = "EVT_911007_NAME"
+desc = "EVT_911007_DESC"
 style = 2
 
 date = { day = 20 month = february year = 1939 }
@@ -309,7 +309,7 @@ offset = 20
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Reactionaries must be stopped."
+name = "EVT_911007_OPTIONA"
 ai_chance = 99
 command = { type = domestic which = interventionism value = 2 }
 command = { type = relation which = ENG value = 50 }
@@ -326,7 +326,7 @@ command = { type = trigger which = 911010 }
 command = { type = trigger which = 911011 }
 }
 action_b = {
-name = "America first."
+name = "EVT_911007_OPTIONB"
 ai_chance = 1
 command = { type = dissent value = 1 }
 command = { type = domestic which = interventionism value = -2 }
@@ -344,11 +344,11 @@ government = communist
 }
 }
 
-name = "The Reed Doctrine"
-desc = "The Combined Syndicates of America have proclaimed a policy aimed at extinguishing capitalism throughout the Americas.  Such a policy is an obvious threat to Mexico."
+name = "EVT_911008_NAME"
+desc = "EVT_911008_DESC"
 
 action_a = {
-name = "A new threat arises"
+name = "EVT_911008_OPTIONA"
 command = { type = relation which = CSA value = -75 }
 }
 }
@@ -364,11 +364,11 @@ government = communist
 }
 }
 
-name = "The Reed Doctrine"
-desc = "The Combined Syndicates of America have proclaimed a policy aimed at extinguishing capitalism throughout the Americas.  Such a policy is an obvious threat to La-Plata."
+name = "EVT_911009_NAME"
+desc = "EVT_911009_DESC"
 
 action_a = {
-name = "A new threat arises"
+name = "EVT_911009_OPTIONA"
 command = { type = relation which = CSA value = -75 }
 }
 }
@@ -384,11 +384,11 @@ government = communist
 }
 }
 
-name = "The Reed Doctrine"
-desc = "The Combined Syndicates of America have proclaimed a policy aimed at extinguishing Ccpitalism throughout the Americas.  Such a policy is an obvious threat to Honduras."
+name = "EVT_911010_NAME"
+desc = "EVT_911010_DESC"
 
 action_a = {
-name = "A new threat arises"
+name = "EVT_911010_OPTIONA"
 command = { type = relation which = CSA value = -75 }
 }
 }
@@ -404,11 +404,11 @@ government = communist
 }
 }
 
-name = "The Reed Doctrine"
-desc = "The Combined Syndicates of America have proclaimed a policy aimed at extinguishing capitalism throughout the Americas.  Such a policy is an obvious threat to United Provinces."
+name = "EVT_911011_NAME"
+desc = "EVT_911011_DESC"
 
 action_a = {
-name = "A new threat arises"
+name = "EVT_911011_OPTIONA"
 command = { type = relation which = CSA value = -75 }
 }
 }
@@ -440,8 +440,8 @@ exists = TEX
 }
 }
 
-name = "The Mexican Question"
-desc = "With territory of the former USA under our firm control, time has come to directly implement the Reed doctrine and eradicate capitalism from America. We should start with our southern neighbour-Mexico. The incompetence of the previous governments allowed capitalism to root deeply within Mexican society. The only way to solve this matter is direct military confrontation..."
+name = "EVT_911012_NAME"
+desc = "EVT_911012_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -449,7 +449,7 @@ offset = 60
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "War will end this!"
+name = "EVT_911012_OPTIONA"
 ai_chance = 90
 command = { type = dissent value = 1 }
 command = { type = domestic which = interventionism value = 1 }
@@ -457,7 +457,7 @@ command = { type = domestic which = defense_lobby value = 1 }
 command = { type = war which = MEX }
 }
 action_b = {
-name = "We should try and coexist with our neighbours."
+name = "EVT_911012_OPTIONB"
 ai_chance = 10
 command = { type = relation which = MEX value = 100 }
 command = { type = dissent value = 3 }

@@ -62,11 +62,11 @@ headofstate = 56510
 
 date = { day = 19 month = january year = 1936 }
 
-name = "The Passing of King George V"
-desc = "The ousted king of Britain, George V, has finally succumbed to the illness that had plagued him since revolution swept through the home isles. His son, Edward, has ascended the throne of the British Empire, including that of the Antipodean dominions."
+name = "EVT_123000_NAME"
+desc = "EVT_123000_DESC"
 
 action_a = {
-name = "The Entente enters a state of mourning..."
+name = "EVT_123000_OPTIONA"
 command = { type = dissent value = 1 }
 }
 }
@@ -80,7 +80,7 @@ trigger = {
 headofstate = 56510
 }
 
-name = "A Special Conference of the Australasian Labour Party"
+name = "EVT_123001_NAME"
 desc = "EVT_123001_DESC"
 style = 2
 picture = "JackLang"
@@ -89,7 +89,7 @@ date = { day = 24 month = february year = 1936 }
 
 action = {
 ai_chance = 100
-name = "Let the leftists squabble amongst themselves!"
+name = "EVT_123001_OPTIONA"
 command = { type = dissent value = 1 }
 }
 
@@ -104,7 +104,7 @@ trigger = {
 headofstate = 56510
 }
 
-name = "The Government and Additional Funding for Military Training"
+name = "EVT_123002_NAME"
 desc = "EVT_123002_DESC"
 style = 2
 picture = "Australian_troops1"
@@ -113,7 +113,7 @@ date = { day = 8 month = july year = 1936 }
 
 action = {
 ai_chance = 100
-name = "Direct extra funds to military training!"
+name = "EVT_123002_OPTIONA"
 command = { type = relative_manpower value = 2 }
 command = { type = manpowerpool value = 10 }
 command = { type = domestic which = professional_army value = 1 }
@@ -125,7 +125,7 @@ command = { type = local_setflag which = AST_conscription }
 
 action = {
 ai_chance = 0
-name = "We shan't compromise the volunteer nature of the army!"
+name = "EVT_123002_OPTIONB"
 command = { type = domestic which = professional_army value = -1 }
 command = { type = domestic which = defense_lobby value = -1 }
 command = { type = dissent value = -1 }
@@ -142,7 +142,7 @@ trigger = {
 headofstate = 56510
 }
 
-name = "Charles Vyner Brooke Backs the New Guard"
+name = "EVT_123003_NAME"
 desc = "EVT_123003_DESC"
 style = 2
 picture = "Vynerbrooke"
@@ -151,7 +151,7 @@ date = { day = 15 month = june year = 1936 }
 
 action = {
 ai_chance = 100
-name = "What's a Bruce to do?"
+name = "EVT_123003_OPTIONA"
 command = { type = dissent value = 2 }
 }
 
@@ -182,7 +182,7 @@ event = 123002 #Extra funding for military training
 local_flag = AST_conscription
 }
 
-name = "Campaign for the Introduction of Conscription?"
+name = "EVT_123004_NAME"
 desc = "EVT_123004_DESC"
 style = 2
 picture = "australian_troops2"
@@ -192,7 +192,7 @@ offset = 5
 deathdate = { day = 29 month = december year = 1963 }
 
 action = {
-name = "We shall campaign vigorously!"
+name = "EVT_123004_OPTIONA"
 ai_chance = 50
 command = { type = dissent value = 6 }
 command = { type = money value = -200 }
@@ -205,7 +205,7 @@ command = { type = domestic which = defense_lobby value = 1 }
 command	= { type = local_setflag which = AST_conscription_campaign }
 }
 action = {
-name = "Launch a moderate campaign to avoid a national schism."
+name = "EVT_123004_OPTIONB"
 ai_chance = 25
 command = { type = dissent value = 4 }
 command = { type = money value = -100 }
@@ -217,7 +217,7 @@ command	= { type = local_setflag which = AST_conscription_campaign_mild }
 }
 action = {
 ai_chance = 25
-name = "A volunteer force is adequate to defend the peaceful Antipodes."
+name = "EVT_123004_OPTIONC"
 command = { type = dissent value = 2 }
 command = { type = relation which = CAN value = -5 }
 command = { type = relation which = PAK value = -5 }
@@ -250,18 +250,18 @@ date = { day = 2 month = september year = 1936 }
 offset = 10
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "Announce a Plebiscite on Conscription?"
-desc = "With the government having launched a campaign to entice Australasia to the idea of conscription the populace look kindlier on the need for a stronger national defence. However, the issue needs to be resolved by plebiscite if the cabinet is to draw true strength from the campaign."
+name = "EVT_123005_NAME"
+desc = "EVT_123005_DESC"
 
 action = {
-name = "Yes! Bring the question to the polls!"
+name = "EVT_123005_OPTIONA"
 ai_chance = 75
 command = { type = dissent value = 2 }
 command = { type = domestic which = defense_lobby value = 1 }
 command	= { type = local_setflag which = AST_conscription_plebiscite_yes }
 }
 action = {
-name = "Try to formulate federal legalisation on the issue instead."
+name = "EVT_123005_OPTIONB"
 ai_chance = 25
 command = { type = dissent value = 4 }
 command = { type = domestic which = defense_lobby value = -1 }
@@ -285,12 +285,12 @@ date = { day = 2 month = september year = 1936 }
 offset = 4
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "Conscription Plebiscite: New South Wales"
-desc = "As the announced plebiscite get rolling the good people of New South Wales hurries to the polls."
+name = "EVT_123006_NAME"
+desc = "EVT_123006_DESC"
 
 action = {
 trigger = { local_flag = AST_conscription_campaign }
-name = "Vote YES!"
+name = "EVT_123006_OPTIONA"
 ai_chance = 60
 command = { type = dissent value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
@@ -299,7 +299,7 @@ command	= { type = local_setflag which = Pleb_NSW_Yes }
 }
 action = {
 trigger = { local_flag = AST_conscription_campaign }
-name = "Vote NO!"
+name = "EVT_123006_OPTIONB"
 ai_chance = 40
 command = { type = dissent value = 1 }
 command = { type = event which = 123007 where = AST when = 3 }
@@ -308,7 +308,7 @@ command	= { type = local_setflag which = Pleb_NSW_No }
 
 action = {
 trigger = { local_flag = AST_conscription_campaign_mild }
-name = "Vote YES!"
+name = "EVT_123006_OPTIONC"
 ai_chance = 50
 command = { type = dissent value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
@@ -318,7 +318,7 @@ command	= { type = local_setflag which = Pleb_NSW_Yes }
 
 action = {
 trigger = { local_flag = AST_conscription_campaign_mild }
-name = "Vote NO!"
+name = "EVT_123006_OPTIOND"
 ai_chance = 50
 command = { type = dissent value = 1 }
 command = { type = event which = 123007 where = AST when = 3 }
@@ -333,12 +333,12 @@ country = AST
 style = 2
 picture = "Australasia"
 
-name = "Conscription Plebiscite: Northern Territory"
-desc = "As the announced plebiscite get rolling the good people of the Northern Territory hurry to the polls."
+name = "EVT_123007_NAME"
+desc = "EVT_123007_DESC"
 
 action = {
 trigger = { local_flag = AST_conscription_campaign }
-name = "Vote YES!"
+name = "EVT_123007_OPTIONA"
 ai_chance = 60
 command = { type = dissent value = 1 }
 command = { type = event which = 123008 where = AST when = 3 }
@@ -346,7 +346,7 @@ command	= { type = local_setflag which = Pleb_NT_Yes }
 }
 action = {
 trigger = { local_flag = AST_conscription_campaign }
-name = "Vote NO!"
+name = "EVT_123007_OPTIONB"
 ai_chance = 40
 command = { type = dissent value = 1 }
 command = { type = event which = 123008 where = AST when = 3 }
@@ -355,7 +355,7 @@ command	= { type = local_setflag which = Pleb_NT_No }
 
 action = {
 trigger = { local_flag = AST_conscription_campaign_mild }
-name = "Vote YES!"
+name = "EVT_123007_OPTIONC"
 ai_chance = 50
 command = { type = dissent value = 1 }
 command = { type = event which = 123008 where = AST when = 3 }
@@ -364,7 +364,7 @@ command	= { type = local_setflag which = Pleb_NT_Yes }
 
 action = {
 trigger = { local_flag = AST_conscription_campaign_mild }
-name = "Vote NO!"
+name = "EVT_123007_OPTIOND"
 ai_chance = 50
 command = { type = dissent value = 1 }
 command = { type = event which = 123008 where = AST when = 3 }
@@ -379,12 +379,12 @@ country = AST
 style = 2
 picture = "Australasia"
 
-name = "Conscription Plebiscite: Western Australia"
-desc = "As the announced plebiscite get rolling the good people of Western Australia hurry to the polls."
+name = "EVT_123008_NAME"
+desc = "EVT_123008_DESC"
 
 action = {
 trigger = { local_flag = AST_conscription_campaign }
-name = "Vote YES!"
+name = "EVT_123008_OPTIONA"
 ai_chance = 60
 command = { type = dissent value = 1 }
 command = { type = event which = 123009 where = AST when = 3 }
@@ -392,7 +392,7 @@ command	= { type = local_setflag which = Pleb_WA_Yes }
 }
 action = {
 trigger = { local_flag = AST_conscription_campaign }
-name = "Vote NO!"
+name = "EVT_123008_OPTIONB"
 ai_chance = 40
 command = { type = dissent value = 1 }
 command = { type = event which = 123009 where = AST when = 3 }
@@ -401,7 +401,7 @@ command	= { type = local_setflag which = Pleb_WA_No }
 
 action = {
 trigger = { local_flag = AST_conscription_campaign_mild }
-name = "Vote YES!"
+name = "EVT_123008_OPTIONC"
 ai_chance = 50
 command = { type = dissent value = 1 }
 command = { type = event which = 123009 where = AST when = 3 }
@@ -410,7 +410,7 @@ command	= { type = local_setflag which = Pleb_WA_Yes }
 
 action = {
 trigger = { local_flag = AST_conscription_campaign_mild }
-name = "Vote NO!"
+name = "EVT_123008_OPTIOND"
 ai_chance = 50
 command = { type = dissent value = 1 }
 command = { type = event which = 123009 where = AST when = 3 }
@@ -425,12 +425,12 @@ country = AST
 style = 2
 picture = "Australasia"
 
-name = "Conscription Plebiscite: South Australia"
-desc = "As the announced plebiscite get rolling the good people of South Australia hurry to the polls."
+name = "EVT_123009_NAME"
+desc = "EVT_123009_DESC"
 
 action = {
 trigger = { local_flag = AST_conscription_campaign }
-name = "Vote YES!"
+name = "EVT_123009_OPTIONA"
 ai_chance = 60
 command = { type = dissent value = 1 }
 command = { type = event which = 123010 where = AST when = 4 }
@@ -438,7 +438,7 @@ command	= { type = local_setflag which = Pleb_SA_Yes }
 }
 action = {
 trigger = { local_flag = AST_conscription_campaign }
-name = "Vote NO!"
+name = "EVT_123009_OPTIONB"
 ai_chance = 40
 command = { type = dissent value = 1 }
 command = { type = event which = 123010 where = AST when = 4 }
@@ -447,7 +447,7 @@ command	= { type = local_setflag which = Pleb_SA_No }
 
 action = {
 trigger = { local_flag = AST_conscription_campaign_mild }
-name = "Vote YES!"
+name = "EVT_123009_OPTIONC"
 ai_chance = 50
 command = { type = dissent value = 1 }
 command = { type = event which = 123010 where = AST when = 4 }
@@ -456,7 +456,7 @@ command	= { type = local_setflag which = Pleb_SA_Yes }
 
 action = {
 trigger = { local_flag = AST_conscription_campaign_mild }
-name = "Vote NO!"
+name = "EVT_123009_OPTIOND"
 ai_chance = 50
 command = { type = dissent value = 1 }
 command = { type = event which = 123010 where = AST when = 4 }
@@ -471,12 +471,12 @@ country = AST
 style = 2
 picture = "Australasia"
 
-name = "Conscription Plebiscite: Queensland"
-desc = "As the announced plebiscite get rolling the good people of Queensland hurry to the polls."
+name = "EVT_123010_NAME"
+desc = "EVT_123010_DESC"
 
 action = {
 trigger = { local_flag = AST_conscription_campaign }
-name = "Vote YES!"
+name = "EVT_123010_OPTIONA"
 ai_chance = 60
 command = { type = dissent value = 1 }
 command = { type = event which = 123011 where = AST when = 3 }
@@ -484,7 +484,7 @@ command	= { type = local_setflag which = Pleb_QL_Yes }
 }
 action = {
 trigger = { local_flag = AST_conscription_campaign }
-name = "Vote NO!"
+name = "EVT_123010_OPTIONB"
 ai_chance = 40
 command = { type = dissent value = 1 }
 command = { type = event which = 123011 where = AST when = 3 }
@@ -493,7 +493,7 @@ command	= { type = local_setflag which = Pleb_QL_No }
 
 action = {
 trigger = { local_flag = AST_conscription_campaign_mild }
-name = "Vote YES!"
+name = "EVT_123010_OPTIONC"
 ai_chance = 50
 command = { type = dissent value = 1 }
 command = { type = event which = 123011 where = AST when = 3 }
@@ -502,7 +502,7 @@ command	= { type = local_setflag which = Pleb_QL_Yes }
 
 action = {
 trigger = { local_flag = AST_conscription_campaign_mild }
-name = "Vote NO!"
+name = "EVT_123010_OPTIOND"
 ai_chance = 50
 command = { type = dissent value = 1 }
 command = { type = event which = 123011 where = AST when = 3 }
@@ -517,12 +517,12 @@ country = AST
 style = 2
 picture = "NZL_North"
 
-name = "Conscription Plebiscite: NZ - North Island"
-desc = "As the announced plebiscite get rolling the good people of New Zealand's Northern Island hurry to the polls."
+name = "EVT_123011_NAME"
+desc = "EVT_123011_DESC"
 
 action = {
 trigger = { local_flag = AST_conscription_campaign }
-name = "Vote YES!"
+name = "EVT_123011_OPTIONA"
 ai_chance = 60
 command = { type = dissent value = 1 }
 command = { type = event which = 123012 where = AST when = 4 }
@@ -530,7 +530,7 @@ command	= { type = local_setflag which = Pleb_NZN_Yes }
 }
 action = {
 trigger = { local_flag = AST_conscription_campaign }
-name = "Vote NO!"
+name = "EVT_123011_OPTIONB"
 ai_chance = 40
 command = { type = dissent value = 1 }
 command = { type = event which = 123012 where = AST when = 4 }
@@ -539,7 +539,7 @@ command	= { type = local_setflag which = Pleb_NZN_No }
 
 action = {
 trigger = { local_flag = AST_conscription_campaign_mild }
-name = "Vote YES!"
+name = "EVT_123011_OPTIONC"
 ai_chance = 50
 command = { type = dissent value = 1 }
 command = { type = event which = 123012 where = AST when = 4 }
@@ -548,7 +548,7 @@ command	= { type = local_setflag which = Pleb_NZN_Yes }
 
 action = {
 trigger = { local_flag = AST_conscription_campaign_mild }
-name = "Vote NO!"
+name = "EVT_123011_OPTIOND"
 ai_chance = 50
 command = { type = dissent value = 1 }
 command = { type = event which = 123012 where = AST when = 4 }
@@ -564,12 +564,12 @@ style = 2
 picture = "NZL_South"
 save_date = yes
 
-name = "Conscription Plebiscite: NZ - South Island"
-desc = "As the announced plebiscite get rolling the good people of New Zealand's Southern Island hurry to the polls."
+name = "EVT_123012_NAME"
+desc = "EVT_123012_DESC"
 
 action = {
 trigger = { local_flag = AST_conscription_campaign }
-name = "Vote YES!"
+name = "EVT_123012_OPTIONA"
 ai_chance = 60
 command = { type = dissent value = 1 }
 command = { type = event which = 123012 where = AST when = 3 }
@@ -577,7 +577,7 @@ command	= { type = local_setflag which = Pleb_NZS_Yes }
 }
 action = {
 trigger = { local_flag = AST_conscription_campaign }
-name = "Vote NO!"
+name = "EVT_123012_OPTIONB"
 ai_chance = 40
 command = { type = dissent value = 1 }
 command = { type = event which = 123012 where = AST when = 3 }
@@ -586,7 +586,7 @@ command	= { type = local_setflag which = Pleb_NZS_No }
 
 action = {
 trigger = { local_flag = AST_conscription_campaign_mild }
-name = "Vote YES!"
+name = "EVT_123012_OPTIONC"
 ai_chance = 50
 command = { type = dissent value = 1 }
 command = { type = event which = 123012 where = AST when = 3 }
@@ -595,7 +595,7 @@ command	= { type = local_setflag which = Pleb_NZS_Yes }
 
 action = {
 trigger = { local_flag = AST_conscription_campaign_mild }
-name = "Vote NO!"
+name = "EVT_123012_OPTIOND"
 ai_chance = 50
 command = { type = dissent value = 1 }
 command = { type = event which = 123012 where = AST when = 3 }
@@ -731,8 +731,8 @@ local_flag = Pleb_NZS_Yes
 }
 }
 
-name = "Conscription Plebiscite: Result - YES"
-desc = "The people of the Antipodean dominions have overwhelmingly backed the government in its desire to introduce conscription to our fair Confederation. This will greatly strengthen the current cabinet at the expense of the extremist factions of parliament and it is expected that Bruce will soon call for fresh elections to stabilize his mandate even further."
+name = "EVT_123013_NAME"
+desc = "EVT_123013_DESC"
 style = 2
 picture = "Australian_troops1"
 
@@ -741,7 +741,7 @@ offset = 5
 deathdate = { day = 29 month = december year= 1960 }
 
 action_a = {
-name = "Hurray, hurray, hurray!"
+name = "EVT_123013_OPTIONA"
 ai_chance = 100
 command = { type = dissent value = -5  }
 command = { type = domestic which = professional_army value = -2 }
@@ -778,8 +778,8 @@ NOT = { event = 123013 }
 event = { id = 123012 days = 6 }
 }
 
-name = "Conscription Plebiscite: Result - NO"
-desc = "The government has been completely defeated at the voting polls. Conscription has been absolutely refused by the Antipodean citizens, leaving the cabinet's prestige deeply damaged."
+name = "EVT_123014_NAME"
+desc = "EVT_123014_DESC"
 style = 2
 picture = "Australian_troops1"
 
@@ -788,7 +788,7 @@ offset = 5
 deathdate = { day = 29 month = december year= 1960 }
 
 action_a = {
-name = "Ack! What a humiliation! Bloody hell!"
+name = "EVT_123014_OPTIONA"
 ai_chance = 100
 command = { type = dissent value = 10  }
 command = { type = domestic which = professional_army value = 1 }
@@ -818,17 +818,17 @@ country = AST
 style = 2
 picture = "NZL"
 
-name = "Conscription Plebiscite: NZ Votes No"
+name = "EVT_123015_NAME"
 desc = "EVT_123015_DESC"
 
 action = {
-name = "Exempt New Zealand from national conscription!"
+name = "EVT_123015_OPTIONA"
 ai_chance = 60
 command = { type = dissent value = 2 }
 command = { type = relative_manpower value = -5 }
 }
 action = {
-name = "Implement conscription moderately on the Kiwis"
+name = "EVT_123015_OPTIONB"
 ai_chance = 30
 command = { type = dissent value = 5 }
 command = { type = relative_manpower value = -2 }
@@ -836,7 +836,7 @@ command = { type = relative_manpower value = -2 }
 }
 
 action = {
-name = "The Antipodes are in this together! Enforce conscription!"
+name = "EVT_123015_OPTIONC"
 ai_chance = 10
 command = { type = dissent value = 10 }
 command = { type = revolt which = 1721 }
@@ -857,7 +857,7 @@ trigger = {
 headofstate = 56510
 }
 
-name = "The Great Schism of the Australasian Labour Party"
+name = "EVT_123016_NAME"
 desc = "EVT_123016_DESC"
 style = 2
 picture = "AST_labour"
@@ -866,7 +866,7 @@ date = { day = 21 month = august year = 1936 }
 
 action = {
 ai_chance = 100
-name = "This is both disturbing and encouraging!"
+name = "EVT_123016_OPTIONA"
 command = { type = dissent value = 1 }
 }
 
@@ -892,11 +892,11 @@ date = { day = 5 month = january year = 1937 }
 offset = 5
 deathdate = { day = 29 month = march year = 1937 }
 
-name = "Confederate Election 1937"
-desc = "Riding on a wave on support and prestige following last year's plebiscite, Governor-General Stanley Bruce has called for fresh elections to our Confederation's parliament."
+name = "EVT_123017_NAME"
+desc = "EVT_123017_DESC"
 
 action = {
-name = "Bruce and Hughes solidify their mandate once more!"
+name = "EVT_123017_OPTIONA"
 ai_chance = 80
 command = { type = set_domestic which = democratic value = 4 }
 command = { type = set_domestic which = political_left value = 4 }
@@ -909,14 +909,14 @@ command = { type = dissent value = -3 }
 command	= { type = local_setflag which = AST_Bruce }
 }
 action = {
-name = "Labour overcomes its infighting and scores a majority!"
+name = "EVT_123017_OPTIONB"
 ai_chance = 10
 command = { type = event which = 123018 where = AST when = 1 }	# Who takes the premiership?
 command = { type = dissent value = 10 }
 command	= { type = local_setflag which = AST_Labour }
 }
 action = {
-name = "The revanchist Centre Party and its 'New Guard' triumphs!?"
+name = "EVT_123017_OPTIONC"
 ai_chance = 10
 command = { type = set_domestic which = democratic value = 3 }
 command = { type = set_domestic which = political_left value = 3 }
@@ -936,11 +936,11 @@ country = AST
 style = 2
 picture = "AST_labour"
 
-name = "Labour Victory"
-desc = "After Labour's surprising victory in the last election two figures are struggling for both leadership of the party as well as the premiership. Who will triumph?"
+name = "EVT_123018_NAME"
+desc = "EVT_123018_DESC"
 
 action = {
-name = "John Curtin's silent strength unites Labour!"
+name = "EVT_123018_OPTIONA"
 ai_chance = 50
 command = { type = set_domestic which = democratic value = 7 }
 command = { type = set_domestic which = political_left value = 8 }
@@ -954,7 +954,7 @@ command	= { type = local_setflag which = AST_Curtin }
 }
 
 action = {
-name = "Lang's scheming secures him the premiership!"
+name = "EVT_123018_OPTIONB"
 ai_chance = 50
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 6 }

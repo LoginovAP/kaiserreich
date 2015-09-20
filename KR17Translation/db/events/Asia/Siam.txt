@@ -28,11 +28,11 @@ date = { day = 0 month = january year = 1939 }
 offset = 3
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Defeat"
-desc = "With the news of the surrender of Japan, our fight seems hopeless. It would be in the best interests of the people of Siam to surrender, face the humilation and keep as much land as we can."
+name = "EVT_3967392_NAME"
+desc = "EVT_3967392_DESC"
 
 action_a = {
-name = "The war is hopeless now..."
+name = "EVT_3967392_OPTIONA"
 ai_chance = 100
 command = { type = secedeprovince which = GER value = 1433 }
 command = { type = secedeprovince which = GER value = 1436 }
@@ -62,7 +62,7 @@ command = { type = end_puppet }
 }
 
 action_b = {
-name = "Fight to death !"
+name = "EVT_3967392_OPTIONB"
 ai_chance = 0
 command = {  }
 }
@@ -93,8 +93,8 @@ control = { province = 1436 data = SIA }
 control = { province = 1423 data = SIA }
 }
 
-name = "German Empire in disarray"
-desc = "With the German Empire in turmoil, we have a great oportunity to seize control of Singapore. There is very little that the German Empire can do to stop us at this point."
+name = "EVT_3967393_NAME"
+desc = "EVT_3967393_DESC"
 style = 2
 
 
@@ -104,7 +104,7 @@ deathdate = { day = 29 month = january year = 1960 }
 
 action_a = {
 ai_chance = 100
-name = "Seize Singapore!"
+name = "EVT_3967393_OPTIONA"
 command = { type = addcore which = 1437 }
 command = { type = addcore which = 1438 }
 command = { type = addcore which = 1432 }
@@ -114,7 +114,7 @@ command = { type = trigger which = 3967394 }
 }
 action_b = {
 ai_chance = 0
-name = "Rather not"
+name = "EVT_3967393_OPTIONB"
 command = { type = relation which = GER value = 100 }
 command = { type = dissent value = 5 }
 
@@ -127,14 +127,14 @@ random = no
 country = GER
 ## triggered by 3967393
 
-name = "Siam seize Singapore!"
-desc = "With our empire in chaos Siam used this oportunity to seize control of Singapore. Currently there is very little that we can do to stop Siam at this point."
+name = "EVT_3967394_NAME"
+desc = "EVT_3967394_DESC"
 style = 2
 
 
 action_a = {
 ai_chance = 100
-name = "There is nothing we can do"
+name = "EVT_3967394_OPTIONA"
 command = { type = secedeprovince which = SIA value = 1437 }
 command = { type = secedeprovince which = SIA value = 1438 }
 command = { type = secedeprovince which = SIA value = 1432 }
@@ -143,7 +143,7 @@ command = { type = dissent value = 1 }
 }
 action_b = {
 ai_chance = 0
-name = "This means WAR!"
+name = "EVT_3967394_OPTIONB"
 command = { type = war which = SIA }
 command = { type = dissent value = 5 }
 
@@ -157,8 +157,8 @@ random = no
 country = SIA
 style = 2
 
-name = "The name of our country"
-desc = "A campaign supported by some ministers and military leaders, and also by the nationalist inteligentsia, has proposed the change of our country's name from Siam to Ratcha Anachak Thai - the Kingdom of Thailand, after our main ethnic group, the Thai people."
+name = "EVT_3967395_NAME"
+desc = "EVT_3967395_DESC"
 
 date = { day = 1 month = june year = 1939 }
 offset = 50
@@ -166,7 +166,7 @@ deathdate = { day = 1 month = december year = 1960 }
 
 action_a = {
 ai_chance = 70
-name = "This is Thailand, land of the free"
+name = "EVT_3967395_OPTIONA"
 command = { type = name where = SIA which = "Thailand" }
 command = { type = dissent value = -1 }
 command = { type = setflag which = SIA_THAILAND }
@@ -174,7 +174,7 @@ command = { type = setflag which = SIA_THAILAND }
 
 action_b = {
 ai_chance = 20
-name = "We've been calling it Siam since forever, why bother?"
+name = "EVT_3967395_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = setflag which = SIA_SIAM }
 }
@@ -205,8 +205,8 @@ flag = SIA_SIAM
 }
 }
 
-name = "The Birth of an Empire"
-desc = "Following our successes against both Burma and the mighty German Empire, our country has secured her place as the greatest nation in Southeast Asia. Our beloved king, after listening to the proposals of our prime minister, is seriously considering his idea of a showcase of Thai power to the world: the proclamation of a new Empire based in Bangcok!"
+name = "EVT_3967396_NAME"
+desc = "EVT_3967396_DESC"
 
 date = { day = 1 month = june year = 1936 }
 offset = 300
@@ -215,7 +215,7 @@ deathdate = { day = 1 month = december year = 1960 }
 action = {
 trigger = {flag = SIA_THAILAND }
 ai_chance = 80
-name = "Proclaim the Thai Empire"
+name = "EVT_3967396_OPTIONA"
 command = { type = name where = SIA which = "Thai Empire" }
 command = { type = dissent value = 5 } # The minorities would be pissed...
 command = { type = set_domestic which = interventionism value = 1 }
@@ -253,7 +253,7 @@ command = { type = addclaim which = 1392 } #VIETNAM
 action = {
 trigger = {flag = SIA_SIAM }
 ai_chance = 80
-name = "Proclaim the Siamese Empire"
+name = "EVT_3967396_OPTIONB"
 command = { type = name where = SIA which = "Siamese Empire" }
 command = { type = dissent value = 5 } # The minorities would be pissed...
 command = { type = set_domestic which = interventionism value = 1 }
@@ -290,7 +290,7 @@ command = { type = addclaim which = 1392 } #VIETNAM
 
 action = {
 ai_chance = 20
-name = "We're tired of being imperialists, drop the proposal"
+name = "EVT_3967396_OPTIONC"
 command = { type = dissent value = -5 } # The minorities are happy!
 command = { type = set_domestic which = interventionism value = -2 }
 command = { type = belligerence which = SIA value = -5 }
@@ -314,8 +314,8 @@ control = { province = 1400 data = SIA }    # We hold Phnom Penh
 flag = SIA_EMPIRE
 }
 
-name = "The Fate of Burma"
-desc = "As we proclaimed the birth of our Empire, the native population of Burma has been behaving uneasily. Heavy riots have erupted in their major cities as local nationalists and syndicalists protest to the idea of being ruled by a Thai sovereign. While our military demands an imposition of martial law and the complete integration of Burma into the Empire, some moderate politicians have proposed that we grant them a small ammount of autonomy, just to appease their leaders."
+name = "EVT_3967397_NAME"
+desc = "EVT_3967397_DESC"
 
 date = { day = 1 month = june year = 1936 }
 offset = 300
@@ -323,7 +323,7 @@ deathdate = { day = 1 month = december year = 1960 }
 
 action = {
 ai_chance = 70
-name = "Integrate Burma"
+name = "EVT_3967397_OPTIONA"
 command = { type = dissent value = 10 }
 command = { type = set_domestic which = interventionism value = 1 }
 command = { type = set_domestic which = defense_lobby value = 1 }
@@ -334,7 +334,7 @@ command = { type = event which = 3967398 where = SIA when = 900 }
 
 action = {
 ai_chance = 30
-name = "Release an autonomous Burma"
+name = "EVT_3967397_OPTIONB"
 command = { type = dissent value = -5 }
 command = { type = set_domestic which = interventionism value = -1 }
 command = { type = set_domestic which = defense_lobby value = -1 }
@@ -365,11 +365,11 @@ id = 3967398
 random = no
 country = SIA
 
-name = "Integration of Burma"
-desc = "After three years of hard work, repression of dissidents and propaganda campaigns, the integration of the former Kingdom of Burma is completed."
+name = "EVT_3967398_NAME"
+desc = "EVT_3967398_DESC"
 
 action = {
-name = "Great!"
+name = "EVT_3967398_OPTIONA"
 command = { type = set_domestic which = interventionism value = 1 }
 command = { type = set_domestic which = defense_lobby value = 1 }
 command = { type = set_domestic which = freedom value = -1 }
@@ -407,8 +407,8 @@ control = { province = 1400 data = SIA }    # We hold Phnom Penh
 flag = SIA_EMPIRE
 }
 
-name = "The Fate of Malaya"
-desc = "As we proclaimed the birth of our Empire, the Malays have been rioting, their major cities turning into battlefields as local nationalists and syndicalists protest to the idea of being ruled by a Thai sovereign. While our military demands an imposition of martial law and the complete integration of Malaya into the Empire, some moderate politicians have proposed that we grant them a small ammount of autonomy to queel the protests."
+name = "EVT_3967399_NAME"
+desc = "EVT_3967399_DESC"
 
 date = { day = 1 month = june year = 1936 }
 offset = 300
@@ -416,7 +416,7 @@ deathdate = { day = 1 month = december year = 1960 }
 
 action = {
 ai_chance = 70
-name = "Integrate Malaya"
+name = "EVT_3967399_OPTIONA"
 command = { type = dissent value = 10 }
 command = { type = set_domestic which = interventionism value = 1 }
 command = { type = set_domestic which = defense_lobby value = 1 }
@@ -427,7 +427,7 @@ command = { type = event which = 3967400 where = SIA when = 900 }
 
 action = {
 ai_chance = 30
-name = "Release an autonomous Malaya"
+name = "EVT_3967399_OPTIONB"
 command = { type = dissent value = -5 }
 command = { type = set_domestic which = interventionism value = -1 }
 command = { type = set_domestic which = defense_lobby value = -1 }
@@ -446,11 +446,11 @@ id = 3967400
 random = no
 country = SIA
 
-name = "Integration of Malaya"
-desc = "After three years of hard work, repression of dissidents and propaganda campaigns, the integration of Malaya is completed."
+name = "EVT_3967400_NAME"
+desc = "EVT_3967400_DESC"
 
 action = {
-name = "Great!"
+name = "EVT_3967400_OPTIONA"
 command = { type = set_domestic which = interventionism value = 1 }
 command = { type = set_domestic which = defense_lobby value = 1 }
 command = { type = set_domestic which = freedom value = -1 }
@@ -479,8 +479,8 @@ control = { province = 1400 data = SIA }    # We hold Phnom Penh
 flag = SIA_EMPIRE
 }
 
-name = "The Fate of Vietnam"
-desc = "As we proclaimed the birth of our Empire, the Vietnamese people has been rioting, their major cities turning into battlefields as local nationalists and syndicalists protest to the idea of being ruled by a Thai sovereign. While our military demands an imposition of martial law and the complete integration of Vietnam into the Empire, some moderate politicians have proposed that we grant them a small ammount of autonomy to queel the protests."
+name = "EVT_3967401_NAME"
+desc = "EVT_3967401_DESC"
 
 date = { day = 1 month = june year = 1936 }
 offset = 300
@@ -488,7 +488,7 @@ deathdate = { day = 1 month = december year = 1960 }
 
 action = {
 ai_chance = 70
-name = "Integrate Vietnam"
+name = "EVT_3967401_OPTIONA"
 command = { type = dissent value = 10 }
 command = { type = set_domestic which = interventionism value = 1 }
 command = { type = set_domestic which = defense_lobby value = 1 }
@@ -499,7 +499,7 @@ command = { type = event which = 3967402 where = SIA when = 900 }
 
 action = {
 ai_chance = 30
-name = "Release an autonomous Vietnam"
+name = "EVT_3967401_OPTIONB"
 command = { type = dissent value = -5 }
 command = { type = set_domestic which = interventionism value = -1 }
 command = { type = set_domestic which = defense_lobby value = -1 }
@@ -527,11 +527,11 @@ id = 3967402
 random = no
 country = SIA
 
-name = "Integration of Vietnam"
-desc = "After three years of hard work, repression of dissidents and propaganda campaigns, the integration of Vietnam is completed."
+name = "EVT_3967402_NAME"
+desc = "EVT_3967402_DESC"
 
 action = {
-name = "Great!"
+name = "EVT_3967402_OPTIONA"
 command = { type = set_domestic which = interventionism value = 1 }
 command = { type = set_domestic which = defense_lobby value = 1 }
 command = { type = set_domestic which = freedom value = -1 }
@@ -557,15 +557,15 @@ country = SIA
 
 trigger = { headofstate = 62115 }
 
-name = "The death of Rama VII"
-desc = "Our dear King Prajadhipok, also known as Rama VII, the 7th monarch of the House of Chakri, has died due to a heart failure this morning. The childless monarch will be succeded by his nephew Ananda Mahidol, who took the regnal name Rama VIII."
+name = "EVT_3967403_NAME"
+desc = "EVT_3967403_DESC"
 
 date = { day = 1 month = september year = 1941 }
 offset = 300
 deathdate = { day = 9 month = december year = 1960 }
 
 action = {
-name = "May he rest in peace!"
+name = "EVT_3967403_OPTIONA"
 command = { type = headofstate which = 62001 }
 command = { type = sleepminister which = 62115 }
 }

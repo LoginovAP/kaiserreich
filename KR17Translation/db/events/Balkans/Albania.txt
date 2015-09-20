@@ -26,8 +26,8 @@ war = { country = OTT country = FRA }
 }
 }
 
-name = "A Time for Change"
-desc = "For many years, the Ottomans have ruled over us in an uneasy agreement with Germany to have Wilhelm on the throne. Today, problems have arisen for the Ottomans, and Zog wishes to claim the throne once and for all and establish a Free Albania."
+name = "EVT_9070800_NAME"
+desc = "EVT_9070800_DESC"
 style = 2
 
 date = { day = 1 month = january year = 1936 }
@@ -35,7 +35,7 @@ offset = 3
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Overthrow Wilhelm and set Zog as ruler of all of the Albanians!"
+name = "EVT_9070800_OPTIONA"
 ai_chance = 99
 command = { type = add_division which = "IX Zog Kembesori Pjesetim" value = militia when = 4 }
 command = { type = add_division which = "X Zog Kembesori Pjesetim" value = militia when = 4 }
@@ -62,7 +62,7 @@ command = { type = event which = 9070801 where = OTT when = 1  }
 }
 
 action_b = {
-name = "Nonsense! Wilhelm is loved by the people!"
+name = "EVT_9070800_OPTIONB"
 ai_chance = 1
 command = { type = dissent value = 5 }
 }
@@ -73,19 +73,19 @@ id = 9070801
 random = no
 country = OTT
 
-name = "Wilhelm of Albania overthrown!"
-desc = "For many years, we have ruled over Albania in an uneasy agreement with Germany to have Wilhelm on the throne. Today, the Albanian Zog has overthrown Wilhelm in a coup. How should we react to this mess?"
+name = "EVT_9070801_NAME"
+desc = "EVT_9070801_DESC"
 style = 2
 
 action_a = {
-name = "Recognize Zog as the new king; Let Albania Go"
+name = "EVT_9070801_OPTIONA"
 ai_chance = 70
 command = { type = trigger which = 9070802 }
 command = { type = end_mastery which = ALB }
 }
 
 action_b = {
-name = "Blasphemy! Crush this upstart!"
+name = "EVT_9070801_OPTIONB"
 ai_chance = 30
 command = { type = end_mastery which = ALB }
 command = { type = war which = ALB }
@@ -109,8 +109,8 @@ ispuppet = ALB
 control = { province = 361 data = ALB }
 }
 
-name = "The Ottomans have been defeated!"
-desc = "Glorious day! We have soundly defeated the Ottoman garrison!"
+name = "EVT_9070802_NAME"
+desc = "EVT_9070802_DESC"
 style = 2
 picture = "End_Winter_War"
 
@@ -119,7 +119,7 @@ offset = 90
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Liri e Shqiperise! Freedom for Albania!"
+name = "EVT_9070802_OPTIONA"
 command = { type = peace which = OTT value = 1 }
 command = { type = dissent value = -10 }
 }
@@ -138,8 +138,8 @@ NOT = { exists = ALB }
 }
 
 
-name = "The Albanian Campaign is Over"
-desc = "After the Albanians began to resist our benevolent rule, we began a campaign to put them back in their place. Now, Albania is in our hands once again."
+name = "EVT_9070803_NAME"
+desc = "EVT_9070803_DESC"
 style = 2
 picture = "militaryparade1"
 
@@ -148,7 +148,7 @@ offset = 1
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "They can't seem to govern themselves, we'll do it for them"
+name = "EVT_9070803_OPTIONA"
 command = { type = dissent value = -4 }
 }
 }
@@ -230,8 +230,8 @@ control = { province = 333 data = SER }
 }
 }
 
-name = "Reclaiming Kosovo region"
-desc = "With Serbian state finally regaining its former strength, we have the unique opportunity to reclaim Kosovo once again for Serbia ! Members of general staff together with several senior diplomats believe, that decisive action aimed at liberation of Kosovo will meet almost no resistance from weak Albanian state."
+name = "EVT_9070804_NAME"
+desc = "EVT_9070804_DESC"
 picture = "serbianarmy"
 decision_picture = "decision_serbian_mobilization"
 
@@ -241,7 +241,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 95
-name = "Claim Kosovo!"
+name = "EVT_9070804_OPTIONA"
 command = { type = belligerence which = SER value = 1  }
 command = { type = domestic which = interventionism value = 1 }
 command = { type = addcore  which =  329 }
@@ -251,7 +251,7 @@ command = { type = trigger which = 9070805 }
 
 action_b = {
 ai_chance = 5
-name = "This is a bit risky..."
+name = "EVT_9070804_OPTIONB"
 command = { type = domestic which = interventionism value = -2 }
 command = { type = relation which = ALB value = 60 }
 }
@@ -263,13 +263,13 @@ random = no
 country = ALB
 style = 2
 
-name = "Serbia makes its Move!"
-desc = "Serbia has taken advantage of our recent vulnerability to establish its control over Kosovo.  While this is a great infringement on our sovereignty, we are currently very weak and may not be able to win a war to reclaim our lands..."
+name = "EVT_9070805_NAME"
+desc = "EVT_9070805_DESC"
 picture = "militaryparade1"
 
 action_a = {
 ai_chance = 95
-name =  "We can not hope to win"
+name =  "EVT_9070805_OPTIONA"
 command = { type = domestic which = interventionism value = -2 }
 command = { type = dissent value = 5 }
 command = { type = secedeprovince which = SER value = 329 }
@@ -277,7 +277,7 @@ command = { type = secedeprovince which = SER value = 329 }
 
 action_b = {
 ai_chance = 5
-name = "We shall defend our territorial integrity!"
+name = "EVT_9070805_OPTIONB"
 command = { type = domestic which = interventionism value = 2 }
 command = { type = secedeprovince which = SER value = 329 }
 command = { type = war which = SER }

@@ -29,27 +29,27 @@ ispuppet = GEO
 }
 }
 
-name = "Bolshevism!"
-desc = "The Bolsheviks have regained control over Russia! What shall Menshevik Georgia's reaction to this new workers' state be?"
+name = "EVT_757002_NAME"
+desc = "EVT_757002_DESC"
 style = 2
 picture = "spread_revolution"
 
 
 action_a = {
-name = "We shall propose an alliance of proletarian nations!"
+name = "EVT_757002_OPTIONA"
 ai_chance = 20
 command = { type = domestic which = interventionism value = 1 }
 command = { type = trigger which = 757003 }
 }
 action_b = {
 ai_chance = 60
-name = "We send out our congratulations!"
+name = "EVT_757002_OPTIONB"
 command = { type = relation which = SOV value = 100 }
 }
 
 action_c = {
 ai_chance = 20
-name = "The ideological gap between us is too great."
+name = "EVT_757002_OPTIONC"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = SOV value = -80 }
 
@@ -63,13 +63,13 @@ random = no
 country = SOV
 
 
-name = "Menshevik Georgia desires an alliance"
-desc = "The Georgians have sent word that they consider our two states to be alike and that we should ally to promote the global cause of labour. What should we do?"
+name = "EVT_757003_NAME"
+desc = "EVT_757003_DESC"
 style = 2
 picture = "spread_revolution"
 
 action_a = {
-name = "Of course, proletarians unite!"
+name = "EVT_757003_OPTIONA"
 ai_chance = 60
 command = { type = domestic which = interventionism value = 1 }
 command = { type = relation which = GEO value = 200 }
@@ -78,13 +78,13 @@ command = { type = alliance which = GEO }
 }
 action_b = {
 ai_chance = 40
-name = "There is to be no reconciliation between our two positions."
+name = "EVT_757003_OPTIONB"
 command = { type = relation which = GEO value = -50 }
 }
 
 action_c = {
 ai_chance = 0
-name = "We must annihilate these revisionists!"
+name = "EVT_757003_OPTIONC"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = relation which = GEO value = -200 }
 command = { type = war which = GEO  }
@@ -116,18 +116,18 @@ date = { day = 1 month = january year = 1936 }
 offset = 5
 deathdate = { day = 29 month = january year = 1960 }
 
-name = "The success of the Russian Revolution!"
-desc = "After a long and bitter struggle the Russian workers have finally regained their freedom from their capitalist oppressors! It is time to help them recover and to combine our efforts to free the oppressed around the world!"
+name = "EVT_757004_NAME"
+desc = "EVT_757004_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Offer a Cooperation treaty."
+name = "EVT_757004_OPTIONA"
 command = { type = trigger which = 757005 }
 }
 
 action_b = {
 ai_chance = 5
-name = "Just recognize the new government."
+name = "EVT_757004_OPTIONB"
 command = { type = trigger which = 757006 }
 }
 }
@@ -139,12 +139,12 @@ country = SOV
 style = 2
 picture = "russia_politics"
 
-name = "The Americans offer us a treaty"
-desc = "The American Syndicates officially recognize our state and they offer us a Friendship and Cooperation Treaty. Although their methods seem to be slightly different it seems that we strive towards the same goal, that of freeing the people from the oppression of Capitalism."
+name = "EVT_757005_NAME"
+desc = "EVT_757005_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Workers of the world, unite!"
+name = "EVT_757005_OPTIONA"
 command = { type = trigger which = 757007 }
 command = { type = steal_tech which = CSA }
 command = { type = steal_tech which = CSA }
@@ -158,7 +158,7 @@ command = { type = setflag which = SOV_befriend_CSA }
 
 action_b = {
 ai_chance = 5
-name = "We can not sign this just yet."
+name = "EVT_757005_OPTIONB"
 command = { type = relation which = CSA value = -10 }
 command = { type = trigger which = 757008 }
 }
@@ -170,11 +170,11 @@ country = SOV
 style = 2
 picture = "russia_politics"
 
-name = "The Americans recognise us"
-desc = "The Syndicalists of America have officially recognized our newly created Soviet state!"
+name = "EVT_757006_NAME"
+desc = "EVT_757006_DESC"
 
 action_a = {
-name = "Good!"
+name = "EVT_757006_OPTIONA"
 command = { type = relation which = CSA value = 50 }
 }
 }
@@ -185,11 +185,11 @@ country = CSA
 style = 2
 picture = "politics4"
 
-name = "The Russians agree"
-desc = "The Soviet government has agreed to sign our Cooperation treaty. This is the beginning of a long and prosperous friendship between the Russian and the American peoples."
+name = "EVT_757007_NAME"
+desc = "EVT_757007_DESC"
 
 action_a = {
-name = "Excellent"
+name = "EVT_757007_OPTIONA"
 command = { type = steal_tech which = SOV }
 command = { type = steal_tech which = SOV }
 command = { type = steal_tech which = SOV }
@@ -206,11 +206,11 @@ country = CSA
 style = 2
 picture = "politics4"
 
-name = "The Russians refuse"
-desc = "The Russians say that they are unable to sign our treaty just yet."
+name = "EVT_757008_NAME"
+desc = "EVT_757008_DESC"
 
 action_a = {
-name = "Oh well."
+name = "EVT_757008_OPTIONA"
 command = {}
 }
 }
@@ -229,8 +229,8 @@ exists = RUS
 NOT = { ispuppet = SOV }
 }
 
-name = "Exporting the Revolution"
-desc = "Now that Soviet power is firmly established within the heartland of Russia we can now decide our stance regarding the rest of the world and how far-reaching our goals will be."
+name = "EVT_757009_NAME"
+desc = "EVT_757009_DESC"
 style = 2
 picture = "sovforeign"
 
@@ -239,7 +239,7 @@ offset = 20
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "We are happy with what we have."
+name = "EVT_757009_OPTIONA"
 ai_chance = 5
 command = { type = set_domestic which = interventionism value = 3 }
 command = { type = belligerence which = SOV value = -10 }
@@ -248,7 +248,7 @@ command = { type = setflag which = SOV_ISO }
 
 action_b = {
 ai_chance = 50
-name = "All rightfull russian lands must be ours!"
+name = "EVT_757009_OPTIONB"
 command = { type = set_domestic which = interventionism value = 7 }
 command = { type = setflag which = SOV_RCL }
 command = { type = ai which = "Kaiserreich/switch/SOV_MINOR_ATTACK.ai"  }
@@ -400,7 +400,7 @@ command = { type = addclaim which = 540  } #Kestenga
 }
 action_c = {
 ai_chance = 50
-name = "It is time to liberate the oppressed of Eurasia!"
+name = "EVT_757009_OPTIONC"
 command = { type = set_domestic which = interventionism value = 9 }
 command = { type = setflag which = SOV_EXP }
 command = { type = ai which = "kaiserreich/switch/SOV_MINOR_ATTACK.ai" }
@@ -724,8 +724,8 @@ atwar = SOV
 }
 }
 
-name = "Relations with Siberia"
-desc = "Unable to cope with Russian oppression, the Siberian national assembly has declared its independence from Russia. Now that the days of the Russian government are numbered we must decide whether we should bring the revolution to Siberia or let them be for now?"
+name = "EVT_757010_NAME"
+desc = "EVT_757010_DESC"
 
 
 date = { day = 1 month = january year = 1936 }
@@ -735,7 +735,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
 ai_chance =  60
-name = "We will free ALL Russian workers!"
+name = "EVT_757010_OPTIONA"
 command = { type = war which = SIB }
 command = { type = trigger which = 757011 }
 command = { type = sleepevent which = 757013 }
@@ -743,7 +743,7 @@ command = { type = sleepevent which = 757013 }
 
 action_b = {
 ai_chance =  40
-name = "Recognize Siberia."
+name = "EVT_757010_OPTIONB"
 command = { type = trigger which = 757012 }
 command = { type = dissent value = 10 }
 command = { type = sleepevent which = 757013 }
@@ -757,12 +757,12 @@ random = no
 country = SIB
 style = 2
 
-name = "The Soviets declare War"
-desc = "As expected, the situation in European Russia did take a turn for the worse. The country has collapsed and a new Communist revolution has begun. The Reds have refused to recognize us as a free nation and now we are faced with the necessity of defending ourselves against the Bolshevik threat."
+name = "EVT_757011_NAME"
+desc = "EVT_757011_DESC"
 picture = "bolshevik_troops"
 
 action_a = {
-name = "If it's a war they want..."
+name = "EVT_757011_OPTIONA"
 command = {  }
 }
 }
@@ -774,13 +774,13 @@ random = no
 country = SIB
 style = 2
 
-name = "The Soviets recognized us!"
-desc = "As expected, the situation in European Russia did take a turn for the worse. The country has collapsed and a new Communist revolution has begun. Luckily, the new Bolshevik leadership is more forgiving and Soviet Russia has agreed to recognize our independence."
+name = "EVT_757012_NAME"
+desc = "EVT_757012_DESC"
 picture = "russia_politics"
 
 
 action_a = {
-name = "Excellent!"
+name = "EVT_757012_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = set_relation which = SOV value = 70 }
 }
@@ -802,8 +802,8 @@ ispuppet = SOV
 }
 }
 
-name = "Relations with Siberia"
-desc = "Unable to cope with Russian oppression, the Siberian national assembly has declared its independance from Russia. Now that the days of the Russian government are numbered we must decide whether we should bring the revolution to Siberia or recognize their independence in exchange for their help?"
+name = "EVT_757013_NAME"
+desc = "EVT_757013_DESC"
 
 
 date = { day = 1 month = january year = 1936 }
@@ -818,7 +818,7 @@ NOT = {
 alliance = { country = JAP country = SIB }
 }
 }
-name = "We will free ALL Russian workers!"
+name = "EVT_757013_OPTIONA"
 command = { type = war which = SIB }
 command = { type = trigger which = 757014 }
 command = { type = sleepevent which = 757010 }
@@ -833,7 +833,7 @@ war = { country = MON country = SIB }
 alliance = { country = SIB country = JAP }
 }
 }
-name = "Recognize Siberia and offer them an alliance."
+name = "EVT_757013_OPTIONB"
 command = { type = trigger which = 757015 }
 command = { type = dissent value = 5 }
 command = { type = sleepevent which = 757010 }
@@ -841,7 +841,7 @@ command = { type = sleepevent which = 757010 }
 
 action_c = {
 ai_chance =  70
-name = "Ignore them, they will not last long."
+name = "EVT_757013_OPTIONC"
 command = { type = dissent value = 1 }
 }
 }
@@ -853,12 +853,12 @@ random = no
 country = SIB
 style = 2
 
-name = "The Soviets declare War"
-desc = "As expected, the situation in European Russia did take a turn for the worse. The country has collapsed and a new Communist revolution has begun. The Reds have refused to recognize us as a free nation and now we are faced with the necessity of defending ourselves against the Bolshevik threat."
+name = "EVT_757014_NAME"
+desc = "EVT_757014_DESC"
 picture = "bolshevik_troops"
 
 action_a = {
-name = "If it is war they want..."
+name = "EVT_757014_OPTIONA"
 command = {  }
 }
 }
@@ -870,13 +870,13 @@ random = no
 country = SIB
 style = 2
 
-name = "The Soviets recognized us"
-desc = "As expected, the situation in European Russia did take a turn for the worse. The country has collapsed and a new Communist revolution has begun. Luckily, the new Bolshevik leadership seems more than willing to compromise. They offer an official recognition of our independence in exchange for a coordinated effort in fighting the current Russian government."
+name = "EVT_757015_NAME"
+desc = "EVT_757015_DESC"
 picture = "russia_politics"
 
 
 action_a = {
-name = "Excellent, now we are not alone!"
+name = "EVT_757015_OPTIONA"
 ai_chance = 70
 command = { type = trigger which = 757016 }
 command = { type = dissent value = -5 }
@@ -886,7 +886,7 @@ command = { type = set_relation which = SOV value = 70 }
 
 action_b = {
 ai_chance = 30
-name = "Refuse, the Bolsheviks aren't to be dealt with!"
+name = "EVT_757015_OPTIONB"
 command = { type = trigger which = 757017 }
 command = { type = set_relation which = SOV value = -20 }
 }
@@ -899,11 +899,11 @@ country = SOV
 style = 2
 picture = "siberia4"
 
-name = "Siberia accepts!"
-desc = "The Siberian government has agreed to join forces in the war against the Russian regime."
+name = "EVT_757016_NAME"
+desc = "EVT_757016_DESC"
 
 action_a = {
-name = "Good!"
+name = "EVT_757016_OPTIONA"
 command = { type = dissent value = -5 }
 }
 }
@@ -915,19 +915,19 @@ country = SOV
 style = 2
 picture = "siberia4"
 
-name = "Siberia refuses!"
-desc = "The Siberian government has refused our generous offer to fight the oppressive Russian regime together. What shall we do?"
+name = "EVT_757017_NAME"
+desc = "EVT_757017_DESC"
 
 
 action_a = {
-name = "Let them be, their time will come!"
+name = "EVT_757017_OPTIONA"
 ai_chance = 100
 command = { type = dissent value = 1 }
 }
 
 action_b = {
 ai_chance = 0
-name = "If they aren't with us they're against us!"
+name = "EVT_757017_OPTIONB"
 command = { type = war which = SIB }
 }
 }
@@ -945,8 +945,8 @@ exists = RUS
 }
 }
 
-name = "Relations with Siberia"
-desc = "Now that the Whites are defeated the government needs to decide whether it is safe to remain with the new Soviet regime. Should we sever our ties with them?"
+name = "EVT_757018_NAME"
+desc = "EVT_757018_DESC"
 picture = "russia_politics"
 
 date = { day = 1 month = january year = 1936 }
@@ -956,14 +956,14 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
 ai_chance =  90
-name = "The Bolsheviks are dangerous partners!"
+name = "EVT_757018_OPTIONA"
 command = { type = leave_alliance }
 command = { type = trigger which = 757019 }
 }
 
 action_b = {
 ai_chance =  10
-name = "It is safer to stay on the winning side."
+name = "EVT_757018_OPTIONB"
 command = { type = dissent value = 5 }
 command = { type = relation which = SOV value = 20 }
 }
@@ -976,18 +976,18 @@ country = SOV
 style = 2
 picture = "siberia4"
 
-name = "Siberia abandons us!"
-desc = "Now that the Revolution has succeeded, the treacherous leaders of Siberia have decided to abandon our cause."
+name = "EVT_757019_NAME"
+desc = "EVT_757019_DESC"
 
 action_a = {
-name = "Let them be, their time will come!"
+name = "EVT_757019_OPTIONA"
 ai_chance = 50
 command = { type = dissent value = 5 }
 }
 
 action_b = {
 ai_chance = 50
-name = "Ungrateful swines, this means war!"
+name = "EVT_757019_OPTIONB"
 command = { type = war which = SIB }
 }
 }
@@ -1014,8 +1014,8 @@ control = { province = 691 data = SOV }
 control = { province = 702 data = SOV }
 }
 
-name = "The integration of Don-Kuban Union"
-desc = "The areas of the former Cossack state are now firmly integrated into our growing socialist motherland."
+name = "EVT_753801_NAME"
+desc = "EVT_753801_DESC"
 picture = "militaryparade1"
 
 
@@ -1024,7 +1024,7 @@ offset = 100
 deathdate = { day = 1 month = january year = 1960 }
 
 action_a = {
-name = " Great!"
+name = "EVT_753801_OPTIONA"
 command = { type = addcore   which = 694  }
 command = { type = addcore   which = 693  }
 command = { type = addcore   which = 695  }
@@ -1079,8 +1079,8 @@ exists = FIN
 owned = { province = 525 data = SOV }
 control = { province = 525 data = SOV }
 }
-name = "The fate of Finland"
-desc = "With the rebellious state of Finland finally crushed by the glorious Red Army the time has come to decide its fate. Shall we reincorporate it once more into our motherland or shall we preserve Finnish independence under our supervision?"
+name = "EVT_753802_NAME"
+desc = "EVT_753802_DESC"
 picture = "finland1"
 
 
@@ -1090,7 +1090,7 @@ deathdate = { day = 1 month = january year = 1960 }
 
 action_a = {
 ai_chance = 40
-name = "Restore independent Finland!"
+name = "EVT_753802_OPTIONA"
 command = { type = removeclaim which = 529 }
 command = { type = removeclaim which = 518 }
 command = { type = removeclaim which = 530 }
@@ -1157,7 +1157,7 @@ trigger = {
 flag = SOV_EXP
 }
 ai_chance = 60
-name = "Integrate Finland!"
+name = "EVT_753802_OPTIONB"
 command = { type = belligerence value = 5 }
 command = { type = addcore which = 530  }
 command = { type = addcore which = 531  }
@@ -1203,7 +1203,7 @@ command = { type = dissent value = 5 }
 
 action = {
 ai_chance = 0
-name = "Continue the military occupation!"
+name = "EVT_753802_OPTIONC"
 command = { type = belligerence value = 5 }
 command = { type = dissent value = 5 }
 
@@ -1230,8 +1230,8 @@ exists = FIN
 owned = { province = 525 data = SOV }
 control = { province = 525 data = SOV }
 }
-name = "The integration of Finland"
-desc = "The areas of the former state of Finland are now firmly integrated into our growing socialist motherland."
+name = "EVT_753803_NAME"
+desc = "EVT_753803_DESC"
 picture = "finland1"
 
 
@@ -1240,7 +1240,7 @@ offset = 100
 deathdate = { day = 1 month = january year = 1960 }
 
 action_a = {
-name = " Great!"
+name = "EVT_753803_OPTIONA"
 command = { type = addcore which = 529    }
 command = { type = addcore which = 518    }
 command = { type = addcore which = 530    }
@@ -1301,8 +1301,8 @@ owned = { province = 1208 data = SOV }
 control = { province = 1208 data = SOV }
 }
 
-name = "The fate of Manchuria"
-desc = "With Japan's puppet state Fengtien finally crushed by the glorious Red Army the time has come to decide its fate. Shall we reincorporate it once more into our motherland or shall we restore its independence under our supervision? Another course of action could be the establishment of a new order, not just in Manchuria but in China as a whole!"
+name = "EVT_753804_NAME"
+desc = "EVT_753804_DESC"
 picture = "Russianvicchina"
 decision_picture = "decision_fateofnorthwestchina"
 
@@ -1313,7 +1313,7 @@ deathdate = { day = 30 month = december year = 1963 }
 
 action_a = {
 ai_chance = 40
-name = "Restore independent Manchuria!"
+name = "EVT_753804_OPTIONA"
 command = { type = removeclaim which = 1202   }
 command = { type = removeclaim which = 1216   }
 command = { type = removeclaim which = 1235   }
@@ -1355,7 +1355,7 @@ exists = CHI
 }
 }
 ai_chance = 40
-name = "Restore the Republic of China!"
+name = "EVT_753804_OPTIONB"
 command = { type = removeclaim which = 1202   }
 command = { type = removeclaim which = 1216   }
 command = { type = removeclaim which = 1235   }
@@ -1397,7 +1397,7 @@ trigger = {
 flag = SOV_EXP
 }
 ai_chance = 60
-name = "Integrate Manchuria!"
+name = "EVT_753804_OPTIONC"
 command = { type = belligerence value = 5 }
 command = { type = addclaim which = 1202   }
 command = { type = addclaim which = 1216   }
@@ -1433,7 +1433,7 @@ command = { type = dissent value = 5 }
 
 action_d = {
 ai_chance = 0
-name = "Continue the military occupation!"
+name = "EVT_753804_OPTIOND"
 command = { type = belligerence value = 5 }
 command = { type = dissent value = 5 }
 
@@ -1460,8 +1460,8 @@ exists = MAN
 owned = { province = 1208 data = SOV }
 control = { province = 1208 data = SOV }
 }
-name = "The integration of Manchuria"
-desc = "The areas of the former Japanese puppet state Fengtien are now firmly integrated into our growing socialist motherland."
+name = "EVT_753805_NAME"
+desc = "EVT_753805_DESC"
 
 picture = "militaryparade1"
 
@@ -1471,7 +1471,7 @@ offset = 100
 deathdate = { day = 1 month = january year = 1960 }
 
 action_a = {
-name = "Great!"
+name = "EVT_753805_OPTIONA"
 
 command = { type = addcore which = 1202   }
 command = { type = addcore which = 1216   }
@@ -1525,8 +1525,8 @@ exists = KAZ
 owned = { province = 504 data = SOV }
 control = { province = 504 data = SOV }
 }
-name = "The integration of Alash-Orda"
-desc = "The areas of the former state of Alash-Orda are now firmly integrated into our growing socialist motherland."
+name = "EVT_753806_NAME"
+desc = "EVT_753806_DESC"
 
 picture = "militaryparade1"
 
@@ -1536,7 +1536,7 @@ offset = 100
 deathdate = { day = 1 month = january year = 1960 }
 
 action_a = {
-name = "Great!"
+name = "EVT_753806_OPTIONA"
 
 command = { type = addcore which = 1113 }
 command = { type = addcore which = 706  }
@@ -1602,8 +1602,8 @@ owned = { province = 1281 data = SOV }
 control = { province = 1281 data = SOV }
 }
 
-name = "Fate of the North-Western China"
-desc = "With the North-Western China finally under our control, the time has come to decide its fate. Shall we reincorporate the eastern part of it, called Sinkiang, into our motherland or shall we restore its independence under our supervision? Another course of action could be the restoration of Xibei Lianbang Yiyuan."
+name = "EVT_753807_NAME"
+desc = "EVT_753807_DESC"
 picture = "Russianvicchina"
 decision_picture = "decision_fateofnorthwestchina"
 
@@ -1613,7 +1613,7 @@ deathdate = { day = 30 month = december year = 1963 }
 
 action = {
 ai_chance = 40
-name = "Restore independent Sinkiang and the Huijang republic!"
+name = "EVT_753807_OPTIONA"
 trigger = {
 control = { province = 1284 data = SOV }
 }
@@ -1638,7 +1638,7 @@ command = { type = sleepevent which = 753808 }
 
 action = {
 ai_chance = 40
-name = "Restore independent Sinkiang !"
+name = "EVT_753807_OPTIONB"
 command = { type = removeclaim which = 1281 }
 command = { type = removeclaim which = 1273 }
 command = { type = removeclaim which = 1280 }
@@ -1656,7 +1656,7 @@ command = { type = sleepevent which = 753808 }
 
 action = {
 ai_chance = 40
-name = "Restore independent Huijang republic!"
+name = "EVT_753807_OPTIONC"
 command = { type = removeclaim which = 1281 }
 command = { type = removeclaim which = 1273 }
 command = { type = removeclaim which = 1280 }
@@ -1679,7 +1679,7 @@ trigger = {
 flag = SOV_EXP
 }
 ai_chance = 60
-name = "Integrate Sinkiang and liberate Huijang republic!"
+name = "EVT_753807_OPTIOND"
 command = { type = belligerence value = 5 }
 command = { type = addclaim which = 1281 }
 command = { type = addclaim which = 1273 }
@@ -1705,7 +1705,7 @@ puppet = { country = CHI country = SOV  }
 }
 }
 ai_chance = 90
-name = "Integrate Sinkiang and allow China to occupy the rest!"
+name = "EVT_753807_OPTIONE"
 command = { type = belligerence value = 5 }
 command = { type = addclaim which = 1281 }
 command = { type = addclaim which = 1273 }
@@ -1739,7 +1739,7 @@ puppet = { country = CHI country = SOV  }
 }
 }
 ai_chance = 90
-name = "Liberate Sinkiang and allow China to occupy the rest!"
+name = "EVT_753807_OPTIONF"
 command = { type = belligerence value = 5 }
 command = { type = removeclaim which = 1281 }
 command = { type = removeclaim which = 1273 }
@@ -1776,7 +1776,7 @@ puppet = { country = CHI country = SOV  }
 }
 }
 ai_chance = 60
-name = "Allow China to occupy Xibei Lianbang Yiyuan!"
+name = "EVT_753807_OPTIONG"
 command = { type = belligerence value = -5 }
 command = { type = removeclaim which = 1281 }
 command = { type = removeclaim which = 1273 }
@@ -1813,7 +1813,7 @@ command = { type = sleepevent which = 753808 }
 
 action = {
 ai_chance = 0
-name = "Continue the military occupation!"
+name = "EVT_753807_OPTIONERR"
 command = { type = belligerence value = 5 }
 command = { type = dissent value = 2 }
 }
@@ -1838,8 +1838,8 @@ exists = SIK
 owned = { province = 1281 data = SOV }
 control = { province = 1281 data = SOV }
 }
-name = "The integration of Sinkiang"
-desc = "Sinkiang, once part of the warlord state of Xibei Lianbang Yiyuan, is now firmly integrated into our growing socialist motherland."
+name = "EVT_753808_NAME"
+desc = "EVT_753808_DESC"
 
 picture = "militaryparade1"
 
@@ -1849,7 +1849,7 @@ offset = 100
 deathdate = { day = 1 month = january year = 1960 }
 
 action_a = {
-name = "Great!"
+name = "EVT_753808_OPTIONA"
 
 command = { type = addcore which = 1281 }
 command = { type = addcore which = 1273 }
@@ -1886,8 +1886,8 @@ exists = KYG
 owned = { province = 1105 data = SOV }
 control = { province = 1105 data = SOV }
 }
-name = "The integration of Turkestan"
-desc = "The areas of the former state of Turkestan are now firmly integrated into our growing socialist motherland."
+name = "EVT_753809_NAME"
+desc = "EVT_753809_DESC"
 
 picture = "militaryparade1"
 
@@ -1897,7 +1897,7 @@ offset = 200
 deathdate = { day = 1 month = january year = 1960 }
 
 action_a = {
-name = "Great!"
+name = "EVT_753809_OPTIONA"
 
 command = { type = addcore which = 1103 }
 command = { type = addcore which = 1105 }
@@ -1934,8 +1934,8 @@ exists = PRI
 owned = { province = 1191 data = -1 }
 control = { province = 1191 data = -1 }
 }
-name = "The integration of Primorsk"
-desc = "The areas of the former state of Primorsk are now firmly integrated into our growing motherland."
+name = "EVT_753810_NAME"
+desc = "EVT_753810_DESC"
 
 picture = "militaryparade1"
 
@@ -1945,7 +1945,7 @@ offset = 70
 deathdate = { day = 1 month = january year = 1960 }
 
 action_a = {
-name = "Great!"
+name = "EVT_753810_OPTIONA"
 
 command = { type = addcore which = 1191 }
 command = { type = addcore which = 1196 }
@@ -1978,8 +1978,8 @@ core = { province = 1167 data = -1 }
 owned = { province = 1167 data = -1 }
 control = { province = 1167 data = -1 }
 }
-name = "The integration of Southern Siberia"
-desc = "The areas once occupied by Mongolia are now firmly integrated into our growing motherland."
+name = "EVT_753811_NAME"
+desc = "EVT_753811_DESC"
 
 picture = "militaryparade1"
 
@@ -1989,7 +1989,7 @@ offset = 70
 deathdate = { day = 1 month = january year = 1960 }
 
 action_a = {
-name = "Great!"
+name = "EVT_753811_OPTIONA"
 
 command = { type = addcore   which = 1167   }
 command = { type = addcore   which = 1168   }
@@ -2022,8 +2022,8 @@ exists = MON
 owned = { province = 1124 data = SOV }
 control = { province = 1124 data = SOV }
 }
-name = "The fate of Mongolia"
-desc = "With the rogue state of Mongolia finally crushed by the glorious Red Army the time has come to decide its fate. Shall we reincorporate it once more into our motherland or shall we preserve Mongolia's independence under our supervision?"
+name = "EVT_753812_NAME"
+desc = "EVT_753812_DESC"
 
 picture = "militaryparade1"
 
@@ -2034,7 +2034,7 @@ deathdate = { day = 1 month = january year = 1960 }
 
 action_a = {
 ai_chance = 40
-name = "Restore independent Mongolia!"
+name = "EVT_753812_OPTIONA"
 command = { type = removeclaim which = 1124 }
 command = { type = removeclaim which = 1123 }
 command = { type = removeclaim which = 1125 }
@@ -2055,7 +2055,7 @@ trigger = {
 flag = SOV_EXP
 }
 ai_chance = 60
-name = "Integrate Mongolia!"
+name = "EVT_753812_OPTIONB"
 command = { type = belligerence value = 5 }
 command = { type = addclaim which = 1124 }
 command = { type = addclaim which = 1123 }
@@ -2070,7 +2070,7 @@ command = { type = dissent value = 5 }
 
 action = {
 ai_chance = 0
-name = "Continue the military occupation!"
+name = "EVT_753812_OPTIONC"
 command = { type = belligerence value = 5 }
 command = { type = dissent value = 5 }
 
@@ -2097,8 +2097,8 @@ exists = MON
 owned = { province = 1124 data = SOV }
 control = { province = 1124 data = SOV }
 }
-name = "The integration of Mongolia"
-desc = "The areas of the former Mongolian state are now firmly integrated into our growing socialist motherland."
+name = "EVT_753813_NAME"
+desc = "EVT_753813_DESC"
 
 picture = "militaryparade1"
 
@@ -2108,7 +2108,7 @@ offset = 100
 deathdate = { day = 1 month = january year = 1960 }
 
 action_a = {
-name = " Great!"
+name = "EVT_753813_OPTIONA"
 
 command = { type = addcore which = 1124 }
 command = { type = addcore which = 1123 }
@@ -2140,8 +2140,8 @@ exists = BLR
 owned = { province = 599 data = SOV }
 control = { province = 599 data = SOV }
 }
-name = "The integration of White Ruthenia"
-desc = "The areas of the artificial state of White Ruthenia, created by the German Empire to weaken Russia, are now firmly integrated into our growing socialist motherland."
+name = "EVT_753814_NAME"
+desc = "EVT_753814_DESC"
 
 picture = "militaryparade1"
 
@@ -2151,7 +2151,7 @@ offset = 200
 deathdate = { day = 1 month = january year = 1960 }
 
 action_a = {
-name = "Great!"
+name = "EVT_753814_OPTIONA"
 
 command = { type = addcore   which = 591  }
 command = { type = addcore   which = 592  }
@@ -2192,8 +2192,8 @@ exists = UKR
 owned = { province = 617 data = SOV }
 control = { province = 617 data = SOV }
 }
-name = "The integration of Ukraine"
-desc = "The areas of the artificial state of Ukraine, created by the German Empire to weaken Russia, are now firmly integrated into our growing socialist motherland."
+name = "EVT_753815_NAME"
+desc = "EVT_753815_DESC"
 
 picture = "militaryparade1"
 
@@ -2203,7 +2203,7 @@ offset = 250
 deathdate = { day = 1 month = january year = 1960 }
 
 action_a = {
-name = "Great!"
+name = "EVT_753815_OPTIONA"
 
 command = { type = addcore which = 638 }
 command = { type = addcore which = 639 }
@@ -2280,8 +2280,8 @@ exists = AZB
 owned = { province = 713 data = SOV }
 control = { province = 713 data = SOV }
 }
-name = "The integration of Azerbaijan"
-desc = "The areas of the former state of Azerbaijan are now firmly integrated into our growing socialist motherland."
+name = "EVT_753816_NAME"
+desc = "EVT_753816_DESC"
 
 picture = "militaryparade1"
 
@@ -2291,7 +2291,7 @@ offset = 150
 deathdate = { day = 1 month = january year = 1960 }
 
 action_a = {
-name = "Great!"
+name = "EVT_753816_OPTIONA"
 
 command = { type = addcore which = 712 }
 command = { type = addcore which = 713 }
@@ -2318,8 +2318,8 @@ exists = ARM
 owned = { province = 711 data = SOV }
 control = { province = 711 data = SOV }
 }
-name = "The integration of Armenia"
-desc = "The areas of the former state of Armenia are now firmly integrated into our growing socialist motherland."
+name = "EVT_753817_NAME"
+desc = "EVT_753817_DESC"
 
 picture = "militaryparade1"
 
@@ -2329,7 +2329,7 @@ offset = 100
 deathdate = { day = 1 month = january year = 1960 }
 
 action_a = {
-name = " Great!"
+name = "EVT_753817_OPTIONA"
 
 command = { type = addcore which = 711 }
 command = { type = addcore which = 714 }
@@ -2360,8 +2360,8 @@ exists = GEO
 owned = { province = 709 data = SOV }
 control = { province = 709 data = SOV }
 }
-name = "The integration of Georgia"
-desc = "The areas of the former state of Georgia are now firmly integrated into our growing socialist motherland."
+name = "EVT_753818_NAME"
+desc = "EVT_753818_DESC"
 
 picture = "militaryparade1"
 
@@ -2371,7 +2371,7 @@ offset = 150
 deathdate = { day = 1 month = january year = 1960 }
 
 action_a = {
-name = "Great!"
+name = "EVT_753818_OPTIONA"
 
 command = { type = addcore which = 707 }
 command = { type = addcore which = 708 }
@@ -2402,8 +2402,8 @@ exists = LAT
 owned = { province = 264 data = SOV }
 control = { province = 264 data = SOV }
 }
-name = "The integration of United Baltic Duchy"
-desc = "The areas of the United Baltic Duchy, created by the German Empire to further weaken Russia, are now firmly integrated into our growing socialist motherland."
+name = "EVT_753819_NAME"
+desc = "EVT_753819_DESC"
 
 picture = "militaryparade1"
 
@@ -2413,7 +2413,7 @@ offset = 250
 deathdate = { day = 1 month = january year = 1960 }
 
 action_a = {
-name = "Great!"
+name = "EVT_753819_OPTIONA"
 
 command = { type = addcore which = 268 }
 command = { type = addcore which = 269 }
@@ -2451,8 +2451,8 @@ exists = LIT
 owned = { province = 258 data = SOV }
 control = { province = 258 data = SOV }
 }
-name = "The integration of Lithuania"
-desc = "The areas of the former state of Lithuania are now firmly integrated into our growing socialist motherland."
+name = "EVT_753820_NAME"
+desc = "EVT_753820_DESC"
 
 picture = "militaryparade1"
 
@@ -2462,7 +2462,7 @@ offset = 250
 deathdate = { day = 1 month = january year = 1960 }
 
 action_a = {
-name = "Great!"
+name = "EVT_753820_OPTIONA"
 
 command = { type = addcore which = 259 }
 command = { type = addcore which = 260 }
@@ -2495,8 +2495,8 @@ random = 50
 owned = { province = 304 data = SOV }
 control = { province = 304 data = SOV }
 }
-name = "The integration of Bessarabia"
-desc = "The region of Bessarabia, once unlawfully occupied by Romania, is now firmly integrated into our growing socialist motherland."
+name = "EVT_753821_NAME"
+desc = "EVT_753821_DESC"
 
 picture = "militaryparade1"
 
@@ -2506,7 +2506,7 @@ offset = 100
 deathdate = { day = 1 month = january year = 1960 }
 
 action_a = {
-name = "Great!"
+name = "EVT_753821_OPTIONA"
 
 command = { type = addcore which = 302 }
 command = { type = addcore which = 303 }
@@ -2535,8 +2535,8 @@ random = 50
 owned = { province = 242 data = SOV }
 control = { province = 242 data = SOV }
 }
-name = "The integration of Eastern Galicia"
-desc = "Eastern Galicia, once part of the Austro-Hungarian Empire, is now firmly integrated into our growing socialist motherland."
+name = "EVT_753822_NAME"
+desc = "EVT_753822_DESC"
 
 picture = "militaryparade1"
 
@@ -2546,7 +2546,7 @@ offset = 100
 deathdate = { day = 1 month = january year = 1960 }
 
 action_a = {
-name = "Great!"
+name = "EVT_753822_OPTIONA"
 
 command = { type = addcore which = 300 }
 command = { type = addcore which = 238 }
@@ -2579,8 +2579,8 @@ exists = POL
 owned = { province = 232 data = SOV }
 control = { province = 232 data = SOV }
 }
-name = "The Fate of Poland"
-desc = "With the former state of Poland finally crushed by the glorious Red Army the time has come to decide its fate. Shall we reincorporate it once more into our motherland or shall we preserve Polish independence under our supervision?"
+name = "EVT_753823_NAME"
+desc = "EVT_753823_DESC"
 
 picture = "congresspoland"
 
@@ -2591,7 +2591,7 @@ deathdate = { day = 1 month = january year = 1960 }
 
 action_a = {
 ai_chance = 40
-name = "Restore independent Poland!"
+name = "EVT_753823_OPTIONA"
 command = { type = removeclaim which = 230 }
 command = { type = removeclaim which = 231 }
 command = { type = removeclaim which = 227 }
@@ -2642,7 +2642,7 @@ trigger = {
 flag = SOV_EXP
 }
 ai_chance = 60
-name = "Integrate Poland!"
+name = "EVT_753823_OPTIONB"
 command = { type = belligerence value = 5 }
 command = { type = addclaim which = 230 }
 command = { type = addclaim which = 231 }
@@ -2673,7 +2673,7 @@ command = { type = dissent value = 5 }
 
 action_d = {
 ai_chance = 0
-name = "Continue the military occupation!"
+name = "EVT_753823_OPTIONC"
 command = { type = belligerence value = 5 }
 command = { type = dissent value = 5 }
 
@@ -2699,8 +2699,8 @@ owned = { province = 232 data = SOV }
 control = { province = 232 data = SOV }
 }
 
-name = "The integration of Poland"
-desc = "The areas of the former Polish state are now firmly integrated into our growing socialist motherland."
+name = "EVT_753824_NAME"
+desc = "EVT_753824_DESC"
 picture = "congresspoland"
 
 
@@ -2709,7 +2709,7 @@ offset = 100
 deathdate = { day = 30 month = december year = 1963 }
 
 action_a = {
-name = "Great!"
+name = "EVT_753824_OPTIONA"
 command = { type = addcore which = 230 }
 command = { type = addcore which = 231 }
 command = { type = addcore which = 227 }
@@ -2778,8 +2778,8 @@ alliance = { country = GER country = TRA }
 }
 }
 
-name = "Don-Kuban Union and Semyon Budyonny"
-desc = "With the stabilization of our motherland we can now start looking beyond our borders. To the south lies the pseudo-capitalist Cossack state led by Hetman Krasnov. Soviet Marshal Budyonny has petitioned our government to instigate a coup in the Don-Kuban Union by using his significant influence amongst the Cossack population. Shall we offer him our support?"
+name = "EVT_889030_NAME"
+desc = "EVT_889030_DESC"
 
 date = { day = 1 month = july year = 1937 }
 offset = 30
@@ -2787,7 +2787,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
 ai_chance = 100
-name = "Help him!"
+name = "EVT_889030_OPTIONA"
 command = { type = relation which = TRA value = -150 }
 command = { type = event which = 889031 where = TRA when = 5  }
 command = { type = belligerence which = SOV value = 5 }
@@ -2795,7 +2795,7 @@ command = { type = belligerence which = SOV value = 5 }
 
 action_b = {
 ai_chance = 0
-name = "We don`t need them."
+name = "EVT_889030_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 }
 }
@@ -2807,18 +2807,18 @@ country = TRA
 style = 2
 picture = "Bud"
 
-name = "Soviet coup"
-desc = "Soviet agitators, together with detachments of rebellious cossacks lead by Semyon Budyonny, have turned popular opinion against our regime. Russians, both in the countryside and in the cities, have rebelled. Chechens and Ingushens have also declared a jihad against our government. The country is in chaos. Can we resist the opposition?"
+name = "EVT_889031_NAME"
+desc = "EVT_889031_DESC"
 
 action_a = {
 ai_chance = 60
-name = "The rebels take over the capital!"
+name = "EVT_889031_OPTIONA"
 command = { type = trigger which = 889032 }
 }
 
 action_b = {
 ai_chance = 40
-name = "The rebels have been defeated!"
+name = "EVT_889031_OPTIONB"
 command = { type = dissent value = 20 }
 command = { type = trigger which = 889033 }
 }
@@ -2831,11 +2831,11 @@ country = SOV
 style = 2
 picture = "Bud"
 
-name = "The Don-Kuban Union falls"
-desc = "Today the new Hetman of Don-Kuban Union, Semyon Budyonny, met with our prime-minister and announced that the Don-Kuban Union will become an integral part of the new Russia. Our citizens are happy that marshal Budyonny has achieved a new victory. Glory to the new Red Cossacks!"
+name = "EVT_889032_NAME"
+desc = "EVT_889032_DESC"
 
 action_a = {
-name = "Glory to the Red Cossacks!"
+name = "EVT_889032_OPTIONA"
 command = { type = addcore   which = 694  }
 command = { type = addcore   which = 693  }
 command = { type = addcore   which = 695  }
@@ -2880,19 +2880,19 @@ country = SOV
 style = 2
 picture = "1kon"
 
-name = "The Soviet coup has failed!"
-desc = "Our attempt to replace the government in the Don-Kuban union with one loyal to our state failed miserably. What shall we do now?"
+name = "EVT_889033_NAME"
+desc = "EVT_889033_DESC"
 
 action_a ={
 ai_chance = 70
-name = "We shall crush them!"
+name = "EVT_889033_OPTIONA"
 command = { type = dissent value = 2 }
 command = { type = war which = TRA }
 }
 
 action_b = {
 ai_chance = 30
-name = "Let them be."
+name = "EVT_889033_OPTIONB"
 command = { type = dissent value = 3 }
 }
 }
@@ -2921,8 +2921,8 @@ atwar = no
 control = { province = 691 data = SOV }
 }
 
-name = "The Alash Orda's Russians are oppressed!"
-desc = "We have an excellent opportunity to expand our territories and further spread the ideals of Lenin. The leaders of Alash Orda's Russian community have complained to us that they are oppressed under the government's ethnic policies."
+name = "EVT_889034_NAME"
+desc = "EVT_889034_DESC"
 
 date = { day = 1 month = january year = 1937 }
 offset = 5
@@ -2930,7 +2930,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
 ai_chance = 50
-name = "Encourage them to secede and rejoin Soviet Russia!"
+name = "EVT_889034_OPTIONA"
 command = { type = addcore which = 1113 }
 command = { type = addcore which = 706 }
 command = { type = addcore which = 1115 }
@@ -2958,7 +2958,7 @@ command = { type = relation which = KAZ value = -120 }
 
 action_b = {
 ai_chance = 50
-name = "Take these lands by force!"
+name = "EVT_889034_OPTIONB"
 command = { type = addcore which = 1113 }
 command = { type = addcore which = 706 }
 command = { type = addcore which = 1115 }
@@ -2986,7 +2986,7 @@ command = { type = war which = KAZ }
 
 action_c = {
 ai_chance = 20
-name = "Covert operations will be good enough."
+name = "EVT_889034_OPTIONC"
 command = { type = addcore which = 1113 }
 command = { type = addcore which = 706  }
 command = { type = addcore which = 1115 }
@@ -3013,7 +3013,7 @@ command = { type = relation which = KAZ value = -120 }
 }
 action_d = {
 ai_chance = 0
-name = "Do nothing."
+name = "EVT_889034_OPTIOND"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = KAZ value = 60 }
 }
@@ -3025,8 +3025,8 @@ picture = "Kazakhstan2"
 country = KAZ
 style = 2
 
-name = "Soviet Russia is stirring up seperatism!"
-desc = "The resurgent Soviet Russia is encouraging our ethnic Russian community to secede from our country and be incorporated into their state.  What shall we do?"
+name = "EVT_889035_NAME"
+desc = "EVT_889035_DESC"
 
 
 
@@ -3034,14 +3034,14 @@ desc = "The resurgent Soviet Russia is encouraging our ethnic Russian community 
 action_a = {
 
 ai_chance = 60
-name = "We shall fight to maintain the integrity of our lands!"
+name = "EVT_889035_OPTIONA"
 command = { type = war which = SOV }
 command = { type = dissent value = 15 }
 }
 
 action_b = {
 ai_chance = 40
-name = "Let them go but maintain our interests in the area."
+name = "EVT_889035_OPTIONB"
 command = { type = secedeprovince which = SOV value = 1113 }
 command = { type = secedeprovince which = SOV  value = 706 }
 command = { type = secedeprovince which = SOV value = 1115 }
@@ -3094,11 +3094,11 @@ country = SOV
 style = 2
 picture = "Pole"
 
-name = "Northern Alash-Orda joins Soviet Russia!"
-desc = "The prime-minister has announced that, following intense diplomatic pressure on the government of Alash-Orda, their northern areas were allowed to join Soviet Russia! A new grand victory for the Soviet state!"
+name = "EVT_889036_NAME"
+desc = "EVT_889036_DESC"
 
 action_a = {
-name = "Hooray!"
+name = "EVT_889036_OPTIONA"
 command = { type = dissent value = -5 }
 }
 }
@@ -3127,8 +3127,8 @@ atwar = no
 control = { province = 691 data = SOV }
 }
 
-name = "The Alash Orda's Russians are oppressed!"
-desc = "The leaders of Alash Orda's Russian community have complained to us that they are oppressed under the government's ethnic policies. Such an insult to the Soviet people must not go unpunished! We can either immediately declare war upon them or try to use our existing contacts within certain political circles in Alash-Orda to stage a coup."
+name = "EVT_889038_NAME"
+desc = "EVT_889038_DESC"
 
 date = { day = 1 month = january year = 1937 }
 offset = 5
@@ -3136,7 +3136,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
 ai_chance = 50
-name = "Encourage them to secede and rejoin Soviet Union!"
+name = "EVT_889038_OPTIONA"
 command = { type = addcore which = 1113 }
 command = { type = addcore which = 706 }
 command = { type = addcore which = 1115 }
@@ -3164,7 +3164,7 @@ command = { type = relation which = KAZ value = -120 }
 
 action_b = {
 ai_chance = 60
-name = "Covert operations will be good enough."
+name = "EVT_889038_OPTIONB"
 command = { type = addcore which = 1113 }
 command = { type = addcore which = 706  }
 command = { type = addcore which = 1115 }
@@ -3191,7 +3191,7 @@ command = { type = relation which = KAZ value = -120 }
 }
 action_c = {
 ai_chance = 35
-name = "The Kazakhs have overstepped their bounds, this means war!"
+name = "EVT_889038_OPTIONC"
 command = { type = addcore which = 1113 }
 command = { type = addcore which = 706  }
 command = { type = addcore which = 1115 }
@@ -3218,7 +3218,7 @@ command = { type = war which = KAZ }
 }
 action_d = {
 ai_chance = 0
-name = "Do nothing."
+name = "EVT_889038_OPTIOND"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = KAZ value = 60 }
 }
@@ -3230,21 +3230,21 @@ picture = "Kazakhstan2"
 country = KAZ
 style = 2
 
-name = "Soviet Union tried to accomplish a coup!"
-desc = "Soviet agitators, together with detachments of rebellious Russians led by Talgat Bigeldinov, have turned popular opinion against our regime. Russians, both in the countryside and in the cities have rebelled, leaving the entire country in chaos. How will the situation develop?"
+name = "EVT_889039_NAME"
+desc = "EVT_889039_DESC"
 
 
 action_a = {
 
 ai_chance = 50
-name = "The revolution is crushed!"
+name = "EVT_889039_OPTIONA"
 command = { type = dissent value = 15 }
 command = { type = trigger which = 889037 }
 }
 
 action_b = {
 ai_chance = 50
-name = "The revolution is successful!"
+name = "EVT_889039_OPTIONB"
 command = { type = secedeprovince which = SOV value = 1113 }
 command = { type = secedeprovince which = SOV  value = 706 }
 command = { type = secedeprovince which = SOV value = 1115 }
@@ -3297,19 +3297,19 @@ country = SOV
 style = 2
 picture = "Pole"
 
-name = "Soviet coup has failed"
-desc = "Our attempt to replace the government of Alash-Orda with one loyal to our state failed miserably. What shall we do now?"
+name = "EVT_889037_NAME"
+desc = "EVT_889037_DESC"
 
 action_a ={
 ai_chance = 70
-name = "We shall crush them!"
+name = "EVT_889037_OPTIONA"
 command = { type = dissent value = 2 }
 command = { type = war which = KAZ }
 }
 
 action_b = {
 ai_chance = 30
-name = "Let them be."
+name = "EVT_889037_OPTIONB"
 command = { type = dissent value = 3 }
 }
 }
@@ -3321,19 +3321,19 @@ country = SOV
 style = 2
 picture = "Pole"
 
-name = "Revolution in Alash Orda was successful!"
-desc = "Members of SOVNARKOM are currently in the capital of the Syndicalist Republic of Alash Orda. Vyacheslav Molotov is holding a speech, where he states that..."
+name = "EVT_889040_NAME"
+desc = "EVT_889040_DESC"
 
 action_a = {
 ai_chance = 80
-name = "...Alash Orda will become part of the Soviet Union!"
+name = "EVT_889040_OPTIONA"
 command = { type = dissent value = -3 }
 command = { type = inherit which = KAZ value = 1 }
 }
 
 action_b = {
 ai_chance = 20
-name = "...Alash Orda will be an ally of the Soviet Union!"
+name = "EVT_889040_OPTIONB"
 command = { type = dissent value = -1 }
 command = { type = coup_nation which = KAZ }
 command = { type = make_puppet which = KAZ }
@@ -3364,8 +3364,8 @@ atwar = no
 control = { province = 691 data = SOV }
 }
 
-name = "The Alash Orda's Russians are oppressed!"
-desc = "The leaders of Alash Orda's Russian community have complained to us that they are oppressed under the government's ethnic policies. Such an insult to the Soviet people must not go unpunished!"
+name = "EVT_889041_NAME"
+desc = "EVT_889041_DESC"
 
 date = { day = 1 month = january year = 1937 }
 offset = 5
@@ -3373,7 +3373,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
 ai_chance = 30
-name = "Encourage them to secede and rejoin the Soviet Republic!"
+name = "EVT_889041_OPTIONA"
 command = { type = addcore which = 1113 }
 command = { type = addcore which = 706 }
 command = { type = addcore which = 1115 }
@@ -3401,7 +3401,7 @@ command = { type = relation which = KAZ value = -120 }
 
 action_b = {
 ai_chance = 95
-name = "World revolution, we must liberate them!"
+name = "EVT_889041_OPTIONB"
 command = { type = war which = KAZ }
 command = { type = addcore which = 1113 }
 command = { type = addcore which = 706  }
@@ -3428,7 +3428,7 @@ command = { type = domestic which = interventionism value = 2 }
 
 action_c = {
 ai_chance = 20
-name = "Covert operations will be good enough."
+name = "EVT_889041_OPTIONC"
 command = { type = addcore which = 1113 }
 command = { type = addcore which = 706  }
 command = { type = addcore which = 1115 }
@@ -3456,7 +3456,7 @@ command = { type = relation which = KAZ value = -120 }
 
 action_d = {
 ai_chance = 5
-name = "Do nothing."
+name = "EVT_889041_OPTIOND"
 command = { type = dissent value = 7 }
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = KAZ value = 60 }
@@ -3508,19 +3508,19 @@ date = { day = 1 month = january year = 1937 }
 offset = 5
 deathdate = { day = 29 month = december year = 1946 }
 
-name = "Liberation of Central Asia"
-desc = "Michail Frunze observes a map of Central Asia in light of recent events. A series of border incidents has drawn Central Asia into armed conflict. Should Soviet Russia use this opportunity to liberate the workers and peasants of Central Asia?"
+name = "EVT_889042_NAME"
+desc = "EVT_889042_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Yes, it is our duty!"
+name = "EVT_889042_OPTIONA"
 command = { type = war which = KYG }
 command = { type = war which = KAZ }
 }
 
 action_b = {
 ai_chance = 5
-name = "We have no interests in Central Asia."
+name = "EVT_889042_OPTIONB"
 command = { type = dissent value = 10 }
 command = { type = relation which = KAZ value = 80 }
 command = { type = relation which = KYG value = 80 }
@@ -3574,20 +3574,20 @@ date = { day = 1 month = january year = 1937 }
 offset = 5
 deathdate = { day = 29 month = december year = 1944 }
 
-name = "Liberation of Central Asia"
-desc = "Members of SOVNARKOM are concerned about the unstable situation near our southern borders which may prove detrimental to the development of our southern regions. Armed forces of Alash-Orda and Turkestan are currently locked in a deadly struggle against each other with each nation having clear intentions to dominate Central Asia. This presents us with an opportunity to further spread the ideals of Lenin and bring stability back to Central Asia."
+name = "EVT_889044_NAME"
+desc = "EVT_889044_DESC"
 
 
 action_a = {
 ai_chance = 75
-name = "Yes, it is our duty!"
+name = "EVT_889044_OPTIONA"
 command = { type = war which = KYG }
 command = { type = war which = KAZ }
 }
 
 action_b = {
 ai_chance = 25
-name = "We have no interests in Central Asia."
+name = "EVT_889044_OPTIONB"
 command = { type = dissent value = 5 }
 command = { type = relation which = KAZ value = 80 }
 command = { type = relation which = KYG value = 80 }
@@ -3644,12 +3644,12 @@ date = { day = 1 month = january year = 1937 }
 offset = 5
 deathdate = { day = 29 month = december year = 1944 }
 
-name = "Liberation of Central Asia"
-desc = "Marshal Tukhachevsky and his staff are considering the next course of action in order to bring Syndicalism to the entire world. Central Asia is still dominated by religious fanatics based in Turkestan and bourgeois traitors in Alash-Orda with both states locked in a fight to the death. This presents us with an opportunity to further spread the ideals of Lenin and bring stability back to Central Asia."
+name = "EVT_889045_NAME"
+desc = "EVT_889045_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Begin the operation!"
+name = "EVT_889045_OPTIONA"
 command = { type = war which = KYG }
 command = { type = war which = KAZ }
 command = { type = add_division value = cavalry when = 7 }
@@ -3659,7 +3659,7 @@ command = { type = add_division value = cavalry when = 7 }
 
 action_b = {
 ai_chance = 5
-name = "We have no interests in Central Asia."
+name = "EVT_889045_OPTIONB"
 command = { type = dissent value = 15 }
 command = { type = relation which = KAZ value = 80 }
 command = { type = relation which = KYG value = 80 }
@@ -3691,8 +3691,8 @@ control = { province = 1161 data = SOV }
 }
 
 
-name = "The Trans-Siberian Crisis"
-desc = "Horrible news! A train full of Soviet citizens has been massacred by bandits on the Mongolian section of the Trans-Siberian railway! Our people are shocked by this act of barbarism and demand an immediate response from the government. Baron Ungern von Sternberg, Supreme Khan of All Mongols, is getting stronger. This might be the perfect opportunity to stop his wild and savage men."
+name = "EVT_889046_NAME"
+desc = "EVT_889046_DESC"
 picture = "Poezd"
 
 date = { day = 15 month = july year = 1938 }
@@ -3701,7 +3701,7 @@ deathdate = { day = 29 month = december year = 1942 }
 
 action_a = {
 ai_chance = 55
-name = "We demand full sovereignity over OUR Trans-Siberian railway!"
+name = "EVT_889046_OPTIONA"
 command = { type = relation which = MON value = -80 }
 command = { type = addcore   which = 1167   }
 command = { type = addcore   which = 1168   }
@@ -3718,7 +3718,7 @@ command = { type = domestic which = interventionism value = 2 }
 
 action_b = {
 ai_chance = 40
-name = "We must topple Sternberg!"
+name = "EVT_889046_OPTIONB"
 command = { type = relation which = MON value = -60 }
 command = { type = relation which = TAN value = -60 }
 command = { type = relation which = JAP value = -40 }
@@ -3738,7 +3738,7 @@ command = { type = addcore   which = 1119   }
 
 action_c = {
 ai_chance = 40
-name = "We shall bring civilization where there is barbarism, send the troops!"
+name = "EVT_889046_OPTIONC"
 trigger = {
 flag = SOV_EXP
 }
@@ -3762,7 +3762,7 @@ command = { type = trigger which = 750051 }
 
 action_d = {
 ai_chance = 5
-name = "We must increase the security on our trains."
+name = "EVT_889046_OPTIOND"
 trigger = {
 flag = SOV_ISO
 }
@@ -3780,14 +3780,14 @@ random = no
 country = MON
 persistent = yes
 
-name = "Soviet Russia demands full control over the railroad"
-desc = "After a train carrying Soviet citizens was attacked by bandits on our section of the Trans-Siberian railway the Soviet government has demanded full control over the railway. Soviet Russia is an increasingly powerful country and it is doubtful whether we could win in any confrontation with them."
+name = "EVT_889047_NAME"
+desc = "EVT_889047_DESC"
 picture = "Poezd"
 style = 2
 
 action_a = {
 ai_chance = 10
-name = "We shall abandon our portion of the railroad."
+name = "EVT_889047_OPTIONA"
 command = { type = belligerence which = MON value = -10  }
 command = { type = dissent value = 5 }
 command = { type = secedeprovince which = SOV value = 1167 }
@@ -3808,7 +3808,7 @@ command = { type = removecore which = 1119 }
 
 action_b = {
 ai_chance = 90
-name = "Mobilise, Siberia is ours!"
+name = "EVT_889047_OPTIONB"
 command = { type = add_division value = cavalry when = 6 }
 command = { type = add_division value = cavalry when = 6 }
 command = { type = add_division value = cavalry when = 6 }
@@ -3875,14 +3875,14 @@ id = 889055
 random = no
 country = SOV
 
-name = "The Bloody Baron"
-desc = "Baron Ungern von Sternberg has responded to our demands: one hundred ethnic Russians have been executed in Ulaan Baator as a warning for us not to meddle in Mongolian affairs. He has also asserted Mongolia's historic right to Siberia. How should we react?"
+name = "EVT_889055_NAME"
+desc = "EVT_889055_DESC"
 picture = "Poezd"
 style = 2
 
 action_a = {
 ai_chance = 100
-name = "Unacceptable, we shall wipe Mongolia from the map!"
+name = "EVT_889055_OPTIONA"
 command = { type = addcore   which = 1167   }
 command = { type = addcore   which = 1168   }
 command = { type = addcore   which = 1169   }
@@ -3894,7 +3894,7 @@ command = { type = war which = MON }
 }
 action_b = {
 ai_chance = 0
-name = "Evacuate all Russian citizens from Mongolia and seal the border!"
+name = "EVT_889055_OPTIONB"
 command = { type = domestic which = interventionism value = -2 }
 command = { type = dissent value = 15  }
 }
@@ -3906,14 +3906,14 @@ random = no
 country = MON
 persistent = yes
 
-name = "Sukhbaatar`s revolt!"
-desc = "After a train carrying Soviet citizens was attacked by bandits on our section of the Trans-Siberian railway the Soviet government used its wide array of contacts, namely general Sukhbaatar and his lackeys, to instigate rebellion against our rightful government. How will the situation evolve?"
+name = "EVT_889048_NAME"
+desc = "EVT_889048_DESC"
 picture = "Poezd"
 style = 2
 
 action_a = {
 ai_chance = 50
-name = "Baron Ungern von Sternberg falls!"
+name = "EVT_889048_OPTIONA"
 command = { type = leave_alliance }
 command = { type = name where = MON }
 command = { type = belligerence which = MON value = -10  }
@@ -3943,7 +3943,7 @@ command = { type = removecore which = 1119 }
 
 action_c = {
 ai_chance = 50
-name = "The revolution is crushed!"
+name = "EVT_889048_OPTIONB"
 command = { type = add_division value = cavalry when = 6 }
 command = { type = add_division value = cavalry when = 6 }
 command = { type = add_division value = cavalry when = 6 }
@@ -4014,11 +4014,11 @@ country = SOV
 style = 2
 picture = "Poezd"
 
-name = "The revolution in Mongolia is successful"
-desc = "With aid from the soviet intelligence general Sukhbaatar and his lackeys we were able to overthrow Sternberg and take power in Mongolia!"
+name = "EVT_889049_NAME"
+desc = "EVT_889049_DESC"
 
 action_a = {
-name = "Another victory for the Soviet intelligence service!"
+name = "EVT_889049_OPTIONA"
 command = { type = dissent value = -1 }
 command = { type = name where = MON  }
 command = { type = make_puppet which = MON }
@@ -4034,19 +4034,19 @@ country = SOV
 style = 2
 picture = "Pole"
 
-name = "Soviet coup failed"
-desc = "Our attempt to replace the government of Mongolia with one loyal to our state failed miserably. What shall we do now?"
+name = "EVT_889056_NAME"
+desc = "EVT_889056_DESC"
 
 action_a ={
 ai_chance = 70
-name = "We shall crush them!"
+name = "EVT_889056_OPTIONA"
 command = { type = dissent value = 2 }
 command = { type = war which = MON }
 }
 
 action_b = {
 ai_chance = 30
-name = "Let them be."
+name = "EVT_889056_OPTIONB"
 command = { type = dissent value = 3 }
 }
 }
@@ -4075,8 +4075,8 @@ control = { province = 1161 data = SOV }
 }
 
 
-name = "The Trans-Siberian Crisis"
-desc = "Horrible news!  A train full of Russian citizens has been massacred by bandits on the Mongolian section of the Trans-Siberian railway! Our people are shocked by this act of barbarism and demand an immediate response from the government. Baron Ungern von Sternberg, Supreme Khan of All Mongols, is getting stronger. This might be the best opportunity to stop this wild and savage man."
+name = "EVT_889050_NAME"
+desc = "EVT_889050_DESC"
 picture = "Poezd"
 
 date = { day = 15 month = july year = 1938 }
@@ -4085,7 +4085,7 @@ deathdate = { day = 29 month = december year = 1942 }
 
 action_a = {
 ai_chance = 75
-name = "We shall bring civilization where there is barbarism, send the troops!"
+name = "EVT_889050_OPTIONA"
 command = { type = relation which = MON value = -80 }
 command = { type = war which = MON }
 command = { type = addcore   which = 1167   }
@@ -4103,7 +4103,7 @@ command = { type = domestic which = interventionism value = 2 }
 
 action_b = {
 ai_chance = 55
-name = "Enough, we demand full sovereignity over OUR Trans-Siberian railway!"
+name = "EVT_889050_OPTIONB"
 command = { type = relation which = MON value = -80 }
 command = { type = addcore   which = 1167   }
 command = { type = addcore   which = 1168   }
@@ -4119,7 +4119,7 @@ command = { type = domestic which = interventionism value = 2 }
 
 action_c = {
 ai_chance = 40
-name = "We must topple Sternberg!"
+name = "EVT_889050_OPTIONC"
 command = { type = relation which = MON value = -60 }
 command = { type = relation which = TAN value = -60 }
 command = { type = relation which = JAP value = -40 }
@@ -4142,7 +4142,7 @@ ai_chance = 10
 trigger = {
 flag = SOV_ISO
 }
-name = "We must increase the security on our trains."
+name = "EVT_889050_OPTIOND"
 command = { type = relation which = MON value = -40 }
 command = { type = relation which = TAN value = -40 }
 command = { type = relation which = JAP value = -20 }
@@ -4175,8 +4175,8 @@ control = { province = 1161 data = SOV }
 }
 
 
-name = "The Trans-Siberian Crisis"
-desc = "Horrible news! A train full of Russian citizens has been massacred by bandits on the Mongolian section of the Trans-Siberian railroad! Our people are shocked by this act of barbarism and demand an immediate response from the government. Baron Ungern von Sternberg, Supreme Khan of All Mongols, is getting stronger. This might be the perfect opportunity to stop this wild and savage man."
+name = "EVT_889051_NAME"
+desc = "EVT_889051_DESC"
 picture = "Poezd"
 
 date = { day = 15 month = july year = 1938 }
@@ -4185,7 +4185,7 @@ deathdate = { day = 29 month = december year = 1942 }
 
 action_a = {
 ai_chance = 75
-name = "We shall bring civilization where there is barbarism, send the troops!"
+name = "EVT_889051_OPTIONA"
 command = { type = relation which = MON value = -80 }
 command = { type = war which = MON }
 command = { type = addcore   which = 1167   }
@@ -4203,7 +4203,7 @@ command = { type = domestic which = interventionism value = 2 }
 
 action_b = {
 ai_chance = 10
-name = "Enough, we demand full sovereignity over OUR Trans-Siberian railway!"
+name = "EVT_889051_OPTIONB"
 command = { type = relation which = MON value = -80 }
 command = { type = addcore   which = 1167   }
 command = { type = addcore   which = 1168   }
@@ -4219,7 +4219,7 @@ command = { type = domestic which = interventionism value = 2 }
 
 action_c = {
 ai_chance = 40
-name = "We must topple Sternberg!"
+name = "EVT_889051_OPTIONC"
 command = { type = relation which = MON value = -60 }
 command = { type = relation which = TAN value = -60 }
 command = { type = relation which = JAP value = -40 }
@@ -4242,7 +4242,7 @@ ai_chance = 0
 trigger = {
 flag = SOV_ISO
 }
-name = "We must increase the security on our trains."
+name = "EVT_889051_OPTIOND"
 command = { type = relation which = MON value = -40 }
 command = { type = relation which = TAN value = -40 }
 command = { type = relation which = JAP value = -20 }
@@ -4319,8 +4319,8 @@ control = { province = 1175 data = SOV }
 control = { province = 1189 data = SOV }
 }
 
-name = "The Problem of Transamur"
-desc = "Since 1920 the right bank of the Amur river is in the hands of Japan and its lackeys. Now, our Soviet state is finally strong enough to retake our rightful territory. But there are different opinions on how we will liberate this territory. The NKVD wants to start a coup while army leaders just want to send the troops to Vladivostok."
+name = "EVT_889090_NAME"
+desc = "EVT_889090_DESC"
 style = 2
 picture = "VJ"
 decision_picture = "decision_transamur"
@@ -4331,14 +4331,14 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 50
-name = "Contact the People`s Far East Party, they will help us plan a coup."
+name = "EVT_889090_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = trigger which = 889091  }
 }
 
 action_b = {
 ai_chance = 10
-name = "Leave Transamur alone."
+name = "EVT_889090_OPTIONB"
 command = { type = dissent value = 10 }
 command = { type = belligerence which = SOV value = -5 }
 command = { type = relation which = JAP value = 40 }
@@ -4347,7 +4347,7 @@ command = { type = relation which = PRI value = 40 }
 
 action_c = {
 ai_chance = 40
-name = "Send the troops to Vladivostok to dissolve Transamur!"
+name = "EVT_889090_OPTIONC"
 command = { type = belligerence which = SOV value = 5 }
 command = { type = addcore which = 1191 }
 command = { type = addcore which = 1196 }
@@ -4367,21 +4367,21 @@ id = 889091
 random = no
 country = PRI
 
-name = "The People`s Far East Party coup!"
-desc = "Transamur Syndicalists, supported by Soviet bolsheviks, went to the streets. They are trying to overthrow our rightful government and replace it with this Syndicalist monstrosity. Members of the People`s Far East Party as well as revolutionary parts of our population are trying to take control of Vladivostok. We have already sent for the troops to help us contain this revolution, will the armed forces remain loyal to us?"
+name = "EVT_889091_NAME"
+desc = "EVT_889091_DESC"
 picture = "VJ"
 style = 2
 
 action_a = {
 ai_chance = 55
-name = "A Syndicalist republic is proclaimed!"
+name = "EVT_889091_OPTIONA"
 command = { type = dissent value = -10 }
 command = { type = trigger which = 889058 }
 }
 
 action_b = {
 ai_chance = 40
-name = "The armed forces stay loyal, this 'revolution' is crushed!"
+name = "EVT_889091_OPTIONB"
 command = { type = dissent value = 5 }
 command = { type = trigger which = 889059 }
 }
@@ -4393,21 +4393,21 @@ id = 889057
 random = no
 country = JAP
 
-name = "Soviet Troops arrive in Vladivostok!"
-desc = "Following the re-establishment of Soviet control over the Trans-Siberian Railway the Soviets have decided to enlist the support of some rebellious Transamurian Syndicalists in order to establish control over the Primorsk territory by force! Can we afford to oppose an increasingly powerful Soviet state for the sake of Transamur or should we concentrate on greener pastures?"
+name = "EVT_889057_NAME"
+desc = "EVT_889057_DESC"
 picture = "VJ"
 style = 2
 
 action_a = {
 ai_chance = 60
-name = "We shall defend Transamur!"
+name = "EVT_889057_OPTIONA"
 command = { type = war which = SOV }
 
 }
 
 action_b = {
 ai_chance = 30
-name = "Abandon Transamur to its fate."
+name = "EVT_889057_OPTIONB"
 command = { type = dissent value = 4 }
 command = { type = sleepevent which = 889060 }
 command = { type = sleepevent which = 889061 }
@@ -4423,14 +4423,14 @@ id = 889059
 random = no
 country = SOV
 
-name = "Coup failed"
-desc = "The Transamur Syndicalists were killed by the Transamur army. Our military is demanding that we send an army to Transamur. What will the political leaders of the Soviet state say?"
+name = "EVT_889059_NAME"
+desc = "EVT_889059_DESC"
 picture = "VJ"
 style = 2
 
 action_a = {
 ai_chance = 95
-name = "All right, do it!"
+name = "EVT_889059_OPTIONA"
 command = { type = addcore which = 1191 }
 command = { type = addcore which = 1196 }
 command = { type = addcore which = 1193 }
@@ -4444,7 +4444,7 @@ command = { type = trigger which = 889057 }
 
 action_b = {
 ai_chance = 5
-name = "This is not needed."
+name = "EVT_889059_OPTIONB"
 command = { type = dissent value = 5 }
 }
 }
@@ -4456,13 +4456,13 @@ country = SOV
 style = 2
 
 
-name = "Transamur is Russian!"
-desc = "Facing the threat of Soviet military force and deprived of the support of the local capitalists and the Japanese the Transamur government is ready to collapse in the face of popular will. We can now do what we like with Transamur but it has been independent for a long time and will be difficult to integrate into our country. Perhaps some sort of compromise is needed?"
+name = "EVT_889058_NAME"
+desc = "EVT_889058_DESC"
 picture = "VJ"
 
 action_a = {
 ai_chance = 95
-name = "No compromise, put the leadership on trial and incorporate Transamur!"
+name = "EVT_889058_OPTIONA"
 command = { type = inherit which = PRI  }
 command = { type = addcore which = 1191 }
 command = { type = addcore which = 1196 }
@@ -4478,7 +4478,7 @@ command = { type = setflag which = SOV_TIH }
 
 action_b = {
 ai_chance = 5
-name = "Administer Transamur as an autonomous zone."
+name = "EVT_889058_OPTIONB"
 command = { type = addcore which = 1191 }
 command = { type = addcore which = 1196 }
 command = { type = addcore which = 1193 }
@@ -4506,8 +4506,8 @@ flag = SOV_AUT
 flag = SOVJAPPRI
 }
 
-name = "Soviet Russia controls Transamur!"
-desc = "Soviet Russia has managed to establish its control over the Transamur Republic. Their prime-minister has arrived in Vladivostok. Can we accept this diminishment of the Co-prosperity Sphere?"
+name = "EVT_889060_NAME"
+desc = "EVT_889060_DESC"
 
 date = { day = 1 month = january year = 1938 }
 offset = 3
@@ -4515,7 +4515,7 @@ deathdate = { day = 29 month = july year = 1960 }
 
 action_a = {
 ai_chance = 40
-name = "They're just reclaiming their own land..."
+name = "EVT_889060_OPTIONA"
 command = { type = relation which = SOV value = -100 }
 command = { type = belligerence which = JAP value = -10 }
 command = { type = clrflag which = SOV_TIH }
@@ -4523,7 +4523,7 @@ command = { type = clrflag which = SOV_TIH }
 
 action_b = {
 ai_chance = 30
-name = "We shall keep an eye on Transamur."
+name = "EVT_889060_OPTIONB"
 command = { type = dissent value = 5 }
 command = { type = addclaim which = 1191 }
 command = { type = addclaim which = 1196 }
@@ -4539,7 +4539,7 @@ command = { type = clrflag which = SOV_TIH }
 
 action_c = {
 ai_chance = 5
-name = "How dare they insult Japan like this!? Attack!"
+name = "EVT_889060_OPTIONC"
 command = { type = addclaim which = 1191 }
 command = { type = addclaim which = 1196 }
 command = { type = addclaim which = 1193 }
@@ -4566,8 +4566,8 @@ flag = SOV_FED
 flag = SOV_TIH
 }
 
-name = "Soviet Union controls Transamur!"
-desc = "The Soviet Union has managed to establish its control over the Transamur Republic. Members of SOVNARKOM have arrived in Vladivostok. Can we accept this diminishment of the Co-prosperity Sphere?"
+name = "EVT_889061_NAME"
+desc = "EVT_889061_DESC"
 
 date = { day = 29 month = october year = 1938 }
 offset = 3
@@ -4575,7 +4575,7 @@ deathdate = { day = 10 month = july year = 1960 }
 
 action_a = {
 ai_chance = 30
-name = "They're just reclaiming their own land..."
+name = "EVT_889061_OPTIONA"
 command = { type = relation which = SOV value = -100 }
 command = { type = belligerence which = JAP value = -10 }
 command = { type = clrflag which = SOV_TIH }
@@ -4583,7 +4583,7 @@ command = { type = clrflag which = SOV_TIH }
 
 action_b = {
 ai_chance = 60
-name = "We shall keep an eye on Transamur, federalists are dangerous."
+name = "EVT_889061_OPTIONB"
 command = { type = dissent value = 5 }
 command = { type = addclaim which = 1191 }
 command = { type = addclaim which = 1196 }
@@ -4599,7 +4599,7 @@ command = { type = clrflag which = SOV_TIH }
 
 action_c = {
 ai_chance = 10
-name = "How dare they insult Japan like this!? Attack!"
+name = "EVT_889061_OPTIONC"
 command = { type = addclaim which = 1191 }
 command = { type = addclaim which = 1196 }
 command = { type = addclaim which = 1193 }
@@ -4626,8 +4626,8 @@ flag = SOV_WR
 flag = SOV_TIH
 }
 
-name = "Soviet Republic controls Transamur!"
-desc = "The Soviet Republic has managed to establish its control over the Transamur Republic. Their prime-minister has arrived in Vladivostok. Can we accept this diminishment of the Co-prosperity Sphere?"
+name = "EVT_889062_NAME"
+desc = "EVT_889062_DESC"
 
 date = { day = 29 month = october year = 1938 }
 offset = 3
@@ -4635,7 +4635,7 @@ deathdate = { day = 10 month = july year = 1960 }
 
 action_a = {
 ai_chance = 15
-name = "They're just reclaiming their own land..."
+name = "EVT_889062_OPTIONA"
 command = { type = relation which = SOV value = -100 }
 command = { type = belligerence which = JAP value = -10 }
 command = { type = clrflag which = SOV_TIH }
@@ -4643,7 +4643,7 @@ command = { type = clrflag which = SOV_TIH }
 
 action_b = {
 ai_chance = 65
-name = "We shall keep an eye on Transamur. Their ideas of world revolution are too dangerous."
+name = "EVT_889062_OPTIONB"
 command = { type = dissent value = 5 }
 command = { type = addclaim which = 1191 }
 command = { type = addclaim which = 1196 }
@@ -4659,7 +4659,7 @@ command = { type = clrflag which = SOV_TIH }
 
 action_c = {
 ai_chance = 20
-name = "How dare they insult Japan like this!? Attack!"
+name = "EVT_889062_OPTIONC"
 command = { type = addclaim which = 1191 }
 command = { type = addclaim which = 1196 }
 command = { type = addclaim which = 1193 }
@@ -4720,17 +4720,17 @@ date = { day = 1 month = january year = 1936 }
 offset = 5
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Fading Sun"
-desc = "We have lost control of our continental provinces. Now our homeland is directly threatened. Maybe we could appease the Soviets by offering them Korea, Port Arthur, Sakhalin and the Kuril Islands."
+name = "EVT_889070_NAME"
+desc = "EVT_889070_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Offer territories for peace."
+name = "EVT_889070_OPTIONA"
 command = { type = trigger which = 889071 }
 }
 action_b = {
 ai_chance = 5
-name = "Fight on!"
+name = "EVT_889070_OPTIONB"
 command = { type = dissent value = 10 }
 }
 }
@@ -4741,13 +4741,13 @@ country = SOV
 style = 2
 picture = "japsun"
 
-name = "Japan offers peace"
-desc = "After we conquered their continental provinces Japan, fearing the might of our armed forces, begs for peace.  They're offering us Korea, Port Arthur, Sakhalin and the Kuril Islands in exchange for the cessation of hostilities between our states."
+name = "EVT_889071_NAME"
+desc = "EVT_889071_DESC"
 
 
 action_a = {
 ai_chance = 95
-name = "Humiliate Japan!"
+name = "EVT_889071_OPTIONA"
 command = { type = trigger which = 889092 }
 command = { type = peace which = JAP value = 0 }
 command = { type = belligerence value = -5 }
@@ -4769,7 +4769,7 @@ command = { type = non_aggression which = SOV where = JAP }
 
 action_b = {
 ai_chance = 5
-name = "Continue with the armed struggle."
+name = "EVT_889071_OPTIONB"
 command = { type = belligerence value = 5 }
 }
 }
@@ -4781,11 +4781,11 @@ country = JAP
 style = 2
 picture = "japsun"
 
-name = "Peace With the Soviets"
-desc = "Now it is time to fullfill our conditions."
+name = "EVT_889092_NAME"
+desc = "EVT_889092_DESC"
 
 action_a = {
-name = "Transfer the territories."
+name = "EVT_889092_OPTIONA"
 command = { type = secedeprovince which = SOV value = 1216 }
 command = { type = secedeprovince which = SOV value = 1240 }
 command = { type = secedeprovince which = SOV value = 1235 }
@@ -4920,12 +4920,12 @@ country = SOV
 style = 2
 picture = "korea"
 
-name = "The fate of Korea"
-desc = "The Korean people have suffered for a very long time under the Japanese regime. It is now in our power to grant them their desired independence, is this in accordance with our plans?"
+name = "EVT_889072_NAME"
+desc = "EVT_889072_DESC"
 
 action_a = {
 ai_chance = 99
-name = "Grant them independence!"
+name = "EVT_889072_OPTIONA"
 command = { type = independence which = KOR value = 1 when = 0 }
 command = { type = flag_ext where = KOR which = "_synd" }
 command = { type = trigger which = 889073 }
@@ -4933,7 +4933,7 @@ command = { type = belligerence value = -5 }
 }
 action_b = {
 ai_chance = 1
-name = "Keep it under our direct control."
+name = "EVT_889072_OPTIONB"
 command = { type = 	province_revoltrisk which = 1230 value = 50 }
 command = { type = 	province_revoltrisk which = 1231 value = 50 }
 command = { type = 	province_revoltrisk which = 1232 value = 50 }
@@ -4957,12 +4957,12 @@ country = SOV
 style = 2
 picture = "Korea"
 
-name = "Independence of Korea"
-desc = "We have decided that it would be in our best interest if an independent Korea emerges on the world map. How much independence will it really have?"
+name = "EVT_889073_NAME"
+desc = "EVT_889073_DESC"
 
 action_a = {
 ai_chance = 99
-name = "Puppet them."
+name = "EVT_889073_OPTIONA"
 command = { type = make_puppet which = KOR  }
 command = { type = set_relation which = KOR value = 200 }
 command = { type = access which = KOR }
@@ -4970,7 +4970,7 @@ command = { type = access which = KOR }
 
 action_b = {
 ai_chance = 1
-name = "Full independence."
+name = "EVT_889073_OPTIONB"
 command = { type = set_relation which = KOR value = 200 }
 command = { type = access which = KOR }
 }
@@ -4994,17 +4994,17 @@ date = { day = 3 month = april year = 1936 }
 offset = 20
 deathdate = { day = 29 month = september year = 1960 }
 
-name = "Port Arthur"
-desc = "After our defeat in the First Russo-Japanese War of 1905 we had to relinquish Port Arthur to the Japanese empire. Now it is under our control once again."
+name = "EVT_889074_NAME"
+desc = "EVT_889074_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Keep it."
+name = "EVT_889074_OPTIONA"
 command = { type = addclaim which = 1219 }
 }
 action_b = {
 ai_chance = 5
-name = "Give it to Fengtien."
+name = "EVT_889074_OPTIONB"
 trigger = { OR = { alliance = { country = SOV country = MAN } puppet = { country = MAN country = SOV  } } }
 command = { type = secedeprovince which = MAN value = 1219 }
 command = { type = trigger which = 889075 }
@@ -5018,11 +5018,11 @@ country = MAN
 style = 2
 picture = "harbor_statue"
 
-name = "Port Arthur is now ours"
-desc = "After the Russians beat the Japanese they gained control of Port Arthur. They have decided that they have no more use for it and instead have given it to us."
+name = "EVT_889075_NAME"
+desc = "EVT_889075_DESC"
 
 action_a = {
-name = "Splendid!"
+name = "EVT_889075_OPTIONA"
 command = { type = addcore which = 1219 }
 }
 }
@@ -5046,19 +5046,19 @@ date = { day = 3 month = april year = 1936 }
 offset = 5
 deathdate = { day = 29 month = september year = 1960 }
 
-name = "Soviets conquered Mukden"
-desc = "The Soviet state has launched a succesful invasion of our country and there is nothing we can do to stop their relentless advance. Most of our commanders suggest that we offer the Soviets an unconditional surrender to prevent more useless deaths."
+name = "EVT_889076_NAME"
+desc = "EVT_889076_DESC"
 
 action_a = {
 ai_chance = 100
-name = "Surrender."
+name = "EVT_889076_OPTIONA"
 command = { type = leave_alliance }
 command = { type = peace which = SOV value = 1 }
 command = { type = trigger which = 889077 }
 }
 action_b = {
 ai_chance = 0
-name = "Fight to the death!"
+name = "EVT_889076_OPTIONB"
 command = {  }
 
 }
@@ -5071,12 +5071,12 @@ country = SOV
 style = 2
 picture = "Japan_Occupation2"
 
-name = "Defeat of Fengtien"
-desc = "After our troops reached Mukden the Fengtien republic was forced to sign an unconditional surrender."
+name = "EVT_889077_NAME"
+desc = "EVT_889077_DESC"
 
 action_a = {
 ai_chance = 80
-name = "Puppet them."
+name = "EVT_889077_OPTIONA"
 command = { type = make_puppet which = MAN }
 command = { type = alliance which = MAN }
 command = { type = dissent value = -5 }
@@ -5086,7 +5086,7 @@ command = { type = access which = MAN }
 
 action_b = {
 ai_chance = 20
-name = "Annex them!"
+name = "EVT_889077_OPTIONB"
 command = { type = inherit which = MAN  }
 command = { type = dissent value = -5 }
 }
@@ -5114,19 +5114,19 @@ date = { day = 3 month = april year = 1936 }
 offset = 5
 deathdate = { day = 29 month = september year = 1960 }
 
-name = "Hopeless war"
-desc = "The Soviet state has launched a succesful invasion of our country and there is nothing we can do to stop their relentless advance. Most of our commanders suggest that we offer the Soviets an unconditional surrender to prevent more useless deaths."
+name = "EVT_889078_NAME"
+desc = "EVT_889078_DESC"
 
 action_a = {
 ai_chance = 100
-name = "Surrender."
+name = "EVT_889078_OPTIONA"
 command = { type = leave_alliance }
 command = { type = peace which = SOV value = 1 }
 command = { type = trigger which = 889079 }
 }
 action_b = {
 ai_chance = 0
-name = "Fight to the death!"
+name = "EVT_889078_OPTIONB"
 command = {  }
 
 }
@@ -5138,12 +5138,12 @@ country = SOV
 style = 2
 picture = "Japan_Occupation2"
 
-name = "Defeat of Transamur"
-desc = "Kolchak realized that further resistance against us was hopeless. He was left no other choice but to sign the unconditional surrender of his rebellious state."
+name = "EVT_889079_NAME"
+desc = "EVT_889079_DESC"
 
 action_a = {
 ai_chance = 5
-name = "Puppet them."
+name = "EVT_889079_OPTIONA"
 command = { type = peace which = PRI value = 1 }
 command = { type = make_puppet which = PRI }
 command = { type = alliance which = PRI }
@@ -5153,7 +5153,7 @@ command = { type = access which = PRI }
 }
 action_b = {
 ai_chance = 95
-name = "Annex them!"
+name = "EVT_889079_OPTIONB"
 command = { type = inherit which = PRI  }
 command = { type = addcore which = 1191 }
 command = { type = addcore which = 1196 }
@@ -5179,8 +5179,8 @@ control = { province = 1124 data = SOV }
 }
 
 
-name = "Ulan Bator Captured"
-desc = "We have finally seized control of the Mongolian capital! How shall we deal with these savage barbarians?"
+name = "EVT_889080_NAME"
+desc = "EVT_889080_DESC"
 style = 2
 picture = "mongoliadefeated"
 
@@ -5189,7 +5189,7 @@ offset = 7
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = " Let the Mongols join us on OUR terms!"
+name = "EVT_889080_OPTIONA"
 ai_chance = 95
 command = { type = trigger which = 889084 }
 command = { type = addcore   which = 1167   }
@@ -5202,7 +5202,7 @@ command = { type = clrflag  which = SIB_PANIC }
 command = { type = relation which = MON value = 10 }
 }
 action_b = {
-name = "Make an example of them, unconditional surrender!"
+name = "EVT_889080_OPTIONB"
 ai_chance = 5
 command = { type = relation which = KYG value = -50 }
 command = { type = relation which = KAZ value = -50 }
@@ -5223,13 +5223,13 @@ random = no
 country = SOV
 
 
-name = "Mongols Accept!"
-desc = "The Mongols fold to our demands!"
+name = "EVT_889081_NAME"
+desc = "EVT_889081_DESC"
 style = 2
 picture = "mongoliadefeated"
 
 action_a = {
-name = "Good!"
+name = "EVT_889081_OPTIONA"
 command = { type = trigger which = 889082 }
 command = { type = dissent value = -10 }
 command = { type = make_puppet which = MON }
@@ -5251,13 +5251,13 @@ war = { country = TIB country = SOV }
 }
 
 
-name = "Tibet abandons Mongolia"
-desc = "Our alliance with Baron von Sternberg and Mongolia ended in disaster! The self-proclaimed Khan has ended up as a Soviet puppet, there's nothing to gain for us in this conflict."
+name = "EVT_889082_NAME"
+desc = "EVT_889082_DESC"
 style = 2
 picture = "End_Winter_War"
 
 action_a = {
-name = "We'll make peace with Russia!"
+name = "EVT_889082_OPTIONA"
 command = { type = peace which = RUS value = 1 }
 command = { type = dissent value = 5 }
 
@@ -5271,13 +5271,13 @@ id = 889083
 random = no
 country = SOV
 
-name = "The Mongols are Suicidal!"
-desc = "Apparently the rogue Baron is more important to the Mongols than a dignified defeat!"
+name = "EVT_889083_NAME"
+desc = "EVT_889083_DESC"
 style = 2
 picture = "mongoliadefeated"
 
 action_a = {
-name = "They will have to pay!"
+name = "EVT_889083_OPTIONA"
 command = { type = dissent value = 5 }
 command = { type = domestic which = interventionism value = 1 }
 }
@@ -5288,13 +5288,13 @@ id = 889084
 random = no
 country = MON
 
-name = "Ulan Bator Captured"
-desc = "The wretched Russians have seized our glorious capital! Defeat seems certain, is it time to submit?"
+name = "EVT_889084_NAME"
+desc = "EVT_889084_DESC"
 style = 2
 picture = "mongoliadefeated"
 
 action_a = {
-name = "We have no choice but to submit."
+name = "EVT_889084_OPTIONA"
 ai_chance = 90
 command = { type = flag_ext where = MON  }
 command = { type = peace which = SOV value = 1 }
@@ -5379,7 +5379,7 @@ command = { type = sleepminister which = 94112 }
 command = { type = trigger which = 889081 }
 }
 action_b = {
-name = "The Baron shall lead us to victory or death!"
+name = "EVT_889084_OPTIONB"
 ai_chance = 10
 command = { type = trigger which = 889083 }
 
@@ -5402,12 +5402,12 @@ exists = MON
 control = { province = 1119 data = MON }
 }
 
-name = "The Tuvan Question"
-desc = "The Tuvan people are Turks that live next to the Mongols and they have played an important function in Sternberg's empire. Upon hearing of the collapse of his regime the Tuvans are demanding freedom. Granting them this wish would greatly weaken the Mongols."
+name = "EVT_889085_NAME"
+desc = "EVT_889085_DESC"
 
 action_a = {
 ai_chance = 75
-name = "Order Mongolia to release Tannu Tuva!"
+name = "EVT_889085_OPTIONA"
 command = { type = trigger which = 555427 }
 command = { type = relation which = MON value = -50 }
 command = { type = sleepevent which = 889087 }
@@ -5415,7 +5415,7 @@ command = { type = sleepevent which = 889087 }
 
 action_b = {
 ai_chance = 5
-name = "Tannu Tuva will be Soviet!"
+name = "EVT_889085_OPTIONB"
 command = { type = relation which = MON value = -50 }
 command = { type = addcore   which = 1119   }
 command = { type = dissent value = 3 }
@@ -5424,7 +5424,7 @@ command = { type = trigger which = 889089 }
 
 action_c = {
 ai_chance = 25
-name = "They are still Mongols for all we care!"
+name = "EVT_889085_OPTIONC"
 command = { type = relation which = MON value = 50 }
 command = { type = sleepevent which = 889086 }
 }
@@ -5445,8 +5445,8 @@ war = { country = MON country = SOV }
 }
 }
 
-name = "The Tuvan Question"
-desc = "The Tuvan people are Turks that live next to the Mongols and they have played an important function in Sternberg's empire. Upon hearing of the collapse of his regime the Tuvans are demanding freedom. Granting them this wish would greatly weaken the Mongols."
+name = "EVT_889086_NAME"
+desc = "EVT_889086_DESC"
 
 date = { day = 1 month = january year = 1936 }
 offset = 10
@@ -5454,14 +5454,14 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
 ai_chance = 40
-name = "Give the Tuvans total freedom, once and for all!"
+name = "EVT_889086_OPTIONA"
 command = { type = independence which = TAN value = 1 when = 0 }
 command = { type = relation which = MON value = -50 }
 }
 
 action_b = {
 ai_chance = 55
-name = "Give the Tuvans freedom, but they shall remain loyal to us!"
+name = "EVT_889086_OPTIONB"
 command = { type = independence which = TAN value = 1 when = 0 }
 command = { type = trigger which = 889088 }
 command = { type = relation which = MON value = -50 }
@@ -5469,7 +5469,7 @@ command = { type = relation which = MON value = -50 }
 
 action_c = {
 ai_chance = 5
-name = "Tannu Tuva will be Soviet!"
+name = "EVT_889086_OPTIONC"
 command = { type = relation which = MON value = -50 }
 command = { type = addcore   which = 1119   }
 command = { type = dissent value = 5 }
@@ -5484,10 +5484,10 @@ style = 2
 picture = "tannutuvadec"
 
 
-name = "The Soviet Ultimatum"
-desc = "The Soviets have sent us an ultimatum to release the Tuvans!"
+name = "EVT_889087_NAME"
+desc = "EVT_889087_DESC"
 action_a = {
-name = "Well, if they insist..."
+name = "EVT_889087_OPTIONA"
 command = { type = independence which = TAN value = 1 when = 0 }
 command = { type = removecore which = 1119 }
 command = { type = secedeprovince which = TAN value = 1119 }
@@ -5504,10 +5504,10 @@ style = 2
 picture = "tannutuvadec"
 
 
-name = "Tuvan Freedom"
-desc = "The Tuvans are now free, and at our disposal!"
+name = "EVT_889088_NAME"
+desc = "EVT_889088_DESC"
 action_a = {
-name = "Huzzah!"
+name = "EVT_889088_OPTIONA"
 command = { type = make_puppet which = TAN }
 command = { type = alliance which = TAN }
 command = { type = relation which = TAN value = 100 }
@@ -5522,10 +5522,10 @@ style = 2
 picture = "tannutuvadec"
 
 
-name = "The Russian Ultimatum"
-desc = "The Russians have sent us an ultimatum to secede Tannu Tuva to them!"
+name = "EVT_889089_NAME"
+desc = "EVT_889089_DESC"
 action_a = {
-name = "Well, if they insist..."
+name = "EVT_889089_OPTIONA"
 command = { type = removecore which = 1119 }
 command = { type = secedeprovince which = SOV value = 1119 }
 }
@@ -5573,8 +5573,8 @@ control = { province = 538 data = FIN }
 control = { province = 531 data = FIN }
 }
 
-name = "Status of Karelia"
-desc = "During the Russian civil war many rightful Russian lands were occupied by the Kingdom of Finland. The subsequent German intervention in the Russian civil war allowed Finland to keep those territories. Now that the attention of the German empire is turned westwards we can finally focus on regaining Karelia. We can either try to solve this matter diplomatically or use this opportunity as a pretext to finally integrate Finland into our state."
+name = "EVT_889118_NAME"
+desc = "EVT_889118_DESC"
 
 date = { day = 1 month = july year = 1939 }
 offset = 10
@@ -5582,7 +5582,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
 ai_chance = 50
-name = "Demand Karelia!"
+name = "EVT_889118_OPTIONA"
 command = { type = relation which = FIN value = -25 }
 command = { type = relation which = GER value = -30 }
 command = { type = trigger which = 889119 }
@@ -5602,7 +5602,7 @@ command = { type = addcore which = 536 }
 }
 action_b = {
 ai_chance = 70
-name = "Crush Finland!"
+name = "EVT_889118_OPTIONB"
 trigger = {
 flag = SOV_EXP
 }
@@ -5627,7 +5627,7 @@ command = { type = war which = FIN }
 
 action_c = {
 ai_chance = 0
-name = "Forget about it."
+name = "EVT_889118_OPTIONC"
 command = { type = dissent value = 5 }
 }
 
@@ -5640,18 +5640,18 @@ picture = "Helsinki"
 random = no
 style = 2
 
-name = "Soviet claims!"
-desc = "Today, Vyacheslav Molotov has met with our Prime-Minister and announced that the Soviet state wants to take back Vyborg and a part of Karelia. They are offering us monetary and material compensation as well as a guarantee of the future state borders in return. How shall we react?"
+name = "EVT_889119_NAME"
+desc = "EVT_889119_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Njet Molotoff!"
+name = "EVT_889119_OPTIONA"
 command = { type = trigger which = 889120 }
 }
 
 action_b = {
 ai_chance = 5
-name = "All right."
+name = "EVT_889119_OPTIONB"
 command = { type = dissent value = 15}
 command = { type = trigger which = 889121 }
 command = { type = secedeprovince which = SOV value = 538 }
@@ -5683,12 +5683,12 @@ picture = "Army"
 random = no
 style = 2
 
-name = "Finland refused!"
-desc = "The Kingdom of Finland has refused our generous offer to transfer Vyborg and a part of Karelia back to the motherland! We must take back our rightful lands by force!"
+name = "EVT_889120_NAME"
+desc = "EVT_889120_DESC"
 
 action_a = {
 ai_chance = 70
-name = "Take it back by force!"
+name = "EVT_889120_OPTIONA"
 command = { type = end_guarantee which = GER where = FIN }
 command = { type = relation which = FIN value = -100 }
 command = { type = relation which = GER value = -100 }
@@ -5698,7 +5698,7 @@ command = { type = dissent value = -5 }
 
 action_b = {
 ai_chance = 30
-name = "Forget about it."
+name = "EVT_889120_OPTIONB"
 command = { type = dissent value = 3 }
 }
 }
@@ -5711,11 +5711,11 @@ picture = "helsinki"
 random = no
 style = 2
 
-name = "Transfer of the territories"
-desc = "The Kingdom of Finland has agreed to transfer larger parts of Karelia in return for monetary and material compensation as well as the guaranteed security of their new borders!"
+name = "EVT_889121_NAME"
+desc = "EVT_889121_DESC"
 
 action_a = {
-name = "Another victory for Soviet diplomacy!"
+name = "EVT_889121_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = supplies value = -2500 }
 command = { type = metalpool value = -5000 }
@@ -5749,8 +5749,8 @@ control = { province = 538 data = SOV }
 }
 }
 
-name = "We've been defeated!"
-desc = "Armed forces of the Soviet state have inflicted a series of great defeats upon us. We must end this war before they manage to overrun our entire homeland!"
+name = "EVT_889122_NAME"
+desc = "EVT_889122_DESC"
 picture = "finnish_replacement"
 
 date = { day = 1 month = april year = 1936 }
@@ -5759,14 +5759,14 @@ deathdate = { day = 29 month = december year = 1966 }
 
 action_a = {
 ai_chance = 60
-name = "Sue for peace!"
+name = "EVT_889122_OPTIONA"
 command = { type = dissent value = 2 }
 command = { type = trigger which = 889123 }
 
 }
 action_b = {
 ai_chance = 40
-name = "We can still win this!"
+name = "EVT_889122_OPTIONB"
 command = { type = dissent value = 4 }
 }
 }
@@ -5779,13 +5779,13 @@ style = 2
 
 
 
-name = "Peace with Finland?"
-desc = "With the reconquest of Karelia the government of Finland have declared their desire to end the war between our nations, accepting our sovereignty over the entirety of Karelia in the process. How shall we react?"
+name = "EVT_889123_NAME"
+desc = "EVT_889123_DESC"
 picture = "Army"
 
 action_a = {
 ai_chance = 50
-name = "Accept the peace offer!"
+name = "EVT_889123_OPTIONA"
 command = { type = peace which = FIN value = 1 }
 command = { type = trigger which = 889124 }
 }
@@ -5794,7 +5794,7 @@ ai_chance = 50
 trigger = {
 flag = SOV_EXP
 }
-name = "No, they shall be crushed!"
+name = "EVT_889123_OPTIONB"
 command = { type = dissent value = 3 }
 }
 }
@@ -5805,12 +5805,12 @@ random = no
 country = FIN
 style = 2
 
-name = "Treaty of Petrograd"
-desc = "The Soviet state has agreed to our offer of surrender and the state of war is finally over..."
+name = "EVT_889124_NAME"
+desc = "EVT_889124_DESC"
 picture = "finnish_replacement"
 
 action_a = {
-name = "At least we still exist!"
+name = "EVT_889124_OPTIONA"
 command = { type = non_aggression which = FIN where = SOV }
 command = { type = trade which = FIN where = SOV money = -1 when = 1800 value = 2 }	#forced trade for 5 years!
 command = { type = trade which = FIN where = SOV supplies = -4 when = 1800 value = 2 }	#forced trade for 5 years!
@@ -5839,13 +5839,13 @@ style = 2
 
 
 
-name = "Treaty of Petrograd"
-desc = "Armed forces of the Soviet state have managed to revert the injustices imposed on us during the Russian Civil War. The entire nation celebrates this enormous victory!"
+name = "EVT_889125_NAME"
+desc = "EVT_889125_DESC"
 
 
 
 action_a = {
-name = "The Soviet state stands triumphant!"
+name = "EVT_889125_OPTIONA"
 command = { type = addcore which = 538 }
 command = { type = addcore which = 532 }
 command = { type = addcore which = 530 }
@@ -5922,8 +5922,8 @@ alliance = { country = SOV country = OTT }
 }
 }
 
-name = "Security of the Eastern border"
-desc = "The Soviet state recapturing positions in the Caucasus, previously held by the Russian Empire, has led to a rise of Arabian nationalism originating from Egypt and Hashemite Arabia. Our state and its foreign interests are in grave danger. We must quickly stabilise our eastern borders if we hope to survive the approaching struggle with the hostile Arabian states. The Sultan is planning to send Prince Nihad to propose a non-aggression treaty with the Soviet state."
+name = "EVT_889126_NAME"
+desc = "EVT_889126_DESC"
 
 date = { day = 1 month = april year = 1937 }
 offset = 2
@@ -5931,7 +5931,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
 ai_chance = 50
-name = "Send the Prince!"
+name = "EVT_889126_OPTIONA"
 command = { type = trigger which = 889127 }
 command = { type = relation which = SOV value = 20 }
 command = { type = dissent value = 1 }
@@ -5939,7 +5939,7 @@ command = { type = dissent value = 1 }
 
 action_b = {
 ai_chance = 50
-name = "No deals with bolsheviks!"
+name = "EVT_889126_OPTIONB"
 command = { type = dissent value = 2 }
 }
 }
@@ -5950,12 +5950,12 @@ country = SOV
 style = 2
 picture = "Sovturpact"
 
-name = "Non-Agression pact with Ottomans"
-desc = "Our recent achievments in the Caucasus, namely the incorporation of Georgia, greatly disturbed the Ottoman Empire. Prince Nihad recently arrived into our capital with the proposal of a non-aggression pact between our nations in which either side recognizes the current borders between the Ottoman Empire and the Soviet state. How shall we respond to this proposal?"
+name = "EVT_889127_NAME"
+desc = "EVT_889127_DESC"
 
 action_a = {
 ai_chance = 40
-name = "We need security too, sign the Pact!"
+name = "EVT_889127_OPTIONA"
 command = { type = trigger which = 889128 }
 command = { type = non_aggression which = SOV where = OTT }
 command = { type = relation which = OTT value = 20 }
@@ -5964,7 +5964,7 @@ command = { type = dissent value = 1 }
 
 action_b = {
 ai_chance = 55
-name = "Include Armenia to sweeten the deal!"
+name = "EVT_889127_OPTIONB"
 trigger = {
 puppet = { country = ARM country = OTT  }
 }
@@ -5974,7 +5974,7 @@ command = { type = trigger which = 889129 }
 
 action_c = {
 ai_chance = 5
-name = "No, we don`t need it."
+name = "EVT_889127_OPTIONC"
 command = { type = dissent value = 1 }
 }
 }
@@ -5985,11 +5985,11 @@ country = OTT
 style = 2
 picture = "Sovturpact"
 
-name = "Non-Agression pact with Soviets was signed"
-desc = "The airplane of Prince Nihad recently landed in Istanbul. The Prince announced that the non-aggression pact with the Soviet government was signed. The eastern border of our empire is now secure!"
+name = "EVT_889128_NAME"
+desc = "EVT_889128_DESC"
 
 action_a = {
-name = "A grand success of Ottoman diplomacy!"
+name = "EVT_889128_OPTIONA"
 command = { type = non_aggression which = OTT where = SOV }
 command = { type = relation which = SOV value = 20 }
 }
@@ -6001,12 +6001,12 @@ country = OTT
 style = 2
 picture = "Sovturpact"
 
-name = "Non-Agression pact with Soviets"
-desc = "The Soviet state agrees to sign the pact but they demand the inclusion of our buffer-state Armenia into the deal so that it falls in the Soviet sphere of influence."
+name = "EVT_889129_NAME"
+desc = "EVT_889129_DESC"
 
 action_a = {
 ai_chance = 60
-name = "Abandon Armenia to its fate."
+name = "EVT_889129_OPTIONA"
 command = { type = end_mastery which = ARM }
 command = { type = end_access which = ARM }
 command = { type = trigger which = 889130 }
@@ -6016,7 +6016,7 @@ command = { type = dissent value = 1 }
 
 action_b = {
 ai_chance = 40
-name = "We won`t give up Armenia!"
+name = "EVT_889129_OPTIONB"
 command = { type = dissent value = -2 }
 command = { type = relation which = SOV value = -20 }
 }
@@ -6028,11 +6028,11 @@ country = SOV
 style = 2
 picture = "Sovturpact"
 
-name = "The non-aggression pact with the Ottomans was signed"
-desc = "The Ottoman Empire has agreed to include Armenia into our sphere of influence. We have succesfully eliminated the probability of war with the Ottoman Empire, thus freeing our hands to deal with more serious threats to our security in the process. It`s a grand success of Soviet diplomacy!"
+name = "EVT_889130_NAME"
+desc = "EVT_889130_DESC"
 
 action_a = {
-name = "Hooray!"
+name = "EVT_889130_OPTIONA"
 command = { type = non_aggression which = SOV where = OTT }
 command = { type = relation which = OTT value = 20 }
 command = { type = dissent value = -5 }
@@ -6072,8 +6072,8 @@ control = { province = 572 data = SOV }
 control = { province = 553 data = SOV }
 }
 
-name = "Status of Armenia"
-desc = "Thanks to our masterful diplomacy the Armenian state now belongs to our sphere of influence. Now we have to decide our stance towards them. We can either try to establish our control over their government or integrate the entire Armenian state into our motherland."
+name = "EVT_889131_NAME"
+desc = "EVT_889131_DESC"
 
 date = { day = 1 month = january year = 1936 }
 offset = 10
@@ -6081,7 +6081,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 60
-name = "Demand their incorporation!"
+name = "EVT_889131_OPTIONA"
 trigger = {
 flag = SOV_EXP
 }
@@ -6092,7 +6092,7 @@ command = { type = dissent value = -2 }
 
 action_b = {
 ai_chance = 40
-name = "Try to establish control over the Armenian government!"
+name = "EVT_889131_OPTIONB"
 command = { type = dissent value = -1 }
 command = { type = relation which = ARM value = -20 }
 command = { type = trigger which = 889135 }
@@ -6106,19 +6106,19 @@ country = ARM
 style = 2
 picture = "Peace_conference"
 
-name = "Soviet demands"
-desc = "Secret negotiations between the Ottoman Empire and the Soviet state resulted in our state becoming a part of the Soviet sphere of influence. Now the Soviet state has issued a number of demands towards our state which, if accepted, will result in our incorporation into the Soviet state. Efforts to resist the powerful Soviet state without international backing seem futile."
+name = "EVT_889132_NAME"
+desc = "EVT_889132_DESC"
 
 action_a = {
 ai_chance = 85
-name = "Accept their terms."
+name = "EVT_889132_OPTIONA"
 command = { type = trigger which = 889133 }
 command = { type = dissent value = 4 }
 }
 
 action_b = {
 ai_chance = 15
-name = "Never!"
+name = "EVT_889132_OPTIONB"
 command = { type = dissent value = -2 }
 command = { type = relation which = SOV value = -20 }
 command = { type = trigger which = 889134 }
@@ -6131,12 +6131,12 @@ country = SOV
 style = 2
 picture = "Peace_conference"
 
-name = "Armenian submission"
-desc = "Seeing no other options the Armenian leadership has accepted our demands"
+name = "EVT_889133_NAME"
+desc = "EVT_889133_DESC"
 
 
 action = {
-name = "Hooray!"
+name = "EVT_889133_OPTIONA"
 command = { type = dissent value = 2 }
 command = { type = inherit which = ARM  }
 }
@@ -6148,19 +6148,19 @@ country = SOV
 style = 2
 picture = "armenialib"
 
-name = "Armenian resistance"
-desc = "The mad Armenian leadership rejected our rightful demands. How shall we react to this insolence?"
+name = "EVT_889134_NAME"
+desc = "EVT_889134_DESC"
 
 action_a = {
 ai_chance = 85
-name = "War will solve this!"
+name = "EVT_889134_OPTIONA"
 command = { type = dissent value = -1 }
 command = { type = war which = ARM }
 }
 
 action_b = {
 ai_chance = 15
-name = "Back down!"
+name = "EVT_889134_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = relation which = ARM value = 20 }
 
@@ -6174,19 +6174,19 @@ country = ARM
 style = 2
 picture = "Peace_conference"
 
-name = "Soviet demands"
-desc = "Secret negotiations between the Ottoman Empire and the Soviet state resulted in our state becoming a part of the Soviet sphere of influence. Now the Soviet state issued a number of demands with regards to our constitutional system which, if accepted, will mean the end of Armenia as an independent state. Efforts to resist the powerful Soviet state without international backing seem futile."
+name = "EVT_889135_NAME"
+desc = "EVT_889135_DESC"
 
 action_a = {
 ai_chance = 100
-name = "Accept their terms."
+name = "EVT_889135_OPTIONA"
 command = { type = trigger which = 889136 }
 command = { type = dissent value = -1 }
 }
 
 action_b = {
 ai_chance = 0
-name = "Never!"
+name = "EVT_889135_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = relation which = SOV value = -20 }
 command = { type = trigger which = 889134 }
@@ -6200,12 +6200,12 @@ country = SOV
 style = 2
 picture = "Peace_conference"
 
-name = "Armenian submission"
-desc = "Seeing no other options the Armenian leadership has accepted all our demands with regards to their constitutional system."
+name = "EVT_889136_NAME"
+desc = "EVT_889136_DESC"
 
 
 action = {
-name = "Hooray!"
+name = "EVT_889136_OPTIONA"
 command = { type = dissent value = -2 }
 command = { type = make_puppet which = ARM }
 }
@@ -6259,8 +6259,8 @@ control = { province = 663 data = SOV }
 
 
 
-name = "The Georgian Question"
-desc = "Now that the state of Don-Kuban no longer exists we must choose our stance towards the independent state of Georgia. We can either try to bring them into the fold using the threat of military power or via more subtle ways of negotiation. Another option is to create an independent military bloc with Georgia. What shall we do?"
+name = "EVT_889137_NAME"
+desc = "EVT_889137_DESC"
 
 date = { day = 1 month = january year = 1938 }
 offset = 30
@@ -6268,7 +6268,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action = {
 ai_chance = 20
-name = "War will resolve this!"
+name = "EVT_889137_OPTIONA"
 trigger = {
 flag = SOV_EXP
 }
@@ -6278,7 +6278,7 @@ command = { type = dissent value = 4 }
 }
 action = {
 ai_chance = 25
-name = "Threaten them with force!"
+name = "EVT_889137_OPTIONB"
 trigger = {
 OR = {
 flag = SOV_RCL
@@ -6291,7 +6291,7 @@ command = { type = trigger which = 889138 }
 }
 action = {
 ai_chance = 25
-name = "Negotiate with them."
+name = "EVT_889137_OPTIONC"
 trigger = {
 NOT = { alliance = { country = OTT country = GEO } }
 }
@@ -6303,13 +6303,13 @@ trigger = {
 NOT = { alliance = { country = FRA country = GEO } }
 NOT = { alliance = { country = OTT country = GEO } }
 }
-name = "Offer an alliance to Georgia"
+name = "EVT_889137_OPTIOND"
 command = { type = trigger which = 889143 }
 command = { type = relation which = GEO value = 20 }
 }
 action = {
 ai_chance = 1
-name = "We don't care about Georgia."
+name = "EVT_889137_OPTIONE"
 command = { type = belligerence which = SOV value = -3  }
 command = { type = dissent value = 4 }
 }
@@ -6322,19 +6322,19 @@ country = GEO
 style = 2
 picture = "caucasusgeo"
 
-name = "Soviet demands"
-desc = "The increasingly powerful Soviet state has once again set its sights on the Caucasus. Now the Soviet state issued a number of demands towards our state which, if accepted, will result in our incorporation into the Soviet state. Efforts to resist the powerful Soviet state without international backing seem futile."
+name = "EVT_889138_NAME"
+desc = "EVT_889138_DESC"
 
 action_a = {
 ai_chance = 30
-name = "Accept their terms."
+name = "EVT_889138_OPTIONA"
 command = { type = trigger which = 889139 }
 command = { type = dissent value = 4 }
 }
 
 action_b = {
 ai_chance = 70
-name = "Never!"
+name = "EVT_889138_OPTIONB"
 command = { type = dissent value = -2 }
 command = { type = relation which = SOV value = -20 }
 command = { type = trigger which = 889140 }
@@ -6347,12 +6347,12 @@ country = SOV
 style = 2
 picture = "caucasusgeo"
 
-name = "Georgian submission"
-desc = "Seeing no other options the Georgian leadership accepted our demands."
+name = "EVT_889139_NAME"
+desc = "EVT_889139_DESC"
 
 
 action = {
-name = "Hooray!"
+name = "EVT_889139_OPTIONA"
 command = { type = dissent value = 2 }
 command = { type = inherit which = GEO  }
 }
@@ -6364,12 +6364,12 @@ country = SOV
 style = 2
 picture = "Army"
 
-name = "Georgian resistance"
-desc = "The mad Georgian leadership rejected our rightful demands. How shall we react to this insolence?"
+name = "EVT_889140_NAME"
+desc = "EVT_889140_DESC"
 
 action_a = {
 ai_chance = 85
-name = "War will solve this!"
+name = "EVT_889140_OPTIONA"
 trigger = {
 OR = {
 flag = SOV_RCL
@@ -6382,7 +6382,7 @@ command = { type = war which = GEO }
 
 action_b = {
 ai_chance = 15
-name = "Back down!"
+name = "EVT_889140_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = relation which = GEO value = 20 }
 
@@ -6395,12 +6395,12 @@ country = GEO
 style = 2
 picture = "Peace_conference"
 
-name = "Negotiations with the Soviets"
-desc = "The increasingly powerful Soviet state has once again set its sights on the Caucasus. Now the Soviet state displayed its willingness to negotiate with our state on terms of our peaceful reintegration into the Soviet state. How shall we respond?"
+name = "EVT_889141_NAME"
+desc = "EVT_889141_DESC"
 
 action_a = {
 ai_chance = 70
-name = "Agree, but Beria must have role in the Soviet government!"
+name = "EVT_889141_OPTIONA"
 trigger = {
 headofgovernment = 519002
 }
@@ -6411,7 +6411,7 @@ command = { type = trigger which = 889142 }
 
 action_b = {
 ai_chance = 30
-name = "Never!"
+name = "EVT_889141_OPTIONB"
 command = { type = relation which = SOV value = -40 }
 command = { type = trigger which = 889140 }
 }
@@ -6425,14 +6425,14 @@ style = 2
 
 
 
-name = "Georgian demands!"
-desc = "Beria has decided to agree with our demands and will allow his country to become incorporated into our motherland if he is given the post of Foreign minister of the Soviet state as part of a compromise."
+name = "EVT_889142_NAME"
+desc = "EVT_889142_DESC"
 
 picture = "Beria"
 
 action_a = {
 ai_chance = 30
-name = "Accept this demand!"
+name = "EVT_889142_OPTIONA"
 command = { type = dissent value = 5 }
 command = { type = foreignminister which = 40813 }
 command = { type = inherit which = GEO }
@@ -6441,7 +6441,7 @@ command = { type = inherit which = GEO }
 
 action_b = {
 ai_chance = 10
-name = "What is this lunacy? Send in the troops!"
+name = "EVT_889142_OPTIONB"
 command = { type = war which = GEO }
 command = { type = relation which = GEO value = -100 }
 command = { type = relation which = OTT value = -50 }
@@ -6450,7 +6450,7 @@ command = { type = belligerence which = SOV  value = 5 }
 
 action_c = {
 ai_chance = 60
-name = "Refuse the offer."
+name = "EVT_889142_OPTIONC"
 command = {  }
 
 }
@@ -6464,14 +6464,14 @@ country = GEO
 style = 2
 picture = "Peace_conference"
 
-name = "The Soviet state offers us an alliance!"
-desc = "The Soviets have sent word that they consider our two states to be alike and that we should ally to promote the global cause of labour. What should we do?"
+name = "EVT_889143_NAME"
+desc = "EVT_889143_DESC"
 
 
 
 action_a = {
 ai_chance = 80
-name = "Of course, proletarians unite!"
+name = "EVT_889143_OPTIONA"
 command = { type = relation which = SOV value = 200 }
 command = { type = trigger which = 889144 }
 }
@@ -6479,7 +6479,7 @@ command = { type = trigger which = 889144 }
 
 action_b = {
 ai_chance = 20
-name = "We cannot trust the treacherous Soviets!"
+name = "EVT_889143_OPTIONB"
 command = { type = relation which = SOV value = -200 }
 command = { type = trigger which = 889145  }
 }
@@ -6492,13 +6492,13 @@ country = SOV
 style = 2
 picture = "Peace_conference"
 
-name = "A new power in the east!"
-desc = "The government of Georgia has accepted our offer and now a new power in the east is born. With such a powerful alliance emerging on the global stage the future of the proletariat looks promising."
+name = "EVT_889144_NAME"
+desc = "EVT_889144_DESC"
 
 
 
 action_a = {
-name = "Excellent!"
+name = "EVT_889144_OPTIONA"
 command = { type = alliance which = GEO }
 command = { type = relation which = GEO value = 200 }
 
@@ -6515,15 +6515,15 @@ country = SOV
 style = 2
 picture = "Peace_conference"
 
-name = "Georgia turned us down!"
-desc = "In their arrogance the government of Georgia has turned down our gracious offer, saying that the ideological rift between us is too great for an alliance to form. How shall we react to this humiliation?"
+name = "EVT_889145_NAME"
+desc = "EVT_889145_DESC"
 
 
 
 
 action_a = {
 ai_chance = 95
-name = "They will pay for their foolishness!"
+name = "EVT_889145_OPTIONA"
 trigger = {
 NOT = { exists = SOV }
 exists = RUS
@@ -6537,7 +6537,7 @@ command = { type = war which = GEO }
 }
 action_d = {
 ai_chance = 5
-name = "Let them rot."
+name = "EVT_889145_OPTIONB"
 command = { type = dissent value = 5 }
 command = { type = relation which = GEO value = 10 }
 }
@@ -6597,8 +6597,8 @@ alliance = { country = SOV country = GER }
 participant = { country = FRA value = 3 } #Commune of France is part of Syndicalist Internationale
 }
 
-name = "The Second Weltkrieg"
-desc = "Growing tensions between the German Empire and the Commune of France has erupted into a full scale war. This armed conflict presents us with the perfect opportunity to reclaim the territories in Eastern Europe that we lost due to the treaty of Brest-Litovsk as well as the option to spread the proletarian revolution!"
+name = "EVT_889170_NAME"
+desc = "EVT_889170_DESC"
 picture = "SOVGER"
 decision_picture = "decision_secwelt"
 
@@ -6607,7 +6607,7 @@ offset = 40
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "We must join arms with France!"
+name = "EVT_889170_OPTIONA"
 ai_chance = 80
 command = { type = domestic which = interventionism value = 4 }
 command = { type = set_relation which = FRA value = 175 }
@@ -6619,7 +6619,7 @@ command = { type = dissent value = 3 } #People are unhappy that you went into th
 command = { type = trigger which = 889171 }
 }
 action_b = {
-name = "We must reorganize our own country."
+name = "EVT_889170_OPTIONB"
 ai_chance = 20
 command = { type = dissent value = -3 }# People are happy that you choose not to go with the syndicaists.
 command = { type = domestic which = interventionism value = -4 }
@@ -6637,11 +6637,11 @@ country = FRA
 style = 2
 picture = "SOVGER"
 
-name = "The Soviets want to join the Internationale!"
-desc = "The Soviet state expressed its intention to join our alliance. For the world revolution!"
+name = "EVT_889171_NAME"
+desc = "EVT_889171_DESC"
 
 action_a = {
-name = "Welcome!"
+name = "EVT_889171_OPTIONA"
 ai_chance = 100
 command = { type = alliance which = SOV }
 command = { type = set_relation which = SOV value = 175 }
@@ -6650,7 +6650,7 @@ command = { type = domestic which = interventionism value = 1 }
 }
 
 action_b = {
-name = "We don´t need them."
+name = "EVT_889171_OPTIONB"
 ai_chance = 0
 command = { type = set_relation which = SOV value = -100 }
 command = { type = dissent value = 1 }
@@ -6676,8 +6676,8 @@ core = { province = 702 data = -1 }
 owned = { province = 702 data = -1 }
 control = { province = 702 data = -1 }
 }
-name = "The integration of Northern Caucasus"
-desc = "The areas once occupied by Mountainous Republic of the Northern Caucasus are now firmly integrated into our growing motherland."
+name = "EVT_889172_NAME"
+desc = "EVT_889172_DESC"
 
 picture = "militaryparade1"
 
@@ -6687,7 +6687,7 @@ offset = 70
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Great!"
+name = "EVT_889172_OPTIONA"
 command = { type = addcore   which = 702   }
 command = { type = addcore   which = 704   }
 command = { type = addcore   which = 705   }
@@ -6748,8 +6748,8 @@ puppet = { country = U43 country = SOV  }
 }
 }
 
-name = "Mountain republic and Ali Mitayev"
-desc = "With the stabilization of our motherland we can now start looking beyond our borders. To the south lies the pseudo-capitalist Mountain republic led by Caucasian nationalists. Ali Mitayev, the Chechen sheikh from the Mountainous republic has petitioned our government to instigate a coup in the Mountain Republic by using his significant influence amongst local population. Shall we offer him our support ?"
+name = "EVT_889173_NAME"
+desc = "EVT_889173_DESC"
 
 date = { day = 1 month = july year = 1937 }
 offset = 30
@@ -6757,7 +6757,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 100
-name = "Help him!"
+name = "EVT_889173_OPTIONA"
 command = { type = relation which = U43 value = -100 }
 command = { type = event which = 889174 where = TRA when = 6  }
 command = { type = belligerence which = SOV value = 5 }
@@ -6765,7 +6765,7 @@ command = { type = belligerence which = SOV value = 5 }
 
 action_b = {
 ai_chance = 0
-name = "We don`t need them."
+name = "EVT_889173_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 }
 }
@@ -6777,12 +6777,12 @@ country = U43
 style = 2
 picture = "urbanwarfare1"
 
-name = "Soviet coup"
-desc = "Soviet agitators, together with detachments of rebellious mountaineers lead by Ali Mitayev, have turned part of popular opinion against our regime. Russians, both in the countryside and in the cities, have rebelled. The country is in chaos. Can we resist the opposition ?"
+name = "EVT_889174_NAME"
+desc = "EVT_889174_DESC"
 
 action_a = {
 ai_chance = 35
-name = "The rebels take over the capital!"
+name = "EVT_889174_OPTIONA"
 command = { type = set_domestic which = democratic value = 4     }
 command = { type = set_domestic which = political_left value = 8  }
 command = { type = headofstate which = 1234001 }
@@ -6793,7 +6793,7 @@ command = { type = dissent value = 10 }
 
 action_b = {
 ai_chance = 65
-name = "The rebels have been defeated!"
+name = "EVT_889174_OPTIONB"
 command = { type = dissent value = 5 }
 command = { type = trigger which = 889176 }
 }
@@ -6806,11 +6806,11 @@ country = SOV
 style = 2
 picture = "Army"
 
-name = "The Mountain republic falls"
-desc = "Today the new Head of state of Mountain republic, Ali Mitayev, met with our prime-minister and announced that the Mountain republic will become an integral part of the new Russia. Our citizens are celebrating resotration of the Russian authority over Caucasus."
+name = "EVT_889175_NAME"
+desc = "EVT_889175_DESC"
 
 action_a = {
-name = "Glory to the Red Cossacks!"
+name = "EVT_889175_OPTIONA"
 command = { type = addcore   which = 701  }
 command = { type = addcore   which = 703  }
 command = { type = addcore   which = 705  }
@@ -6831,19 +6831,19 @@ country = SOV
 style = 2
 picture = "Army"
 
-name = "The Soviet coup has failed!"
-desc = "Our attempt to replace the government in the Mountain republic with one loyal to our state failed miserably. What shall we do now?"
+name = "EVT_889176_NAME"
+desc = "EVT_889176_DESC"
 
 action_a ={
 ai_chance = 70
-name = "We shall crush them!"
+name = "EVT_889176_OPTIONA"
 command = { type = dissent value = 2 }
 command = { type = war which = U43 }
 }
 
 action_b = {
 ai_chance = 30
-name = "Let them be."
+name = "EVT_889176_OPTIONB"
 command = { type = dissent value = 3 }
 }
 }
@@ -6885,8 +6885,8 @@ government = communist
 }
 }
 
-name = "Soviet expansionism threatens Commonwealth"
-desc = "Recent reassurgence of the Soviet state in the east together with recent soviet diplomatic activity through the eastern Europe proves, that in order to keep our state, its independence and its borders intact, we need to gain protection of German Empire and Mitteleuropa alliance. Hovewer doing will mean definite military involvement of our state in any potential conflict in the western europe and may further worsen our relations with Soviet Russia. What shall we do ?"
+name = "EVT_889177_NAME"
+desc = "EVT_889177_DESC"
 picture = "diplomatic_campaign"
 
 date = { day = 1 month = january year = 1936 }
@@ -6895,7 +6895,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action = {
 ai_chance = 90
-name = "Ask German Empire for protection"
+name = "EVT_889177_OPTIONA"
 command = { type = trigger which = 889178 }
 command = { type = domestic which = interventionism value = 1 }
 command = { type = relation which = SOV value = -40 }
@@ -6905,7 +6905,7 @@ command = { type = dissent value = 1 }
 
 action = {
 ai_chance = 10
-name = "We don't need any allies"
+name = "EVT_889177_OPTIONB"
 command = { type = dissent value = -1 }
 command = { type = relation which = SOV value = 10 }
 command = { type = domestic which = interventionism value = -4 }
@@ -6920,12 +6920,12 @@ country = GER
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Commonwealth wants to join Mitteleuropa"
-desc = "Government of Commonwealth, afraid of recent agressive soviet foreign policy has annouced recently that they want to join Mitteleuropa alliance. It's not a sudden move because pro-German policy is popular in many circles including the ruling cabinet and army. Do we want to allow Commonwealth to join our alliance and protect them from potential Bolshevik diplomatic and economical offensive ?"
+name = "EVT_889178_NAME"
+desc = "EVT_889178_DESC"
 
 action_a = {
 ai_chance = 70
-name = "Accept their offer."
+name = "EVT_889178_OPTIONA"
 command = { type = alliance which = U00 }
 command = { type = relation which = U00 value = 200 }
 command = { type = relation which = SOV value = -40 }
@@ -6936,7 +6936,7 @@ command = { type = trigger which = 889179 }
 
 action_b = {
 ai_chance = 20
-name = "Guarantee their independence, but nothing more."
+name = "EVT_889178_OPTIONB"
 command = { type = guarantee which = GER where = U00 }
 command = { type = non_aggression which = GER where = U00 }
 command = { type = relation which = U00 value = 80 }
@@ -6945,7 +6945,7 @@ command = { type = relation which = SOV value = -20 }
 
 action_c = {
 ai_chance = 10
-name = "Stable relationship with Russia is more important."
+name = "EVT_889178_OPTIONC"
 command = { type = relation which = SOV value = 40 }
 command = { type = relation which = U00 value = -80 }
 }
@@ -6958,11 +6958,11 @@ country = U00
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Commonwealth joins Mitteleuropa"
-desc = "Germans accepted our offer and invited us into Mitteleuropa alliance. Now our independence and territorial integrity are protected by powerfull German armed forces."
+name = "EVT_889179_NAME"
+desc = "EVT_889179_DESC"
 
 action_a = {
-name = "Now our independence is secured !"
+name = "EVT_889179_OPTIONA"
 command = { type = relation which = FRA value = -150 }
 command = { type = relation which = ENG value = -150 }
 command = { type = relation which = SOV value = -150 }
@@ -7027,8 +7027,8 @@ government = communist
 }
 }
 
-name = "Soviet expansionism threatens Poland"
-desc = "Recent reassurgence of the Soviet state in the east together with recent soviet diplomatic activity through the eastern Europe proves, that in order to keep our state, its independence and its borders intact, we need to gain protection of German Empire and Mitteleuropa alliance. Hovewer doing will mean definite military involvement of our state in any potential conflict in the western europe and may further worsen our relations with Soviet Russia. What shall we do ?"
+name = "EVT_889180_NAME"
+desc = "EVT_889180_DESC"
 picture = "diplomatic_campaign"
 
 date = { day = 1 month = january year = 1936 }
@@ -7037,7 +7037,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action = {
 ai_chance = 90
-name = "Ask German Empire for protection"
+name = "EVT_889180_OPTIONA"
 command = { type = trigger which = 889181 }
 command = { type = domestic which = interventionism value = 1 }
 command = { type = relation which = SOV value = -40 }
@@ -7047,7 +7047,7 @@ command = { type = dissent value = 1 }
 
 action = {
 ai_chance = 10
-name = "We don't need any allies"
+name = "EVT_889180_OPTIONB"
 command = { type = dissent value = -1 }
 command = { type = relation which = SOV value = 10 }
 command = { type = domestic which = interventionism value = -4 }
@@ -7062,12 +7062,12 @@ country = GER
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Poland wants to join Mitteleuropa"
-desc = "Government of Poland, afraid of recent agressive soviet foreign policy has annouced recently that they want to join Mitteleuropa alliance. It's not a sudden move because pro-German policy is popular in many circles including the ruling cabinet and army. Do we want to allow Poland to join our alliance and protect them from potential Bolshevik diplomatic and economical offensive ?"
+name = "EVT_889181_NAME"
+desc = "EVT_889181_DESC"
 
 action_a = {
 ai_chance = 70
-name = "Accept their offer."
+name = "EVT_889181_OPTIONA"
 command = { type = alliance which = POL }
 command = { type = relation which = POL value = 200 }
 command = { type = relation which = SOV value = -40 }
@@ -7078,7 +7078,7 @@ command = { type = trigger which = 889182 }
 
 action_b = {
 ai_chance = 20
-name = "Guarantee their independence, but nothing more."
+name = "EVT_889181_OPTIONB"
 command = { type = guarantee which = GER where = POL }
 command = { type = non_aggression which = GER where = POL }
 command = { type = relation which = POL value = 80 }
@@ -7087,7 +7087,7 @@ command = { type = relation which = SOV value = -20 }
 
 action_c = {
 ai_chance = 10
-name = "Stable relationship with Russia is more important."
+name = "EVT_889181_OPTIONC"
 command = { type = relation which = SOV value = 40 }
 command = { type = relation which = POL value = -80 }
 }
@@ -7100,11 +7100,11 @@ country = POL
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Poland joins Mitteleuropa"
-desc = "Germans accepted our offer and invited us into Mitteleuropa alliance. Now our independence and territorial integrity are protected by powerfull German armed forces."
+name = "EVT_889182_NAME"
+desc = "EVT_889182_DESC"
 
 action_a = {
-name = "Now our independence is secured !"
+name = "EVT_889182_OPTIONA"
 command = { type = relation which = FRA value = -150 }
 command = { type = relation which = ENG value = -150 }
 command = { type = relation which = SOV value = -150 }
@@ -7168,8 +7168,8 @@ government = communist
 }
 }
 
-name = "Soviet expansionism threatens Finland"
-desc = "Recent reassurgence of the Soviet state in the east together with recent soviet diplomatic activity through the eastern Europe proves, that in order to keep our state, its independence and its borders intact, we need to gain protection of German Empire and Mitteleuropa alliance. Hovewer doing will mean definite military involvement of our state in any potential conflict in the western europe and may further worsen our relations with Soviet Russia. What shall we do ?"
+name = "EVT_889183_NAME"
+desc = "EVT_889183_DESC"
 picture = "diplomatic_campaign"
 
 date = { day = 1 month = january year = 1936 }
@@ -7178,7 +7178,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action = {
 ai_chance = 90
-name = "Ask German Empire for protection"
+name = "EVT_889183_OPTIONA"
 command = { type = trigger which = 889184 }
 command = { type = domestic which = interventionism value = 1 }
 command = { type = relation which = SOV value = -40 }
@@ -7188,7 +7188,7 @@ command = { type = dissent value = 1 }
 
 action = {
 ai_chance = 10
-name = "We don't need any allies"
+name = "EVT_889183_OPTIONB"
 command = { type = dissent value = -1 }
 command = { type = relation which = SOV value = 10 }
 command = { type = domestic which = interventionism value = -4 }
@@ -7203,12 +7203,12 @@ country = GER
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Finland wants to join Mitteleuropa"
-desc = "Government of Finland, afraid of recent agressive soviet foreign policy has annouced recently that they want to join Mitteleuropa alliance. It's not a sudden move because pro-German policy is popular in many circles including the ruling cabinet and army. Do we want to allow Finland to join our alliance and protect them from potential Bolshevik diplomatic and economical offensive ?"
+name = "EVT_889184_NAME"
+desc = "EVT_889184_DESC"
 
 action_a = {
 ai_chance = 70
-name = "Accept their offer."
+name = "EVT_889184_OPTIONA"
 command = { type = alliance which = FIN }
 command = { type = relation which = FIN value = 200 }
 command = { type = relation which = SOV value = -40 }
@@ -7219,7 +7219,7 @@ command = { type = trigger which = 889185 }
 
 action_b = {
 ai_chance = 20
-name = "Guarantee their independence, but nothing more."
+name = "EVT_889184_OPTIONB"
 command = { type = guarantee which = GER where = FIN }
 command = { type = non_aggression which = GER where = FIN }
 command = { type = relation which = FIN value = 80 }
@@ -7228,7 +7228,7 @@ command = { type = relation which = SOV value = -20 }
 
 action_c = {
 ai_chance = 10
-name = "Stable relationship with Russia is more important."
+name = "EVT_889184_OPTIONC"
 command = { type = relation which = SOV value = 40 }
 command = { type = relation which = FIN value = -80 }
 }
@@ -7241,11 +7241,11 @@ country = FIN
 style = 2
 picture = "diplomatic_campaign"
 
-name = "Finland joins Mitteleuropa"
-desc = "Germans accepted our offer and invited us into Mitteleuropa alliance. Now our independence and territorial integrity are protected by powerfull German armed forces."
+name = "EVT_889185_NAME"
+desc = "EVT_889185_DESC"
 
 action_a = {
-name = "Now our independence is secured !"
+name = "EVT_889185_OPTIONA"
 command = { type = relation which = FRA value = -150 }
 command = { type = relation which = ENG value = -150 }
 command = { type = relation which = SOV value = -150 }

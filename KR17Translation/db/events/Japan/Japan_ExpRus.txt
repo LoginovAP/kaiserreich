@@ -186,8 +186,8 @@ date = { day = 1 month = april year = 1937 }
 offset = 5
 deathdate = { day = 29 month = december year = 1940 }
 
-name = "The Japanese Northern Expansion"
-desc = "The collapse of the Russian government has left their borders open. With Primorsk already under Japanese control, expansion into Siberia is tempting and Kolchak has been waiting to bring all of Siberia under his, our control. Even Mongolia is a prime candidate, but now it is time to make our decision. The invasion is planned for years 1938-1939."
+name = "EVT_340300_NAME"
+desc = "EVT_340300_DESC"
 
 action_a = {
 ai_chance = 30
@@ -245,7 +245,7 @@ puppet = { country = PRI country = JAP  }
 }
 }
 }
-name = "Russia is the best option of all; The Bigger they Are, The Harder They Fall!"
+name = "EVT_340300_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = relation which = RUS value = -100 }
@@ -278,7 +278,7 @@ puppet = { country = SIB country = RUS  }
 puppet = { country = SIB country = PRI  }
 }
 }
-name = "We must gain control over Siberia !"
+name = "EVT_340300_OPTIONB"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = relation which = RUS value = -100 }
@@ -337,7 +337,7 @@ alliance = { country = MON country = SOV }
 ispuppet = MON
 }
 }
-name = "Mongolia is a threat to the stability of the region, it must be dealt with!"
+name = "EVT_340300_OPTIONC"
 command = { type = domestic which = interventionism value = 2 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = relation which = MON value = -100 }
@@ -393,7 +393,7 @@ alliance = { country = SOV country = MON }
 puppet = { country = MON country = SOV }
 }
 }
-name = "Both shall be destroyed !"
+name = "EVT_340300_OPTIOND"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = relation which = MON value = -100 }
@@ -422,12 +422,12 @@ war = { country = GER country = JAP }
 }
 }
 
-name = "Report from Far East"
-desc = "Our secret service reported that Japan considers to invade Russia in order to gain control over Siberia. Such drastical step means direct threat to stability of the entire Eastern Asia arrangement, which is currently set in our favor. What shall we do ?"
+name = "EVT_340301_NAME"
+desc = "EVT_340301_DESC"
 
 action = {
 ai_chance = 25
-name = "Japan must be stopped"
+name = "EVT_340301_OPTIONA"
 command = { type = relation which = RUS value = 50 }
 command = { type = trigger which = 340302 }
 }
@@ -441,7 +441,7 @@ alliance = { country = RUS country = GER }
 }
 }
 ai_chance = 75
-name = "We don't care about Russia"
+name = "EVT_340301_OPTIONB"
 command = { type = relation which = RUS value = -50 }
 command = { type = end_guarantee which = GER where = RUS  }
 }
@@ -455,18 +455,18 @@ country = JAP
 style = 2
 picture = "Wehrmacht"
 
-name = "Report from Far East"
-desc = "The German Kaiser declared clearly that his Empire would fully support Russia if any nation tries to invade them. It would be most unwise to underestimate them, despite troubles they are facing on the homefront. How shall we react to this statement ?"
+name = "EVT_340302_NAME"
+desc = "EVT_340302_DESC"
 
 action_a = {
 ai_chance = 85
-name = "Who cares?"
+name = "EVT_340302_OPTIONA"
 command = { type = relation which = GER value = -50 }
 }
 
 action_b = {
 ai_chance = 10
-name = "Let us orientate new"
+name = "EVT_340302_OPTIONB"
 command = { type = relation which = GER value = 20 }
 command = { type = clrflag which = JAP_MONRUS_CAMP }
 command = { type = clrflag which = JAP_MON_CAMP }
@@ -477,7 +477,7 @@ command = { type = trigger which = 340203 }
 
 action_c = {
 ai_chance = 5
-name = "Give up our plans of expansion"
+name = "EVT_340302_OPTIONC"
 command = { type = domestic which = interventionism value = -9 }
 command = { type = domestic which = defense_lobby value = -9 }
 command = { type = relation which = GER value = 25 }
@@ -556,11 +556,11 @@ date = { day = 1 month = may year = 1938 }
 offset = 14
 deathdate = { day = 29 month = december year = 1944 }
 
-name = "Operation Kuma"
-desc = "Before the Russo-Manchurian and -Transamurian borders our troops are positioned and ready to invade. First of all we should bring Russian pacific coast under our control. Simultaneously we should push forward Yakutsk and Novosibirsk."
+name = "EVT_340321_NAME"
+desc = "EVT_340321_DESC"
 
 action_a = {
-name = "Declare war."
+name = "EVT_340321_OPTIONA"
 command = {
 trigger = {
 OR = {
@@ -680,18 +680,18 @@ date = { day = 1 month = may year = 1937 }
 offset = 20
 deathdate = { day = 29 month = june year = 1942 }
 
-name = "Incorporate the Russians?"
-desc = "In 1921 Mongolia occupied part of Russian siberian provinces. Across this provinces a section of the Trans-Siberian railroad is located and Russia takes a great interest to regain their land. Until now only their internal and military weakness discourage them to do it by force. But now, with Russia stable their interests shifted to this part of world once more. We can greatly speed our invasion if we allow Russia to take part in our plans to remove Mongolian state as threat to stability in the Eastern Asia"
+name = "EVT_340340_NAME"
+desc = "EVT_340340_DESC"
 
 action_a = {
 ai_chance = 50
-name = "Invite the Russians"
+name = "EVT_340340_OPTIONA"
 command = { type = trigger which = 340341 }
 command = { type = relation which = RUS value = 25 }
 }
 action_b = {
 ai_chance = 50
-name = "Leave the Russians out"
+name = "EVT_340340_OPTIONB"
 command = { type = setflag which = JAP_ALONE_MON }
 command = { type = relation which = RUS value = -25 }
 }
@@ -705,12 +705,12 @@ country = RUS
 style = 2
 picture = "mongolia1"
 
-name = "The Japanese offer"
-desc = "In 1921 tratcherous mongolians occupied part of our Siberian provinces. Across this provinces a large sections of the critically important Transsiberian railroad are located. Until now only our internal and military weakness discourage us to retake them by force. But now Japaneese Empire, which views Mongolian state as threat to stability in the Eastern Asia offered us to participate on their plans to conquer Mongolia."
+name = "EVT_340341_NAME"
+desc = "EVT_340341_DESC"
 
 action_a = {
 ai_chance = 70
-name = "An excellent proposition."
+name = "EVT_340341_OPTIONA"
 command = { type = trigger which = 340342 }
 command = { type = trigger which = 340343 }
 command = { type = setflag which = JAP_RUS_PACT }
@@ -728,7 +728,7 @@ command = { type = sleepevent which = 555405 }
 
 action_b = {
 ai_chance = 30
-name = "This have to wait."
+name = "EVT_340341_OPTIONB"
 command = { type = trigger which = 340344 }
 command = { type = belligerence value = -5 }
 command = { type = domestic which = interventionism value = -2 }
@@ -743,11 +743,11 @@ country = JAP
 style = 2
 picture = "Japanese-Russian Meeting"
 
-name = "Pact of Vladivostok signed"
-desc = "In Vladivostok at the behest of their head of states a russian and japanese delegation signed a agreement to invade Mongolia together. After the defeat of Mongolia Russia will get their former land. In turn Russia will give us free reign within Mongolia."
+name = "EVT_340342_NAME"
+desc = "EVT_340342_DESC"
 
 action_a = {
-name = "Excellent"
+name = "EVT_340342_OPTIONA"
 command = { type = relation which = RUS value = 25 }
 command = { type = dissent value = -5 }
 }
@@ -761,11 +761,11 @@ country = RUS
 style = 2
 picture = "Japanese-Russian Meeting"
 
-name = "Pact of Vladivostok signed"
-desc = "In Vladivostok at the behest of their head of states a russian and japanese delegation signed a agreement to invade Mongolia together. After the defeat of Mongolia we will get our stolen territories back. In turn we will give Japan free reign within Mongolia."
+name = "EVT_340343_NAME"
+desc = "EVT_340343_DESC"
 
 action_a = {
-name = "Excellent"
+name = "EVT_340343_OPTIONA"
 command = { type = relation which = JAP value = 25 }
 command = { type = dissent value = -5 }
 }
@@ -779,11 +779,11 @@ country = JAP
 style = 2
 picture = "Japanese-Russian Meeting"
 
-name = "Russia refused our offer"
-desc = "Russia refused our proposition to invade Mongolia together. Once again the Russian state has shown the world its utter weakness."
+name = "EVT_340344_NAME"
+desc = "EVT_340344_DESC"
 
 action_a = {
-name = "So we have to do it alone."
+name = "EVT_340344_OPTIONA"
 command = { type = setflag which = JAP_ALONE_MON }
 command = { type = relation which = RUS value = -25 }
 command = { type = dissent value = 1 }
@@ -840,11 +840,11 @@ date = { day = 1 month = july year = 1937 }
 offset = 14
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Operation Tsunami"
-desc = "The Pact of Vladivostok was signed. On the Mongolian borders Russian and Japanese troops are waiting for orders. It's time to invade this rogue state and bring stability to this part of world !"
+name = "EVT_340345_NAME"
+desc = "EVT_340345_DESC"
 
 action_a = {
-name = "Declare war on Mongolia."
+name = "EVT_340345_OPTIONA"
 command = { type = war which = MON }
 command = { type = trigger which = 340346 }
 command = { type = ai which = "kaiserreich/switch/JAP_MON_INV.ai" }
@@ -859,17 +859,17 @@ country = RUS
 style = 2
 picture = "mongolia1"
 
-name = "Operation Tsunami"
-desc = "The Pact of Vladivostok was signed. On the Mongolian borders Russian and Japanese troops are waiting for orders. It's time to retake back what is ours !."
+name = "EVT_340346_NAME"
+desc = "EVT_340346_DESC"
 
 action_a = {
-name = "Declare war on Mongolia."
+name = "EVT_340346_OPTIONA"
 ai_chance = 100
 command = { type = war which = MON }
 }
 
 action_b = {
-name = "We have changed our mind"
+name = "EVT_340346_OPTIONB"
 ai_chance = 0
 command = { type = relation which = JAP value = -100 }
 command = { type = dissent value = 5 }
@@ -934,8 +934,8 @@ date = { day = 1 month = april year = 1937 }
 offset = 20
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Choosing strategic directions"
-desc = "With territory of Siberia secured, we must now choose our next step in reienforcing co-prosperity sphere. We can either continue our expansion westwards, into Mongolia our choose different startegic direction."
+name = "EVT_340369_NAME"
+desc = "EVT_340369_DESC"
 
 
 action_a = {
@@ -978,7 +978,7 @@ control = { province = 1162 data = SIB }
 }
 }
 }
-name = "Mongolia is a threat to the stability of the region, it must be dealt with!"
+name = "EVT_340369_OPTIONA"
 command = { type = domestic which = interventionism value = 2 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = relation which = MON value = -100 }
@@ -992,7 +992,7 @@ command = { trigger = { puppet = { country = MAN country = JAP } } type = allian
 
 action_b = {
 ai_chance = 30
-name = "Let us orientate anew"
+name = "EVT_340369_OPTIONB"
 command = { type = clrflag which = JAP_RUS_CAMP }
 command = { type = clrflag which = JAP_SIB_CAMP }
 command = { type = trigger which = 340203 }
@@ -1000,7 +1000,7 @@ command = { type = trigger which = 340203 }
 
 action_c = {
 ai_chance = 10
-name = "Abandon expansionism, we have achieved our goals !"
+name = "EVT_340369_OPTIONC"
 command = { type = domestic which = interventionism value = -9 }
 command = { type = domestic which = defense_lobby value = -9 }
 command = { type = relation which = GER value = 25 }
@@ -1046,12 +1046,12 @@ date = { day = 1 month = april year = 1937 }
 offset = 20
 deathdate = { day = 29 month = june year = 1960 }
 
-name = "Choosing strategic directions"
-desc = "With territory of Mongolia under our firm control, we must now choose our next step in reienforcing co-prosperity sphere. We can either continue our expansion northwards, into Siberia our choose different startegic direction."
+name = "EVT_340370_NAME"
+desc = "EVT_340370_DESC"
 
 action_a = {
 ai_chance = 30
-name = "Focus upon Russia"
+name = "EVT_340370_OPTIONA"
 trigger = {
 OR = {
 AND = {
@@ -1097,7 +1097,7 @@ command = { type = event which = 340301 where = GER when = 4  }
 
 action_b = {
 ai_chance = 30
-name = "Focus upon Siberia"
+name = "EVT_340370_OPTIONB"
 trigger = {
 AND = {
 NOT = {
@@ -1125,14 +1125,14 @@ command = { type = ai which = "kaiserreich/switch/JAP_RUS_PREP.ai" }
 
 action_c = {
 ai_chance = 30
-name = "Let us orientate anew"
+name = "EVT_340370_OPTIONC"
 command = { type = clrflag which = JAP_MON_CAMP }
 command = { type = trigger which = 340203 }
 }
 
 action_d = {
 ai_chance = 10
-name = "Abandon expansionism, we have achieved our goals !"
+name = "EVT_340370_OPTIOND"
 command = { type = domestic which = interventionism value = -9 }
 command = { type = domestic which = defense_lobby value = -9 }
 command = { type = relation which = GER value = 25 }
@@ -1203,13 +1203,13 @@ date = { day = 1 month = april year = 1937 }
 offset = 20
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Choosing strategic directions"
-desc = "With territory of Siberia and Mongolia secured, we must now choose our next step in reienforcing co-prosperity sphere. We can either choose to expand in different startegic directions or give up our expansionist plans."
+name = "EVT_340361_NAME"
+desc = "EVT_340361_DESC"
 
 
 action_b = {
 ai_chance = 60
-name = "Let us orientate anew"
+name = "EVT_340361_OPTIONA"
 command = { type = clrflag which = JAP_RUS_CAMP }
 command = { type = clrflag which = JAP_SIB_CAMP }
 command = { type = clrflag which = JAP_MON_CAMP }
@@ -1218,7 +1218,7 @@ command = { type = trigger which = 340203 }
 
 action_c = {
 ai_chance = 40
-name = "Abandon expansionism, we have achieved our goals !"
+name = "EVT_340361_OPTIONB"
 command = { type = domestic which = interventionism value = -9 }
 command = { type = domestic which = defense_lobby value = -9 }
 command = { type = relation which = GER value = 25 }
@@ -1276,11 +1276,11 @@ date = { day = 1 month = july year = 1937 }
 offset = 14
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Operation Tsunami"
-desc = "On the Mongolian borders Japanese troops are waiting for orders. It's time to invade Mongolia and bring stability to this part of world !"
+name = "EVT_340371_NAME"
+desc = "EVT_340371_DESC"
 
 action_a = {
-name = "Declare war on Mongolia"
+name = "EVT_340371_OPTIONA"
 command = { type = war which = MON }
 command = { type = sleepevent which = 340340 }
 command = { type = ai which = "kaiserreich/switch/JAP_MON_INV.ai" }
@@ -1322,11 +1322,11 @@ date = { day = 1 month = may year = 1937 }
 offset = 14
 deathdate = { day = 29 month = april year = 1938 }
 
-name = "Operation Kuma"
-desc = "On the Siberian borders Japanese troops are waiting for orders. It's time to invade Siberia and bring stability to this part of world !"
+name = "EVT_340372_NAME"
+desc = "EVT_340372_DESC"
 
 action_a = {
-name = "Declare war on Siberia"
+name = "EVT_340372_OPTIONA"
 command = { type = war which = SIB }
 }
 }
@@ -1371,11 +1371,11 @@ date = { day = 3 month = june year = 1938 }
 offset = 7
 deathdate = { day = 29 month = september year = 1960 }
 
-name = "Operation Kuma"
-desc = "Belong the Manchurian and Transamurian borders our troops are positioned and ready to invade. First of all we should bring Russian pacific coast under our control and defeat Mongolia as far as possible. Simultaneously we should push forward Yakutsk and Lake Baikal."
+name = "EVT_340375_NAME"
+desc = "EVT_340375_DESC"
 
 action_a = {
-name = "Declare war."
+name = "EVT_340375_OPTIONA"
 command = {
 trigger = {
 OR = {
@@ -1478,12 +1478,12 @@ date = { day = 4 month = april year = 1937 }
 offset = 3
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Mongolia is defeated"
-desc = "Joint armed forces of Japan and Russia forced Mongolians to cease futile resistance and sign unconditional surrender before representatives of both nations. Fate of Mongolia is now in our hand."
+name = "EVT_341030_NAME"
+desc = "EVT_341030_DESC"
 
 action_a = {
 ai_chance = 10
-name = "Occupy Mongolia !"
+name = "EVT_341030_OPTIONA"
 command = { type = setflag which = MON_DEFEATED_BY_JAP }
 command = { type = setflag which = MON_ANNEXED_BY_JAP }
 command = { type = inherit which = MON }
@@ -1502,7 +1502,7 @@ command = { type = event which = 341080 where = JAP when = 2  }
 
 action_b = {
 ai_chance = 90
-name = "Install friendly regime..."
+name = "EVT_341030_OPTIONB"
 command = { type = flag_ext where = MON  }
 command = { type = name where = MON  }
 command = { type = setflag which = MON_DEFEATED_BY_JAP }
@@ -1543,12 +1543,12 @@ date = { day = 4 month = april year = 1937 }
 offset = 3
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Mongolia is defeated"
-desc = "Armed forces of Japanese Empire forced Mongolians to cease their futile resistance and sign unconditional surrender before representatives of our nation. Fate of Mongolia is now in our hand."
+name = "EVT_341031_NAME"
+desc = "EVT_341031_DESC"
 
 action_a = {
 ai_chance = 10
-name = "Occupy Mongolia !"
+name = "EVT_341031_OPTIONA"
 command = { type = setflag which = MON_DEFEATED_BY_JAP }
 command = { type = setflag which = MON_ANNEXED_BY_JAP }
 command = { type = inherit which = MON }
@@ -1567,7 +1567,7 @@ command = { type = event which = 341080 where = JAP when = 2  }
 
 action_b = {
 ai_chance = 90
-name = "Install friendly regime..."
+name = "EVT_341031_OPTIONB"
 command = { type = flag_ext where = MON  }
 command = { type = name where = MON  }
 command = { type = setflag which = MON_DEFEATED_BY_JAP }
@@ -1595,13 +1595,13 @@ random = no
 country = RUS
 picture = "mongolia1"
 
-name = "Mongolia in disarray"
-desc = "With territories of Mongolian state in turmoil, we have great oportunity to seize control over stolen parts of Trans-Siberian railway. There is very little that either Mongolia or Japan can do to stop us at this point."
+name = "EVT_340366_NAME"
+desc = "EVT_340366_DESC"
 style = 2
 
 action_a = {
 ai_chance = 100
-name = "Seize Northern Mongolia !"
+name = "EVT_340366_OPTIONA"
 command = { type = addcore which = 1167 }
 command = { type = addcore which = 1168 }
 command = { type = addcore which = 1169 }
@@ -1616,7 +1616,7 @@ command = { trigger = { NOT = { exists = MON } } type = trigger which = 340365 }
 
 action_b = {
 ai_chance = 0
-name = "Rather not"
+name = "EVT_340366_OPTIONB"
 command = { type = relation which = JAP value = 50 }
 command = { type = relation which = MON value = 50 }
 command = { type = dissent value = 1 }
@@ -1630,13 +1630,13 @@ random = no
 country = SOV
 picture = "mongolia1"
 
-name = "Mongolia in disarray"
-desc = "With territories of Mongolian state in turmoil, we have great oportunity to seize control over stolen parts of Trans-Siberian railway. There is very little that either Mongolia or Japan can do to stop us at this point."
+name = "EVT_340362_NAME"
+desc = "EVT_340362_DESC"
 style = 2
 
 action_a = {
 ai_chance = 100
-name = "Seize Northern Mongolia !"
+name = "EVT_340362_OPTIONA"
 command = { type = addcore which = 1167 }
 command = { type = addcore which = 1168 }
 command = { type = addcore which = 1169 }
@@ -1651,7 +1651,7 @@ command = { trigger = { NOT = { exists = MON } } type = trigger which = 340364 }
 
 action_b = {
 ai_chance = 0
-name = "Rather not"
+name = "EVT_340362_OPTIONB"
 command = { type = relation which = JAP value = 50 }
 command = { type = relation which = MON value = 50 }
 command = { type = dissent value = 1 }
@@ -1665,13 +1665,13 @@ random = no
 country = MON
 ## triggered by 3967393
 
-name = "Russia seize northern Mongolia !"
-desc = "With our state in chaos Russia used this oportunity to seize control over parts of the northern Mongolia. Currently there is very little that we can do to stop Russia at this point."
+name = "EVT_340367_NAME"
+desc = "EVT_340367_DESC"
 style = 2
 
 
 action_a = {
-name = "There is nothing we can do"
+name = "EVT_340367_OPTIONA"
 command = { type = secedeprovince which = RUS value = 1167 }
 command = { type = secedeprovince which = RUS value = 1168 }
 command = { type = secedeprovince which = RUS value = 1169 }
@@ -1689,14 +1689,14 @@ random = no
 country = JAP
 ## triggered by 3967393
 
-name = "Russia seize northern Mongolia !"
-desc = "With newly conquered territory of Mongolia in chaos, Russians used this oportunity to seize control over disputed territory around Trans-siberian railway. Currently there is very little that we can do to stop Russian state at this point."
+name = "EVT_340365_NAME"
+desc = "EVT_340365_DESC"
 style = 2
 
 
 action_a = {
 ai_chance = 100
-name = "There is nothing we can do"
+name = "EVT_340365_OPTIONA"
 command = { type = secedeprovince which = RUS value = 1167 }
 command = { type = secedeprovince which = RUS value = 1168 }
 command = { type = secedeprovince which = RUS value = 1169 }
@@ -1708,7 +1708,7 @@ command = { type = dissent value = 1 }
 }
 action_b = {
 ai_chance = 0
-name = "This means WAR !"
+name = "EVT_340365_OPTIONB"
 command = { type = war which = RUS }
 command = { type = dissent value = 1 }
 
@@ -1721,14 +1721,14 @@ random = no
 country = MON
 ## triggered by 3967393
 
-name = "Soviets seize northern Mongolia !"
-desc = "With our state in chaos Soviets used this oportunity to seize control over parts of the northern Mongolia. Currently there is very little that we can do to stop Soviets at this point."
+name = "EVT_340363_NAME"
+desc = "EVT_340363_DESC"
 style = 2
 
 
 action_a = {
 ai_chance = 100
-name = "There is nothing we can do"
+name = "EVT_340363_OPTIONA"
 command = { type = secedeprovince which = SOV value = 1167 }
 command = { type = secedeprovince which = SOV value = 1168 }
 command = { type = secedeprovince which = SOV value = 1169 }
@@ -1746,14 +1746,14 @@ random = no
 country = JAP
 ## triggered by 3967393
 
-name = "Soviets seize northern Mongolia !"
-desc = "With newly conquered territory of Mongolia in chaos, Soviets used this oportunity to seize control over Singapore. Currently there is very little that we can do to stop Soviet state at this point."
+name = "EVT_340364_NAME"
+desc = "EVT_340364_DESC"
 style = 2
 
 
 action_a = {
 ai_chance = 100
-name = "There is nothing we can do"
+name = "EVT_340364_OPTIONA"
 command = { type = secedeprovince which = SOV value = 1167 }
 command = { type = secedeprovince which = SOV value = 1168 }
 command = { type = secedeprovince which = SOV value = 1169 }
@@ -1765,7 +1765,7 @@ command = { type = dissent value = 1 }
 }
 action_b = {
 ai_chance = 0
-name = "This means WAR !"
+name = "EVT_340364_OPTIONB"
 command = { type = war which = SOV }
 command = { type = dissent value = 1 }
 
@@ -1780,11 +1780,11 @@ country = RUS
 style = 2
 picture = "mongolia1"
 
-name = "Mongolia is defeated"
-desc = "Joined armed forces of Japan and Russia forced Mongolians to cease futile resistance and sign unconditional surrender before representatives of both nations. Fate of Mongolia is now in our hands."
+name = "EVT_341032_NAME"
+desc = "EVT_341032_DESC"
 
 action_a = {
-name = "We are victorious !"
+name = "EVT_341032_OPTIONA"
 command = { type = peace which = MON value = 0 }
 command = { type = peace which = TIB value = 0 }
 command = { type = secedeprovince which = JAP value = 1268 }
@@ -1819,11 +1819,11 @@ country = MON
 style = 2
 picture = "mongolia1"
 
-name = "A new overlord"
-desc = "Mongolia becomes Japanese ally."
+name = "EVT_341033_NAME"
+desc = "EVT_341033_DESC"
 
 action_a = {
-name = "At least we survived..."
+name = "EVT_341033_OPTIONA"
 command = { type = secederegion which = JAP value = "Far East Siberia" }
 command = { type = secederegion which = JAP value = "Irkutsk" }
 command = { type = secederegion which = JAP value = "Krasnoyarsk" }
@@ -2313,12 +2313,12 @@ date = { day = 4 month = april year = 1937 }
 offset = 2
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Partition of Mongolia"
-desc = "According to the Pact of Vladivostok Japan will be allowed to occupy territories of 1918 Mongolia while Russia will be able to retain stolen parts of our territory."
+name = "EVT_341041_NAME"
+desc = "EVT_341041_DESC"
 
 action_a = {
 ai_chance = 100
-name = "Honor the agreement"
+name = "EVT_341041_OPTIONA"
 command = { type = secedeprovince which = RUS value = 1167 }
 command = { type = secedeprovince which = RUS value = 1168 }
 command = { type = secedeprovince which = RUS value = 1169 }
@@ -2333,7 +2333,7 @@ command = { type = clrflag which = MON_ANNEXED_BY_JAP }
 
 action_b = {
 ai_chance = 0
-name = "Don't let us stop fighting. Mongolia was only a warm-up."
+name = "EVT_341041_OPTIONB"
 command = { type = trigger which = 341042 }
 command = { type = war which = RUS }
 command = { type = clrflag which = JAP_RUS_PACT }
@@ -2349,11 +2349,11 @@ country = RUS
 style = 2
 picture = "Japan"
 
-name = "Japanese tratchery"
-desc = "Japan deceived us. We are now target of Japanese aggression."
+name = "EVT_341042_NAME"
+desc = "EVT_341042_DESC"
 
 action_a = {
-name = "May they bleed to death."
+name = "EVT_341042_OPTIONA"
 command = {  }
 }
 }
@@ -2366,11 +2366,11 @@ country = RUS
 style = 2
 picture = "mongolia1"
 
-name = "Partition of Mongolia"
-desc = "According to the Pact of Vladivostok Japan will be allowed to occupy territories of 1918 Mongolia while Russia will be able to retain stolen parts of our territory."
+name = "EVT_341043_NAME"
+desc = "EVT_341043_DESC"
 
 action_a = {
-name = "Honor the agreement."
+name = "EVT_341043_OPTIONA"
 command = { type = secedeprovince which = JAP value = 1119 }
 command = { type = secedeprovince which = JAP value = 1123 }
 command = { type = secedeprovince which = JAP value = 1125 }
@@ -2406,14 +2406,14 @@ date = { day = 1 month = april year = 1937 }
 offset = 2
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Partition of Mongolia"
-desc = "According to the Pact of Vladivostok Japan will be allowed to occupy territories of 1918 Mongolia while Russia will be able to retain stolen parts of our territory."
+name = "EVT_341044_NAME"
+desc = "EVT_341044_DESC"
 
 
 
 action_a = {
 ai_chance = 100
-name = "Honor the agreement"
+name = "EVT_341044_OPTIONA"
 command = { type = trigger which = 341045 }
 command = { type = trigger which = 341046 }
 command = { type = trigger which = 340359 }
@@ -2429,7 +2429,7 @@ command = { type = clrflag which = MON_ALLIED_WITH_JAP }
 
 action_b = {
 ai_chance = 0
-name = " Don't let us stop fighting. Mongolia was only a warm-up."
+name = "EVT_341044_OPTIONB"
 command = { type = trigger which = 341042 }
 command = { type = war which = RUS }
 command = { type = clrflag which = JAP_RUS_PACT }
@@ -2445,11 +2445,11 @@ country = RUS
 style = 2
 picture = "mongolia1"
 
-name = "Partition of Mongolia"
-desc = "According to the Pact of Vladivostok Japan will be allowed to occupy whole 1918 Mongoli while Russia retains control over territories stole from us by Mongolia in 1920."
+name = "EVT_341045_NAME"
+desc = "EVT_341045_DESC"
 
 action_a = {
-name = "Honor the agreement"
+name = "EVT_341045_OPTIONA"
 command = { type = secedeprovince which = MON value = 1119 }
 command = { type = secedeprovince which = MON value = 1123 }
 command = { type = secedeprovince which = MON value = 1125 }
@@ -2469,11 +2469,11 @@ country = MAN
 style = 2
 picture = "mongolia1"
 
-name = "Partition of Mongolia"
-desc = "According to the Pact of Vladivostok Japan will be allowed to occupy whole 1918 Mongoli while Russia retains control over territories stole from us by Mongolia in 1920."
+name = "EVT_340359_NAME"
+desc = "EVT_340359_DESC"
 
 action_a = {
-name = "Honor the agreement"
+name = "EVT_340359_OPTIONA"
 command = { type = secedeprovince which = RUS value = 1167 }
 command = { type = secedeprovince which = RUS value = 1168 }
 command = { type = secedeprovince which = RUS value = 1169 }
@@ -2494,11 +2494,11 @@ style = 2
 picture = "mongolia1"
 
 
-name = "Partition of Mongolia"
-desc = "According to the Pact of Vladivostok Russia claims their former territories."
+name = "EVT_341046_NAME"
+desc = "EVT_341046_DESC"
 
 action_a = {
-name = "Transfer territories"
+name = "EVT_341046_OPTIONA"
 command = { type = secedeprovince which = RUS value = 1167 }
 command = { type = secedeprovince which = RUS value = 1168 }
 command = { type = secedeprovince which = RUS value = 1169 }
@@ -2540,12 +2540,12 @@ date = { day = 4 month = april year = 1937 }
 offset = 250
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Status of Mongolia"
-desc = "We have kept territory of Mongolia under direct military control for some time. But some members of general staff are suggesting to release independent Mongolia as next member of co-prosperity sphere.."
+name = "EVT_341050_NAME"
+desc = "EVT_341050_DESC"
 
 action_a = {
 ai_chance = 100
-name = "End the military occupation"
+name = "EVT_341050_OPTIONA"
 command = { type = independence which = MON value = 1 when = 0 }
 command = { type = make_puppet which = MON }
 command = { type = event which = 341080 where = JAP when = 2  }
@@ -2553,7 +2553,7 @@ command = { type = event which = 341080 where = JAP when = 2  }
 
 action_b = {
 ai_chance = 0
-name = "Keep Mongolia under direct control"
+name = "EVT_341050_OPTIONB"
 command = { type = dissent value = 2 }
 }
 }
@@ -2584,17 +2584,17 @@ date = { day = 4 month = april year = 1937 }
 offset = 14
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "Transfer of territories"
-desc = "Japanese empire launched succesfull assault against mad Khan of Mongolia, which resulted in complete occupation of Mongolia, including territories stolen from us by Mongolia in 1920. Some members of our cabinet suggest to strike a deal with Japan to get our territories back. What shall we do ?"
+name = "EVT_341047_NAME"
+desc = "EVT_341047_DESC"
 
 action_a = {
 ai_chance = 100
-name = "Let us offer a deal to Japan"
+name = "EVT_341047_OPTIONA"
 command = { type = trigger  which = 341048 }
 }
 action_a = {
 ai_chance = 0
-name = "Never !"
+name = "EVT_341047_OPTIONB"
 command = { type = dissent value = 2 }
 }
 }
@@ -2607,12 +2607,12 @@ country = JAP
 style = 2
 picture = "mongolia1"
 
-name = "Transfer of territories"
-desc = "Russian want to buy the northern provinces of the former Mongolia. This territory was annexed in 1920 by mad baron Sternberg and it contains long section of critically important Transsiberian railway."
+name = "EVT_341048_NAME"
+desc = "EVT_341048_DESC"
 
 action_a = {
 ai_chance = 100
-name = "Accept their offer"
+name = "EVT_341048_OPTIONA"
 command = { type = secedeprovince which = RUS value = 1167 }
 command = { type = secedeprovince which = RUS value = 1168 }
 command = { type = secedeprovince which = RUS value = 1169 }
@@ -2629,7 +2629,7 @@ command = { type = rarematerialspool value = 10000 }
 
 action_b = {
 ai_chance = 0
-name = "Refuse !"
+name = "EVT_341048_OPTIONB"
 command = { type = relation which = RUS value = -20 }
 }
 }
@@ -2643,12 +2643,12 @@ country = RUS
 style = 2
 picture = "mongolia1"
 
-name = "Transfer of territories"
-desc = "Japan accepted our proposal and territories stolen in 1920 once again belong to us."
+name = "EVT_341049_NAME"
+desc = "EVT_341049_DESC"
 
 action_a = {
 ai_chance = 100
-name = "These lands are ours again."
+name = "EVT_341049_OPTIONA"
 command = { type = addcore which = 1167     }
 command = { type = addcore which = 1168     }
 command = { type = addcore which = 1169     }
@@ -2678,12 +2678,12 @@ trigger = {
 minister = 94105
 }
 
-name = "Fate of Mad Baron"
-desc = "After defeat of Mongolia state, baron Roman Nikolai Maximilian von Ungern-Sternberg, known as mad baron fell into our hands. What shall we do with this dangerous lunatic ?"				#
+name = "EVT_341080_NAME"
+desc = "EVT_341080_DESC"				#
 
 action_a = {
 ai_chance = 10
-name = "We don't fear him. Let him be"
+name = "EVT_341080_OPTIONA"
 command = { type = dissent value = 2 }
 command = { type = relation which = RUS value = -20 }
 command = { type = relation which = MON value = 20 }
@@ -2691,7 +2691,7 @@ command = { type = relation which = MON value = 20 }
 
 action_b = {
 ai_chance = 80
-name = "Extradite him to Russia"
+name = "EVT_341080_OPTIONB"
 command = { type = dissent value = -1 }
 command = { type = relation which = RUS value = 50 }
 command = { type = relation which = MON value = -40 }
@@ -2699,7 +2699,7 @@ command = { type = trigger which = 341081 }
 }
 action_c = {
 ai_chance = 10
-name = "He is a danger. Dispel him."
+name = "EVT_341080_OPTIONC"
 command = { type = dissent value = 1 }
 command = { type = relation which = RUS value = -10 }
 command = { type = relation which = MON value = -10 }
@@ -2707,7 +2707,7 @@ command = { type = relation which = MON value = -10 }
 
 action_d = {
 ai_chance = 10
-name = "He is too dangerous. Imprison him."
+name = "EVT_341080_OPTIOND"
 command = { type = setflag which = STB_FLIGHT  }
 command = { type = dissent value = -5 }
 command = { type = relation which = RUS value = 10 }
@@ -2722,10 +2722,10 @@ country = RUS
 style = 2
 picture = "sternberg"
 
-name = "Sternberg arrived"
-desc = "The Japanese Empire - after conquering Mongolia - sent us this dangerous enemy of Russia as a gift. What should we do to this madman and traitor of mother Russia ?"
+name = "EVT_341081_NAME"
+desc = "EVT_341081_DESC"
 action_a = {
-name = "Hang him high!"
+name = "EVT_341081_OPTIONA"
 ai_chance = 70
 command = { type = dissent value = -2 }
 command = { type = sleepleader which = 330025 }
@@ -2737,7 +2737,7 @@ command = { type = sleepminister which = 94136 }
 }
 
 action_b = {
-name = "Exile him to the worst part of Siberia"
+name = "EVT_341081_OPTIONB"
 ai_chance = 30
 command = { type = dissent value = -1 }
 command = { type = sleepleader which = 330025 }
@@ -2767,11 +2767,11 @@ date = { day = 4 month = april year = 1937 }
 offset = 14
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Mad Baron escaped !"
-desc = "A fanatic supporter of overthrowned mad baron was able to free him. We should have open eyes in Mongolia for he might try to return...."
+name = "EVT_341100_NAME"
+desc = "EVT_341100_DESC"
 
 action_a = {
-name = "Damn !"
+name = "EVT_341100_OPTIONA"
 command = { type = dissent value = 2 }
 command = { type = clrflag which = STB_FLIGHT }
 }
@@ -2808,7 +2808,7 @@ exists = SOV
 }
 }
 
-name = "A new alliance ?"
+name = "EVT_341082_NAME"
 desc = "EVT_9981_DESC"
 
 date = { day = 1 month = january year = 1936 }
@@ -2817,14 +2817,14 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
 ai_chance = 50
-name = "Try to invite Russia into our alliance !"
+name = "EVT_341082_OPTIONA"
 command = { type = trigger which = 341084 }
 command = { type = dissent value = 1 }
 }
 
 action_b = {
 ai_chance = 50
-name = "We dont need them !"
+name = "EVT_341082_OPTIONB"
 command = { type = relation which = RUS value = -20 }
 command = { type = dissent value = -2 }
 }
@@ -2837,12 +2837,12 @@ country = RUS
 style = 2
 picture = "japan"
 
-name = "Alliance with Japan ?"
-desc = "Recent cooperation with Japan in conquest of Mongolia greatly strengthen mutual relations between two great nations. Japan empire decided to offer us participation in their alliance block, which is clearly aimed against German dominance in Pacific and Europe and want to form an alliance with us. How we shall respond ?"
+name = "EVT_341084_NAME"
+desc = "EVT_341084_DESC"
 
 action_a = {
 ai_chance = 5
-name = "Accept their offer !"
+name = "EVT_341084_OPTIONA"
 command = { type = relation which = JAP value = 150 }
 command = { trigger = { alliance = { country = JAP country = PRI } } type = relation which = PRI value = 150 }
 command = { trigger = { alliance = { country = JAP country = MON } } type = relation which = MON value = 150 }
@@ -2862,7 +2862,7 @@ command = { type = trigger which = 341085 }
 
 action_b = {
 ai_chance = 60
-name = "Accept, but demand Primorsk and Northern Sakhalin !"
+name = "EVT_341084_OPTIONB"
 trigger = {
 OR = {
 AND = {
@@ -2904,7 +2904,7 @@ command = { trigger = { alliance = { country = JAP country = KOR } } type = rela
 
 action_b = {
 ai_chance = 40
-name = "Never !"
+name = "EVT_341084_OPTIONC"
 command = { type = relation which = JAP value = -50 }
 command = { type = relation which = GER value = 50 }
 }
@@ -2917,11 +2917,11 @@ country = JAP
 style = 2
 picture = "russiageo"
 
-name = "Russia joins Co-Prosperity Sphere"
-desc = "Russian state accepted our offer and entered military alliance with all members of Co-Prosperity Sphere."
+name = "EVT_341085_NAME"
+desc = "EVT_341085_DESC"
 
 action_a = {
-name = "A new power rises !"
+name = "EVT_341085_OPTIONA"
 command = { type = alliance which = RUS }
 command = { type = dissent value = -3 }
 command = { type = relation which = GER value = -50 }
@@ -2943,12 +2943,12 @@ country = JAP
 style = 2
 picture = "russiageo"
 
-name = "Russian demands"
-desc = "The Russians have agreed in principle to an alliance aimed against German Empire and its allies in Asia, but as a precondition of their direct military support they want the return of territories taken by Japan during the Russian civil war, namely northern Sakhalin and Primorsk."
+name = "EVT_341086_NAME"
+desc = "EVT_341086_DESC"
 
 action_a = {
 ai_chance = 50
-name = "Accept their demands !"
+name = "EVT_341086_OPTIONA"
 command = { type = alliance which = RUS }
 command = { type = dissent value = 3 }
 command = { type = relation which = GER value = -50 }
@@ -2967,7 +2967,7 @@ command = { trigger = { puppet = { country = PRI country = JAP  } } type = trigg
 
 action_b = {
 ai_chance = 50
-name = "Never !"
+name = "EVT_341086_OPTIONB"
 command = { type = relation which = RUS value = -50 }
 command = { type = relation which = GER value = 50 }
 command = { type = dissent value = -3 }
@@ -2981,13 +2981,13 @@ country = RUS
 style = 2
 
 
-name = "Transamur is Russian!"
-desc = "Facing the threat of Russian military force and deprived of the support of the local capitalists and the Japanese, Transamur's government is ready to collapse in the face of the popular will.  We can now do what we like with Transamur, but it has been independent for a long time and will be difficult to integrate into our country.  Perhaps some sort of compromise is needed ?"
+name = "EVT_341087_NAME"
+desc = "EVT_341087_DESC"
 picture = "Primorsk"
 
 action_a = {
 ai_chance = 85
-name = "No compromise - put leadership on trial and incorporate Transamur"
+name = "EVT_341087_OPTIONA"
 command = { type = dissent value = 2  }
 command = { type = inherit which = PRI  }
 command = { type = addcore which = 1191 }
@@ -3013,7 +3013,7 @@ command = { type = clrflag  which = SIB_PANIC }
 
 action_b = {
 ai_chance = 0
-name = "Establish a government of reconciliation: Kolchak for Prime Minister!"
+name = "EVT_341087_OPTIONB"
 trigger = { minister = 527001 }
 command = { type = dissent value = 5 }
 command = { type = inherit which = PRI  }
@@ -3039,7 +3039,7 @@ command = { type = headofgovernment which = 4198 }
 
 action_c = {
 ai_chance = 0
-name = "Administer Transamur as an autonomous zone. For now..."
+name = "EVT_341087_OPTIONC"
 command = { type = clrflag  which = SIB_PANIC }
 command = { type = make_puppet which = PRI }
 
@@ -3112,19 +3112,19 @@ date = { day = 4 month = april year = 1936 }
 offset = 14
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "Peace with Japanese Empire ?"
-desc = "Our military campaign against Japanese Empire has been military catasthrope so far. Nearly the whole of East-Siberia has been taken by Japan. Many politicians are demanding to sign peace with Japan and end this war, even if on our expense...."
+name = "EVT_341200_NAME"
+desc = "EVT_341200_DESC"
 
 action_a = {
 ai_chance = 50
-name = "Offer them the coast of pacific"
+name = "EVT_341200_OPTIONA"
 command = { type = trigger which = 341201 }
 command = { type = dissent value = 3 }
 }
 
 action_b = {
 ai_chance = 50
-name = "No ! We shall win !"
+name = "EVT_341200_OPTIONB"
 command = { type = dissent value = 4 }
 }
 }
@@ -3136,12 +3136,12 @@ country = JAP
 style = 2
 picture = "Japanese Parliament"
 
-name = "Russia's peace offer"
-desc = "Nearly the whole of East-Siberia has been taken by us. Now Russia begs for peace and offer us the Russian pacific coast. Shall we accept this offer ?"
+name = "EVT_341201_NAME"
+desc = "EVT_341201_DESC"
 
 action_a = {
 ai_chance = 60
-name = "Better than we expected, accept the conditions"
+name = "EVT_341201_OPTIONA"
 command = { type = trigger which =  341203 }
 command = { type = peace which = RUS value = 0 }
 command = { type = belligerence value = -5 }
@@ -3149,7 +3149,7 @@ command = { type = belligerence value = -5 }
 
 action_b = {
 ai_chance = 40
-name = "No Peace with the Russians !"
+name = "EVT_341201_OPTIONB"
 command = { type = trigger which = 341202 }
 command = { type = ai which = "kaiserreich/switch/JAP_RUS_INV2.ai" }
 command = { type = belligerence value = 10 }
@@ -3163,11 +3163,11 @@ country = RUS
 style = 2
 picture = "Mountain1"
 
-name = "Japan refuses peace offer"
-desc = "Japan refused our offer. Let them make regret their foolish decision."
+name = "EVT_341202_NAME"
+desc = "EVT_341202_DESC"
 
 action_a = {
-name = "The war goes on."
+name = "EVT_341202_OPTIONA"
 command = { type = dissent value = 5 }
 }
 }
@@ -3181,11 +3181,11 @@ country = RUS
 style = 2
 picture = "soviet_strategic_defeat"
 
-name = "Japan accepts peace offer"
-desc = "Now we have to fullfill the harh conditions of the peace treaty we have signed. But later we will take our provinces back !"
+name = "EVT_341203_NAME"
+desc = "EVT_341203_DESC"
 
 action_a = {
-name = "Transfer territories"
+name = "EVT_341203_OPTIONA"
 command = { type = secedeprovince which = JAP value = 1187  }
 command = { type = secedeprovince which = JAP value = 1188  }
 command = { type = secedeprovince which = JAP value = 1175  }
@@ -3215,12 +3215,12 @@ country = JAP
 style = 2
 picture = "Japan_victory3"
 
-name = "Japan accepts peace"
-desc = "Now the Russian pacific coast is in our hands. We can either keep it for ourselves or hand it over to our loyal puppet, Transamur."
+name = "EVT_341204_NAME"
+desc = "EVT_341204_DESC"
 
 action_a = {
 ai_chance = 100
-name = "Give it to Transamur."
+name = "EVT_341204_OPTIONA"
 command = { type = secedeprovince which = PRI value = 1187  }
 command = { type = secedeprovince which = PRI value = 1188  }
 command = { type = secedeprovince which = PRI value = 1175  }
@@ -3241,7 +3241,7 @@ command = { type = relation which = PRI value = 30 }
 
 action_b = {
 ai_chance = 0
-name = "Keep it."
+name = "EVT_341204_OPTIONB"
 command = { type = relation which = PRI value = -30 }
 }
 }
@@ -3397,19 +3397,19 @@ date = { day = 4 month = april year = 1936 }
 offset = 14
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "Peace with Japanese Empire ?"
-desc = "Japanese troops reached Ural and are currently directly threatening european part of our homeland . To prevent a total defeat we should try to appease Japan by offering them entire Siberia."
+name = "EVT_341210_NAME"
+desc = "EVT_341210_DESC"
 
 action_a = {
 ai_chance = 100
-name = "Offer them Siberia"
+name = "EVT_341210_OPTIONA"
 command = { type = trigger which = 341211  }
 command = { type = dissent value = 10 }
 }
 
 action_b = {
 ai_chance = 0
-name = "The turning point is near"
+name = "EVT_341210_OPTIONB"
 command = { type = dissent value = 5 }
 }
 }
@@ -3420,12 +3420,12 @@ country = JAP
 style = 2
 picture = "Japanese Parliament"
 
-name = "Russia offers Siberia for peace"
-desc = "Our glorious troops have reached the Ural mountains. Humiliated Russia leadership is offering us control over whole Sibeira, if we sign peace with broken Russian state. On the other hand we have reached our main target to bring Siberia under direct military control and continuing this military struggle would serve no purpose."
+name = "EVT_341211_NAME"
+desc = "EVT_341211_DESC"
 
 action_a = {
 ai_chance = 100
-name = "Better than we expected, accept the conditions"
+name = "EVT_341211_OPTIONA"
 command = { type = trigger which =  341213 }
 command = { type = peace which = RUS value = 0 }
 command = { type = belligerence value = -5 }
@@ -3433,7 +3433,7 @@ command = { type = belligerence value = -5 }
 
 action_b = {
 ai_chance = 0
-name = "No Peace with the Russians!"
+name = "EVT_341211_OPTIONB"
 command = { type = trigger which = 341212 }
 command = { type = belligerence value = 5 }
 }
@@ -3446,11 +3446,11 @@ country = RUS
 style = 2
 picture = "Mountain1"
 
-name = "Japan refuses peace offer"
-desc = "Japan refused our generous offer. Let them make regret their foolish decision."
+name = "EVT_341212_NAME"
+desc = "EVT_341212_DESC"
 
 action_a = {
-name = "The war goes on"
+name = "EVT_341212_OPTIONA"
 command = {   }
 }
 }
@@ -3462,11 +3462,11 @@ country = RUS
 style = 2
 picture = "soviet_strategic_defeat"
 
-name = "Japan accepts peace offer"
-desc = "No we have to fullfill the conditions. At a later time we will get everything they havew stolen from us back !"
+name = "EVT_341213_NAME"
+desc = "EVT_341213_DESC"
 
 action_a = {
-name = "Transfer territories"
+name = "EVT_341213_OPTIONA"
 # Transamur's territories
 command = { type = secedeprovince which = JAP value = 1187  }
 command = { type = secedeprovince which = JAP value = 1188  }
@@ -3540,12 +3540,12 @@ country = JAP
 style = 2
 picture = "Nomonhan"
 
-name = "Fate of Siberia"
-desc = "Now Siberia is under our direct control. We can either release it as independent state, turn it over to Transamur or keep it for ourselves."
+name = "EVT_341214_NAME"
+desc = "EVT_341214_DESC"
 
 action_a = {
 ai_chance = 20
-name = "Create independent Siberia"
+name = "EVT_341214_OPTIONA"
 trigger = {
 NOT = {
 exists = SIB
@@ -3556,7 +3556,7 @@ command = { type = trigger which = 341215 }
 }
 action_b = {
 ai_chance = 75
-name = "Give it to Transamur"
+name = "EVT_341214_OPTIONB"
 trigger = {
 exists = PRI
 OR = {
@@ -3630,7 +3630,7 @@ command = { type = secedeprovince which = PRI value = 502 }
 }
 action_c = {
 ai_chance = 5
-name = "Keep it under direct control."
+name = "EVT_341214_OPTIONC"
 command = { type = dissent value = 5 }
 }
 }
@@ -3642,11 +3642,11 @@ country = JAP
 style = 2
 picture = "Japan"
 
-name = "Siberia becomes part of Co-Prosperity Sphere"
-desc = "Siberia becomes part of Greater East Asia Co-Prosperity Sphere. This is indeed a great day for Japaneese empire."
+name = "EVT_341215_NAME"
+desc = "EVT_341215_DESC"
 
 action_a = {
-name = "OK"
+name = "EVT_341215_OPTIONA"
 command = { type = make_puppet which = SIB }
 command = { type = set_relation which = SIB value = 200 }
 command = { type = access which = SIB }
@@ -3670,8 +3670,8 @@ exists = CXB
 }
 }
 
-name = "Status of Xibei Lianbang Yiyuan"
-desc = "Territory of Xibei Lianbang Yiyuan was occupied by Mongolian state since last Mongolian-Xibeian war which ended in total defeat of warlordism state. Upon hearing the collapse of his power, the inhabitants of this former state are demanding freedom. Granting them this wish would greatly weaken the Mongols. "
+name = "EVT_341216_NAME"
+desc = "EVT_341216_DESC"
 
 date = { day = 1 month = january year = 1936 }
 offset = 10
@@ -3679,14 +3679,14 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
 ai_chance = 60
-name = "Order Mongolia to secede Xibei Linbang Yinquan !"
+name = "EVT_341216_OPTIONA"
 command = { type = relation which = MON value = -50 }
 command = { type = trigger which = 341217 }
 }
 
 action_b = {
 ai_chance = 40
-name = "They can keep it !"
+name = "EVT_341216_OPTIONB"
 command = { type = relation which = MON value = 50 }
 }
 }
@@ -3699,10 +3699,10 @@ style = 2
 picture = "tannutuvadec"
 
 
-name = "The foreign ulimatum"
-desc = "Our foreign masters have sent us an ultimatum to release the occupied territory of Xibei Lianbang Yiyuan. We have no other choice, but to comply...."
+name = "EVT_341217_NAME"
+desc = "EVT_341217_DESC"
 action_a = {
-name = "Well, if they insist..."
+name = "EVT_341217_OPTIONA"
 command = { type = removecore which = 1270 }
 command = { type = removecore which = 1272 }
 command = { type = removecore which = 1273 }
@@ -3859,12 +3859,12 @@ date = { day = 3 month = april year = 1938 }
 offset = 14
 deathdate = { day = 29 month = september year = 1938 }
 
-name = "Outbreak of Trans-Siberian war"
-desc = "A minor conflict about a section of Trans-Siberian railroad culminated in war between Russia and Mongolia. This tranverses our plans of expansion. Maybe it is also a good opportunity for us to launch our long-prepared military operations."
+name = "EVT_341500_NAME"
+desc = "EVT_341500_DESC"
 
 action_a = {
 ai_chance = 75
-name = "Take the chance and declare war on Russia"
+name = "EVT_341500_OPTIONA"
 command = { type = war which = RUS }
 command = { type = ai which = "kaiserreich/switch/JAP_RUS_INV.ai" }
 command = { type = sleepevent which = 340502 }
@@ -3874,7 +3874,7 @@ command = { type = belligerence value = 5 }
 
 action_b = {
 ai_chance = 25
-name = "We are not prepared"
+name = "EVT_341500_OPTIONB"
 command = {  }
 }
 }
@@ -3907,18 +3907,18 @@ date = { day = 1 month = july year = 1937 }
 offset = 14
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "End of Trans-Siberian-War"
-desc = "With the defeat of Mongolia the Trans-Siberian-War is over. Since Russian state showed remarkable strength some cautious politicians and military leaders are asking to reorientate our expansion into safer areas..."
+name = "EVT_341502_NAME"
+desc = "EVT_341502_DESC"
 
 action_a = {
 ai_chance = 60
-name = "No changes. Proceed as planned"
+name = "EVT_341502_OPTIONA"
 command = { type = ai which = "kaiserreich/switch/JAP_MONRUS_PREP.ai" }
 }
 
 action_b = {
 ai_chance = 20
-name = "Let us orientate new"
+name = "EVT_341502_OPTIONB"
 command = { type = trigger which = 340204 }
 command = { type = clrflag which = JAP_MONRUS_CAMP }
 command = { type = clrflag which = JAP_MON_CAMP }
@@ -3928,7 +3928,7 @@ command = { type = clrflag which = JAP_SIB_CAMP }
 
 action_c = {
 ai_chance = 20
-name = "Give up our plans of expansion"
+name = "EVT_341502_OPTIONC"
 command = { type = domestic which = interventionism value = -9 }
 command = { type = domestic which = defense_lobby value = -9 }
 command = { type = relation which = GER value = 25 }
@@ -3984,12 +3984,12 @@ date = { day = 1 month = april year = 1937 }
 offset = 2
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Chaos in Siberia"
-desc = "The Russian government has proved itself unable to maintain the security of its Siberian territory. Regarding to our plans in this region we have to decide how to deal with this confusing situation."
+name = "EVT_341520_NAME"
+desc = "EVT_341520_DESC"
 
 action_a = {
 ai_chance = 80
-name = "Don´t change anything, continue with military preparations"
+name = "EVT_341520_OPTIONA"
 trigger = {
 OR = {
 alliance = { country = SIB country = SOV }
@@ -4003,7 +4003,7 @@ command = { }
 
 action_b = {
 ai_chance = 80
-name = "Let us focus upon Siberia"
+name = "EVT_341520_OPTIONB"
 trigger = {
 NOT = {
 alliance = { country = SIB country = SOV }
@@ -4022,7 +4022,7 @@ command = { type = clrflag which = JAP_MONRUS_CAMP }
 
 action_c = {
 ai_chance = 10
-name = "Let us orientate new"
+name = "EVT_341520_OPTIONC"
 command = { type = trigger which = 340204 }
 command = { type = clrflag which = JAP_RUS_CAMP }
 command = { type = clrflag which = JAP_SIB_CAMP }
@@ -4032,7 +4032,7 @@ command = { type = clrflag which = JAP_MONRUS_CAMP }
 
 action_d = {
 ai_chance = 10
-name = "Give up our plans of expansion"
+name = "EVT_341520_OPTIOND"
 command = { type = domestic which = interventionism value = -9 }
 command = { type = domestic which = defense_lobby value = -9 }
 command = { type = relation which = GER value = 25 }
@@ -4071,12 +4071,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 5
 deathdate = { day = 30 month = december year = 1963 }
 
-name = "Russians conquered Mukden"
-desc = "Russian state has launched succesfull invasion of our country and there is nothing we can do to stop their relentless advance. The most of commanders suggest to offer Russia surrender of our state to prevent useless deaths..."
+name = "EVT_341709_NAME"
+desc = "EVT_341709_DESC"
 
 action_a = {
 ai_chance = 100
-name = "Surrender"
+name = "EVT_341709_OPTIONA"
 command = { type = leave_alliance when = 1 }
 command = { type = trigger which = 341700 }
 command = { type = wakeminister which = 58052 }
@@ -4096,7 +4096,7 @@ command = { type = dissent value = 2 }
 
 action_b = {
 ai_chance = 0
-name = "Fight to death !"
+name = "EVT_341709_OPTIONB"
 command = { type = dissent value = 5 }
 
 }
@@ -4109,12 +4109,12 @@ country = RUS
 style = 2
 picture = "russianvicchina"
 
-name = "Defeat of Fengtien"
-desc = "After our troops reached Mukden a Fengtien republic was forced to sign  signed unconditional surrender."
+name = "EVT_341700_NAME"
+desc = "EVT_341700_DESC"
 
 action_a = {
 ai_chance = 80
-name = "Puppet them"
+name = "EVT_341700_OPTIONA"
 command = { type = peace which = MAN value = 1 }
 command = { type = make_puppet which = MAN }
 command = { type = dissent value = -5 }
@@ -4125,7 +4125,7 @@ command = { type = trigger which = 751123 }
 
 action_b = {
 ai_chance = 20
-name = "Annex them"
+name = "EVT_341700_OPTIONB"
 command = { type = inherit which = MAN  }
 command = { type = dissent value = 5 }
 }
@@ -4152,19 +4152,19 @@ date = { day = 3 month = april year = 1936 }
 offset = 10
 deathdate = { day = 29 month = september year = 1960 }
 
-name = "Hopeless war"
-desc = "Russian state has launched succesfull invasion of our country and there is nothing we can do to stop their relentless advance. The most of commanders suggest to offer Russia surrender of our state to prevent useless deaths..."
+name = "EVT_341710_NAME"
+desc = "EVT_341710_DESC"
 
 action_a = {
 ai_chance = 100
-name = "Surrender"
+name = "EVT_341710_OPTIONA"
 command = { type = leave_alliance when = 1 }
 command = { type = trigger which = 341701 }
 command = { type = dissent value = 2 }
 }
 action_b = {
 ai_chance = 0
-name = "Fight to death !"
+name = "EVT_341710_OPTIONB"
 command = { type = dissent value = 5 }
 
 }
@@ -4176,12 +4176,12 @@ country = RUS
 style = 2
 picture = "Russian_tanks"
 
-name = "Defeat of Transamur"
-desc = "Kolchak realized that further resistance of his pseudo-state against us is hopeless. He was left no other chice, but to sign unconditional surrender of his rebellious state."
+name = "EVT_341701_NAME"
+desc = "EVT_341701_DESC"
 
 action_a = {
 ai_chance = 5
-name = "Puppet them"
+name = "EVT_341701_OPTIONA"
 command = { type = peace which = PRI value = 1 }
 command = { type = make_puppet which = PRI }
 command = { type = dissent value = -5 }
@@ -4190,7 +4190,7 @@ command = { type = access which = PRI }
 }
 action_b = {
 ai_chance = 95
-name = "Annex them"
+name = "EVT_341701_OPTIONB"
 command = { type = inherit which = PRI  }
 command = { type = addcore which = 1191 }
 command = { type = addcore which = 1196 }
@@ -4264,17 +4264,17 @@ date = { day = 1 month = january year = 1936 }
 offset = 5
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "Fading Sun"
-desc = "We have lost the control of our continental provinces. Now our homeland is directly threatend. Maybe we could appease the Russians with offering Korea, Port Arthur, Sachalin and Kuril Islands."
+name = "EVT_341702_NAME"
+desc = "EVT_341702_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Offer territories for peace"
+name = "EVT_341702_OPTIONA"
 command = { type = trigger which = 341703 }
 }
 action_b = {
 ai_chance = 5
-name = "Fight on"
+name = "EVT_341702_OPTIONB"
 command = { type = dissent value = 10 }
 }
 }
@@ -4287,12 +4287,12 @@ country = RUS
 style = 2
 picture = "japsun"
 
-name = "Japan Offers Peace"
-desc = "After we brought their continental provinces under our control Japan begs for peace. Therefore they offer us Korea, Port Arthur, Sachalin and Kuril Islands in exchange for cessation of hostilities between our states."
+name = "EVT_341703_NAME"
+desc = "EVT_341703_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Finally the shame of 1905 has been vindicated!"
+name = "EVT_341703_OPTIONA"
 command = { type = trigger which = 341704 }
 command = { type = peace which = JAP value = 0 }
 command = { type = belligerence value = -5 }
@@ -4314,7 +4314,7 @@ command = { type = non_aggression which = RUS where = JAP }
 
 action_b = {
 ai_chance = 5
-name = "No peace with Tokyo!"
+name = "EVT_341703_OPTIONB"
 command = { type = belligerence value = 5 }
 }
 }
@@ -4326,11 +4326,11 @@ country = JAP
 style = 2
 picture = "japsun"
 
-name = "Second Treaty of Port Arthur"
-desc = "Now it is time to fullfill our conditions."
+name = "EVT_341704_NAME"
+desc = "EVT_341704_DESC"
 
 action_a = {
-name = "Transfer territories"
+name = "EVT_341704_OPTIONA"
 command = { type = secedeprovince which = RUS value = 1216 }
 command = { type = secedeprovince which = RUS value = 1240 }
 command = { type = secedeprovince which = RUS value = 1235 }
@@ -4626,12 +4626,12 @@ country = JAP
 style = 2
 picture = "Japan"
 
-name = "Japan down to the count"
-desc = "After the great defeat we have to go other ways."
+name = "EVT_341705_NAME"
+desc = "EVT_341705_DESC"
 
 
 action_a = {
-name = "We must return to our old ways of isolationism, Japan is a world in itself"
+name = "EVT_341705_OPTIONA"
 command = { type = leave_alliance }
 command = { type = domestic which = interventionism value = -9 }
 command = { type = domestic which = defense_lobby value = -9 }
@@ -4715,19 +4715,19 @@ country = RUS
 style = 2
 picture = "korea"
 
-name = "Fate of Korea"
-desc = "The Korean people have suffered for a very long time under Japan dominance.It is now in our power to grant them desired independence, if it is in accordance with our plans.."
+name = "EVT_341706_NAME"
+desc = "EVT_341706_DESC"
 
 action_a = {
 ai_chance = 99
-name = "Grant them independence"
+name = "EVT_341706_OPTIONA"
 command = { type = independence which = KOR value = 1 when = 0 }
 command = { type = trigger which = 341707 }
 command = { type = belligerence value = -5 }
 }
 action_b = {
 ai_chance = 1
-name = "Keep it under our direct control"
+name = "EVT_341706_OPTIONB"
 command = { type = 	province_revoltrisk which = 1230 value = 50 }
 command = { type = 	province_revoltrisk which = 1231 value = 50 }
 command = { type = 	province_revoltrisk which = 1232 value = 50 }
@@ -4751,12 +4751,12 @@ country = RUS
 style = 2
 picture = "Korea"
 
-name = "Independence of Korea"
-desc = "We have decided that it will be in Russias best interest, if independent Korea emerges on Russian border. But how much independence will it really have ?"
+name = "EVT_341707_NAME"
+desc = "EVT_341707_DESC"
 
 action_a = {
 ai_chance = 99
-name = "Puppet them"
+name = "EVT_341707_OPTIONA"
 command = { type = make_puppet which = KOR  }
 command = { type = set_relation which = KOR value = 200 }
 command = { type = access which = KOR }
@@ -4764,7 +4764,7 @@ command = { type = access which = KOR }
 
 action_b = {
 ai_chance = 1
-name = "Full independence."
+name = "EVT_341707_OPTIONB"
 command = { type = set_relation which = KOR value = 200 }
 command = { type = access which = KOR }
 }
@@ -4791,19 +4791,19 @@ date = { day = 3 month = april year = 1936 }
 offset = 14
 deathdate = { day = 29 month = september year = 1960 }
 
-name = "Port Arthur"
-desc = "After our defeat in the First Russo-Japanese-War 1905 we had to relinquish Port Arthur to the Japaneese empire. Now it is under our control once again."
+name = "EVT_341708_NAME"
+desc = "EVT_341708_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Keep it"
+name = "EVT_341708_OPTIONA"
 command = { type = addclaim which = 1219 }
 command = { type = dissent value = -3 }
 }
 
 action_b = {
 ai_chance = 5
-name = "Give it to Fengtien"
+name = "EVT_341708_OPTIONB"
 trigger = { OR = { alliance = { country = RUS country = MAN } puppet = { country = MAN country = RUS  } } }
 command = { type = secedeprovince which = MAN value = 1219 }
 command = { type = trigger which = 3417099 }
@@ -4812,7 +4812,7 @@ command = { type = trigger which = 3417099 }
 
 action_c = {
 ai_chance = 5
-name = "Give it to Chinnese Republic"
+name = "EVT_341708_OPTIONC"
 trigger = { OR = { alliance = { country = RUS country = CHI } puppet = { country = CHI country = RUS  } } }
 command = { type = secedeprovince which = CHI value = 1219 }
 
@@ -4820,7 +4820,7 @@ command = { type = secedeprovince which = CHI value = 1219 }
 
 action_d = {
 ai_chance = 5
-name = "Give it to Qing Empire"
+name = "EVT_341708_OPTIOND"
 trigger = { OR = { alliance = { country = RUS country = CSX } puppet = { country = CSX country = RUS  } } }
 command = { type = secedeprovince which = CSX value = 1219 }
 
@@ -4828,7 +4828,7 @@ command = { type = secedeprovince which = CSX value = 1219 }
 
 action_d = {
 ai_chance = 5
-name = "Give it to National government of China"
+name = "EVT_341708_OPTIONE"
 trigger = { OR = { alliance = { country = RUS country = MEN } puppet = { country = MEN country = RUS  } } }
 command = { type = secedeprovince which = MEN value = 1219 }
 
@@ -4841,11 +4841,11 @@ country = MAN
 style = 2
 picture = "harbor_statue"
 
-name = "Port Arthur is now ours"
-desc = "After the Russians beat the Japanese they gained control of Port Arthur. They have decided that they have no use for it and instead have given it to us."
+name = "EVT_3417099_NAME"
+desc = "EVT_3417099_DESC"
 
 action_a = {
-name = "Slendid!"
+name = "EVT_3417099_OPTIONA"
 command = { type = addcore which = 1219 }
 }
 }
@@ -4874,19 +4874,19 @@ date = { day = 3 month = april year = 1936 }
 offset = 3
 deathdate = { day = 29 month = september year = 1960 }
 
-name = "Mongolians controls Mukden"
-desc = "Mukden is in Mongolian hands. We have to surrender."
+name = "EVT_341720_NAME"
+desc = "EVT_341720_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Surrender"
+name = "EVT_341720_OPTIONA"
 command = { type = leave_alliance }
 command = { type = trigger which = 341721 }
 command = { type = dissent value = 3 }
 }
 action_b = {
 ai_chance = 5
-name = "Fight to death !"
+name = "EVT_341720_OPTIONB"
 command = { type = dissent value = 5 }
 
 }
@@ -4899,12 +4899,12 @@ country = MON
 style = 2
 picture = "Japan_Occupation2"
 
-name = "Defeat of Fengtien"
-desc = "After our glorious troops reached Mukden a Fengtien delegation signed unconditional surrender."
+name = "EVT_341721_NAME"
+desc = "EVT_341721_DESC"
 
 action_a = {
 ai_chance = 90
-name = "Puppet them"
+name = "EVT_341721_OPTIONA"
 command = { type = peace which = MAN value = 1 }
 command = { type = make_puppet which = MAN }
 command = { type = alliance which = MAN }
@@ -4915,7 +4915,7 @@ command = { type = access which = MAN }
 
 action_b = {
 ai_chance = 10
-name = "Annex them"
+name = "EVT_341721_OPTIONB"
 command = { type = inherit which = MAN  }
 }
 }
@@ -4927,12 +4927,12 @@ country = MAN
 style = 2
 picture = "mongolia1"
 
-name = "Inner Mongolia"
-desc = "Mongolians demands Inner Mongolia from us"
+name = "EVT_341722_NAME"
+desc = "EVT_341722_DESC"
 
 action_a = {
 ai_chance = 100
-name = "Relinquish"
+name = "EVT_341722_OPTIONA"
 # Mongolian claims in Manchuria
 command = { type = secedeprovince which = MON value = 1238 }
 command = { type = secedeprovince which = MON value = 1239 }
@@ -4962,12 +4962,12 @@ date = { day = 3 month = april year = 1936 }
 offset = 7
 deathdate = { day = 29 month = september year = 1960 }
 
-name = "Fengtien surrenders"
-desc = "After the defeat of Fengtien by Mongolia we have to take the opportunity to save our heads as long as we can. But this means break all agreements with Japan."
+name = "EVT_341723_NAME"
+desc = "EVT_341723_DESC"
 
 action_a = {
 ai_chance = 50
-name = "Propose white peace"
+name = "EVT_341723_OPTIONA"
 command = { type = leave_alliance when = 1 }
 command = { type = trigger which = 341724 }
 command = { type = belligerence value = -5 }
@@ -4975,21 +4975,21 @@ command = { type = dissent value = -5 }
 }
 action_b = {
 ai_chance = 30
-name = "Propose alliance"
+name = "EVT_341723_OPTIONB"
 command = { type = leave_alliance }
 command = { type = trigger which = 341725}
 command = { type = dissent value = 1 }
 }
 action_c = {
 ai_chance = 5
-name = "Propose to become puppet"
+name = "EVT_341723_OPTIONC"
 command = { type = leave_alliance }
 command = { type = trigger which = 341727 }
 command = { type = dissent value = -5 }
 }
 action_d = {
 ai_chance = 15
-name = "Fight on."
+name = "EVT_341723_OPTIOND"
 command = { type = belligerence value = 5 }
 command = { type = dissent value = 5 }
 }
@@ -5002,18 +5002,18 @@ country = MON
 style = 2
 picture = "mongolia1"
 
-name = "Transamur offers peace"
-desc = "Kolchak offers peace. How we will react?"
+name = "EVT_341724_NAME"
+desc = "EVT_341724_DESC"
 
 action_a = {
 ai_chance = 10
-name = "Accept white peace"
+name = "EVT_341724_OPTIONA"
 command = { type = trigger which = 341757 }
 command = { type = belligerence value = -5 }
 }
 action_b = {
 ai_chance = 90
-name = "Refuse"
+name = "EVT_341724_OPTIONB"
 command = { type = belligerence value = 5 }
 }
 }
@@ -5026,11 +5026,11 @@ country = PRI
 style = 2
 picture = "mongolia1"
 
-name = "Ceasefire"
-desc = "The war is over."
+name = "EVT_341757_NAME"
+desc = "EVT_341757_DESC"
 
 action_a = {
-name = "OK"
+name = "EVT_341757_OPTIONA"
 command = { type = peace which = MON value = 1 }
 }
 }
@@ -5042,19 +5042,19 @@ country = MON
 style = 2
 picture = "mongolia1"
 
-name = "Transamur offers alliance"
-desc = "Kolchak offers alliance. How we will react?"
+name = "EVT_341725_NAME"
+desc = "EVT_341725_DESC"
 
 action_a = {
 ai_chance = 30
-name = "Accept"
+name = "EVT_341725_OPTIONA"
 command = { type = trigger which = 341757 }
 command = { type = trigger which = 341726 }
 command = { type = belligerence value = -5 }
 }
 action_b = {
 ai_chance = 70
-name = "No"
+name = "EVT_341725_OPTIONB"
 command = { type = belligerence value = 5 }
 }
 }
@@ -5065,12 +5065,12 @@ country = MON
 style = 2
 picture = "constitutional"
 
-name = "Alliance signed"
-desc = "Welcome to our new ally."
+name = "EVT_341726_NAME"
+desc = "EVT_341726_DESC"
 
 action_a = {
 ai_chance = 100
-name = "Accept"
+name = "EVT_341726_OPTIONA"
 command = { type = alliance which = PRI }
 }
 }
@@ -5082,19 +5082,19 @@ country = MON
 style = 2
 picture = "mongolia1"
 
-name = "Transamur offers to become our protectorate"
-desc = "Kolchak offers to become a puppet of us. How shall we react?"
+name = "EVT_341727_NAME"
+desc = "EVT_341727_DESC"
 
 action_a = {
 ai_chance = 80
-name = "Accept"
+name = "EVT_341727_OPTIONA"
 command = { type = trigger which = 341757 }
 command = { type = trigger which = 341728 }
 command = { type = belligerence value = -5 }
 }
 action_b = {
 ai_chance = 20
-name = "We only want annex them"
+name = "EVT_341727_OPTIONB"
 command = { type = belligerence value = 5 }
 }
 }
@@ -5105,12 +5105,12 @@ country = MON
 style = 2
 picture = "mongolia1"
 
-name = "Primorsk becomes protectorate"
-desc = "Peace treaty was signed. Primorsk is now our protectorate."
+name = "EVT_341728_NAME"
+desc = "EVT_341728_DESC"
 
 action_a = {
 ai_chance = 100
-name = "OK"
+name = "EVT_341728_OPTIONA"
 command = { type = alliance which = PRI }
 command = { type = make_puppet which = PRI }
 command = { type = set_relation which = PRI value = 200 }
@@ -5138,17 +5138,17 @@ date = { day = 3 month = april year = 1936 }
 offset = 1
 deathdate = { day = 29 month = september year = 1960 }
 
-name = "Hopeless fight"
-desc = "Mongolian troops conquered some parts of our country. Maybe it is time to lay down our arms."
+name = "EVT_341729_NAME"
+desc = "EVT_341729_DESC"
 
 action_a = {
 ai_chance = 100
-name = "Surrender"
+name = "EVT_341729_OPTIONA"
 command = { type = peace which = MAN value = 1 }
 }
 action_b = {
 ai_chance = 0
-name = "Fight on"
+name = "EVT_341729_OPTIONB"
 command = { type = belligerence value = 5 }
 command = { type = dissent value = 10 }
 }
@@ -5169,12 +5169,12 @@ date = { day = 3 month = april year = 1936 }
 offset = 1
 deathdate = { day = 29 month = september year = 1960 }
 
-name = "Transamur surrenders"
-desc = "After their resistance collapsed Transamur was forced to surrender."
+name = "EVT_341730_NAME"
+desc = "EVT_341730_DESC"
 
 action_a = {
 ai_chance = 100
-name = "Annex them"
+name = "EVT_341730_OPTIONA"
 command = { type = inherit which = PRI }
 command = { type = dissent value = -5 }
 }
@@ -5196,12 +5196,12 @@ date = { day = 3 month = april year = 1936 }
 offset = 1
 deathdate = { day = 29 month = september year = 1960 }
 
-name = "Transamur surrenders"
-desc = "After their resistance collapsed Transamur was forced to surrender."
+name = "EVT_341731_NAME"
+desc = "EVT_341731_DESC"
 
 action_a = {
 ai_chance = 80
-name = "Puppet them"
+name = "EVT_341731_OPTIONA"
 command = { type = make_puppet which = PRI }
 command = { type = alliance which = PRI }
 command = { type = dissent value = -5 }
@@ -5209,7 +5209,7 @@ command = { type = dissent value = -5 }
 
 action_b = {
 ai_chance = 20
-name = "Annex them"
+name = "EVT_341731_OPTIONB"
 command = { type = inherit which = PRI }
 command = { type = dissent value = -5 }
 }
@@ -5261,19 +5261,19 @@ date = { day = 3 month = april year = 1936 }
 offset = 1
 deathdate = { day = 29 month = september year = 1960 }
 
-name = "Fading sun"
-desc = "We have lost the control of our continental provinces. Now our homeland is threatend. Maybe we could appease the Mongolians with offering Korea and Port Arthur."
+name = "EVT_341750_NAME"
+desc = "EVT_341750_DESC"
 
 
 action_a = {
 ai_chance = 95
-name = "Beg for peace."
+name = "EVT_341750_OPTIONA"
 command = { type = trigger which = 341751 }
 command = { type = dissent value = -5 }
 }
 action_b = {
 ai_chance = 5
-name = "Fight till the end."
+name = "EVT_341750_OPTIONB"
 command = { type = belligerence value = 5 }
 }
 }
@@ -5286,19 +5286,19 @@ country = MON
 style = 2
 picture = "Japan"
 
-name = "Japan offers peace"
-desc = "After we brought their continental provinces under our control Japan begs for peace. Therefor they offer us Korea and Port Arthur."
+name = "EVT_341751_NAME"
+desc = "EVT_341751_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Accept"
+name = "EVT_341751_OPTIONA"
 command = { type = trigger which = 341752 }
 command = { type = peace which = JAP value = 0 }
 command = { type = belligerence value = -5 }
 }
 action_b = {
 ai_chance = 5
-name = "No. We want total victory"
+name = "EVT_341751_OPTIONB"
 command = { type = belligerence value = 5 }
 }
 }
@@ -5310,12 +5310,12 @@ country = JAP
 style = 2
 picture = "Japan"
 
-name = "Peace With the Mongols"
-desc = "Now it is time to fullfill conditions of the peace treaty we have signed with Mongolia."
+name = "EVT_341752_NAME"
+desc = "EVT_341752_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Transfer territories"
+name = "EVT_341752_OPTIONA"
 command = { type = secedeprovince which = MON value = 1216 }
 command = { type = secedeprovince which = MON value = 1240 }
 command = { type = secedeprovince which = MON value = 1235 }
@@ -5363,12 +5363,12 @@ country = JAP
 style = 2
 picture = "Japan"
 
-name = "Japan down to the count"
-desc = "After the great defeat we have to go other ways."
+name = "EVT_341753_NAME"
+desc = "EVT_341753_DESC"
 
 
 action_a = {
-name = "We must return to our old ways of isolationism, Japan is a world in itself"
+name = "EVT_341753_OPTIONA"
 command = { type = domestic which = interventionism value = -9 }
 command = { type = domestic which = defense_lobby value = -9 }
 command = { type = relation which = GER value = 25 }
@@ -5452,19 +5452,19 @@ country = MON
 style = 2
 picture = "korea"
 
-name = "Korea"
-desc = "The Korean people desire for independence."
+name = "EVT_341754_NAME"
+desc = "EVT_341754_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Grant them independence"
+name = "EVT_341754_OPTIONA"
 command = { type = independence which = KOR value = 1 when = 0 }
 command = { type = trigger which = 341707 }
 command = { type = belligerence value = -5 }
 }
 action_b = {
 ai_chance = 5
-name = "Keep it under our direct control"
+name = "EVT_341754_OPTIONB"
 command = { type = 	province_revoltrisk which = 1230 value = 50 }
 command = { type = 	province_revoltrisk which = 1231 value = 50 }
 command = { type = 	province_revoltrisk which = 1232 value = 50 }
@@ -5489,12 +5489,12 @@ picture = "korea"
 
 # Triggered by 341755
 
-name = "Indepdence of Korea"
-desc = "How many autonomy we want grant Korea?"
+name = "EVT_341755_NAME"
+desc = "EVT_341755_DESC"
 
 action_a = {
 ai_chance = 99
-name = "Puppet them"
+name = "EVT_341755_OPTIONA"
 command = { type = make_puppet which = KOR  }
 command = { type = set_relation which = KOR value = 200 }
 command = { type = access which = KOR }
@@ -5502,7 +5502,7 @@ command = { type = access which = KOR }
 
 action_b = {
 ai_chance = 1
-name = "Full independence."
+name = "EVT_341755_OPTIONB"
 command = { type = set_relation which = KOR value = 200 }
 command = { type = access which = KOR }
 }
@@ -5526,17 +5526,17 @@ date = { day = 3 month = april year = 1936 }
 offset = 14
 deathdate = { day = 29 month = september year = 1960 }
 
-name = "Port Arthur"
-desc = "After our defeat in the First Russo-Japanese-War 1905 Russia had to relinquish Port Arthur. Now it is under our control."
+name = "EVT_341756_NAME"
+desc = "EVT_341756_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Keep it"
+name = "EVT_341756_OPTIONA"
 command = { type = addclaim which = 1219 }
 }
 action_b = {
 ai_chance = 5
-name = "Give it to Fengtien"
+name = "EVT_341756_OPTIONB"
 command = { type = secedeprovince which = MAN value = 1219 }
 command = { type = trigger which = 3417577 }
 }
@@ -5548,11 +5548,11 @@ country = MAN
 style = 2
 picture = "harbor_statue"
 
-name = "Port Arthur is now ours"
-desc = "After the Mongolians beat the Japanese they gained control of Port Arthur. They have decided that they have no use for it and instead have given it to us."
+name = "EVT_3417577_NAME"
+desc = "EVT_3417577_DESC"
 
 action_a = {
-name = "Slendid!"
+name = "EVT_3417577_OPTIONA"
 command = { type = addcore which = 1219 }
 }
 }
@@ -5580,11 +5580,11 @@ date = { day = 4 month = april year = 1936 }
 offset = 14
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "War Preperation"
-desc = "AI_Event"
+name = "EVT_341800_NAME"
+desc = "EVT_341800_DESC"
 
 action_a = {
-name = "OK"
+name = "EVT_341800_OPTIONA"
 command = { type = ai which = "kaiserreich/switch/TRANS_RUS_PREP.ai" }  # ai
 }
 }
@@ -5610,11 +5610,11 @@ date = { day = 4 month = april year = 1936 }
 offset = 14
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "War Preperation"
-desc = "AI_Event"
+name = "EVT_341850_NAME"
+desc = "EVT_341850_DESC"
 
 action_a = {
-name = "OK"
+name = "EVT_341850_OPTIONA"
 command = { type = ai which = "kaiserreich/switch/FENG_MON_PREP.ai" } # ai
 }
 }
@@ -5638,11 +5638,11 @@ date = { day = 4 month = april year = 1936 }
 offset = 14
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "War Preperation"
-desc = "AI_Event"
+name = "EVT_341851_NAME"
+desc = "EVT_341851_DESC"
 
 action_a = {
-name = "OK"
+name = "EVT_341851_OPTIONA"
 command = { type = ai which = "kaiserreich/switch/FENG_RUS_PREP.ai" } # ai
 }
 }
@@ -5665,11 +5665,11 @@ date = { day = 4 month = april year = 1936 }
 offset = 14
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "War Preperation"
-desc = "AI_Event"
+name = "EVT_341852_NAME"
+desc = "EVT_341852_DESC"
 
 action_a = {
-name = "OK"
+name = "EVT_341852_OPTIONA"
 command = { type = ai which = "kaiserreich/switch/FENG_MONRUS_PREP.ai" } # ai
 
 }
@@ -5694,11 +5694,11 @@ date = { day = 4 month = april year = 1936 }
 offset = 14
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "AI_Event"
-desc = "AI_Event"
+name = "EVT_341900_NAME"
+desc = "EVT_341900_DESC"
 
 action_a = {
-name = "OK"
+name = "EVT_341900_OPTIONA"
 command = { type = ai which = "kaiserreich/switch/JAP_RUS_INV2.ai" }
 }
 }

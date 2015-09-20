@@ -31,12 +31,12 @@ date = { day = 1 month = april year = 1937 }
 offset = 5
 deathdate = { day = 29 month = december year = 1939 }
 
-name = "The Japanese Age of Colonialism"
-desc = "Japan decided in order to build a proper nation, they must look beyond their region as Germany had appeared for Japan to be too tough to face. There are many directions we can expand in, the American continent to the East, Indonesia, IndoChina and Australaisa to the South or, if we are to be so bold, we can claim everything in the name of the Empire!"
+name = "EVT_342000_NAME"
+desc = "EVT_342000_DESC"
 
 action_a = {
 ai_chance = 50
-name = "We must focus on the weaker powers in the region"
+name = "EVT_342000_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = relation which = u15 value = -20 }
@@ -53,7 +53,7 @@ command = { trigger = { NOT = {  government = { type = communist country = HOL }
 
 action_b = {
 ai_chance = 0
-name = "Australasia is ripe for Japanese occupation"
+name = "EVT_342000_OPTIONB"
 command = { type = domestic which = interventionism value = 2 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = relation which = AST value = -70 }
@@ -110,14 +110,14 @@ date = { day = 3 month = april year = 1936 }
 offset = 4
 deathdate = { day = 29 month = september year = 1960 }
 
-name = "Status of Philippines"
-desc = "After fall of United States into civil war, Philippines are left in dangerous world, full of various countries wanting to get numerous resources of Philippines. We, Japanese people, dream of united Asia, under our reasonable leadership. The first step of this union is to get Philippines into Greater East Asia Co-Prosperity Sphere."
+name = "EVT_909504_NAME"
+desc = "EVT_909504_DESC"
 picture = "philippines"
 decision_picture = "decision_peace_conference"
 
 action_a = {
 ai_chance = 90
-name = "Invite Philippians to Greater East Asia Co-Prosperity Sphere"
+name = "EVT_909504_OPTIONA"
 trigger = {
 NOT = {
 ispuppet = PHI
@@ -132,7 +132,7 @@ command = { type = sleepevent which = 909508 }
 
 action_b = {
 ai_chance = 5
-name = "We must bring them into fold !"
+name = "EVT_909504_OPTIONB"
 trigger = {
 NOT = {
 ispuppet = PHI
@@ -147,14 +147,14 @@ command = { type = sleepevent which = 909508 }
 
 action_c = {
 ai_chance = 0
-name = "Do nothing"
+name = "EVT_909504_OPTIONC"
 command = { type = dissent value = 5 }
 command = { type = sleepevent which = 909508 }
 }
 
 action_d = {
 ai_chance = 5
-name = "An absurd notion, we will bring them into fold by force !"
+name = "EVT_909504_OPTIOND"
 command = { type = dissent value = 2 }
 command = { type = war which = PHI }
 }
@@ -211,14 +211,14 @@ date = { day = 3 month = april year = 1936 }
 offset = 4
 deathdate = { day = 29 month = september year = 1960 }
 
-name = "Status of Philippines"
-desc = "After fall of United States into civil war, Philippines are left alone. Such perfect oportunity must be fully used. Phillipines are potentially a perfect shelter for our navy and airforce, which will allow us to project our influence far into Pacific."
+name = "EVT_909508_NAME"
+desc = "EVT_909508_DESC"
 picture = "philippines"
 decision_picture = "decision_peace_conference"
 
 action_a = {
 ai_chance = 50
-name = "Invite Philippians to Greater East Asia Co-Prosperity Sphere"
+name = "EVT_909508_OPTIONA"
 trigger = {
 NOT = {
 ispuppet = PHI
@@ -233,7 +233,7 @@ command = { type = sleepevent which = 909504 }
 
 action_b = {
 ai_chance = 45
-name = "We must bring them into fold !"
+name = "EVT_909508_OPTIONB"
 trigger = {
 NOT = {
 ispuppet = PHI
@@ -248,14 +248,14 @@ command = { type = sleepevent which = 909504 }
 
 action_c = {
 ai_chance = 5
-name = "Do nothing"
+name = "EVT_909508_OPTIONC"
 command = { type = dissent value = 5 }
 command = { type = sleepevent which = 909504 }
 }
 
 action_d = {
 ai_chance = 5
-name = "An absurd notion, we will bring them into fold by force !"
+name = "EVT_909508_OPTIOND"
 command = { type = dissent value = 2 }
 command = { type = war which = PHI }
 }
@@ -269,11 +269,11 @@ country = PHI
 style = 2
 picture = "japanese_navy3"
 
-name = "Japan threatens us!"
-desc = "A large Japanese task force has sailed into the islands and is threatening to attack us if we do not bow to their demand of full surrender!"
+name = "EVT_909509_NAME"
+desc = "EVT_909509_DESC"
 
 action_a = {
-name = "Resist them and call for help!"
+name = "EVT_909509_OPTIONA"
 ai_chance = 50
 trigger = {
 exists = CAN
@@ -290,7 +290,7 @@ command = { type = setflag which = philipines_resists }
 }
 action_b = {
 ai_chance =	50
-name = "Surrender is our only option"
+name = "EVT_909509_OPTIONB"
 command = { type = trigger which = 909510  }
 }
 }
@@ -313,12 +313,12 @@ date = { day = 3 month = april year = 1936 }
 offset = 1
 deathdate = { day = 9 month = march year = 1960 }
 
-name = "Philippines begs for help"
-desc = "Japan is pounding at the door of Philipines and they have come to us begging for assistance. Should we respond?"
+name = "EVT_909511_NAME"
+desc = "EVT_909511_DESC"
 
 action_a = {
 ai_chance = 20
-name = "Offer our protection"
+name = "EVT_909511_OPTIONA"
 command = { type = setflag which = philipines_can_support }
 command = { type = guarantee which = CAN where = PHI }
 command = { type = domestic which = interventionism value = 1 }
@@ -328,7 +328,7 @@ command = { type = clrflag which = philipines_resists }
 
 action_b = {
 ai_chance = 80
-name = "We can not strech ourselves so far."
+name = "EVT_909511_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = dissent value = -2 }
 }
@@ -349,12 +349,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 30
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Philippines resists with Canadian backing"
-desc = "Philippines are resisting our demands and Canadian state is backing their claim to independence"
+name = "EVT_909512_NAME"
+desc = "EVT_909512_DESC"
 
 action_a = {
 ai_chance = 40
-name = "We will destroy them anyways"
+name = "EVT_909512_OPTIONA"
 command = { type = war which = PHI }
 command = { type = relation which = GER value = -20 }
 command = { type = relation which = CAN value = -20 }
@@ -371,7 +371,7 @@ command = { type = sleepevent which = 909513 }
 
 action_b = {
 ai_chance = 60
-name = "Back down, we can return later"
+name = "EVT_909512_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = clrflag which = philipines_resists }
 command = { type = clrflag which = philipines_can_support }
@@ -397,12 +397,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 70
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Philippines resists without Canadian backing"
-desc = "Philippines are resisting our demands and the Canadian state is refusing to send aid. We should make them pay for this in blood."
+name = "EVT_909513_NAME"
+desc = "EVT_909513_DESC"
 
 action_a = {
 ai_chance = 100
-name = "We will destroy them"
+name = "EVT_909513_OPTIONA"
 command = { type = war which = PHI }
 command = { type = relation which = GER value = -20 }
 command = { type = relation which = CAN value = -20 }
@@ -419,7 +419,7 @@ command = { type = sleepevent which = 909512 }
 
 action_b = {
 ai_chance = 0
-name = "Back down, we can return later"
+name = "EVT_909513_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = clrflag which = philipines_resists }
 command = { type = clrflag which = philipines_can_support }
@@ -434,11 +434,11 @@ country = JAP
 style = 2
 picture = "japanese_navy3"
 
-name = "Philippines Surrenders!"
-desc = "Seeing might of our forces , Philippines had no chance, but to ulimately submit before brave sons of nippon !"
+name = "EVT_909510_NAME"
+desc = "EVT_909510_DESC"
 
 action_a = {
-name = "Victory"
+name = "EVT_909510_OPTIONA"
 command = { type = make_puppet which = PHI }
 command = { type = relation which = PHI value = 150 }
 command = { type = access which = PHI }
@@ -452,13 +452,13 @@ id = 909505
 random = no
 country = PHI
 
-name = "Japan invites us to Greater East Asia Co-Prosperity Sphere"
-desc = "Japanese seeing the empty space after Americans decided to leave, have invited us to their alliance. It could be chance to make us rich and prosperous but it can be deadly as Japan needs new markets and wnats to spread its political influence."
+name = "EVT_909505_NAME"
+desc = "EVT_909505_DESC"
 picture = "japanese_navy3"
 
 action_a = {
 ai_chance = 70
-name = "Yes, we gladly accept"
+name = "EVT_909505_OPTIONA"
 command = { type = alliance which = JAP }
 command = { type = relation which = JAP value = 100 }
 command = { type = dissent value = 3 }
@@ -466,7 +466,7 @@ command = { type = dissent value = 3 }
 
 action_b = {
 ai_chance = 15
-name = "Turn to Entente for protection"
+name = "EVT_909505_OPTIONB"
 command = { type = trigger which = 909506 }
 command = { type = relation which = JAP value = -50 }
 command = { type = dissent value = 3 }
@@ -474,7 +474,7 @@ command = { type = dissent value = 3 }
 
 action_b = {
 ai_chance = 30
-name = "Turn to Mitteleuropa for protection"
+name = "EVT_909505_OPTIONC"
 command = { type = trigger which = 909515 }
 command = { type = relation which = JAP value = -50 }
 command = { type = dissent value = 1 }
@@ -482,7 +482,7 @@ command = { type = dissent value = 1 }
 
 action_c = {
 ai_chance = 5
-name = "We prefer isolation"
+name = "EVT_909505_OPTIOND"
 command = { type = set_domestic which = interventionism value = -1 }
 command = { type = relation which = JAP value = -100 }
 command = { type = dissent value = 5 }
@@ -495,13 +495,13 @@ id = 909506
 random = no
 country = CAN
 
-name = "Philippines want to join Entente!"
-desc = "Due to Japanese expansion, Philippines decided to forge an alliance with us. We are far from Philippines and we have different goals, but we need as many allies, as we can."
+name = "EVT_909506_NAME"
+desc = "EVT_909506_DESC"
 picture = "japanese_navy3"
 
 action_a = {
 ai_chance = 80
-name = "Yes, they can be our allies"
+name = "EVT_909506_OPTIONA"
 command = { type = alliance which = PHI }
 command = { type = relation which = JAP value = -100 }
 command = { type = relation which = PHI value = 200 }
@@ -509,7 +509,7 @@ command = { type = relation which = PHI value = 200 }
 
 action_b = {
 ai_chance = 20
-name = "We can't trust them"
+name = "EVT_909506_OPTIONB"
 command = { type = trigger which = 909507 }
 command = { type = relation which = PHI value = -100 }
 }
@@ -520,20 +520,20 @@ id = 909507
 random = no
 country = PHI
 
-name = "Canada doesn't want us in Entente"
-desc = "We have to face the truth - Japanese or dangerous isolation. The choice is ours"
+name = "EVT_909507_NAME"
+desc = "EVT_909507_DESC"
 picture = "japanese_navy3"
 
 action_a = {
 ai_chance = 60
-name = "Japanese are trustworthy allies"
+name = "EVT_909507_OPTIONA"
 command = { type = alliance which = JAP }
 command = { type = relation which = JAP value = 100 }
 }
 
 action_b = {
 ai_chance = 40
-name = "Isolation is better"
+name = "EVT_909507_OPTIONB"
 command = { type = set_domestic which = interventionism value = 1 }
 command = { type = relation which = JAP value = -100 }
 command = { type = trigger which = 909514 }
@@ -546,13 +546,13 @@ id = 909515
 random = no
 country = GER
 
-name = "Philippines want to join Mitteleuropa!"
-desc = "Due to Japanese expansion, Philippines decided to forge an alliance with us. We are far from Philippines and we have different goals, but we need as many allies, as we can."
+name = "EVT_909515_NAME"
+desc = "EVT_909515_DESC"
 picture = "japanese_navy3"
 
 action_a = {
 ai_chance = 80
-name = "Yes, they can be our allies"
+name = "EVT_909515_OPTIONA"
 command = { type = alliance which = PHI }
 command = { type = relation which = JAP value = -100 }
 command = { type = relation which = PHI value = 200 }
@@ -560,7 +560,7 @@ command = { type = relation which = PHI value = 200 }
 
 action_b = {
 ai_chance = 20
-name = "We can't trust them"
+name = "EVT_909515_OPTIONB"
 command = { type = trigger which = 909516 }
 command = { type = relation which = PHI value = -100 }
 }
@@ -571,20 +571,20 @@ id = 909516
 random = no
 country = PHI
 
-name = "German Empire doesn't want us in Mitteleuropa"
-desc = "We have to face the truth - Japanese or dangerous isolation. The choice is ours"
+name = "EVT_909516_NAME"
+desc = "EVT_909516_DESC"
 picture = "japanese_navy3"
 
 action_a = {
 ai_chance = 60
-name = "Japanese are trustworthy allies"
+name = "EVT_909516_OPTIONA"
 command = { type = alliance which = JAP }
 command = { type = relation which = JAP value = 100 }
 }
 
 action_b = {
 ai_chance = 40
-name = "Isolation is better"
+name = "EVT_909516_OPTIONB"
 command = { type = set_domestic which = interventionism value = 1 }
 command = { type = relation which = JAP value = -100 }
 command = { type = trigger which = 909514 }
@@ -598,12 +598,12 @@ country = JAP
 style = 2
 picture = "japanese_navy3"
 
-name = "Philippines refused our offer"
-desc = "Philippines are refused our offer to become member of Co-prosperity sphere. Such transgression should not be tolerated !"
+name = "EVT_909514_NAME"
+desc = "EVT_909514_DESC"
 
 action_a = {
 ai_chance = 100
-name = "We will destroy them"
+name = "EVT_909514_OPTIONA"
 command = { type = war which = PHI }
 command = { type = relation which = GER value = -20 }
 command = { type = relation which = CAN value = -20 }
@@ -617,7 +617,7 @@ command = { type = relation which = CAN value = -75 }
 
 action_b = {
 ai_chance = 0
-name = "Back down, we can return later"
+name = "EVT_909514_OPTIONB"
 command = { type = dissent value = 2 }
 }
 }
@@ -698,11 +698,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 25
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Dealing with Hawaii"
-desc = "With the USA in chaos the Islands of Hawaii have declared their independence. They are weak and could provide a an easy target for expanding our influence in the region"
+name = "EVT_344000_NAME"
+desc = "EVT_344000_DESC"
 
 action_a = {
-name = "We must show force"
+name = "EVT_344000_OPTIONA"
 ai_chance = 60
 command = { type = setflag which = jap_for_haw }
 command = { type = sleepevent which = 344020 }
@@ -710,14 +710,14 @@ command = { type = sleepevent which = 344020 }
 
 action_b = {
 ai_chance = 35
-name = "Use diplomatic pressures"
+name = "EVT_344000_OPTIONB"
 command = { type = setflag which = jap_dip_haw }
 command = { type = sleepevent which = 344020 }
 }
 
 action_c = {
 ai_chance = 5
-name = "Leave them alone, America is dangerous"
+name = "EVT_344000_OPTIONC"
 command = { type = dissent value = 5 }
 command = { type = sleepevent which = 344020 }
 }
@@ -765,11 +765,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 25
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Dealing with Hawaii"
-desc = "With the USA in chaos the Islands of Hawaii have declared their independence. They are weak and could provide a an easy target for expanding our influence in the region"
+name = "EVT_344020_NAME"
+desc = "EVT_344020_DESC"
 
 action_a = {
-name = "We must show force"
+name = "EVT_344020_OPTIONA"
 ai_chance = 10
 command = { type = setflag which = jap_for_haw }
 command = { type = sleepevent which = 344000 }
@@ -777,14 +777,14 @@ command = { type = sleepevent which = 344000 }
 
 action_b = {
 ai_chance = 60
-name = "Use diplomatic pressures"
+name = "EVT_344020_OPTIONB"
 command = { type = setflag which = jap_dip_haw }
 command = { type = sleepevent which = 344000 }
 }
 
 action_c = {
 ai_chance = 30
-name = "Leave them alone, America is dangerous"
+name = "EVT_344020_OPTIONC"
 command = { type = dissent value = 2 }
 command = { type = sleepevent which = 344000 }
 }
@@ -806,11 +806,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 25
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "What is our goal?"
-desc = "We have arranged for a naval taskforce to head to the Hawaii to force their government into submission. What is the overarcing goal of the expedition?"
+name = "EVT_344001_NAME"
+desc = "EVT_344001_DESC"
 
 action_a = {
-name = "Annexation"
+name = "EVT_344001_OPTIONA"
 ai_chance = 20
 command = { type = domestic which = interventionism value = 1 }
 command = { type = belligerence value = 10 }
@@ -826,7 +826,7 @@ command = { type = relation which = U15 value = -100 }
 }
 
 action_b = {
-name = "Bring them into the fold"
+name = "EVT_344001_OPTIONB"
 ai_chance = 50
 command = { type = belligerence value = 5 }
 command = { type = trigger which = 344004  }
@@ -842,7 +842,7 @@ command = { type = relation which = U15 value = -75 }
 
 action_c = {
 ai_chance = 30
-name = "Military Access"
+name = "EVT_344001_OPTIONC"
 command = { type = trigger which = 344006  }
 command = { type = relation which = GER value = -10 }
 command = { type = relation which = CAN value = -10 }
@@ -864,11 +864,11 @@ country = U15
 style = 2
 picture = "Hawaii"
 
-name = "Japan threatens us!"
-desc = "A large Japanese task force has sailed into the islands and is threatening to attack us if we do not bow to their demand of full surrender!"
+name = "EVT_344002_NAME"
+desc = "EVT_344002_DESC"
 
 action_a = {
-name = "Resist them and call for help!"
+name = "EVT_344002_OPTIONA"
 ai_chance = 65
 command = { type = add_division which = "Militia of Hawaii" value = militia when = 4 }
 command = { type = domestic which = interventionism value = -1 }
@@ -877,7 +877,7 @@ command = { type = setflag which = hawaii_resists }
 }
 action_b = {
 ai_chance =	35
-name = "Surrender is our only option"
+name = "EVT_344002_OPTIONB"
 command = { type = trigger which = 344003  }
 }
 }
@@ -891,11 +891,11 @@ country = JAP
 style = 2
 picture = "Japan_Victory2"
 
-name = "Hawaii Surrenders!"
-desc = "A victory!"
+name = "EVT_344003_NAME"
+desc = "EVT_344003_DESC"
 
 action_a = {
-name = "Victory"
+name = "EVT_344003_OPTIONA"
 command = { type = inherit which = U15 }
 }
 }
@@ -909,11 +909,11 @@ country = U15
 style = 2
 picture = "Hawaii"
 
-name = "Japan threatens us!"
-desc = "A large Japanese task force has sailed into the islands and is threatening to attack us if we do not bow down to them and accept their control over our future!"
+name = "EVT_344004_NAME"
+desc = "EVT_344004_DESC"
 
 action_a = {
-name = "Resist them and call for help!"
+name = "EVT_344004_OPTIONA"
 ai_chance = 40
 command = { type = add_division which = "Militia of Hawaii" value = militia when = 4 }
 command = { type = domestic which = interventionism value = -1 }
@@ -923,7 +923,7 @@ command = { type = setflag which = hawaii_resists }
 
 action_b = {
 ai_chance = 60
-name = "Surrender is our only option"
+name = "EVT_344004_OPTIONB"
 command = { type = trigger which = 344005  }
 }
 }
@@ -937,11 +937,11 @@ country = JAP
 style = 2
 picture = "Japan_Victory2"
 
-name = "Hawaii Surrenders!"
-desc = "A victory!"
+name = "EVT_344005_NAME"
+desc = "EVT_344005_DESC"
 
 action_a = {
-name = "Victory"
+name = "EVT_344005_OPTIONA"
 command = { type = make_puppet which = U15 }
 command = { type = relation which = U15 value = 150 }
 }
@@ -956,11 +956,11 @@ country = U15
 style = 2
 picture = "Hawaii"
 
-name = "Japan threatens us!"
-desc = "A large Japanese task force has sailed into the islands and is threatening to attack us if we do not bow down to them and accept giving their forces access to our islands"
+name = "EVT_344006_NAME"
+desc = "EVT_344006_DESC"
 
 action_a = {
-name = "Resist them and call for help!"
+name = "EVT_344006_OPTIONA"
 ai_chance = 25
 command = { type = add_division which = "Militia of Hawaii" value = militia when = 4 }
 command = { type = domestic which = interventionism value = -1 }
@@ -970,7 +970,7 @@ command = { type = setflag which = hawaii_resists }
 
 action_b = {
 ai_chance = 75
-name = "Not really worth fighting now is it"
+name = "EVT_344006_OPTIONB"
 command = { type = trigger which = 344007  }
 command = { type = access which = JAP }
 }
@@ -985,11 +985,11 @@ country = JAP
 style = 2
 picture = "Hawaii"
 
-name = "Hawaii Surrenders!"
-desc = "A victory!"
+name = "EVT_344007_NAME"
+desc = "EVT_344007_DESC"
 
 action_a = {
-name = "Victory"
+name = "EVT_344007_OPTIONA"
 command = { type = relation which = U15 value = 100 }
 command = { type = guarantee which = JAP where = U15 }
 }
@@ -1012,11 +1012,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 25
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "What is our goal?"
-desc = "We have arranged for a diplomatic envoy to head to the Hawaii to force their government into submission. What is the overarcing goal of the expedition?"
+name = "EVT_344008_NAME"
+desc = "EVT_344008_DESC"
 
 action_a = {
-name = "Alliance"
+name = "EVT_344008_OPTIONA"
 ai_chance = 40
 command = { type = trigger which = 344009  }
 command = { type = relation which = USA value = -20 }
@@ -1026,7 +1026,7 @@ command = { type = relation which = CAL value = -20 }
 command = { type = relation which = U15 value = 50 }
 }
 action_b = {
-name = "Bring them into the fold"
+name = "EVT_344008_OPTIONB"
 ai_chance = 40
 command = { type = belligerence value = 5 }
 command = { type = trigger which = 344010  }
@@ -1041,7 +1041,7 @@ command = { type = relation which = U15 value = -75 }
 }
 action_c = {
 ai_chance = 20
-name = "Military Access"
+name = "EVT_344008_OPTIONC"
 command = { type = trigger which = 344011  }
 command = { type = relation which = GER value = -10 }
 command = { type = relation which = CAN value = -10 }
@@ -1063,18 +1063,18 @@ country = U15
 style = 2
 picture = "Hawaii"
 
-name = "Japan's Diplomatic efforts"
-desc = "A high level envoy from Japan has brought a plan that would guarentee our independence while giving Japan the military bases it needs to secure the Pacific Ocean. It is likely that a negative answer will be taken well...."
+name = "EVT_344009_NAME"
+desc = "EVT_344009_DESC"
 
 action_a = {
 ai_chance = 80
-name = "Accept"
+name = "EVT_344009_OPTIONA"
 command = { type = alliance which = JAP }
 command = { type = set_relation which = JAP value = 100 }
 }
 
 action_b = {
-name = "Resist them and call for help!"
+name = "EVT_344009_OPTIONB"
 ai_chance = 20
 command = { type = add_division which = "Militia of Hawaii" value = militia when = 4 }
 command = { type = domestic which = interventionism value = -1 }
@@ -1092,11 +1092,11 @@ country = U15
 style = 2
 picture = "Hawaii"
 
-name = "Japan's Diplomatic efforts"
-desc = "A high level envoy from Japan has brought a plan that would guarentee our independence while giving Japan the military bases it needs to secure the Pacific Ocean. It is likely that a negative answer will be taken well...."
+name = "EVT_344010_NAME"
+desc = "EVT_344010_DESC"
 
 action_a = {
-name = "Resist them and call for help!"
+name = "EVT_344010_OPTIONA"
 ai_chance = 25
 command = { type = add_division which = "Militia of Hawaii" value = militia when = 4 }
 command = { type = domestic which = interventionism value = -1 }
@@ -1106,7 +1106,7 @@ command = { type = setflag which = hawaii_resists }
 
 action_b = {
 ai_chance = 75
-name = "Surrender is our only option"
+name = "EVT_344010_OPTIONB"
 command = { type = trigger which = 344005  }
 command = { type = access which = JAP }
 }
@@ -1121,11 +1121,11 @@ country = U15
 style = 2
 picture = "Hawaii"
 
-name = "Japan's Diplomatic efforts"
-desc = "A high level envoy from Japan has brought a plan that would guarentee our independence while giving Japan the military bases it needs to secure the Pacific Ocean. It is likely that a negative answer will not be taken well...."
+name = "EVT_344011_NAME"
+desc = "EVT_344011_DESC"
 
 action_a = {
-name = "Resist them and call for help!"
+name = "EVT_344011_OPTIONA"
 ai_chance = 10
 command = { type = add_division which = "Militia of Hawaii" value = militia when = 4 }
 command = { type = domestic which = interventionism value = -1 }
@@ -1135,7 +1135,7 @@ command = { type = setflag which = hawaii_resists }
 
 action_b = {
 ai_chance = 90
-name = "Not really worth fighting now is it"
+name = "EVT_344011_OPTIONB"
 command = { type = trigger which = 344007  }
 command = { type = access which = JAP }
 }
@@ -1162,8 +1162,8 @@ date = { day = 3 month = april year = 1936 }
 offset = 5
 deathdate = { day = 9 month = march year = 1960 }
 
-name = "Hawaii begs for help"
-desc = "Japan is pounding at the door of Hawaii and they have come to us begging for assistance. Should we respond?"
+name = "EVT_344012_NAME"
+desc = "EVT_344012_DESC"
 
 action_a = {
 ai_chance = 50
@@ -1172,7 +1172,7 @@ NOT = {
 alliance = { country = JAP country = CAL }
 }
 }
-name = "Offer our protection"
+name = "EVT_344012_OPTIONA"
 command = { type = setflag which = hawaii_pac_support }
 command = { type = guarantee which = CAL where = U15 }
 command = { type = domestic which = interventionism value = 1 }
@@ -1181,7 +1181,7 @@ command = { type = dissent value = 2 }
 
 action_b = {
 ai_chance = 50
-name = "They left us, Remember"
+name = "EVT_344012_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = dissent value = -2 }
 }
@@ -1203,8 +1203,8 @@ ispuppet = U15
 }
 }
 
-name = "Hawaii begs for help"
-desc = "Japan is pounding at the door of Hawaii and they have come to us begging for assistance. Should we respond? With the Civil War now may not be the time to start things with Japan..."
+name = "EVT_343013_NAME"
+desc = "EVT_343013_DESC"
 action_a = {
 ai_chance = 0
 trigger = {
@@ -1212,7 +1212,7 @@ NOT = {
 alliance = { country = JAP country = CAL }
 }
 }
-name = "Offer our protection"
+name = "EVT_343013_OPTIONA"
 command = { type = setflag which = hawaii_pac_support }
 command = { type = guarantee which = CAL where = U15 }
 command = { type = domestic which = interventionism value = 1 }
@@ -1221,7 +1221,7 @@ command = { type = dissent value = 2 }
 
 action_b = {
 ai_chance = 100
-name = "They left us, Remember"
+name = "EVT_343013_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = dissent value = -2 }
 }
@@ -1244,12 +1244,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 30
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Hawaii resists with American backing"
-desc = "Hawaii is resisting our demands and the Pacific States of America are backing their claim to independance"
+name = "EVT_344014_NAME"
+desc = "EVT_344014_DESC"
 
 action_a = {
 ai_chance = 40
-name = "We will destroy them anyways"
+name = "EVT_344014_OPTIONA"
 command = { type = war which = U15 }
 command = { type = relation which = GER value = -20 }
 command = { type = relation which = CAN value = -20 }
@@ -1263,7 +1263,7 @@ command = { type = relation which = U15 value = -75 }
 
 action_b = {
 ai_chance = 60
-name = "Back down, we can return later"
+name = "EVT_344014_OPTIONB"
 command = { type = dissent value = 2 }
 }
 }
@@ -1287,12 +1287,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 30
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Hawaii resists with American backing"
-desc = "Hawaii is resisting our demands and the Pacific States of America are refusing to send aid. We should make them pay for this in blood."
+name = "EVT_344015_NAME"
+desc = "EVT_344015_DESC"
 
 action_a = {
 ai_chance = 90
-name = "We will destroy them"
+name = "EVT_344015_OPTIONA"
 command = { type = war which = U15 }
 command = { type = relation which = GER value = -20 }
 command = { type = relation which = CAN value = -20 }
@@ -1306,7 +1306,7 @@ command = { type = relation which = U15 value = -75 }
 
 action_b = {
 ai_chance = 10
-name = "Back down, we can return later"
+name = "EVT_344015_OPTIONB"
 command = { type = dissent value = 2 }
 }
 }
@@ -1339,13 +1339,13 @@ date = { day = 1 month = april year = 1937 }
 offset = 20
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Choosing strategic directions"
-desc = "With territories of Philiphines, Hawaii and Netherland East Indies secured, we must now choose our next step in reienforcing co-prosperity sphere. We can either choose to expand in different startegic directions or give up our expansionist plans."
+name = "EVT_344016_NAME"
+desc = "EVT_344016_DESC"
 
 
 action_a = {
 ai_chance = 60
-name = "We must focus upon Australasia !"
+name = "EVT_344016_OPTIONA"
 trigger = {
 NOT = {
 control = { province = 1705 data = -3 }
@@ -1359,7 +1359,7 @@ command = { type = relation which = CAN value = -25 }
 
 action_b = {
 ai_chance = 60
-name = "Let us orientate anew"
+name = "EVT_344016_OPTIONB"
 command = { type = clrflag which = JAP_ANZAC }
 command = { type = clrflag which = JAP_WEAK }
 command = { type = trigger which = 340206 }
@@ -1367,7 +1367,7 @@ command = { type = trigger which = 340206 }
 
 action_c = {
 ai_chance = 40
-name = "Abandon expansionism, we have achieved our goals !"
+name = "EVT_344016_OPTIONC"
 command = { type = domestic which = interventionism value = -9 }
 command = { type = domestic which = defense_lobby value = -9 }
 command = { type = relation which = GER value = 25 }
@@ -1400,13 +1400,13 @@ date = { day = 1 month = april year = 1937 }
 offset = 20
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Choosing strategic directions"
-desc = "With territory of Australasian confederation secured, we must now choose our next step in reienforcing co-prosperity sphere. We can either choose to expand in different startegic directions or give up our expansionist plans."
+name = "EVT_344017_NAME"
+desc = "EVT_344017_DESC"
 
 
 action_a = {
 ai_chance = 60
-name = "We must focus on the weaker powers in the region !"
+name = "EVT_344017_OPTIONA"
 trigger = {
 OR = {
 NOT = {
@@ -1433,7 +1433,7 @@ command = { trigger = { NOT = {  government = { type = communist country = HOL }
 
 action_b = {
 ai_chance = 60
-name = "Let us orientate anew"
+name = "EVT_344017_OPTIONB"
 command = { type = clrflag which = JAP_ANZAC }
 command = { type = clrflag which = JAP_WEAK }
 command = { type = trigger which = 340206 }
@@ -1441,7 +1441,7 @@ command = { type = trigger which = 340206 }
 
 action_c = {
 ai_chance = 40
-name = "Abandon expansionism, we have achieved our goals !"
+name = "EVT_344017_OPTIONC"
 command = { type = domestic which = interventionism value = -9 }
 command = { type = domestic which = defense_lobby value = -9 }
 command = { type = relation which = GER value = 25 }
@@ -1470,8 +1470,8 @@ war = { country = HOL country = JAP }
 }
 }
 
-name = "Report from Far East"
-desc = "Our secret service reported that Japan considers to invade Indonesia in order to gain dominance in the Southern Pacific. Such drastical step means direct threat to stability of the entire Eastern Asia arrangement, which is currently set in our favor. What shall we do ?"
+name = "EVT_344018_NAME"
+desc = "EVT_344018_DESC"
 
 action = {
 trigger = {
@@ -1481,7 +1481,7 @@ government = { type = communist country = HOL }
 control = { province = 1654 data = HOL }
 }
 ai_chance = 75
-name = "Japan must be stopped"
+name = "EVT_344018_OPTIONA"
 command = { type = relation which = HOL value = 50 }
 command = { type = guarantee which = GER where = HOL  }
 command = { type = trigger which = 340302 }
@@ -1489,7 +1489,7 @@ command = { type = trigger which = 340302 }
 
 action = {
 ai_chance = 25
-name = "We don't care about Indonesia"
+name = "EVT_344018_OPTIONB"
 command = { type = relation which = HOL value = -50 }
 command = { type = end_guarantee which = GER where = HOL  }
 }
@@ -1503,18 +1503,18 @@ country = JAP
 style = 2
 picture = "Wehrmacht"
 
-name = "Report from Far East"
-desc = "The German Kaiser declared clearly that his Empire would fully support and protect Indonesia if any nation tries to invade them. It would be most unwise to underestimate it, despite troubles they are facing on the homefront. How shall we react to this statement ?"
+name = "EVT_344019_NAME"
+desc = "EVT_344019_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Who cares?"
+name = "EVT_344019_OPTIONA"
 command = { type = relation which = GER value = -50 }
 }
 
 action_b = {
 ai_chance = 5
-name = "Let us orientate new"
+name = "EVT_344019_OPTIONB"
 command = { type = relation which = GER value = 20 }
 command = { type = clrflag which = JAP_WEAK }
 command = { type = clrflag which = JAP_ANZAC }
@@ -1524,7 +1524,7 @@ command = { type = trigger which = 340203 }
 
 action_c = {
 ai_chance = 0
-name = "Give up our plans of expansion"
+name = "EVT_344019_OPTIONC"
 command = { type = domestic which = interventionism value = -9 }
 command = { type = domestic which = defense_lobby value = -9 }
 command = { type = relation which = GER value = 25 }
@@ -1583,12 +1583,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 3
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "The Empire of Japan invade Netherlands East India"
-desc = "Combined forces of the Empire of Japan have launched invasion of Netherlands East India. This invasion threatens to disrupt balance of powers in favour of Japan. Shall we warn yellow monkies about foolishness of their actions or let Netherlands East India fall into their hands ?"
+name = "EVT_344026_NAME"
+desc = "EVT_344026_DESC"
 
 action_a = {
 ai_chance = 80
-name = "Warn them to turn back or face german arms!"
+name = "EVT_344026_OPTIONA"
 command = { type = belligerence which = GER value = 1 }
 command = { type = relation which = HOL value = 50 }
 command = { type = relation which = JAP value = -50 }
@@ -1599,7 +1599,7 @@ command = { type = trigger which = 344022 }
 
 action_b = {
 ai_chance = 20
-name = "Back Down! We've changed our minds!"
+name = "EVT_344026_OPTIONB"
 command = { type = belligerence which = GER value = -3 }
 command = { type = relation which = HOL value = -50 }
 command = { type = relation which = JAP value = 50 }
@@ -1613,12 +1613,12 @@ country = JAP
 style = 2
 picture = "Wehrmacht"
 
-name = "The Germans Send an Ultimatum"
-desc = "The Second Reich has Sent an Ultimatum to Tokyo. We are to either pull out of Netherlands East India and declare a cease fire or Germany will come to Holland's aid."
+name = "EVT_344021_NAME"
+desc = "EVT_344021_DESC"
 
 action_a = {
 ai_chance = 5
-name = "We will not risk war with Germany, Back to the Boats!"
+name = "EVT_344021_OPTIONA"
 command = { type = belligerence which = JAP value = -3 }
 command = { type = relation which = HOL value = 50 }
 command = { type = relation which = GER value = 50 }
@@ -1629,7 +1629,7 @@ command = { type = trigger which = 344025 }
 }
 action_b = {
 ai_chance = 95
-name = "We do not answer to Germany !"
+name = "EVT_344021_OPTIONB"
 command = { type = belligerence which = JAP value = 3 }
 command = { type = relation which = HOL value = -50 }
 command = { type = relation which = JAP value = -50 }
@@ -1644,11 +1644,11 @@ country = HOL
 style = 2
 picture = "Wehrmacht"
 
-name = "The Ultimatum, Berlin Warns Tokyo"
-desc = "Germany has come to our aid! They have sent an ultimatum to the Japanese Empire, either fall back to their home islands or risk annihilation."
+name = "EVT_344022_NAME"
+desc = "EVT_344022_DESC"
 
 action_a = {
-name = "We Knew They'd Pull Through For Us!"
+name = "EVT_344022_OPTIONA"
 command = { type = relation which = GER value = 50 }
 command = { type = dissent value = -3 }
 }
@@ -1660,11 +1660,11 @@ country = GER
 style = 2
 picture = "Japan_Invasion"
 
-name = "The Japanese Empire Backs Down"
-desc = "After the ultimatum was received by Tokyo, they quickly sent orders to all their commanders on the ground to cease fire and return to the coast. We have achieved a diplomatic victory today, we have shown the world we will stand up to Japanese agression, and we will protect any nation under threat from Japan !"
+name = "EVT_344023_NAME"
+desc = "EVT_344023_DESC"
 
 action_a = {
-name = "Diplomacy Has Achieved Peace Once Again!"
+name = "EVT_344023_OPTIONA"
 command = { type = relation which = HOL value = 25 }
 command = { type = dissent value = -5 }
 }
@@ -1676,12 +1676,12 @@ country = GER
 style = 2
 picture = "Japan_Invasion"
 
-name = "The Japanese Ignore our Ultimatum"
-desc = "After the ultimatum was received by Tokyo, they ignored it and are advancing into Indonesia, clearly ignoring our ultimatum. We can either go through and declare war, bringing Netherlands into our alliance or we can stand down and let Netherlands East India fall."
+name = "EVT_344024_NAME"
+desc = "EVT_344024_DESC"
 
 action_a = {
 ai_chance = 50
-name = "They have made their choice, war it is!"
+name = "EVT_344024_OPTIONA"
 command = { type = war which = JAP }
 command = { type = alliance which = HOL }
 command = { type = dissent value = 1 }
@@ -1689,7 +1689,7 @@ command = { type = dissent value = 1 }
 
 action_b = {
 ai_chance = 50
-name = "Back Down! We've changed our minds!"
+name = "EVT_344024_OPTIONB"
 command = { type = dissent value = 1 }
 }
 }
@@ -1700,11 +1700,11 @@ country = HOL
 style = 2
 picture = "Wehrmacht"
 
-name = "The Japanese Pull out of Indonesia"
-desc = "After the ultimatum was received by Tokyo, they quickly sent orders to all their commanders on the ground to cease fire and return to the coast. Our colonial emprire and our pride remain intact."
+name = "EVT_344025_NAME"
+desc = "EVT_344025_DESC"
 
 action_a = {
-name = "We couldn't have done it without Germany!"
+name = "EVT_344025_OPTIONA"
 command = { type = dissent value = -10 }
 command = { type = relation which = GER value = 200 }
 }

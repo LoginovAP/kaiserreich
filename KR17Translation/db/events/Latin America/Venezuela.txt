@@ -13,11 +13,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 25
 deathdate = { day = 29 month = december year = 1941 }
 
-name = "Dissent"
-desc = "Neighboring Brasil and Bolivia have both been taken over by Sydnicalist governments, which has caused the air here in Venezuela to be tense. Along side the mountains are giant barrios where life is a struggle for everyday people."
+name = "EVT_655500_NAME"
+desc = "EVT_655500_DESC"
 
 action_a = {
-name = "A Wind of Change will blow down from the mountain side barrios"
+name = "EVT_655500_OPTIONA"
 command = { type = setflag which = VEN_SOCIALIST }
 command = { type = dissent value = 5 }
 }
@@ -37,18 +37,18 @@ date = { day = 1 month = january year = 1936 }
 offset = 50
 deathdate = { day = 29 month = december year = 1941 }
 
-name = "Dissent turns into Revolt"
-desc = "A Mass Protest turned into an Angry Mob as the people came down from the barrios on the mountain side to protest and demand a new constitution that was voted against yesterday. Encouraged by the governments of Bolivia and Brasil, they have repeated the pattern and surrounded the Presidential Palace."
+name = "EVT_655501_NAME"
+desc = "EVT_655501_DESC"
 
 action_a = {
 ai_chance = 70
-name = "Give into their Demands!"
+name = "EVT_655501_OPTIONA"
 command = { type = trigger which = 655502 }
 command = { type = dissent value = 10 }
 }
 action_b = {
 ai_chance = 30
-name = "Crush this Rebellion!"
+name = "EVT_655501_OPTIONB"
 command = { type = clrflag which = VEN_SOCIALIST }
 command = { type = dissent value = 20 }
 }
@@ -60,11 +60,11 @@ country = VEN
 picture = "gold"
 style = 2
 
-name = "The New Government of Venezuela"
-desc = "Juna Bautista Fuenmayor forms his cabinet."
+name = "EVT_655502_NAME"
+desc = "EVT_655502_DESC"
 
 action_a = {
-name = "Juan Bautista Fuenmayor and the Socialist Party!"
+name = "EVT_655502_OPTIONA"
 command = { type = set_domestic which = democratic value = 3 }
 command = { type = set_domestic which = political_left value = 8 }
 command = { type = set_domestic which = free_market value = 1 }
@@ -109,12 +109,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 50
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Alliance with Brazil ?"
-desc = "The world is a dangerous place, so we need alliances with sworn enemies of the capitalism. Venezuela and Brazil could benefit from joining forces in a crusade for a new, brave world. Anti-socialist warmongers from La Plata are seeking war to crush the successful Brazilian and Venezuelan revolutions, so we need to combine our powers to defend the spoils of our proletarian uprisings!"
+name = "EVT_655503_NAME"
+desc = "EVT_655503_DESC"
 
 action_a = {
 ai_chance = 70
-name = "Propose an Alliance with Brazil"
+name = "EVT_655503_OPTIONA"
 command = { type = trigger which = 655504 } # Brazilian response
 command = { type = domestic which = interventionism value = 1 }
 command = { type = dissent value = 2 }
@@ -123,7 +123,7 @@ command = { type = dissent value = 2 }
 
 action_b = {
 ai_chance = 15
-name = "Rather not"
+name = "EVT_655503_OPTIONB"
 command = { type = relation which = ARG value = -10 }
 command = { type = dissent value = 1 }
 }
@@ -135,12 +135,12 @@ country = BRA
 style = 2
 picture = "southamerica"
 
-name = "Alliance with Venezuela ?"
-desc = "Venezuela has proposed an axis be formed, a defensive alliance between Brazil and Venezuela against capitalist menace. What should we tell them?"
+name = "EVT_655504_NAME"
+desc = "EVT_655504_DESC"
 
 action_a = {
 ai_chance = 95
-name = "Accept their offer !"
+name = "EVT_655504_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = alliance which = VEN }
@@ -150,7 +150,7 @@ command = { type = relation which = ARG value = -10 }
 
 action_b = {
 ai_chance = 5
-name = "Refuse their alliance, we don't need anyone!"
+name = "EVT_655504_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = VEN value = -25 }
 command = { type = relation which = ARG value = 10 }
@@ -165,12 +165,12 @@ picture = "Venezuelan_Oil"
 
 date = { day = 5 month = april year = 1936 }
 
-name = "The Venezuelan Oil Industry"
-desc = "Oil has always been a chief export of Venezula, as far back as we can remember. It has been proposed that we take the Oil Industry from the hands of foreign companies and sell the oil to them ourselves. Our profits would increase and we would have taken another step towards true independence and self dependence."
+name = "EVT_55801_NAME"
+desc = "EVT_55801_DESC"
 
 action_a = {
 ai_chance = 90
-name = "The Oil Refined Here is Ours, Nationalize!,"
+name = "EVT_55801_OPTIONA"
 command = { type = industrial_modifier which = total value = 2 }
 command = { type = domestic which = free_market value = -1 }
 command = { type = supplies value = -500 }
@@ -192,7 +192,7 @@ command = { type = free_money value = 3 }
 }
 action_b = {
 ai_chance = 10
-name = "We would not want to upset foreign interests"
+name = "EVT_55801_OPTIONB"
 command = { type = relation which = HOL value = 5 }
 command = { type = relation which = ENG value = 5 }
 command = { type = relation which = SPA value = 5 }
@@ -225,8 +225,8 @@ ispuppet = VEN
 }
 }
 
-name = "The 1941 Presidental election"
-desc = "While currently the President is elected by the Legislature, it's not any easier than a national election and therefore anyone can win. However, there is onyl two canidates in this election, either Isaías Medina Angarita or the current President with the former likely going to win..."
+name = "EVT_557304_NAME"
+desc = "EVT_557304_DESC"
 picture = "politics3"
 
 date = { day = 1 month = may year = 1941 }
@@ -235,7 +235,7 @@ deathdate = { day = 29 month = may year = 1941 }
 
 action_a = {
 ai_chance = 80
-name = "Isaías Medina Angarita is our man!"
+name = "EVT_557304_OPTIONA"
 command = { type = headofstate which = 38016 } #Isaías Medina Angarita
 command = { type = headofgovernment which = 38028 } #Isaías Medina Angarita
 command = { type = set_domestic which = democratic value = 8 }
@@ -244,7 +244,7 @@ command = { type = dissent value = 2 }
 }
 action_b = {
 ai_chance = 20
-name = "The current President is fine"
+name = "EVT_557304_OPTIONB"
 command = { type = dissent value = 1 }
 }
 }
@@ -261,8 +261,8 @@ headofstate = 38016 #Isaías Medina Angarita
 NOT = { ispuppet = VEN }
 }
 
-name = "A day in Autumn"
-desc = "With Medina Angarita having been our President for some time now, his policies have increasling pleased no one. Because of this, critics of him have begun plotting a coup detat headed by Rómulo Betancourt..."
+name = "EVT_557305_NAME"
+desc = "EVT_557305_DESC"
 picture = "Coup2"
 
 date = { day = 1 month = may year = 1941 }
@@ -271,7 +271,7 @@ deathdate = { day = 29 month = may year = 1941 }
 
 action_a = {
 ai_chance = 75
-name = "Rómulo Betancourt takes over!"
+name = "EVT_557305_OPTIONA"
 command = { type = headofstate which = 38017 } #Rómulo Betancourt
 command = { type = headofgovernment which = 38029 } #Rómulo Betancourt
 command = { type = set_domestic which = democratic value = 7 }
@@ -280,7 +280,7 @@ command = { type = dissent value = 2 }
 }
 action_b = {
 ai_chance = 25
-name = "Medina Angarita continues to lead the nation"
+name = "EVT_557305_OPTIONB"
 command = { type = dissent value = 1 }
 }
 }
@@ -296,8 +296,8 @@ government = democratic
 NOT = { ispuppet = VEN }
 }
 
-name = "The 1947 Presidental election"
-desc = "This election will go down in Venezulan history because this is the first election the people directly elect the President! Because the Social Democrats forced this and other social reforms, they are viewed quite with high regard by the people and are likely to be the Christian Democrats..."
+name = "EVT_557306_NAME"
+desc = "EVT_557306_DESC"
 picture = "election"
 
 date = { day = 15 month = december year = 1947 }
@@ -306,7 +306,7 @@ deathdate = { day = 15 month = january year = 1947 }
 
 action_a = {
 ai_chance = 70
-name = "The Social Democrats win it!"
+name = "EVT_557306_OPTIONA"
 command = { type = headofstate which = 38019 } #Rómulo Gallegos Freire
 command = { type = headofgovernment which = 38031 } #Rómulo Gallegos Freire
 command = { type = foreignminister which = 38040 } #Carlos Morales Acorzia
@@ -323,7 +323,7 @@ command = { type = domestic which = free_market value = -1 }
 }
 action_b = {
 ai_chance = 30
-name = "The Christian Democrats win it!"
+name = "EVT_557306_OPTIONB"
 command = { type = headofstate which = 38018 } #Rafael Caldera
 command = { type = headofgovernment which = 38030 } #Rafael Caldera
 command = { type = foreignminister which = 38041 } #Gonzalo Barrios
@@ -352,8 +352,8 @@ government = democratic
 NOT = { ispuppet = VEN }
 }
 
-name = "The 1954 Presidental election"
-desc = "It is time for the next Presidential election. The radicals of the Social Democrats, discontent with the relative moderation of the party, split and formed their own Syndicalist party. However, it is much more likely for the weakened Social Democrats or even the Christians to win..."
+name = "EVT_557307_NAME"
+desc = "EVT_557307_DESC"
 picture = "election"
 
 date = { day = 15 month = december year = 1954 }
@@ -362,7 +362,7 @@ deathdate = { day = 15 month = january year = 1954 }
 
 action_a = {
 ai_chance = 40
-name = "The Social Democrats win it!"
+name = "EVT_557307_OPTIONA"
 command = { type = headofstate which = 38019 } #Rómulo Gallegos Freire
 command = { type = headofgovernment which = 38031 } #Rómulo Gallegos Freire
 command = { type = foreignminister which = 38040 } #Carlos Morales Acorzia
@@ -379,7 +379,7 @@ command = { type = domestic which = free_market value = -1 }
 }
 action_b = {
 ai_chance = 40
-name = "The Christian Democrats win it!"
+name = "EVT_557307_OPTIONB"
 command = { type = headofstate which = 38018 } #Rafael Caldera
 command = { type = headofgovernment which = 38030 } #Rafael Caldera
 command = { type = foreignminister which = 38041 } #Gonzalo Barrios
@@ -396,7 +396,7 @@ command = { type = domestic which = free_market value = 1 }
 }
 action_c = {
 ai_chance = 20
-name = "The Syndicalists win it!"
+name = "EVT_557307_OPTIONC"
 command = { type = headofstate which = 38023 } #Wolfgang Larrazábal Ugueto
 command = { type = headofgovernment which = 38034 } #Wolfgang Larrazábal Ugueto
 command = { type = foreignminister which = 38037 } #Pedro Leon Castro
@@ -424,8 +424,8 @@ government = democratic
 NOT = { ispuppet = VEN }
 }
 
-name = "The 1961 Presidental election"
-desc = "Wow... did you really play till 1961 as Venezula? Regardless, the three political parties all have essentially the same chance of winning..."
+name = "EVT_557308_NAME"
+desc = "EVT_557308_DESC"
 picture = "election"
 
 date = { day = 15 month = december year = 1961 }
@@ -434,7 +434,7 @@ deathdate = { day = 15 month = january year = 1961 }
 
 action_a = {
 ai_chance = 35
-name = "The Social Democrats win it!"
+name = "EVT_557308_OPTIONA"
 command = { type = headofstate which = 38019 } #Rómulo Gallegos Freire
 command = { type = headofgovernment which = 38031 } #Rómulo Gallegos Freire
 command = { type = foreignminister which = 38040 } #Carlos Morales Acorzia
@@ -451,7 +451,7 @@ command = { type = domestic which = free_market value = -1 }
 }
 action_b = {
 ai_chance = 35
-name = "The Christian Democrats win it!"
+name = "EVT_557308_OPTIONB"
 command = { type = headofstate which = 38018 } #Rafael Caldera
 command = { type = headofgovernment which = 38030 } #Rafael Caldera
 command = { type = foreignminister which = 38041 } #Gonzalo Barrios
@@ -468,7 +468,7 @@ command = { type = domestic which = free_market value = 1 }
 }
 action_c = {
 ai_chance = 30
-name = "The Syndicalists win it!"
+name = "EVT_557308_OPTIONC"
 command = { type = headofstate which = 38023 } #Wolfgang Larrazábal Ugueto
 command = { type = headofgovernment which = 38034 } #Wolfgang Larrazábal Ugueto
 command = { type = foreignminister which = 38037 } #Pedro Leon Castro
@@ -498,7 +498,7 @@ picture = "minister_died"
 date = { year = 1936 month = may day = 19 }
 
 action_a = {
-name = "OK"
+name = "EVT_557309_OPTIONA"
 command = { type = sleepminister which = 38035 } #Pedro Itriago Chacín
 }
 }
@@ -520,7 +520,7 @@ picture = "minister_died"
 date = { year = 1950 month = november day = 13 }
 
 action_a = {
-name = "OK"
+name = "EVT_557310_OPTIONA"
 command = { type = sleepminister which = 38020 } #Carlos Delgado Chalbaud
 command = { type = sleepminister which = 38079 } #Carlos Delgado Chalbaud
 command = { type = sleepleader which = 270004 } #Carlos Delgado Chalbaud
@@ -535,14 +535,14 @@ style = 2
 
 trigger = { headofstate = 38020 } #Carlos Delgado Chalbaud
 
-name = "Carlos Delgado Chalbaud has died!"
-desc = "Carlos Delgado Chalbaud, our President has died! A week of mourning has been declared and German Suarez Flamerich has become the interm President."
+name = "EVT_557311_NAME"
+desc = "EVT_557311_DESC"
 picture = "minister_died"
 
 date = { year = 1950 month = november day = 13 }
 
 action_a = {
-name = "Memento mori"
+name = "EVT_557311_OPTIONA"
 command = { type = sleepminister which = 38020 } #Carlos Delgado Chalbaud
 command = { type = sleepminister which = 38079 } #Carlos Delgado Chalbaud
 command = { type = sleepleader which = 270004 } #Carlos Delgado Chalbaud
@@ -572,7 +572,7 @@ picture = "minister_died"
 date = { year = 1952 month = may day = 7 }
 
 action_a = {
-name = "OK"
+name = "EVT_557312_OPTIONA"
 command = { type = sleepminister which = 38014 } #Juan Bautista Pérez
 command = { type = sleepminister which = 38005 } #Juan Bautista Pérez
 }
@@ -592,14 +592,14 @@ event = 557315 } }
 headofstate = 38014 #Juan Bautista Pérez
 NOT = { headofgovernment = 38002 } } #Juan Bautista Pérez
 
-name = "Juan Bautista Pérez has died!"
-desc = "The president of our nation, Juan Bautista Pérez, has died! A week of mourning has been declared and Eleazar López Contreras has become the interm President."
+name = "EVT_557313_NAME"
+desc = "EVT_557313_DESC"
 picture = "minister_died"
 
 date = { year = 1952 month = may day = 7 }
 
 action_a = {
-name = "OK"
+name = "EVT_557313_OPTIONA"
 command = { type = sleepminister which = 38014 } #Juan Bautista Pérez
 command = { type = sleepminister which = 38005 } #Juan Bautista Pérez
 command = { type = headofstate which = 38001 } #Eleazar López Contreras
@@ -621,14 +621,14 @@ event = 557315 } }
 NOT = { headofstate = 38014 } #Juan Bautista Pérez
 headofgovernment = 38002 } #Juan Bautista Pérez
 
-name = "Juan Bautista Pérez has died!"
-desc = "Juan Bautista Pérez, the head of government, has died! A day of mourning has been declared and Eleazar López Contreras has filled in his position."
+name = "EVT_557314_NAME"
+desc = "EVT_557314_DESC"
 picture = "minister_died"
 
 date = { year = 1952 month = may day = 7 }
 
 action_a = {
-name = "OK"
+name = "EVT_557314_OPTIONA"
 command = { type = sleepminister which = 38014 } #Juan Bautista Pérez
 command = { type = sleepminister which = 38005 } #Juan Bautista Pérez
 command = { type = headofgovernment which = 38024 } #Eleazar López Contreras
@@ -650,14 +650,14 @@ event = 557314 } }
 headofstate = 38014 #Juan Bautista Pérez
 headofgovernment = 38002 } #Juan Bautista Pérez
 
-name = "Juan Bautista Pérez has died!"
-desc = "The president of our nation, Juan Bautista Pérez, has died! A week of mourning has been declared and Eleazar López Contreras has become the interm President."
+name = "EVT_557315_NAME"
+desc = "EVT_557315_DESC"
 picture = "minister_died"
 
 date = { year = 1952 month = may day = 7 }
 
 action_a = {
-name = "OK"
+name = "EVT_557315_OPTIONA"
 command = { type = sleepminister which = 38014 } #Juan Bautista Pérez
 command = { type = sleepminister which = 38005 } #Juan Bautista Pérez
 command = { type = headofstate which = 38001 } #Eleazar López Contreras
@@ -679,7 +679,7 @@ picture = "minister_died"
 date = { year = 1953 month = february day = 1 }
 
 action_a = {
-name = "OK"
+name = "EVT_557316_OPTIONA"
 command = { type = sleepminister which = 38039 } #Gustavo Herrera Grau
 }
 }
@@ -697,7 +697,7 @@ picture = "minister_died"
 date = { year = 1955 month = august day = 28 }
 
 action_a = {
-name = "OK"
+name = "EVT_557317_OPTIONA"
 command = { type = sleepminister which = 38056 } #Cesar Zumeta
 }
 }
@@ -715,7 +715,7 @@ picture = "minister_died"
 date = { year = 1959 month = august day = 21 }
 
 action_a = {
-name = "OK"
+name = "EVT_557318_OPTIONA"
 command = { type = sleepminister which = 38005 } #Santiago Key Ayala
 }
 }

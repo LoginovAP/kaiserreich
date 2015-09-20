@@ -110,15 +110,15 @@ ideology = nazi
 }
 }
 
-name = "1938 General Elections"
-desc = "On May 18th 1938, general elections are held in South Africa. There are three main parties: the United Party, the current government, the National Party, more racist and authoritarian, and the Labour Party, with social liberal or even socialist ideas. The current government led by the United Party suffered the minority position from which it had to rule and therefore couldn't impose its decisions because of the opposition of the National Party."
+name = "EVT_93001_NAME"
+desc = "EVT_93001_DESC"
 picture = "election"
 
 date = { day = 17 month = may year = 1938 }
 
 action_a = {
 ai_chance = 60
-name = "United Party, keep the current government"
+name = "EVT_93001_OPTIONA"
 command = { type = dissent value = -2 }
 command = { type = set_domestic which = democratic value = 10 }
 command = { type = set_domestic which = political_left value = 4 }
@@ -136,7 +136,7 @@ command = { type = setflag which = SAF_UNITED }
 }
 action_b = {
 ai_chance = 30
-name = "National Party"
+name = "EVT_93001_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = set_domestic which = democratic value = 9 }
 command = { type = set_domestic which = political_left value = 0 }
@@ -154,7 +154,7 @@ command = { type = setflag which = SAF_NATIONAL }
 }
 action_c = {
 ai_chance = 10
-name = "Labour Party"
+name = "EVT_93001_OPTIONC"
 command = { type = dissent value = 4 }
 command = { type = set_domestic which = democratic value = 10 }
 command = { type = set_domestic which = political_left value = 6 }
@@ -182,22 +182,22 @@ trigger = {
 flag = SAF_UNITED
 }
 
-name = "Domestic Policy"
-desc = "Following the victory achieved two weeks ago at the general elections, the United Party confirmed the ministers of the current government. Now it is time to choose the domestic policy: will they keep the current system and focus on foreign policy or will they enact the measures proposed by the National Party?"
+name = "EVT_93002_NAME"
+desc = "EVT_93002_DESC"
 picture = "politics1"
 
 date = { day = 2 month = june year = 1938 }
 
 action_a = {
 ai_chance = 95
-name = "Keep the current system"
+name = "EVT_93002_OPTIONA"
 command = { type = dissent value = -1 }
 command = { type = clrflag which = SAF_UNITED }
 command = { type = setflag which = SAF_FOREIGN_1 }
 }
 action_b = {
 ai_chance = 5
-name = "Introduce racial segregation!"
+name = "EVT_93002_OPTIONB"
 command = { type = dissent value = 5 }
 command = { type = domestic which = freedom value = -2 }
 command = { type = chiefofstaff which = 70107 } #Christian du Toit
@@ -219,22 +219,22 @@ trigger = {
 flag = SAF_NATIONAL
 }
 
-name = "Domestic Policy"
-desc = "Following the victory achieved two weeks ago at the general elections, the National Party estabilished the new government. Now it is time to choose the domestic policy: will they keep the current system and focus on foreign policy or will they introduce racial segregation?"
+name = "EVT_93003_NAME"
+desc = "EVT_93003_DESC"
 picture = "politics1"
 
 date = { day = 2 month = june year = 1938 }
 
 action_a = {
 ai_chance = 20
-name = "Keep the current system"
+name = "EVT_93003_OPTIONA"
 command = { type = dissent value = 1 }
 command = { type = clrflag which = SAF_NATIONAL }
 command = { type = setflag which = SAF_FOREIGN_2 }
 }
 action_b = {
 ai_chance = 80
-name = "Introduce racial segregation!"
+name = "EVT_93003_OPTIONB"
 command = { type = dissent value = 3 }
 command = { type = domestic which = freedom value = -2 }
 command = { type = clrflag which = SAF_NATIONAL }
@@ -252,21 +252,21 @@ trigger = {
 flag = SAF_LABOUR
 }
 
-name = "Domestic Policy"
-desc = "Following the suprising victory achieved two weeks ago at the general elections, the Labour Party estabilished the new government. Now it is time to choose the domestic policy: will they keep the current system and focus on foreign policy or will they reform the country along socialist lines?"
+name = "EVT_93004_NAME"
+desc = "EVT_93004_DESC"
 picture = "politics1"
 
 date = { day = 2 month = june year = 1938 }
 
 action_a = {
 ai_chance = 50
-name = "Keep the current system"
+name = "EVT_93004_OPTIONA"
 command = { type = clrflag which = SAF_LABOUR }
 command = { type = setflag which = SAF_FOREIGN_3 }
 }
 action_b = {
 ai_chance = 50
-name = "Introduce socialist reforms!"
+name = "EVT_93004_OPTIONB"
 command = { type = dissent value = 3 }
 command = { type = set_domestic which = democratic value = 5 }
 command = { type = set_domestic which = political_left value = 8 }
@@ -287,8 +287,8 @@ flag = SAF_FOREIGN_1
 random = 50
 }
 
-name = "Foreign Policy"
-desc = "The government has to choose the new foreign policy. Choosing isolationism will lead to cutting off ties with other countries. By focusing on defence the fortifications and garrisons will be improved to make the country harder to be overrun by enemies. Reconciling with the Entente can give us strong allies. Finally, expanding the borders of the country is risky, but the possible rewards could make it worthwhile."
+name = "EVT_93005_NAME"
+desc = "EVT_93005_DESC"
 picture = "foreign_policy"
 
 date = { day = 2 month = june year = 1938 }
@@ -297,7 +297,7 @@ deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
 ai_chance = 20
-name = "Isolationism"
+name = "EVT_93005_OPTIONA"
 command = { type = clrflag which = SAF_FOREIGN_1 }
 command = { type = set_domestic which = interventionism value = 0 }
 command = { type = relation which = CAN value = -20 }
@@ -307,20 +307,20 @@ command = { type = trigger which = 93011 }
 }
 action_b = {
 ai_chance = 30
-name = "Defence of the country"
+name = "EVT_93005_OPTIONB"
 command = { type = clrflag which = SAF_FOREIGN_1 }
 command = { type = setflag which = SAF_DEFENCE }
 }
 action_c = {
 ai_chance = 49
-name = "Reconcile with the Entente"
+name = "EVT_93005_OPTIONC"
 command = { type = dissent value = 1 }
 command = { type = clrflag which = SAF_FOREIGN_1 }
 command = { type = setflag which = SAF_ENTENTE }
 }
 action_d = {
 ai_chance = 1
-name = "Expansionism"
+name = "EVT_93005_OPTIOND"
 command = { type = dissent value = 3 }
 command = { type = clrflag which = SAF_FOREIGN_1 }
 command = { type = setflag which = SAF_EXP }
@@ -348,8 +348,8 @@ exists = CON
 random = 50
 }
 
-name = "Foreign Policy"
-desc = "The government has to choose the new foreign policy. Choosing isolationism will lead to cutting off ties with other countries. By focusing on defence the fortifications and garrisons will be improved to make the country harder to be overrun by enemies. Reconciling with the Entente can give us strong allies. Finally, expanding the borders of the country is risky, but the possible rewards could make it worthwhile."
+name = "EVT_93006_NAME"
+desc = "EVT_93006_DESC"
 picture = "foreign_policy"
 
 date = { day = 2 month = june year = 1938 }
@@ -358,7 +358,7 @@ deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
 ai_chance = 20
-name = "Isolationism"
+name = "EVT_93006_OPTIONA"
 command = { type = clrflag which = SAF_FOREIGN_2 }
 command = { type = set_domestic which = interventionism value = 0 }
 command = { type = relation which = CAN value = -20 }
@@ -368,13 +368,13 @@ command = { type = trigger which = 93011 }
 }
 action_b = {
 ai_chance = 20
-name = "Defence of the country"
+name = "EVT_93006_OPTIONB"
 command = { type = clrflag which = SAF_FOREIGN_2 }
 command = { type = setflag which = SAF_DEFENCE }
 }
 action_c = {
 ai_chance = 60
-name = "Expansionism"
+name = "EVT_93006_OPTIONC"
 command = { type = dissent value = 3 }
 command = { type = clrflag which = SAF_FOREIGN_2 }
 command = { type = setflag which = SAF_EXP }
@@ -392,8 +392,8 @@ flag = SAF_FOREIGN_3
 random = 50
 }
 
-name = "Foreign Policy"
-desc = "The government has to choose the new foreign policy. Choosing isolationism will lead to cutting off ties with other countries. By focusing on defence the fortifications and garrisons will be improved to make the country harder to be overrun by enemies. Reconciling with the Entente can give us strong allies. Finally, expanding the borders of the country is risky, but the possible rewards could make it worthwhile."
+name = "EVT_93007_NAME"
+desc = "EVT_93007_DESC"
 picture = "foreign_policy"
 
 date = { day = 2 month = june year = 1938 }
@@ -402,7 +402,7 @@ deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
 ai_chance = 49
-name = "Isolationism"
+name = "EVT_93007_OPTIONA"
 command = { type = clrflag which = SAF_FOREIGN_3 }
 command = { type = set_domestic which = interventionism value = 0 }
 command = { type = relation which = CAN value = -20 }
@@ -412,20 +412,20 @@ command = { type = trigger which = 93011 }
 }
 action_b = {
 ai_chance = 49
-name = "Defence of the country"
+name = "EVT_93007_OPTIONB"
 command = { type = clrflag which = SAF_FOREIGN_3 }
 command = { type = setflag which = SAF_DEFENCE }
 }
 action_c = {
 ai_chance = 1
-name = "Reconcile with the Entente"
+name = "EVT_93007_OPTIONC"
 command = { type = dissent value = 1 }
 command = { type = clrflag which = SAF_FOREIGN_3 }
 command = { type = setflag which = SAF_ENTENTE }
 }
 action_d = {
 ai_chance = 1
-name = "Expansionism"
+name = "EVT_93007_OPTIOND"
 command = { type = dissent value = 3 }
 command = { type = clrflag which = SAF_FOREIGN_3 }
 command = { type = setflag which = SAF_EXP }
@@ -443,8 +443,8 @@ flag = SAF_FOREIGN_4
 random = 50
 }
 
-name = "Foreign Policy"
-desc = "The government has to choose the new foreign policy. Choosing isolationism will lead to cutting off ties with other countries. By focusing on defence the fortifications and garrisons will be improved to make the country harder to be overrun by enemies. Joining the Internationale can give us strong allies. Finally, expanding the borders of the country is risky, but the possible rewards could make it worthwhile."
+name = "EVT_93008_NAME"
+desc = "EVT_93008_DESC"
 picture = "foreign_policy"
 
 date = { day = 1 month = january year = 1936 }
@@ -453,7 +453,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
 ai_chance = 30
-name = "Isolationism"
+name = "EVT_93008_OPTIONA"
 command = { type = clrflag which = SAF_FOREIGN_4 }
 command = { type = set_domestic which = interventionism value = 0 }
 command = { type = relation which = CAN value = -20 }
@@ -463,20 +463,20 @@ command = { type = trigger which = 93011 }
 }
 action_b = {
 ai_chance = 30
-name = "Defence of the country"
+name = "EVT_93008_OPTIONB"
 command = { type = clrflag which = SAF_FOREIGN_4 }
 command = { type = setflag which = SAF_DEFENCE }
 }
 action_c = {
 ai_chance = 30
-name = "Join the Syndicalist Internationale"
+name = "EVT_93008_OPTIONC"
 command = { type = dissent value = 1 }
 command = { type = clrflag which = SAF_FOREIGN_4 }
 command = { type = setflag which = SAF_INTERNATIO }
 }
 action_d = {
 ai_chance = 10
-name = "Expansionism"
+name = "EVT_93008_OPTIOND"
 command = { type = dissent value = 3 }
 command = { type = clrflag which = SAF_FOREIGN_4 }
 command = { type = setflag which = SAF_EXP }
@@ -502,8 +502,8 @@ ispuppet=CON
 random = 50
 }
 
-name = "Foreign Policy"
-desc = "The government has to choose the new foreign policy. Choosing isolationism will lead to cutting off ties with other countries. By focusing on defence the fortifications and garrisons will be improved to make the country harder to be overrun by enemies. It could be possible to approach the northern neighbour, Mittelafrika, and strike a deal with them. Finally, expanding the borders of the country is risky, but the possible rewards could make it worthwhile."
+name = "EVT_93009_NAME"
+desc = "EVT_93009_DESC"
 picture = "foreign_policy"
 
 date = { day = 2 month = june year = 1938 }
@@ -512,7 +512,7 @@ deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
 ai_chance = 30
-name = "Isolationism"
+name = "EVT_93009_OPTIONA"
 command = { type = clrflag which = SAF_FOREIGN_4 }
 command = { type = set_domestic which = interventionism value = 0 }
 command = { type = relation which = CAN value = -20 }
@@ -522,20 +522,20 @@ command = { type = trigger which = 93011 }
 }
 action_b = {
 ai_chance = 30
-name = "Defence of the country"
+name = "EVT_93009_OPTIONB"
 command = { type = clrflag which = SAF_FOREIGN_4 }
 command = { type = setflag which = SAF_DEFENCE }
 }
 action_c = {
 ai_chance = 30
-name = "Approach Mittealfrika"
+name = "EVT_93009_OPTIONC"
 command = { type = dissent value = 1 }
 command = { type = clrflag which = SAF_FOREIGN_4 }
 command = { type = setflag which = SAF_MITTELAFRIKA }
 }
 action_d = {
 ai_chance = 10
-name = "Expansionism"
+name = "EVT_93009_OPTIOND"
 command = { type = dissent value = 3 }
 command = { type = clrflag which = SAF_FOREIGN_4 }
 command = { type = setflag which = SAF_EXP }
@@ -549,12 +549,12 @@ random = no
 country = CAN
 style = 2
 
-name = "Isolationist South Africa"
-desc = "The new government of South Africa decided to follow an isolationist policy and therefore cancel the military access we granted them."
+name = "EVT_93010_NAME"
+desc = "EVT_93010_DESC"
 picture = "SouthAfrica"
 
 action_a = {
-name = "Their loss."
+name = "EVT_93010_OPTIONA"
 command = { type = end_access which = SAF }
 }
 }
@@ -565,12 +565,12 @@ random = no
 country = AST
 style = 2
 
-name = "Isolationist South Africa"
-desc = "The new government of South Africa decided to follow an isolationist policy and therefore cancel the military access we granted them."
+name = "EVT_93011_NAME"
+desc = "EVT_93011_DESC"
 picture = "SouthAfrica"
 
 action_a = {
-name = "Their loss."
+name = "EVT_93011_OPTIONA"
 command = { type = end_access which = SAF }
 }
 }
@@ -586,8 +586,8 @@ flag = SAF_DEFENCE
 random = 15
 }
 
-name = "Improving our defence"
-desc = "The new government of South Africa decided to focus on the defence of the land. The first step is building costal fortifications to prevent amphibious landings."
+name = "EVT_93012_NAME"
+desc = "EVT_93012_DESC"
 picture = "Coast Guard"
 
 
@@ -596,7 +596,7 @@ offset = 20
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Build the new coastal fortifications!"
+name = "EVT_93012_OPTIONA"
 ai_chance = 95
 command = { type = construct which = coastal_fort where = 872 value = 1 } #Cape Town
 command = { type = construct which = coastal_fort where = 880 value = 1 } #Port Elizabeth
@@ -608,7 +608,7 @@ command = { type = clrflag which = SAF_DEFENCE }
 command = { type = setflag which = SAF_DEFENCE_2 }
 }
 action_b = {
-name = "It wasn't such a good idea"
+name = "EVT_93012_OPTIONB"
 ai_chance = 5
 command = { type = dissent value = 2 }
 command = { type = clrflag which = SAF_DEFENCE }
@@ -626,8 +626,8 @@ flag = SAF_DEFENCE_2
 random = 15
 }
 
-name = "Improving our defence"
-desc = "The new government of South Africa decided to focus on the defence of the land. The second step consists of  building land fortifications in the most developed towns."
+name = "EVT_93013_NAME"
+desc = "EVT_93013_DESC"
 picture = "fortification"
 
 
@@ -636,7 +636,7 @@ offset = 20
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Build the new land fortifications!"
+name = "EVT_93013_OPTIONA"
 ai_chance = 95
 command = { type = construct which = land_fort where = 880 value = 1 } #Cape Town
 command = { type = construct which = land_fort where = 881 value = 1 } #Port Elizabeth
@@ -649,7 +649,7 @@ command = { type = clrflag which = SAF_DEFENCE_2 }
 command = { type = setflag which = SAF_DEFENCE_3 }
 }
 action_b = {
-name = "It wasn't such a good idea"
+name = "EVT_93013_OPTIONB"
 ai_chance = 5
 command = { type = dissent value = 2 }
 command = { type = clrflag which = SAF_DEFENCE_2 }
@@ -667,8 +667,8 @@ flag = SAF_DEFENCE_3
 random = 15
 }
 
-name = "Improving our defence"
-desc = "The new government of South Africa decided to focus on the defence of the land. The third step consists of recruiting new troops."
+name = "EVT_93014_NAME"
+desc = "EVT_93014_DESC"
 picture = "fortification2"
 
 
@@ -677,7 +677,7 @@ offset = 20
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Welcome the new recruits!"
+name = "EVT_93014_OPTIONA"
 ai_chance = 95
 command = { type = add_division which = "1st South Africa Defence Corps" value = militia when = 4 }
 command = { type = add_division which = "2nd South Africa Defence Corps" value = militia when = 4 }
@@ -688,7 +688,7 @@ command = { type = clrflag which = SAF_DEFENCE_3 }
 command = { type = setflag which = SAF_DEFENCE_4 }
 }
 action_b = {
-name = "It wasn't such a good idea"
+name = "EVT_93014_OPTIONB"
 ai_chance = 5
 command = { type = dissent value = 2 }
 command = { type = clrflag which = SAF_DEFENCE_3 }
@@ -706,8 +706,8 @@ flag = SAF_DEFENCE_4
 random = 15
 }
 
-name = "Improving our defence"
-desc = "The new government of South Africa decided to focus on the defence of the land. The final step consist in improving the land fortifications on our long border with Mittelafrika."
+name = "EVT_93015_NAME"
+desc = "EVT_93015_DESC"
 picture = "fortification3"
 
 
@@ -716,7 +716,7 @@ offset = 20
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Build the new land fortifications!"
+name = "EVT_93015_OPTIONA"
 ai_chance = 95
 command = { type = construct which = land_fort where = 878 value = 1 }
 command = { type = construct which = land_fort where = 879 value = 1 }
@@ -729,7 +729,7 @@ command = { type = money value = -7 }
 command = { type = clrflag which = SAF_DEFENCE_4 }
 }
 action_b = {
-name = "It wasn't such a good idea"
+name = "EVT_93015_OPTIONB"
 ai_chance = 5
 command = { type = dissent value = 2 }
 command = { type = clrflag which = SAF_DEFENCE_4 }
@@ -747,8 +747,8 @@ flag = SAF_ENTENTE
 random = 50
 }
 
-name = "Approaching the Entente"
-desc = "The new government of South Africa decided to approach the Entente and negotiate their return to the alliance."
+name = "EVT_93016_NAME"
+desc = "EVT_93016_DESC"
 picture = "foreign_policy"
 
 
@@ -757,14 +757,14 @@ offset = 20
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Start the negotiations!"
+name = "EVT_93016_OPTIONA"
 ai_chance = 95
 command = { type = relation which = CAN value = 10 }
 command = { type = clrflag which = SAF_ENTENTE }
 command = { type = setflag which = SAF_ENTENTE_2 }
 }
 action_b = {
-name = "It wasn't such a good idea"
+name = "EVT_93016_OPTIONB"
 ai_chance = 5
 command = { type = domestic which = interventionism value = -1 }
 command = { type = clrflag which = SAF_ENTENTE }
@@ -781,8 +781,8 @@ trigger = {
 flag = SAF_ENTENTE_2
 }
 
-name = "South Africa in the Entente?"
-desc = "The new government of South Africa approached us: they are thinking about joining the Entente. Do we really need them?"
+name = "EVT_93017_NAME"
+desc = "EVT_93017_DESC"
 picture = "foreign_policy"
 
 
@@ -791,7 +791,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Yes! Welcome Back!"
+name = "EVT_93017_OPTIONA"
 ai_chance = 70
 command = { type = alliance which = SAF }
 command = { type = relation which = SAF value = 20 }
@@ -799,7 +799,7 @@ command = { type = clrflag which = SAF_ENTENTE_2 }
 command = { type = setflag which = SAF_ENTENTE_3 }
 }
 action_b = {
-name = "No, but what about a non-aggression pact?"
+name = "EVT_93017_OPTIONB"
 ai_chance = 29
 command = { type = guarantee which = CAN where = SAF }
 command = { type = domestic which = interventionism value = -1 }
@@ -807,7 +807,7 @@ command = { type = clrflag which = SAF_ENTENTE_2 }
 command = { type = setflag which = SAF_ENTENTE_4 }
 }
 action_c = {
-name = "Who needs you?"
+name = "EVT_93017_OPTIONC"
 ai_chance = 1
 command = { type = relation which = SAF value = -30 }
 command = { type = clrflag which = SAF_ENTENTE_2 }
@@ -825,8 +825,8 @@ trigger = {
 flag = SAF_ENTENTE_3
 }
 
-name = "The Entente accepted our request!"
-desc = "The Entente accepted our request, we will now join the Entente, once again we stand together with our brothers!"
+name = "EVT_93018_NAME"
+desc = "EVT_93018_DESC"
 picture = "foreign_policy"
 
 
@@ -835,14 +835,14 @@ offset = 10
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Great!"
+name = "EVT_93018_OPTIONA"
 ai_chance = 95
 command = { type = relation which = CAN value = 50 }
 command = { type = dissent value = -1 }
 command = { type = clrflag which = SAF_ENTENTE_3 }
 }
 action_b = {
-name = "We changed our minds!"
+name = "EVT_93018_OPTIONB"
 ai_chance = 5
 command = { type = leave_alliance }
 command = { type = relation which = CAN value = -100 }
@@ -864,8 +864,8 @@ trigger = {
 flag = SAF_ENTENTE_4
 }
 
-name = "The Entente has a different proposal"
-desc = "The Entente rejected our request, but they said that they will guarantee our independence and proposed a non-aggression pact. It's not what we asked, but maybe this is a better solution."
+name = "EVT_93019_NAME"
+desc = "EVT_93019_DESC"
 picture = "foreign_policy"
 
 
@@ -874,14 +874,14 @@ offset = 10
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Ok..."
+name = "EVT_93019_OPTIONA"
 ai_chance = 80
 command = { type = non_aggression which = CAN where = SAF }
 command = { type = guarantee which = SAF where = CAN }
 command = { type = clrflag which = SAF_ENTENTE_4 }
 }
 action_b = {
-name = "Bah, we don't need this..."
+name = "EVT_93019_OPTIONB"
 ai_chance = 20
 command = { type = end_guarantee which = CAN where = SAF }
 command = { type = relation which = CAN value = -100 }
@@ -902,8 +902,8 @@ trigger = {
 flag = SAF_ENTENTE_5
 }
 
-name = "The Entente rejected our request!"
-desc = "The Entente rejected our request, we will never trust them again!"
+name = "EVT_93020_NAME"
+desc = "EVT_93020_DESC"
 picture = "foreign_policy"
 
 
@@ -912,7 +912,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Their loss!"
+name = "EVT_93020_OPTIONA"
 command = { type = relation which = CAN value = -50 }
 command = { type = dissent value = 1 }
 command = { type = clrflag which = SAF_ENTENTE_5 }
@@ -932,8 +932,8 @@ flag = SAF_CAN_MIL_ACC
 access = { COUNTRY = CAN COUNTRY = SAF}
 }
 
-name = "Who cares about South Africa!"
-desc = "We will now revoke the military access we granted to South Africa. We don't really care what will happen to them!"
+name = "EVT_93021_NAME"
+desc = "EVT_93021_DESC"
 picture = "SouthAfrica"
 
 
@@ -942,7 +942,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Their loss!"
+name = "EVT_93021_OPTIONA"
 command = { type = end_access which = SAF }
 command = { type = relation which = SAF value = -10 }
 command = { type = clrflag which = SAF_CAN_MIL_ACC }
@@ -960,8 +960,8 @@ flag = SAF_AST_MIL_ACC
 access = { COUNTRY = AST COUNTRY = SAF}
 }
 
-name = "Who cares about South Africa!"
-desc = "We will now revoke the military access we granted to South Africa. We don't really care what will happen to them!"
+name = "EVT_93022_NAME"
+desc = "EVT_93022_DESC"
 picture = "SouthAfrica"
 
 
@@ -970,7 +970,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Their loss!"
+name = "EVT_93022_OPTIONA"
 command = { type = end_access which = SAF }
 command = { type = relation which = SAF value = -10 }
 command = { type = clrflag which = SAF_CAN_MIL_ACC }
@@ -988,8 +988,8 @@ flag = SAF_INTERNATIO
 random = 50
 }
 
-name = "Approaching the Internationale"
-desc = "The new socialist government of South Africa decided to approach the Internationale and asked to join the alliance."
+name = "EVT_93023_NAME"
+desc = "EVT_93023_DESC"
 picture = "foreign_policy"
 
 
@@ -998,14 +998,14 @@ offset = 20
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Start the negotiations!"
+name = "EVT_93023_OPTIONA"
 ai_chance = 95
 command = { type = relation which = FRA value = 10 }
 command = { type = clrflag which = SAF_INTERNATIO }
 command = { type = setflag which = SAF_INTERNATIO_2 }
 }
 action_b = {
-name = "It wasn't such a good idea"
+name = "EVT_93023_OPTIONB"
 ai_chance = 5
 command = { type = domestic which = interventionism value = -1 }
 command = { type = clrflag which = SAF_INTERNATIO }
@@ -1022,8 +1022,8 @@ trigger = {
 flag = SAF_INTERNATIO_2
 }
 
-name = "South Africa in the Internationale?"
-desc = "The new socialist government of South Africa approached us: they are thinking about joining the Internationale. Do we really need them?"
+name = "EVT_93024_NAME"
+desc = "EVT_93024_DESC"
 picture = "foreign_policy"
 
 
@@ -1032,7 +1032,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Yes! For the Revolution!"
+name = "EVT_93024_OPTIONA"
 ai_chance = 50
 command = { type = alliance which = SAF }
 command = { type = relation which = SAF value = 20 }
@@ -1040,7 +1040,7 @@ command = { type = clrflag which = SAF_INTERNATIO_2 }
 command = { type = setflag which = SAF_INTERNATIO_3 }
 }
 action_b = {
-name = "No, but what about a non-aggression pact?"
+name = "EVT_93024_OPTIONB"
 ai_chance = 40
 command = { type = guarantee which = FRA where = SAF }
 command = { type = domestic which = interventionism value = -1 }
@@ -1048,7 +1048,7 @@ command = { type = clrflag which = SAF_INTERNATIO_2 }
 command = { type = setflag which = SAF_INTERNATIO_4 }
 }
 action_c = {
-name = "Who needs you?"
+name = "EVT_93024_OPTIONC"
 ai_chance = 10
 command = { type = relation which = FRA value = -30 }
 command = { type = clrflag which = SAF_INTERNATIO_2 }
@@ -1066,8 +1066,8 @@ trigger = {
 flag = SAF_INTERNATIO_3
 }
 
-name = "The Internationale accepted our request!"
-desc = "The Internationale accepted our request, we will now join the Internationale!"
+name = "EVT_93025_NAME"
+desc = "EVT_93025_DESC"
 picture = "foreign_policy"
 
 
@@ -1076,7 +1076,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Great!"
+name = "EVT_93025_OPTIONA"
 ai_chance = 95
 command = { type = relation which = FRA value = 50 }
 command = { type = dissent value = -1 }
@@ -1085,7 +1085,7 @@ command = { type = setflag which = SAF_CAN_MIL_ACC }
 command = { type = setflag which = SAF_AST_MIL_ACC }
 }
 action_b = {
-name = "We changed our minds!"
+name = "EVT_93025_OPTIONB"
 ai_chance = 5
 command = { type = leave_alliance }
 command = { type = relation which = FRA value = -100 }
@@ -1105,8 +1105,8 @@ trigger = {
 flag = SAF_INTERNATIO_4
 }
 
-name = "The Internationale has a different proposal"
-desc = "The Internationale rejected our request, but they said that they will guarantee our independence and proposed a non-aggression pact. It's not what we asked, but maybe this is a better solution."
+name = "EVT_93026_NAME"
+desc = "EVT_93026_DESC"
 picture = "foreign_policy"
 
 
@@ -1115,14 +1115,14 @@ offset = 10
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Ok..."
+name = "EVT_93026_OPTIONA"
 ai_chance = 95
 command = { type = non_aggression which = FRA where = SAF }
 command = { type = guarantee which = SAF where = FRA }
 command = { type = clrflag which = SAF_INTERNATIO_4 }
 }
 action_b = {
-name = "Bah, we don't need this..."
+name = "EVT_93026_OPTIONB"
 ai_chance = 5
 command = { type = end_guarantee which = FRA where = SAF }
 command = { type = relation which = FRA value = -100 }
@@ -1141,8 +1141,8 @@ trigger = {
 flag = SAF_INTERNATIO_5
 }
 
-name = "The Internationale rejected our request!"
-desc = "The Internationale rejected our request, we will never trust them again!"
+name = "EVT_93027_NAME"
+desc = "EVT_93027_DESC"
 picture = "foreign_policy"
 
 
@@ -1151,7 +1151,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Their loss!"
+name = "EVT_93027_OPTIONA"
 command = { type = relation which = FRA value = -50 }
 command = { type = dissent value = 1 }
 command = { type = clrflag which = SAF_INTERNATIO_5 }
@@ -1169,8 +1169,8 @@ flag = SAF_MITTELAFRIKA
 random = 50
 }
 
-name = "Approaching Mittelafrika"
-desc = "The new government of South Africa decided to approach Mittelafrika and negotiate an alliance."
+name = "EVT_93028_NAME"
+desc = "EVT_93028_DESC"
 picture = "foreign_policy"
 
 
@@ -1179,14 +1179,14 @@ offset = 20
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Start the negotiations!"
+name = "EVT_93028_OPTIONA"
 ai_chance = 95
 command = { type = relation which = CAN value = 10 }
 command = { type = clrflag which = SAF_MITTELAFRIKA }
 command = { type = setflag which = SAF_MITTELAFRIKA_2 }
 }
 action_b = {
-name = "It wasn't such a good idea"
+name = "EVT_93028_OPTIONB"
 ai_chance = 5
 command = { type = domestic which = interventionism value = -1 }
 command = { type = clrflag which = SAF_MITTELAFRIKA }
@@ -1203,8 +1203,8 @@ trigger = {
 flag = SAF_MITTELAFRIKA_2
 }
 
-name = "South Africa and Mittelafrika?"
-desc = "The new government of South Africa approached us: they are thinking about an alliance between our countries. Do we really need them?"
+name = "EVT_93029_NAME"
+desc = "EVT_93029_DESC"
 picture = "foreign_policy"
 
 
@@ -1213,7 +1213,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Yes! A great African alliance!"
+name = "EVT_93029_OPTIONA"
 ai_chance = 50
 command = { type = alliance which = SAF }
 command = { type = relation which = SAF value = 20 }
@@ -1221,7 +1221,7 @@ command = { type = clrflag which = SAF_MITTELAFRIKA_2 }
 command = { type = setflag which = SAF_MITTELAFRIKA_3 }
 }
 action_b = {
-name = "No, but what about a non-aggression pact?"
+name = "EVT_93029_OPTIONB"
 ai_chance = 40
 command = { type = guarantee which = CON where = SAF }
 command = { type = domestic which = interventionism value = -1 }
@@ -1229,7 +1229,7 @@ command = { type = clrflag which = SAF_MITTELAFRIKA_2 }
 command = { type = setflag which = SAF_MITTELAFRIKA_4 }
 }
 action_c = {
-name = "Who needs you?"
+name = "EVT_93029_OPTIONC"
 ai_chance = 10
 command = { type = relation which = CON value = -30 }
 command = { type = clrflag which = SAF_MITTELAFRIKA_2 }
@@ -1247,8 +1247,8 @@ trigger = {
 flag = SAF_MITTELAFRIKA_3
 }
 
-name = "Mittelafrika accepted our request!"
-desc = "Mittelafrika accepted our request, we are now allies!"
+name = "EVT_93030_NAME"
+desc = "EVT_93030_DESC"
 picture = "foreign_policy"
 
 
@@ -1257,7 +1257,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Great!"
+name = "EVT_93030_OPTIONA"
 ai_chance = 95
 command = { type = relation which = CON value = 50 }
 command = { type = dissent value = -1 }
@@ -1266,7 +1266,7 @@ command = { type = setflag which = SAF_CAN_MIL_ACC }
 command = { type = setflag which = SAF_AST_MIL_ACC }
 }
 action_b = {
-name = "We changed our minds!"
+name = "EVT_93030_OPTIONB"
 ai_chance = 5
 command = { type = leave_alliance }
 command = { type = relation which = CON value = -100 }
@@ -1286,8 +1286,8 @@ trigger = {
 flag = SAF_MITTELAFRIKA_4
 }
 
-name = "Mittelafrika has a different proposal"
-desc = "Mittelafrika rejected our request, but they said that they will guarantee our independence and proposed a non-aggression pact. It's not what we asked, but maybe this is a better solution."
+name = "EVT_93031_NAME"
+desc = "EVT_93031_DESC"
 picture = "foreign_policy"
 
 
@@ -1296,14 +1296,14 @@ offset = 10
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Ok..."
+name = "EVT_93031_OPTIONA"
 ai_chance = 80
 command = { type = non_aggression which = CON where = SAF }
 command = { type = guarantee which = SAF where = CON }
 command = { type = clrflag which = SAF_MITTELAFRIKA_4 }
 }
 action_b = {
-name = "Bah, we don't need this..."
+name = "EVT_93031_OPTIONB"
 ai_chance = 20
 command = { type = end_guarantee which = CON where = SAF }
 command = { type = relation which = CON value = -100 }
@@ -1322,8 +1322,8 @@ trigger = {
 flag = SAF_MITTELAFRIKA_5
 }
 
-name = "Mittelafrika rejected our request!"
-desc = "Mittelafrika rejected our request, we will never trust them again!"
+name = "EVT_93032_NAME"
+desc = "EVT_93032_DESC"
 picture = "foreign_policy"
 
 
@@ -1332,7 +1332,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Their loss!"
+name = "EVT_93032_OPTIONA"
 command = { type = relation which = CON value = -50 }
 command = { type = dissent value = 1 }
 command = { type = clrflag which = SAF_MITTELAFRIKA_5 }
@@ -1365,8 +1365,8 @@ war = { country = CON country = POR}
 random = 15
 }
 
-name = "Expansionism"
-desc = "The new government decided to expand the borders of South Africa. What will be the target? Portugal for Mozambique or Mittelafrika for Südwestafrika?"
+name = "EVT_93033_NAME"
+desc = "EVT_93033_DESC"
 picture = "15th_army"
 
 
@@ -1376,7 +1376,7 @@ deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
 ai_chance = 60
-name = "Portugal, for Mozambique!"
+name = "EVT_93033_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = clrflag which = SAF_EXP }
 command = { type = setflag which = SAF_EXP_POR }
@@ -1384,7 +1384,7 @@ command = { type = setflag which = SAF_EXP_POR }
 
 action_b = {
 ai_chance = 25
-name = "Mittelafrika, for Südwestafrika!"
+name = "EVT_93033_OPTIONB"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = clrflag which = SAF_EXP }
 command = { type = setflag which = SAF_EXP_MIT }
@@ -1392,7 +1392,7 @@ command = { type = setflag which = SAF_EXP_MIT }
 
 action_c = {
 ai_chance = 10
-name = "Portugal first, then Mittelafrika!"
+name = "EVT_93033_OPTIONC"
 command = { type = domestic which = interventionism value = 2 }
 command = { type = clrflag which = SAF_EXP }
 command = { type = setflag which = SAF_EXP_POR_MIT }
@@ -1400,7 +1400,7 @@ command = { type = setflag which = SAF_EXP_POR_MIT }
 
 action_d = {
 ai_chance = 5
-name = "Maybe it was a bad idea..."
+name = "EVT_93033_OPTIOND"
 command = { type = dissent value = 1 }
 command = { type = domestic which = interventionism value = -1 }
 command = { type = clrflag which = SAF_EXP }
@@ -1433,8 +1433,8 @@ owned = { province = 854 data = POR } # Vila Cabral
 random = 15
 }
 
-name = "Expansionism"
-desc = "The new government decided to expand the borders of South Africa. The obvious target is Mittelafrika, what else?"
+name = "EVT_93034_NAME"
+desc = "EVT_93034_DESC"
 picture = "15th_army"
 
 
@@ -1444,7 +1444,7 @@ deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
 ai_chance = 80
-name = "Mittelafrika is our enemy!"
+name = "EVT_93034_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = clrflag which = SAF_EXP }
 command = { type = setflag which = SAF_EXP_MIT }
@@ -1452,7 +1452,7 @@ command = { type = setflag which = SAF_EXP_MIT }
 
 action_b = {
 ai_chance = 20
-name = "Maybe it was a bad idea..."
+name = "EVT_93034_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = domestic which = interventionism value = -1 }
 command = { type = clrflag which = SAF_EXP }
@@ -1473,8 +1473,8 @@ flag = SAF_EXP_POR_MIT
 random = 15
 }
 
-name = "Ask Portugal for Mozambique!"
-desc = "It is time to ask for what is rightfully ours, the land of Mozambique!"
+name = "EVT_93035_NAME"
+desc = "EVT_93035_DESC"
 picture = "mozambique"
 
 
@@ -1484,13 +1484,13 @@ deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
 ai_chance = 99
-name = "Mozambique belongs to us!"
+name = "EVT_93035_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = trigger which = 93036 }
 }
 action_b = {
 ai_chance = 1
-name = "Maybe it was a bad idea..."
+name = "EVT_93035_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = domestic which = interventionism value = -1 }
 command = { type = clrflag which = SAF_EXP_POR }
@@ -1504,13 +1504,13 @@ random = no
 country = POR
 style = 2
 
-name = "South Africa wants Mozambique!"
-desc = "South Africa claims our land, they want us to cede our East African colony! How should we react?"
+name = "EVT_93036_NAME"
+desc = "EVT_93036_DESC"
 picture = "mozambique"
 
 action_a = {
 ai_chance = 10
-name = "Ok, we don't want a war."
+name = "EVT_93036_OPTIONA"
 command = { type = secedeprovince which = SAF value = 853 } #Lourenco Marques
 command = { type = secedeprovince which = SAF value = 854 } #Inhambane
 command = { type = secedeprovince which = SAF value = 855 } #Beira
@@ -1523,7 +1523,7 @@ command = { type = trigger which = 93037 }
 
 action_b = {
 ai_chance = 90
-name = "Forget it!"
+name = "EVT_93036_OPTIONB"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = trigger which = 93038 }
 }
@@ -1535,12 +1535,12 @@ random = no
 country = SAF
 style = 2
 
-name = "Portugal accepts!"
-desc = "Portugal accepted our request and gave us Mozambique!"
+name = "EVT_93037_NAME"
+desc = "EVT_93037_DESC"
 picture = "mozambique"
 
 action_a = {
-name = "Great!"
+name = "EVT_93037_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = addcore which = 853 } #Lourenco Marques
 command = { type = addcore which = 854 } #Inhambane
@@ -1559,13 +1559,13 @@ random = no
 country = SAF
 style = 2
 
-name = "Portugal refuses!"
-desc = "Portugal refused to give us the land of Mozambique. What should we do now?"
+name = "EVT_93038_NAME"
+desc = "EVT_93038_DESC"
 picture = "mozambique"
 
 action_a = {
 ai_chance = 90
-name = "Then it is war!"
+name = "EVT_93038_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = addcore which = 853 } #Lourenco Marques
 command = { type = addcore which = 854 } #Inhambane
@@ -1577,7 +1577,7 @@ command = { type = war which = POR }
 }
 action_b = {
 ai_chance = 10
-name = "Damn it!"
+name = "EVT_93038_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = domestic which = interventionism value = -1 }
 command = { type = clrflag which = SAF_EXP_POR }
@@ -1610,8 +1610,8 @@ war = { country = POR country = SAF}
 lost_national = { country = SAF value = 30 }
 }
 
-name = "Offer peace condition"
-desc = "South Africa is losing their war against us, should we offer them acceptable peace terms? We could ask them to grant us military access and to pay some war indennities."
+name = "EVT_93039_NAME"
+desc = "EVT_93039_DESC"
 picture = "SouthAfrica"
 
 
@@ -1621,13 +1621,13 @@ deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
 ai_chance = 100
-name = "Yes, offer peace!"
+name = "EVT_93039_OPTIONA"
 command = { type = dissent value = -1 }
 command = { type = trigger which = 93040 }
 }
 action_b = {
 ai_chance = 0
-name = "No, there will be no peace!"
+name = "EVT_93039_OPTIONB"
 command = { type = dissent value = 3 }
 command = { type = domestic which = defense_lobby value = 1 }
 }
@@ -1639,13 +1639,13 @@ random = no
 country = SAF
 style = 2
 
-name = "Portugal offers peace"
-desc = "Portugal offers peace, they want us to grant them military access and to pay some war indennities"
+name = "EVT_93040_NAME"
+desc = "EVT_93040_DESC"
 picture = "SouthAfrica"
 
 action_a = {
 ai_chance = 100
-name = "Yes, yes we accept!"
+name = "EVT_93040_OPTIONA"
 command = { type = leave_alliance }
 command = { type = peace which = POR value = 0 }
 command = { type = access which = POR }
@@ -1657,7 +1657,7 @@ command = { type = clrflag which = SAF_EXP_POR_MIT }
 }
 action_b = {
 ai_chance = 0
-name = "No, never!"
+name = "EVT_93040_OPTIONB"
 command = { type = dissent value = 3 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = trigger which = 93042 }
@@ -1670,12 +1670,12 @@ random = no
 country = POR
 style = 2
 
-name = "South Africa accepts peace!"
-desc = "South Africa accepted our generous peace offer. The war has ended!"
+name = "EVT_93041_NAME"
+desc = "EVT_93041_DESC"
 picture = "SouthAfrica"
 
 action_a = {
-name = "Great!"
+name = "EVT_93041_OPTIONA"
 command = { type = supplies value = 2000 }
 command = { type = money value = 100 }
 command = { type = dissent value = -5 }
@@ -1688,12 +1688,12 @@ random = no
 country = POR
 style = 2
 
-name = "South Africa rejects peace"
-desc = "South Africa rejected our generous peace offer! How dare they!"
+name = "EVT_93042_NAME"
+desc = "EVT_93042_DESC"
 picture = "SouthAfrica"
 
 action_a = {
-name = "Idiots, they will pay a bigger price!"
+name = "EVT_93042_OPTIONA"
 command = { type = dissent value = 1 }
 }
 }
@@ -1734,8 +1734,8 @@ owned = { province = 853 data = POR } # Quelimane
 owned = { province = 854 data = POR } # Vila Cabral
 }
 
-name = "Offer peace condition"
-desc = "We occupied the land of Mozambique, maybe now Portugal will understand our rightful claims to this land."
+name = "EVT_93043_NAME"
+desc = "EVT_93043_DESC"
 picture = "mozambique"
 
 date = { day = 2 month = june year = 1938 }
@@ -1744,13 +1744,13 @@ deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
 ai_chance = 100
-name = "Yes, offer peace!"
+name = "EVT_93043_OPTIONA"
 command = { type = dissent value = -1 }
 command = { type = trigger which = 93044 }
 }
 action_b = {
 ai_chance = 0
-name = "No, there will be no peace!"
+name = "EVT_93043_OPTIONB"
 command = { type = dissent value = 3 }
 command = { type = domestic which = defense_lobby value = 1 }
 }
@@ -1762,13 +1762,13 @@ random = no
 country = POR
 style = 2
 
-name = "South Africa offers peace"
-desc = "South Africa offers peace, they now control Mozambique and they want us to recognize their claim"
+name = "EVT_93044_NAME"
+desc = "EVT_93044_DESC"
 picture = "mozambique"
 
 action_a = {
 ai_chance = 100
-name = "We accept, Mozambique belongs to South Africa now"
+name = "EVT_93044_OPTIONA"
 command = { type = leave_alliance }
 command = { type = peace which = SAF value = 0 }
 command = { type = secedeprovince which = SAF value = 853 }
@@ -1781,7 +1781,7 @@ command = { type = trigger which = 93045 }
 }
 action_b = {
 ai_chance = 0
-name = "No, never!"
+name = "EVT_93044_OPTIONB"
 command = { type = dissent value = 3 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = trigger which = 93046 }
@@ -1794,12 +1794,12 @@ random = no
 country = SAF
 style = 2
 
-name = "Portugal accepts peace!"
-desc = "South Africa accepted our generous peace offer. Mozambique now belongs to us!"
+name = "EVT_93045_NAME"
+desc = "EVT_93045_DESC"
 picture = "mozambique"
 
 action_a = {
-name = "Great!"
+name = "EVT_93045_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = clrflag which = SAF_EXP_POR }
 command = { type = setflag which = SAF_EXP_POR_OK }
@@ -1812,12 +1812,12 @@ random = no
 country = SAF
 style = 2
 
-name = "Portugal rejects peace"
-desc = "Portugal rejected our generous peace offer! How dare they!"
+name = "EVT_93046_NAME"
+desc = "EVT_93046_DESC"
 picture = "mozambique"
 
 action_a = {
-name = "Idiots, they will pay a bigger price!"
+name = "EVT_93046_OPTIONA"
 command = { type = dissent value = 1 }
 }
 }
@@ -1840,8 +1840,8 @@ event = 93037
 event = 93045
 }
 }
-name = "Mozambique under control"
-desc = "Mozambique is now under our full control!"
+name = "EVT_93047_NAME"
+desc = "EVT_93047_DESC"
 picture = "mozambique"
 
 
@@ -1850,7 +1850,7 @@ offset = 70
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Great!"
+name = "EVT_93047_OPTIONA"
 command = { type = dissent value = -1 }
 command = { type = addcore which = 853 } #Lourenco Marques
 command = { type = addcore which = 854 } #Inhambane
@@ -1882,8 +1882,8 @@ flag = SAF_EXP_POR_OK
 exists = CON
 random = 15
 }
-name = "Gearing up for war"
-desc = "The country must be prepared for a war against Mittelafrika. More manpower is needed."
+name = "EVT_93048_NAME"
+desc = "EVT_93048_DESC"
 picture = "15th_army"
 
 
@@ -1893,7 +1893,7 @@ deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
 ai_chance = 99
-name = "We need manpower!"
+name = "EVT_93048_OPTIONA"
 command = { type = manpowerpool value = 30 }
 command = { type = relative_manpower value = 5 }
 command = { type = domestic which = defense_lobby value = 1 }
@@ -1903,7 +1903,7 @@ command = { type = setflag which = SAF_EXP_MIT_1 }
 
 action_b = {
 ai_chance = 1
-name = "It was a bad idea!"
+name = "EVT_93048_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = domestic which = interventionism value = -1 }
 command = { type = clrflag which = SAF_EXP_MIT }
@@ -1927,8 +1927,8 @@ exists = CON
 random = 15
 }
 
-name = "Gearing up for war"
-desc = "The country must be prepared for a war against Mittelafrika. More troops are needed."
+name = "EVT_93049_NAME"
+desc = "EVT_93049_DESC"
 picture = "15th_army"
 
 
@@ -1938,7 +1938,7 @@ deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
 ai_chance = 99
-name = "Welcome the new troops!"
+name = "EVT_93049_OPTIONA"
 command = { type = add_division which = "1st South Africa Attack Corps" value = infantry when = 9 }
 command = { type = add_division which = "2nd South Africa Attack Corps" value = militia when = 9 }
 command = { type = supplies value = -100 }
@@ -1949,7 +1949,7 @@ command = { type = setflag which = SAF_EXP_MIT_2 }
 
 action_b = {
 ai_chance = 1
-name = "It was a bad idea!"
+name = "EVT_93049_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = domestic which = interventionism value = -1 }
 command = { type = clrflag which = SAF_EXP_MIT }
@@ -1974,8 +1974,8 @@ exists = CON
 random = 15
 }
 
-name = "Gearing up for war"
-desc = "The country must be prepared for a war against Mittelafrika. More manpower is needed."
+name = "EVT_93050_NAME"
+desc = "EVT_93050_DESC"
 picture = "15th_army"
 
 
@@ -1985,7 +1985,7 @@ deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
 ai_chance = 99
-name = "We need manpower!"
+name = "EVT_93050_OPTIONA"
 command = { type = manpowerpool value = 30 }
 command = { type = relative_manpower value = 5 }
 command = { type = domestic which = defense_lobby value = 1 }
@@ -1996,7 +1996,7 @@ command = { type = setflag which = SAF_EXP_MIT_3 }
 
 action_b = {
 ai_chance = 1
-name = "It was a bad idea!"
+name = "EVT_93050_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = domestic which = interventionism value = -1 }
 command = { type = clrflag which = SAF_EXP_MIT }
@@ -2023,8 +2023,8 @@ random = 15
 
 }
 
-name = "Gearing up for war"
-desc = "The country must be prepared for a war against Mittelafrika. More troops are needed."
+name = "EVT_93051_NAME"
+desc = "EVT_93051_DESC"
 picture = "15th_army"
 
 
@@ -2034,7 +2034,7 @@ deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
 ai_chance = 99
-name = "Welcome the new troops!"
+name = "EVT_93051_OPTIONA"
 command = { type = add_division which = "3rd South Africa Attack Corps" value = cavalry when = 7 }
 command = { type = add_division which = "4th South Africa Attack Corps" value = militia when = 5 }
 command = { type = supplies value = -150 }
@@ -2045,7 +2045,7 @@ command = { type = setflag which = SAF_EXP_MIT_4 }
 
 action_b = {
 ai_chance = 1
-name = "It was a bad idea!"
+name = "EVT_93051_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = domestic which = interventionism value = -1 }
 command = { type = clrflag which = SAF_EXP_MIT }
@@ -2070,8 +2070,8 @@ exists = CON
 random = 15
 }
 
-name = "Gearing up for war"
-desc = "The country must be prepared for a war against Mittelafrika. More troops and landing units are needed."
+name = "EVT_93052_NAME"
+desc = "EVT_93052_DESC"
 picture = "15th_army"
 
 
@@ -2081,7 +2081,7 @@ deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
 ai_chance = 99
-name = "Welcome the new troops!"
+name = "EVT_93052_OPTIONA"
 command = { type = add_division which = "5th South Africa Attack Corps" value = militia when = 5 }
 command = { type = add_division which = "1st South Africa Transport" value = transport when = 1 }
 command = { type = supplies value = -200 }
@@ -2093,7 +2093,7 @@ command = { type = setflag which = SAF_EXP_MIT_5 }
 
 action_b = {
 ai_chance = 1
-name = "It was a bad idea!"
+name = "EVT_93052_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = domestic which = interventionism value = -1 }
 command = { type = clrflag which = SAF_EXP_MIT }
@@ -2118,8 +2118,8 @@ war = { country = SAF country = CON}
 }
 exists = SAF
 }
-name = "Warning"
-desc = "Reports show an increasing military activity in South Africa: they are probably preparing an attack against us. What should we do?"
+name = "EVT_93053_NAME"
+desc = "EVT_93053_DESC"
 picture = "15th_army"
 
 
@@ -2129,7 +2129,7 @@ deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
 ai_chance = 50
-name = "Let them come if they dare!"
+name = "EVT_93053_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = clrflag which = SAF_EXP_MIT_5 }
 command = { type = setflag which = SAF_EXP_MIT_6 }
@@ -2137,7 +2137,7 @@ command = { type = setflag which = SAF_EXP_MIT_6 }
 
 action_b = {
 ai_chance = 50
-name = "We need more troops!"
+name = "EVT_93053_OPTIONB"
 command = { type = manpowerpool value = 50 }
 command = { type = add_division which = "1st Mittelafrika Defense Corps" value = infantry when = 9 }
 command = { type = add_division which = "2nd Mittelafrika Defense Corps" value = militia when = 5 }
@@ -2164,8 +2164,8 @@ war = { country = SAF country = CON}
 }
 }
 
-name = "Ask Mittelafrika for Südwestafrika!"
-desc = "It is time to ask what is rightfully ours, the land of Südwestafrika!"
+name = "EVT_93054_NAME"
+desc = "EVT_93054_DESC"
 picture = "namibia"
 
 
@@ -2175,14 +2175,14 @@ deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
 ai_chance = 99
-name = "Südwestafrika belongs to us!"
+name = "EVT_93054_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = trigger which = 93055 }
 command = { type = clrflag which = SAF_EXP_MIT_6 }
 }
 action_b = {
 ai_chance = 1
-name = "Maybe it was a bad idea..."
+name = "EVT_93054_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = domestic which = interventionism value = -1 }
 command = { type = clrflag which = SAF_EXP_MIT }
@@ -2197,13 +2197,13 @@ random = no
 country = CON
 style = 2
 
-name = "South Africa wants Südwestafrika!"
-desc = "South Africa claims our land, they want us to cede Südwestafrika! How should we react?"
+name = "EVT_93055_NAME"
+desc = "EVT_93055_DESC"
 picture = "namibia"
 
 action_a = {
 ai_chance = 5
-name = "Ok, we don't want a war."
+name = "EVT_93055_OPTIONA"
 command = { type = secedeprovince which = SAF value = 882 } #Luderitz
 command = { type = secedeprovince which = SAF value = 883 } #Walvis Bay
 command = { type = secedeprovince which = SAF value = 884 } #Windhoek
@@ -2214,7 +2214,7 @@ command = { type = trigger which = 93056 }
 }
 action_b = {
 ai_chance = 95
-name = "Forget it!"
+name = "EVT_93055_OPTIONB"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = trigger which = 93057 }
 }
@@ -2226,12 +2226,12 @@ random = no
 country = SAF
 style = 2
 
-name = "Mittelafrika accepts!"
-desc = "Mittelafrika accepted our request and gave us Südwestafrika!"
+name = "EVT_93056_NAME"
+desc = "EVT_93056_DESC"
 picture = "namibia"
 
 action_a = {
-name = "Great!"
+name = "EVT_93056_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = addcore which = 882 } #Luderitz
 command = { type = addcore which = 883 } #Walvis Bay
@@ -2250,13 +2250,13 @@ random = no
 country = SAF
 style = 2
 
-name = "Mittelafrika refuses!"
-desc = "Mittelafrika refused to give us the land of Südwestafrika. What should we do now?"
+name = "EVT_93057_NAME"
+desc = "EVT_93057_DESC"
 picture = "namibia"
 
 action_a = {
 ai_chance = 90
-name = "Then it is war!"
+name = "EVT_93057_OPTIONA"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = addcore which = 882 } #Luderitz
 command = { type = addcore which = 883 } #Walvis Bay
@@ -2267,7 +2267,7 @@ command = { type = war which = CON }
 }
 action_b = {
 ai_chance = 10
-name = "Damn it!"
+name = "EVT_93057_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = domestic which = interventionism value = -1 }
 command = { type = clrflag which = SAF_EXP_MIT }
@@ -2299,8 +2299,8 @@ lost_national = { country = CON value = 10 }
 war = { country = CON country = SAF }
 lost_national = { country = SAF value = 40 }
 }
-name = "Offer peace condition"
-desc = "South Africa is losing their war against us, should we offer them acceptable peace terms? We could ask for the Bechuanaland Protectorate and Southern Rhodesia along with military access or maybe it would be better to install a puppet government?"
+name = "EVT_93058_NAME"
+desc = "EVT_93058_DESC"
 picture = "SouthAfrica"
 
 
@@ -2310,7 +2310,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 70
-name = "We want the the Bechuanaland Protectorate, Southern Rhodesia, and military access!"
+name = "EVT_93058_OPTIONA"
 command = { type = dissent value = -1 }
 command = { type = addclaim  which = 866  }
 command = { type = addclaim  which = 867  }
@@ -2323,7 +2323,7 @@ command = { type = trigger which = 93059 }
 
 action_b = {
 ai_chance = 25
-name = "We want the Bechuanaland Protectorate, Southern Rhodesia, and a friendly governement!"
+name = "EVT_93058_OPTIONB"
 command = { type = dissent value = -2 }
 command = { type = addclaim  which = 866  }
 command = { type = addclaim  which = 867  }
@@ -2336,7 +2336,7 @@ command = { type = trigger which = 93060 }
 
 action_c = {
 ai_chance = 5
-name = "No, there will be no peace!"
+name = "EVT_93058_OPTIONC"
 command = { type = dissent value = 3 }
 command = { type = addclaim  which = 866  }
 command = { type = addclaim  which = 867  }
@@ -2354,13 +2354,13 @@ random = no
 country = SAF
 style = 2
 
-name = "Mittelafrika offers peace"
-desc = "Mittelafrika offers peace, they want the Bechuanaland Protectorate and Southern Rhodesia and military access."
+name = "EVT_93059_NAME"
+desc = "EVT_93059_DESC"
 picture = "SouthAfrica"
 
 action_a = {
 ai_chance = 95
-name = "Yes, yes we accept!"
+name = "EVT_93059_OPTIONA"
 command = { type = leave_alliance }
 command = { type = peace which = CON value = 0 }
 command = { type = access which = CON }
@@ -2376,7 +2376,7 @@ command = { type = clrflag which = SAF_EXP_POR_MIT }
 }
 action_b = {
 ai_chance = 5
-name = "No, never!"
+name = "EVT_93059_OPTIONB"
 command = { type = dissent value = 3 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = trigger which = 93063 }
@@ -2389,13 +2389,13 @@ random = no
 country = SAF
 style = 2
 
-name = "Mittelafrika offers peace"
-desc = "Mittelafrika offers peace, they want the Bechuanaland Protectorate and Southern Rhodesia and they want to install a puppet government!"
+name = "EVT_93060_NAME"
+desc = "EVT_93060_DESC"
 picture = "SouthAfrica"
 
 action_a = {
 ai_chance = 90
-name = "Yes, yes we accept!"
+name = "EVT_93060_OPTIONA"
 command = { type = leave_alliance }
 command = { type = peace which = CON value = 0 }
 command = { type = secedeprovince which = CON value = 870 } #Harare
@@ -2410,7 +2410,7 @@ command = { type = clrflag which = SAF_EXP_POR_MIT }
 }
 action_b = {
 ai_chance = 10
-name = "No, never!"
+name = "EVT_93060_OPTIONB"
 command = { type = dissent value = 3 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = trigger which = 93063 }
@@ -2423,12 +2423,12 @@ random = no
 country = CON
 style = 2
 
-name = "South Africa accepts peace!"
-desc = "South Africa accepted our generous peace offer. The war has ended!"
+name = "EVT_93061_NAME"
+desc = "EVT_93061_DESC"
 picture = "SouthAfrica"
 
 action_a = {
-name = "Great!"
+name = "EVT_93061_OPTIONA"
 command = { type = dissent value = -5 }
 }
 }
@@ -2439,12 +2439,12 @@ random = no
 country = CON
 style = 2
 
-name = "South Africa accepts peace!"
-desc = "South Africa accepted our generous peace offer. The war has ended!"
+name = "EVT_93062_NAME"
+desc = "EVT_93062_DESC"
 picture = "SouthAfrica"
 
 action_a = {
-name = "Great!"
+name = "EVT_93062_OPTIONA"
 command = { type = make_puppet which = SAF }
 command = { type = dissent value = -5 }
 }
@@ -2456,12 +2456,12 @@ random = no
 country = CON
 style = 2
 
-name = "South Africa rejects peace"
-desc = "South Africa rejected our generous peace offer! How dare they!"
+name = "EVT_93063_NAME"
+desc = "EVT_93063_DESC"
 picture = "SouthAfrica"
 
 action_a = {
-name = "Idiots, they will pay a bigger price!"
+name = "EVT_93063_OPTIONA"
 command = { type = dissent value = 1 }
 }
 }
@@ -2501,8 +2501,8 @@ owned = { province = 858 data = CON } # Vila Cabral
 }
 }
 
-name = "Offer peace condition"
-desc = "We occupied Dar es Salaam, the capital of Mittelafrika. Should we offer them peace in exchange for Südwestafrika?"
+name = "EVT_93064_NAME"
+desc = "EVT_93064_DESC"
 picture = "namibia"
 
 date = { day = 2 month = june year = 1938 }
@@ -2511,7 +2511,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 100
-name = "Yes, offer peace!"
+name = "EVT_93064_OPTIONA"
 command = { type = dissent value = -1 }
 command = { type = addcore  which = 885   }
 command = { type = addcore  which = 886   }
@@ -2522,7 +2522,7 @@ command = { type = trigger which = 93066 }
 }
 action_b = {
 ai_chance = 0
-name = "No, there will be no peace!"
+name = "EVT_93064_OPTIONB"
 command = { type = dissent value = 3 }
 command = { type = addcore  which = 885   }
 command = { type = addcore  which = 886   }
@@ -2568,8 +2568,8 @@ lost_national = { country = SAF value = 10 }
 }
 }
 
-name = "Offer peace condition"
-desc = "We occupied Dar es Salaam, the capital of Mittelafrika. What should we ask in exchange for peace?"
+name = "EVT_93065_NAME"
+desc = "EVT_93065_DESC"
 picture = "namibia"
 
 date = { day = 2 month = june year = 1938 }
@@ -2578,7 +2578,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 50
-name = "We want Südwestafrika!"
+name = "EVT_93065_OPTIONA"
 command = { type = dissent value = -1 }
 command = { type = addcore  which = 885   }
 command = { type = addcore  which = 886   }
@@ -2589,7 +2589,7 @@ command = { type = trigger which = 93066 }
 }
 action_b = {
 ai_chance = 50
-name = "We want Südwestafrika and Mozambique!"
+name = "EVT_93065_OPTIONB"
 command = { type = dissent value = -2 }
 command = { type = addcore  which = 885 }
 command = { type = addcore  which = 886 }
@@ -2606,7 +2606,7 @@ command = { type = trigger which = 93067 }
 }
 action_c = {
 ai_chance = 0
-name = "No, there will be no peace!"
+name = "EVT_93065_OPTIONC"
 command = { type = dissent value = 3 }
 command = { type = addcore  which = 885 }
 command = { type = addcore  which = 886 }
@@ -2629,13 +2629,13 @@ random = no
 country = CON
 style = 2
 
-name = "South Africa offers peace"
-desc = "South Africa offers peace, they want Südwestafrika!"
+name = "EVT_93066_NAME"
+desc = "EVT_93066_DESC"
 picture = "namibia"
 
 action_a = {
 ai_chance = 85
-name = "We accept, Südwestafrika belongs to South Africa now"
+name = "EVT_93066_OPTIONA"
 command = { type = leave_alliance }
 command = { type = peace which = SAF value = 0 }
 command = { type = secedeprovince which = SAF value = 882 } #Luderitz
@@ -2653,7 +2653,7 @@ command = { type = trigger which = 93068 }
 }
 action_b = {
 ai_chance = 15
-name = "No, never!"
+name = "EVT_93066_OPTIONB"
 command = { type = dissent value = 3 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = trigger which = 93070 }
@@ -2666,13 +2666,13 @@ random = no
 country = CON
 style = 2
 
-name = "South Africa offers peace"
-desc = "South Africa offers peace, they want Südwestafrika and Mozambique!"
+name = "EVT_93067_NAME"
+desc = "EVT_93067_DESC"
 picture = "namibia"
 
 action_a = {
 ai_chance = 70
-name = "We accept, Südwestafrika and Mozambique belong to South Africa now"
+name = "EVT_93067_OPTIONA"
 command = { type = leave_alliance }
 command = { type = peace which = SAF value = 0 }
 command = { type = secedeprovince which = SAF value = 882 } #Luderitz
@@ -2701,7 +2701,7 @@ command = { type = trigger which = 93069 }
 }
 action_b = {
 ai_chance = 30
-name = "No, never!"
+name = "EVT_93067_OPTIONB"
 command = { type = dissent value = 3 }
 command = { type = domestic which = defense_lobby value = 1 }
 command = { type = trigger which = 93070 }
@@ -2713,12 +2713,12 @@ random = no
 country = SAF
 style = 2
 
-name = "Mittelafrika accepts peace!"
-desc = "Mittelafrika accepted our generous peace offer. Südwestafrika now belongs to us!"
+name = "EVT_93068_NAME"
+desc = "EVT_93068_DESC"
 picture = "namibia"
 
 action_a = {
-name = "Great!"
+name = "EVT_93068_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = clrflag which = SAF_EXP_MIT }
 command = { type = clrflag which = SAF_EXP_POR_MIT }
@@ -2730,12 +2730,12 @@ random = no
 country = SAF
 style = 2
 
-name = "Mittelafrika accepts peace!"
-desc = "Mittelafrika accepted our generous peace offer. Südwestafrika and Mozambique now belong to us!"
+name = "EVT_93069_NAME"
+desc = "EVT_93069_DESC"
 picture = "namibia"
 
 action_a = {
-name = "Great!"
+name = "EVT_93069_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = clrflag which = SAF_EXP_MIT }
 command = { type = clrflag which = SAF_EXP_POR_MIT }
@@ -2748,12 +2748,12 @@ random = no
 country = SAF
 style = 2
 
-name = "Mittelafrika rejects peace"
-desc = "Mittelafrika rejected our generous peace offer! How dare they!"
+name = "EVT_93070_NAME"
+desc = "EVT_93070_DESC"
 picture = "namibia"
 
 action_a = {
-name = "Idiots, they will pay a bigger price!"
+name = "EVT_93070_OPTIONA"
 command = { type = dissent value = 1 }
 }
 }
@@ -2777,8 +2777,8 @@ event = 93068
 event = 93069
 }
 }
-name = "Südwestafrika under control"
-desc = "Südwestafrika is now under our full control!"
+name = "EVT_93071_NAME"
+desc = "EVT_93071_DESC"
 picture = "namibia"
 
 
@@ -2787,7 +2787,7 @@ offset = 5
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Great!"
+name = "EVT_93071_OPTIONA"
 command = { type = dissent value = -1 }
 command = { type = addcore which = 882 } #Luderitz
 command = { type = addcore which = 883 } #Walvis Bay
@@ -2812,8 +2812,8 @@ owned = { province = 869 data = CON }
 owned = { province = 870 data = CON }
 owned = { province = 871 data = CON } #Gaberones
 }
-name = "The Bechuanaland Protectorate and Southern Rhodesia under control"
-desc = "The Bechuanaland Protectorate and Southern Rhodesia are now under our full control!"
+name = "EVT_93072_NAME"
+desc = "EVT_93072_DESC"
 picture = "mittelafrika"
 
 
@@ -2822,7 +2822,7 @@ offset = 5
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "Great!"
+name = "EVT_93072_OPTIONA"
 command = { type = dissent value = -1 }
 command = { type = addcore which = 866 } #Harare
 command = { type = addcore which = 867 } #Bulawayo
@@ -2864,8 +2864,8 @@ NOT = {
 exists = SAF
 }
 }
-name = "Redrawing the Map"
-desc = "We control some african provinces, once belonging to South Africa. Should we give them to our loyal puppet Mittelafrika or should we keep them for ourselves?"
+name = "EVT_93073_NAME"
+desc = "EVT_93073_DESC"
 picture = "mittelafrika"
 
 
@@ -2875,7 +2875,7 @@ deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
 ai_chance = 100
-name = "South Africa to Mittelafrika!"
+name = "EVT_93073_OPTIONA"
 command = { type = relation which = CON value = 50 }
 command = { type = secedeprovince which = CON value = 879 } #Cape Town
 command = { type = secedeprovince which = CON value = 880 } #Port Elizabeth
@@ -2896,7 +2896,7 @@ command = { type = secedeprovince which = CON value = 867 }
 }
 action_b = {
 ai_chance = 0
-name = "South Africa is ours!"
+name = "EVT_93073_OPTIONB"
 command = { type = relation which = CON value = -50 }
 }
 }
@@ -2911,8 +2911,8 @@ trigger = {
 flag = SAF_APARTHEID
 random = 15
 }
-name = "Prohibition of Mixed Marriages Act"
-desc = "The government decided to introduce racial segretation: the first step consist in passing a law prohibiting marriages between people of different races."
+name = "EVT_93074_NAME"
+desc = "EVT_93074_DESC"
 picture = "Riot1"
 
 
@@ -2922,7 +2922,7 @@ deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
 ai_chance = 95
-name = "Pass the law!"
+name = "EVT_93074_OPTIONA"
 command = { type = dissent value = 10 }
 command = { type = domestic which = freedom value = -1 }
 command = { type = clrflag which = SAF_APARTHEID }
@@ -2930,7 +2930,7 @@ command = { type = setflag which = SAF_APA_1 }
 }
 action_b = {
 ai_chance = 5
-name = "Repeal the racial laws!"
+name = "EVT_93074_OPTIONB"
 command = { type = dissent value = -5 }
 command = { type = domestic which = democratic value = 1 }
 command = { type = domestic which = freedom value = 2 }
@@ -2949,8 +2949,8 @@ trigger = {
 flag = SAF_APA_1
 random = 15
 }
-name = "Separate Representation of Voters Act"
-desc = "The government decided to introduce racial segretation: the second step consist in passing a law regarding the separate representation of voters. This bill will introduce the Coloured Persons Representative Council, consisting of forty elected members and twenty nominated members. This council will make laws on finance, local government, education, community welfare and pensions, rural settlements and agriculture which affect coloured people."
+name = "EVT_93075_NAME"
+desc = "EVT_93075_DESC"
 picture = "Riot2"
 
 
@@ -2960,7 +2960,7 @@ deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
 ai_chance = 95
-name = "Pass the law!"
+name = "EVT_93075_OPTIONA"
 command = { type = dissent value = 10 }
 command = { type = domestic which = freedom value = -1 }
 command = { type = clrflag which = SAF_APA_1 }
@@ -2968,7 +2968,7 @@ command = { type = setflag which = SAF_APA_2 }
 }
 action_b = {
 ai_chance = 5
-name = "Repeal the racial laws!"
+name = "EVT_93075_OPTIONB"
 command = { type = dissent value = -10 }
 command = { type = domestic which = democratic value = 1 }
 command = { type = domestic which = freedom value = 3 }
@@ -2987,8 +2987,8 @@ trigger = {
 flag = SAF_APA_2
 random = 15
 }
-name = "Pass Laws Act"
-desc = "The government decided to introduce racial segretation: the third step consist in making compulsory for all black South Africans over the age of 18 to carry a 'pass book' at all times. The law stipulated where, when, and for how long a person could remain. The document was similar to an internal passport, containing details on the bearer such as their fingerprints, photograph, the name of his/her employer, his/her address, how long the bearer had been employed, as well as other identification information."
+name = "EVT_93076_NAME"
+desc = "EVT_93076_DESC"
 picture = "Strike1"
 
 
@@ -2998,7 +2998,7 @@ deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
 ai_chance = 95
-name = "Pass the law!"
+name = "EVT_93076_OPTIONA"
 command = { type = dissent value = 15 }
 command = { type = domestic which = freedom value = -1 }
 command = { type = clrflag which = SAF_APA_2 }
@@ -3006,7 +3006,7 @@ command = { type = setflag which = SAF_APA_3 }
 }
 action_b = {
 ai_chance = 5
-name = "Repeal the racial laws!"
+name = "EVT_93076_OPTIONB"
 command = { type = dissent value = -15 }
 command = { type = domestic which = democratic value = 1 }
 command = { type = domestic which = freedom value = 4 }
@@ -3025,8 +3025,8 @@ trigger = {
 flag = SAF_APA_3
 random = 50
 }
-name = "Violent protests!"
-desc = "After introducing the latest law enforcing racial segregation, violent protests erupted in the streets. It seems like the Labour Party is rallying the black population, invoking the revolution! We must stop them, either by negotiation or by force!"
+name = "EVT_93377_NAME"
+desc = "EVT_93377_DESC"
 picture = "coup"
 
 
@@ -3036,7 +3036,7 @@ deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
 ai_chance = 80
-name = "We will not stop! Crush the revolters!"
+name = "EVT_93377_OPTIONA"
 command = { type = dissent value = 10 }
 command = { type = domestic which = democratic value = -1 }
 command = { type = domestic which = freedom value = -1 }
@@ -3045,7 +3045,7 @@ command = { type = setflag which = SAF_APA_4 }
 }
 action_b = {
 ai_chance = 20
-name = "Listen to their demands, repeal the laws!"
+name = "EVT_93377_OPTIONB"
 command = { type = dissent value = -25 }
 command = { type = domestic which = democratic value = 1 }
 command = { type = domestic which = freedom value = 5 }
@@ -3066,8 +3066,8 @@ flag = SAF_APA_4
 random = 25
 }
 
-name = "The fate of the rebellion!"
-desc = "The governement decided to use the force against the revolters: many were killed and many more were arrested. The most important politicians from the Labour Party were arrested and accused of treason, but the party has not been disbanded. However, racial segregation is now reality and the repression against the black population is strong."
+name = "EVT_93078_NAME"
+desc = "EVT_93078_DESC"
 picture = "failed_coup"
 
 
@@ -3076,7 +3076,7 @@ offset = 5
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "The rebellion is crushed!"
+name = "EVT_93078_OPTIONB"
 ai_chance = 25
 command = { type = dissent value = -15 }
 command = { type = domestic which = democratic value = -1 }
@@ -3085,7 +3085,7 @@ command = { type = clrflag which = SAF_APA_4 }
 command = { type = setflag which = SAF_APA_SUCCESS }
 }
 action_b = {
-name = "The rebellion succeeded!"
+name = "EVT_93078_OPTIONC"
 ai_chance = 20
 command = { type = dissent value = -25 }
 command = { type = set_domestic which = democratic value = 4 }
@@ -3129,8 +3129,8 @@ ideology = stalinist
 random = 25
 }
 
-name = "Help revolters in Mittelafrika?"
-desc = "We have the opportunity to send supplies to some rebels in Mittelafrika. If we keep sending weapons and supplies, they might be able to start an uprising! We have connection in both Äquatorialafrika and Niger-Kamerun, where should we send the weapons?"
+name = "EVT_93080_NAME"
+desc = "EVT_93080_DESC"
 picture = "foreign_policy"
 
 
@@ -3139,7 +3139,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Send weapons to Niger-Kamerun!"
+name = "EVT_93080_OPTIONA"
 ai_chance = 30
 command = { type = domestic which = interventionism value = 1 }
 command = { type = supplies value = -250 }
@@ -3147,7 +3147,7 @@ command = { type = money value = -5 }
 command = { type = setflag which = SAF_NIGKAM_1	}
 }
 action_b = {
-name = "Send weapons to Äquatorialafrika!"
+name = "EVT_93080_OPTIONB"
 ai_chance = 30
 command = { type = domestic which = interventionism value = 1 }
 command = { type = supplies value = -250 }
@@ -3155,7 +3155,7 @@ command = { type = money value = -5 }
 command = { type = setflag which = SAF_EQUA_1 }
 }
 action_c = {
-name = "Send weapons to Niger-Kamerun and Äquatorialafrika!"
+name = "EVT_93080_OPTIONC"
 ai_chance = 30
 command = { type = domestic which = interventionism value = 1 }
 command = { type = supplies value = -500 }
@@ -3164,7 +3164,7 @@ command = { type = setflag which = SAF_NIGKAM_1	}
 command = { type = setflag which = SAF_EQUA_1 }
 }
 action_d = {
-name = "We have better things to do than this!"
+name = "EVT_93080_OPTIOND"
 ai_chance = 10
 command = { type = domestic which = interventionism value = -1 }
 }
@@ -3190,8 +3190,8 @@ flag = SAF_EQUA_1
 random = 25
 }
 
-name = "Dissent in Niger-Kamerun and Äquatorialafrika"
-desc = "The people in Niger-Kamerun and Äquatorialafrika are not happy with our government!"
+name = "EVT_93081_NAME"
+desc = "EVT_93081_DESC"
 picture = "Riot1"
 
 
@@ -3200,7 +3200,7 @@ offset = 25
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Damn it!"
+name = "EVT_93081_OPTIONA"
 command = { type = dissent value = 8 }
 command = { type = clrflag which = SAF_NIGKAM_1	}
 command = { type = clrflag which = SAF_EQUA_1 }
@@ -3230,8 +3230,8 @@ flag = SAF_EQUA_1
 random = 25
 }
 
-name = "Dissent in Niger-Kamerun"
-desc = "The people in Niger-Kamerun are not happy with our government!"
+name = "EVT_93082_NAME"
+desc = "EVT_93082_DESC"
 picture = "Riot1"
 
 
@@ -3240,7 +3240,7 @@ offset = 25
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Damn it!"
+name = "EVT_93082_OPTIONA"
 command = { type = dissent value = 5 }
 command = { type = clrflag which = SAF_NIGKAM_1	}
 command = { type = setflag which = SAF_NIGKAM_2	}
@@ -3267,8 +3267,8 @@ flag = SAF_NIGKAM_1
 random = 25
 }
 
-name = "Dissent in Äquatorialafrika"
-desc = "The people in Äquatorialafrika are not happy with our government!"
+name = "EVT_93083_NAME"
+desc = "EVT_93083_DESC"
 picture = "Riot1"
 
 
@@ -3277,7 +3277,7 @@ offset = 25
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Damn it!"
+name = "EVT_93083_OPTIONA"
 command = { type = dissent value = 3 }
 command = { type = clrflag which = SAF_EQUA_1 }
 command = { type = setflag which = SAF_EQUA_2 }
@@ -3301,8 +3301,8 @@ flag = SAF_EQUA_2
 random = 25
 }
 
-name = "The revolters are getting stronger!"
-desc = "We've been sending weapons and supplies to the people in Niger-Kamerun and Äquatorialafrika and they're almost ready for an open rebellion!"
+name = "EVT_93084_NAME"
+desc = "EVT_93084_DESC"
 picture = "foreign_policy"
 
 
@@ -3311,7 +3311,7 @@ offset = 25
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Send more weapons and supplies!"
+name = "EVT_93084_OPTIONA"
 ai_chance = 95
 command = { type = domestic which = interventionism value = 1 }
 command = { type = supplies value = -500 }
@@ -3322,7 +3322,7 @@ command = { type = setflag which = SAF_NIGKAM_3	}
 command = { type = setflag which = SAF_EQUA_3 }
 }
 action_b = {
-name = "It's too risky, we should stop."
+name = "EVT_93084_OPTIONB"
 ai_chance = 5
 command = { type = domestic which = interventionism value = -1 }
 command = { type = clrflag which = SAF_NIGKAM_2	}
@@ -3346,8 +3346,8 @@ exists = NIG
 random = 25
 }
 
-name = "The revolters are getting stronger!"
-desc = "We've been sending weapons and supplies to the people in Niger-Kamerun and they're almost ready for an open rebellion!"
+name = "EVT_93085_NAME"
+desc = "EVT_93085_DESC"
 picture = "foreign_policy"
 
 
@@ -3356,7 +3356,7 @@ offset = 25
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Send more weapons and supplies!"
+name = "EVT_93085_OPTIONA"
 ai_chance = 95
 command = { type = domestic which = interventionism value = 1 }
 command = { type = supplies value = -250 }
@@ -3365,7 +3365,7 @@ command = { type = clrflag which = SAF_NIGKAM_2	}
 command = { type = setflag which = SAF_NIGKAM_3	}
 }
 action_b = {
-name = "It's too risky, we should stop."
+name = "EVT_93085_OPTIONB"
 ai_chance = 5
 command = { type = domestic which = interventionism value = -1 }
 command = { type = clrflag which = SAF_NIGKAM_2	}
@@ -3387,8 +3387,8 @@ exists = GAB
 random = 25
 }
 
-name = "The revolters are getting stronger!"
-desc = "We've been sending weapons and supplies to the people in Äquatorialafrika and they're almost ready for an open rebellion!"
+name = "EVT_93086_NAME"
+desc = "EVT_93086_DESC"
 picture = "foreign_policy"
 
 
@@ -3397,7 +3397,7 @@ offset = 25
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Send more weapons and supplies!"
+name = "EVT_93086_OPTIONA"
 ai_chance = 95
 command = { type = domestic which = interventionism value = 1 }
 command = { type = supplies value = -250 }
@@ -3406,7 +3406,7 @@ command = { type = clrflag which = SAF_EQUA_2 }
 command = { type = setflag which = SAF_EQUA_3 }
 }
 action_b = {
-name = "It's too risky, we should stop."
+name = "EVT_93086_OPTIONB"
 ai_chance = 5
 command = { type = domestic which = interventionism value = -1 }
 command = { type = clrflag which = SAF_EQUA_2 }
@@ -3430,8 +3430,8 @@ flag = SAF_EQUA_3
 random = 25
 }
 
-name = "Revolts in Niger-Kamerun and Äquatorialafrika!"
-desc = "The people in Niger-Kamerun and Äquatorialafrika are starting to rise against us! We could send the troops to punish the population, even if this could led to a stronger revolt, or we could jail the leaders without oppressing the population."
+name = "EVT_93087_NAME"
+desc = "EVT_93087_DESC"
 picture = "Riot2"
 
 
@@ -3440,7 +3440,7 @@ offset = 25
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Send the troops to punish the population!"
+name = "EVT_93087_OPTIONA"
 ai_chance = 60
 command = { type = domestic which = interventionism value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
@@ -3451,7 +3451,7 @@ command = { type = setflag which = SAF_NIGKAM_4	}
 command = { type = setflag which = SAF_EQUA_4 }
 }
 action_b = {
-name = "Who cares, what can they do anyway?"
+name = "EVT_93087_OPTIONB"
 ai_chance = 30
 command = { type = domestic which = interventionism value = -1 }
 command = { type = clrflag which = SAF_NIGKAM_3	}
@@ -3460,7 +3460,7 @@ command = { type = setflag which = SAF_NIGKAM_4 }
 command = { type = setflag which = SAF_EQUA_4 }
 }
 action_c = {
-name = "Jail the leaders but don't punish the population!"
+name = "EVT_93087_OPTIONC"
 ai_chance = 10
 command = { type = domestic which = defense_lobby value = -1 }
 command = { type = dissent value = 3 }
@@ -3485,8 +3485,8 @@ exists = NIG
 random = 25
 }
 
-name = "Revolts in Niger-Kamerun!"
-desc = "The people in Niger-Kamerun are starting to rise against us! We could send the troops to punish the population, even if this could led to a stronger revolt, or we could jail the leaders without oppressing the population."
+name = "EVT_93088_NAME"
+desc = "EVT_93088_DESC"
 picture = "Riot2"
 
 
@@ -3495,7 +3495,7 @@ offset = 25
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Send the troops to punish the population!"
+name = "EVT_93088_OPTIONA"
 ai_chance = 60
 command = { type = domestic which = interventionism value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
@@ -3505,14 +3505,14 @@ command = { type = setflag which = SAF_NIGKAM_4 }
 command = { type = setflag which = SAF_EQUA_4 }
 }
 action_b = {
-name = "Who cares, what can they do anyway?"
+name = "EVT_93088_OPTIONB"
 ai_chance = 30
 command = { type = domestic which = interventionism value = -1 }
 command = { type = clrflag which = SAF_NIGKAM_3	}
 command = { type = setflag which = SAF_NIGKAM_4	}
 }
 action_c = {
-name = "Jail the leaders but don't punish the population!"
+name = "EVT_93088_OPTIONC"
 ai_chance = 10
 command = { type = domestic which = defense_lobby value = -1 }
 command = { type = dissent value = 2 }
@@ -3535,8 +3535,8 @@ exists = GAB
 random = 25
 }
 
-name = "Revolts in Äquatorialafrika!"
-desc = "The people in Niger-Kamerun and Äquatorialafrika are starting to rise against us! We could send the troops to punish the population, even if this could led to a stronger revolt, or we could jail the leaders without oppressing the population."
+name = "EVT_93089_NAME"
+desc = "EVT_93089_DESC"
 picture = "Riot2"
 
 
@@ -3545,7 +3545,7 @@ offset = 25
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Send the troops to punish the population!"
+name = "EVT_93089_OPTIONA"
 ai_chance = 60
 command = { type = domestic which = interventionism value = 1 }
 command = { type = domestic which = defense_lobby value = 1 }
@@ -3555,14 +3555,14 @@ command = { type = setflag which = SAF_NIGKAM_4	}
 command = { type = setflag which = SAF_EQUA_4 }
 }
 action_b = {
-name = "Who cares, what can they do anyway?"
+name = "EVT_93089_OPTIONB"
 ai_chance = 30
 command = { type = domestic which = interventionism value = -1 }
 command = { type = clrflag which = SAF_EQUA_3 }
 command = { type = setflag which = SAF_EQUA_4 }
 }
 action_c = {
-name = "Jail the leaders but don't punish the population!"
+name = "EVT_93089_OPTIONC"
 ai_chance = 10
 command = { type = domestic which = defense_lobby value = -1 }
 command = { type = dissent value = 1 }
@@ -3587,8 +3587,8 @@ flag = SAF_EQUA_4
 random = 25
 }
 
-name = "Rebellion in Niger-Kamerun and Äquatorialafrika!"
-desc = "The people in Niger-Kamerun and Äquatorialafrika are revolting, they want to be free and to create their own independent nations!"
+name = "EVT_93090_NAME"
+desc = "EVT_93090_DESC"
 picture = "Riot3"
 
 date = { day = 2 month = june year = 1938 }
@@ -3596,7 +3596,7 @@ offset = 25
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "This is terrible!"
+name = "EVT_93090_OPTIONA"
 command = { type = independence which = NIG value = 1 when = 1 }
 command = { type = independence which = CAM value = 1 when = 1 }
 command = { type = independence which = GAB value = 1 when = 1 }
@@ -3624,8 +3624,8 @@ exists = NIG
 random = 25
 }
 
-name = "Rebellion in Niger-Kamerun!"
-desc = "The people in Niger-Kamerun are revolting, they want to be free and to create their own independent nation!"
+name = "EVT_93091_NAME"
+desc = "EVT_93091_DESC"
 picture = "Riot3"
 
 date = { day = 2 month = june year = 1938 }
@@ -3633,7 +3633,7 @@ offset = 25
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "This is terrible!"
+name = "EVT_93091_OPTIONA"
 command = { type = independence which = NIG value = 1 when = 1 }
 command = { type = independence which = CAM value = 1 when = 1 }
 command = { type = trigger which = 93093 }
@@ -3658,8 +3658,8 @@ exists = GAB
 random = 25
 }
 
-name = "Rebellion in Äquatorialafrika!"
-desc = "The people in Äquatorialafrika are revolting, they want to be free and to create their own independent nation!"
+name = "EVT_93092_NAME"
+desc = "EVT_93092_DESC"
 picture = "Riot3"
 
 date = { day = 2 month = june year = 1938 }
@@ -3667,7 +3667,7 @@ offset = 25
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "This is terrible!"
+name = "EVT_93092_OPTIONA"
 command = { type = independence which = GAB value = 1 when = 1 }
 command = { type = trigger which = 93096 }
 command = { type = trigger which = 93099 }
@@ -3680,12 +3680,12 @@ random = no
 country = CON
 style = 2
 
-name = "Niger-Kamerun is revolting"
-desc = "We have lost control over part of our lands to the rebels in Niger, the local population quickly joined them!"
+name = "EVT_93093_NAME"
+desc = "EVT_93093_DESC"
 picture = "Riot3"
 
 action_a = {
-name = "Damnit!"
+name = "EVT_93093_OPTIONA"
 command = { type = secedeprovince which = NIG value = 930 }
 command = { type = secedeprovince which = NIG value = 911 }
 command = { type = secedeprovince which = NIG value = 933 }
@@ -3699,12 +3699,12 @@ random = no
 country = NIG
 style = 2
 
-name = "Revolution!"
-desc = "We have declared our independence from the corrupt and oppressive government of Mittelafrika!"
+name = "EVT_93094_NAME"
+desc = "EVT_93094_DESC"
 picture = "coup"
 
 action_a = {
-name = "Great!"
+name = "EVT_93094_OPTIONA"
 command = { type = set_domestic which = democratic value = 3 }
 command = { type = set_domestic which = political_left value = 9 }
 command = { type = add_division which = "1st Infantry Corps" value = infantry when = 9 }
@@ -3721,12 +3721,12 @@ random = no
 country = CAM
 style = 2
 
-name = "Revolution!"
-desc = "We have declared our independence from the corrupt and oppressive government of Mittelafrika!"
+name = "EVT_93095_NAME"
+desc = "EVT_93095_DESC"
 picture = "coup"
 
 action_a = {
-name = "Great!"
+name = "EVT_93095_OPTIONA"
 command = { type = set_domestic which = democratic value = 3 }
 command = { type = set_domestic which = political_left value = 9 }
 command = { type = add_division which = "1st Infantry Corps" value = infantry when = 9 }
@@ -3743,12 +3743,12 @@ random = no
 country = GAB
 style = 2
 
-name = "Revolution!"
-desc = "We have declared our independence from the corrupt and oppressive government of Mittelafrika!"
+name = "EVT_93096_NAME"
+desc = "EVT_93096_DESC"
 picture = "coup"
 
 action_a = {
-name = "Great!"
+name = "EVT_93096_OPTIONA"
 command = { type = set_domestic which = democratic value = 3 }
 command = { type = set_domestic which = political_left value = 9 }
 command = { type = add_division which = "1st Infantry Corps" value = infantry when = 9 }
@@ -3765,12 +3765,12 @@ random = no
 country = NIG
 style = 2
 
-name = "War with Mittelafrika!"
-desc = "Together with our brothers in Kamerun and Äquatorialafrika, we are now at war with Mittelafrika: we will defeat them and we will bring freedom to Africa !"
+name = "EVT_93097_NAME"
+desc = "EVT_93097_DESC"
 picture = "failed_coup"
 
 action_a = {
-name = "WAR!"
+name = "EVT_93097_OPTIONA"
 command = { type = alliance which = CAM }
 command = { type = alliance which = GAB }
 command = { type = war which = CON }
@@ -3784,12 +3784,12 @@ random = no
 country = CAM
 style = 2
 
-name = "War with Mittelafrika!"
-desc = "Together with our brothers in Niger, we are now at war with Mittelafrika: we will defeat them and we will bring freedom to Africa!"
+name = "EVT_93098_NAME"
+desc = "EVT_93098_DESC"
 picture = "failed_coup"
 
 action_a = {
-name = "WAR!"
+name = "EVT_93098_OPTIONA"
 command = { type = alliance which = NIG }
 command = { type = war which = CON }
 command = { type = dissent value = -15 }
@@ -3802,12 +3802,12 @@ random = no
 country = GAB
 style = 2
 
-name = "War with Mittelafrika!"
-desc = "We are now at war with Mittelafrika: we will defeat them and we will bring freedom to Africa!"
+name = "EVT_93099_NAME"
+desc = "EVT_93099_DESC"
 picture = "failed_coup"
 
 action_a = {
-name = "WAR!"
+name = "EVT_93099_OPTIONA"
 command = { type = war which = CON }
 command = { type = dissent value = -15 }
 }

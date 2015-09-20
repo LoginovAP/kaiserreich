@@ -29,17 +29,17 @@ date = { day = 1 month = january year = 1936 }
 offset =  50
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Carlist City of Madrid"
-desc = "The Pope has been interested since the end of the Spanish Civil War in visiting Madrid."
+name = "EVT_91233_NAME"
+desc = "EVT_91233_DESC"
 
 action_a = {
 ai_chance =  100
-name = "Announce His Holiness' plan to visit Spain!"
+name = "EVT_91233_OPTIONA"
 command = { }
 }
 action_b = {
 ai_chance =  0
-name = "Bah! Roma is where His Holiness will stay!"
+name = "EVT_91233_OPTIONB"
 command = { type = sleepevent which = 91234 }
 command = { type = sleepevent which = 91235 }
 }
@@ -58,18 +58,18 @@ date = { day = 1 month = january year = 1936 }
 offset =  7
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Pope Announces his trip to Madrid"
-desc = "The Pope has recently announced he would like to make a trip to Carlist Madrid celebrating the Carlist Victory in the Spanish Civil War."
+name = "EVT_91234_NAME"
+desc = "EVT_91234_DESC"
 
 action_a = {
 ai_chance = 100
-name = "The Pope Would Honor us with his presence? Welcome him!"
+name = "EVT_91234_OPTIONA"
 command = { type = dissent value = -3 }
 command = { type = relation which = ITA value = 25 }
 }
 action_b = {
 ai_chance =  0
-name = "We're not interested !"
+name = "EVT_91234_OPTIONB"
 command = { type = relation which = ITA value = -10 }
 command = { type = sleepevent which = 91247 }
 command = { type = sleepevent which = 91235 }
@@ -89,11 +89,11 @@ date = { day = 1 month = january year = 1936 }
 offset =  14
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Pope Visits Madrid"
-desc = "The Popes plane landed down yesterday, and he is taking part in a parade in his honor."
+name = "EVT_91235_NAME"
+desc = "EVT_91235_DESC"
 
 action_a = {
-name = "His Holiness has arrived!"
+name = "EVT_91235_OPTIONA"
 command = { type = dissent value = -3 }
 command = { type = relation which = EUS value = 25 }
 }
@@ -126,11 +126,11 @@ date = { day = 7 month = january year = 1936 }
 offset = 20
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Mediterranean bloc"
-desc = "As our nation rises from the horrors of the Civil War, we are finding increased faith in the people, of both our government and our glorious armed forces. There has been serious talk amongst the military and national leaders of this country to use our strength to defend our interests across the Mediterranean."
+name = "EVT_91247_NAME"
+desc = "EVT_91247_DESC"
 
 action_a = {
-name = "Try to form a new bloc in Mediterranean"
+name = "EVT_91247_OPTIONA"
 ai_chance = 100
 command = { type = domestic which = interventionism value = 1 }
 command = { type = trigger which = 91248 }
@@ -138,7 +138,7 @@ command = { type = setflag which = EUS_pope }
 }
 
 action_b = {
-name = "It was a violent civil war... we must rebuild."
+name = "EVT_91247_OPTIONB"
 ai_chance = 0
 command = { type = domestic which = interventionism value = -1 }
 }
@@ -162,11 +162,11 @@ date = { day = 7 month = january year = 1936 }
 offset = 20
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Mediterranean bloc"
-desc = "As the strength of the Carlists increase after the bloody Spanish Civil War, their gratitude towards us for our involvement in the civil war has risen. They are now offering us to form a new military bloc to protect our mutual national interests. How shall we respond ?"
+name = "EVT_91248_NAME"
+desc = "EVT_91248_DESC"
 
 action_a = {
-name = "Accept their offer"
+name = "EVT_91248_OPTIONA"
 ai_chance = 100
 command = { type = leave_alliance when = 1 }
 command = { type = domestic which = interventionism value = 1 }
@@ -175,7 +175,7 @@ command = { type = relation which = EUS value = 100 }
 command = { type = alliance which = EUS }
 }
 action_b = {
-name = "Refuse !"
+name = "EVT_91248_OPTIONB"
 ai_chance = 0
 command = { type = domestic which = interventionism value = -1 }
 }
@@ -198,11 +198,11 @@ date = { day = 7 month = january year = 1936 }
 offset = 1
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Pope in Exile"
-desc = "With Italy in ruins, the Pope and his entourage has come to Spain, seeking refuge in our lands until Rome is once again secured."
+name = "EVT_91249000_NAME"
+desc = "EVT_91249000_DESC"
 
 action_a = {
-name = "He is always welcome here."
+name = "EVT_91249000_OPTIONA"
 command = { type = dissent value = -10 }
 }
 }
@@ -222,11 +222,11 @@ date = { day = 7 month = january year = 1936 }
 offset = 5
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Mediterranean bloc"
-desc = "National leaders now believe it is time to start insuring the prosperity of fellow Mediterranean nations."
+name = "EVT_91249_NAME"
+desc = "EVT_91249_DESC"
 
 action_a = {
-name = "Send out the envoys!"
+name = "EVT_91249_OPTIONA"
 ai_chance = 100
 command = { type = domestic which = interventionism value = 1 }
 command = { trigger = { NOT = { event = 3967240 ispuppet = POR } NOT = { war = { country = EUS country = POR } } } type = trigger which = 91252 } #Portugal
@@ -236,7 +236,7 @@ command = { type = setflag which = carleuro }
 }
 
 action_b = {
-name = "This was a bad idea..."
+name = "EVT_91249_OPTIONB"
 ai_chance = 0
 command = { type = domestic which = interventionism value = -1 }
 command = { type = dissent value = 20 }
@@ -254,18 +254,18 @@ trigger = {
 NOT = { government = communist }
 }
 
-name = "The Mediterranean bloc"
-desc = "After the end of the Spanish Civil War, Carlist Spain has proposed the creation of a Mediterrean Block, an economic and military alliance among the nations of the Mediterranena Sea."
+name = "EVT_91250_NAME"
+desc = "EVT_91250_DESC"
 
 action_a = {
-name = "Just observe them..."
+name = "EVT_91250_OPTIONA"
 ai_chance = 50
 command = { type = dissent value = -5 }
 command = { type = relation which = EUS value = 100 }
 }
 
 action_b = {
-name = "We must join in their cause!"
+name = "EVT_91250_OPTIONB"
 ai_chance = 50
 command = { type = leave_alliance when = 1 }
 command = { type = dissent value = -5 }
@@ -286,17 +286,17 @@ trigger = {
 NOT = { government = communist }
 }
 
-name = "The Mediterranean bloc"
-desc = "After the end of the Spanish Civil War, Carlist Spain has proposed the creation of a Mediterrean Bloc, an economic and military alliance among the nations of the Mediterranena Sea."
+name = "EVT_91252_NAME"
+desc = "EVT_91252_DESC"
 
 action_a = {
-name = "Just observe them..."
+name = "EVT_91252_OPTIONA"
 ai_chance = 40
 command = { type = dissent value = -5 }
 command = { type = relation which = EUS value = 100 }
 }
 action_b = {
-name = "We must join in their cause!"
+name = "EVT_91252_OPTIONB"
 ai_chance = 60
 command = { type = dissent value = -5 }
 command = { type = leave_alliance when = 1 }
@@ -317,11 +317,11 @@ trigger = {
 NOT = { government = communist }
 }
 
-name = "The Mediterranean bloc"
-desc = "After the end of the Spanish Civil War, Carlist Spain has proposed the creation of a Mediterrean Bloc, an economic and military alliance among the nations of the Mediterranena Sea."
+name = "EVT_91253_NAME"
+desc = "EVT_91253_DESC"
 
 action_a = {
-name = "Just observe them..."
+name = "EVT_91253_OPTIONA"
 ai_chance = 50
 trigger = {
 OR = {
@@ -333,7 +333,7 @@ command = { type = dissent value = -5 }
 command = { type = relation which = EUS value = 100 }
 }
 action_b = {
-name = "Leave Canada and join in their cause!"
+name = "EVT_91253_OPTIONB"
 ai_chance = 50
 trigger = {
 NOT = { exists = U07 } # Why would they leave alliance with Canada, if they have already taken British Isles
@@ -367,11 +367,11 @@ date = { day = 7 month = january year = 1936 }
 offset = 40
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Spanish Inquisition"
-desc = "A group of Spanish officials, priests, and representatives from Italy have gathered to discuss the large numbers of syndicalists, atheists, and dissenters in Iberia. These 'problems' will plague Carlist Spain in the future if not dealt with now. The representatives have considered heavily a new Spanish Inquisition..."
+name = "EVT_91254_NAME"
+desc = "EVT_91254_DESC"
 
 action_a = {
-name = "Nobody expects the Spanish Inquisition!"
+name = "EVT_91254_OPTIONA"
 ai_chance = 65
 command = { type = dissent value = 5 }
 command = { type = setflag which = iberinq }
@@ -379,7 +379,7 @@ command = { type = relation which = FRA value = -20 }
 }
 
 action_b = {
-name = "They are Spaniards, too"
+name = "EVT_91254_OPTIONB"
 ai_chance = 35
 command = { type = dissent value = 10 }
 }
@@ -401,17 +401,17 @@ date = { day = 7 month = january year = 1936 }
 offset = 20
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Portuguese Anarchists"
-desc = "The Spanish Inquisition is in full swing! Officials have been rounding up dissenters of all shapes and forcing them into jails and nationalized labor. Many members of the CNT-FAI have been fleeing to Portugal, seeking shelter amongst the Portuguese anarchists, the União Anarquista Portuguesa. Many priests and officials in Portugal and Spain are demanding action."
+name = "EVT_91255_NAME"
+desc = "EVT_91255_DESC"
 
 action_a = {
-name = "Contact Portugal for Spreading the Inquisition"
+name = "EVT_91255_OPTIONA"
 ai_chance = 90
 command = { type = trigger which = 91256 }
 }
 
 action_b = {
-name = "What the Portuguese do is not our business"
+name = "EVT_91255_OPTIONB"
 ai_chance = 10
 command = { type = dissent value = 2 }
 }
@@ -423,11 +423,11 @@ country = POR
 style = 2
 picture = "Carlists"
 
-name = "Portuguese Anarchists"
-desc = "Across the border, the Spanish Inquisition is in full swing! As a result of the oppression, many Spanish anarchists are taking refuge amongst the Portuguese anarchists, the União Anarquista Portuguesa. This is worrying many priests and officials in both countries. The Spanish wish for us to adopt their Inquisition to combat it."
+name = "EVT_91256_NAME"
+desc = "EVT_91256_DESC"
 
 action_a = {
-name = "Start the Inquisiton!"
+name = "EVT_91256_OPTIONA"
 ai_chance = 90
 command = { type = trigger which = 91257 }
 command = { type = dissent value = 5 }
@@ -436,7 +436,7 @@ command = { type = relation which = EUS value = 20 }
 }
 
 action_b = {
-name = "Bah! The Spaniards are backward..."
+name = "EVT_91256_OPTIONB"
 ai_chance = 10
 command = { type = dissent value = 10 }
 command = { type = leave_alliance }
@@ -454,11 +454,11 @@ NOT = { government = communist }
 NOT = { war = { country = ITA country = POR } }
 }
 
-name = "The Spanish Inquisition"
-desc = "In Iberia, the Spanish Inquisition is in full swing! Both Portugal and Spain have adopted brutal methods to destroy the anarchists. We must ally with Portugal to make sure things are going well..."
+name = "EVT_91257_NAME"
+desc = "EVT_91257_DESC"
 
 action_a = {
-name = "An alliance is in order"
+name = "EVT_91257_OPTIONA"
 command = { type = alliance which = POR }
 }
 }
@@ -507,12 +507,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 10
 deathdate = { day = 29 month = december year = 1963 }
 
-name = "German and France fight!"
-desc = "Europe is engulfed in war again. Now is the time to liberate France from the clutches of Syndicalism ! We should call for a Holy Crusade !"
+name = "EVT_3967078_NAME"
+desc = "EVT_3967078_DESC"
 
 action_a = {
 ai_chance = 90
-name = "Attack!"
+name = "EVT_3967078_OPTIONA"
 command = { type = end_non_aggression which = EUS where = ENG }
 command = { type = end_non_aggression which = EUS where = FRA }
 command = { type = end_non_aggression which = EUS where = RSI }
@@ -522,7 +522,7 @@ command = { type = war which = FRA }
 
 action_b = {
 ai_chance = 10
-name = "We must stay out of this"
+name = "EVT_3967078_OPTIONB"
 command = { type = dissent value = -5 }
 }
 }

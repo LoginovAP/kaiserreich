@@ -47,8 +47,8 @@ control = { province = 1188 data = RUS }
 }
 }
 
-name = "Panic in Siberia!"
-desc = "The Russian government has proven itself unable to maintain the security of its Siberian territories. We have received word that many local leaders want to secede and join Transamur! There may be international complications but we may never get another opportunity like this!"
+name = "EVT_751000_NAME"
+desc = "EVT_751000_DESC"
 picture = "SiberiaAssembly"
 decision_picture = "decision_Russian_mobilization"
 
@@ -58,7 +58,7 @@ deathdate = { day = 1 month = december year = 1960 }
 
 action_a = {
 ai_chance = 70
-name = "Claim the land up to Lake Baikal!"
+name = "EVT_751000_OPTIONA"
 trigger = {
 NOT = {
 puppet = { country = PRI country = JAP  }
@@ -72,7 +72,7 @@ command = { type = event which = 751001 where = RUS when = 2  }
 
 action_b = {
 ai_chance = 70
-name = "Ask the Japanese Empire for permission."
+name = "EVT_751000_OPTIONB"
 trigger = {
 puppet = { country = PRI country = JAP  }
 }
@@ -83,7 +83,7 @@ command = { type = trigger which = 751125 }
 
 action_c = {
 ai_chance = 30
-name = "This is a bit risky..."
+name = "EVT_751000_OPTIONC"
 command = { type = domestic which = interventionism value = -2 }
 command = { type = relation which = RUS value = 60 }
 }
@@ -97,12 +97,12 @@ style = 2
 picture = "Siberia4"
 
 
-name = "Transamur ambitions"
-desc = "The growing instability in Russia was viewed by the leadership of Transamur as an excellent opportunity to finally take control over Eastern Siberia. An official diplomatic representative from Transamur has come to us seeking permission to use force against Russia if they resist their rightful demands regarding Siberia."
+name = "EVT_751125_NAME"
+desc = "EVT_751125_DESC"
 
 action_a = {
 ai_chance = 90
-name = "Give them the green light."
+name = "EVT_751125_OPTIONA"
 trigger = {
 NOT = {
 war = { country = JAP country = GER }
@@ -124,7 +124,7 @@ command = { type = sleepevent which = 756037 }
 
 action_b = {
 ai_chance = 10
-name =  "Siberia will remain untouched!"
+name =  "EVT_751125_OPTIONB"
 trigger = {
 NOT = {
 war = { country = JAP country = GER }
@@ -144,7 +144,7 @@ command = { type = relation which = PRI value = -25 }
 
 action_c = {
 ai_chance = 0
-name = "Give them the green light."
+name = "EVT_751125_OPTIONC"
 trigger = {
 OR = {
 war = { country = JAP country = GER }
@@ -166,7 +166,7 @@ command = { type = sleepevent which = 756037 }
 
 action_d = {
 ai_chance = 100
-name =  "Siberia will remain untouched!"
+name =  "EVT_751125_OPTIOND"
 trigger = {
 OR = {
 war = { country = JAP country = GER }
@@ -192,15 +192,15 @@ country = RUS
 style = 2
 
 
-name = "Transamur makes its Move!"
-desc = "Transamur has taken advantage of the unrest in Siberia to establish its control over the region. While this is a great infringement on our sovereignty we are currently very weak and may not be able to win a war to reclaim our lands, especially since fighting Transamur may mean fighting Japan as well."
+name = "EVT_751001_NAME"
+desc = "EVT_751001_DESC"
 picture = "Siberia4"
 
 
 
 action_a = {
 ai_chance = 80
-name =  "It is useless to fight over an icy wasteland."
+name =  "EVT_751001_OPTIONA"
 command = { type = domestic which = interventionism value = -2 }
 command = { type = dissent value = 15 }
 command = { trigger = { puppet = { country = PRI country = JAP  } } type = event which = 751002 where = JAP when = 3  }
@@ -224,7 +224,7 @@ command = { type = trigger which = 751133 }
 
 action_b = {
 ai_chance = 20
-name = "What!? Siberia shall always belong to Russia!"
+name = "EVT_751001_OPTIONB"
 command = { type = domestic which = interventionism value = 2 }
 command = { type = war which = PRI }
 }  ### Add option later to invite Kolchak to take leadership of a united Russia, with Japanese reaction
@@ -257,12 +257,12 @@ control = { province = 1174 data = SOV }
 }
 }
 
-name = "Transamur makes its Move!"
-desc = "Transamur has taken advantage of the unrest in Siberia to establish its control over the region. While this is a great infringement on our sovereignty, we are currently very weak in the Far East and can not hope to win a war to reclaim our lands, especially since we are still caught up in a deadly civil war."
+name = "EVT_751133_NAME"
+desc = "EVT_751133_DESC"
 picture = "Siberia4"
 
 action_a = {
-name =  "Damn it!"
+name =  "EVT_751133_OPTIONA"
 command = { type = dissent value = 2 }
 command = { type = secedeprovince which = PRI value = 1187  }
 command = { type = secedeprovince which = PRI value = 1188  }
@@ -290,26 +290,26 @@ random = no
 country = JAP
 style = 2
 
-name = "The Japanese reaction"
-desc = "Our client state, the Transamur Republic, has established its control over parts of Siberia. While this is a fine addition to the Co-Prosperity Sphere it is possible that Transamur is becoming too powerful and needs to be restrained."
+name = "EVT_751002_NAME"
+desc = "EVT_751002_DESC"
 picture = "Siberia4"
 
 
 action_a = {
 ai_chance = 5
-name = "Demand Kamchatka and bases in the Sea of Okhotsk!"
+name = "EVT_751002_OPTIONA"
 command = { type = trigger which = 751003 }
 }
 
 action_b = {
 ai_chance = 60
-name = "It is good to have strong client states!"
+name = "EVT_751002_OPTIONB"
 command = { type = relation which = PRI value = 100 }
 }
 
 action_c = {
 ai_chance = 5
-name = "Kolchak is too greedy for his own good, it is time to replace him."
+name = "EVT_751002_OPTIONC"
 trigger = { minister = 527001 }
 command = { type = trigger which = 751004 }
 
@@ -323,15 +323,15 @@ random = no
 country = PRI
 style = 2
 
-name = "Japan demands bases"
-desc = "The Japanese have congratulated us on our seizure of Siberia but the Representative of the Mikado states that we should allow Japan to administer Kamchatka and allow them to establish a naval base in the Sea of Okhotsk."
+name = "EVT_751003_NAME"
+desc = "EVT_751003_DESC"
 picture = "japan"
 
 
 action_a = {
 
 ai_chance = 70
-name = "Yes, we still need Japanese protection."
+name = "EVT_751003_OPTIONA"
 command = { type = secedeprovince which = JAP value = 1183 }
 command = { type = secedeprovince which = JAP value = 1184 }
 command = { type = secedeprovince which = JAP value = 1186 }
@@ -340,7 +340,7 @@ command = { type = relation which = JAP value = 100 }
 
 action_b = {
 ai_chance = 30
-name = "It is time to throw off the Japanese yoke!"
+name = "EVT_751003_OPTIONB"
 command = { type = end_puppet }
 command = { type = relation which = JAP value = -250 }
 command = { type = end_access which = JAP  }
@@ -376,14 +376,14 @@ random = no
 country = PRI
 style = 2
 
-name = "The Japanese are trying to remove Admiral Kolchak!"
-desc = "The Japanese believe Kolchak has outlived his usefulness and have approached the elite of Transamur with the plan of backing a coup d'etat to replace him with a more pliant council of business and military leaders."
+name = "EVT_751004_NAME"
+desc = "EVT_751004_DESC"
 picture = "kolchak"
 
 
 action_a = {
 ai_chance = 65
-name = "Yes, Kolchak is mad and should be removed!"
+name = "EVT_751004_OPTIONA"
 command = { type = secedeprovince which = JAP value = 1183 }
 command = { type = secedeprovince which = JAP value = 1184 }
 command = { type = secedeprovince which = JAP value = 1186 }
@@ -402,7 +402,7 @@ command = { type = waketeam which = 12721 }
 
 action_b = {
 ai_chance = 35
-name = "Kolchak is the Mighty Lord of the East, he stays here!"
+name = "EVT_751004_OPTIONB"
 command = { type = end_puppet }
 command = { type = event which = 751005 where = JAP when = 1  }
 command = { type = relation which = JAP value = -250 }
@@ -441,21 +441,21 @@ country = JAP
 style = 2
 persistent = yes
 
-name = "Transamur breaks away!"
-desc = "The Transamur Republic has taken great offence at our attempts to regulate their internal affairs and are severing all political ties with us!"
+name = "EVT_751005_NAME"
+desc = "EVT_751005_DESC"
 picture = "Transamur"
 
 
 action_a = {
 ai_chance = 70
-name = "Destroy them!"
+name = "EVT_751005_OPTIONA"
 command = { type = war which = PRI }
 command = { type = setflag which = PRI_breaksaway }
 }
 
 action_b = {
 ai_chance = 30
-name = "We can only let them go..."
+name = "EVT_751005_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = dissent value = 10 }
 command = { type = setflag which = PRI_breaksaway }
@@ -496,8 +496,8 @@ alliance = { country = RUS country = SIB }
 }
 }
 
-name = "Siberia is vulnerable"
-desc = "For a time during the Civil War Kolchak was the Supreme Ruler of All Siberia, one step away from rulership of all the Russias. Now that Siberia is in a state of rebellion against Russia this could be an opportunity to reassert the Admiral's claims over the weak rebellious government in Novosibirsk."
+name = "EVT_751040_NAME"
+desc = "EVT_751040_DESC"
 picture = "SiberianAssembly"
 decision_picture = "decision_Russian_mobilization"
 
@@ -508,7 +508,7 @@ deathdate = { day = 1 month = january year = 1960 }
 
 action = {
 ai_chance = 50
-name = "We should take this opportunity to attack Siberia!"
+name = "EVT_751040_OPTIONA"
 trigger = {
 NOT = {
 puppet = { country = PRI country = JAP }
@@ -583,7 +583,7 @@ command = { type = relation which = RUS value = -80 }
 
 action = {
 ai_chance = 70
-name = "Ask the Japanese Empire for permission."
+name = "EVT_751040_OPTIONB"
 trigger = {
 puppet = { country = PRI country = JAP  }
 }
@@ -594,7 +594,7 @@ command = { type = trigger which = 751126 }
 
 action = {
 ai_chance =  0
-name = "Guarantee their independence instead."
+name = "EVT_751040_OPTIONC"
 trigger = {
 NOT = {
 puppet = { country = PRI country = JAP }
@@ -606,7 +606,7 @@ command = { type = guarantee which = PRI where = SIB }
 
 action = {
 ai_chance =  70
-name = "Demand that they cede us the land up to lake Baikal!"
+name = "EVT_751040_OPTIOND"
 trigger = {
 NOT = {
 puppet = { country = PRI country = JAP }
@@ -620,7 +620,7 @@ command = { type = domestic which = interventionism value = 1 }
 
 action = {
 ai_chance = 30
-name = "Not yet, we are still building up Transamur..."
+name = "EVT_751040_OPTIONE"
 command = { type = dissent value = 1 }
 command = { type = belligerence which = PRI value = -5  }
 command = { type = relation which = GER value = 20 }
@@ -637,12 +637,12 @@ style = 2
 picture = "Siberia4"
 
 
-name = "Transamur ambitions"
-desc = "The growing instability in Russia was viewed by the leadership of Transamur as an excellent opportunity to finally take control over Eastern Siberia. An official diplomatic representative of Transamur has come to us seeking permission to use force against the rebellious government of Siberia if they resist their rightful demands."
+name = "EVT_751126_NAME"
+desc = "EVT_751126_DESC"
 
 action_a = {
 ai_chance = 90
-name = "Give them the green light."
+name = "EVT_751126_OPTIONA"
 trigger = {
 NOT = {
 war = { country = JAP country = GER }
@@ -671,7 +671,7 @@ command = { type = trigger which = 751041 }
 
 action_b = {
 ai_chance = 10
-name =  "Siberia will remain untouched!"
+name =  "EVT_751126_OPTIONB"
 trigger = {
 NOT = {
 war = { country = JAP country = GER }
@@ -699,7 +699,7 @@ command = { type = relation which = PRI value = -25 }
 
 action_c = {
 ai_chance = 0
-name = "Give them the green light."
+name = "EVT_751126_OPTIONC"
 trigger = {
 OR = {
 war = { country = JAP country = GER }
@@ -728,7 +728,7 @@ command = { type = trigger which = 751041 }
 
 action_d = {
 ai_chance = 100
-name =  "Siberia will remain untouched!"
+name =  "EVT_751126_OPTIOND"
 trigger = {
 OR = {
 war = { country = JAP country = GER }
@@ -763,14 +763,14 @@ country = PRI
 style = 2
 
 
-name = "Siberian policy"
-desc = "We have obtained permission from our Japanese overlords and we are free to proceed with our plans regarding Siberia."
+name = "EVT_751041_NAME"
+desc = "EVT_751041_DESC"
 picture = "Siberia4"
 
 
 action_a = {
 ai_chance =  70
-name = "Demand that they cede us the land up to lake Baikal!"
+name = "EVT_751041_OPTIONA"
 trigger = {
 NOT = {
 control = { province = 1186 data = PRI }
@@ -783,7 +783,7 @@ command = { type = domestic which = interventionism value = 1 }
 
 action_b = {
 ai_chance =  20
-name = "Transamur will dominate Siberia, march on!"
+name = "EVT_751041_OPTIONB"
 command = { type = relation which = SIB value = -200 }
 command = { type = domestic which = interventionism value = 1 }
 command = { type = add_division value = cavalry when = 8 }
@@ -857,7 +857,7 @@ command = { type = war which = SIB }
 
 action_d = {
 ai_chance =  0
-name = "Ignore them, they will not last."
+name = "EVT_751041_OPTIONC"
 command = { type = relation which = SIB value = 20 }
 command = { type = belligerence which = PRI value = 5  }
 command = { type = relation which = GER value = -20 }
@@ -872,14 +872,14 @@ random = no
 country = SIB
 style = 2
 
-name = "Transamur makes its move!"
-desc = "Transamur has sent troops and political specialists into Eastern Siberia, asserting their claim to rulership over the eastern parts of our state. What shall we do?"
+name = "EVT_751042_NAME"
+desc = "EVT_751042_DESC"
 picture = "Siberia4"
 
 
 action_a = {
 ai_chance = 40
-name =  "Let them take Eastern Siberia, we must keep our autonomy."
+name =  "EVT_751042_OPTIONA"
 command = { type = domestic which = interventionism value = -2 }
 command = { type = dissent value = 15 }
 command = { trigger = { puppet = { country = PRI country = JAP  } } type = event which = 751002 where = JAP when = 3  }
@@ -903,14 +903,14 @@ command = { type = secedeprovince which = PRI value = 1184  }
 
 action_b = {
 ai_chance = 30
-name = "No, this is our land!"
+name = "EVT_751042_OPTIONB"
 command = { type = domestic which = interventionism value = 2 }
 command = { type = war which = PRI }
 }
 
 action_c = {
 ai_chance = 30
-name = "Submit before Transamur."
+name = "EVT_751042_OPTIONC"
 command = { type = trigger which = 751044 }
 }
 }
@@ -922,27 +922,27 @@ random = no
 country = PRI
 style = 2
 
-name = "Siberia offers positions in their goverment"
-desc = "Our request for the eastern part of Siberia was met with a counteroffer from Siberia in which they promise to become our protectorate in exchange for the recognition of their independence."
+name = "EVT_751044_NAME"
+desc = "EVT_751044_DESC"
 picture = "Transamur"
 
 
 action_a = {
 ai_chance = 70
-name = "Accept the offer."
+name = "EVT_751044_OPTIONA"
 command = { type = make_puppet which = SIB }
 command = { type = trigger which = 751045 }
 }
 
 action_b = {
 ai_chance = 40
-name = "Demand their complete intergration!"
+name = "EVT_751044_OPTIONB"
 command = { type = trigger which = 751048 }
 }
 
 action_b = {
 ai_chance = 30
-name = "We will take everything!"
+name = "EVT_751044_OPTIONC"
 command = { type = war which = SIB }
 command = { type = relation which = SIB value = -200 }
 command = { type = domestic which = interventionism value = 1 }
@@ -1015,7 +1015,7 @@ command = { type = relation which = RUS value = -80 }
 
 action_c = {
 ai_chance = 0
-name = "It is too risky to overstretch ourselves..."
+name = "EVT_751044_OPTIOND"
 command = { type = dissent value = 5 } ## How can you ignore such perfect oportunity to gain control over Siberia!
 }
 }
@@ -1027,13 +1027,13 @@ random = no
 country = SIB
 style = 2
 
-name = "Transamurian mobilisation on our border"
-desc = "The government of Transamur, unsatisfied with our offer, has instead demanded we submit to their authority immediately or face war! What shall we do?"
+name = "EVT_751048_NAME"
+desc = "EVT_751048_DESC"
 picture = "kolchak"
 
 action_a = {
 ai_chance = 50
-name = "Refuse their demands!"
+name = "EVT_751048_OPTIONA"
 command = { type = dissent value = -1 }
 command = { type = relation which = PRI value = -100 }
 command = { type = event which = 751136 where = PRI when = 1  }
@@ -1041,7 +1041,7 @@ command = { type = event which = 751136 where = PRI when = 1  }
 
 action_b = {
 ai_chance = 50
-name = "Let us unite under one leader!"
+name = "EVT_751048_OPTIONB"
 command = { type = dissent value = 3 }
 command = { type = event which = 751135 where = PRI when = 1  }
 }
@@ -1054,13 +1054,13 @@ random = no
 country = PRI
 style = 2
 
-name = "Siberia denies our claim of authority!"
-desc = "The insolent Siberian government has refused to accept direct rule from us, many of our officials are calling for a war against the 'heretical' state."
+name = "EVT_751136_NAME"
+desc = "EVT_751136_DESC"
 picture = "kolchak"
 
 action_a = {
 ai_chance = 80
-name = "Transamur will dominate Siberia, march on!"
+name = "EVT_751136_OPTIONA"
 command = { type = relation which = SIB value = -200 }
 command = { type = domestic which = interventionism value = 1 }
 command = { type = add_division value = cavalry when = 8 }
@@ -1131,7 +1131,7 @@ command = { type = war which = SIB }
 }
 action_b = {
 ai_chance = 20
-name = "Let's not focus on those whelps"
+name = "EVT_751136_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = dissent value = 3 }
 }
@@ -1144,12 +1144,12 @@ country = PRI
 style = 2
 picture = "caucasusgeo"
 
-name = "Siberian submission"
-desc = "Seeing no other options the leadership of Siberia has accepted all our demands."
+name = "EVT_751135_NAME"
+desc = "EVT_751135_DESC"
 
 
 action = {
-name = "Hooray!"
+name = "EVT_751135_OPTIONA"
 command = { type = dissent value = 2 }
 command = { type = inherit which = SIB }
 command = { type = add_division value = cavalry when = 9 }
@@ -1223,12 +1223,12 @@ random = no
 country = SIB
 style = 2
 
-name = "Transamur assumes control over Siberia"
-desc = "According to the treaty we have signed with Transamur Siberia will recognize Transamur as a protector in exchange for their recognition of our independence."
+name = "EVT_751045_NAME"
+desc = "EVT_751045_DESC"
 picture = "Siberia4"
 
 action_a = {
-name =  "Our independence is secured!"
+name =  "EVT_751045_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = relation which = PRI value = 200 }
 command = { type = headofstate which = 522011 }
@@ -1247,8 +1247,8 @@ trigger = {
 puppet = { country = SIB country = PRI }
 }
 
-name = "Siberian Autonomy"
-desc = "With the Transamur domination over Siberia complete some members of our government think that the time is right for the integration of Siberia into Transamur. It would be quite easy to pass a series of laws which would ensure that the region is more firmly integrated into Transamur."
+name = "EVT_751046_NAME"
+desc = "EVT_751046_DESC"
 picture = "Siberia4"
 
 
@@ -1258,7 +1258,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 100
-name = "It is time for Transamur to directly rule over Siberia!"
+name = "EVT_751046_OPTIONA"
 command = { type = inherit which = SIB  }
 command = { type = addcore   which =  1155  }
 command = { type = addcore   which =  1157  }
@@ -1344,7 +1344,7 @@ command = { type = dissent value = 5 } ## Reflects difficulty of integrating Sib
 
 action_b = {
 ai_chance = 0
-name = "Siberia must remain autonomous."
+name = "EVT_751046_OPTIONB"
 command = { type = domestic which = interventionism value = -1   }
 }
 }
@@ -1373,8 +1373,8 @@ owned = { province = 1162 data = PRI }
 }
 }
 
-name = "The integration of Siberia"
-desc = "Vast areas of Siberia are now firmly integrated into our state!"
+name = "EVT_751047_NAME"
+desc = "EVT_751047_DESC"
 
 picture = "Siberia4"
 
@@ -1384,7 +1384,7 @@ offset = 200
 deathdate = { day = 1 month = january year = 1960 }
 
 action_a = {
-name = "God is with us!"
+name = "EVT_751047_OPTIONA"
 command = { type = addcore   which =  1155  }
 command = { type = addcore   which =  1157  }
 command = { type = addcore   which =  1142  }
@@ -1495,8 +1495,8 @@ control = { province = 1142 data = PRI }
 }
 
 
-name = "The Capital"
-desc = "With Transamur gaining control over Siberia maybe the time is right to move our capital into the hinterland in order to limit Japanese influence. Where should we go?"
+name = "EVT_751050_NAME"
+desc = "EVT_751050_DESC"
 picture = "Transamur"
 
 date = { day = 1 month = january year = 1936 }
@@ -1506,7 +1506,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 10
-name = "The capital stays in Vladivostok!"
+name = "EVT_751050_OPTIONA"
 command = { type = capital which = 1191 }
 command = { type = dissent value = 2 }
 command = { type = relation which = JAP value = 50 }
@@ -1514,7 +1514,7 @@ command = { type = relation which = JAP value = 50 }
 
 action_b = {
 ai_chance = 50
-name = "Irkutsk!"
+name = "EVT_751050_OPTIONB"
 trigger = {
 control = { province = 1162 data = PRI }
 }
@@ -1526,7 +1526,7 @@ command = { type = trigger which = 751066  }
 
 action_c = {
 ai_chance = 40
-name = "Novosibirsk!"
+name = "EVT_751050_OPTIONC"
 trigger = {
 control = { province = 1142 data = PRI }
 }
@@ -1549,14 +1549,14 @@ trigger = {
 puppet = { country = PRI country = JAP  }
 }
 
-name = "Transamur tries to escape our influence!"
-desc = "With the recent reconquest of Siberia by Transamur they have become much bolder, trying to forge their own way under the sun. Recently they have moved their capital from Vladivostok to more remote parts of their republic, a clear attempt to minimize our influence. What shall we do?"
+name = "EVT_751066_NAME"
+desc = "EVT_751066_DESC"
 picture = "Transamur"
 
 
 action_a = {
 ai_chance = 70
-name = "It is good to have strong allies!"
+name = "EVT_751066_OPTIONA"
 command = { type = end_mastery which = PRI }
 command = { type = alliance which = PRI }
 command = { type = relation which = PRI value = 200 }
@@ -1564,7 +1564,7 @@ command = { type = relation which = PRI value = 200 }
 
 action_b = {
 ai_chance = 30
-name = "Try to restore our influence over Transamur!"
+name = "EVT_751066_OPTIONB"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = dissent value = -2 }
 command = { type = trigger which = 751067 }
@@ -1578,14 +1578,14 @@ country = PRI
 style = 2
 
 
-name = "The Japanese are trying to subdue us!"
-desc = "The Japanese feel threatened by our attempts to minimize their influence over our country and they have issued an ultimatum to us in which they demand the cessation of steps threatening their sphere of prosperity."
+name = "EVT_751067_NAME"
+desc = "EVT_751067_DESC"
 picture = "kolchak"
 
 
 action_a = {
 ai_chance = 50
-name = "Submit before Japan."
+name = "EVT_751067_OPTIONA"
 command = { type = relation which = JAP value = 100 }
 command = { type = dissent value = 15 }
 command = { type = set_domestic which = democratic value = 3 }
@@ -1594,7 +1594,7 @@ command = { type = set_domestic which = political_left value = 3 }
 
 action_b = {
 ai_chance = 50
-name = "Never!"
+name = "EVT_751067_OPTIONB"
 command = { type = end_puppet }
 command = { type = event which = 751068 where = JAP when = 1  }
 command = { type = relation which = JAP value = -250 }
@@ -1620,20 +1620,20 @@ country = JAP
 style = 2
 
 
-name = "Transamur breaks away!"
-desc = "The Transamur Republic has taken great offence at our attempts to regulate their internal affairs and are severing all political ties with us!"
+name = "EVT_751068_NAME"
+desc = "EVT_751068_DESC"
 picture = "Transamur"
 
 action_a = {
 ai_chance = 70
-name = "Destroy them!"
+name = "EVT_751068_OPTIONA"
 command = { type = war which = PRI }
 command = { type = setflag which = PRI_breaksaway }
 }
 
 action_b = {
 ai_chance = 30
-name = "We can only let them go..."
+name = "EVT_751068_OPTIONB"
 command = { type = domestic which = interventionism value = 1 }
 command = { type = dissent value = 5 }
 command = { type = setflag which = PRI_breaksaway }
@@ -1659,8 +1659,8 @@ control = { province = 1162 data = PRI }
 control = { province = 1142 data = PRI }
 }
 
-name = "Claiming Russia!"
-desc = "With Siberia firmly integrated into our growing state we can now move further towards our ultimate goal; the restoration of the Russian state in its full glory."
+name = "EVT_751051_NAME"
+desc = "EVT_751051_DESC"
 picture = "russiageo"
 
 date = { day = 1 month = january year = 1936 }
@@ -1670,7 +1670,7 @@ deathdate = { day = 29 month = december year = 1963 }
 action_a = {
 
 ai_chance = 70
-name = "Claim rulership over Russia!"
+name = "EVT_751051_OPTIONA"
 command = { type = belligerence which = PRI value = 10  }
 command = { type = domestic which = interventionism value = 2 }
 command = { type = dissent value = -5 }
@@ -1977,7 +1977,7 @@ command = { type = addclaim which = 502 }
 
 action_b = {
 ai_chance = 10
-name = "This is a bit risky..."
+name = "EVT_751051_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = relation which = RUS value = 60 }
 command = { type = dissent value = 2 }
@@ -2001,8 +2001,8 @@ control = { province = 1162 data = PRI }
 }
 
 
-name = "Ulan Bator Captured"
-desc = "We have finally seized control of the Mongolian capital! How shall we deal with these barbarians?"
+name = "EVT_751052_NAME"
+desc = "EVT_751052_DESC"
 style = 2
 picture = "mongoliadefeated"
 
@@ -2011,7 +2011,7 @@ offset = 7
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = " Let the Mongols join us on OUR terms!"
+name = "EVT_751052_OPTIONA"
 ai_chance = 95
 command = { type = trigger which = 751053 }
 command = { type = addcore   which = 1167   }
@@ -2023,7 +2023,7 @@ command = { type = addcore   which = 1158   }
 command = { type = relation which = MON value = 10 }
 }
 action_b = {
-name = "Make an example of them, unconditional surrender!"
+name = "EVT_751052_OPTIONB"
 ai_chance = 5
 command = { type = relation which = KYG value = -50 }
 command = { type = relation which = KAZ value = -50 }
@@ -2043,13 +2043,13 @@ id = 751053
 random = no
 country = MON
 
-name = "Ulan Bator Captured"
-desc = "The wretched Russians have siezed our glorious capital! Defeat seems near, is it time to submit?"
+name = "EVT_751053_NAME"
+desc = "EVT_751053_DESC"
 style = 2
 picture = "mongoliadefeated"
 
 action_a = {
-name = "We have no choice but to submit..."
+name = "EVT_751053_OPTIONA"
 ai_chance = 90
 command = { type = flag_ext where = MON  }
 command = { type = name where = MON  }
@@ -2355,7 +2355,7 @@ command = { type = sleepminister which = 94112 }
 command = { type = trigger which = 751054 }
 }
 action_b = {
-name = "The Baron shall lead us to victory or death!"
+name = "EVT_751053_OPTIONB"
 ai_chance = 10
 command = { type = trigger which = 751056 }
 
@@ -2369,13 +2369,13 @@ random = no
 country = PRI
 
 
-name = "Mongols Accept!"
-desc = "The Mongols fold to our demands!"
+name = "EVT_751054_NAME"
+desc = "EVT_751054_DESC"
 style = 2
 picture = "mongoliadefeated"
 
 action_a = {
-name = "Good!"
+name = "EVT_751054_OPTIONA"
 command = { type = trigger which = 751055 }
 command = { type = dissent value = -10 }
 command = { type = make_puppet which = MON }
@@ -2395,13 +2395,13 @@ war = { country = TIB country = PRI }
 }
 
 
-name = "Tibet abandons Mongolia"
-desc = "Our alliance with Baron von Sternberg and Mongolia ended in disaster! After the self-proclaimed Khan has ended as a Transamur puppet there's nothing to gain for us in this conflict."
+name = "EVT_751055_NAME"
+desc = "EVT_751055_DESC"
 style = 2
 picture = "End_Winter_War"
 
 action_a = {
-name = "We'll make peace with Transamur!"
+name = "EVT_751055_OPTIONA"
 command = { type = peace which = PRI value = 0 }
 command = { type = dissent value = 5 }
 
@@ -2413,13 +2413,13 @@ id = 751056
 random = no
 country = PRI
 
-name = "The Mongols are Suicidal!"
-desc = "Apparently the rogue Baron is more important to the Mongols than a dignified defeat!"
+name = "EVT_751056_NAME"
+desc = "EVT_751056_DESC"
 style = 2
 picture = "mongoliadefeated"
 
 action_a = {
-name = "They will have to pay!"
+name = "EVT_751056_OPTIONA"
 command = { type = dissent value = 5 }
 command = { type = domestic which = interventionism value = 1 }
 }
@@ -2431,12 +2431,12 @@ country = PRI
 style = 2
 picture = "tannutuvadec"
 
-name = "The Tuvan Question"
-desc = "The Tuvan people are Turks that live next to the Mongols and they have played an important function in Sternberg's empire. Upon hearing about the collapse of his power the Tuvans are demanding freedom. Granting them this wish would greatly weaken the Mongols."
+name = "EVT_751057_NAME"
+desc = "EVT_751057_DESC"
 
 action_a = {
 ai_chance = 20
-name = "Order Mongolia to release Tannu Tuva!"
+name = "EVT_751057_OPTIONA"
 command = { type = trigger which = 751059 }
 command = { type = relation which = MON value = -50 }
 command = { type = sleepevent which = 751058 }
@@ -2444,7 +2444,7 @@ command = { type = sleepevent which = 751058 }
 
 action_b = {
 ai_chance = 70
-name = "Tannu Tuva will be Russian once more!"
+name = "EVT_751057_OPTIONB"
 command = { type = relation which = MON value = -50 }
 command = { type = addcore   which = 1119   }
 command = { type = dissent value = 3 }
@@ -2454,7 +2454,7 @@ command = { type = sleepevent which = 751062 }
 
 action_c = {
 ai_chance = 25
-name = "They are still Mongols for all we care!"
+name = "EVT_751057_OPTIONC"
 command = { type = relation which = MON value = 50 }
 command = { type = sleepevent which = 751058 }
 }
@@ -2476,8 +2476,8 @@ core = { province = 1119 data = PRI }
 }
 }
 
-name = "The Tuvan Question"
-desc = "The Tuvan people are Turks that live next to the Mongols and they have played an important function in Sternberg's empire. Upon hearing about the collapse of his power the Tuvans are demanding freedom. Granting them this wish would greatly weaken the Mongols."
+name = "EVT_751058_NAME"
+desc = "EVT_751058_DESC"
 
 date = { day = 1 month = january year = 1936 }
 offset = 10
@@ -2485,14 +2485,14 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 0
-name = "Give the Tuvans total freedom, once and for all!"
+name = "EVT_751058_OPTIONA"
 command = { type = independence which = TAN value = 1 when = 0 }
 command = { type = relation which = MON value = -50 }
 }
 
 action_b = {
 ai_chance = 55
-name = "Give the Tuvans freedom, but they shall remain loyal to us!"
+name = "EVT_751058_OPTIONB"
 command = { type = independence which = TAN value = 1 when = 0 }
 command = { type = trigger which = 751060 }
 command = { type = relation which = MON value = -50 }
@@ -2500,7 +2500,7 @@ command = { type = relation which = MON value = -50 }
 
 action_c = {
 ai_chance = 70
-name = "Tannu Tuva will be Russian once more!"
+name = "EVT_751058_OPTIONC"
 command = { type = relation which = MON value = -50 }
 command = { type = addcore   which = 1119   }
 command = { type = dissent value = 3 }
@@ -2516,10 +2516,10 @@ style = 2
 picture = "tannutuvadec"
 
 
-name = "The Transamur Ultimatum"
-desc = "The Russians have sent us an ultimatum to release the Tuvans!"
+name = "EVT_751059_NAME"
+desc = "EVT_751059_DESC"
 action_a = {
-name = "Well, if they insist..."
+name = "EVT_751059_OPTIONA"
 command = { type = independence which = TAN value = 1 when = 0 }
 command = { type = removecore which = 1119 }
 command = { type = secedeprovince which = TAN value = 1119 }
@@ -2535,10 +2535,10 @@ style = 2
 picture = "tannutuvadec"
 
 
-name = "The Transamur Ultimatum"
-desc = "The Government of Transamur have sent us an ultimatum to release the Tuvans!"
+name = "EVT_751062_NAME"
+desc = "EVT_751062_DESC"
 action_a = {
-name = "Well, if they insist..."
+name = "EVT_751062_OPTIONA"
 command = { type = removecore which = 1119 }
 command = { type = secedeprovince which = PRI value = 1119 }
 }
@@ -2553,11 +2553,11 @@ style = 2
 picture = "tannutuvadec"
 
 
-name = "Tuvan Freedom"
-desc = "The Tuvans are now free and at our disposal!"
+name = "EVT_751060_NAME"
+desc = "EVT_751060_DESC"
 action_a = {
 ai_chance = 100
-name = "Huzzah!"
+name = "EVT_751060_OPTIONA"
 command = { type = independence which = TAN value = 1 when = 0 }
 command = { type = make_puppet which = TAN }
 command = { type = relation which = TAN value = 100 }
@@ -2595,8 +2595,8 @@ random = 25
 }
 }
 
-name = "Aleksander Kolchak was overthrown"
-desc = "Aleksander Kolchak, leader of Transamur for more than 12 years, was overthrown by members of the general staff led by Sergei Wojciechowski and was executed by a firing squad. His death opens the field for various possiblities of political change in Transamur including the declaration of a republic, if Sergei Wojciechowski and his staff allows it."
+name = "EVT_751061_NAME"
+desc = "EVT_751061_DESC"
 style = 2
 picture = "Yugoslav coup"
 
@@ -2605,7 +2605,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1966 }
 
 action_a = {
-name = "Sergei Wojciechowski is the new leader of Transamur!"
+name = "EVT_751061_OPTIONA"
 ai_chance = 30
 command = { type = dissent value = 10 }
 command = { type = set_domestic which = democratic value = 3 }
@@ -2629,7 +2629,7 @@ command = { type = sleepevent which = 758438 }
 
 
 action_b = {
-name = "A Republic is founded."
+name = "EVT_751061_OPTIONB"
 ai_chance = 40
 command = { type = dissent value = 2 }
 command = { type = set_domestic which = democratic value = 9 }
@@ -2665,20 +2665,20 @@ trigger = {
 puppet = { country = PRI country = JAP  }
 }
 
-name = "Admiral Kolchak was overthrown!"
-desc = "Admiral Kolchak, the long term leader of the Transamur state has been overthrown and assasinated by members of his own general staff. This was used by the democratic opposition to gain control over the state, effectively turning Transamur from a military junta into a democracy. How shall we react?"
+name = "EVT_751063_NAME"
+desc = "EVT_751063_DESC"
 picture = "Transamur"
 
 action_a = {
 ai_chance = 100
-name = "Congratulate the new government!"
+name = "EVT_751063_OPTIONA"
 trigger = { government = democratic }
 command = { type = relation which = PRI value = 200 }
 }
 
 action_b = {
 ai_chance = 50
-name = "Demand the restoration of a military cabinet!"
+name = "EVT_751063_OPTIONB"
 trigger = { NOT = { government = democratic } }
 command = { type = relation which = PRI value = -100 }
 command = { type = dissent value = -1 }
@@ -2687,7 +2687,7 @@ command = { type = trigger which = 751064 }
 
 action_c = {
 ai_chance = 50
-name = "It is their internal affair."
+name = "EVT_751063_OPTIONC"
 trigger = { NOT = { government = democratic } }
 command = { type = relation which = PRI value = 100 }
 }
@@ -2700,14 +2700,14 @@ country = PRI
 style = 2
 
 
-name = "The Japanese are trying to destroy our republic!"
-desc = "The Japanese feel threatened by the sudden restoration of democracy in Transamur and they have issued an ultimatum to us in which they demand the restoration of a military cabinet."
+name = "EVT_751064_NAME"
+desc = "EVT_751064_DESC"
 picture = "kolchak"
 
 
 action_a = {
 ai_chance = 50
-name = "Submit before Japan."
+name = "EVT_751064_OPTIONA"
 command = { type = relation which = JAP value = 100 }
 command = { type = dissent value = 15 }
 command = { type = set_domestic which = democratic value = 3 }
@@ -2716,7 +2716,7 @@ command = { type = set_domestic which = political_left value = 3 }
 
 action_b = {
 ai_chance = 50
-name = "Never!"
+name = "EVT_751064_OPTIONB"
 command = { type = event which = 751065 where = JAP when = 1  }
 command = { type = relation which = JAP value = -250 }
 command = { type = end_access which = JAP  }
@@ -2742,21 +2742,21 @@ country = JAP
 style = 2
 
 
-name = "Transamur breaks away!"
-desc = "The Transamur Republic has taken great offence at our attempts to regulate their internal affairs and are severing all political ties with us!"
+name = "EVT_751065_NAME"
+desc = "EVT_751065_DESC"
 picture = "Transamur"
 
 
 action_a = {
 ai_chance = 70
-name = "Destroy them!"
+name = "EVT_751065_OPTIONA"
 command = { type = war which = PRI }
 command = { type = setflag which = PRI_breaksaway }
 }
 
 action_b = {
 ai_chance = 30
-name = "We can only let them go..."
+name = "EVT_751065_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = dissent value = 5 }
 command = { type = setflag which = PRI_breaksaway }
@@ -2799,12 +2799,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 2
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Restoration of Russia"
-desc = "We have successfuly reclaimed the European parts of Russia and we can now restore the Russian republic to its true glory!"
+name = "EVT_751069_NAME"
+desc = "EVT_751069_DESC"
 picture = "russiageo"
 
 action_a = {
-name = "God is with us!"
+name = "EVT_751069_OPTIONA"
 command = { type = country which = RUS }
 command = { type = clrflag which = RUS_TSAR }
 command = { type = clrflag which = HoS_Senate }
@@ -3074,8 +3074,8 @@ control = { province = 553 data = RUS }
 }
 
 
-name = "The Capital"
-desc = "Either of Russia's historic capitals could become the home of our government. Where should we go?"
+name = "EVT_751070_NAME"
+desc = "EVT_751070_DESC"
 picture = "capitalrus"
 
 date = { day = 1 month = january year = 1936 }
@@ -3085,13 +3085,13 @@ deathdate = { day = 16 month = december year = 1960  }
 
 action_a = {
 ai_chance = 60
-name = "St. Petersburg!"
+name = "EVT_751070_OPTIONA"
 command = {  type =	capital which =  553 }
 command = { type = setflag which = CAP_PET }
 }
 action_b = {
 ai_chance = 40
-name = "Moscow!"
+name = "EVT_751070_OPTIONB"
 command = {  type =	capital which =  572 }
 command = { type = setflag which = CAP_MOS }
 
@@ -3111,8 +3111,8 @@ save_date = yes
 
 trigger = { government = democratic }
 
-name = "The Duma Elections"
-desc = "After several months of preparations the provisional government has completed the arrangements for the first free election in Transamur since 1920. There are 90 seats in national assembly available and various political parties have begun their campaigns. Currently only three parties have a chance of gaining a majority, thus forming a new government. Which one shall prevail?"
+name = "EVT_751076_NAME"
+desc = "EVT_751076_DESC"
 picture = "rusDumaelect"
 
 date = { day = 1 month = january year = 1936 }
@@ -3122,7 +3122,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action = {
 ai_chance = 30
-name = "The People`s Far East Party!"
+name = "EVT_751076_OPTIONA"
 command = { type = dissent value = 2 }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 9 }
@@ -3131,7 +3131,7 @@ command = { type = foreignminister which =  527061	 }
 }
 action = {
 ai_chance =  35
-name = "The Party of Popular Freedom!"
+name = "EVT_751076_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 5 }
@@ -3140,7 +3140,7 @@ command = { type = foreignminister which =  527016	 }
 }
 action = {
 ai_chance =  34
-name = "The The Zemski Krai Party!"
+name = "EVT_751076_OPTIONC"
 command = { type = dissent value = 2 }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 2 }
@@ -3151,7 +3151,7 @@ command = { type = foreignminister which =  527059	 }
 
 action = {
 ai_chance =  1
-name = "The army shall put an end to this chaotic democracy!"
+name = "EVT_751076_OPTIOND"
 command = { type = dissent value = 20 }
 command = { type = set_domestic which = democratic value = 3 }
 command = { type = set_domestic which = political_left value = 3 }
@@ -3172,8 +3172,8 @@ event = 751076
 government = democratic
 }
 
-name = "The Presidential Elections"
-desc = "The time has come to elect a new president. All major forces in the country have put forward their candidates and the Duma is ready to assemble to vote on the new president."
+name = "EVT_751077_NAME"
+desc = "EVT_751077_DESC"
 
 picture = "RussianDumaforeign"
 
@@ -3183,28 +3183,28 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance =  35
-name = "Spiridon Merkulov, the leader of the ZK Party!"
+name = "EVT_751077_OPTIONA"
 command = { type = dissent value = 1 }
 command = { type = headofstate which = 527054 }
 
 }
 action_b = {
 ai_chance =  35
-name = "Boris Shumyatsky, the PFE Party representative!"
+name = "EVT_751077_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = headofstate which = 527053 }
 
 }
 action_c = {
 ai_chance =  30
-name = "Nikolay Smirnov, the PF Party representative!"
+name = "EVT_751077_OPTIONC"
 command = { type = dissent value = 1 }
 command = { type = headofstate which = 527011 }
 
 }
 action_d = {
 ai_chance =  1
-name = "Gennadij Bukaev, the people's tribune of our time!"
+name = "EVT_751077_OPTIOND"
 command = { type = dissent value = 3 }
 command = { type = headofstate which = 527052 }
 
@@ -3224,8 +3224,8 @@ government = democratic
 event = { id = 751076 days = 1400 } #4 years
 }
 
-name = "The Duma Elections"
-desc = "According to the Constitution elections are to be held every four years. The state Duma's term has expired and the time has come to elect a new parliament. There are 90 seats in the Duma available and various political parties have begun their campaigns. Only three parties have a chance of gaining the majority, thus forming a new government. Which one shall prevail?"
+name = "EVT_751078_NAME"
+desc = "EVT_751078_DESC"
 picture = "rusDumaelect"
 
 date = { day = 1 month = january year = 1936 }
@@ -3235,7 +3235,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action = {
 ai_chance = 30
-name = "The People`s Far East Party!"
+name = "EVT_751078_OPTIONA"
 command = { type = dissent value = 2 }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 9 }
@@ -3244,7 +3244,7 @@ command = { type = foreignminister which =  527061	 }
 }
 action = {
 ai_chance =  35
-name = "The Party of Popular Freedom!"
+name = "EVT_751078_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 5 }
@@ -3253,7 +3253,7 @@ command = { type = foreignminister which =  527016	 }
 }
 action = {
 ai_chance =  34
-name = "The The Zemski Krai Party!"
+name = "EVT_751078_OPTIONC"
 command = { type = dissent value = 2 }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 2 }
@@ -3264,7 +3264,7 @@ command = { type = foreignminister which =  527059	 }
 
 action = {
 ai_chance =  1
-name = "The army shall put an end to this chaotic democracy!"
+name = "EVT_751078_OPTIOND"
 command = { type = dissent value = 20 }
 command = { type = set_domestic which = democratic value = 3 }
 command = { type = set_domestic which = political_left value = 3 }
@@ -3286,8 +3286,8 @@ event = 751078
 government = democratic
 }
 
-name = "The presidential Elections"
-desc = "The time has come to elect a new president. All major forces in the country have put forward their candidates and the Duma is ready to assemble to vote on the new president."
+name = "EVT_751079_NAME"
+desc = "EVT_751079_DESC"
 
 picture = "RussianDumaforeign"
 
@@ -3297,28 +3297,28 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance =  35
-name = "Spiridon Merkulov, the leader of the ZK Party!"
+name = "EVT_751079_OPTIONA"
 command = { type = dissent value = 1 }
 command = { type = headofstate which = 527054 }
 
 }
 action_b = {
 ai_chance =  35
-name = "Boris Shumyatsky, the PFE Party representative!"
+name = "EVT_751079_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = headofstate which = 527053 }
 
 }
 action_c = {
 ai_chance =  30
-name = "Nikolay Smirnov, the PF Party representative!"
+name = "EVT_751079_OPTIONC"
 command = { type = dissent value = 1 }
 command = { type = headofstate which = 527011 }
 
 }
 action_d = {
 ai_chance =  1
-name = "Gennadij Bukaev, the people's tribune of our time!"
+name = "EVT_751079_OPTIOND"
 command = { type = dissent value = 3 }
 command = { type = headofstate which = 527052 }
 
@@ -3340,8 +3340,8 @@ government = democratic
 event = { id = 751078 days = 1400 } #4 years
 }
 
-name = "The Duma Elections"
-desc = "According to the Constitution elections are to be held every four years. The state Duma's term has expired and the time has come to elect a new parliament. There are 90 seats in the Duma available and various political parties have begun their campaigns. Only three parties have a chance of gaining the majority, thus forming a new government. Which one shall prevail?"
+name = "EVT_751080_NAME"
+desc = "EVT_751080_DESC"
 picture = "rusDumaelect"
 
 date = { day = 1 month = january year = 1936 }
@@ -3351,7 +3351,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action = {
 ai_chance = 30
-name = "The People`s Far East Party!"
+name = "EVT_751080_OPTIONA"
 command = { type = dissent value = 2 }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 9 }
@@ -3360,7 +3360,7 @@ command = { type = foreignminister which =  527061	 }
 }
 action = {
 ai_chance =  35
-name = "The Party of Popular Freedom!"
+name = "EVT_751080_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 5 }
@@ -3369,7 +3369,7 @@ command = { type = foreignminister which =  527016	 }
 }
 action = {
 ai_chance =  34
-name = "The The Zemski Krai Party!"
+name = "EVT_751080_OPTIONC"
 command = { type = dissent value = 2 }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 2 }
@@ -3380,7 +3380,7 @@ command = { type = foreignminister which =  527059	 }
 
 action = {
 ai_chance =  1
-name = "The army shall put an end to this chaotic democracy!"
+name = "EVT_751080_OPTIOND"
 command = { type = dissent value = 20 }
 command = { type = set_domestic which = democratic value = 3 }
 command = { type = set_domestic which = political_left value = 3 }
@@ -3403,8 +3403,8 @@ event = 751080
 government = democratic
 }
 
-name = "The presidential Elections"
-desc = "The time has come to elect a new president. All major forces in the country have put forward their candidates and the Duma is ready to assemble to vote on the new president."
+name = "EVT_751081_NAME"
+desc = "EVT_751081_DESC"
 
 picture = "RussianDumaforeign"
 
@@ -3414,28 +3414,28 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance =  35
-name = "Spiridon Merkulov, the leader of the ZK Party!"
+name = "EVT_751081_OPTIONA"
 command = { type = dissent value = 1 }
 command = { type = headofstate which = 527054 }
 
 }
 action_b = {
 ai_chance =  35
-name = "Boris Shumyatsky, the PFE Party representative!"
+name = "EVT_751081_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = headofstate which = 527053 }
 
 }
 action_c = {
 ai_chance =  30
-name = "Mirsha Vuchilkov, the PF Party representative!"
+name = "EVT_751081_OPTIONC"
 command = { type = dissent value = 8 }
 command = { type = headofstate which = 527012 }
 
 }
 action_d = {
 ai_chance =  1
-name = "Gennadij Bukaev, the people's tribune of our time!"
+name = "EVT_751081_OPTIOND"
 command = { type = dissent value = 3 }
 command = { type = headofstate which = 527052 }
 
@@ -3455,8 +3455,8 @@ government = democratic
 event = { id = 751080 days = 1400 } #4 years
 }
 
-name = "The Duma Elections"
-desc = "According to the Constitution elections are to be held every four years. The state Duma's term has expired and the time has come to elect a new parliament. There are 90 seats in the Duma available and various political parties have begun their campaigns. Only three parties have a chance of gaining the majority, thus forming a new government. Which one shall prevail?"
+name = "EVT_751082_NAME"
+desc = "EVT_751082_DESC"
 picture = "rusDumaelect"
 
 date = { day = 1 month = january year = 1936 }
@@ -3466,7 +3466,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action = {
 ai_chance = 30
-name = "The People`s Far East Party!"
+name = "EVT_751082_OPTIONA"
 command = { type = dissent value = 2 }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 9 }
@@ -3475,7 +3475,7 @@ command = { type = foreignminister which =  527061	 }
 }
 action = {
 ai_chance =  35
-name = "The Party of Popular Freedom!"
+name = "EVT_751082_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 5 }
@@ -3484,7 +3484,7 @@ command = { type = foreignminister which =  527016	 }
 }
 action = {
 ai_chance =  34
-name = "The The Zemski Krai Party!"
+name = "EVT_751082_OPTIONC"
 command = { type = dissent value = 2 }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 2 }
@@ -3495,7 +3495,7 @@ command = { type = foreignminister which =  527059	 }
 
 action = {
 ai_chance =  1
-name = "The army shall put an end to this chaotic democracy!"
+name = "EVT_751082_OPTIOND"
 command = { type = dissent value = 20 }
 command = { type = set_domestic which = democratic value = 3 }
 command = { type = set_domestic which = political_left value = 3 }
@@ -3517,8 +3517,8 @@ event = 751082
 government = democratic
 }
 
-name = "The presidential Elections"
-desc = "The time has come to elect a new president. All major forces in the country have put forward their candidates and the Duma is ready to assemble to vote on the new president."
+name = "EVT_751083_NAME"
+desc = "EVT_751083_DESC"
 
 picture = "RussianDumaforeign"
 
@@ -3528,28 +3528,28 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance =  35
-name = "Spiridon Merkulov, the leader of the ZK Party!"
+name = "EVT_751083_OPTIONA"
 command = { type = dissent value = 1 }
 command = { type = headofstate which = 527054 }
 
 }
 action_b = {
 ai_chance =  35
-name = "Boris Shumyatsky, the PFE Party representative!"
+name = "EVT_751083_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = headofstate which = 527053 }
 
 }
 action_c = {
 ai_chance =  30
-name = "Mirsha Vuchilkov, the PF Party representative!"
+name = "EVT_751083_OPTIONC"
 command = { type = dissent value = 8 }
 command = { type = headofstate which = 527012 }
 
 }
 action_d = {
 ai_chance =  1
-name = "Gennadij Bukaev, the people's tribune of our time!"
+name = "EVT_751083_OPTIOND"
 command = { type = dissent value = 3 }
 command = { type = headofstate which = 527052 }
 
@@ -3569,8 +3569,8 @@ government = democratic
 event = { id = 751082 days = 1400 } #4 years
 }
 
-name = "The Duma Elections"
-desc = "According to the Constitution elections are to be held every four years. The state Duma's term has expired and the time has come to elect a new parliament. There are 90 seats in the Duma available and various political parties have begun their campaigns. Only three parties have a chance of gaining the majority, thus forming a new government. Which one shall prevail?"
+name = "EVT_751084_NAME"
+desc = "EVT_751084_DESC"
 picture = "rusDumaelect"
 
 date = { day = 1 month = january year = 1936 }
@@ -3580,7 +3580,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action = {
 ai_chance = 30
-name = "The People`s Far East Party!"
+name = "EVT_751084_OPTIONA"
 command = { type = dissent value = 2 }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 9 }
@@ -3589,7 +3589,7 @@ command = { type = foreignminister which =  527061	 }
 }
 action = {
 ai_chance =  35
-name = "The Party of Popular Freedom!"
+name = "EVT_751084_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 5 }
@@ -3598,7 +3598,7 @@ command = { type = foreignminister which =  527016	 }
 }
 action = {
 ai_chance =  34
-name = "The The Zemski Krai Party!"
+name = "EVT_751084_OPTIONC"
 command = { type = dissent value = 2 }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 2 }
@@ -3609,7 +3609,7 @@ command = { type = foreignminister which =  527059	 }
 
 action = {
 ai_chance =  1
-name = "The army shall put an end to this chaotic democracy!"
+name = "EVT_751084_OPTIOND"
 command = { type = dissent value = 20 }
 command = { type = set_domestic which = democratic value = 3 }
 command = { type = set_domestic which = political_left value = 3 }
@@ -3631,8 +3631,8 @@ event = 751084
 government = democratic
 }
 
-name = "The presidential Elections"
-desc = "The time has come to elect a new president. All major forces in the country have put forward their candidates and the Duma is ready to assemble to vote on the new president."
+name = "EVT_751085_NAME"
+desc = "EVT_751085_DESC"
 
 picture = "RussianDumaforeign"
 
@@ -3641,28 +3641,28 @@ offset = 50
 deathdate = { day = 29 month = december year = 1963 }
 action_a = {
 ai_chance =  35
-name = "Spiridon Merkulov, the leader of the ZK Party!"
+name = "EVT_751085_OPTIONA"
 command = { type = dissent value = 1 }
 command = { type = headofstate which = 527054 }
 
 }
 action_b = {
 ai_chance =  35
-name = "Boris Shumyatsky, the PFE Party representative!"
+name = "EVT_751085_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = headofstate which = 527053 }
 
 }
 action_c = {
 ai_chance =  30
-name = "Mirsha Vuchilkov, the PF Party representative!"
+name = "EVT_751085_OPTIONC"
 command = { type = dissent value = 4 }
 command = { type = headofstate which = 527012 }
 
 }
 action_d = {
 ai_chance =  1
-name = "Gennadij Bukaev, the people's tribune of our time!"
+name = "EVT_751085_OPTIOND"
 command = { type = dissent value = 3 }
 command = { type = headofstate which = 527052 }
 
@@ -3682,8 +3682,8 @@ government = democratic
 event = { id = 751084 days = 1400 } #4 years
 }
 
-name = "The Duma Elections"
-desc = "According to the Constitution elections are to be held every four years. The state Duma's term has expired and the time has come to elect a new parliament. There are 90 seats in the Duma available and various political parties have begun their campaigns. Only three parties have a chance of gaining the majority, thus forming a new government. Which one shall prevail?"
+name = "EVT_751086_NAME"
+desc = "EVT_751086_DESC"
 picture = "rusDumaelect"
 
 date = { day = 1 month = january year = 1936 }
@@ -3693,7 +3693,7 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action = {
 ai_chance = 30
-name = "The People`s Far East Party!"
+name = "EVT_751086_OPTIONA"
 command = { type = dissent value = 2 }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 9 }
@@ -3702,7 +3702,7 @@ command = { type = foreignminister which =  527061	 }
 }
 action = {
 ai_chance =  35
-name = "The Party of Popular Freedom!"
+name = "EVT_751086_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 5 }
@@ -3711,7 +3711,7 @@ command = { type = foreignminister which =  527016	 }
 }
 action = {
 ai_chance =  34
-name = "The The Zemski Krai Party!"
+name = "EVT_751086_OPTIONC"
 command = { type = dissent value = 2 }
 command = { type = set_domestic which = democratic value = 8 }
 command = { type = set_domestic which = political_left value = 2 }
@@ -3722,7 +3722,7 @@ command = { type = foreignminister which =  527059	 }
 
 action = {
 ai_chance =  1
-name = "The army shall put an end to this chaotic democracy!"
+name = "EVT_751086_OPTIOND"
 command = { type = dissent value = 20 }
 command = { type = set_domestic which = democratic value = 3 }
 command = { type = set_domestic which = political_left value = 3 }
@@ -3744,8 +3744,8 @@ event = 751086
 government = democratic
 }
 
-name = "The presidential Elections"
-desc = "The time has come to elect a new president. All major forces in the country have put forward their candidates and the Duma is ready to assemble to vote on the new president."
+name = "EVT_751087_NAME"
+desc = "EVT_751087_DESC"
 
 picture = "RussianDumaforeign"
 
@@ -3755,28 +3755,28 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance =  35
-name = "Spiridon Merkulov, the leader of the ZK Party!"
+name = "EVT_751087_OPTIONA"
 command = { type = dissent value = 1 }
 command = { type = headofstate which = 527054 }
 
 }
 action_b = {
 ai_chance =  35
-name = "Boris Shumyatsky, the PFE Party representative!"
+name = "EVT_751087_OPTIONB"
 command = { type = dissent value = 1 }
 command = { type = headofstate which = 527053 }
 
 }
 action_c = {
 ai_chance =  30
-name = "Mirsha Vuchilkov, the PF Party representative!"
+name = "EVT_751087_OPTIONC"
 command = { type = dissent value = 2 }
 command = { type = headofstate which = 527012 }
 
 }
 action_d = {
 ai_chance =  1
-name = "Gennadij Bukaev, the people's tribune of our time!"
+name = "EVT_751087_OPTIOND"
 command = { type = dissent value = 3 }
 command = { type = headofstate which = 527052 }
 
@@ -3794,8 +3794,8 @@ headofstate = 527001
 random = 40
 }
 
-name = "Aleksander Kolchak Dies"
-desc = "Aleksander Kolchak, the former leader of Transamur, has passed away due to a heart attack. His death opens the field for various possiblities of political change in Transamur including the declaration of a republic, if Sergei Wojciechowski and his staff allows it."
+name = "EVT_751105_NAME"
+desc = "EVT_751105_DESC"
 style = 2
 picture = "minister_died"
 
@@ -3804,7 +3804,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1966 }
 
 action_a = {
-name = "Sergei Wojciechowski is the new leader of Transamur!"
+name = "EVT_751105_OPTIONA"
 ai_chance = 30
 command = { type = dissent value = 10 }
 command = { type = set_domestic which = democratic value = 3 }
@@ -3830,7 +3830,7 @@ command = { type = sleepevent which = 751106 }
 
 
 action_b = {
-name = "A Republic is founded!"
+name = "EVT_751105_OPTIONB"
 ai_chance = 40
 command = { type = dissent value = 2 }
 command = { type = set_domestic which = democratic value = 9 }
@@ -3869,8 +3869,8 @@ minister = 527001
 random = 40
 }
 
-name = "Aleksander Kolchak dies"
-desc = "Aleksander Kolchak, the former leader of Transamur, has passed away due to a heart attack. A week of mourning was declared to honor this great hero of the Russian nation."
+name = "EVT_751106_NAME"
+desc = "EVT_751106_DESC"
 style = 2
 picture = "minister_died"
 
@@ -3879,7 +3879,7 @@ offset = 30
 deathdate = { day = 29 month = december year = 1966 }
 
 action_a = {
-name = "A sad day for Transamur!"
+name = "EVT_751106_OPTIONA"
 command = { type = dissent value = 1 }
 command = { type = sleepminister which = 527001 }
 command = { type = sleepminister which = 527047 }
@@ -3914,8 +3914,8 @@ trigger = {
 event = 751069
 }
 
-name = "Status of the Orthodox Church"
-desc = "With the restoration of the Russian republic the Orthodox Church, under the leadership of the vocal Patriarch Mikhail Pol'skii, is demanding the reclarification of its legal status. He wants a constitutional ammendment passed on the issue of the national religion."
+name = "EVT_751107_NAME"
+desc = "EVT_751107_DESC"
 picture = "mikhailpolskii"
 
 date = { day = 4 month = august year = 1936 }
@@ -3924,7 +3924,7 @@ deathdate = { day = 29 month = december year = 1966 }
 
 action_a = {
 ai_chance = 40
-name = "Orthodoxy is our State Religion!"
+name = "EVT_751107_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = sleepevent which = 750010 }
 command = { type = sleepevent which = 750008 }
@@ -3934,7 +3934,7 @@ command = { type = setflag which = ORTH_STATE }
 
 action_b = {
 ai_chance = 60
-name = "We are modern and secular!"
+name = "EVT_751107_OPTIONB"
 command = { type = dissent value = 5  }
 command = { type = sleepevent which = 750010 }
 command = { type = sleepevent which = 750008 }
@@ -3944,7 +3944,7 @@ command = { type = setflag which = secular }
 
 action_c = {
 ai_chance = 0
-name = "The Orthodox Church must have a role in Government!"
+name = "EVT_751107_OPTIONC"
 command = { type = dissent value = 15  }
 command = { type = domestic which = political_left value = -3 }
 command = { type = headofgovernment which = 4094  }
@@ -3981,11 +3981,11 @@ date = { day = 1 month = april year = 1936 }
 offset = 10
 deathdate = { day = 29 month = december year = 1940 }
 
-name = "Growing unrest"
-desc = "Despite the relative stability of our state, which was achieved by vigorous collaboration with our Japanese masters, the majority of the population remain discontented with our form of state. They are not content with the dictatorial rule of admiral Kolchak and demand that democratic and liberal reforms be implemented in Transamur. What shall we do?"
+name = "EVT_751129_NAME"
+desc = "EVT_751129_DESC"
 
 action_a = {
-name = "Introduce full democracy to Transamur!"
+name = "EVT_751129_OPTIONA"
 ai_chance = 0
 command = { type = money value = -60 }
 command = { type = dissent value = -5 }
@@ -3998,7 +3998,7 @@ command = { trigger = { puppet = { country = PRI country = JAP  } } type = trigg
 }
 
 action_b = {
-name = "Minor reforms should appease these dissenters!"
+name = "EVT_751129_OPTIONB"
 ai_chance = 40
 command = { type = money value = -30 }
 command = { type = dissent value = -1 }
@@ -4009,7 +4009,7 @@ command = { type = set_domestic which = freedom value = 5 }
 }
 
 action_c = {
-name = "Keep everything as it is!"
+name = "EVT_751129_OPTIONC"
 ai_chance = 60
 command = { type = dissent value = 4 }
 command = { type = set_domestic which = freedom value = -1 }
@@ -4023,20 +4023,20 @@ random = no
 country = JAP
 style = 2
 
-name = "Transamur surrendered before dissenters!"
-desc = "Admiral Kolchak, the long term leader of the Transamur state, was forced to step down due to large unrest in Transamur. The democratic opposition used the vacuum left by Kolchak to gain control over the state, effectively transforming Transamur from a military junta into a democracy. How shall we react?"
+name = "EVT_751130_NAME"
+desc = "EVT_751130_DESC"
 picture = "Transamur"
 
 action_a = {
 ai_chance = 100
-name = "Congratulate the new government!"
+name = "EVT_751130_OPTIONA"
 trigger = { government = democratic }
 command = { type = relation which = PRI value = 200 }
 }
 
 action_b = {
 ai_chance = 50
-name = "Demand the restoration of a military cabinet!"
+name = "EVT_751130_OPTIONB"
 trigger = { NOT = { government = democratic } }
 command = { type = relation which = PRI value = -100 }
 command = { type = dissent value = -1 }
@@ -4045,7 +4045,7 @@ command = { type = trigger which = 751131 }
 
 action_c = {
 ai_chance = 50
-name = "It is their internal affair."
+name = "EVT_751130_OPTIONC"
 trigger = { NOT = { government = democratic } }
 command = { type = relation which = PRI value = 100 }
 }
@@ -4058,14 +4058,14 @@ country = PRI
 style = 2
 
 
-name = "The Japanese are trying to destroy republic!"
-desc = "The Japanese feel threatened by the sudden restoration of democracy in Transamur and they have issued an ultimatum to us in which they demand the restoration of a military cabinet."
+name = "EVT_751131_NAME"
+desc = "EVT_751131_DESC"
 picture = "kolchak"
 
 
 action_a = {
 ai_chance = 50
-name = "Submit before Japan."
+name = "EVT_751131_OPTIONA"
 command = { type = relation which = JAP value = 100 }
 command = { type = dissent value = 15 }
 command = { type = set_domestic which = democratic value = 3 }
@@ -4074,7 +4074,7 @@ command = { type = set_domestic which = political_left value = 3 }
 
 action_b = {
 ai_chance = 50
-name = "Never!"
+name = "EVT_751131_OPTIONB"
 command = { type = event which = 751132 where = JAP when = 1  }
 command = { type = relation which = JAP value = -250 }
 command = { type = end_access which = JAP  }
@@ -4100,20 +4100,20 @@ country = JAP
 style = 2
 
 
-name = "Transamur breaks away!"
-desc = "The Transamur Republic has taken great offence at our attempts to regulate their internal affairs and are severing all political ties with us!"
+name = "EVT_751132_NAME"
+desc = "EVT_751132_DESC"
 picture = "Transamur"
 
 action_a = {
 ai_chance = 70
-name = "Destroy them!"
+name = "EVT_751132_OPTIONA"
 command = { type = war which = PRI }
 command = { type = setflag which = PRI_breaksaway }
 }
 
 action_b = {
 ai_chance = 30
-name = "We can only let them go..."
+name = "EVT_751132_OPTIONB"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = dissent value = 5 }
 command = { type = setflag which = PRI_breaksaway }

@@ -9,13 +9,13 @@ country = ITA
 style = 2
 
 
-name = "The Carlists banned in Spain"
-desc = "Following attempts to increase their power, the Carlist movement has suffered vicious repression from the present government.  Manuel Fal Conde and the new pretender, Francis Xavier of Borbón-Parma have sought asylum in Rome, and are requesting Vatican support to continue their drive to re-establish a Most Christian Monarchy in Spain."
+name = "EVT_91203_NAME"
+desc = "EVT_91203_DESC"
 picture = "politics2"
 
 action_a = {
 ai_chance =  60
-name = "Allow them to continue operating from Italy"
+name = "EVT_91203_OPTIONA"
 command = { type = relation which = GER value = -50 }
 command = { type = relation which = SPA value = -150 }
 command = { type = relation which = AUS value = -50 }
@@ -26,13 +26,13 @@ command = { type = setflag  which = SPA_CARLISTS }
 
 action_b = {
 ai_chance =  25
-name = "Break off diplomatic relations with Spain"
+name = "EVT_91203_OPTIONB"
 command = { type = relation which = SPA value = -100 }
 }
 
 action_c = {
 ai_chance =  15
-name = "Wash our hands of the Carlists"
+name = "EVT_91203_OPTIONC"
 command = { type = domestic which = interventionism value = -1 }
 command = { type = dissent value = 5  }
 }
@@ -52,8 +52,8 @@ NOT = { exists = EUS
 }
 }
 
-name = "Carlist uprising!"
-desc = "Disaster - Carlists in the armed forces have united with the remnants of the Requêtes to seize control of Northern Spain!  Carlist political organizations are taking over state authorities, the rural clergy are mobilizing the masses, and the pretender has flown in to Burgos to proclaim the beginning of a Second Reconquista to reclaim Spain for a truly Catholic Dynasty!"
+name = "EVT_91204_NAME"
+desc = "EVT_91204_DESC"
 
 picture = "politics2"
 
@@ -64,7 +64,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
 
-name = "We shall fight them!"
+name = "EVT_91204_OPTIONA"
 
 command = { type = independence which = EUS value = 0 when = 0 }
 command = { type = add_corps which = "X Cuerpo del Ejército" value = land when = -1 where = 452 }
@@ -94,15 +94,15 @@ trigger = { event = 91204
 
 }
 
-name = "Carlist Spain rises up!"
-desc = "After a century of struggle, the Legitimist Cause has again risen up, to bring justice and Christian rule back to Spain!"
+name = "EVT_91201_NAME"
+desc = "EVT_91201_DESC"
 
 picture = "politics2"
 
 
 
 action_a = {
-name = "Vivo Cristo Rey!"
+name = "EVT_91201_OPTIONA"
 command = { type = ai which = "kaiserreich/Carlist spain.ai" }
 command = { type = set_domestic which = democratic value = 1 }
 command = { type = set_domestic which = political_left value = 2 }
@@ -234,8 +234,8 @@ NOT = { exists = SPR
 }
 }
 
-name = "CNT uprising!"
-desc = "An unprecedented week of unrest in Catalonia and Andalusia has left these regions dominated by anarchy.  State power has broken down, civil Guard garrisons have been massacred, private plantations and factories have been collectivized by armed workers, and the clergy have been forcibly driven out."
+name = "EVT_91210_NAME"
+desc = "EVT_91210_DESC"
 
 picture = "politics2"
 
@@ -246,7 +246,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
 
-name = "We shall fight to stop this revolution!"
+name = "EVT_91210_OPTIONA"
 command = { type = independence which = SPR value = 0 when = 0 }
 command = { type = add_corps which = "XI Cuerpo del Ejército" value = land when = -1 where = 454 }
 command = { type = add_division which = "12. División de Infantería" value = infantry when = 8 }
@@ -270,12 +270,12 @@ trigger = {
 event = 91210
 }
 
-name = "CNT Spain rises up!  ¡A las barricadas!"
-desc = "Collectivize and mobilize, for Social Revolution!"
+name = "EVT_91207_NAME"
+desc = "EVT_91207_DESC"
 picture = "politics2"
 
 action_a = {
-name = "Arise workers of Spain !"
+name = "EVT_91207_OPTIONA"
 command = { type = set_domestic which =   democratic value = 3  }
 command = { type = set_domestic which = political_left value = 9  }
 command = { type = ai which = "kaiserreich/Syndicalist spain.ai" }
@@ -554,8 +554,8 @@ event = 3967027
 }
 }
 
-name = "Revolution in Spain!"
-desc = "The Spanish Workers are throwing off the chains of Monarchist oppression, and are fighting to establish a syndicalist federation of their own!  They face grave threats from reactionaries of all stripes, and while it has generally been our policy to remain neutral foreign disputes, many influential voices in Britain are demanding that we send help to our Comrades."
+name = "EVT_91212_NAME"
+desc = "EVT_91212_DESC"
 style = 2
 picture = "SCW"
 decision_picture = "decision_foreign_volunteers"
@@ -567,7 +567,7 @@ deathdate = { day = 29 month = december year = 1947 }
 
 
 action_a = {
-name = "We are content with Socialism on our island" # Why support anarchist rabble?
+name = "EVT_91212_OPTIONA" # Why support anarchist rabble?
 ai_chance = 25
 command = { type = dissent value = 2 }
 command = { type = relation which = SPR value = -55 }
@@ -582,7 +582,7 @@ command = { type = sleepevent which = 3967026 }
 command = { type = sleepevent which = 3967027 }
 }
 action_b = {
-name = "To Spain!  For Syndicalism and Liberty!" # Send materiel and volunteers
+name = "EVT_91212_OPTIONB" # Send materiel and volunteers
 ai_chance = 75
 command = { type = money value = -100 }
 command = { type = manpowerpool value = -10 }
@@ -665,8 +665,8 @@ event = 3967027
 }
 }
 
-name = "Revolution in Spain!"
-desc = "The Spanish Workers are throwing off the chains of Monarchist oppression, and are fighting to establish a syndicalist federation of their own!  They face grave threats from reactionaries of all stripes, and while it has generally been our policy to remain neutral foreign disputes, many influential voices in Britain are demanding that we send help to our Comrades."
+name = "EVT_3967026_NAME"
+desc = "EVT_3967026_DESC"
 style = 2
 picture = "SCW"
 decision_picture = "decision_foreign_volunteers"
@@ -678,7 +678,7 @@ deathdate = { day = 29 month = december year = 1947 }
 
 
 action_a = {
-name = "We are content with Socialism on our island" # Why support anarchist rabble?
+name = "EVT_3967026_OPTIONA" # Why support anarchist rabble?
 ai_chance = 60
 command = { type = dissent value = 2 }
 command = { type = relation which = SPR value = -55 }
@@ -693,7 +693,7 @@ command = { type = sleepevent which = 91212 }
 command = { type = sleepevent which = 3967027 }
 }
 action_b = {
-name = "To Spain!  For Syndicalism and Liberty!" # Send materiel and volunteers
+name = "EVT_3967026_OPTIONB" # Send materiel and volunteers
 ai_chance = 40
 command = { type = money value = -100 }
 command = { type = manpowerpool value = -10 }
@@ -769,8 +769,8 @@ event = 3967026
 }
 }
 
-name = "Revolution in Spain!"
-desc = "The Spanish Workers are throwing off the chains of Monarchist oppression, and are fighting to establish a syndicalist federation of their own!  They face grave threats from reactionaries of all stripes, and while it has generally been our policy to remain neutral foreign disputes, many influential voices in Britain are demanding that we send help to our Comrades."
+name = "EVT_3967027_NAME"
+desc = "EVT_3967027_DESC"
 style = 2
 picture = "SCW"
 decision_picture = "decision_foreign_volunteers"
@@ -782,7 +782,7 @@ deathdate = { day = 29 month = december year = 1947 }
 
 
 action_a = {
-name = "We are content with Socialism on our island" # Why support anarchist rabble?
+name = "EVT_3967027_OPTIONA" # Why support anarchist rabble?
 ai_chance = 30
 command = { type = dissent value = 2 }
 command = { type = relation which = SPR value = -55 }
@@ -797,7 +797,7 @@ command = { type = sleepevent which = 91212 }
 command = { type = sleepevent which = 3967026 }
 }
 action_b = {
-name = "To Spain!  For Syndicalism and Liberty!" # Send materiel and volunteers
+name = "EVT_3967027_OPTIONB" # Send materiel and volunteers
 ai_chance = 70
 command = { type = money value = -100 }
 command = { type = manpowerpool value = -10 }
@@ -830,13 +830,13 @@ country = SPR
 
 # Triggered by UK
 
-name = "British Aid Arrives!"
-desc = "Our British Comrades have seen the plight of the Spanish workers, and have sent us considerable shipments of supplies!  Many British volunteers have also arrived, who are filling to fight for the cause of International Proletarian Solidarity!"
+name = "EVT_91213_NAME"
+desc = "EVT_91213_DESC"
 picture = "foreign_volunteers"
 style = 2
 
 action_a = {
-name = "Hurrah!" # Great!
+name = "EVT_91213_OPTIONA" # Great!
 command = { type = manpowerpool value = 10 }
 command = { type = supplies value = 1500 }
 command = { type = add_division value = infantry when = 9 }
@@ -853,13 +853,13 @@ country = SPR
 
 # Triggered by UK
 
-name = "British Aid Arrives!"
-desc = "Our British Comrades have seen the plight of the Spanish workers, and have sent us considerable shipments of supplies!  Many British volunteers have also arrived, who are filling to fight for the cause of International Proletarian Solidarity!"
+name = "EVT_3967028_NAME"
+desc = "EVT_3967028_DESC"
 picture = "foreign_volunteers"
 style = 2
 
 action_a = {
-name = "Hurrah!" # Great!
+name = "EVT_3967028_OPTIONA" # Great!
 command = { type = manpowerpool value = 10 }
 command = { type = supplies value = 1500 }
 command = { type = add_division value = militia when = 4 }
@@ -887,8 +887,8 @@ flag = eus_win_scw
 
 }
 
-name = "The End of the Spanish War"
-desc = "Our brave soldiers have fought well defending the rights of the Spanish workers, and are now returning home.  Great parades and celebrations are organized on the streets of London, Cardiff, Manchester and Glasgow, and our own militia chiefs are attempting to analyze the lessons we have learnt in military matters."
+name = "EVT_91214_NAME"
+desc = "EVT_91214_DESC"
 style = 2
 picture = "foreign_volunteers"
 
@@ -897,7 +897,7 @@ offset = 50
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Excellent !"
+name = "EVT_91214_OPTIONA"
 command = { type = relation which = SPR value = 10 }	#
 command = { type = manpowerpool value = 5 }		# Soldiers return home
 command = { type = dissent value = -1 }
@@ -953,8 +953,8 @@ war = { country = RUS country = SPA }
 }
 }
 
-name = "Civil War in Spain!"
-desc = "The legitimate Spanish Kingdom under Alfonso XIII is under severe threat from anarchists and fanatics!  While many are saying that this provides further proof of the terminal weakness of the House of Bourbon, a secure Spain is an important part of our defensive plans.  It could be wise to help the Government put an end to these threats."
+name = "EVT_3967222_NAME"
+desc = "EVT_3967222_DESC"
 
 style = 2
 picture = "soviet_reinforcements"
@@ -967,7 +967,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 
 action_a = {
-name = "Send material and technical experts" # Send materiel and volunteers
+name = "EVT_3967222_OPTIONA" # Send materiel and volunteers
 ai_chance = 40
 command = { type = relation which = SPA value = 20 }
 command = { type = relation which = SPR value = -20 }
@@ -983,7 +983,7 @@ command = { type = belligerence which = RUS value = 1 }
 command = { type = setflag which = rus_int_scw }
 }
 action_b = {
-name = "Spain is of no interest to Russia" # Franco needs no aid
+name = "EVT_3967222_OPTIONB" # Franco needs no aid
 ai_chance = 60
 command = { type = relation which = SPA value = -20 }
 command = { type = relation which = SPR value = 20 }
@@ -1005,14 +1005,14 @@ id = 3967223
 random = no
 country = SPA
 
-name = "Russian Aid Arrives!"
-desc = "The Russian state believes that our success in the present struggle in Spain is essential for the continued stability of Europe, and has sent us considerable amounts of supplies and military 'experts' to help us in the fight."
+name = "EVT_3967223_NAME"
+desc = "EVT_3967223_DESC"
 
 style = 2
 picture = "soviet_reinforcements"
 
 action_a = {
-name = "OK" # Great!
+name = "EVT_3967223_OPTIONA" # Great!
 command = { type = manpowerpool value = 10 }
 command = { type = supplies value = 1500 }
 command = { type = add_division value = infantry when = 9 }
@@ -1040,8 +1040,8 @@ flag = eus_win_scw
 }
 }
 
-name = "The End of the Spanish War"
-desc = "For good or ill, the Spanish war is now over.  The General Staff have reported that they learnt many valuable lessons regarding the nature of modern warfare over the course of the conflict."
+name = "EVT_3967224_NAME"
+desc = "EVT_3967224_DESC"
 style = 2
 picture = "soviet_replacement"
 
@@ -1050,7 +1050,7 @@ offset = 50
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "ACTIONNAME2803A" # Great!
+name = "EVT_3967224_OPTIONA" # Great!
 command = { type = relation which = SPA value = 10 }	#
 command = { type = manpowerpool value = 5 }	 	# Soldiers return home
 command = { type = dissent value = -1 }
@@ -1113,8 +1113,8 @@ war = { country = ENG country = FRA }
 }
 }
 
-name = "Revolution in Spain!"
-desc = "The Spanish Workers are throwing off the chains of Monarchist oppression, and are fighting to establish a syndicalist federation of their own!  They face grave threats from reactionaries of all stripes, and it is surely the Duty of France, as the chief of all progressive proletarian nations, to aid the Spanish workers!"
+name = "EVT_91215_NAME"
+desc = "EVT_91215_DESC"
 
 
 style = 2
@@ -1126,7 +1126,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "The Anarchist are not true Syndicalists, and we shall not help them" # Why support anarchist rabble?
+name = "EVT_91215_OPTIONA" # Why support anarchist rabble?
 ai_chance = 5
 command = { type = dissent value = 10 }
 command = { type = domestic which = interventionism value = -1 }
@@ -1138,7 +1138,7 @@ command = { type = sleepevent which = 3967033 }
 }
 action_b = {
 ai_chance = 95
-name = "Onwards!  France shall lead the way!" # Send materiel and volunteers
+name = "EVT_91215_OPTIONB" # Send materiel and volunteers
 command = { type = dissent value = 2 }
 command = { type = manpowerpool value = -10 }
 command = { type = supplies value = -1000 }
@@ -1207,8 +1207,8 @@ event = 91215
 }
 }
 
-name = "Revolution in Spain!"
-desc = "The Spanish Workers are throwing off the chains of Monarchist oppression, and are fighting to establish a syndicalist federation of their own!  They face grave threats from reactionaries of all stripes, and it is surely the Duty of France, as the chief of all progressive proletarian nations, to aid the Spanish workers!"
+name = "EVT_3967033_NAME"
+desc = "EVT_3967033_DESC"
 
 
 style = 2
@@ -1220,7 +1220,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "The Anarchist are not true Syndicalists, and we shall not help them" # Why support anarchist rabble?
+name = "EVT_3967033_OPTIONA" # Why support anarchist rabble?
 ai_chance = 65
 command = { type = dissent value = 5 }
 command = { type = domestic which = interventionism value = -1 }
@@ -1232,7 +1232,7 @@ command = { type = sleepevent which = 91215 }
 }
 action_b = {
 ai_chance = 35
-name = "Onwards!  France shall lead the way!" # Send materiel and volunteers
+name = "EVT_3967033_OPTIONB" # Send materiel and volunteers
 command = { type = dissent value = 5 }
 command = { type = manpowerpool value = -10 }
 command = { type = supplies value = -1000 }
@@ -1258,14 +1258,14 @@ country = SPR
 
 # Triggered by FRA
 
-name = "French Aid Arrives!"
-desc = "Our French Comrades have seen the plight of the Spanish workers, and have sent us considerable shipments of supplies!  Many volunteers have also arrived, who are filling to fight for the cause of International Proletarian Solidarity!"
+name = "EVT_91216_NAME"
+desc = "EVT_91216_DESC"
 
 style = 2
 picture = "foreign_volunteers"
 
 action_a = {
-name = "OK" # Great!
+name = "EVT_91216_OPTIONA" # Great!
 command = { type = manpowerpool value = 10 }
 command = { type = supplies value = 1500 }
 command = { type = add_division value = infantry when = 9 }
@@ -1294,8 +1294,8 @@ flag = eus_win_scw
 }
 
 
-name = "The End of the Spanish War"
-desc = "Our brave soldiers have fought well defending the rights of the Spanish workers, and are now returning home.  In Paris, a grand parade is being planned to march down La Voie Triomphale to Place de la Commune.  Meanwhile, our army chiefs are attempting to analyze the lessons we have learnt in military matters."
+name = "EVT_91217_NAME"
+desc = "EVT_91217_DESC"
 
 
 style = 2
@@ -1306,7 +1306,7 @@ offset = 50
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "ACTIONNAME2803A" # Great!
+name = "EVT_91217_OPTIONA" # Great!
 command = { type = relation which = SPR value = 10 }	#
 command = { type = manpowerpool value = 5 }	 	# Soldiers return home
 command = { type = dissent value = -1 }
@@ -1357,8 +1357,8 @@ war = { country = GER country = FRA }
 }
 }
 
-name = "Civil War in Spain!"
-desc = "The legitimate Spanish Kingdom under Alfonso XIII is under severe threat from anarchists and fanatics!  While many are saying that this provides further proof of the terminal weakness of the House of Bourbon, a secure Spain is an important part of our defensive plans.  It could be wise to help the Government put an end to these threats."
+name = "EVT_91218_NAME"
+desc = "EVT_91218_DESC"
 
 style = 2
 picture = "Wehrmacht"
@@ -1370,7 +1370,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 
 action_a = {
-name = "Send material and technical experts" # Send materiel and volunteers
+name = "EVT_91218_OPTIONA" # Send materiel and volunteers
 ai_chance = 60
 command = { type = relation which = SPA value = 20 }
 command = { type = relation which = SPR value = -20 }
@@ -1386,7 +1386,7 @@ command = { type = setflag which = ger_int_scw }
 command = { type = sleepevent which = 3967030 }
 }
 action_b = {
-name = "Spain is of no interest to Germany" # Franco needs no aid
+name = "EVT_91218_OPTIONB" # Franco needs no aid
 ai_chance = 40
 command = { type = relation which = SPA value = -20 }
 command = { type = relation which = SPR value = 20 }
@@ -1438,8 +1438,8 @@ war = { country = GER country = FRA }
 }
 }
 
-name = "Civil War in Spain!"
-desc = "The legitimate Spanish Kingdom under Alfonso XIII is under severe threat from anarchists and fanatics!  While many are saying that this provides further proof of the terminal weakness of the House of Bourbon, a secure Spain is an important part of our defensive plans.  It could be wise to help the Government put an end to these threats."
+name = "EVT_3967030_NAME"
+desc = "EVT_3967030_DESC"
 
 style = 2
 picture = "Wehrmacht"
@@ -1451,7 +1451,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 
 action_a = {
-name = "Send material and technical experts" # Send materiel and volunteers
+name = "EVT_3967030_OPTIONA" # Send materiel and volunteers
 ai_chance = 60
 command = { type = relation which = SPA value = 20 }
 command = { type = relation which = SPR value = -20 }
@@ -1467,7 +1467,7 @@ command = { type = setflag which = ger_int_scw }
 command = { type = sleepevent which = 91218 }
 }
 action_b = {
-name = "Spain is of no interest to Germany" # Xavier needs no aid
+name = "EVT_3967030_OPTIONB" # Xavier needs no aid
 ai_chance = 40
 command = { type = relation which = SPA value = -20 }
 command = { type = relation which = SPR value = 20 }
@@ -1487,14 +1487,14 @@ id = 91219
 random = no
 country = SPA
 
-name = "German Aid Arrives!"
-desc = "The German Kaiser believes that our success in the present struggle in Spain is essential for the continued stability of Europe, and has sent us considerable amounts of supplies and military 'experts' to help us in the fight."
+name = "EVT_91219_NAME"
+desc = "EVT_91219_DESC"
 
 style = 2
 picture = "Wehrmacht"
 
 action_a = {
-name = "OK" # Great!
+name = "EVT_91219_OPTIONA" # Great!
 command = { type = manpowerpool value = 10 }
 command = { type = supplies value = 1500 }
 command = { type = add_division value = infantry when = 9 }
@@ -1508,14 +1508,14 @@ id = 3967031
 random = no
 country = SPA
 
-name = "German Aid Arrives!"
-desc = "The German Kaiser believes that our success in the present struggle in Spain is essential for the continued stability of Europe, and has sent us considerable amounts of supplies, military 'experts,' and some motorized infantry to help us in the fight."
+name = "EVT_3967031_NAME"
+desc = "EVT_3967031_DESC"
 
 style = 2
 picture = "Wehrmacht"
 
 action_a = {
-name = "OK" # Great!
+name = "EVT_3967031_OPTIONA" # Great!
 command = { type = manpowerpool value = 10 }
 command = { type = supplies value = 1500 }
 command = { type = add_division value = motorized when = 0 }
@@ -1541,8 +1541,8 @@ flag = spa_win_scw
 flag = eus_win_scw
 }
 }
-name = "The End of the Spanish War"
-desc = "For good or ill, the Spanish war is now over.  The General Staff have reported that they learnt many valuable lessons regarding the nature of modern warfare over the course of the conflict."
+name = "EVT_91220_NAME"
+desc = "EVT_91220_DESC"
 
 
 style = 2
@@ -1553,7 +1553,7 @@ offset = 50
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "The lessons are not lost on the Heer!"
+name = "EVT_91220_OPTIONA"
 command = { type = relation which = SPA value = 10 }	#
 command = { type = manpowerpool value = 5 }	 	# Soldiers return home
 command = { type = dissent value = -1 }
@@ -1607,8 +1607,8 @@ war = { country = ITA country = USA }
 }
 }
 
-name = "Civil War in Spain!"
-desc = "Spain is collapsing into anarchy, and only the Carlist Movement appears to offer any potential hope for the Restoration of Christianity and Order over the peninsula.  It is widely believed that we should publically organize support for the Traditionalist cause, and encourage all good Catholics to do whatever they can to defend Spain!"
+name = "EVT_91221_NAME"
+desc = "EVT_91221_DESC"
 style = 2
 picture = "foreign_volunteers"
 decision_picture = "decision_foreign_volunteers"
@@ -1618,7 +1618,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Publically Support the Carlists" # Send materiel and volunteers
+name = "EVT_91221_OPTIONA" # Send materiel and volunteers
 ai_chance = 95
 command = { type = domestic which = interventionism value = 1 }
 command = { type = relation which = SPR value = -20 }
@@ -1637,7 +1637,7 @@ command = { type = sleepevent which = 3967242 }
 }
 
 action_b = {
-name = "Remain silent on Spanish affairs" # Xavier needs no aid
+name = "EVT_91221_OPTIONB" # Xavier needs no aid
 ai_chance = 5
 command = { type = dissent value = 5 }
 command = { type = relation which = SPA value = -20 }
@@ -1697,8 +1697,8 @@ war = { country = ITA country = USA }
 }
 }
 
-name = "Civil War in Spain!"
-desc = "Spain is collapsing into anarchy, and only by offering support of existing govenrnment of Spain can rise of syndicalism or extreme nationalism be prevented.  It is widely believed that we should publically organize support for the legal government of Spain, and encourage all Italians to do whatever they can to defend Spain!"
+name = "EVT_3967242_NAME"
+desc = "EVT_3967242_DESC"
 style = 2
 picture = "foreign_volunteers"
 decision_picture = "decision_foreign_volunteers"
@@ -1708,7 +1708,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
-name = "Publically Support the legal government" # Send material and volunteers
+name = "EVT_3967242_OPTIONA" # Send material and volunteers
 ai_chance = 95
 command = { type = domestic which = interventionism value = 1 }
 command = { type = relation which = SPR value = -20 }
@@ -1728,7 +1728,7 @@ command = { type = sleepevent which = 91221  }
 }
 
 action_b = {
-name = "Remain silent on Spanish affairs"
+name = "EVT_3967242_OPTIONB"
 ai_chance = 5
 command = { type = relation which = SPA value = -20 }
 command = { type = relation which = SPR value = -20 }
@@ -1749,13 +1749,13 @@ random = no
 country = EUS
 
 
-name = "Papal Blessings"
-desc = "The Holy Father has publically expressed his support and recognition for the Cause of the True Dynasty in Spain!  Donations from Catholics from all over the world are pouring in, and many volunteers are arriving to help us in the struggle."
+name = "EVT_91222_NAME"
+desc = "EVT_91222_DESC"
 style = 2
 picture = "foreign_volunteers"
 
 action_a = {
-name = "OK" # Great!
+name = "EVT_91222_OPTIONA" # Great!
 command = { type = manpowerpool value = 10 }
 command = { type = supplies value = 1500 }
 command = { type = add_division value = infantry when = 9 }
@@ -1771,13 +1771,13 @@ random = no
 country = SPA
 
 
-name = "Italian support"
-desc = "The government of Italy has publically expressed their support and recognition for the legal government of Spain! Many volunteers and members of Italian armed forces are arriving to help us in the struggle."
+name = "EVT_3967243_NAME"
+desc = "EVT_3967243_DESC"
 style = 2
 picture = "foreign_volunteers"
 
 action_a = {
-name = "OK" # Great!
+name = "EVT_3967243_OPTIONA" # Great!
 command = { type = manpowerpool value = 10 }
 command = { type = supplies value = 1500 }
 command = { type = add_division value = infantry when = 9 }
@@ -1804,8 +1804,8 @@ flag = eus_win_scw
 }
 }
 
-name = "The End of the Spanish War"
-desc = "The War in Spain is over, and the volunteers are returning to their homes.  Crowds gather in St. Peter's Square to hear the Pope's sermon praising all who have made sacrifices for Spain, and our military chiefs are attempting to analyze the lessons we have learnt in military matters."
+name = "EVT_91223_NAME"
+desc = "EVT_91223_DESC"
 style = 2
 picture = "foreign_volunteers"
 
@@ -1814,7 +1814,7 @@ offset = 50
 deathdate = { day = 29 month = december year = 1947 }
 
 action_a = {
-name = "ACTIONNAME2803A" # Great!
+name = "EVT_91223_OPTIONA" # Great!
 command = { trigger = { event = 91222 } type = relation which = EUS value = 40 }	#
 command = { trigger = { event = 3967243 } type = relation which = SPA value = 40 }	#
 command = { type = manpowerpool value = 5 }	 	# Soldiers return home
@@ -1865,8 +1865,8 @@ atwar = SPA
 }
 }
 
-name = "Victory!"
-desc = "Despite the challenges we faced, we have succeeded in holding our proud nation together! Now that Spain is truly united, we must take our first steps into this new era with our German friends."
+name = "EVT_91228_NAME"
+desc = "EVT_91228_DESC"
 
 picture = "politics2"
 
@@ -1876,7 +1876,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 
 action_a = {
-name = "Great!"
+name = "EVT_91228_OPTIONA"
 command = { type = dissent value = -10 }
 command = { type = relation which = GER value = 50 }
 command = { type = relation which = AUS value = 20 }
@@ -1912,8 +1912,8 @@ atwar = SPR
 }
 }
 
-name = "Victory!"
-desc = "Despite the challenges we faced, we have succeeded in uniting our nation together under a Syndicalist Government! Now that Spain is truly united, we must take our first steps into this new era with our fellow Syndicalists."
+name = "EVT_91229_NAME"
+desc = "EVT_91229_DESC"
 
 picture = "politics2"
 
@@ -1923,7 +1923,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 
 action_a = {
-name = "Great!"
+name = "EVT_91229_OPTIONA"
 command = { type = dissent value = -10 }
 command = { type = relation which = FRA value = 50 }
 command = { type = relation which = ENG value = 20 }
@@ -1950,8 +1950,8 @@ control = { province = 460 data = SPR } #Madrid
 }
 
 
-name = "The People's Home"
-desc = "Now that we have won the Civil War, our Syndicalist dream has become a reality! But should we keep the People's home in Barcelona, or move it to the old capital in Madrid?"
+name = "EVT_91232_NAME"
+desc = "EVT_91232_DESC"
 picture = "politics2"
 
 date = { day = 1 month = january year = 1936 }
@@ -1961,7 +1961,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
 ai_chance = 80
-name = "Madrid for a unified Iberia!"
+name = "EVT_91232_OPTIONA"
 command = { type = capital which =  460 } #Madrid
 command = { type = dissent value = -1 }
 
@@ -1969,7 +1969,7 @@ command = { type = dissent value = -1 }
 
 action_b = {
 ai_chance = 20
-name = "Barcelona is now and forever the People's home."
+name = "EVT_91232_OPTIONB"
 command = { type = capital which =  440 } #Barcelona
 command = { type = dissent value = -1 }
 }
@@ -1996,8 +1996,8 @@ atwar = EUS
 }
 }
 
-name = "Victory!"
-desc = "Despite the challenges we faced, we have succeeded in uniting our proud nation! Now that Spain is truly united, we must take our first steps into this new era with our fellow Catholics."
+name = "EVT_91230_NAME"
+desc = "EVT_91230_DESC"
 
 picture = "politics2"
 
@@ -2007,7 +2007,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 
 action_a = {
-name = "Great!"
+name = "EVT_91230_OPTIONA"
 command = { type = dissent value = -10 }
 command = { type = relation which = ITA value = 50 }
 command = { type = relation which = AUS value = 20 }
@@ -2035,8 +2035,8 @@ event = 91230
 control = { province = 460 data = EUS } #Madrid
 }
 
-name = "The Capital"
-desc = "Now that we have won the Civil War, our Carlist dream has become a reality! But should we move the national capital to the Bourbon's home in Madrid, or keep it as is?"
+name = "EVT_91231_NAME"
+desc = "EVT_91231_DESC"
 picture = "politics2"
 
 date = { day = 1 month = january year = 1936 }
@@ -2046,7 +2046,7 @@ deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
 ai_chance = 95
-name = "To Historical Madrid!"
+name = "EVT_91231_OPTIONA"
 command = { type = capital which = 460 } #Madrid
 command = { type = dissent value = -1 }
 
@@ -2054,7 +2054,7 @@ command = { type = dissent value = -1 }
 
 action_b = {
 ai_chance = 5
-name = "A new Bourbon Dynasty with a new home."
+name = "EVT_91231_OPTIONB"
 command = { type = capital which = 451 } #Burgos
 command = { type = dissent value = -1 }
 }
@@ -2083,20 +2083,20 @@ date = { day = 1 month = january year = 1936 }
 offset = 10
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Clashes with the CNT"
-desc = "As civil war has swept the country - both us and the CNT have focused our energy on the government. Yesterday our forces where attacked by the CNT and several men were killed on both sides."
+name = "EVT_3967000_NAME"
+desc = "EVT_3967000_DESC"
 
 
 action_a = {
 ai_chance = 99
-name = "Crush these anarchists!"
+name = "EVT_3967000_OPTIONA"
 command = { type = war which = SPR }
 command = { type = dissent value = -3 }
 }
 
 action_b = {
 ai_chance = 1
-name = "We will settle this later"
+name = "EVT_3967000_OPTIONB"
 command = { type = dissent value = 3 }
 }
 }
@@ -2121,20 +2121,20 @@ date = { day = 1 month = january year = 1936 }
 offset = 10
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Clashes with the Carlists"
-desc = "As civil war has swept the country - both us and the Carlists have focused our energy on the government. Yesterday our forces where attacked by the Carlists and several men were killed on both sides."
+name = "EVT_3967001_NAME"
+desc = "EVT_3967001_DESC"
 
 
 action_a = {
 ai_chance = 99
-name = "Crush the Carlists!"
+name = "EVT_3967001_OPTIONA"
 command = { type = war which = EUS }
 command = { type = dissent value = -3 }
 }
 
 action_b = {
 ai_chance = 1
-name = "We will settle this later"
+name = "EVT_3967001_OPTIONB"
 command = { type = dissent value = 3 }
 }
 }
@@ -2159,11 +2159,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 15
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Workers rise up"
-desc = "Our efforts at organizing and building along the coast are paying off. The workers have risen to stand with us and our secret work at building forts in the old castles and watch posts have come to fruition"
+name = "EVT_3967002_NAME"
+desc = "EVT_3967002_DESC"
 
 action_a = {
-name = "Huzzah"
+name = "EVT_3967002_OPTIONA"
 command = { type = add_corps which = "CNT-FIA Workers" value = land where = 462 }
 command = { type = add_division which = "Mine workers" value = militia when = 4 }
 
@@ -2191,11 +2191,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 15
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Returning from France"
-desc = "Our members who have been training in France have returned"
+name = "EVT_3967003_NAME"
+desc = "EVT_3967003_DESC"
 
 action_a = {
-name = "For the revolution!"
+name = "EVT_3967003_OPTIONA"
 command = { type = add_division which = "Trained CNT" value = militia when = 4 }
 command = { type = relation which = FRA value = 25 }
 }
@@ -2217,11 +2217,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 15
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Returning from Southern Italy"
-desc = "Our members who have been training in Southern Italy have returned"
+name = "EVT_3967004_NAME"
+desc = "EVT_3967004_DESC"
 
 action_a = {
-name = "For the revolution!"
+name = "EVT_3967004_OPTIONA"
 command = { type = add_division which = "Trained CNT" value = militia when = 4 }
 command = { type = relation which = RSI value = 25 }
 }
@@ -2244,11 +2244,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 15
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Returning from Britain"
-desc = "Our members who have been training in the Union of Britain have returned"
+name = "EVT_3967005_NAME"
+desc = "EVT_3967005_DESC"
 
 action_a = {
-name = "For the revolution!"
+name = "EVT_3967005_OPTIONA"
 command = { type = add_division which = "Trained CNT" value = militia when = 4 }
 command = { type = relation which = ENG value = 25 }
 }
@@ -2270,11 +2270,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 15
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Portuguese supplies and arms"
-desc = "With our trade deal with Portugal, we have been able to stockpile some arms and supplies to outfit a well equipped militia unit"
+name = "EVT_3967006_NAME"
+desc = "EVT_3967006_DESC"
 
 action_a = {
-name = "For Xavier and the Pope!"
+name = "EVT_3967006_OPTIONA"
 command = { type = add_division which = "Carlist militia" value = militia when = 4 }
 command = { type = relation which = POR value = 10 }
 }
@@ -2296,11 +2296,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 15
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Papal supplies and arms"
-desc = "With our trade deal with Papacy, we have been able to stockpile some arms and supplies to outfit a well equipped militia unit"
+name = "EVT_3967007_NAME"
+desc = "EVT_3967007_DESC"
 
 action_a = {
-name = "For Xavier and the Pope!"
+name = "EVT_3967007_OPTIONA"
 command = { type = add_division which = "Carlist militia" value = militia when = 4 }
 command = { type = relation which = ITA value = 10 }
 }
@@ -2322,11 +2322,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 15
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Irish supplies and arms"
-desc = "With our trade deal with Ireland, we have been able to stockpile some arms and supplies to outfit a well equipped militia unit"
+name = "EVT_3967008_NAME"
+desc = "EVT_3967008_DESC"
 
 action_a = {
-name = "For Xavier and the Pope!"
+name = "EVT_3967008_OPTIONA"
 command = { type = add_division which = "Carlist militia" value = militia when = 4 }
 command = { type = relation which = IRE value = 10 }
 }
@@ -2348,11 +2348,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 15
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Austrian supplies and arms"
-desc = "With our trade deal with Austria, we have been able to stockpile some arms and supplies to outfit a well equipped militia unit"
+name = "EVT_3967009_NAME"
+desc = "EVT_3967009_DESC"
 
 action_a = {
-name = "For Xavier and the Pope!"
+name = "EVT_3967009_OPTIONA"
 command = { type = add_division which = "Carlist militia" value = militia when = 4 }
 command = { type = relation which = AUS value = 10 }
 }
@@ -2375,19 +2375,19 @@ date = { day = 1 month = april year = 1937 }
 offset = 10
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "A devious plan"
-desc = "Our agents think that they can kill the Crown Prince - this would clear help clear the road to Xavier becoming the king and put our enemies into chaos"
+name = "EVT_3967013_NAME"
+desc = "EVT_3967013_DESC"
 
 action_a = {
 ai_chance = 60
-name = "Go ahead"
+name = "EVT_3967013_OPTIONA"
 command = { type = setflag which = xavier_assassin }
 command = { type = dissent value = 2 }
 }
 
 action_b = {
 ai_chance = 40
-name = "This is not right"
+name = "EVT_3967013_OPTIONB"
 command = { type = dissent value = -2 }
 }
 }
@@ -2407,19 +2407,19 @@ date = { day = 15 month = april year = 1937 }
 offset = 5
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "A plot is found"
-desc = "our agents have discovered a plot to kill the Crown Prince - we think the Carlists are behind it. How should we act?"
+name = "EVT_3967014_NAME"
+desc = "EVT_3967014_DESC"
 
 action_a = {
 ai_chance = 50
-name = "Use it as leverage with the Kingdom"
+name = "EVT_3967014_OPTIONA"
 command = { type = setflag which = cnt_telling }
 command = { type = dissent value = -2 }
 }
 
 action_b = {
 ai_chance = 50
-name = "Let them do it"
+name = "EVT_3967014_OPTIONB"
 command = { type = dissent value = 2 }
 }
 }
@@ -2439,18 +2439,18 @@ date = { day = 1 month = may year = 1937 }
 offset = 5
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "A CNT-FAI offer"
-desc = "The CNT-FAI have approached us with information they claim could save a very important life. If we surrender to them they will grant clemency for the government and Royal Family"
+name = "EVT_3967032_NAME"
+desc = "EVT_3967032_DESC"
 
 action_a = {
 ai_chance = 75
-name = "Never! - we are safe"
+name = "EVT_3967032_OPTIONA"
 command = { type = dissent value = -3 }
 }
 
 action_b = {
 ai_chance = 25
-name = "We should agree"
+name = "EVT_3967032_OPTIONB"
 command = { type = dissent value = 3 }
 command = { type = trigger which = 3967029 }
 }
@@ -2465,11 +2465,11 @@ style = 2
 
 picture = "SPR_Communist Coup"
 
-name = "The Kingdom of Spain gives in"
-desc = "The Kingdom of Spain agreed to surrender to save the lives of the Royal Family. Now much of Spain is under our control and we shall crush the Carlists"
+name = "EVT_3967029_NAME"
+desc = "EVT_3967029_DESC"
 
 action_a = {
-name = "The Carlists are next!"
+name = "EVT_3967029_OPTIONA"
 command = { type = inherit which = SPA }
 command = { type = dissent value = -5 }
 }
@@ -2495,12 +2495,12 @@ offset = 30
 deathdate = { day = 29 month = december year = 1960 }
 
 
-name = "The Crown Prince is Dead!"
-desc = "Last night a group of assassins killed the crown prince! He had been in the Regency position with his father's coma. But now there is no true heir to the throne! Someone must act quickly to keep the country together!"
+name = "EVT_3967010_NAME"
+desc = "EVT_3967010_DESC"
 
 action_a = {
 ai_chance = 30
-name = "Miguel Ferrer takes control"
+name = "EVT_3967010_OPTIONA"
 command = { type = headofstate which = 10001 }
 command = { type = domestic which = freedom value = 1 }
 command = { type = domestic which = democratic value = 1 }
@@ -2510,7 +2510,7 @@ command = { type = sleepminister which = 10038 }
 
 action_b = {
 ai_chance = 30
-name = "Franco Bahamonde becomes the regent"
+name = "EVT_3967010_OPTIONB"
 command = { type = headofstate which = 10032 }
 command = { type = domestic which = freedom value = -1 }
 command = { type = domestic which = democratic value = -1 }
@@ -2521,7 +2521,7 @@ command = { type = dissent value = 5 }
 
 action_c = {
 ai_chance = 40
-name = "J.M. Gil-Robles Quiñones retains the government"
+name = "EVT_3967010_OPTIONC"
 command = { type = headofstate which = 10211 }
 command = { type = sleepminister which = 10038 }
 }
@@ -2546,12 +2546,12 @@ date = { day = 1 month = july year = 1936 }
 offset = 30
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Crown Prince is Dead!"
-desc = "Last night a group of assassins killed the crown prince! He had been in the Regency position with his father's coma. But now there is no true heir to the throne! Someone must act quickly to keep the country together!"
+name = "EVT_3967011_NAME"
+desc = "EVT_3967011_DESC"
 
 action_a = {
 ai_chance = 40
-name = "We must give in to Xavier"
+name = "EVT_3967011_OPTIONA"
 command = { type = switch_allegiance which = -1 where = EUS }
 command = { type = switch_allegiance which = -1 where = EUS }
 command = { type = switch_allegiance which = -1 where = EUS }
@@ -2565,7 +2565,7 @@ command = { type = trigger which = 3967012  }
 
 action_b = {
 ai_chance = 20
-name = "Franco Bahamonde becomes the regent"
+name = "EVT_3967011_OPTIONB"
 command = { type = headofstate which = 10032 }
 command = { type = domestic which = freedom value = -1 }
 command = { type = domestic which = democratic value = -1 }
@@ -2576,7 +2576,7 @@ command = { type = dissent value = 5 }
 
 action_c = {
 ai_chance = 40
-name = "J.M. Gil-Robles Quiñones retains the government"
+name = "EVT_3967011_OPTIONC"
 command = { type = headofstate which = 10211 }
 command = { type = sleepminister which = 10038 }
 }
@@ -2590,11 +2590,11 @@ style = 2
 
 picture = "SCW_Carlists"
 
-name = "The Kingdom of Spain gives in"
-desc = "With the assassination of the Crown Prince the Kingdom has been thrown into even more chaos than ever. Their government has agreed to join our cause and to crown Xavier as the King of Spain in order for peace!"
+name = "EVT_3967012_NAME"
+desc = "EVT_3967012_DESC"
 
 action_a = {
-name = "The CNT-FAI are next!"
+name = "EVT_3967012_OPTIONA"
 command = { type = inherit which = SPA }
 command = { type = dissent value = -5 }
 }
@@ -2621,12 +2621,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 30
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Fate of Carlist supporters"
-desc = "We have defeated the Bourbon Pretender and his Carlist movement. Now what should we do with him and his people?"
+name = "EVT_3967020_NAME"
+desc = "EVT_3967020_DESC"
 
 action_a = {
 ai_chance = 50
-name = "We are all Spaniards - be lenient"
+name = "EVT_3967020_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = domestic which = freedom value = 1 }
 command = { type = sleepevent which = 3967022 }
@@ -2637,7 +2637,7 @@ command = { type = sleepevent which = 3967025 }
 
 action_b = {
 ai_chance = 50
-name = "They will never see the light of day!"
+name = "EVT_3967020_OPTIONB"
 command = { type = dissent value = -5 }
 command = { type = domestic which = freedom value = -1 }
 command = { type = sleepevent which = 3967022 }
@@ -2666,12 +2666,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 30
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Fate of CNT-FAI supporters"
-desc = "We have defeated the CNT-FAI movement. Now what should we do with them?"
+name = "EVT_3967021_NAME"
+desc = "EVT_3967021_DESC"
 
 action_a = {
 ai_chance = 50
-name = "We are all Spaniards - be lenient"
+name = "EVT_3967021_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = domestic which = freedom value = 1 }
 command = { type = setflag which = cnt_defeat }
@@ -2683,7 +2683,7 @@ command = { type = sleepevent which = 3967025 }
 
 action_b = {
 ai_chance = 50
-name = "They will never see the light of day!"
+name = "EVT_3967021_OPTIONB"
 command = { type = dissent value = -5 }
 command = { type = domestic which = freedom value = -1 }
 command = { type = setflag which = cnt_defeat }
@@ -2713,12 +2713,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 30
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Kingdom of Spain is no more!"
-desc = "We have defeated the King and his Government. How should we treat these enemies of the people?"
+name = "EVT_3967022_NAME"
+desc = "EVT_3967022_DESC"
 
 action_a = {
 ai_chance = 50
-name = "We are all Spaniards - be lenient"
+name = "EVT_3967022_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = domestic which = freedom value = 1 }
 command = { type = sleepevent which = 3967020 }
@@ -2729,7 +2729,7 @@ command = { type = sleepevent which = 3967025 }
 
 action_b = {
 ai_chance = 50
-name = "They will never see the light of day!"
+name = "EVT_3967022_OPTIONB"
 command = { type = dissent value = -5 }
 command = { type = domestic which = freedom value = -1 }
 command = { type = sleepevent which = 3967020 }
@@ -2758,12 +2758,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 30
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The fate of Carlist supporters!"
-desc = "We have defeated the Bourbon Pretender and his Carlist movement. Now what should we do with him and his people?"
+name = "EVT_3967023_NAME"
+desc = "EVT_3967023_DESC"
 
 action_a = {
 ai_chance = 50
-name = "We are all Spaniards - be lenient"
+name = "EVT_3967023_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = domestic which = freedom value = 1 }
 command = { type = sleepevent which = 3967020 }
@@ -2774,7 +2774,7 @@ command = { type = sleepevent which = 3967025 }
 
 action_b = {
 ai_chance = 50
-name = "They will never see the light of day!"
+name = "EVT_3967023_OPTIONB"
 command = { type = dissent value = -5 }
 command = { type = domestic which = freedom value = -1 }
 command = { type = sleepevent which = 3967020 }
@@ -2803,12 +2803,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 30
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The CNT-FAI have fallen"
-desc = "We have defeated the CNT-FAI movement. Now what should we do with them?"
+name = "EVT_3967024_NAME"
+desc = "EVT_3967024_DESC"
 
 action_a = {
 ai_chance = 50
-name = "We are all Spaniards - be lenient"
+name = "EVT_3967024_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = domestic which = freedom value = 1 }
 command = { type = setflag which = cnt_defeat }
@@ -2820,7 +2820,7 @@ command = { type = sleepevent which = 3967023 }
 
 action_b = {
 ai_chance = 50
-name = "They will never see the light of day!"
+name = "EVT_3967024_OPTIONB"
 command = { type = dissent value = -5 }
 command = { type = domestic which = freedom value = -1 }
 command = { type = setflag which = cnt_defeat }
@@ -2850,12 +2850,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 30
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Kingdom of Spain is no more!"
-desc = "We have defeated the King and his Government. How should we treat our former enemies?"
+name = "EVT_3967025_NAME"
+desc = "EVT_3967025_DESC"
 
 action_a = {
 ai_chance = 50
-name = "We are all Spaniards - be lenient"
+name = "EVT_3967025_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = domestic which = freedom value = 1 }
 command = { type = sleepevent which = 3967020 }
@@ -2866,7 +2866,7 @@ command = { type = sleepevent which = 3967023 }
 
 action_b = {
 ai_chance = 50
-name = "They will never see the light of day!"
+name = "EVT_3967025_OPTIONB"
 command = { type = dissent value = -5 }
 command = { type = domestic which = freedom value = -1 }
 command = { type = sleepevent which = 3967020 }
@@ -2891,12 +2891,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 25
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The CNT-FAI are defeated"
-desc = "The CNT-FAI have been defeated while stuggling for their cause. Our border with Spain has been flooded by CNT-FAI members and supporters fleeing what is to come. Now no matter which side wins we are sure to have an enemy on our southern flank."
+name = "EVT_3967034_NAME"
+desc = "EVT_3967034_DESC"
 
 action_a = {
 ai_chance = 85
-name = "Let them cross and put them to work"
+name = "EVT_3967034_OPTIONA"
 command = { type = dissent value = -3 }
 command = { type = manpowerpool value = 25 }
 command = { type = construct which = land_fort where = 80 value = 1 }
@@ -2908,7 +2908,7 @@ command = { type = add_division which = "CNT_FAI" value = militia when = 3 }
 
 action_b = {
 ai_chance = 15
-name = "Close the Border!"
+name = "EVT_3967034_OPTIONB"
 command = { type = dissent value = 5 }
 }
 }
@@ -2932,12 +2932,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 5
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Madrid was taken!"
-desc = "We have taken the city of Madrid!"
+name = "EVT_3967035_NAME"
+desc = "EVT_3967035_DESC"
 
 action_a = {
 ai_chance = 65
-name = "We must scavenge what we can!"
+name = "EVT_3967035_OPTIONA"
 command = { type = construct which = ic where = 460 value = -1 }
 command = { type = supplies value = 2500 }
 command = { type = money value = 20 }
@@ -2947,7 +2947,7 @@ command = { type = dissent value = 2 }
 
 action_b = {
 ai_chance = 35
-name = "Leave the city as it stands"
+name = "EVT_3967035_OPTIONB"
 command = { type = dissent value = -2 }
 }
 }
@@ -2971,12 +2971,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 25
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Madrid was taken!"
-desc = "We have taken the city of Madrid!"
+name = "EVT_3967036_NAME"
+desc = "EVT_3967036_DESC"
 
 action_a = {
 ai_chance = 65
-name = "We must scavenge what we can!"
+name = "EVT_3967036_OPTIONA"
 command = { type = construct which = ic where = 460 value = -1 }
 command = { type = supplies value = 2500 }
 command = { type = money value = 20 }
@@ -2986,7 +2986,7 @@ command = { type = dissent value = 2 }
 
 action_b = {
 ai_chance = 35
-name = "Leave the city as it stands"
+name = "EVT_3967036_OPTIONB"
 command = { type = dissent value = -2 }
 }
 }
@@ -3012,12 +3012,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 25
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Gibraltar is in CNT-FAI hands"
-desc = "The vital port and island of Gibraltar has been taken by the CNT-FAI rebels. This means that they will control the sea lanes through the straits and be able to block any shipments or naval activity. This could be a serious threat to our nation."
+name = "EVT_3967037_NAME"
+desc = "EVT_3967037_DESC"
 
 action_a = {
 ai_chance = 50
-name = "Launch an incursion to secure the Gibratar"
+name = "EVT_3967037_OPTIONA"
 command = { type = setflag which = ger_gibraltar }
 command = { type = relation which = SPR value = -100 }
 command = { type = relation which = SPA value = -50 }
@@ -3026,7 +3026,7 @@ command = { type = relation which = EUS value = -50 }
 
 action_b = {
 ai_chance = 50
-name = "Do not get involved"
+name = "EVT_3967037_OPTIONB"
 command = {  }
 }
 }
@@ -3044,18 +3044,18 @@ date = { day = 1 month = january year = 1936 }
 offset = 25
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "German troops are nearing Gibraltar"
-desc = "German transport ships have been spotted by the French navy closing in on Gibraltar. France does not wish war with Germany at this point but it would cost us greatly if we lost control of the straights."
+name = "EVT_3967038_NAME"
+desc = "EVT_3967038_DESC"
 
 action_a = {
 ai_chance = 50
-name = "Ask for French protection"
+name = "EVT_3967038_OPTIONA"
 command = { type = setflag which = fra_gibraltar }
 }
 
 action_b = {
 ai_chance = 50
-name = "We will hold the island"
+name = "EVT_3967038_OPTIONB"
 command = { type = setflag which = spr_gibraltar }
 }
 }
@@ -3073,12 +3073,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 2
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Protect Gibraltar"
-desc = "The CNT-FAI have asked that we use our forces to occupy and protect Gibraltar from an approaching German taskforce"
+name = "EVT_3967053_NAME"
+desc = "EVT_3967053_DESC"
 
 action_a = {
 ai_chance = 35
-name = "Protect the Island"
+name = "EVT_3967053_OPTIONA"
 command = { type = addcore which = 348 }
 command = { type = setflag which = fra_take_gibraltar }
 command = { type = manpowerpool value = -5 }
@@ -3094,13 +3094,13 @@ command = { type = trigger which = 3967130  }
 
 action_b = {
 ai_chance = 45
-name = "Establish a naval presence to deter the Germans"
+name = "EVT_3967053_OPTIONB"
 command = { type = setflag which = fra_pro_gibraltar }
 }
 
 action_c = {
 ai_chance = 20
-name = "We do not wish to make an incident"
+name = "EVT_3967053_OPTIONC"
 command = { type = setflag which = spr_gibraltar }
 command = { type = relation which = SPR value = -25 }
 }
@@ -3113,11 +3113,11 @@ country = SPR
 style = 2
 picture = "SPR_Communist Coup"
 
-name = "The Commune of France occupies Gibraltar"
-desc = "The Commune of France occupies Gibraltar"
+name = "EVT_3967128_NAME"
+desc = "EVT_3967128_DESC"
 
 action_a = {
-name = "Ok!"
+name = "EVT_3967128_OPTIONA"
 command = { type = control which = FRA value = 348 }
 command = { type = secedeprovince which = FRA value = 348 }
 command = { type = relation which = FRA value = 10 }
@@ -3131,11 +3131,11 @@ country = SPA
 style = 2
 picture = "SPR_Communist Coup"
 
-name = "The Commune of France occupies Gibraltar"
-desc = "The Commune of France occupies Gibraltar"
+name = "EVT_3967129_NAME"
+desc = "EVT_3967129_DESC"
 
 action_a = {
-name = "Ok!"
+name = "EVT_3967129_OPTIONA"
 command = { type = control which = FRA value = 348 }
 command = { type = secedeprovince which = FRA value = 348 }
 command = { type = relation which = FRA value = -25 }
@@ -3149,11 +3149,11 @@ country = EUS
 style = 2
 picture = "SPR_Communist Coup"
 
-name = "The Commune of France occupies Gibraltar"
-desc = "The Commune of France occupies Gibraltar"
+name = "EVT_3967130_NAME"
+desc = "EVT_3967130_DESC"
 
 action_a = {
-name = "Ok!"
+name = "EVT_3967130_OPTIONA"
 command = { type = control which = FRA value = 348 }
 command = { type = secedeprovince which = FRA value = 348 }
 command = { type = relation which = FRA value = -25 }
@@ -3169,8 +3169,8 @@ picture = "SPR_Communist Coup"
 
 trigger = { flag = spr_gibraltar }
 
-name = "The pieces are in place"
-desc = "Gibraltar is gaurded by some CNT-FAI militia. They seem to be veterans of a few battles and the island is a fortress. Should we give the green light?"
+name = "EVT_3967039_NAME"
+desc = "EVT_3967039_DESC"
 
 date = { day = 1 month = january year = 1936 }
 offset = 2
@@ -3178,14 +3178,14 @@ deathdate = { day = 29 month = december year = 1949 }
 
 action_a = {
 ai_chance = 70
-name = "Launch the operation"
+name = "EVT_3967039_OPTIONA"
 command = { type = relation which = SPR value = -75 }
 command = { type = setflag which = gibraltar_launch }
 }
 
 action_b = {
 ai_chance = 30
-name = "Back down. We don't want a war"
+name = "EVT_3967039_OPTIONB"
 command = { type = relation which = SPR value = 5 }
 }
 }
@@ -3203,19 +3203,19 @@ date = { day = 1 month = january year = 1936 }
 offset = 2
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The pieces are in place"
-desc = "Gibraltar has been occupied by French forces. They seem to be an elite marine unit with naval support and the island is a fortress. Should we give the green light?"
+name = "EVT_3967040_NAME"
+desc = "EVT_3967040_DESC"
 
 action_a = {
 ai_chance = 5
-name = "Who cares - attack!"
+name = "EVT_3967040_OPTIONA"
 command = { type = setflag which = gibraltar_launch_fra }
 command = { type = belligerence which = GER value = 5 }
 }
 
 action_b = {
 ai_chance = 95
-name = "Back down - we are not ready for a full-scale war"
+name = "EVT_3967040_OPTIONB"
 command = { type = relation which = FRA value = 5 }
 }
 }
@@ -3233,19 +3233,19 @@ date = { day = 1 month = january year = 1936 }
 offset = 2
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The pieces are in place"
-desc = "Gibraltar is guarded by some CNT-FAI militia. They seem to be veterans of a few battles and the island is a fortress. The French navy has also stationed several ships right around the island. If we go ahead we may risk a wider conflict. Should we give the green light?"
+name = "EVT_3967041_NAME"
+desc = "EVT_3967041_DESC"
 
 action_a = {
 ai_chance = 25
-name = "Launch the Operation"
+name = "EVT_3967041_OPTIONA"
 command = { type = setflag which = gibraltar_launch_fra }
 command = { type = belligerence which = GER value = 5 }
 }
 
 action_b = {
 ai_chance = 75
-name = "Back down"
+name = "EVT_3967041_OPTIONB"
 command = { type = relation which = FRA value = 5 }
 command = { type = relation which = SPR value = 5 }
 }
@@ -3264,12 +3264,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 2
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Germans are attacking Girbraltar"
-desc = "The German transports are moving into position to release marines. The German navy is postitioned to shore bombard and our forces, while tough, will be hard pressed to hold the island"
+name = "EVT_3967042_NAME"
+desc = "EVT_3967042_DESC"
 
 action_a = {
 ai_chance = 70
-name = "Surrender the island - we will get it back later!"
+name = "EVT_3967042_OPTIONA"
 command = { type = control which = GER value = 348 }
 command = { type = secedeprovince which = GER value = 348 }
 command = { type = setflag which = gibraltar_giveup }
@@ -3277,7 +3277,7 @@ command = { type = setflag which = gibraltar_giveup }
 
 action_b = {
 ai_chance = 30
-name = "Order our men to fight to the death!"
+name = "EVT_3967042_OPTIONB"
 command = { type = manpowerpool value = -2 }
 command = { type = setflag which = gibraltar_defeat }
 }
@@ -3296,19 +3296,19 @@ date = { day = 1 month = january year = 1936 }
 offset = 2
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Germans are attacking Gibraltar"
-desc = "The German transports are moving into position to release marines. The German navy is postitioned to shore bombard and our forces will hold!"
+name = "EVT_3967043_NAME"
+desc = "EVT_3967043_DESC"
 
 action_a = {
 ai_chance = 90
-name = "Germany has been made a fool today!"
+name = "EVT_3967043_OPTIONA"
 command = { type = manpowerpool value = -1 }
 command = { type = setflag which = gibraltar_defeat }
 }
 
 action_b = {
 ai_chance = 10
-name = "This calls for war!"
+name = "EVT_3967043_OPTIONB"
 command = { type = manpowerpool value = -1 }
 command = { type = setflag which = gibraltar_defeat }
 command = { type = war which = GER }
@@ -3328,11 +3328,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 2
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Our forces have been defeated"
-desc = "This morning our forces attacked the Rock of Gibraltar and got cast back into the sea despite their valiant efforts"
+name = "EVT_3967044_NAME"
+desc = "EVT_3967044_DESC"
 
 action_a = {
-name = "This is not good"
+name = "EVT_3967044_OPTIONA"
 command = { type = manpowerpool value = -10 }
 command = { type = dissent value = 5 }
 command = { type = sleepleader which = -1 }
@@ -3352,11 +3352,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 2
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "We have the Rock"
-desc = "The defenders of the island made way for our troops and we now contol the island"
+name = "EVT_3967045_NAME"
+desc = "EVT_3967045_DESC"
 
 action_a = {
-name = "Our sealanes are safe!"
+name = "EVT_3967045_OPTIONA"
 command = { type = dissent value = -5 }
 command = { type = manpowerpool value = -5 }
 command = { type = add_corps which = "German Garrison" value = land where = 348 }
@@ -3383,18 +3383,18 @@ date = { day = 1 month = january year = 1936 }
 offset = 10
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Claiming Bata"
-desc = "With the civil war in Spain we have an opportunity to claim the the province of Bata. Maybe the Spainish would sell it?"
+name = "EVT_3967046_NAME"
+desc = "EVT_3967046_DESC"
 
 action_a = {
 ai_chance = 80
-name = "Make an offer"
+name = "EVT_3967046_OPTIONA"
 command = { type = setflag which = buy_bata }
 }
 
 action_c = {
 ai_chance = 20
-name = "We don't need it"
+name = "EVT_3967046_OPTIONB"
 command = { type = dissent value = 1 }
 }
 }
@@ -3412,24 +3412,24 @@ date = { day = 1 month = january year = 1936 }
 offset = 4
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Mittelafrika wants Bata"
-desc = "The German Government of Mittelafrika has offered to buy our colony of Bata from us. We could use the aid - but it maybe we could request payment in the form of troops"
+name = "EVT_3967047_NAME"
+desc = "EVT_3967047_DESC"
 
 action_a = {
 ai_chance = 45
-name = "Agree to sell it"
+name = "EVT_3967047_OPTIONA"
 command = { type = setflag which = sell_bata }
 }
 
 action_b = {
 ai_chance = 45
-name = "Ask for military aid"
+name = "EVT_3967047_OPTIONB"
 command = { type = setflag which = aid_for_bata }
 }
 
 action_c = {
 ai_chance = 10
-name = "Refuse"
+name = "EVT_3967047_OPTIONC"
 command = { type = relation which = CON value = -15 }
 }
 }
@@ -3447,12 +3447,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 4
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "Spain has agreed to sell"
-desc = "Spain has agreed to sell us Bata for a decent price."
+name = "EVT_3967048_NAME"
+desc = "EVT_3967048_DESC"
 
 action_a = {
 ai_chance = 90
-name = "Send the money!"
+name = "EVT_3967048_OPTIONA"
 command = { type = money value = -50 }
 command = { type = resource which = supplies value = -1000 }
 command = { type = trigger which = 3967049 }
@@ -3462,7 +3462,7 @@ command = { type = addcore which = 916 }
 
 action_b = {
 ai_chance = 10
-name = "Back out"
+name = "EVT_3967048_OPTIONB"
 command = { type = relation which = SPA value = -5 }
 command = { type = clrflag which = sell_bata }
 command = { type = clrflag which = buy_bata }
@@ -3476,11 +3476,11 @@ country = SPA
 style = 2
 picture = "mittelafrika"
 
-name = "Bata is sold!"
-desc = "We have sold Bata to the Mittelafrika government!"
+name = "EVT_3967049_NAME"
+desc = "EVT_3967049_DESC"
 
 action_a = {
-name = "Hurra"
+name = "EVT_3967049_OPTIONA"
 command = { type = secedeprovince which = CON value = 913 }
 command = { type = secedeprovince which = CON value = 916 }
 command = { type = money value = 50 }
@@ -3503,11 +3503,11 @@ flag = bata_sold
 }
 }
 
-name = "Bata is sold!"
-desc = "The Kingdom of Spain have sold Bata to the Mittelafrika government, despite our control over it. German troops are marching in to claim the territory as we speak!"
+name = "EVT_3967113_NAME"
+desc = "EVT_3967113_DESC"
 
 action_a = {
-name = "There is nothing we can do now"
+name = "EVT_3967113_OPTIONA"
 command = { type = control which = CON value = 913 }
 command = { type = secedeprovince which = CON value = 913 }
 command = { type = control which = CON value = 916 }
@@ -3530,11 +3530,11 @@ flag = bata_sold
 }
 }
 
-name = "Bata is sold!"
-desc = "The Kingdom of Spain have sold Bata to the Mittelafrika government, despite our control over it. German troops are marching in to claim the territory as we speak!"
+name = "EVT_3967114_NAME"
+desc = "EVT_3967114_DESC"
 
 action_a = {
-name = "There is nothing we can do now"
+name = "EVT_3967114_OPTIONA"
 command = { type = control which = CON value = 913 }
 command = { type = secedeprovince which = CON value = 913 }
 command = { type = control which = CON value = 916 }
@@ -3557,12 +3557,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 4
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Spainish want military help"
-desc = "The Spainish government has requested military assistance in exchange for Bata."
+name = "EVT_3967050_NAME"
+desc = "EVT_3967050_DESC"
 
 action_a = {
 ai_chance = 75
-name = "Agree"
+name = "EVT_3967050_OPTIONA"
 command = { type = resource which = supplies value = -1000 }
 command = { type = manpowerpool value = -10 }
 command = { type = trigger which = 3967051 }
@@ -3572,7 +3572,7 @@ command = { type = addcore which = 916 }
 
 action_b = {
 ai_chance = 25
-name = "Back out"
+name = "EVT_3967050_OPTIONB"
 command = { type = relation which = SPA value = -5 }
 }
 }
@@ -3584,11 +3584,11 @@ country = SPA
 style = 2
 picture = "goring"
 
-name = "Bata is sold!"
-desc = "We have sold Bata to the Mittelafrika government!"
+name = "EVT_3967051_NAME"
+desc = "EVT_3967051_DESC"
 
 action_a = {
-name = "HUZZAH"
+name = "EVT_3967051_OPTIONA"
 command = { type = control which = CON value = 913 }
 command = { type = secedeprovince which = CON value = 913 }
 command = { type = control which = CON value = 916 }
@@ -3604,7 +3604,7 @@ id = 3967052
 random = no
 country = CON
 style = 2
-picture = "mittelafrika"
+picture = "EVT_3967052_DESC"
 
 trigger = { flag = refuse_bata }
 date = { day = 1 month = january year = 1936 }
@@ -3612,7 +3612,7 @@ offset = 4
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Ohh well"
+name = "EVT_3967052_NAME"
 command = { type = relation which = SPA value = -5 }
 }
 }
@@ -3630,11 +3630,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 30
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Troubles continue"
-desc = "Despite our victory in the Civil War, there is still a great amount of unrest and partisan activity around the country. Rebuilding and regaining the trust of the people may take some time"
+name = "EVT_3967054_NAME"
+desc = "EVT_3967054_DESC"
 
 action_a = {
-name = "The after effects of a war"
+name = "EVT_3967054_OPTIONA"
 command = { type = dissent value = 10 }
 command = { type = peacetime_ic_mod value = -10 }
 command = { type = setflag which = spa_recover }
@@ -3653,11 +3653,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 180
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The nation is recovering"
-desc = "Our efforts at rebuilding the country and regaining the trust of our people are paying off."
+name = "EVT_3967055_NAME"
+desc = "EVT_3967055_DESC"
 
 action_a = {
-name = "The after effects of a war"
+name = "EVT_3967055_OPTIONA"
 command = { type = dissent value = -2 }
 command = { type = peacetime_ic_mod value = 5 }
 command = { type = setflag which = spa_recover2 }
@@ -3677,11 +3677,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 180
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The nation is recovering"
-desc = "Our efforts at rebuilding the country and regaining the trust of our people are paying off."
+name = "EVT_3967056_NAME"
+desc = "EVT_3967056_DESC"
 
 action_a = {
-name = "The after effects of a war"
+name = "EVT_3967056_OPTIONA"
 command = { type = dissent value = -2 }
 command = { type = peacetime_ic_mod value = 5 }
 }
@@ -3699,11 +3699,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 30
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Troubles continue"
-desc = "Despite our victory in the Civil War, there is still a great amount of unrest and partisan activity around the country. Rebuilding and regaining the trust of the people may take some time"
+name = "EVT_3967057_NAME"
+desc = "EVT_3967057_DESC"
 
 action_a = {
-name = "The after effects of a war"
+name = "EVT_3967057_OPTIONA"
 command = { type = dissent value = 10 }
 command = { type = peacetime_ic_mod value = -10 }
 command = { type = setflag which = spr_recover }
@@ -3723,11 +3723,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 180
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The nation is recovering"
-desc = "Our efforts at rebuilding the country and regaining the trust of our people are paying off."
+name = "EVT_3967058_NAME"
+desc = "EVT_3967058_DESC"
 
 action_a = {
-name = "The after effects of a war"
+name = "EVT_3967058_OPTIONA"
 command = { type = dissent value = -2 }
 command = { type = peacetime_ic_mod value = 5 }
 command = { type = setflag which = spr_recover2 }
@@ -3747,11 +3747,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 180
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The nation is recovering"
-desc = "Our efforts at rebuilding the country and regaining the trust of our people are paying off."
+name = "EVT_3967059_NAME"
+desc = "EVT_3967059_DESC"
 
 action_a = {
-name = "The after effects of a war"
+name = "EVT_3967059_OPTIONA"
 command = { type = dissent value = -2 }
 command = { type = peacetime_ic_mod value = 5 }
 command = { type = setflag which = cnt_internal }
@@ -3771,11 +3771,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 30
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The Troubles continue"
-desc = "Despite our victory in the Civil War, there is still a great amount of unrest and partisan activity around the country. Rebuilding and regaining the trust of the people may take some time"
+name = "EVT_3967060_NAME"
+desc = "EVT_3967060_DESC"
 
 action_a = {
-name = "The after effects of a war"
+name = "EVT_3967060_OPTIONA"
 command = { type = dissent value = 10 }
 command = { type = peacetime_ic_mod value = -10 }
 command = { type = setflag which = eus_recover }
@@ -3794,11 +3794,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 180
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The nation is recovering"
-desc = "Our efforts at rebuilding the country and regaining the trust of our people are paying off."
+name = "EVT_3967061_NAME"
+desc = "EVT_3967061_DESC"
 
 action_a = {
-name = "The after effects of a war"
+name = "EVT_3967061_OPTIONA"
 command = { type = dissent value = -2 }
 command = { type = peacetime_ic_mod value = 5 }
 command = { type = setflag which = eus_recover2 }
@@ -3817,11 +3817,11 @@ date = { day = 1 month = january year = 1936 }
 offset = 180
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "The nation is recovering"
-desc = "Our efforts at rebuilding the country and regaining the trust of our people are paying off."
+name = "EVT_3967062_NAME"
+desc = "EVT_3967062_DESC"
 
 action_a = {
-name = "The after effects of a war"
+name = "EVT_3967062_OPTIONA"
 command = { type = dissent value = -2 }
 command = { type = peacetime_ic_mod value = 5 }
 }
@@ -3867,8 +3867,8 @@ war = { country = VIC country = USA }
 }
 }
 
-name = "The Spanish civil war !"
-desc = "The legitimate Spanish Kingdom under Alfonso XIII is under severe threat from anarchists and fanatics!  While many are saying that this provides further proof of the terminal weakness of the House of Bourbon, a secure Spain and friendly is an important part of our plans to retake French mainland.  It could be wise to help the Government put an end to these threats."
+name = "EVT_3967074_NAME"
+desc = "EVT_3967074_DESC"
 
 
 style = 2
@@ -3880,7 +3880,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Publically support the Carlists" # Send materiel and volunteers
+name = "EVT_3967074_OPTIONA" # Send materiel and volunteers
 ai_chance = 40
 trigger = {
 exists = EUS
@@ -3910,7 +3910,7 @@ command = { type = belligerence which = VIC value = 1 }
 }
 
 action_b = {
-name = "Publically support the Legal Government" # Send materiel and volunteers
+name = "EVT_3967074_OPTIONB" # Send materiel and volunteers
 ai_chance = 75
 trigger = {
 exists = SPA
@@ -3939,7 +3939,7 @@ command = { type = trigger which = 3967230   } #SPA
 command = { type = belligerence which = VIC value = 1 }
 }
 action_c = {
-name = "Remain silent on Spanish affairs" # Xavier needs no aid
+name = "EVT_3967074_OPTIONC" # Xavier needs no aid
 ai_chance = 25
 command = { type = dissent value = 5 }
 command = { type = relation which = SPA value = 10 }
@@ -3962,13 +3962,13 @@ country = EUS
 
 # Triggered by FRA
 
-name = "Nationalist France supports us!"
-desc = "The Nationalist French government has decided to support our cause in the civil war. It is possible that it is only due to their Catholic roots but also because they hope to gain our support in retaking France."
+name = "EVT_3967075_NAME"
+desc = "EVT_3967075_DESC"
 style = 2
 picture = "foreign_volunteers"
 
 action_a = {
-name = "Great !"
+name = "EVT_3967075_OPTIONA"
 command = { type = manpowerpool value = 10 }
 command = { type = supplies value = 1500 }
 command = { type = add_division value = infantry when = 9 }
@@ -3985,13 +3985,13 @@ country = SPA
 # Triggered by FRA
 
 
-name = "Nationalist France supports us!"
-desc = "The Nationalist French government has decided to support us in the ongoing civil war. It is possible that it is mainly because they hope to gain our support in retaking France back."
+name = "EVT_3967230_NAME"
+desc = "EVT_3967230_DESC"
 style = 2
 picture = "foreign_volunteers"
 
 action_a = {
-name = "Great !" #
+name = "EVT_3967230_OPTIONA" #
 command = { type = manpowerpool value = 10 }
 command = { type = supplies value = 1500 }
 command = { type = add_division value = infantry when = 9 }
@@ -4031,8 +4031,8 @@ exists = RUS
 }
 }
 
-name = "Anarco-Syndicalist uprising!"
-desc = "Spain is collapsing into anarchy, and the CNT-FAI is our brother in the supporting the cause of the working class! We should send aid at once!"
+name = "EVT_3967076_NAME"
+desc = "EVT_3967076_DESC"
 
 
 style = 2
@@ -4044,7 +4044,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Publically Support the CNT-FAI" # Send materiel and volunteers
+name = "EVT_3967076_OPTIONA" # Send materiel and volunteers
 ai_chance = 75
 command = { type = domestic which = interventionism value = 1 }
 command = { type = relation which = EUS value = -20 }
@@ -4062,7 +4062,7 @@ command = { type = trigger which = 3967077   } #SPA
 command = { type = belligerence which = SOV value = 1 }
 }
 action_b = {
-name = "Remain silent on Spanish affairs" # Anarchist needs no aid
+name = "EVT_3967076_OPTIONB" # Anarchist needs no aid
 ai_chance = 25
 command = { type = dissent value = 5 }
 command = { type = relation which = SPA value = 10 }
@@ -4085,13 +4085,13 @@ country = SPR
 
 # Triggered by FRA
 
-name = "The Soviets support us!"
-desc = "The Soviet government has decided to support our cause in the civil war. They have sent soldiers and aid to support us in the struggle of the workers!"
+name = "EVT_3967077_NAME"
+desc = "EVT_3967077_DESC"
 style = 2
 picture = "SCW_French Intervention"
 
 action_a = {
-name = "OK" # Great!
+name = "EVT_3967077_OPTIONA" # Great!
 command = { type = manpowerpool value = 10 }
 command = { type = supplies value = 1500 }
 command = { type = add_division value = infantry when = 9 }
@@ -4134,8 +4134,8 @@ ispuppet = BRA
 
 }
 }
-name = "Anarco-Syndicalist uprising!"
-desc = "Spain is collapsing into anarchy, and the CNT-FAI is our brother in the supporting the cause of the working class! We should send aid at once!"
+name = "EVT_3967079_NAME"
+desc = "EVT_3967079_DESC"
 
 
 style = 2
@@ -4147,7 +4147,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Publically Support the CNT-FAI" # Send materiel and volunteers
+name = "EVT_3967079_OPTIONA" # Send materiel and volunteers
 ai_chance = 75
 command = { type = domestic which = interventionism value = 1 }
 command = { type = relation which = EUS value = -20 }
@@ -4166,7 +4166,7 @@ command = { type = setflag which = bra_cnt }
 command = { type = belligerence which = BRA value = 1 }
 }
 action_b = {
-name = "Remain silent on Spanish affairs" # Anarchist needs no aid
+name = "EVT_3967079_OPTIONB" # Anarchist needs no aid
 ai_chance = 25
 command = { type = dissent value = 5 }
 command = { type = relation which = SPA value = 10 }
@@ -4187,13 +4187,13 @@ id = 3967080
 random = no
 country = SPR
 
-name = "Brazil support us!"
-desc = "The Brazilian government has decided to support our cause in the civil war. They have sent soldiers and aid to support us in the struggle of the workers!"
+name = "EVT_3967080_NAME"
+desc = "EVT_3967080_DESC"
 style = 2
 picture = "foreign_volunteers"
 
 action_a = {
-name = "OK"
+name = "EVT_3967080_OPTIONA"
 command = { type = manpowerpool value = 5 }
 command = { type = supplies value = 500 }
 command = { type = add_division value = militia when = 5 }
@@ -4235,8 +4235,8 @@ ispuppet = MEX
 }
 }
 
-name = "Anarco-Syndicalist uprising!"
-desc = "Spain is collapsing into anarchy, and the CNT-FAI is our brother in the supporting the cause of the working class! We should send aid at once!"
+name = "EVT_3967081_NAME"
+desc = "EVT_3967081_DESC"
 
 
 style = 2
@@ -4248,7 +4248,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Publically Support the CNT-FAI" # Send materiel and volunteers
+name = "EVT_3967081_OPTIONA" # Send materiel and volunteers
 ai_chance = 75
 command = { type = domestic which = interventionism value = 1 }
 command = { type = relation which = EUS value = -20 }
@@ -4267,7 +4267,7 @@ command = { type = setflag which = mex_cnt }
 command = { type = belligerence which = MEX value = 1 }
 }
 action_b = {
-name = "Remain silent on Spanish affairs" # Anarchist needs no aid
+name = "EVT_3967081_OPTIONB" # Anarchist needs no aid
 ai_chance = 25
 command = { type = dissent value = 5 }
 command = { type = relation which = SPA value = 10 }
@@ -4288,13 +4288,13 @@ id = 3967082
 random = no
 country = SPR
 
-name = "Mexico support us!"
-desc = "The Mexican government has decided to support our cause in the civil war. They have sent soldiers and aid to support us in the struggle of the workers!"
+name = "EVT_3967082_NAME"
+desc = "EVT_3967082_DESC"
 style = 2
 picture = "SCW_French Intervention"
 
 action_a = {
-name = "OK" # Great!
+name = "EVT_3967082_OPTIONA" # Great!
 command = { type = manpowerpool value = 5 }
 command = { type = supplies value = 500 }
 command = { type = add_division value = militia when = 5 }
@@ -4336,8 +4336,8 @@ ispuppet = RSI
 }
 }
 
-name = "Anarco-Syndicalist uprising!"
-desc = "Spain is collapsing into anarchy, and the CNT-FAI is our brother in the supporting the cause of the working class! We should send aid at once!"
+name = "EVT_39670791_NAME"
+desc = "EVT_39670791_DESC"
 
 
 style = 2
@@ -4349,7 +4349,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Publically Support the CNT-FAI" # Send materiel and volunteers
+name = "EVT_39670791_OPTIONA" # Send materiel and volunteers
 ai_chance = 85
 command = { type = domestic which = interventionism value = 1 }
 command = { type = relation which = EUS value = -20 }
@@ -4367,7 +4367,7 @@ command = { type = trigger which = 3967092   } #SPA
 command = { type = belligerence which = RSI value = 1 }
 }
 action_b = {
-name = "Remain silent on Spanish affairs" # Anarchist needs no aid
+name = "EVT_39670791_OPTIONB" # Anarchist needs no aid
 ai_chance = 15
 command = { type = dissent value = 5 }
 command = { type = relation which = SPA value = 10 }
@@ -4388,13 +4388,13 @@ id = 3967092
 random = no
 country = SPR
 
-name = "Southern Italy support us!"
-desc = "The Socialist Italian government has decided to support our cause in the civil war. They have sent soldiers and aid to support us in the struggle of the workers!"
+name = "EVT_3967092_NAME"
+desc = "EVT_3967092_DESC"
 style = 2
 picture = "SCW_French Intervention"
 
 action_a = {
-name = "OK" # Great!
+name = "EVT_3967092_OPTIONA" # Great!
 command = { type = manpowerpool value = 5 }
 command = { type = supplies value = 500 }
 command = { type = add_division value = militia when = 5 }
@@ -4437,8 +4437,8 @@ government = communist
 
 }
 }
-name = "Carlist uprising!"
-desc = "Spain is collapsing into anarchy, and the Pope has declared that Catholics should support the Carlist cause - We should send aid at once!"
+name = "EVT_3967101_NAME"
+desc = "EVT_3967101_DESC"
 
 
 style = 2
@@ -4451,7 +4451,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Publically Support the Carlists" # Send materiel and volunteers
+name = "EVT_3967101_OPTIONA" # Send materiel and volunteers
 ai_chance = 75
 command = { type = domestic which = interventionism value = 1 }
 command = { type = relation which = EUS value = 25 }
@@ -4470,7 +4470,7 @@ command = { type = trigger which = 3967102   } #SPA
 command = { type = belligerence which = IRE value = 1 }
 }
 action_b = {
-name = "Remain silent on Spanish affairs" # Xavier needs no aid
+name = "EVT_3967101_OPTIONB" # Xavier needs no aid
 ai_chance = 25
 command = { type = dissent value = 5 }
 command = { type = relation which = SPA value = 10 }
@@ -4491,13 +4491,13 @@ id = 3967102
 random = no
 country = EUS
 
-name = "Ireland support us!"
-desc = "The Irish government has decided to support our cause in the civil war. They have sent soldiers and aid to support us in the struggle!"
+name = "EVT_3967102_NAME"
+desc = "EVT_3967102_DESC"
 style = 2
 picture = "SCW_French Intervention"
 
 action_a = {
-name = "OK" # Great!
+name = "EVT_3967102_OPTIONA" # Great!
 command = { type = manpowerpool value = 5 }
 command = { type = supplies value = 500 }
 command = { type = add_division value = militia when = 5 }
@@ -4542,8 +4542,8 @@ government = communist
 }
 
 
-name = "Civil war in Spain !"
-desc = "Spain is collapsing into anarchy, and the Pope has declared that Catholics should support the Carlist cause - We should send aid at once!"
+name = "EVT_3967115_NAME"
+desc = "EVT_3967115_DESC"
 
 
 style = 2
@@ -4556,7 +4556,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Publically Support the Carlists" # Send materiel and volunteers
+name = "EVT_3967115_OPTIONA" # Send materiel and volunteers
 ai_chance = 75
 trigger = {
 government = fascist
@@ -4577,7 +4577,7 @@ command = { type = belligerence which = POR value = 1 }
 }
 
 action_a = {
-name = "Publically Support the Madrid government" # Send materiel and volunteers
+name = "EVT_3967115_OPTIONB" # Send materiel and volunteers
 ai_chance = 70
 trigger = {
 government = democratic
@@ -4599,7 +4599,7 @@ command = { type = belligerence which = POR value = 1 }
 }
 
 action_b = {
-name = "Remain silent on Spanish affairs" # Xavier needs no aid
+name = "EVT_3967115_OPTIONC" # Xavier needs no aid
 ai_chance = 25
 command = { type = dissent value = 2 }
 command = { type = relation which = SPA value = 10 }
@@ -4620,13 +4620,13 @@ id = 3967116
 random = no
 country = EUS
 
-name = "Portugal support us!"
-desc = "The Portugese government has decided to support our cause in the civil war. They have sent soldiers and aid to support us in the struggle!"
+name = "EVT_3967116_NAME"
+desc = "EVT_3967116_DESC"
 style = 2
 picture = "SCW_French Intervention"
 
 action_a = {
-name = "OK" # Great!
+name = "EVT_3967116_OPTIONA" # Great!
 command = { type = manpowerpool value = 5 }
 command = { type = supplies value = 500 }
 command = { type = add_division value = militia when = 5 }
@@ -4638,13 +4638,13 @@ id = 3967241
 random = no
 country = SPA
 
-name = "Portugal support us!"
-desc = "The Portugese government has decided to support our cause in the civil war. They have sent soldiers and aid to support us in the struggle!"
+name = "EVT_3967241_NAME"
+desc = "EVT_3967241_DESC"
 style = 2
 picture = "SCW_French Intervention"
 
 action_a = {
-name = "OK" # Great!
+name = "EVT_3967241_OPTIONA" # Great!
 command = { type = manpowerpool value = 5 }
 command = { type = supplies value = 500 }
 command = { type = add_division value = militia when = 5 }
@@ -4671,12 +4671,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 15
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "CNT in Africa"
-desc = "With the CNT-FAI revolution in Spain and their gaining control over the African colonies of Spain, they have a foothold here. Should we deny them this by taking the colonies by force?"
+name = "EVT_3967119_NAME"
+desc = "EVT_3967119_DESC"
 
 action_a = {
 ai_chance = 50
-name = "Occupy those territories"
+name = "EVT_3967119_OPTIONA"
 command = { type = belligerence which = VIC value = 3 }
 command = { type = relation which = SPA value = -20 }
 command = { type = relation which = EUS value = -20 }
@@ -4688,7 +4688,7 @@ command = { type = resource which = supplies value = -1000 }
 
 action_b = {
 ai_chance = 20
-name = "We shouldn't provoke them"
+name = "EVT_3967119_OPTIONB"
 command = { type = dissent value = 2 }
 command = { type = belligerence which = VIC value = -2 }
 command = { type = relation which = SPA value = 20 }
@@ -4699,7 +4699,7 @@ command = { type = relation which = SPR value = 20 }
 action_c = {
 trigger = { exists = EUS NOT = { war = { country = VIC country = EUS } } }
 ai_chance = 30
-name = "Take them and give them to the Carlists"
+name = "EVT_3967119_OPTIONC"
 command = { type = belligerence which = VIC value = 2 }
 command = { type = relation which = SPA value = -20 }
 command = { type = relation which = EUS value = 20 }
@@ -4723,12 +4723,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 5
 deathdate = { day = 29 month = december year = 1947 }
 
-name = "Conflict in Africa"
-desc = "The Nationalist French Government has marched on our territories in Africa! How should we respond to this action?"
+name = "EVT_3967120_NAME"
+desc = "EVT_3967120_DESC"
 
 action_a = {
 ai_chance = 30
-name = "Let them take them"
+name = "EVT_3967120_OPTIONA"
 command = { type = control which = VIC value = 715 }
 command = { type = control which = VIC value = 716 }
 command = { type = control which = VIC value = 987 }
@@ -4743,13 +4743,13 @@ command = { type = secedeprovince which = VIC value = 989 }
 
 action_b = {
 ai_chance = 10
-name = "To war!"
+name = "EVT_3967120_OPTIONB"
 command = { type = war which = VIC }
 }
 
 action_c = {
 ai_chance = 60
-name = "Offer what resistance we can....."
+name = "EVT_3967120_OPTIONC"
 command = { type = control which = VIC value = 715 }
 command = { type = control which = VIC value = 716 }
 command = { type = control which = VIC value = 987 }
@@ -4779,12 +4779,12 @@ date = { day = 1 month = january year = 1936 }
 offset = 5
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "COnflict in Africa"
-desc = "National French forces have taken our African provinces and surrendered them to the Carlist cause. What course of action should we pursue?"
+name = "EVT_3967121_NAME"
+desc = "EVT_3967121_DESC"
 
 action_a = {
 ai_chance = 30
-name = "Let them take them"
+name = "EVT_3967121_OPTIONA"
 command = { type = control which = EUS value = 715 }
 command = { type = control which = EUS value = 716 }
 command = { type = control which = EUS value = 987 }
@@ -4799,13 +4799,13 @@ command = { type = secedeprovince which = EUS value = 989 }
 
 action_b = {
 ai_chance = 10
-name = "To war!"
+name = "EVT_3967121_OPTIONB"
 command = { type = war which = VIC }
 }
 
 action_c = {
 ai_chance = 60
-name = "Offer what resistance we can....."
+name = "EVT_3967121_OPTIONC"
 command = { type = control which = EUS value = 715 }
 command = { type = control which = EUS value = 716 }
 command = { type = control which = EUS value = 987 }
@@ -4855,8 +4855,8 @@ war = { country = U24 country = SPA }
 }
 }
 
-name = "Civil War in Spain!"
-desc = "The legitimate Spanish Kingdom under Alfonso XIII is under severe threat from anarchists and fanatics!  While many are saying that this provides further proof of the terminal weakness of the House of Bourbon, a secure Spain is an important part of our defensive plans.  It could be wise to help the Government put an end to these threats."
+name = "EVT_3967225_NAME"
+desc = "EVT_3967225_DESC"
 
 style = 2
 picture = "scw"
@@ -4867,7 +4867,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Support legitimate government" # Send materiel and volunteers
+name = "EVT_3967225_OPTIONA" # Send materiel and volunteers
 ai_chance = 60
 command = { type = relation which = SPA value = 20 }
 command = { type = relation which = SPR value = -20 }
@@ -4885,7 +4885,7 @@ command = { type = setflag which = u24_int_scw }
 }
 
 action_b = {
-name = "Support Carlist" # Send materiel and volunteers
+name = "EVT_3967225_OPTIONB" # Send materiel and volunteers
 ai_chance = 5
 command = { type = relation which = SPA value = -20 }
 command = { type = relation which = SPR value = -20 }
@@ -4903,7 +4903,7 @@ command = { type = setflag which = u24_int_scw }
 }
 
 action_b = {
-name = "Spain is of no interest to Austria-Hungary" # King needs no aid
+name = "EVT_3967225_OPTIONC" # King needs no aid
 ai_chance = 40
 command = { type = relation which = SPA value = -20 }
 command = { type = relation which = SPR value = 20 }
@@ -4945,8 +4945,8 @@ war = { country = U25 country = SPA }
 }
 }
 
-name = "Civil War in Spain!"
-desc = "The legitimate Spanish Kingdom under Alfonso XIII is under severe threat from anarchists and fanatics!  While many are saying that this provides further proof of the terminal weakness of the House of Bourbon, a secure Spain is an important part of our defensive plans.  It could be wise to help the Government put an end to these threats."
+name = "EVT_3967226_NAME"
+desc = "EVT_3967226_DESC"
 
 style = 2
 picture = "scw"
@@ -4957,7 +4957,7 @@ offset = 10
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Support legitimate government" # Send materiel and volunteers
+name = "EVT_3967226_OPTIONA" # Send materiel and volunteers
 ai_chance = 60
 command = { type = relation which = SPA value = 20 }
 command = { type = relation which = SPR value = -20 }
@@ -4975,7 +4975,7 @@ command = { type = setflag which = u25_int_scw }
 }
 
 action_b = {
-name = "Support Carlist" # Send materiel and volunteers
+name = "EVT_3967226_OPTIONB" # Send materiel and volunteers
 ai_chance = 0
 command = { type = relation which = SPA value = -20 }
 command = { type = relation which = SPR value = -20 }
@@ -4993,7 +4993,7 @@ command = { type = setflag which = u25_int_scw }
 }
 
 action_b = {
-name = "Spain is of no interest to Danubian Federation" # King needs no aid
+name = "EVT_3967226_OPTIONC" # King needs no aid
 ai_chance = 40
 command = { type = relation which = SPA value = -20 }
 command = { type = relation which = SPR value = 20 }
@@ -5014,14 +5014,14 @@ id = 3967227
 random = no
 country = SPA
 
-name = "Austrian Aid Arrives!"
-desc = "The Austrian state believes that our success in the present struggle in Spain is essential for the continued stability of Europe, and has sent us considerable amounts of supplies and military 'experts' to help us in the fight."
+name = "EVT_3967227_NAME"
+desc = "EVT_3967227_DESC"
 
 style = 2
 picture = "foreign_volunteers"
 
 action_a = {
-name = "OK" # Great!
+name = "EVT_3967227_OPTIONA" # Great!
 command = { type = manpowerpool value = 10 }
 command = { type = supplies value = 1500 }
 command = { type = add_division value = infantry when = 9 }
@@ -5034,14 +5034,14 @@ id = 3967240
 random = no
 country = EUS
 
-name = "Austrian Aid Arrives!"
-desc = "The Austrian state believes that our success in the present struggle in Spain is essential for the continued stability of Europe, and has sent us considerable amounts of supplies and military 'experts' to help us in the fight."
+name = "EVT_3967240_NAME"
+desc = "EVT_3967240_DESC"
 
 style = 2
 picture = "foreign_volunteers"
 
 action_a = {
-name = "OK" # Great!
+name = "EVT_3967240_OPTIONA" # Great!
 command = { type = manpowerpool value = 10 }
 command = { type = supplies value = 1500 }
 command = { type = add_division value = infantry when = 9 }
@@ -5068,8 +5068,8 @@ flag = eus_win_scw
 }
 }
 
-name = "The End of the Spanish War"
-desc = "For good or ill, the Spanish war is now over.  The General Staff have reported that they learnt many valuable lessons regarding the nature of modern warfare over the course of the conflict."
+name = "EVT_3967228_NAME"
+desc = "EVT_3967228_DESC"
 style = 2
 picture = "foreign_volunteers"
 
@@ -5078,7 +5078,7 @@ offset = 50
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "ACTIONNAME2803A" # Great!
+name = "EVT_3967228_OPTIONA" # Great!
 command = { type = relation which = SPA value = 10 }    #
 command = { type = manpowerpool value = 5 }         # Soldiers return home
 command = { type = dissent value = -1 }
@@ -5103,8 +5103,8 @@ flag = eus_win_scw
 }
 }
 
-name = "The End of the Spanish War"
-desc = "For good or ill, the Spanish war is now over.  The General Staff have reported that they learnt many valuable lessons regarding the nature of modern warfare over the course of the conflict."
+name = "EVT_3967229_NAME"
+desc = "EVT_3967229_DESC"
 style = 2
 picture = "foreign_volunteers"
 
@@ -5113,7 +5113,7 @@ offset = 50
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "ACTIONNAME2803A" # Great!
+name = "EVT_3967229_OPTIONA" # Great!
 command = { type = relation which = SPA value = 10 }    #
 command = { type = manpowerpool value = 5 }         # Soldiers return home
 command = { type = dissent value = -1 }
@@ -5138,8 +5138,8 @@ war = { country = SPA country = EUS }
 }
 }
 
-name = "Carlist terror"
-desc = "During ongoing civil war some of our commanders started to use rather doubtfull methods to permanently supress civilian population suspicious of helping our mortal enemies. Such policies, even if looks drastical are neccesary in these dark times. "
+name = "EVT_966624_NAME"
+desc = "EVT_966624_DESC"
 style = 2
 picture = "massterror1"
 
@@ -5148,7 +5148,7 @@ offset = 22
 deathdate = { day = 29 month = december year = 1960 }
 
 action = {
-name = "War is war" # Peasants won't appeciate
+name = "EVT_966624_OPTIONA" # Peasants won't appeciate
 command = { type = dissent value = 1 }
 }
 }
@@ -5166,8 +5166,8 @@ war = { country = SPA country = EUS }
 }
 }
 
-name = "Monarchist terror"
-desc = "During ongoing civil war some of our commanders started to use rather doubtfull methods to permanently supress civilian population suspicious of helping our mortal enemies. Such policies, even if looks drastical are neccesary in these dark times. "
+name = "EVT_966625_NAME"
+desc = "EVT_966625_DESC"
 style = 2
 picture = "massterror1"
 
@@ -5176,7 +5176,7 @@ offset = 22
 deathdate = { day = 29 month = december year = 1960 }
 
 action = {
-name = "War is war" # Peasants won't appeciate
+name = "EVT_966625_OPTIONA" # Peasants won't appeciate
 command = { type = dissent value = 1 }
 }
 }
@@ -5195,8 +5195,8 @@ war = { country = SPA country = EUS }
 }
 }
 
-name = "Anarchist terror"
-desc = "During ongoing civil war some of our commanders started to use rather doubtfull methods to permanently supress civilian population suspicious of helping our mortal enemies. Such policies, even if looks drastical are neccesary in these dark times. "
+name = "EVT_966626_NAME"
+desc = "EVT_966626_DESC"
 style = 2
 picture = "massterror1"
 
@@ -5205,7 +5205,7 @@ offset = 22
 deathdate = { day = 29 month = december year = 1960 }
 
 action = {
-name = "War is war" # Peasants won't appeciate
+name = "EVT_966626_OPTIONA" # Peasants won't appeciate
 command = { type = dissent value = 1 }
 }
 }
@@ -5230,8 +5230,8 @@ flag = eus_win_scw
 }
 }
 
-name = "The End of the Spanish War"
-desc = "For good or ill, the Spanish war is now over.  The General Staff have reported that they learnt many valuable lessons regarding the nature of modern warfare over the course of the conflict."
+name = "EVT_3967233_NAME"
+desc = "EVT_3967233_DESC"
 style = 2
 picture = "soviet_replacement"
 
@@ -5240,7 +5240,7 @@ offset = 50
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Great!" # Great!
+name = "EVT_3967233_OPTIONA" # Great!
 command = { type = relation which = SPA value = 10 }	#
 command = { type = manpowerpool value = 5 }	 	# Soldiers return home
 command = { type = dissent value = -1 }
@@ -5266,8 +5266,8 @@ flag = eus_win_scw
 }
 }
 
-name = "The End of the Spanish War"
-desc = "For good or ill, the Spanish war is now over.  The General Staff have reported that they learnt many valuable lessons regarding the nature of modern warfare over the course of the conflict."
+name = "EVT_3967234_NAME"
+desc = "EVT_3967234_DESC"
 style = 2
 picture = "soviet_replacement"
 
@@ -5276,7 +5276,7 @@ offset = 50
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Great!" # Great!
+name = "EVT_3967234_OPTIONA" # Great!
 command = { type = relation which = SPR value = 10 }	#
 command = { type = manpowerpool value = 5 }	 	# Soldiers return home
 command = { type = dissent value = -1 }
@@ -5301,8 +5301,8 @@ flag = eus_win_scw
 }
 }
 
-name = "The End of the Spanish War"
-desc = "For good or ill, the Spanish war is now over.  The General Staff have reported that they learnt many valuable lessons regarding the nature of modern warfare over the course of the conflict."
+name = "EVT_3967235_NAME"
+desc = "EVT_3967235_DESC"
 style = 2
 picture = "soviet_replacement"
 
@@ -5311,7 +5311,7 @@ offset = 50
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Great!" # Great!
+name = "EVT_3967235_OPTIONA" # Great!
 command = { type = relation which = SPR value = 10 }	#
 command = { type = manpowerpool value = 5 }	 	# Soldiers return home
 command = { type = dissent value = -1 }
@@ -5337,8 +5337,8 @@ flag = eus_win_scw
 }
 }
 
-name = "The End of the Spanish War"
-desc = "For good or ill, the Spanish war is now over.  The General Staff have reported that they learnt many valuable lessons regarding the nature of modern warfare over the course of the conflict."
+name = "EVT_3967236_NAME"
+desc = "EVT_3967236_DESC"
 style = 2
 picture = "soviet_replacement"
 
@@ -5347,7 +5347,7 @@ offset = 50
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Great!" # Great!
+name = "EVT_3967236_OPTIONA" # Great!
 command = { type = relation which = SPR value = 10 }	#
 command = { type = manpowerpool value = 5 }	 	# Soldiers return home
 command = { type = dissent value = -1 }
@@ -5373,8 +5373,8 @@ flag = eus_win_scw
 }
 }
 
-name = "The End of the Spanish War"
-desc = "For good or ill, the Spanish war is now over.  The General Staff have reported that they learnt many valuable lessons regarding the nature of modern warfare over the course of the conflict."
+name = "EVT_3967237_NAME"
+desc = "EVT_3967237_DESC"
 style = 2
 picture = "soviet_replacement"
 
@@ -5383,7 +5383,7 @@ offset = 50
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Great!" # Great!
+name = "EVT_3967237_OPTIONA" # Great!
 command = { type = relation which = SPR value = 10 }	#
 command = { type = manpowerpool value = 5 }	 	# Soldiers return home
 command = { type = dissent value = -1 }
@@ -5409,8 +5409,8 @@ flag = eus_win_scw
 }
 }
 
-name = "The End of the Spanish War"
-desc = "For good or ill, the Spanish war is now over.  The General Staff have reported that they learnt many valuable lessons regarding the nature of modern warfare over the course of the conflict."
+name = "EVT_3967238_NAME"
+desc = "EVT_3967238_DESC"
 style = 2
 picture = "soviet_replacement"
 
@@ -5419,7 +5419,7 @@ offset = 50
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Great!" # Great!
+name = "EVT_3967238_OPTIONA" # Great!
 command = { type = relation which = EUS value = 10 }	#
 command = { type = manpowerpool value = 5 }	 	# Soldiers return home
 command = { type = dissent value = -1 }
@@ -5444,8 +5444,8 @@ flag = eus_win_scw
 }
 }
 
-name = "The End of the Spanish War"
-desc = "For good or ill, the Spanish war is now over.  The General Staff have reported that they learnt many valuable lessons regarding the nature of modern warfare over the course of the conflict."
+name = "EVT_3967239_NAME"
+desc = "EVT_3967239_DESC"
 style = 2
 picture = "soviet_replacement"
 
@@ -5454,7 +5454,7 @@ offset = 50
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-name = "Great!" # Great!
+name = "EVT_3967239_OPTIONA" # Great!
 command = { type = relation which = EUS value = 10 }	#
 command = { type = manpowerpool value = 5 }	 	# Soldiers return home
 command = { type = dissent value = -1 }
