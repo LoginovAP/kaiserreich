@@ -1,0 +1,418 @@
+event = {
+	id = 9985000
+	random = no
+	country = GER
+	style = 2
+
+        trigger = {
+        puppet = { country = U02 country = GER  }
+        }
+
+	name = "EVT_9985000_NAME"
+	desc = "EVT_9985000_DESC"
+	picture = "crete"
+
+	action_a = {
+		ai_chance = 50
+		name = "EVT_9985000_OPTIONA"
+		command = { type = relation which = GRE value = -10 }
+		command = { type = relation which = OTT value = -10 }
+                command = { type = dissent value = 2  }
+		command = { type = money value = -50 }
+	}
+	action_b = {
+		ai_chance = 30
+		name = "EVT_9985000_OPTIONB"
+		command = { type = relation which = GRE value = -20 }
+		command = { type = relation which = OTT value = 20 }
+		command = { type = trigger which = 9985001 }
+	}
+	action_c = {
+		ai_chance = 20
+		name = "EVT_9985000_OPTIONC"
+		command = { type = relation which = GRE value = 20 }
+		command = { type = relation which = OTT value = -20 }
+		command = { type = trigger which = 9985008 }
+	}
+}
+
+event = {
+	id = 9985001
+	random = no
+	country = OTT
+	style = 2
+
+	name = "EVT_9985001_NAME"
+	desc = "EVT_9985001_DESC"
+	picture = "crete"
+
+	action_a = {
+		ai_chance = 70
+		name = "EVT_9985001_OPTIONA"
+		command = { type = relation which = GER value = 20 }
+		command = { type = money value = -200 }
+                command = { type = non_aggression which = OTT where = GER }
+		command = { type = trigger which = 9985002 }
+	}
+	action_b = {
+		ai_chance = 30
+		name = "EVT_9985001_OPTIONB"
+		command = { type = relation which = GER value = -10 }
+		command = { type = trigger which = 9985005 }
+	}
+}
+
+event = {
+	id = 9985002
+	random = no
+	country = GER
+	style = 2
+
+	name = "EVT_9985002_NAME"
+	desc = "EVT_9985002_DESC"
+	picture = "crete"
+
+	action_a = {
+		name = "EVT_9985002_OPTIONA"
+		command = { type = end_mastery which = U02 }
+		command = { type = money value = 200 }
+		command = { type = trigger which = 9985003 }
+	}
+}
+
+event = {
+	id = 9985003
+	country = OTT
+	style = 2
+
+	name = "EVT_9985003_NAME"
+	desc = "EVT_9985003_DESC"
+        picture = "crete"
+
+	action_a = {
+		ai_chance = 80
+		name = "EVT_9985003_OPTIONA"
+		command = { type = make_puppet which = U02 }
+		command = { type = coup_nation which = U02 }
+		command = { type = alliance which = U02 }
+		command = { type = trigger which = 9985004 }
+	}
+	action_b = {
+		ai_chance = 20
+		name = "EVT_9985003_OPTIONB"
+		command = { type = inherit which = U02 }
+                command = { type = addclaim   which = 382   }
+                command = { type = addclaim   which = 380   }
+	}
+}
+
+event = {
+	id = 9985004
+	country = U02
+	style = 2
+        picture = "crete"
+
+	name = "EVT_9985004_NAME"
+	desc = "EVT_9985004_DESC"
+
+	action_a = {
+		name = "EVT_9985004_OPTIONA"
+		command = { type = headofstate which = 8955011 } #Mustafa Ertugru
+		command = { type = headofgovernment which = 8955012 } #Munis Tekinalp
+		command = { type = armamentminister which = 8955013 } #Sükrü Kaya
+		command = { type = ministerofsecurity which = 8955014 } #Musa Cevat Sakir
+		command = { type = ministerofintelligence which = 8955015 } #Salih Omurtak
+		command = { type = chiefofstaff which = 8955006 } #Ali Fuat Cebesoy
+		command = { type = chiefofarmy which = 8955007 } #Mustafa Fehmi Kubilay
+		command = { type = chiefofnavy which = 8955008 } #Karl Artelt
+		command = { type = chiefofair which = 8955019 } #Ali Fuat Cebesoy
+	}
+}
+
+event = {
+	id = 9985005
+	country = GER
+	style = 2
+
+	name = "EVT_9985005_NAME"
+	desc = "EVT_9985005_DESC"
+	picture = "crete"
+
+	action_a = {
+		ai_chance = 85
+		name = "EVT_9985005_OPTIONA"
+		command = { type = money value = -50 }
+                command = { type = dissent value = 2  }
+	}
+	action_b = {
+		ai_chance = 15
+		name = "EVT_9985005_OPTIONB"
+		command = { type = trigger which = 9985006 }
+	}
+}
+
+event = {
+	id = 9985006
+	country = GRE
+	style = 2
+
+	name = "EVT_9985006_NAME"
+	desc = "EVT_9985006_DESC"
+	picture = "crete"
+
+	action_a = {
+		ai_chance = 100
+		name = "EVT_9985006_OPTIONA"
+		command = { type = trigger which = 9985009 }
+                command = { type = non_aggression which = GRE where = GER }
+		command = { type = money value = -200 }
+	}
+	action_b = {
+		ai_chance = 0
+		name = "EVT_9985006_OPTIONB"
+		command = { type = trigger which = 9985007 }
+	}
+}
+
+event = {
+	id = 9885007
+	country = GER
+	style = 2
+        picture = "crete"
+
+	name = "EVT_9885007_NAME"
+	desc = "EVT_9885007_DESC"
+
+	action_a = {
+		name = "EVT_9885007_OPTIONA"
+		command = { type = money value = -50 }
+                command = { type = dissent value = 2  }
+	}
+}
+
+#Greek variant
+event = {
+	id = 9985008
+	random = no
+	country = GRE
+	style = 2
+
+	name = "EVT_9985008_NAME"
+	desc = "EVT_9985008_DESC"
+	picture = "crete"
+
+	action_a = {
+		ai_chance = 100
+		name = "EVT_9985008_OPTIONA"
+		command = { type = relation which = GER value = 20 }
+		command = { type = money value = -200 }
+                command = { type = non_aggression which = GRE where = GER }
+		command = { type = trigger which = 9985009 }
+	}
+	action_b = {
+		ai_chance = 0
+		name = "EVT_9985008_OPTIONB"
+		command = { type = relation which = GER value = -10 }
+		command = { type = trigger which = 9985012 }
+	}
+}
+
+event = {
+	id = 9985009
+	random = no
+	country = GER
+	style = 2
+
+	name = "EVT_9985009_NAME"
+	desc = "EVT_9985009_DESC"
+	picture = "crete"
+
+	action_a = {
+		name = "EVT_9985009_OPTIONA"
+		command = { type = end_mastery which = U02 }
+		command = { type = money value = 200 }
+		command = { type = trigger which = 9985010 }
+	}
+}
+
+event = {
+	id = 9985010
+	country = GRE
+	style = 2
+
+	name = "EVT_9985010_NAME"
+	desc = "EVT_9985010_DESC"
+	picture = "crete"
+
+	action_a = {
+		ai_chance = 0
+		name = "EVT_9985010_OPTIONA"
+		command = { type = make_puppet which = U02 }
+		command = { type = coup_nation which = U02 }
+		command = { type = alliance which = U02 }
+		command = { type = trigger which = 9985011 }
+	}
+	action_b = {
+		ai_chance = 100
+		name = "EVT_9985010_OPTIONB"
+		command = { type = inherit which = U02 }
+                command = { type = addcore   which = 382   }
+                command = { type = addcore   which = 380   }
+	}
+}
+
+event = {
+	id = 9985011
+	country = U02
+	style = 2
+        picture = "crete"
+
+	name = "EVT_9985011_NAME"
+	desc = "EVT_9985011_DESC"
+
+	action_a = {
+		name = "EVT_9985011_OPTIONA"
+		command = { type = headofstate which = 8955010 } #Prince George
+		command = { type = headofgovernment which = 8955001 } #Carl Dankwort
+		command = { type = armamentminister which = 8955013 } #Sükrü Kaya
+		command = { type = ministerofsecurity which = 8955004 } #Elias Mellos
+		command = { type = ministerofintelligence which = 8955005 } #Friedrich Schubert
+		command = { type = chiefofstaff which = 8955016 } #Nikolaos Plastiras
+		command = { type = chiefofarmy which = 8955017 } #Nikolaos Plastiras
+		command = { type = chiefofnavy which = 8955018 } #Petros Voulgaris
+		command = { type = chiefofair which = 8955019 } #Ali Fuat Cebesoy
+	}
+}
+
+event = {
+	id = 9985012
+	country = GER
+	style = 2
+
+	name = "EVT_9985012_NAME"
+	desc = "EVT_9985012_DESC"
+	picture = "crete"
+
+	action_a = {
+		ai_chance = 80
+		name = "EVT_9985012_OPTIONA"
+		command = { type = money value = -50 }
+                command = { type = dissent value = 2  }
+	}
+	action_b = {
+		ai_chance = 20
+		name = "EVT_9985012_OPTIONB"
+		command = { type = trigger which = 9985013 }
+	}
+}
+
+event = {
+	id = 9885013
+	country = OTT
+	style = 2
+
+	name = "EVT_9885013_NAME"
+	desc = "EVT_9885013_DESC"
+	picture = "crete"
+
+	action_a = {
+		ai_chance = 75
+		name = "EVT_9885013_OPTIONA"
+		command = { type = trigger which = 9985002 }
+                command = { type = non_aggression which = OTT where = GER }
+                command = { type = money value = -200 }
+	}
+	action_b = {
+		ai_chance = 25
+		name = "EVT_9885013_OPTIONB"
+		command = { type = trigger which = 9985014 }
+	}
+}
+
+event = {
+	id = 9885014
+	country = GER
+	style = 2
+        picture = "crete"
+
+	name = "EVT_9885014_NAME"
+	desc = "EVT_9885014_DESC"
+
+	action_a = {
+		name = "EVT_9885014_OPTIONA"
+		command = { type = money value = -50 }
+                command = { type = dissent value = 2  }
+	}
+}
+
+##########
+#Weltkreig
+##########
+event = {
+	id = 9885015
+	country = U02
+	style = 2
+
+	trigger = {
+	war = { country = FRA country = GER }
+	puppet = { country = U02 country = GER }
+	exists = GRE
+        control = { province = 377 data = GRE }
+	NOT = {
+	ispuppet = GRE } }
+
+	name = "EVT_9885015_NAME"
+	desc = "EVT_9885015_DESC"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 100
+	deathdate = { day = 1 month = january year = 1966 }
+
+	action_a = {
+		ai_chance = 50
+		name = "EVT_9885015_OPTIONA"
+		command = { type = relation which = GRE value = 20 }
+		command = { type = relation which = GER value = -50 }
+	}
+	action_b = {
+		ai_chance = 50
+		name = "EVT_9885015_OPTIONB"
+		command = { type = trigger which = 9885016 }
+	}
+}
+
+event = {
+	id = 9885016
+	country = GRE
+	style = 2
+        picture = "crete"
+
+	name = "EVT_9885016_NAME"
+	desc = "EVT_9885016_DESC"
+
+	action_a = {
+		name = "EVT_9885016_OPTIONA"
+		command = { type = inherit which = U02 }
+		command = { type = addcore   which = 382   }
+                command = { type = addcore   which = 380   }
+	}
+}
+
+#Etc
+event = {
+	id = 9885030
+	random = no
+	country = U02
+	style = 2
+
+	date = { year = 1939 month = january day = 2 }
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	action_a = {
+		name = "EVT_9885030_OPTIONA"
+		command = { type = sleepminister which = 8955003 } #Zaharoff
+	}
+}

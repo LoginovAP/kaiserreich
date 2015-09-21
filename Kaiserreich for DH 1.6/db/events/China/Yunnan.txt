@@ -1,0 +1,2504 @@
+event = {
+id = 6552501
+random = no
+country = CYN
+style = 2
+save_date = yes
+
+picture = "shenyang"
+
+trigger = {
+control = { province = 1389 data = CYN }
+}
+
+name = "EVT_6552501_NAME"
+desc = "EVT_6552501_DESC"
+
+date = { day = 12 month = february year = 1936 }
+offset = 10
+deathdate = { day = 1 month = march year = 1936 }
+
+action_a = {
+name = "EVT_6552501_OPTIONA"
+command = { type = removecore which = 1389 }
+command = { type = addclaim which = 1389 }
+command = { type = dissent value = 2 }
+command = { type = revolt which = 1389 }
+    }
+}
+
+event = {
+id = 6552502
+random = no
+country = CYN
+style = 2
+
+trigger = {
+event = 6552501
+event = { id = 6552501 days = 40 } # It takes some time to supress local population
+control = { province = 1389 data = CYN }
+}
+
+name = "EVT_6552502_NAME"
+desc = "EVT_6552502_DESC"
+picture = "surrender"
+
+date = { day = 14 month = february year = 1936 }
+offset = 15
+deathdate = { day = 1 month = may year = 1952 }
+
+action_a = {
+name = "EVT_6552502_OPTIONA"
+command = { type = addcore which = 1389 }
+command = { type = dissent value = -1 }
+    }
+}
+
+event = {
+id = 628027
+country = CYN
+style = 2
+picture = "Chinese Crossroad"
+
+trigger = { 
+random = 50
+exists = CGX
+NOT = {
+ispuppet = CYN
+atwar = CYN
+exists = CHI
+}
+ }
+
+date = { day = 1 month = june year = 1937 }
+offset = 30
+deathdate = { day = 1 month = may year = 1960 }
+
+name = "EVT_628027_NAME"
+desc = "EVT_628027_DESC"
+
+action_a = {
+ai_chance = 80
+name = "EVT_628027_OPTIONA"
+command = { type = setflag which = CYN_raids }
+}
+
+action_b = {
+ai_chance = 20
+name = "EVT_628027_OPTIONB"
+command = { type = dissent value = 1 }
+}
+}
+
+event = {
+id = 628028
+country = CYN
+style = 2 
+picture = "Chinese Crossroad"
+
+trigger = { 
+flag = CYN_raids
+exists = CGX
+NOT = {
+ispuppet = CYN
+atwar = CYN
+} 
+}
+
+date = { day = 1 month = June year = 1937 }
+offset = 30
+deathdate = { day = 1 month = may year = 1960 }
+
+name = "EVT_628028_NAME"
+desc = "EVT_628028_DESC"
+
+action_a = {
+name = "EVT_628028_OPTIONA"
+command = { type = dissent value = -1 }
+command = { type = manpowerpool value = 5 }
+command = { type = supplies value = 50 }
+command = { type = money value = 5 }
+command = { type = relation which = CGX value = -30 }
+command = { type = relation which = GER value = -10 }
+}
+}
+
+event = {
+id = 628029
+country = CYN
+style = 2 
+picture = "Chinese Crossroad"
+
+trigger = { 
+flag = CYN_raids 
+exists = CGX
+NOT = {
+ispuppet = CYN
+atwar = CYN
+} 
+}
+
+date = { day = 1 month = december year = 1937 }
+offset = 30
+deathdate = { day = 1 month = may year = 1960 }
+
+name = "EVT_628029_NAME"
+desc = "EVT_628029_DESC"
+
+action_a = {
+name = "EVT_628029_OPTIONA"
+command = { type = dissent value = -1 }
+command = { type = manpowerpool value = 5 }
+command = { type = supplies value = 50 }
+command = { type = money value = 5 }
+command = { type = setflag which = CYN_raids_CGX }
+command = { type = relation which = CGX value = -30 }
+command = { type = relation which = GER value = -10 }
+}
+}
+
+event = {
+id = 628030
+country = CGX
+style = 2 
+picture = "Chinese Crossroad"
+
+trigger = { 
+NOT = { war = { country = CGX country = CYN } }
+flag = CYN_raids_CGX
+NOT = {
+exists = CHI
+}
+ }
+
+date = { day = 1 month = december year = 1937 }
+offset = 30
+deathdate = { day = 1 month = may year = 1960 }
+
+name = "EVT_628030_NAME"
+desc = "EVT_628030_DESC"
+
+action_a = {
+ai_chance = 30
+name = "EVT_628030_OPTIONA"
+command = { type = dissent value = 1 }
+}
+
+action_b = {
+ai_chance = 70
+name = "EVT_628030_OPTIONB"
+command = { type = setflag which = CGX_CYN_gaurding }
+}
+}
+
+event = {
+id = 628031
+country = CYN
+style = 2 
+picture = "Chinese Crossroad"
+
+trigger = { 
+flag = CYN_raids 
+not = { flag = CGX_CYN_gaurding }
+NOT = { war = { country = CGX country = CYN } }
+}
+
+date = { day = 1 month = april year = 1938 }
+offset = 30
+deathdate = { day = 1 month = may year = 1960 }
+
+name = "EVT_628031_NAME"
+desc = "EVT_628031_DESC"
+
+action_a = {
+name = "EVT_628031_OPTIONA"
+command = { type = dissent value = -1 }
+command = { type = manpowerpool value = 5 }
+command = { type = supplies value = 50 }
+command = { type = money value = 50 }
+command = { type = relation which = CGX value = -30 }
+command = { type = relation which = GER value = -10 }
+}
+}
+
+event = {
+id = 628032
+country = CGX
+style = 2 
+picture = "Chinese Crossroad"
+
+trigger = { 
+flag = CYN_raids_CGX 
+flag = CGX_CYN_gaurding
+exists = CYN
+NOT = { war = { country = CGX country = CYN } }
+}
+
+date = { day = 1 month = april year = 1938 }
+offset = 30
+deathdate = { day = 1 month = may year = 1960 }
+
+name = "EVT_628032_NAME"
+desc = "EVT_628032_DESC"
+
+action_a = {
+ai_chance = 80
+name = "EVT_628032_OPTIONA"
+command = { type = event which = 628040 where = CYN when = 2  }
+command = { type = dissent value = -5 }
+command = { type = clrflag which = CYN_raids_CGX  }
+command = { type = clrflag which = CGX_CYN_gaurding  }
+}
+
+action_b = {
+ai_chance = 20
+name = "EVT_628032_OPTIONB"
+command = { type = trigger which = 6552503 }
+command = { type = dissent value = 5 }
+command = { type = money value = -50 }
+command = { type = clrflag which = CYN_raids_CGX  }
+command = { type = clrflag which = CGX_CYN_gaurding  }
+}
+}
+
+event = {
+id = 6552503
+country = CYN
+style = 2 
+picture = "Chinese Crossroad"
+
+name = "EVT_6552503_NAME"
+desc = "EVT_6552503_DESC"
+
+action_a = {
+	name = "EVT_6552503_OPTIONA"
+	ai_chance = 95
+	command = { type = money value = 50 }
+	command = { type = dissent value = -1 }
+	}
+
+action_b = {
+	name = "EVT_6552503_OPTIONB"
+	ai_chance = 5
+	command = { type = money value = 50 }
+	command = { type = war which = CGX }
+	}
+}
+
+event = {
+id = 628040
+country = CYN
+style = 2
+picture = "Chinese Crossroad"
+
+name = "EVT_628040_NAME"
+desc = "EVT_628040_DESC"
+
+action_a = {
+ai_chance = 60
+name = "EVT_628040_OPTIONA"
+command = { type = dissent value = 2 }
+command = { type = relation which = CGX value = 20 }
+command = { type = relation which = GER value = 10 }
+command = { type = trigger which = 628041 }
+}
+
+action_b = {
+ai_chance = 40
+name = "EVT_628040_OPTIONB"
+command = { type = war which = CGX }
+}
+}
+
+event = {
+id = 628041
+country = CGX
+style = 2
+picture = "Chinese Crossroad"
+
+name = "EVT_628041_NAME"
+desc = "EVT_628041_DESC"
+
+action_a = {
+ai_chance = 0
+name = "EVT_628041_OPTIONA"
+command = { type = war which = CYN }
+command = { type = dissent value = -2 }
+command = { type = addclaim which = 1389 }
+command = { type = addclaim which = 1390 }
+command = { type = addclaim which = 1384 }
+command = { type = addclaim which = 1385 }
+command = { type = addclaim which = 1387 }
+command = { type = addclaim which = 1386 }
+command = { type = addclaim which = 1388 }
+command = { type = addclaim which = 1292 }
+command = { type = addclaim which = 1293 }
+command = { type = addclaim which = 1291 }
+command = { type = addclaim which = 1300 }
+command = { type = addclaim which = 1303 }
+command = { type = addclaim which = 1261 }
+command = { type = addclaim which = 1262 }
+command = { type = addclaim which = 1296 }
+command = { type = addclaim which = 1297 }
+command = { type = addclaim which = 1298 }
+command = { type = addclaim which = 1299 }
+command = { type = addclaim which = 1302 }
+command = { type = addclaim which = 1267 }
+}
+
+action_b = {
+ai_chance = 100
+name = "EVT_628041_OPTIONB"
+command = { type = dissent value = 1 }
+command = { type = relation which = CYN value = 20 }
+}
+}
+
+
+
+
+
+
+
+
+
+### Chinese Unification by Yunnan
+
+ event = {
+ id = 6280003
+ random = no
+ country = CYN
+ style = 2
+ picture = "China_Army"
+
+ trigger = {
+     NOT = { 
+             atwar = CYN 
+             ispuppet = CYN
+             }
+ }
+
+ name = "EVT_6280003_NAME"
+ desc = "EVT_6280003_DESC"
+
+ date = { day = 1 month = april year = 1937 }
+ offset = 30
+ deathdate = { day = 1 month = march year = 1966 }
+
+ action = {
+ ai_chance = 60
+ name = "EVT_6280003_OPTIONA"
+     command = { type = dissent value = 1 }
+     command = { type = domestic which = interventionism value = -1 }
+     command = { type = sleepevent which = 6280004 }
+     command = { type = sleepevent which = 6280005 }
+     command = { type = sleepevent which = 6280006 }
+     command = { type = sleepevent which = 6280007 }
+     command = { type = sleepevent which = 6280008 }
+     command = { type = sleepevent which = 6280009 }
+     command = { type = sleepevent which = 6280010 }
+     command = { type = sleepevent which = 6280011 }
+     command = { type = sleepevent which = 6280012 }
+     command = { type = sleepevent which = 6280013 }
+     command = { type = sleepevent which = 6280014 }
+     command = { type = sleepevent which = 6280015 }
+     command = { type = sleepevent which = 6280016 }
+     command = { type = sleepevent which = 6280017 }
+     command = { type = sleepevent which = 6280018 }
+     command = { type = sleepevent which = 6280019 }
+     command = { type = sleepevent which = 6280020 }
+     command = { type = sleepevent which = 6280021 }
+     command = { type = sleepevent which = 6280022 }
+     command = { type = sleepevent which = 6280023 }
+     command = { type = sleepevent which = 6280024 }
+     command = { type = sleepevent which = 6280025 }
+     command = { type = sleepevent which = 6280026 }
+     command = { type = sleepevent which = 6280027 }
+     command = { type = sleepevent which = 6280028 }
+ }
+
+ action = {
+ ai_chance = 40
+ name = "EVT_6280003_OPTIONB"
+     command = { type = dissent value = -1 }
+     command = { type = domestic which = interventionism value = 2 }
+     command = { type = domestic which = defense_lobby value = 2 }
+     command = { type = relation which = GER value = -30 }
+     command = { type = relation which = CGX value = -30 }
+     command = { type = relation which = CHC value = -30 }
+     command = { type = relation which = CXB value = -30 }
+     command = { type = relation which = TIB value = -30 }
+     command = { type = relation which = MON value = -30 }
+     command = { type = relation which = CSX value = -30 }
+     command = { type = relation which = MAN value = -30 }
+     command = { type = sleepevent which = 628027 }
+     command = { type = sleepevent which = 628028 }
+     command = { type = sleepevent which = 628029 }
+     command = { type = sleepevent which = 628030 }
+     command = { type = sleepevent which = 628031 }
+     command = { type = sleepevent which = 628032 }
+     command = { type = setflag which = YUN_CHINA }
+     command = { type = flag_ext where = CYN which = "_REP" }
+     command = { type = name where = CYN which = CYN_NPA }
+ }
+ }
+
+ event = {
+ id = 6280004
+ random = no
+ country = CYN
+ style = 2
+ picture = "China_Army"
+
+ trigger = {
+     event = 6280003
+     flag = YUN_CHINA
+     NOT = { 
+             exists = CHI
+             atwar = CYN 
+             ispuppet = CYN
+             }
+ }
+
+ name = "EVT_6280004_NAME"
+ desc = "EVT_6280004_DESC"
+
+ date = { day = 1 month = june year = 1937 }
+ offset = 100
+ deathdate = { day = 29 month = december year = 1966 }
+
+ action = {
+ name = "EVT_6280004_OPTIONA"
+     command = { type = dissent value = -1 }
+     command = { type = relation which = CGX value = -10 }
+     command = { type = relation which = CSX value = -10 }
+     command = { type = manpowerpool value = 10 }
+     command = { type = supplies value = 100 where = 1390 }
+     command = { type = industrial_modifier which = total value = 2 }
+     command = { type = industrial_modifier which = supplies value = 2 }
+     command = { type = free_ic value = 2 }
+ }
+ }
+
+ event = {
+ id = 6280005
+ random = no
+ country = CYN
+ style = 2
+ picture = "China_Army"
+
+ trigger = {
+     flag = YUN_CHINA
+     NOT = { 
+             atwar = CYN 
+             ispuppet = CYN
+             }
+ }
+
+ name = "EVT_6280005_NAME"
+ desc = "EVT_6280005_DESC"
+
+ date = { day = 1 month = january year = 1938 }
+ offset = 100
+ deathdate = { day = 29 month = december year = 1966 }
+
+ action = {
+ ai_chance = 55
+ trigger = {
+ exists = CXB
+ NOT = { 
+ alliance = { country = CYN country = CXB } 
+ ispuppet = CXB
+ }
+ }
+ name = "EVT_6280005_OPTIONA"
+     command = { type = relation which = CXB value = -50 }
+     command = { type = event which = 6280006 where = CYN when = 30 }
+ }
+
+ action = {
+ ai_chance = 15
+ trigger = {
+ exists = TIB
+ NOT = { 
+ alliance = { country = CYN country = TIB } 
+ ispuppet = TIB
+ }
+ }
+ name = "EVT_6280005_OPTIONB"
+     command = { type = relation which = TIB value = -50 }
+     command = { type = event which = 6280007 where = CYN when = 50 }
+ }
+
+ action = {
+ ai_chance = 20
+ trigger = {
+ exists = CHC
+ NOT = { 
+ alliance = { country = CYN country = CHC } 
+ ispuppet = CHC
+ }
+ }
+ name = "EVT_6280005_OPTIONC"
+     command = { type = relation which = CHC value = -50 }
+     command = { type = event which = 6280008 where = CYN when = 50 }
+ }
+
+ action = {
+ ai_chance = 0
+ trigger = {
+ exists = CGX
+ NOT = { alliance = { country = CYN country = CGX } }
+ }
+ name = "EVT_6280005_OPTIOND"
+     command = { type = relation which = CGX value = -50 }
+     command = { type = event which = 6280009 where = CYN when = 50 }
+ }
+
+ action = {
+ ai_chance = 1
+ name = "EVT_6280005_OPTIONE"
+     command = { type = dissent value = 5 }
+     command = { type = clrflag which = YUN_CHINA }
+     command = { type = sleepevent which = 6280006 }
+     command = { type = sleepevent which = 6280007 }
+     command = { type = sleepevent which = 6280008 }
+     command = { type = sleepevent which = 6280009 }
+     command = { type = sleepevent which = 6280010 }
+     command = { type = sleepevent which = 6280011 }
+     command = { type = sleepevent which = 6280012 }
+     command = { type = sleepevent which = 6280013 }
+     command = { type = sleepevent which = 6280014 }
+     command = { type = sleepevent which = 6280015 }
+     command = { type = sleepevent which = 6280016 }
+     command = { type = sleepevent which = 6280017 }
+     command = { type = sleepevent which = 6280018 }
+     command = { type = sleepevent which = 6280019 }
+     command = { type = sleepevent which = 6280020 }
+     command = { type = sleepevent which = 6280021 }
+     command = { type = sleepevent which = 6280022 }
+     command = { type = sleepevent which = 6280023 }
+     command = { type = sleepevent which = 6280024 }
+     command = { type = sleepevent which = 6280025 }
+     command = { type = sleepevent which = 6280026 }
+     command = { type = sleepevent which = 6280027 }
+     command = { type = sleepevent which = 6280028 }
+ }
+ }
+
+ event = {
+ id = 6280006
+ random = no
+ country = CYN
+ style = 2
+ picture = "China_Army"
+
+ name = "EVT_6280006_NAME"
+ desc = "EVT_6280006_DESC"
+
+ action = {
+ ai_chance = 90
+ trigger = {
+ exists = CXB
+ NOT = { alliance = { country = CYN country = CXB } }
+ }
+ name = "EVT_6280006_OPTIONA"
+     command = { type = war which = CXB }
+     command = { type = addclaim which = 1283 }
+     command = { type = addclaim which = 1284 }
+     command = { type = addclaim which = 1285 }
+     command = { type = addclaim which = 1266 }
+     command = { type = addclaim which = 1265 }
+     command = { type = addclaim which = 1264 }
+     command = { type = addclaim which = 1272 }
+     command = { type = addclaim which = 1268 }
+     command = { type = addclaim which = 1270 }
+     command = { type = addclaim which = 1277 }
+     command = { type = addclaim which = 1281 }
+     command = { type = addclaim which = 1280 }
+     command = { type = addclaim which = 1276 }
+     command = { type = addclaim which = 1273 }
+     command = { type = addclaim which = 1275 }
+     command = { type = addclaim which = 1279 }
+     command = { type = addclaim which = 1282 }
+     command = { type = addclaim which = 1274 }
+     command = { type = dissent value = -1 }
+ }
+ action = {
+ ai_chance = 10
+ trigger = {
+ exists = CXB
+ NOT = { alliance = { country = CYN country = CXB } }
+ }
+ name = "EVT_6280006_OPTIONB"
+     command = { type = dissent value = 10 }
+     command = { type = clrflag which = YUN_CHINA }
+     command = { type = sleepevent which = 6280004 }
+     command = { type = sleepevent which = 6280005 }
+     command = { type = sleepevent which = 6280006 }
+     command = { type = sleepevent which = 6280007 }
+     command = { type = sleepevent which = 6280008 }
+     command = { type = sleepevent which = 6280009 }
+     command = { type = sleepevent which = 6280010 }
+     command = { type = sleepevent which = 6280011 }
+     command = { type = sleepevent which = 6280017 }
+     command = { type = sleepevent which = 6280022 }
+     command = { type = sleepevent which = 6280023 }
+     command = { type = sleepevent which = 6280024 }
+     command = { type = sleepevent which = 6280025 }
+     command = { type = sleepevent which = 6280026 }
+     command = { type = sleepevent which = 6280027 }
+     command = { type = sleepevent which = 6280028 }
+ }
+ action = {
+ ai_chance = 15
+ trigger = { 
+ event = 6280010
+ OR = {
+ control = { province = 1289 data = CYN }
+ control = { province = 1281 data = CYN }
+ control = { province = 1284 data = CYN }
+ control = { province = 1277 data = CYN }
+ control = { province = 1263 data = CYN }
+ control = { province = 1259 data = CYN }
+ control = { province = 1310 data = CYN }
+ control = { province = 1378 data = CYN }
+ control = { province = 1369 data = CYN }
+ }
+ }
+ name = "EVT_6280006_OPTIONC"
+ command = { type = trigger which = 6280011 }
+ }
+ }
+
+ event = {
+ id = 6280007
+ random = no
+ country = CYN
+ style = 2
+ picture = "China_Army"
+
+ name = "EVT_6280007_NAME"
+ desc = "EVT_6280007_DESC"
+
+ action = {
+ ai_chance = 90
+ trigger = {
+ exists = TIB
+ NOT = { alliance = { country = CYN country = TIB } }
+ }
+ name = "EVT_6280007_OPTIONA"
+     command = { type = war which = TIB }
+     command = { type = addclaim which = 1278 }
+     command = { type = addclaim which = 1286 }
+     command = { type = addclaim which = 1287 }
+     command = { type = addclaim which = 1288 }
+     command = { type = addclaim which = 1290 }
+     command = { type = addclaim which = 1289 }
+     command = { type = addclaim which = 1295 }
+     command = { type = addclaim which = 1294 }
+     command = { type = dissent value = -1 }
+ }
+ action = {
+ ai_chance = 10
+ trigger = {
+ exists = TIB
+ NOT = { alliance = { country = CYN country = TIB } }
+ }
+ name = "EVT_6280007_OPTIONB"
+     command = { type = dissent value = 10 }
+     command = { type = clrflag which = YUN_CHINA }
+     command = { type = sleepevent which = 6280004 }
+     command = { type = sleepevent which = 6280005 }
+     command = { type = sleepevent which = 6280006 }
+     command = { type = sleepevent which = 6280007 }
+     command = { type = sleepevent which = 6280008 }
+     command = { type = sleepevent which = 6280009 }
+     command = { type = sleepevent which = 6280010 }
+     command = { type = sleepevent which = 6280011 }
+     command = { type = sleepevent which = 6280017 }
+     command = { type = sleepevent which = 6280022 }
+     command = { type = sleepevent which = 6280023 }
+     command = { type = sleepevent which = 6280024 }
+     command = { type = sleepevent which = 6280025 }
+     command = { type = sleepevent which = 6280026 }
+     command = { type = sleepevent which = 6280027 }
+     command = { type = sleepevent which = 6280028 }
+ }
+ action = {
+ ai_chance = 15
+ trigger = { 
+ event = 6280010
+ OR = {
+ control = { province = 1289 data = CYN }
+ control = { province = 1281 data = CYN }
+ control = { province = 1284 data = CYN }
+ control = { province = 1277 data = CYN }
+ control = { province = 1263 data = CYN }
+ control = { province = 1259 data = CYN }
+ control = { province = 1310 data = CYN }
+ control = { province = 1378 data = CYN }
+ control = { province = 1369 data = CYN }
+ }
+ }
+ name = "EVT_6280007_OPTIONC"
+     command = { type = trigger which = 6280011 }
+ }
+ }
+
+ event = {
+ id = 6280008
+ random = no
+ country = CYN
+ style = 2
+ picture = "China_Army"
+
+ name = "EVT_6280008_NAME"
+ desc = "EVT_6280008_DESC"
+
+ action = {
+ ai_chance = 90
+ trigger = {
+ exists = CHC
+ NOT = { alliance = { country = CYN country = CHC } }
+ }
+ name = "EVT_6280008_OPTIONA"
+     command = { type = war which = CHC }
+     command = { type = addclaim which = 1263 }
+     command = { type = addclaim which = 1258 }
+     command = { type = addclaim which = 1257 }
+     command = { type = addclaim which = 1256 }
+     command = { type = addclaim which = 1255 }
+     command = { type = addclaim which = 1271 }
+     command = { type = addclaim which = 1259 }
+     command = { type = addclaim which = 1269 }
+     command = { type = addclaim which = 1260 }
+     command = { type = dissent value = -1 }
+ }
+ action = {
+ ai_chance = 10
+ trigger = {
+ exists = CHC
+ NOT = { alliance = { country = CYN country = CHC } }
+ }
+ name = "EVT_6280008_OPTIONB"
+     command = { type = dissent value = 10 }
+     command = { type = clrflag which = YUN_CHINA }
+     command = { type = sleepevent which = 6280004 }
+     command = { type = sleepevent which = 6280005 }
+     command = { type = sleepevent which = 6280006 }
+     command = { type = sleepevent which = 6280007 }
+     command = { type = sleepevent which = 6280008 }
+     command = { type = sleepevent which = 6280009 }
+     command = { type = sleepevent which = 6280010 }
+     command = { type = sleepevent which = 6280011 }
+     command = { type = sleepevent which = 6280017 }
+     command = { type = sleepevent which = 6280022 }
+     command = { type = sleepevent which = 6280023 }
+     command = { type = sleepevent which = 6280024 }
+     command = { type = sleepevent which = 6280025 }
+     command = { type = sleepevent which = 6280026 }
+     command = { type = sleepevent which = 6280027 }
+     command = { type = sleepevent which = 6280028 }
+ }
+ action = {
+ ai_chance = 15
+ trigger = { 
+ event = 6280010
+ OR = {
+ control = { province = 1289 data = CYN }
+ control = { province = 1281 data = CYN }
+ control = { province = 1284 data = CYN }
+ control = { province = 1277 data = CYN }
+ control = { province = 1263 data = CYN }
+ control = { province = 1259 data = CYN }
+ control = { province = 1310 data = CYN }
+ control = { province = 1378 data = CYN }
+ control = { province = 1369 data = CYN }
+ }
+ }
+ name = "EVT_6280008_OPTIONC"
+     command = { type = trigger which = 6280011 }
+ }
+ }
+
+ event = {
+ id = 6280009
+ random = no
+ country = CYN
+ style = 2
+ picture = "China_Army"
+
+ name = "EVT_6280009_NAME"
+ desc = "EVT_6280009_DESC"
+
+ action = {
+ ai_chance = 90
+ trigger = {
+ exists = CGX
+ NOT = { alliance = { country = CYN country = CGX } }
+ }
+ name = "EVT_6280009_OPTIONA"
+     command = { type = war which = CGX }
+     command = { type = addclaim which = 1314 }
+     command = { type = addclaim which = 1315 }
+     command = { type = addclaim which = 1313 }
+     command = { type = addclaim which = 1310 }
+     command = { type = addclaim which = 1301 }
+     command = { type = addclaim which = 1304 }
+     command = { type = addclaim which = 1307 }
+     command = { type = addclaim which = 1309 }
+     command = { type = addclaim which = 1312 }
+     command = { type = addclaim which = 1306 }
+     command = { type = addclaim which = 1305 }
+     command = { type = addclaim which = 1378 }
+     command = { type = addclaim which = 1380 }
+     command = { type = addclaim which = 1382 }
+     command = { type = addclaim which = 1381 }
+     command = { type = addclaim which = 1383 }
+     command = { type = addclaim which = 1379 }
+     command = { type = addclaim which = 1376 }
+     command = { type = addclaim which = 1377 }
+     command = { type = addclaim which = 1374 }
+     command = { type = addclaim which = 1318 }
+     command = { type = addclaim which = 1353 }
+     command = { type = addclaim which = 1308 }
+     command = { type = addclaim which = 1355 }
+     command = { type = addclaim which = 1311 }
+     command = { type = addclaim which = 1354 }
+     command = { type = addclaim which = 1368 }
+     command = { type = addclaim which = 1369 }
+     command = { type = addclaim which = 1373 }
+     command = { type = addclaim which = 1370 }
+     command = { type = addclaim which = 1375 }
+     command = { type = addclaim which = 1356 }
+     command = { type = addclaim which = 1349 }
+     command = { type = addclaim which = 1359 }
+     command = { type = addclaim which = 1360 }
+     command = { type = addclaim which = 1352 }
+     command = { type = addclaim which = 1357 }
+     command = { type = addclaim which = 1350 }
+     command = { type = addclaim which = 1351 }
+     command = { type = addclaim which = 1348 }
+     command = { type = addclaim which = 1347 }
+     command = { type = dissent value = -1 }
+ }
+ action = {
+ ai_chance = 10
+ trigger = {
+ exists = CGX
+ NOT = { alliance = { country = CYN country = CGX } }
+ }
+ name = "EVT_6280009_OPTIONB"
+     command = { type = dissent value = 10 }
+     command = { type = clrflag which = YUN_CHINA }
+     command = { type = sleepevent which = 6280004 }
+     command = { type = sleepevent which = 6280005 }
+     command = { type = sleepevent which = 6280006 }
+     command = { type = sleepevent which = 6280007 }
+     command = { type = sleepevent which = 6280008 }
+     command = { type = sleepevent which = 6280009 }
+     command = { type = sleepevent which = 6280010 }
+     command = { type = sleepevent which = 6280011 }
+     command = { type = sleepevent which = 6280017 }
+     command = { type = sleepevent which = 6280022 }
+     command = { type = sleepevent which = 6280023 }
+     command = { type = sleepevent which = 6280024 }
+     command = { type = sleepevent which = 6280025 }
+     command = { type = sleepevent which = 6280026 }
+     command = { type = sleepevent which = 6280027 }
+     command = { type = sleepevent which = 6280028 }
+ }
+ action = {
+ ai_chance = 15
+ trigger = { 
+ event = 6280010
+ OR = {
+ control = { province = 1289 data = CYN }
+ control = { province = 1281 data = CYN }
+ control = { province = 1284 data = CYN }
+ control = { province = 1277 data = CYN }
+ control = { province = 1263 data = CYN }
+ control = { province = 1259 data = CYN }
+ control = { province = 1310 data = CYN }
+ control = { province = 1378 data = CYN }
+ control = { province = 1369 data = CYN }
+ }
+ }
+ name = "EVT_6280009_OPTIONC"
+     command = { type = trigger which = 6280011 }
+ }
+ }
+
+ event = {
+ id = 6280010
+ random = no
+ persistent = yes
+ country = CYN
+ style = 2
+ picture = "China_Army"
+
+ trigger = {
+     flag = YUN_CHINA
+     event = 6280005
+     OR = { 
+     event = 6280006
+     event = 6280007
+     event = 6280008
+     event = 6280009
+     }
+     NOT = { 
+             atwar = CYN 
+             ispuppet = CYN
+             }
+ }
+
+ name = "EVT_6280010_NAME"
+ desc = "EVT_6280010_DESC"
+
+ date = { day = 1 month = january year = 1938 }
+ offset = 100
+ deathdate = { day = 1 month = march year = 1966 }
+
+ action = {
+ ai_chance = 55
+ trigger = {
+ exists = CXB
+ NOT = { 
+ alliance = { country = CYN country = CXB } 
+ event = 6280006
+ }
+ }
+ name = "EVT_6280010_OPTIONA"
+     command = { type = relation which = CXB value = -50 }
+     command = { type = event which = 6280006 where = CYN when = 50 }
+ }
+ action = {
+ ai_chance = 15
+ trigger = {
+ exists = TIB
+ NOT = { 
+ alliance = { country = CYN country = TIB } 
+ event = 6280007
+ }
+ }
+ name = "EVT_6280010_OPTIONB"
+     command = { type = relation which = TIB value = -50 }
+     command = { type = event which = 6280007 where = CYN when = 50 }
+ }
+ action = {
+ ai_chance = 20
+ trigger = {
+ exists = CHC
+ NOT = { 
+ alliance = { country = CYN country = CHC } 
+ event = 6280008
+ }
+ }
+ name = "EVT_6280010_OPTIONC"
+     command = { type = relation which = CHC value = -50 }
+     command = { type = event which = 6280008 where = CYN when = 50 }
+ }
+ action = {
+ ai_chance = 5
+ trigger = {
+ exists = CGX
+ NOT = { 
+ alliance = { country = CYN country = CGX } 
+ event = 6280009
+ }
+ }
+ name = "EVT_6280010_OPTIOND"
+     command = { type = relation which = CGX value = -50 }
+     command = { type = event which = 6280009 where = CYN when = 50 }
+ }
+ action = {
+ ai_chance = 15
+ trigger = { OR = {
+ control = { province = 1289 data = CYN }
+ control = { province = 1281 data = CYN }
+ control = { province = 1284 data = CYN }
+ control = { province = 1277 data = CYN }
+ control = { province = 1263 data = CYN }
+ control = { province = 1259 data = CYN }
+ control = { province = 1310 data = CYN }
+ control = { province = 1378 data = CYN }
+ control = { province = 1369 data = CYN }
+ }
+ }
+ name = "EVT_6280010_OPTIONE"
+     command = { type = trigger which = 6280011 }
+ }
+ action = {
+ ai_chance = 1
+ name = "EVT_6280010_OPTIONF"
+     command = { type = dissent value = 10 }
+     command = { type = clrflag which = YUN_CHINA }
+     command = { type = sleepevent which = 6280004 }
+     command = { type = sleepevent which = 6280005 }
+     command = { type = sleepevent which = 6280006 }
+     command = { type = sleepevent which = 6280007 }
+     command = { type = sleepevent which = 6280008 }
+     command = { type = sleepevent which = 6280009 }
+     command = { type = sleepevent which = 6280010 }
+     command = { type = sleepevent which = 6280011 }
+     command = { type = sleepevent which = 6280017 }
+     command = { type = sleepevent which = 6280022 }
+     command = { type = sleepevent which = 6280023 }
+     command = { type = sleepevent which = 6280024 }
+     command = { type = sleepevent which = 6280025 }
+     command = { type = sleepevent which = 6280026 }
+     command = { type = sleepevent which = 6280027 }
+     command = { type = sleepevent which = 6280028 }
+ }
+ }
+
+ event = {
+ id = 6280011
+ random = no
+ country = CYN
+ style = 2
+ picture = "China_Army"
+
+ name = "EVT_6280011_NAME"
+ desc = "EVT_6280011_DESC"
+
+ action = {
+ ai_chance = 80
+ trigger = { NOT = { exists = CHI } }
+ name = "EVT_6280011_OPTIONA"
+     command = { type = dissent value = -10 }
+     command = { type = flag_ext where = CYN } #reset flag
+     command = { type = name where = CYN }
+     command = { type = country which = CHI }
+     command = { type = free_ic value = 2 }
+     command = { type = add_division value = cavalry when = 8 }
+     command = { type = add_division value = infantry when = 9 }
+     command = { type = add_division value = infantry when = 9 }  
+     command = { type = trigger which = 6280017 }
+ }
+
+ action = {
+ ai_chance = 20
+ name = "EVT_6280011_OPTIONB"
+     command = { type = dissent value = 10 }
+     command = { type = sleepevent which = 6280017 }
+     command = { type = sleepevent which = 6280022 }
+     command = { type = sleepevent which = 6280023 }
+     command = { type = sleepevent which = 6280024 }
+     command = { type = sleepevent which = 6280025 }
+     command = { type = sleepevent which = 6280026 }
+     command = { type = sleepevent which = 6280027 }
+     command = { type = sleepevent which = 6280028 }
+ }
+ }
+
+ event = {
+ id = 6280012
+ random = no
+ country = CYN
+ style = 2
+ picture = "China_Army"
+
+ trigger = {
+     flag = YUN_CHINA
+     control = { province = 1289 data = CYN }
+     }
+
+ name = "EVT_6280012_NAME"
+ desc = "EVT_6280012_DESC"
+
+ date = { day = 1 month = january year = 1938 }
+ offset = 50
+ deathdate = { day = 1 month = march year = 1966 }
+
+ action = {
+ name = "EVT_6280012_OPTIONA"
+     command = { type = add_division which = "Xizang bubing" value = infantry when = 6 }
+     command = { type = add_division which = "Xizang weidui" value = militia when = 4 }
+     command = { type = manpowerpool value = 5 }
+     command = { type = supplies value = 100 where = 1390 }
+     command = { type = event which = 6280019 where = CYN when = 350 }
+ }
+ }
+
+ event = {
+ id = 6280013
+ random = no
+ country = CYN
+ style = 2
+ picture = "China_Army"
+
+ trigger = {
+     flag = YUN_CHINA
+     control = { province = 1281 data = CYN }
+     }
+
+ name = "EVT_6280013_NAME"
+ desc = "EVT_6280013_DESC"
+
+ date = { day = 1 month = january year = 1938 }
+ offset = 50
+ deathdate = { day = 1 month = march year = 1966 }
+
+ action = {
+ name = "EVT_6280013_OPTIONA"
+     command = { type = add_division which = "Xibei bubing" value = infantry when = 6 }
+     command = { type = add_division which = "Xibei weidui" value = militia when = 4 }
+     command = { type = manpowerpool value = 5 }
+     command = { type = supplies value = 100 where = 1390 }
+     command = { type = event which = 6280018 where = CYN when = 350 }
+ }
+ }
+
+ event = {
+ id = 6280014
+ random = no
+ country = CYN
+ style = 2
+ picture = "China_Army"
+
+ trigger = {
+     flag = YUN_CHINA
+     control = { province = 1259 data = CYN }
+     }
+
+ name = "EVT_6280014_NAME"
+ desc = "EVT_6280014_DESC"
+
+ date = { day = 1 month = january year = 1938 }
+ offset = 50
+ deathdate = { day = 1 month = march year = 1966 }
+
+ action = {
+ name = "EVT_6280014_OPTIONA"
+     command = { type = add_division which = "Shan bubing" value = infantry when = 6 }
+     command = { type = add_division which = "Shan weidui" value = militia when = 4 }
+     command = { type = manpowerpool value = 5 }
+     command = { type = supplies value = 100 where = 1390 }
+     command = { type = event which = 6280020 where = CYN when = 350 }
+ }
+ }
+
+ event = {
+ id = 6280015
+ random = no
+ country = CYN
+ style = 2
+ picture = "China_Army"
+
+ trigger = {
+     flag = YUN_CHINA
+     control = { province = 1378 data = CYN }
+     }
+
+ name = "EVT_6280015_NAME"
+ desc = "EVT_6280015_DESC"
+
+ date = { day = 1 month = january year = 1938 }
+ offset = 50
+ deathdate = { day = 1 month = march year = 1966 }
+
+ action = {
+ name = "EVT_6280015_OPTIONA"
+     command = { type = add_division which = "Guilín bubing" value = infantry when = 6 }
+     command = { type = add_division which = "Guilín weidui" value = militia when = 4 }
+     command = { type = manpowerpool value = 5 }
+     command = { type = supplies value = 100 where = 1390 }
+     command = { type = event which = 6280021 where = CYN when = 350 }
+ }
+ }
+
+ event = {
+ id = 6280016
+ random = no
+ country = CYN
+ style = 2
+ picture = "China_Army"
+
+ trigger = {
+     flag = YUN_CHINA
+     control = { province = 1369 data = CYN }
+     }
+
+ name = "EVT_6280016_NAME"
+ desc = "EVT_6280016_DESC"
+
+ date = { day = 1 month = january year = 1938 }
+ offset = 50
+ deathdate = { day = 1 month = march year = 1966 }
+
+ action = {
+ name = "EVT_6280016_OPTIONA"
+     command = { type = add_division which = "Guangzhou bubing" value = infantry when = 6 }
+     command = { type = add_division which = "Guangzhou weidui" value = militia when = 4 }
+     command = { type = manpowerpool value = 5 }
+     command = { type = supplies value = 100 where = 1390 }
+     command = { type = event which = 6280021 where = CYN when = 350 }
+ }
+ }
+
+ event = {
+ id = 6280017
+ random = no
+ country = CHI
+ style = 2
+ picture = "China_Army"
+
+ name = "EVT_6280017_NAME"
+ desc = "EVT_6280017_DESC"
+
+ action = {
+ ai_chance = 40
+ name = "EVT_6280017_OPTIONA"
+     command = { type = event which = 6280022 where = CHI when = 30 }
+     command = { type = sleepevent which = 630103 } #Chosing new capital
+     command = { type = sleepevent which = 628016 } #Shangqing's alliance
+     command = { type = dissent value = -5 }
+     command = { type = wakeminister which = 77501001 }
+     command = { type = wakeminister which = 77501002 }
+     command = { type = wakeminister which = 77501003 }
+     command = { type = wakeminister which = 77501004 }
+     command = { type = wakeminister which = 77501005 }
+     command = { type = wakeminister which = 77501006 }
+     command = { type = wakeminister which = 77501007 }
+     command = { type = wakeminister which = 77501008 }
+     command = { type = wakeminister which = 77501009 }
+     command = { type = wakeminister which = 77501010 }
+     command = { type = wakeminister which = 77501011 }
+     command = { type = wakeminister which = 77501012 }
+     command = { type = wakeminister which = 77501013 }
+     command = { type = wakeminister which = 77501014 }
+     command = { type = wakeminister which = 77501015 }
+     command = { type = wakeminister which = 77501016 }
+     command = { type = wakeminister which = 77501017 }
+     command = { type = wakeminister which = 77501018 }
+     command = { type = wakeminister which = 77501019 }
+     command = { type = wakeminister which = 77501020 }
+     command = { type = headofstate which = 77501001 }
+     command = { type = headofgovernment which = 77501002 } 
+     command = { type = foreignminister which = 77501003 } 
+     command = { type = armamentminister which = 77501004 }
+     command = { type = ministerofsecurity which = 77501005 }
+     command = { type = ministerofintelligence which = 77501006 } 
+     command = { type = chiefofstaff which = 77501007 }
+     command = { type = chiefofarmy which = 77501008 } 
+     command = { type = chiefofnavy which = 77501009 }
+     command = { type = chiefofair which = 77501010 } 
+     command = { type = sleepevent which = 630104 }
+     command = { type = sleepevent which = 630180 }
+     command = { type = sleepevent which = 630181 }
+     command = { type = sleepevent which = 630182 }
+     command = { type = sleepevent which = 630183 }
+     command = { type = sleepevent which = 630184 }
+     command = { type = sleepevent which = 630185 }    # Elections at Republican China.txt
+ }
+ action = {
+ ai_chance = 60
+ name = "EVT_6280017_OPTIONB"
+     command = { type = sleepevent which = 630103 } #Chosing new capital
+     command = { type = sleepevent which = 628016 } #Shangqing's alliance
+     command = { type = dissent value = 10 }
+     command = { type = wakeminister which = 77501001 }
+     command = { type = wakeminister which = 77501002 }
+     command = { type = wakeminister which = 77501003 }
+     command = { type = wakeminister which = 77501004 }
+     command = { type = wakeminister which = 77501005 }
+     command = { type = wakeminister which = 77501006 }
+     command = { type = wakeminister which = 77501007 }
+     command = { type = wakeminister which = 77501008 }
+     command = { type = wakeminister which = 77501009 }
+     command = { type = wakeminister which = 77501010 }
+     command = { type = wakeminister which = 77501011 }
+     command = { type = wakeminister which = 77501012 }
+     command = { type = wakeminister which = 77501013 }
+     command = { type = wakeminister which = 77501014 }
+     command = { type = wakeminister which = 77501015 }
+     command = { type = wakeminister which = 77501016 }
+     command = { type = wakeminister which = 77501017 }
+     command = { type = wakeminister which = 77501018 }
+     command = { type = wakeminister which = 77501019 }
+     command = { type = wakeminister which = 77501020 }
+     command = { type = headofstate which = 77501001 }
+     command = { type = headofgovernment which = 77501002 } 
+     command = { type = foreignminister which = 77501003 } 
+     command = { type = armamentminister which = 77501004 }
+     command = { type = ministerofsecurity which = 77501005 }
+     command = { type = ministerofintelligence which = 77501006 } 
+     command = { type = chiefofstaff which = 77501007 }
+     command = { type = chiefofarmy which = 77501008 } 
+     command = { type = chiefofnavy which = 77501009 }
+     command = { type = chiefofair which = 77501010 } 
+     command = { type = set_domestic which = democratic value = 2 }
+     command = { type = set_domestic which = political_left value = 3 }
+     command = { type = sleepevent which = 630104 }
+     command = { type = sleepevent which = 630180 }
+     command = { type = sleepevent which = 630181 }
+     command = { type = sleepevent which = 630182 }
+     command = { type = sleepevent which = 630183 }
+     command = { type = sleepevent which = 630184 }
+     command = { type = sleepevent which = 630185 } # Elections at Republican China.txt
+ }
+ }
+
+ event = {
+ id = 6280018
+ random = no
+ country = CYN
+ style = 2
+ picture = "China_Army"
+
+ name = "EVT_6280018_NAME"
+ desc = "EVT_6280018_DESC"
+
+ action = {
+ trigger = { 
+ NOT = { exists = CXB}
+ control = { province = 1281 data = CYN }
+ }
+ name = "EVT_6280018_OPTIONA"
+     command = { type = dissent value = -2 }
+     command = { type = addcore which = 1283 }
+     command = { type = addcore which = 1284 }
+     command = { type = addcore which = 1285 }
+     command = { type = addcore which = 1266 }
+     command = { type = addcore which = 1265 }
+     command = { type = addcore which = 1264 }
+     command = { type = addcore which = 1272 }
+     command = { type = addcore which = 1268 }
+     command = { type = addcore which = 1270 }
+     command = { type = addcore which = 1277 }
+     command = { type = addcore which = 1281 }
+     command = { type = addcore which = 1280 }
+     command = { type = addcore which = 1276 }
+     command = { type = addcore which = 1273 }
+     command = { type = addcore which = 1275 }
+     command = { type = addcore which = 1279 }
+     command = { type = addcore which = 1282 }
+     command = { type = addcore which = 1274 }
+ }
+ }
+
+ event = {
+ id = 6280019
+ random = no
+ country = CYN
+ style = 2
+ picture = "China_Army"
+
+ name = "EVT_6280019_NAME"
+ desc = "EVT_6280019_DESC"
+
+ action = {
+ trigger = { 
+ NOT = { exists = TIB }
+ control = { province = 1289 data = CYN }
+ }
+ name = "EVT_6280019_OPTIONA"
+     command = { type = dissent value = -2 }
+     command = { type = addcore which = 1278 }
+     command = { type = addcore which = 1286 }
+     command = { type = addcore which = 1287 }
+     command = { type = addcore which = 1288 }
+     command = { type = addcore which = 1290 }
+     command = { type = addcore which = 1289 }
+     command = { type = addcore which = 1295 }
+     command = { type = addcore which = 1294 }
+ }
+ }
+
+ event = {
+ id = 6280020
+ random = no
+ country = CYN
+ style = 2
+ picture = "China_Army"
+
+ name = "EVT_6280020_NAME"
+ desc = "EVT_6280020_DESC"
+
+ action = {
+ trigger = { 
+ NOT = { exists = CHC }
+ control = { province = 1259 data = CYN }
+ }
+ name = "EVT_6280020_OPTIONA"
+     command = { type = dissent value = -2 }
+     command = { type = addcore which = 1263 }
+     command = { type = addcore which = 1258 }
+     command = { type = addcore which = 1257 }
+     command = { type = addcore which = 1256 }
+     command = { type = addcore which = 1255 }
+     command = { type = addcore which = 1271 }
+     command = { type = addcore which = 1259 }
+     command = { type = addcore which = 1269 }
+     command = { type = addcore which = 1260 }
+ }
+ }
+
+ event = {
+ id = 6280021
+ random = no
+ country = CYN
+ style = 2
+ picture = "China_Army"
+
+ name = "EVT_6280021_NAME"
+ desc = "EVT_6280021_DESC"
+
+ action = {
+ trigger = { 
+ NOT = { exists = CHC }
+ OR = {
+ control = { province = 1369 data = CYN }
+ control = { province = 1378 data = CYN }
+ }
+ }
+ name = "EVT_6280021_OPTIONA"
+     command = { type = dissent value = -2 }
+     command = { type = addcore which = 1314 }
+     command = { type = addcore which = 1315 }
+     command = { type = addcore which = 1313 }
+     command = { type = addcore which = 1310 }
+     command = { type = addcore which = 1301 }
+     command = { type = addcore which = 1304 }
+     command = { type = addcore which = 1307 }
+     command = { type = addcore which = 1309 }
+     command = { type = addcore which = 1312 }
+     command = { type = addcore which = 1306 }
+     command = { type = addcore which = 1305 }
+     command = { type = addcore which = 1378 }
+     command = { type = addcore which = 1380 }
+     command = { type = addcore which = 1382 }
+     command = { type = addcore which = 1381 }
+     command = { type = addcore which = 1383 }
+     command = { type = addcore which = 1379 }
+     command = { type = addcore which = 1376 }
+     command = { type = addcore which = 1377 }
+     command = { type = addcore which = 1374 }
+     command = { type = addcore which = 1318 }
+     command = { type = addcore which = 1353 }
+     command = { type = addcore which = 1308 }
+     command = { type = addcore which = 1355 }
+     command = { type = addcore which = 1311 }
+     command = { type = addcore which = 1354 }
+     command = { type = addcore which = 1368 }
+     command = { type = addcore which = 1369 }
+     command = { type = addcore which = 1373 }
+     command = { type = addcore which = 1370 }
+     command = { type = addcore which = 1375 }
+     command = { type = addcore which = 1356 }
+     command = { type = addcore which = 1349 }
+     command = { type = addcore which = 1359 }
+     command = { type = addcore which = 1360 }
+     command = { type = addcore which = 1352 }
+     command = { type = addcore which = 1357 }
+     command = { type = addcore which = 1350 }
+     command = { type = addcore which = 1351 }
+     command = { type = addcore which = 1348 }
+     command = { type = addcore which = 1347 }
+ }
+ }
+
+ event = {
+ id = 6280022
+ random = no
+ country = CHI
+ style = 2
+
+ name = "EVT_6280022_NAME"
+ desc = "EVT_6280022_DESC"
+ picture = "mayfourth"
+
+ action_a = {
+ ai_chance =  40
+ name = "EVT_6280022_OPTIONA"
+     command = { type = dissent value = -3  }  
+     command = { type = set_domestic which = democratic value = 7 }
+     command = { type = set_domestic which = political_left value = 7 }
+     command = { type = set_domestic which = freedom value = 6 }
+     command = { type = headofstate which = 183510 } # Soong Ching-ling
+     command = { type = headofgovernment which = 183521 } # Zhou Shuren
+     command = { type = foreignminister which =  183530 } # Zhang Junmai
+     command = { type = armamentminister which = 183513 } # Liao Zhongkai
+     command = { type = ministerofsecurity which = 183514 } # Lieu Xiao
+     command = { type = ministerofintelligence which = 183516 } # Woo Tsin-hang
+     command = { type = domestic which = free_market value = 2 }
+     command = { type = set_domestic which = interventionism value = 5 }
+     command = { type = domestic which = defense_lobby value = 3 }
+     command = { type = setflag which = CHI_KTMDEM }
+     command = { type = setflag which = CHI_DEM }
+     command = { type = event which = 6280023 where = CHI when = 1480 }
+     command = { type = event which = 630105 where = CHI when = 150 }    # The Legacy of Sun Yat Sen
+ }
+ action_b = {
+ ai_chance =  30
+ name = "EVT_6280022_OPTIONB"
+     command = { type = dissent value = -2 }  
+     command = { type = set_domestic which = democratic value = 7 }
+     command = { type = set_domestic which = political_left value = 5 }
+     command = { type = set_domestic which = freedom value = 6 }
+     command = { type = headofstate which = 183512 } # Hu Shi
+     command = { type = headofgovernment which = 183511 } # Wellington Koo
+     command = { type = foreignminister which =  183533 } # Zhang Dongsun
+     command = { type = armamentminister which = 183525 } # Chen Yinque
+     command = { type = ministerofsecurity which = 183527 } # Chao Yuen Ren
+     command = { type = ministerofintelligence which = 183520 } # Xian Xinghai
+     command = { type = domestic which = free_market value = 5 }
+     command = { type = set_domestic which = interventionism value = 4 }
+     command = { type = domestic which = defense_lobby value = 3 }
+     command = { type = setflag which = CHI_LIBDEM }
+     command = { type = setflag which = CHI_DEM }
+     command = { type = event which = 6280023 where = CHI when = 1480 }
+     command = { type = event which = 630105 where = CHI when = 150 }    # The Legacy of Sun Yat Sen
+ }
+ action_c = {
+ ai_chance =  30
+ name = "EVT_6280022_OPTIONC"
+     command = { type = dissent value = 3 }
+     command = { type = set_domestic which = democratic value = 7 }
+     command = { type = set_domestic which = political_left value = 2 }
+     command = { type = set_domestic which = freedom value = 4 }
+     command = { type = set_domestic which = free_market value = -1 }
+     command = { type = headofstate which = 183562 } # Chen Jiongming
+     command = { type = headofgovernment which = 183538 } # Tang Shaoyi
+     command = { type = foreignminister which =  52035 } # Lin Wei
+     command = { type = armamentminister which = 183539 } # Zhang Qun
+     command = { type = ministerofsecurity which = 183535 } # Jiang Tingfu
+     command = { type = ministerofintelligence which = 183532 } # Lin Yutang
+     command = { type = set_domestic which = interventionism value = 3 }
+     command = { type = domestic which = defense_lobby value = 4 }
+     command = { type = setflag which = CHI_CONDEM }
+     command = { type = setflag which = CHI_DEM }
+     command = { type = event which = 6280023 where = CHI when = 1480 }
+     command = { type = event which = 630105 where = CHI when = 150 }    # The Legacy of Sun Yat Sen
+ }
+ }
+
+ event = {
+ id = 6280023
+ random = no
+ country = CHI
+ style = 2
+
+ name = "EVT_6280023_NAME"
+ desc = "EVT_6280023_DESC"
+ picture = "mayfourth"
+
+ action_a = {
+ ai_chance =  40
+ name = "EVT_6280023_OPTIONA"
+     command = { type = set_domestic which = democratic value = 7 }
+     command = { type = set_domestic which = political_left value = 7 }
+     command = { type = dissent value = -3  }  
+     command = { type = headofstate which = 183510 } # Soong Ching-ling
+     command = { type = headofgovernment which = 183521 } # Zhou Shuren
+     command = { type = foreignminister which =  183530 } # Zhang Junmai
+     command = { type = armamentminister which = 183513 } # Cheng Jioming
+     command = { type = ministerofsecurity which = 183514 } # Lieu Xiao
+     command = { type = ministerofintelligence which = 183516 } # Woo Tsin-hang
+     command = { type = event which = 6280024 where = CHI when = 1480 }
+ }
+ action_b = {
+ ai_chance =  25
+ name = "EVT_6280023_OPTIONB"
+     command = { type = set_domestic which = democratic value = 7 }
+     command = { type = set_domestic which = political_left value = 5 }
+     command = { type = dissent value = -2 }  
+     command = { type = headofstate which = 183512 } # Hu Shi
+     command = { type = headofgovernment which = 183511 } # Wellington Koo
+     command = { type = foreignminister which =  183533 } # Zhang Dongsun
+     command = { type = armamentminister which = 183525 } # Chen Yinque
+     command = { type = ministerofsecurity which = 183527 } # Chao Yuen Ren
+     command = { type = ministerofintelligence which = 183520 } # Xian Xinghai
+     command = { type = event which = 6280024 where = CHI when = 1480 }
+ }
+ action_c = {
+ ai_chance =  10
+ name = "EVT_6280023_OPTIONC"
+     command = { type = set_domestic which = democratic value = 7 }
+     command = { type = set_domestic which = political_left value = 3 }
+     command = { type = set_domestic which = freedom value = 4 }
+     command = { type = dissent value = 3 }
+     command = { type = headofstate which = 183562 } # Chen Jiongming
+     command = { type = headofgovernment which = 183538 } # Tang Shaoyi
+     command = { type = foreignminister which =  52035 } # Lin Wei
+     command = { type = armamentminister which = 183539 } # Zhang Qun
+     command = { type = ministerofsecurity which = 183535 } # Jiang Tingfu
+     command = { type = ministerofintelligence which = 183532 } # Lin Yutang
+     command = { type = event which = 6280024 where = CHI when = 1480 }
+ }
+ action_d = {
+ ai_chance =  25
+ name = "EVT_6280023_OPTIOND"
+     command = { type = set_domestic which = democratic value = 7 }
+     command = { type = set_domestic which = political_left value = 3 }
+     command = { type = set_domestic which = freedom value = 6 }
+     command = { type = dissent value = -2 }
+     command = { type = headofstate which = 183542 } # Zeng Qi
+     command = { type = headofgovernment which = 183543 } # Zuo Shunsheng
+     command = { type = foreignminister which =  183544 } # He Luzhi
+     command = { type = armamentminister which = 183545 } # Luo Longji
+     command = { type = event which = 6280024 where = CHI when = 1480 }
+ }
+ }
+
+ event = {
+ id = 6280024
+ random = no
+ country = CHI
+ style = 2
+
+ name = "EVT_6280024_NAME"
+ desc = "EVT_6280024_DESC"
+ picture = "mayfourth"
+
+ action_a = {
+ ai_chance =  40
+ name = "EVT_6280024_OPTIONA"
+     command = { type = set_domestic which = democratic value = 7 }
+     command = { type = set_domestic which = political_left value = 7 }
+     command = { type = dissent value = -3  }  
+     command = { type = headofstate which = 183510 } # Soong Ching-ling
+     command = { type = headofgovernment which = 183521 } # Zhou Shuren
+     command = { type = foreignminister which =  183530 } # Zhang Junmai
+     command = { type = armamentminister which = 183513 } # Cheng Jioming
+     command = { type = ministerofsecurity which = 183514 } # Lieu Xiao
+     command = { type = ministerofintelligence which = 183516 } # Woo Tsin-hang
+     command = { type = event which = 6280025 where = CHI when = 1480 }
+ }
+ action_b = {
+ ai_chance =  25
+ name = "EVT_6280024_OPTIONB"
+     command = { type = set_domestic which = democratic value = 7 }
+     command = { type = set_domestic which = political_left value = 5 }
+     command = { type = dissent value = -2 }  
+     command = { type = headofstate which = 183512 } # Hu Shi
+     command = { type = headofgovernment which = 183511 } # Wellington Koo
+     command = { type = foreignminister which =  183533 } # Zhang Dongsun
+     command = { type = armamentminister which = 183525 } # Chen Yinque
+     command = { type = ministerofsecurity which = 183527 } # Chao Yuen Ren
+     command = { type = ministerofintelligence which = 183520 } # Xian Xinghai
+     command = { type = event which = 6280025 where = CHI when = 1480 }
+ }
+ action_c = {
+ ai_chance =  10
+ name = "EVT_6280024_OPTIONC"
+     command = { type = set_domestic which = democratic value = 7 }
+     command = { type = set_domestic which = political_left value = 3 }
+     command = { type = set_domestic which = freedom value = 4 }
+     command = { type = dissent value = 3 }
+     command = { type = headofstate which = 183562 } # Chen Jiongming
+     command = { type = headofgovernment which = 183538 } # Tang Shaoyi
+     command = { type = foreignminister which =  52035 } # Lin Wei
+     command = { type = armamentminister which = 183539 } # Zhang Qun
+     command = { type = ministerofsecurity which = 183535 } # Jiang Tingfu
+     command = { type = ministerofintelligence which = 183532 } # Lin Yutang
+     command = { type = event which = 6280025 where = CHI when = 1480 }
+ }
+ action_d = {
+ ai_chance =  25
+ name = "EVT_6280024_OPTIOND"
+     command = { type = set_domestic which = democratic value = 7 }
+     command = { type = set_domestic which = political_left value = 3 }
+     command = { type = set_domestic which = freedom value = 6 }
+     command = { type = dissent value = -2 }
+     command = { type = headofstate which = 183542 } # Zeng Qi
+     command = { type = headofgovernment which = 183543 } # Zuo Shunsheng
+     command = { type = foreignminister which =  183544 } # He Luzhi
+     command = { type = armamentminister which = 183545 } # Luo Longji
+     command = { type = event which = 6280025 where = CHI when = 1480 }
+ }
+ }
+
+ event = {
+ id = 6280025
+ random = no
+ country = CHI
+ style = 2
+
+ name = "EVT_6280025_NAME"
+ desc = "EVT_6280025_DESC"
+ picture = "mayfourth"
+
+ action_a = {
+ ai_chance =  40
+ name = "EVT_6280025_OPTIONA"
+     command = { type = set_domestic which = democratic value = 7 }
+     command = { type = set_domestic which = political_left value = 7 }
+     command = { type = dissent value = -3  }  
+     command = { type = headofstate which = 183510 } # Soong Ching-ling
+     command = { type = headofgovernment which = 183521 } # Zhou Shuren
+     command = { type = foreignminister which =  183530 } # Zhang Junmai
+     command = { type = armamentminister which = 183513 } # Cheng Jioming
+     command = { type = ministerofsecurity which = 183514 } # Lieu Xiao
+     command = { type = ministerofintelligence which = 183516 } # Woo Tsin-hang
+     command = { type = event which = 6280026 where = CHI when = 1480 }
+ }
+ action_b = {
+ ai_chance =  25
+ name = "EVT_6280025_OPTIONB"
+     command = { type = set_domestic which = democratic value = 7 }
+     command = { type = set_domestic which = political_left value = 5 }
+     command = { type = dissent value = -2 }  
+     command = { type = headofstate which = 183512 } # Hu Shi
+     command = { type = headofgovernment which = 183511 } # Wellington Koo
+     command = { type = foreignminister which =  183533 } # Zhang Dongsun
+     command = { type = armamentminister which = 183525 } # Chen Yinque
+     command = { type = ministerofsecurity which = 183527 } # Chao Yuen Ren
+     command = { type = ministerofintelligence which = 183520 } # Xian Xinghai
+     command = { type = event which = 6280026 where = CHI when = 1480 }
+ }
+ action_c = {
+ ai_chance =  10
+ name = "EVT_6280025_OPTIONC"
+     command = { type = set_domestic which = democratic value = 7 }
+     command = { type = set_domestic which = political_left value = 3 }
+     command = { type = set_domestic which = freedom value = 4 }
+     command = { type = dissent value = 3 }
+     command = { type = headofstate which = 183562 } # Chen Jiongming
+     command = { type = headofgovernment which = 183538 } # Tang Shaoyi
+     command = { type = foreignminister which =  52035 } # Lin Wei
+     command = { type = armamentminister which = 183539 } # Zhang Qun
+     command = { type = ministerofsecurity which = 183535 } # Jiang Tingfu
+     command = { type = ministerofintelligence which = 183532 } # Lin Yutang
+     command = { type = event which = 6280026 where = CHI when = 1480 }
+ }
+ action_d = {
+ ai_chance =  25
+ name = "EVT_6280025_OPTIOND"
+     command = { type = set_domestic which = democratic value = 7 }
+     command = { type = set_domestic which = political_left value = 3 }
+     command = { type = set_domestic which = freedom value = 6 }
+     command = { type = dissent value = -2 }
+     command = { type = headofstate which = 183542 } # Zeng Qi
+     command = { type = headofgovernment which = 183543 } # Zuo Shunsheng
+     command = { type = foreignminister which =  183544 } # He Luzhi
+     command = { type = armamentminister which = 183545 } # Luo Longji
+     command = { type = event which = 6280026 where = CHI when = 1480 }
+ }
+ }
+
+ event = {
+ id = 6280026
+ random = no
+ country = CHI
+ style = 2
+
+ name = "EVT_6280026_NAME"
+ desc = "EVT_6280026_DESC"
+ picture = "mayfourth"
+
+ action_a = {
+ ai_chance =  40
+ name = "EVT_6280026_OPTIONA"
+     command = { type = set_domestic which = democratic value = 7 }
+     command = { type = set_domestic which = political_left value = 7 }
+     command = { type = dissent value = -3  }  
+     command = { type = headofstate which = 183510 } # Soong Ching-ling
+     command = { type = headofgovernment which = 183521 } # Zhou Shuren
+     command = { type = foreignminister which =  183530 } # Zhang Junmai
+     command = { type = armamentminister which = 183513 } # Cheng Jioming
+     command = { type = ministerofsecurity which = 183514 } # Lieu Xiao
+     command = { type = ministerofintelligence which = 183516 } # Woo Tsin-hang
+     command = { type = event which = 6280027 where = CHI when = 1480 }
+ }
+ action_b = {
+ ai_chance =  25
+ name = "EVT_6280026_OPTIONB"
+     command = { type = set_domestic which = democratic value = 7 }
+     command = { type = set_domestic which = political_left value = 5 }
+     command = { type = dissent value = -2 }  
+     command = { type = headofstate which = 183512 } # Hu Shi
+     command = { type = headofgovernment which = 183511 } # Wellington Koo
+     command = { type = foreignminister which =  183533 } # Zhang Dongsun
+     command = { type = armamentminister which = 183525 } # Chen Yinque
+     command = { type = ministerofsecurity which = 183527 } # Chao Yuen Ren
+     command = { type = ministerofintelligence which = 183520 } # Xian Xinghai
+     command = { type = event which = 6280027 where = CHI when = 1480 }
+ }
+ action_c = {
+ ai_chance =  10
+ name = "EVT_6280026_OPTIONC"
+     command = { type = set_domestic which = democratic value = 7 }
+     command = { type = set_domestic which = political_left value = 3 }
+     command = { type = set_domestic which = freedom value = 4 }
+     command = { type = dissent value = 3 }
+     command = { type = headofstate which = 183562 } # Chen Jiongming
+     command = { type = headofgovernment which = 183538 } # Tang Shaoyi
+     command = { type = foreignminister which =  52035 } # Lin Wei
+     command = { type = armamentminister which = 183539 } # Zhang Qun
+     command = { type = ministerofsecurity which = 183535 } # Jiang Tingfu
+     command = { type = ministerofintelligence which = 183532 } # Lin Yutang
+     command = { type = event which = 6280027 where = CHI when = 1480 }
+ }
+ action_d = {
+ ai_chance =  25
+ name = "EVT_6280026_OPTIOND"
+     command = { type = set_domestic which = democratic value = 7 }
+     command = { type = set_domestic which = political_left value = 3 }
+     command = { type = set_domestic which = freedom value = 6 }
+     command = { type = dissent value = -2 }
+     command = { type = headofstate which = 183542 } # Zeng Qi
+     command = { type = headofgovernment which = 183543 } # Zuo Shunsheng
+     command = { type = foreignminister which =  183544 } # He Luzhi
+     command = { type = armamentminister which = 183545 } # Luo Longji
+     command = { type = event which = 6280027 where = CHI when = 1480 }
+ }
+ }
+
+ event = {
+ id = 6280027
+ random = no
+ country = CHI
+ style = 2
+
+ name = "EVT_6280027_NAME"
+ desc = "EVT_6280027_DESC"
+ picture = "mayfourth"
+
+ action_a = {
+ ai_chance =  35
+ name = "EVT_6280027_OPTIONA"
+     command = { type = set_domestic which = democratic value = 7 }
+     command = { type = set_domestic which = political_left value = 7 }
+     command = { type = dissent value = -3  }  
+     command = { type = headofstate which = 183510 } # Soong Ching-ling
+     command = { type = headofgovernment which = 183521 } # Zhou Shuren
+     command = { type = foreignminister which =  183530 } # Zhang Junmai
+     command = { type = armamentminister which = 183513 } # Cheng Jioming
+     command = { type = ministerofsecurity which = 183514 } # Lieu Xiao
+     command = { type = ministerofintelligence which = 183516 } # Woo Tsin-hang
+     command = { type = event which = 6280028 where = CHI when = 1480 }
+ }
+ action_b = {
+ ai_chance =  25
+ name = "EVT_6280027_OPTIONB"
+     command = { type = set_domestic which = democratic value = 7 }
+     command = { type = set_domestic which = political_left value = 5 }
+     command = { type = dissent value = -2 }  
+     command = { type = headofstate which = 183512 } # Hu Shi
+     command = { type = headofgovernment which = 183511 } # Wellington Koo
+     command = { type = foreignminister which =  183533 } # Zhang Dongsun
+     command = { type = armamentminister which = 183525 } # Chen Yinque
+     command = { type = ministerofsecurity which = 183527 } # Chao Yuen Ren
+     command = { type = ministerofintelligence which = 183520 } # Xian Xinghai
+     command = { type = event which = 6280028 where = CHI when = 1480 }
+ }
+ action_c = {
+ ai_chance =  25
+ name = "EVT_6280027_OPTIONC"
+     command = { type = set_domestic which = democratic value = 7 }
+     command = { type = set_domestic which = political_left value = 3 }
+     command = { type = set_domestic which = freedom value = 4 }
+     command = { type = dissent value = 3 }
+     command = { type = headofstate which = 183562 } # Chen Jiongming
+     command = { type = headofgovernment which = 183538 } # Tang Shaoyi
+     command = { type = foreignminister which =  52035 } # Lin Wei
+     command = { type = armamentminister which = 183539 } # Zhang Qun
+     command = { type = ministerofsecurity which = 183535 } # Jiang Tingfu
+     command = { type = ministerofintelligence which = 183532 } # Lin Yutang
+     command = { type = event which = 6280028 where = CHI when = 1480 }
+ }
+ action_d = {
+ ai_chance =  15
+ name = "EVT_6280027_OPTIOND"
+     command = { type = set_domestic which = democratic value = 7 }
+     command = { type = set_domestic which = political_left value = 3 }
+     command = { type = set_domestic which = freedom value = 6 }
+     command = { type = dissent value = -2 }
+     command = { type = headofstate which = 183542 } # Zeng Qi
+     command = { type = headofgovernment which = 183543 } # Zuo Shunsheng
+     command = { type = foreignminister which =  183544 } # He Luzhi
+     command = { type = armamentminister which = 183545 } # Luo Longji
+     command = { type = event which = 6280028 where = CHI when = 1480 }
+ }
+ }
+
+ event = {
+ id = 6280028
+ random = no
+ country = CHI
+
+ name = "EVT_6280028_NAME"
+ desc = "EVT_6280028_DESC"
+ picture = "mayfourth"
+
+ action_a = {
+ ai_chance =  35
+ name = "EVT_6280028_OPTIONA"
+     command = { type = set_domestic which = democratic value = 7 }
+     command = { type = set_domestic which = political_left value = 7 }
+     command = { type = dissent value = -3  }  
+     command = { type = headofstate which = 183510 } # Soong Ching-ling
+     command = { type = headofgovernment which = 183521 } # Zhou Shuren
+     command = { type = foreignminister which =  183530 } # Zhang Junmai
+     command = { type = armamentminister which = 183513 } # Cheng Jioming
+     command = { type = ministerofsecurity which = 183514 } # Lieu Xiao
+     command = { type = ministerofintelligence which = 183516 } # Woo Tsin-hang
+ }
+ action_b = {
+ ai_chance =  25
+ name = "EVT_6280028_OPTIONB"
+     command = { type = set_domestic which = democratic value = 7 }
+     command = { type = set_domestic which = political_left value = 5 }
+     command = { type = dissent value = -2 }  
+     command = { type = headofstate which = 183512 } # Hu Shi
+     command = { type = headofgovernment which = 183511 } # Wellington Koo
+     command = { type = foreignminister which =  183533 } # Zhang Dongsun
+     command = { type = armamentminister which = 183525 } # Chen Yinque
+     command = { type = ministerofsecurity which = 183527 } # Chao Yuen Ren
+     command = { type = ministerofintelligence which = 183520 } # Xian Xinghai
+ }
+ action_c = {
+ ai_chance =  25
+ name = "EVT_6280028_OPTIONC"
+     command = { type = set_domestic which = democratic value = 7 }
+     command = { type = set_domestic which = political_left value = 3 }
+     command = { type = set_domestic which = freedom value = 4 }
+     command = { type = dissent value = 3 }
+     command = { type = headofstate which = 183562 } # Chen Jiongming
+     command = { type = headofgovernment which = 183538 } # Tang Shaoyi
+     command = { type = foreignminister which =  52035 } # Lin Wei
+     command = { type = armamentminister which = 183539 } # Zhang Qun
+     command = { type = ministerofsecurity which = 183535 } # Jiang Tingfu
+     command = { type = ministerofintelligence which = 183532 } # Lin Yutang
+ }
+ action_d = {
+ ai_chance =  15
+ name = "EVT_6280028_OPTIOND"
+     command = { type = set_domestic which = democratic value = 7 }
+     command = { type = set_domestic which = political_left value = 3 }
+     command = { type = set_domestic which = freedom value = 6 }
+     command = { type = dissent value = -2 }
+     command = { type = headofstate which = 183542 } # Zeng Qi
+     command = { type = headofgovernment which = 183543 } # Zuo Shunsheng
+     command = { type = foreignminister which =  183544 } # He Luzhi
+     command = { type = armamentminister which = 183545 } # Luo Longji
+ }
+ }
+
+
+
+
+
+### Expedition against the AOG
+
+ event = {
+ id = 6280029
+ country = CHI
+ style = 2
+ picture = "diplomatic_campaign"
+ decision_picture = "decision_diplomatic_campaign"
+
+ decision = {
+     exists = CGX
+ OR = {
+     puppet = { country = CGX country = GER }
+     alliance = { country = GER country = CGX }
+     }
+ NOT = {
+     alliance = { country = GER country = CHI }
+     alliance = { country = CGX country = CHI }
+     alliance = { country = CSX country = CHI }
+     ispuppet = CHI
+     } 
+ }
+
+ decision_trigger = { }
+
+ trigger = { 
+     exists = CGX
+ NOT = {
+     alliance = { country = GER country = CHI }
+     alliance = { country = CGX country = CHI }
+     alliance = { country = CSX country = CHI }
+     ispuppet = CHI
+     war = { country = JAP country = CHI }
+     war = { country = GER country = CHI }
+     war = { country = MAN country = CHI }
+     war = { country = TIB country = CHI }
+     war = { country = CYN country = CHI }
+     war = { country = CXB country = CHI }
+     war = { country = MON country = CHI }
+     } 
+ }
+
+ date = { day = 1 month = may year = 1939 }
+ offset =  150
+ deathdate = { day = 29 month = december year = 1970 }
+
+ name = "EVT_6280029_NAME"
+ desc = "EVT_6280029_DESC"
+
+ action = {
+ ai_chance = 200
+ trigger = {
+     OR = {
+         NOT = {
+             puppet = { country = CGX country = GER }
+             alliance = { country = CGX country = GER }        # AOG is all alone
+                 }
+         flag = GER_Capitulation
+         flag = GER_CON_Capitulation
+         }
+         }
+ name = "EVT_6280029_OPTIONA"    
+ command = { type = dissent value = -5 }
+ command = { type = domestic which = interventionism value = 1 }
+ command = { type = domestic which = defense_lobby value = 1 }
+ command = { type = trigger which = 6280030 }
+ }
+ action = {
+ ai_chance = 20
+ trigger = {
+      OR = {
+         puppet = { country = CGX country = GER }
+         alliance = { country = CGX country = GER }        # AOG allied/puppet of the Germans
+         }
+     NOT = {
+         flag = GER_Capitulation
+         flag = GER_CON_Capitulation
+         }
+         }
+ name = "EVT_6280029_OPTIONB"    
+ command = { type = dissent value = -5 }
+ command = { type = domestic which = interventionism value = 1 }
+ command = { type = domestic which = defense_lobby value = 1 }
+ command = { type = trigger which = 6280032 }
+ }
+ action = {
+ ai_chance = 70
+ trigger = {
+      OR = {
+         puppet = { country = CGX country = GER }
+         alliance = { country = CGX country = GER }        # AOG allied/puppet of the Germans
+         }
+     NOT = {
+         flag = GER_Capitulation
+         flag = GER_CON_Capitulation
+         }
+         }
+ name = "EVT_6280029_OPTIONC"
+ command = { type = trigger which = 6280034 }
+ }
+ action = {
+ ai_chance = 10
+ name = "EVT_6280029_OPTIOND"
+ command = { type = dissent value = 5 }
+ }
+ }
+
+ event = {
+ id = 6280030
+ country = CGX
+ style = 2
+ picture = "China_Army"
+
+ name = "EVT_6280030_NAME"
+ desc = "EVT_6280030_DESC"
+
+ action = {
+ ai_chance = 20
+ name = "EVT_6280030_OPTIONA"
+ command = { type = dissent value = -5 }
+ command = { type = war which = CHI }
+ }
+ action = {
+ ai_chance = 80
+ name = "EVT_6280030_OPTIONB"
+ command = { type = trigger which = 6280031 }
+ }
+ }
+
+ event = {
+ id = 6280031
+ country = CHI
+ style = 2
+ picture = "China_Army"
+
+ name = "EVT_6280031_NAME"
+ desc = "EVT_6280031_DESC"
+
+ action = {
+ ai_chance = 100
+ name = "EVT_6280031_OPTIONA"
+ command = { type = dissent value = -5 }
+ command = { type = inherit which = CGX }
+ }
+ }
+
+ event = {
+ id = 6280032
+ country = GER
+ style = 2
+ picture = "China_Army"
+
+ name = "EVT_6280032_NAME"
+ desc = "EVT_6280032_DESC"
+
+ action = {
+ ai_chance = 5
+ name = "EVT_6280032_OPTIONA"
+ command = { type = dissent value = 10 }
+ command = { type = end_mastery which = CGX }
+ command = { type = relation which = CSX value = -100 }
+ command = { type = trigger which = 6280030 }
+ }
+ action = {
+ ai_chance = 95
+ name = "EVT_6280032_OPTIONB"
+ command = { type = relation which = CSX value = 50 }
+ command = { type = trigger which = 6280033 }
+ }
+ }
+
+ event = {
+ id = 6280033
+ country = CHI
+ style = 2
+ picture = "China_Army"
+
+ name = "EVT_6280033_NAME"
+ desc = "EVT_6280033_DESC"
+
+ action = {
+ ai_chance = 30
+ name = "EVT_6280033_OPTIONA"
+ command = { type = war which = CGX }
+ }
+ action = {
+ ai_chance = 70
+ name = "EVT_6280033_OPTIONB"
+ command = { type = dissent value = 8 }
+ command = { type = domestic which = interventionism value = -1 }
+ command = { type = domestic which = defense_lobby value = -1 }
+ }
+ }
+
+ event = {
+ id = 6280034
+ country = GER
+ style = 2
+ picture = "China_Army"
+
+ name = "EVT_6280034_NAME"
+ desc = "EVT_6280034_DESC"
+
+ action = {
+ ai_chance = 60
+ name = "EVT_6280034_OPTIONA"
+ command = { type = relation which = CSX value = 50 }
+ command = { type = trigger which = 6280035 }
+ }
+
+ action = {
+ ai_chance = 5
+ name = "EVT_6280034_OPTIONB"
+ command = { type = dissent value = 3 }
+ command = { type = relation which = CSX value = -100 }
+ command = { type = relation which = CHI value = 100 }
+ command = { type = trigger which = 6280036 }
+ }
+
+ action = {
+ ai_chance = 35
+ name = "EVT_6280034_OPTIONC"
+ command = { type = relation which = CSX value = -100 }
+ command = { type = relation which = CHI value = 100 }
+ command = { type = trigger which = 6280037 }
+ }
+
+ }
+
+ event = {
+ id = 6280035
+ country = CHI
+ style = 2
+ picture = "China_Army"
+
+ name = "EVT_6280035_NAME"
+ desc = "EVT_6280035_DESC"
+
+ action = {
+ ai_chance = 60
+ name = "EVT_6280035_OPTIONA"    
+ command = { type = dissent value = -5 }
+ command = { type = domestic which = interventionism value = 1 }
+ command = { type = domestic which = defense_lobby value = 1 }
+ command = { type = trigger which = 6280032 }
+ }
+ action = {
+ ai_chance = 40
+ name = "EVT_6280035_OPTIONB"
+ command = { type = dissent value = 5 }
+ }
+ }
+
+ event = {
+ id = 6280036
+ country = CGX
+ style = 2
+ picture = "China_Army"
+
+ name = "EVT_6280036_NAME"
+ desc = "EVT_6280036_DESC"
+
+ action = {
+ ai_chance = 0
+ name = "EVT_6280036_OPTIONA"
+ command = { type = dissent value = 5 }
+ command = { type = war which = CHI }
+ }
+ action = {
+ ai_chance = 80
+ name = "EVT_6280036_OPTIONB"
+ command = { type = trigger which = 6280031 }
+ }
+ }
+
+ event = {
+ id = 6280037
+ country = CHI
+ style = 2
+ picture = "China_Army"
+
+ name = "EVT_6280037_NAME"
+ desc = "EVT_6280037_DESC"
+
+ action = {
+ ai_chance = 80
+ name = "EVT_6280037_OPTIONA"    
+ command = { type = trigger which = 6280038 }
+ command = { type = dissent value = -5 }
+ command = { type = inherit which = CGX }
+ command = { type = relation which = GER value = 100 }
+ command = { trigger = { alliance = { country = POL country = GER } } type = relation which = POL value = 100 }
+ command = { trigger = { alliance = { country = BEL country = GER } } type = relation which = BEL value = 100 }
+ command = { trigger = { alliance = { country = LIT country = GER } } type = relation which = LIT value = 100 }
+ command = { trigger = { alliance = { country = OTT country = GER } } type = relation which = OTT value = 100 }
+ command = { trigger = { alliance = { country = TUR country = GER } } type = relation which = TUR value = 100 }
+ command = { trigger = { alliance = { country = RUS country = GER } } type = relation which = RUS value = 100 }
+ command = { trigger = { alliance = { country = ITA country = GER } } type = relation which = ITA value = 100 }
+ command = { trigger = { alliance = { country = SCH country = GER } } type = relation which = SCH value = 100 }
+ command = { trigger = { alliance = { country = HOL country = GER } } type = relation which = HOL value = 100 }
+ command = { trigger = { alliance = { country = POL country = GER } } type = relation which = POL value = 100 }
+ command = { trigger = { alliance = { country = SPA country = GER } } type = relation which = SPA value = 100 }
+ command = { trigger = { alliance = { country = EUS country = GER } } type = relation which = EUS value = 100 }
+ command = { trigger = { alliance = { country = POR country = GER } } type = relation which = POR value = 100 }
+ command = { trigger = { alliance = { country = SPR country = GER } } type = relation which = SPR value = 100 }
+ command = { trigger = { alliance = { country = UKR country = GER } } type = relation which = UKR value = 100 }
+ command = { trigger = { alliance = { country = AUS country = GER } } type = relation which = AUS value = 100 }
+ command = { trigger = { alliance = { country = RSI country = GER } } type = relation which = RSI value = 100 }
+ command = { trigger = { alliance = { country = BLR country = GER } } type = relation which = BLR value = 100 }
+ command = { trigger = { alliance = { country = LAT country = GER } } type = relation which = LAT value = 100 }
+ command = { trigger = { alliance = { country = TEX country = GER } } type = relation which = TEX value = 100 }
+ command = { trigger = { alliance = { country = IRE country = GER } } type = relation which = IRE value = 100 }
+ }
+
+ action = {
+ ai_chance = 20
+ name = "EVT_6280037_OPTIONB"
+ command = { type = relation which = GER value = -50 }
+ command = { type = dissent value = 5 }
+ }
+
+ }
+
+ event = {
+ id = 6280038
+ country = GER
+ style = 2
+ picture = "China_Army"
+
+ name = "EVT_6280038_NAME"
+ desc = "EVT_6280038_DESC"
+
+ action = {
+ name = "EVT_6280038_OPTIONA"    
+ command = { type = alliance which = CHI }
+ }
+ }
+
+
+
+event = {
+id = 6280039
+country = CYN
+style = 2
+picture = "China_Army"
+
+trigger = {
+exists = CHI
+flag = YUN_CHINA
+war = { country = CHI country = CGX } 
+NOT = {
+ispuppet = CYN
+ispuppet = CHI
+atwar = CYN
+alliance = { country = CHI country = CYN }
+}
+}
+
+date = { day = 1 month = January year = 1936 }
+offset =  15
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_6280039_NAME"
+desc = "EVT_6280039_DESC"
+
+action_a = {
+ai_chance = 80
+name = "EVT_6280039_OPTIONA"
+command = { type = trigger which = 6280040 }
+}
+
+action_b = {
+ai_chance = 20
+name = "EVT_6280039_OPTIONB"
+command = { type = dissent value = -1 }
+}
+}
+
+
+event = {
+id = 6280040
+country = CHI
+style = 2
+picture = "China_Army"
+
+name = "EVT_6280040_NAME"
+desc = "EVT_6280040_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_6280040_OPTIONA"
+command = { type = relation which = CYN value = 200 }
+command = { type = alliance which = CYN }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_6280040_OPTIONB"
+command = { type = dissent value = 1 }
+}
+}
+
+
+
+event = {
+id = 6280041
+country = CHI
+style = 2
+picture = "Chinese Crossroad"
+
+trigger = {
+alliance = { country = CYN country = CHI }
+NOT = { 
+atwar = CHI
+exists = CGX
+exists = CSX
+ispuppet = CHI
+}
+OR = {
+NOT = {
+ispuppet = CYN
+}
+puppet = { country = CYN country = CHI  }
+}
+}
+
+date = { day = 1 month = January year = 1936 }
+offset =  40
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_6280041_NAME"
+desc = "EVT_6280041_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_6280041_OPTIONA"
+command = { type = event which = 6280042 where = CHI when = 2  }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_6280041_OPTIONB"
+command = { type = dissent value = 3 }
+}
+}
+
+
+event = {
+id = 6280042
+country = CYN
+style = 2
+persistent = yes
+picture = "Chinese Crossroad"
+
+name = "EVT_6280042_NAME"
+desc = "EVT_6280042_DESC"
+
+action_a = {
+ai_chance = 30
+name = "EVT_6280042_OPTIONA"
+trigger = {
+NOT = {
+puppet = { country = CYN country = CHI  }
+}
+}
+command = { type = dissent value = 7 }
+command = { type = event which = 6280043 where = CHI when = 1  }
+command = { type = leave_alliance }
+}
+
+action_b = {
+ai_chance = 70
+name = "EVT_6280042_OPTIONB"
+command = { type = trigger which = 6280044 }
+command = { type = dissent value = 1 }
+}
+}
+
+event = {
+id = 6280043
+country = CHI
+style = 2
+persistent = yes
+picture = "Chinese Crossroad"
+
+name = "EVT_6280043_NAME"
+desc = "EVT_6280043_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_6280043_OPTIONA"
+command = { type = dissent value = -3 }
+command = { type = war which = CYN }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_6280043_OPTIONB"
+command = { type = dissent value = 3 }
+}
+}
+
+event = {
+id = 6280044
+country = CHI
+style = 2
+persistent = yes
+picture = "Chinese Crossroad"
+
+name = "EVT_6280044_NAME"
+desc = "EVT_6280044_DESC"
+
+action_a = {
+name = "EVT_6280044_OPTIONA"
+command = { type = dissent value = -10 }
+command = { type = inherit which = CHI value = 1 }
+}
+}
+
+

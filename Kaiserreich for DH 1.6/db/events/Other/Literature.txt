@@ -1,0 +1,306 @@
+event = {
+id = 346000
+random = no
+country = AUS
+style = 2
+
+date = { day = 1 month = february year = 1938 }
+offset = 30
+deathdate = { day = 29 month = may year = 1938 }
+
+name = "EVT_346000_NAME"
+desc = "EVT_346000_DESC"
+
+action_a = {
+name = "EVT_346000_OPTIONA"
+command = { type = dissent value = -1 }
+}
+}
+
+event = {
+id = 346001
+random = no
+country = FRA
+style = 2
+
+
+date = { day = 1 month = may year = 1937 }
+offset = 30
+deathdate = { day = 29 month = december year = 1937 }
+
+name = "EVT_346001_NAME"
+desc = "EVT_9992_DESC"
+
+action_a = {
+name = "EVT_346001_OPTIONA"
+command = { type = dissent value = -2 }
+}
+}
+
+event = {
+id = 346002
+random = no
+country = VIC
+style = 2
+
+
+date = { day = 1 month = january year = 1938 }
+offset = 60
+deathdate = { day = 29 month = december year = 1938 }
+
+
+name = "EVT_346002_NAME"
+desc = "EVT_9991_DESC"
+picture = "levistraus"
+
+action_a = {
+ai_chance = 60
+name = "EVT_346002_OPTIONA"
+command = { trigger = { government = fascist } type = dissent value = -2 }
+command = { trigger = { government = democratic } type = dissent value = 2 }
+}
+
+action_b = {
+ai_chance = 40
+name = "EVT_346002_OPTIONB"
+command = { trigger = { government = fascist } type = dissent value = 2 }
+command = { trigger = { government = democratic } type = dissent value = -2 }
+command = { trigger = { NOT = { government = democratic } } type = setflag which = STRAUSS_FREE }
+}
+}
+
+event = {
+id = 346003
+random = no
+country = FRA
+style = 2
+
+
+trigger = {
+flag = STRAUSS_FREE 
+}
+
+date = { day = 1 month = january year = 1938 }
+offset = 15
+deathdate = { day = 29 month = december year = 1938 }
+
+name = "EVT_346003_NAME"
+desc = "EVT_346003_DESC"
+picture = "levistraus"
+
+action_a = {
+ai_chance = 95
+name = "EVT_346003_OPTIONA"
+command = { type = dissent value = -1 }
+command = { type = clrflag which = STRAUSS_FREE }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_346003_OPTIONB"
+command = { type = dissent value = 3 }
+command = { type = sleepevent which = 346004 }
+command = { type = sleepevent which = 346005 } 
+command = { type = sleepevent which = 346006 }  
+}
+}
+
+event = {
+id = 346004
+random = no
+country = FRA
+style = 2
+
+
+trigger = {
+random = 50
+event = 346003 
+}
+
+date = { day = 1 month = january year = 1938 }
+offset = 15
+deathdate = { day = 29 month = december year = 1938 }
+
+name = "EVT_346004_NAME"
+desc = "EVT_346004_DESC"
+picture = "levistraus"
+
+action_a = {
+name = "EVT_346004_OPTIONA"
+command = { type = dissent value = -5 }
+command = { type = trigger which = 346005 }
+command = { type = sleepevent which = 346006 }
+command = { type = sleepevent which = 346007 }
+command = { type = sleepevent which = 346008 }
+}
+}
+
+event = {
+id = 346005
+random = no
+country = VIC
+style = 2
+
+
+name = "EVT_346005_NAME"
+desc = "EVT_346005_DESC"
+picture = "levistraus"
+
+action_a = {
+name = "EVT_346005_OPTIONA"
+command = { type = dissent value = 2 }
+}
+}
+
+event = {
+id = 346006
+random = no
+country = FRA
+style = 2
+
+
+trigger = {
+random = 50
+event = 346003 
+}
+
+date = { day = 1 month = january year = 1938 }
+offset = 15
+deathdate = { day = 29 month = december year = 1938 }
+
+name = "EVT_346006_NAME"
+desc = "EVT_346006_DESC"
+picture = "levistraus"
+
+action_a = {
+name = "EVT_346006_OPTIONA"
+command = { type = dissent value = 5 }
+command = { type = sleepevent which = 346005 }
+command = { type = sleepevent which = 346004 }
+}
+}
+
+event = {
+id = 346007
+random = no
+country = RUS
+style = 2
+
+
+trigger = { 
+event = 346003
+government = democratic
+NOT = {
+war = { country = GER country = RUS }
+war = { country = FRA country = RUS }
+exists = SOV
+}
+}
+
+date = { day = 1 month = january year = 1938 }
+offset = 15
+deathdate = { day = 29 month = december year = 1938 }
+
+name = "EVT_346007_NAME"
+desc = "EVT_346007_DESC"
+picture = "levistraus"
+
+action_a = {
+name = "EVT_346007_OPTIONA"
+command = { type = dissent value = -3 }
+command = { type = sleepevent which = 346005 }
+command = { type = sleepevent which = 346004 }
+command = { type = sleepevent which = 346008 } 
+}
+}
+
+event = {
+id = 346008
+random = no
+country = USA
+style = 2
+
+
+trigger = { 
+event = 346003
+government = democratic
+NOT = {
+exists = CSA
+exists = TEX
+atwar = yes 
+}
+}
+
+date = { day = 1 month = january year = 1938 }
+offset = 15
+deathdate = { day = 29 month = december year = 1938 }
+
+name = "EVT_346008_NAME"
+desc = "EVT_346008_DESC"
+picture = "levistraus"
+
+action_a = {
+name = "EVT_346008_OPTIONA"
+command = { type = dissent value = -3 }
+command = { type = sleepevent which = 346005 }
+command = { type = sleepevent which = 346004 }
+command = { type = sleepevent which = 346007 } 
+}
+}
+
+##################################################
+#Books of Sartre
+##################################################
+event = {
+id = 346009
+random = no
+country = FRA
+style = 2
+
+
+trigger = {
+lost_national = { country = FRA value = 0 }
+}
+
+date = { day = 1 month = january year = 1946 }
+offset = 90
+deathdate = { day = 29 month = december year = 1946 }
+
+name = "EVT_346009_NAME"
+desc = "EVT_346009_DESC" 
+
+action_a = {
+name = "EVT_346009_OPTIONA"
+command = { type = dissent value = -1 }
+}
+}
+
+event = {
+id = 346010
+random = no
+country = FRA
+style = 2
+
+
+trigger = {
+war = { country = FRA country = VIC }
+OR = {
+control = { province = 727 data = FRA } 
+control = { province = 727 data = ENG } 
+control = { province = 727 data = RSI } 
+}
+}
+
+date = { day = 1 month = january year = 1938 }
+offset = 30
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_346010_NAME"
+desc = "EVT_346010_DESC"
+
+action_a = {
+name = "EVT_346010_OPTIONA"
+command = { type = dissent value = -5 }
+command = { type = attrition_mod value = 1 }
+}
+}

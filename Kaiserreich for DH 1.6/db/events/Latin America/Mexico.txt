@@ -1,0 +1,1771 @@
+###################################################################################
+# Events for Mexico! by Kibbles 61000-100 Suggestions, motivation and original idea by Masked Pickle
+###################################################################################
+# 61000, "Death of President Zapata"
+# 61001, "The New Direction of Mexico" - Expansion, Industry or Agriculture
+# 61002, "The State of the Military" - What Branch to Invest in
+# 61003, "Where do we go now?" - North or South event for Arango & Toledano if there is a second civil war in the US
+# 61004, "The Oil Industry" - Nationalize or Not
+# 61005, "Deal with the Devil, Arango" (CSA) - CSA approaches Mexico about California - Event for Arango
+# 61006, "The Syndicate asks for our help" - Mexicos response to 005
+# 61007, "The Terms" for Arango (CSA) - Terms to 005
+# 61008, "The Yank's Offer an Alliance" - Terms to 005
+# 61009, "The Yank's Offer" - Terms to 005
+# 61010, "The Yank's Offer Nothing"- Terms to 005
+# 61011, "Mexico Accepts Our Offer" (CSA) - Terms to 005
+# 61012, "Arango wants different Terms" - Terms to 005
+# 61013, "Spanish Immigrates arrive in Mexico" - People fleeing the SCW go to MEX
+# 61014, "Calfornia brought to its knees!" - Surrender Event for California if MEX teams up with CSA
+# 61015, "Calfornia brought to its knees!" - Surrender Event for California if MEX take CAL alone
+# 61016, "A Potential Ally in America" - Arango invited into the Syndicalist club
+# 61017 "The Industrialisation of Mexico" - Which path to go down
+# 61018 "The Agrarian Reform" - Agricultural path to go down
+# 61019, "The New Direction of Mexico" - Expansion, Industry or Agriculture for the Triumverate
+# 61020, "The New Direction of Mexico" - Expansion, Industry or Agriculture for Toledano
+# 61021, "Where do we go now?" - North or South event for Arango & Toledano if there isn't a 2nd Civil War in the US
+# 61022, "Where do we go now?" - North or South event for Triumverate
+# 61023, "Where do we go now?" - North or South event for Triumverate if there is a 2nd Civil War in the US
+# 61024, "A Potential Ally in North Amerika" - Think 16, but replace FRA with GER and Arango with Triple
+# 61025, "A Message from the Germans" - Mexico's reponse to 24
+# 61026, "The Germans Strike a Deal with Mexico" - Allows the TEX to garrison the Texan Border with Mexico
+# 61027, "The Germans Strike a Deal with Mexico" - Allows the CAL to garrison the California Border with Mexico
+# 61028, "The Germans Strike a Deal with Mexico" - Allows the USA to garrison the Texan Border with Mexico
+# 61029, "The Germans Strike a Deal with Mexico" - Allows the USA to garrison the California border with Mexico
+# 61030, "The Germans Strike a Deal with Mexico" - Allows the USA to garrison the California and the Texan border with Mexico
+# 61031, "Mexico has Mobilized for War" - Introduces Mexico to the War with USA, TEX or CAL by putting MEX into the Central.
+
+#61070	Mexico defeats the PSA in a war and demands territory
+#61071	Mexico demands California
+#61072	Mexico demands SoCal 
+#61073	California turns Mexico down
+#61074	PSA accepts the demands
+#61075	PSA accepts the demands
+
+event = {
+id = 61000
+country = MEX
+style = 2
+picture = "zapata"
+
+date = { day = 9 month = april year = 1936 }
+
+name = "EVT_61000_NAME"
+desc = "EVT_61000_DESC"
+
+action_a = {
+name = "EVT_61000_OPTIONA"
+ai_chance = 33
+command = { type = setflag which = Arango }
+command = { type = ai which = "kaiserreich\switch\MEX_ARANGO.ai" }
+command = { type = set_domestic which = political_left value = 7 }
+command = { type = set_domestic which = democratic value = 2 }
+command = { type = domestic which = free_market value = 7 }
+command = { type = domestic which = interventionism value = 7 }
+command = { type = domestic which = defense_lobby value = 7 }
+command = { type = sleepminister which = 36121 } #Zapata
+command = { type = sleepminister which = 36122 } #Zapata
+command = { type = headofstate which = 36123 } #Arango
+command = { type = headofgovernment which = 36124 } #Arango
+command = { type = dissent value = 5 } 
+}
+action_b = {
+name = "EVT_61000_OPTIONB"
+ai_chance = 34
+command = { type = setflag which = Toledano }
+command = { type = ai which = "kaiserreich\switch\MEX_TOLEDANO.ai" }
+command = { type = sleepevent which = 61005 }
+command = { type = sleepevent which = 61016 }
+command = { type = domestic which = interventionism value = -3 }
+command = { type = domestic which = defense_lobby value = -3 }
+command = { type = domestic which = free_market value = -7 }
+command = { type = set_domestic which = political_left value = 7 }
+command = { type = set_domestic which = democratic value = 3 }
+command = { type = sleepminister which = 36121 }
+command = { type = sleepminister which = 36122 }
+command = { type = headofstate which = 36128 } #Lombardo
+command = { type = headofgovernment which = 36129 } #Lombardo
+command = { type = dissent value = 5 } 
+}
+action_c = {
+name = "EVT_61000_OPTIONC"
+ai_chance = 33
+command = { type = setflag which = Triple }
+command = { type = ai which = "kaiserreich\switch\MEX_TRIPLE.ai" }
+command = { type = sleepevent which = 61005 }
+command = { type = sleepevent which = 61016 }
+command = { type = set_domestic which = political_left value = 3 }
+command = { type = set_domestic which = democratic value = 3 }
+command = { type = flag_ext where = MEX } #reset Mexican flag
+command = { type = sleepminister which = 36121 }
+command = { type = sleepminister which = 36122 }
+command = { type = headofstate which = 36059 }
+command = { type = headofgovernment which = 36132 }
+command = { type = dissent value = 5 } 
+}
+}
+
+event = {
+id = 61001
+country = MEX
+style = 2
+picture = "arango"
+
+trigger = { flag = arango }
+
+date = { day = 27 month = june year = 1936 }
+
+name = "EVT_61001_NAME"
+desc = "EVT_61001_DESC"
+
+action_a = {
+name = "EVT_61001_OPTIONA"
+ai_chance = 50
+command = { type = belligerence which = MEX value = 5 }
+command = { type = relation which = USA value = -50 }
+command = { type = relation which = CAL value = -50 }
+command = { type = relation which = TEX value = -25 }
+command = { type = relation which = CAN value = -25 }
+command = { type = domestic which = defense_lobby value = 3 }
+command = { type = domestic which = interventionism value = 3 }
+command = { type = dissent value = 3 }
+command = { type = supplies value = -1000 }
+command = { type = money value = -250 }
+command = { type = manpowerpool value = -50 }
+command = { type = setflag which = MEX_Military }
+}
+
+action_b = {
+name = "EVT_61001_OPTIONB" 
+ai_chance = 25
+command = { type = dissent value = -3 }
+command = { type = supplies value = -2000 } 
+command = { type = money value = -500 }
+command = { type = setflag which = MEX_Industry }
+}
+
+action_c = {
+name = "EVT_61001_OPTIONC"
+ai_chance = 25
+command = { type = manpowerpool value = 50 }
+command = { type = dissent value = -3 }
+command = { type = supplies value = -1000 }
+command = { type = money value = -100 }
+command = { type = setflag which = MEX_Agriculture }
+}
+}
+
+event = {
+id = 61002
+country = MEX
+style = 2
+picture = "mex_army"
+
+trigger = { flag = MEX_Military }
+
+date = { day = 21 month = january year = 1937 }
+
+name = "EVT_61002_NAME"
+desc = "EVT_61002_DESC"
+
+action_a = {
+name = "EVT_61002_OPTIONA"
+ai_chance = 45
+command = { type = max_organization which = land value = 10 }
+command = { type = morale which = land value = 10 }
+
+command = { type = add_corps which = "Nuevo Ejercito Mexicano" value = land where = 1974 }
+command = { type = add_division which = "Infanteria Mexicana" value = infantry when = 9 where = artillery }
+command = { type = add_division which = "Infanteria Mexicana" value = infantry when = 9 }
+command = { type = add_division which = "Infanteria Mexicana" value = infantry when = 9 }
+
+command = { type = add_corps which = "Nuevo Ejercito Mexicano" value = land where = 1974 }
+command = { type = add_division which = "Infanteria Mexicana" value = infantry when = 9 where = artillery }
+command = { type = add_division which = "Infanteria Mexicana" value = infantry when = 9 }
+command = { type = add_division which = "Infanteria Mexicana" value = infantry when = 9 }
+
+command = { type = manpowerpool value = -25 }
+command = { type = domestic which = professional_army value = 1 }
+}
+action_b = {
+name = "EVT_61002_OPTIONB"
+ai_chance = 35
+command = { type = max_organization which = land value = 10 }
+command = { type = morale which = land value = 10 }
+command = { type = add_corps which = "Nuevo Ejercito Mexicano" value = land where = 1974 }
+command = { type = add_division which = "Caballeria Mexicana" value = cavalry when = 6 where = artillery }
+command = { type = add_division which = "Caballeria Mexicana" value = cavalry when = 6 }
+command = { type = add_division which = "Caballeria Mexicana" value = cavalry when = 6 }
+command = { type = add_corps which = "Nuevo Ejercito Mexicano" value = land where = 1974 }
+command = { type = add_division which = "Caballeria Mexicana" value = cavalry when = 6 where = artillery }
+command = { type = add_division which = "Caballeria Mexicana" value = cavalry when = 6 }
+command = { type = add_division which = "Caballeria Mexicana" value = cavalry when = 6 }
+command = { type = manpowerpool value = -25 }
+command = { type = domestic which = professional_army value = 1 }
+}
+action_c = {
+name = "EVT_61002_OPTIONC"
+ai_chance = 20
+command = { type = max_organization which = air value = 10 }
+command = { type = morale which = air value = 10 }
+command = { type = add_corps which = "Primera ala interceptora" value = air where = 1974 }
+command = { type = add_division which = "Escuadron aereo de pelea 100" value = interceptor when = 7 }
+command = { type = add_division which = "Escuadron aereo de pelea 101" value = interceptor when = 7 }
+command = { type = add_corps which = "Segunda ala interceptora" value = air where = 1974 }
+command = { type = add_division which = "Escuadron aereo de pelea 200" value = interceptor when = 7 } #This one existed in OTL and they served somewhere in the pacific
+command = { type = add_division which = "Escuadron aereo de pelea 201" value = interceptor when = 7 }
+command = { type = manpowerpool value = -25 }
+command = { type = domestic which = professional_army value = 1 }
+}
+action_d = {
+name = "EVT_61002_OPTIOND"
+ai_chance = 0
+command = { type = max_organization which = naval value = 10 }
+command = { type = morale which = naval value = 10 }
+command = { type = add_corps which = "Armada Mexicana" value = naval where = 1968 }
+command = { type = add_division which = "ARM Zaragosa" value = light_cruiser  when = 4 }
+command = { type = add_division which = "ARM Yucatan" value = light_cruiser  when = 4 }
+command = { type = add_division which = "Primera flotilla de destructores" value = destroyer when = 4 }
+command = { type = add_division which = "Segunda flotilla de destructores" value = destroyer when = 4 }
+command = { type = add_division which = "Tercera flotilla de destructores" value = destroyer when = 4 }
+command = { type = add_division which = "Primera flota de transporte" value = transport when = 1 }
+command = { type = add_division which = "Segunda flota de transporte" value = transport when = 1 }
+command = { type = add_division which = "Tercera flota de transporte" value = transport when = 1 }
+command = { type = transport_pool which = MEX value = 20 }
+command = { type = escort_pool which = MEX value = 10 }
+command = { type = manpowerpool value = -25 }
+command = { type = domestic which = professional_army value = 1 }
+}
+}
+
+
+event = {
+id = 61004
+country = MEX
+style = 2
+picture = "venezuelan_oil"
+
+date = { day = 12 month = april year = 1937 }
+
+name = "EVT_61004_NAME"
+desc = "EVT_61004_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_61004_OPTIONA"
+command = { type = domestic which = free_market value = -1 }
+command = { type = oilpool value = 250 }
+command = { type = add_prov_resource which = 1967 value = 5 where = oil }
+command = { type = add_prov_resource which = 1968 value = 3 where = oil }
+command = { type = dissent value = -3 }
+command = { type = relation which = JAP value = -10 }
+command = { type = relation which = USA value = -10 }
+command = { type = relation which = CAN value = -10 }
+command = { type = relation which = GER value = -10 }
+command = { type = relation which = SPA value = -10 }
+}
+action_b = {
+ai_chance = 5
+name = "EVT_61004_OPTIONB"
+command = { type = dissent value = 5 }
+command = { type = relation which = JAP value = 25 }
+command = { type = relation which = USA value = 25 }
+command = { type = relation which = CAN value = 25 }
+}
+}
+
+event = {
+id = 61013
+country = MEX
+style = 2
+picture = "immigrates"
+
+trigger = { 
+OR = {
+war = { country = SPA country = EUS } 
+war = { country = SPA country = SPR }
+war = { country = EUS country = SPR }
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_61013_NAME"
+desc = "EVT_61013_DESC"
+
+action_a = {
+ai_chance = 99
+name = "EVT_61013_OPTIONA"
+command = { type = dissent value = 1 }
+command = { type = manpowerpool value = 25 }
+command = { type = relation which = SPA value = 10 }
+command = { type = relation which = EUS value = 10 }
+command = { type = relation which = SPR value = 10 }
+}
+action_b = {
+ai_chance = 1
+name = "EVT_61013_OPTIONB"
+command = { type = dissent value = -3 }
+command = { type = relation which = SPA value = -25 }
+command = { type = relation which = EUS value = -25 }
+command = { type = relation which = SPR value = -25 }
+}
+}
+
+event = {
+id = 61020
+country = MEX
+style = 2
+picture = "factory"
+
+trigger = { flag = MEX_Agriculture }
+
+date = { day = 21 month = january year = 1937 }
+
+name = "EVT_61020_NAME"
+desc = "EVT_61020_DESC"
+
+action_a = {
+name = "EVT_61020_OPTIONA"
+ai_chance = 50
+command = { type = domestic which = free_market value = 1 }
+command = { type = relative_manpower value = 3 }
+command = { type = manpowerpool value = 10 }
+command = { type = gain_tech which = 5020 }
+}
+action_b = {
+name = "EVT_61020_OPTIONB"
+ai_chance = 50
+command = { type = domestic which = free_market value = -1 }
+command = { type = relative_manpower value = 5 }
+command = { type = manpowerpool value = 50 }
+command = { type = gain_tech which = 5020 }
+command = { type = gain_tech which = 5030 }
+}
+}
+
+event = {
+id = 61021
+country = MEX
+style = 2
+picture = "calles"
+
+trigger = { flag = Triple }
+
+date = { day = 15 month = december year = 1936 }
+
+name = "EVT_61021_NAME"
+desc = "EVT_61021_DESC"
+
+action_a = {
+name = "EVT_61021_OPTIONA"
+ai_chance = 60
+command = { type = belligerence which = MEX value = 5 }
+command = { type = relation which = USA value = -50 }
+command = { type = relation which = CAL value = -50 }
+command = { type = relation which = TEX value = -25 }
+command = { type = relation which = CAN value = -25 }
+command = { type = domestic which = defense_lobby value = 3 }
+command = { type = domestic which = interventionism value = 3 }
+command = { type = dissent value = 3 }
+command = { type = supplies value = -1000 }
+command = { type = money value = -250 }
+command = { type = manpowerpool value = -50 }
+command = { type = sleepevent which = 61019 } #agriculture
+command = { type = sleepevent which = 61020 } #industry
+}
+action_b = {
+name = "EVT_61021_OPTIONB" 
+ai_chance = 25
+command = { type = dissent value = -3 }
+command = { type = supplies value = -2000 } 
+command = { type = money value = -500 }
+command = { type = sleepevent which = 61002 } #army
+command = { type = sleepevent which = 61020 } #agriculture
+}
+action_c = {
+name = "EVT_61021_OPTIONC"
+ai_chance = 15
+command = { type = manpowerpool value = 50 }
+command = { type = dissent value = -3 }
+command = { type = supplies value = -1000 }
+command = { type = money value = -100 }
+command = { type = sleepevent which = 61002 } #army
+command = { type = sleepevent which = 61019 } #industry
+}
+}
+
+event = {
+id = 61022
+country = MEX
+style = 2
+picture = "toledano"
+
+trigger = { flag = toledano }
+
+date = { day = 15 month = december year = 1936 }
+
+name = "EVT_61022_NAME"
+desc = "EVT_61022_DESC"
+
+action_a = {
+name = "EVT_61022_OPTIONA"
+ai_chance = 1
+command = { type = belligerence which = MEX value = 5 }
+command = { type = relation which = USA value = -50 }
+command = { type = relation which = CAL value = -50 }
+command = { type = relation which = TEX value = -25 }
+command = { type = relation which = CAN value = -25 }
+command = { type = domestic which = defense_lobby value = 3 }
+command = { type = domestic which = interventionism value = 3 }
+command = { type = dissent value = 3 }
+command = { type = supplies value = -1000 }
+command = { type = money value = -250 }
+command = { type = manpowerpool value = -50 }
+command = { type = setflag which = MEX_Military }
+}
+action_b = {
+name = "EVT_61022_OPTIONB" 
+ai_chance = 84
+command = { type = dissent value = -3 }
+command = { type = supplies value = -2000 } 
+command = { type = money value = -500 }
+command = { type = setflag which = MEX_Industry }
+}
+action_c = {
+name = "EVT_61022_OPTIONC"
+ai_chance = 15
+command = { type = manpowerpool value = 50 }
+command = { type = dissent value = -3 }
+command = { type = supplies value = -1000 }
+command = { type = money value = -100 }
+command = { type = setflag which = MEX_Agriculture }
+}
+}
+
+#61070	Mexico defeats the PSA in a war and demands territory
+#61071	Mexico demands California
+#61072	Mexico demands SoCal 
+#61073	California turns Mexico down
+#61074	PSA accepts the demands
+#61075	PSA accepts the demands
+
+### Mexico defeats the PSA in a war and demands territory
+event = {
+id = 610701
+random = no
+country = MEX
+trigger = {
+	war = { country = CAL country = MEX }
+	control = { province = 1887 data = MEX }
+	control = { province = 1888 data = MEX }
+	control = { province = 1889 data = MEX }
+	
+	NOT = {
+                ispuppet = CAL
+                ispuppet = MEX
+		war = { country = USA country = MEX }
+		lost_national = { country = MEX value = 10 }
+                alliance = { country = CAN country = CAL }
+                alliance = { country = JAP country = CAL }
+                alliance = { country = USA country = CAL }
+                alliance = { country = RUS country = CAL }
+                alliance = { country = GER country = CAL }
+	} 
+	lost_national = { country = CAL value = 15 }
+}
+name = "EVT_610701_NAME"
+desc = "EVT_610701_DESC"
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 1
+deathdate = { day = 29 month = december year = 1954 }
+
+action_a = {
+	name = "EVT_610701_OPTIONA"
+	ai_chance = 15
+	command = { type = trigger which = 61071 } #mexico demands California
+        command = { type = addclaim which = 1889 }
+	command = { type = addclaim which = 1892 }
+	command = { type = addclaim which = 1887 }
+	command = { type = addclaim which = 1883 }
+	command = { type = addclaim which = 1891 }
+	command = { type = addclaim which = 1888 }
+	command = { type = addclaim which = 1889 }
+	command = { type = addclaim which = 1884 }
+	command = { type = addclaim which = 1885 }
+        command = { type = addclaim which = 1890 }
+	}
+
+action_b = {
+	name = "EVT_610701_OPTIONB"
+	ai_chance = 60
+	command = { type = trigger which = 61072 } # mexico demands SoCal 
+        command = { type = addclaim which = 1886 }
+	command = { type = addclaim which = 1887 }
+        command = { type = addclaim which = 1892 }
+	}
+
+action_c = {
+	name = "EVT_610701_OPTIONC" 
+	ai_chance = 5
+	command = { type = dissent value = 1 }
+	#command = { type = setflag which = MEX_AGG }
+	}
+}
+
+### Mexico demands all of California
+event = {
+id = 61071
+random = no
+country = CAL
+
+name = "EVT_61071_NAME"
+desc = "EVT_61071_DESC"
+style = 2
+
+action_a = {
+	name = "EVT_61071_OPTIONA"
+	ai_chance = 40
+	command = { type = secedeprovince which = MEX value = 1886 }
+	command = { type = secedeprovince which = MEX value = 1892 }
+        command = { type = secedeprovince which = MEX value = 1887 }
+        command = { type = secedeprovince which = MEX value = 1883 }
+        command = { type = secedeprovince which = MEX value = 1891 }
+        command = { type = secedeprovince which = MEX value = 1888 }
+        command = { type = secedeprovince which = MEX value = 1889 }
+        command = { type = secedeprovince which = MEX value = 1884 }
+        command = { type = secedeprovince which = MEX value = 1885 }
+        command = { type = secedeprovince which = MEX value = 1890 }
+	command = { type = dissent value = 10 }
+	command = { type = trigger which = 61074 }
+	}
+action_b = {
+	name = "EVT_61071_OPTIONB"
+	ai_chance = 60
+	command = { type = dissent value = -1 }
+	command = { type = trigger which = 61073 }
+	}
+}
+
+### Mexico demands the Southern half of California
+event = {
+id = 61072
+random = no
+country = CAL
+
+name = "EVT_61072_NAME"
+desc = "EVT_61072_DESC"
+style = 2
+
+action_a = {
+	name = "EVT_61072_OPTIONA"
+	ai_chance = 80
+	command = { type = secedeprovince which = MEX value = 1886 }
+        command = { type = secedeprovince which = MEX value = 1887 }
+        command = { type = secedeprovince which = MEX value = 1892 }
+	command = { type = dissent value = 5 }
+	command = { type = trigger which = 61075 }
+	}
+action_b = {
+	name = "EVT_61072_OPTIONB"
+	ai_chance = 20
+	command = { type = dissent value = -1 }
+	command = { type = trigger which = 61073 }
+	}
+}
+
+### California turns Mexico down
+event = {
+id = 61073
+random = no
+country = MEX
+
+name = "EVT_61073_NAME"
+desc = "EVT_61073_DESC"
+style = 2
+
+action_a = {
+	name = "EVT_61073_OPTIONA"
+	command = { type = dissent value = 1 }
+	}
+}
+
+### PSA accepts the demands
+event = {
+id = 61074
+random = no
+country = MEX
+
+name = "EVT_61074_NAME"
+desc = "EVT_61074_DESC"
+style = 2
+
+action_a = {
+	 name = "EVT_61074_OPTIONA"
+	 command = { type = peace which = CAL value = 1 }
+	 
+	 
+}
+}
+
+### PSA accepts the demands
+event = {
+id = 61075
+random = no
+country = MEX
+
+name = "EVT_61075_NAME"
+desc = "EVT_61075_DESC"
+style = 2
+
+action_a = {
+	name = "EVT_61075_OPTIONA"
+	command = { type = peace which = CAL value = 1 }
+	
+	
+	}
+}
+
+#Death events
+
+event = {
+	id = 61100
+	random = no
+	country = MEX
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 29 month = september year = 1937 }
+
+	action_a = {
+		name = "EVT_61100_OPTIONA"
+		command = { type = sleepminister which = 36074 } #Genaro Estrada
+	}
+}
+
+event = {
+	id = 61101
+	random = no
+	country = MEX
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 9 month = november year = 1939 }
+
+	action_a = {
+		name = "EVT_61101_OPTIONA"
+		command = { type = sleepminister which = 36063 } #Jose Manuel Puig
+	}
+}
+
+event = {
+	id = 61102
+	random = no
+	country = MEX
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 3 month = november year = 1942 }
+
+	action_a = {
+		name = "EVT_61102_OPTIONA"
+		command = { type = sleepminister which = 36004 } #Enrique Estrada Reynoso
+	}
+}
+
+event = {
+	id = 61103
+	random = no
+	country = MEX
+	style = 2
+
+	trigger = {
+	NOT = { headofgovernment = 36131 } #Plutarco Elias Calles
+	headofstate = 36132 } #Plutarco Elias Calles
+
+	name = "EVT_61103_NAME"
+	desc = "EVT_61103_DESC"
+	picture = "minister_died"
+
+	date = { day = 19 month = october year = 1945 }
+
+	action_a = {
+		name = "EVT_61103_OPTIONA"
+		command = { type = sleepminister which = 36109 } #Plutarco Elias Calles
+		command = { type = sleepminister which = 36131 } #Plutarco Elias Calles
+		command = { type = sleepminister which = 36132 } #Plutarco Elias Calles
+		command = { type = sleepminister which = 36133 } #Plutarco Elias Calles
+		command = { type = headofstate which = 36037 } #Juan Andrew Almazan
+	}
+}
+
+event = {
+	id = 61104
+	random = no
+	country = MEX
+	style = 2
+
+	trigger = {
+	NOT = { headofstate = 36132 } #Plutarco Elias Calles
+	headofgovernment = 36131 } #Plutarco Elias Calles
+
+	name = "EVT_61104_NAME"
+	desc = "EVT_61104_DESC"
+	picture = "minister_died"
+
+	date = { day = 19 month = october year = 1945 }
+
+	action_a = {
+		name = "EVT_61104_OPTIONA"
+		command = { type = sleepminister which = 36109 } #Plutarco Elias Calles
+		command = { type = sleepminister which = 36131 } #Plutarco Elias Calles
+		command = { type = sleepminister which = 36132 } #Plutarco Elias Calles
+		command = { type = sleepminister which = 36133 } #Plutarco Elias Calles
+		command = { type = headofgovernment which = 36038 } #Agustin Olachea Aviles
+	}
+}
+
+event = {
+	id = 61105
+	random = no
+	country = MEX
+	style = 2
+
+	trigger = {
+	headofstate = 36132 #Plutarco Elias Calles
+	headofgovernment = 36131 } #Plutarco Elias Calles
+
+	name = "EVT_61105_NAME"
+	desc = "EVT_61105_DESC"
+	picture = "minister_died"
+
+	date = { day = 19 month = october year = 1945 }
+
+	action_a = {
+		name = "EVT_61105_OPTIONA"
+		command = { type = sleepminister which = 36109 } #Plutarco Elias Calles
+		command = { type = sleepminister which = 36131 } #Plutarco Elias Calles
+		command = { type = sleepminister which = 36132 } #Plutarco Elias Calles
+		command = { type = sleepminister which = 36133 } #Plutarco Elias Calles
+		command = { type = headofstate which = 36037 } #Juan Andrew Almazan
+		command = { type = headofgovernment which = 36046 } #Juan Andrew Almazan
+	}
+}
+
+event = {
+	id = 61106
+	random = no
+	country = MEX
+	style = 2
+
+	trigger = { NOT = {
+	headofstate = 36132 } #Plutarco Elias Calles
+	headofgovernment = 36131 } #Plutarco Elias Calles
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 19 month = october year = 1945 }
+
+	action_a = {
+		name = "EVT_61106_OPTIONA"
+		command = { type = sleepminister which = 36109 } #Plutarco Elias Calles
+		command = { type = sleepminister which = 36131 } #Plutarco Elias Calles
+		command = { type = sleepminister which = 36132 } #Plutarco Elias Calles
+		command = { type = sleepminister which = 36133 } #Plutarco Elias Calles
+	}
+}
+
+event = {
+	id = 61107
+	random = no
+	country = MEX
+	style = 2
+
+	trigger = {
+	NOT = { headofgovernment = 36124 } #Pancho Villa
+	headofstate = 36123 } #Pancho Villa
+
+	name = "EVT_61107_NAME"
+	desc = "EVT_61107_DESC"
+	picture = "minister_died"
+
+	date = { day = 1 month = may year = 1946 }
+
+	action_a = {
+		name = "EVT_61107_OPTIONA"
+		command = { type = sleepminister which = 36123 } #Pancho Villa
+		command = { type = sleepminister which = 36124 } #Pancho Villa
+		command = { type = sleepminister which = 36125 } #Pancho Villa
+		command = { type = sleepminister which = 36126 } #Pancho Villa
+		command = { type = headofstate which = 36128 } #Vicente Lombardo Toledano
+	}
+}
+
+
+event = {
+	id = 61108
+	random = no
+	country = MEX
+	style = 2
+
+	trigger = {
+	NOT = { headofstate = 36123 } #Pancho Villa
+	headofgovernment = 36124 } #Pancho Villa
+
+	name = "EVT_61108_NAME"
+	desc = "EVT_61108_DESC"
+	picture = "minister_died"
+
+	date = { day = 1 month = may year = 1946 }
+
+	action_a = {
+		name = "EVT_61108_OPTIONA"
+		command = { type = sleepminister which = 36123 } #Pancho Villa
+		command = { type = sleepminister which = 36124 } #Pancho Villa
+		command = { type = sleepminister which = 36125 } #Pancho Villa
+		command = { type = sleepminister which = 36126 } #Pancho Villa
+		command = { type = headofgovernment which = 36048 } #Procopio Herrera
+	}
+}
+
+event = {
+	id = 61109
+	random = no
+	country = MEX
+	style = 2
+
+	trigger = {
+	headofstate = 36123 #Pancho Villa
+	headofgovernment = 36124 } #Pancho Villa
+
+	name = "EVT_61109_NAME"
+	desc = "EVT_61109_DESC"
+	picture = "minister_died"
+
+	date = { day = 1 month = may year = 1946 }
+
+	action_a = {
+		name = "EVT_61109_OPTIONA"
+		command = { type = sleepminister which = 36123 } #Pancho Villa
+		command = { type = sleepminister which = 36124 } #Pancho Villa
+		command = { type = sleepminister which = 36125 } #Pancho Villa
+		command = { type = sleepminister which = 36126 } #Pancho Villa
+		command = { type = headofgovernment which = 36048 } #Procopio Herrera
+	}
+}
+
+event = {
+	id = 61110
+	random = no
+	country = MEX
+	style = 2
+
+	trigger = { NOT = {
+	headofstate = 36123 #Pancho Villa
+	headofgovernment = 36124 } } #Pancho Villa
+
+	name = "EVT_61110_NAME"
+	desc = "EVT_61110_DESC"
+	picture = "minister_died"
+
+	date = { day = 1 month = may year = 1946 }
+
+	action_a = {
+		name = "EVT_61110_OPTIONA"
+		command = { type = sleepminister which = 36123 } #Pancho Villa
+		command = { type = sleepminister which = 36124 } #Pancho Villa
+		command = { type = sleepminister which = 36125 } #Pancho Villa
+		command = { type = sleepminister which = 36126 } #Pancho Villa
+	}
+}
+
+event = {
+	id = 61111
+	random = no
+	country = MEX
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 15 month = feburary year = 1947 }
+
+	action_a = {
+		name = "EVT_61111_OPTIONA"
+		command = { type = sleepminister which = 36057 } #Francisco R. Serrano
+		command = { type = sleepminister which = 36066 } #Francisco R. Serrano
+	}
+}
+
+event = {
+	id = 61112
+	random = no
+	country = MEX
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 26 month = june year = 1948 }
+
+	action_a = {
+		name = "EVT_61112_OPTIONA"
+		command = { type = sleepminister which = 36008 } #Pablo Quiroga Escamillo
+		command = { type = sleepminister which = 36095 } #Pablo Quiroga Escamillo
+	}
+}
+
+event = {
+	id = 61113
+	random = no
+	country = MEX
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 15 month = march year = 1952 }
+
+	action_a = {
+		name = "EVT_61113_OPTIONA"
+		command = { type = sleepminister which = 36075 } #Joaquin Amaro Dominguez
+	}
+}
+
+event = {
+	id = 61114
+	random = no
+	country = MEX
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 29 month = november year = 1952 }
+
+	action_a = {
+		name = "EVT_61114_OPTIONA"
+		command = { type = sleepminister which = 36107 } #Gilberto Limon Marquez
+	}
+}
+
+event = {
+	id = 61115
+	random = no
+	country = MEX
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 20 month = december year = 1954 }
+
+	action_a = {
+		name = "EVT_61115_OPTIONA"
+		command = { type = sleepminister which = 36051 } #Francisco Castillo Najera
+	}
+}
+
+event = {
+	id = 61116
+	random = no
+	country = MEX
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 13 month = october year = 1956 }
+
+	action_a = {
+		name = "EVT_61116_OPTIONA"
+		command = { type = sleepminister which = 36087 } #Manuel Avila Camacho
+	}
+}
+
+
+event = {
+	id = 61117
+	random = no
+	country = MEX
+	style = 2
+	  
+        decision = {
+        war = { country = USA country = TEX }
+        war = { country = USA country = CSA }
+        control = { province = 1928 data = USA }
+        NOT = {
+        ispuppet = MEX
+        atwar = MEX
+	alliance = { country = MEX country = USA }
+        }
+        }
+
+        decision_trigger = {  
+        }
+
+	trigger = {
+        war = { country = USA country = TEX }
+        war = { country = USA country = CSA }
+        control = { province = 1928 data = USA }
+        NOT = {
+        ispuppet = MEX
+        atwar = MEX
+	alliance = { country = MEX country = USA }
+        }
+        }
+
+	name = "EVT_61117_NAME"
+	desc = "EVT_61117_DESC"
+	decision_picture = "decision_lostmex"
+        picture = "lostterritoriesmex"
+
+        date = { day = 1 month = january year = 1936 }
+	offset = 40
+	deathdate = { day = 1 month = january year = 1960 }
+
+	action_a = {
+	ai_chance = 50
+	name = "EVT_61117_OPTIONA"
+        command = { type = belligerence which = MEX  value = 5  }
+        command = { type = relation which = USA value = -100 }
+        command = { type = relation which = CSA value = -40 }
+        command = { type = relation which = TEX value = -40 }
+        command = { type = relation which = CAL value = -40 }
+        command = { type = domestic which = interventionism value = 2 }
+        command = { type = addclaim which = 1884 }
+        command = { type = addclaim which = 1885 }
+        command = { type = addclaim which = 1890 }
+        command = { type = addclaim which = 1888 }
+        command = { type = addclaim which = 1889 }
+        command = { type = addclaim which = 1883 }
+        command = { type = addclaim which = 1886 }
+        command = { type = addclaim which = 1887 }
+        command = { type = addclaim which = 1891 }
+        command = { type = addclaim which = 1886 }
+        command = { type = addclaim which = 1900 }
+        command = { type = addclaim which = 1901 }
+        command = { type = addclaim which = 1902 }
+        command = { type = addclaim which = 1904 }
+        command = { type = addclaim which = 1906 }
+        command = { type = addclaim which = 1903 }
+        command = { type = addclaim which = 1905 }
+        command = { type = addclaim which = 1922 }
+        command = { type = addclaim which = 1923 }
+        command = { type = addclaim which = 1926 }
+        command = { type = addclaim which = 1920 }
+        command = { type = addclaim which = 1921 }
+        command = { type = addclaim which = 1927 }
+        command = { type = addclaim which = 1924 }
+        command = { type = addclaim which = 1925 }
+        command = { type = addclaim which = 1919 }
+        command = { type = addclaim which = 1928 }
+        command = { type = addclaim which = 1892 }
+        command = { type = dissent value = -5 } 
+        command = { type = trigger which = 61118 }
+	}
+
+	action_b = {
+	ai_chance = 40
+	name = "EVT_61117_OPTIONB"
+        command = { type = belligerence which = MEX  value = 2  }
+        command = { type = domestic which = interventionism value = 1 }
+        command = { type = relation which = USA value = -50 }
+        command = { type = relation which = CSA value = -10 }
+        command = { type = relation which = TEX value = -20 }
+        command = { type = relation which = CAL value = -20 }
+        command = { type = addclaim which = 1884 }
+        command = { type = addclaim which = 1885 }
+        command = { type = addclaim which = 1890 }
+        command = { type = addclaim which = 1888 }
+        command = { type = addclaim which = 1889 }
+        command = { type = addclaim which = 1883 }
+        command = { type = addclaim which = 1886 }
+        command = { type = addclaim which = 1887 }
+        command = { type = addclaim which = 1891 }
+        command = { type = addclaim which = 1886 }
+        command = { type = addclaim which = 1900 }
+        command = { type = addclaim which = 1901 }
+        command = { type = addclaim which = 1902 }
+        command = { type = addclaim which = 1904 }
+        command = { type = addclaim which = 1906 }
+        command = { type = addclaim which = 1903 }
+        command = { type = addclaim which = 1905 }
+        command = { type = addclaim which = 1922 }
+        command = { type = addclaim which = 1923 }
+        command = { type = addclaim which = 1926 }
+        command = { type = addclaim which = 1920 }
+        command = { type = addclaim which = 1921 }
+        command = { type = addclaim which = 1927 }
+        command = { type = addclaim which = 1924 }
+        command = { type = addclaim which = 1925 }
+        command = { type = addclaim which = 1919 }
+        command = { type = addclaim which = 1928 }
+        command = { type = addclaim which = 1892 }
+        command = { type = dissent value = -3 } 
+        }
+
+        action_b = {
+	ai_chance = 10
+	name = "EVT_61117_OPTIONC"
+        command = { type = domestic which = interventionism value = -1 }
+        command = { type = relation which = USA value = 30 }
+        command = { type = dissent value = 2 } 
+        }
+
+        }
+
+
+
+event = {
+	id = 61118
+	random = no
+	country = USA
+	style = 2
+	  
+
+	name = "EVT_61118_NAME"
+	desc = "EVT_61118_DESC"
+        picture = "foreign_volunteers"
+
+	action_a = {
+        ai_chance = 20
+        name =  "EVT_61118_OPTIONA"
+        command = { type = domestic which = interventionism value = -1 }
+        command = { type = dissent value = 10 }
+        command = { type = secedeprovince which = MEX value = 1884 }
+        command = { type = secedeprovince which = MEX value = 1885 }
+        command = { type = secedeprovince which = MEX value = 1890 }
+        command = { type = secedeprovince which = MEX value = 1888 }
+        command = { type = secedeprovince which = MEX value = 1889 }
+        command = { type = secedeprovince which = MEX value = 1883 }
+        command = { type = secedeprovince which = MEX value = 1886 }
+        command = { type = secedeprovince which = MEX value = 1887 }
+        command = { type = secedeprovince which = MEX value = 1891 }
+        command = { type = secedeprovince which = MEX value = 1886 }
+        command = { type = secedeprovince which = MEX value = 1887 }
+        command = { type = secedeprovince which = MEX value = 1891 }
+        command = { type = secedeprovince which = MEX value = 1886 }
+        command = { type = secedeprovince which = MEX value = 1900 }
+        command = { type = secedeprovince which = MEX value = 1901 }
+        command = { type = secedeprovince which = MEX value = 1902 }
+        command = { type = secedeprovince which = MEX value = 1904 }
+        command = { type = secedeprovince which = MEX value = 1906 }
+        command = { type = secedeprovince which = MEX value = 1903 }
+        command = { type = secedeprovince which = MEX value = 1905 }
+        command = { type = secedeprovince which = MEX value = 1922 }
+        command = { type = secedeprovince which = MEX value = 1923 }
+        command = { type = secedeprovince which = MEX value = 1926 }
+        command = { type = secedeprovince which = MEX value = 1920 }
+        command = { type = secedeprovince which = MEX value = 1921 }
+        command = { type = secedeprovince which = MEX value = 1927 }
+        command = { type = secedeprovince which = MEX value = 1924 }
+        command = { type = secedeprovince which = MEX value = 1925 }
+        command = { type = secedeprovince which = MEX value = 1919 }
+        command = { type = secedeprovince which = MEX value = 1928 }
+        command = { type = secedeprovince which = MEX value = 1892 }
+		}
+
+	action_b = {
+	ai_chance = 80
+	name = "EVT_61118_OPTIONB"
+        command = { type = domestic which = interventionism value = 1 }
+        command = { type = dissent value = -5 }
+        command = { type = trigger which = 61119 }
+        }  
+
+        }
+
+
+event = {
+	id = 61119
+	random = no
+	country = MEX
+	style = 2
+
+	name = "EVT_61119_NAME"
+	desc = "EVT_61119_DESC"
+        picture = "foreign_volunteers"
+
+	action_a = {
+	ai_chance = 50
+	name = "EVT_61119_OPTIONA"
+        command = { type = end_non_aggression which = MEX where = USA }
+        command = { type = end_non_aggression which = USA where = MEX }
+        command = { type = war which = USA }
+        command = { type = belligerence which = MEX  value = 5  }
+        command = { type = relation which = USA value = -100 }
+        command = { type = relation which = CSA value = -40 }
+        command = { type = relation which = TEX value = -40 }
+        command = { type = relation which = CAL value = -40 }
+        command = { type = domestic which = interventionism value = 1 }
+        command = { type = dissent value = -5 } 
+        command = { type = trigger which = 61120 }
+	}
+
+	action_b = {
+	ai_chance = 40
+	name = "EVT_61119_OPTIONB"
+        command = { type = domestic which = interventionism value = -1 }
+        command = { type = dissent value = 1 } 
+        }
+
+
+        }
+
+
+event = {
+	id = 61120
+	random = no
+	country = USA
+        save_date = yes
+
+	name = "EVT_61120_NAME"
+	desc = "EVT_61120_DESC"
+	style = 2
+        picture = "Volkssturm"
+
+
+	action_a = {
+		name = "EVT_61120_OPTIONA" #
+		command = { type = dissent value = 2 } #panic
+		command = { trigger = { control = { province = 1922 data = USA } } type = construct which = land_fort where = 1922 value = 1 }
+		command = { trigger = { control = { province = 1926 data = USA } } type = construct which = land_fort where = 1926 value = 1 }
+		command = { trigger = { control = { province = 1923 data = USA } } type = construct which = land_fort where = 1923 value = 1 }
+                command = { trigger = { control = { province = 1901 data = USA } } type = construct which = land_fort where = 1901 value = 1 }
+                command = { trigger = { control = { province = 1886 data = USA } } type = construct which = land_fort where = 1886 value = 1 }
+		command = { type = manpowerpool value = 20 }
+		command = { type = supplies value = 300 }
+		command = { trigger = { control = { province = 1922 data = USA } } type = add_corps which = "Texas National Guard" value = land when = -1 where = 1922 }
+		command = { trigger = { control = { province = 1922 data = USA } } type = add_division which = "Corpus Christi National Guard" value = militia when = 4 }
+		command = { trigger = { control = { province = 1926 data = USA } } type = add_corps which = "Texas National Guard" value = land when = -1 where = 1926 }
+		command = { trigger = { control = { province = 1926 data = USA } } type = add_division which = "San Antonio National Guard" value = militia when = 4 }
+		command = { trigger = { control = { province = 1923 data = USA } } type = add_corps which = "Texas National Guard" value = land when = -1 where = 1923 }
+		command = { trigger = { control = { province = 1923 data = USA } } type = add_division which = "El Paso National Guard" value = militia when = 4 }
+		command = { trigger = { control = { province = 1901 data = USA } } type = add_corps which = "Arizona National Guard" value = land when = -1 where = 1901 }
+		command = { trigger = { control = { province = 1901 data = USA } } type = add_division which = "Tuscon National Guard" value = militia when = 4 }
+                command = { trigger = { control = { province = 1886 data = USA } } type = add_corps which = "California National Guard" value = land when = -1 where = 1886 }
+		command = { trigger = { control = { province = 1886 data = USA } } type = add_division which = "San Diego National Guard" value = militia when = 4 }
+
+	}
+}
+
+
+event = {
+id = 61121
+country = USA
+style = 2
+
+trigger = {
+war = { country = USA country = MEX }
+control = { province = 1928 data = MEX }
+NOT = {
+control = { province = 1901 data = USA } 
+control = { province = 1923 data = USA }
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 60
+deathdate = { day = 1 month = january year = 1960 }
+
+name = "EVT_61121_NAME"
+desc = "EVT_61121_DESC"
+picture = "Peace_conference"
+
+action_a = {
+ai_chance = 85
+name =  "EVT_61121_OPTIONA"
+command = { type = trigger which = 61122 }
+command = { type = dissent value = 3 }
+}
+action_b = {
+ai_chance = 15
+name = "EVT_61121_OPTIONB"
+command = { type = dissent value = 6 }
+}
+}
+
+event = {
+id = 61122
+country = MEX
+style = 2
+
+
+name = "EVT_61122_NAME"
+desc = "EVT_61122_DESC"
+picture = "Peace_conference"
+
+action_a = {
+ai_chance = 100
+name =  "EVT_61122_OPTIONA"
+command = { type = dissent value = -5 }
+command = { type = peace which = USA value = 0 }
+command = { type = peace which = TEX value = 0 }
+command = { type = trigger which = 61123 }
+}
+
+action_b = {
+ai_chance = 0
+name = "EVT_61122_OPTIONB"
+command = { type = dissent value = 2 }
+command = { type = belligerence which = MEX value = 5  }
+command = { type = trigger which = 61124 }
+}
+}
+
+
+event = {
+id = 61123
+country = USA
+style = 2
+
+
+
+
+name = "EVT_61123_NAME"
+desc = "EVT_61123_DESC"
+picture = "lostterritoriesmex"
+
+action_a = {
+name =  "EVT_61123_OPTIONA"
+command = { type = construct which = land_fort where = 1922 value = -1 }
+command = { type = construct which = land_fort where = 1926 value = -1 }
+command = { type = construct which = land_fort where = 1923 value = -1 }
+command = { type = construct which = land_fort where = 1901 value = -1 }
+command = { type = construct which = land_fort where = 1886 value = -1 }
+command = { type = secedeprovince which = MEX value = 1884 }
+        command = { type = secedeprovince which = MEX value = 1885 }
+        command = { type = secedeprovince which = MEX value = 1890 }
+        command = { type = secedeprovince which = MEX value = 1888 }
+        command = { type = secedeprovince which = MEX value = 1889 }
+        command = { type = secedeprovince which = MEX value = 1883 }
+        command = { type = secedeprovince which = MEX value = 1886 }
+        command = { type = secedeprovince which = MEX value = 1887 }
+        command = { type = secedeprovince which = MEX value = 1891 }
+        command = { type = secedeprovince which = MEX value = 1886 }
+        command = { type = secedeprovince which = MEX value = 1887 }
+        command = { type = secedeprovince which = MEX value = 1891 }
+        command = { type = secedeprovince which = MEX value = 1886 }
+        command = { type = secedeprovince which = MEX value = 1900 }
+        command = { type = secedeprovince which = MEX value = 1901 }
+        command = { type = secedeprovince which = MEX value = 1902 }
+        command = { type = secedeprovince which = MEX value = 1904 }
+        command = { type = secedeprovince which = MEX value = 1906 }
+        command = { type = secedeprovince which = MEX value = 1903 }
+        command = { type = secedeprovince which = MEX value = 1905 }
+        command = { type = secedeprovince which = MEX value = 1922 }
+        command = { type = secedeprovince which = MEX value = 1923 }
+        command = { type = secedeprovince which = MEX value = 1926 }
+        command = { type = secedeprovince which = MEX value = 1920 }
+        command = { type = secedeprovince which = MEX value = 1921 }
+        command = { type = secedeprovince which = MEX value = 1927 }
+        command = { type = secedeprovince which = MEX value = 1924 }
+        command = { type = secedeprovince which = MEX value = 1925 }
+        command = { type = secedeprovince which = MEX value = 1919 }
+        command = { type = secedeprovince which = MEX value = 1928 }
+        command = { type = secedeprovince which = MEX value = 1892 }
+command = { type = dissent value = 2 }
+}
+
+}
+
+event = {
+id = 61124
+country = USA
+style = 2
+
+
+
+
+name = "EVT_61124_NAME"
+desc = "EVT_61124_DESC"
+picture = "foreign_volunteers"
+
+action_a = {
+name =  "EVT_61124_OPTIONA"
+command = { type = dissent value = 1 }
+}
+
+}
+
+
+event = {
+id = 61125
+country = MEX
+style = 2
+
+trigger = {
+event = { id = 61120 days = 100 }
+war = { country = USA country = MEX }
+OR = {
+war = { country = USA country = CSA }
+war = { country = USA country = TEX }
+war = { country = USA country = CAL }
+}
+NOT = {
+control = { province = 1928 data = MEX }
+control = { province = 1901 data = MEX } 
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 20
+deathdate = { day = 29 month = december year = 1942 }
+
+name = "EVT_61125_NAME"
+desc = "EVT_61125_DESC"
+picture = "Peace_conference"
+
+action_a = {
+ai_chance = 85
+name =  "EVT_61125_OPTIONA"
+command = { type = trigger which = 61126 }
+command = { type = dissent value = 3 }
+command = { type = removeclaim which = 1884 }
+        command = { type = removeclaim which = 1885 }
+        command = { type = removeclaim which = 1890 }
+        command = { type = removeclaim which = 1888 }
+        command = { type = removeclaim which = 1889 }
+        command = { type = removeclaim which = 1883 }
+        command = { type = removeclaim which = 1886 }
+        command = { type = removeclaim which = 1887 }
+        command = { type = removeclaim which = 1891 }
+        command = { type = removeclaim which = 1886 }
+        command = { type = removeclaim which = 1900 }
+        command = { type = removeclaim which = 1901 }
+        command = { type = removeclaim which = 1902 }
+        command = { type = removeclaim which = 1904 }
+        command = { type = removeclaim which = 1906 }
+        command = { type = removeclaim which = 1903 }
+        command = { type = removeclaim which = 1905 }
+        command = { type = removeclaim which = 1922 }
+        command = { type = removeclaim which = 1923 }
+        command = { type = removeclaim which = 1926 }
+        command = { type = removeclaim which = 1920 }
+        command = { type = removeclaim which = 1921 }
+        command = { type = removeclaim which = 1927 }
+        command = { type = removeclaim which = 1924 }
+        command = { type = removeclaim which = 1925 }
+        command = { type = removeclaim which = 1919 }
+        command = { type = removeclaim which = 1928 }
+        command = { type = removeclaim which = 1892 }
+}
+action_b = {
+ai_chance = 15
+name = "EVT_61125_OPTIONB"
+command = { type = dissent value = 6 }
+}
+}
+
+
+event = {
+id = 61126
+country = USA
+style = 2
+
+
+name = "EVT_61126_NAME"
+desc = "EVT_61126_DESC"
+picture = "Peace_conference"
+
+action_a = {
+ai_chance = 100
+name =  "EVT_61126_OPTIONA"
+command = { type = dissent value = -5 }
+command = { type = peace which = MEX value = 0 }
+}
+
+action_b = {
+ai_chance = 0
+name = "EVT_61126_OPTIONB"
+command = { type = dissent value = 2 }
+command = { type = belligerence which = USA value = 5  }
+}
+}
+
+
+
+event = {
+id = 61127
+country = MEX
+style = 2
+
+trigger = {
+OR = {
+war = { country = USA country = MEX }
+event = 61123
+}
+control = { province = 1974 data = MEX }
+exists = TEX 
+OR = {
+control = { province = 1923 data = TEX }
+control = { province = 1924 data = TEX } 
+control = { province = 1928 data = TEX }
+control = { province = 1919 data = TEX }
+control = { province = 1922 data = TEX }
+control = { province = 1926 data = TEX }
+control = { province = 1925 data = TEX }
+control = { province = 1927 data = TEX }
+}
+NOT = {
+ispuppet = TEX
+alliance = { country = CSA country = TEX }
+war = { country = TEX country = MEX }
+control = { province = 1923 data = USA }
+control = { province = 1924 data = USA }
+control = { province = 1928 data = USA }
+control = { province = 1919 data = USA }
+control = { province = 1922 data = USA }
+control = { province = 1926 data = USA }
+control = { province = 1925 data = USA }
+control = { province = 1927 data = USA }
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 20
+deathdate = { day = 1 month = january year = 1960 }
+
+name = "EVT_61127_NAME"
+desc = "EVT_61127_DESC"
+picture = "foreign_volunteers"
+
+action_a = {
+ai_chance = 85
+name =  "EVT_61127_OPTIONA"
+command = { type = trigger which = 61128 }
+command = { type = end_non_aggression which = MEX where = TEX }
+command = { type = end_non_aggression which = TEX where = MEX }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_61127_OPTIONB"
+command = { type = dissent value = 1 }
+}
+}
+
+
+
+event = {
+id = 61128
+country = TEX
+style = 2
+
+
+name = "EVT_61128_NAME"
+desc = "EVT_61128_DESC"
+picture = "foreign_volunteers"
+
+action_a = {
+ai_chance = 100
+name =  "EVT_61128_OPTIONA"
+command = { type = dissent value = 1 }
+command = { type = secedeprovince which = MEX value = 1884 }
+        command = { type = secedeprovince which = MEX value = 1885 }
+        command = { type = secedeprovince which = MEX value = 1890 }
+        command = { type = secedeprovince which = MEX value = 1888 }
+        command = { type = secedeprovince which = MEX value = 1889 }
+        command = { type = secedeprovince which = MEX value = 1883 }
+        command = { type = secedeprovince which = MEX value = 1886 }
+        command = { type = secedeprovince which = MEX value = 1887 }
+        command = { type = secedeprovince which = MEX value = 1891 }
+        command = { type = secedeprovince which = MEX value = 1886 }
+        command = { type = secedeprovince which = MEX value = 1887 }
+        command = { type = secedeprovince which = MEX value = 1891 }
+        command = { type = secedeprovince which = MEX value = 1886 }
+        command = { type = secedeprovince which = MEX value = 1900 }
+        command = { type = secedeprovince which = MEX value = 1901 }
+        command = { type = secedeprovince which = MEX value = 1902 }
+        command = { type = secedeprovince which = MEX value = 1904 }
+        command = { type = secedeprovince which = MEX value = 1906 }
+        command = { type = secedeprovince which = MEX value = 1903 }
+        command = { type = secedeprovince which = MEX value = 1905 }
+        command = { type = secedeprovince which = MEX value = 1922 }
+        command = { type = secedeprovince which = MEX value = 1923 }
+        command = { type = secedeprovince which = MEX value = 1926 }
+        command = { type = secedeprovince which = MEX value = 1920 }
+        command = { type = secedeprovince which = MEX value = 1921 }
+        command = { type = secedeprovince which = MEX value = 1927 }
+        command = { type = secedeprovince which = MEX value = 1924 }
+        command = { type = secedeprovince which = MEX value = 1925 }
+        command = { type = secedeprovince which = MEX value = 1919 }
+        command = { type = secedeprovince which = MEX value = 1928 }
+        command = { type = secedeprovince which = MEX value = 1892 }
+}
+
+action_b = {
+ai_chance = 0
+name = "EVT_61128_OPTIONB"
+command = { type = dissent value = -2 }
+command = { type = trigger which = 61129 }
+}
+}
+
+
+
+event = {
+	id = 61129
+	random = no
+	country = MEX
+	style = 2
+
+	name = "EVT_61129_NAME"
+	desc = "EVT_61129_DESC"
+        picture = "foreign_volunteers"
+
+	action_a = {
+	ai_chance = 50
+	name = "EVT_61129_OPTIONA"
+        command = { type = war which = TEX }
+        command = { type = belligerence which = MEX  value = 5  }
+        command = { type = domestic which = interventionism value = 1 }
+        command = { type = dissent value = -1 } 
+	}
+
+	action_b = {
+	ai_chance = 40
+	name = "EVT_61129_OPTIONB"
+        command = { type = domestic which = interventionism value = -1 }
+        command = { type = dissent value = 1 } 
+        }
+
+
+        }
+
+
+
+#######################################################
+#Alliance with Centroamerica
+#######################################################
+event = {
+id = 61130
+random = no
+country = MEX
+style = 2
+
+trigger = {
+lost_national = { country = MEX value = 0 }
+lost_national = { country = GUA value = 0 }
+government = { type = communist country = GUA }
+NOT = {
+ispuppet = MEX
+ispuppet = GUA
+lost_national = { country = MEX value = 2 }
+lost_national = { country = GUA value = 2 }
+atwar = MEX
+war = { country = GUA country = USA }
+war = { country = GUA country = JAP }
+war = { country = GUA country = GER }
+war = { country = GUA country = RUS }
+war = { country = GUA country = CSA }
+war = { country = GUA country = CAN }
+alliance = { country = CSA country = MEX }
+alliance = { country = FRA country = MEX }
+alliance = { country = ENG country = MEX }
+}
+government = communist
+}
+
+name = "EVT_61130_NAME"
+desc = "EVT_61130_DESC"
+picture = "foreign_volunteers"
+
+action = {
+trigger = {
+NOT = {
+atwar = GUA
+}
+}
+ai_chance = 100
+name = "EVT_61130_OPTIONA"
+command = { type = alliance which = GUA }
+command = { type = set_relation which = GUA value = 200 }
+command = { type = relation which = NIC value = -200 }
+}
+
+action = {
+trigger = {
+atwar = GUA 
+NOT = {
+war = { country = GUA country = USA }
+war = { country = GUA country = JAP }
+war = { country = GUA country = GER }
+war = { country = GUA country = RUS }
+war = { country = GUA country = CSA }
+war = { country = GUA country = CAN }
+}
+}
+ai_chance = 25
+name = "EVT_61130_OPTIONB"
+command = { type = alliance which = GUA }
+command = { type = set_relation which = GUA value = 200 }
+command = { type = relation which = NIC value = -200 }
+}
+
+action = {
+ai_chance = 50
+name = "EVT_61130_OPTIONC"
+command = { type = dissent value = 3 }
+command = { type = relation which = GUA value = -100 }
+command = { type = relation which = NIC value = 50 }
+}
+}
+
+#
+#The Independence Day
+#
+
+event = {
+id = 61131
+random = no
+country = MEX
+ persistent = yes
+ style = 2
+ picture = "mexico"
+
+     trigger = {
+         day = 15
+         month = 9
+         NOT = {
+         day = 16
+         }
+         NOT = {
+         month = 10
+         }
+     }
+     
+     date = { day = 0 month = january year = 1936 }
+     offset = 1
+     deathdate = { day = 29 month = december year = 1963 }
+     
+     name = "EVT_61131_NAME"
+     desc = "EVT_61131_DESC"
+     
+	 action_a = {
+         name = "EVT_61131_OPTIONA"
+         command = { type = dissent value = -1 }
+     }
+
+}

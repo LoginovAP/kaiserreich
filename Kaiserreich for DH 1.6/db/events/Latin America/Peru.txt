@@ -1,0 +1,1215 @@
+#####################################################################
+#Peruvian-Bolivian Union
+#####################################################################
+
+event = {
+id = 755450
+country = PRU
+picture = "southamerica"
+style = 2
+
+trigger = {
+	exists = BOL
+	NOT = {
+	war = { country = BOL country = PRU }			#BOL not at war against PRU
+	flag = BOL_SOCIALIST
+	flag = BOL_SYNDICALIST					#BOL is not syndie
+	government = communist					#PRU not syndie
+	ispuppet = BOL						#BOL not anyones puppet
+	ispuppet = PRU						#PRU not anyones puppet
+	}					
+	}
+
+date = { day = 10 month = march year = 1936 }
+offset = 20
+deathdate = { day = 20 month = june year = 1966 }
+
+name = "EVT_755450_NAME"
+desc = "EVT_755450_DESC"
+
+action_a = {
+	name = "EVT_755450_OPTIONA"
+	ai_chance = 80
+	command = { type = dissent value = -5 }
+	command = { type = domestic which = free_market value = 1 }
+	command = { type = relation which = BOL value = 15 }
+	command = { type = trigger which = 755451 }
+	}
+action_b = {
+	name = "EVT_755450_OPTIONB"
+	ai_chance = 20
+	command = { type = domestic which = free_market value = -1 }
+	command = { type = relation which = BOL value = -5 }
+	command = { type = dissent value = 1 }
+	command = { type = sleepevent which = 755452 }
+	command = { type = sleepevent which = 755454 }
+	command = { type = sleepevent which = 755456 }
+	command = { type = sleepevent which = 755459 }
+	}
+}
+
+event = {
+id = 755451
+country = BOL
+picture = "southamerica"
+style = 2
+
+name = "EVT_755451_NAME"
+desc = "EVT_755451_DESC"
+
+action_a = {
+	name = "EVT_755451_OPTIONA"
+	ai_chance = 70
+	command = { type = dissent value = 2 }
+	command = { type = domestic which = free_market value = 1 }
+	command = { type = relation which = PRU value = 15 }
+	command = { type = money value = 50 }
+	command = { type = setflag which = PRUBOL }
+	}
+action_b = {
+	name = "EVT_755451_OPTIONB"
+	ai_chance = 30
+	command = { type = domestic which = free_market value = -1 }
+	command = { type = relation which = PRU value = -5 }
+	command = { type = dissent value = -1 }
+	command = { type = clrflag which = PRUBOL }
+	command = { type = sleepevent which = 755452 }
+	command = { type = sleepevent which = 755454 }
+	command = { type = sleepevent which = 755456 }
+	command = { type = sleepevent which = 755459 }
+	}
+}
+
+event = {
+id = 755452
+country = PRU
+picture = "southamerica"
+style = 2
+
+trigger = {
+	flag = PRUBOL
+	exists = BOL
+	event = 755451
+	NOT = {
+	war = { country = BOL country = PRU }			#BOL not at war against PRU
+	atwar = PRU
+	atwar = BOL
+	flag = BOL_SOCIALIST
+	flag = BOL_SYNDICALIST					#BOL is not syndie
+	government = communist					#PRU not syndie
+	ispuppet = BOL						#BOL not anyones puppet
+	ispuppet = PRU						#PRU not anyones puppet
+	}					
+	}
+
+date = { day = 1 month = january year = 1937 }
+offset = 30
+deathdate = { day = 20 month = june year = 1966 }
+
+name = "EVT_755452_NAME"
+desc = "EVT_755452_DESC"
+
+action_a = {
+	name = "EVT_755452_OPTIONA"
+	ai_chance = 80
+	command = { type = dissent value = -5 }
+	command = { type = domestic which = free_market value = 1 }
+	command = { type = relation which = BOL value = 15 }
+        command = { type = industrial_modifier which = total value = 2 }
+	command = { type = trigger which = 755453 }
+	}
+action_b = {
+	name = "EVT_755452_OPTIONB"
+	ai_chance = 20
+	command = { type = domestic which = free_market value = -1 }
+	command = { type = relation which = BOL value = -5 }
+	command = { type = dissent value = 1 }
+	command = { type = clrflag which = PRUBOL }
+	command = { type = sleepevent which = 755454 }
+	command = { type = sleepevent which = 755456 }
+	command = { type = sleepevent which = 755459 }
+	}
+}
+
+event = {
+id = 755453
+country = BOL
+picture = "southamerica"
+style = 2
+
+name = "EVT_755453_NAME"
+desc = "EVT_755453_DESC"
+
+action_a = {
+	name = "EVT_755453_OPTIONA"
+	ai_chance = 70
+	command = { type = dissent value = 1 }
+	command = { type = domestic which = free_market value = 1 }
+	command = { type = relation which = PRU value = 25 }
+	command = { type = money value = 75 }
+        command = { type = industrial_modifier which = total value = 2 }
+	command = { type = steal_tech which = PRU }
+	}
+action_b = {
+	name = "EVT_755453_OPTIONB"
+	ai_chance = 30
+	command = { type = domestic which = free_market value = -1 }
+	command = { type = relation which = PRU value = -10 }
+	command = { type = dissent value = -1 }
+	command = { type = clrflag which = PRUBOL }
+	command = { type = sleepevent which = 755454 }
+	command = { type = sleepevent which = 755456 }
+	command = { type = sleepevent which = 755459 }
+	}
+}
+
+event = {
+id = 755454
+country = PRU
+picture = "southamerica"
+style = 2
+
+trigger = {
+	flag = PRUBOL
+	exists = BOL
+	event = 755453
+	NOT = {
+	war = { country = BOL country = PRU }			#BOL not at war against PRU
+	atwar = PRU
+	atwar = BOL
+	flag = BOL_SOCIALIST
+	flag = BOL_SYNDICALIST					#BOL is not syndie
+	government = communist					#PRU not syndie
+	ispuppet = BOL						#BOL not anyones puppet
+	ispuppet = PRU						#PRU not anyones puppet
+	}					
+	}
+
+date = { day = 1 month = july year = 1938 }
+offset = 200
+deathdate = { day = 20 month = june year = 1966 }
+
+name = "EVT_755454_NAME"
+desc = "EVT_755454_DESC"
+
+action_a = {
+	name = "EVT_755454_OPTIONA"
+	ai_chance = 80
+	command = { type = domestic which = interventionism value = 1 }
+	command = { type = domestic which = defense_lobby value = 1 }
+	command = { type = relation which = BOL value = 15 }
+	command = { type = trigger which = 755455 }
+	}
+action_b = {
+	name = "EVT_755454_OPTIONB"
+	ai_chance = 20
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = domestic which = defense_lobby value = -1 }
+	command = { type = relation which = BOL value = -15 }
+	command = { type = clrflag which = PRUBOL }
+	command = { type = sleepevent which = 755456 }
+	command = { type = sleepevent which = 755459 }
+	}
+}
+
+event = {
+id = 755455
+country = BOL
+picture = "southamerica"
+style = 2
+
+name = "EVT_755455_NAME"
+desc = "EVT_755455_DESC"
+
+action_a = {
+	name = "EVT_755455_OPTIONA"
+	ai_chance = 70
+	command = { type = domestic which = interventionism value = 1 }
+	command = { type = domestic which = defense_lobby value = 1 }
+	command = { type = relation which = PRU value = 15 }
+	command = { type = guarantee which = BOL where = PRU }
+	command = { type = guarantee which = PRU where = BOL }
+	}
+action_b = {
+	name = "EVT_755455_OPTIONB"
+	ai_chance = 30
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = domestic which = defense_lobby value = -1 }
+	command = { type = relation which = PRU value = -15 }
+	command = { type = clrflag which = PRUBOL }
+	command = { type = sleepevent which = 755456 }
+	command = { type = sleepevent which = 755459 }
+	}
+}
+
+
+event = {
+id = 755465
+country = PRU
+style = 2
+picture = "southamerica"
+
+trigger = { 	
+	war = { country = BOL country = PRU }
+	flag = PRUBOL
+	}
+
+date = { day = 15 month = march year = 1936 }
+offset = 30
+deathdate = { day = 20 month = june year = 1966 }
+
+name = "EVT_755465_NAME"
+desc = "EVT_755465_DESC"
+
+action_a = {
+	name = "EVT_755465_OPTIONA"
+	command = { type = clrflag which = PRUBOL }
+	command = { type = sleepevent which = 755452 }
+	command = { type = sleepevent which = 755454 }
+	command = { type = sleepevent which = 755456 }
+	command = { type = sleepevent which = 755459 }
+	}
+}
+
+event = {
+id = 558059
+random = no
+country = PRU
+
+date = { day = 2 month = june year = 1941 }
+offset = 300
+deathdate = { day = 29 month = january year = 1960 }
+
+trigger = {
+ event = 755455
+ NOT = {  
+ flag = BOL_REVOLT
+ flag = BOL_SOCIALIST
+ flag = BOL_SYNDICALIST
+ ispuppet = PRU
+ ispuppet = BOL
+ government = communist
+ war = { country = PRU country = BOL }
+ }
+ OR = {
+ belligerence = { country = ARG value = 5 }
+ belligerence = { country = BRA value = 5 }
+ }
+ }
+
+name = "EVT_558059_NAME"
+desc = "EVT_558059_DESC"
+picture = "PRUBOL"
+
+
+action_a = {
+ai_chance = 80
+name = "EVT_558059_OPTIONA"
+command = { type = trigger which = 6500199 }
+command = { type = dissent value = -1 }
+}
+
+action_b = {
+ai_chance = 40
+name = "EVT_558059_OPTIONB"
+command = { type = trigger which = 6500201 }
+command = { type = dissent value = -1 }
+}
+
+action_b = {
+ai_chance = 0
+name = "EVT_558059_OPTIONC"
+command =  { type = domestic which = interventionism value = -2 }
+command =  { type = dissent value = 5 }
+}
+}
+
+event = {
+id = 558060
+country = PRU
+style = 2
+
+name = "EVT_558060_NAME"
+desc = "EVT_558060_DESC"
+picture = "PRUBOL"
+
+action_a = {
+	name = "EVT_558060_OPTIONA"
+		command = { type = country which = U27 }
+                command = { type = ai which = "kaiserreich/PeruBol.ai" }
+                command = { type = add_division value = infantry when = 7 }
+		command = { type = add_division value = cavalry when = 7 } 
+                command = { type = domestic which = political_left value = 1 }
+		command = { type = domestic which = democratic value = 1 } 
+                command = { type = dissent value = 15 }
+}
+}
+
+event = {
+id = 55804
+country = U27
+style = 2
+picture = "ecuador"
+
+date = { day = 25 month = march year = 1936 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_55804_NAME"
+desc = "EVT_55804_DESC"
+
+action_a = {
+ai_chance = 90
+name = "EVT_55804_OPTIONA"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = dissent value = -1 }
+command = { type = addcore which = 2002 }
+command = { type = addcore which = 2003 }
+command = { type = addcore which = 2062 }
+command = { type = addcore which = 2010 }
+command = { type = addcore which = 2033 }
+command = { type = relation which = PRU value = -25 }
+command = { type = relation which = BOL value = -25 }
+command = { type = relation which = BRA value = -25 }
+command = { type = relation which = COL value = -25 }
+command = { type = relation which = VEN value = -10 }
+command = { type = belligerence value = 3 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+}
+
+action_b = {
+ai_chance = 10
+name = "EVT_55804_OPTIONB"
+command = { type = relation which = PRU value = 25 }
+command = { type = relation which = BRA value = 10 }
+command = { type = relation which = COL value = 10 }
+command = { type = relation which = BOL value = 10 }
+}
+}
+
+#####
+#Peru
+#####
+event = {
+	id = 557001
+	country = PRU
+	random = no
+	style = 2
+
+	trigger = { 
+        OR = {
+	government = democratic
+	ideology = paternal_autocrat 
+        }
+	NOT = { ispuppet = PRU } 
+        }
+
+	name = "EVT_557001_NAME"
+	desc = "EVT_557001_DESC"
+	picture = "rusdumaelect"
+
+	date = { day = 10 month = june year = 1939 }
+	offset = 15
+	deathdate = { day = 10 month = july year = 1939 }
+
+	action_a = {
+		ai_chance = 60
+		name = "EVT_557001_OPTIONA"
+		command = { type = headofstate which = 39015 } #Manuel Prado y Ugarteche
+		command = { type = headofgovernment which = 39025 } #Alberto Rey de Castro
+		command = { type = foreignminister which = 39043 } #Enrique Goytisola Bolognesi
+		command = { type = armamentminister which = 39055 } #Augusto Leguia Swayne
+		command = { type = ministerofsecurity which = 39071 } #Eleodoro Romero
+		command = { type = ministerofintelligence which = 39085 } #Benigno Ballón Farfán
+		command = { type = chiefofstaff which = 39095 } #Luis Sánchez Cerro
+		command = { type = chiefofarmy which = 39104 } #Luis Saenz Diaz
+		command = { type = chiefofnavy which = 39111 } #Alberto Roque Saldías
+		command = { type = chiefofair which = 39118 } #Victor Solano
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 4 }
+		command = { type = domestic which = free_market value = 1 }
+	}
+	action_b = {
+		ai_chance = 40
+		name = "EVT_557001_OPTIONB"
+		command = { type = headofstate which = 39001 } #Oscar Benavides Larrea
+		command = { type = headofgovernment which = 39002 } #Manuel Esteban Rodríguez
+		command = { type = foreignminister which = 39003 } #Alberto Ulloa Sotomayor
+		command = { type = armamentminister which = 39004 } #Ernesto Scroth
+		command = { type = ministerofsecurity which = 39005 } #Luis Sanchez Cerro
+		command = { type = ministerofintelligence which = 39006 } #Oscar Gilardi
+		command = { type = chiefofstaff which = 39007 } #Gustavo Jimenez
+		command = { type = chiefofarmy which = 39008 } #Oscar Benavides Larrea
+		command = { type = chiefofnavy which = 39009 } #Ernesto Scroth
+		command = { type = chiefofair which = 39010 } #Paul de Beaudiez
+		command = { type = set_domestic which = democratic value = 5 }
+		command = { type = set_domestic which = political_left value = 4 }
+		command = { type = domestic which = freedom value = -1 }
+		command = { type = domestic which = free_market value = 2 }
+	}
+        action_c = {
+		ai_chance = 10
+		name = "EVT_557001_OPTIONC"
+		command = { type = headofstate which = 39012 } #José de la Riva Agüero
+		command = { type = headofgovernment which = 39021 } #José de la Riva Agüero
+		command = { type = foreignminister which = 39040 } #Felipe Tudela
+		command = { type = armamentminister which = 39052 } #José Julio Bravo
+		command = { type = ministerofsecurity which = 39005 } #Luis Sanchez Cerro
+		command = { type = ministerofintelligence which = 39006 } #Oscar Gilardi
+                command = { type = chiefofstaff which = 39007 } #Gustavo Jimenez
+		command = { type = chiefofarmy which = 39108 } #Oscar Benavides Larrea
+		command = { type = chiefofnavy which = 39009 } #Ernesto Scroth
+		command = { type = chiefofair which = 39010 } #Paul de Beaudiez
+		command = { type = set_domestic which = democratic value = 3 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 3 }
+	}
+}
+
+event = {
+	id = 557002
+	country = PRU
+	random = no
+	style = 2
+
+	trigger = { 
+        OR = {
+	government = democratic
+	ideology = paternal_autocrat 
+        }
+	NOT = { ispuppet = PRU } 
+        }
+
+	name = "EVT_557002_NAME"
+	desc = "EVT_557002_DESC"
+	picture = "rusdumaelect"
+
+	date = { day = 10 month = june year = 1944 }
+	offset = 15
+	deathdate = { day = 10 month = july year = 1944 }
+
+	action_a = {
+		ai_chance = 70
+		name = "EVT_557002_OPTIONA"
+		command = { type = headofstate which = 39015 } #Manuel Prado y Ugarteche
+		command = { type = headofgovernment which = 39002 } #Manuel Esteban Rodríguez
+		command = { type = foreignminister which = 39043 } #Enrique Goytisola Bolognesi
+		command = { type = armamentminister which = 39055 } #Augusto Leguia Swayne
+		command = { type = ministerofsecurity which = 39071 } #Eleodoro Romero
+		command = { type = ministerofintelligence which = 39085 } #Benigno Ballón Farfán
+		command = { type = chiefofstaff which = 39095 } #Luis Sánchez Cerro
+		command = { type = chiefofarmy which = 39104 } #Luis Saenz Diaz
+		command = { type = chiefofnavy which = 39111 } #Alberto Roque Saldías
+		command = { type = chiefofair which = 39118 } #Victor Solano
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 4 }
+		command = { type = domestic which = freedom value = -1 }
+	}
+	action_b = {
+		ai_chance = 30
+		name = "EVT_557002_OPTIONB"
+		command = { type = headofstate which = 39018 } #Eloy G. Ureta
+		command = { type = headofgovernment which = 39031 } #David S. Ocampo
+		command = { type = foreignminister which = 39044 } #Reynaldo Vinatea
+		command = { type = armamentminister which = 39056 } #Manuel Vásquez Díaz
+		command = { type = ministerofsecurity which = 39073 } #Antonio Rodríguez Ramírez
+		command = { type = ministerofintelligence which = 39088 } #Miguel Montero y Tirado
+		command = { type = chiefofstaff which = 39099 } #Juan Poncé Diaz
+		command = { type = chiefofarmy which = 39105 } #Eloy G. Ureta
+		command = { type = chiefofnavy which = 39112 } #Manuel R. Nieto
+		command = { type = chiefofair which = 39119 } #Romulo Frias
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 7 }
+		command = { type = domestic which = free_market value = -1 }
+	}
+        action_c = {
+		ai_chance = 10
+		name = "EVT_557002_OPTIONC"
+		command = { type = headofstate which = 39012 } #José de la Riva Agüero
+		command = { type = headofgovernment which = 39021 } #José de la Riva Agüero
+		command = { type = foreignminister which = 39040 } #Felipe Tudela
+		command = { type = armamentminister which = 39052 } #José Julio Bravo
+		command = { type = ministerofsecurity which = 39005 } #Luis Sanchez Cerro
+		command = { type = ministerofintelligence which = 39006 } #Oscar Gilardi
+                command = { type = chiefofstaff which = 39007 } #Gustavo Jimenez
+		command = { type = chiefofarmy which = 39108 } #Oscar Benavides Larrea
+		command = { type = chiefofnavy which = 39009 } #Ernesto Scroth
+		command = { type = chiefofair which = 39010 } #Paul de Beaudiez
+		command = { type = set_domestic which = democratic value = 3 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 3 }
+	}
+}
+
+event = {
+	id = 557003
+	country = PRU
+	random = no
+	style = 2
+
+	trigger = { 
+        OR = {
+	government = democratic
+	ideology = paternal_autocrat 
+        }
+	NOT = { ispuppet = PRU } 
+        }
+
+	name = "EVT_557003_NAME"
+	desc = "EVT_557003_DESC"
+	picture = "rusdumaelect"
+
+	date = { day = 10 month = june year = 1949 }
+	offset = 15
+	deathdate = { day = 10 month = july year = 1949 }
+
+	action_a = {
+		ai_chance = 50
+		name = "EVT_557003_OPTIONA"
+		command = { type = headofstate which = 39019 } #Manuel Odria Amoretti
+		command = { type = headofgovernment which = 39035 } #Alberto Roque Saldías
+		command = { type = foreignminister which = 39046 } #Manuel Gallagher
+		command = { type = armamentminister which = 39055 } #Augusto Leguia Swayne
+		command = { type = ministerofsecurity which = 39071 } #Eleodoro Romero
+		command = { type = ministerofintelligence which = 39088 } #Miguel Montero y Tirado
+		command = { type = chiefofstaff which = 39099 } #Juan Poncé Diaz
+		command = { type = chiefofarmy which = 39105 } #Eloy G. Ureta
+		command = { type = chiefofnavy which = 39112 } #Manuel R. Nieto
+		command = { type = chiefofair which = 39119 } #Romulo Frias
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 4 }
+		command = { type = domestic which = freedom value = -1 }
+	}
+	action_b = {
+		ai_chance = 30
+		name = "EVT_557003_OPTIONB"
+		command = { type = headofstate which = 39020 } #Fernando Belaúnde Terry
+		command = { type = headofgovernment which = 39033 } #Julio Portugal Montero
+		command = { type = foreignminister which = 39048 } #Javier Correa Elías
+		command = { type = armamentminister which = 39066 } #Rómulo Ferrero
+		command = { type = ministerofsecurity which = 39080 } #Juan F. Guabloche Rodrígues
+		command = { type = ministerofintelligence which = 39088 } #Miguel Montero y Tirado
+		command = { type = chiefofstaff which = 39099 } #Juan Poncé Diaz
+		command = { type = chiefofarmy which = 39105 } #Eloy G. Ureta
+		command = { type = chiefofnavy which = 39112 } #Manuel R. Nieto
+		command = { type = chiefofair which = 39119 } #Romulo Frias
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 7 }
+		command = { type = domestic which = free_market value = -1 }
+	}
+	action_c = {
+		ai_chance = 20
+		name = "EVT_557003_OPTIONC"
+		command = { type = headofstate which = 39018 } #Eloy G. Ureta
+		command = { type = headofgovernment which = 39031 } #David S. Ocampo
+		command = { type = foreignminister which = 39044 } #Reynaldo Vinatea
+		command = { type = armamentminister which = 39056 } #Manuel Vásquez Díaz
+		command = { type = ministerofsecurity which = 39073 } #Antonio Rodríguez Ramírez
+		command = { type = ministerofintelligence which = 39093 } #Armando Montes de Peralta
+		command = { type = chiefofstaff which = 39098 } #Fortunato Quesada Larrea
+		command = { type = chiefofarmy which = 39107 } #Vladimiro Lopéz Trigos
+		command = { type = chiefofnavy which = 39115 } #Luis Navarreté
+		command = { type = chiefofair which = 39123 } #Luis Navarreté
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 5 }
+		command = { type = domestic which = free_market value = -1 }
+	}
+        action_c = {
+		ai_chance = 10
+		name = "EVT_557003_OPTIOND"
+		command = { type = headofstate which = 39012 } #José de la Riva Agüero
+		command = { type = headofgovernment which = 39021 } #José de la Riva Agüero
+		command = { type = foreignminister which = 39040 } #Felipe Tudela
+		command = { type = armamentminister which = 39052 } #José Julio Bravo
+		command = { type = ministerofsecurity which = 39005 } #Luis Sanchez Cerro
+		command = { type = ministerofintelligence which = 39006 } #Oscar Gilardi
+                command = { type = chiefofstaff which = 39007 } #Gustavo Jimenez
+		command = { type = chiefofarmy which = 39108 } #Oscar Benavides Larrea
+		command = { type = chiefofnavy which = 39009 } #Ernesto Scroth
+		command = { type = chiefofair which = 39010 } #Paul de Beaudiez
+		command = { type = set_domestic which = democratic value = 3 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 3 }
+	}
+}
+
+
+event = {
+	id = 557004
+	country = PRU
+	random = no
+	style = 2
+
+	trigger = { 
+        OR = {
+	government = democratic
+	ideology = paternal_autocrat 
+        }
+	NOT = { ispuppet = PRU } 
+        }
+
+	name = "EVT_557004_NAME"
+	desc = "EVT_557004_DESC"
+	picture = "rusdumaelect"
+
+	date = { day = 10 month = june year = 1954 }
+	offset = 15
+	deathdate = { day = 10 month = july year = 1954 }
+
+	action_a = {
+		ai_chance = 50
+		name = "EVT_557004_OPTIONA"
+		command = { type = headofstate which = 39019 } #Manuel Odria Amoretti
+		command = { type = headofgovernment which = 39035 } #Alberto Roque Saldías
+		command = { type = foreignminister which = 39046 } #Manuel Gallagher
+		command = { type = armamentminister which = 39055 } #Augusto Leguia Swayne
+		command = { type = ministerofsecurity which = 39071 } #Eleodoro Romero
+		command = { type = ministerofintelligence which = 39088 } #Miguel Montero y Tirado
+		command = { type = chiefofstaff which = 39099 } #Juan Poncé Diaz
+		command = { type = chiefofarmy which = 39105 } #Eloy G. Ureta
+		command = { type = chiefofnavy which = 39112 } #Manuel R. Nieto
+		command = { type = chiefofair which = 39119 } #Romulo Frias
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 4 }
+		command = { type = domestic which = freedom value = -1 }
+	}
+	action_b = {
+		ai_chance = 30
+		name = "EVT_557004_OPTIONB"
+		command = { type = headofstate which = 39020 } #Fernando Belaúnde Terry
+		command = { type = headofgovernment which = 39033 } #Julio Portugal Montero
+		command = { type = foreignminister which = 39048 } #Javier Correa Elías
+		command = { type = armamentminister which = 39066 } #Rómulo Ferrero
+		command = { type = ministerofsecurity which = 39080 } #Juan F. Guabloche Rodrígues
+		command = { type = ministerofintelligence which = 39088 } #Miguel Montero y Tirado
+		command = { type = chiefofstaff which = 39099 } #Juan Poncé Diaz
+		command = { type = chiefofarmy which = 39105 } #Eloy G. Ureta
+		command = { type = chiefofnavy which = 39112 } #Manuel R. Nieto
+		command = { type = chiefofair which = 39119 } #Romulo Frias
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 7 }
+		command = { type = domestic which = free_market value = -1 }
+	}
+	action_c = {
+		ai_chance = 20
+		name = "EVT_557004_OPTIONC"
+		command = { type = headofstate which = 39018 } #Eloy G. Ureta
+		command = { type = headofgovernment which = 39031 } #David S. Ocampo
+		command = { type = foreignminister which = 39044 } #Reynaldo Vinatea
+		command = { type = armamentminister which = 39056 } #Manuel Vásquez Díaz
+		command = { type = ministerofsecurity which = 39073 } #Antonio Rodríguez Ramírez
+		command = { type = ministerofintelligence which = 39093 } #Armando Montes de Peralta
+		command = { type = chiefofstaff which = 39098 } #Fortunato Quesada Larrea
+		command = { type = chiefofarmy which = 39107 } #Vladimiro Lopéz Trigos
+		command = { type = chiefofnavy which = 39115 } #Luis Navarreté
+		command = { type = chiefofair which = 39123 } #Luis Navarreté
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 5 }
+		command = { type = domestic which = free_market value = -1 }
+	}
+        action_c = {
+		ai_chance = 10
+		name = "EVT_557004_OPTIOND"
+		command = { type = headofstate which = 39012 } #José de la Riva Agüero
+		command = { type = headofgovernment which = 39021 } #José de la Riva Agüero
+		command = { type = foreignminister which = 39040 } #Felipe Tudela
+		command = { type = armamentminister which = 39052 } #José Julio Bravo
+		command = { type = ministerofsecurity which = 39005 } #Luis Sanchez Cerro
+		command = { type = ministerofintelligence which = 39006 } #Oscar Gilardi
+                command = { type = chiefofstaff which = 39007 } #Gustavo Jimenez
+		command = { type = chiefofarmy which = 39108 } #Oscar Benavides Larrea
+		command = { type = chiefofnavy which = 39009 } #Ernesto Scroth
+		command = { type = chiefofair which = 39010 } #Paul de Beaudiez
+		command = { type = set_domestic which = democratic value = 3 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 3 }
+	}
+}
+
+event = {
+	id = 557005
+	country = PRU
+	random = no
+	style = 2
+
+	trigger = { 
+        OR = {
+	government = democratic
+	ideology = paternal_autocrat 
+        }
+	NOT = { ispuppet = PRU } 
+        }
+
+	name = "EVT_557005_NAME"
+	desc = "EVT_557005_DESC"
+	picture = "rusdumaelect"
+
+	date = { day = 10 month = june year = 1959 }
+	offset = 15
+	deathdate = { day = 10 month = july year = 1959 }
+
+	action_a = {
+		ai_chance = 50
+		name = "EVT_557005_OPTIONA"
+		command = { type = headofstate which = 39019 } #Manuel Odria Amoretti
+		command = { type = headofgovernment which = 39035 } #Alberto Roque Saldías
+		command = { type = foreignminister which = 39046 } #Manuel Gallagher
+		command = { type = armamentminister which = 39055 } #Augusto Leguia Swayne
+		command = { type = ministerofsecurity which = 39071 } #Eleodoro Romero
+		command = { type = ministerofintelligence which = 39088 } #Miguel Montero y Tirado
+		command = { type = chiefofstaff which = 39099 } #Juan Poncé Diaz
+		command = { type = chiefofarmy which = 39105 } #Eloy G. Ureta
+		command = { type = chiefofnavy which = 39112 } #Manuel R. Nieto
+		command = { type = chiefofair which = 39119 } #Romulo Frias
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 4 }
+		command = { type = domestic which = freedom value = -1 }
+	}
+	action_b = {
+		ai_chance = 30
+		name = "EVT_557005_OPTIONB"
+		command = { type = headofstate which = 39020 } #Fernando Belaúnde Terry
+		command = { type = headofgovernment which = 39033 } #Julio Portugal Montero
+		command = { type = foreignminister which = 39048 } #Javier Correa Elías
+		command = { type = armamentminister which = 39066 } #Rómulo Ferrero
+		command = { type = ministerofsecurity which = 39080 } #Juan F. Guabloche Rodrígues
+		command = { type = ministerofintelligence which = 39088 } #Miguel Montero y Tirado
+		command = { type = chiefofstaff which = 39099 } #Juan Poncé Diaz
+		command = { type = chiefofarmy which = 39105 } #Eloy G. Ureta
+		command = { type = chiefofnavy which = 39112 } #Manuel R. Nieto
+		command = { type = chiefofair which = 39119 } #Romulo Frias
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 7 }
+		command = { type = domestic which = free_market value = -1 }
+	}
+	action_c = {
+		ai_chance = 20
+		name = "EVT_557005_OPTIONC"
+		command = { type = headofstate which = 39018 } #Eloy G. Ureta
+		command = { type = headofgovernment which = 39031 } #David S. Ocampo
+		command = { type = foreignminister which = 39044 } #Reynaldo Vinatea
+		command = { type = armamentminister which = 39056 } #Manuel Vásquez Díaz
+		command = { type = ministerofsecurity which = 39073 } #Antonio Rodríguez Ramírez
+		command = { type = ministerofintelligence which = 39093 } #Armando Montes de Peralta
+		command = { type = chiefofstaff which = 39098 } #Fortunato Quesada Larrea
+		command = { type = chiefofarmy which = 39107 } #Vladimiro Lopéz Trigos
+		command = { type = chiefofnavy which = 39115 } #Luis Navarreté
+		command = { type = chiefofair which = 39123 } #Luis Navarreté
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 5 }
+		command = { type = domestic which = free_market value = -1 }
+	}
+        action_c = {
+		ai_chance = 10
+		name = "EVT_557005_OPTIOND"
+		command = { type = headofstate which = 39012 } #José de la Riva Agüero
+		command = { type = headofgovernment which = 39021 } #José de la Riva Agüero
+		command = { type = foreignminister which = 39040 } #Felipe Tudela
+		command = { type = armamentminister which = 39052 } #José Julio Bravo
+		command = { type = ministerofsecurity which = 39005 } #Luis Sanchez Cerro
+		command = { type = ministerofintelligence which = 39006 } #Oscar Gilardi
+                command = { type = chiefofstaff which = 39007 } #Gustavo Jimenez
+		command = { type = chiefofarmy which = 39108 } #Oscar Benavides Larrea
+		command = { type = chiefofnavy which = 39009 } #Ernesto Scroth
+		command = { type = chiefofair which = 39010 } #Paul de Beaudiez
+		command = { type = set_domestic which = democratic value = 3 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 3 }
+	}
+}
+
+
+event = {
+	id = 557006
+	country = U27
+	random = no
+	style = 2
+
+	trigger = { 
+        OR = {
+	government = democratic
+	ideology = paternal_autocrat 
+        }
+        }
+
+	name = "EVT_557006_NAME"
+	desc = "EVT_557006_DESC"
+	picture = "rusdumaelect"
+
+	date = { day = 10 month = june year = 1939 }
+	offset = 15
+	deathdate = { day = 10 month = july year = 1939 }
+
+	action_a = {
+		ai_chance = 60
+		name = "EVT_557006_OPTIONA"
+		command = { type = headofstate which = 790712 } #Manuel Prado y Ugarteche
+		command = { type = headofgovernment which = 790855 } #Carlos Quintanilla Quiroga
+		command = { type = foreignminister which = 790878 } #Abadon Saavedra Mallea
+		command = { type = armamentminister which = 790741 } #Augusto Leguia Swayne
+		command = { type = ministerofsecurity which = 790756 } #Eleodoro Romero
+		command = { type = ministerofintelligence which = 790769 } #Benigno Ballón Farfán
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 4 }
+		command = { type = domestic which = free_market value = 1 }
+	}
+	action_b = {
+		ai_chance = 40
+		name = "EVT_557006_OPTIONB"
+		command = { type = headofstate which = 790701 } #Oscar Benavides Larrea
+		command = { type = headofgovernment which = 790866 } #Enrique Penaranda Castillo
+		command = { type = foreignminister which = 790880 } #Alberto Ostria Gutierrez
+		command = { type = armamentminister which = 790704 } #Ernesto Scroth
+		command = { type = ministerofsecurity which = 790705 } #Luis Sanchez Cerro
+		command = { type = ministerofintelligence which = 790706 } #Oscar Gilardi
+		command = { type = set_domestic which = democratic value = 5 }
+		command = { type = set_domestic which = political_left value = 4 }
+		command = { type = domestic which = freedom value = -1 }
+		command = { type = domestic which = free_market value = 2 }
+	}
+        action_c = {
+		ai_chance = 10
+		name = "EVT_557006_OPTIONC"
+		command = { type = headofstate which = 790808 } #José de la Riva Agüero
+		command = { type = headofgovernment which = 790868 } #German Butron
+		command = { type = foreignminister which = 790855 } #Simon I. Patino
+		command = { type = armamentminister which = 790738 } #José Julio Bravo
+		command = { type = ministerofsecurity which = 790705 } #Luis Sanchez Cerro
+		command = { type = ministerofintelligence which = 790706 } #Oscar Gilardi
+		command = { type = set_domestic which = democratic value = 3 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 3 }
+	}
+}
+
+event = {
+	id = 557007
+	country = U27
+	random = no
+	style = 2
+
+	trigger = { 
+        OR = {
+	government = democratic
+	ideology = paternal_autocrat 
+        }
+        }
+
+	name = "EVT_557007_NAME"
+	desc = "EVT_557007_DESC"
+	picture = "rusdumaelect"
+
+	date = { day = 10 month = june year = 1944 }
+	offset = 15
+	deathdate = { day = 10 month = july year = 1944 }
+
+	action_a = {
+		ai_chance = 60
+		name = "EVT_557007_OPTIONA"
+		command = { type = headofstate which = 790712 } #Manuel Prado y Ugarteche
+		command = { type = headofgovernment which = 790866 } #Enrique Penaranda Castillo
+		command = { type = foreignminister which = 790880 } #Alberto Ostria Gutierrez
+		command = { type = armamentminister which = 790741 } #Augusto Leguia Swayne
+		command = { type = ministerofsecurity which = 790756 } #Eleodoro Romero
+		command = { type = ministerofintelligence which = 790769 } #Benigno Ballón Farfán
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 4 }
+		command = { type = domestic which = free_market value = 1 }
+	}
+	action_b = {
+		ai_chance = 30
+		name = "EVT_557007_OPTIONB"
+		command = { type = headofstate which = 790716 } #Eloy G. Ureta
+		command = { type = headofgovernment which = 790853 } #German Busch Beccera
+		command = { type = foreignminister which = 790871 } #Enrique Baldivieso Aparicio
+		command = { type = armamentminister which = 790742 } #Manuel Vásquez Díaz
+		command = { type = ministerofsecurity which = 790758 } #Antonio Rodríguez Ramírez
+		command = { type = ministerofintelligence which = 790772 } #Miguel Montero y Tirado
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 7 }
+		command = { type = domestic which = free_market value = -1 }
+	}
+        action_c = {
+		ai_chance = 10
+		name = "EVT_557007_OPTIONC"
+		command = { type = headofstate which = 790808 } #José de la Riva Agüero
+		command = { type = headofgovernment which = 790868 } #German Butron
+		command = { type = foreignminister which = 790855 } #Simon I. Patino
+		command = { type = armamentminister which = 790738 } #José Julio Bravo
+		command = { type = ministerofsecurity which = 790705 } #Luis Sanchez Cerro
+		command = { type = ministerofintelligence which = 790706 } #Oscar Gilardi
+		command = { type = set_domestic which = democratic value = 3 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 3 }
+	}
+}
+
+event = {
+	id = 557008
+	country = U27
+	random = no
+	style = 2
+
+	trigger = { 
+        OR = {
+	government = democratic
+	ideology = paternal_autocrat 
+        }
+        }
+
+	name = "EVT_557008_NAME"
+	desc = "EVT_557008_DESC"
+	picture = "rusdumaelect"
+
+	date = { day = 10 month = june year = 1949 }
+	offset = 15
+	deathdate = { day = 10 month = july year = 1949 }
+
+	action_a = {
+		ai_chance = 50
+		name = "EVT_557008_OPTIONA"
+		command = { type = headofstate which = 790712 } #Manuel Prado y Ugarteche
+		command = { type = headofgovernment which = 790866 } #Enrique Penaranda Castillo
+		command = { type = foreignminister which = 790880 } #Alberto Ostria Gutierrez
+		command = { type = armamentminister which = 790741 } #Augusto Leguia Swayne
+		command = { type = ministerofsecurity which = 790756 } #Eleodoro Romero
+		command = { type = ministerofintelligence which = 790769 } #Benigno Ballón Farfán
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 4 }
+		command = { type = domestic which = free_market value = 1 }
+	}
+	action_b = {
+		ai_chance = 30
+		name = "EVT_557008_OPTIONB"
+		command = { type = headofstate which = 790713 } #José Bustamante y Rivero
+		command = { type = headofgovernment which = 790726 } #Julio Portugal Montero
+		command = { type = foreignminister which = 790876 } #Tomas Manuel Elío
+		command = { type = armamentminister which = 790901 } #Néstor Guillén Olmos
+		command = { type = ministerofsecurity which = 790765 } #Juan F. Guabloche Rodrígues
+		command = { type = ministerofintelligence which = 790772 } #Miguel Montero y Tirado
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 6 }
+		command = { type = domestic which = free_market value = -1 }
+	}
+	action_b = {
+		ai_chance = 30
+		name = "EVT_557008_OPTIONC"
+		command = { type = headofstate which = 790716 } #Eloy G. Ureta
+		command = { type = headofgovernment which = 790853 } #German Busch Beccera
+		command = { type = foreignminister which = 790871 } #Enrique Baldivieso Aparicio
+		command = { type = armamentminister which = 790742 } #Manuel Vásquez Díaz
+		command = { type = ministerofsecurity which = 790758 } #Antonio Rodríguez Ramírez
+		command = { type = ministerofintelligence which = 790772 } #Miguel Montero y Tirado
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 8 }
+		command = { type = domestic which = free_market value = -1 }
+	}
+        action_c = {
+		ai_chance = 10
+		name = "EVT_557008_OPTIOND"
+		command = { type = headofstate which = 790808 } #José de la Riva Agüero
+		command = { type = headofgovernment which = 790868 } #German Butron
+		command = { type = foreignminister which = 790855 } #Simon I. Patino
+		command = { type = armamentminister which = 790738 } #José Julio Bravo
+		command = { type = ministerofsecurity which = 790705 } #Luis Sanchez Cerro
+		command = { type = ministerofintelligence which = 790706 } #Oscar Gilardi
+		command = { type = set_domestic which = democratic value = 3 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 3 }
+	}
+}
+
+
+event = {
+	id = 557009
+	country = U27
+	random = no
+	style = 2
+
+	trigger = { 
+        OR = {
+	government = democratic
+	ideology = paternal_autocrat 
+        }
+        }
+
+	name = "EVT_557009_NAME"
+	desc = "EVT_557009_DESC"
+	picture = "rusdumaelect"
+
+	date = { day = 10 month = june year = 1954 }
+	offset = 15
+	deathdate = { day = 10 month = july year = 1954 }
+
+	action_a = {
+		ai_chance = 50
+		name = "EVT_557009_OPTIONA"
+		command = { type = headofstate which = 790712 } #Manuel Prado y Ugarteche
+		command = { type = headofgovernment which = 790866 } #Enrique Penaranda Castillo
+		command = { type = foreignminister which = 790880 } #Alberto Ostria Gutierrez
+		command = { type = armamentminister which = 790741 } #Augusto Leguia Swayne
+		command = { type = ministerofsecurity which = 790756 } #Eleodoro Romero
+		command = { type = ministerofintelligence which = 790769 } #Benigno Ballón Farfán
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 4 }
+		command = { type = domestic which = free_market value = 1 }
+	}
+	action_b = {
+		ai_chance = 30
+		name = "EVT_557009_OPTIONB"
+		command = { type = headofstate which = 790713 } #José Bustamante y Rivero
+		command = { type = headofgovernment which = 790726 } #Julio Portugal Montero
+		command = { type = foreignminister which = 790876 } #Tomas Manuel Elío
+		command = { type = armamentminister which = 790901 } #Néstor Guillén Olmos
+		command = { type = ministerofsecurity which = 790765 } #Juan F. Guabloche Rodrígues
+		command = { type = ministerofintelligence which = 790772 } #Miguel Montero y Tirado
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 6 }
+		command = { type = domestic which = free_market value = -1 }
+	}
+	action_b = {
+		ai_chance = 30
+		name = "EVT_557009_OPTIONC"
+		command = { type = headofstate which = 790716 } #Eloy G. Ureta
+		command = { type = headofgovernment which = 790853 } #German Busch Beccera
+		command = { type = foreignminister which = 790871 } #Enrique Baldivieso Aparicio
+		command = { type = armamentminister which = 790742 } #Manuel Vásquez Díaz
+		command = { type = ministerofsecurity which = 790758 } #Antonio Rodríguez Ramírez
+		command = { type = ministerofintelligence which = 790772 } #Miguel Montero y Tirado
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 8 }
+		command = { type = domestic which = free_market value = -1 }
+	}
+        action_c = {
+		ai_chance = 10
+		name = "EVT_557009_OPTIOND"
+		command = { type = headofstate which = 790808 } #José de la Riva Agüero
+		command = { type = headofgovernment which = 790868 } #German Butron
+		command = { type = foreignminister which = 790855 } #Simon I. Patino
+		command = { type = armamentminister which = 790738 } #José Julio Bravo
+		command = { type = ministerofsecurity which = 790705 } #Luis Sanchez Cerro
+		command = { type = ministerofintelligence which = 790706 } #Oscar Gilardi
+		command = { type = set_domestic which = democratic value = 3 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 3 }
+	}
+}
+
+event = {
+	id = 557010
+	country = U27
+	random = no
+	style = 2
+
+	trigger = { 
+        OR = {
+	government = democratic
+	ideology = paternal_autocrat 
+        }
+        }
+
+	name = "EVT_557010_NAME"
+	desc = "EVT_557010_DESC"
+	picture = "rusdumaelect"
+
+	date = { day = 10 month = june year = 1959 }
+	offset = 15
+	deathdate = { day = 10 month = july year = 1959 }
+
+	action_a = {
+		ai_chance = 50
+		name = "EVT_557010_OPTIONA"
+		command = { type = headofstate which = 790712 } #Manuel Prado y Ugarteche
+		command = { type = headofgovernment which = 790866 } #Enrique Penaranda Castillo
+		command = { type = foreignminister which = 790880 } #Alberto Ostria Gutierrez
+		command = { type = armamentminister which = 790741 } #Augusto Leguia Swayne
+		command = { type = ministerofsecurity which = 790756 } #Eleodoro Romero
+		command = { type = ministerofintelligence which = 790769 } #Benigno Ballón Farfán
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 4 }
+		command = { type = domestic which = free_market value = 1 }
+	}
+	action_b = {
+		ai_chance = 30
+		name = "EVT_557010_OPTIONB"
+		command = { type = headofstate which = 790713 } #José Bustamante y Rivero
+		command = { type = headofgovernment which = 790726 } #Julio Portugal Montero
+		command = { type = foreignminister which = 790876 } #Tomas Manuel Elío
+		command = { type = armamentminister which = 790901 } #Néstor Guillén Olmos
+		command = { type = ministerofsecurity which = 790765 } #Juan F. Guabloche Rodrígues
+		command = { type = ministerofintelligence which = 790772 } #Miguel Montero y Tirado
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 6 }
+		command = { type = domestic which = free_market value = -1 }
+	}
+	action_b = {
+		ai_chance = 30
+		name = "EVT_557010_OPTIONC"
+		command = { type = headofstate which = 790716 } #Eloy G. Ureta
+		command = { type = headofgovernment which = 790853 } #German Busch Beccera
+		command = { type = foreignminister which = 790871 } #Enrique Baldivieso Aparicio
+		command = { type = armamentminister which = 790742 } #Manuel Vásquez Díaz
+		command = { type = ministerofsecurity which = 790758 } #Antonio Rodríguez Ramírez
+		command = { type = ministerofintelligence which = 790772 } #Miguel Montero y Tirado
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 8 }
+		command = { type = domestic which = free_market value = -1 }
+	}
+        action_c = {
+		ai_chance = 10
+		name = "EVT_557010_OPTIOND"
+		command = { type = headofstate which = 790808 } #José de la Riva Agüero
+		command = { type = headofgovernment which = 790868 } #German Butron
+		command = { type = foreignminister which = 790855 } #Simon I. Patino
+		command = { type = armamentminister which = 790738 } #José Julio Bravo
+		command = { type = ministerofsecurity which = 790705 } #Luis Sanchez Cerro
+		command = { type = ministerofintelligence which = 790706 } #Oscar Gilardi
+		command = { type = set_domestic which = democratic value = 3 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 3 }
+	}
+}
+
+event = {
+    id = 557011
+    random = no
+    country = PRU
+    picture = "Syndicalists"
+        style = 2
+
+    trigger = {
+        NOT = {
+        government = communist
+        }
+        flag = BOL_REVOLT
+        }
+
+    date = { day = 1 month = may year = 1936 }
+    offset = 7
+    deathdate = { day = 29 month = may year = 1936 }
+
+    name = "EVT_557011_NAME"
+    desc = "EVT_557011_DESC"
+
+    action_a = {
+        ai_chance = 75
+        name = "EVT_557011_OPTIONA"
+        command = { type = dissent value = 3 }
+        command = { type = money value = -200 }
+        command = { type = supplies value = -300 }
+        command = { type = relation which = BOL value = -40 }
+        command = { type = add_division which = "1a. División del Surte" value = infantry when = 8 }
+        command = { type = domestic which = defense_lobby value = 1 }
+        command = { type = domestic which = interventionism value = 1 }
+        }
+    action_b = {
+        ai_chance = 25
+        name = "EVT_557011_OPTIONB"
+        command = { type = dissent value = 2 }
+        command = { type = relation which = BOL value = 10 }
+        command = { type = domestic which = defense_lobby value = -1 }
+        command = { type = domestic which = interventionism value = -1 }
+        }
+    }

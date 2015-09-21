@@ -1,0 +1,1236 @@
+event = {
+id = 628016
+country = CHC
+style = 2
+picture = "TheBrotherhood"
+
+trigger = {
+exists = CHI
+NOT = {
+ispuppet = CHC
+ispuppet = CHI
+atwar = CHC
+alliance = { country = CHI country = CHC }
+}
+}
+
+date = { day = 1 month = January year = 1936 }
+offset =  15
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_628016_NAME"
+desc = "EVT_628016_DESC"
+
+action_a = {
+ai_chance = 80
+name = "EVT_628016_OPTIONA"
+command = { type = trigger which = 628017 }
+}
+
+action_b = {
+ai_chance = 20
+name = "EVT_628016_OPTIONB"
+command = { type = dissent value = -1 }
+}
+}
+
+
+
+####################
+### Empire of Manchuria
+####################
+
+event = {
+id = 66731
+country = GER
+style = 2
+picture = "China_rally"
+
+trigger = { 
+exists = MAN
+exists = JAP
+puppet = { country = MAN country = JAP  }
+NOT = {
+war = { country = JAP country = GER } 
+ispuppet = CHC
+ispuppet = JAP
+exists = CSX
+alliance = { country = GER country = CHI }
+alliance = { country = JAP country = CHI }
+}
+control = { province = 1247 data = CHC }
+control = { province = 1259 data = CHC }
+control = { province = 1328 data = GER }
+control = { province = 163 data = GER }
+control = { province = 1552 data = JAP } 
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  7
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_66731_NAME"
+desc = "EVT_66731_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_66731_OPTIONA"
+command = { type = relation which = JAP value = 50 }
+command = { type = trigger which = 66732 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_66731_OPTIONB"
+command = { type = dissent value = 2 } #Fall of CSX without retaliation
+}
+}
+
+event = {
+id = 66732
+country = JAP
+style = 2
+picture = "japsun"
+
+name = "EVT_66732_NAME"
+desc = "EVT_66732_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_66732_OPTIONA"
+command = { type = relation which = GER value = 50 }
+command = { type = setflag which = JAP_KILL_Zhang }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_66732_OPTIONB"
+command = { type = relation which = GER value = -10 }
+}
+}
+
+event = {
+    id = 66733
+    country = MAN
+    style = 2
+    picture = "minister_died"
+
+    trigger = {
+    flag = JAP_KILL_Zhang 
+    }
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1966 }
+
+name = "EVT_66733_NAME"
+desc = "EVT_66733_DESC"
+
+
+action_a = {
+name = "EVT_66733_OPTIONA"
+command = { type = dissent value = 10 }
+command = { type = wakeminister which = 58058 }
+command = { type = wakeminister which = 58059 }
+command = { type = sleepminister which = 58001 } 
+command = { type = sleepminister which = 58032 } 
+command = { type = sleepminister which = 58012 } 
+command = { type = sleepminister which = 58010 } 
+command = { type = sleepminister which = 58014 } 
+command = { type = sleepminister which = 58032 } 
+command = { type = sleepminister which = 58017 } 
+command = { type = sleepminister which = 58023 }
+command = { type = sleepminister which = 58034 } 
+command = { type = headofstate which = 58058 } #Puyi
+command = { type = headofgovernment which = 58043 } #Japanese 
+command = { type = sleepteam which = 6403 }
+command = { type = sleepteam which = 6407 }
+command = { type = sleepleader which = 250037 }
+command = { type = sleepleader which = 250041 }
+command = { type = sleepevent which = 66704 } #sleep the original Fengtien events to avoid confusion
+command = { type = sleepevent which = 63059 }
+command = { type = sleepevent which = 6627078 }
+command = { type = sleepevent which = 925045 }
+command = { type = sleepevent which = 627061 }
+command = { type = sleepevent which = 95048 }
+command = { type = sleepevent which = 95060 }
+command = { type = sleepevent which = 95051 }
+command = { type = sleepevent which = 95056 }
+command = { type = sleepevent which = 95053 }
+command = { type = setflag which = Man_puyi }
+}
+}
+
+event = {
+id = 66734
+country = MAN
+style = 2
+picture = "China_Rally"
+
+trigger = {
+flag = MAN_puyi
+}
+
+date = { day = 1 month = January year = 1936 }
+offset =  5
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_66734_NAME"
+desc = "EVT_66734_DESC"
+
+action_a = {
+name = "EVT_66734_OPTIONA"
+command = { type = name where = MAN which = "MAN_EMP_NAME"}
+command = { type = domestic which = interventionism value = 1 }
+command = { type = flag_ext where = MAN which = "_EMP" }
+command = { type = manpowerpool value = 30 }
+command = { type = add_division which = "Qi Jun" value = infantry when = 8 }
+command = { type = add_division which = "Qi Jun" value = infantry when = 8 }
+command = { type = add_division which = "Qi Jun" value = infantry when = 8 }
+command = { type = add_division which = "Qi Jun" value = infantry when = 8 }
+command = { type = add_division which = "Qi Jun" value = infantry when = 8 }
+command = { type = add_division value = light_cruiser when = 3 }
+command = { type = add_division value = destroyer when = 3 }
+command = { type = clrflag which = MAN_puyi }
+}
+}
+
+event = {
+ id = 66735
+ random = no
+ country = CHC
+ style = 2
+ picture = "TheBrotherhood"
+
+trigger = { 
+control = { province = 1247 data = CHC }
+control = { province = 1159 data = CHC }
+event = 66734
+exists = MAN
+NOT = {
+ispuppet = CHC
+exists = CSX
+ }
+ }
+
+date = { day = 1 month = January year = 1936 }
+offset =  10
+deathdate = { day = 29 month = december year = 1960 }
+
+
+name = "EVT_66735_NAME"
+desc = "EVT_66735_DESC"
+
+
+action_a = {
+ai_chance = 5
+name = "EVT_66735_OPTIONA"
+command = { type = war which = MAN }
+command = { type = war which = JAP }
+}
+
+action_b = {
+ai_chance = 95
+name = "EVT_66735_OPTIONB"
+command = { type = dissent value = 1 }
+}
+}
+
+event = {
+id = 628018
+country = CHC
+style = 2
+picture = "TheBrotherhood"
+
+trigger = {
+control = { province = 1247 data = CHC }
+not = { 
+exists = CSX 
+exists = CHI
+ispuppet = CHC
+alliance = { country = CHC country = CGX }
+}
+exists = CGX
+}
+
+date = { day = 1 month = January year = 1936 }
+offset =  15
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_628018_NAME"
+desc = "EVT_628018_DESC"
+
+action_a = {
+ai_chance = 75
+name = "EVT_628018_OPTIONA"
+command = { type = manpowerpool value = -20 }
+command = { type = supplies value = -250 }
+command = { type = domestic which = interventionism value = 2 }
+command = { type = relation which = CGX value = -150 }
+command = { type = setflag which = CHC_revolt }
+}
+
+action_b = {
+ai_chance = 25
+name = "EVT_628018_OPTIONB"
+command = { type = dissent value = -1 }
+command = { type = domestic which = interventionism value = -2 }
+}
+}
+
+event = {
+id = 628019
+country = CHC
+style = 2
+picture = "TheBrotherhood"
+
+trigger = { 
+flag = CHC_revolt
+not = { 
+exists = CSX 
+exists = CHI 
+}
+}
+
+date = { day = 1 month = January year = 1936 }
+offset =  50
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_628019_NAME"
+desc = "EVT_628019_DESC"
+
+action_a = {
+name = "EVT_628019_OPTIONA"
+command = { type = trigger which = 890704 }
+}
+}
+
+event = {
+id = 628042
+country = CHC
+style = 2
+picture = "Chinese Crossroad"
+
+trigger = { 
+NOT = { 
+atwar = CHC
+ispuppet = CHC 
+}
+exists = CYN
+war = { country = CGX country = CYN }
+}
+
+date = { day = 1 month = January year = 1936 }
+offset =  15
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_628042_NAME"
+desc = "EVT_628042_DESC"
+
+action_a = {
+ai_chance = 70
+name = "EVT_628042_OPTIONA"
+command = { type = war which = CYN }
+command = { type = dissent value = -1 }
+command = { type = setflag which = CHC_revolt }
+}
+
+action_b = {
+ai_chance = 30
+name = "EVT_628042_OPTIONB"
+command = { type = dissent value = 3 }
+}
+}
+
+event = {
+id = 628043
+country = CHC
+style = 2
+picture = "Chinese Crossroad"
+
+trigger = {
+alliance = { country = CHC country = CHI }
+not = { 
+atwar = CHC
+exists = CYN
+exists = CSX
+ispuppet = CHC
+}
+}
+
+date = { day = 1 month = January year = 1936 }
+offset =  40
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_628043_NAME"
+desc = "EVT_628043_DESC"
+
+action_a = {
+ai_chance = 100
+name = "EVT_628043_OPTIONA"
+command = { type = event which = 628044 where = CHI when = 2  }
+}
+
+action_b = {
+ai_chance = 0
+name = "EVT_628043_OPTIONB"
+command = { type = dissent value = 3 }
+}
+}
+
+event = {
+id = 628044
+country = CHI
+style = 2
+picture = "Chinese Crossroad"
+
+name = "EVT_628044_NAME"
+desc = "EVT_628044_DESC"
+
+action_a = {
+ai_chance = 70
+name = "EVT_628044_OPTIONA"
+command = { type = dissent value = -1 }
+command = { type = trigger which = 628045 }
+}
+
+action_b = {
+ai_chance = 10
+name = "EVT_628044_OPTIONB"
+command = { type = trigger which = 628046 }
+}
+
+action_c = {
+ai_chance = 20
+name = "EVT_628044_OPTIONC"
+command = { type = trigger which = 628047 }
+}
+
+action_d = {
+ai_chance = 40
+name = "EVT_628044_OPTIOND"
+command = { type = trigger which = 628053 }
+}
+}
+
+event = {
+id = 628045
+country = CHC
+style = 2
+picture = "Chinese Crossroad"
+
+name = "EVT_628045_NAME"
+desc = "EVT_628045_DESC"
+
+action_a = {
+ai_chance = 70
+name = "EVT_628045_OPTIONA"
+command = { type = leave_alliance }
+command = { type = war which = CHI }
+command = { type = addcore which = 1378 }
+	command = { type = addcore which = 1360 }
+	command = { type = addcore which = 1301 }
+	command = { type = addcore which = 1304 }
+	command = { type = addcore which = 1305 }
+	command = { type = addcore which = 1306 }
+	command = { type = addcore which = 1307 }
+	command = { type = addcore which = 1308 }
+	command = { type = addcore which = 1309 }
+	command = { type = addcore which = 1310 }
+	command = { type = addcore which = 1311 }
+	command = { type = addcore which = 1312 }
+	command = { type = addcore which = 1313 }
+	command = { type = addcore which = 1314 }
+	command = { type = addcore which = 1315 }
+	command = { type = addcore which = 1318 }
+	command = { type = addcore which = 1347 }
+	command = { type = addcore which = 1348 }
+	command = { type = addcore which = 1349 }
+	command = { type = addcore which = 1350 }
+	command = { type = addcore which = 1351 }
+	command = { type = addcore which = 1352 }
+	command = { type = addcore which = 1353 }
+	command = { type = addcore which = 1354 }
+	command = { type = addcore which = 1355 }
+	command = { type = addcore which = 1356 }
+	command = { type = addcore which = 1357 }
+	command = { type = addcore which = 1359 }
+	command = { type = addcore which = 1368 }
+	command = { type = addcore which = 1369 }
+	command = { type = addcore which = 1370 }
+	command = { type = addcore which = 1373 }
+	command = { type = addcore which = 1374 }
+	command = { type = addcore which = 1375 }
+	command = { type = addcore which = 1376 }
+        command = { type = addcore which = 1377 }
+	command = { type = addcore which = 1379 }
+	command = { type = addcore which = 1380 }
+	command = { type = addcore which = 1381 }
+	command = { type = addcore which = 1382 }
+        command = { type = addcore which = 1382 }
+        command = { type = addcore which = 1389 }
+	command = { type = addcore which = 1390 }
+	command = { type = addcore which = 1384 }
+	command = { type = addcore which = 1385 }
+	command = { type = addcore which = 1387 }
+	command = { type = addcore which = 1386 }
+	command = { type = addcore which = 1388 }
+	command = { type = addcore which = 1292 }
+	command = { type = addcore which = 1293 }
+	command = { type = addcore which = 1291 }
+	command = { type = addcore which = 1300 }
+	command = { type = addcore which = 1303 }
+	command = { type = addcore which = 1261 }
+	command = { type = addcore which = 1262 }
+	command = { type = addcore which = 1296 }
+	command = { type = addcore which = 1297 }
+	command = { type = addcore which = 1298 }
+	command = { type = addcore which = 1299 }
+	command = { type = addcore which = 1302 }
+        command = { type = addcore which = 1267 }
+command = { type = addcore which = 1338 }
+command = { type = addcore which = 1358 }
+command = { type = addcore which = 1371 }
+command = { type = addcore which = 1346 }
+command = { type = addcore which = 1365 }
+command = { type = addcore which = 1367 }
+command = { type = addcore which = 1328 }
+command = { type = addcore which = 1331 }
+command = { type = addcore which = 1241 }
+command = { type = addcore which = 1245 }
+}
+
+action_b = {
+ai_chance = 30
+name = "EVT_628045_OPTIONB"
+command = { type = dissent value = 3 }
+}
+}
+
+event = {
+id = 628046
+country = CHC
+style = 2
+picture = "Chinese Crossroad"
+
+name = "EVT_628046_NAME"
+desc = "EVT_628046_DESC"
+
+action_a = {
+name = "EVT_628046_OPTIONA"
+command = { type = addcore which = 1378 }
+	command = { type = addcore which = 1360 }
+	command = { type = addcore which = 1301 }
+	command = { type = addcore which = 1304 }
+	command = { type = addcore which = 1305 }
+	command = { type = addcore which = 1306 }
+	command = { type = addcore which = 1307 }
+	command = { type = addcore which = 1308 }
+	command = { type = addcore which = 1309 }
+	command = { type = addcore which = 1310 }
+	command = { type = addcore which = 1311 }
+	command = { type = addcore which = 1312 }
+	command = { type = addcore which = 1313 }
+	command = { type = addcore which = 1314 }
+	command = { type = addcore which = 1315 }
+	command = { type = addcore which = 1318 }
+	command = { type = addcore which = 1347 }
+	command = { type = addcore which = 1348 }
+	command = { type = addcore which = 1349 }
+	command = { type = addcore which = 1350 }
+	command = { type = addcore which = 1351 }
+	command = { type = addcore which = 1352 }
+	command = { type = addcore which = 1353 }
+	command = { type = addcore which = 1354 }
+	command = { type = addcore which = 1355 }
+	command = { type = addcore which = 1356 }
+	command = { type = addcore which = 1357 }
+	command = { type = addcore which = 1359 }
+	command = { type = addcore which = 1368 }
+	command = { type = addcore which = 1369 }
+	command = { type = addcore which = 1370 }
+	command = { type = addcore which = 1373 }
+	command = { type = addcore which = 1374 }
+	command = { type = addcore which = 1375 }
+	command = { type = addcore which = 1376 }
+        command = { type = addcore which = 1377 }
+	command = { type = addcore which = 1379 }
+	command = { type = addcore which = 1380 }
+	command = { type = addcore which = 1381 }
+	command = { type = addcore which = 1382 }
+        command = { type = addcore which = 1382 }
+        command = { type = addcore which = 1389 }
+	command = { type = addcore which = 1390 }
+	command = { type = addcore which = 1384 }
+	command = { type = addcore which = 1385 }
+	command = { type = addcore which = 1387 }
+	command = { type = addcore which = 1386 }
+	command = { type = addcore which = 1388 }
+	command = { type = addcore which = 1292 }
+	command = { type = addcore which = 1293 }
+	command = { type = addcore which = 1291 }
+	command = { type = addcore which = 1300 }
+	command = { type = addcore which = 1303 }
+	command = { type = addcore which = 1261 }
+	command = { type = addcore which = 1262 }
+	command = { type = addcore which = 1296 }
+	command = { type = addcore which = 1297 }
+	command = { type = addcore which = 1298 }
+	command = { type = addcore which = 1299 }
+	command = { type = addcore which = 1302 }
+        command = { type = addcore which = 1267 }
+        command = { type = addcore which = 1338 }
+command = { type = addcore which = 1358 }
+command = { type = addcore which = 1371 }
+command = { type = addcore which = 1346 }
+command = { type = addcore which = 1365 }
+command = { type = addcore which = 1367 }
+command = { type = addcore which = 1328 }
+command = { type = addcore which = 1331 }
+command = { type = addcore which = 1241 }
+command = { type = addcore which = 1245 }
+command = { type = inherit which = CHI }
+}
+}
+
+event = {
+id = 628047
+country = CHC
+style = 2
+picture = "Chinese Crossroad"
+
+name = "EVT_628047_NAME"
+desc = "EVT_628047_DESC"
+
+action_a = {
+ai_chance = 70
+name = "EVT_628047_OPTIONA"
+command = { type = make_puppet which = CHI }
+}
+
+action_b = {
+ai_chance = 30
+name = "EVT_628047_OPTIONB"
+command = { type = leave_alliance }
+command = { type = war which = CHI }
+command = { type = addcore which = 1360 }
+	command = { type = addcore which = 1301 }
+	command = { type = addcore which = 1304 }
+	command = { type = addcore which = 1305 }
+	command = { type = addcore which = 1306 }
+	command = { type = addcore which = 1307 }
+	command = { type = addcore which = 1308 }
+	command = { type = addcore which = 1309 }
+	command = { type = addcore which = 1310 }
+	command = { type = addcore which = 1311 }
+	command = { type = addcore which = 1312 }
+	command = { type = addcore which = 1313 }
+	command = { type = addcore which = 1314 }
+	command = { type = addcore which = 1315 }
+	command = { type = addcore which = 1318 }
+	command = { type = addcore which = 1347 }
+	command = { type = addcore which = 1348 }
+	command = { type = addcore which = 1349 }
+	command = { type = addcore which = 1350 }
+	command = { type = addcore which = 1351 }
+	command = { type = addcore which = 1352 }
+	command = { type = addcore which = 1353 }
+	command = { type = addcore which = 1354 }
+	command = { type = addcore which = 1355 }
+	command = { type = addcore which = 1356 }
+	command = { type = addcore which = 1357 }
+	command = { type = addcore which = 1359 }
+	command = { type = addcore which = 1368 }
+	command = { type = addcore which = 1369 }
+	command = { type = addcore which = 1370 }
+	command = { type = addcore which = 1373 }
+	command = { type = addcore which = 1374 }
+	command = { type = addcore which = 1375 }
+	command = { type = addcore which = 1376 }
+        command = { type = addcore which = 1377 }
+	command = { type = addcore which = 1379 }
+	command = { type = addcore which = 1380 }
+	command = { type = addcore which = 1381 }
+	command = { type = addcore which = 1382 }
+        command = { type = addcore which = 1382 }
+        command = { type = addcore which = 1389 }
+	command = { type = addcore which = 1390 }
+	command = { type = addcore which = 1384 }
+	command = { type = addcore which = 1385 }
+	command = { type = addcore which = 1387 }
+	command = { type = addcore which = 1386 }
+	command = { type = addcore which = 1388 }
+	command = { type = addcore which = 1292 }
+	command = { type = addcore which = 1293 }
+	command = { type = addcore which = 1291 }
+	command = { type = addcore which = 1300 }
+	command = { type = addcore which = 1303 }
+	command = { type = addcore which = 1261 }
+	command = { type = addcore which = 1262 }
+	command = { type = addcore which = 1296 }
+	command = { type = addcore which = 1297 }
+	command = { type = addcore which = 1298 }
+	command = { type = addcore which = 1299 }
+	command = { type = addcore which = 1302 }
+        command = { type = addcore which = 1267 }
+command = { type = addcore which = 1338 }
+command = { type = addcore which = 1358 }
+command = { type = addcore which = 1371 }
+command = { type = addcore which = 1346 }
+command = { type = addcore which = 1365 }
+command = { type = addcore which = 1367 }
+command = { type = addcore which = 1328 }
+command = { type = addcore which = 1331 }
+command = { type = addcore which = 1241 }
+command = { type = addcore which = 1245 }
+}
+}
+
+event = {
+id = 628053
+country = CHC
+style = 2
+picture = "Chinese Crossroad"
+
+name = "EVT_628053_NAME"
+desc = "EVT_628053_DESC"
+
+action_a = {
+ai_chance = 75
+command = { type = trigger which = 628054 }
+command = { type = switch_allegiance which = -1 where = CHI }
+command = { type = switch_allegiance which = -1 where = CHI }
+command = { type = switch_allegiance which = -1 where = CHI }
+command = { type = switch_allegiance which = -1 where = CHI }
+command = { type = switch_allegiance which = -1 where = CHI }
+command = { type = switch_allegiance which = -1 where = CHI }
+command = { type = switch_allegiance which = -1 where = CHI }
+command = { type = switch_allegiance which = -1 where = CHI }
+command = { type = switch_allegiance which = -1 where = CHI }
+command = { type = switch_allegiance which = -1 where = CHI }
+command = { type = switch_allegiance which = -1 where = CHI }
+command = { type = switch_allegiance which = -1 where = CHI }
+command = { type = switch_allegiance which = -1 where = CHI }
+command = { type = switch_allegiance which = -1 where = CHI }
+command = { type = switch_allegiance which = -1 where = CHI }
+command = { type = switch_allegiance which = -1 where = CHI }
+command = { type = switch_allegiance which = -1 where = CHI }
+command = { type = switch_allegiance which = -1 where = CHI }
+command = { type = switch_allegiance which = -1 where = CHI }
+command = { type = switch_allegiance which = -1 where = CHI }
+command = { type = switch_allegiance which = -1 where = CHI }
+command = { type = switch_allegiance which = -1 where = CHI }
+}
+
+action_b = {
+ai_chance = 25
+name = "EVT_628053_OPTIONA"
+command = { type = leave_alliance }
+command = { type = war which = CHI }
+command = { type = addcore which = 1301 }
+	command = { type = addcore which = 1304 }
+	command = { type = addcore which = 1305 }
+	command = { type = addcore which = 1306 }
+	command = { type = addcore which = 1307 }
+	command = { type = addcore which = 1308 }
+	command = { type = addcore which = 1309 }
+	command = { type = addcore which = 1310 }
+	command = { type = addcore which = 1311 }
+	command = { type = addcore which = 1312 }
+	command = { type = addcore which = 1313 }
+	command = { type = addcore which = 1314 }
+	command = { type = addcore which = 1315 }
+	command = { type = addcore which = 1318 }
+	command = { type = addcore which = 1347 }
+	command = { type = addcore which = 1348 }
+	command = { type = addcore which = 1349 }
+	command = { type = addcore which = 1350 }
+	command = { type = addcore which = 1351 }
+	command = { type = addcore which = 1352 }
+	command = { type = addcore which = 1353 }
+	command = { type = addcore which = 1354 }
+	command = { type = addcore which = 1355 }
+	command = { type = addcore which = 1356 }
+	command = { type = addcore which = 1357 }
+	command = { type = addcore which = 1359 }
+	command = { type = addcore which = 1368 }
+	command = { type = addcore which = 1369 }
+	command = { type = addcore which = 1370 }
+	command = { type = addcore which = 1373 }
+	command = { type = addcore which = 1374 }
+	command = { type = addcore which = 1375 }
+	command = { type = addcore which = 1376 }
+        command = { type = addcore which = 1377 }
+	command = { type = addcore which = 1379 }
+	command = { type = addcore which = 1380 }
+	command = { type = addcore which = 1381 }
+	command = { type = addcore which = 1382 }
+        command = { type = addcore which = 1382 }
+        command = { type = addcore which = 1389 }
+	command = { type = addcore which = 1390 }
+	command = { type = addcore which = 1384 }
+	command = { type = addcore which = 1385 }
+	command = { type = addcore which = 1387 }
+	command = { type = addcore which = 1386 }
+	command = { type = addcore which = 1388 }
+	command = { type = addcore which = 1292 }
+	command = { type = addcore which = 1293 }
+	command = { type = addcore which = 1291 }
+	command = { type = addcore which = 1300 }
+	command = { type = addcore which = 1303 }
+	command = { type = addcore which = 1261 }
+	command = { type = addcore which = 1262 }
+	command = { type = addcore which = 1296 }
+	command = { type = addcore which = 1297 }
+	command = { type = addcore which = 1298 }
+	command = { type = addcore which = 1299 }
+	command = { type = addcore which = 1302 }
+        command = { type = addcore which = 1267 }
+command = { type = addcore which = 1338 }
+command = { type = addcore which = 1358 }
+command = { type = addcore which = 1371 }
+command = { type = addcore which = 1346 }
+command = { type = addcore which = 1365 }
+command = { type = addcore which = 1367 }
+command = { type = addcore which = 1328 }
+command = { type = addcore which = 1331 }
+command = { type = addcore which = 1241 }
+command = { type = addcore which = 1245 }
+}
+}
+
+event = {
+id = 628054
+country = CHI
+style = 2
+picture = "Chinese Crossroad"
+
+name = "EVT_628054_NAME"
+desc = "EVT_628054_DESC"
+
+action_a = {
+name = "EVT_628054_OPTIONA"
+command = { type = inherit which = CHC }
+}
+}
+
+event = {
+	id = 630099
+	random = no
+	country = CHC
+	style = 2
+
+	trigger = {
+		owned = { province = 1247 data = CHC }
+		control = { province = 1247 data = CHC }
+		owned = { province = 1337 data = CHC }
+		control = { province = 1337 data = CHC }
+                not = { exists = CSX }
+		}
+	
+
+	name = "EVT_630099_NAME"
+	desc = "EVT_630099_DESC"
+        picture = "shangqingone"
+
+	date = { day = 1 month = february year = 1936 }
+	offset = 100
+	deathdate = { day = 16 month = november year = 1960  }
+
+
+	action_a = {
+		ai_chance = 60
+		name = "EVT_630099_OPTIONA"
+		command = { type = capital which = 1337 }
+		}
+	action_b = {
+		ai_chance = 30
+		name = "EVT_630099_OPTIONB"
+		command = { type = capital which = 1247 }
+		}
+	action_c = {
+		ai_chance = 10
+		name = "EVT_630099_OPTIONC"
+		command = { type = capital which = 1259 }
+}
+}
+
+event = {
+ id = 63057
+ random = no
+ country = CHC
+ style = 2
+ picture = "TheBrotherhood"
+ trigger = { control = { province = 1378 data = CHC }
+ NOT = {
+ exists = CGX
+ }
+ }
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 40
+ deathdate = { day = 29 month = december year = 1962 }
+
+ name = "EVT_63057_NAME"
+ desc = "EVT_63057_DESC" # this is for players who want to strike the south first, still gotta disable the revolution 
+
+ action_a = {
+ name = "EVT_63057_OPTIONA"
+ command = { type = addcore which = 1378 }
+	command = { type = addcore which = 1360 }
+	command = { type = addcore which = 1301 }
+	command = { type = addcore which = 1304 }
+	command = { type = addcore which = 1305 }
+	command = { type = addcore which = 1306 }
+	command = { type = addcore which = 1307 }
+	command = { type = addcore which = 1308 }
+	command = { type = addcore which = 1309 }
+	command = { type = addcore which = 1310 }
+	command = { type = addcore which = 1311 }
+	command = { type = addcore which = 1312 }
+	command = { type = addcore which = 1313 }
+	command = { type = addcore which = 1314 }
+	command = { type = addcore which = 1315 }
+	command = { type = addcore which = 1318 }
+	command = { type = addcore which = 1347 }
+	command = { type = addcore which = 1348 }
+	command = { type = addcore which = 1349 }
+	command = { type = addcore which = 1350 }
+	command = { type = addcore which = 1351 }
+	command = { type = addcore which = 1352 }
+	command = { type = addcore which = 1353 }
+	command = { type = addcore which = 1354 }
+	command = { type = addcore which = 1355 }
+	command = { type = addcore which = 1356 }
+	command = { type = addcore which = 1357 }
+	command = { type = addcore which = 1359 }
+	command = { type = addcore which = 1368 }
+	command = { type = addcore which = 1369 }
+	command = { type = addcore which = 1370 }
+	command = { type = addcore which = 1373 }
+	command = { type = addcore which = 1374 }
+	command = { type = addcore which = 1375 }
+	command = { type = addcore which = 1376 }
+        command = { type = addcore which = 1377 }
+	command = { type = addcore which = 1379 }
+	command = { type = addcore which = 1380 }
+	command = { type = addcore which = 1381 }
+	command = { type = addcore which = 1382 }
+        command = { type = addcore which = 1383 }
+        command = { type = addcore which = 1338 }
+command = { type = addcore which = 1358 }
+command = { type = addcore which = 1371 }
+command = { type = addcore which = 1346 }
+command = { type = addcore which = 1365 }
+command = { type = addcore which = 1367 }
+command = { type = addcore which = 1328 }
+command = { type = addcore which = 1331 }
+command = { type = addcore which = 1241 }
+command = { type = addcore which = 1245 }
+ command = { type = add_division which = "The Heavenly Guard" value = infantry when = 9 }
+ command = { type = add_division which = "Swords of the Dao" value = infantry when = 9 }
+ command = { type = add_division which = "Defenders of Wuji Shengmu" value = militia when = 5 }
+ command = { type = add_division which = "White Lotus Militia" value = militia when = 5 }
+ command = { type = add_division which = "Black Flag Militia" value = militia when = 5 }
+ #NOTE waketeam events maybe, giving them teams from chi or sth like that, but obviously not too many, because you know, they're still dangerous sectarians
+ command = { type = dissent value = -3 }
+ command = { type = sleepevent which = 628016 }
+ }
+ }
+
+
+ event = {
+ id = 63058
+ random = no
+ country = CHC
+ style = 2
+ picture = "TheBrotherhood"
+
+ trigger = { control = { province = 1390 data = CHC }
+ NOT = {
+ exists = CYN
+ }
+ }
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 5
+ deathdate = { day = 29 month = december year = 1962 }
+
+ name = "EVT_63058_NAME"
+ desc = "EVT_63058_DESC"
+
+ action_a = {
+ name = "EVT_63058_OPTIONA"
+        command = { type = addcore which = 1389 }
+	command = { type = addcore which = 1390 }
+	command = { type = addcore which = 1384 }
+	command = { type = addcore which = 1385 }
+	command = { type = addcore which = 1387 }
+	command = { type = addcore which = 1386 }
+	command = { type = addcore which = 1388 }
+	command = { type = addcore which = 1292 }
+	command = { type = addcore which = 1293 }
+	command = { type = addcore which = 1291 }
+	command = { type = addcore which = 1300 }
+	command = { type = addcore which = 1303 }
+	command = { type = addcore which = 1261 }
+	command = { type = addcore which = 1262 }
+	command = { type = addcore which = 1296 }
+	command = { type = addcore which = 1297 }
+	command = { type = addcore which = 1298 }
+	command = { type = addcore which = 1299 }
+	command = { type = addcore which = 1302 }
+        command = { type = addcore which = 1267 }
+ 
+ command = { type = add_division which = "Shi Dakai Militia" value = militia when = 5 }
+ command = { type = add_division which = "Yunnan Bubing Zongdui" value = infantry when = 9 }
+ command = { type = add_division which = "Sichuan Bubing Zongdui" value = infantry when = 9 }
+ command = { type = add_division which = "Miao tribesmen" value = militia when = 5 }
+ command = { type = dissent value = -3 }
+ }
+ }
+
+ event = {
+ id = 63059
+ random = no
+ country = CHC
+ style = 2
+ picture = "TheBrotherhood"
+
+ trigger = { control = { province = 1208 data = CHC }
+ NOT = {
+ exists = MAN
+ }
+ }
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 5
+ deathdate = { day = 29 month = december year = 1962 }
+
+ name = "EVT_63059_NAME"
+ desc = "EVT_63059_DESC"
+
+ action_a = {
+ name = "EVT_63059_OPTIONA"
+ command = { type = addcore which = 1202 }
+command = { type = addcore which = 1204 }
+command = { type = addcore which = 1212 }
+command = { type = addcore which = 1205 }
+command = { type = addcore which = 1199 }
+command = { type = addcore which = 1203 }
+command = { type = addcore which = 1200 }
+command = { type = addcore which = 1206 }
+command = { type = addcore which = 1213 }
+command = { type = addcore which = 1237 }
+command = { type = addcore which = 1207 }
+command = { type = addcore which = 1220 }
+command = { type = addcore which = 1218 }
+command = { type = addcore which = 1201 }
+command = { type = addcore which = 1208 }
+command = { type = addcore which = 1209 }
+command = { type = addcore which = 1210 }
+command = { type = addcore which = 1211 }
+command = { type = addcore which = 1214 }
+command = { type = addcore which = 1215 }
+command = { type = addcore which = 1217 }
+command = { type = addcore which = 1197 }
+command = { type = addcore which = 1198 }
+command = { type = addcore which = 1240 }
+command = { type = addcore which = 1236 }
+command = { type = addcore which = 1235 }
+command = { type = addcore which = 1216 }
+command = { type = addcore which = 1219 }
+ 
+ command = { type = dissent value = -3 }
+ }
+ }
+
+event = {
+     id = 630100
+     random = no
+     country = CHC
+     style = 2
+
+     trigger = { headofstate = 51002 } #Zhang Tianran
+
+     name = "EVT_630100_NAME"
+     desc = "EVT_630100_DESC"
+     picture = "minister_died"
+
+     date = { day = 29 month = september year = 1947 }
+
+     action_a = {
+         ai_chance = 60
+         name = "EVT_630100_OPTIONA"
+         command = { type = sleepminister which = 51001 } #Zhang Tianran
+         command = { type = sleepminister which = 51002 } #Zhang Tianran
+         command = { type = sleepminister which = 51052 } #Zhang Tianran
+         command = { type = headofstate which = 51007 } #Sun Suzhen
+         command = { type = headofgovernment which = 51006 } #Sun Suzhen
+         command = { type = dissent value = 2 }
+         command = { type = sleepteam which = 8302 }
+         command = { type = sleepevent which = 630101 }
+     }
+     action_b = {
+         ai_chance = 40
+         name = "EVT_630100_OPTIONB"
+         command = { type = sleepminister which = 51001 } #Zhang Tianran
+         command = { type = sleepminister which = 51002 } #Zhang Tianran
+         command = { type = sleepminister which = 51052 } #Zhang Tianran
+         command = { type = headofstate which = 51008 } #Zhang Guotao
+         command = { type = headofgovernment which = 51023 } #Zhang Guotao
+         command = { type = dissent value = 5 }
+         command = { type = sleepteam which = 8302 }
+         command = { type = sleepevent which = 630101 }
+     }
+ }
+
+ event = {
+     id = 630101
+     random = no
+     country = CHC
+     style = 2
+
+     trigger = { NOT = { headofstate = 51002 } } #Zhang Tianran
+
+     name = "EVT_630101_NAME"
+     desc = "EVT_630101_DESC"
+     picture = "minister_died"
+
+     date = { day = 29 month = september year = 1947 }
+
+     action_a = {
+         name = "EVT_630101_OPTIONA"
+         command = { type = sleepminister which = 51001 } #Zhang Tianran
+         command = { type = sleepminister which = 51002 } #Zhang Tianran
+         command = { type = sleepminister which = 51052 } #Zhang Tianran
+         command = { type = sleepteam which = 8302 }
+         command = { type = dissent value = 1 }
+     }
+ }
+
+event = {
+id = 925042
+country = CHC
+style = 2
+picture = "China_Reunited"
+
+trigger = {
+control = { province = 1247 data = CHC }
+control = { province = 1337 data = CHC }
+control = { province = 1338 data = CHC }
+control = { province = 1369 data = CHC }
+control = { province = 1390 data = CHC }
+control = { province = 1281 data = CHC }
+control = { province = 1208 data = CHC }
+control = { province = 1289 data = CHC }
+NOT = {
+exists = MAN
+exists = CYN
+exists = CSX
+exists = CGX
+exists = CXB
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  10
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_925042_NAME"
+desc = "EVT_925042_DESC"
+action_a = {
+name = "EVT_925042_OPTIONA"
+command = { type = dissent value = -5 }
+command = { type = industrial_modifier which = total value = -15 }
+command = { type = free_ic value = -7 }
+command = { type = waketeam which = 8313 } 
+command = { type = waketeam which = 8314 }
+command = { type = waketeam which = 8315 } 
+command = { trigger = { NOT = { ispuppet = CHC } } type = setflag which = CHC_united }
+}
+}
+
+
+event = {
+id = 925043
+country = CHC
+style = 2
+picture = "China_Reunited"
+
+trigger = {
+flag = CHC_united
+NOT = { ispuppet = CHC }
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  60
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_925043_NAME"
+desc = "EVT_925043_DESC"
+
+action_a = {
+name = "EVT_925043_OPTIONA"
+ai_chance = 70
+trigger = {
+NOT = {
+alliance = { country = RUS country = CHC }
+control = { province = 1191 data = CHC } 
+}
+}
+command = { type = relation which = RUS value = -100 }
+command = { type = relation which = PRI value = -100 }
+command = { type = relation which = SIB value = -100 }
+command = { type = relation which = SOV value = -100 }
+command = { type = relation which = JAP value = -100 }
+command = { type = belligerence which = CHC value = 5 }
+command = { type = clrflag which = CHC_united }
+command = { type = addclaim which = 1191 }
+command = { type = addclaim which = 1196 }
+command = { type = addclaim which = 1193 }
+command = { type = addclaim which = 1192 }
+command = { type = addclaim which = 1195 }
+command = { type = addclaim which = 1194 }
+command = { type = addclaim which = 1190 }
+command = { type = addclaim which = 1185 }
+}
+action_b = {
+name = "EVT_925043_OPTIONB"
+ai_chance = 20
+trigger = {
+NOT = {
+alliance = { country = GER country = CHC }
+control = { province = 1395 data = CHC } 
+}
+}
+command = { type = belligerence which = CHC value = 5 }
+command = { type = addclaim which = 1398 }
+command = { type = addclaim which = 1399 }
+command = { type = addclaim which = 1403 }
+command = { type = addclaim which = 1394 }
+command = { type = addclaim which = 1397 }
+command = { type = addclaim which = 1395 }
+command = { type = addclaim which = 1396 }
+command = { type = addclaim which = 1392 }
+command = { type = addclaim which = 1393 }
+command = { type = addclaim which = 1404 }
+command = { type = addclaim which = 1405 }
+command = { type = addclaim which = 1391 }
+command = { type = relation which = GER value = -50 }
+command = { type = relation which = PRK value = -25 }
+command = { type = relation which = IND value = -25 }
+command = { type = relation which = AST value = -25 }
+command = { type = clrflag which = CHC_united }
+}
+action_c = {
+name = "EVT_925043_OPTIONC"
+ai_chance = 10
+command = { type = belligerence which = CHC value = -1 }
+command = { type = clrflag which = CHC_united }
+}
+}
+
+
+
+

@@ -1,0 +1,1599 @@
+########################################
+#### America First Domestic Policy
+########################################
+## Event # 90824 81130-81153
+#90824	TEX	Foundation of the Union State
+#81130	TEX	Where Will We Govern From?
+#81138	TEX	Rebirth of the Country
+#81139	TEX	The American Union State Youth
+#81140	TEX	The American Union Constitution
+#81141	TEX	American Union War Industry
+#81143	TEX	The CSA Escapes to France
+#81144	TEX	Long and the PSA Leadership
+#81145	TEX	US Government in Exile
+#81146	TEX	The Beacon of the New America
+#81147	TEX	Share Our Wealth
+#81148	TEX	The Poll Tax
+#81149	TEX	Long's Tariff
+#81150	TEX	American Union Recession
+#81151	TEX	Show Trials
+#81152	TEX	Political Opposition
+#81153	TEX	Extremists Move to Depose Long
+#81154	TEX	The Industrial Security Act
+#81155	TEX	Industrial Decentralization Act
+#81156	TEX	Industrial Resources
+#81157	TEX	Old Southern Money
+#81158	TEX	The Grand Council of the America First Union Party
+#81159	TEX	The House of Representatives and the House of Corporations
+#81160	TEX	The Supreme Court
+#81161	TEX	The 1940 elections
+#81162	TEX	The Grand Council of the America First Union Party 
+#81163	TEX	The New Congress - 1940 elections
+#81164	TEX	The Supreme Court - 1940 elections
+#81165	TEX	Lindbergh's faction wins
+#81166	TEX	Long's and Smith's faction wins
+#81167	TEX	Father Coughlin's faction wins
+#81168	TEX	Kuhn's faction wins
+#81169	TEX	No consensun reached
+#81170	TEX	
+
+
+event = {
+id = 90824
+random = no
+country = TEX
+style = 2
+
+trigger = {
+	exists = TEX
+	NOT = {
+		event = 81161 #The 1940 elections
+	}
+}
+
+name = "EVT_90824_NAME"
+desc = "EVT_90824_DESC"
+picture = "hueylong"
+
+date = { day = 1 month = september year = 1936 }
+offset = 3
+deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+ai_chance =  25
+	name = "EVT_90824_OPTIONA"
+	command = { type = set_domestic which = democratic value = 6 }
+	command = { type = set_domestic which = political_left value = 3 }
+	command = { type = set_domestic which = defense_lobby value = 4 }
+	command = { type = set_domestic which = interventionism value = 3 }
+	command = { type = headofstate which = 571002 } #Huey Long
+	command = { type = headofgovernment which = 571008 } #Charles Lindbergh
+	command = { type = foreignminister which = 571014 } #Joseph P. Kennedy - Lindbergh faction
+	command = { type = armamentminister which = 571023 } #Lawrence Dennis - Long/Smith faction
+	command = { type = ministerofsecurity which = 571035 } #William Bell Riley - Coughlin faction
+	command = { type = ministerofintelligence which = 571039 } #Gerald K. Smith - Long/Smith faction
+	command = { type = chiefofstaff which = 571048 } #Lee O. Willard
+	command = { type = chiefofarmy which = 571052 } #R.J. Stockman
+	command = { type = chiefofnavy which = 571054 } #William Halsey
+	command = { type = chiefofair which = 571057 } #Nathan B. Forrest III
+	command = { type = dissent value = -5 }
+	command = { type = manpowerpool value = 25 }
+	command = { type = ai which = "kaiserreich/TEX.ai" }
+	}
+action_b = {
+	ai_chance =  25
+	name = "EVT_90824_OPTIONB"
+	command = { type = set_domestic which = democratic value = 5 }
+	command = { type = set_domestic which = political_left value = 2 }
+	command = { type = set_domestic	which = freedom value = 5 }
+	command = { type = domestic	which = free_market value = -1 }
+	command = { type = set_domestic which = defense_lobby value = 6 }
+	command = { type = set_domestic which = interventionism value = 2 }
+	command = { type = headofstate which = 571002 } #Huey Long
+	command = { type = headofgovernment which = 571009 } #Gerald K. Smith
+	command = { type = foreignminister which = 571015 } #Father Charles Coughlin - Coughlin faction
+	command = { type = armamentminister which = 571021 } #Henry Ford - Lindbergh faction
+	command = { type = ministerofsecurity which = 571026 } #Prescott Sheldon Bush - Kuhn faction
+	command = { type = ministerofintelligence which = 571039 } #Gerald K. Smith - Long/Smith faction
+	command = { type = chiefofstaff which = 571048} #Larry K. Arnold
+	command = { type = chiefofarmy which = 571050 } #George S. Patton
+	command = { type = chiefofnavy which = 571054 } #William Halsey
+	command = { type = chiefofair which = 571061 } #Charles Lindbergh - Lindbergh faction
+	command = { type = manpowerpool value = 50 }
+	command = { type = ai which = "kaiserreich/TEX.ai" }
+	}
+action_c = {
+	ai_chance =  25
+	name = "EVT_90824_OPTIONC"
+	command = { type = set_domestic which = democratic value = 4 }
+	command = { type = set_domestic which = political_left value = 2 }
+	command = { type = set_domestic	which = freedom value = 4 }
+	command = { type = domestic	which = free_market value = -2 }
+	command = { type = set_domestic which = defense_lobby value = 6 }
+	command = { type = set_domestic which = interventionism value = 3 }
+	command = { type = headofstate which = 571001 } #Huey Long
+	command = { type = headofgovernment which = 571010 } #Father Charles Coughlin
+	command = { type = foreignminister which = 571015 } #Father Charles Coughlin -  Coughlin faction
+	command = { type = armamentminister which = 571023 } #Lawrence Dennis - Long/Smith faction
+	command = { type = ministerofsecurity which = 571028 } #Fritz Kuhn - Kuhn faction
+	command = { type = ministerofintelligence which = 571043 } #George Sylvester Viereck - Kuhn faction
+	command = { type = chiefofstaff which = 571047}  #George S. Patton
+	command = { type = chiefofarmy which = 571050 } #George S. Patton
+	command = { type = chiefofnavy which = 571054 } #William Halsey
+	command = { type = chiefofair which = 571058 } #Curtis 'Bombs Away' LeMay
+	command = { type = dissent value = 5  }
+	command = { type = manpowerpool value = 100 }
+	command = { type = ai which = "kaiserreich/TEX.ai" }
+	}
+action_d = {
+	ai_chance =  25
+	name = "EVT_90824_OPTIOND"
+	command = { type = set_domestic which = democratic value = 2 }
+	command = { type = set_domestic which = political_left value = 1 }
+	command = { type = set_domestic	which = freedom value = 2 }
+	command = { type = domestic	which = free_market value = -3 }
+	command = { type = set_domestic which = defense_lobby value = 7 }
+	command = { type = set_domestic which = interventionism value = 5 }
+	command = { type = headofstate which = 571001 } #Huey Long
+	command = { type = headofgovernment which = 571011  } #Fritz Kuhn
+	command = { type = foreignminister which = 571019 } #H. L. Mencken - Kuhn facion
+	command = { type = armamentminister which = 571023 } #Lawrence Dennis - Long/Smith faction
+	command = { type = ministerofsecurity which = 571035 }  #William Bell Riley - Coughlin faction
+	command = { type = ministerofintelligence which = 571039 } #Gerald K. Smith - Long/Smith faction
+	command = { type = chiefofstaff which = 571047}  #George S. Patton
+	command = { type = chiefofarmy which = 571050 } #George S. Patton
+	command = { type = chiefofnavy which = 571054 } #William Halsey
+	command = { type = chiefofair which = 571058 } #Curtis 'Bombs Away' LeMay
+	command = { type = dissent value = 10 }
+	command = { type = manpowerpool value = 120 }
+	command = { type = ai which = "kaiserreich/TEX.ai" }
+	}
+}
+
+event = {
+id = 81130
+random = no
+country = TEX
+trigger = {
+	flag = END_ACW
+control = { province = 1809 data = TEX }
+}
+name = "EVT_81130_NAME"
+desc = "EVT_81130_DESC"
+style = 2
+date = { day = 1 month = january year = 1937 }
+offset = 55
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+name = "EVT_81130_OPTIONA"
+ai_chance = 50
+command = { type = supplies value = 1000 }
+}
+
+action_b = {
+name = "EVT_81130_OPTIONB"
+ai_chance = 50
+command = { type = capital which = 1809 }
+command = { type = dissent value = -1 }
+}
+}
+
+
+##################
+# reforms #
+##################
+
+### Long and the US reconstruction
+event = {
+id = 81138
+random = no
+country = TEX
+trigger = {
+	flag = END_ACW
+}
+name = "EVT_81138_NAME"
+desc = "EVT_81138_DESC"
+style = 2
+
+date = { day = 1 month = january year = 1937 }
+offset = 55
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+ name = "EVT_81138_OPTIONA"
+ ai_chance = 75
+ command = { type = dissent value = 10 }
+ command = { type = manpowerpool value = -25 }
+ command = { type = domestic which = free_market value = -2 }
+ command = { type = metalpool value  = -2000 }
+ command = { type = energypool value = -6000 }
+ command = { type = oilpool value = -1000 }
+ command = { type = supplies value = -1500 }
+ command = { type = building_prod_mod which = IC value = 10 }
+}
+action_b = {
+ name = "EVT_81138_OPTIONB"
+ ai_chance = 25
+ command = { type = dissent value = 1 }
+ command = { type = domestic which = free_market value = 2 }
+ command = { type = money value = 150 }
+ command = { type = research_mod value = 5 }
+ command = { type = building_prod_mod which = IC value = 5 }
+}
+}
+
+
+
+event = {
+id = 81139
+random = no
+country = TEX
+style = 2
+
+name = "EVT_81139_NAME"
+desc = "EVT_81139_DESC"
+#picture = "TEX_Youth"
+
+date = { day = 1 month = january year = 1937 }
+offset = 20
+deathdate = { day = 29 month = december year = 1949 }
+
+action_a = {
+ai_chance =  75
+name = "EVT_81139_OPTIONA"
+	command = { type = relative_manpower value = 5 }
+	command = { type = manpowerpool value = 50 }
+	}
+action_b = {
+ai_chance =  25
+name = "EVT_81139_OPTIONB"
+	command = { }
+	}
+}
+
+### The New Constitution
+event = {
+id = 81140
+random = no
+country = TEX
+trigger = {
+     flag = END_ACW
+     OR = {
+                headofstate = 571001
+                headofstate = 571002
+                }
+}
+style = 2
+
+name = "EVT_81140_NAME"
+desc = "EVT_81140_DESC"
+picture = "diplomatic_campaign"
+
+date = { day = 1 month = january year = 1937 }
+offset = 35
+deathdate = { day = 29 month = december year= 1963 }
+
+action_a = {
+	name = "EVT_81140_OPTIONA"
+	command = { type = dissent value = 1 }
+	command = { type = trigger which = 81158 } #The Grand Council of the America First Union Party
+	}
+}
+
+### American Union State Total War
+event = {
+	id = 81141
+	random = no
+	country = TEX
+	trigger = {
+		atwar = yes
+	}
+
+	name = "EVT_81141_NAME"
+	desc = "EVT_81141_DESC"
+	style = 2
+
+	date = { day = 1 month = september year = 1936 }
+	offset = 10
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		name = "EVT_81141_OPTIONA"
+		ai_chance = 98
+		command = { type = construct which = IC where = -4 value = 2 }
+		command = { type = construct which = IC where = -4 value = 2 }
+		command = { type = industrial_modifier which = total value = 10 }
+		command = { type = domestic which = defense_lobby value = 1 }
+		command = { type = domestic which = free_market value = -1 }
+		command = { type = dissent value = 5 }
+	} 
+	action_b = {
+		name = "EVT_81141_OPTIONB"
+		ai_chance = 2
+		command = { type = industrial_modifier which = supplies value = 10 }
+		command = { type = domestic which = free_market value = 1 }
+		command = { type = domestic which = defense_lobby value = -1 }
+		command = { type = dissent value = -1 }
+	}
+}
+### Reed escapes to France
+event = {
+id = 81143
+random = no
+country = TEX
+trigger = {
+ flag = END_ACW
+ flag = ACW_CSA
+ not = {
+  exists = CSA
+ }
+ exists = FRA
+}
+name = "EVT_81143_NAME"
+desc = "EVT_81143_DESC"
+style = 2
+
+date = { day = 1 month = january year = 1937 }
+offset = 15
+deathdate = { day = 29 month = december year = 1954 }
+
+action_a = {
+ name = "EVT_81143_OPTIONA"
+ command = { type = dissent value = 1 }
+ command = { type = relation which = FRA value = -25 }
+}
+}
+
+### Punish the PSA leaders
+event = {
+id = 81144
+random = no
+country = TEX
+trigger = {
+ flag = END_ACW
+ flag = ACW_CAL
+ not = {
+  exists = CAL
+ }
+}
+name = "EVT_81144_NAME"
+desc = "EVT_81144_DESC"
+style = 2
+
+date = { day = 1 month = january year = 1937 }
+offset = 15
+deathdate = { day = 29 month = december year = 1954 }
+
+action_a = {
+ name = "EVT_81144_OPTIONA"
+ ai_chance = 55
+ command = { type = dissent value = 10 }
+ command = { type = industrial_modifier which = total value = 2 }
+ command = { type = peacetime_ic_mod value = 10 }
+ command = { type = supplies which = 500 }
+}
+action_b = {
+ name = "EVT_81144_OPTIONB"
+ ai_chance = 45
+ command = { type = research_mod value = 2 }
+ command = { type = industrial_modifier which = supplies value = 1 }
+ command = { type = dissent value = 2 }
+}
+}
+
+### US government in exile  
+event = {
+id = 81145
+random = no
+country = TEX
+trigger = {
+	flag = END_ACW
+	flag = ACW_AUS
+	flag = ACW_CSA
+	not = {
+		war = { country = TEX country = CAN }
+		flag = ACW_junta
+	}
+}
+name = "EVT_81145_NAME"
+desc = "EVT_81145_DESC"
+style = 2
+
+date = { day = 1 month = january year = 1937 }
+offset = 15
+deathdate = { day = 29 month = december year = 1954 }
+
+action_a = {
+ name = "EVT_81145_OPTIONA"
+ command = { type = dissent value = -1 }
+ command = { type = relation which = CAN value = -25 }
+ command = { type = trigger which = 909015 }
+}
+}
+
+### The Beacon of the New America
+event = {
+id = 81146
+random = no
+country = TEX
+trigger = {
+	event = 81138
+	control = { province = 1931 data = TEX } #New Orleans
+}
+name = "EVT_81146_NAME"
+desc = "EVT_81146_DESC"
+style = 2
+
+date = { day = 1 month = january year = 1937 }
+offset = 20
+deathdate = { day = 29 month = december year = 1954 }
+
+action_a = {
+ name = "EVT_81146_OPTIONA"
+ ai_chance = 99
+ command = { type = dissent value = -5 }
+ command = { type = construct which = IC where = 1931 value = 2 }
+ command = { type = construct which = naval_base where = 1931 value = 5 }
+ command = { type = construct which = air_base where = 1931 value = 5 }
+ command = { type = money value = -250 }
+ command = { type = supplies value = -1500 }
+ command = { type = metalpool value = -2500 }
+ command = { type = rarematerialspool value = -500 }
+}
+action_b = {
+ name = "EVT_81146_OPTIONB"
+ ai_chance = 1
+ command = { type = dissent value = 1 }
+}
+}
+
+### Share our wealth
+event = {
+	id = 81147
+	random = no
+	country = TEX
+	trigger = {
+		event = 81146
+	}
+
+	name = "EVT_81147_NAME"
+	desc = "EVT_81147_DESC"
+	style = 2
+
+	date = { day = 1 month = january year = 1937 }
+	offset = 10
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		name = "EVT_81147_OPTIONA"
+		ai_chance = 75
+		command = { type = domestic which = free_market value = -1 }
+		command = { type = domestic which = freedom value = -1 }
+		command = { type = domestic which = political_left value = -1 }
+		command = { type = money value = 200 }
+		command = { type = dissent value = 5 }
+		command = { type = setflag which = AUS_WEALTH }
+	} 
+	action_b = {
+		name = "EVT_81147_OPTIONB"
+		ai_chance = 25
+		command = { type = domestic which = free_market value = 1 }
+		command = { type = domestic which = freedom value = 1 }
+		command = { type = domestic which = political_left value = 1 }
+		command = { type = dissent value = -1 }
+	}
+}
+
+### Extremists make trouble
+event = {
+	id = 81148
+	random = no
+	country = TEX
+	trigger = {
+		flag = AUS_WEALTH
+	}
+
+	name = "EVT_81148_NAME"
+	desc = "EVT_81148_DESC"
+	style = 2
+
+	date = { day = 21 month = january year = 1940 }
+	offset = 21
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		name = "EVT_81148_OPTIONA"
+		ai_chance = 99
+		command = { type = domestic which = democratic value = 1 }
+		command = { type = domestic which = freedom value = 1 }
+		command = { type = domestic which = political_left value = 1 }
+		command = { type = money value = -50 }
+		command = { type = dissent value = -5 }
+	} 
+	action_b = {
+		name = "EVT_81148_OPTIONB"
+		ai_chance = 1
+		command = { type = domestic which = political_left value = -1 }
+		command = { type = dissent value = 8 }
+		command = { type = clrflag which = AUS_WEALTH }
+	}
+}
+
+### Long's Tariff
+event = {
+	id = 81149
+	random = no
+	country = TEX
+	trigger = {
+		event = 81146
+	}
+
+	name = "EVT_81149_NAME"
+	desc = "EVT_81149_DESC"
+	style = 2 
+
+	date = { day = 28 month = january year = 1939 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		name = "EVT_81149_OPTIONA"
+		ai_chance = 55
+		command = { type = domestic which = free_market value = -1 }
+		command = { type = building_prod_mod which = IC value = 5 }
+		command = { type = dissent value = 5 }
+		command = { type = setflag which = LONG_TARIFF }
+	} 
+	action_b = {
+		name = "EVT_81149_OPTIONB"
+		ai_chance = 45
+		command = { type = domestic which = free_market value = 1 }
+		command = { type = dissent value = -1 }
+	}
+}
+
+### Tariff causes economy to slow
+event = {
+	id = 81150
+	random = no
+	country = TEX
+	trigger = {
+		event = 81149
+		flag = LONG_TARIFF
+	}
+
+	name = "EVT_81150_NAME"
+	desc = "EVT_81150_DESC"
+	style = 2 
+
+	date = { day = 11 month = november year = 1939 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		name = "EVT_81150_OPTIONA"
+		command = { type = industrial_modifier which = total value = -5 }
+		command = { type = dissent value = 5 }
+	}
+}
+
+### The Show Trials
+event = {
+id = 81151
+random = no
+country = TEX
+trigger = {
+ flag = END_ACW
+}
+name = "EVT_81151_NAME"
+desc = "EVT_81151_DESC"
+style = 2
+
+date = { day = 1 month = january year = 1937 }
+offset = 365
+deathdate = { day = 29 month = december year = 1954 }
+
+action_a = {
+ name = "EVT_81151_OPTIONA"
+ ai_chance = 65
+ command = { type = dissent value = 5 }
+ command = { type = domestic which = freedom value = -1 }
+ command = { type = domestic which = political_left value = -1 }
+ command = { type = relation which = ENG value = -25 }
+ command = { type = relation which = FRA value = -25 }
+}
+action_b = {
+ name = "EVT_81151_OPTIONB"
+ ai_chance = 35
+ command = { type = dissent value = 1 }
+ command = { type = domestic which = freedom value = 1 }
+ command = { type = domestic which = political_left value = 1 }
+ command = { type = setflag which = LONG_EXILE }
+}
+}
+
+### The Long Night
+event = {
+id = 81152
+random = no
+country = TEX
+trigger = {
+ event = 81151
+ not = {
+  domestic = { type = freedom value = 3 }
+ }
+}
+name = "EVT_81152_NAME"
+desc = "EVT_81152_DESC"
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 55
+deathdate = { day = 29 month = december year = 1954 }
+
+action_a = {
+ name = "EVT_81152_OPTIONA"
+ ai_chance = 45
+ command = { type = dissent value = 2 }
+ command = { type = money value = 250 }
+ command = { type = domestic which = freedom value = -2 }
+}
+action_b = {
+ name = "EVT_81152_OPTIONB"
+ ai_chance = 55
+ command = { type = dissent value = 5 }
+ command = { type = domestic which = freedom value = 1 }
+ command = { type = domestic which = political_left value = 1 }
+ command = { type = domestic which = democratic value = 1 }
+}
+}
+
+### Extremists move to depose Long
+event = {
+	id = 81153
+	random = no
+	country = TEX
+	trigger = {
+		flag = AUS_WEALTH
+		event = 81148
+                OR = {
+                headofstate = 571001
+                headofstate = 571002
+                }
+	}
+
+	name = "EVT_81153_NAME"
+	desc = "EVT_81153_DESC"
+	style = 2
+
+	date = { day = 10 month = february year = 1940 }
+	offset = 25
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		name = "EVT_81153_OPTIONA"
+		ai_chance = 90
+		command = { type = dissent value = -1 }
+                command = { type = sleepminister which = 571005 } #Fritz Kuhn
+                command = { type = sleepminister which = 571011 } #Fritz Kuhn
+		command = { type = sleepminister which = 571028 } #Fritz Kuhn
+		command = { type = sleepminister which = 571035 } #Fritz Kuhn
+		command = { type = sleepminister which = 571042 } #Fritz Kuhn
+		command = { type = sleepminister which = 571037 } #KKK da rimuvoere cmq
+		command = { type = domestic which = political_left value = 1 }
+		command = { type = clrflag which = AUS_WEALTH }
+	}
+
+	action_b = { 
+		name = "EVT_81153_OPTIONB"
+		ai_chance = 10
+		command = { type = dissent value = 10 }
+		command = { type = sleepminister which = 571001 } #Huey Long
+		command = { type = sleepminister which = 571002 } #Huey Long
+		command = { type = headofstate which = 571005 } #Fritz Kuhn
+		command = { type = headofgovernment which = 571011 } #Fritz Kuhn
+		command = { type = foreignminister which = 571015 } #Charles Coughlin
+		command = { type = ministerofsecurity which = 571031 } #Gerald K. Smith
+                command = { type = set_domestic which = democratic value = 1 }
+                command = { type = set_domestic which = political_left value = 1 }
+		command = { type = clrflag which = AUS_WEALTH }
+	}
+}
+
+### The Industrial Security Act
+event = {
+id = 81154
+random = no
+country = TEX
+trigger = {
+ flag = END_ACW
+ event = 81138
+}
+name = "EVT_81154_NAME"
+desc = "EVT_81154_DESC"
+style = 2
+
+date = { day = 4 month = march year = 1939 }
+offset = 120
+deathdate = { day = 29 month = december year = 1954 }
+
+action_a = {
+ name = "EVT_81154_OPTIONA"
+ ai_chance = 99
+ command = { type = dissent value = 5 }
+ command = { type = domestic which = political_left value = -1 }
+}
+action_b = {
+ name = "EVT_81154_OPTIONB"
+ ai_chance = 1
+ command = { type = dissent value = -1 }
+ command = { type = domestic which = political_left value = 1 }
+ command = { type = setflag which = NO_IND_SEC_ACT }  
+}
+}
+
+### Industrial Decentralization
+event = {
+id = 81155
+random = no
+country = TEX
+trigger = {
+ event = 81154
+}
+name = "EVT_81155_NAME"
+desc = "EVT_81155_DESC"
+style = 2
+
+date = { day = 10 month = september year = 1939 }
+offset = 90
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+ name = "EVT_81155_OPTIONA"
+ ai_chance = 99
+ command = { type = domestic which = free_market value = -2 }
+ command = { type = construct which = IC where = 1845 value = -2 }
+ command = { type = construct which = IC where = 1832 value = -2 }
+ command = { type = construct which = IC where = 1842 value = -2 }
+ command = { type = construct which = IC where = 1826 value = -2 }
+ command = { type = building_prod_mod which = IC value = 5 }
+ command = { type = energypool value = 1000 }
+ command = { type = metalpool value = 750 }
+ command = { type = oilpool value = 500 }
+ command = { type = supplies value = 2000 }
+ command = { type = rarematerialspool value = 500 }
+ command = { type = setflag which = DEC_IND_AUS }
+ command = { type = dissent value = 5 }
+}
+action_b = {
+ name = "EVT_81155_OPTIONB"
+ ai_chance = 1
+ command = { type = dissent value = -1 }
+}
+}
+
+### Industrial Reserves 
+event = {
+id = 81156
+random = no
+country = TEX
+trigger = {
+	exists = TEX
+}
+
+name = "EVT_81156_NAME"
+desc = "EVT_81156_DESC"
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 5
+deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+	name = "EVT_81156_OPTIONA"
+	command = { type = supplies value = 5000 }
+	command = { type = oilpool value = 4000 }
+	command = { type = metalpool value = 2000 }
+	command = { type = energypool value = 2300 }
+	command = { type = rarematerialspool value = 1000 }
+	}
+}
+
+### Old Southern Money
+event = {
+id = 81157
+random = no
+country = TEX
+trigger = {
+	event = 81156
+}
+
+name = "EVT_81157_NAME"
+desc = "EVT_81157_DESC"
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 5
+deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+		name = "EVT_81157_OPTIONA"
+		command = { type = money value = 600 }
+	}
+}
+
+### The Grand Council of the America First Union Party
+event = {
+id = 81158
+random = no
+country = TEX
+style = 2
+
+name = "EVT_81158_NAME"
+desc = "EVT_81158_DESC"
+picture = "huey"
+
+action_a = {
+	name = "EVT_81158_OPTIONA"
+	command = { type = trigger which = 81159 } #The House of Representatives and the House of Corporations
+	}
+}
+
+### The House of Representatives and the House of Corporations
+event = {
+id = 81159
+random = no
+country = TEX
+style = 2
+
+name = "EVT_81159_NAME"
+desc = "EVT_81159_DESC"
+picture = "politics4"
+
+action_a = {
+	name = "EVT_81159_OPTIONA"
+	command = { type = trigger which = 81160 } #The Supreme Court
+	}
+}
+
+### The Supreme Court
+event = {
+id = 81160
+random = no
+country = TEX
+style = 2
+
+name = "EVT_81160_NAME"
+desc = "EVT_81160_DESC"
+picture = "politics5"
+
+action_a = {
+	name = "EVT_81160_OPTIONA"
+	command = { }
+	}
+}
+
+
+#The 1940 elections
+event = {
+id = 81161
+random = no
+country = TEX
+style = 2
+
+trigger = {
+	flag = END_ACW
+	NOT = {
+		government = communist
+		headofstate = 571005 #Kuhn is HOS (coup succeeded)
+	}
+}
+
+date = { day = 0 month = march year = 1940 }
+offset = 10
+deathdate = { day = 29 month = december year = 1940 }
+
+name = "EVT_81161_NAME"
+desc = "EVT_81161_DESC"
+picture = "America First1"
+
+action_a = {
+	name = "EVT_81161_OPTIONA"
+	command = { type = dissent value = -2 }
+	command = { type = trigger which = 81162 } #The Grand Council of the America First Union Party
+	}
+}
+
+#The Grand Council of the America First Union Party
+event = {
+id = 81162
+random = no
+country = TEX
+style = 2
+
+name = "EVT_81162_NAME"
+desc = "EVT_81162_DESC"
+picture = "politics3"
+
+action_a = {
+	name = "EVT_81162_OPTIONA"
+	ai_chance = 25
+	command = { type = domestic which = democratic value = 1 }
+	command = { type = domestic which = freedom value = 1 }
+	command = { type = dissent value = -2 }
+	command = { type = trigger which = 81163 } #The New Congress - 1940 elections
+	command = { type = setflag which = AUS_LIND_1 }
+	}
+
+action_b = {
+	name = "EVT_81162_OPTIONB"
+	ai_chance =	40
+	command = { type = domestic which = free_market value = -1 }
+	command = { type = dissent value = -1 }
+	command = { type = trigger which = 81163 } #The New Congress - 1940 elections
+	command = { type = setflag which = AUS_SMITH_1 }
+	}
+
+action_c = {
+	name = "EVT_81162_OPTIONC"
+	ai_chance =	25
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = trigger which = 81163 } #The New Congress - 1940 elections
+	command = { type = setflag which = AUS_COUGH_1 }
+	}
+
+action_d = {
+	ai_chance = 10
+	name = "EVT_81162_OPTIOND"
+        trigger = {
+        NOT= { 
+        event = 81153
+        }
+        } 
+	command = { type = domestic which = interventionism value = 1 }
+	command = { type = trigger which = 81163 } #The New Congress - 1940 elections
+	command = { type = setflag which = AUS_KUHN_1 }
+	}
+}
+
+#The New Congress - 1940 elections
+event = {
+id = 81163
+random = no
+country = TEX
+style = 2
+
+name = "EVT_81163_NAME"
+desc = "EVT_81163_DESC"
+picture = "politics2"
+
+action_a = {
+	name = "EVT_81163_OPTIONA"
+	ai_chance = 30
+	command = { type = construct which = infrastructure where = -1 value = 10 }
+	command = { type = construct which = infrastructure where = -1 value = 10 }
+	command = { type = construct which = infrastructure where = -1 value = 10 }
+	command = { type = construct which = infrastructure where = -1 value = 10 }
+	command = { type = construct which = infrastructure where = -1 value = 10 }
+	command = { type = construct which = infrastructure where = -1 value = 10 }
+	command = { type = construct which = infrastructure where = -1 value = 10 }
+	command = { type = construct which = infrastructure where = -1 value = 10 }
+	command = { type = construct which = infrastructure where = -1 value = 10 }
+	command = { type = construct which = infrastructure where = -1 value = 10 }
+	command = { type = supplies value = -1000 }
+	command = { type = trigger which = 81164 } #The Supreme Court - 1940 elections
+	command = { type = setflag which = AUS_LIND_2 }
+	}
+action_b = {
+	name = "EVT_81163_OPTIONB"
+	ai_chance =	30
+	command = { type = construct which = ic where = -1 value = 1 }
+	command = { type = construct which = ic where = -1 value = 1 }
+	command = { type = domestic	which = free_market value = -1 }
+	command = { type = trigger which = 81164 } #The Supreme Court - 1940 elections
+	command = { type = setflag which = AUS_SMITH_2 }
+	}
+action_c = {
+	name = "EVT_81163_OPTIONC"
+	ai_chance =	20
+	command = { type = dissent value = -2 }
+	command = { type = domestic which = free_market value = 1 }
+	command = { type = trigger which = 81164 } #The Supreme Court - 1940 elections
+	command = { type = setflag which = AUS_COUGH_2 }
+	}
+action_d = {
+	ai_chance = 20
+	name = "EVT_81163_OPTIOND"
+        trigger = {
+        NOT= { 
+        event = 81153
+        }
+        } 
+	command = { type = domestic which = defense_lobby value = 1 }
+	command = { type = manpowerpool value = 50 }
+	command = { type = trigger which = 81164 } #The Supreme Court - 1940 elections
+	command = { type = setflag which = AUS_KUHN_2 }
+	}
+}
+
+#The Supreme Court
+event = {
+id = 81164
+random = no
+country = TEX
+style = 2
+
+name = "EVT_81164_NAME"
+desc = "EVT_81164_DESC"
+picture = "politics1"
+
+action_a = {
+	name = "EVT_81164_OPTIONA"
+	ai_chance = 30
+	command = { type = dissent value = -2 }
+	command = { type = domestic which = freedom value = 1 }
+	command = { type = setflag which = AUS_LIND_3 }
+	}
+action_b = {
+	name = "EVT_81164_OPTIONB"
+	ai_chance =	30
+	command = { type = dissent value = -1 }
+	command = { type = setflag which = AUS_SMITH_3 }	
+	}
+action_c = {
+	name = "EVT_81164_OPTIONC"
+	ai_chance =	30
+	command = { type = domestic which = freedom value = -1 }
+	command = { type = dissent value = 2 }
+	command = { type = setflag which = AUS_COUGH_3 }
+	}
+action_d = {
+	ai_chance = 10
+	name = "EVT_81164_OPTIOND"
+        trigger = {
+        NOT= { 
+        event = 81153
+        }
+        } 
+	command = { type = domestic which = freedom value = -2 }
+	command = { type = dissent value = 4 }
+	command = { type = setflag which = AUS_KUHN_3 }
+	}
+}
+
+#Lindbergh's faction wins
+event = {
+id = 81165
+random = no
+country = TEX
+style = 2
+
+trigger = {
+	event = 81164 #The Supreme Court - 1940 elections
+	NOT = {
+		event = 81166	#Long's and Smith's faction wins
+		event = 81167	#Father Coughlin's faction wins
+		event = 81168	#Kuhn's faction wins
+		event = 81169	#No consensus reached
+	}
+	OR = {
+		AND = {
+			flag = AUS_LIND_1
+			flag = AUS_LIND_2
+			flag = AUS_LIND_3
+		}
+		AND = {
+			flag = AUS_LIND_1
+			flag = AUS_LIND_2
+		}	
+		AND = {
+			flag = AUS_LIND_2
+			flag = AUS_LIND_3
+		}		
+		AND = {
+			flag = AUS_LIND_1
+			flag = AUS_LIND_3
+		}		
+	}
+}
+
+date = { day = 0 month = march year = 1940 }
+offset = 10
+deathdate = { day = 29 month = december year = 1940 }
+
+name = "EVT_81165_NAME"
+desc = "EVT_81165_DESC"
+picture = "Demonstrations"
+
+action_a = {
+	name = "EVT_81165_OPTIONA"
+	command = { type = dissent value = -3 }
+	command = { type = set_domestic which = democratic value = 6 }
+	command = { type = set_domestic which = political_left value = 3 }
+	command = { type = headofstate which = 571002 } #Huey Long
+	command = { type = headofgovernment which = 571008 } #Charles Lindbergh
+	command = { type = foreignminister which = 571014 } #Joseph P. Kennedy
+	command = { type = armamentminister which = 571021 } #Henry Ford
+	command = { type = ministerofsecurity which = 571038 } #H. Keith Thompson
+	command = { type = ministerofintelligence which = 571044 } #Charles Sorensen
+	command = { type = chiefofair which = 571061 } #Charles Lindbergh	
+	command = { type = clrflag which = AUS_LIND_1 }
+	command = { type = clrflag which = AUS_LIND_2 }
+	command = { type = clrflag which = AUS_LIND_3 }
+	command = { type = clrflag which = AUS_SMITH_1 }
+	command = { type = clrflag which = AUS_SMITH_2 }
+	command = { type = clrflag which = AUS_SMITH_3 }
+	command = { type = clrflag which = AUS_COUGH_1 }
+	command = { type = clrflag which = AUS_COUGH_2 }
+	command = { type = clrflag which = AUS_COUGH_3 }
+	command = { type = clrflag which = AUS_KUHN_1 }
+	command = { type = clrflag which = AUS_KUHN_2 }
+	command = { type = clrflag which = AUS_KUHN_3 }
+	}
+
+}
+
+#Long's and Smith's faction wins
+event = {
+id = 81166
+random = no
+country = TEX
+style = 2
+
+trigger = {
+	event = 81164 #The Supreme Court - 1940 elections
+	NOT = {
+		event = 81165	#Lindbergh's faction wins
+		event = 81167	#Father Coughlin's faction wins
+		event = 81168	#Kuhn's faction wins
+		event = 81169	#No consensus reached
+	}
+	OR = {
+		AND = {
+			flag = AUS_SMITH_1
+			flag = AUS_SMITH_2
+			flag = AUS_SMITH_3
+		}
+		AND = {
+			flag = AUS_SMITH_1
+			flag = AUS_SMITH_2
+		}	
+		AND = {
+			flag = AUS_SMITH_2
+			flag = AUS_SMITH_3
+		}		
+		AND = {
+			flag = AUS_SMITH_1
+			flag = AUS_SMITH_3
+		}		
+	}
+}
+
+date = { day = 0 month = march year = 1940 }
+offset = 10
+deathdate = { day = 29 month = december year = 1940 }
+
+name = "EVT_81166_NAME"
+desc = "EVT_81166_DESC"
+picture = "Demonstrations"
+
+action_a = {
+	name = "EVT_81166_OPTIONA"
+	command = { type = dissent value = -2 }
+	command = { type = set_domestic which = democratic value = 5 }
+	command = { type = set_domestic which = political_left value = 3 }
+	command = { type = headofstate which = 571002 } #Huey Long
+	command = { type = headofgovernment which = 571009 } #Gerald K. Smith
+	command = { type = foreignminister which = 571020 } #Oscar Allen
+	command = { type = armamentminister which = 571023 } #Lawrence Dennis
+	command = { type = ministerofsecurity which = 571034 } #Earl Williamson
+	command = { type = ministerofintelligence which = 571039 } #Gerald K. Smith
+	command = { type = clrflag which = AUS_LIND_1 }
+	command = { type = clrflag which = AUS_LIND_2 }
+	command = { type = clrflag which = AUS_LIND_3 }
+	command = { type = clrflag which = AUS_SMITH_1 }
+	command = { type = clrflag which = AUS_SMITH_2 }
+	command = { type = clrflag which = AUS_SMITH_3 }
+	command = { type = clrflag which = AUS_COUGH_1 }
+	command = { type = clrflag which = AUS_COUGH_2 }
+	command = { type = clrflag which = AUS_COUGH_3 }
+	command = { type = clrflag which = AUS_KUHN_1 }
+	command = { type = clrflag which = AUS_KUHN_2 }
+	command = { type = clrflag which = AUS_KUHN_3 }
+	}
+
+}
+
+#Father Coughlin's faction wins
+event = {
+id = 81167
+random = no
+country = TEX
+style = 2
+
+trigger = {
+	event = 81164 #The Supreme Court - 1940 elections
+	NOT = {
+		event = 81165	#Lindbergh's faction wins
+		event = 81166	#Long's and Smith's faction wins
+		event = 81168	#Kuhn's faction wins
+		event = 81169	#No consensus reached
+	}
+	OR = {
+		AND = {
+			flag = AUS_COUGH_1
+			flag = AUS_COUGH_2
+			flag = AUS_COUGH_3
+		}
+		AND = {
+			flag = AUS_COUGH_1
+			flag = AUS_COUGH_2
+		}	
+		AND = {
+			flag = AUS_COUGH_2
+			flag = AUS_COUGH_3
+		}		
+		AND = {
+			flag = AUS_COUGH_1
+			flag = AUS_COUGH_3
+		}		
+	}
+}
+
+date = { day = 0 month = march year = 1940 }
+offset = 10
+deathdate = { day = 29 month = december year = 1940 }
+
+name = "EVT_81167_NAME"
+desc = "EVT_81167_DESC"
+picture = "Demonstrations"
+
+action_a = {
+	name = "EVT_81167_OPTIONA"
+	command = { type = dissent value = 2 }
+	command = { type = set_domestic which = democratic value = 3 }
+	command = { type = set_domestic which = political_left value = 2 }
+	command = { type = headofstate which = 571001 } #Huey Long
+	command = { type = headofgovernment which = 571010 } #Father Charles Coughlin
+	command = { type = foreignminister which = 571015 } #Father Charles Coughlin
+	command = { type = armamentminister which = 571026 } #Prescott Sheldon Bush
+	command = { type = ministerofsecurity which = 571035 } #William Bell Riley
+	command = { type = ministerofintelligence which = 571045 } #Francis Parker Yockey	
+	command = { type = clrflag which = AUS_LIND_1 }
+	command = { type = clrflag which = AUS_LIND_2 }
+	command = { type = clrflag which = AUS_LIND_3 }
+	command = { type = clrflag which = AUS_SMITH_1 }
+	command = { type = clrflag which = AUS_SMITH_2 }
+	command = { type = clrflag which = AUS_SMITH_3 }
+	command = { type = clrflag which = AUS_COUGH_1 }
+	command = { type = clrflag which = AUS_COUGH_2 }
+	command = { type = clrflag which = AUS_COUGH_3 }
+	command = { type = clrflag which = AUS_KUHN_1 }
+	command = { type = clrflag which = AUS_KUHN_2 }
+	command = { type = clrflag which = AUS_KUHN_3 }
+	}
+
+}
+
+#Kuhn's faction wins
+event = {
+id = 81168
+random = no
+country = TEX
+style = 2
+
+trigger = {
+	event = 81164 #The Supreme Court - 1940 elections
+	NOT = {
+		event = 81165	#Lindbergh's faction wins
+		event = 81166	#Long's and Smith's faction wins
+		event = 81167	#Father Coughlin's faction wins
+		event = 81169	#No consensus reached
+	}
+	OR = {
+		AND = {
+			flag = AUS_KUHN_1
+			flag = AUS_KUHN_2
+			flag = AUS_KUHN_3
+		}
+		AND = {
+			flag = AUS_KUHN_1
+			flag = AUS_KUHN_2
+		}	
+		AND = {
+			flag = AUS_KUHN_2
+			flag = AUS_KUHN_3
+		}		
+		AND = {
+			flag = AUS_KUHN_1
+			flag = AUS_KUHN_3
+		}		
+	}
+}
+
+date = { day = 0 month = march year = 1940 }
+offset = 10
+deathdate = { day = 29 month = december year = 1940 }
+
+name = "EVT_81168_NAME"
+desc = "EVT_81168_DESC"
+picture = "Demonstrations"
+
+action_a = {
+	name = "EVT_81168_OPTIONA"
+	command = { type = dissent value = 3 }
+	command = { type = set_domestic which = democratic value = 2 }
+	command = { type = set_domestic which = political_left value = 1 }
+	command = { type = headofstate which = 571002 } #Huey Long
+	command = { type = headofgovernment which = 571011  } #Fritz Kuhn
+	command = { type = foreignminister which = 571019 } #H. L. Mencken
+	command = { type = armamentminister which = 571026 } #Prescott Sheldon Bush
+	command = { type = ministerofsecurity which = 571028 }  #Fritz Kuhn
+	command = { type = ministerofintelligence which = 571043 } #George Sylvester Viereck
+	command = { type = chiefofstaff which = 571047}  #George S. Patton
+	command = { type = chiefofarmy which = 571050 } #George S. Patton	
+	command = { type = clrflag which = AUS_LIND_1 }
+	command = { type = clrflag which = AUS_LIND_2 }
+	command = { type = clrflag which = AUS_LIND_3 }
+	command = { type = clrflag which = AUS_SMITH_1 }
+	command = { type = clrflag which = AUS_SMITH_2 }
+	command = { type = clrflag which = AUS_SMITH_3 }
+	command = { type = clrflag which = AUS_COUGH_1 }
+	command = { type = clrflag which = AUS_COUGH_2 }
+	command = { type = clrflag which = AUS_COUGH_3 }
+	command = { type = clrflag which = AUS_KUHN_1 }
+	command = { type = clrflag which = AUS_KUHN_2 }
+	command = { type = clrflag which = AUS_KUHN_3 }
+	}
+
+}
+
+#No consensus reached
+event = {
+id = 81169
+random = no
+country = TEX
+style = 2
+
+trigger = {
+	event = 81164 #The Supreme Court - 1940 elections
+	NOT = {
+		event = 81165	#Lindbergh's faction wins
+		event = 81166	#Long's and Smith's faction wins
+		event = 81167	#Father Coughlin's faction wins
+		event = 81168	#Kuhn's faction wins
+	}
+	OR = {
+		AND = {
+			flag = AUS_LIND_1
+			flag = AUS_COUGH_2
+			flag = AUS_SMITH_3
+		}
+		AND = {
+			flag = AUS_LIND_1
+			flag = AUS_SMITH_2
+			flag = AUS_COUGH_3
+		}	
+		AND = {
+			flag = AUS_LIND_1
+			flag = AUS_COUGH_2
+			flag = AUS_KUHN_3
+		}		
+		AND = {
+			flag = AUS_LIND_1
+			flag = AUS_KUHN_2
+			flag = AUS_COUGH_3
+		}		
+		AND = {
+			flag = AUS_LIND_1
+			flag = AUS_SMITH_2
+			flag = AUS_KUHN_3
+		}
+		AND = {
+			flag = AUS_LIND_1
+			flag = AUS_KUHN_2
+			flag = AUS_SMITH_3
+		}	
+		AND = {
+			flag = AUS_SMITH_1
+			flag = AUS_COUGH_2
+			flag = AUS_LIND_3
+		}		
+		AND = {
+			flag = AUS_SMITH_1
+			flag = AUS_LIND_2
+			flag = AUS_COUGH_3
+		}		
+		AND = {
+			flag = AUS_SMITH_1
+			flag = AUS_COUGH_2
+			flag = AUS_KUHN_3
+		}
+		AND = {
+			flag = AUS_SMITH_1
+			flag = AUS_KUHN_2
+			flag = AUS_COUGH_3
+		}	
+		AND = {
+			flag = AUS_SMITH_1
+			flag = AUS_KUHN_2
+			flag = AUS_LIND_3
+		}		
+		AND = {
+			flag = AUS_SMITH_1
+			flag = AUS_LIND_2
+			flag = AUS_KUHN_3
+		}		
+		AND = {
+			flag = AUS_COUGH_1
+			flag = AUS_LIND_2
+			flag = AUS_SMITH_3
+		}
+		AND = {
+			flag = AUS_COUGH_1
+			flag = AUS_SMITH_2
+			flag = AUS_LIND_3
+		}	
+		AND = {
+			flag = AUS_COUGH_1
+			flag = AUS_LIND_2
+			flag = AUS_KUHN_3
+		}		
+		AND = {
+			flag = AUS_COUGH_1
+			flag = AUS_KUHN_2
+			flag = AUS_LIND_3
+		}		
+		AND = {
+			flag = AUS_COUGH_1
+			flag = AUS_KUHN_2
+			flag = AUS_SMITH_3
+		}
+		AND = {
+			flag = AUS_COUGH_1
+			flag = AUS_SMITH_2
+			flag = AUS_KUHN_3
+		}	
+		AND = {
+			flag = AUS_KUHN_1
+			flag = AUS_LIND_2
+			flag = AUS_SMITH_3
+		}		
+		AND = {
+			flag = AUS_KUHN_1
+			flag = AUS_SMITH_2
+			flag = AUS_LIND_3
+		}		
+		AND = {
+			flag = AUS_KUHN_1
+			flag = AUS_LIND_2
+			flag = AUS_COUGH_3
+		}
+		AND = {
+			flag = AUS_KUHN_1
+			flag = AUS_COUGH_2
+			flag = AUS_LIND_3
+		}	
+		AND = {
+			flag = AUS_KUHN_1
+			flag = AUS_SMITH_2
+			flag = AUS_COUGH_3
+		}		
+		AND = {
+			flag = AUS_KUHN_1
+			flag = AUS_COUGH_2
+			flag = AUS_SMITH_3
+		}		
+	}
+}
+
+date = { day = 0 month = march year = 1940 }
+offset = 10
+deathdate = { day = 29 month = december year = 1940 }
+
+name = "EVT_81169_NAME"
+desc = "EVT_81169_DESC"
+picture = "Demonstrations"
+
+action_a = {
+	name = "EVT_81169_OPTIONA"
+        ai_chance = 50
+	command = { type = set_domestic which = democratic value = 5 }
+	command = { type = set_domestic which = political_left value = 3 }
+	command = { type = headofstate which = 571002 } #Huey Long
+	command = { type = headofgovernment which = 571008 } #Charles Lindbergh
+	command = { type = foreignminister which = 571014 } #Joseph P. Kennedy
+	command = { type = armamentminister which = 571023 } #Lawrence Dennis
+	command = { type = ministerofsecurity which = 571034 } #Earl Williamson
+	command = { type = ministerofintelligence which = 571039 } #Gerald K. Smith	
+	command = { type = chiefofair which = 571061 } #Charles Lindbergh	
+	command = { type = clrflag which = AUS_LIND_1 }
+	command = { type = clrflag which = AUS_LIND_2 }
+	command = { type = clrflag which = AUS_LIND_3 }
+	command = { type = clrflag which = AUS_SMITH_1 }
+	command = { type = clrflag which = AUS_SMITH_2 }
+	command = { type = clrflag which = AUS_SMITH_3 }
+	command = { type = clrflag which = AUS_COUGH_1 }
+	command = { type = clrflag which = AUS_COUGH_2 }
+	command = { type = clrflag which = AUS_COUGH_3 }
+	command = { type = clrflag which = AUS_KUHN_1 }
+	command = { type = clrflag which = AUS_KUHN_2 }
+	command = { type = clrflag which = AUS_KUHN_3 }
+	}
+action_b = {
+	name = "EVT_81169_OPTIONB"
+        ai_chance = 50
+        trigger = {
+        NOT= { 
+        event = 81153
+        }
+        } 
+	command = { type = set_domestic which = democratic value = 3 }
+	command = { type = set_domestic which = political_left value = 2 }
+	command = { type = headofstate which = 571001 } #Huey Long
+	command = { type = headofgovernment which = 571011  } #Fritz Kuhn
+	command = { type = foreignminister which = 571015 } #Father Charles Coughlin
+	command = { type = armamentminister which = 571026 } #Prescott Sheldon Bush
+	command = { type = ministerofsecurity which = 571028 }  #Fritz Kuhn
+	command = { type = ministerofintelligence which = 571045 } #Francis Parker Yockey
+	command = { type = chiefofstaff which = 571047}  #George S. Patton
+	command = { type = chiefofarmy which = 571050 } #George S. Patton		
+	command = { type = clrflag which = AUS_LIND_1 }
+	command = { type = clrflag which = AUS_LIND_2 }
+	command = { type = clrflag which = AUS_LIND_3 }
+	command = { type = clrflag which = AUS_SMITH_1 }
+	command = { type = clrflag which = AUS_SMITH_2 }
+	command = { type = clrflag which = AUS_SMITH_3 }
+	command = { type = clrflag which = AUS_COUGH_1 }
+	command = { type = clrflag which = AUS_COUGH_2 }
+	command = { type = clrflag which = AUS_COUGH_3 }
+	command = { type = clrflag which = AUS_KUHN_1 }
+	command = { type = clrflag which = AUS_KUHN_2 }
+	command = { type = clrflag which = AUS_KUHN_3 }
+	}
+}
+
+
+
+
+event = {
+ id = 81170
+ random = no
+ country = TEX
+ style = 2
+
+ trigger = {    NOT = { ispuppet = TEX } }
+
+ date = { day = 0 month = march year = 1936 }
+ offset = 30
+ deathdate = { day = 29 month = december year = 1960 }
+
+ name = "EVT_81170_NAME"
+ desc = "EVT_81170_DESC"
+ picture = "aus_flag_event"
+
+ action = {
+ ai_chance = 25
+     name = "EVT_81170_OPTIONA"
+     command = { type = dissent value = -1 }
+     command = { type = flag_ext where = TEX which = "_coast" }
+     }
+ action = {
+ ai_chance = 25
+     name = "EVT_81170_OPTIONB"
+     command = { type = dissent value = -1 }
+     command = { type = flag_ext where = TEX which = "_saltire" }
+     }
+ action = {
+ ai_chance = 25
+     name = "EVT_81170_OPTIONC"
+     command = { type = dissent value = -1 }
+     command = { type = flag_ext where = TEX which = "_sword" }
+     }
+ action = {
+ ai_chance = 25
+     name = "EVT_81170_OPTIOND"
+     command = { type = dissent value = -1 }
+     }
+ }

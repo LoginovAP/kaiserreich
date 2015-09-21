@@ -1,0 +1,2303 @@
+#############################################
+###### Show of force # 
+#############################################
+event = {
+    id = 100150
+    random = no
+    country = ENG
+
+    decision = {
+        exists = IRE
+        exists = GER
+        exists = CAN    
+        NOT = {
+                alliance = { country = ENG country = GER }
+                alliance = { country = ENG country = IRE }
+                war = { country = ENG country = IRE }
+                war = { country = ENG country = GER }
+                war = { country = ENG country = CAN }
+                puppet = { country = IRE country = ENG  }
+                ispuppet = ENG
+                 
+                
+        }
+                 
+    }
+    
+    decision_trigger = {
+       supplies = 500 
+       money = 50
+    }
+    
+    trigger = {
+        exists = IRE
+        exists = GER
+        exists = CAN    
+        NOT = {
+                alliance = { country = ENG country = GER }
+                alliance = { country = ENG country = IRE }
+                war = { country = ENG country = IRE }
+                war = { country = ENG country = GER }
+                war = { country = ENG country = CAN }
+                puppet = { country = IRE country = ENG  }
+                ispuppet = ENG
+                 
+                
+        }  
+        
+}
+
+
+    name = "EVT_100150_NAME"
+    desc = "EVT_9996_DESC"
+    style = 2
+    picture = "rebeccaUoB"
+    decision_picture = "decision_navalUoB"
+
+    date = { day = 11 month = march year = 1936 }
+    offset = 5
+    deathdate = { day = 29 month = december year = 1963 }
+
+     action_a = {
+	ai_chance = 25
+                name = "EVT_100150_OPTIONA"
+                command = { type = relation which = CAN value = -5 }
+                command = { type = relation which = GER value = -5 }
+                command = { type = relation which = IRE value = -10 }
+                command = { trigger = { ai = no } type = supplies value = -300 }
+                command = { trigger = { ai = no } type = money value = -20 }
+        }
+        action_b = {
+	ai_chance = 70
+                name = "EVT_100150_OPTIONB"
+                command = { type = relation which = CAN value = -25 }
+                command = { type = relation which = GER value = -25 }
+                command = { type = relation which = IRE value = -150 }
+                command = { type = domestic which = defense_lobby value = 1 }
+                command = { trigger = { ai = no } type = supplies value = -400 }
+                command = { trigger = { ai = no } type = money value = -40 }
+                command = { type = trigger which = 100151 } # Irish reaction
+        }
+        action_c = {
+	ai_chance = 5
+                name = "EVT_100150_OPTIONC"
+                command = { type = relation which = CAN value = -75 }
+                command = { type = relation which = GER value = -50 }
+                command = { type = relation which = DEN value = -150 }
+                command = { type = relation which = POR value = -150 }
+                command = { type = relation which = IRE value = -25 }
+                command = { type = domestic which = defense_lobby value = 2 }
+                command = { type = domestic which = interventionism value = 1 }
+                command = { trigger = { ai = no } type = supplies value = -500 }
+                command = { trigger = { ai = no } type = money value = -50 }
+                command = { type = trigger which = 100157 } # German response
+                command = { type = trigger which = 100162 } # Canadian response
+        }
+}
+
+
+#############################################
+###### Union of Britain threatens Ireland # 
+#############################################
+
+event = {
+        id = 100151
+        random = no
+        country = IRE
+        
+ 
+        name = "EVT_100151_NAME"
+        desc = "EVT_100151_DESC"
+        style = 2
+        picture = "Rebecca"
+ 
+        action_a = {
+	ai_chance = 40
+                name = "EVT_100151_OPTIONA"
+                command = { type = trigger which = 100152 } # British success
+                command = { type = domestic which = interventionism value = -1 }
+        }
+        action_b = {
+	ai_chance = 40
+                name = "EVT_100151_OPTIONB"
+                command = { type = relation which = GER value = 25 }
+                command = { type = trigger which = 100177 } # German reaction
+        }
+        action_c = {
+	ai_chance = 20
+                name = "EVT_100151_OPTIONC"
+                command = { type = relation which = CAN value = 25 }
+                command = { type = trigger which = 100153 } # Canadian reaction
+        }
+}
+#############################################
+###### The Irish cower # 
+#############################################
+event = {
+        id = 100152
+        random = no
+        country = ENG
+ 
+        name = "EVT_100152_NAME"
+        desc = "EVT_100152_DESC"
+        style = 2
+        picture = "rebecca"
+ 
+        action_a = {
+                name = "EVT_100152_OPTIONA"
+                command = { type = dissent value = -2 }
+                command = { type = local_setflag which = IREUOB_ALONE }       
+        }
+}
+#############################################
+###### Ireland asks for help (Canadian variant) # 
+#############################################
+event = {
+        id = 100153
+        random = no
+        country = CAN
+ 
+        name = "EVT_100153_NAME"
+        desc = "EVT_100153_DESC"
+        style = 2
+        picture = "rebecca"
+ 
+
+        action_a = {
+	ai_chance = 40
+                name = "EVT_100153_OPTIONA"
+                command = { type = guarantee which = CAN where = IRE }
+                command = { type = dissent value = -2 }
+                command = { type = domestic which = interventionism value = 1 }
+                command = { type = relation which = IRE value = 25 }
+                command = { type = trigger which = 100154 } # Irish reaction
+               
+        }
+        action_b = {
+	ai_chance = 40
+                name = "EVT_100153_OPTIONB"
+                command = { type = guarantee which = CAN where = IRE }
+                command = { type = domestic which = interventionism value = 1 }
+                command = { type = relation which = IRE value = 15 }
+                command = { type = trigger which = 100156 } # Irish reaction
+                command = { type = trigger which = 100174 } # British reaction
+        }
+        action_c = {
+	ai_chance = 20
+                name = "EVT_100153_OPTIONC"
+                command = { type = domestic which = interventionism value = -1 }
+                command = { type = relation which = IRE value = -50 }
+                command = { type = trigger which = 100175 } # Irish reaction
+                command = { type = trigger which = 100176 } # British reaction
+        }
+}
+#############################################
+###### Canada protects us! # 
+#############################################
+event = {
+        id = 100154
+        random = no
+        country = IRE
+ 
+        name = "EVT_100154_NAME"
+        desc = "EVT_100154_DESC"
+        style = 2
+        picture = "politics4"
+ 
+        action_a = {
+        ai_chance = 100
+                name = "EVT_100154_OPTIONA"
+                command = { type = dissent value = 4 }
+                command = { type = domestic which = defense_lobby value = 1 }
+                command = { type = setflag which = IRE_ENT }
+                 command = { type = trigger which = 100155 } # British reaction
+        }
+
+        action_b = {
+        ai_chance = 0
+        name = "EVT_100154_OPTIONB"
+        command = { type = trigger which = 100152 }
+                
+                
+        }
+}
+#############################################
+###### Ireland joins the Entente # 
+#############################################
+event = {
+        id = 100155
+        random = no
+        country = ENG
+ 
+        name = "EVT_100155_NAME"
+        desc = "EVT_100155_DESC"
+        style = 2
+        picture = "politics4"
+ 
+ 
+        action_a = {
+                name = "EVT_100155_OPTIONA"
+                command = { type = dissent value = 5 }
+                command = { type = relation which = CAN value = -75 }
+        }
+}
+#############################################
+###### Canada protects Ireland # 
+#############################################
+event = {
+        id = 100156
+        random = no
+        country = IRE
+ 
+        name = "EVT_100156_NAME"
+        desc = "EVT_100156_DESC"
+        style = 2
+        picture = "politics4"
+ 
+        action_a = {
+                name = "EVT_100156_OPTIONA"
+                command = { type = dissent value = -2 }
+        }
+}
+
+#############################################
+###### The Canadians interfere # 
+#############################################
+event = {
+        id = 100174
+        random = no
+        country = ENG
+ 
+        name = "EVT_100174_NAME"
+        desc = "EVT_100174_DESC"
+        style = 2
+        picture = "politics4"
+ 
+ 
+        action_a = {
+                name = "EVT_100174_OPTIONA"
+                command = { type = dissent value = 2 }
+                command = { type = relation which = CAN value = -50 }
+                command = { type = local_setflag which = IREUOB_DIPL }
+        }
+}
+
+#############################################
+###### Canada abandons us! # 
+#############################################
+event = {
+        id = 100175
+        random = no
+        country = IRE
+ 
+        name = "EVT_100175_NAME"
+        desc = "EVT_100175_DESC"
+        style = 2
+        picture = "politics4"
+ 
+        action_a = {
+                name = "EVT_100175_OPTIONA"
+                command = { type = dissent value = 5 }
+                command = { type = relation which = CAN value = -75 }
+        }
+}
+
+#############################################
+###### The Canadians cower # 
+#############################################
+event = {
+        id = 100176
+        random = no
+        country = ENG
+ 
+        name = "EVT_100176_NAME"
+        desc = "EVT_100176_DESC"
+        style = 2
+        picture = "politics4"
+ 
+        action_a = {
+                name = "EVT_100176_OPTIONA"
+                command = { type = dissent value = -2 }
+                command = { type = local_setflag which = IREUOB_ALONE }       
+        }
+}
+
+#############################################
+###### Ireland asks for help (German variant) # 
+#############################################
+event = {
+        id = 100177
+        random = no
+        country = GER
+ 
+        name = "EVT_100177_NAME"
+        desc = "EVT_100177_DESC"
+        style = 2
+        picture = "rebecca"
+ 
+        action_a = {
+	ai_chance = 50
+                name = "EVT_100177_OPTIONA"
+                command = { type = dissent value = -2 }
+                command = { type = domestic which = interventionism value = 1 }
+                command = { type = relation which = IRE value = 25 }
+                command = { type = trigger which = 100178 } # Irish reaction
+                 
+        }
+        action_b = {
+	ai_chance = 40
+                name = "EVT_100177_OPTIONB"
+                command = { type = guarantee which = GER where = IRE }
+                command = { type = domestic which = interventionism value = 1 }
+                command = { type = relation which = IRE value = 15 }
+                command = { type = trigger which = 100180 } # Irish reaction
+                command = { type = trigger which = 100181 } # British reaction
+        }
+        action_c = {
+	ai_chance = 10
+                name = "EVT_100177_OPTIONC"
+                command = { type = domestic which = interventionism value = -1 }
+                command = { type = relation which = IRE value = -50 }
+                command = { type = trigger which = 100182 } # Irish reaction
+                command = { type = trigger which = 100183 } # British reaction
+        }
+}
+#############################################
+###### Germany protects us! # 
+#############################################
+event = {
+        id = 100178
+        random = no
+        country = IRE
+ 
+        name = "EVT_100178_NAME"
+        desc = "EVT_100178_DESC"
+        style = 2
+        picture = "politics4"
+ 
+        action_a = {
+        ai_chance = 100
+                name = "EVT_100178_OPTIONA"
+                command = { type = domestic which = defense_lobby value = 1 }
+                command = { type = setflag which = IRE_MIT }
+                command = { type = trigger which = 100179 } # British reaction
+        }
+        action_b = {
+        ai_chance = 0
+        name = "EVT_100178_OPTIONB"
+        command = { type = trigger which = 100152 }        
+                
+                
+        }
+}
+#############################################
+###### Ireland joins Mitteleuropa # 
+#############################################
+event = {
+        id = 100179
+        random = no
+        country = ENG
+ 
+        name = "EVT_100179_NAME"
+        desc = "EVT_100179_DESC"
+        style = 2
+        picture = "politics4"
+ 
+ 
+        action_a = {
+                name = "EVT_100179_OPTIONA"
+                command = { type = dissent value = 5 }
+                command = { type = relation which = GER value = -75 }
+        }
+}
+#############################################
+###### Germany protects Ireland # 
+#############################################
+event = {
+        id = 100180
+        random = no
+        country = IRE
+ 
+        name = "EVT_100180_NAME"
+        desc = "EVT_100180_DESC"
+        style = 2
+        picture = "politics4"
+ 
+        action_a = {
+                name = "EVT_100180_OPTIONA"
+                command = { type = dissent value = -2 }
+        }
+}
+
+#############################################
+###### The Germans interfere # 
+#############################################
+event = {
+        id = 100181
+        random = no
+        country = ENG
+ 
+        name = "EVT_100181_NAME"
+        desc = "EVT_100181_DESC"
+        style = 2
+        picture = "politics4"
+ 
+ 
+        action_a = {
+                name = "EVT_100181_OPTIONA"
+                command = { type = dissent value = 2 }
+                command = { type = relation which = GER value = -50 }
+                command = { type = local_setflag which = IREUOB_DIPL }
+        }
+}
+
+#############################################
+###### Germany abandons us! # 
+#############################################
+event = {
+        id = 100182
+        random = no
+        country = IRE
+ 
+        name = "EVT_100182_NAME"
+        desc = "EVT_100182_DESC"
+        style = 2
+        picture = "politics4"
+ 
+        action_a = {
+                name = "EVT_100182_OPTIONA"
+                command = { type = dissent value = 5 }
+                command = { type = relation which = GER value = -75 }
+        }
+}
+
+#############################################
+###### The Germans cower # 
+#############################################
+event = {
+        id = 100183
+        random = no
+        country = ENG
+ 
+        name = "EVT_100183_NAME"
+        desc = "EVT_100183_DESC"
+        style = 2
+        picture = "politics4"
+ 
+        action_a = {
+                name = "EVT_100183_OPTIONA"
+                command = { type = dissent value = -2 }
+                command = { type = local_setflag which = IREUOB_ALONE }       
+        }
+}
+#############################################
+###### Union of Britain threatens Iceland and the Azores# 
+#############################################
+event = {
+        id = 100157
+        random = no
+        country = GER
+       
+ 
+        name = "EVT_100157_NAME"
+        desc = "EVT_100157_DESC"
+        style = 2
+        picture = "Rebecca"
+ 
+        action_a = {
+	ai_chance = 50
+                name = "EVT_100157_OPTIONA"
+                command = { type = relation which = ENG value = -100 }
+                command = { type = relation which = FRA value = -75 }
+		command = { type = supplies value = -500 }
+		command = { type = money value = -50 }
+                command = { type = dissent value = 4 }
+                command = { type = domestic which = interventionism value = 1 }
+                command = { type = trigger which = 100158 }
+                command = { type = trigger which = 100159 }
+        }
+        action_b = {
+	ai_chance = 50
+                name = "EVT_100157_OPTIONB"
+                command = { type = relation which = POR value = -15 }
+                command = { type = relation which = IRE value = -15 }
+                command = { type = relation which = DEN value = -15 }
+                command = { type = domestic which = defense_lobby value = -1 }
+                command = { type = dissent value = 2 }
+                command = { type = trigger which = 100160 }
+                command = { type = trigger which = 100161 }
+        }
+}
+#############################################
+###### The Hochseeflotte on the North Sea # 
+#############################################
+event = {
+        id = 100158
+        random = no
+        country = ENG
+ 
+        name = "EVT_100158_NAME"
+        desc = "EVT_100158_DESC"
+        style = 2
+        picture = "hochseeflotte3"
+ 
+        action_a = {
+                name = "EVT_100158_OPTIONA"
+                command = { type = dissent value = 2 }
+                command = { type = relation which = GER value = -50 }
+        }
+}
+#############################################
+###### The Hochseeflotte on the North Sea # 
+#############################################
+event = {
+        id = 100159
+        random = no
+        country = FRA
+ 
+        name = "EVT_100159_NAME"
+        desc = "EVT_100159_DESC"
+        style = 2
+        picture = "hochseeflotte3"
+ 
+        action_a = {
+                name = "EVT_100159_OPTIONA"
+                command = { type = dissent value = 1 }
+                command = { type = relation which = GER value = -85 }
+        }
+}
+#############################################
+###### The Germans cower # 
+#############################################
+event = {
+        id = 100160
+        random = no
+        country = ENG
+ 
+        name = "EVT_100160_NAME"
+        desc = "EVT_100160_DESC"
+        style = 2
+        picture = "british_naval_reinforcments"
+ 
+        action_a = {
+                name = "EVT_100160_OPTIONA"
+                command = { type = dissent value = -2 }
+                command = { type = local_setflag which = IREUOB_ALONE }  
+        }
+}
+#############################################
+###### The Germans cower # 
+#############################################
+event = {
+        id = 100161
+        random = no
+        country = FRA
+ 
+        name = "EVT_100161_NAME"
+        desc = "EVT_100161_DESC"
+        style = 2
+        picture = "british_naval_reinforcments"
+ 
+        action_a = {
+                name = "EVT_100161_OPTIONA"
+                command = { type = dissent value = -1 }
+        }
+}
+#############################################
+###### Union of Britain threatens Iceland and the Azores# 
+#############################################
+event = {
+        id = 100162
+        random = no
+        country = CAN
+        
+ 
+        name = "EVT_100162_NAME"
+        desc = "EVT_100162_DESC"
+        style = 2
+        picture = "Rebecca"
+ 
+        action_a = {
+	ai_chance = 35
+                name = "EVT_100162_OPTIONA"
+                command = { type = relation which = ENG value = -100 }
+                command = { type = relation which = FRA value = -75 }
+		command = { type = supplies value = -300 }
+		command = { type = money value = -50 }
+                command = { type = domestic which = defense_lobby value = 1 }
+                command = { type = domestic which = interventionism value = 1 }
+                command = { type = dissent value = 1 }
+                command = { type = trigger which = 100163 }
+                command = { type = trigger which = 100164 }
+        }
+        action_b = {
+	ai_chance = 65
+                name = "EVT_100162_OPTIONB"
+                command = { type = relation which = POR value = -15 }
+                command = { type = relation which = IRE value = -15 }
+                command = { type = relation which = DEN value = -15 }
+                command = { type = domestic which = defense_lobby value = 2 }
+                command = { type = dissent value = 2 }
+                command = { type = trigger which = 100165 }
+                command = { type = trigger which = 100166 }
+        }
+}
+#############################################
+###### The Royal Navy on the Atlantic # 
+#############################################
+event = {
+        id = 100163
+        random = no
+        country = ENG
+ 
+        name = "EVT_100163_NAME"
+        desc = "EVT_100163_DESC"
+        style = 2
+        picture = "british_naval_reinforcments"
+ 
+        action_a = {
+                name = "EVT_100163_OPTIONA"
+                command = { type = dissent value = 2 }
+                command = { type = relation which = CAN value = -85 }
+        }
+}
+#############################################
+###### The Royal Navy on the Atlantic # 
+#############################################
+event = {
+        id = 100164
+        random = no
+        country = FRA
+ 
+        name = "EVT_100164_NAME"
+        desc = "EVT_100164_DESC"
+        style = 2
+        picture = "british_naval_reinforcments"
+ 
+        action_a = {
+                name = "EVT_100164_OPTIONA"
+                command = { type = dissent value = 1 }
+                command = { type = relation which = CAN value = -50 }
+        }
+}
+#############################################
+###### The Canadians cower # 
+#############################################
+event = {
+        id = 100165
+        random = no
+        country = ENG
+ 
+        name = "EVT_100165_NAME"
+        desc = "EVT_100165_DESC"
+        style = 2
+        picture = "british_naval_reinforcments"
+ 
+        action_a = {
+                name = "EVT_100165_OPTIONA"
+                command = { type = dissent value = -2 }
+        }
+}
+
+#############################################
+###### The Canadians cower # 
+#############################################
+event = {
+        id = 100166
+        random = no
+        country = FRA
+ 
+        name = "EVT_100166_NAME"
+        desc = "EVT_100166_DESC"
+        style = 2
+        picture = "british_naval_reinforcments"
+ 
+        action_a = {
+                name = "EVT_100166_OPTIONA"
+                command = { type = dissent value = -1 }
+        }
+}
+
+event = {
+id = 555815
+
+country = GER
+style = 2
+#picture = "Ireinvasion"
+
+trigger = { flag = IRE_MIT
+            war = { country = ENG country = IRE }
+         NOT = {   war = { country = ENG country = GER } }
+         NOT = { alliance = { country = IRE country = ITA } }
+         NOT = { alliance = { country = ENG country = GER } } 
+ }
+
+date = { day = 1 month = january year = 1936 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_555815_NAME"
+desc = "EVT_555815_DESC"
+action_a = {
+ai_chance = 80
+name = "EVT_555815_OPTIONA"
+command = { type = belligerence which = GER value = 1 }
+command = { type = relation which = IRE value = 50 }
+command = { type = relation which = ENG value = -50 }
+command = { type = setflag which = GERI_ULTI }
+command = {  type = clrflag which = IRE_MIT }
+command = { type = dissent value = -3 }
+}
+action_b = {
+ai_chance = 20
+name = "EVT_555815_OPTIONB"
+command = { type = belligerence which = GER value = -3 }
+command = { type = relation which = IRE value = -50 }
+command = { type = relation which = ENG value = 50 }
+command = { type = setflag which = ULT1_Ignored }
+command = {  type = clrflag which = IRE_MIT }
+command = { type = dissent value = 3 }
+}
+}
+
+event = {
+id = 555816
+country = CAN
+style = 2
+#picture = "Ireinvasion"
+
+trigger = { flag = IRE_ENT
+            war = { country = ENG country = IRE }
+           NOT = {   war = { country = ENG country = CAN } }
+           NOT = { alliance = { country = IRE country = ITA } }
+ }
+
+date = { day = 1 month = january year = 1936 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_555816_NAME"
+desc = "EVT_555816_DESC"
+
+action_a = {
+ai_chance = 80
+name = "EVT_555816_OPTIONA"
+command = { type = belligerence which = CAN value = 1 }
+command = { type = relation which = IRE value = 50 }
+command = { type = relation which = ENG value = -50 }
+command = { type = setflag which = CANI_ULTI }
+command = {  type = clrflag which = IRE_ENT }
+command = { type = dissent value = -3 }
+}
+action_b = {
+ai_chance = 20
+name = "EVT_555816_OPTIONB"
+command = { type = belligerence which = CAN value = -3 }
+command = { type = relation which = IRE value = -50 }
+command = { type = relation which = ENG value = 50 }
+command = {  type = clrflag which = IRE_ENT }
+command = { type = dissent value = 3 }
+}
+}
+
+
+event = {
+id = 555817
+country = ENG
+style = 2
+picture = "german_replacements"
+
+trigger = { flag = GERI_ULTI }
+
+date = { day = 1 month = january year = 1936 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_555817_NAME"
+desc = "EVT_555817_DESC"
+
+action_a = {
+ai_chance = 70
+name = "EVT_555817_OPTIONA"
+command = { type = belligerence which = ENG value = -3 }
+command = { type = relation which = IRE value = 50 }
+command = { type = relation which = GER value = 50 }
+command = { type = peace which = IRE value = 0 }
+command = { type = setflag which = ULTIG_ACC }
+command = { type = dissent value = 3 }
+}
+action_b = {
+ai_chance = 30
+name = "EVT_555817_OPTIONB"
+command = { type = belligerence which = ENG value = 3 }
+command = { type = relation which = IRE value = -50 }
+command = { type = relation which = GER value = -50 }
+command = { type = setflag which = ULTIG_IGN }
+command = { type = dissent value = -3 }
+}
+}
+
+event = {
+id = 555818
+country = IRE
+style = 2
+picture = "allied_supply_captured"
+
+trigger = { flag = GERI_ULTI }
+
+date = { day = 1 month = january year = 1936 }
+offset = 1
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_555818_NAME"
+desc = "EVT_555818_DESC"
+
+action_a = {
+name = "EVT_555818_OPTIONA"
+command = { type = relation which = GER value = 50 }
+command = { type = dissent value = -3 }
+}
+}
+
+event = {
+id = 555819
+country = GER
+style = 2
+picture = "Memel"
+
+trigger = { flag = ULTIG_ACC }
+
+date = { day = 1 month = january year = 1936 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_555819_NAME"
+desc = "EVT_555819_DESC"
+
+action_a = {
+name = "EVT_555819_OPTIONA"
+command = { type = relation which = IRE value = 25 }
+command = { type = dissent value = -5 }
+command = {  type = clrflag which = GERI_ULTI }
+}
+}
+
+event = {
+id = 555808
+country = GER
+style = 2
+picture = "german_marginal_victory2"
+
+trigger = { flag = ULTIG_IGN }
+
+date = { day = 1 month = january year = 1936 }
+offset = 2
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_555808_NAME"
+desc = "EVT_555808_DESC"
+
+action_a = {
+ai_chance = 99
+name = "EVT_555808_OPTIONA"
+command = { type = war which = ENG }
+command = { type = alliance which = IRE }
+}
+action_b = {
+ai_chance = 1
+name = "EVT_555808_OPTIONB"
+command = { type = dissent value = 3 }
+}
+}
+
+event = {
+id = 555809
+country = IRE
+style = 2
+picture = "boarding"
+
+trigger = { flag = ULTIG_ACC }
+
+date = { day = 1 month = january year = 1936 }
+offset = 1
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_555809_NAME"
+desc = "EVT_555809_DESC"
+
+action_a = {
+name = "EVT_555809_OPTIONA"
+command = { type = dissent value = -10 }
+
+}
+}
+
+event = {
+id = 555810
+country = ENG
+style = 2
+picture = "german_replacements"
+
+trigger = { flag = CANI_ULTI }
+
+date = { day = 1 month = january year = 1936 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_555810_NAME"
+desc = "EVT_555810_DESC"
+
+action_a = {
+ai_chance = 50
+name = "EVT_555810_OPTIONA"
+command = { type = belligerence which = ENG value = -3 }
+command = { type = relation which = IRE value = 50 }
+command = { type = relation which = CAN value = 50 }
+command = { type = peace which = IRE value = 0 }
+command = { type = setflag which = ULTIC_ACC }
+command = { type = dissent value = 3 }
+}
+action_b = {
+ai_chance = 50
+name = "EVT_555810_OPTIONB"
+command = { type = belligerence which = ENG value = 3 }
+command = { type = relation which = IRE value = -50 }
+command = { type = relation which = CAN value = -50 }
+command = { type = setflag which = ULTIC_IGN }
+command = { type = dissent value = -3 }
+}
+}
+
+event = {
+id = 555811
+country = IRE
+style = 2
+picture = "allied_supply_captured"
+
+trigger = { flag = CANI_ULTI }
+
+date = { day = 1 month = january year = 1936 }
+offset = 1
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_555811_NAME"
+desc = "EVT_555811_DESC"
+
+action_a = {
+name = "EVT_555811_OPTIONA"
+command = { type = relation which = CAN value = 50 }
+command = { type = dissent value = -3 }
+}
+}
+
+event = {
+id = 555812
+country = CAN
+style = 2
+picture = "Memel"
+
+trigger = { flag = ULTIC_ACC }
+
+date = { day = 1 month = january year = 1936 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_555812_NAME"
+desc = "EVT_555812_DESC"
+
+action_a = {
+name = "EVT_555812_OPTIONA"
+command = { type = relation which = IRE value = 25 }
+command = { type = dissent value = -5 }
+command = {  type = clrflag which = CANI_ULTI }
+}
+}
+
+event = {
+id = 555813
+country = CAN
+style = 2
+picture = "german_marginal_victory2"
+
+trigger = { flag = ULTIC_IGN }
+
+date = { day = 1 month = january year = 1936 }
+offset = 2
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_555813_NAME"
+desc = "EVT_555813_DESC"
+
+action_a = {
+ai_chance = 99
+name = "EVT_555813_OPTIONA"
+command = { type = war which = ENG }
+command = { type = alliance which = IRE }
+}
+action_b = {
+ai_chance = 1
+name = "EVT_555813_OPTIONB"
+command = { type = dissent value = 3 }
+}
+}
+
+event = {
+id = 555814
+country = IRE
+style = 2
+picture = "boarding"
+
+trigger = { flag = ULTIC_ACC }
+
+date = { day = 1 month = january year = 1936 }
+offset = 1
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_555814_NAME"
+desc = "EVT_555814_DESC"
+
+action_a = {
+name = "EVT_555814_OPTIONA"
+command = { type = dissent value = -10 }
+}
+}
+
+#############################################
+###### Stance towards Ireland # 
+#############################################
+
+event = {
+	id = 100204
+	country = ENG
+	style = 2
+        picture = "diplomatic_campaign"
+        decision_picture = "decision_fateofireland"
+	  
+        decision = {
+        NOT = { alliance = { country = ENG country = IRE } }
+        exists = IRE
+        NOT = {
+        atwar = ENG
+        exists = SCO
+        exists = U17
+        ispuppet = IRE
+        ispuppet = ENG
+        alliance = { country = GER country = IRE }
+        alliance = { country = CAN country = IRE }
+        }
+        control = { province = 29 data = ENG }
+        control = { province = 34 data = IRE }
+        OR = {
+        local_flag = IREUOB_ALONE
+        local_flag = IREUOB_DIPL
+        }
+        }
+
+        decision_trigger = {
+        NOT = {
+        atwar = ENG
+        }
+        event = 100150
+        }
+
+	trigger = {
+        OR = {
+        local_flag = IREUOB_ALONE
+        local_flag = IREUOB_DIPL
+        }
+        event = 100150
+        NOT = { alliance = { country = ENG country = IRE } }
+        exists = IRE
+        NOT = {
+        atwar = ENG
+        exists = SCO
+        exists = U17
+        ispuppet = IRE
+        ispuppet = ENG
+        alliance = { country = GER country = IRE }
+        alliance = { country = CAN country = IRE }
+        }
+        control = { province = 29 data = ENG }
+        control = { province = 34 data = IRE }
+        }
+
+
+
+	name = "EVT_100204_NAME"
+	desc = "EVT_100204_DESC"
+        
+
+        date = { day = 1 month = january year = 1937 }
+	offset = 10
+	deathdate = { day = 29 month = december year = 1960 }
+
+	action = {
+		ai_chance = 20
+		name = "EVT_100204_OPTIONA"
+                trigger = {
+                ideology = stalinist
+                local_flag = IREUOB_ALONE
+                }
+                command = { type = belligerence which = ENG value = 10  }
+                command = { type = dissent value = 2 }
+                command = { type = event which = 100205 where = ENG when = 4  }
+		}
+
+	action = {
+		ai_chance = 35
+		name = "EVT_100204_OPTIONB"
+                command = { type = belligerence which = ENG value = 5  }
+                command = { trigger = { ideology = left_wing_radical } type = dissent value = 2 }
+                command = { type = event which = 100210 where = ENG when = 4  }
+}
+        
+        action = {
+                  
+                ai_chance = 10
+                name = "EVT_100204_OPTIONC"
+                trigger = {
+                ideology = left_wing_radical
+                }
+                command = { type = event which = 100220 where = IRE when = 2  }
+                }
+       
+        action = {
+		ai_chance = 0
+		name = "EVT_100204_OPTIOND"
+                command = { type = belligerence which = ENG value = -3  }
+                command = { type = dissent value = 3 }
+}
+}
+
+
+event = {
+	id = 100205
+	country = ENG
+	style = 2
+        picture = "diplomatic_campaign"
+
+	name = "EVT_100205_NAME"
+	desc = "EVT_100205_DESC"
+
+	action_a = {
+		ai_chance = 20
+		name = "EVT_100205_OPTIONA"
+                command = { type = war which = IRE }
+                command = { trigger = { NOT = { ideology = stalinist } } type = dissent value = 4 } 
+                command = { type = belligerence which = ENG value = 5  }
+                command = { type = relation which = GER value = -50 }
+                command = { type = relation which = CAN value = -50 }
+                command = { type = sleepevent which = 555426 }
+		}
+
+        action_b = {
+		ai_chance = 20
+		name = "EVT_100205_OPTIONB"
+                command = { type = event which = 100206 where = IRE when = 1  }
+                command = { type = dissent value = 1 } 
+		}
+
+	action_c = {
+		ai_chance = 5
+		name = "EVT_100205_OPTIONC"
+                command = { type = dissent value = 2 }
+                command = { type = relation which = ENG value = -20 }
+                }
+                }
+
+
+event = {
+	id = 100206
+	country = IRE
+	style = 2
+        picture = "diplomatic_campaign"
+
+	name = "EVT_100206_NAME"
+	desc = "EVT_100206_DESC"
+
+	action_a = {
+		ai_chance = 15
+		name = "EVT_100206_OPTIONA"
+                command = { type = trigger which = 100207 }
+                command = { type = dissent value = 4 } 
+		}
+
+	action_b = {
+		ai_chance = 85
+		name = "EVT_100206_OPTIONB"
+                command = { type = dissent value = -2 }
+                command = { type = relation which = ENG value = -20 }
+                command = { type = add_division value = infantry when = 8 }
+		command = { type = add_division value = infantry when = 8 }
+		command = { type = add_division value = cavalry when = 8 }
+                command = { type = trigger which = 100208 }
+                }
+                }
+
+event = {
+	id = 100207
+	country = ENG
+	style = 2
+        picture = "diplomatic_campaign"
+
+	name = "EVT_100207_NAME"
+	desc = "EVT_100207_DESC"
+
+
+	action = {
+		name = "EVT_100207_OPTIONA"
+                command = { type = dissent value = 4 }
+                command = { type = inherit which = IRE  }
+                }
+                }
+
+event = {
+	id = 100208
+	country = ENG
+	style = 2
+        picture = "diplomatic_campaign"
+
+	name = "EVT_100208_NAME"
+	desc = "EVT_100208_DESC"
+
+	action_a = {
+		ai_chance = 85
+		name = "EVT_100208_OPTIONA"
+                command = { type = war which = IRE }
+                command = { trigger = { NOT = { ideology = stalinist } } type = dissent value = 4 } 
+                command = { type = belligerence which = ENG value = 5  }
+                command = { type = relation which = GER value = -50 }
+                command = { type = relation which = CAN value = -50 }
+		}
+
+	action_b = {
+		ai_chance = 15
+		name = "EVT_100208_OPTIONB"
+                command = { type = dissent value = 2 }
+                command = { type = relation which = IRE value = 20 }
+                
+                }
+                }
+
+
+event = {
+	id = 100210
+	country = ENG
+	style = 2
+        picture = "diplomatic_campaign"
+
+	name = "EVT_100210_NAME"
+	desc = "EVT_100210_DESC"
+
+	action = {
+		ai_chance = 20
+		name = "EVT_100210_OPTIONA"
+                trigger = {
+                local_flag = IREUOB_ALONE
+                }
+                command = { type = war which = IRE }
+                command = { trigger = { NOT = { ideology = stalinist } } type = dissent value = 7 } 
+                command = { trigger = { ideology = stalinist } type = dissent value = 3 }
+                command = { type = belligerence which = ENG value = 5  }
+                command = { type = relation which = GER value = -50 }
+                command = { type = relation which = CAN value = -50 }
+		}
+
+        action = {
+		ai_chance = 20
+		name = "EVT_100210_OPTIONB"
+                command = { type = event which = 100211 where = IRE when = 1  }
+                command = { type = dissent value = 1 } 
+		}
+
+        action = {
+                ai_chance = 20
+                name = "EVT_100210_OPTIONC"
+                command = { type = setflag which = IRE_ENGCOU }
+                }
+
+	action = {
+		ai_chance = 5
+		name = "EVT_100210_OPTIOND"
+                command = { type = dissent value = 2 }
+                command = { type = relation which = ENG value = -20 }
+                }
+                }
+
+event = {
+	id = 100211
+	country = IRE
+	style = 2
+        picture = "diplomatic_campaign"
+
+	name = "EVT_100211_NAME"
+	desc = "EVT_100211_DESC"
+
+	action_a = {
+		ai_chance = 25
+		name = "EVT_100211_OPTIONA"
+                command = { type = trigger which = 100212 }
+                command = { type = dissent value = 4 } 
+		}
+
+        action_b = {
+		ai_chance = 95
+		name = "EVT_100211_OPTIONB"
+                trigger = {
+                event = 100174
+                exists = CAN
+                NOT = {
+                atwar = IRE
+                }
+                }
+                command = { type = trigger which = 100214 }
+                command = { type = dissent value = 4 } 
+                command = { type = relation which = CAN value = 40 }
+                command = { type = relation which = VIC value = 40 }
+                command = { type = relation which = GUY value = 40 }
+                command = { type = relation which = PAK value = 40 }
+                command = { type = relation which = AST value = 40 }
+		}
+
+        action_c = {
+		ai_chance = 95
+                trigger = {
+                event = 100181
+                exists = GER
+                NOT = {
+                atwar = IRE
+                }
+                }
+		name = "EVT_100211_OPTIONC"
+                command = { type = trigger which = 100217 }
+                command = { type = dissent value = 4 } 
+                command = { type = relation which = GER value = 40 }
+		}
+
+	action_d = {
+		ai_chance = 75
+		name = "EVT_100211_OPTIOND"
+                trigger = {
+                NOT = {
+                event = 100181
+                event = 100174
+                }
+                }
+                command = { type = dissent value = -2 }
+                command = { type = relation which = ENG value = -20 }
+                command = { type = add_division value = infantry when = 8 }
+		command = { type = add_division value = infantry when = 8 }
+		command = { type = add_division value = cavalry when = 8 }
+                command = { type = trigger which = 100223 }
+                }
+                }
+
+
+event = {
+	id = 100212
+	country = ENG
+	style = 2
+        picture = "diplomatic_campaign"
+
+	name = "EVT_100212_NAME"
+	desc = "EVT_100212_DESC"
+
+
+	action = {
+		name = "EVT_100212_OPTIONA"
+                command = { type = dissent value = 4 }
+                command = { type = make_puppet which = IRE }
+                }
+                }
+
+
+event = {
+	id = 100223
+	country = ENG
+	style = 2
+        picture = "diplomatic_campaign"
+
+	name = "EVT_100223_NAME"
+	desc = "EVT_100223_DESC"
+
+	action_a = {
+		ai_chance = 85
+		name = "EVT_100223_OPTIONA"
+                command = { type = end_guarantee which = CAN where = IRE }
+                command = { type = end_guarantee which = GER where = IRE }
+                command = { type = war which = IRE }
+                command = { trigger = { NOT = { ideology = stalinist } } type = dissent value = 2 } 
+                command = { type = belligerence which = ENG value = 5  }
+                command = { type = relation which = GER value = -50 }
+                command = { type = relation which = CAN value = -50 }
+		}
+
+	action_b = {
+		ai_chance = 15
+		name = "EVT_100223_OPTIONB"
+                command = { type = dissent value = 1 }
+                command = { type = relation which = IRE value = 20 }
+                }
+                }
+
+event = {
+id = 100214
+random = no
+country = CAN
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_100214_NAME"
+desc = "EVT_100214_DESC"
+
+action_a = {
+ai_chance = 94
+name = "EVT_100214_OPTIONA"
+command = { type = alliance which = IRE }
+command = { type = relation which = IRE value = 200 }
+command = { type = dissent value = -3 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = trigger which = 100215 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_100214_OPTIONB"
+command = { type = dissent value = 1 }
+command = { type = end_guarantee which = CAN where = IRE }
+command = { type = relation which = IRE value = -100 }
+command = { type = trigger which = 100216 }
+}
+}
+
+event = {
+        id = 100215
+        random = no
+        country = ENG
+ 
+        name = "EVT_100215_NAME"
+        desc = "EVT_100215_DESC"
+        style = 2
+        picture = "politics4"
+ 
+ 
+        action_a = {
+                ai_chance = 100
+                name = "EVT_100215_OPTIONA"
+                command = { type = dissent value = 3 }
+                command = { type = relation which = CAN value = -75 }
+        }
+
+        action_b = {
+                ai_chance = 0
+                name = "EVT_100215_OPTIONB"
+                command = { type = war which = IRE }
+                command = { trigger = { NOT = { ideology = stalinist } } type = dissent value = 2 } 
+        }
+}
+
+event = {
+        id = 100216
+        random = no
+        country = IRE
+ 
+        name = "EVT_100216_NAME"
+        desc = "EVT_100216_DESC"
+        style = 2
+        picture = "politics4"
+ 
+        action_a = {
+		ai_chance = 25
+		name = "EVT_100216_OPTIONA"
+                command = { type = trigger which = 100212 }
+                command = { type = dissent value = 4 } 
+		}
+
+        action_b = {
+		ai_chance = 75
+		name = "EVT_100216_OPTIONB"
+                command = { type = dissent value = -2 }
+                command = { type = relation which = ENG value = -20 }
+                command = { type = add_division value = infantry when = 8 }
+		command = { type = add_division value = infantry when = 8 }
+		command = { type = add_division value = cavalry when = 8 }
+                command = { type = trigger which = 100223 }
+                }
+}
+
+event = {
+id = 100217
+random = no
+country = GER
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_100217_NAME"
+desc = "EVT_100217_DESC"
+
+action_a = {
+ai_chance = 94
+name = "EVT_100217_OPTIONA"
+command = { type = alliance which = IRE }
+command = { type = relation which = IRE value = 200 }
+command = { type = dissent value = -3 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = trigger which = 100218 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_100217_OPTIONB"
+command = { type = dissent value = 1 }
+command = { type = end_guarantee which = GER where = IRE }
+command = { type = relation which = IRE value = -100 }
+command = { type = trigger which = 100219 }
+}
+}
+
+event = {
+        id = 100218
+        random = no
+        country = ENG
+ 
+        name = "EVT_100218_NAME"
+        desc = "EVT_100218_DESC"
+        style = 2
+        picture = "politics4"
+ 
+ 
+        action_a = {
+                ai_chance = 100
+                name = "EVT_100218_OPTIONA"
+                command = { type = dissent value = 3 }
+                command = { type = relation which = CAN value = -75 }
+        }
+
+        action_b = {
+                ai_chance = 0
+                name = "EVT_100218_OPTIONB"
+                command = { type = war which = IRE }
+                command = { trigger = { NOT = { ideology = stalinist } } type = dissent value = 2 } 
+        }
+}
+
+event = {
+        id = 100219
+        random = no
+        country = IRE
+ 
+        name = "EVT_100219_NAME"
+        desc = "EVT_100219_DESC"
+        style = 2
+        picture = "politics4"
+ 
+        action_a = {
+		ai_chance = 25
+		name = "EVT_100219_OPTIONA"
+                command = { type = trigger which = 100212 }
+                command = { type = dissent value = 4 } 
+		}
+
+        action_b = {
+		ai_chance = 75
+		name = "EVT_100219_OPTIONB"
+                command = { type = dissent value = -2 }
+                command = { type = relation which = ENG value = -20 }
+                command = { type = add_division value = infantry when = 8 }
+		command = { type = add_division value = infantry when = 8 }
+		command = { type = add_division value = cavalry when = 8 }
+                command = { type = trigger which = 100223 }
+                }
+}
+
+
+event = {
+id = 100220
+random = no
+country = IRE
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_100220_NAME"
+desc = "EVT_100220_DESC"
+
+action_a = {
+name = "EVT_100220_OPTIONA"
+ai_chance = 30
+command = { type = dissent value = 1 }
+command = { type = trigger which = 100222  }
+}
+
+action_b = {
+	ai_chance = 70
+	name = "EVT_100220_OPTIONB"
+	command = { type = trigger which = 100221  }
+        command = { type = dissent value = -1 }
+        command = { type = access which = ENG }
+        command = { type = relation which = ENG value = 30 }
+        command = { type = non_aggression which = ENG where = IRE }
+}
+}
+
+
+event = {
+        id = 100221
+        random = no
+        country = ENG
+ 
+        name = "EVT_100221_NAME"
+        desc = "EVT_100221_DESC"
+        style = 2
+        picture = "diplomatic_campaign"
+ 
+        action_a = {
+                name = "EVT_100221_OPTIONA"
+                command = { type = dissent value = -2 }
+                command = { type = relation which = IRE value = 30 }       
+        }
+}
+
+event = {
+	id = 100222
+	country = ENG
+	style = 2
+        picture = "diplomatic_campaign"
+
+	name = "EVT_100222_NAME"
+	desc = "EVT_100222_DESC"
+
+	action_a = {
+		ai_chance = 55
+		name = "EVT_100222_OPTIONA"
+                command = { type = belligerence which = ENG value = 5  }
+                command = { trigger = { ideology = left_wing_radical } type = dissent value = 2 }
+                command = { type = event which = 100210 where = ENG when = 4  }
+        }
+
+	action_b = {
+		ai_chance = 15
+		name = "EVT_100222_OPTIONB"
+                command = { type = dissent value = 1 }
+                command = { type = relation which = IRE value = 20 }
+                }
+                }
+
+
+####################
+#### Ireland falls to the Union of Britain
+####################
+event = {
+id = 6656220
+random = no
+country = ENG
+style = 2
+
+trigger = {
+    NOT = {
+        exists = IRE
+    }
+    owned = { province = 31 data = ENG } #Cork
+    owned = { province = 30 data = ENG } #Galway
+    owned = { province = 34 data = ENG } #Sligo
+    owned = { province = 32 data = ENG } #Letterkenny
+    owned = { province = 33 data = ENG } #Belfast
+    owned = { province = 35 data = ENG } #Portadown
+    owned = { province = 36 data = ENG } #Dublin
+}
+
+name = "EVT_6656220_NAME"
+desc = "EVT_6656220_DESC"
+
+date = { day = 1 month = january year = 1936 }
+offset = 1
+deathdate = { day = 1 month = december year = 1960 }
+
+action_a = {
+name = "EVT_6656220_OPTIONA"
+        ai_chance = 60
+        trigger = {
+        NOT = {
+        event = 100205
+        }
+        }
+        command = { type = independence which = IRE value = 1 when = 0 }
+        command = { type = trigger which = 979002 }
+    }
+
+action_b = {
+name = "EVT_6656220_OPTIONB"
+        ai_chance = 40
+        command = { type = dissent value = 5 }
+        command = { type = addclaim which = 31 }
+    command = { type = addclaim which = 30 }
+    command = { type = addclaim which = 34 }
+    command = { type = addclaim which = 32 }
+    command = { type = addclaim which = 33 }
+    command = { type = addclaim which = 35 }
+    command = { type = addclaim which = 36 }
+                     command = { type = relation which = CSA value = -25 }
+    command = { type = setflag which = IRE_UOB_IRA }
+                     command = { type = trigger which = 100224 }
+    }
+}
+event = {
+        id = 100224
+        random = no
+        country = CSA
+
+        name = "EVT_100224_NAME"
+        desc = "EVT_100224_DESC"
+        style = 2
+        picture = "ireland"
+
+        action_a = {
+                ai_chance = 55
+                name = "EVT_100224_OPTIONA"
+                command = { type = dissent value = -3 }
+                command = { type = relation which = ENG value = -25 }
+                command = { type = domestic which = interventionism value = 1 }
+                command = { type = trigger which = 100225 }
+        }
+        action_b = {
+                ai_chance = 15
+                name = "EVT_100224_OPTIONB"
+                command = { type = dissent value = 20 }
+                command = { type = domestic which = interventionism value = 1 }
+                command = { type = relation which = ENG value = 100 }
+        }
+        action_c = {
+                ai_chance = 30
+                name = "EVT_100224_OPTIONC"
+                command = { type = dissent value = 8 }
+                command = { type = domestic which = interventionism value = -1 }
+                command = { type = relation which = ENG value = 20 }
+        }
+}
+event = {
+        id = 100225
+        random = no
+        country = ENG
+
+        name = "EVT_100225_NAME"
+        desc = "EVT_100225_DESC"
+        style = 2
+        picture = "ireland"
+
+         action_a = {
+                     ai_chance = 60
+                     name = "EVT_100225_OPTIONA"
+                     command = { type = removeclaim which = 31 }
+    command = { type = removeclaim which = 30 }
+    command = { type = removeclaim which = 34 }
+    command = { type = removeclaim which = 35 }
+    command = { type = removeclaim which = 36 }
+    command = { type = removeclaim which = 32 }
+    command = { type = removeclaim which = 33 }
+    command = { type = independence which = IRE value = 1 when = 0 }
+    command = { type = trigger which = 979002 }
+    command = { type = clrflag which = IRE_UOB_IRA }
+                     command = { type = dissent value = 5 }
+                     command = { type = relation which = CSA value = 50 }
+        }
+        action_b = {
+                ai_chance = 40
+                name = "EVT_100225_OPTIONB"
+                command = { type = relation which = CSA value = -75 }
+                command = { type = trigger which = 100226 }
+        }
+}
+
+event = {
+        id = 100226
+        random = no
+        country = CSA
+
+        name = "EVT_100226_NAME"
+        desc = "EVT_100226_DESC"
+        style = 2
+        picture = "ireland"
+        
+        action_a = {
+                ai_chance = 45
+                name = "EVT_100226_OPTIONA"
+                command = { type = end_trades which = CSA where = ENG }
+                command = { type = embargo which = CSA where = ENG value = 3 }
+                command = { type = relation which = ENG value = -75 }
+                command = { type = trigger which = 100227 }
+        }
+        action_b = {
+                ai_chance = 55
+                name = "EVT_100226_OPTIONB"
+                command = { type = dissent value = 5 }
+                command = { type = domestic which = interventionism value = -1 }
+        }
+}
+
+event = {
+        id = 100227
+        random = no
+        country = ENG
+
+        name = "EVT_100227_NAME"
+        desc = "EVT_100227_DESC"
+        style = 2
+        picture = "ireland"
+
+         action_a = {
+                     ai_chance = 80
+                     name = "EVT_100227_OPTIONA"
+                command = { type = embargo which = ENG where = CSA value = 3 }
+                command = { type = relation which = CSA value = -30 }
+                command = { type = sleepevent which = 300322 }
+                command = { type = clrflag which = british_aid_A }
+                command = { type = clrflag which = british_aid_B }
+                command = { type = clrflag which = british_aid_C }
+        }
+        action_b = {
+                ai_chance = 20
+                name = "EVT_100227_OPTIONB"
+    command = { type = removeclaim which = 31 }
+    command = { type = removeclaim which = 30 }
+    command = { type = removeclaim which = 34 }
+    command = { type = removeclaim which = 35 }
+    command = { type = removeclaim which = 36 }
+    command = { type = removeclaim which = 32 }
+    command = { type = removeclaim which = 33 }
+    command = { type = independence which = IRE value = 1 when = 0 }
+    command = { type = trigger which = 979002 }
+    command = { type = clrflag which = IRE_UOB_IRA }
+    command = { type = dissent value = 10 }
+    command = { type = relation which = CSA value = 50 }
+    command = { type = embargo which = CSA where = ENG value = 0 }
+        }
+}
+
+#############################################
+###### CTU Chairman election # 
+#############################################
+event = {
+        id = 100167
+        random = no
+        country = ENG
+        trigger = {
+                headofstate = 1211 # Congress of Trade Unions
+        }
+ 
+        name = "EVT_100167_NAME"
+        desc = "EVT_100167_DESC"
+        style = 2
+        picture = "congress"
+ 
+        date = { day = 13 month = march year = 1937 }
+ 
+        action_a = {
+                name = "EVT_100167_OPTIONA"
+		ai_chance = 80
+                command = { type = dissent value = 4 }
+        }
+        action_b = {
+                name = "EVT_100167_OPTIONB"
+		ai_chance = 10
+                command = { type = headofstate which = 1204 }
+                command = { type = dissent value = 2 }
+                command = { type = trigger which = 100169 } # General secretary under Oswald Mosley
+        }
+        action_c = {
+                name = "EVT_100167_OPTIONC"
+		ai_chance = 10
+                command = { type = headofstate which = 1213 }
+                command = { type = dissent value = 1 }
+        }
+}
+
+
+
+
+
+
+
+
+
+#############################################
+######  # Arthur Horner's gamble
+#############################################
+event = {
+        id = 100168
+        random = no
+        country = ENG
+        trigger = {
+                event = 100167
+                NOT = { 
+                        event = 100169
+                }
+        }
+ 
+        name = "EVT_100168_NAME"
+        desc = "EVT_100168_DESC"
+        style = 2
+        picture = "horner"
+ 
+        date = { day = 13 month = march year = 1937 }
+        offset = 15
+        deathdate = { day = 1 month = april year = 1937 }
+ 
+        action_a = {
+                name = "EVT_100168_OPTIONA"
+		ai_chance = 25
+                command = { type = headofstate which = 1207 }
+                command = { type = dissent value = -2 }
+                command = { type = trigger which = 100170 } # General secretary under Arthur Horner
+        }
+        action_b = {
+                name = "EVT_100168_OPTIONB"
+		ai_chance = 55
+                command = { type = headofstate which = 1204 }
+                command = { type = dissent value = 2 }
+                command = { type = trigger which = 100171 } # General secretary under Mosley (No Horner)
+        }
+        action_c = {
+                name = "EVT_100168_OPTIONC"
+		ai_chance = 20
+                command = { type = headofstate which = 1213 }
+                command = { type = trigger which = 100172 } # General secretary under Mann
+        }
+}
+#############################################
+###### General Secretary under Oswald Mosley # 
+#############################################
+event = {
+        id = 100169
+        random = no
+        country = ENG
+ 
+        name = "EVT_100169_NAME"
+        desc = "EVT_100169_DESC"
+        style = 2
+        picture = "mosley"
+ 
+ 
+        action_a = {
+                name = "EVT_100169_OPTIONA"
+		ai_chance = 20
+                command = { type = dissent value = -2 }
+        }
+        action_b = {
+                name = "EVT_100169_OPTIONB"
+		ai_chance = 25
+                command = { type = headofgovernment which = 1202 }
+        }
+        action_c = {
+                name = "EVT_100169_OPTIONC"
+		ai_chance = 30
+                command = { type = headofgovernment which = 1206 }
+        }
+        action_d = {
+                name = "EVT_100169_OPTIOND"
+		ai_chance = 25
+                command = { type = headofgovernment which = 1042 }
+                command = { type = dissent value = 15 }
+                command = { type = domestic which = democratic value = -2 }
+                command = { type = sleepminister which = 1188 }
+                command = { type = sleepminister which = 1189 }
+                command = { type = sleepminister which = 1207 }
+                command = { type = sleepminister which = 1076 }
+        }
+}
+
+#############################################
+###### General Secretary under Arthur Horner # 
+#############################################
+event = {
+        id = 100170
+        random = no
+        country = ENG
+ 
+        name = "EVT_100170_NAME"
+        desc = "EVT_100170_DESC"
+        style = 2
+        picture = "horner"
+ 
+ 
+        action_a = {
+                name = "EVT_100170_OPTIONA"
+		ai_chance = 40
+                command = { type = dissent value = -1 }
+                command = { type = headofgovernment which = 1042 }
+        }
+        action_b = {
+                name = "EVT_100170_OPTIONB"
+		ai_chance = 20
+                command = { type = headofgovernment which = 1202 }
+                command = { type = dissent value = 1 }
+        }
+        action_c = {
+                name = "EVT_100170_OPTIONC"
+		ai_chance = 20
+                command = { type = headofgovernment which = 1206 }
+                command = { type = dissent value = 1 }
+        }
+        action_d = {
+                name = "EVT_100170_OPTIOND"
+		ai_chance = 20
+                command = { type = headofgovernment which = 1212 }
+                command = { type = dissent value = 1 }
+        }
+}
+
+#############################################
+###### General Secretary under Oswald Mosley # 
+#############################################
+event = {
+        id = 100171
+        random = no
+        country = ENG
+ 
+        name = "EVT_100171_NAME" # No Horner version
+        desc = "EVT_100171_DESC"
+        style = 2
+        picture = "mosley"
+ 
+ 
+        action_a = {
+                name = "EVT_100171_OPTIONA"
+		ai_chance = 20
+                command = { type = headofgovernment which = 1186 }
+        }
+        action_b = {
+                name = "EVT_100171_OPTIONB"
+		ai_chance = 25
+                command = { type = headofgovernment which = 1202 }
+        }
+        action_c = {
+                name = "EVT_100171_OPTIONC"
+		ai_chance = 30
+                command = { type = headofgovernment which = 1206 }
+        }
+        action_d = {
+                name = "EVT_100171_OPTIOND"
+		ai_chance = 25
+                command = { type = headofgovernment which = 1042 }
+                command = { type = dissent value = 15 }
+                command = { type = domestic which = democratic value = -2 }
+                command = { type = sleepminister which = 1188 }
+                command = { type = sleepminister which = 1189 }
+                command = { type = sleepminister which = 1207 }
+                command = { type = sleepminister which = 1076 }
+        }
+}
+
+#############################################
+###### General Secretary under Tom Mann # 
+#############################################
+event = {
+        id = 100172
+        random = no
+        country = ENG
+ 
+        name = "EVT_100172_NAME"
+        desc = "EVT_100172_DESC"
+        style = 2
+        picture = "mann"
+ 
+ 
+        action_a = {
+                name = "EVT_100172_OPTIONA"
+		ai_chance = 15
+                command = { type = dissent value = -1 }
+                command = { type = headofgovernment which = 1042 }
+                command = { type = trigger which = 100173 } # Exchequer choice
+        }
+        action_b = {
+                name = "EVT_100172_OPTIONB"
+		ai_chance = 30
+                command = { type = headofgovernment which = 1202 }
+                command = { type = dissent value = 1 }
+        }
+        action_c = {
+                name = "EVT_100172_OPTIONC"
+		ai_chance = 35
+                command = { type = headofgovernment which = 1206 }
+                command = { type = dissent value = 1 }
+        }
+        action_d = {
+                name = "EVT_100172_OPTIOND"
+		ai_chance = 20
+                command = { type = headofgovernment which = 1043 }
+                command = { type = dissent value = 1 }
+        }
+}
+
+#############################################
+###### The Exchequer's post # 
+#############################################
+event = {
+        id = 100173
+        random = no
+        country = ENG
+		trigger = {
+			incabinet = 1004 # Mosley as Exchequer
+			OR = {
+				headofstate = 1204
+				headofgovernment = 1042
+			}
+			OR = {
+				event = 100169
+				event = 100170
+				event = 100171
+				event = 100172
+			}
+		}
+ 
+        name = "EVT_100173_NAME"
+        desc = "EVT_100173_DESC"
+        style = 2
+        picture = "soviet_directive"
+
+        date = { day = 13 month = march year = 1937 }
+        offset = 5
+        deathdate = { day = 1 month = may year = 1937 }
+ 
+        action_a = {
+                name = "EVT_100173_OPTIONA"
+		ai_chance = 30
+                command = { type = armamentminister which = 1078 }
+        }
+        action_b = {
+                name = "EVT_100173_OPTIONB"
+		ai_chance = 30
+                command = { type = armamentminister which = 1196 }
+        }
+        action_c = {
+                name = "EVT_100173_OPTIONC"
+		ai_chance = 30
+                command = { type = armamentminister which = 1214 }
+        }
+        action_d = {
+                name = "EVT_100173_OPTIOND"
+		ai_chance = 10
+                command = { type = dissent value = 10 }
+                command = { type = domestic which = democratic value = -1 }
+        }
+}
+
+# Death events
+###### Aneurin Bevan
+event = {
+        id = 100200
+        random = no
+        country = ENG
+ 
+        name = "EVT_100200_NAME"
+        desc = "EVT_100200_DESC"
+        style = 2
+        picture = "minister_died"
+ 
+        date = { day = 6 month = july year = 1960 }
+ 
+        action_a = {
+                name = "EVT_100200_OPTIONA"
+                command = { type = sleepminister which = 1036 } # HoS
+                command = { type = sleepminister which = 1113 } # HoI
+        }
+
+}
+###### Annie Kenney
+event = {
+        id = 100201
+        random = no
+        country = ENG
+ 
+        name = "EVT_100201_NAME"
+        desc = "EVT_100201_DESC"
+        style = 2
+        picture = "minister_died"
+ 
+        date = { day = 9 month = july year = 1953 }
+ 
+        action_a = {
+                name = "EVT_100201_OPTIONA"
+                command = { type = sleepminister which = 1205 } # HoS
+                command = { type = sleepminister which = 1209 } # HoG
+        }
+
+}
+###### Alan Brooke
+event = {
+        id = 100202
+        random = no
+        country = ENG
+ 
+        name = "EVT_100202_NAME"
+        desc = "EVT_100202_DESC"
+        style = 2
+        picture = "minister_died"
+ 
+        date = { day = 17 month = june year = 1963 }
+ 
+        action_a = {
+                name = "EVT_100202_OPTIONA"
+                command = { type = sleepminister which = 1130 } # CoA
+                command = { type = sleepminister which = 1120 } # CoS
+        }
+
+}
+###### Andrew Cunningham
+event = {
+        id = 100203
+        random = no
+        country = ENG
+ 
+        name = "EVT_100203_NAME"
+        desc = "EVT_100203_DESC"
+        style = 2
+        picture = "minister_died"
+ 
+        date = { day = 17 month = june year = 1963 }
+ 
+        action_a = {
+                name = "EVT_100203_OPTIONA"
+                command = { type = sleepminister which = 1138 } # CoN
+        }
+
+}
+
+#############################################
+###### The World Encyclopadia by Jamhaw # 
+#############################################
+event = {
+id = 775490
+random = no
+country = ENG
+
+name = "EVT_775490_NAME"
+desc = "EVT_775490_DESC"
+style = 2
+picture = "news_paper"
+
+
+date = { day = 13 month = July year = 1936 }
+
+
+action_a = {
+name = "EVT_775490_OPTIONA"
+ai_chance = 30
+command = { type = dissent value = -5 }
+command = { type = relation which = EGY value = 45 }
+command = { type = relation which = Eth value = 45 }
+command = { type = relation which = IND value = 45 }
+command = { type = relation which = TIB value = 45 }
+command = { type = relation which = CSX value = 45 }
+command = { type = supplies value = -300 }
+}
+action_b = {
+name = "EVT_775490_OPTIONB"
+ai_chance = 40
+command = { type = supplies value = -50 }
+command = { type = dissent value = -5 }
+}
+action_c = {
+name = "EVT_775490_OPTIONC"
+ai_chance = 30
+command = { type = dissent value = 2 }
+}
+}

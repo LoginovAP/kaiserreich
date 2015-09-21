@@ -1,0 +1,5237 @@
+###########################################################################
+################ Kaisermuffin's Events for German Union ###################
+###########################################################################
+
+###########################################################################
+############################### SYNDIE EVENTS  ############################
+###########################################################################
+## 658000=> Die Nationale Volksarmee
+## 658002=> Undesirables Are Barred From Command
+#####Congress
+## 658003=> First Syndicalist Congress of the German Union
+## 658004=> Foreign Policy
+## 658005=> Industrial Policy
+## 658006=> Military Affairs
+## 658007=> Domestic Policy
+## 658008=> Close of Congressional Voting and the Result (FAUD WIN)
+## 658009=> Close of Congressional Voting and the Result (MT WIN)
+## 658010=> Close of Congressional Voting and the Result (SU WIN)
+## 658011=> Close of Congressional Voting and the Result (FAUD/SU SPLIT)
+## 658012=> Close of Congressional Voting and the Result (MT/SU SPLIT)
+## 658013=> Close of Congressional Voting and the Result (FAUD/MT SPLIT)
+## 658014=> Close of Congressional Voting and the Result (FAUD MARGINAL WIN)
+## 658015=> Close of Congressional Voting and the Result (MT MARGINAL WIN)
+## 658016=> Close of Congressional Voting and the Result (SU MARGINAL WIN)
+## 658017=> Final Runoff Vote and the Result (FAUD WIN)
+## 658018=> Final Runoff Vote and the Result (SU WIN)
+## 658019=> Coalition Negotiations (SU/MT)
+## 658020=> Negotiations Continue! {SU/MT)
+## 658021=> Coalition Negotiations (MT/FAUD)
+#####Congress END
+#####Couple of Flavour events
+## 658022-23=> German Guerillas awarded for his actions in Germany & British reaction
+## 658024-26=> Syndicalist Student Exchange Program 
+#####Airforce events, dependant on who won the Congress
+## 658027-32=> An Airforce for the Union?
+#####Navy events, same
+## 658033-38=> A Navy for the Union?
+##### Thalmann minichain (MT_SU_THALMANN_ANNOY)
+## 658039=> Spartacists Uncooperative
+## 658040=> Pieck Confronts Thalmann!
+## 658041=> Pieck Appeases Thalmann!
+##### Witkop/Detente chain (GU_HOG_MILLY)
+## 658042=> Witkop insulted by British Diplomat
+## 658043-47=> British reaction dependant on government
+## 658048=> British refusal to guard German ships
+## 658049-50=> French intervention with varying ai chances
+## 658051-59=> The outcomes of French Intervention or not and the end of the chain
+#####Flavour event - if the military expansion choices are made.
+## 658060=> French Military Advisors for Germany?
+## 658061=> A mopup event for the detente chain due to a bugged trigger.
+## 658062=> Activating the Syndie Tech Teams
+## 658063=> Rudolf Rocker returns Home
+###########################################################################
+
+###########################################################################
+################### Authoritarian German Union ############################
+###########################################################################
+## 659000=> The Nationale Volksarmee (+ setting Von Leeb as HoS)
+## 659001=> Old Russian Planes
+##### Thought Police Chain
+## 659002=> List of Objectionable Materials Published
+## 659003=> Ministry of Culture Needs More Men
+## 659004=> New objectional material list published! ((Kristallnacht of the Left))
+## 659005=> The Prisons Are Full
+## 659006=> Prison Expansion Persistent Event
+## 659007=> Emigre Persistent Event
+## 659008=> Bavarian Uprising And Civil War Event
+## 659009=> Bavaria Setup Event.
+##### Cabinet Selection
+## 659010=> Von Leeb's Choice
+##### Techteams and Strasserwerke Chains
+## 659011=> Techteams Awake
+## 658012-15 => Strasserwerke expands, becomes a burden.
+##### Internal Politics 
+## 658016 => Rohm flavour event
+## 658017 => The Abolition of Kingdoms flavour event
+###########################################################################
+
+###########################################################################
+##################### Democratic German Union #############################
+###########################################################################
+## 660000=> The Union Defense Force (democratic Russia)
+## 660001=> The Union Airforce (dR)
+## 660002=> The Provisional Government of the Union (dR)
+## 660003=> The Union Defense Force (Entente/Imperial Rus)
+## 660004=> The Union Airforce (Entente/Imperial Rus)
+## 660005=> The Provisional Government of the Union (Entente/Imperial Rus)
+
+## 660007=> The First Presidential Elections 
+## 660008=> The First Presidential Elections 
+## 660009=> The First Parliamentary Elections
+## 660010=> The First Parliamentary Elections
+## 660011=> The Post War Reforms (Entente/Imperial Rus)
+## 660012=> The Post War Reforms (dR)
+## From this point all AI chances will be the same, to reflect growing independance of the nation.
+## To any future modders - feel free to add events for the provisional government - bias the Raeder government more to conservatism however. Also it might be worth looking at different events for the Provisional Govts. 
+## First free elections are currently scheduled for 1946 though playtesting may see that set earlier or later.
+
+## 660013=> Democratic Techteams
+## 660014-18=> Second Presidential Elections (dependant on previous winners)
+
+###########################################################################
+
+###########################################################################
+############################ General Events  ##############################
+## 658001=> Supply Dumps Located!
+## 660006=> Monarchists Revolt!
+###########################################################################
+event = {
+	id = 658000
+	country = U31
+        style = 2
+        picture= "gerarmedfor"
+	name = "EVT_658000_NAME"
+	desc = "EVT_658000_DESC"
+
+action_a = {
+name = "EVT_658000_OPTIONA"
+        command = { type = ai which = "kaiserreich/German Union.ai" }
+        command = { type = flag_ext where = U31 which = "_synd" }
+        command = { type = removecore which = 104 }
+        command = { type = removecore which = 105 }
+        command = { type = removecore which = 107 }
+        command = { type = removecore which = 110 }
+        command = { type = removecore which = 109 }
+        command = { type = secedeprovince which = FRA value = 104 }
+	command = { type = secedeprovince which = FRA value = 105 }
+        command = { type = secedeprovince which = FRA value = 107 }
+	command = { type = secedeprovince which = FRA value = 110 }
+	command = { type = secedeprovince which = FRA value = 109 }
+	command = { type = trigger which = 658001 }
+	command = { type = add_corps which = "I. NVA Corps" value = land where = 154 }
+	command = { type = add_division which = "I. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "II. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "II. NVA Corps" value = land where = 145 }
+	command = { type = add_division which = "III. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "IV. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "III. NVA Corps" value = land where = 179 }
+	command = { type = add_division which = "V. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "VI. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "IV. NVA Corps" value = land where = 140 }
+	command = { type = add_division which = "VII. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "IX. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "V. NVA Corps" value = land where = 146 }
+	command = { type = add_division which = "X. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XI. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "VI. NVA Corps" value = land where = 163 }
+	command = { type = add_division which = "XII. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XIII. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XIV. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XV. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "VII. NVA Corps" value = land where = 153 }
+	command = { type = add_division which = "XVI. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XVII. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "IX. NVA Corps" value = land where = 170 }
+	command = { type = add_division which = "XIX. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XX. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = set_relation which = FRA value = 150 }
+	command = { type = set_relation which = RSI value = 150 }
+	command = { type = set_relation which = ENG value = 150 }
+	
+	command = { type = set_relation which = GER value = -199 }
+	command = { type = set_relation which = CON value = -199 }
+	command = { type = set_relation which = CGX value = -199 }
+	command = { type = set_relation which = BUL value = -159 }
+	command = { type = set_relation which = CZE value = -199 }
+	command = { type = set_relation which = CRO value = -199 }
+
+	command = { type = alliance which = FRA }
+	command = { type = setflag which = RED_UNION}
+}
+}
+
+event = {
+	id = 660018
+	country = U31
+        style = 2
+	picture= "gerarmedfor"
+	name = "EVT_660018_NAME"
+	desc = "EVT_660018_DESC"
+
+action_a = {
+name = "EVT_660018_OPTIONA"
+        command = { type = ai which = "kaiserreich/German Union.ai" }
+        command = { type = flag_ext where = U31 which = "_synd" }
+        command = { type = removecore which = 104 }
+        command = { type = removecore which = 105 }
+        command = { type = removecore which = 107 }
+        command = { type = removecore which = 110 }
+        command = { type = removecore which = 109 }
+        command = { type = secedeprovince which = FRA value = 104 }
+	command = { type = secedeprovince which = FRA value = 105 }
+        command = { type = secedeprovince which = FRA value = 107 }
+	command = { type = secedeprovince which = FRA value = 110 }
+	command = { type = secedeprovince which = FRA value = 109 }
+	command = { type = secedeprovince which = FRA value = 127 }
+        command = { type = secedeprovince which = FRA value = 128 }
+	command = { type = secedeprovince which = FRA value = 129 }
+        command = { type = secedeprovince which = FRA value = 130 }
+	command = { type = secedeprovince which = FRA value = 126 }
+	command = { type = secedeprovince which = FRA value = 131 }
+	command = { type = trigger which = 658001 }
+	command = { type = add_corps which = "I. NVA Corps" value = land where = 154 }
+	command = { type = add_division which = "I. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "II. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "II. NVA Corps" value = land where = 145 }
+	command = { type = add_division which = "III. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "IV. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "III. NVA Corps" value = land where = 179 }
+	command = { type = add_division which = "V. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "VI. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "IV. NVA Corps" value = land where = 140 }
+	command = { type = add_division which = "VII. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "IX. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "V. NVA Corps" value = land where = 146 }
+	command = { type = add_division which = "X. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XI. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "VI. NVA Corps" value = land where = 163 }
+	command = { type = add_division which = "XII. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XIII. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XIV. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XV. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "VII. NVA Corps" value = land where = 153 }
+	command = { type = add_division which = "XVI. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XVII. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "IX. NVA Corps" value = land where = 170 }
+	command = { type = add_division which = "XIX. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XX. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = set_relation which = FRA value = 150 }
+	command = { type = set_relation which = RSI value = 150 }
+	command = { type = set_relation which = ENG value = 150 }
+	
+	command = { type = set_relation which = GER value = -199 }
+	command = { type = set_relation which = CON value = -199 }
+	command = { type = set_relation which = CGX value = -199 }
+	command = { type = set_relation which = BUL value = -159 }
+	command = { type = set_relation which = CZE value = -199 }
+	command = { type = set_relation which = CRO value = -199 }
+
+	command = { type = alliance which = FRA }
+	command = { type = setflag which = RED_UNION}
+}
+}
+
+
+event = {
+	id = 658001
+	country = U31
+        style = 2
+	picture = "americansupplies1"
+	name = "EVT_658001_NAME"
+	desc = "EVT_658001_DESC"
+
+action_a = {
+	name = "EVT_658001_OPTIONA"
+
+	command = { type = manpowerpool value = 50 }
+	command = { type = rarematerialspool value = 5000 }
+	command = { type = energypool value = 2250 }
+	command = { type = metalpool value = 2250 }
+	command = { type = supplies value = 1500 }
+	command = { type = oilpool value = 700 }
+	command = { type = money value = 100 }
+}
+}
+
+event = {
+	id = 658002
+	country = U31
+        style = 2
+	picture = "soviet_politics2"
+	name = "EVT_658002_NAME"
+	desc = "EVT_658002_DESC"
+
+	trigger = {
+		flag = RED_UNION
+		}
+
+date = { day = 1 month = january year = 1936 }
+offset = 7
+deathdate = { day = 29 month = december year = 1970 }
+
+action_a = {
+	name = "EVT_658002_OPTIONA"
+
+	command = { type = sleepleader which = 1234326 }
+	command = { type = sleepleader which = 1234325 }
+	command = { type = sleepleader which = 1234324 }
+	command = { type = sleepleader which = 1234323 }
+	command = { type = sleepleader which = 1234288 }
+	command = { type = sleepleader which = 1234321 }
+	command = { type = sleepleader which = 1234320 }
+	command = { type = sleepleader which = 1234319 }
+	command = { type = sleepleader which = 1234318 }
+	command = { type = sleepleader which = 1234316 }
+	command = { type = sleepleader which = 1234315 }
+	command = { type = sleepleader which = 1234311 }
+	command = { type = sleepleader which = 1234310 }
+	command = { type = sleepleader which = 1234309 }
+	command = { type = sleepleader which = 1234308 }
+	command = { type = sleepleader which = 1234307 }
+	command = { type = sleepleader which = 1234306 }
+	command = { type = sleepleader which = 1234305 }
+	command = { type = sleepleader which = 1234304 }
+	command = { type = sleepleader which = 1234303 }
+	command = { type = sleepleader which = 1234302 }
+	command = { type = sleepleader which = 1234301 }
+	command = { type = sleepleader which = 1234300 }
+	command = { type = sleepleader which = 1234299 }
+	command = { type = sleepleader which = 1234298 }
+	command = { type = sleepleader which = 1234296 }
+	command = { type = sleepleader which = 1234293 }
+	command = { type = sleepleader which = 1234292 }
+	command = { type = sleepleader which = 1234291 }
+	command = { type = sleepleader which = 1234290 }
+	command = { type = sleepleader which = 1234289 }
+	command = { type = sleepleader which = 1234288 }
+	command = { type = sleepleader which = 1234287 }
+	command = { type = sleepleader which = 1234286 }
+	command = { type = sleepleader which = 1234285 }
+	command = { type = sleepleader which = 1234283 }
+	command = { type = sleepleader which = 1234282 }
+	command = { type = sleepleader which = 1234281 }
+	command = { type = sleepleader which = 1234280 }
+	command = { type = sleepleader which = 1234279 }
+	command = { type = sleepleader which = 1234278 }
+	command = { type = sleepleader which = 1234276 }
+	command = { type = sleepleader which = 1234275 }
+	command = { type = sleepleader which = 1234274 }
+	command = { type = sleepleader which = 1234273 }
+	command = { type = sleepleader which = 1234272 }
+	command = { type = sleepleader which = 1234271 }
+	command = { type = sleepleader which = 1234269 }
+	command = { type = sleepleader which = 1234268 }
+	command = { type = sleepleader which = 1234267 }
+	command = { type = sleepleader which = 1234266 }
+	command = { type = sleepleader which = 1234265 }
+	command = { type = sleepleader which = 1234264 }
+	command = { type = sleepleader which = 1234263 }
+	command = { type = sleepleader which = 1234262 }
+	command = { type = sleepleader which = 1234261 }
+	command = { type = sleepleader which = 1234260 }
+	command = { type = sleepleader which = 1234259 }
+	command = { type = sleepleader which = 1234257 }
+	command = { type = sleepleader which = 1234254 }
+	command = { type = sleepleader which = 1234253 }
+	command = { type = sleepleader which = 1234252 }
+	command = { type = sleepleader which = 1234251 }
+	command = { type = sleepleader which = 1234250 }
+	command = { type = sleepleader which = 1234249 }
+	command = { type = sleepleader which = 1234248 }
+	command = { type = sleepleader which = 1234247 }
+	command = { type = sleepleader which = 1234246 }
+	command = { type = sleepleader which = 1234244 }
+	command = { type = sleepleader which = 1234243 }
+	command = { type = sleepleader which = 1234242 }
+	command = { type = sleepleader which = 1234240 }
+	command = { type = sleepleader which = 1234238 }
+	command = { type = sleepleader which = 1234237 }
+	command = { type = sleepleader which = 1234236 }
+	command = { type = sleepleader which = 1234235 }
+	command = { type = sleepleader which = 1234233 }
+	command = { type = sleepleader which = 1234232 }
+	command = { type = sleepleader which = 1234231 }
+	command = { type = sleepleader which = 1234230 }
+	command = { type = sleepleader which = 1234229 }
+	command = { type = sleepleader which = 1234228 }
+	command = { type = sleepleader which = 1234227 }
+	command = { type = sleepleader which = 1234226 }
+	command = { type = sleepleader which = 1234225 }
+	command = { type = sleepleader which = 1234224 }
+	command = { type = sleepleader which = 1234223 }
+	command = { type = sleepleader which = 1234222 }
+	command = { type = sleepleader which = 1234221 }
+	command = { type = sleepleader which = 1234220 }
+	command = { type = sleepleader which = 1234219 }
+	command = { type = sleepleader which = 1234218 }
+	command = { type = sleepleader which = 1234217 }
+	command = { type = sleepleader which = 1234216 }
+	command = { type = sleepleader which = 1234215 }
+	command = { type = sleepleader which = 1234214 }
+	command = { type = sleepleader which = 1234212 }
+	command = { type = sleepleader which = 1234211 }
+	command = { type = sleepleader which = 1234210 }
+	command = { type = sleepleader which = 1234209 }
+	command = { type = sleepleader which = 1234208 }
+	command = { type = sleepleader which = 1234207 }
+	command = { type = sleepleader which = 1234206 }
+	command = { type = sleepleader which = 1234202 }
+	command = { type = sleepleader which = 1234199 }
+	command = { type = sleepleader which = 1234197 }
+	command = { type = sleepleader which = 1234196 }
+	command = { type = sleepleader which = 1234193 }
+	command = { type = sleepleader which = 1234192 }
+	command = { type = sleepleader which = 1234190 }
+	command = { type = sleepleader which = 1234189 }
+	command = { type = sleepleader which = 1234187 }
+	command = { type = sleepleader which = 1234186 }
+	command = { type = sleepleader which = 1234184 }
+	command = { type = sleepleader which = 1234180 }
+	command = { type = sleepleader which = 1234173 }
+	command = { type = sleepleader which = 1234170 }
+	command = { type = sleepleader which = 1234167 }
+	command = { type = sleepleader which = 1234165 }
+	command = { type = sleepleader which = 1234164 }
+	command = { type = sleepleader which = 1234163 }
+	command = { type = sleepleader which = 1234152 }
+	command = { type = sleepleader which = 1234151 }
+	command = { type = sleepleader which = 1234150 }
+	command = { type = sleepleader which = 1234149 }
+	command = { type = sleepleader which = 1234148 }
+	command = { type = sleepleader which = 1234147 }
+	command = { type = sleepleader which = 1234146 }
+	command = { type = sleepleader which = 1234145 }
+	command = { type = sleepleader which = 1234143 }
+	command = { type = sleepleader which = 1234142 }
+	command = { type = sleepleader which = 1234141 }
+	command = { type = sleepleader which = 1234113 }
+	command = { type = sleepleader which = 1234131 }
+	command = { type = sleepleader which = 1234126 }
+	command = { type = sleepleader which = 1234123 }
+	command = { type = sleepleader which = 1234124 }
+	command = { type = sleepleader which = 1234123 }
+	command = { type = sleepleader which = 1234118 }
+	command = { type = sleepleader which = 1234115 }
+	command = { type = sleepleader which = 26040 }
+	command = { type = sleepleader which = 1234114 }
+	command = { type = sleepleader which = 1234113 }
+	command = { type = sleepleader which = 1234105 }
+	command = { type = sleepleader which = 1234104 }
+	command = { type = sleepleader which = 1234100 }
+	command = { type = sleepleader which = 1234098 }
+	command = { type = sleepleader which = 1234097 }
+	command = { type = sleepleader which = 1234096 }
+	command = { type = sleepleader which = 1234095 }
+	command = { type = sleepleader which = 1234094 }
+	command = { type = sleepleader which = 1234093 }
+	command = { type = sleepleader which = 1234091 }
+	command = { type = sleepleader which = 1234087 }
+	command = { type = sleepleader which = 1234083 }
+	command = { type = sleepleader which = 1234081 }
+	command = { type = sleepleader which = 1234080 }
+	command = { type = sleepleader which = 1234079 }
+	command = { type = sleepleader which = 1234076 }
+	command = { type = sleepleader which = 1234073 }
+	command = { type = sleepleader which = 1234072 }
+	command = { type = sleepleader which = 1234071 }
+	command = { type = sleepleader which = 1234068 }
+	command = { type = sleepleader which = 1234067 }
+	command = { type = sleepleader which = 1234065 }
+	command = { type = sleepleader which = 1234061 }
+	command = { type = sleepleader which = 1234059 }
+	command = { type = sleepleader which = 1234057 }
+	command = { type = sleepleader which = 1234054 }
+	command = { type = sleepleader which = 1234043 }
+	command = { type = sleepleader which = 1234037 }
+	command = { type = sleepleader which = 1234033 }
+	command = { type = sleepleader which = 1234032 }
+	command = { type = sleepleader which = 1234028 }
+	command = { type = sleepleader which = 1234026 }
+	command = { type = sleepleader which = 1234023 }
+	command = { type = sleepleader which = 1234021 }
+	command = { type = sleepleader which = 1234018 }
+	command = { type = sleepleader which = 1234016 }
+	command = { type = sleepleader which = 1234015 }
+	command = { type = sleepleader which = 1234014 }
+	command = { type = sleepleader which = 1234011 }
+	command = { type = sleepleader which = 1234007 }
+	command = { type = sleepleader which = 1234010 }
+	command = { type = sleepleader which = 1234004 }
+	command = { type = sleepleader which = 1234001 }
+	command = { type = sleepleader which = 1234024 }
+	command = { type = sleepleader which = 1234000 }
+	command = { type = sleepleader which = 1234065 }
+	command = { type = sleepleader which = 1234080 }
+	command = { type = sleepleader which = 1234095 }
+	command = { type = sleepleader which = 1234282 }
+	command = { type = sleepleader which = 1234286 }
+	command = { type = sleepleader which = 1234324 }
+	command = { type = sleepleader which = 1234449 }
+}
+}
+
+##############################################################################
+################################ 1st CONGRESS ###############################
+##############################################################################
+
+event = {
+	id = 658003
+	country = U31
+        style = 2
+	picture = foreign_policy
+	name = "EVT_658003_NAME"
+	desc = "EVT_658003_DESC"
+
+	trigger = {
+		flag = RED_UNION
+		}
+
+date = { day = 1 month = january year = 1936 }
+offset = 21
+deathdate = { day = 29 month = december year = 1970 }
+
+action_a = {
+	name = "EVT_658003_OPTIONA"
+
+	command = { type = setflag which = 1ST_CONGRESS }
+}
+}
+
+event = {
+	id = 658004
+	country = U31
+        style = 2
+	picture = internationale
+	name = "EVT_658004_NAME"
+	desc = "EVT_658004_DESC"
+
+	trigger = {
+		flag = RED_UNION
+		flag = 1ST_CONGRESS
+		}
+
+date = { day = 1 month = january year = 1936 }
+offset = 1
+deathdate = { day = 29 month = december year = 1970 }
+
+action_a = {
+	name = "EVT_658004_OPTIONA"
+	ai_chance = 49
+	command = { type = relation which = PRK value = 25 }	
+	command = { type = relation which = ENG value = 25 }
+	command = { type = relation which = FRA value = 25 }
+	command = { type = relation which = CSA value = 25 }
+	command = { type = relation which = RSI value = 25 }
+	command = { type = setflag which = FAUD_SOL }
+	command = { type = setflag which = GUFOR }
+}
+action_b = {
+	name = "EVT_658004_OPTIONB"
+	ai_chance = 50
+	command = { type = relation which = PRK value = 75 }	
+	command = { type = relation which = ENG value = 75 }
+	command = { type = relation which = FRA value = 75 }
+	command = { type = relation which = CSA value = 75 }
+	command = { type = relation which = RSI value = 75 }
+	command = { type = setflag which = MT_REV }
+	command = { type = setflag which = GUFOR }
+}
+
+action_c = {
+	name = "EVT_658004_OPTIONC"
+	ai_chance = 1
+	command = { type = relation which = PRK value = -25 }	
+	command = { type = relation which = ENG value = -25 }
+	command = { type = relation which = FRA value = -25 }
+	command = { type = relation which = CSA value = -25 }
+	command = { type = relation which = RSI value = -25 }
+	command = { type = leave_alliance }
+	command = { type = setflag which = SU_ISO }
+	command = { type = setflag which = GUFOR }
+
+}
+}
+
+event = {
+	id = 658005
+	country = U31
+	picture = Railway1
+        style = 2
+	name = "EVT_658005_NAME"
+	desc = "EVT_658005_DESC"
+
+	trigger = {
+		flag = RED_UNION
+		flag = 1ST_CONGRESS
+		flag = GUFOR
+		}
+
+date = { day = 1 month = january year = 1936 }
+offset = 5
+deathdate = { day = 29 month = december year = 1970 }
+
+action_a = {
+	name = "EVT_658005_OPTIONA"
+	ai_chance = 34
+	command = { type = energypool value = 300  }	
+	command = { type = rarematerialspool value = 300  }	
+	command = { type = money value = 100  }	
+	command = { type = setflag which = FAUD_NC }
+	command = { type = setflag which = GUIND }
+	command = { type = clrflag which = GUFOR }
+}
+
+action_b = {
+	name = "EVT_658005_OPTIONB"
+	ai_chance = 33
+
+	command = { type = energypool value = -100  }	
+	command = { type = rarematerialspool value = -100  }	
+	command = { type = money value = -25  }
+	command = { type = construct which = ic where = 163 value = 1 }
+	command = { type = construct which = ic where = 145 value = 1 }
+	command = { type = construct which = ic where = 139 value = 1 }
+	command = { type = setflag which = MT_CE }
+	command = { type = setflag which = GUIND }
+	command = { type = clrflag which = GUFOR }
+}
+
+action_c = {
+	name = "EVT_658005_OPTIONC"
+	ai_chance = 33
+	command = { type = energypool value = -200  }	
+	command = { type = rarematerialspool value = -200  }	
+	command = { type = money value = -50  }
+	command = { type = construct which = ic where = 163 value = 4 }
+	command = { type = setflag which = SU_MOD}
+	command = { type = setflag which = GUIND }
+	command = { type = clrflag which = GUFOR }
+
+}
+}
+
+event = {
+	id = 658006
+	country = U31
+        style = 2
+	picture = american_reinforcments1
+	name = "EVT_658006_NAME"
+	desc = "EVT_658006_DESC"
+
+	trigger = {
+		flag = RED_UNION
+		flag = 1ST_CONGRESS
+		flag = GUIND
+		}
+	
+
+date = { day = 1 month = january year = 1936 }
+offset = 5
+deathdate = { day = 29 month = december year = 1970 }
+
+action_a = {
+	name = "EVT_658006_OPTIONA"
+	ai_chance = 33
+	command = { type = supplies value = 1000  }	
+	command = { type = manpowerpool value = 100  }	
+	command = { type = setflag which = FAUD_OK }
+	command = { type = setflag which = GUMIL }
+	command = { type = clrflag which = GUIND }
+}
+
+action_b = {
+	name = "EVT_658006_OPTIONB"
+	ai_chance = 34
+	command = { type = supplies value = -1000  }	
+	command = { type = build_division which = infantry when = 10 }
+	command = { type = build_division which = infantry when = 10 }
+	command = { type = build_division which = armor  when = 4 }
+	command = { type = add_corps which = "Rote Garde Berlin" value = land where = 163 }
+	command = { type = add_division which = "Kreuzberg Abteilung" value = militia when = 4 }
+	command = { type = add_division which = "Mitte Abteilung" value = militia when = 4 }
+	command = { type = add_division which = "Wedding Abteilung" value = militia when = 4 }
+	command = { type = setflag which = MT_MOAR }
+	command = { type = setflag which = GUMIL }
+	command = { type = setflag which = GU_ARMY }
+	command = { type = clrflag which = GUIND }
+}
+
+action_c = {
+	name = "EVT_658006_OPTIONC"
+	ai_chance = 33
+	command = { type = supplies value = -500  }	
+	command = { type = build_division which = infantry when = 10 }
+	command = { type = build_division which = infantry when = 10 }
+	command = { type = build_division which = armor  when = 4 }
+	command = { type = setflag which = SU_SOME}
+	command = { type = setflag which = GUMIL }
+	command = { type = setflag which = GU_ARMY }
+	command = { type = clrflag which = GUIND }
+
+}
+}
+
+event = {
+	id = 658007
+	country = U31
+        style = 2
+	picture = liberation00
+	name = "EVT_658007_NAME"
+	desc = "EVT_658007_DESC"
+
+	trigger = {
+		flag = RED_UNION
+		flag = 1ST_CONGRESS
+		flag = GUMIL
+		}
+
+date = { day = 1 month = january year = 1936 }
+offset = 6
+deathdate = { day = 29 month = december year = 1970 }
+
+action_a = {
+	name = "EVT_658007_OPTIONA"
+	ai_chance = 33
+	command = { type = dissent value = -5  }	
+	command = { type = money value = 50  }	
+	command = { type = setflag which = FAUD_AUT }
+              command = { type = setflag which = GU_1CONFIN }
+	command = { type = clrflag which = GUMIL }
+}
+
+action_b = {
+	name = "EVT_658007_OPTIONB"
+	ai_chance = 33
+	command = { type = dissent value = -2  }	
+	command = { type = money value = -25  }
+	command = { type = setflag which = MT_CON }
+              command = { type = setflag which = GU_1CONFIN }
+	command = { type = clrflag which = GUMIL }
+}
+
+action_c = {
+	name = "EVT_658007_OPTIONC"
+	ai_chance = 34
+	command = { type = dissent value = 5  }	
+	command = { type = money value = -50  }	
+	command = { type = setflag which = SU_MOD2 }
+              command = { type = setflag which = GU_1CONFIN }
+	command = { type = clrflag which = GUMIL }
+}
+}
+
+event = {
+id = 658008
+random = no
+picture = tuc1
+country = U31
+
+       trigger = {
+       OR = {
+       AND = {
+       flag = FAUD_SOL
+       flag = FAUD_OK
+       flag = FAUD_NC
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = FAUD_SOL
+       flag = FAUD_NC
+       flag = FAUD_AUT
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = FAUD_SOL
+       flag = FAUD_OK
+       flag = FAUD_AUT
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = FAUD_NC
+       flag = FAUD_OK
+       flag = FAUD_AUT
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag =  FAUD_SOL
+       flag = FAUD_NC
+       flag = FAUD_OK
+       flag = FAUD_AUT
+       flag = GU_1CONFIN
+       }
+       }
+       }
+
+name = "EVT_658008_NAME"
+desc = "EVT_658008_DESC"
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 6
+deathdate = { day = 29 month = december year = 1970 }
+
+action_a = {
+ name = "EVT_658008_OPTIONA"
+               command = { type = headofstate which = 911007 }
+	 command = { type = headofgovernment which = 911021 }
+	 command = { type = foreignminister which = 911042 }
+	 command = { type = armamentminister which = 911057 }
+	 command = { type = ministerofsecurity which = 911076 }
+	 command = { type = ministerofintelligence which = 911096 }
+	 command = { type = chiefofstaff which = 911107 }
+	 command = { type = chiefofarmy which = 911119 }
+	 command = { type = chiefofnavy which = 911132 }
+	 command = { type = chiefofair which = 911142 }
+               command = { type = set_domestic which = political_left value = 8 }
+               command = { type = set_domestic which = democratic value =5 } 
+command = { type = clrflag which = 1ST_CONGRESS }
+               command = { type = clrflag which = FAUD_SOL }
+               command = { type = clrflag which = FAUD_NC }
+               command = { type = clrflag which = FAUD_OK }
+               command = { type = clrflag which = FAUD_AUT }
+               command = { type = clrflag which = MT_REV }
+               command = { type = clrflag which = MT_CE }
+               command = { type = clrflag which = MT_MOAR }
+               command = { type = clrflag which = MT_CON }
+               command = { type = clrflag which = SU_MOD }
+               command = { type = clrflag which = SU_MOD2 }
+               command = { type = clrflag which = SU_SOME }
+               command = { type = clrflag which = SU_ISO }
+               command = { type = clrflag which = GU_1CONFIN }
+               command = { type = setflag which = GU_HOG_MILLY}
+			   command = { type = setflag which = GU_FAUD_WIN}
+ }
+}
+
+event = {
+id = 658009
+random = no
+picture = tuc1
+country = U31
+
+       trigger = {
+       OR = {
+       AND = {
+       flag = MT_REV
+       flag = MT_CE
+       flag = MT_MOAR
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = MT_REV
+       flag = MT_MOAR
+       flag = MT_CON
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = MT_REV
+       flag = MT_CE
+       flag = MT_CON
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = MT_CE
+       flag = MT_MOAR
+       flag = MT_CON
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = MT_REV
+       flag = MT_CE
+       flag = MT_MOAR
+       flag = MT_CON
+       flag = GU_1CONFIN
+       }
+       }
+       }
+
+name = "EVT_658009_NAME"
+desc = "EVT_658009_DESC"
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 6
+deathdate = { day = 29 month = december year = 1970 }
+
+action_a = {
+ name = "EVT_658009_OPTIONA"
+               command = { type = headofstate which = 911006 }
+	 command = { type = headofgovernment which = 911018 }
+	 command = { type = foreignminister which = 911038 }
+	 command = { type = armamentminister which = 911055 }
+	 command = { type = ministerofsecurity which = 911073 }
+	 command = { type = ministerofintelligence which = 911094 }
+	 command = { type = chiefofstaff which = 911104 }
+	 command = { type = chiefofarmy which = 911117 }
+	 command = { type = chiefofnavy which = 911130 }
+	 command = { type = chiefofair which = 911140 }
+               command = { type = set_domestic which = political_left value = 9 }
+               command = { type = set_domestic which = democratic value = 4 } 
+               command = { type = clrflag which = 1ST_CONGRESS }
+               command = { type = clrflag which = FAUD_SOL }
+               command = { type = clrflag which = FAUD_NC }
+               command = { type = clrflag which = FAUD_OK }
+               command = { type = clrflag which = FAUD_AUT }
+               command = { type = clrflag which = MT_REV }
+               command = { type = clrflag which = MT_CE }
+               command = { type = clrflag which = MT_MOAR }
+               command = { type = clrflag which = MT_CON }
+               command = { type = clrflag which = SU_MOD }
+               command = { type = clrflag which = SU_MOD2 }
+               command = { type = clrflag which = SU_SOME }
+               command = { type = clrflag which = SU_ISO }
+               command = { type = clrflag which = GU_1CONFIN }
+command = { type = setflag which = GU_MT_WIN}
+ }
+}
+
+event = {
+id = 658010
+random = no
+picture = tuc1
+country = U31
+
+       trigger = {
+       OR = {
+       AND = {
+       flag = SU_ISO
+       flag = SU_MOD
+       flag = SU_SOME
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = SU_ISO
+       flag = SU_SOME
+       flag = SU_MOD2
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = SU_ISO
+       flag = SU_MOD
+       flag = SU_MOD2
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = SU_MOD
+       flag = SU_SOME
+       flag = SU_MOD2
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = SU_ISO
+       flag = SU_MOD
+       flag = SU_SOME
+       flag = SU_MOD2
+       flag = GU_1CONFIN
+       }
+       }
+       }
+
+name = "EVT_658010_NAME"
+desc = "EVT_658010_DESC"
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 6
+deathdate = { day = 29 month = december year = 1970 }
+
+action_a = {
+ name = "EVT_658010_OPTIONA"
+               command = { type = headofstate which = 911008 }
+	 command = { type = headofgovernment which = 911020 }
+	 command = { type = foreignminister which = 911040 }
+	 command = { type = armamentminister which = 911056 }
+	 command = { type = ministerofsecurity which = 911075 }
+	 command = { type = ministerofintelligence which = 911095 }
+	 command = { type = chiefofstaff which = 911105 }
+	 command = { type = chiefofarmy which = 911118 }
+	 command = { type = chiefofnavy which = 911131 }
+	 command = { type = chiefofair which = 911141 }
+               command = { type = set_domestic which = political_left value = 10 }
+               command = { type = set_domestic which = democratic value = 3 } 
+               command = { type = clrflag which = 1ST_CONGRESS }
+               command = { type = clrflag which = FAUD_SOL }
+               command = { type = clrflag which = FAUD_NC }
+               command = { type = clrflag which = FAUD_OK }
+               command = { type = clrflag which = FAUD_AUT }
+               command = { type = clrflag which = MT_REV }
+               command = { type = clrflag which = MT_CE }
+               command = { type = clrflag which = MT_MOAR }
+               command = { type = clrflag which = MT_CON }
+               command = { type = clrflag which = SU_MOD }
+               command = { type = clrflag which = SU_MOD2 }
+               command = { type = clrflag which = SU_SOME }
+               command = { type = clrflag which = SU_ISO }
+               command = { type = clrflag which = GU_1CONFIN }
+			   command = { type = setflag which = GU_SU_WIN}
+ }
+}
+
+event = {
+id = 658011
+random = no
+picture = tuc1
+country = U31
+
+       trigger = {
+       OR = {
+       AND = {
+       flag = SU_ISO
+       flag = SU_MOD
+       flag = FAUD_OK
+       flag = FAUD_AUT
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = SU_ISO
+       flag = FAUD_NC
+       flag = FAUD_OK
+       flag = SU_MOD2
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = FAUD_SOL
+       flag = FAUD_NC
+       flag = SU_SOME
+       flag = SU_MOD2
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = SU_ISO
+       flag = FAUD_NC
+       flag = SU_SOME
+       flag = FAUD_AUT
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = FAUD_SOL
+       flag = SU_MOD 
+       flag = FAUD_OK
+       flag = SU_MOD2
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = SU_ISO
+       flag = FAUD_NC
+       flag = FAUD_OK
+       flag = SU_MOD2
+       flag = GU_1CONFIN
+	   }
+       AND = {
+       flag = FAUD_SOL
+       flag = SU_MOD 
+       flag = SU_SOME
+       flag = FAUD_AUT
+       flag = GU_1CONFIN
+       }
+       }
+	   }
+
+
+name = "EVT_658011_NAME"
+desc = "EVT_658011_DESC"
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 6
+deathdate = { day = 29 month = december year = 1970 }
+
+action_a = {
+ name = "EVT_658011_OPTIONA"
+	 command = { type = setflag which = GU_1RUNOFF }
+	           command = { type = clrflag which = 1ST_CONGRESS }
+               command = { type = clrflag which = FAUD_SOL }
+               command = { type = clrflag which = FAUD_NC }
+               command = { type = clrflag which = FAUD_OK }
+               command = { type = clrflag which = FAUD_AUT }
+               command = { type = clrflag which = MT_REV }
+               command = { type = clrflag which = MT_CE }
+               command = { type = clrflag which = MT_MOAR }
+               command = { type = clrflag which = MT_CON }
+               command = { type = clrflag which = SU_MOD }
+               command = { type = clrflag which = SU_MOD2 }
+               command = { type = clrflag which = SU_SOME }
+               command = { type = clrflag which = SU_ISO }
+               command = { type = clrflag which = GU_1CONFIN }
+ }
+}
+
+event = {
+id = 658012
+random = no
+picture = tuc1
+country = U31
+
+       trigger = {
+       OR = {
+       AND = {
+       flag = SU_ISO
+       flag = SU_MOD
+       flag = MT_MOAR
+       flag = MT_CON
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = SU_ISO
+       flag = MT_CE
+       flag = MT_MOAR
+       flag = SU_MOD2
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = MT_REV
+       flag = MT_CE
+       flag = SU_SOME
+       flag = SU_MOD2
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = SU_ISO
+       flag = MT_CE
+       flag = SU_SOME
+       flag = MT_CON
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = MT_REV
+       flag = SU_MOD 
+       flag = MT_MOAR
+       flag = SU_MOD2
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = SU_ISO
+       flag = MT_CE
+       flag = MT_MOAR
+       flag = SU_MOD2
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = MT_REV
+       flag = SU_MOD
+       flag = SU_SOME
+       flag = MT_CON
+       flag = GU_1CONFIN
+       }
+       }
+       }
+
+
+name = "EVT_658012_NAME"
+desc = "EVT_658012_DESC"
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 6
+deathdate = { day = 29 month = december year = 1970 }
+
+action_a = {
+ name = "EVT_658012_OPTIONA"
+               command = { type = clrflag which = 1ST_CONGRESS }
+               command = { type = clrflag which = FAUD_SOL }
+               command = { type = clrflag which = FAUD_NC }
+               command = { type = clrflag which = FAUD_OK }
+               command = { type = clrflag which = FAUD_AUT }
+               command = { type = clrflag which = MT_REV }
+               command = { type = clrflag which = MT_CE }
+               command = { type = clrflag which = MT_MOAR }
+               command = { type = clrflag which = MT_CON }
+               command = { type = clrflag which = SU_MOD }
+               command = { type = clrflag which = SU_MOD2 }
+               command = { type = clrflag which = SU_SOME }
+               command = { type = clrflag which = SU_ISO }
+               command = { type = clrflag which = GU_1CONFIN }
+	 command = { type = setflag which = MT_SU_COALITION_NEGO }
+ }
+}
+
+event = {
+id = 658013
+random = no
+picture = tuc1
+country = U31
+
+       trigger = {
+       OR = {
+       AND = {
+       flag = MT_REV
+       flag = MT_CE
+       flag = FAUD_OK
+       flag = FAUD_AUT
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = MT_REV
+       flag = FAUD_NC
+       flag = FAUD_OK
+       flag = MT_CON
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = FAUD_SOL
+       flag = FAUD_NC
+       flag = MT_MOAR
+       flag = MT_CON
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = MT_REV
+       flag = FAUD_NC
+       flag = MT_MOAR
+       flag = FAUD_AUT
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = FAUD_SOL
+       flag = MT_CE 
+       flag = FAUD_OK
+       flag = MT_CON
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = MT_REV
+       flag = FAUD_NC
+       flag = FAUD_OK
+       flag = MT_CON
+       flag = GU_1CONFIN
+       }
+       }
+       }
+
+
+name = "EVT_658013_NAME"
+desc = "EVT_658013_DESC"
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 6
+deathdate = { day = 29 month = december year = 1970 }
+
+action_a = {
+ name = "EVT_658013_OPTIONA"
+               command = { type = clrflag which = 1ST_CONGRESS }
+               command = { type = clrflag which = FAUD_SOL }
+               command = { type = clrflag which = FAUD_NC }
+               command = { type = clrflag which = FAUD_OK }
+               command = { type = clrflag which = FAUD_AUT }
+               command = { type = clrflag which = MT_REV }
+               command = { type = clrflag which = MT_CE }
+               command = { type = clrflag which = MT_MOAR }
+               command = { type = clrflag which = MT_CON }
+               command = { type = clrflag which = SU_MOD }
+               command = { type = clrflag which = SU_MOD2 }
+               command = { type = clrflag which = SU_SOME }
+               command = { type = clrflag which = SU_ISO }
+               command = { type = clrflag which = GU_1CONFIN }
+	 command = { type = setflag which = FAUD_MT_COALITION_NEGO }
+ }
+}
+
+event = {
+id = 658014
+random = no
+picture = tuc1
+country = U31
+
+       trigger = {
+       OR = {
+       AND = {
+       flag = FAUD_SOL
+       flag = FAUD_OK
+       flag = SU_SOME
+       flag = MT_CON
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = FAUD_SOL
+       flag = SU_MOD
+       flag = FAUD_OK
+       flag = MT_CON
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = FAUD_SOL
+       flag = FAUD_OK
+       flag = MT_MOAR
+       flag = SU_MOD2
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = FAUD_SOL
+       flag = MT_CE
+       flag = FAUD_OK
+       flag = SU_MOD2
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = FAUD_SOL
+       flag = MT_CE
+       flag = SU_SOME
+       flag = FAUD_AUT
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = FAUD_SOL
+       flag = SU_MOD
+       flag = MT_MOAR
+       flag = FAUD_AUT
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = SU_ISO
+       flag = FAUD_NC
+       flag = FAUD_OK
+       flag = MT_CON
+       flag = GU_1CONFIN
+       }      
+       AND = {
+       flag = SU_ISO
+       flag = MT_CE
+       flag = FAUD_OK
+       flag = FAUD_AUT
+       flag = GU_1CONFIN
+       }    
+       AND = {
+       flag = SU_ISO
+       flag = FAUD_NC
+       flag = MT_MOAR
+       flag = FAUD_AUT
+       flag = GU_1CONFIN
+       }    
+       AND = {
+       flag = MT_REV
+       flag = FAUD_NC
+       flag = FAUD_OK
+       flag = SU_MOD2
+       flag = GU_1CONFIN
+       }    
+       AND = {
+       flag = MT_REV
+       flag = FAUD_NC
+       flag = SU_SOME
+       flag = FAUD_AUT
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = MT_REV
+       flag = SU_MOD
+       flag = FAUD_OK
+       flag = FAUD_AUT
+       flag = GU_1CONFIN
+       }        
+       }
+       }
+
+name = "EVT_658014_NAME"
+desc = "EVT_658014_DESC"
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 6
+deathdate = { day = 29 month = december year = 1970 }
+
+action_a = {
+ name = "EVT_658014_OPTIONA"
+               command = { type = headofstate which = 911007 }
+	 command = { type = headofgovernment which = 911021 }
+	 command = { type = foreignminister which = 911042 }
+	 command = { type = armamentminister which = 911057 }
+	 command = { type = ministerofsecurity which = 911076 }
+	 command = { type = ministerofintelligence which = 911096 }
+	 command = { type = chiefofstaff which = 911107 }
+	 command = { type = chiefofarmy which = 911119 }
+	 command = { type = chiefofnavy which = 911132 }
+	 command = { type = chiefofair which = 911142 }
+               command = { type = set_domestic which = political_left value = 8 }
+               command = { type = set_domestic which = democratic value = 5 } 
+               command = { type = clrflag which = 1ST_CONGRESS }
+               command = { type = clrflag which = FAUD_SOL }
+               command = { type = clrflag which = FAUD_NC }
+               command = { type = clrflag which = FAUD_OK }
+               command = { type = clrflag which = FAUD_AUT }
+               command = { type = clrflag which = MT_REV }
+               command = { type = clrflag which = MT_CE }
+               command = { type = clrflag which = MT_MOAR }
+               command = { type = clrflag which = MT_CON }
+               command = { type = clrflag which = SU_MOD }
+               command = { type = clrflag which = SU_MOD2 }
+               command = { type = clrflag which = SU_SOME }
+               command = { type = clrflag which = SU_ISO }
+               command = { type = clrflag which = GU_1CONFIN }
+               command = { type = setflag which = GU_HOG_MILLY}
+			   command = { type = setflag which = GU_FAUD_WIN}
+ }
+}
+
+event = {
+id = 658015
+random = no
+picture = tuc1
+country = U31
+
+       trigger = {
+       OR = {
+       AND = {
+       flag = MT_REV
+       flag = MT_CE
+       flag = SU_SOME
+       flag = FAUD_AUT
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = MT_REV
+       flag = SU_MOD
+       flag = MT_MOAR
+       flag = FAUD_AUT
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = MT_REV
+       flag = MT_CE
+       flag = FAUD_OK
+       flag = SU_MOD2
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = MT_REV
+       flag = FAUD_NC
+       flag = MT_MOAR
+       flag = SU_MOD2
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = MT_REV
+       flag = FAUD_NC
+       flag = SU_SOME
+       flag = MT_CON
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = MT_REV
+       flag = SU_MOD
+       flag = FAUD_OK
+       flag = MT_CON
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = SU_ISO
+       flag = MT_CE
+       flag = MT_MOAR
+       flag = FAUD_AUT
+       flag = GU_1CONFIN
+       }      
+       AND = {
+       flag = SU_ISO
+       flag = FAUD_NC
+       flag = MT_MOAR
+       flag = MT_CON
+       flag = GU_1CONFIN
+       }    
+       AND = {
+       flag = SU_ISO
+       flag = MT_CE
+       flag = FAUD_OK
+       flag = MT_CON
+       flag = GU_1CONFIN
+       }    
+       AND = {
+       flag = FAUD_SOL
+       flag = MT_CE
+       flag = MT_MOAR
+       flag = SU_MOD2
+       flag = GU_1CONFIN
+       }    
+       AND = {
+       flag = FAUD_SOL
+       flag = MT_CE
+       flag = SU_SOME
+       flag = MT_CON
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = FAUD_SOL
+       flag = SU_MOD
+       flag = MT_MOAR
+       flag = MT_CON
+       flag = GU_1CONFIN
+       }        
+       }
+       }
+
+name = "EVT_658015_NAME"
+desc = "EVT_658015_DESC"
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 6
+deathdate = { day = 29 month = december year = 1970 }
+
+action_a = {
+ name = "EVT_658015_OPTIONA"
+               command = { type = headofstate which = 911006 }
+	 command = { type = headofgovernment which = 911018 }
+	 command = { type = foreignminister which = 911038 }
+	 command = { type = armamentminister which = 911055 }
+	 command = { type = ministerofsecurity which = 911073 }
+	 command = { type = ministerofintelligence which = 911094 }
+	 command = { type = chiefofstaff which = 911104 }
+	 command = { type = chiefofarmy which = 911117 }
+	 command = { type = chiefofnavy which = 911130 }
+	 command = { type = chiefofair which = 911140 }
+               command = { type = set_domestic which = political_left value = 9 }
+               command = { type = set_domestic which = democratic value = 4 } 
+               command = { type = clrflag which = 1ST_CONGRESS }
+               command = { type = clrflag which = FAUD_SOL }
+               command = { type = clrflag which = FAUD_NC }
+               command = { type = clrflag which = FAUD_OK }
+               command = { type = clrflag which = FAUD_AUT }
+               command = { type = clrflag which = MT_REV }
+               command = { type = clrflag which = MT_CE }
+               command = { type = clrflag which = MT_MOAR }
+               command = { type = clrflag which = MT_CON }
+               command = { type = clrflag which = SU_MOD }
+               command = { type = clrflag which = SU_MOD2 }
+               command = { type = clrflag which = SU_SOME }
+               command = { type = clrflag which = SU_ISO }
+               command = { type = clrflag which = GU_1CONFIN }
+			   command = { type = setflag which = GU_MT_WIN}
+ }
+}
+
+event = {
+id = 658016
+random = no
+picture = tuc1
+country = U31
+
+       trigger = {
+       OR = {
+       AND = {
+       flag = SU_ISO
+       flag = SU_MOD
+       flag = MT_MOAR
+       flag = FAUD_AUT
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = SU_ISO
+       flag = MT_CE
+       flag = SU_SOME
+       flag = FAUD_AUT
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = SU_ISO
+       flag = SU_MOD
+       flag = FAUD_OK
+       flag = MT_CON
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = SU_ISO
+       flag = FAUD_NC
+       flag = SU_SOME
+       flag = MT_CON
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = SU_ISO
+       flag = FAUD_NC
+       flag = MT_MOAR
+       flag = SU_MOD2
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = SU_ISO
+       flag = MT_CE
+       flag = FAUD_OK
+       flag = SU_MOD2
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = MT_REV
+       flag = SU_MOD
+       flag = SU_SOME
+       flag = FAUD_AUT
+       flag = GU_1CONFIN
+       }      
+       AND = {
+       flag = MT_REV
+       flag = FAUD_NC
+       flag = SU_SOME
+       flag = SU_MOD2
+       flag = GU_1CONFIN
+       }    
+       AND = {
+       flag = MT_REV
+       flag = SU_MOD
+       flag = FAUD_OK
+       flag = SU_MOD2
+       flag = GU_1CONFIN
+       }    
+       AND = {
+       flag = FAUD_SOL
+       flag = SU_MOD
+       flag = SU_SOME
+       flag = MT_CON
+       flag = GU_1CONFIN
+       }    
+       AND = {
+       flag = FAUD_SOL
+       flag = SU_MOD
+       flag = MT_MOAR
+       flag = SU_MOD2
+       flag = GU_1CONFIN
+       }
+       AND = {
+       flag = FAUD_SOL
+       flag = MT_CE
+       flag = SU_SOME
+       flag = SU_MOD2
+       flag = GU_1CONFIN
+       }        
+       }
+       }
+
+
+name = "EVT_658016_NAME"
+desc = "EVT_658016_DESC"
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 6
+deathdate = { day = 29 month = december year = 1970 }
+
+action_a = {
+ name = "EVT_658016_OPTIONA"
+               command = { type = headofstate which = 911008 }
+	 command = { type = headofgovernment which = 911020 }
+	 command = { type = foreignminister which = 911040 }
+	 command = { type = armamentminister which = 911056 }
+	 command = { type = ministerofsecurity which = 911075 }
+	 command = { type = ministerofintelligence which = 911095 }
+	 command = { type = chiefofstaff which = 911105 }
+	 command = { type = chiefofarmy which = 911118 }
+	 command = { type = chiefofnavy which = 911131 }
+	 command = { type = chiefofair which = 911141 }
+               command = { type = set_domestic which = political_left value = 10 }
+               command = { type = set_domestic which = democratic value = 3 } 
+               command = { type = clrflag which = 1ST_CONGRESS }
+               command = { type = clrflag which = FAUD_SOL }
+               command = { type = clrflag which = FAUD_NC }
+               command = { type = clrflag which = FAUD_OK }
+               command = { type = clrflag which = FAUD_AUT }
+               command = { type = clrflag which = MT_REV }
+               command = { type = clrflag which = MT_CE }
+               command = { type = clrflag which = MT_MOAR }
+               command = { type = clrflag which = MT_CON }
+               command = { type = clrflag which = SU_MOD }
+               command = { type = clrflag which = SU_MOD2 }
+               command = { type = clrflag which = SU_SOME }
+               command = { type = clrflag which = SU_ISO }
+               command = { type = clrflag which = GU_1CONFIN }
+			   command = { type = setflag which = GU_SU_WIN}
+ }
+}
+
+event = {
+id = 658017
+country = U31
+style = 2
+picture = election
+
+trigger = {
+flag = GU_1RUNOFF
+random = 50
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 4
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_658017_NAME"
+desc = "EVT_658017_DESC"
+
+action_a = {
+name = "EVT_658017_OPTIONA"
+command = { type = clrflag which = GU_1RUNOFF }
+command = { type = sleepevent which = 658018 }
+     command = { type = set_domestic which = political_left value = 8 }
+     command = { type = set_domestic which = democratic value = 5 } 
+     command = { type = headofstate which = 911007 }
+	 command = { type = headofgovernment which = 911021 }
+	 command = { type = foreignminister which = 911042 }
+	 command = { type = armamentminister which = 911057 }
+	 command = { type = ministerofsecurity which = 911076 }
+	 command = { type = ministerofintelligence which = 911096 }
+	 command = { type = chiefofstaff which = 911107 }
+	 command = { type = chiefofarmy which = 911119 }
+	 command = { type = chiefofnavy which = 911132 }
+	 command = { type = chiefofair which = 911142 }
+     command = { type = setflag which = GU_HOG_MILLY}
+	 command = { type = setflag which = GU_FAUD_WIN}
+}
+}
+
+event = {
+id = 658018
+country = U31
+style = 2
+picture = election
+
+trigger = {
+flag = GU_1RUNOFF
+random = 50
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 4
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_658018_NAME"
+desc = "EVT_658018_DESC"
+
+action_a = {
+name = "EVT_658018_OPTIONA"
+command = { type = clrflag which = GU_1RUNOFF }
+command = { type = sleepevent which = 658017 }
+     command = { type = set_domestic which = political_left value = 10 }
+     command = { type = set_domestic which = democratic value = 3 } 
+     command = { type = headofstate which = 911008 }
+	 command = { type = headofgovernment which = 911020 }
+	 command = { type = foreignminister which = 911040 }
+	 command = { type = armamentminister which = 911056 }
+	 command = { type = ministerofsecurity which = 911075 }
+	 command = { type = ministerofintelligence which = 911095 }
+	 command = { type = chiefofstaff which = 911105 }
+	 command = { type = chiefofarmy which = 911118 }
+	 command = { type = chiefofnavy which = 911131 }
+	 command = { type = chiefofair which = 911141 }
+	 command = { type = setflag which = GU_SU_WIN}
+}
+}
+
+event = {
+id = 658019
+country = U31
+style = 2
+picture = albania
+
+trigger = {
+flag = MT_SU_COALITION_NEGO
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 4
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_658019_NAME"
+desc = "EVT_658019_DESC"
+
+action_a = {
+name = "EVT_658019_OPTIONA"
+ai_chance = 50
+command = { type = clrflag which = MT_SU_COALITION_NEGO }
+     command = { type = set_domestic which = political_left value = 9 }
+     command = { type = set_domestic which = democratic value = 4 } 
+     command = { type = headofstate which = 911006 }
+	 command = { type = headofgovernment which = 911020 }
+	 command = { type = foreignminister which = 911040 }
+	 command = { type = armamentminister which = 911055 }
+	 command = { type = ministerofsecurity which = 911073 }
+	 command = { type = ministerofintelligence which = 911095 }
+	 command = { type = chiefofstaff which = 911105 }
+	 command = { type = chiefofarmy which = 911118 }
+	 command = { type = chiefofnavy which = 911131 }
+	 command = { type = chiefofair which = 911141 }
+	 command = { type = setflag which = GU_MT_SU_THALMANN_HAPPY}
+	 }
+	 
+action_b = {
+name = "EVT_658019_OPTIONB"
+ai_chance = 50
+command = { type = clrflag which = MT_SU_COALITION_NEGO }
+command = { type = setflag which = MT_SU_DRAGS_ON }
+}
+}
+
+event = {
+id = 658020
+country = U31
+style = 2
+picture = albania
+
+trigger = {
+flag = MT_SU_DRAGS_ON
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 8
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_658020_NAME"
+desc = "EVT_658020_DESC"
+action_a = {
+name = "EVT_658020_OPTIONA"
+	 command = { type = clrflag which = MT_SU_DRAGS_ON }
+	 command = { type = setflag which = GU_MT_SU_THALMANN_ANNOY}
+     command = { type = set_domestic which = political_left value = 9 }
+     command = { type = set_domestic which = democratic value = 4 } 
+     command = { type = headofstate which = 911006 }
+	 command = { type = headofgovernment which = 911020 }
+	 command = { type = foreignminister which = 911040 }
+	 command = { type = armamentminister which = 911056 }
+	 command = { type = ministerofsecurity which = 911073 }
+	 command = { type = ministerofintelligence which = 911094 }
+	 command = { type = chiefofstaff which = 911105 }
+	 command = { type = chiefofarmy which = 911118 }
+	 command = { type = chiefofnavy which = 911131 }
+	 command = { type = chiefofair which = 911141 }
+	 }
+	 }
+
+event = {
+id = 658021
+country = U31
+style = 2
+picture = albania
+
+trigger = {
+flag = MT_FAUD_COALITION_NEGO
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 4
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_658021_NAME"
+desc = "EVT_658021_DESC"
+
+action_a = {
+name = "EVT_658021_OPTIONA"
+command = { type = clrflag which = MT_FAUD_COALITION_NEGO }
+     command = { type = set_domestic which = political_left value = 8 }
+     command = { type = set_domestic which = democratic value = 5 } 
+     command = { type = headofstate which = 911006 }
+	 command = { type = headofgovernment which = 911021 }
+	 command = { type = foreignminister which = 911042 }
+	 command = { type = armamentminister which = 911055 }
+	 command = { type = ministerofsecurity which = 911073 }
+	 command = { type = ministerofintelligence which = 911096 }
+	 command = { type = chiefofstaff which = 911107 }
+	 command = { type = chiefofarmy which = 911119 }
+	 command = { type = chiefofnavy which = 911132 }
+	 command = { type = chiefofair which = 911142 }
+	 	 command = { type = setflag which = GU_MT_FAUD_WIN}
+		 }
+		 }
+
+##################################################################################
+#########END OF 1ST CONGRESS######################################################
+##################################################################################
+#########A couple of flavour events###############################################
+##################################################################################
+
+event = {
+id = 658022
+country = U31
+style = 2
+picture = lawrence
+
+trigger = {
+flag = LAWRENCE_OF_GERMANIA_DEPLOYED
+government = communist
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 25
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_658022_NAME"
+desc = "EVT_658022_DESC"
+
+action_a = {
+name = "EVT_658022_OPTIONA"
+command = { type = dissent value = -1 }
+command = { type = trigger which = 658023 }
+}
+}
+
+event = {
+id = 658023
+country = ENG
+style = 2
+picture = lawrence
+random = no
+
+name = "EVT_658023_NAME"
+desc = "EVT_658023_DESC"
+
+action_a = {
+name = "EVT_658023_OPTIONA"
+command = { type = dissent value = -1 }
+command = { type = setflag which = LAWRENCE_MEDAL }
+}
+}
+
+event = {
+id = 658024
+country = U31
+style = 2
+picture = syndicalists
+random = no
+
+trigger = {
+AND = {
+atwar = no
+exists = ENG
+exists = FRA
+flag = RED_UNION
+}
+NOT = {
+flag = GU_ENG_DETENTE}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 275
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_658024_NAME"
+desc = "EVT_658024_DESC"
+
+action_a = {
+name = "EVT_658024_OPTIONA"
+command = { type = dissent value = -1 }
+	command = { type = relation which = ENG value = 25 }
+	command = { type = relation which = FRA value = 25 }
+	command = { type = trigger which = 658025 }
+	}
+	}
+	
+event = {
+id = 658025
+country = FRA
+style = 2
+picture = syndicalists
+random = no
+
+name = "EVT_658025_NAME"
+desc = "EVT_658025_DESC"
+
+action_a = {
+name = "EVT_658025_OPTIONA"
+command = { type = dissent value = -1 }
+	command = { type = relation which = ENG value = 25 }
+	command = { type = trigger which = 658026 }
+}
+}
+	event = {
+id = 658026
+country = ENG
+style = 2
+picture = syndicalists
+random = no
+
+name = "EVT_658026_NAME"
+desc = "EVT_658026_DESC"
+
+action_a = {
+name = "EVT_658026_OPTIONA"
+command = { type = dissent value = -1 }
+}
+}
+
+##################################################################################
+######Post Congress Airforce and Navy events######################################
+##################################################################################
+
+event = {
+id = 658027
+country = U31
+style = 2
+picture = air_reinforcements
+random = no
+
+trigger = {
+flag = GU_FAUD_WIN
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_658027_NAME"
+desc = "EVT_658027_DESC"
+
+action_a = {
+ai_chance = 30
+name = "EVT_658027_OPTIONA"
+	command = { type = supplies value = -1000  }	
+	command = { type = build_division which = interceptor when = 9 }
+	command = { type = build_division which = interceptor when = 9 }
+	command = { type = build_division which = cas  when = 6 }
+}
+
+action_b = {
+ai_chance = 10
+name = "EVT_658027_OPTIONB"
+	command = { type = supplies value = -3000  }	
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = cas  when = 6 }
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = cas  when = 6 }
+	command = { type = build_division which = strategic_bomber when = 4 }
+}
+
+action_c = {
+ai_chance = 60
+name = "EVT_658027_OPTIONC"
+	command = { type = supplies value = 500 }	
+}
+}
+
+event = {
+id = 658028
+country = U31
+style = 2
+picture = air_reinforcements
+random = no
+
+trigger = {
+flag = GU_SU_WIN
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_658028_NAME"
+desc = "EVT_658028_DESC"
+
+action_a = {
+ai_chance = 60
+name = "EVT_658028_OPTIONA"
+	command = { type = supplies value = -1000  }	
+	command = { type = build_division which = interceptor when = 9 }
+	command = { type = build_division which = interceptor when = 9 }
+	command = { type = build_division which = cas  when = 6 }
+}
+
+action_b = {
+ai_chance = 30
+name = "EVT_658028_OPTIONB"
+	command = { type = supplies value = -3000  }	
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = cas  when = 6 }
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = cas  when = 6 }
+	command = { type = build_division which = strategic_bomber when = 5 }
+}
+
+action_c = {
+ai_chance = 10
+name = "EVT_658028_OPTIONC"
+	command = { type = supplies value = 500 }	
+}
+}
+
+event = {
+id = 658029
+country = U31
+style = 2
+picture = air_reinforcements
+random = no
+
+trigger = {
+flag = GU_MT_WIN
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_658029_NAME"
+desc = "EVT_658029_DESC"
+
+action_a = {
+ai_chance = 55
+name = "EVT_658029_OPTIONA"
+	command = { type = supplies value = -1000  }	
+	command = { type = build_division which = interceptor when = 9 }
+	command = { type = build_division which = interceptor when = 9 }
+	command = { type = build_division which = cas  when = 6 }
+}
+
+action_b = {
+ai_chance = 45
+name = "EVT_658029_OPTIONB"
+	command = { type = supplies value = -3000  }	
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = cas  when = 6 }
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = cas  when = 6 }
+	command = { type = build_division which = strategic_bomber when = 5 }
+}
+
+action_c = {
+ai_chance = 0
+name = "EVT_658029_OPTIONC"
+	command = { type = supplies value = 500 }	
+}
+}
+
+event = {
+id = 658030
+country = U31
+style = 2
+picture = air_reinforcements
+random = no
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 29 month = december year = 1970 }
+
+trigger = {
+flag = GU_MT_SU_THALMANN_HAPPY
+}
+
+name = "EVT_658030_NAME"
+desc = "EVT_658030_DESC"
+
+action_a = {
+ai_chance = 50
+name = "EVT_658030_OPTIONA"
+	command = { type = supplies value = -1000  }	
+	command = { type = build_division which = interceptor when = 9 }
+	command = { type = build_division which = interceptor when = 9 }
+	command = { type = build_division which = cas  when = 6 }
+}
+
+action_b = {
+ai_chance = 40
+name = "EVT_658030_OPTIONB"
+	command = { type = supplies value = -3000  }	
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = cas  when = 6 }
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = cas  when = 6 }
+	command = { type = build_division which = strategic_bomber when = 5 }
+}
+
+action_c = {
+ai_chance = 10
+name = "EVT_658030_OPTIONC"
+	command = { type = supplies value = 500 }	
+}
+}
+
+event = {
+id = 658031
+country = U31
+style = 2
+picture = air_reinforcements
+random = no
+
+trigger = {
+flag = GU_MT_SU_THALMANN_ANNOY
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_658031_NAME"
+desc = "EVT_658031_DESC"
+
+action_a = {
+ai_chance = 70
+name = "EVT_658031_OPTIONA"
+	command = { type = supplies value = -1000  }	
+	command = { type = build_division which = interceptor when = 9 }
+	command = { type = build_division which = interceptor when = 9 }
+	command = { type = build_division which = cas  when = 6 }
+}
+
+action_b = {
+ai_chance = 20
+name = "EVT_658031_OPTIONB"
+	command = { type = supplies value = -3000  }	
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = cas  when = 6 }
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = cas  when = 6 }
+	command = { type = build_division which = strategic_bomber when = 5 }
+}
+
+action_c = {
+ai_chance = 10
+name = "EVT_658031_OPTIONC"
+	command = { type = supplies value = 500 }	
+}
+}
+
+event = {
+id = 658032
+country = U31
+style = 2
+picture = air_reinforcements
+random = no
+
+trigger = {
+flag = GU_MT_FAUD_WIN
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_658032_NAME"
+desc = "EVT_658032_DESC"
+
+action_a = {
+ai_chance = 70
+name = "EVT_658032_OPTIONA"
+	command = { type = supplies value = -1000  }	
+	command = { type = build_division which = interceptor when = 9 }
+	command = { type = build_division which = interceptor when = 9 }
+	command = { type = build_division which = cas  when = 6 }
+}
+
+action_b = {
+ai_chance = 20
+name = "EVT_658032_OPTIONB"
+	command = { type = supplies value = -3000  }	
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = cas  when = 6 }
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = cas  when = 6 }
+	command = { type = build_division which = strategic_bomber when = 5 }
+}
+
+action_c = {
+ai_chance = 10
+name = "EVT_658032_OPTIONC"
+	command = { type = supplies value = 500 }	
+}
+}
+
+event = {
+id = 658033
+country = U31
+style = 2
+picture = naval_reinforcements
+random = no
+
+trigger = {
+flag = GU_FAUD_WIN
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_658033_NAME"
+desc = "EVT_658033_DESC"
+
+action_a = {
+ai_chance = 50
+name = "EVT_658033_OPTIONA"
+	command = { type = supplies value = -1000  }	
+	command = { type = build_division which = heavy_cruiser when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+}
+
+action_b = {
+ai_chance = 10
+name = "EVT_658033_OPTIONB"
+	command = { type = supplies value = -3000  }
+	command = { type = build_division which = carrier value = cag when = 4 }
+	command = { type = build_division which = battlecruiser when = 5 }
+	command = { type = build_division which = battlecruiser when = 5 }
+	command = { type = build_division which = heavy_cruiser when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = heavy_cruiser when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+}
+
+action_c = {
+ai_chance = 40
+name = "EVT_658033_OPTIONC"
+	command = { type = supplies value = 500 }	
+}
+}
+
+event = {
+id = 658034
+country = U31
+style = 2
+picture = naval_reinforcements
+random = no
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 29 month = december year = 1970 }
+
+trigger = {
+flag = GU_SU_WIN
+}
+name = "EVT_658034_NAME"
+desc = "EVT_658034_DESC"
+
+action_a = {
+ai_chance = 55
+name = "EVT_658034_OPTIONA"
+	command = { type = supplies value = -1000  }	
+	command = { type = build_division which = heavy_cruiser when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+}
+
+action_b = {
+ai_chance = 45
+name = "EVT_658034_OPTIONB"
+	command = { type = supplies value = -3000  }
+	command = { type = build_division which = carrier value = cag when = 4 }
+	command = { type = build_division which = battlecruiser when = 5 }
+	command = { type = build_division which = battlecruiser when = 5 }
+	command = { type = build_division which = heavy_cruiser when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = heavy_cruiser when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+}
+
+action_c = {
+ai_chance = 00
+name = "EVT_658034_OPTIONC"
+	command = { type = supplies value = 500 }	
+}
+}
+
+event = {
+id = 658035
+country = U31
+style = 2
+picture = naval_reinforcements
+random = no
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 29 month = december year = 1970 }
+
+trigger = {
+flag = GU_MT_WIN
+}
+
+name = "EVT_658035_NAME"
+desc = "EVT_658035_DESC"
+
+action_a = {
+ai_chance = 30
+name = "EVT_658035_OPTIONA"
+	command = { type = supplies value = -1000  }	
+	command = { type = build_division which = heavy_cruiser when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+}
+
+action_b = {
+ai_chance = 70
+name = "EVT_658035_OPTIONB"
+	command = { type = supplies value = -3000  }
+	command = { type = build_division which = carrier value = cag when = 4 }
+	command = { type = build_division which = battlecruiser when = 5 }
+	command = { type = build_division which = battlecruiser when = 5 }
+	command = { type = build_division which = heavy_cruiser when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = heavy_cruiser when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+}
+
+action_c = {
+ai_chance = 0
+name = "EVT_658035_OPTIONC"
+	command = { type = supplies value = 500 }	
+}
+}
+
+event = {
+id = 658036
+country = U31
+style = 2
+picture = naval_reinforcements
+random = no
+
+trigger = {
+flag = GU_MT_SU_THALMANN_HAPPY
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_658036_NAME"
+desc = "EVT_658036_DESC"
+
+action_a = {
+ai_chance = 50
+name = "EVT_658036_OPTIONA"
+	command = { type = supplies value = -1000  }	
+	command = { type = build_division which = heavy_cruiser when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+}
+
+action_b = {
+ai_chance = 40
+name = "EVT_658036_OPTIONB"
+	command = { type = supplies value = -3000  }
+	command = { type = build_division which = carrier value = cag when = 4 }
+	command = { type = build_division which = battlecruiser when = 5 }
+	command = { type = build_division which = battlecruiser when = 5 }
+	command = { type = build_division which = heavy_cruiser when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = heavy_cruiser when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+}
+
+action_c = {
+ai_chance = 10
+name = "EVT_658036_OPTIONC"
+	command = { type = supplies value = 500 }	
+}
+}
+event = {
+id = 658037
+country = U31
+style = 2
+picture = naval_reinforcements
+random = no
+
+trigger = {
+flag = GU_MT_SU_THALMANN_ANNOY
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_658037_NAME"
+desc = "EVT_658037_DESC"
+
+action_a = {
+ai_chance = 70
+name = "EVT_658037_OPTIONA"
+	command = { type = supplies value = -1000  }	
+	command = { type = build_division which = heavy_cruiser when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+}
+
+action_b = {
+ai_chance = 20
+name = "EVT_658037_OPTIONB"
+	command = { type = supplies value = -3000  }
+	command = { type = build_division which = carrier value = cag when = 4 }
+	command = { type = build_division which = battlecruiser when = 5 }
+	command = { type = build_division which = battlecruiser when = 5 }
+	command = { type = build_division which = heavy_cruiser when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = heavy_cruiser when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+}
+
+action_c = {
+ai_chance = 10
+name = "EVT_658037_OPTIONC"
+	command = { type = supplies value = 500 }	
+	}
+	}
+
+event = {
+id = 658038
+country = U31
+style = 2
+picture = naval_reinforcements
+random = no
+
+trigger = {
+flag = GU_MT_FAUD_WIN
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_658038_NAME"
+desc = "EVT_658038_DESC"
+
+action_a = {
+ai_chance = 70
+name = "EVT_658038_OPTIONA"
+	command = { type = supplies value = -1000  }	
+	command = { type = build_division which = heavy_cruiser when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+}
+
+action_b = {
+ai_chance = 10
+name = "EVT_658038_OPTIONB"
+	command = { type = supplies value = -3000  }
+	command = { type = build_division which = carrier value = cag when = 4 }
+	command = { type = build_division which = battlecruiser when = 5 }
+	command = { type = build_division which = battlecruiser when = 5 }
+	command = { type = build_division which = heavy_cruiser when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = heavy_cruiser when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+}
+
+action_c = {
+ai_chance = 20
+name = "EVT_658038_OPTIONC"
+	command = { type = supplies value = 500 }	
+}
+}
+
+##################################################################################
+#####Thalmann Minichain###########################################################
+##################################################################################
+
+event = {
+id = 658039
+country = U31
+style = 2
+picture = thalmann
+random = no
+
+trigger = {
+flag = GU_MT_SU_THALMANN_ANNOY
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 200
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_658039_NAME"
+desc = "EVT_658039_DESC"
+
+action_a = {
+name = "EVT_658039_OPTIONA"
+ai_chance = 50
+command = { type = trigger which = 658040 }
+}
+
+action_b = {
+name = "EVT_658039_OPTIONB"
+ai_chance = 50
+command = { type = trigger which = 658041 }
+}
+}
+
+event = {
+id = 658040
+country = U31
+style = 2
+picture = thalmann
+random = no
+
+name = "EVT_658040_NAME"
+desc = "EVT_658040_DESC"
+
+action_a = {
+name = "EVT_658040_OPTIONA"
+ai_chance = 75
+command = { type = clrflag which = GU_MT_SU_THALMANN_ANNOY }
+command = { type = setflag which = GU_MT_WIN }
+     command = { type = headofstate which = 911006 }
+	 command = { type = headofgovernment which = 911018 }
+	 command = { type = foreignminister which = 911038 }
+	 command = { type = armamentminister which = 911055 }
+	 command = { type = ministerofsecurity which = 911073 }
+	 command = { type = ministerofintelligence which = 911094 }
+	 command = { type = chiefofstaff which = 911104 }
+	 command = { type = chiefofarmy which = 911117 }
+	 command = { type = chiefofnavy which = 911130 }
+	 command = { type = chiefofair which = 911140 }
+}
+
+action_b = {
+name = "EVT_658040_OPTIONB"
+ai_chance = 25
+command = { type = clrflag which = GU_MT_SU_THALMANN_ANNOY }
+command = { type = setflag which = GU_SU_WIN }
+     command = { type = set_domestic which = political_left value = 10 }
+     command = { type = set_domestic which = democratic value = 3 } 
+     command = { type = headofstate which = 911008 }
+	 command = { type = headofgovernment which = 911020 }
+	 command = { type = foreignminister which = 911040 }
+	 command = { type = armamentminister which = 911056 }
+	 command = { type = ministerofsecurity which = 911075 }
+	 command = { type = ministerofintelligence which = 911095 }
+	 command = { type = chiefofstaff which = 911105 }
+	 command = { type = chiefofarmy which = 911118 }
+	 command = { type = chiefofnavy which = 911131 }
+	 command = { type = chiefofair which = 911141 }
+}
+}
+
+event = {
+id = 658041
+country = U31
+style = 2
+picture = thalmann
+random = no
+
+name = "EVT_658041_NAME"
+desc = "EVT_658041_DESC"
+
+action_a = {
+name = "EVT_658041_OPTIONA"
+ai_chance = 75
+command = { type = clrflag which = GU_MT_SU_THALMANN_ANNOY }
+command = { type = setflag which = GU_MT_SU_THALMANN_HAPPY }
+	 command = { type = headofgovernment which = 911018 }
+}
+
+action_b = {
+name = "EVT_658041_OPTIONB"
+ai_chance = 25
+command = { type = clrflag which = GU_MT_SU_THALMANN_ANNOY }
+command = { type = setflag which = GU_MT_SU_THALMANN_HAPPY }
+	 command = { type = chiefofstaff which = 911104 }
+}
+}
+
+#################################################################################
+#########Milly Witkop/Detente Chain##############################################
+#################################################################################
+
+event = {
+id = 658042
+country = U31
+style = 2
+picture = witkopfamily
+random = no
+
+trigger = {
+flag = GU_HOG_MILLY
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 200
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_658042_NAME"
+desc = "EVT_658042_DESC"
+
+action_a = {
+name = "EVT_658042_OPTIONA"
+ai_chance = 50
+command = { type = clrflag which = GU_HOG_MILLY }
+command = { type = relation which = ENG value = -20 }
+	 command = { type = headofgovernment which = 911022 }
+}
+
+action_b = {
+name = "EVT_658042_OPTIONB"
+ai_chance = 50
+command = { type = relation which = ENG value = -100 }
+command = { type = setflag which = GU_ENG_DETENTE }
+}
+}
+
+event = {
+id = 658043
+country = ENG
+style = 2
+picture = witkopfamily
+random = no
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1970 }
+
+
+trigger = {
+flag = GU_HOG_MILLY
+flag = GU_ENG_DETENTE
+flag = ENG_MOSLEY
+}
+
+name = "EVT_658043_NAME"
+desc = "EVT_658043_DESC"
+
+
+action_a = {
+name = "EVT_658043_OPTIONA"
+ai_chance = 20
+command = { type = clrflag which = GU_HOG_MILLY }
+command = { type = clrflag which = GU_ENG_DETENTE }
+command = { type = relation which = U31 value = 45 } #An apology is a bit late, but still appreciated
+command = { type = dissent value = 1 } #sexist socialists!
+}
+
+action_b = {
+name = "EVT_658043_OPTIONB"
+ai_chance = 80
+command = { type = relation which = U31 value = -100 } 
+command = { type = setflag which = GU_ENG_DETENTE_WORSENS }
+}
+}
+
+event = {
+id = 658044
+country = ENG
+style = 2
+picture = witkopfamily
+random = no
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1970 }
+
+trigger = {
+AND = {
+flag = ENG_KENNEY
+flag = GU_HOG_MILLY
+flag = GU_ENG_DETENTE
+}
+}
+
+name = "EVT_658044_NAME"
+desc = "EVT_658044_DESC"
+
+action_a = {
+name = "EVT_658044_OPTIONA"
+ai_chance = 90
+command = { type = clrflag which = GU_HOG_MILLY }
+command = { type = clrflag which = GU_ENG_DETENTE }
+command = { type = relation which = U31 value = 45 } #An apology is a bit late, but still appreciated
+command = { type = dissent value = 1 } #sexist socialists!
+}
+
+action_b = {
+name = "EVT_658044_OPTIONB"
+ai_chance = 10
+command = { type = relation which = U31 value = -100 } 
+command = { type = setflag which = GU_ENG_DETENTE_WORSENS }
+}
+}
+
+event = {
+id = 658045
+country = ENG
+style = 2
+picture = witkopfamily
+random = no
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1970 }
+
+trigger = {
+AND = {
+flag = GU_HOG_MILLY
+flag = GU_ENG_DETENTE
+flag = ENG_HORNER
+}
+}
+
+name = "EVT_658045_NAME"
+desc = "EVT_658045_DESC"
+
+action_a = {
+name = "EVT_658045_OPTIONA"
+ai_chance = 50
+command = { type = clrflag which = GU_HOG_MILLY }
+command = { type = clrflag which = GU_ENG_DETENTE }
+command = { type = relation which = U31 value = 45 } #An apology is a bit late, but still appreciated
+command = { type = dissent value = 1 } #sexist socialists!
+}
+
+action_b = {
+name = "EVT_658045_OPTIONB"
+ai_chance = 50
+command = { type = relation which = U31 value = -100 } 
+command = { type = setflag which = GU_ENG_DETENTE_WORSENS }
+}
+}
+
+event = {
+id = 658046
+country = ENG
+style = 2
+picture = witkopfamily
+random = no
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1970 }
+
+trigger = {
+AND = {
+flag = GU_HOG_MILLY
+flag = GU_ENG_DETENTE
+flag = ENG_GLAIS
+}
+}
+
+name = "EVT_658046_NAME"
+desc = "EVT_658046_DESC"
+
+action_a = {
+name = "EVT_658046_OPTIONA"
+ai_chance = 60
+command = { type = clrflag which = GU_HOG_MILLY }
+command = { type = clrflag which = GU_ENG_DETENTE }
+command = { type = relation which = U31 value = 45 } #An apology is a bit late, but still appreciated
+command = { type = dissent value = 1 } #sexist socialists!
+}
+
+action_b = {
+name = "EVT_658046_OPTIONB"
+ai_chance = 40
+command = { type = relation which = U31 value = -100 } 
+command = { type = setflag which = GU_ENG_DETENTE_WORSENS }
+}
+}
+
+event = {
+id = 658047
+country = ENG
+style = 2
+picture = witkopfamily
+random = no
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1970 }
+
+trigger = {
+AND = {
+flag = GU_HOG_MILLY
+flag = GU_ENG_DETENTE
+flag = UOB_MILITARY_JUNTA
+}
+}
+
+name = "EVT_658047_NAME"
+desc = "EVT_658047_DESC"
+
+action_a = {
+name = "EVT_658047_OPTIONA"
+ai_chance = 99
+command = { type = clrflag which = GU_HOG_MILLY }
+command = { type = clrflag which = GU_ENG_DETENTE }
+command = { type = relation which = U31 value = 45 } #An apology is a bit late, but still appreciated
+command = { type = dissent value = 1 } #sexist socialists!
+}
+
+action_b = {
+name = "EVT_658047_OPTIONB"
+ai_chance = 1
+command = { type = relation which = U31 value = -100 } 
+command = { type = setflag which = GU_ENG_DETENTE_WORSENS }
+}
+}
+
+event = {
+id = 658048
+country = ENG
+style = 2
+picture = rebecca
+trigger = {
+flag = GU_HOG_MILLY
+flag = GU_ENG_DETENTE_WORSENS
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 2
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_658048_NAME"
+desc = "EVT_658048_DESC"
+
+action_a = {
+name = "EVT_658048_OPTIONA"
+ai_chance = 60
+}
+
+action_b = {
+name = "EVT_658048_OPTIONB"
+ai_chance = 40
+command = { type = setflag which = GU_ENG_DETENTE_SHIPPING }
+}
+}
+
+event = {
+id = 658049
+country = FRA
+style = 2
+picture = witkopfamily
+random = no
+trigger = {
+flag = GU_HOG_MILLY
+flag = GU_ENG_DETENTE_WORSENS
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_658049_NAME"
+desc = "EVT_658049_DESC"
+
+action_a = {
+name = "EVT_658049_OPTIONA"
+ai_chance = 33
+command = { type = setflag which = GU_FRA_DETENTE_INTERVENTION }
+command = { type = sleepevent which = 658050 }
+}
+action_b = {
+name = "EVT_658049_OPTIONB"
+ai_chance = 33
+command = { type = setflag which = ENG_FRA_DETENTE_INTERVENTION }
+command = { type = sleepevent which = 658050 }
+}
+action_c = {
+name = "EVT_658049_OPTIONC"
+ai_chance = 33
+command = { type = setflag which = BOTH_FRA_DETENTE_INTERVENTION }
+command = { type = sleepevent which = 658050 }
+}
+action_d = {
+name = "EVT_658049_OPTIOND"
+ai_chance = 1
+command = { type = setflag which = FRA_DETENTE_ABSENT }
+command = { type = sleepevent which = 658050 }
+}
+}
+
+event = {
+id = 658050
+country = FRA
+style = 2
+picture = witkopfamily
+random = no
+trigger = {
+flag = GU_HOG_MILLY
+flag = GU_ENG_DETENTE_WORSENS
+flag = GU_ENG_DETENTE_SHIPPING
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_658050_NAME"
+desc = "EVT_658050_DESC"
+
+action_a = {
+name = "EVT_658050_OPTIONA"
+ai_chance = 10
+command = { type = setflag which = GU_FRA_DETENTE_INTERVENTION }
+}
+action_b = {
+name = "EVT_658050_OPTIONB"
+ai_chance = 40
+command = { type = setflag which = ENG_FRA_DETENTE_INTERVENTION }
+}
+action_c = {
+name = "EVT_658050_OPTIONC"
+ai_chance = 50
+command = { type = setflag which = BOTH_FRA_DETENTE_INTERVENTION }
+}
+action_d = {
+name = "EVT_658050_OPTIOND"
+ai_chance = 0
+command = { type = setflag which = FRA_DETENTE_ABSENT }
+}
+}
+
+event = {
+id = 658051
+country = U31
+style = 2
+picture = witkopfamily
+random = no
+trigger = {
+flag = GU_HOG_MILLY
+flag = GU_FRA_DETENTE_INTERVENTION
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_658051_NAME"
+desc = "EVT_658051_DESC"
+
+action_a = {
+name = "EVT_658051_OPTIONA"
+ai_chance = 99
+command = { type = clrflag which = GU_HOG_MILLY }
+command = { type = clrflag which = GU_ENG_DETENTE }
+command = { type = clrflag which = GU_ENG_DETENTE_WORSENS }
+command = { type = clrflag which = GU_ENG_DETENTE_SHIPPING }
+command = { type = clrflag which = GU_FRA_DETENTE_INTERVENTION }
+command = { type = relation which = ENG value = 20 }
+}
+action_b = {
+name = "EVT_658051_OPTIONB"
+ai_chance = 1
+command = { type = setflag which = GU_ALONE }
+command = { type = clrflag which = GU_HOG_MILLY }
+command = { type = clrflag which = GU_ENG_DETENTE }
+command = { type = clrflag which = GU_ENG_DETENTE_WORSENS }
+command = { type = clrflag which = GU_ENG_DETENTE_SHIPPING }
+command = { type = clrflag which = GU_FRA_DETENTE_INTERVENTION }
+command = { type = set_relation which = FRA value = -100 }
+command = { type = leave_alliance }
+command = { type = dissent value = 5 }
+}
+}
+
+event = {
+id = 658052
+country = ENG
+style = 2
+picture = witkopfamily
+random = no
+trigger = {
+flag = GU_HOG_MILLY
+flag =  ENG_FRA_DETENTE_INTERVENTION
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_658052_NAME"
+desc = "EVT_658052_DESC"
+
+action_a = {
+name = "EVT_658052_OPTIONA"
+ai_chance = 99
+command = { type = clrflag which = GU_HOG_MILLY }
+command = { type = clrflag which = GU_ENG_DETENTE }
+command = { type = clrflag which = GU_ENG_DETENTE_WORSENS }
+command = { type = clrflag which = GU_ENG_DETENTE_SHIPPING }
+command = { type = clrflag which = ENG_FRA_DETENTE_INTERVENTION }
+command = { type = relation which = U31 value = 20 }
+}
+action_b = {
+name = "EVT_658052_OPTIONB"
+ai_chance = 1
+command = { type = clrflag which = GU_HOG_MILLY }
+command = { type = clrflag which = GU_ENG_DETENTE }
+command = { type = clrflag which = GU_ENG_DETENTE_WORSENS }
+command = { type = clrflag which = GU_ENG_DETENTE_SHIPPING }
+command = { type = clrflag which = ENG_FRA_DETENTE_INTERVENTION }
+command = { type = relation which = FRA value = -100 }
+command = { type = dissent value = 5 }
+command = { type = leave_alliance }
+}
+}
+
+event = {
+id = 658053
+country = U31
+style = 2
+picture = witkopfamily
+random = no
+trigger = {
+flag = GU_HOG_MILLY
+flag =  BOTH_FRA_DETENTE_INTERVENTION
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_658053_NAME"
+desc = "EVT_658053_DESC"
+
+action_a = {
+name = "EVT_658053_OPTIONA"
+ai_chance = 25
+command = { type = clrflag which = GU_HOG_MILLY }
+command = { type = clrflag which = GU_ENG_DETENTE }
+command = { type = clrflag which = GU_ENG_DETENTE_WORSENS }
+command = { type = clrflag which = GU_ENG_DETENTE_SHIPPING }
+command = { type = clrflag which = BOTH_FRA_DETENTE_INTERVENTION }
+command = { type = relation which = ENG value = 20 }
+}
+action_b = {
+name = "EVT_658053_OPTIONB"
+ai_chance = 75
+command = { type = clrflag which = GU_HOG_MILLY }
+command = { type = clrflag which = GU_ENG_DETENTE }
+command = { type = clrflag which = GU_ENG_DETENTE_WORSENS }
+command = { type = clrflag which = GU_ENG_DETENTE_SHIPPING }
+command = { type = clrflag which = BOTH_FRA_DETENTE_INTERVENTION }
+command = { type = setflag which = GU_NEGOTIATIONS }
+
+}
+}
+
+event = {
+id = 658054
+country = ENG
+style = 2
+picture = witkopfamily
+random = no
+trigger = {
+flag = GU_HOG_MILLY
+flag =  BOTH_FRA_DETENTE_INTERVENTION
+flag = GU_NEGOTIATIONS
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_658054_NAME"
+desc = "EVT_658054_DESC"
+
+action_a = {
+name = "EVT_658054_OPTIONA"
+ai_chance = 25
+command = { type = clrflag which = GU_HOG_MILLY }
+command = { type = clrflag which = GU_ENG_DETENTE }
+command = { type = clrflag which = GU_ENG_DETENTE_WORSENS }
+command = { type = clrflag which = GU_ENG_DETENTE_SHIPPING }
+command = { type = clrflag which = BOTH_FRA_DETENTE_INTERVENTION }
+command = { type = clrflag which = GU_NEGOTIATIONS }
+command = { type = relation which = ENG value = 20 }
+}
+action_b = {
+name = "EVT_658054_OPTIONB"
+ai_chance = 75
+command = { type = clrflag which = GU_HOG_MILLY }
+command = { type = clrflag which = GU_ENG_DETENTE }
+command = { type = clrflag which = GU_ENG_DETENTE_WORSENS }
+command = { type = clrflag which = GU_ENG_DETENTE_SHIPPING }
+command = { type = clrflag which = BOTH_FRA_DETENTE_INTERVENTION }
+command = { type = setflag which = ENG_NEGOTIATIONS }
+
+}
+}
+
+event = {
+id = 658055
+country = U31
+style = 2
+picture = lawrence
+random = no
+trigger = {
+flag = GU_HOG_MILLY
+flag = FRA_DETENTE_ABSENT
+flag = LAWRENCE_MEDAL
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 20
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_658055_NAME"
+desc = "EVT_658055_DESC"
+
+action_a = {
+name = "EVT_658055_OPTIONA"
+command = { type = trigger which = 658056 }
+}
+}
+
+event = {
+id = 658056
+country = ENG
+style = 2
+picture = lawrence
+random = no
+
+name = "EVT_658056_NAME"
+desc = "EVT_658056_DESC"
+
+action_a = {
+name = "EVT_658056_OPTIONA"
+ai_chance = 100
+command = { type = clrflag which = GU_HOG_MILLY }
+command = { type = clrflag which = GU_ENG_DETENTE }
+command = { type = clrflag which = GU_ENG_DETENTE_WORSENS }
+command = { type = clrflag which = GU_ENG_DETENTE_SHIPPING }
+command = { type = clrflag which = FRA_DETENTE_ABSENT }
+command = { type = relation which = U31 value = 25 }
+}
+
+action_b = {
+name = "EVT_658056_OPTIONB"
+ai_chance = 0
+command = { type = leave_alliance }
+command = { type = clrflag which = GU_HOG_MILLY }
+command = { type = clrflag which = GU_ENG_DETENTE }
+command = { type = clrflag which = GU_ENG_DETENTE_WORSENS }
+command = { type = clrflag which = GU_ENG_DETENTE_SHIPPING }
+command = { type = clrflag which = FRA_DETENTE_ABSENT }
+}
+}
+
+event = {
+id = 658057
+country = FRA
+picture = impatientlydemands
+
+trigger = {
+flag = GU_HOG_MILLY
+flag = ENG_NEGOTIATIONS
+flag = GU_NEGOTIATIONS
+}
+
+name = "EVT_658057_NAME"
+desc = "EVT_658057_DESC"
+
+action_a = {
+name = "EVT_658057_OPTIONA"
+ai_chance = 70
+command = { type = trigger which = 658058 }
+command = { type = set_relation which = ENG value = 50 }
+}
+
+action_b = {
+name = "EVT_658057_OPTIONB"
+ai_chance = 30
+command = { type = trigger which = 658059 }
+command = { type = set_relation which = U31 value = 50 }
+}
+}
+
+event = {
+id = 658058
+country = U31
+style = 2
+picture = impatientlydemands
+random = no
+
+name = "EVT_658058_NAME"
+desc = "EVT_658058_DESC"
+
+action_a = {
+name = "EVT_658058_OPTIONA"
+ai_chance = 100
+command = { type = relation which = ENG value = 50 }
+command = { type = relation which = FRA value = -50 }
+command = { type = clrflag which = GU_NEGOTIATIONS }
+command = { type = clrflag which = ENG_NEGOTIATIONS }
+command = { type = clrflag which = GU_HOG_MILLY }
+}
+
+action_b = {
+name = "EVT_658058_OPTIONB"
+ai_chance = 0
+command = { type = clrflag which = GU_HOG_MILLY }
+command = { type = clrflag which = GU_NEGOTIATIONS }
+command = { type = clrflag which = ENG_NEGOTIATIONS }
+command = { type = leave_alliance} 
+command = { type = dissent value = 5 }
+}
+}
+
+event = {
+id = 658059
+country = ENG
+style = 2
+picture = impatientlydemands
+random = no
+
+name = "EVT_658059_NAME"
+desc = "EVT_658059_DESC"
+
+action_a = {
+name = "EVT_658059_OPTIONA"
+ai_chance = 100
+command = { type = relation which = U31 value = 50 }
+command = { type = relation which = FRA value = -50 }
+command = { type = clrflag which = GU_NEGOTIATIONS }
+command = { type = clrflag which = ENG_NEGOTIATIONS }
+command = { type = clrflag which = GU_HOG_MILLY }
+}
+
+action_b = {
+name = "EVT_658059_OPTIONB"
+ai_chance = 0
+command = { type = clrflag which = GU_NEGOTIATIONS }
+command = { type = clrflag which = ENG_NEGOTIATIONS }
+command = { type = clrflag which = GU_HOG_MILLY }
+command = { type = leave_alliance} 
+command = { type = dissent value = 5 }
+}
+}
+
+event = {
+id = 658061
+country = ENG
+style = 2
+picture = witkopfamily
+random = no
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1970 }
+
+
+trigger = {
+flag = GU_HOG_MILLY
+flag = GU_ENG_DETENTE
+flag = MOSLEY_DICTATORSHIP
+}
+
+name = "EVT_658061_NAME"
+desc = "EVT_658061_DESC"
+
+
+action_a = {
+name = "EVT_658061_OPTIONA"
+ai_chance = 20
+command = { type = clrflag which = GU_HOG_MILLY }
+command = { type = clrflag which = GU_ENG_DETENTE }
+command = { type = relation which = U31 value = 45 } #An apology is a bit late, but still appreciated
+command = { type = dissent value = 1 } #sexist socialists!
+}
+
+action_b = {
+name = "EVT_658061_OPTIONB"
+ai_chance = 80
+command = { type = relation which = U31 value = -100 } 
+command = { type = setflag which = GU_ENG_DETENTE_WORSENS }
+}
+}
+
+
+###############################
+
+event = {
+id = 658060
+country = FRA
+style = 2
+#picture = americanreinforcments1
+random = no
+
+
+
+date = { day = 1 month = january year = 1936 }
+offset = 183
+deathdate = { day = 29 month = december year = 1970 }
+
+trigger = {
+flag = GU_ARMY 
+alliance = { country = FRA country = U31 }
+}
+
+name = "EVT_658060_NAME"
+desc = "EVT_658060_DESC"
+
+action_a = {
+name = "EVT_658060_OPTIONA"
+ai_chance = 75
+command = { type = relation which = U31 value = 10 }
+command = { type = supplies value = -10 }
+command = { type = clrflag which = GU_ARMY }
+}
+
+action_b = {
+name = "EVT_658060_OPTIONB"
+ai_chance = 25
+command = { type = relation which = U31 value = -10 }
+command = { type = supplies value = 10 }
+command = { type = clrflag which = GU_ARMY }
+}
+}
+
+####################################
+
+event = {
+id = 658062
+country = U31
+style = 2
+picture = industry
+random = no
+
+date = { day = 1 month = january year = 1936 }
+offset = 49
+deathdate = { day = 29 month = december year = 1970 }
+
+trigger = {
+flag = RED_UNION
+}
+
+name = "EVT_658062_NAME"
+desc = "EVT_658062_DESC"
+
+action_a = {
+name = "EVT_658062_OPTIONA"
+command = { type = waketeam which = 1119128 }
+command = { type = waketeam which = 1119129 }
+command = { type = waketeam which = 1119130 }
+command = { type = waketeam which = 1119131 }
+command = { type = waketeam which = 1119125 }
+command = { type = waketeam which = 1119132 }
+}
+}
+
+############################################################################################################
+###################Authoritarian Zone#######################################################################
+############################################################################################################
+
+event = {
+	id = 659000
+	country = U31
+
+trigger = {
+OR = { 
+ideology = fascist
+ideology = nazi
+}
+}
+
+
+	picture= "gerarmedfor"
+	name = "EVT_659000_NAME"
+	desc = "EVT_659000_DESC"
+
+action_a = {
+name = "EVT_659000_OPTIONA"
+        command = { type = ai which = "kaiserreich/German Union.ai" }
+	command = { type = trigger which = 658001 }
+	command = { type = add_corps which = "I. NVA Corps" value = land where = 154 }
+	command = { type = add_division which = "I. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "II. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "II. NVA Corps" value = land where = 145 }
+	command = { type = add_division which = "III. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "IV. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "III. NVA Corps" value = land where = 179 }
+	command = { type = add_division which = "V. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "VI. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "IV. NVA Corps" value = land where = 140 }
+	command = { type = add_division which = "VII. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "IX. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "V. NVA Corps" value = land where = 146 }
+	command = { type = add_division which = "X. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XI. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "VI. NVA Corps" value = land where = 163 }
+	command = { type = add_division which = "XII. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XIII. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XIV. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XV. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "VII. NVA Corps" value = land where = 153 }
+	command = { type = add_division which = "XVI. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XVII. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "IX. NVA Corps" value = land where = 170 }
+	command = { type = add_division which = "XIX. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XX. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = set_relation which = RUS value = 150 }
+	command = { type = removecore which = 221 }
+        command = { type = removecore which = 168 }
+        command = { type = removecore which = 224 }
+        command = { type = removecore which = 225 }
+        command = { type = removecore which = 222 }
+        command = { type = removecore which = 261 }
+        command = { type = removecore which = 164 }
+        command = { type = secedeprovince which = RUS value = 221 }
+	command = { type = secedeprovince which = RUS value = 168 }
+        command = { type = secedeprovince which = RUS value = 224 }
+	command = { type = secedeprovince which = RUS value = 225 }
+	command = { type = secedeprovince which = RUS value = 222 }
+        command = { type = secedeprovince which = RUS value = 261 }
+        command = { type = secedeprovince which = RUS value = 164 }
+	command = { type = set_relation which = GER value = -199 }
+        command = { type = sleepevent which = 660000 }
+        command = { type = sleepevent which = 660003 }
+        command = { type = trigger which = 666086 }
+	command = { type = setflag which = BLACK_UNION }
+	 command = { type = headofstate which = 911001 }
+
+}
+}
+
+event = {
+id = 659101
+country = U31
+style = 2
+picture = air_reinforcements
+random = no
+
+trigger = {
+flag = BLACK_UNION
+alliance = { country = U31 country = RUS } 
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_659101_NAME"
+desc = "EVT_659101_DESC"
+
+action_a = {
+ai_chance = 90
+name = "EVT_659101_OPTIONA"
+	command = { type = supplies value = -1000  }	
+	command = { type = add_corps which = "Russiche Aircorps" value = air where = 163 }
+	command = { type = add_division which = "Sankt Petersburg Airwing" value = interceptor when = 9 }
+	command = { type = add_division which = "Moskva Airwing" value = interceptor when = 9 }
+	command = { type = add_division which = "Shturmovik Airwing" value = cas when = 6 }
+}
+
+action_b = {
+ai_chance = 10
+name = "EVT_659101_OPTIONB"
+	command = { type = supplies value = 500 }
+}
+}
+
+####################################################################################################
+#####Thought Police#################################################################################
+####################################################################################################
+
+event = {
+id = 659002
+country = U31
+style = 2
+picture = bookburning
+
+date = { day = 1 month = january year = 1936 }
+offset = 286
+deathdate = { day = 29 month = december year = 1970 }
+
+trigger = {
+flag = BLACK_UNION
+}
+
+name = "EVT_659002_NAME"
+desc = "EVT_659002_DESC"
+
+action_a = {
+ai_chance = 90
+name = "EVT_659002_OPTIONA"
+command = { type = dissent value = -2 }
+command = { type = domestic which = freedom value = -1 }
+command = { type = add_corps which = "Ministry of Culture" value = land where = 163 }
+command = { type = add_division which = "The Ministry of Culture" value = HQ when = 3 }
+command = { type = add_division which = "I Cultural Enforcement Battalion" value = garrison when = 5 }
+command = { type = setflag which = GU_Thoughtpolice }
+}
+
+action_b = {
+ai_chance = 10
+name = "EVT_659002_OPTIONB"
+command = { type = dissent value = 1 }
+command = { type = domestic which = freedom value = 1 }
+}
+}
+
+event = {
+id = 659003
+country = U31
+style = 2
+picture = truthsquad
+
+date = { day = 1 month = january year = 1936 }
+offset = 100
+deathdate = { day = 29 month = december year = 1970 }
+
+trigger = {
+flag = BLACK_UNION
+flag = GU_Thoughtpolice
+}
+
+name = "EVT_659003_NAME"
+desc = "EVT_659003_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_659003_OPTIONA"
+command = { type = dissent value = 1 }
+command = { type = domestic which = freedom value = -1 }
+command = { type = setflag which = GU_Orpo }
+command = { type = add_corps which = "Cultural Enforcement Battalion" value = land where = 154 }
+command = { type = add_division which = "II Cultural Enforcement Battalion" value = garrison when = 5 }
+
+command = { type = add_corps which = "Cultural Enforcement Battalion" value = land where = 145 }
+command = { type = add_division which = "III Cultural Enforcement Battalion" value = garrison when = 5 }
+
+command = { type = add_corps which = "Cultural Enforcement Battalion" value = land where = 179 }
+command = { type = add_division which = "IV Cultural Enforcement Battalion" value = garrison when = 5 }
+
+command = { type = add_corps which = "Cultural Enforcement Battalion" value = land where = 170 }
+command = { type = add_division which = "V Cultural Enforcement Battalion" value = garrison when = 5 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_659003_OPTIONB"
+command = { type = clrflag which = GU_Thoughtpolice } 
+}
+}
+
+event = {
+id = 659104
+country = U31
+style = 2
+picture = bookburning
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1970 }
+
+trigger = {
+flag = BLACK_UNION
+flag = GU_Thoughtpolice
+flag = GU_Orpo
+}
+
+name = "EVT_659104_NAME"
+desc = "EVT_659104_DESC"
+
+action_a = {
+ai_chance = 99
+name = "EVT_659104_OPTIONA"
+command = { type = dissent value = 2 }
+command = { type = domestic which = democratic value = -1 }
+command = { type = domestic which = freedom value = -1 }
+command = { type = setflag which = GU_Kristal }
+}
+
+action_b = {
+ai_chance = 1
+name = "EVT_659104_OPTIONB"
+command = { type = dissent value = 2 }
+command = { type = domestic which = freedom value = 2 }
+}
+}
+
+event = {
+id = 659005
+country = U31
+style = 2
+picture = truthsquad
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 29 month = december year = 1970 }
+
+trigger = {
+flag = BLACK_UNION
+flag = GU_Thoughtpolice
+flag = GU_Orpo
+flag = GU_Kristal
+}
+
+name = "EVT_659005_NAME"
+desc = "EVT_659005_DESC"
+
+action_a = {
+ai_chance = 50
+name = "EVT_659005_OPTIONA"
+command = { type = dissent value = -1 }
+command = { type = supplies value = -100 }
+command = { type = clrflag which = GU_Thoughtpolice }
+command = { type = clrflag which = GU_Orpo }
+command = { type = setflag which = GU_Gulag }
+command = { type = clrflag which = GU_Kristal }
+command = { type = domestic which = freedom value = -2 }
+}
+
+action_b = {
+ai_chance = 29
+name = "EVT_659005_OPTIONB"
+command = { type = dissent value = 1 }
+command = { type = clrflag which = GU_Thoughtpolice }
+command = { type = clrflag which = GU_Orpo }
+command = { type = setflag which = GU_Deportation }
+command = { type = clrflag which = GU_Kristal }
+command = { type = domestic which = freedom value = -2 }
+}
+
+action_c = {
+ai_chance = 20
+name = "EVT_659005_OPTIONC"
+command = { type = dissent value = 5 }
+command = { type = clrflag which = GU_Thoughtpolice }
+command = { type = clrflag which = GU_Orpo }
+command = { type = clrflag which = GU_Kristal }
+command = { type = setflag which = GU_Suppression }
+command = { type = domestic which = freedom value = -4 }
+}
+
+action_d = {
+ai_chance = 1
+name = "EVT_659005_OPTIOND"
+command = { type = dissent value = 5 }
+command = { type = clrflag which = GU_Thoughtpolice }
+command = { type = clrflag which = GU_Orpo }
+command = { type = clrflag which = GU_Kristal }
+command = { type = domestic which = freedom value = 2 }
+}
+}
+
+event = {
+id = 659006
+country = U31
+style = 2
+picture = prisonlabor
+persistent = yes
+
+date = { day = 1 month = january year = 1936 }
+offset = 360
+deathdate = { day = 29 month = december year = 1970 }
+
+trigger = {
+flag = BLACK_UNION
+flag = GU_Gulag
+}
+
+name = "EVT_659006_NAME"
+desc = "EVT_659006_DESC"
+
+action_a = {
+ai_chance = 66
+name = "EVT_659006_OPTIONA"
+command = { type = supplies value = 50 }
+command = { type = money value = 10 }
+command = { type = dissent value = 1 }
+}
+
+action_b = {
+ai_chance = 33
+name = "EVT_659006_OPTIONB"
+command = { type = supplies value = 25 }
+command = { type = money value = 5 }
+}
+
+action_c = {
+ai_chance = 1
+name = "EVT_659006_OPTIONC"
+command = { type = dissent value = -3 }
+command = { type = domestic which = freedom value = 2 }
+}
+}
+
+event = {
+id = 659007
+country = U31
+style = 2
+picture = witkopfamily
+persistent = yes
+
+date = { day = 1 month = january year = 1936 }
+offset = 360
+deathdate = { day = 29 month = december year = 1970 }
+
+trigger = {
+flag = BLACK_UNION
+flag = GU_Deportation
+}
+
+name = "EVT_659007_NAME"
+desc = "EVT_659007_DESC"
+
+action_a = {
+ai_chance = 66
+name = "EVT_659007_OPTIONA"
+command = { type = dissent value = 1 }
+}
+
+action_b = {
+ai_chance = 34
+name = "EVT_659007_OPTIONB"
+command = { type = relation which = ENG value = -10 }
+command = { type = relation which = FRA value = -10 }
+command = { type = relation which = CSA value = -10 }
+command = { type = relation which = PRK value = -10 }
+command = { type = relation which = ENG value = -10 }
+}
+}
+
+event = {
+id = 659008
+country = U31
+style = 2
+picture = thalmann
+
+date = { day = 1 month = january year = 1936 }
+offset = 240
+deathdate = { day = 29 month = december year = 1970 }
+
+trigger = {
+flag = BLACK_UNION
+flag = GU_Suppression
+}
+
+name = "EVT_659008_NAME"
+desc = "EVT_659008_DESC"
+
+action_a = {
+ai_chance = 99
+name = "EVT_659008_OPTIONA"
+command = { type = dissent value = 10 }
+command = { type = leave_alliance }
+command = { type = independence which = U11 value = 0 when = 0 }
+	command = { type = secedeprovince which = U11 value = 179 }
+	command = { type = secedeprovince which = U11 value = 176 }
+	command = { type = secedeprovince which = U11 value = 177 }
+	command = { type = secedeprovince which = U11 value = 178 }
+	command = { type = secedeprovince which = U11 value = 175 }
+	command = { type = secedeprovince which = U11 value = 133 }
+	command = { type = secedeprovince which = U11 value = 135 }
+        command = { type = secedeprovince which = U11 value = 134 }
+	command = { type = secedeprovince which = U11 value = 136 }
+	command = { type = secedeprovince which = U11 value = 174 }
+	command = { type = secedeprovince which = U11 value = 132 }
+	command = { type = secedeprovince which = U11 value = 139 }
+command = { type = trigger which = 659009 }
+}
+
+action_b = {
+ai_chance = 1
+name = "EVT_659008_OPTIONB"
+command = { type = dissent value = 2 }
+command = { type = domestic which = democratic value = 1 }
+command = { type = domestic which = freedom value = 1 }
+}
+}
+
+event = {
+id = 659009
+country = U11
+style = 2
+
+name = "EVT_659009_NAME"
+desc = "EVT_659009_DESC"
+
+action_a = {
+name = "EVT_659009_OPTIONA"
+	command = { type = headofstate which = 11538 }
+	command = { type = headofgovernment which = 11539 }
+	command = { type = foreignminister which = 11540 }
+	command = { type = ministerofsecurity which = 11541 }
+	command = { type = ministerofintelligence which = 11542 }
+	command = { type = armamentminister which = 11543 }
+	command = { type = chiefofstaff which = 11544 }
+	command = { type = chiefofarmy which = 11545 }
+	command = { type = chiefofnavy which = 11546 }
+	command = { type = chiefofair which = 11547 }
+
+	command = { type = add_corps which = "I. Rote Bayern Armee Corps" value = land where = 179 }
+	command = { type = add_division which = "I. Rote Division" value = infantry when = 100 }
+	command = { type = add_division which = "II. Rote Division" value = infantry when = 100 }
+	command = { type = add_division which = "Die München Rote Garde" value = militia when = 10 }
+
+	command = { type = add_corps which = "II. Rote Bayern Armee Corps" value = land where = 177 }
+	command = { type = add_division which = "III. Rote Division" value = infantry when = 10 }
+	command = { type = add_division which = "IV. Rote Division" value = infantry when = 10 }
+
+	command = { type = add_corps which = "III. Rote Bayern Armee Corps" value = land where = 174 }
+	command = { type = add_division which = "V. Rote Division" value = infantry when = 10 }
+	command = { type = add_division which = "VI. Rote Division" value = infantry when = 10 }
+
+	command = { type = dissent value = 5 }
+
+	command = { type = manpowerpool value = 200 }
+
+	command = { type = rarematerialspool value = 750 }
+	command = { type = energypool value = 750 }
+	command = { type = metalpool value = 500 }
+	command = { type = supplies value = 500 }
+	command = { type = oilpool value = 200 }
+	command = { type = money value = 10 }
+
+	command = { type = set_relation which = U31 value = -199 }
+	command = { type = set_relation which = GER value = -199 }
+	command = { type = war which = U31 }
+	}
+}
+
+############################################################################################################
+#########Von Leeb's Choice##################################################################################
+############################################################################################################
+
+event = {
+id = 659010
+country = U31
+style = 2
+picture = vonleeb
+
+trigger = {
+flag = BLACK_UNION
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 12
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_659010_NAME"
+desc = "EVT_659010_DESC"
+
+action_a = {
+
+ name = "EVT_659010_OPTIONA"
+
+ ai_chance = 33
+ 
+	 command = { type = foreignminister which = 911027 }
+	 command = { type = armamentminister which = 911043 }
+	 command = { type = ministerofsecurity which = 911059 }
+	 command = { type = ministerofintelligence which = 911078 }
+	 command = { type = chiefofstaff which = 911098 }
+	 command = { type = chiefofarmy which = 911108 }
+	 command = { type = chiefofnavy which = 911121 }
+	 command = { type = chiefofair which = 911133 }
+	 command = { type = headofgovernment which = 911009 }
+	 command = { type = set_domestic which = political_left value = 4 }
+	 command = { type = set_domestic which = democratic value = 4 } 
+	 command = { type = setflag which = GU_Volkisch } 
+ }
+ 
+ action_b = {
+ 
+  name = "EVT_659010_OPTIONB"
+ 
+ ai_chance = 33
+
+	 command = { type = headofgovernment which = 911010 }
+	 command = { type = foreignminister which = 911028 }
+	 command = { type = armamentminister which = 911045 }
+	 command = { type = ministerofsecurity which = 911061 }
+	 command = { type = ministerofintelligence which = 911080 }
+	 command = { type = chiefofstaff which = 911099 }
+	 command = { type = chiefofarmy which = 911109 }
+	 command = { type = chiefofnavy which = 911122 }
+	 command = { type = chiefofair which = 911134 }
+               command = { type = set_domestic which = political_left value = 3 }
+               command = { type = set_domestic which = democratic value = 3} 
+               command = { type = setflag which = GU_Patriotic } 
+ }
+ 
+ action_c = {
+
+ name = "EVT_659010_OPTIONC"
+
+ ai_chance = 34
+
+	 command = { type = headofgovernment which = 911011 }
+	 command = { type = foreignminister which = 911029 }
+	 command = { type = armamentminister which = 911047 }
+	 command = { type = ministerofsecurity which = 911063 }
+	 command = { type = ministerofintelligence which = 911083 }
+	 command = { type = chiefofstaff which = 911100 }
+	 command = { type = chiefofarmy which = 911110 }
+	 command = { type = chiefofnavy which = 911123 }
+	 command = { type = chiefofair which = 911135 }
+               command = { type = set_domestic which = political_left value = 2 }
+               command = { type = set_domestic which = democratic value = 2} 
+               command = { type = setflag which = GU_Stooges } 
+ }
+}
+
+####################################################################################################
+################################## Strasser Werke + Techteams ######################################
+####################################################################################################
+
+event = {
+id = 659011
+country = U31
+style = 2
+picture = industry
+random = no
+
+date = { day = 1 month = january year = 1936 }
+offset = 49
+deathdate = { day = 29 month = december year = 1970 }
+
+trigger = {
+flag = BLACK_UNION
+}
+
+name = "EVT_659011_NAME"
+desc = "EVT_659011_DESC"
+
+action_a = {
+name = "EVT_659011_OPTIONA"
+command = { type = waketeam which = 1119118 }
+command = { type = waketeam which = 1119119 }
+command = { type = waketeam which = 1119120 }
+command = { type = waketeam which = 1119121 }
+command = { type = waketeam which = 1119122 }
+command = { type = waketeam which = 1119123 }
+command = { type = setflag which = GU_Strasserwerke }
+}
+}
+
+event = {
+id = 659012
+country = U31
+style = 2
+picture = strasser
+random = no
+
+date = { day = 1 month = january year = 1936 }
+offset = 180
+deathdate = { day = 29 month = december year = 1970 }
+
+trigger = {
+flag = GU_Strasserwerke
+}
+
+name = "EVT_659012_NAME"
+desc = "EVT_659012_DESC"
+
+action_a = {
+name = "EVT_659012_OPTIONA"
+ai_chance = 100
+command = { type = free_metal value = 5 }
+command = { type = construct which = IC where = 145 value = 2 } 
+command = { type = construct which = IC where = 170 value = 2 }
+command = { type = setflag which = GU_Strasserwerke2 }
+command = { type = clrflag which = GU_Strasserwerke }
+command = { type = domestic which = free_market value = -1 }
+}
+
+action_b = {
+name = "EVT_659012_OPTIONB"
+ai_chance = 0
+command = { type = clrflag which = GU_Strasserwerke }
+command = { type = domestic which = free_market value = 1 }
+}
+}
+
+event = {
+id = 659013
+country = U31
+style = 2
+picture = strasser
+random = no
+
+date = { day = 1 month = january year = 1936 }
+offset = 180
+deathdate = { day = 29 month = december year = 1970 }
+
+trigger = {
+flag = GU_Strasserwerke2
+}
+
+name = "EVT_659013_NAME"
+desc = "EVT_659013_DESC"
+
+action_a = {
+name = "EVT_659013_OPTIONA"
+ai_chance = 80
+command = { type = free_metal value = 30 }
+command = { type = free_supplies value = 10 }
+command = { type = construct which = IC where = 170 value = 3 }
+command = { type = setflag which = GU_Strasserwerke3 }
+command = { type = clrflag which = GU_Strasserwerke2 }
+command = { type = domestic which = free_market value = -1 }
+
+}
+
+action_b = {
+name = "EVT_659013_OPTIONB"
+ai_chance = 20
+command = { type = clrflag which = GU_Strasserwerke2 }
+command = { type = construct which = IC where = 170 value = -1 } 
+command = { type = construct which = IC where = 145 value = -1 }
+command = { type = domestic which = free_market value = 1 }
+}
+}
+
+event = {
+id = 659014
+country = U31
+style = 2
+picture = strasser
+random = no
+
+date = { day = 1 month = january year = 1936 }
+offset = 180
+deathdate = { day = 29 month = december year = 1970 }
+
+trigger = {
+flag = GU_Strasserwerke3
+}
+
+name = "EVT_659014_NAME"
+desc = "EVT_659014_DESC"
+
+action_a = {
+name = "EVT_659014_OPTIONA"
+ai_chance = 50
+command = { type = free_metal value = 20 }
+command = { type = free_supplies value = 5 }
+command = { type = construct which = IC where = 170 value = 1 }
+command = { type = setflag which = GU_Strasserwerke4 }
+command = { type = clrflag which = GU_Strasserwerke3 }
+command = { type = peacetime_ic_mod which = total value = -5 } 
+command = { type = domestic which = free_market value = -2 }
+
+}
+
+action_b = {
+name = "EVT_659014_OPTIONB"
+ai_chance = 50
+command = { type = clrflag which = GU_Strasserwerke3 }
+command = { type = construct which = IC where = 170 value = -1 } 
+command = { type = construct which = IC where = 145 value = -1 }
+command = { type = domestic which = free_market value = 1 }
+}
+}
+
+event = {
+id = 659015
+country = U31
+style = 2
+picture = strasser
+random = no
+
+date = { day = 1 month = january year = 1936 }
+offset = 180
+deathdate = { day = 29 month = december year = 1970 }
+
+trigger = {
+flag = GU_Strasserwerke4
+}
+
+name = "EVT_659015_NAME"
+desc = "EVT_659015_DESC"
+
+action_a = {
+name = "EVT_659015_OPTIONA"
+ai_chance = 20
+command = { type = resource which = metal value = 5 }
+command = { type = resource which = supplies value = 2 }
+command = { type = clrflag which = GU_Strasserwerke4 }
+command = { type = peacetime_ic_mod which = total value = -10 } 
+command = { type = domestic which = free_market value = -2 }
+
+}
+
+action_b = {
+name = "EVT_659015_OPTIONB"
+ai_chance = 80
+command = { type = clrflag which = GU_Strasserwerke4 }
+command = { type = peacetime_ic_mod which = total value = 5 } 
+command = { type = domestic which = free_market value = 2 }
+}
+}
+
+#####################################################################################
+######################### Rohm Flavour event ########################################
+#####################################################################################
+
+event = {
+id = 659016
+country = U31
+style = 2
+picture = cambridge
+random = no
+
+date = { day = 1 month = january year = 1936 }
+offset = 500
+deathdate = { day = 29 month = december year = 1970 }
+
+trigger = {
+headofgovernment = 911009 
+}
+
+name = "EVT_659016_NAME"
+desc = "EVT_659016_DESC"
+
+action_a = {
+name = "EVT_659016_OPTIONA"
+ai_chance = 20
+command = { type = headofgovernment which = 911011 }
+command = { type = dissent value = 2 }
+
+}
+
+action_b = {
+name = "EVT_659016_OPTIONB"
+ai_chance = 80
+command = { type = domestic which = freedom value = 1 }
+}
+}
+
+#####################################################################################
+################### Abolition of Kingdoms Flavour event #############################
+#####################################################################################
+
+event = {
+id = 659017
+country = U31
+style = 2
+picture = truthsquad
+random = no
+
+date = { day = 1 month = january year = 1936 }
+offset = 500
+deathdate = { day = 29 month = december year = 1970 }
+
+trigger = {
+flag = BLACK_UNION
+}
+
+name = "EVT_659017_NAME"
+desc = "EVT_659017_DESC"
+
+action_a = {
+name = "EVT_659017_OPTIONA"
+ai_chance = 100
+command = { type = dissent value = -2 }
+
+}
+}
+
+#####################################################################################
+######################### DEMOCRATIC UNION TIMEEEE ##################################
+#####################################################################################
+event = {
+	id = 660000
+	country = U31
+        style = 2
+	picture= "gerarmedfor"
+	name = "EVT_660000_NAME"
+	desc = "EVT_660000_DESC"
+
+trigger = {
+OR = { 
+government = democratic
+ideology = paternal_autocrat
+}
+NOT = { flag = RUS_TSAR }
+}
+
+
+
+action_a = {
+name = "EVT_660000_OPTIONA"
+        command = { type = ai which = "kaiserreich/German Union.ai" }
+	command = { type = trigger which = 658001 }
+	command = { type = add_corps which = "I. NVA Corps" value = land where = 154 }
+	command = { type = add_division which = "I. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "II. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "II. NVA Corps" value = land where = 145 }
+	command = { type = add_division which = "III. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "IV. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "III. NVA Corps" value = land where = 179 }
+	command = { type = add_division which = "V. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "VI. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "IV. NVA Corps" value = land where = 140 }
+	command = { type = add_division which = "VII. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "IX. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "V. NVA Corps" value = land where = 146 }
+	command = { type = add_division which = "X. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XI. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "VI. NVA Corps" value = land where = 163 }
+	command = { type = add_division which = "XII. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XIII. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XIV. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XV. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "VII. NVA Corps" value = land where = 153 }
+	command = { type = add_division which = "XVI. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XVII. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "IX. NVA Corps" value = land where = 170 }
+	command = { type = add_division which = "XIX. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XX. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = set_relation which = RUS value = 150 }
+	
+	command = { type = set_relation which = GER value = -199 }
+	command = { type = set_relation which = CON value = -199 }
+	command = { type = set_relation which = CGX value = -199 }
+	command = { type = set_relation which = BUL value = -159 }
+	command = { type = set_relation which = CZE value = -199 }
+	command = { type = set_relation which = CRO value = -199 }
+        command = { type = sleepevent which = 660003 }
+        command = { type = sleepevent which = 659000 }
+        command = { type = trigger which = 666086 }
+	command = { type = setflag which = TRUE_BLUE_UNION}
+        command = { type = removecore which = 221 }
+        command = { type = removecore which = 168 }
+        command = { type = removecore which = 224 }
+        command = { type = removecore which = 225 }
+        command = { type = removecore which = 222 }
+        command = { type = removecore which = 261 }
+        command = { type = removecore which = 164 }
+        command = { type = secedeprovince which = RUS value = 221 }
+	command = { type = secedeprovince which = RUS value = 168 }
+        command = { type = secedeprovince which = RUS value = 224 }
+	command = { type = secedeprovince which = RUS value = 225 }
+	command = { type = secedeprovince which = RUS value = 222 }
+        command = { type = secedeprovince which = RUS value = 261 }
+        command = { type = secedeprovince which = RUS value = 164 }
+}
+}
+
+event = {
+id = 659001
+country = U31
+style = 2
+picture = air_reinforcements
+random = no
+
+trigger = {
+flag = TRUE_BLUE_UNION
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_659001_NAME"
+desc = "EVT_659001_DESC"
+
+action_a = {
+ai_chance = 90
+name = "EVT_659001_OPTIONA"
+	command = { type = supplies value = -1000  }	
+	command = { type = add_corps which = "Russiche Aircorps" value = air where = 163 }
+	command = { type = add_division which = "Sankt Petersburg Airwing" value = interceptor when = 9 }
+	command = { type = add_division which = "Moskva Airwing" value = interceptor when = 9 }
+	command = { type = add_division which = "Shturmovik Airwing" value = cas when = 6 }
+}
+
+action_b = {
+ai_chance = 10
+name = "EVT_659001_OPTIONB"
+	command = { type = supplies value = 500 }
+}
+}
+
+event = {
+id = 660002
+country = U31
+style = 2
+picture = christmas
+
+trigger = {
+flag = TRUE_BLUE_UNION
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 4
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_660002_NAME"
+desc = "EVT_660002_DESC"
+
+action_a = {
+
+ name = "EVT_660002_OPTIONA"
+ 
+	 command = { type = headofstate which = 911003 }
+	 command = { type = foreignminister which = 911027 }
+	 command = { type = armamentminister which = 911053 }
+	 command = { type = ministerofsecurity which = 911071 }
+	 command = { type = ministerofintelligence which = 911091 }
+	 command = { type = chiefofstaff which = 911101 }
+	 command = { type = chiefofarmy which = 911114 }
+	 command = { type = chiefofnavy which = 911129 }
+	 command = { type = chiefofair which = 911139 }
+	 command = { type = headofgovernment which = 911016 }
+}
+}
+
+event = {
+	id = 660003
+	country = U31
+        style = 2
+	picture= "gerarmedfor"
+	name = "EVT_660003_NAME"
+	desc = "EVT_660003_DESC"
+
+trigger = {
+OR = { 
+government = democratic
+ideology = paternal_autocrat
+}
+flag = RUS_TSAR
+}
+
+
+action_a = {
+name = "EVT_660003_OPTIONA"
+        command = { type = ai which = "kaiserreich/German Union.ai" }
+	command = { type = trigger which = 658001 }
+	command = { type = add_corps which = "I. NVA Corps" value = land where = 154 }
+	command = { type = add_division which = "I. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "II. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "II. NVA Corps" value = land where = 145 }
+	command = { type = add_division which = "III. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "IV. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "III. NVA Corps" value = land where = 179 }
+	command = { type = add_division which = "V. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "VI. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "IV. NVA Corps" value = land where = 140 }
+	command = { type = add_division which = "VII. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "IX. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "V. NVA Corps" value = land where = 146 }
+	command = { type = add_division which = "X. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XI. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "VI. NVA Corps" value = land where = 163 }
+	command = { type = add_division which = "XII. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XIII. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XIV. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XV. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "VII. NVA Corps" value = land where = 153 }
+	command = { type = add_division which = "XVI. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XVII. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = add_corps which = "IX. NVA Corps" value = land where = 170 }
+	command = { type = add_division which = "XIX. NVA Divisione" value = infantry when = 10 }
+	command = { type = add_division which = "XX. NVA Divisione" value = infantry when = 10 }
+
+	command = { type = set_relation which = RUS value = 150 }
+	command = { type = set_relation which = CAN value = 150 }
+	command = { type = set_relation which = VIC value = 150 }
+	command = { type = set_relation which = PAK value = 150 }
+	
+	command = { type = set_relation which = GER value = -199 }
+	command = { type = set_relation which = CON value = -199 }
+	command = { type = set_relation which = CGX value = -199 }
+	command = { type = set_relation which = BUL value = -159 }
+	command = { type = set_relation which = CZE value = -199 }
+	command = { type = set_relation which = CRO value = -199 }
+        command = { type = sleepevent which = 660000 }
+        command = { type = sleepevent which = 659000 }
+        command = { type = trigger which = 666086 }
+	command = { type = setflag which = ROYAL_BLUE_UNION}
+        command = { type = removecore which = 221 }
+        command = { type = removecore which = 168 }
+        command = { type = removecore which = 224 }
+        command = { type = removecore which = 225 }
+        command = { type = removecore which = 222 }
+        command = { type = removecore which = 261 }
+        command = { type = removecore which = 164 }
+        command = { type = secedeprovince which = RUS value = 221 }
+	command = { type = secedeprovince which = RUS value = 168 }
+        command = { type = secedeprovince which = RUS value = 224 }
+	command = { type = secedeprovince which = RUS value = 225 }
+	command = { type = secedeprovince which = RUS value = 222 }
+        command = { type = secedeprovince which = RUS value = 261 }
+        command = { type = secedeprovince which = RUS value = 164 }
+}
+}
+
+event = {
+id = 659004
+country = U31
+style = 2
+picture = air_reinforcements
+random = no
+
+trigger = {
+flag = ROYAL_BLUE_UNION
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_659004_NAME"
+desc = "EVT_659004_DESC"
+
+action_a = {
+ai_chance = 90
+name = "EVT_659004_OPTIONA"
+	command = { type = supplies value = -1000  }	
+	command = { type = add_corps which = "Union Aircorps" value = air where = 163 }
+	command = { type = add_division which = "Berlin Pact Airwing" value = interceptor when = 9 }
+	command = { type = add_division which = "Top Flight Airwing" value = interceptor when = 9 }
+	command = { type = add_division which = "Bomber Command Airwing" value = cas when = 6 }
+}
+
+action_b = {
+ai_chance = 10
+name = "EVT_659004_OPTIONB"
+	command = { type = supplies value = 500 }
+}
+}
+
+event = {
+id = 660005
+country = U31
+style = 2
+picture = christmas
+
+trigger = {
+flag = ROYAL_BLUE_UNION
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 4
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_660005_NAME"
+desc = "EVT_660005_DESC"
+
+action_a = {
+
+ name = "EVT_660005_OPTIONA"
+ 
+	 command = { type = headofstate which = 911002 }
+	 command = { type = foreignminister which = 911036 }
+	 command = { type = armamentminister which = 911054 }
+	 command = { type = ministerofsecurity which = 911072 }
+	 command = { type = ministerofintelligence which = 911093 }
+	 command = { type = chiefofstaff which = 911103 }
+	 command = { type = chiefofarmy which = 911116 }
+	 command = { type = chiefofnavy which = 911127 }
+	 command = { type = chiefofair which = 911138 }
+	 command = { type = headofgovernment which = 911017 }
+}
+}
+
+event = {
+id = 660006
+country = U31
+style = 2
+picture = wilhelmII
+persistent = yes
+
+trigger = {
+OR ={
+flag = TRUE_BLUE_UNION
+flag = ROYAL_BLUE_UNION
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 200
+deathdate = { day = 29 month = december year = 1970 }
+random = yes
+
+name = "EVT_660006_NAME"
+desc = "EVT_660006_DESC"
+
+action_a = {
+
+ name = "EVT_660006_OPTIONA"
+ 
+	 command = { type = revolt which = -1 } 
+	 command = { type = revolt which = -1 } 
+
+}
+}
+
+event = {
+id = 660007
+country = U31
+style = 2
+save_date = yes
+picture = british_celebrating
+
+trigger = {
+flag = ROYAL_BLUE_UNION
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 90
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_660007_NAME"
+desc = "EVT_660007_DESC"
+
+action_a = {
+
+
+  ai_chance = 70
+ name = "EVT_660007_OPTIONA"
+	 command = { type = headofstate which = 911005 }
+}
+
+action_b = {
+
+
+ name = "EVT_660007_OPTIONB"
+  ai_chance = 30
+	 command = { type = headofstate which = 911004 }
+}
+}
+
+
+event = {
+id = 660008
+country = U31
+style = 2
+save_date = yes
+picture = british_celebrating
+
+trigger = {
+flag = TRUE_BLUE_UNION
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 90
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_660008_NAME"
+desc = "EVT_660008_DESC"
+
+action_a = {
+
+
+ name = "EVT_660008_OPTIONA"
+  ai_chance = 30
+	 command = { type = headofstate which = 911005 }
+}
+
+action_b = {
+
+
+ name = "EVT_660008_OPTIONB"
+  ai_chance = 70
+	 command = { type = headofstate which = 911004 }
+}
+}
+
+event = {
+id = 660009
+country = U31
+save_date = yes
+style = 2
+picture = british_celebrating
+
+trigger = {
+flag = ROYAL_BLUE_UNION
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 90
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_660009_NAME"
+desc = "EVT_660009_DESC"
+ 
+action_a = {
+ 
+ name = "EVT_660009_OPTIONA"
+ ai_chance = 40
+ 	 command = { type = headofgovernment which = 911012 }
+	 command = { type = foreignminister which = 911030 }
+	 command = { type = armamentminister which = 911048 }
+	 command = { type = ministerofsecurity which = 911065 }
+	 command = { type = ministerofintelligence which = 911084 }
+	 command = { type = setflag which = BLUE_UNION }
+}
+
+action_b = {
+
+ name = "EVT_660009_OPTIONB"
+  ai_chance = 25
+ 	 command = { type = headofgovernment which = 911013 }
+	 command = { type = foreignminister which = 911032 }
+	 command = { type = armamentminister which = 911049 }
+	 command = { type = ministerofsecurity which = 911069 }
+	 command = { type = ministerofintelligence which = 911087 }
+	 command = { type = setflag which = BLUE_UNION }
+}
+
+action_c = {
+
+ name = "EVT_660009_OPTIONC"
+  ai_chance = 20
+ 	 command = { type = headofgovernment which = 911014 }
+	 command = { type = foreignminister which = 911033 }
+	 command = { type = armamentminister which = 911050 }
+	 command = { type = ministerofsecurity which = 911067 }
+	 command = { type = ministerofintelligence which = 911088 }
+	 command = { type = setflag which = BLUE_UNION }
+}
+
+action_d = {
+
+ name = "EVT_660009_OPTIOND"
+  ai_chance = 15
+ 	 command = { type = headofgovernment which = 911015 }
+	 command = { type = foreignminister which = 911034 }
+	 command = { type = armamentminister which = 911052 }
+	 command = { type = ministerofsecurity which = 911070 }
+	 command = { type = ministerofintelligence which = 911089 }
+	 command = { type = setflag which = BLUE_UNION }
+}
+}
+
+event = {
+id = 660010
+country = U31
+save_date = yes
+style = 2
+picture = british_celebrating
+
+trigger = {
+flag = TRUE_BLUE_UNION
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 34
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_660010_NAME"
+desc = "EVT_660010_DESC"
+
+action_a = {
+
+ name = "EVT_660010_OPTIONA"
+  ai_chance = 15
+ 	 command = { type = headofgovernment which = 911012 }
+	 command = { type = foreignminister which = 911030 }
+	 command = { type = armamentminister which = 911048 }
+	 command = { type = ministerofsecurity which = 911065 }
+	 command = { type = ministerofintelligence which = 911084 }
+	 command = { type = setflag which = BLUE_UNION }
+}
+
+action_b = {
+
+ name = "EVT_660010_OPTIONB"
+  ai_chance = 25
+ 	 command = { type = headofgovernment which = 911013 }
+	 command = { type = foreignminister which = 911032 }
+	 command = { type = armamentminister which = 911049 }
+	 command = { type = ministerofsecurity which = 911069 }
+	 command = { type = ministerofintelligence which = 911087 }
+	 command = { type = setflag which = BLUE_UNION }
+}
+
+action_c = {
+
+ name = "EVT_660010_OPTIONC"
+  ai_chance = 40
+ 	 command = { type = headofgovernment which = 911014 }
+	 command = { type = foreignminister which = 911033 }
+	 command = { type = armamentminister which = 911050 }
+	 command = { type = ministerofsecurity which = 911067 }
+	 command = { type = ministerofintelligence which = 911088 }
+	 command = { type = setflag which = BLUE_UNION }
+}
+
+action_d = {
+
+ name = "EVT_660010_OPTIOND"
+  ai_chance = 20
+ 	 command = { type = headofgovernment which = 911015 }
+	 command = { type = foreignminister which = 911034 }
+	 command = { type = armamentminister which = 911052 }
+	 command = { type = ministerofsecurity which = 911070 }
+	 command = { type = ministerofintelligence which = 911089 }
+	 command = { type = setflag which = BLUE_UNION }
+}
+}
+
+event = {
+id = 660011
+country = U31
+style = 2
+picture = british_celebrating
+
+trigger = {
+flag = BLUE_UNION 
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 34
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_660011_NAME"
+desc = "EVT_660011_DESC"
+ 
+action_a = {
+
+ name = "EVT_660011_OPTIONA"
+  ai_chance = 25
+  	command = { type = trigger which = 660006 }
+	 command = { type = dissent value = 2  }
+	 command = { type = setflag which = ANTI_ROYAL_BLUE }
+}
+
+action_b = {
+
+ name = "EVT_660011_OPTIONB"
+  ai_chance = 25
+  	command = { type = trigger which = 660006 }
+command = { type = dissent value = 2  }
+	 command = { type = setflag which = LIBERAL_BLUE }
+}
+
+action_c = {
+
+ name = "EVT_660011_OPTIONC"
+  ai_chance = 25
+command = { type = dissent value = 5  }
+	 command = { type = setflag which = CBLUE_UNION }
+}
+
+action_d = {
+
+ name = "EVT_660011_OPTIOND"
+  ai_chance = 25
+command = { type = dissent value = 5  }
+	 command = { type = setflag which = PROVISIONAL_BLUE }
+}
+}
+
+
+event = {
+id = 660012
+country = U31
+style = 2
+picture = air_reinforcements
+random = no
+
+trigger = {
+flag = BLUE_UNION
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 100
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_660012_NAME"
+desc = "EVT_660012_DESC"
+
+action_a = {
+ai_chance = 70
+name = "EVT_660012_OPTIONA"
+	command = { type = supplies value = -1000  }	
+	command = { type = build_division which = interceptor when = 9 }
+	command = { type = build_division which = interceptor when = 9 }
+	command = { type = build_division which = cas  when = 6 }
+}
+
+action_b = {
+ai_chance = 20
+name = "EVT_660012_OPTIONB"
+	command = { type = supplies value = -3000  }	
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = cas  when = 6 }
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = cas  when = 6 }
+	command = { type = build_division which = strategic_bomber when = 5 }
+}
+
+action_c = {
+ai_chance = 10
+name = "EVT_660012_OPTIONC"
+	command = { type = supplies value = 500 }	
+}
+}
+
+event = {
+id = 660013
+country = U31
+style = 2
+picture = naval_reinforcements
+random = no
+
+trigger = {
+flag = BLUE_UNION
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_660013_NAME"
+desc = "EVT_660013_DESC"
+
+action_a = {
+ai_chance = 50
+name = "EVT_660013_OPTIONA"
+	command = { type = supplies value = -1000  }	
+	command = { type = build_division which = heavy_cruiser when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+}
+
+action_b = {
+ai_chance = 10
+name = "EVT_660013_OPTIONB"
+	command = { type = supplies value = -3000  }
+	command = { type = build_division which = carrier value = cag when = 4 }
+	command = { type = build_division which = battlecruiser when = 5 }
+	command = { type = build_division which = battlecruiser when = 5 }
+	command = { type = build_division which = heavy_cruiser when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = heavy_cruiser when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+}
+
+action_c = {
+ai_chance = 40
+name = "EVT_660013_OPTIONC"
+	command = { type = supplies value = 500 }	
+}
+}
+
+
+event = {
+id = 660014
+country = U31
+style = 2
+picture = air_reinforcements
+random = no
+
+trigger = {
+flag = BLACK_UNION
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 100
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_660014_NAME"
+desc = "EVT_660014_DESC"
+
+action_a = {
+ai_chance = 20
+name = "EVT_660014_OPTIONA"
+	command = { type = supplies value = -1000  }	
+	command = { type = build_division which = interceptor when = 9 }
+	command = { type = build_division which = interceptor when = 9 }
+	command = { type = build_division which = cas  when = 6 }
+}
+
+action_b = {
+ai_chance = 80
+name = "EVT_660014_OPTIONB"
+	command = { type = supplies value = -3000  }	
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = cas  when = 6 }
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = multi_role when = 8 }
+	command = { type = build_division which = cas  when = 6 }
+	command = { type = build_division which = strategic_bomber when = 5 }
+}
+
+action_c = {
+ai_chance = 0
+name = "EVT_660014_OPTIONC"
+	command = { type = supplies value = 500 }	
+}
+}
+
+event = {
+id = 660015
+country = U31
+style = 2
+picture = naval_reinforcements
+random = no
+
+trigger = {
+flag = BLACK_UNION
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_660015_NAME"
+desc = "EVT_660015_DESC"
+
+action_a = {
+ai_chance = 20
+name = "EVT_660015_OPTIONA"
+	command = { type = supplies value = -1000  }	
+	command = { type = build_division which = heavy_cruiser when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+}
+
+action_b = {
+ai_chance = 80
+name = "EVT_660015_OPTIONB"
+	command = { type = supplies value = -3000  }
+	command = { type = build_division which = carrier value = cag when = 4 }
+	command = { type = build_division which = battlecruiser when = 5 }
+	command = { type = build_division which = battlecruiser when = 5 }
+	command = { type = build_division which = heavy_cruiser when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = heavy_cruiser when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+	command = { type = build_division which = light_cruiser when = 6 }
+	command = { type = build_division which = destroyer  when = 6 }
+}
+
+action_c = {
+ai_chance = 0
+name = "EVT_660015_OPTIONC"
+	command = { type = supplies value = 500 }	
+}
+}
+
+
+event = {
+id = 660016
+country = U31
+style = 2
+save_date = yes
+picture = british_celebrating
+
+trigger = {
+flag = BLUE_UNION
+OR = {
+event = { id = 660007 days = 1440 }
+event = { id = 660008 days = 1440 }
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 90
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_660016_NAME"
+desc = "EVT_660016_DESC"
+
+action_a = {
+
+
+  ai_chance = 50
+ name = "EVT_660016_OPTIONA"
+	 command = { type = headofstate which = 911005 }
+         command = { type = clrflag which = TRUE_BLUE_UNION }
+         command = { type = clrflag which = ROYAL_BLUE_UNION }
+}
+
+action_b = {
+
+
+ name = "EVT_660016_OPTIONB"
+  ai_chance = 50
+	 command = { type = headofstate which = 911004 }
+         command = { type = clrflag which = TRUE_BLUE_UNION }
+         command = { type = clrflag which = ROYAL_BLUE_UNION }
+}
+}
+
+
+event = {
+id = 660017
+country = U31
+save_date = yes
+style = 2
+picture = british_celebrating
+
+trigger = {
+flag = TRUE_BLUE_UNION
+OR = {
+event = { id = 660009 days = 1440 }
+event = { id = 660010 days = 1440 }
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 34
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_660017_NAME"
+desc = "EVT_660017_DESC"
+
+action_a = {
+
+ name = "EVT_660017_OPTIONA"
+  ai_chance = 15
+ 	 command = { type = headofgovernment which = 911012 }
+	 command = { type = foreignminister which = 911030 }
+	 command = { type = armamentminister which = 911048 }
+	 command = { type = ministerofsecurity which = 911065 }
+	 command = { type = ministerofintelligence which = 911084 }
+	 
+}
+
+action_b = {
+
+ name = "EVT_660017_OPTIONB"
+  ai_chance = 25
+ 	 command = { type = headofgovernment which = 911013 }
+	 command = { type = foreignminister which = 911032 }
+	 command = { type = armamentminister which = 911049 }
+	 command = { type = ministerofsecurity which = 911069 }
+	 command = { type = ministerofintelligence which = 911087 }
+	
+}
+
+action_c = {
+
+ name = "EVT_660017_OPTIONC"
+  ai_chance = 40
+ 	 command = { type = headofgovernment which = 911014 }
+	 command = { type = foreignminister which = 911033 }
+	 command = { type = armamentminister which = 911050 }
+	 command = { type = ministerofsecurity which = 911067 }
+	 command = { type = ministerofintelligence which = 911088 }
+	 
+}
+
+action_d = {
+
+ name = "EVT_660017_OPTIOND"
+  ai_chance = 20
+ 	 command = { type = headofgovernment which = 911015 }
+	 command = { type = foreignminister which = 911034 }
+	 command = { type = armamentminister which = 911052 }
+	 command = { type = ministerofsecurity which = 911070 }
+	 command = { type = ministerofintelligence which = 911089 }
+	
+}
+}
+
+event = {
+	id = 658063
+	country = CSA
+	style = 2
+	picture = witkopfamily
+	random = no
+
+	trigger = {
+		exists = U31
+		flag = RED_UNION
+	}
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 60
+	deathdate = { day = 29 month = december year = 1970 }
+
+	name = "EVT_658063_NAME"
+	desc = "EVT_658063_DESC"
+
+	action_a = {
+	name = "EVT_658063_OPTIONA"
+		command = { type = sleepminister which = 573048 }
+	}
+}

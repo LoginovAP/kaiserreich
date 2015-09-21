@@ -1,0 +1,1896 @@
+################################################################################?#
+#Domestic Reform Done - Princely India goes on the offenseive /By Milites
+################################################################################?#
+event = {
+	id = 101150
+	picture = "federationpolitics"
+	decision_picture = "decision_regalosman"
+	style = 2
+	country = IND
+	
+
+	decision = {
+                flag = princelyreform_done
+		exists = PAK	
+		exists = PRK
+		NOT = { 
+                alliance = { country = IND country = PAK } 
+                alliance = { country = IND country = PRK } 
+                atwar = IND
+                }
+	}
+
+	decision_trigger = {
+                control = { province = 1487 data = IND } #Hyderabad
+                OR = {
+		control = { province = 1507 data = IND } #Mysore
+                control = { province = 1495 data = IND } #Trivandrum
+                }
+	}
+
+
+	trigger = {
+                flag = princelyreform_done
+		exists = PAK	
+		exists = PRK
+		NOT = { 
+                alliance = { country = IND country = PAK } 
+                alliance = { country = IND country = PRK } 
+                atwar = IND
+                }
+                control = { province = 1487 data = IND } #Hyderabad
+                OR = {
+		control = { province = 1507 data = IND } #Mysore
+                control = { province = 1495 data = IND } #Trivandrum
+                }	
+	}
+
+	name = "EVT_101150_NAME"
+	desc = "EVT_101150_DESC"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 10
+	deathdate = { day = 29 month = december year = 1960 }
+
+	action_a = {
+		ai_chance = 75
+		name = "EVT_101150_OPTIONA"
+		command = { type = belligerence which = IND value = 5 }
+		command = { type = dissent value = -5 }
+		command = { type = relation which = PRK value = -50 }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = domestic which = defense_lobby value = 1 }
+                command = { type = event which = 101151 where = IND when = 7 }
+	}
+	action_b = {
+		ai_chance = 24
+		name = "EVT_101150_OPTIONB"
+		command = { type = belligerence which = IND value = 5 }
+		command = { type = dissent value = -5 }
+		command = { type = relation which = PAK value = -50 }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = domestic which = defense_lobby value = 1 }
+        command = { type = event which = 101162 where = IND when = 7 }
+		command = { type = setflag which = IND_focus_Delhi }
+	}
+
+	action_c = {
+		ai_chance = 1
+		name = "EVT_101150_OPTIONC"
+		command = { type = belligerence which = IND value = -5 }
+		command = { type = dissent value = 10 }
+		command = { type = relation which = PAK value = 50 }
+		command = { type = relation which = PRK value = 50 }
+		command = { type = relation which = cAN value = 20 }
+		command = { type = domestic which = interventionism value = -5 }
+		command = { type = domestic which = defense_lobby value = -2 }
+                command = { type = sleepevent which = 101151 }
+	}
+}
+################################################################################?#
+#Princely India targets Calcutta
+################################################################################?#
+event = {
+              id = 101151
+              country = IND
+              style = 2
+              picture = "regalosman"
+
+              
+              name = "EVT_101151_NAME"
+              desc = "EVT_101151_DESC"
+
+              action_a = {
+                  ai_chance = 75
+                  name = "EVT_101151_OPTIONA"
+                  command = { type = domestic which = defense_lobby value = 1 }
+                  command = { type = setflag which = Orissa_unrest }
+                  command = { type = relation which = PRK value = -25 }
+                  }
+
+              action_b = {
+                  ai_chance = 24
+                  name = "EVT_101151_OPTIONB"
+                  trigger = { exists = PAK }
+                  command = { type = domestic which = defense_lobby value = 1 }
+		  command = { type = dissent value = 5 } 
+                  command = { type = relation which = PRK value = -50 }
+                  command = { type = relation which = PAK value = 50 }
+                  command = { type = event which = 101158 where = PAK when = 3 }
+                  }
+
+              action_c = {
+                  ai_chance = 1
+                  name = "EVT_101151_OPTIONC"
+                  command = { type = war which = PRK }
+		  command = { type = dissent value = 2 }  
+                  command = { type = domestic which = defense_lobby value = 2 }
+                  command = { type = relation which = PRK value = -50 }
+                  command = { type = relation which = PAK value = -50 }
+                  command = { type = event which = 101176 where = PAK when = 3 }
+                  }
+
+
+ }
+################################################################################?#
+#Unrest in Orissa
+################################################################################?#
+event = {
+	id = 101152
+	random = no
+	country = PRK
+	style = 2
+	
+trigger = {
+        flag = Orissa_unrest
+		owned = { province = 1447 data = PRK }
+		control = { province = 1447 data = PRK }
+		owned = { province = 1471 data = PRK }
+		control = { province = 1471 data = PRK }
+                OR = {
+			government = communist
+		}
+		}
+
+
+	name = "EVT_101152_NAME"
+	desc = "EVT_101152_DESC"
+        picture = "reactionaryprotests"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 15
+	deathdate = { day = 29 month = december year = 1960 }
+
+
+
+        action_a = {
+	        ai_chance =  75
+	        name = "EVT_101152_OPTIONA"
+		command = { type = dissent value = 5  }  
+                command = { type = setflag which = Orissa_unrest_army }
+		}
+        action_b = {
+	        ai_chance =  24
+	        name = "EVT_101152_OPTIONB"
+		command = { type = dissent value = 10 }  
+                command = { type = domestic which = interventionism value = 1 }
+                command = { type = war which = IND }
+                command = { type = event which = 101157 where = IND when = 1 }
+		}
+        action_c = {
+	        ai_chance =  1
+	        name = "EVT_101152_OPTIONC"
+		command = { type = dissent value = 15  }
+                command = { type = domestic which = free_market value = 2 }
+                command = { type = domestic which = freedom value = 1 }
+		}
+
+		  
+}
+
+event = {
+	id = 101153
+	random = no
+	country = IND
+	style = 2
+	
+trigger = {
+                flag = Orissa_unrest_army
+                flag = Orissa_unrest
+		owned = { province = 1447 data = PRK }
+		control = { province = 1447 data = PRK }
+		owned = { province = 1471 data = PRK }
+		control = { province = 1471 data = PRK }
+		}
+
+
+	name = "EVT_101153_NAME"
+	desc = "EVT_101153_DESC"
+        picture = "reactionaryprotests"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1960 }
+
+
+
+        action_a = {
+	        ai_chance =  55
+	        name = "EVT_101153_OPTIONA"
+		command = { type = dissent value = 5  }                    
+                command = { type = event which = 101154 where = PRK when = 3 }
+		}
+        action_b = {
+	        ai_chance =  45
+	        name = "EVT_101153_OPTIONB" 
+                command = { type = domestic which = interventionism value = 1 }
+                command = { type = war which = PRK }
+                command = { type = domestic which = defense_lobby value = 1 }
+		command = { type = addclaim which = 1439 }
+		command = { type = addclaim which = 1440 }
+		command = { type = addclaim which = 1441 }
+		command = { type = addclaim which = 1442 }
+		command = { type = addclaim which = 1443 }
+		command = { type = addclaim which = 1444 }
+		command = { type = addclaim which = 1445 }
+		command = { type = addclaim which = 1446 }
+		command = { type = addclaim which = 1447 }
+		command = { type = addclaim which = 1448 }
+		command = { type = addclaim which = 1449 }
+		command = { type = addclaim which = 1450 }
+		command = { type = addclaim which = 1458 }
+		command = { type = addclaim which = 1465 }
+		command = { type = addclaim which = 1469 }
+		command = { type = addclaim which = 1470 }
+		command = { type = addclaim which = 1471 }
+		command = { type = addclaim which = 1472 }
+		command = { type = addclaim which = 1473 }
+		command = { type = addclaim which = 1474 }
+		command = { type = addclaim which = 1475 }
+		command = { type = addclaim which = 1476 }
+		command = { type = addclaim which = 1477 }
+		command = { type = addclaim which = 1493 }
+		command = { type = addclaim which = 1452 }
+		command = { type = addclaim which = 1462 }
+		command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+        command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+        command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+        command = { trigger = { ai = yes } type = add_division value = infantry when = 9 }
+        command = { trigger = { ai = yes } type = add_division value = infantry when = 9 }
+		command = { trigger = { ai = yes } type = add_division value = militia when = 8 }
+		command = { trigger = { ai = yes } type = add_division value = militia when = 8 }
+		}
+
+		  
+}
+
+event = {
+              id = 101154
+              country = PRK
+              style = 2
+              picture = "regalosman"
+
+              
+              name = "EVT_101154_NAME"
+              desc = "EVT_101154_DESC"
+
+              action_a = {
+                  ai_chance = 60
+                  name = "EVT_101154_OPTIONA"
+                  command = { type = war which = IND }
+				  command = { type = event which = 101157 where = IND when = 1 }
+                  command = { type = domestic which = defense_lobby value = 1 }
+                  command = { type = relation which = IND value = -25 }
+                  command = { type = relation which = PAK value = -20 }
+                  command = { type = event which = 101157 where = IND when = 1 }
+                  command = { type = clrflag which = Orissa_unrest_army }
+                  command = { type = clrflag which = Orissa_unrest } 
+                  }
+
+              action_b = {
+                  ai_chance = 40
+                  name = "EVT_101154_OPTIONB"
+                  command = { type = event which = 101155 where = PRK when = 7 }
+                  }
+
+ }
+
+event = {
+              id = 101155
+              country = PRK
+              style = 2
+              picture = "reactionaryprotests"
+
+              
+              name = "EVT_101155_NAME"
+              desc = "EVT_101155_DESC"
+
+              action_a = {
+                  ai_chance = 30
+                  name = "EVT_101155_OPTIONA"
+                  command = { type = war which = IND }
+				  command = { type = event which = 101157 where = IND when = 1 }
+                  command = { type = domestic which = defense_lobby value = 1 }
+                  command = { type = relation which = IND value = -25 }
+                  command = { type = relation which = PAK value = -20 }
+                  command = { type = clrflag which = Orissa_unrest_army }
+                  command = { type = clrflag which = Orissa_unrest } 
+                  }
+
+              action_b = {
+                  ai_chance = 70
+                  name = "EVT_101155_OPTIONB"
+		  command = { type = dissent value = 10  }
+                  command = { type = setflag which = Orissa_unrest_army_police }
+                  }
+
+ }
+
+event = {
+	id = 101156
+	random = no
+	country = PRK
+	style = 2
+	
+trigger = {
+                flag = Orissa_unrest
+                flag = Orissa_unrest_army
+                flag = Orissa_unrest_army_police
+		owned = { province = 1447 data = PRK }
+		control = { province = 1447 data = PRK }
+		owned = { province = 1471 data = PRK }
+		control = { province = 1471 data = PRK }
+                OR = {
+			government = communist
+		}
+		}
+
+
+	name = "EVT_101156_NAME"
+	desc = "EVT_101156_DESC"
+        picture = "reactionaryprotests"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 15
+	deathdate = { day = 29 month = december year = 1960 }
+
+
+
+        action_a = {
+	        ai_chance =  100
+	        name = "EVT_101156_OPTIONA"
+		command = { type = dissent value = 5  }  
+                command = { type = domestic which = interventionism value = 1 }
+                command = { type = secedeprovince which = IND value = 1493 } 
+                command = { type = secedeprovince which = IND value = 1474 }
+                command = { type = secedeprovince which = IND value = 1475 }
+				command = { type = revolt which = -1 }
+				command = { type = revolt which = -1 }
+				command = { type = revolt which = -1 }
+                command = { type = war which = IND }
+                command = { type = event which = 101157 where = IND when = 1 }
+                  command = { type = clrflag which = Orissa_unrest_army_police }
+                  command = { type = clrflag which = Orissa_unrest_army }
+                  command = { type = clrflag which = Orissa_unrest } 
+		}
+        action_b = {
+	        ai_chance =  1
+	        name = "EVT_101156_OPTIONB"
+		command = { type = dissent value = 10 }  
+		}
+		  
+}
+
+event = {
+              id = 101157
+              country = IND
+              style = 2
+              picture = "Nepalarmy"
+
+              
+              name = "EVT_101157_NAME"
+              desc = "EVT_101157_DESC"
+
+              action_a = {
+                ai_chance = 100
+                name = "EVT_101157_OPTIONA"
+                command = { type = domestic which = defense_lobby value = 1 }
+                command = { type = relation which = PAK value = -20 }
+		command = { type = addclaim which = 1439 }
+		command = { type = addclaim which = 1440 }
+		command = { type = addclaim which = 1441 }
+		command = { type = addclaim which = 1442 }
+		command = { type = addclaim which = 1443 }
+		command = { type = addclaim which = 1444 }
+		command = { type = addclaim which = 1445 }
+		command = { type = addclaim which = 1446 }
+		command = { type = addclaim which = 1447 }
+		command = { type = addclaim which = 1448 }
+		command = { type = addclaim which = 1449 }
+		command = { type = addclaim which = 1450 }
+		command = { type = addclaim which = 1458 }
+		command = { type = addclaim which = 1465 }
+		command = { type = addclaim which = 1469 }
+		command = { type = addclaim which = 1470 }
+		command = { type = addclaim which = 1471 }
+		command = { type = addclaim which = 1472 }
+		command = { type = addclaim which = 1473 }
+		command = { type = addclaim which = 1474 }
+		command = { type = addclaim which = 1475 }
+		command = { type = addclaim which = 1476 }
+		command = { type = addclaim which = 1477 }
+		command = { type = addclaim which = 1493 }
+		command = { type = addclaim which = 1452 }
+		command = { type = addclaim which = 1462 }
+		command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+        command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+        command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+        command = { trigger = { ai = yes } type = add_division value = infantry when = 9 }
+        command = { trigger = { ai = yes } type = add_division value = infantry when = 9 }
+		command = { trigger = { ai = yes } type = add_division value = militia when = 8 }
+		command = { trigger = { ai = yes } type = add_division value = militia when = 8 }
+                }
+
+ }
+
+event = {
+              id = 101158
+              country = PAK
+              style = 2
+              picture = "Bengal"
+
+              
+              name = "EVT_101158_NAME"
+              desc = "EVT_101158_DESC"
+
+              action_a = {
+                ai_chance = 65
+                name = "EVT_101158_OPTIONA"
+                command = { type = relation which = IND value = 35 }
+                command = { type = relation which = PRK value = -20 }
+                command = { type = event which = 101159 where = IND when = 3 }
+		command = { type = addclaim which = 1439 }
+		command = { type = addclaim which = 1440 }
+		command = { type = addclaim which = 1441 }
+		command = { type = addclaim which = 1442 }
+		command = { type = addclaim which = 1443 }
+		command = { type = addclaim which = 1444 }
+		command = { type = addclaim which = 1445 }
+		command = { type = addclaim which = 1446 }
+		command = { type = addclaim which = 1447 }
+		command = { type = addclaim which = 1448 }
+		command = { type = addclaim which = 1449 }
+		command = { type = addclaim which = 1450 }
+		command = { type = addclaim which = 1458 }
+		command = { type = addclaim which = 1465 }
+		command = { type = addclaim which = 1469 }
+		command = { type = addclaim which = 1470 }
+		command = { type = addclaim which = 1471 }
+		command = { type = addclaim which = 1472 }
+		command = { type = addclaim which = 1473 }
+		command = { type = addclaim which = 1474 }
+		command = { type = addclaim which = 1475 }
+		command = { type = addclaim which = 1476 }
+		command = { type = addclaim which = 1477 }
+		command = { type = addclaim which = 1493 }
+		command = { type = addclaim which = 1452 }
+		command = { type = addclaim which = 1462 }
+                command = { type = setflag which = PAK_IND_PACT_YES }
+                }
+
+              action_b = {
+                ai_chance = 35
+                name = "EVT_101158_OPTIONB"
+                command = { type = event which = 101159 where = IND when = 3 }
+                command = { type = relation which = IND value = 10 }
+                command = { type = relation which = PRK value = -10 }
+                command = { type = setflag which = PAK_IND_PACT_MAYBE }
+                }
+
+
+              action_c = {
+                ai_chance = 10
+                name = "EVT_101158_OPTIONC"
+                command = { type = relation which = PRK value = 20 }
+                command = { type = relation which = IND value = -25 }
+                command = { type = event which = 101161 where = IND when = 5 }
+                }
+
+
+ }
+
+event = {
+              id = 101159
+              country = IND
+              style = 2
+              picture = "Bengal"
+
+              
+              name = "EVT_101159_NAME"
+              desc = "EVT_101159_DESC"
+
+              action_a = {
+                ai_chance = 99
+                name = "EVT_101159_OPTIONA"
+                command = { type = war which = PRK }
+                command = { type = relation which = PAK value = 35 }
+                command = { type = relation which = PRK value = -20 }
+		command = { type = addclaim which = 1439 }
+		command = { type = addclaim which = 1440 }
+		command = { type = addclaim which = 1441 }
+		command = { type = addclaim which = 1442 }
+		command = { type = addclaim which = 1443 }
+		command = { type = addclaim which = 1444 }
+		command = { type = addclaim which = 1445 }
+		command = { type = addclaim which = 1446 }
+		command = { type = addclaim which = 1447 }
+		command = { type = addclaim which = 1448 }
+		command = { type = addclaim which = 1449 }
+		command = { type = addclaim which = 1450 }
+		command = { type = addclaim which = 1458 }
+		command = { type = addclaim which = 1465 }
+		command = { type = addclaim which = 1469 }
+		command = { type = addclaim which = 1470 }
+		command = { type = addclaim which = 1471 }
+		command = { type = addclaim which = 1472 }
+		command = { type = addclaim which = 1473 }
+		command = { type = addclaim which = 1474 }
+		command = { type = addclaim which = 1475 }
+		command = { type = addclaim which = 1476 }
+		command = { type = addclaim which = 1477 }
+		command = { type = addclaim which = 1493 }
+		command = { type = addclaim which = 1452 }
+		command = { type = addclaim which = 1462 }
+                command = { type = event which = 101160 where = PAK when = 2 }
+						command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+        command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+        command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+        command = { trigger = { ai = yes } type = add_division value = infantry when = 9 }
+        command = { trigger = { ai = yes } type = add_division value = infantry when = 9 }
+		command = { trigger = { ai = yes } type = add_division value = militia when = 8 }
+		command = { trigger = { ai = yes } type = add_division value = militia when = 8 }
+                }
+
+              action_b = {
+                ai_chance = 1
+                name = "EVT_101159_OPTIONB"
+                command = { type = relation which = PAK value = -50 }
+                command = { type = relation which = PRK value = 50 }
+                }
+
+
+ }
+
+event = {
+              id = 101160
+              country = PAK
+              style = 2
+              picture = "regalosman"
+
+              
+              name = "EVT_101160_NAME"
+              desc = "EVT_101160_DESC"
+
+              action_a = {
+                ai_chance = 99
+                name = "EVT_101160_OPTIONA"
+                trigger = { flag = PAK_IND_PACT_YES }
+                command = { type = war which = PRK }
+                command = { type = relation which = IND value = 25 }
+                command = { type = relation which = PRK value = -200 }
+		command = { type = addclaim which = 1439 }
+		command = { type = addclaim which = 1440 }
+		command = { type = addclaim which = 1441 }
+		command = { type = addclaim which = 1442 }
+		command = { type = addclaim which = 1443 }
+		command = { type = addclaim which = 1444 }
+		command = { type = addclaim which = 1445 }
+		command = { type = addclaim which = 1446 }
+		command = { type = addclaim which = 1447 }
+		command = { type = addclaim which = 1448 }
+		command = { type = addclaim which = 1449 }
+		command = { type = addclaim which = 1450 }
+		command = { type = addclaim which = 1458 }
+		command = { type = addclaim which = 1465 }
+		command = { type = addclaim which = 1469 }
+		command = { type = addclaim which = 1470 }
+		command = { type = addclaim which = 1471 }
+		command = { type = addclaim which = 1472 }
+		command = { type = addclaim which = 1473 }
+		command = { type = addclaim which = 1474 }
+		command = { type = addclaim which = 1475 }
+		command = { type = addclaim which = 1476 }
+		command = { type = addclaim which = 1477 }
+		command = { type = addclaim which = 1493 }
+		command = { type = addclaim which = 1452 }
+		command = { type = addclaim which = 1462 }
+                command = { type = clrflag which = PAK_IND_PACT_YES } 
+                }
+
+              action_b = {
+                ai_chance = 60
+                name = "EVT_101160_OPTIONB"
+                trigger = { flag = PAK_IND_PACT_MAYBE }
+                command = { type = war which = PRK }
+                command = { type = relation which = IND value = 25 }
+                command = { type = relation which = PRK value = -200 }
+		command = { type = addclaim which = 1439 }
+		command = { type = addclaim which = 1440 }
+		command = { type = addclaim which = 1441 }
+		command = { type = addclaim which = 1442 }
+		command = { type = addclaim which = 1443 }
+		command = { type = addclaim which = 1444 }
+		command = { type = addclaim which = 1445 }
+		command = { type = addclaim which = 1446 }
+		command = { type = addclaim which = 1447 }
+		command = { type = addclaim which = 1448 }
+		command = { type = addclaim which = 1449 }
+		command = { type = addclaim which = 1450 }
+		command = { type = addclaim which = 1458 }
+		command = { type = addclaim which = 1465 }
+		command = { type = addclaim which = 1469 }
+		command = { type = addclaim which = 1470 }
+		command = { type = addclaim which = 1471 }
+		command = { type = addclaim which = 1472 }
+		command = { type = addclaim which = 1473 }
+		command = { type = addclaim which = 1474 }
+		command = { type = addclaim which = 1475 }
+		command = { type = addclaim which = 1476 }
+		command = { type = addclaim which = 1477 }
+		command = { type = addclaim which = 1493 }
+		command = { type = addclaim which = 1452 }
+		command = { type = addclaim which = 1462 }
+                command = { type = clrflag which = PAK_IND_PACT_MAYBE } 
+                }
+
+              action_c = {
+                ai_chance = 39
+                name = "EVT_101160_OPTIONC"
+                trigger = { flag = PAK_IND_PACT_MAYBE }
+                command = { type = war which = IND }
+                command = { type = relation which = PRK value = 25 }
+                command = { type = relation which = IND value = -200 }
+                command = { type = addclaim which = 1520 }
+                command = { type = addclaim which = 1517 }
+                command = { type = addclaim which = 1516 }
+                command = { type = addclaim which = 1515 }
+                command = { type = addclaim which = 1514 }
+                command = { type = addclaim which = 1512 }
+                command = { type = addclaim which = 1508 }
+                command = { type = addclaim which = 1498 }
+                command = { type = addclaim which = 1496 }
+                command = { type = addclaim which = 1492 }
+                command = { type = addclaim which = 1491 }
+                command = { type = addclaim which = 1490 }
+                command = { type = addclaim which = 1489 }
+                command = { type = addclaim which = 1488 }
+                command = { type = addclaim which = 1487 }
+                command = { type = addclaim which = 1486 }
+                command = { type = addclaim which = 1485 }
+                command = { type = addclaim which = 1484 }
+                command = { type = addclaim which = 1482 }
+                command = { type = addclaim which = 1478 }
+                command = { type = addclaim which = 1501 }
+                command = { type = addclaim which = 1502 }
+                command = { type = addclaim which = 1503 }
+                command = { type = addclaim which = 1507 }
+                command = { type = addclaim which = 1495 }
+                command = { type = addclaim which = 1497 }
+                command = { type = clrflag which = PAK_IND_PACT_MAYBE } 
+                }
+
+              action_d = {
+                ai_chance = 1
+                name = "EVT_101160_OPTIOND"
+                command = { type = relation which = IND value = -50 }
+                command = { type = relation which = PRK value = 50 }
+                }
+
+
+ }
+
+event = {
+              id = 101161
+              country = IND
+              style = 2
+              picture = "Bengal"
+
+              
+              name = "EVT_101161_NAME"
+              desc = "EVT_101161_DESC"
+
+              action_a = {
+                ai_chance = 99
+                name = "EVT_101161_OPTIONA"
+                command = { type = war which = PRK }
+                command = { type = relation which = PAK value = 35 }
+                command = { type = relation which = PRK value = -20 }
+		command = { type = addclaim which = 1439 }
+		command = { type = addclaim which = 1440 }
+		command = { type = addclaim which = 1441 }
+		command = { type = addclaim which = 1442 }
+		command = { type = addclaim which = 1443 }
+		command = { type = addclaim which = 1444 }
+		command = { type = addclaim which = 1445 }
+		command = { type = addclaim which = 1446 }
+		command = { type = addclaim which = 1447 }
+		command = { type = addclaim which = 1448 }
+		command = { type = addclaim which = 1449 }
+		command = { type = addclaim which = 1450 }
+		command = { type = addclaim which = 1458 }
+		command = { type = addclaim which = 1465 }
+		command = { type = addclaim which = 1469 }
+		command = { type = addclaim which = 1470 }
+		command = { type = addclaim which = 1471 }
+		command = { type = addclaim which = 1472 }
+		command = { type = addclaim which = 1473 }
+		command = { type = addclaim which = 1474 }
+		command = { type = addclaim which = 1475 }
+		command = { type = addclaim which = 1476 }
+		command = { type = addclaim which = 1477 }
+		command = { type = addclaim which = 1493 }
+		command = { type = addclaim which = 1452 }
+		command = { type = addclaim which = 1462 }
+				command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+        command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+        command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+        command = { trigger = { ai = yes } type = add_division value = infantry when = 9 }
+        command = { trigger = { ai = yes } type = add_division value = infantry when = 9 }
+		command = { trigger = { ai = yes } type = add_division value = militia when = 8 }
+		command = { trigger = { ai = yes } type = add_division value = militia when = 8 }
+                }
+
+              action_b = {
+                ai_chance = 1
+                name = "EVT_101161_OPTIONB"
+                command = { type = relation which = PAK value = 20 }
+                command = { type = relation which = PRK value = 20 }
+                }
+
+
+ }
+################################################################################?#
+#Hyderabad defeats Calcutta on its own
+################################################################################?#
+event = {
+	id = 101162
+	picture = "federationpolitics"
+	decision_picture = "decision_regalosman"
+	style = 2
+	country = IND
+	
+
+	decision = {
+                flag = princelyreform_done
+		exists = PAK	
+		NOT = { 
+		exists = PRK
+                war = { country = IND country = BUR }
+                alliance = { country = IND country = PAK } 
+                }
+	}
+
+	decision_trigger = {
+		owned = { province = 1447 data = IND }
+		control = { province = 1447 data = IND }
+                control = { province = 1487 data = IND } #Hyderabad
+                OR = {
+		control = { province = 1507 data = IND } #Mysore
+                control = { province = 1495 data = IND } #Trivandrum
+                }
+	}
+
+
+	trigger = {
+        flag = princelyreform_done
+		exists = PAK	
+		NOT = { 
+                war = { country = IND country = BUR }
+		        exists = PRK
+                alliance = { country = IND country = PAK } 
+                }
+		owned = { province = 1447 data = IND } #Calcutta
+		control = { province = 1447 data = IND } #Calcutta
+                control = { province = 1487 data = IND } #Hyderabad
+                OR = {
+		control = { province = 1507 data = IND } #Mysore
+                control = { province = 1495 data = IND } #Trivandrum
+                }	
+	}
+
+	name = "EVT_101162_NAME"
+	desc = "EVT_101162_DESC"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 10
+	deathdate = { day = 29 month = december year = 1960 }
+
+	action_a = {
+		ai_chance = 75
+		name = "EVT_101162_OPTIONA"
+		command = { type = belligerence which = IND value = 5 }
+		command = { type = dissent value = -5 }
+                command = { type = war which = PAK }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = domestic which = defense_lobby value = 1 }
+                command = { type = addclaim which = 1513 }
+                command = { type = addclaim which = 1459 }
+                command = { type = addclaim which = 1533 }
+                command = { type = addclaim which = 1538 }
+                command = { type = addclaim which = 1532 }
+                command = { type = addclaim which = 1519 }
+                command = { type = addclaim which = 1522 }
+                command = { type = addclaim which = 1479 }
+                command = { type = addclaim which = 1480 }
+                command = { type = addclaim which = 1481 }
+                command = { type = addclaim which = 1483 }
+                command = { type = addclaim which = 1466 }
+                command = { type = addclaim which = 1453 }
+                command = { type = addclaim which = 1454 }
+                command = { type = addclaim which = 1463 }
+                command = { type = addclaim which = 1460 }
+                command = { type = addclaim which = 1464 }
+                command = { type = addclaim which = 1461 }
+                command = { type = addclaim which = 1468 }
+                command = { type = addclaim which = 1518 }
+                command = { type = addclaim which = 1521 }
+                command = { type = addclaim which = 1523 }
+                command = { type = addclaim which = 1524 }
+                command = { type = addclaim which = 1525 }
+                command = { type = addclaim which = 1526 }
+                command = { type = addclaim which = 1527 }
+                command = { type = addclaim which = 1528 }
+                command = { type = addclaim which = 1530 }
+                command = { type = addclaim which = 1531 }
+                command = { type = addclaim which = 1534 }
+                command = { type = addclaim which = 1535 }
+                command = { type = addclaim which = 1536 }
+                command = { type = addclaim which = 1539 }
+                command = { type = addclaim which = 1540 }
+                command = { type = addclaim which = 1529 }
+                command = { type = addclaim which = 1537 }
+                command = { type = addclaim which = 1451 }
+                command = { type = addclaim which = 1467 }
+	}
+	action_b = {
+		ai_chance = 24
+		name = "EVT_101162_OPTIONB"
+		command = { type = belligerence which = IND value = 5 }
+		command = { type = dissent value = 2 }
+		command = { type = relation which = PAK value = -50 }
+		command = { type = relation which = CAN value = -50 }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = domestic which = defense_lobby value = 1 }
+                command = { type = event which = 101163 where = IND when = 7 }
+	}
+
+	action_c = {
+		ai_chance = 1
+		name = "EVT_101162_OPTIONC"
+		command = { type = belligerence which = IND value = -5 }
+		command = { type = dissent value = 10 }
+		command = { type = relation which = PAK value = 50 }
+		command = { type = relation which = cAN value = 20 }
+		command = { type = domestic which = interventionism value = -5 }
+		command = { type = domestic which = defense_lobby value = -2 }
+	}
+}
+################################################################################?#
+#Scheeming in the North
+################################################################################?#
+event = {
+              id = 101163
+              country = IND
+              style = 2
+              picture = "Gangasinghevent"
+
+              
+              name = "EVT_101163_NAME"
+              desc = "EVT_101163_DESC"
+
+              action_a = {
+                ai_chance = 40
+                name = "EVT_101163_OPTIONA"
+		        command = { type = domestic which = interventionism value = 1 }
+                command = { type = setflag which = IND_Kashmir }
+                command = { type = relation which = PAK value = -50 }
+                command = { type = event which = 101164 where = PAK when = 4 }
+                }
+
+              action_b = {
+                ai_chance = 50
+                name = "EVT_101163_OPTIONB"
+		        command = { type = domestic which = interventionism value = 2 }
+                command = { type = setflag which = IND_Kashmir_Baroda }
+                command = { type = relation which = PAK value = -100 }
+                command = { type = event which = 101164 where = PAK when = 4 }
+                }
+
+              action_c = {
+                ai_chance = 10
+                name = "EVT_101163_OPTIONC"
+		        command = { type = domestic which = defense_lobby value = 1 }
+                command = { type = war which = PAK }
+                command = { type = relation which = PAK value = -200 }
+                command = { type = relation which = CAN value = -100 }
+                command = { type = addclaim which = 1513 }
+                command = { type = addclaim which = 1459 }
+                command = { type = addclaim which = 1533 }
+                command = { type = addclaim which = 1538 }
+                command = { type = addclaim which = 1532 }
+                command = { type = addclaim which = 1519 }
+                command = { type = addclaim which = 1522 }
+                command = { type = addclaim which = 1479 }
+                command = { type = addclaim which = 1480 }
+                command = { type = addclaim which = 1481 }
+                command = { type = addclaim which = 1483 }
+                command = { type = addclaim which = 1466 }
+                command = { type = addclaim which = 1453 }
+                command = { type = addclaim which = 1454 }
+                command = { type = addclaim which = 1463 }
+                command = { type = addclaim which = 1460 }
+                command = { type = addclaim which = 1464 }
+                command = { type = addclaim which = 1461 }
+                command = { type = addclaim which = 1468 }
+                command = { type = addclaim which = 1518 }
+                command = { type = addclaim which = 1521 }
+                command = { type = addclaim which = 1523 }
+                command = { type = addclaim which = 1524 }
+                command = { type = addclaim which = 1525 }
+                command = { type = addclaim which = 1526 }
+                command = { type = addclaim which = 1527 }
+                command = { type = addclaim which = 1528 }
+                command = { type = addclaim which = 1530 }
+                command = { type = addclaim which = 1531 }
+                command = { type = addclaim which = 1534 }
+                command = { type = addclaim which = 1535 }
+                command = { type = addclaim which = 1536 }
+                command = { type = addclaim which = 1539 }
+                command = { type = addclaim which = 1540 }
+                command = { type = addclaim which = 1529 }
+                command = { type = addclaim which = 1537 }
+                command = { type = addclaim which = 1451 }
+                command = { type = addclaim which = 1467 }
+                }
+
+
+ }
+
+event = {
+              id = 101164
+              country = PAK
+              style = 2
+              picture = "diarchy"
+
+              
+              name = "EVT_101164_NAME"
+              desc = "EVT_101164_DESC"
+
+              action = {
+                ai_chance = 40
+                name = "EVT_101164_OPTIONA"
+                trigger = { flag = IND_Kashmir }		
+                command = { type = dissent value = 5 }
+                command = { type = relation which = IND value = -50 }
+                command = { type = setflag which = IND_Kashmir_fail }
+                command = { type = event which = 101166 where = IND when = 4 }
+                }
+
+              action = {
+                ai_chance = 60
+                name = "EVT_101164_OPTIONB"
+                trigger = { flag = IND_Kashmir }
+		command = { type = domestic which = interventionism value = 1 }
+                command = { type = relation which = IND value = -100 }
+	        command = { type = removecore which = 1540 }
+	        command = { type = removecore which = 1539 }
+                command = { type = secedeprovince which = IND value = 1540 } 
+	        command = { type = secedeprovince which = IND value = 1539 }
+                command = { type = addclaim which = 1540 }
+	        command = { type = addclaim which = 1539 }
+                command = { type = remove_division which = "1st Jammu and Kashmir Infantry" value = PAK }
+                command = { type = trigger which = 101165 } 
+                }
+
+              action = {
+                ai_chance = 50
+                name = "EVT_101164_OPTIONC"
+                trigger = { flag = IND_Kashmir_Baroda }
+		command = { type = domestic which = defense_lobby value = 2 }
+	        command = { type = sleepminister which = 564043 }
+	        command = { type = sleepminister which = 564052 }
+	        command = { type = sleepleader which = 564034 }
+		command = { type = dissent value = 10 }
+                command = { type = trigger which = 101166 }
+                }
+
+              action = {
+                ai_chance = 50
+                name = "EVT_101164_OPTIOND"
+                trigger = { flag = IND_Kashmir_Baroda }
+		        command = { type = domestic which = interventionism value = 1 }
+                command = { type = relation which = IND value = -100 }
+	            command = { type = removecore which = 1540 }
+	            command = { type = removecore which = 1539 }
+                command = { type = secedeprovince which = IND value = 1540 } 
+	            command = { type = secedeprovince which = IND value = 1539 }
+                command = { type = addclaim which = 1540 }
+	            command = { type = addclaim which = 1539 }
+	            command = { type = removecore which = 1521 }
+	            command = { type = removecore which = 1518 }
+                command = { type = secedeprovince which = IND value = 1521 } 
+	            command = { type = secedeprovince which = IND value = 1518 }
+                command = { type = addclaim which = 1521 }
+	            command = { type = addclaim which = 1518 }
+                command = { type = remove_division which = "1st Jammu and Kashmir Infantry" value = PAK }
+	            command = { type = sleepminister which = 564043 }
+	            command = { type = sleepminister which = 564052 }
+	            command = { type = sleepleader which = 564034 }
+                command = { type = trigger which = 101165 } 
+                }
+
+
+ }
+event = {
+              id = 101165
+              country = IND
+              style = 2
+              picture = "diarchy"
+
+              
+              name = "EVT_101165_NAME"
+              desc = "EVT_101165_DESC"
+
+              action = {
+                ai_chance = 100
+                name = "EVT_101165_OPTIONA"
+                trigger = { flag = IND_Kashmir }
+                command = { type = add_corps which = "Army of the State of Jammu and Kashmir" value = land where = 1540 }
+                command = { type = add_division which = "1st Jammu and Kashmir Infantry" value = infantry when = 8 }
+                command = { type = addcore which = 1540 }
+	            command = { type = addcore which = 1539 }
+                command = { type = addclaim which = 1513 }
+                command = { type = addclaim which = 1459 }
+                command = { type = addclaim which = 1533 }
+                command = { type = addclaim which = 1538 }
+                command = { type = addclaim which = 1532 }
+                command = { type = addclaim which = 1519 }
+                command = { type = addclaim which = 1522 }
+                command = { type = addclaim which = 1479 }
+                command = { type = addclaim which = 1480 }
+                command = { type = addclaim which = 1481 }
+                command = { type = addclaim which = 1483 }
+                command = { type = addclaim which = 1466 }
+                command = { type = addclaim which = 1453 }
+                command = { type = addclaim which = 1454 }
+                command = { type = addclaim which = 1463 }
+                command = { type = addclaim which = 1460 }
+                command = { type = addclaim which = 1464 }
+                command = { type = addclaim which = 1461 }
+                command = { type = addclaim which = 1468 }
+                command = { type = addclaim which = 1518 }
+                command = { type = addclaim which = 1521 }
+                command = { type = addclaim which = 1523 }
+                command = { type = addclaim which = 1524 }
+                command = { type = addclaim which = 1525 }
+                command = { type = addclaim which = 1526 }
+                command = { type = addclaim which = 1527 }
+                command = { type = addclaim which = 1528 }
+                command = { type = addclaim which = 1530 }
+                command = { type = addclaim which = 1531 }
+                command = { type = addclaim which = 1534 }
+                command = { type = addclaim which = 1535 }
+                command = { type = addclaim which = 1536 }
+                command = { type = addclaim which = 1529 }
+                command = { type = addclaim which = 1537 }
+                command = { type = addclaim which = 1451 }
+                command = { type = addclaim which = 1467 }		
+                command = { type = dissent value = -5 }
+                command = { type = war which = PAK }
+                command = { type = relation which = PAK value = -50 }
+				command = { type = trigger which = 1011660 }
+
+                }
+
+              action = {
+                ai_chance = 100
+                name = "EVT_101165_OPTIONB"
+                trigger = { flag = IND_Kashmir_Baroda } 
+                command = { type = add_corps which = "Army of the State of Jammu and Kashmir" value = land where = 1540 }
+                command = { type = add_division which = "1st Jammu and Kashmir Infantry" value = infantry when = 8 }   
+                command = { type = add_corps which = "Army of the State of Baroda" value = land where = 1521 }
+                command = { type = add_division which = "1st Baroda Royal Infantry" value = infantry when = 8 }  
+                command = { type = add_corps which = "Gujarati Militia" value = land where = 1518 }
+                command = { type = add_division which = "1st Gujarati Volunteers" value = militia when = 4 }    
+                command = { type = war which = PAK }            
+                command = { type = addcore which = 1540 }
+	            command = { type = addcore which = 1539 }
+                command = { type = addclaim which = 1513 }
+                command = { type = addclaim which = 1459 }
+                command = { type = addclaim which = 1533 }
+                command = { type = addclaim which = 1538 }
+                command = { type = addclaim which = 1532 }
+                command = { type = addclaim which = 1519 }
+                command = { type = addclaim which = 1522 }
+                command = { type = addclaim which = 1479 }
+                command = { type = addclaim which = 1480 }
+                command = { type = addclaim which = 1481 }
+                command = { type = addclaim which = 1483 }
+                command = { type = addclaim which = 1466 }
+                command = { type = addclaim which = 1453 }
+                command = { type = addclaim which = 1454 }
+                command = { type = addclaim which = 1463 }
+                command = { type = addclaim which = 1460 }
+                command = { type = addclaim which = 1464 }
+                command = { type = addclaim which = 1461 }
+                command = { type = addclaim which = 1468 }
+                command = { type = addcore which = 1518 }
+                command = { type = addcore which = 1521 }
+                command = { type = addclaim which = 1523 }
+                command = { type = addclaim which = 1524 }
+                command = { type = addclaim which = 1525 }
+                command = { type = addclaim which = 1526 }
+                command = { type = addclaim which = 1527 }
+                command = { type = addclaim which = 1528 }
+                command = { type = addclaim which = 1530 }
+                command = { type = addclaim which = 1531 }
+                command = { type = addclaim which = 1534 }
+                command = { type = addclaim which = 1535 }
+                command = { type = addclaim which = 1536 }
+                command = { type = addclaim which = 1529 }
+                command = { type = addclaim which = 1537 }
+                command = { type = addclaim which = 1451 }
+                command = { type = addclaim which = 1467 }
+				command = { type = trigger which = 1011660 }
+                }
+
+ }
+event = {
+              id = 101166
+              country = IND
+              style = 2
+              picture = "diarchy"
+
+              
+              name = "EVT_101166_NAME"
+              desc = "EVT_101166_DESC"
+
+              action = {
+                ai_chance = 100
+                name = "EVT_101166_OPTIONA"
+                trigger = { flag = IND_Kashmir }
+                command = { type = addclaim which = 1540 }
+	            command = { type = addclaim which = 1539 }
+                command = { type = addclaim which = 1513 }
+                command = { type = addclaim which = 1459 }
+                command = { type = addclaim which = 1533 }
+                command = { type = addclaim which = 1538 }
+                command = { type = addclaim which = 1532 }
+                command = { type = addclaim which = 1519 }
+                command = { type = addclaim which = 1522 }
+                command = { type = addclaim which = 1479 }
+                command = { type = addclaim which = 1480 }
+                command = { type = addclaim which = 1481 }
+                command = { type = addclaim which = 1483 }
+                command = { type = addclaim which = 1466 }
+                command = { type = addclaim which = 1453 }
+                command = { type = addclaim which = 1454 }
+                command = { type = addclaim which = 1463 }
+                command = { type = addclaim which = 1460 }
+                command = { type = addclaim which = 1464 }
+                command = { type = addclaim which = 1461 }
+                command = { type = addclaim which = 1468 }
+                command = { type = addclaim which = 1518 }
+                command = { type = addclaim which = 1521 }
+                command = { type = addclaim which = 1523 }
+                command = { type = addclaim which = 1524 }
+                command = { type = addclaim which = 1525 }
+                command = { type = addclaim which = 1526 }
+                command = { type = addclaim which = 1527 }
+                command = { type = addclaim which = 1528 }
+                command = { type = addclaim which = 1530 }
+                command = { type = addclaim which = 1531 }
+                command = { type = addclaim which = 1534 }
+                command = { type = addclaim which = 1535 }
+                command = { type = addclaim which = 1536 }
+                command = { type = addclaim which = 1529 }
+                command = { type = addclaim which = 1537 }
+                command = { type = addclaim which = 1451 }
+                command = { type = addclaim which = 1467 }		
+                command = { type = dissent value = -5 }
+                command = { type = war which = PAK }
+                command = { type = relation which = PAK value = -50 }
+				command = { type = trigger which = 1011660 }
+
+                }
+
+              action = {
+                ai_chance = 100
+                name = "EVT_101166_OPTIONB"
+                trigger = { flag = IND_Kashmir_Baroda } 
+                command = { type = war which = PAK }            
+                command = { type = addclaim which = 1540 }
+	            command = { type = addclaim which = 1539 }
+                command = { type = addclaim which = 1513 }
+                command = { type = addclaim which = 1459 }
+                command = { type = addclaim which = 1533 }
+                command = { type = addclaim which = 1538 }
+                command = { type = addclaim which = 1532 }
+                command = { type = addclaim which = 1519 }
+                command = { type = addclaim which = 1522 }
+                command = { type = addclaim which = 1479 }
+                command = { type = addclaim which = 1480 }
+                command = { type = addclaim which = 1481 }
+                command = { type = addclaim which = 1483 }
+                command = { type = addclaim which = 1466 }
+                command = { type = addclaim which = 1453 }
+                command = { type = addclaim which = 1454 }
+                command = { type = addclaim which = 1463 }
+                command = { type = addclaim which = 1460 }
+                command = { type = addclaim which = 1464 }
+                command = { type = addclaim which = 1461 }
+                command = { type = addclaim which = 1468 }
+                command = { type = addclaim which = 1518 }
+                command = { type = addclaim which = 1521 }
+                command = { type = addclaim which = 1523 }
+                command = { type = addclaim which = 1524 }
+                command = { type = addclaim which = 1525 }
+                command = { type = addclaim which = 1526 }
+                command = { type = addclaim which = 1527 }
+                command = { type = addclaim which = 1528 }
+                command = { type = addclaim which = 1530 }
+                command = { type = addclaim which = 1531 }
+                command = { type = addclaim which = 1534 }
+                command = { type = addclaim which = 1535 }
+                command = { type = addclaim which = 1536 }
+                command = { type = addclaim which = 1529 }
+                command = { type = addclaim which = 1537 }
+                command = { type = addclaim which = 1451 }
+                command = { type = addclaim which = 1467 }
+                command = { type = dissent value = -5 }
+				command = { type = trigger which = 1011660 }
+                }
+
+              action = {
+                ai_chance = 1
+                name = "EVT_101166_OPTIONC" 
+                command = { type = dissent value = 20 }
+                }    
+
+ }
+
+event = {
+              id = 1011660
+              country = PAK
+              style = 2
+              picture = "diarchy"
+
+              
+              name = "EVT_1011660_NAME"
+              desc = "EVT_1011660_DESC"
+
+              action = {
+                ai_chance = 100
+                name = "EVT_1011660_OPTIONA"
+                  command = { type = addclaim which = 1520 }
+                  command = { type = addclaim which = 1517 }
+                  command = { type = addclaim which = 1516 }
+                  command = { type = addclaim which = 1515 }
+                  command = { type = addclaim which = 1514 }
+                  command = { type = addclaim which = 1512 }
+                  command = { type = addclaim which = 1508 }
+                  command = { type = addclaim which = 1498 }
+                  command = { type = addclaim which = 1496 }
+                  command = { type = addclaim which = 1487 }
+                  command = { type = addclaim which = 1485 }
+                  command = { type = addclaim which = 1484 }
+                  command = { type = addclaim which = 1482 }
+                  command = { type = addclaim which = 1478 }
+                  command = { type = addclaim which = 1501 }
+                  command = { type = addclaim which = 1502 }
+                  command = { type = addclaim which = 1503 }
+				  command = { type = addclaim which = 1504 }
+				  command = { type = addclaim which = 1505 }
+                  command = { type = addclaim which = 1507 }
+                  command = { type = addclaim which = 1495 }
+                  command = { type = addclaim which = 1497 }
+				  command = { type = addclaim which = 1486 }
+	              command = { type = addclaim which = 1488 }
+	              command = { type = addclaim which = 1489 }
+	              command = { type = addclaim which = 1491 }
+	              command = { type = addclaim which = 1492 }
+		command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+        command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+        command = { trigger = { ai = yes } type = add_division value = cavalry when = 10 }
+        command = { trigger = { ai = yes } type = add_division value = infantry when = 9 }
+        command = { trigger = { ai = yes } type = add_division value = infantry when = 9 }
+        command = { trigger = { ai = yes } type = add_division value = infantry when = 9 }
+        command = { trigger = { ai = yes } type = add_division value = infantry when = 9 }		
+		command = { trigger = { ai = yes } type = add_division value = militia when = 8 }
+		command = { trigger = { ai = yes } type = add_division value = militia when = 8 }			
+                command = { type = dissent value = -5 }
+                } 
+ } 
+################################################################################?#
+#Going after the BC if Delhi already done for
+################################################################################?# 
+event = {
+	id = 101167
+	picture = "federationpolitics"
+	decision_picture = "decision_regalosman"
+	style = 2
+	country = IND
+	
+
+	decision = {
+                flag = princelyreform_done
+				flag = IND_focus_Delhi
+		exists = PRK
+		NOT = { 
+		        exists = PAK
+                alliance = { country = IND country = PAK } 
+                alliance = { country = IND country = PRK } 
+                }
+	}
+
+	decision_trigger = {
+	            flag = IND_focus_Delhi
+                control = { province = 1487 data = IND } #Hyderabad
+                OR = {
+		        control = { province = 1507 data = IND } #Mysore
+                control = { province = 1495 data = IND } #Trivandrum
+                }
+	}
+
+
+	trigger = {
+	            flag = IND_focus_Delhi
+                flag = princelyreform_done	
+		exists = PRK
+		NOT = { 
+                alliance = { country = IND country = PAK }  
+				exists = PAK
+                }
+                control = { province = 1487 data = IND } #Hyderabad
+                OR = {
+		        control = { province = 1507 data = IND } #Mysore
+                control = { province = 1495 data = IND } #Trivandrum
+                }	
+	}
+
+	name = "EVT_101167_NAME"
+	desc = "EVT_101167_DESC"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 10
+	deathdate = { day = 29 month = december year = 1960 }
+
+	action_a = {
+		ai_chance = 100
+		name = "EVT_101167_OPTIONA"
+		command = { type = belligerence which = IND value = 5 }
+		command = { type = dissent value = -5 }
+		command = { type = relation which = PRK value = -50 }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = domestic which = defense_lobby value = 1 }
+                command = { type = event which = 101151 where = IND when = 7 }
+	}
+
+	action_b = {
+		ai_chance = 0
+		name = "EVT_101167_OPTIONB"
+		command = { type = belligerence which = IND value = -5 }
+		command = { type = dissent value = 10 }
+		command = { type = relation which = PAK value = 50 }
+		command = { type = relation which = PRK value = 50 }
+		command = { type = relation which = cAN value = 20 }
+		command = { type = domestic which = interventionism value = -5 }
+		command = { type = domestic which = defense_lobby value = -2 }
+                command = { type = sleepevent which = 101151 }
+	}
+} 
+################################################################################?#
+#Choosing the Sides
+################################################################################?#
+event = {
+	id = 101180
+	picture = "federationpolitics"
+	decision_picture = "decision_regalosman"
+	style = 2
+	country = IND
+	
+
+	decision = {
+                flag = princelyreform_done
+		NOT = { 
+		exists = PAK	
+		exists = PRK
+                alliance = { country = GER country = IND}
+                alliance = { country = JAP country = IND}
+                alliance = { country = RUS country = IND}
+                }
+	}
+
+	decision_trigger = {
+                control = { province = 1487 data = IND } #Hyderabad
+		control = { province = 1447 data = IND } #Calcutta
+                OR = {
+		control = { province = 1507 data = IND } #Mysore
+                control = { province = 1495 data = IND } #Trivandrum
+                }
+	}
+
+
+	trigger = {
+                flag = princelyreform_done
+		NOT = { 
+		exists = PAK	
+		exists = PRK
+                alliance = { country = GER country = IND}
+                alliance = { country = JAP country = IND}
+                alliance = { country = RUS country = IND}
+                }
+                control = { province = 1487 data = IND } #Hyderabad
+                OR = {
+		        control = { province = 1507 data = IND } #Mysore
+                control = { province = 1495 data = IND } #Trivandrum
+                }	
+	}
+
+name = "EVT_101180_NAME"
+desc = "EVT_101180_DESC"
+
+date = { day = 3 month = july year = 1941 }
+offset = 200
+deathdate = { day = 10 month = july year = 1962 }
+	
+action_a = {
+ai_chance = 45
+trigger = {
+exists = JAP
+NOT = { ispuppet = JAP }
+NOT = { war = { country = IND country = JAP } }
+NOT = { participant = { country = JAP value = 1 } }
+NOT = { participant = { country = JAP value = 2 } }
+}
+name = "EVT_101180_OPTIONA"
+command = { type = trigger which = 101181 }
+command = { type = dissent value = 2 }
+}
+
+action_b = {
+ai_chance = 35
+trigger = {
+exists = GER
+NOT = { ispuppet = GER }
+NOT = { war = { country = IND country = GER } }
+participant = { country = GER value = 2 }
+}
+name = "EVT_101180_OPTIONB"
+command = { type = trigger which = 101182 }
+command = { type = dissent value = 5 }
+}
+
+action_c = {
+ai_chance = 25
+trigger = {
+exists = RUS
+NOT = { flag = RUS_ISO }
+NOT = { ispuppet = RUS }
+NOT = { war = { country = RUS country = IND } }
+NOT = { participant = { country = IND value = 1 } }
+NOT = { participant = { country = IND value = 2 } }
+}
+name = "EVT_101180_OPTIONC"
+command = { type = trigger which = 101183 }
+command = { type = dissent value = 5 }
+}
+
+action_d = {
+ai_chance = 3
+name = "EVT_101180_OPTIOND"
+command = { type = belligerence which = IND value = -20  }
+command = { type = dissent value = -10 }
+}
+}
+
+event = {
+              id = 101181
+              country = JAP
+              style = 2
+              picture = "Bengal"
+
+              
+              name = "EVT_101181_NAME"
+              desc = "EVT_101181_DESC"
+
+              action_a = {
+                ai_chance = 99
+                name = "EVT_101181_OPTIONA"
+                command = { type = alliance which = IND }
+                command = { type = relation which = IND value = 200 }
+                command = { type = dissent value = -3 }
+                command = { type = domestic which = defense_lobby value = -1 }
+                }
+
+              action_b = {
+                ai_chance = 1
+                name = "EVT_101181_OPTIONB"
+                command = { type = relation which = IND value = -20 }
+                }
+
+
+ }
+
+event = {
+              id = 101182
+              country = GER
+              style = 2
+              picture = "Bengal"
+
+              
+              name = "EVT_101182_NAME"
+              desc = "EVT_101182_DESC"
+
+              action_a = {
+                ai_chance = 80
+                name = "EVT_101182_OPTIONA"
+                command = { type = alliance which = IND }
+                command = { type = relation which = IND value = 200 }
+                command = { type = dissent value = -3 }
+                command = { type = domestic which = defense_lobby value = -1 }
+                }
+
+              action_b = {
+                ai_chance = 20
+                name = "EVT_101182_OPTIONB"
+                command = { type = relation which = IND value = -20 }
+                }
+
+
+ }
+
+event = {
+              id = 101183
+              country = RUS
+              style = 2
+              picture = "Bengal"
+
+              
+              name = "EVT_101183_NAME"
+              desc = "EVT_101183_DESC"
+
+              action_a = {
+                ai_chance = 75
+                name = "EVT_101183_OPTIONA"
+                command = { type = alliance which = IND }
+                command = { type = relation which = IND value = 200 }
+                command = { type = dissent value = -3 }
+                command = { type = domestic which = defense_lobby value = -1 }
+                }
+
+              action_b = {
+                ai_chance = 25
+                name = "EVT_101183_OPTIONB"
+                command = { type = relation which = IND value = -20 }
+                }
+
+
+ }
+################################################################################?#
+#German colonies in the area if allied
+################################################################################?#
+event = {
+     id = 101184
+     random = no
+     country = IND
+     style = 2
+
+     trigger = {
+     alliance = { country = IND country = GER }
+     NOT = {
+     exists = U42
+     ispuppet = IND
+     }
+     AND = {
+     control = { province = 1421 data = GER }
+     control = { province = 1509 data = GER }
+     control = { province = 1510 data = GER }
+     control = { province = 1511 data = GER }
+     control = { province = 1612 data = GER }
+      }
+      } 
+      
+
+     name = "EVT_101184_NAME"
+     desc = "EVT_101184_DESC"
+     picture = "Ceylon"
+
+     date = { day = 1 month = january year = 1936 }
+     offset = 10
+     deathdate = { day = 29 month = december year = 1966 }
+
+     action_a = {
+         ai_chance = 20
+         name = "EVT_101184_OPTIONA"
+         command = { type = relation which = GER value = -10 }
+         command = { type = dissent value = -2 }
+         command = { type = event which = 101185 where = GER when = 3 }
+         command = { type = setflag which = IND_And_Lac }
+         
+     }
+     action_b = {
+         ai_chance = 60
+         name = "EVT_101184_OPTIONB"
+         command = { type = relation which = GER value = -20 }
+         command = { type = dissent value = -3 }
+         command = { type = event which = 101185 where = GER when = 3 }
+         command = { type = setflag which = IND_Ceylon }
+
+     }
+     action_c = {
+         ai_chance = 20
+         name = "EVT_101184_OPTIONC"
+         command = { type = relation which = GER value = 50 }
+         command = { type = dissent value = 4 }
+     }
+ }
+
+event = {
+              id = 101185
+	      random = no
+              country = GER
+              style = 2
+              picture = "Ceylon"
+
+              
+              name = "EVT_101185_NAME"
+              desc = "EVT_101185_DESC"
+
+              action = {
+                trigger = { flag = IND_And_Lac }
+                ai_chance = 75
+                name = "EVT_101185_OPTIONA"
+                command = { type = relation which = IND value = 100 }
+                command = { type = secedeprovince which = IND value = 1421 }
+                command = { type = secedeprovince which = IND value = 1611 } 
+                command = { type = secedeprovince which = IND value = 1612 }
+                command = { type = trigger which = 101186 }
+                command = { type = dissent value = 3 }
+                }
+
+              action = {
+                trigger = { flag = IND_And_Lac }
+                ai_chance = 25
+                name = "EVT_101185_OPTIONB"
+                command = { type = relation which = IND value = -20 }
+                }
+
+              action = {
+                trigger = { flag = IND_Ceylon }
+                ai_chance = 75
+                name = "EVT_101185_OPTIONC"
+                command = { type = relation which = IND value = 120 }
+                command = { type = dissent value = 5 }
+                command = { type = domestic which = defense_lobby value = -1 }
+                command = { type = secedeprovince which = IND value = 1421 } 
+                command = { type = secedeprovince which = IND value = 1611 }
+                command = { type = secedeprovince which = IND value = 1612 }
+                command = { type = secedeprovince which = IND value = 1509 } 
+                command = { type = secedeprovince which = IND value = 1510 }
+                command = { type = secedeprovince which = IND value = 1511 } 
+                command = { type = trigger which = 101186 }
+                }
+
+              action = {
+                trigger = { flag = IND_Ceylon }
+                ai_chance = 40
+                name = "EVT_101185_OPTIOND"
+                command = { type = relation which = IND value = -25 }
+                }
+
+
+ }
+
+event = {
+              id = 101186
+	      random = no
+              country = IND
+              style = 2
+              picture = "Ceylon"
+
+              name = "EVT_101186_NAME"
+              desc = "EVT_101186_DESC"
+
+              action = {
+                trigger = { flag = IND_And_Lac }
+                ai_chance = 100
+                name = "EVT_101186_OPTIONA"
+                command = { type = relation which = GER value = 25 }
+                command = { type = addcore which = 1421 }
+                command = { type = addcore which = 1611 }
+                command = { type = addcore which = 1612 }
+                command = { type = dissent value = -1 }
+                command = { type = clrflag which = IND_And_Lac }
+                }
+
+              action = {
+                trigger = { flag = IND_Ceylon }
+                ai_chance = 85
+                name = "EVT_101186_OPTIONB"
+                command = { type = relation which = GER value = 120 }
+                command = { type = dissent value = -3 }
+                command = { type = addcore which = 1421 }
+                command = { type = addcore which = 1611 }
+                command = { type = addcore which = 1612 }
+                command = { type = addcore which = 1509 }
+                command = { type = addcore which = 1510 }
+                command = { type = addcore which = 1511 }
+                command = { type = clrflag which = IND_Ceylon }
+                }
+
+              action = {
+                trigger = { flag = IND_Ceylon }
+                ai_chance = 15
+                name = "EVT_101186_OPTIONC"
+                command = { type = addcore which = 1421 }
+                command = { type = addcore which = 1611 }
+                command = { type = addcore which = 1612 }
+		command = { type = independence which = U42 value = 1 when = 0 }
+		command = { type = supplies value = 1000 }
+		command = { type = dissent value = -5 }
+                command = { type = make_puppet which = U42 }
+                command = { type = relation which = GER value = 25 }
+                command = { type = relation which = U42 value = 200 }
+                command = { type = clrflag which = IND_Ceylon }
+                }
+
+ }
+################################################################################?#
+#Demand Bhutan give up on Indian territory
+################################################################################?#
+event = {
+	id = 101187
+	random = no
+	country = IND
+	style = 2
+
+trigger = {
+
+		control = { province = 1447 data = IND }
+		control = { province = 1455 data = BHU }
+		control = { province = 1459 data = IND }
+		control = { province = 1487 data = IND }
+                local_flag = Assam_pacified_princely
+		NOT = { 
+                exists = PRK
+                exists = PAK
+                war = { country = IND country = BUR }
+		}
+	}
+
+
+	name = "EVT_101187_NAME"
+	desc = "EVT_101187_DESC"
+        picture = "Bhutan"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1960 }
+
+
+        action = {
+	        ai_chance =  60
+	        name = "EVT_101187_OPTIONA"
+                command = { type = relation which = BHU value = -25 }
+                command = { type = domestic which = interventionism value = 1 }
+                command = { type = event which = 101188 where = BHU when = 7 }
+                command = { type = addcore which = 1455 }
+		}
+
+        action = {
+	        ai_chance =  39
+	        name = "EVT_101187_OPTIONB"
+                command = { type = relation which = BHU value = -50 }
+                command = { type = addcore which = 1455 }
+                command = { type = domestic which = interventionism value = 2 }
+		command = { type = dissent value = 3  }
+                command = { type = event which = 101189 where = BHU when = 7 }
+		}
+
+        action = {
+	        ai_chance =  1
+	        name = "EVT_101187_OPTIONC"
+                command = { type = domestic which = interventionism value = -2 }
+		command = { type = dissent value = 10 }
+		}
+		  
+}
+
+event = {
+             id = 101188
+             random = no
+             country = BHU
+             style = 2
+             picture = "Bhutan"
+
+             name = "EVT_101188_NAME"
+             desc = "EVT_101188_DESC"
+
+                action_a = {
+	        ai_chance =  80
+	        name = "EVT_101188_OPTIONA"
+                command = { type = removecore which = 1455 }
+                command = { type = secedeprovince which = IND value = 1455 } 
+		command = { type = dissent value = 5 }
+		}
+
+        action = {
+	        ai_chance =  20
+	        name = "EVT_101188_OPTIONB"
+                command = { type = war which = IND }
+                command = { type = domestic which = interventionism value = 2 }
+		command = { type = dissent value = 10 }
+		}
+		  
+}
+
+
+event = {
+             id = 101189
+             random = no
+             country = BHU
+             style = 2
+             picture = "Bhutan"
+
+             name = "EVT_101189_NAME"
+             desc = "EVT_101189_DESC"
+
+                action_a = {
+	        ai_chance =  70
+	        name = "EVT_101189_OPTIONA"
+                command = { type = removecore which = 1455 }
+                command = { type = secedeprovince which = IND value = 1455 } 
+                command = { type = event which = 101190 where = IND when = 2 }
+		command = { type = dissent value = 5 }
+		}
+
+        action = {
+	        ai_chance =  30
+	        name = "EVT_101189_OPTIONB"
+                command = { type = war which = IND }
+                command = { type = domestic which = interventionism value = 2 }
+		command = { type = dissent value = 10 }
+		}
+		  
+}
+
+
+event = {
+             id = 101190
+             random = no
+             country = IND
+             style = 2
+             picture = "Bhutan"
+
+             name = "EVT_101190_NAME"
+             desc = "EVT_101190_DESC"
+
+                action_a = {
+	        ai_chance =  99
+	        name = "EVT_101190_OPTIONA"
+		        command = { type = make_puppet which = BHU  }
+		        command = { type = alliance which = BHU }
+                command = { type = relation which = BHU value = 200 }
+		        command = { type = dissent value = -2 }
+		}
+
+                action_b = {
+	        ai_chance =  1
+	        name = "EVT_101190_OPTIONB"
+                command = { type = relation which = BHU value = 100 }
+                command = { type = domestic which = interventionism value = -2 }
+		command = { type = dissent value = 10 }
+		}
+		  
+}

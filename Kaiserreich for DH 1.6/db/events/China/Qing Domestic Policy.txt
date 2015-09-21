@@ -1,0 +1,1160 @@
+####################
+### "The New Reformation" events by thegreatplant (well the first two events originally by someone else - I've just redone them)
+### IDs 627033- 627034
+####################
+
+
+
+event = {
+id = 9015500
+country = CSX
+style = 2
+picture = "Chinese New Year"
+
+date = { day = 20 month = january year = 1936 }
+
+name = "EVT_9015500_NAME"
+desc = "EVT_9015500_DESC"
+
+action_a = { 
+name = "EVT_9015500_OPTIONA"
+	command = { type = dissent value = -1 }
+	}
+}
+
+event = {
+id = 9015501
+country = CSX
+style = 2
+picture = "Chinese New Year"
+
+date = { day = 26 month = january year = 1936 }
+
+name = "EVT_9015501_NAME"
+desc = "EVT_9015501_DESC"
+
+action_a = {
+ai_chance = 75
+name = "EVT_9015501_OPTIONA"
+	command = { type = dissent value = -3 }	
+	}
+
+action_b = {
+ai_chance = 25
+name = "EVT_9015501_OPTIONB"
+	command = { type = dissent value = 5 }
+	command = { type = setflag which = CSX_noreform }
+	command = { type = sleepevent which = 627000 }
+}
+}
+
+event = {
+id = 627033
+country = CSX
+style = 2
+picture = "Chinese New Year"
+
+date = { day = 26 month = january year = 1937 }
+
+name = "EVT_627033_NAME"
+desc = "EVT_627033_DESC"
+
+
+action_a = {
+ai_chance = 80
+name = "EVT_627033_OPTIONA"
+	command = { type = dissent value = -3 }	
+}
+action_b = {
+ai_chance = 20
+name = "EVT_627033_OPTIONB"
+	command = { type = dissent value = 5 }
+	command = { type = setflag which = CSX_noreform2 }
+	command = { type = sleepevent which = 627015 }
+}
+}
+
+event = {
+id = 627034
+country = CSX
+style = 2
+picture = "Chinese New Year"
+
+date = { day = 26 month = january year = 1938 }
+
+name = "EVT_627034_NAME"
+desc = "EVT_627034_DESC"
+
+action_a = {
+ai_chance = 30
+name = "EVT_627034_OPTIONA"
+	command = { type = dissent value = -3 }
+}
+
+action_b = {
+ai_chance = 50
+name = "EVT_627034_OPTIONB"
+	command = { type = dissent value = -3 }
+	command = { type = sleepevent which = 627005 }
+}
+
+action_c = {
+ai_chance = 20
+name = "EVT_627034_OPTIONC"
+	command = { type = dissent value = 5 }
+	command = { type = setflag which = CSX_noreform3 }
+}
+}
+	
+event = {
+id = 667065
+country = CSX
+style = 2
+picture = "Qing_Marching"
+
+date = { day = 18 month = march year = 1939 }
+
+name = "EVT_667065_NAME"
+desc = "EVT_667065_DESC"
+
+
+action_a = {
+name = "EVT_667065_OPTIONA"
+	command = { type = dissent value = 1 }	
+        command = { type = relation which = CAN value = -20 }
+	}
+}
+
+####################
+### Wedding by Dermaglen
+####################
+
+event = {
+id = 667066
+country = CSX
+style = 2
+picture = "Chinese Wedding"
+
+trigger = {
+OR = {
+headofstate = 503001
+headofstate = 978138
+}
+}
+
+date = { day = 6 month = april year = 1937 }
+
+name = "EVT_667066_NAME"
+desc = "EVT_667066_DESC"
+
+
+action_a = {
+name = "EVT_667066_OPTIONA"
+	command = { type = money value = -25 }
+	command = { type = supplies value = -100 }
+	command = { type = dissent value = -1 }	
+	}
+}
+
+
+####################
+### Qing domestic events by thegreatplant
+### IDs 627000 - 627003 +627015
+####################
+
+
+event = {
+id = 627000
+country = CSX
+style = 2
+picture = "China_Rally"
+
+date = { day = 27 month = May year = 1936 }
+offset =  10
+deathdate = { day = 29 month = december year = 1949 }
+
+name = "EVT_627000_NAME"
+desc = "EVT_627000_DESC"
+
+action_a = {
+name = "EVT_627000_OPTIONA"
+ai_chance = 30
+command = { type = belligerence which = CSX value = 5 }
+command = { type = relation which = JAP value = -50 }
+command = { type = relation which = CHC value = -50 }
+command = { type = relation which = CYN value = -25 }
+command = { type = relation which = CGX value = -25 }
+command = { type = domestic which = defense_lobby value = 3 }
+command = { type = domestic which = interventionism value = 3 }
+command = { type = dissent value = 3 }
+command = { type = supplies value = -1000 }
+command = { type = money value = -100 }
+command = { type = manpowerpool value = -50 }
+command = { type = trigger which = 627001 }
+command = { type = event which = 627001 where = CSX when = 10  }
+}
+
+action_b = {
+name = "EVT_627000_OPTIONB" 
+ai_chance = 30
+command = { type = dissent value = -3 }
+command = { type = supplies value = -2000 } 
+command = { type = money value = -100 }
+command = { type = trigger which = 627002 }
+command = { type = event which = 627002 where = CSX when = 10  }
+}
+
+action_c = {
+name = "EVT_627000_OPTIONC"
+ai_chance = 30
+command = { type = manpowerpool value = 50 }
+command = { type = dissent value = -3 }
+command = { type = supplies value = -1000 }
+command = { type = money value = -100 }
+command = { type = trigger which = 627003 }
+command = { type = event which = 627003 where = CSX when = 10  }
+}
+
+action_d = {
+name = "EVT_627000_OPTIOND"
+ai_chance = 10
+command = { type = dissent value = 15 } # people don't think it is funny
+command = { type = event which = 627092 where = CSX when = 10  }
+command = { type = sleepevent which = 627033 }
+command = { type = sleepevent which = 627034 }
+}
+}
+
+event = {
+id = 627001
+random = no
+country = CSX
+style = 2
+picture = "China_Army"
+
+name = "EVT_627001_NAME"
+desc = "EVT_627001_DESC"
+
+action_a = {
+name = "EVT_627001_OPTIONA"
+ai_chance = 65
+command = { type = max_organization which = land value = 1 }
+command = { type = morale which = land value = 1 }
+command = { type = add_corps which = "Qing First corp" value = land where = 1247 }
+command = { type = add_division which = "1st Qing Infantry" value = infantry when = 7 where = artillery }
+command = { type = add_division which = "2nd Qing Infantry" value = infantry when = 7 }
+command = { type = add_corps which = "Qing Second Corp" value = land where = 1247 }
+command = { type = add_division which = "3rd Qing Infantry" value = infantry when = 7 where = artillery }
+command = { type = add_division which = "4th Qing Infantry" value = infantry when = 7 }
+command = { type = manpowerpool value = -25 }
+command = { type = domestic which = professional_army value = 1 }
+}
+
+action_b = {
+name = "EVT_627001_OPTIONB"
+ai_chance = 35
+command = { type = max_organization which = land value = 1 }
+command = { type = morale which = land value = 1 }
+command = { type = add_corps which = "Qing First Corp" value = land where = 1247 }
+command = { type = add_division which = "1st Qing Cavalry" value = cavalry when = 7 where = artillery }
+command = { type = add_division which = "2nd Qing Cavalry" value = cavalry when = 7 }
+command = { type = add_corps which = "Qing Second Corp" value = land where = 1247 }
+command = { type = add_division which = "3rd Qing Cavalry" value = cavalry when = 7 where = artillery }
+command = { type = add_division which = "4th Qing Cavalry" value = cavalry when = 7 }
+command = { type = manpowerpool value = -25 }
+command = { type = domestic which = professional_army value = 2 }
+}
+}
+
+event = {
+id = 627003
+random = no
+country = CSX
+style = 2
+picture = "Chinese Workforce"
+
+name = "EVT_627003_NAME"
+desc = "EVT_627003_DESC"
+
+
+action_a = {
+name = "EVT_627003_OPTIONA"
+ai_chance = 50
+command = { type = domestic which = free_market value = 2 }
+command = { type = relative_manpower value = 3 }
+command = { type = money value = 75 }
+command = { type = manpowerpool value = 10 }
+command = { type = gain_tech which = 5700 }
+command = { type = gain_tech which = 5710 }
+command = { type = add_prov_resource which = 1247 value = 7 where = metal }
+command = { type = add_prov_resource which = 1247 value = 4 where = rare_materials }
+command = { type = add_prov_resource which = 1247 value = 14 where = energy }
+}
+
+action_b = {
+name = "EVT_627003_OPTIONB"
+ai_chance = 30
+command = { type = domestic which = free_market value = -1 }
+command = { type = relative_manpower value = 5 }
+command = { type = manpowerpool value = 25 }
+command = { type = gain_tech which = 5700 }
+command = { type = gain_tech which = 5710 }
+command = { type = gain_tech which = 5010 }
+command = { type = gain_tech which = 5020 }
+command = { type = add_prov_resource which = 1247 value = 7 where = metal }
+command = { type = add_prov_resource which = 1247 value = 4 where = rare_materials }
+command = { type = add_prov_resource which = 1247 value = 14 where = energy }
+command = { type = dissent value = -1 }
+}
+
+action_c = {
+ai_chance = 20
+name = "EVT_627003_OPTIONC"
+command = { type = domestic which = free_market value = -2 }
+command = { type = relative_manpower value = -2 } #costs of dangerous mining operations
+command = { type = manpowerpool value = -25 }
+command = { type = add_prov_resource which = 1247 value = 7 where = metal }
+command = { type = add_prov_resource which = 1247 value = 4 where = rare_materials }
+command = { type = add_prov_resource which = 1247 value = 14 where = energy }
+command = { type = construct which = ic where = 1247 value = 1 }
+command = { type = add_prov_resource which = 1249 value = 7 where = metal }
+command = { type = add_prov_resource which = 1249 value = 4 where = rare_materials }
+command = { type = add_prov_resource which = 1249 value = 14 where = energy }
+command = { type = construct which = ic where = 1249 value = 1 }
+command = { type = dissent value = 3 }
+}
+}
+
+event = {
+id = 627002
+random = no
+country = CSX
+style = 2
+picture = "factory"
+	
+name = "EVT_627002_NAME"
+desc = "EVT_627002_DESC"  
+
+action_a = {
+ai_chance = 60
+name = "EVT_627002_OPTIONA"
+command = { type = dissent value = -2 }
+command = { type = supplies value = -200 }
+command = { type = money value = -50 }
+command = { type = construct which = ic where = 1247 value = 2 } 
+command = { type = construct which = ic where = 1337 value = 2 } 
+command = { type = construct which = ic where = 1334 value = 2 } 
+command = { type = construct which = ic where = 1249 value = 1 } 
+command = { type = gain_tech which = 5820 }
+command = { type = gain_tech which = 5050 }
+command = { type = gain_tech which = 5830 }
+command = { type = gain_tech which = 5060 } #Improved Machine Tools
+command = { type = gain_tech which = 54010 }
+command = { type = gain_tech which = 54020 }
+command = { type = gain_tech which = 54030 } #Accounting machine
+command = { type = domestic which = free_market value = -2 }
+}
+
+action_b = {
+ai_chance = 40
+name = "EVT_627002_OPTIONB"
+command = { type = dissent value = 2 }
+command = { type = money value = 75 }
+command = { type = construct which = ic where = 1247 value = 2 } 
+command = { type = construct which = ic where = 1337 value = 2 } 
+command = { type = construct which = ic where = 1334 value = 2 } 
+command = { type = construct which = ic where = 1249 value = 1 } 
+command = { type = domestic which = free_market value = 2 }
+command = { type = domestic which = freedom value = 1 }
+command = { type = relation which = JAP value = 25 }
+command = { type = relation which = GER value = 25 }
+command = { type = relation which = USA value = 25 }
+command = { type = relation which = CAN value = 25 }
+command = { type = relation which = RUS value = 25 }
+command = { type = relation which = AST value = 25 }
+command = { type = relation which = CHC value = -25 }
+}
+}
+
+event  = {
+id = 627015
+random = no
+country = CSX
+style = 2
+
+trigger = {
+NOT = { government = communist  }
+}
+
+date = { day = 27 month = july year = 1937 }
+offset =  10
+deathdate = { day = 29 month = december year = 1949 }
+
+name = "Politicians and Economic Reform"
+desc = "If we are to move the Empire towards the future we must continue our reforms. H.H.Kung, the rich banker, has offered to help - or should we choose the German Stennes, to bring the people in line? 
+Wang Kemin is a good worker and organizer and is liked by the people, however."
+picture = "economic"
+
+action_a = {
+name = "H.H. Kung is the man for the job"
+ai_chance = 30
+command = { type = set_domestic which = democratic value = 4 }
+command = { type = set_domestic which = political_left value = 3 }
+command = { type = set_domestic which = free_market value = 5 }
+command = { type = domestic which = freedom value = 1 }
+command = { type = extra_tc value = 10 }
+command = { type = sleepminister which = 503002 }
+command = { type = headofgovernment which = 503015 }
+command = { type = foreignminister which = 978117 }
+command = { type = armamentminister which = 978129 }
+command = { type = ministerofsecurity which = 978120 }
+command = { type = ministerofintelligence which = 503017 }
+command = { type = dissent value = 2 } #reform of markets 
+command = { type = money value = 100 }
+}
+
+action_b = {
+trigger = {
+NOT = { puppet = { country = CSX country = JAP  }  }
+}
+name = "The German, Walther Stennes"
+ai_chance = 20
+command = { type = set_domestic which = democratic value = 3 }
+command = { type = set_domestic which = political_left value = 3 }
+command = { type = domestic which = freedom value = -2 }
+command = { type = domestic which = defense_lobby value = 3 }
+command = { type = domestic which = interventionism value = 3 }
+command = { type = domestic which = professional_army value = 2 }
+command = { type = sleepminister which = 503002 }
+command = { type = headofgovernment which = 503018 }
+command = { type = foreignminister which = 978117 }
+command = { type = armamentminister which = 978119 }
+command = { type = chiefofarmy which = 503019 }
+command = { type = ministerofsecurity which = 503013 }
+command = { type = ministerofintelligence which = 503017 }
+command = { type = dissent value = 5 } #a german HoG pisses people off
+command = { type = relation which = CHC value = -75 }
+command = { type = relation which = CGX value = 25 }
+command = { type = relation which = GER value = 25 }
+}
+
+action_c = {
+name = "Wang Kemin, A solid industrial banker"
+ai_chance = 40
+command = { type = set_domestic which = democratic value = 2 }
+command = { type = set_domestic which = political_left value = 2 }
+command = { type = domestic which = freedom value = -1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = professional_army value = 1 }
+command = { type = domestic which = free_market value = -2 }
+command = { type = dissent value = -3 } 
+command = { type = sleepminister which = 503002 }
+command = { type = headofgovernment which = 503020 }
+command = { type = foreignminister which = 978123 }
+command = { type = ministerofsecurity which = 978127 }
+command = { type = armamentminister which = 978126 }
+command = { type = chiefofarmy which = 503024 }
+}
+
+action_d = {
+name = "Reform? What? We are done with that!"
+ai_chance = 10
+command = { type = dissent value = 15 }
+command = { type = domestic which = democratic value = -2 }
+command = { type = event which = 628000 where = CSX when = 10  }
+}
+}
+
+event  = {
+ id = 928005
+ random = no
+ country = CSX
+ style = 2
+
+ trigger = {
+ headofgovernment = 503015
+ }
+
+ date = { day = 1 month = september year = 1937 }
+ offset =  10
+ deathdate = { day = 29 month = december year = 1949 }
+ 
+
+ name = "H.H. Kung's proposal on trade"
+ desc = "The first step on the path to reform is to reorganize our trade relationship. He has studied in America and is full of new ideas about free trade, but should our Empire pursue international money at the expense of our local markets and our preferred trade partner Germany?"
+
+ picture = "China_Rally"
+
+ action_a = {
+ name = "Open the Chinese Market to the world"
+ ai_chance = 50
+ command = { type = domestic which = free_market value = 10 } #should be full freemarket by now
+ command = { type = dissent value = 5 }
+ command = { type = relation which = CAN value = 50 }
+ command = { type = relation which = AUS value = 50 }
+ command = { type = relation which = USA value = 50 }
+ command = { type = relation which = RUS value = 50 }
+ command = { type = relation which = EAF value = 50 }
+ command = { type = relation which = JAP value = 20 }
+ command = { type = relation which = CGX value = -10 }
+ command = { type = sleepevent which = 928006 }
+ command = { type = sleepevent which = 928007 }
+ }
+
+ action_b = {
+ name = "Let us focus on the Chinese Market"
+ ai_chance = 45
+ command = { type = domestic which = free_market value = 2 }
+ command = { type = construct which = ic where = 1249 value = 1 } #local industry growth
+ command = { type = dissent value = -3 }
+ command = { type = relation which = CHC value = 20 }
+ command = { type = relation which = CYN value = 20 }
+ command = { type = relation which = CGX value = 10 } 
+ command = { type = relation which = CXB value = 20 } #east china
+ command = { type = relation which = MAN value = 20 } #Fengtien 
+ command = { type = relation which = U30 value = 20 } #formosa if they exist
+ command = { type = sleepevent which = 928006 }
+ command = { type = sleepevent which = 928007 }
+ }
+
+ action_c = {
+ name = "Germany is still our prefferred partner"
+ ai_chance = 5
+ command = { type = dissent value = 5 }#Kung has failed to reform anything
+ command = { type = sleepevent which = 928006 }
+ command = { type = sleepevent which = 928007 }
+ }
+ }
+
+ event  = {
+ id = 928006
+ random = no
+ country = CSX
+ style = 2
+
+ trigger = {
+ headofgovernment = 503018
+ }
+
+ date = { day = 1 month = september year = 1937 }
+ offset =  10
+ deathdate = { day = 29 month = december year = 1949 }
+ 
+
+ name = "Walther Stennes Modernization Program"
+ desc = "EVT_9985_DESC"
+
+ picture = "China_Rally"
+
+ action = {
+ name = "Walther Stennes will show the Chinese how to work!"
+ ai_chance = 60
+ command = { type = domestic which = free_market value = -3 }
+ command = { type = domestic which = freedom value = -1 }
+ command = { type = domestic which = democratic value = -1 }
+ command = { type = construct which = ic where = -4 value = 2 }
+ command = { type = construct which = ic where = -4 value = 2 }
+ command = { type = dissent value = 10 }
+ command = { type = sleepevent which = 928005 }
+ command = { type = sleepevent which = 928007 }
+ }
+
+ action = {
+ name = "Perhaps we should move slower, and copy the AOG."
+ ai_chance = 40
+ command = { type = relation which = CGX value = 100 }
+ command = { type = construct which = ic where = -4 value = 2 }
+ command = { type = dissent value = 2 }
+ command = { type = sleepevent which = 928005 }
+ command = { type = sleepevent which = 928007 }
+ }
+ }
+
+ event  = {
+ id = 928007
+ random = no
+ country = CSX
+ style = 2
+
+ trigger = {
+ headofgovernment = 503020
+ }
+
+ date = { day = 1 month = september year = 1937 }
+ offset =  10
+ deathdate = { day = 29 month = december year = 1949 }
+ 
+
+ name = "Wang Kemin will develop China through righteous industrialization!"
+ desc = "Wang Kemin had been working his way through the Qing bureacracy for some time. As head of the Central Bank he has earned a reputation of brilliant administrative skill, he is also well liked by Chinese workers. Since being chosen by Pu Yi to lead the New Reoformation he has increased his Populist rhetoric. China he argues can and must industrialize by its own strength, and not give an inch of sovereignity. We now have a choice in how to go about this great process."
+
+ picture = "China_Rally"
+
+ action = {
+ name = "The Chinese will become an industrial power in 5 years!"
+ ai_chance = 75
+ command = { type = domestic which = free_market value = -10 }
+ command = { type = construct which = ic where = -4 value = 2 }
+ command = { type = construct which = ic where = -4 value = 2 }
+ command = { type = dissent value = 5 }
+ command = { type = relation which = GER value = -75 }
+ command = { type = relation which = JAP value = -25 }
+ command = { type = relation which = CHC value = 25 }
+ command = { type = sleepevent which = 928005 }
+ command = { type = sleepevent which = 928006 }
+ }
+
+ action = {
+ name = "We will form a Cooperative Chinese Market"
+ ai_chance = 25
+ command = { type = domestic which = free_market value = 2 }
+ command = { type = construct which = ic where = 1249 value = 1 } #local industry growth
+ command = { type = dissent value = -3 }
+ command = { type = relation which = CHC value = 20 }
+ command = { type = relation which = CYN value = 20 }
+ command = { type = relation which = CGX value = 10 } 
+ command = { type = relation which = CXB value = 20 } #east china
+ command = { type = relation which = MAN value = 20 } #Fengtien 
+ command = { type = relation which = U30 value = 20 } #formosa if they exist
+ command = { type = sleepevent which = 928005 }
+ command = { type = sleepevent which = 928006 }
+ }
+ }
+
+event = {
+id = 627092
+country = CSX
+style = 2
+picture = "China_Rally"
+
+name = "EVT_627092_NAME"
+desc = "EVT_627092_DESC"
+
+action_a = {
+name = "EVT_627092_OPTIONA"
+command = { type = dissent value = 5 }
+command = { type = setflag which = CSX_peasants }
+}
+} 
+
+event = {
+id = 628000
+country = CSX
+style = 2
+picture = "China_Rally"
+
+name = "EVT_628000_NAME"
+desc = "EVT_628000_DESC"
+
+action_a = {
+name = "EVT_628000_OPTIONA"
+command = { type = dissent value = 5 }
+command = { type = setflag which = CSX_peasants2 }
+}
+} 
+
+event = {
+id = 628001
+country = CSX
+style = 2
+picture = "China_Rally"
+
+trigger = { flag = CSX_noreform3 }
+date = { day = 1 month = January year = 1936 }
+offset =  40
+deathdate = { day = 29 month = december year = 1949 }
+
+name = "EVT_628001_NAME"
+desc = "EVT_628001_DESC"
+
+action_a = {
+name = "EVT_628001_OPTIONA"
+command = { type = dissent value = 5 }
+command = { type = setflag which = CSX_peasants3 }
+}
+}
+
+event = {
+id = 928000
+tag = { CSX MAN MEN CHI }
+style = 2
+picture = "fortification2"
+
+trigger = { 
+control = { province = 1255 data = -1 }
+control = { province = 1259 data = -1 }
+NOT = { exists = CHC }
+}
+
+date = { day = 1 month = January year = 1936 }
+offset =  10
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_928000_NAME"
+desc = "EVT_928000_DESC"
+
+action_a = {
+name = "EVT_928000_OPTIONA" 
+command = { type = construct which = land_fort where = 1259 value = -5 }
+command = { type = construct which = land_fort where = 1255 value = -4 }
+command = { type = construct which = land_fort where = 1260 value = -2 }
+command = { type = construct which = land_fort where = 1269 value = -3 }
+command = { type = construct which = land_fort where = 1271 value = -2 }
+command = { type = construct which = land_fort where = 1256 value = -3 }
+command = { type = construct which = land_fort where = 1263 value = -3 }
+command = { type = construct which = land_fort where = 1257 value = -3 }
+command = { type = construct which = land_fort where = 1258 value = -2 }
+command = { trigger = { control = { province = 1264 data = -1 } } type = construct which = land_fort where = 1264 value = -2 }
+}
+}
+
+event = {
+	id = 928001
+	random = no
+	country = CSX
+	style = 2
+        picture = "Chinese Workforce"
+
+	trigger = {
+		control = { province = 1247 data = CSX }
+		headofstate = 503001 # Aisin-Gioro Puyi
+		government = fascist
+	}
+
+	date = { day = 1 month = january year = 1938 }
+	offset = 50
+	deathdate = { day = 29 month = december year = 1963 }
+
+	name = "EVT_928001_NAME"
+	desc = "EVT_928001_DESC"
+
+	action_a = {
+		ai_chance = 90
+		name = "EVT_928001_OPTIONA"
+		command = { type = dissent value = 5 }
+		command = { type = setflag which = CSX_INT_REB }
+	}
+	action_b = {
+		ai_chance = 10
+		name = "EVT_928001_OPTIONB"
+		command = { type = headofstate which = 978138 }
+		command = { type = domestic which = democratic value = 2 }
+		command = { type = domestic which = freedom value = 1 }
+	}
+}
+
+event = {
+	id = 928002
+	random = no
+	country = CSX
+	persistent = yes
+	style = 2
+        picture = "Chinese Workforce"
+
+	trigger = {
+		flag = CSX_INT_REB
+                government = fascist
+		NOT = {
+			exists = CHI
+		}
+	}
+
+	date = { day = 1 month = january year = 1938 }
+	offset = 90
+	deathdate = { day = 29 month = december year = 1963 }
+
+	name = "EVT_928002_NAME"
+	desc = "EVT_928002_DESC"
+
+	action_a = {
+		name = "EVT_928002_OPTIONA"
+		ai_chance = 50
+		command = { type = dissent value = 3 }
+	}
+	action_b = {
+		ai_chance = 50
+		name = "EVT_928002_OPTIONB"
+		command = { type = headofstate which = 978138 }
+		command = { type = domestic which = democratic value = 2 }
+		command = { type = domestic which = freedom value = 1 }
+		command = { type = clrflag which = CSX_INT_REB }
+	}
+}
+
+event = {
+	id = 928003
+	random = no
+	country = CSX
+	persistent = yes
+	style = 2
+        picture = "Chinese Workforce"
+
+	trigger = {
+	flag = CSX_INT_REB
+	exists = CHI
+        government = fascist
+	}
+
+	date = { day = 1 month = january year = 1938 }
+	offset = 90
+	deathdate = { day = 29 month = december year = 1963 }
+
+	name = "EVT_928003_NAME"
+	desc = "EVT_928003_DESC"
+
+	action_a = {
+		ai_chance = 30
+		name = "EVT_928003_OPTIONA"
+		command = { type = dissent value = 6 }
+	}
+
+	action_b = {
+		ai_chance = 70
+		name = "EVT_928003_OPTIONB"
+		command = { type = headofstate which = 978138 }
+		command = { type = domestic which = democratic value = 2 }
+		command = { type = domestic which = freedom value = 1 }
+		command = { type = clrflag which = CSX_INT_REB }
+	}
+}
+
+event = {
+	id = 928004
+	random = no
+	country = CSX
+	style = 2
+        picture = "Chinese Workforce"
+
+	trigger = {
+		flag = CSX_INT_REB
+		random = 80
+                government = fascist
+		NOT = {
+			war = { country = CHI country = CSX }
+                        
+		}
+		dissent = 10
+	}
+	
+	date = { day = 1 month = january year = 1939 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1963 }
+
+	name = "EVT_928004_NAME"
+	desc = "EVT_928004_DESC"
+
+	action_a = {
+		name = "EVT_928004_OPTIONA"
+		command = { type = dissent value = 5 }
+		command = { type = clrflag which = CSX_INT_REB }
+	}
+}
+
+event = {
+ id = 928008
+ random = no
+ country = CSX
+ style = 2
+ picture = "Marshalldead"
+
+ trigger = {
+     headofgovernment = 503002 
+ }
+
+ date = { day = 5 month = june year = 1939 }
+
+ name = "EVT_928008_NAME"
+ desc = "EVT_928008_DESC"
+
+ action_a = {
+ name = "EVT_928008_OPTIONA"
+     command = { type = sleepminister which = 503002 }
+     command = { type = headofgovernment which = 978257 }
+     command = { type = sleepevent which = 928009 }
+     }
+ }
+
+event = {
+ id = 928009
+ random = no
+ country = CSX
+ style = 2
+ picture = "Marshalldead"
+
+ trigger = {
+     NOT = {
+     headofgovernment = 503002 
+     }
+ }
+
+ date = { day = 6 month = june year = 1939 }
+
+ name = "EVT_928009_NAME"
+ desc = "EVT_928009_DESC"
+
+ action_a = {
+ name = "EVT_928009_OPTIONA"
+     command = { type = sleepminister which = 503002 }
+     command = { type = sleepevent which = 928008 }
+     }
+ }
+
+
+
+event = {
+ id = 928012
+ country = CSX
+ style = 2
+ picture = "Chinese New Year"
+
+ date = { day = 1 month = february year = 1939 }
+
+ name = "EVT_928012_NAME"
+ desc = "EVT_928012_DESC"
+
+ action_a = { 
+ name = "EVT_928012_OPTIONA"
+     command = { type = dissent value = -1 }
+     }
+ }
+
+ event = {
+ id = 928013
+ country = CSX
+ style = 2
+ picture = "Chinese New Year"
+
+ date = { day = 7 month = february year = 1940 }
+
+ name = "EVT_928013_NAME"
+ desc = "EVT_928013_DESC"
+
+ action_a = { 
+ name = "EVT_928013_OPTIONA"
+     command = { type = dissent value = -1 }
+     }
+ }
+
+ event = {
+ id = 928014
+ country = CSX
+ style = 2
+ picture = "Chinese New Year"
+
+ date = { day = 26 month = january year = 1941 }
+
+ name = "EVT_928014_NAME"
+ desc = "EVT_91857_DESC"
+
+ action_a = { 
+ name = "EVT_928014_OPTIONA"
+     command = { type = dissent value = -1 }
+     }
+ }
+
+ event = {
+ id = 928015
+ country = CSX
+ style = 2
+ picture = "Chinese New Year"
+
+ date = { day = 14 month = february year = 1942 }
+
+ name = "EVT_928015_NAME"
+ desc = "EVT_928015_DESC"
+
+ action_a = { 
+ name = "EVT_928015_OPTIONA"
+     command = { type = dissent value = -1 }
+     }
+ }
+
+
+ event = {
+ id = 928016
+ country = CSX
+ style = 2
+ picture = "Chinese New Year"
+
+ date = { day = 3 month = february year = 1943 }
+
+ name = "EVT_928016_NAME"
+ desc = "EVT_928016_DESC"
+
+ action_a = { 
+ name = "EVT_928016_OPTIONA"
+     command = { type = dissent value = -1 }
+     }
+ }
+
+ event = {
+ id = 928017
+ country = CSX
+ style = 2
+ picture = "Chinese New Year"
+
+ date = { day = 24 month = january year = 1944 }
+
+ name = "EVT_928017_NAME"
+ desc = "EVT_928017_DESC"
+
+ action_a = { 
+ name = "EVT_928017_OPTIONA"
+     command = { type = dissent value = -1 }
+     }
+ }
+
+ event = {
+ id = 928018
+ country = CSX
+ style = 2
+ picture = "Chinese New Year"
+
+ date = { day = 13 month = february year = 1945 }
+
+ name = "EVT_928018_NAME"
+ desc = "EVT_91859_DESC"
+ 
+ 
+ action_a = { 
+ name = "EVT_928018_OPTIONA"
+     command = { type = dissent value = -1 }
+     }
+ }
+
+ event = {
+ id = 928019
+ country = CSX
+ style = 2
+ picture = "Chinese New Year"
+
+ date = { day = 1 month = february year = 1946 }
+
+ name = "EVT_928019_NAME"
+ desc = "EVT_928019_DESC"
+
+ action_a = { 
+ name = "EVT_928019_OPTIONA"
+     command = { type = dissent value = -1 }
+     }
+ }
+
+ event = {
+ id = 928020
+ country = CSX
+ style = 2
+ picture = "Chinese New Year"
+
+ date = { day = 21 month = january year = 1947 }
+
+ name = "EVT_928020_NAME"
+ desc = "EVT_928020_DESC"
+
+ action_a = { 
+ name = "EVT_928020_OPTIONA"
+     command = { type = dissent value = -1 }
+     }
+ }
+
+ event = {
+ id = 928021
+ country = CSX
+ style = 2
+ picture = "Chinese New Year"
+
+ date = { day = 9 month = february year = 1948 }
+
+ name = "EVT_928021_NAME"
+ desc = "EVT_928021_DESC"
+
+ action_a = { 
+ name = "EVT_928021_OPTIONA"
+     command = { type = dissent value = -1 }
+     }
+ }
+
+ event = {
+ id = 928022
+ country = CSX
+ style = 2
+ picture = "Chinese New Year"
+
+ date = { day = 28 month = january year = 1949 }
+
+ name = "EVT_928022_NAME"
+ desc = "EVT_928022_DESC"
+
+ action_a = { 
+ name = "EVT_928022_OPTIONA"
+     command = { type = dissent value = -1 }
+     }
+ }
+
+ event = {
+ id = 928023
+ country = CSX
+ style = 2
+ picture = "Chinese New Year"
+
+ date = { day = 16 month = february year = 1950 }
+
+ name = "EVT_928023_NAME"
+ desc = "EVT_928023_DESC"
+
+ action_a = { 
+ name = "EVT_928023_OPTIONA"
+     command = { type = dissent value = -1 }
+     }
+ }
+
+ event = {
+ id = 928024
+ country = CSX
+ style = 2
+ picture = "Chinese New Year"
+
+ date = { day = 5 month = february year = 1951 }
+
+ name = "EVT_928024_NAME"
+ desc = "EVT_928024_DESC"
+
+ action_a = { 
+ name = "EVT_928024_OPTIONA"
+     command = { type = dissent value = -1 }
+     }
+ }
+
+ event = {
+ id = 928025
+ country = CSX
+ style = 2
+ picture = "Chinese New Year"
+
+ date = { day = 26 month = january year = 1952 }
+
+ name = "EVT_928025_NAME"
+ desc = "EVT_928025_DESC"
+
+ action_a = { 
+ name = "EVT_928025_OPTIONA"
+     command = { type = dissent value = -1 }
+     }
+ }
+
+ event = {
+ id = 928026
+ country = CSX
+ style = 2
+ picture = "Chinese New Year"
+
+ date = { day = 13 month = february year = 1953 }
+
+ name = "EVT_928026_NAME"
+ desc = "EVT_91858_DESC"
+
+ action_a = { 
+ name = "EVT_928026_OPTIONA"
+     command = { type = dissent value = -1 }
+     }
+ }

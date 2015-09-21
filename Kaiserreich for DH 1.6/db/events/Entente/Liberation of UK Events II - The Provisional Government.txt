@@ -1,0 +1,277 @@
+# Liberation of the UK Events II: The Provisional Government
+#
+# IDs 830170-830179
+#
+# 830170 - Choosing a Provisional Government
+# 830171 - Rooting Out Syndicalism
+# 830172 - The Treatment of POWs
+# 830173 - The Returning Aristocracy
+# 830174 - Workers' Organization and Trade Unions
+# 830175 - The Houses of Parliament
+# 830176 - The Creation of the Progressive Party
+# 830177 to 830179 - [Empty]
+
+event = {
+    id = 830170
+    random = no
+    country = U07
+    style = 2
+
+    trigger = { 
+    event = 830160 
+    NOT = {
+    ispuppet = U07
+    }
+    }
+
+    name = "EVT_830170_NAME"
+    desc = "EVT_830170_DESC"
+
+    date = { day = 1 month = january year = 1936 }
+    offset = 30
+    deathdate = { day = 29 month = december year = 1966 }
+
+    action_a = {
+        name = "EVT_830170_OPTIONA"
+        ai_chance = 60
+        command = { type = setflag which = UK_ELECT1_YES }
+        command = { type = sleepevent which = 830180 }
+    }
+    action_b = {
+        name = "EVT_830170_OPTIONB"
+        ai_chance = 20
+        command = { type = set_domestic which = political_left value = 3 }
+        command = { type = headofstate which = 557400 } #Edward VIII
+        command = { type = headofgovernment which = 557416 } #Lord Mountbatten
+        command = { type = foreignminister which = 557432 } #Adrian Carton de Wiart
+        command = { type = armamentminister which = 557449 } #John Siddeley
+        command = { type = ministerofsecurity which = 557483 } #Desmond Morton
+        command = { type = chiefofstaff which = 557514 } #Edmund Ironside
+        command = { type = chiefofarmy which = 557515 } #Edmund Ironside
+        command = { type = chiefofnavy which = 557536 } #Roger Keyes
+        command = { type = chiefofair which = 557544 } #Hugh Trenchard
+        command = { type = waketeam which = 557423 } #Edmund Ironside
+        command = { type = waketeam which = 557435 } #Roger Keyes
+        command = { type = waketeam which = 557425 } #Hugh Trenchard
+        command = { type = trigger which = 830208 } #Return of Ironside, Keyes, & Trenchard (CAN)
+        command = { type = setflag which = UK_MILPROVGOV }
+    }
+    action_c = {
+        name = "EVT_830170_OPTIONC"
+        ai_chance = 20
+        command = { type = set_domestic which = political_left value = 3 }
+        command = { type = headofstate which = 557400 } #Edward VIII
+        command = { type = headofgovernment which = 557416 } #Lord Mountbatten
+        command = { type = foreignminister which = 557432 } #Adrian Carton de Wiart
+        command = { type = armamentminister which = 557449 } #John Siddeley
+        command = { type = ministerofsecurity which = 557483 } #Desmond Morton
+        command = { type = chiefofstaff which = 557515 } #Claude Auchinleck
+        command = { type = chiefofarmy which = 557526 } #Claude Auchinleck
+        command = { type = chiefofnavy which = 557536 } #Roger Keyes
+        command = { type = chiefofair which = 557544 } #Hugh Trenchard
+        command = { type = waketeam which = 557420 } #Claude Auchinleck
+        command = { type = waketeam which = 557435 } #Roger Keyes
+        command = { type = waketeam which = 557425 } #Hugh Trenchard
+        command = { type = trigger which = 830209 } #Return of Auchinleck, Keyes, & Trenchard (CAN)
+        command = { type = setflag which = UK_MILPROVGOV }
+    }
+}
+
+event = {
+
+	id = 830171
+	random = no
+	country = U07
+	style = 2
+	trigger = {
+                NOT = {
+                ispuppet = U07
+                }
+		event = 830170
+		}
+
+	name = "EVT_830171_NAME"
+	desc = "EVT_830171_DESC"
+
+	date =  { day = 1 month = january year = 1936 }
+	offset = 15
+	deathdate = { day = 29 month = december year = 1960 }
+
+	action_a = {
+		name = "EVT_830171_OPTIONA"
+		ai_chance = 70
+		command = { type = domestic which = political_left value = -1 }
+                command = { type = dissent value = 4 }
+		command = { type = setflag which = UK_PROVGOV_HABEAS_CORPUS_SUSPENDED }
+		}
+
+	action_b = {
+		name = "EVT_830171_OPTIONB"
+		ai_chance = 30
+		command = { type = domestic which = freedom value = 1 }
+                command = { type = dissent value = 2 }
+		}
+	}
+
+event = {
+
+	id = 830172
+	random = no
+	country = U07
+	style = 2
+	trigger = {
+                NOT = {
+                ispuppet = U07
+                }
+		event = 830171
+		}
+
+	name = "EVT_830172_NAME"
+	desc = "EVT_830172_DESC"
+
+	date =  { day = 1 month = january year = 1936 }
+	offset = 15
+	deathdate = { day = 29 month = december year = 1960 }
+
+	action_a = {
+		name = "EVT_830172_OPTIONA"
+		ai_chance = 40
+		command = { type = domestic which = political_left value = 1 }
+                command = { type = dissent value = 1 }
+		command = { type = setflag which = UK_PROVGOV_POWS_FREED }
+		}
+
+	action_b = {
+		name = "EVT_830172_OPTIONB"
+		ai_chance = 60
+		command = { type = dissent value = 2 }
+		}
+	}
+
+event = {
+
+	id = 830173
+	random = no
+	country = U07
+	style = 2
+	trigger = {
+		event = 830172
+		}
+
+	name = "EVT_830173_NAME"
+	desc = "EVT_830173_DESC"
+
+	date =  { day = 1 month = january year = 1936 }
+	offset = 15
+	deathdate = { day = 29 month = december year = 1960 }
+
+	action_a = {
+		name = "EVT_830173_OPTIONA"
+		ai_chance = 80
+		command = { type = domestic which = political_left value = -1 }
+                command = { type = dissent value = 2 }
+		command = { type = setflag which = UK_PROVGOV_LAND_RETURNED }
+		}
+
+	action_b = {
+		name = "EVT_830173_OPTIONB"
+		ai_chance = 20
+		command = { type = dissent value = -2 }
+		}
+	}
+
+event = {
+
+	id = 830174
+	random = no
+	country = U07
+	style = 2
+	trigger = {
+		event = 830173
+		}
+
+	name = "EVT_830174_NAME"
+	desc = "EVT_830174_DESC"
+
+	date =  { day = 1 month = january year = 1936 }
+	offset = 15
+	deathdate = { day = 29 month = december year = 1960 }
+
+	action_a = {
+		name = "EVT_830174_OPTIONA"
+		ai_chance = 25
+		command = { type = domestic which = political_left value = 1 }
+                command = { type = dissent value = 2 }
+		command = { type = setflag which = UK_PROVGOV_UNIONS_YES }
+		}
+
+	action_b = {
+		name = "EVT_830174_OPTIONB"
+		ai_chance = 75
+		command = { type = dissent value = 5 }
+		}
+	}
+
+event = {
+
+	id = 830175
+	random = no
+	country = U07
+	style = 2
+	trigger = {
+		event = 830174
+		}
+
+	name = "EVT_830175_NAME"
+	desc = "EVT_830175_DESC"
+
+	date =  { day = 1 month = january year = 1936 }
+	offset = 15
+	deathdate = { day = 29 month = december year = 1960 }
+
+	action_a = {
+		name = "EVT_830175_OPTIONA"
+		ai_chance = 65
+		command = { type = domestic which = political_left value = -1 }
+		command = { type = setflag which = UK_PROVGOV_LORDS_ALLOWED }
+                command = { type = dissent value = 2 }
+		}
+
+	action_b = {
+		name = "EVT_830175_OPTIONB"
+		ai_chance = 35
+		command = { type = dissent value = 1 }
+		}
+	}
+
+event = {
+
+	id = 830176
+	random = no
+	country = U07
+	style = 2
+	trigger = {
+		event = 830175
+		}
+
+	name = "EVT_830176_NAME"
+	desc = "EVT_830176_DESC"
+
+	date =  { day = 1 month = january year = 1936 }
+	offset = 15
+	deathdate = { day = 29 month = december year = 1960 }
+
+	action_a = {
+		name = "EVT_830176_OPTIONA"
+		ai_chance = 50
+		command = { type = domestic which = political_left value = 1 }
+		command = { type = setflag which = UK_PROVGOV_PROG_ALLOWED }
+		}
+
+	action_b = {
+		name = "EVT_830176_OPTIONB"
+		ai_chance = 50
+		command = { type = dissent value = 3 }
+		}
+	}
+

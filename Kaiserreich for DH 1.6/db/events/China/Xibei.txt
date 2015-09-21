@@ -1,0 +1,887 @@
+event = {
+ id = 75000
+ country = CXB
+ style = 2
+ picture = "Chinese New Year"
+
+ date = { day = 3 month = january year = 1936 }
+
+ name = "EVT_75000_NAME"
+ desc = "EVT_91802_DESC"
+
+ action_a = { 
+ name = "EVT_75000_OPTIONA"
+ command = {  }
+
+     }
+ }
+
+
+event = {
+ id = 75001
+ country = CXB
+ style = 2
+ picture = "Chinese Workforce"
+
+ trigger = {
+         war = { country = MON country = CXB }
+         OR = { 
+		lost_national = { country = CXB value = 20 }
+		lost_vp = { country = CXB value = 30 }
+	 }
+         }
+
+ name = "EVT_75001_NAME"
+ desc = "EVT_75001_DESC"
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 6
+ deathdate = { day = 29 month = december year = 1960 }
+
+ action_a = { 
+ ai_chance = 60
+ name = "EVT_75001_OPTIONA"
+     command = { type = add_division which = "1st Xibei Lianbang Militia" value = militia when = 3 }
+     command = { type = add_division which = "2nd Xibei Lianbang Militia" value = militia when = 3 }
+     command = { type = add_division which = "3rd Xibei Lianbang Militia" value = militia when = 3 }
+     command = { type = dissent value = 5 }
+     command = { type = manpowerpool value = -10 }
+     command = { type = money value = -20 }
+     command = { type = supplies value = -500 }
+     command = { type = industrial_modifier which = total value = -1 }
+     command = { type = morale which = land value = -2 }
+     }
+
+ action_b = {
+ ai_chance = 40 
+ name = "EVT_75001_OPTIONB"
+     command = { type = morale which = land value = 4 }
+     command = { type = dissent value = -1 }
+     }
+
+ }
+
+
+
+
+
+
+event = {
+ id = 75002
+ country = CXB
+ style = 2
+ picture = "Chinese Infantry2"
+
+ trigger = {
+     control = { province = 1124 data = CXB }
+     NOT = {
+     exists = MON
+     atwar = CXB
+     ispuppet = CXB
+     government = communist
+     }
+     }
+
+ name = "EVT_75002_NAME"
+ desc = "EVT_75002_DESC"
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 30
+ deathdate = { day = 29 month = december year = 1960 }
+
+ action_a = { 
+ ai_chance = 30
+ name = "EVT_75002_OPTIONA"
+     command = { type = addclaim  which = 1119 }
+     command = { type = addclaim  which = 1120 }
+     command = { type = addclaim  which = 1121 }
+     command = { type = addclaim  which = 1122 }
+     command = { type = addclaim  which = 1123 }
+     command = { type = addclaim  which = 1124 }
+     command = { type = addclaim  which = 1125 }
+     command = { trigger = { owned = { province = 1146 data = CXB } } type = addclaim  which = 1146 }
+     command = { trigger = { owned = { province = 1147 data = CXB } } type = addclaim  which = 1147 }
+     command = { trigger = { owned = { province = 1158 data = CXB } } type = addclaim  which = 1158 }
+     command = { trigger = { owned = { province = 1167 data = CXB } } type = addclaim  which = 1167 }
+     command = { trigger = { owned = { province = 1168 data = CXB } } type = addclaim  which = 1168 }
+     command = { trigger = { owned = { province = 1169 data = CXB } } type = addclaim  which = 1169 }
+     command = { type = sleepleader which = 330025 }
+     command = { type = sleepteam which = 6802 }
+     command = { type = sleepteam which = 6801 }
+     command = { type = waketeam which = 6807 }
+     command = { type = sleepminister which = 94105 }
+     command = { type = sleepminister which = 94111 }
+     command = { type = sleepminister which = 94112 }
+     command = { type = sleepminister which = 94136 }
+     command = { type = dissent value = 10 }
+     command = { type = belligerence which = CXB value = 10  }
+     command = { trigger = { exists = RUS NOT = { control = { province = 1167 data = RUS } exists = SOV exists = SIB war = { country = RUS country = CXB } alliance = { country = RUS country = CXB } } control = { province = 1162 data = RUS } control = { province = 553 data = RUS } } type = trigger which = 75021 }
+     command = { trigger = { exists = SOV NOT = { control = { province = 1167 data = SOV } exists = RUS exists = SIB war = { country = SOV country = CXB } alliance = { country = SOV country = CXB } } control = { province = 1162 data = SOV } control = { province = 553 data = SOV } } type = trigger which = 75022 }
+     }
+
+ action_b = {
+ ai_chance = 70
+ name = "EVT_75002_OPTIONB"
+     command = { type = sleepleader which = 330025 }
+     command = { type = sleepteam which = 6802 }
+     command = { type = sleepteam which = 6801 }
+     command = { type = waketeam which = 6807 }
+     command = { type = sleepminister which = 94105 }
+     command = { type = sleepminister which = 94111 }
+     command = { type = sleepminister which = 94112 }
+     command = { type = sleepminister which = 94136 }
+     command = { type = independence which = MON value = 1 when = 0 }
+     command = { type = make_puppet which = MON }
+     command = { type = dissent value = 4 }
+     command = { type = belligerence which = CXB value = 2  }
+     command = { type = trigger which = 75003 }
+     command = { trigger = { exists = RUS NOT = { control = { province = 1167 data = RUS } exists = SOV exists = SIB war = { country = RUS country = CXB } alliance = { country = RUS country = CXB } } control = { province = 1162 data = RUS } control = { province = 553 data = RUS } } type = trigger which = 75021 }
+     command = { trigger = { exists = SOV NOT = { control = { province = 1167 data = SOV } exists = RUS exists = SIB war = { country = SOV country = CXB } alliance = { country = SOV country = CXB } } control = { province = 1162 data = SOV } control = { province = 553 data = SOV } } type = trigger which = 75022 }
+     }
+ }
+
+event = {
+	id = 75021
+	random = no
+	country = RUS
+	picture = "mongolia1"
+	
+	name = "EVT_75021_NAME"
+	desc = "EVT_75021_DESC"		
+	style = 2
+
+	action_a = {
+        ai_chance = 100
+		name = "EVT_75021_OPTIONA"
+		command = { type = addcore which = 1167 }
+		command = { type = addcore which = 1168 }
+		command = { type = addcore which = 1169 }
+		command = { type = addcore which = 1158 }
+                command = { type = addcore which = 1146 }
+		command = { type = addcore which = 1147 }
+		command = { type = relation which = CXB value = -50 }
+                command = { type = relation which = MON value = -50 }
+                command = { trigger = { exists = MON } type = trigger which = 75023 }
+                command = { type = trigger which = 75024 }     
+	}
+
+        action_b = {
+        ai_chance = 0
+		name = "EVT_75021_OPTIONB"
+		command = { type = relation which = CXB value = 50 }
+                command = { type = relation which = MON value = 50 }
+		command = { type = dissent value = 1 }
+                
+	}
+}
+
+event = {
+	id = 75022
+	random = no
+	country = SOV
+	picture = "mongolia1"
+	
+	name = "EVT_75022_NAME"
+	desc = "EVT_75022_DESC"		
+	style = 2
+
+	action_a = {
+        ai_chance = 100
+		name = "EVT_75022_OPTIONA"
+		command = { type = addcore which = 1167 }
+		command = { type = addcore which = 1168 }
+		command = { type = addcore which = 1169 }
+		command = { type = addcore which = 1158 }
+                command = { type = addcore which = 1146 }
+		command = { type = addcore which = 1147 }
+		command = { type = relation which = CXB value = -50 }
+                command = { type = relation which = MON value = -50 }
+                command = { trigger = { exists = MON } type = trigger which = 75025 }
+                command = { type = trigger which = 75026 }          
+	}
+
+        action_b = {
+        ai_chance = 0
+		name = "EVT_75022_OPTIONB"
+		command = { type = relation which = CXB value = 50 }
+                command = { type = relation which = MON value = 50 }
+		command = { type = dissent value = 1 }
+                
+	}
+}
+
+event = {
+	id = 75023
+	random = no
+	country = MON
+        picture = "mongolia1"
+	
+	name = "EVT_75023_NAME"
+	desc = "EVT_75023_DESC"		
+	style = 2
+        
+
+	action_a = {
+		name = "EVT_75023_OPTIONA"
+		command = { type = secedeprovince which = RUS value = 1167 } 				
+		command = { type = secedeprovince which = RUS value = 1168 } 				
+		command = { type = secedeprovince which = RUS value = 1169 } 				
+		command = { type = secedeprovince which = RUS value = 1158 }
+                command = { type = secedeprovince which = RUS value = 1146 } 				
+		command = { type = secedeprovince which = RUS value = 1147 } 
+                command = { type = dissent value = 1 }
+                
+	}
+}
+
+event = {
+	id = 75024
+	random = no
+	country = CXB
+	picture = "mongolia1"
+	
+	name = "EVT_75024_NAME"
+	desc = "EVT_75024_DESC"		
+	style = 2
+        
+
+	action_a = {
+        ai_chance = 100
+		name = "EVT_75024_OPTIONA"
+		command = { type = secedeprovince which = RUS value = 1167 } 				
+		command = { type = secedeprovince which = RUS value = 1168 } 				
+		command = { type = secedeprovince which = RUS value = 1169 } 				
+		command = { type = secedeprovince which = RUS value = 1158 }
+                command = { type = secedeprovince which = RUS value = 1146 } 				
+		command = { type = secedeprovince which = RUS value = 1147 } 
+                command = { type = dissent value = 1 }
+                
+	}
+        action_b = {
+        ai_chance = 0
+		name = "EVT_75024_OPTIONB"
+		command = { type = war which = RUS }
+                command = { type = dissent value = 1 }
+                
+	}
+}
+
+event = {
+	id = 75025
+	random = no
+	country = MON
+	picture = "mongolia1"
+	
+	name = "EVT_75025_NAME"
+	desc = "EVT_75025_DESC"			
+	style = 2
+        
+
+	action_a = {
+        ai_chance = 100
+		name = "EVT_75025_OPTIONA"
+		command = { type = secedeprovince which = SOV value = 1167 } 				
+		command = { type = secedeprovince which = SOV value = 1168 } 				
+		command = { type = secedeprovince which = SOV value = 1169 } 				
+		command = { type = secedeprovince which = SOV value = 1158 }
+                command = { type = secedeprovince which = SOV value = 1146 } 				
+		command = { type = secedeprovince which = SOV value = 1147 } 
+                command = { type = dissent value = 1 }
+                
+	}
+}
+
+event = {
+	id = 75026
+	random = no
+	country = CXB
+	picture = "mongolia1"
+	
+	name = "EVT_75026_NAME"
+	desc = "EVT_75026_DESC"	
+	style = 2
+        
+
+	action_a = {
+        ai_chance = 100
+		name = "EVT_75026_OPTIONA"
+		command = { type = secedeprovince which = SOV value = 1167 } 				
+		command = { type = secedeprovince which = SOV value = 1168 } 				
+		command = { type = secedeprovince which = SOV value = 1169 } 				
+		command = { type = secedeprovince which = SOV value = 1158 }
+                command = { type = secedeprovince which = SOV value = 1146 } 				
+		command = { type = secedeprovince which = SOV value = 1147 } 
+                command = { type = dissent value = 1 }
+                
+	}
+        action_b = {
+        ai_chance = 0
+		name = "EVT_75026_OPTIONB"
+		command = { type = war which = SOV }
+                command = { type = dissent value = 1 }
+                
+	}
+}
+
+
+
+ event = {
+ id = 75003
+ country = CXB
+ style = 2
+ picture = "Chinese Infantry2"
+
+ name = "EVT_75003_NAME"
+ desc = "EVT_75003_DESC"
+
+ action_a = { 
+ ai_chance = 60
+ name = "EVT_75003_OPTIONA"
+     command = { type = trigger which = 75004 }
+     command = { type = wakeminister which = 94158 }
+     command = { type = wakeminister which = 94159 }
+     command = { type = wakeminister which = 94160 }
+     }
+
+ action_b = {
+ ai_chance = 25
+ name = "EVT_75003_OPTIONB"
+     command = { type = trigger which = 75005 }
+     command = { type = wakeminister which = 94158 }
+     command = { type = wakeminister which = 94159 }
+     command = { type = wakeminister which = 94160 }
+     }
+
+ action_c = {
+ ai_chance = 15
+ name = "EVT_75003_OPTIONC"
+     command = { type = trigger which = 75006 }
+     command = { type = wakeminister which = 94158 }
+     command = { type = wakeminister which = 94159 }
+     command = { type = wakeminister which = 94160 }
+     }
+ }
+
+ event = {
+ id = 75004
+ country = MON
+ style = 2
+ picture = "Chinese Infantry2"
+
+ name = "EVT_75004_NAME"
+ desc = "EVT_75004_DESC"
+
+ action_a = {
+ name = "EVT_75004_OPTIONA"
+     command = { type = headofstate which = 94158 } #Ma Zhongying
+     }
+ }
+
+ event = {
+ id = 75005
+ country = MON
+ style = 2
+ picture = "Chinese Infantry2"
+
+ name = "EVT_75005_NAME"
+ desc = "EVT_75005_DESC"
+
+ action_a = {
+ name = "EVT_75005_OPTIONA"
+     command = { type = headofstate which = 94159 } #Ma Lin
+     }
+ }
+
+ event = {
+ id = 75006
+ country = MON
+ style = 2
+ picture = "Chinese Infantry2"
+
+ name = "EVT_75006_NAME"
+ desc = "EVT_75006_DESC"
+
+ action_a = {
+ name = "EVT_75006_OPTIONA"
+     command = { type = headofstate which = 94160 } #Ma Shaowu
+     }
+ }
+
+ event = {
+ id = 75007
+ country = CXB
+ style = 2
+ picture = "Chinese Calvary2"
+
+ trigger = {
+     event = 75002
+     control = { province = 1124 data = -3 }
+     NOT = {
+     atwar = CXB
+     ispuppet = CXB
+     government = communist
+     }
+     }
+
+ name = "EVT_75007_NAME"
+ desc = "EVT_75007_DESC"
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 30
+ deathdate = { day = 29 month = december year = 1960 }
+
+ action_a = {
+ ai_chance = 90
+ name = "EVT_75007_OPTIONA"
+     command = { type = event which = 75009 where = CXB when = 4  }
+     command = { type = dissent value = 3 }
+     }
+
+ action_b = {
+ ai_chance = 10
+ name = "EVT_75007_OPTIONB"
+     command = { type = dissent value = 3 }
+     }
+
+ action_c = {
+ ai_chance = 10
+ name = "EVT_75007_OPTIONC"
+     command = { type = event which = 75008 where = CXB when = 3  }
+     command = { type = headofstate which = 504022 }
+     }
+ }
+
+ event = {
+ id = 75008
+ country = CXB
+ style = 2
+ picture = "Chinese Crossroad"
+
+ name = "EVT_75008_NAME"
+ desc = "EVT_75008_DESC"
+
+ action_a = {
+ name = "EVT_75008_OPTIONA"
+     command = { type = headofstate which = 504022 }
+     command = { type = end_mastery which = MON }
+     command = { type = revolt which = 1282 }
+     command = { type = revolt which = 1280 }
+     command = { type = revolt which = 1284 }
+     command = { trigger = { owned = { province = 1124 data = CXB } } type = revolt which = 1124 }
+     command = { trigger = { owned = { province = 1123 data = CXB } } type = revolt which = 1123 }
+     command = { trigger = { owned = { province = 1122 data = CXB } } type = revolt which = 1122 }
+     command = { trigger = { owned = { province = 1121 data = CXB } } type = revolt which = 1121 }
+     command = { type = domestic which = democratic value = -2 }
+     command = { type = dissent value = 15 }
+     }
+     }
+     
+
+ event = {
+ id = 75009
+ country = CXB
+ style = 2
+ picture = "Japanese-American Meeting"
+
+ name = "EVT_75009_NAME"
+ desc = "EVT_91803_DESC"
+
+ action_a = {
+ name = "EVT_75009_OPTIONA"
+     command = { type = setflag which = CXB_ASSEMBLY }
+     }
+ }
+
+ event = {
+ id = 75010
+ country = CXB
+ style = 2
+ picture = "Japanese-American Meeting"
+
+ trigger = {
+ random = 70
+ flag = CXB_ASSEMBLY 
+ }
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 10
+ deathdate = { day = 29 month = december year = 1960 }
+
+ name = "EVT_75010_NAME"
+ desc = "EVT_75010_DESC"
+
+ action_a = {
+ name = "EVT_75010_OPTIONA"
+     command = { type = clrflag which = CXB_ASSEMBLY }
+     command = { type = name where = CXB which = CXB_FED_NAME }
+     command = { type = flag_ext where = CXB which = "_fed" }
+     command = { type = dissent value = -10 }
+     command = { type = industrial_modifier which = total value = 5 }
+     command = { type = sleepevent which = 75011 }
+     command = { type = event which = 75014 where = CXB when = 1  }
+     }
+ }
+
+ event = {
+ id = 75011
+ country = CXB
+ style = 2
+ picture = "Japanese-American Meeting"
+
+ trigger = {
+ random = 30
+ flag = CXB_ASSEMBLY 
+ }
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 10
+ deathdate = { day = 29 month = december year = 1950 }
+
+ name = "EVT_75011_NAME"
+ desc = "EVT_75011_DESC"
+
+ action_a = {
+ name = "EVT_75011_OPTIONA"
+     command = { type = dissent value = 1 }
+     command = { type = clrflag which = CXB_ASSEMBLY }
+     command = { type = sleepevent which = 75010 }
+     command = { type = event which = 75018 where = CXB when = 1  }
+ }
+ }
+
+
+event = {
+ id = 75012
+ country = CXB
+ style = 2
+ picture = "Chinese Crossroad"
+
+ trigger = {
+     NOT = {
+        atwar = CXB
+        ispuppet = CXB
+        }
+     OR = {
+     event = 75008
+     event = 75011
+     }
+     random = 35
+ }
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 20
+ deathdate = { day = 29 month = december year = 1950 }
+
+ name = "EVT_75012_NAME"
+ desc = "EVT_75012_DESC"
+
+ action_a = {
+ name = "EVT_75012_OPTIONA"
+     command = { type = sleepleader which = 160024 } #High ranking Sinkiang leaders from Xibei are removed. Let the Mj. Generals stay behind.
+     command = { type = sleepleader which = 160023 }
+     command = { type = sleepleader which = 160015 }
+     command = { type = sleepleader which = 160000 }
+     command = { type = sleepleader which = 160001 }
+     command = { type = independence which = SIK value = 1 when = 0 }
+     command = { type = secedeprovince which = SIK value = 1273 }
+     command = { type = secedeprovince which = SIK value = 1281 }
+     command = { type = secedeprovince which = SIK value = 1278 }
+     command = { type = secedeprovince which = SIK value = 1276 }
+     command = { type = secedeprovince which = SIK value = 1274 }
+     command = { type = remove_division which = -1 value = -1	}
+     command = { type = remove_division which = -1 value = -1	}
+     command = { type = remove_division which = -1 value = -1	}
+     command = { type = remove_division which = -1 value = -1	}
+     command = { type = trigger which = 75013 }
+     }
+ }
+
+
+event = {
+ id = 75013
+ country = SIK
+ style = 2
+ picture = "Chinese Crossroad"
+
+ name = "EVT_75013_NAME"
+ desc = "EVT_75013_DESC"
+
+ action_a = {
+ name = "EVT_75013_OPTIONA"
+     command = { type = set_domestic which = democratic value = 3 }
+     command = { type = set_domestic which = political_left value = 4 }
+     command = { type = headofstate which = 7435001  } 
+     command = { type = headofgovernment which = 7435002  }
+     command = { type = add_division value = infantry when = 6 }
+     command = { type = add_division value = infantry when = 6 }
+     command = { type = add_division value = infantry when = 6 }
+     command = { type = add_division value = infantry when = 6 } 
+     command = { type = add_division value = militia when = 4 }
+     command = { type = add_division value = militia when = 4 }
+     command = { type = war which = CXB } 
+     }
+ }
+
+
+event = {
+ id = 75014
+ country = CXB
+ style = 2
+ picture = "China_Rally"
+
+ name = "EVT_75014_NAME"
+ desc = "EVT_75014_DESC"
+
+ action_a = {
+ ai_chance = 40
+ name = "EVT_75014_OPTIONA"
+     command = { type = setflag which = CXB_BUFANG }
+     command = { type = trigger which = 75015 }
+     command = { type = headofstate which = 504022 }
+     }
+
+ action_b = {
+ ai_chance = 40
+ name = "EVT_75014_OPTIONB"
+     command = { type = setflag which = CXB_HONGKUI }
+     command = { type = trigger which = 75016 }
+     command = { type = headofstate which = 504011 }
+     }
+
+ action_c = {
+ ai_chance = 20
+ name = "EVT_75014_OPTIONC"
+     command = { type = setflag which = CXB_HONGBIN }
+     command = { type = trigger which = 75017 }
+     command = { type = headofstate which = 504032 }
+     }
+ }
+
+
+event = {
+ id = 75015
+ country = CXB
+ style = 2
+ picture = "China_Rally"
+
+ name = "EVT_75015_NAME"
+ desc = "EVT_75015_DESC"
+
+ action_a = {
+ ai_chance = 25
+ name = "EVT_75015_OPTIONA"
+     command = { type = headofgovernment which = 504033 }
+     }
+
+ action_b = {
+ ai_chance = 25
+ name = "EVT_75015_OPTIONB"
+     command = { type = headofgovernment which = 504012 }
+     }
+
+ action_c = {
+ ai_chance = 25
+ name = "EVT_75015_OPTIONC"
+     command = { type = headofgovernment which = 504034 }
+     }
+
+ action_d = {
+ ai_chance = 25
+ name = "EVT_75015_OPTIOND"
+     command = { type = headofgovernment which = 504035 }
+     }
+ }
+
+ event = {
+ id = 75016
+ country = CXB
+ style = 2
+ picture = "China_Rally"
+
+ name = "EVT_75016_NAME"
+ desc = "EVT_75016_DESC"
+
+ action_a = {
+ ai_chance = 40
+ name = "EVT_75016_OPTIONA"
+     command = { type = headofgovernment which = 504033 }
+     }
+
+ action_b = {
+ ai_chance = 20
+ name = "EVT_75016_OPTIONB"
+     command = { type = headofgovernment which = 504012 }
+     }
+
+ action_c = {
+ ai_chance = 20
+ name = "EVT_75016_OPTIONC"
+     command = { type = headofgovernment which = 504034 }
+     }
+
+ action_d = {
+ ai_chance = 20
+ name = "EVT_75016_OPTIOND"
+     command = { type = headofgovernment which = 504002 }
+     command = { type = dissent value = 8 }
+     }
+ }
+
+ event = {
+ id = 75017
+ country = CXB
+ style = 2
+ picture = "China_Rally"
+
+ name = "EVT_75017_NAME"
+ desc = "EVT_75017_DESC"
+
+ action_a = {
+ ai_chance = 40
+ name = "EVT_75017_OPTIONA"
+     command = { type = headofgovernment which = 504002 }
+     }
+
+ action_b = {
+ ai_chance = 20
+ name = "EVT_75017_OPTIONB"
+     command = { type = headofgovernment which = 504012 }
+     }
+
+ action_c = {
+ ai_chance = 20
+ name = "EVT_75017_OPTIONC"
+     command = { type = headofgovernment which = 504034 }
+     }
+
+ action_d = {
+ ai_chance = 20
+ name = "EVT_75017_OPTIOND"
+     command = { type = headofgovernment which = 504036 }
+     }
+ }
+
+
+
+event = {
+ id = 75018
+ country = CXB
+ style = 2
+ picture = "China_Rally"
+
+ name = "EVT_75018_NAME"
+ desc = "EVT_75018_DESC"
+
+ action_a = {
+ ai_chance = 40
+ name = "EVT_75018_OPTIONA"
+ command = { type = dissent value = 5 }
+     }
+
+ action_b = {
+ ai_chance = 60
+ name = "EVT_75018_OPTIONB"
+     command = { type = trigger which = 75008 }
+     command = { type = dissent value = 2 }
+     }
+ }
+
+
+event = {
+ id = 75019
+ country = CXB
+ style = 2
+ picture = "China_Rally"
+
+ trigger = {
+     event = 75013
+     headofstate = 504011 #Ma Hongkui
+     control = { province = 1281 data = CXB }
+     not = {
+     exists = SIK
+     ispuppet = CXB
+     atwar = CXB 
+     }
+ }
+
+ name = "EVT_75019_NAME"
+ desc = "EVT_75019_DESC"
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 20
+ deathdate = { day = 29 month = december year = 1950 }
+
+ action_a = {
+ name = "EVT_75019_OPTIONA"
+     command = { type = trigger which = 75016 } #Choosing a Head of Government
+     command = { type = setflag which = CXB_HONGKUIDICTATOR }
+     command = { type = name where = CXB which = CXB_FED_NAME }
+     command = { type = flag_ext where = CXB which = "_fed" }
+     command = { type = dissent value = -10 }
+     }
+ }
+
+
+event = {
+ id = 75020
+ country = CXB
+ style = 2
+ picture = "China_Rally"
+
+ trigger = {
+     NOT = {
+     exists = SIK 
+     ispuppet = CXB
+     atwar = CXB
+     }
+     OR = {
+     flag = CXB_HONGKUI
+     flag = CXB_HONGKUIDICTATOR
+     flag = CXB_BUFANG
+     flag = CXB_HONGBIN
+     }
+ }
+
+ name = "EVT_75020_NAME"
+ desc = "EVT_75020_DESC"
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 20
+ deathdate = { day = 29 month = december year = 1950 }
+
+ action_a = {
+ ai_chance = 50
+ trigger = {
+ control = { province = 1284 data = CXB }
+ }
+ name = "EVT_75020_OPTIONA"
+     command = { type = capital which = 1284 }
+     }
+
+ action_b = {
+ ai_chance = 10
+ trigger = {
+ control = { province = 1281 data = CXB }
+ }
+ name = "EVT_75020_OPTIONB"
+     command = { type = capital which = 1281 }
+     }
+
+ action_c = {
+ ai_chance = 20
+ trigger = {
+ control = { province = 1283 data = CXB }
+ }
+ name = "EVT_75020_OPTIONC"
+     command = { type = capital which = 1283 }
+     }
+
+ action_d = {
+ ai_chance = 20
+ trigger = {
+ control = { province = 1264 data = CXB }
+ }
+ name = "EVT_75020_OPTIOND"
+     command = { type = capital which = 1264 }
+     }
+ }

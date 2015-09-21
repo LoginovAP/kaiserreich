@@ -1,0 +1,4109 @@
+event = {
+	id = 751000
+	random = no
+	country = PRI
+	style = 2
+	  
+        decision = {
+        flag = SIB_PANIC 
+        NOT = {
+	exists = SIB
+	alliance = { country = PRI country = RUS }
+	war = { country = PRI country = RUS }
+        war = { country = PRI country = JAP }
+        war = { country = PRI country = KOR }
+        war = { country = PRI country = MAN }
+	puppet = { country = PRI country = RUS  }
+	}
+        OR = {
+	control = { province = 1162 data = RUS }
+	control = { province = 1186 data = RUS }
+	control = { province = 1142 data = RUS }
+	control = { province = 1184 data = RUS }
+        control = { province = 1188 data = RUS }
+	}
+	}
+
+        decision_trigger = {
+        }
+
+	trigger = {
+        flag = SIB_PANIC 
+        NOT = {
+	exists = SIB
+	alliance = { country = PRI country = RUS }
+	war = { country = PRI country = RUS }
+        war = { country = PRI country = JAP }
+        war = { country = PRI country = KOR }
+        war = { country = PRI country = MAN }
+	puppet = { country = PRI country = RUS  }
+	}
+        OR = {
+	control = { province = 1162 data = RUS }
+	control = { province = 1186 data = RUS }
+	control = { province = 1142 data = RUS }
+	control = { province = 1184 data = RUS }
+        control = { province = 1188 data = RUS }
+	}
+	}
+
+	name = "EVT_751000_NAME"
+	desc = "EVT_751000_DESC"
+        picture = "SiberiaAssembly"
+        decision_picture = "decision_Russian_mobilization"	
+
+        date = { day = 1 month = january year = 1936 }
+	offset = 120
+	deathdate = { day = 1 month = december year = 1960 }
+
+	action_a = {
+		ai_chance = 70
+		name = "EVT_751000_OPTIONA"
+                trigger = {
+                NOT = {
+                puppet = { country = PRI country = JAP  }
+                }
+                }
+                command = { type = belligerence which = PRI value = 10  }
+                command = { type = domestic which = interventionism value = 2 }
+                command = { type = dissent value = 10 }  ## Reflects difficulty of integrating new territory
+                command = { type = event which = 751001 where = RUS when = 2  }
+		}
+
+        action_b = {
+		ai_chance = 70
+		name = "EVT_751000_OPTIONB"
+                trigger = {
+                puppet = { country = PRI country = JAP  }
+                }
+                command = { type = belligerence which = PRI value = 10  }
+                command = { type = domestic which = interventionism value = 2 }
+                command = { type = trigger which = 751125 }
+		}
+
+	action_c = {
+		ai_chance = 30
+		name = "EVT_751000_OPTIONC"
+                command = { type = domestic which = interventionism value = -2 }
+                command = { type = relation which = RUS value = 60 }
+                }
+                }
+
+event = {
+id = 751125
+random = no
+country = JAP
+style = 2
+picture = "Siberia4"
+
+
+name = "EVT_751125_NAME"
+desc = "EVT_751125_DESC"
+
+action_a = {
+ai_chance = 90
+name = "EVT_751125_OPTIONA"
+trigger = {
+NOT = {
+war = { country = JAP country = GER }
+war = { country = JAP country = CSX }
+war = { country = JAP country = CAN }
+war = { country = JAP country = USA }
+war = { country = JAP country = CAL }
+war = { country = JAP country = TEX }
+war = { country = JAP country = AST }
+}
+}
+command = { type = belligerence which = JAP value = 3 }
+command = { type = dissent value = -1 }
+command = { type = relation which = RUS value = -50 }
+command = { type = relation which = PRI value = 25 }
+command = { type = event which = 751001 where = RUS when = 2  }
+command = { type = sleepevent which = 756037 }
+}
+
+action_b = {
+ai_chance = 10
+name =  "EVT_751125_OPTIONB"
+trigger = {
+NOT = {
+war = { country = JAP country = GER }
+war = { country = JAP country = CSX }
+war = { country = JAP country = CAN }
+war = { country = JAP country = USA }
+war = { country = JAP country = CAL }
+war = { country = JAP country = TEX }
+war = { country = JAP country = AST }
+}
+}
+command = { type = belligerence which = JAP value = -3 }
+command = { type = dissent value = 1 }
+command = { type = relation which = RUS value = 50 }
+command = { type = relation which = PRI value = -25 }
+}
+
+action_c = {
+ai_chance = 0
+name = "EVT_751125_OPTIONC"
+trigger = {
+OR = {
+war = { country = JAP country = GER }
+war = { country = JAP country = CSX }
+war = { country = JAP country = CAN }
+war = { country = JAP country = USA }
+war = { country = JAP country = CAL }
+war = { country = JAP country = TEX }
+war = { country = JAP country = AST }
+}
+}
+command = { type = belligerence which = JAP value = 3 }
+command = { type = dissent value = 1 }
+command = { type = relation which = RUS value = -50 }
+command = { type = relation which = PRI value = 25 }
+command = { type = event which = 751001 where = RUS when = 2  }
+command = { type = sleepevent which = 756037 }
+}
+
+action_d = {
+ai_chance = 100
+name =  "EVT_751125_OPTIOND"
+trigger = {
+OR = {
+war = { country = JAP country = GER }
+war = { country = JAP country = CSX }
+war = { country = JAP country = CAN }
+war = { country = JAP country = USA }
+war = { country = JAP country = CAL }
+war = { country = JAP country = TEX }
+war = { country = JAP country = AST }
+}
+}
+command = { type = belligerence which = JAP value = -3 }
+command = { type = dissent value = -1 }
+command = { type = relation which = RUS value = 50 }
+command = { type = relation which = PRI value = -25 }
+}
+}
+
+event = {
+	id = 751001
+	random = no
+	country = RUS
+	style = 2
+
+
+	name = "EVT_751001_NAME"
+	desc = "EVT_751001_DESC"
+	picture = "Siberia4"
+
+
+
+	action_a = {
+		ai_chance = 80
+		name =  "EVT_751001_OPTIONA"
+                command = { type = domestic which = interventionism value = -2 }
+                command = { type = dissent value = 15 }
+                command = { trigger = { puppet = { country = PRI country = JAP  } } type = event which = 751002 where = JAP when = 3  }
+                command = { type = secedeprovince which = PRI value = 1187  }
+                command = { type = secedeprovince which = PRI value = 1188  }
+                command = { type = secedeprovince which = PRI value = 1175  }
+                command = { type = secedeprovince which = PRI value = 1189  }
+                command = { type = secedeprovince which = PRI value = 1174  }
+                command = { type = secedeprovince which = PRI value = 1176  }
+                command = { type = secedeprovince which = PRI value = 1170  }
+                command = { type = secedeprovince which = PRI value = 1171  }
+                command = { type = secedeprovince which = PRI value = 1178  }
+                command = { type = secedeprovince which = PRI value = 1180  }
+                command = { type = secedeprovince which = PRI value = 1186  }
+                command = { type = secedeprovince which = PRI value = 1181  }
+                command = { type = secedeprovince which = PRI value = 1182  }
+                command = { type = secedeprovince which = PRI value = 1183  }
+                command = { type = secedeprovince which = PRI value = 1184  }
+                command = { type = trigger which = 751133 }
+		}
+
+	action_b = {
+		ai_chance = 20
+		name = "EVT_751001_OPTIONB"
+                command = { type = domestic which = interventionism value = 2 }
+                command = { type = war which = PRI }
+                }  ### Add option later to invite Kolchak to take leadership of a united Russia, with Japanese reaction
+
+}
+
+event = {
+	id = 751133
+	random = no
+	country = SOV
+	style = 2
+
+        trigger = {
+        OR = {
+        control = { province = 1187 data = SOV } 
+        control = { province = 1188 data = SOV } 
+        control = { province = 1175 data = SOV } 
+        control = { province = 1189 data = SOV }
+        control = { province = 1174 data = SOV } 
+        control = { province = 1176 data = SOV } 
+        control = { province = 1170 data = SOV } 
+        control = { province = 1171 data = SOV }
+        control = { province = 1178 data = SOV } 
+        control = { province = 1180 data = SOV } 
+        control = { province = 1186 data = SOV } 
+        control = { province = 1181 data = SOV }
+        control = { province = 1182 data = SOV } 
+        control = { province = 1183 data = SOV } 
+        control = { province = 1174 data = SOV } 
+        }
+        }
+
+	name = "EVT_751133_NAME"
+	desc = "EVT_751133_DESC"
+	picture = "Siberia4"
+
+	action_a = {
+		name =  "EVT_751133_OPTIONA"
+                command = { type = dissent value = 2 }
+                command = { type = secedeprovince which = PRI value = 1187  }
+                command = { type = secedeprovince which = PRI value = 1188  }
+                command = { type = secedeprovince which = PRI value = 1175  }
+                command = { type = secedeprovince which = PRI value = 1189  }
+                command = { type = secedeprovince which = PRI value = 1174  }
+                command = { type = secedeprovince which = PRI value = 1176  }
+                command = { type = secedeprovince which = PRI value = 1170  }
+                command = { type = secedeprovince which = PRI value = 1171  }
+                command = { type = secedeprovince which = PRI value = 1178  }
+                command = { type = secedeprovince which = PRI value = 1180  }
+                command = { type = secedeprovince which = PRI value = 1186  }
+                command = { type = secedeprovince which = PRI value = 1181  }
+                command = { type = secedeprovince which = PRI value = 1182  }
+                command = { type = secedeprovince which = PRI value = 1183  }
+                command = { type = secedeprovince which = PRI value = 1184  }
+		}
+
+}
+
+
+event = {
+	id = 751002
+	random = no
+	country = JAP
+	style = 2
+
+	name = "EVT_751002_NAME"
+	desc = "EVT_751002_DESC"
+	picture = "Siberia4"
+
+
+	action_a = {
+		ai_chance = 5
+		name = "EVT_751002_OPTIONA"
+                command = { type = trigger which = 751003 }
+		}
+
+	action_b = {
+		ai_chance = 60
+		name = "EVT_751002_OPTIONB"
+                command = { type = relation which = PRI value = 100 }
+                }
+
+	action_c = {
+		ai_chance = 5
+		name = "EVT_751002_OPTIONC"
+                trigger = { minister = 527001 }
+                command = { type = trigger which = 751004 }
+
+}
+}
+
+
+event = {
+	id = 751003
+	random = no
+	country = PRI
+	style = 2
+
+	name = "EVT_751003_NAME"
+	desc = "EVT_751003_DESC"
+	picture = "japan"
+
+
+	action_a = {
+
+		ai_chance = 70
+		name = "EVT_751003_OPTIONA"
+                command = { type = secedeprovince which = JAP value = 1183 }
+                command = { type = secedeprovince which = JAP value = 1184 }
+                command = { type = secedeprovince which = JAP value = 1186 }
+                command = { type = relation which = JAP value = 100 }
+		}
+
+	action_b = {
+		ai_chance = 30
+		name = "EVT_751003_OPTIONB"
+                command = { type = end_puppet }
+                command = { type = relation which = JAP value = -250 }
+                command = { type = end_access which = JAP  }
+                command = { trigger = { alliance = { country = PRI country = JAP } } type = leave_alliance when = 1 }
+                command = { type = end_non_aggression  which = JAP where = PRI	  }		
+                command = { type = end_trades which = JAP where = PRI  }	
+                command = { type = sleepteam which = 12708 }
+                command = { type = peace which = MAN value = 1 }
+                command = { type = peace which = CSX value = 1 }
+                command = { type = peace which = KOR value = 1 }
+                command = { type = peace which = U30 value = 1 }
+                command = { type = peace which = CGX value = 1 }
+                command = { type = peace which = CHC value = 1 }
+                command = { type = peace which = GER value = 1 }
+                command = { type = peace which = AST value = 1 }
+		command = { type = peace which = USA value = 1 } #A few more nations added, just in case
+		command = { type = peace which = CAL value = 1 }
+		command = { type = peace which = TEX value = 1 }
+		command = { type = peace which = FRA value = 1 }
+		command = { type = peace which = ENG value = 1 }
+		command = { type = peace which = SOV value = 1 }
+		command = { type = peace which = PAK value = 1 }
+		command = { type = peace which = IND value = 1 }
+		command = { type = peace which = PRK value = 1 }
+		command = { type = peace which = OTT value = 1 }
+                command = { type = event which = 751005 where = JAP when = 1  }
+}
+}
+
+event = {
+	id = 751004
+	random = no
+	country = PRI
+	style = 2
+
+	name = "EVT_751004_NAME"
+	desc = "EVT_751004_DESC"
+	picture = "kolchak"
+
+
+	action_a = {
+		ai_chance = 65
+		name = "EVT_751004_OPTIONA"
+                command = { type = secedeprovince which = JAP value = 1183 }
+                command = { type = secedeprovince which = JAP value = 1184 }
+                command = { type = secedeprovince which = JAP value = 1186 }
+                command = { type = relation which = JAP value = 100 }
+                command = { type = sleepminister which = 527047 } 
+                command = { type = sleepminister which = 527011 } 
+                command = { type = sleepminister which = 527048 } 
+                command = { type = sleepminister which = 527049 } 
+                command = { type = sleepminister which = 527001 } 
+                command = { type = sleepminister which = 527002 } 
+                command = { type = sleepteam which = 12707 }
+                command = { type = headofstate which = 527012 }
+                command = { type = headofgovernment which = 527014 }
+                command = { type = waketeam which = 12721 }
+		}
+
+	action_b = {
+		ai_chance = 35
+		name = "EVT_751004_OPTIONB"
+                command = { type = end_puppet }
+                command = { type = event which = 751005 where = JAP when = 1  }
+                command = { type = relation which = JAP value = -250 }
+                command = { type = end_access which = JAP  }
+                command = { trigger = { alliance = { country = PRI country = JAP } } type = leave_alliance when = 1 }
+                command = { type = end_non_aggression  which = JAP where = PRI	  }		
+                command = { type = end_trades which = JAP where = PRI  }	
+                command = { type = sleepteam which = 12708 }
+                command = { type = peace which = MAN value = 1 }
+		command = { type = peace which = CSX value = 1 }
+		command = { type = peace which = KOR value = 1 }
+		command = { type = peace which = U30 value = 1 }
+		command = { type = peace which = CGX value = 1 }
+		command = { type = peace which = CHC value = 1 }
+		command = { type = peace which = GER value = 1 }
+		command = { type = peace which = AST value = 1 }
+		command = { type = peace which = USA value = 1 }
+		command = { type = peace which = CAL value = 1 }
+		command = { type = peace which = TEX value = 1 }
+		command = { type = peace which = FRA value = 1 }
+		command = { type = peace which = ENG value = 1 }
+		command = { type = peace which = SOV value = 1 }
+		command = { type = peace which = PAK value = 1 }
+		command = { type = peace which = IND value = 1 }
+		command = { type = peace which = PRK value = 1 }
+		command = { type = peace which = OTT value = 1 }		
+
+}
+}
+
+
+event = {
+	id = 751005
+	random = no
+	country = JAP
+	style = 2
+        persistent = yes
+
+	name = "EVT_751005_NAME"
+	desc = "EVT_751005_DESC"
+	picture = "Transamur"
+
+
+	action_a = {
+        ai_chance = 70
+        name = "EVT_751005_OPTIONA"
+        command = { type = war which = PRI }
+        command = { type = setflag which = PRI_breaksaway }
+	}
+
+        action_b = {
+        ai_chance = 30
+        name = "EVT_751005_OPTIONB"
+        command = { type = domestic which = interventionism value = -1 }			
+        command = { type = dissent value = 10 }
+        command = { type = setflag which = PRI_breaksaway }
+        }
+        }
+
+
+event = {
+	id = 751040
+	random = no
+	country = PRI
+	style = 2
+
+        decision = {
+        exists = SIB
+	atwar = SIB
+        NOT = { 	
+        atwar = PRI
+        ispuppet = SIB
+        alliance = { country = PRI country = SIB }
+        alliance = { country = JAP country = SIB }
+        alliance = { country = RUS country = SIB }
+        }
+	}
+
+        decision_trigger = {
+        }
+
+	trigger = {
+        exists = SIB
+        atwar = SIB
+        NOT = { 	
+        atwar = PRI
+        ispuppet = SIB
+        alliance = { country = PRI country = SIB }
+        alliance = { country = JAP country = SIB }
+        alliance = { country = RUS country = SIB }
+        }
+	}
+
+	name = "EVT_751040_NAME"
+	desc = "EVT_751040_DESC"
+	picture = "SiberianAssembly"
+        decision_picture = "decision_Russian_mobilization"
+
+
+        date = { day = 1 month = january year = 1936 }
+	offset = 40 
+	deathdate = { day = 1 month = january year = 1960 }
+
+	action = {
+		ai_chance = 50
+		name = "EVT_751040_OPTIONA"
+                trigger = {
+                NOT = {
+                puppet = { country = PRI country = JAP }
+                }
+                }
+	        command = { type = war which = SIB  }
+                command = { type = add_division value = cavalry when = 8 }
+                command = { type = add_division value = cavalry when = 8 }
+                command = { type = addclaim   which =  1142  }
+                command = { type = addclaim   which =  1155  }
+                command = { type = addclaim   which =  1157  }
+                command = { type = addclaim   which =  1148  }
+                command = { type = addclaim   which =  1140  }
+                command = { type = addclaim   which =  1143  }
+                command = { type = addclaim   which =  1144  }
+                command = { type = addclaim   which =  1145  }
+                command = { type = addclaim   which =  1152  }
+                command = { type = addclaim   which =  1153  } 
+                command = { type = addclaim   which =  1150  }
+                command = { type = addclaim   which =  1146  }
+                command = { type = addclaim   which =  1158  }
+                command = { type = addclaim   which =  1138  }
+                command = { type = addclaim   which =  1147  }
+                command = { type = addclaim   which =  1166  }
+                command = { type = addclaim   which =  1167  }
+                command = { type = addclaim   which =  1162  }
+                command = { type = addclaim   which =  1163  }
+                command = { type = addclaim   which =  1164  }
+                command = { type = addclaim   which =  1165  }
+                command = { type = addclaim   which =  1169  }
+                command = { type = addclaim   which =  1179  }
+                command = { type = addclaim   which =  1178  }
+                command = { type = addclaim   which =  1177  }
+                command = { type = addclaim   which =  1168  }
+                command = { type = addclaim   which =  1156  }
+                command = { type = addclaim   which =  1189  }
+                command = { type = addclaim   which =  1186  }
+                command = { type = addclaim   which =  1139  }
+                command = { type = addclaim   which =  1149  }
+                command = { type = addclaim   which =  1141  }
+                command = { type = addclaim   which =  1135  }
+                command = { type = addclaim   which =  1138  }
+                command = { type = addclaim   which =  1154  }
+                command = { type = addclaim   which =  1180  }
+                command = { type = addclaim   which =  1181  }
+                command = { type = addclaim   which =  1182  }
+                command = { type = addclaim   which =  1183  }
+                command = { type = addclaim   which =  1184  }
+                command = { type = addclaim   which =  1176  }
+                command = { type = addclaim   which =  1174  }
+                command = { type = addclaim   which =  1188  }
+                command = { type = addclaim   which =  1175  }
+                command = { type = addclaim   which =  1187  }
+                command = { type = addclaim   which =  1136  }
+                command = { type = addclaim   which =  1137  }
+                command = { type = addclaim   which =  1151  }
+                command = { type = addclaim   which =  1069  }
+                command = { type = addclaim   which =  1070  }
+                command = { type = addclaim   which =  1170  }
+                command = { type = addclaim   which =  1171  }
+                command = { type = addclaim   which =  1161  }
+                command = { type = addclaim   which =  1132  }
+                command = { type = addclaim   which =  1133  }
+                command = { type = addclaim   which =  1127  }
+                command = { type = addclaim   which =  1128  }
+                command = { type = addclaim   which =  1140  }
+                command = { type = dissent value = -5 }
+		command = { type = belligerence which = PRI value = 5  }
+                command = { type = relation which = GER value = -20 }
+                command = { type = relation which = RUS value = -80 }
+		}
+
+        action = {
+		ai_chance = 70
+		name = "EVT_751040_OPTIONB"
+                trigger = {
+                puppet = { country = PRI country = JAP  }
+                }
+                command = { type = belligerence which = PRI value = 10  }
+                command = { type = domestic which = interventionism value = 2 }
+                command = { type = trigger which = 751126 }
+		}
+
+        action = {
+	        ai_chance =  0
+	        name = "EVT_751040_OPTIONC"
+                trigger = {
+                NOT = {
+                puppet = { country = PRI country = JAP }
+                }
+                }
+		command = { type = relation which = SIB value = 150 }
+                command = { type = guarantee which = PRI where = SIB }	
+		}
+
+       action = {
+	        ai_chance =  70
+	        name = "EVT_751040_OPTIOND"
+                trigger = {
+                NOT = {
+                puppet = { country = PRI country = JAP }
+                control = { province = 1186 data = PRI }
+                }
+                }
+		command = { type = relation which = SIB value = -80 }	
+                command = { type = trigger which = 751042 }
+		command = { type = domestic which = interventionism value = 1 }	
+                }
+
+	action = {
+		ai_chance = 30
+		name = "EVT_751040_OPTIONE"
+                command = { type = dissent value = 1 }
+		command = { type = belligerence which = PRI value = -5  }
+                command = { type = relation which = GER value = 20 }
+                command = { type = relation which = RUS value = 80 }
+		}
+                }
+
+
+event = {
+id = 751126
+random = no
+country = JAP
+style = 2
+picture = "Siberia4"
+
+
+name = "EVT_751126_NAME"
+desc = "EVT_751126_DESC"
+
+action_a = {
+ai_chance = 90
+name = "EVT_751126_OPTIONA"
+trigger = {
+NOT = {
+war = { country = JAP country = GER }
+war = { country = JAP country = CSX }
+war = { country = JAP country = CAN }
+war = { country = JAP country = AST }
+war = { country = JAP country = USA }
+war = { country = JAP country = CAL }
+war = { country = JAP country = CSA }
+war = { country = JAP country = TEX }
+war = { country = JAP country = FRA }
+war = { country = JAP country = ENG }
+war = { country = JAP country = SOV }
+war = { country = JAP country = PAK }
+war = { country = JAP country = IND }
+war = { country = JAP country = PRK }
+war = { country = JAP country = OTT }
+}
+}
+command = { type = belligerence which = JAP value = 3 }
+command = { type = dissent value = -1 }
+command = { type = relation which = RUS value = -50 }
+command = { type = relation which = PRI value = 25 }
+command = { type = trigger which = 751041 }
+}
+
+action_b = {
+ai_chance = 10
+name =  "EVT_751126_OPTIONB"
+trigger = {
+NOT = {
+war = { country = JAP country = GER }
+war = { country = JAP country = CSX }
+war = { country = JAP country = CAN }
+war = { country = JAP country = AST }
+war = { country = JAP country = USA }
+war = { country = JAP country = CAL }
+war = { country = JAP country = CSA }
+war = { country = JAP country = TEX }
+war = { country = JAP country = FRA }
+war = { country = JAP country = ENG }
+war = { country = JAP country = SOV }
+war = { country = JAP country = PAK }
+war = { country = JAP country = IND }
+war = { country = JAP country = PRK }
+war = { country = JAP country = OTT }
+}
+}
+command = { type = belligerence which = JAP value = -3 }
+command = { type = dissent value = 1 }
+command = { type = relation which = RUS value = 50 }
+command = { type = relation which = PRI value = -25 }
+}
+
+action_c = {
+ai_chance = 0
+name = "EVT_751126_OPTIONC"
+trigger = {
+OR = {
+war = { country = JAP country = GER }
+war = { country = JAP country = CSX }
+war = { country = JAP country = CAN }
+war = { country = JAP country = AST }
+war = { country = JAP country = USA }
+war = { country = JAP country = CAL }
+war = { country = JAP country = CSA }
+war = { country = JAP country = TEX }
+war = { country = JAP country = FRA }
+war = { country = JAP country = ENG }
+war = { country = JAP country = SOV }
+war = { country = JAP country = PAK }
+war = { country = JAP country = IND }
+war = { country = JAP country = PRK }
+war = { country = JAP country = OTT }
+}
+}
+command = { type = belligerence which = JAP value = 3 }
+command = { type = dissent value = 1 }
+command = { type = relation which = RUS value = -50 }
+command = { type = relation which = PRI value = 25 }
+command = { type = trigger which = 751041 }
+}
+
+action_d = {
+ai_chance = 100
+name =  "EVT_751126_OPTIOND"
+trigger = {
+OR = {
+war = { country = JAP country = GER }
+war = { country = JAP country = CSX }
+war = { country = JAP country = CAN }
+war = { country = JAP country = AST }
+war = { country = JAP country = USA }
+war = { country = JAP country = CAL }
+war = { country = JAP country = CSA }
+war = { country = JAP country = TEX }
+war = { country = JAP country = FRA }
+war = { country = JAP country = ENG }
+war = { country = JAP country = SOV }
+war = { country = JAP country = PAK }
+war = { country = JAP country = IND }
+war = { country = JAP country = PRK }
+war = { country = JAP country = OTT }
+}
+}
+command = { type = belligerence which = JAP value = -3 }
+command = { type = dissent value = -1 }
+command = { type = relation which = RUS value = 50 }
+command = { type = relation which = PRI value = -25 }
+}
+}
+
+
+event = {
+	id = 751041
+	random = no
+	country = PRI
+	style = 2
+
+
+	name = "EVT_751041_NAME"
+	desc = "EVT_751041_DESC"
+        picture = "Siberia4"
+
+
+        action_a = {
+	        ai_chance =  70
+	        name = "EVT_751041_OPTIONA"
+                trigger = {
+                NOT = {
+                control = { province = 1186 data = PRI }
+                }
+                }
+		command = { type = relation which = SIB value = -80 }	
+                command = { type = trigger which = 751042 }
+		command = { type = domestic which = interventionism value = 1 }	
+                }
+	
+        action_b = {
+	        ai_chance =  20
+	        name = "EVT_751041_OPTIONB"
+		command = { type = relation which = SIB value = -200 }	
+		command = { type = domestic which = interventionism value = 1 }
+                command = { type = add_division value = cavalry when = 8 }
+                command = { type = add_division value = cavalry when = 8 }
+                command = { type = addclaim   which =  1142  }
+                command = { type = addclaim   which =  1155  }
+                command = { type = addclaim   which =  1157  }
+                command = { type = addclaim   which =  1148  }
+                command = { type = addclaim   which =  1140  }
+                command = { type = addclaim   which =  1143  }
+                command = { type = addclaim   which =  1144  }
+                command = { type = addclaim   which =  1145  }
+                command = { type = addclaim   which =  1152  }
+                command = { type = addclaim   which =  1153  } 
+                command = { type = addclaim   which =  1150  }
+                command = { type = addclaim   which =  1146  }
+                command = { type = addclaim   which =  1158  }
+                command = { type = addclaim   which =  1138  }
+                command = { type = addclaim   which =  1147  }
+                command = { type = addclaim   which =  1166  }
+                command = { type = addclaim   which =  1167  }
+                command = { type = addclaim   which =  1162  }
+                command = { type = addclaim   which =  1163  }
+                command = { type = addclaim   which =  1164  }
+                command = { type = addclaim   which =  1165  }
+                command = { type = addclaim   which =  1169  }
+                command = { type = addclaim   which =  1179  }
+                command = { type = addclaim   which =  1178  }
+                command = { type = addclaim   which =  1177  }
+                command = { type = addclaim   which =  1168  }
+                command = { type = addclaim   which =  1156  }
+                command = { type = addclaim   which =  1189  }
+                command = { type = addclaim   which =  1186  }
+                command = { type = addclaim   which =  1139  }
+                command = { type = addclaim   which =  1149  }
+                command = { type = addclaim   which =  1141  }
+                command = { type = addclaim   which =  1135  }
+                command = { type = addclaim   which =  1138  }
+                command = { type = addclaim   which =  1154  }
+                command = { type = addclaim   which =  1180  }
+                command = { type = addclaim   which =  1181  }
+                command = { type = addclaim   which =  1182  }
+                command = { type = addclaim   which =  1183  }
+                command = { type = addclaim   which =  1184  }
+                command = { type = addclaim   which =  1176  }
+                command = { type = addclaim   which =  1174  }
+                command = { type = addclaim   which =  1188  }
+                command = { type = addclaim   which =  1175  }
+                command = { type = addclaim   which =  1187  }
+                command = { type = addclaim   which =  1136  }
+                command = { type = addclaim   which =  1137  }
+                command = { type = addclaim   which =  1151  }
+                command = { type = addclaim   which =  1069  }
+                command = { type = addclaim   which =  1070  }
+                command = { type = addclaim   which =  1170  }
+                command = { type = addclaim   which =  1171  }
+                command = { type = addclaim   which =  1161  }
+                command = { type = addclaim   which =  1132  }
+                command = { type = addclaim   which =  1133  }
+                command = { type = addclaim   which =  1127  }
+                command = { type = addclaim   which =  1128  }
+                command = { type = addclaim   which =  1140  }
+                command = { type = dissent value = -5 }
+		command = { type = belligerence which = PRI value = 5  }
+                command = { type = relation which = GER value = -20 }
+                command = { type = relation which = RUS value = -80 }
+                command = { type = war which = SIB }
+		}
+		
+
+
+        action_d = {
+	         ai_chance =  0
+	         name = "EVT_751041_OPTIONC"
+		 command = { type = relation which = SIB value = 20 }	
+                 command = { type = belligerence which = PRI value = 5  }
+                 command = { type = relation which = GER value = -20 }
+                 command = { type = relation which = RUS value = -80 }
+		 }
+	}
+
+
+event = {
+	id = 751042
+	random = no
+	country = SIB
+	style = 2
+	  
+	name = "EVT_751042_NAME"
+	desc = "EVT_751042_DESC"
+	picture = "Siberia4"
+
+
+	action_a = {
+		 ai_chance = 40
+		 name =  "EVT_751042_OPTIONA"
+                 command = { type = domestic which = interventionism value = -2 }
+                 command = { type = dissent value = 15 }
+                 command = { trigger = { puppet = { country = PRI country = JAP  } } type = event which = 751002 where = JAP when = 3  }
+                 command = { type = relation which = PRI value = 100 }	
+                 command = { type = secedeprovince which = PRI value = 1187  }
+                 command = { type = secedeprovince which = PRI value = 1188  }
+                 command = { type = secedeprovince which = PRI value = 1175  }
+                 command = { type = secedeprovince which = PRI value = 1189  }
+                 command = { type = secedeprovince which = PRI value = 1174  }
+                 command = { type = secedeprovince which = PRI value = 1176  }
+                 command = { type = secedeprovince which = PRI value = 1170  }
+                 command = { type = secedeprovince which = PRI value = 1171  }
+                 command = { type = secedeprovince which = PRI value = 1178  }
+                 command = { type = secedeprovince which = PRI value = 1180  }
+                 command = { type = secedeprovince which = PRI value = 1186  }
+                 command = { type = secedeprovince which = PRI value = 1181  }
+                 command = { type = secedeprovince which = PRI value = 1182  }
+                 command = { type = secedeprovince which = PRI value = 1183  }
+                 command = { type = secedeprovince which = PRI value = 1184  }
+		 }
+
+	action_b = {
+		 ai_chance = 30
+		 name = "EVT_751042_OPTIONB"
+                 command = { type = domestic which = interventionism value = 2 }
+                 command = { type = war which = PRI }
+                 }  
+
+        action_c = {
+                 ai_chance = 30
+                 name = "EVT_751042_OPTIONC"
+                 command = { type = trigger which = 751044 }
+                 }  
+                 }
+
+
+event = {
+    id = 751044
+    random = no
+    country = PRI
+    style = 2
+
+    name = "EVT_751044_NAME"
+    desc = "EVT_751044_DESC"
+    picture = "Transamur"
+
+
+    action_a = {
+             ai_chance = 70
+             name = "EVT_751044_OPTIONA"
+             command = { type = make_puppet which = SIB }
+             command = { type = trigger which = 751045 }
+        }
+
+   action_b = {
+	     ai_chance = 40
+	     name = "EVT_751044_OPTIONB"
+	     command = { type = trigger which = 751048 }
+	}
+
+    action_b = {
+             ai_chance = 30
+             name = "EVT_751044_OPTIONC"
+             command = { type = war which = SIB }
+             command = { type = relation which = SIB value = -200 }    
+             command = { type = domestic which = interventionism value = 1 }
+             command = { type = war which = SIB }
+             command = { type = add_division value = cavalry when = 7 }
+             command = { type = add_division value = cavalry when = 7 }
+             command = { type = addclaim   which =  1142  }
+                command = { type = addclaim   which =  1155  }
+                command = { type = addclaim   which =  1157  }
+                command = { type = addclaim   which =  1148  }
+                command = { type = addclaim   which =  1140  }
+                command = { type = addclaim   which =  1143  }
+                command = { type = addclaim   which =  1144  }
+                command = { type = addclaim   which =  1145  }
+                command = { type = addclaim   which =  1152  }
+                command = { type = addclaim   which =  1153  } 
+                command = { type = addclaim   which =  1150  }
+                command = { type = addclaim   which =  1146  }
+                command = { type = addclaim   which =  1158  }
+                command = { type = addclaim   which =  1138  }
+                command = { type = addclaim   which =  1147  }
+                command = { type = addclaim   which =  1166  }
+                command = { type = addclaim   which =  1167  }
+                command = { type = addclaim   which =  1162  }
+                command = { type = addclaim   which =  1163  }
+                command = { type = addclaim   which =  1164  }
+                command = { type = addclaim   which =  1165  }
+                command = { type = addclaim   which =  1169  }
+                command = { type = addclaim   which =  1179  }
+                command = { type = addclaim   which =  1178  }
+                command = { type = addclaim   which =  1177  }
+                command = { type = addclaim   which =  1168  }
+                command = { type = addclaim   which =  1156  }
+                command = { type = addclaim   which =  1189  }
+                command = { type = addclaim   which =  1186  }
+                command = { type = addclaim   which =  1139  }
+                command = { type = addclaim   which =  1149  }
+                command = { type = addclaim   which =  1141  }
+                command = { type = addclaim   which =  1135  }
+                command = { type = addclaim   which =  1138  }
+                command = { type = addclaim   which =  1154  }
+                command = { type = addclaim   which =  1180  }
+                command = { type = addclaim   which =  1181  }
+                command = { type = addclaim   which =  1182  }
+                command = { type = addclaim   which =  1183  }
+                command = { type = addclaim   which =  1184  }
+                command = { type = addclaim   which =  1176  }
+                command = { type = addclaim   which =  1174  }
+                command = { type = addclaim   which =  1188  }
+                command = { type = addclaim   which =  1175  }
+                command = { type = addclaim   which =  1187  }
+                command = { type = addclaim   which =  1136  }
+                command = { type = addclaim   which =  1137  }
+                command = { type = addclaim   which =  1151  }
+                command = { type = addclaim   which =  1069  }
+                command = { type = addclaim   which =  1070  }
+                command = { type = addclaim   which =  1170  }
+                command = { type = addclaim   which =  1171  }
+                command = { type = addclaim   which =  1161  }
+                command = { type = addclaim   which =  1132  }
+                command = { type = addclaim   which =  1133  }
+                command = { type = addclaim   which =  1127  }
+                command = { type = addclaim   which =  1128  }
+                command = { type = addclaim   which =  1140  }
+             command = { type = dissent value = -5 }
+             command = { type = belligerence which = PRI value = 5  }
+             command = { type = relation which = GER value = -20 }
+             command = { type = relation which = RUS value = -80 }  
+             }
+
+    action_c = {
+             ai_chance = 0
+             name = "EVT_751044_OPTIOND"      
+             command = { type = dissent value = 5 } ## How can you ignore such perfect oportunity to gain control over Siberia!
+             }
+             }
+
+
+event = {
+	id = 751048
+ 	random = no
+	country = SIB
+	style = 2
+
+	name = "EVT_751048_NAME"
+	desc = "EVT_751048_DESC"
+	picture = "kolchak"
+
+	action_a = {
+		ai_chance = 50
+		name = "EVT_751048_OPTIONA"
+		command = { type = dissent value = -1 }
+		command = { type = relation which = PRI value = -100 }
+                command = { type = event which = 751136 where = PRI when = 1  }
+	}
+
+	action_b = {
+		ai_chance = 50
+		name = "EVT_751048_OPTIONB"
+		command = { type = dissent value = 3 }
+		command = { type = event which = 751135 where = PRI when = 1  }
+	}
+}
+
+
+event = {
+	id = 751136
+ 	random = no
+	country = PRI
+	style = 2
+
+	name = "EVT_751136_NAME"
+	desc = "EVT_751136_DESC"
+	picture = "kolchak"
+
+	action_a = {
+		ai_chance = 80
+		name = "EVT_751136_OPTIONA"
+		command = { type = relation which = SIB value = -200 }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = add_division value = cavalry when = 8 }
+		command = { type = add_division value = cavalry when = 8 }
+		command = { type = addclaim which = 1142 }
+		command = { type = addclaim which = 1155 }
+		command = { type = addclaim which = 1157 }
+		command = { type = addclaim which = 1148 }
+		command = { type = addclaim which = 1140 }
+		command = { type = addclaim which = 1143 }
+		command = { type = addclaim which = 1144 }
+		command = { type = addclaim which = 1145 }
+		command = { type = addclaim which = 1152 }
+		command = { type = addclaim which = 1153 }
+		command = { type = addclaim which = 1150 }
+		command = { type = addclaim which = 1146 }
+		command = { type = addclaim which = 1158 }
+		command = { type = addclaim which = 1138 }
+		command = { type = addclaim which = 1147 }
+		command = { type = addclaim which = 1166 }
+		command = { type = addclaim which = 1167 }
+		command = { type = addclaim which = 1162 }
+		command = { type = addclaim which = 1163 }
+		command = { type = addclaim which = 1164 }
+		command = { type = addclaim which = 1165 }
+		command = { type = addclaim which = 1169 }
+		command = { type = addclaim which = 1179 }
+		command = { type = addclaim which = 1178 }
+		command = { type = addclaim which = 1177 }
+		command = { type = addclaim which = 1168 }
+		command = { type = addclaim which = 1156 }
+		command = { type = addclaim which = 1189 }
+		command = { type = addclaim which = 1186 }
+		command = { type = addclaim which = 1139 }
+		command = { type = addclaim which = 1149 }
+		command = { type = addclaim which = 1141 }
+		command = { type = addclaim which = 1135 }
+		command = { type = addclaim which = 1138 }
+		command = { type = addclaim which = 1154 }
+		command = { type = addclaim which = 1180 }
+		command = { type = addclaim which = 1181 }
+		command = { type = addclaim which = 1182 }
+		command = { type = addclaim which = 1183 }
+		command = { type = addclaim which = 1184 }
+		command = { type = addclaim which = 1176 }
+		command = { type = addclaim which = 1174 }
+		command = { type = addclaim which = 1188 }
+		command = { type = addclaim which = 1175 }
+		command = { type = addclaim which = 1187 }
+		command = { type = addclaim which = 1136 }
+		command = { type = addclaim which = 1137 }
+		command = { type = addclaim which = 1151 }
+		command = { type = addclaim which = 1069 }
+		command = { type = addclaim which = 1070 }
+		command = { type = addclaim which = 1170 }
+		command = { type = addclaim which = 1171 }
+		command = { type = addclaim which = 1161 }
+		command = { type = addclaim which = 1132 }
+		command = { type = addclaim which = 1133 }
+		command = { type = addclaim which = 1127 }
+		command = { type = addclaim which = 1128 }
+		command = { type = addclaim which = 1140 }
+		command = { type = dissent value = -5 }
+		command = { type = belligerence which = PRI value = 5 }
+		command = { type = relation which = GER value = -20 }
+		command = { type = relation which = RUS value = -80 }
+		command = { type = war which = SIB }
+	}
+	action_b = {
+		ai_chance = 20
+		name = "EVT_751136_OPTIONB"
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = dissent value = 3 }		
+	}
+}
+
+
+event = {
+	id = 751135
+	country = PRI
+	style = 2
+        picture = "caucasusgeo"
+
+	name = "EVT_751135_NAME"
+	desc = "EVT_751135_DESC"
+
+
+	action = {
+		name = "EVT_751135_OPTIONA"
+                command = { type = dissent value = 2 }
+                command = { type = inherit which = SIB }
+                command = { type = add_division value = cavalry when = 9 }
+		command = { type = add_division value = cavalry when = 9 }
+                command = { type = add_division value = infantry when = 9 }
+		command = { type = addclaim which = 1142 }
+		command = { type = addclaim which = 1155 }
+		command = { type = addclaim which = 1157 }
+		command = { type = addclaim which = 1148 }
+		command = { type = addclaim which = 1140 }
+		command = { type = addclaim which = 1143 }
+		command = { type = addclaim which = 1144 }
+		command = { type = addclaim which = 1145 }
+		command = { type = addclaim which = 1152 }
+		command = { type = addclaim which = 1153 }
+		command = { type = addclaim which = 1150 }
+		command = { type = addclaim which = 1146 }
+		command = { type = addclaim which = 1158 }
+		command = { type = addclaim which = 1138 }
+		command = { type = addclaim which = 1147 }
+		command = { type = addclaim which = 1166 }
+		command = { type = addclaim which = 1167 }
+		command = { type = addclaim which = 1162 }
+		command = { type = addclaim which = 1163 }
+		command = { type = addclaim which = 1164 }
+		command = { type = addclaim which = 1165 }
+		command = { type = addclaim which = 1169 }
+		command = { type = addclaim which = 1179 }
+		command = { type = addclaim which = 1178 }
+		command = { type = addclaim which = 1177 }
+		command = { type = addclaim which = 1168 }
+		command = { type = addclaim which = 1156 }
+		command = { type = addclaim which = 1189 }
+		command = { type = addclaim which = 1186 }
+		command = { type = addclaim which = 1139 }
+		command = { type = addclaim which = 1149 }
+		command = { type = addclaim which = 1141 }
+		command = { type = addclaim which = 1135 }
+		command = { type = addclaim which = 1138 }
+		command = { type = addclaim which = 1154 }
+		command = { type = addclaim which = 1180 }
+		command = { type = addclaim which = 1181 }
+		command = { type = addclaim which = 1182 }
+		command = { type = addclaim which = 1183 }
+		command = { type = addclaim which = 1184 }
+		command = { type = addclaim which = 1176 }
+		command = { type = addclaim which = 1174 }
+		command = { type = addclaim which = 1188 }
+		command = { type = addclaim which = 1175 }
+		command = { type = addclaim which = 1187 }
+		command = { type = addclaim which = 1136 }
+		command = { type = addclaim which = 1137 }
+		command = { type = addclaim which = 1151 }
+		command = { type = addclaim which = 1069 }
+		command = { type = addclaim which = 1070 }
+		command = { type = addclaim which = 1170 }
+		command = { type = addclaim which = 1171 }
+		command = { type = addclaim which = 1161 }
+		command = { type = addclaim which = 1132 }
+		command = { type = addclaim which = 1133 }
+		command = { type = addclaim which = 1127 }
+		command = { type = addclaim which = 1128 }
+		command = { type = addclaim which = 1140 }
+                }
+                }
+
+
+event = {
+    id = 751045
+    random = no
+    country = SIB
+    style = 2
+      
+    name = "EVT_751045_NAME"
+    desc = "EVT_751045_DESC"
+    picture = "Siberia4"
+
+    action_a = {
+             name =  "EVT_751045_OPTIONA"
+             command = { type = dissent value = -5 }
+             command = { type = relation which = PRI value = 200 }
+             command = { type = headofstate which = 522011 }
+             }
+             }
+
+
+event = {
+    id = 751046
+    random = no
+    country = PRI
+    style = 2
+
+    
+    trigger = {
+    puppet = { country = SIB country = PRI }
+    }
+
+    name = "EVT_751046_NAME"
+    desc = "EVT_751046_DESC"
+    picture = "Siberia4"
+
+
+    date = { day = 1 month = january year = 1938 }
+    offset = 500 
+    deathdate = { day = 29 month = december year = 1963 }
+
+    action_a = {
+        ai_chance = 100
+        name = "EVT_751046_OPTIONA"
+        command = { type = inherit which = SIB  }
+        command = { type = addcore   which =  1155  }
+        command = { type = addcore   which =  1157  }
+        command = { type = addcore   which =  1142  }
+        command = { type = addcore   which =  1148  }
+        command = { type = addcore   which =  1140  }
+        command = { type = addcore   which =  1143  }
+        command = { type = addcore   which =  1144  }
+        command = { type = addcore   which =  1145  }
+        command = { type = addcore   which =  1152  }
+        command = { type = addcore   which =  1153  } 
+        command = { type = addcore   which =  1150  }
+        command = { type = addcore   which =  1146  }
+        command = { type = addcore   which =  1158  }
+        command = { type = addcore   which =  1138  }
+        command = { type = addcore   which =  1147  }
+        command = { type = addcore   which =  1166  }
+        command = { type = addcore   which =  1167  }
+        command = { type = addcore   which =  1162  }
+        command = { type = addcore   which =  1163  }
+        command = { type = addcore   which =  1164  }
+        command = { type = addcore   which =  1165  }
+        command = { type = addcore   which =  1169  }
+        command = { type = addcore   which =  1179  }
+        command = { type = addcore   which =  1178  }
+        command = { type = addcore   which =  1177  }
+        command = { type = addcore   which =  1168  }
+        command = { type = addcore   which =  1156  }
+        command = { type = addcore   which =  1189  }
+        command = { type = addcore   which =  1186  }
+        command = { type = addcore   which =  1139  }
+        command = { type = addcore   which =  1149  }
+        command = { type = addcore   which =  1141  }
+        command = { type = addcore   which =  1135  }
+        command = { type = addcore   which =  1138  }
+        command = { type = addcore   which =  1154  }
+        command = { type = addcore   which =  1180  }
+        command = { type = addcore   which =  1181  }
+        command = { type = addcore   which =  1182  }
+        command = { type = addcore   which =  1183  }
+        command = { type = addcore   which =  1184  }
+        command = { type = addcore   which =  1176  }
+        command = { type = addcore   which =  1174  }
+        command = { type = addcore   which =  1188  }
+        command = { type = addcore   which =  1175  }
+        command = { type = addcore   which =  1187  }
+        command = { type = addcore   which =  1136  }
+        command = { type = addcore   which =  1137  }
+        command = { type = addcore   which =  1151  }
+        command = { type = addcore   which =  1069  }
+        command = { type = addcore   which =  1070  }
+        command = { type = addcore   which =  1170  }
+        command = { type = addcore   which =  1171  }
+        command = { type = addcore   which =  1161  }
+        command = { type = addcore   which =  1132  }
+        command = { type = addcore   which =  1133  }
+        command = { type = addcore   which =  1127  }
+        command = { type = addcore   which =  1128  }
+        command = { type = addcore   which =  1140  }
+        command = { type = sleepevent which = 751047 }
+        command = { type = waketeam which = 12709 }
+        command = { type = waketeam which = 12710 }
+        command = { type = waketeam which = 12711 }
+        command = { type = waketeam which = 12712 }
+        command = { type = waketeam which = 12713 }
+        command = { type = waketeam which = 12714 }
+        command = { type = waketeam which = 12715 }
+        command = { type = waketeam which = 12716 }
+        command = { type = waketeam which = 12717 }
+        command = { type = waketeam which = 12718 }
+        command = { type = waketeam which = 12719 }
+        command = { type = waketeam which = 12720 }
+        command = { type = waketeam which = 12721 }
+        command = { type = industrial_modifier which = total value = 2 }
+        command = { type = manpowerpool value = 150 }
+        command = { type = dissent value = 5 } ## Reflects difficulty of integrating Siberia, which was independent for a little bit longer....
+        }
+
+    action_b = {
+             ai_chance = 0
+             name = "EVT_751046_OPTIONB"
+             command = { type = domestic which = interventionism value = -1   }
+             }
+             }
+
+
+event = {
+    id = 751047
+    random = no
+    country = PRI
+    style = 2
+
+    
+    trigger = {
+    NOT = {    
+    exists = SIB
+    }
+    OR = {
+    AND = {
+    control = { province = 1142 data = PRI }
+    owned = { province = 1142 data = PRI }
+    }
+    AND = {
+    control = { province = 1162 data = PRI }
+    owned = { province = 1162 data = PRI }
+    }
+    }
+    }
+
+    name = "EVT_751047_NAME"
+    desc = "EVT_751047_DESC"
+
+    picture = "Siberia4"
+
+
+    date = { day = 1 month = january year = 1936 }
+    offset = 200  
+    deathdate = { day = 1 month = january year = 1960 }
+
+    action_a = { 
+        name = "EVT_751047_OPTIONA"
+        command = { type = addcore   which =  1155  }
+        command = { type = addcore   which =  1157  }
+        command = { type = addcore   which =  1142  }
+        command = { type = addcore   which =  1148  }
+        command = { type = addcore   which =  1140  }
+        command = { type = addcore   which =  1143  }
+        command = { type = addcore   which =  1144  }
+        command = { type = addcore   which =  1145  }
+        command = { type = addcore   which =  1152  }
+        command = { type = addcore   which =  1153  } 
+        command = { type = addcore   which =  1150  }
+        command = { type = addcore   which =  1146  }
+        command = { type = addcore   which =  1158  }
+        command = { type = addcore   which =  1138  }
+        command = { type = addcore   which =  1147  }
+        command = { type = addcore   which =  1166  }
+        command = { type = addcore   which =  1167  }
+        command = { type = addcore   which =  1162  }
+        command = { type = addcore   which =  1163  }
+        command = { type = addcore   which =  1164  }
+        command = { type = addcore   which =  1165  }
+        command = { type = addcore   which =  1169  }
+        command = { type = addcore   which =  1179  }
+        command = { type = addcore   which =  1178  }
+        command = { type = addcore   which =  1177  }
+        command = { type = addcore   which =  1168  }
+        command = { type = addcore   which =  1156  }
+        command = { type = addcore   which =  1189  }
+        command = { type = addcore   which =  1186  }
+        command = { type = addcore   which =  1139  }
+        command = { type = addcore   which =  1149  }
+        command = { type = addcore   which =  1141  }
+        command = { type = addcore   which =  1135  }
+        command = { type = addcore   which =  1138  }
+        command = { type = addcore   which =  1154  }
+        command = { type = addcore   which =  1180  }
+        command = { type = addcore   which =  1181  }
+        command = { type = addcore   which =  1182  }
+        command = { type = addcore   which =  1183  }
+        command = { type = addcore   which =  1184  }
+        command = { type = addcore   which =  1176  }
+        command = { type = addcore   which =  1174  }
+        command = { type = addcore   which =  1188  }
+        command = { type = addcore   which =  1175  }
+        command = { type = addcore   which =  1187  }
+        command = { type = addcore   which =  1136  }
+        command = { type = addcore   which =  1137  }
+        command = { type = addcore   which =  1151  }
+        command = { type = addcore   which =  1069  }
+        command = { type = addcore   which =  1070  }
+        command = { type = addcore   which =  1170  }
+        command = { type = addcore   which =  1171  }
+        command = { type = addcore   which =  1161  }
+        command = { type = addcore   which =  1132  }
+        command = { type = addcore   which =  1133  }
+        command = { type = addcore   which =  1127  }
+        command = { type = addcore   which =  1128  }
+        command = { type = addcore   which =  1140  }
+        command = { type = waketeam which = 12709 }
+        command = { type = waketeam which = 12710 }
+        command = { type = waketeam which = 12711 }
+        command = { type = waketeam which = 12712 }
+        command = { type = waketeam which = 12713 }
+        command = { type = waketeam which = 12714 }
+        command = { type = waketeam which = 12715 }
+        command = { type = waketeam which = 12716 }
+        command = { type = waketeam which = 12717 }
+        command = { type = waketeam which = 12718 }
+        command = { type = waketeam which = 12719 }
+        command = { type = waketeam which = 12720 }
+        command = { type = waketeam which = 12721 }
+        command = { type = industrial_modifier which = total value = 2 }
+        command = { type = manpowerpool value = 150 }
+        command = { type = dissent value = 5 } ## Reflects difficulty of integrating Siberia
+        }
+        }
+
+###############
+#Capital change
+###############
+
+event = {
+	id = 751050
+	random = no
+	country = PRI
+	style = 2
+
+	trigger = {
+                NOT = {
+                atwar = PRI
+                }
+                control = { province = 1191 data = PRI }
+                OR = {
+                AND = {
+		owned = { province = 1162 data = PRI }
+		control = { province = 1162 data = PRI }
+                }
+                AND = {
+		owned = { province = 1142 data = PRI }
+		control = { province = 1142 data = PRI }
+                }
+                }
+		}
+	
+
+	name = "EVT_751050_NAME"
+	desc = "EVT_751050_DESC"
+        picture = "Transamur"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 40
+	deathdate = { day = 29 month = december year = 1963 }
+
+
+	action_a = {
+		ai_chance = 10
+		name = "EVT_751050_OPTIONA"
+		command = { type = capital which = 1191 }
+                command = { type = dissent value = 2 }
+                command = { type = relation which = JAP value = 50 }
+		}
+
+	action_b = {
+		ai_chance = 50
+		name = "EVT_751050_OPTIONB"
+                trigger = {
+                control = { province = 1162 data = PRI }
+                }
+		command = { type = capital which = 1162 }
+                command = { type = dissent value = -3 }
+                command = { type = relation which = JAP value = -30 }
+                command = { type = trigger which = 751066  }
+		}
+
+        action_c = {
+		ai_chance = 40
+		name = "EVT_751050_OPTIONC"
+                trigger = {
+                control = { province = 1142 data = PRI }
+                }
+		command = { type = capital which = 1142 }
+                command = { type = dissent value = -5 }
+                command = { type = relation which = JAP value = -50 }
+                command = { type = trigger which = 751066  }
+		}
+
+	}
+
+
+event = {
+	id = 751066
+	random = no
+	country = JAP
+	style = 2
+
+	trigger = {
+	puppet = { country = PRI country = JAP  }
+	}
+
+	name = "EVT_751066_NAME"
+	desc = "EVT_751066_DESC"
+	picture = "Transamur"
+
+
+	action_a = {
+	ai_chance = 70
+	name = "EVT_751066_OPTIONA"
+	command = { type = end_mastery which = PRI }
+	command = { type = alliance which = PRI }
+	command = { type = relation which = PRI value = 200 }
+	}
+
+	action_b = {
+	ai_chance = 30
+	name = "EVT_751066_OPTIONB"
+	command = { type = domestic which = interventionism value = 1 }			
+	command = { type = dissent value = -2 }
+	command = { type = trigger which = 751067 }
+	}
+}
+
+event = {
+	id = 751067
+	random = no
+	country = PRI
+	style = 2
+
+
+	name = "EVT_751067_NAME"
+	desc = "EVT_751067_DESC"
+	picture = "kolchak"
+
+
+	action_a = {
+	ai_chance = 50
+	name = "EVT_751067_OPTIONA"
+        command = { type = relation which = JAP value = 100 }
+        command = { type = dissent value = 15 }
+        command = { type = set_domestic which = democratic value = 3 }
+        command = { type = set_domestic which = political_left value = 3 }
+	}
+
+	action_b = {
+	ai_chance = 50
+	name = "EVT_751067_OPTIONB"
+	command = { type = end_puppet }
+	command = { type = event which = 751068 where = JAP when = 1  }
+	command = { type = relation which = JAP value = -250 }
+	command = { type = end_access which = JAP  }
+	command = { trigger = { alliance = { country = JAP country = PRI } } type = leave_alliance when = 1  }
+	command = { type = end_non_aggression  which = JAP where = PRI	  }		
+	command = { type = end_trades which = JAP where = PRI  }	
+	command = { type = sleepteam which = 12708 }	
+	command = { type = peace which = MAN value = 1 }
+	command = { type = peace which = CSX value = 1 }
+	command = { type = peace which = KOR value = 1 }
+	command = { type = peace which = U30 value = 1 }
+	command = { type = peace which = CGX value = 1 }
+	command = { type = peace which = CHC value = 1 }
+	command = { type = peace which = GER value = 1 }					
+	}
+}
+
+event = {
+	id = 751068
+	random = no
+	country = JAP
+	style = 2
+
+
+	name = "EVT_751068_NAME"
+	desc = "EVT_751068_DESC"
+	picture = "Transamur"
+
+	action_a = {
+	ai_chance = 70
+	name = "EVT_751068_OPTIONA"
+	command = { type = war which = PRI }
+	command = { type = setflag which = PRI_breaksaway }
+	}
+
+	action_b = {
+	ai_chance = 30
+	name = "EVT_751068_OPTIONB"
+	command = { type = domestic which = interventionism value = 1 }			
+	command = { type = dissent value = 5 }
+	command = { type = setflag which = PRI_breaksaway }
+	}
+}
+
+
+
+event = {
+	id = 751051
+	random = no
+	country = PRI
+	style = 2
+	  
+	trigger = {
+	NOT = {
+	exists = SIB
+	}
+	owned = { province = 1162 data = PRI }
+	owned = { province = 1142 data = PRI }
+        control = { province = 1191 data = PRI }
+        control = { province = 1162 data = PRI }
+        control = { province = 1142 data = PRI }
+	}
+
+	name = "EVT_751051_NAME"
+	desc = "EVT_751051_DESC"
+        picture = "russiageo"	
+
+        date = { day = 1 month = january year = 1936 }
+	offset = 120
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+
+		ai_chance = 70
+		name = "EVT_751051_OPTIONA"
+                command = { type = belligerence which = PRI value = 10  }
+                command = { type = domestic which = interventionism value = 2 }
+                command = { type = dissent value = -5 } 
+                command = { type = relation which = RUS value = -60 }
+                command = { type = name where = PRI which = PRI_RUS_NAME }
+                command = { type = flag_ext where = PRI which = "_rus" }
+                command = { type = addclaim which = 534 }
+                                command = { type = addclaim which = 535 }
+                                command = { type = addclaim which = 536 }
+                                command = { type = addclaim which = 537 }
+                                command = { type = addclaim which = 541 }
+                                command = { type = addclaim which = 546 }
+                                command = { type = addclaim which = 539 }
+                                command = { type = addclaim which = 529 }
+                                command = { type = addclaim which = 530 }
+                                command = { type = addclaim which = 531 }
+                                command = { type = addclaim which = 525 }
+                                command = { type = addclaim which = 524 }
+                                command = { type = addclaim which = 512 }
+                                command = { type = addclaim which = 527 }
+                                command = { type = addclaim which = 528 }
+                                command = { type = addclaim which = 533 }
+                                command = { type = addclaim which = 532 }
+                                command = { type = addclaim which = 538 }
+                                command = { type = addclaim which = 520 }
+                                command = { type = addclaim which = 521 }
+                                command = { type = addclaim which = 523 }
+                                command = { type = addclaim which = 518 }
+                                command = { type = addclaim which = 540 }
+                                command = { type = addclaim which = 522 }
+                                command = { type = addclaim which = 519 }
+                                command = { type = addclaim which = 514 }
+                                command = { type = addclaim which = 515 }
+                                command = { type = addclaim which = 516 }
+                                command = { type = addclaim which = 511 }
+                                command = { type = addclaim which = 513 }
+                                command = { type = addclaim which = 517 }
+                                command = { type = addclaim which = 268 }
+                                command = { type = addclaim which = 269 }
+                                command = { type = addclaim which = 264 }
+                                command = { type = addclaim which = 267 }
+                                command = { type = addclaim which = 266 }
+                                command = { type = addclaim which = 265 }
+                                command = { type = addclaim which = 273 }
+                                command = { type = addclaim which = 272 }
+                                command = { type = addclaim which = 271 }
+                                command = { type = addclaim which = 270 }
+                                command = { type = addclaim which = 274 }
+                                command = { type = addclaim which = 275 }
+                                command = { type = addclaim which = 257 }
+                                command = { type = addclaim which = 256 }
+                                command = { type = addclaim which = 251 }
+                                command = { type = addclaim which = 253 }
+                                command = { type = addclaim which = 247 }
+                                command = { type = addclaim which = 248 }
+                                command = { type = addclaim which = 595 }
+                                command = { type = addclaim which = 598 }
+                                command = { type = addclaim which = 597 }
+                                command = { type = addclaim which = 596 }
+                                command = { type = addclaim which = 599 }
+                                command = { type = addclaim which = 592 }
+                                command = { type = addclaim which = 594 }
+                                command = { type = addclaim which = 591 }
+                                command = { type = addclaim which = 618 }
+                                command = { type = addclaim which = 619 }
+                                command = { type = addclaim which = 620 }
+                                command = { type = addclaim which = 621 }
+                                command = { type = addclaim which = 626 }
+                                command = { type = addclaim which = 625 }
+                                command = { type = addclaim which = 622 }
+                                command = { type = addclaim which = 623 }
+                                command = { type = addclaim which = 624 }
+                                command = { type = addclaim which = 637 }
+                                command = { type = addclaim which = 638 }
+                                command = { type = addclaim which = 639 }
+                                command = { type = addclaim which = 640 }
+                                command = { type = addclaim which = 641 }
+                                command = { type = addclaim which = 630 }
+                                command = { type = addclaim which = 631 }
+                                command = { type = addclaim which = 644 }
+                                command = { type = addclaim which = 645 }
+                                command = { type = addclaim which = 643 }
+                                command = { type = addclaim which = 649 }
+                                command = { type = addclaim which = 633 }
+                                command = { type = addclaim which = 634 }
+                                command = { type = addclaim which = 635 }
+                                command = { type = addclaim which = 636 }
+                                command = { type = addclaim which = 632 }
+                                command = { type = addclaim which = 627 }
+                                command = { type = addclaim which = 646 }
+                                command = { type = addclaim which = 647 }
+                                command = { type = addclaim which = 648 }
+                                command = { type = addclaim which = 602 }
+                                command = { type = addclaim which = 604 }
+                                command = { type = addclaim which = 603 }
+                                command = { type = addclaim which = 605 }
+                                command = { type = addclaim which = 606 }
+                                command = { type = addclaim which = 607 }
+                                command = { type = addclaim which = 608 }
+                                command = { type = addclaim which = 610 }
+                                command = { type = addclaim which = 629 }
+                                command = { type = addclaim which = 628 }
+                                command = { type = addclaim which = 615 }
+                                command = { type = addclaim which = 612 }
+                                command = { type = addclaim which = 614 }
+                                command = { type = addclaim which = 611 }
+                                command = { type = addclaim which = 616 }
+                                command = { type = addclaim which = 609 }
+                                command = { type = addclaim which = 617 }
+                                command = { type = addclaim which = 613 }
+                                command = { type = addclaim which = 694 }
+                                command = { type = addclaim which = 693 }
+                                command = { type = addclaim which = 695 }
+                                command = { type = addclaim which = 696 }
+                                command = { type = addclaim which = 691 }
+                                command = { type = addclaim which = 692 }
+                                command = { type = addclaim which = 697 }
+                                command = { type = addclaim which = 662 }
+                                command = { type = addclaim which = 698 }
+                                command = { type = addclaim which = 701 }
+                                command = { type = addclaim which = 703 }
+                                command = { type = addclaim which = 705 }
+                                command = { type = addclaim which = 702 }
+                                command = { type = addclaim which = 700 }
+                                command = { type = addclaim which = 699 }
+                                command = { type = addclaim which = 704 }
+                                command = { type = addclaim which = 712 }
+                                command = { type = addclaim which = 713 }
+                                command = { type = addclaim which = 710 }
+                                command = { type = addclaim which = 708 }
+                                command = { type = addclaim which = 707 }
+                                command = { type = addclaim which = 709 }
+                                command = { type = addclaim which = 542 }
+                                command = { type = addclaim which = 547 }
+                                command = { type = addclaim which = 543 }
+                                command = { type = addclaim which = 545 }
+                                command = { type = addclaim which = 544 }
+                                command = { type = addclaim which = 685 }
+                                command = { type = addclaim which = 684 }
+                                command = { type = addclaim which = 673 }
+                                command = { type = addclaim which = 674 }
+                                command = { type = addclaim which = 656 }
+                                command = { type = addclaim which = 665 }
+                                command = { type = addclaim which = 668 }
+                                command = { type = addclaim which = 669 }
+                                command = { type = addclaim which = 661 }
+                                command = { type = addclaim which = 663 }
+                                command = { type = addclaim which = 550 }
+                                command = { type = addclaim which = 551 }
+                                command = { type = addclaim which = 553 }
+                                command = { type = addclaim which = 557 }
+                                command = { type = addclaim which = 556 }
+                                command = { type = addclaim which = 539 }
+                                command = { type = addclaim which = 552 }
+                                command = { type = addclaim which = 566 }
+                                command = { type = addclaim which = 564 }
+                                command = { type = addclaim which = 593 }
+                                command = { type = addclaim which = 590 }
+                                command = { type = addclaim which = 565 }
+                                command = { type = addclaim which = 549 }
+                                command = { type = addclaim which = 560 }
+                                command = { type = addclaim which = 600 }
+                                command = { type = addclaim which = 601 }
+                                command = { type = addclaim which = 587 }
+                                command = { type = addclaim which = 581 }
+                                command = { type = addclaim which = 582 }
+                                command = { type = addclaim which = 580 }
+                                command = { type = addclaim which = 654 }
+                                command = { type = addclaim which = 653 }
+                                command = { type = addclaim which = 655 }
+                                command = { type = addclaim which = 642 }
+                                command = { type = addclaim which = 659 }
+                                command = { type = addclaim which = 657 }
+                                command = { type = addclaim which = 658 }
+                                command = { type = addclaim which = 670 }
+                                command = { type = addclaim which = 675 }
+                                command = { type = addclaim which = 683 }
+                                command = { type = addclaim which = 680 }
+                                command = { type = addclaim which = 681 }
+                                command = { type = addclaim which = 555 }
+                                command = { type = addclaim which = 548 }
+                                command = { type = addclaim which = 650 }
+                                command = { type = addclaim which = 651 }
+                                command = { type = addclaim which = 652 }
+                                command = { type = addclaim which = 578 }
+                                command = { type = addclaim which = 679 }
+                                command = { type = addclaim which = 682 }
+                                command = { type = addclaim which = 676 }
+                                command = { type = addclaim which = 554 }
+                                command = { type = addclaim which = 563 }
+                                command = { type = addclaim which = 559 }
+                                command = { type = addclaim which = 562 }
+                                command = { type = addclaim which = 561 }
+                                command = { type = addclaim which = 573 }
+                                command = { type = addclaim which = 589 }
+                                command = { type = addclaim which = 586 }
+                                command = { type = addclaim which = 588 }
+                                command = { type = addclaim which = 583 }
+                                command = { type = addclaim which = 585 }
+                                command = { type = addclaim which = 579 }
+                                command = { type = addclaim which = 558 }
+                                command = { type = addclaim which = 577 }
+                                command = { type = addclaim which = 575 }
+                                command = { type = addclaim which = 574 }
+                                command = { type = addclaim which = 576 }
+                                command = { type = addclaim which = 584 }
+                                command = { type = addclaim which = 567 }
+                                command = { type = addclaim which = 572 }
+                                command = { type = addclaim which = 568 }
+                                command = { type = addclaim which = 569 }
+                                command = { type = addclaim which = 570 }
+                                command = { type = addclaim which = 571 }
+                                command = { type = addclaim which = 677 }
+                                command = { type = addclaim which = 678 }
+                                command = { type = addclaim which = 244 }
+                                command = { type = addclaim which = 245 }
+                                command = { type = addclaim which = 249 }
+                                command = { type = addclaim which = 711 }
+                                command = { type = addclaim which = 714 }
+                                command = { type = addclaim which = 386 }
+                                command = { type = addclaim which = 230 }
+                                command = { type = addclaim which = 231 }
+                                command = { type = addclaim which = 227 }
+                                command = { type = addclaim which = 223 }
+                                command = { type = addclaim which = 233 }
+                                command = { type = addclaim which = 234 }
+                                command = { type = addclaim which = 243 }
+                                command = { type = addclaim which = 246 }
+                                command = { type = addclaim which = 228 }
+                                command = { type = addclaim which = 232 }
+                                command = { type = addclaim which = 229 }
+                                command = { type = addclaim which = 250 }
+                                command = { type = addclaim which = 254 }
+                                command = { type = addclaim which = 259 }
+                                command = { type = addclaim which = 260 }
+                                command = { type = addclaim which = 262 }
+                                command = { type = addclaim which = 263 }
+                                command = { type = addclaim which = 252 }
+                                command = { type = addclaim which = 255 }
+                                command = { type = addclaim which = 258 }
+                                command = { type = addclaim which = 660 }
+                                command = { type = addclaim which = 666 }
+                                command = { type = addclaim which = 667 }
+                                command = { type = addclaim which = 258 }
+                                command = { type = addclaim which = 1134 }
+                                command = { type = addclaim which = 690 }
+                                command = { type = addclaim which = 1131 }
+                                command = { type = addclaim which = 664 }
+                                command = { type = addclaim which = 672 }
+                                command = { type = addclaim which = 671 }
+                                command = { type = addclaim which = 687 }
+                                command = { type = addclaim which = 1126 }
+                                command = { type = addclaim which = 1131 }
+                                command = { type = addclaim which = 1130 }
+                                command = { type = addclaim which = 1129 }
+                                command = { type = addclaim which = 686 }
+                                command = { type = addclaim which = 689 }
+                                command = { type = addclaim which = 688 }
+                                command = { type = addclaim which = 706 }
+                                command = { type = addclaim which = 1113 }
+                                command = { type = addclaim which = 1118 }
+                                command = { type = addclaim which = 1115 }
+                                command = { type = addclaim which = 1116 }
+                                command = { type = addclaim which = 1117 }
+                                command = { type = addclaim which = 501 }
+                                command = { type = addclaim which = 502 }
+                                command = { type = addclaim which = 498 }
+                                command = { type = addclaim which = 499 }
+                                command = { type = addclaim which = 1140 }
+                                command = { type = addclaim which = 507 }
+                                command = { type = addclaim which = 505 }
+                                command = { type = addclaim which = 506 }
+                                command = { type = addclaim which = 504 }
+                                command = { type = addclaim which = 1114 }
+                                command = { type = addclaim which = 1110 }
+                                command = { type = addclaim which = 1111 }
+                                command = { type = addclaim which = 503 }
+                                command = { type = addclaim which = 500 }
+                                command = { type = addclaim which = 1108 }
+                                command = { type = addclaim which = 1109 }
+                                command = { type = addclaim which = 1112 }
+                                command = { type = addclaim which = 1103 }
+                                command = { type = addclaim which = 1105 }
+                                command = { type = addclaim which = 1104 }
+                                command = { type = addclaim which = 1106 }
+                                command = { type = addclaim which = 1107 }
+                                command = { type = addclaim which = 1099 }
+                                command = { type = addclaim which = 1100 }
+                                command = { type = addclaim which = 1101 }
+                                command = { type = addclaim which = 1102 }
+                                command = { type = addclaim which = 1097 }
+                                command = { type = addclaim which = 1098 }
+                                command = { type = addclaim which = 302 }
+                                command = { type = addclaim which = 303 }
+                                command = { type = addclaim which = 304 }
+                                command = { type = addclaim which = 305 }
+                                command = { type = addclaim which = 306 }
+                                command = { type = addclaim which = 501 }
+                                command = { type = addclaim which = 498 }
+                                command = { type = addclaim which = 1115 }
+                                command = { type = addclaim which = 499 }
+                                command = { type = addclaim which = 502 }
+		}
+
+	action_b = {
+		ai_chance = 10
+		name = "EVT_751051_OPTIONB"
+                command = { type = domestic which = interventionism value = -1 }
+                command = { type = relation which = RUS value = 60 }
+                command = { type = dissent value = 2 }
+}
+}
+
+
+event = {
+id = 751052
+random = no
+country = PRI
+
+trigger = {
+NOT = {
+puppet = { country = PRI country = JAP  }
+}
+exists = MON
+war = { country = MON country = PRI }
+control = { province = 1124 data = PRI }
+control = { province = 1162 data = PRI }
+}
+
+
+name = "EVT_751052_NAME"
+desc = "EVT_751052_DESC"
+style = 2
+picture = "mongoliadefeated"
+
+date = { day = 1 month = january year = 1936 }
+offset = 7
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+name = "EVT_751052_OPTIONA"
+ai_chance = 95
+command = { type = trigger which = 751053 }
+command = { type = addcore   which = 1167   }
+command = { type = addcore   which = 1168   }
+command = { type = addcore   which = 1169   }
+command = { type = addcore   which = 1146   }
+command = { type = addcore   which = 1147   }
+command = { type = addcore   which = 1158   }
+command = { type = relation which = MON value = 10 }
+}
+action_b = {
+name = "EVT_751052_OPTIONB"
+ai_chance = 5
+command = { type = relation which = KYG value = -50 }
+command = { type = relation which = KAZ value = -50 }
+command = { type = relation which = JAP value = -40 } 
+command = { type = domestic which = interventionism value = 1 }
+command = { type = addcore   which = 1167   }
+command = { type = addcore   which = 1168   }
+command = { type = addcore   which = 1169   }
+command = { type = addcore   which = 1146   }
+command = { type = addcore   which = 1147   }
+command = { type = addcore   which = 1158   }
+}
+}
+
+event = {
+id = 751053
+random = no
+country = MON
+
+name = "EVT_751053_NAME"
+desc = "EVT_751053_DESC"
+style = 2
+picture = "mongoliadefeated"
+
+action_a = {
+name = "EVT_751053_OPTIONA"
+ai_chance = 90
+command = { type = flag_ext where = MON  }
+command = { type = name where = MON  }
+command = { type = peace which = PRI value = 1 }
+command = { type = peace which = JAP value = 1 }
+command = { type = peace which = KOR value = 1 }
+command = { type = peace which = U30 value = 1 }
+command = { type = peace which = MAN value = 1 }
+command = { type = leave_alliance when = 1 }
+command = { type = secedeprovince which = PRI value = 1167 }
+command = { type = secedeprovince which = PRI value = 1168 }
+command = { type = secedeprovince which = PRI value = 1169 }
+command = { type = secedeprovince which = PRI value = 1146 }
+command = { type = secedeprovince which = PRI value = 1147 }
+command = { type = secedeprovince which = PRI value = 1158 }
+command = { type = removecore which = 1167 }
+command = { type = removecore which = 1168 }
+command = { type = removecore which = 1169 }
+command = { type = removecore which = 1146 }
+command = { type = removecore which = 1147 }
+command = { type = removecore which = 1158 }
+command = { type = removeclaim which = 1142 }
+command = { type = removeclaim which = 1155 }
+command = { type = removeclaim which = 1157 }
+command = { type = removeclaim which = 1148 }
+command = { type = removeclaim which = 1140 }
+command = { type = removeclaim which = 1143 }
+command = { type = removeclaim which = 1144 }
+command = { type = removeclaim which = 1145 }
+command = { type = removeclaim which = 1152 }
+command = { type = removeclaim which = 1153 } 
+command = { type = removeclaim which = 1150 }
+command = { type = removeclaim which = 1146 }
+command = { type = removeclaim which = 1158 }
+command = { type = removeclaim which = 1138 }
+command = { type = removeclaim which = 1147 }
+command = { type = removeclaim which = 1166 }
+command = { type = removeclaim which = 1167 }
+command = { type = removeclaim which = 1162 }
+command = { type = removeclaim which = 1163 }
+command = { type = removeclaim which = 1164 }
+command = { type = removeclaim which = 1165 }
+command = { type = removeclaim which = 1169 }
+command = { type = removeclaim which = 1179 }
+command = { type = removeclaim which = 1178 }
+command = { type = removeclaim which = 1177 }
+command = { type = removeclaim which = 1168 }
+command = { type = removeclaim which = 1156 }
+command = { type = removeclaim which = 1189 }
+command = { type = removeclaim which = 1186 }
+command = { type = removeclaim which = 1139 }
+command = { type = removeclaim which = 1149 }
+command = { type = removeclaim which = 1141 }
+command = { type = removeclaim which = 1135 }
+command = { type = removeclaim which = 1138 }
+command = { type = removeclaim which = 1154 }
+command = { type = removeclaim which = 1180 }
+command = { type = removeclaim which = 1181 }
+command = { type = removeclaim which = 1182 }
+command = { type = removeclaim which = 1183 }
+command = { type = removeclaim which = 1184 }
+command = { type = removeclaim which = 1176 }
+command = { type = removeclaim which = 1174 }
+command = { type = removeclaim which = 1188 }
+command = { type = removeclaim which = 1175 }
+command = { type = removeclaim which = 1187 }
+command = { type = removeclaim which = 1136 }
+command = { type = removeclaim which = 1137 }
+command = { type = removeclaim which = 1151 }
+command = { type = removeclaim which = 1069 }
+command = { type = removeclaim which = 1070 }
+command = { type = removeclaim which = 1170 }
+command = { type = removeclaim which = 1171 }
+command = { type = removeclaim which = 1161 }
+command = { type = removecore which = 1270 } 
+command = { type = removecore which = 1272 }
+command = { type = removecore which = 1273 } 
+command = { type = removecore which = 1276 }
+command = { type = removecore which = 1281 }
+command = { type = removeclaim which = 1265 }
+command = { type = removeclaim which = 1266 }
+command = { type = removeclaim which = 1268 }
+command = { type = removeclaim which = 1275 }
+command = { type = removeclaim which = 1277 }
+command = { type = removeclaim which = 1279 }
+command = { type = removeclaim which = 1280 }
+command = { type = removeclaim which = 1282 }
+command = { type = removeclaim which = 1284 }
+command = { type = removeclaim which = 1280 }
+command = { type = removeclaim which = 1241 }
+command = { type = removeclaim which = 501 }
+command = { type = removeclaim which = 498 }
+command = { type = removeclaim which = 1115 }
+command = { type = removeclaim which = 499 }
+command = { type = removeclaim which = 502 }
+        command = { type = removeclaim   which =  1338  }
+        command = { type = removeclaim   which =  1107  }
+        command = { type = removeclaim   which =  1245  }
+        command = { type = removeclaim   which =  1328  }
+        command = { type = removeclaim   which =  1331  }
+        command = { type = removeclaim   which =  1241  }
+        command = { type = removeclaim   which =  1245  }
+        command = { type = removeclaim   which =  1157  }
+        command = { type = removeclaim   which =  1148  }
+        command = { type = removeclaim   which =  1140  }
+        command = { type = removeclaim   which =  1143  }
+        command = { type = removeclaim   which =  1144  }
+        command = { type = removeclaim   which =  1145  }
+        command = { type = removeclaim   which =  1152  }
+        command = { type = removeclaim   which =  1153  } 
+        command = { type = removeclaim   which =  1150  }
+        command = { type = removeclaim   which =  1146  }
+        command = { type = removeclaim   which =  1158  }
+        command = { type = removeclaim   which =  1138  }
+        command = { type = removeclaim   which =  1147  }
+        command = { type = removeclaim   which =  1166  }
+        command = { type = removeclaim   which =  1167  }
+        command = { type = removeclaim   which =  1162  }
+        command = { type = removeclaim   which =  1163  }
+        command = { type = removeclaim   which =  1164  }
+        command = { type = removeclaim   which =  1165  }
+        command = { type = removeclaim   which =  1169  }
+        command = { type = removeclaim   which =  1179  }
+        command = { type = removeclaim   which =  1178  }
+        command = { type = removeclaim   which =  1177  }
+        command = { type = removeclaim   which =  1168  }
+        command = { type = removeclaim   which =  1156  }
+        command = { type = removeclaim   which =  1189  }
+        command = { type = removeclaim   which =  1186  }
+        command = { type = removeclaim   which =  1139  }
+        command = { type = removeclaim   which =  1149  }
+        command = { type = removeclaim   which =  1141  }
+        command = { type = removeclaim   which =  1135  }
+        command = { type = removeclaim   which =  1138  }
+        command = { type = removeclaim   which =  1154  }
+        command = { type = removeclaim   which =  1180  }
+        command = { type = removeclaim   which =  1181  }
+        command = { type = removeclaim   which =  1182  }
+        command = { type = removeclaim   which =  1183  }
+        command = { type = removeclaim   which =  1184  }
+        command = { type = removeclaim   which =  1176  }
+        command = { type = removeclaim   which =  1174  }
+        command = { type = removeclaim   which =  1188  }
+        command = { type = removeclaim   which =  1175  }
+        command = { type = removeclaim   which =  1187  }
+        command = { type = removeclaim   which =  1136  }
+        command = { type = removeclaim   which =  1137  }
+        command = { type = removeclaim   which =  1151  }
+        command = { type = removeclaim   which =  1069  }
+        command = { type = removeclaim   which =  1070  }
+        command = { type = removeclaim   which =  1170  }
+        command = { type = removeclaim   which =  1171  }
+        command = { type = removeclaim   which =  1161  }
+        command = { type = removeclaim   which =  1202  }
+        command = { type = removeclaim   which =  1216  } 		
+        command = { type = removeclaim   which =  1235  }
+        command = { type = removeclaim   which =  1236  }
+        command = { type = removeclaim   which =  1240  } 
+        command = { type = removeclaim   which =  1204  }
+        command = { type = removeclaim   which =  1212  }
+        command = { type = removeclaim   which =  1205  }
+        command = { type = removeclaim   which =  1199  }
+        command = { type = removeclaim   which =  1203  }
+        command = { type = removeclaim   which =  1200  }
+        command = { type = removeclaim   which =  1206  }	
+        command = { type = removeclaim   which =  1213  }
+        command = { type = removeclaim   which =  1237  }
+        command = { type = removeclaim   which =  1207  }
+        command = { type = removeclaim   which =  1220  }
+        command = { type = removeclaim   which =  1218  } 
+        command = { type = removeclaim   which =  1201  }
+        command = { type = removeclaim   which =  1208  }
+        command = { type = removeclaim   which =  1209  }
+        command = { type = removeclaim   which =  1210  } 
+        command = { type = removeclaim   which =  1211  }
+        command = { type = removeclaim   which =  1214  }
+        command = { type = removeclaim   which =  1215  }
+        command = { type = removeclaim   which =  1217  } 
+        command = { type = removeclaim   which =  1197  }
+        command = { type = removeclaim   which =  1198  }
+        command = { type = removeclaim   which =  1219  }
+        command = { type = removeclaim   which =  1142  }
+        command = { type = removeclaim   which =  1155  }
+        command = { type = removeclaim   which =  1191  }
+        command = { type = removeclaim   which =  1196  }
+        command = { type = removeclaim   which =  1193  }
+        command = { type = removeclaim   which =  1192  }
+        command = { type = removeclaim   which =  1195  }
+        command = { type = removeclaim   which =  1194  }
+        command = { type = removeclaim   which =  1190  }
+        command = { type = removeclaim   which =  1185  }
+        command = { type = removeclaim   which =  1541  }
+        command = { type = removeclaim   which =  1542  }
+        command = { type = removeclaim   which =  1543  }
+        command = { type = removeclaim which = 1246 }
+	command = { type = removeclaim which = 1247 }
+	command = { type = removeclaim which = 1243 }
+	command = { type = removeclaim which = 1250 }
+        command = { type = removeclaim which = 1321 }
+	command = { type = removeclaim which = 1323 }
+	command = { type = removeclaim which = 1238 }
+	command = { type = removeclaim which = 1333 }
+        command = { type = removeclaim which = 1342 }
+	command = { type = removeclaim which = 1345 }
+	command = { type = removeclaim which = 1239 }
+	command = { type = removeclaim which = 1343 }
+        command = { type = removeclaim which = 1337 }
+        command = { type = removeclaim which = 1334 }
+	command = { type = removeclaim which = 1336 }
+	command = { type = removeclaim which = 1339 }
+        command = { type = removeclaim which = 1335 }
+	command = { type = removeclaim which = 1251 }
+	command = { type = removeclaim which = 1242 }
+	command = { type = removeclaim which = 1254 }
+        command = { type = removeclaim which = 1332 }
+	command = { type = removeclaim which = 1252 }
+	command = { type = removeclaim which = 1253 }
+	command = { type = removeclaim which = 1248 }
+        command = { type = removeclaim which = 1249 }
+	command = { type = removeclaim which = 1250 }
+	command = { type = removeclaim which = 1327 }
+	command = { type = removeclaim which = 1244 }
+        command = { type = removeclaim which = 1329 }
+	command = { type = removeclaim which = 1330 }
+	command = { type = removeclaim which = 1340 }
+        command = { type = removeclaim which = 1341 }
+	command = { type = removeclaim which = 1319 }
+	command = { type = removeclaim which = 1324 }
+	command = { type = removeclaim which = 1322 }
+        command = { type = removeclaim which = 1320 }
+	command = { type = removeclaim which = 1325 }
+	command = { type = removeclaim which = 1316 }
+        command = { type = removeclaim which = 1326 }
+	command = { type = removeclaim which = 1317 }
+	command = { type = removeclaim which = 1344 }
+        command = { type = removeclaim which = 1259 }
+        command = { type = removeclaim which = 1255 }
+        command = { type = removeclaim which = 1260 }
+        command = { type = removeclaim which = 1269 }
+        command = { type = removeclaim which = 1271 }
+        command = { type = removeclaim which = 1256 }
+        command = { type = removeclaim which = 1263 }
+        command = { type = removeclaim which = 1257 }
+        command = { type = removeclaim which = 1258 }
+        command = { type = removeclaim which = 1278 }
+        command = { type = removeclaim which = 1286 }
+        command = { type = removeclaim which = 1287 }
+        command = { type = removeclaim which = 1288 }
+        command = { type = removeclaim which = 1289 }
+        command = { type = removeclaim which = 1290 }
+        command = { type = removeclaim which = 1294 }
+        command = { type = removeclaim which = 1295 }
+        command = { type = removeclaim which = 1113 }
+        command = { type = removeclaim which = 706  }
+        command = { type = removeclaim which = 1115 }
+        command = { type = removeclaim which = 502  }
+        command = { type = removeclaim which = 501  }
+        command = { type = removeclaim which = 498  }
+        command = { type = removeclaim which = 499  }
+        command = { type = removeclaim which = 1140 }
+        command = { type = removeclaim which = 1114 }
+        command = { type = removeclaim which = 1117 }
+        command = { type = removeclaim which = 1118 }
+        command = { type = removeclaim which = 1116 }
+        command = { type = removeclaim which = 1111 }
+        command = { type = removeclaim which = 500  }
+        command = { type = removeclaim which = 503  }
+        command = { type = removeclaim which = 505  }
+        command = { type = removeclaim which = 507  }
+        command = { type = removeclaim which = 504  }
+        command = { type = removeclaim which = 506  }
+        command = { type = removeclaim which = 1108 }
+        command = { type = removeclaim which = 1109 }
+        command = { type = removeclaim which = 1110 }
+        command = { type = removeclaim which = 1112 }
+        command = { type = removeclaim which = 1264 }
+        command = { type = removeclaim which = 1268 }
+        command = { type = removeclaim which = 1275 }
+	command = { type = removeclaim which = 1279 }
+	command = { type = removeclaim which = 1280 }
+	command = { type = removeclaim which = 1277 }
+	command = { type = removeclaim which = 1282 }
+	command = { type = removeclaim which = 1266 }
+	command = { type = removeclaim which = 1284 }
+	command = { type = removeclaim which = 1265 }
+	command = { type = removeclaim which = 1280 }
+	command = { type = removeclaim which = 1268 }
+	command = { type = removecore which = 1273 }
+	command = { type = removecore which = 1276 }
+	command = { type = removecore which = 1281 }
+	command = { type = removecore which = 1270 }
+	command = { type = removecore which = 1272 }
+	command = { type = removeclaim which = 1283 }
+	command = { type = removeclaim which = 1285 }
+	command = { type = removeclaim which = 1274 }
+command = { type = sleepleader which = 330025 }
+command = { type = sleepteam which = 6802 }
+command = { type = sleepteam which = 6801 }
+command = { type = waketeam which = 6807 }
+command = { type = sleepminister which = 94105 }
+command = { type = sleepminister which = 94111 }
+command = { type = sleepminister which = 94112 }
+command = { type = trigger which = 751054 }
+}
+action_b = {
+name = "EVT_751053_OPTIONB"
+ai_chance = 10
+command = { type = trigger which = 751056 }
+
+}
+}
+
+
+event = {
+id = 751054
+random = no
+country = PRI
+
+
+name = "EVT_751054_NAME"
+desc = "EVT_751054_DESC"
+style = 2
+picture = "mongoliadefeated"
+
+action_a = {
+name = "EVT_751054_OPTIONA"
+command = { type = trigger which = 751055 }
+command = { type = dissent value = -10 }
+command = { type = make_puppet which = MON }
+command = { type = trigger which = 751057 }
+command = { type = trigger which = 901937 }
+}
+}
+
+
+event = {
+id = 751055
+random = no
+country = TIB
+
+trigger = {
+war = { country = TIB country = PRI }
+}
+
+
+name = "EVT_751055_NAME"
+desc = "EVT_751055_DESC"
+style = 2
+picture = "End_Winter_War"
+
+action_a = {
+name = "EVT_751055_OPTIONA"
+command = { type = peace which = PRI value = 0 }
+command = { type = dissent value = 5 }
+
+}
+}
+
+event = {
+id = 751056
+random = no
+country = PRI
+
+name = "EVT_751056_NAME"
+desc = "EVT_751056_DESC"
+style = 2
+picture = "mongoliadefeated"
+
+action_a = {
+name = "EVT_751056_OPTIONA"
+command = { type = dissent value = 5 }
+command = { type = domestic which = interventionism value = 1 }
+}
+}
+
+event = {
+id = 751057
+country = PRI
+style = 2
+picture = "tannutuvadec"
+
+name = "EVT_751057_NAME"
+desc = "EVT_751057_DESC"
+
+action_a = {
+ai_chance = 20
+name = "EVT_751057_OPTIONA"
+command = { type = trigger which = 751059 }
+command = { type = relation which = MON value = -50 }
+command = { type = sleepevent which = 751058 }
+}
+
+action_b = {
+ai_chance = 70
+name = "EVT_751057_OPTIONB"
+command = { type = relation which = MON value = -50 }
+command = { type = addcore   which = 1119   }
+command = { type = dissent value = 3 }
+command = { type = sleepevent which = 751062 }
+}
+
+
+action_c = {
+ai_chance = 25
+name = "EVT_751057_OPTIONC"
+command = { type = relation which = MON value = 50 }
+command = { type = sleepevent which = 751058 }
+}
+}
+
+event = {
+id = 751058
+country = PRI
+style = 2
+picture = "tannutuvadec"
+
+
+trigger = {
+owned = { province = 1418 data = PRI }
+NOT = {
+war = { country = MON country = PRI }
+}
+}
+
+name = "EVT_751058_NAME"
+desc = "EVT_751058_DESC"
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1953 }
+
+action_a = {
+ai_chance = 0
+name = "EVT_751058_OPTIONA"
+command = { type = independence which = TAN value = 1 when = 0 }
+command = { type = relation which = MON value = -50 }
+}
+
+action_b = {
+ai_chance = 55
+name = "EVT_751058_OPTIONB"
+command = { type = independence which = TAN value = 1 when = 0 }
+command = { type = trigger which = 751060 }
+command = { type = relation which = MON value = -50 }
+}
+
+action_c = {
+ai_chance = 70
+name = "EVT_751058_OPTIONC"
+command = { type = relation which = MON value = -50 }
+command = { type = addcore   which = 1119   }
+command = { type = dissent value = 3 }
+}
+}
+
+
+event = {
+id = 751059
+random = no
+country = MON
+style = 2
+picture = "tannutuvadec"
+
+
+name = "EVT_751059_NAME"
+desc = "EVT_751059_DESC"
+action_a = {
+name = "EVT_751059_OPTIONA"
+command = { type = independence which = TAN value = 1 when = 0 }
+command = { type = removecore which = 1119 }
+command = { type = secedeprovince which = TAN value = 1119 }
+command = { type = trigger which = 751060 }
+}
+}
+
+event = {
+id = 751062
+random = no
+country = MON
+style = 2
+picture = "tannutuvadec"
+
+
+name = "EVT_751062_NAME"
+desc = "EVT_751062_DESC"
+action_a = {
+name = "EVT_751062_OPTIONA"
+command = { type = removecore which = 1119 }
+command = { type = secedeprovince which = PRI value = 1119 }
+}
+}
+
+
+event = {
+id = 751060
+random = no
+country = PRI
+style = 2
+picture = "tannutuvadec"
+
+
+name = "EVT_751060_NAME"
+desc = "EVT_751060_DESC"
+action_a = {
+ai_chance = 100
+name = "EVT_751060_OPTIONA"
+command = { type = independence which = TAN value = 1 when = 0 }
+command = { type = make_puppet which = TAN }
+command = { type = relation which = TAN value = 100 }
+}
+}
+
+
+event = {
+	id = 751061
+	random = no
+	country = PRI
+
+	trigger = {
+        OR = {
+        ideology = nazi
+        ideology = fascist
+        }
+	headofstate = 527001
+        OR = { 
+        AND = {
+	NOT = { 
+        dissent = 10 } 
+        }
+	random = 3
+	AND = { 
+        dissent = 10
+	NOT = {	
+        dissent = 20 
+        }
+	random = 10 
+        }
+	AND = { dissent = 20
+	random = 25 
+        } 
+        } 
+        }
+
+	name = "EVT_751061_NAME"
+	desc = "EVT_751061_DESC"
+	style = 2
+	picture = "Yugoslav coup"
+
+	date = { day = 9 month = january year = 1937 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1966 }
+
+	action_a = {
+		name = "EVT_751061_OPTIONA"
+		ai_chance = 30
+		command = { type = dissent value = 10 }
+		command = { type = set_domestic which = democratic value = 3 }
+		command = { type = set_domestic which = political_left value = 3 }
+	        command = { type = headofstate which = 527048 } 
+		command = { type = sleepminister which = 527001 }
+                command = { type = sleepminister which = 527047 }
+                command = { type = sleepminister which = 4089 }
+                command = { type = sleepminister which = 4121 }
+                command = { type = sleepminister which = 4127 }
+                command = { type = sleepminister which = 4141 }
+                command = { type = sleepminister which = 4199 }
+                command = { type = sleepminister which = 4198 }
+                command = { type = sleepminister which = 522011 }
+                command = { type = sleepminister which = 522035 }
+                command = { type = sleepteam which = 12707 }
+                command = { type = waketeam which = 12721 }
+                command = { type = sleepevent which = 758437 }
+                command = { type = sleepevent which = 758438 }
+	} 
+	
+	
+	action_b = {
+		name = "EVT_751061_OPTIONB"
+		ai_chance = 40
+		command = { type = dissent value = 2 }
+		command = { type = set_domestic which = democratic value = 9 }
+		command = { type = set_domestic which = political_left value = 5 }
+	        command = { type = headofstate which = 527011 } 
+	        command = { type = headofgovernment which = 527013 }
+        	command = { type = foreignminister which = 527016 } 
+        	command = { type = sleepminister which = 527001 }
+                command = { type = sleepminister which = 527047 }
+                command = { type = sleepminister which = 4089 }
+                command = { type = sleepminister which = 4121 }
+                command = { type = sleepminister which = 4127 }
+                command = { type = sleepminister which = 4141 }
+                command = { type = sleepminister which = 4199 }
+                command = { type = sleepminister which = 4198 }
+                command = { type = sleepminister which = 522011 }
+                command = { type = sleepminister which = 522035 }
+                command = { trigger = { puppet = { country = PRI country = JAP  } } type = trigger which = 751063 }
+                command = { type = sleepteam which = 12707 }
+                command = { type = waketeam which = 12721 }
+                command = { type = sleepevent which = 758437 }
+                command = { type = sleepevent which = 758438 }
+	}  
+}
+
+event = {
+	id = 751063
+	random = no
+	country = JAP
+	style = 2
+
+	trigger = {
+	puppet = { country = PRI country = JAP  }
+	}
+
+	name = "EVT_751063_NAME"
+	desc = "EVT_751063_DESC"
+	picture = "Transamur"
+
+	action_a = {
+	ai_chance = 100
+	name = "EVT_751063_OPTIONA"
+	trigger = { government = democratic }
+	command = { type = relation which = PRI value = 200 }
+	}
+
+	action_b = {
+	ai_chance = 50
+	name = "EVT_751063_OPTIONB"
+	trigger = { NOT = { government = democratic } }
+	command = { type = relation which = PRI value = -100 }			
+	command = { type = dissent value = -1 }
+	command = { type = trigger which = 751064 }
+	}
+
+	action_c = {
+	ai_chance = 50
+	name = "EVT_751063_OPTIONC"
+	trigger = { NOT = { government = democratic } }
+	command = { type = relation which = PRI value = 100 }
+	}
+}
+
+event = {
+	id = 751064
+	random = no
+	country = PRI
+	style = 2
+
+
+	name = "EVT_751064_NAME"
+	desc = "EVT_751064_DESC"
+	picture = "kolchak"
+
+
+	action_a = {
+	ai_chance = 50
+	name = "EVT_751064_OPTIONA"
+	command = { type = relation which = JAP value = 100 }
+	command = { type = dissent value = 15 }
+	command = { type = set_domestic which = democratic value = 3 }
+	command = { type = set_domestic which = political_left value = 3 }
+	}
+
+	action_b = {
+	ai_chance = 50
+	name = "EVT_751064_OPTIONB"
+	command = { type = event which = 751065 where = JAP when = 1  }
+	command = { type = relation which = JAP value = -250 }
+	command = { type = end_access which = JAP  }
+	command = { trigger = { alliance = { country = JAP country = PRI } } type = leave_alliance when = 1  }
+	command = { type = end_non_aggression  which = JAP where = PRI	  }		
+	command = { type = end_trades which = JAP where = PRI  }	
+	command = { type = sleepteam which = 12708 }
+	command = { type = peace which = MAN value = 1 }
+	command = { type = peace which = SIB value = 1 }
+	command = { type = peace which = CSX value = 1 }
+	command = { type = peace which = KOR value = 1 }
+	command = { type = peace which = U30 value = 1 }
+	command = { type = peace which = CGX value = 1 }
+	command = { type = peace which = CHC value = 1 }
+	command = { type = peace which = GER value = 1 }						
+	}
+}
+
+event = {
+	id = 751065
+	random = no
+	country = JAP
+	style = 2
+
+
+	name = "EVT_751065_NAME"
+	desc = "EVT_751065_DESC"
+	picture = "Transamur"
+
+
+	action_a = {
+	ai_chance = 70
+	name = "EVT_751065_OPTIONA"
+	command = { type = war which = PRI }
+	command = { type = setflag which = PRI_breaksaway }
+	}
+
+	action_b = {
+	ai_chance = 30
+	name = "EVT_751065_OPTIONB"
+	command = { type = domestic which = interventionism value = -1 }			
+	command = { type = dissent value = 5 }
+	command = { type = setflag which = PRI_breaksaway }
+	}
+}
+
+
+event = {
+	id = 751069
+	country = PRI
+	style = 2
+        
+
+	trigger = { 
+        NOT = {
+	exists = SIB
+        exists = RUS
+	}
+
+	owned = { province = 1162 data = PRI }
+	owned = { province = 1142 data = PRI }
+        owned = { province = 1188 data = PRI }
+        control = { province = 1191 data = PRI }
+        control = { province = 1162 data = PRI }
+        control = { province = 1142 data = PRI }
+        control = { province = 1188 data = PRI } 
+        OR = {
+        AND = {
+        control = { province = 572 data = PRI }
+        owned = { province = 572 data = PRI }
+        }
+        AND = {
+        control = { province = 672 data = PRI }
+        owned = { province = 672 data = PRI }
+        }
+        }
+        }
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 2
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "EVT_751069_NAME"
+	desc = "EVT_751069_DESC"
+	picture = "russiageo"	
+
+	action_a = {
+		name = "EVT_751069_OPTIONA"
+		command = { type = country which = RUS }
+                command = { type = clrflag which = RUS_TSAR }
+                command = { type = clrflag which = HoS_Senate }
+                command = { type = clrflag which = RUS_MIL }
+                command = { type = clrflag which = HoS_Dmitri_P }
+                command = { type = clrflag which = RUS_BOL }
+                command = { type = clrflag which = RUS_REP }
+                command = { type = clrflag which = HoS_Chernov }
+                command = { type = clrflag which = HoS_Maklakov }
+                command = { type = clrflag which = HoS_Arkhangelskiy }
+                command = { type = clrflag which = HoS_Bukharin }
+                command = { type = clrflag which = HoS_Williams }
+                command = { type = clrflag which = HoS_Kaplan }
+                command = { type = clrflag which = HoS_Markov }
+                command = { type = clrflag which = RUS_ISO }
+                command = { type = clrflag which = RUS_REAL }
+                command = { type = clrflag which = CAP_PET }
+                command = { type = clrflag which = CAP_MOS }
+                command = { type = clrflag which = ORTH_STATE }
+                command = { type = clrflag which = secular }
+                command = { type = clrflag which = ORTH_GVMT }
+                command = { type = local_clrflag which = RUSexp_cea }
+                command = { type = local_clrflag which = RUSexp_cau }
+                command = { type = local_clrflag which = RUSexp_fae }
+                command = { type = local_clrflag which = RUSexp_eas }
+                command = { type = local_clrflag which = RUSexp_mie }
+                command = { trigger = { minister = 527001 } type = wakeminister which = 4089 }
+                command = { trigger = { minister = 527001 } type = wakeminister which = 4121 }
+                command = { trigger = { minister = 527001 } type = wakeminister which = 4127 }
+                command = { trigger = { minister = 527001 } type = wakeminister which = 4141 }
+                command = { trigger = { minister = 527001 } type = wakeminister which = 4199 }
+                command = { trigger = { minister = 527001 } type = wakeminister which = 4198 }
+                command = { trigger = { minister = 527001 government = fascist } type = headofstate which = 4199 }
+                command = { trigger = { minister = 527001 government = fascist } type = headofgovernment which = 4191 }
+                command = { trigger = { minister = 527001 government = fascist } type = foreignminister which =  4098 }  
+		command = { type = name where = RUS which = RUS_REP_NAME }
+                command = { type = flag_ext where = RUS which = "_rep" }
+                command = { type = manpowerpool value = 500 }
+                command = { type = setflag which = RUS_EXP }
+                command = { trigger = { government = democratic } type = setflag which = RUS_REP }
+                command = { trigger = { government = communist } type = setflag which = RUS_BOL }
+                command = { trigger = { government = democratic } type = headofgovernment which = 4110 }
+                command = { trigger = { government = democratic } type = foreignminister which =  4225 }
+                command = { trigger = { government = democratic } type = headofstate which = 4280  }
+                command = { type = add_division value = infantry when = 10 }
+                command = { type = add_division value = infantry when = 10 }
+                command = { type = add_division value = infantry when = 10 }
+                command = { type = add_division value = infantry when = 10 }
+                command = { type = add_division value = infantry when = 10 }
+                command = { type = add_division value = infantry when = 10 }
+                command = { type = add_division value = infantry when = 10 }
+                command = { type = add_division value = infantry when = 10 }
+                command = { type = add_division value = infantry when = 10 }
+                command = { type = add_division value = infantry when = 10 }
+                command = { type = add_division value = infantry when = 10 }
+                command = { type = add_division value = infantry when = 10 }
+                command = { type = add_division value = cavalry when = 9 }
+                command = { type = add_division value = cavalry when = 9 }
+                command = { type = add_division value = cavalry when = 9 }
+                command = { type = add_division value = interceptor when = 9 }
+                command = { type = add_division value = interceptor when = 9 }
+                command = { type = add_division value = heavy_cruiser when = 3 }
+                command = { type = add_division value = light_cruiser when = 3 }
+                command = { type = add_division value = light_cruiser when = 3 }
+                command = { type = add_division value = destroyer when = 4 }
+                command = { type = add_division value = destroyer when = 4 }
+                command = { type = add_division value = destroyer when = 4 }
+                command = { type = add_division value = destroyer when = 4 }
+                command = { type = transport_pool which = RUS value = 50 }
+	        command = { type = escort_pool which = RUS value = 10 }
+                command = { type = sleepevent which = 771060  }
+                command = { type = sleepevent which = 771061  }
+                command = { type = sleepevent which = 771067  }
+                command = { type = sleepevent which = 771068  }
+                command = { type = sleepevent which = 758081  }
+                command = { type = sleepevent which = 750080  }
+                command = { type = sleepevent which = 750081  }
+                command = { type = sleepevent which = 750082  }
+                command = { type = addcore which = 1191 }
+		command = { type = addcore which = 1196 }
+		command = { type = addcore which = 1193 }
+		command = { type = addcore which = 1192 }
+		command = { type = addcore which = 1195 }
+		command = { type = addcore which = 1194 }
+		command = { type = addcore which = 1190 }
+		command = { type = addcore which = 1185 }
+		command = { type = addcore which = 1541 }
+		command = { type = addcore which = 1542 }
+		command = { type = addcore which = 1543 }
+		command = { type = addcore   which = 694  }
+		command = { type = addcore   which = 693  }
+		command = { type = addcore   which = 695  }
+		command = { type = addcore   which = 696  }
+		command = { type = addcore   which = 691  }
+		command = { type = addcore   which = 692  }
+		command = { type = addcore   which = 697  }
+		command = { type = addcore   which = 662  }
+		command = { type = addcore   which = 698  }
+		command = { type = addcore   which = 701  }
+		command = { type = addcore   which = 703  }
+		command = { type = addcore   which = 705  }
+		command = { type = addcore   which = 702  }
+		command = { type = addcore   which = 700  }
+		command = { type = addcore   which = 699  }
+		command = { type = addcore   which = 704  }
+		command = { type = addcore   which = 642  }
+		command = { type = addcore   which = 659  }
+		command = { type = addcore   which = 660  }
+		command = { type = addcore   which = 663  }
+		command = { type = addcore   which = 661  }
+		command = { type = addcore   which = 1167   }
+		command = { type = addcore   which = 1168   }
+		command = { type = addcore   which = 1169   }
+		command = { type = addcore   which = 1146   }
+		command = { type = addcore   which = 1147   }
+		command = { type = addcore   which = 1158   }
+		command = { type = addcore which = 530 }
+		command = { type = addcore which = 531 }
+		command = { type = addcore which = 532 }
+		command = { type = addcore which = 538 }
+		command = { type = addcore which = 540 }
+		command = { type = addcore which = 519 }
+		command = { type = addcore which = 517 }
+		command = { type = addcore which = 537 } # just to make sure that Russia gets cores on whole Karelia, if event about peace with Finland fired before
+		command = { type = addcore which = 541 }
+		command = { type = addcore which = 539 }
+		command = { type = addcore which = 534 }
+		command = { type = addcore which = 535 }
+		command = { type = addcore which = 536 }
+                command = { type = addcore which = 643 }
+		command = { type = addcore which = 645 }
+		command = { type = addcore which = 649 }
+		command = { type = addcore which = 644 }
+		command = { trigger = { owned = { province = 504 data = -1 } } type = addcore which = 1113 }
+		command = { trigger = { owned = { province = 504 data = -1 } } type = addcore which = 706  }
+		command = { trigger = { owned = { province = 504 data = -1 } } type = addcore which = 1115 }
+		command = { trigger = { owned = { province = 504 data = -1 } } type = addcore which = 502  }
+		command = { trigger = { owned = { province = 504 data = -1 } } type = addcore which = 501  }
+		command = { trigger = { owned = { province = 504 data = -1 } } type = addcore which = 498  }
+		command = { trigger = { owned = { province = 504 data = -1 } } type = addcore which = 499  }
+		command = { trigger = { owned = { province = 504 data = -1 } } type = addcore which = 1140 }
+		command = { trigger = { owned = { province = 504 data = -1 } } type = addcore which = 1114 }
+		command = { trigger = { owned = { province = 504 data = -1 } } type = addcore which = 1117 }
+		command = { trigger = { owned = { province = 504 data = -1 } } type = addcore which = 1118 }
+		command = { trigger = { owned = { province = 504 data = -1 } } type = addcore which = 1116 }
+		command = { trigger = { owned = { province = 504 data = -1 } } type = addcore which = 1111 }
+		command = { trigger = { owned = { province = 504 data = -1 } } type = addcore which = 500  }
+		command = { trigger = { owned = { province = 504 data = -1 } } type = addcore which = 503  }
+		command = { trigger = { owned = { province = 504 data = -1 } } type = addcore which = 505  }
+		command = { trigger = { owned = { province = 504 data = -1 } } type = addcore which = 507  }
+		command = { trigger = { owned = { province = 504 data = -1 } } type = addcore which = 504  }
+		command = { trigger = { owned = { province = 504 data = -1 } } type = addcore which = 506  }
+		command = { trigger = { owned = { province = 504 data = -1 } } type = addcore which = 1108 }
+		command = { trigger = { owned = { province = 504 data = -1 } } type = addcore which = 1109 }
+		command = { trigger = { owned = { province = 504 data = -1 } } type = addcore which = 1110 }
+		command = { trigger = { owned = { province = 504 data = -1 } } type = addcore which = 1112 }
+		command = { trigger = { owned = { province = 1105 data = -1 } } type = addcore which = 1103 } 
+		command = { trigger = { owned = { province = 1105 data = -1 } } type = addcore which = 1105 }
+		command = { trigger = { owned = { province = 1105 data = -1 } } type = addcore which = 1104 }
+		command = { trigger = { owned = { province = 1105 data = -1 } } type = addcore which = 1106 }
+		command = { trigger = { owned = { province = 1105 data = -1 } } type = addcore which = 1107 }
+		command = { trigger = { owned = { province = 1105 data = -1 } } type = addcore which = 1099 }
+		command = { trigger = { owned = { province = 1105 data = -1 } } type = addcore which = 1100 }
+		command = { trigger = { owned = { province = 1105 data = -1 } } type = addcore which = 1101 }
+		command = { trigger = { owned = { province = 1105 data = -1 } } type = addcore which = 1102 }
+		command = { trigger = { owned = { province = 1105 data = -1 } } type = addcore which = 1097 }
+		command = { trigger = { owned = { province = 1105 data = -1 } } type = addcore which = 1098 }
+		command = { trigger = { owned = { province = 1119 data = -1 } } type = addcore which = 1119 }
+                command = { type = addcore which = 501 }
+                command = { type = addcore which = 498 }
+                command = { type = addcore which = 1115 }
+                command = { type = addcore which = 499 }
+                command = { type = addcore which = 502 }
+		command = { type = clrflag which = RUS_UBE }
+		command = { type = clrflag which = RUS_BSD }
+		command = { type = clrflag which = RUS_FRB }
+		command = { type = clrflag which = RUS_KIS }
+		command = { type = clrflag which = RUS_ARA }
+		command = { type = clrflag which = RUS_GGF }
+		command = { type = clrflag which = RUS_TSR }
+		command = { type = clrflag which = RUS_FMS }
+		command = { type = clrflag which = RUS_EFE }
+		command = { type = clrflag which = RUS_KGD }
+		command = { type = clrflag which = RUS_AOD }
+		command = { type = clrflag which = RUS_DKU }
+		command = { type = clrflag which = RUS_DKC }
+		command = { type = clrflag which = RUS_ETC }
+		command = { trigger = { control = { province = 1167 data = -1 } control = { province = 1169 data = -1 } control = { province = 1147 data = -1 } control = { province = 1158 data = -1 } } type = setflag which = SIB_OPN }
+		command = { trigger = { owned = { province = 1105 data = RUS } owned = { province = 504 data = RUS } } type = setflag which = RUS_CENASIAPEACE }
+		command = { trigger = { owned = { province = 1167 data = RUS } owned = { province = 1168 data = RUS } owned = { province = 1169 data = RUS } owned = { province = 1146 data = RUS } owned = { province = 1147 data = RUS } owned = { province = 1158 data = RUS } } type = setflag which = RUS_SIBPEACE }
+		command = { 
+		trigger = { 
+		OR = {
+                                  AND = {
+                                  NOT = { owned = { province = 694 data = -3 } }
+                                  NOT = { control = { province = 694 data = -3 } }
+                                  }
+                                  AND = {
+                                  NOT = { owned = { province = 709 data = -3 } }
+                                  NOT = { control = { province = 709 data = -3 } }
+                                  }
+                                  AND = {
+                                  flag = RUS_EXP
+                                  NOT = { owned = { province = 711 data = -3 } }
+                                  NOT = { control = { province = 711 data = -3 } }
+                                  }
+                                  AND = {
+                                  NOT = { owned = { province = 713 data = -3 } }
+                                  NOT = { control = { province = 713 data = -3 } }
+                                  }
+                                  AND = {
+                                  NOT = { owned = { province = 504 data = -3 } }
+                                  NOT = { control = { province = 504 data = -3 } }
+                                  }
+                                  AND = {
+                                  NOT = { owned = { province = 1105 data = -3 } }
+                                  NOT = { control = { province = 1105 data = -3 } }
+                                  }
+                                  }
+		}
+		type = event which = 901971 where = RUS when = 40  
+		}
+		command = { 
+		trigger = { 
+                                  
+                                  owned = { province = 694 data = -3 }
+                                  control = { province = 694 data = -3 }
+                                  
+                                  
+                                  owned = { province = 709 data = -3 }
+                                  control = { province = 709 data = -3 }
+                                  
+                                  
+                                  owned = { province = 711 data = -3 }
+                                  control = { province = 711 data = -3 }
+                                 
+                                  
+                                  owned = { province = 713 data = -3 }
+                                  control = { province = 713 data = -3 }
+                                 
+                                  
+                                  owned = { province = 504 data = -3 }
+                                  control = { province = 504 data = -3 }
+                                  
+                                  
+                                  owned = { province = 1105 data = -3 }
+                                  control = { province = 1105 data = -3 }
+                                 
+                                  }
+		type = event which = 901996 where = RUS when = 40  
+		}
+		}
+}
+
+event = {
+	id = 751070
+	random = no
+	country = RUS
+	style = 2
+
+	trigger = {
+                event = 751069
+		owned = { province = 572 data = RUS }
+		control = { province = 572 data = RUS }
+		owned = { province = 553 data = RUS }
+		control = { province = 553 data = RUS }
+		}
+	
+
+	name = "EVT_751070_NAME"
+	desc = "EVT_751070_DESC"
+        picture = "capitalrus"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 20
+	deathdate = { day = 16 month = december year = 1960  }
+
+
+	action_a = {
+		ai_chance = 60
+		name = "EVT_751070_OPTIONA"
+		command = {  type =	capital which =  553 }
+                command = { type = setflag which = CAP_PET }
+		}
+	action_b = {
+		ai_chance = 40
+		name = "EVT_751070_OPTIONB"
+		command = {  type =	capital which =  572 }
+                command = { type = setflag which = CAP_MOS }
+
+		}
+
+	}
+
+
+
+
+event = {
+	id = 751076
+	random = no
+	country = PRI
+	style = 2
+        save_date = yes
+
+        trigger = { government = democratic }
+
+	name = "EVT_751076_NAME"
+	desc = "EVT_751076_DESC"
+        picture = "rusDumaelect"
+
+        date = { day = 1 month = january year = 1936 }
+        offset = 50
+        deathdate = { day = 29 month = december year = 1963 }
+
+
+	action = {
+		ai_chance = 30
+		name = "EVT_751076_OPTIONA"
+		command = { type = dissent value = 2 } 
+		command = { type = set_domestic which = democratic value = 8 }
+		command = { type = set_domestic which = political_left value = 9 }
+		command = { type = headofgovernment which = 527057       }
+		command = { type = foreignminister which =  527061	 }
+	}
+	action = {
+		ai_chance =  35
+		name = "EVT_751076_OPTIONB"
+		command = { type = dissent value = 1 }  
+		command = { type = set_domestic which = democratic value = 8 }
+		command = { type = set_domestic which = political_left value = 5 }
+		command = { type = headofgovernment which = 527013       }
+		command = { type = foreignminister which =  527016	 }
+	}
+	action = {
+		ai_chance =  34
+		name = "EVT_751076_OPTIONC"
+		command = { type = dissent value = 2 }   
+		command = { type = set_domestic which = democratic value = 8 }
+		command = { type = set_domestic which = political_left value = 2 }
+		command = { type = headofgovernment which = 527055       }
+		command = { type = foreignminister which =  527059	 }
+	}
+
+
+	action = {
+	ai_chance =  1
+	name = "EVT_751076_OPTIOND"
+		command = { type = dissent value = 20 }
+		command = { type = set_domestic which = democratic value = 3 }
+		command = { type = set_domestic which = political_left value = 3 }
+	        command = { type = headofstate which = 527048 } 
+                command = { type = headofgovernment which = 527014       }
+               
+		}
+	}
+
+event = {
+	id = 751077
+	random = no
+	country = PRI
+	style = 2
+
+        trigger = { 
+        event = 751076
+        government = democratic 
+        }
+
+	name = "EVT_751077_NAME"
+	desc = "EVT_751077_DESC"
+
+picture = "RussianDumaforeign"
+
+	date = { day = 1 month = january year = 1936 }
+        offset = 50
+        deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+	ai_chance =  35
+	name = "EVT_751077_OPTIONA"
+		command = { type = dissent value = 1 }
+		command = { type = headofstate which = 527054 }
+                
+		}
+action_b = {
+	ai_chance =  35
+	name = "EVT_751077_OPTIONB"
+		command = { type = dissent value = 1 }
+		command = { type = headofstate which = 527053 }
+                
+		}
+action_c = {
+	ai_chance =  30
+	name = "EVT_751077_OPTIONC"
+		command = { type = dissent value = 1 }
+		command = { type = headofstate which = 527011 }
+                
+		}
+action_d = {
+	ai_chance =  1
+	name = "EVT_751077_OPTIOND"
+		command = { type = dissent value = 3 }
+		command = { type = headofstate which = 527052 }
+                
+		}
+
+	}
+
+event = {
+	id = 751078
+	random = no
+	country = PRI
+	style = 2
+        save_date = yes
+
+        trigger = { 
+        government = democratic 
+        event = { id = 751076 days = 1400 } #4 years
+        }
+
+	name = "EVT_751078_NAME"
+	desc = "EVT_751078_DESC"
+        picture = "rusDumaelect"
+
+        date = { day = 1 month = january year = 1936 }
+        offset = 50
+        deathdate = { day = 29 month = december year = 1963 }
+
+
+	action = {
+		ai_chance = 30
+		name = "EVT_751078_OPTIONA"
+		command = { type = dissent value = 2 } 
+		command = { type = set_domestic which = democratic value = 8 }
+		command = { type = set_domestic which = political_left value = 9 }
+		command = { type = headofgovernment which = 527057       }
+		command = { type = foreignminister which =  527061	 }
+	}
+	action = {
+		ai_chance =  35
+		name = "EVT_751078_OPTIONB"
+		command = { type = dissent value = 1 }  
+		command = { type = set_domestic which = democratic value = 8 }
+		command = { type = set_domestic which = political_left value = 5 }
+		command = { type = headofgovernment which = 527013       }
+		command = { type = foreignminister which =  527016	 }
+	}
+	action = {
+		ai_chance =  34
+		name = "EVT_751078_OPTIONC"
+		command = { type = dissent value = 2 }   
+		command = { type = set_domestic which = democratic value = 8 }
+		command = { type = set_domestic which = political_left value = 2 }
+		command = { type = headofgovernment which = 527055       }
+		command = { type = foreignminister which =  527059	 }
+	}
+
+
+	action = {
+	ai_chance =  1
+	name = "EVT_751078_OPTIOND"
+		command = { type = dissent value = 20 }
+		command = { type = set_domestic which = democratic value = 3 }
+		command = { type = set_domestic which = political_left value = 3 }
+	        command = { type = headofstate which = 527048 } 
+                command = { type = headofgovernment which = 527014       }
+               
+		}
+	}
+
+
+event = {
+	id = 751079
+	random = no
+	country = PRI
+	style = 2
+
+        trigger = { 
+        event = 751078
+        government = democratic 
+        }
+
+	name = "EVT_751079_NAME"
+	desc = "EVT_751079_DESC"
+
+picture = "RussianDumaforeign"
+
+	date = { day = 1 month = january year = 1936 }
+        offset = 50
+        deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+	ai_chance =  35
+	name = "EVT_751079_OPTIONA"
+		command = { type = dissent value = 1 }
+		command = { type = headofstate which = 527054 }
+                
+		}
+action_b = {
+	ai_chance =  35
+	name = "EVT_751079_OPTIONB"
+		command = { type = dissent value = 1 }
+		command = { type = headofstate which = 527053 }
+                
+		}
+action_c = {
+	ai_chance =  30
+	name = "EVT_751079_OPTIONC"
+		command = { type = dissent value = 1 }
+		command = { type = headofstate which = 527011 }
+                
+		}
+action_d = {
+	ai_chance =  1
+	name = "EVT_751079_OPTIOND"
+		command = { type = dissent value = 3 }
+		command = { type = headofstate which = 527052 }
+                
+		}
+
+	}
+
+
+
+event = {
+	id = 751080
+	random = no
+	country = PRI
+	style = 2
+        save_date = yes
+
+        trigger = { 
+        government = democratic 
+        event = { id = 751078 days = 1400 } #4 years
+        }
+
+	name = "EVT_751080_NAME"
+	desc = "EVT_751080_DESC"
+        picture = "rusDumaelect"
+
+        date = { day = 1 month = january year = 1936 }
+        offset = 50
+        deathdate = { day = 29 month = december year = 1963 }
+
+
+	action = {
+		ai_chance = 30
+		name = "EVT_751080_OPTIONA"
+		command = { type = dissent value = 2 } 
+		command = { type = set_domestic which = democratic value = 8 }
+		command = { type = set_domestic which = political_left value = 9 }
+		command = { type = headofgovernment which = 527057       }
+		command = { type = foreignminister which =  527061	 }
+	}
+	action = {
+		ai_chance =  35
+		name = "EVT_751080_OPTIONB"
+		command = { type = dissent value = 1 }  
+		command = { type = set_domestic which = democratic value = 8 }
+		command = { type = set_domestic which = political_left value = 5 }
+		command = { type = headofgovernment which = 527013       }
+		command = { type = foreignminister which =  527016	 }
+	}
+	action = {
+		ai_chance =  34
+		name = "EVT_751080_OPTIONC"
+		command = { type = dissent value = 2 }   
+		command = { type = set_domestic which = democratic value = 8 }
+		command = { type = set_domestic which = political_left value = 2 }
+		command = { type = headofgovernment which = 527055       }
+		command = { type = foreignminister which =  527059	 }
+	}
+
+
+	action = {
+	ai_chance =  1
+	name = "EVT_751080_OPTIOND"
+		command = { type = dissent value = 20 }
+		command = { type = set_domestic which = democratic value = 3 }
+		command = { type = set_domestic which = political_left value = 3 }
+	        command = { type = headofstate which = 527048 } 
+                command = { type = headofgovernment which = 527014       }
+               
+		}
+	
+	}
+
+
+event = {
+	id = 751081
+	random = no
+	country = PRI
+	style = 2
+
+        trigger = { 
+        event = 751080
+        government = democratic 
+        }
+
+	name = "EVT_751081_NAME"
+	desc = "EVT_751081_DESC"
+
+picture = "RussianDumaforeign"
+
+	date = { day = 1 month = january year = 1936 }
+        offset = 50
+        deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+	ai_chance =  35
+	name = "EVT_751081_OPTIONA"
+		command = { type = dissent value = 1 }
+		command = { type = headofstate which = 527054 }
+                
+		}
+action_b = {
+	ai_chance =  35
+	name = "EVT_751081_OPTIONB"
+		command = { type = dissent value = 1 }
+		command = { type = headofstate which = 527053 }
+                
+		}
+action_c = {
+	ai_chance =  30
+	name = "EVT_751081_OPTIONC"
+		command = { type = dissent value = 8 }
+		command = { type = headofstate which = 527012 }
+                
+		}
+action_d = {
+	ai_chance =  1
+	name = "EVT_751081_OPTIOND"
+		command = { type = dissent value = 3 }
+		command = { type = headofstate which = 527052 }
+                
+		}
+	}
+
+
+event = {
+	id = 751082
+	random = no
+	country = PRI
+	style = 2
+        save_date = yes
+
+        trigger = { 
+        government = democratic 
+        event = { id = 751080 days = 1400 } #4 years
+        }
+
+	name = "EVT_751082_NAME"
+	desc = "EVT_751082_DESC"
+        picture = "rusDumaelect"
+
+        date = { day = 1 month = january year = 1936 }
+        offset = 50
+        deathdate = { day = 29 month = december year = 1963 }
+
+
+	action = {
+		ai_chance = 30
+		name = "EVT_751082_OPTIONA"
+		command = { type = dissent value = 2 } 
+		command = { type = set_domestic which = democratic value = 8 }
+		command = { type = set_domestic which = political_left value = 9 }
+		command = { type = headofgovernment which = 527057       }
+		command = { type = foreignminister which =  527061	 }
+	}
+	action = {
+		ai_chance =  35
+		name = "EVT_751082_OPTIONB"
+		command = { type = dissent value = 1 }  
+		command = { type = set_domestic which = democratic value = 8 }
+		command = { type = set_domestic which = political_left value = 5 }
+		command = { type = headofgovernment which = 527013       }
+		command = { type = foreignminister which =  527016	 }
+	}
+	action = {
+		ai_chance =  34
+		name = "EVT_751082_OPTIONC"
+		command = { type = dissent value = 2 }   
+		command = { type = set_domestic which = democratic value = 8 }
+		command = { type = set_domestic which = political_left value = 2 }
+		command = { type = headofgovernment which = 527055       }
+		command = { type = foreignminister which =  527059	 }
+	}
+
+
+	action = {
+	ai_chance =  1
+	name = "EVT_751082_OPTIOND"
+		command = { type = dissent value = 20 }
+		command = { type = set_domestic which = democratic value = 3 }
+		command = { type = set_domestic which = political_left value = 3 }
+	        command = { type = headofstate which = 527048 } 
+                command = { type = headofgovernment which = 527014       }
+               
+		}
+	}
+
+
+event = {
+	id = 751083
+	random = no
+	country = PRI
+	style = 2
+
+        trigger = { 
+        event = 751082
+        government = democratic 
+        }
+
+	name = "EVT_751083_NAME"
+	desc = "EVT_751083_DESC"
+
+picture = "RussianDumaforeign"
+
+	date = { day = 1 month = january year = 1936 }
+        offset = 50
+        deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+	ai_chance =  35
+	name = "EVT_751083_OPTIONA"
+		command = { type = dissent value = 1 }
+		command = { type = headofstate which = 527054 }
+                
+		}
+action_b = {
+	ai_chance =  35
+	name = "EVT_751083_OPTIONB"
+		command = { type = dissent value = 1 }
+		command = { type = headofstate which = 527053 }
+                
+		}
+action_c = {
+	ai_chance =  30
+	name = "EVT_751083_OPTIONC"
+		command = { type = dissent value = 8 }
+		command = { type = headofstate which = 527012 }
+                
+		}
+action_d = {
+	ai_chance =  1
+	name = "EVT_751083_OPTIOND"
+		command = { type = dissent value = 3 }
+		command = { type = headofstate which = 527052 }
+                
+		}
+	}
+
+
+event = {
+	id = 751084
+	random = no
+	country = PRI
+	style = 2
+        save_date = yes
+
+        trigger = { 
+        government = democratic 
+        event = { id = 751082 days = 1400 } #4 years
+        }
+
+	name = "EVT_751084_NAME"
+	desc = "EVT_751084_DESC"
+        picture = "rusDumaelect"
+
+        date = { day = 1 month = january year = 1936 }
+        offset = 50
+        deathdate = { day = 29 month = december year = 1963 }
+
+
+	action = {
+		ai_chance = 30
+		name = "EVT_751084_OPTIONA"
+		command = { type = dissent value = 2 } 
+		command = { type = set_domestic which = democratic value = 8 }
+		command = { type = set_domestic which = political_left value = 9 }
+		command = { type = headofgovernment which = 527057       }
+		command = { type = foreignminister which =  527061	 }
+	}
+	action = {
+		ai_chance =  35
+		name = "EVT_751084_OPTIONB"
+		command = { type = dissent value = 1 }  
+		command = { type = set_domestic which = democratic value = 8 }
+		command = { type = set_domestic which = political_left value = 5 }
+		command = { type = headofgovernment which = 527056       }
+		command = { type = foreignminister which =  527016	 }
+	}
+	action = {
+		ai_chance =  34
+		name = "EVT_751084_OPTIONC"
+		command = { type = dissent value = 2 }   
+		command = { type = set_domestic which = democratic value = 8 }
+		command = { type = set_domestic which = political_left value = 2 }
+		command = { type = headofgovernment which = 527055       }
+		command = { type = foreignminister which =  527059	 }
+	}
+
+
+	action = {
+	ai_chance =  1
+	name = "EVT_751084_OPTIOND"
+		command = { type = dissent value = 20 }
+		command = { type = set_domestic which = democratic value = 3 }
+		command = { type = set_domestic which = political_left value = 3 }
+	        command = { type = headofstate which = 527048 } 
+                command = { type = headofgovernment which = 527014       }
+               
+		}
+	}
+
+
+event = {
+	id = 751085
+	random = no
+	country = PRI
+	style = 2
+
+        trigger = { 
+        event = 751084
+        government = democratic 
+        }
+
+	name = "EVT_751085_NAME"
+	desc = "EVT_751085_DESC"
+
+picture = "RussianDumaforeign"
+
+	date = { day = 1 month = january year = 1936 }
+        offset = 50
+        deathdate = { day = 29 month = december year = 1963 }
+action_a = {
+	ai_chance =  35
+	name = "EVT_751085_OPTIONA"
+		command = { type = dissent value = 1 }
+		command = { type = headofstate which = 527054 }
+                
+		}
+action_b = {
+	ai_chance =  35
+	name = "EVT_751085_OPTIONB"
+		command = { type = dissent value = 1 }
+		command = { type = headofstate which = 527053 }
+                
+		}
+action_c = {
+	ai_chance =  30
+	name = "EVT_751085_OPTIONC"
+		command = { type = dissent value = 4 }
+		command = { type = headofstate which = 527012 }
+                
+		}
+action_d = {
+	ai_chance =  1
+	name = "EVT_751085_OPTIOND"
+		command = { type = dissent value = 3 }
+		command = { type = headofstate which = 527052 }
+                
+		}
+	}
+
+
+event = {
+	id = 751086
+	random = no
+	country = PRI
+	style = 2
+        save_date = yes
+
+        trigger = { 
+        government = democratic 
+        event = { id = 751084 days = 1400 } #4 years
+        }
+
+	name = "EVT_751086_NAME"
+	desc = "EVT_751086_DESC"
+        picture = "rusDumaelect"
+
+        date = { day = 1 month = january year = 1936 }
+        offset = 50
+        deathdate = { day = 29 month = december year = 1963 }
+
+
+	action = {
+		ai_chance = 30
+		name = "EVT_751086_OPTIONA"
+		command = { type = dissent value = 2 } 
+		command = { type = set_domestic which = democratic value = 8 }
+		command = { type = set_domestic which = political_left value = 9 }
+		command = { type = headofgovernment which = 527057       }
+		command = { type = foreignminister which =  527061	 }
+	}
+	action = {
+		ai_chance =  35
+		name = "EVT_751086_OPTIONB"
+		command = { type = dissent value = 1 }  
+		command = { type = set_domestic which = democratic value = 8 }
+		command = { type = set_domestic which = political_left value = 5 }
+		command = { type = headofgovernment which = 527056       }
+		command = { type = foreignminister which =  527016	 }
+	}
+	action = {
+		ai_chance =  34
+		name = "EVT_751086_OPTIONC"
+		command = { type = dissent value = 2 }   
+		command = { type = set_domestic which = democratic value = 8 }
+		command = { type = set_domestic which = political_left value = 2 }
+		command = { type = headofgovernment which = 527055       }
+		command = { type = foreignminister which =  527059	 }
+	}
+
+
+	action = {
+	ai_chance =  1
+	name = "EVT_751086_OPTIOND"
+		command = { type = dissent value = 20 }
+		command = { type = set_domestic which = democratic value = 3 }
+		command = { type = set_domestic which = political_left value = 3 }
+	        command = { type = headofstate which = 527048 } 
+                command = { type = headofgovernment which = 527014       }
+               
+		}
+	}
+
+
+event = {
+	id = 751087
+	random = no
+	country = PRI
+	style = 2
+
+        trigger = { 
+        event = 751086
+        government = democratic 
+        }
+
+	name = "EVT_751087_NAME"
+	desc = "EVT_751087_DESC"
+
+picture = "RussianDumaforeign"
+
+	date = { day = 1 month = january year = 1936 }
+        offset = 50
+        deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+	ai_chance =  35
+	name = "EVT_751087_OPTIONA"
+		command = { type = dissent value = 1 }
+		command = { type = headofstate which = 527054 }
+                
+		}
+action_b = {
+	ai_chance =  35
+	name = "EVT_751087_OPTIONB"
+		command = { type = dissent value = 1 }
+		command = { type = headofstate which = 527053 }
+                
+		}
+action_c = {
+	ai_chance =  30
+	name = "EVT_751087_OPTIONC"
+		command = { type = dissent value = 2 }
+		command = { type = headofstate which = 527012 }
+                
+		}
+action_d = {
+	ai_chance =  1
+	name = "EVT_751087_OPTIOND"
+		command = { type = dissent value = 3 }
+		command = { type = headofstate which = 527052 }
+                
+		}
+	}
+
+
+event = {
+	id = 751105
+	random = no
+	country = PRI
+
+	trigger = {
+	headofstate = 527001
+	random = 40
+        }
+
+	name = "EVT_751105_NAME"
+	desc = "EVT_751105_DESC"
+	style = 2
+	picture = "minister_died"
+
+	date = { day = 9 month = january year = 1948 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1966 }
+
+	action_a = {
+		name = "EVT_751105_OPTIONA"
+		ai_chance = 30
+		command = { type = dissent value = 10 }
+		command = { type = set_domestic which = democratic value = 3 }
+		command = { type = set_domestic which = political_left value = 3 }
+	        command = { type = headofstate which = 527048 } 
+		command = { type = sleepminister which = 527001 }
+                command = { type = sleepminister which = 527047 }
+                command = { type = sleepminister which = 4089 }
+                command = { type = sleepminister which = 4121 }
+                command = { type = sleepminister which = 4127 }
+                command = { type = sleepminister which = 4141 }
+                command = { type = sleepminister which = 4199 }
+                command = { type = sleepminister which = 4198 }
+                command = { type = sleepminister which = 522011 }
+                command = { type = sleepminister which = 522035 }
+                command = { type = sleepteam which = 12707 }
+                command = { type = sleepevent which = 751106 }
+                command = { type = waketeam which = 12721 }
+                command = { type = sleepevent which = 758437 }
+                command = { type = sleepevent which = 758438 }
+                command = { type = sleepevent which = 751106 }
+	} 
+	
+	
+	action_b = {
+		name = "EVT_751105_OPTIONB"
+		ai_chance = 40
+		command = { type = dissent value = 2 }
+		command = { type = set_domestic which = democratic value = 9 }
+		command = { type = set_domestic which = political_left value = 5 }
+	        command = { type = headofstate which = 527011 } 
+	        command = { type = headofgovernment which = 527013 }
+        	command = { type = foreignminister which = 527016 } 
+        	command = { type = sleepminister which = 527001 }
+                command = { type = sleepminister which = 527047 }
+                command = { type = sleepminister which = 4089 }
+                command = { type = sleepminister which = 4121 }
+                command = { type = sleepminister which = 4127 }
+                command = { type = sleepminister which = 4141 }
+                command = { type = sleepminister which = 4199 }
+                command = { type = sleepminister which = 4198 }
+                command = { type = sleepminister which = 522011 }
+                command = { type = sleepminister which = 522035 }
+                command = { type = trigger which = 751063 }
+                command = { type = sleepteam which = 12707 }
+                command = { type = sleepevent which = 751106 }
+                command = { type = waketeam which = 12721 }
+                command = { type = sleepevent which = 758437 }
+                command = { type = sleepevent which = 758438 }
+                command = { type = sleepevent which = 751106 }
+	}  
+}
+
+event = {
+	id = 751106
+	random = no
+	country = PRI
+
+	trigger = {
+	NOT = { headofstate = 527001 }
+        minister = 527001
+	random = 40
+        }
+
+	name = "EVT_751106_NAME"
+	desc = "EVT_751106_DESC"
+	style = 2
+	picture = "minister_died"
+
+	date = { day = 9 month = january year = 1948 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1966 }
+
+	action_a = {
+		name = "EVT_751106_OPTIONA"
+		command = { type = dissent value = 1 }
+		command = { type = sleepminister which = 527001 }
+                command = { type = sleepminister which = 527047 }
+                command = { type = sleepminister which = 4089 }
+                command = { type = sleepminister which = 4121 }
+                command = { type = sleepminister which = 4127 }
+                command = { type = sleepminister which = 4141 }
+                command = { type = sleepminister which = 4199 }
+                command = { type = sleepminister which = 4198 }
+                command = { type = sleepminister which = 522011 }
+                command = { type = sleepminister which = 522035 }
+                command = { type = sleepteam which = 12707 }
+                command = { type = waketeam which = 12721 }
+                command = { type = sleepevent which = 751105 }
+                command = { type = sleepevent which = 758437 }
+                command = { type = sleepevent which = 758438 }
+                command = { type = sleepevent which = 751105 }
+	} 
+	
+	
+	
+}
+
+
+event = {
+	id = 751107
+	random = no
+	country = RUS
+	style = 2
+
+	trigger = {
+		event = 751069
+	}
+
+	name = "EVT_751107_NAME"
+	desc = "EVT_751107_DESC"
+        picture = "mikhailpolskii"
+
+	date = { day = 4 month = august year = 1936 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1966 } 
+
+	action_a = {
+		ai_chance = 40
+		name = "EVT_751107_OPTIONA"
+		command = { type = dissent value = -5 }
+                command = { type = sleepevent which = 750010 }
+                command = { type = sleepevent which = 750008 }
+                command = { type = sleepevent which = 750009 }
+                command = { type = setflag which = ORTH_STATE }
+		}
+
+	action_b = {
+		ai_chance = 60
+		name = "EVT_751107_OPTIONB"
+		command = { type = dissent value = 5  }		
+                command = { type = sleepevent which = 750010 }
+                command = { type = sleepevent which = 750008 }
+                command = { type = sleepevent which = 750009 }
+	        command = { type = setflag which = secular }
+		}
+
+	action_c = {
+		ai_chance = 0
+		name = "EVT_751107_OPTIONC"
+		command = { type = dissent value = 15  }
+		command = { type = domestic which = political_left value = -3 }
+		command = { type = headofgovernment which = 4094  }
+                command = { type = foreignminister which =  	4190	 }
+                command = { type = armamentminister which = 	4104	 }
+                command = { type = ministerofsecurity which =  	4195	}
+                command = { type = ministerofintelligence which =   4120	 }
+                command = { type = sleepevent which = 750010 }
+                command = { type = sleepevent which = 750008 }
+                command = { type = sleepevent which = 750009 }
+                command = { type = setflag which = ORTH_GVMT }
+		}
+	}
+
+
+event = {
+ id = 751129
+ country = PRI
+ style = 2
+ picture = "Transamur"
+
+      trigger = {
+      puppet = { country = PRI country = JAP  }
+      headofstate = 527001
+      NOT = { 
+      government = communist
+      government = democratic
+      ideology = paternal_autocrat	
+      atwar = PRI
+      }
+      }
+         
+      date = { day = 1 month = april year = 1936 }
+      offset = 10 
+      deathdate = { day = 29 month = december year = 1940 }
+
+       name = "EVT_751129_NAME"
+       desc = "EVT_751129_DESC"
+
+       action_a = {
+       name = "EVT_751129_OPTIONA"
+       ai_chance = 0
+       command = { type = money value = -60 }
+       command = { type = dissent value = -5 }
+       command = { type = set_domestic which = democratic value = 9 }
+       command = { type = set_domestic which = political_left value = 5 }
+       command = { type = headofstate which = 527011 } 
+       command = { type = headofgovernment which = 527013 }
+       command = { type = foreignminister which = 527016 } 
+       command = { trigger = { puppet = { country = PRI country = JAP  } } type = trigger which = 751130 }
+       }
+
+       action_b = {
+       name = "EVT_751129_OPTIONB"
+       ai_chance = 40
+       command = { type = money value = -30 }
+       command = { type = dissent value = -1 }
+       command = { type = set_domestic which = democratic value = 4 }
+       command = { type = set_domestic which = political_left value = 4 }
+       command = { type = headofgovernment which = 527062 }
+       command = { type = set_domestic which = freedom value = 5 }
+       }
+
+       action_c = {
+       name = "EVT_751129_OPTIONC"
+       ai_chance = 60
+       command = { type = dissent value = 4 }
+       command = { type = set_domestic which = freedom value = -1 }
+       }
+       }
+
+
+event = {
+	id = 751130
+	random = no
+	country = JAP
+	style = 2
+
+	name = "EVT_751130_NAME"
+	desc = "EVT_751130_DESC"
+	picture = "Transamur"
+
+	action_a = {
+	ai_chance = 100
+	name = "EVT_751130_OPTIONA"
+	trigger = { government = democratic }
+	command = { type = relation which = PRI value = 200 }
+	}
+
+	action_b = {
+	ai_chance = 50
+	name = "EVT_751130_OPTIONB"
+	trigger = { NOT = { government = democratic } }
+	command = { type = relation which = PRI value = -100 }			
+	command = { type = dissent value = -1 }
+	command = { type = trigger which = 751131 }
+	}
+
+	action_c = {
+	ai_chance = 50
+	name = "EVT_751130_OPTIONC"
+	trigger = { NOT = { government = democratic } }
+	command = { type = relation which = PRI value = 100 }
+	}
+}
+
+event = {
+	id = 751131
+	random = no
+	country = PRI
+	style = 2
+
+
+	name = "EVT_751131_NAME"
+	desc = "EVT_751131_DESC"
+	picture = "kolchak"
+
+
+	action_a = {
+	ai_chance = 50
+	name = "EVT_751131_OPTIONA"
+	command = { type = relation which = JAP value = 100 }
+	command = { type = dissent value = 15 }
+	command = { type = set_domestic which = democratic value = 3 }
+	command = { type = set_domestic which = political_left value = 3 }
+	}
+
+	action_b = {
+	ai_chance = 50
+	name = "EVT_751131_OPTIONB"
+	command = { type = event which = 751132 where = JAP when = 1  }
+	command = { type = relation which = JAP value = -250 }
+	command = { type = end_access which = JAP  }
+	command = { trigger = { alliance = { country = JAP country = PRI } } type = leave_alliance when = 1  }
+	command = { type = end_non_aggression  which = JAP where = PRI	  }		
+	command = { type = end_trades which = JAP where = PRI  }	
+	command = { type = sleepteam which = 12708 }
+	command = { type = peace which = MAN value = 1 }
+	command = { type = peace which = SIB value = 1 }
+	command = { type = peace which = CSX value = 1 }
+	command = { type = peace which = KOR value = 1 }
+	command = { type = peace which = U30 value = 1 }
+	command = { type = peace which = CGX value = 1 }
+	command = { type = peace which = CHC value = 1 }
+	command = { type = peace which = GER value = 1 }						
+	}
+}
+
+event = {
+	id = 751132
+	random = no
+	country = JAP
+	style = 2
+
+
+	name = "EVT_751132_NAME"
+	desc = "EVT_751132_DESC"
+	picture = "Transamur"
+
+	action_a = {
+	ai_chance = 70
+	name = "EVT_751132_OPTIONA"
+	command = { type = war which = PRI }
+	command = { type = setflag which = PRI_breaksaway }
+	}
+
+	action_b = {
+	ai_chance = 30
+	name = "EVT_751132_OPTIONB"
+	command = { type = domestic which = interventionism value = -1 }			
+	command = { type = dissent value = 5 }
+	command = { type = setflag which = PRI_breaksaway }
+	}
+}

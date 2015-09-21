@@ -1,0 +1,4214 @@
+#########################################################################
+# Black Monday hits Ottoman Empire
+#########################################################################
+
+event = {
+id = 77188
+random = no
+country = OTT
+
+name = "EVT_77188_NAME"
+desc = "EVT_77188_DESC"
+style = 2
+picture = "economic"
+
+date = { day = 4 month = march year = 1936 }
+
+action_a = {
+name = "EVT_77188_OPTIONA"
+command = { type = peacetime_ic_mod value = -8 }
+command = { type = dissent value = 9 }
+command = { type = money value = -30 }
+}
+}
+
+
+event = {
+id = 77185
+random = no
+country = OTT
+trigger = {
+		random = 15
+		event = 77188
+	}
+
+name = "EVT_77185_NAME"
+desc = "EVT_77185_DESC"
+style = 2
+picture = "economic"
+
+date = { day = 1 month = may year = 1937 }
+offset = 31
+deathdate = { day = 29 month = december year = 1960 }
+
+	action_a = {
+	name = "EVT_77185_OPTIONA"
+		command = { type = peacetime_ic_mod value = 3 }
+                command = { type = dissent value = -1 }
+                command = { type = money value = -50 }
+	}
+}
+
+event = {
+id = 77186
+random = no
+country = OTT
+	trigger = { 
+		random = 30
+		event = 77185
+	 }
+
+name = "EVT_77186_NAME"
+desc = "EVT_77186_DESC"
+style = 2
+picture = "economic"
+
+date = { day = 1 month = june year = 1937 }
+offset = 31
+deathdate = { day = 1 month = january year = 1960 }
+
+	action_a = {
+	name = "EVT_77186_OPTIONA"
+		command = { type = peacetime_ic_mod value = 5 }
+		command = { type = dissent value = -1 }
+		command = { type = money value = -50 }
+	}
+}
+
+event = {
+id = 77187
+random = no
+country = OTT
+	trigger = { 
+		random = 25
+		event = 77186
+	}
+
+name = "EVT_77187_NAME"
+desc = "EVT_77187_DESC"
+style = 2
+picture = "economic"
+
+date = { day = 1 month = january year = 1938 }
+offset = 31
+deathdate = { day = 1 month = january year = 1960 }
+
+	action_a = {
+	name = "EVT_77187_OPTIONA"
+		command = { type = peacetime_ic_mod value = 3 }
+                command = { type = money value = -50 }
+                command = { type = dissent value = -1 }
+	}
+}
+
+
+
+
+#########################################################################
+# Jewish immigration events
+#########################################################################
+event = {
+id = 91317
+random = no
+country = OTT
+
+trigger = {
+owned = { province = 1008 } #Palestine
+owned = { province = 1010 }
+owned = { province = 1011 }
+owned = { province = 1013 }
+owned = { province = 1172 }
+NOT =  {
+atwar = OTT
+}
+}
+
+name = "EVT_91317_NAME"
+desc = "EVT_91317_DESC"
+style = 2
+picture = "politics1"
+
+date = { day = 1 month = april year = 1940 }
+offset = 70
+deathdate = { day = 29 month = june year = 1940 }
+
+action_a = {
+name = "EVT_91317_OPTIONA"
+ai_chance = 20
+command = { type = dissent value = 10 }
+command = { type = relation which = LBY value = -50 }
+command = { type = relation which = SAU value = -50 }
+command = { type = relation which = OMN value = -50 }
+command = { type = relation which = TUN value = -50 }
+command = { type = relation which = YEM value = -50 }
+command = { type = relation which = PER value = -50 }
+command = { type = money value = 100 }
+command = { type = supplies value = 50 }
+command = { type = manpowerpool value = 5 }
+command = { type = construct which = ic where = 1172 value = 1 } # Province 1797 -Jerusalem- gets a boost from the international Jewish community
+command = { type = add_prov_resource which = 1172 value = 10 where = money }
+command = { type = add_prov_resource which = 1172 value = 5 where = rare_materials }
+command = { type = construct which = infrastructure where = 1172 value = 20 }
+command = { type = construct which = infrastructure where = 1010 value = 10 }
+command = { type = construct which = infrastructure where = 1011 value = 10 }
+command = { type = construct which = infrastructure where = 1013 value = 10 }
+command = { type = construct which = infrastructure where = 1172 value = 10 }
+}
+
+action_b = {
+name = "EVT_91317_OPTIONB"
+ai_chance = 0
+command = { type = dissent value = 25 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = relation which = LBY value = -80 } # A lot more nations pissed this time, I mean wouldn't you be? What kind of Caliph do you think you are?
+command = { type = relation which = SAU value = -80 }
+command = { type = relation which = OMN value = -80 }
+command = { type = relation which = TUN value = -80 }
+command = { type = relation which = YEM value = -80 }
+command = { type = relation which = PER value = -80 }
+command = { type = relation which = AZB value = -50 } # Arabs are more pissed, because not only religion but also nationalism plays a role for them
+command = { type = relation which = KYG value = -50 }
+command = { type = relation which = KAZ value = -50 }
+command = { type = relation which = AFG value = -50 }
+command = { type = relation which = ALB value = -50 }
+command = { type = relation which = BOS value = -50 }
+command = { type = relation which = SIK value = -50 }
+command = { type = money value = 200 }
+command = { type = supplies value = 75 }
+command = { type = rarematerialspool value = 50 }
+command = { type = manpowerpool value = 10 }
+command = { type = construct which = ic where = 1172 value = 2 }
+command = { type = add_prov_resource which = 1172 value = 10 where = money }
+command = { type = add_prov_resource which = 1172 value = 10 where = rare_materials }
+command = { type = construct which = infrastructure where = 1172 value = 40 }
+command = { type = construct which = infrastructure where = 1010 value = 20 }
+command = { type = construct which = infrastructure where = 1011 value = 20 }
+command = { type = construct which = infrastructure where = 1013 value = 20 }
+command = { type = construct which = infrastructure where = 1172 value = 20 }
+}
+
+action_c = {
+name = "EVT_91317_OPTIONC"
+ai_chance = 89
+command = { type = dissent value = -10 }
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = LBY value = 25 }
+command = { type = relation which = SAU value = 25 }
+command = { type = relation which = OMN value = 25 }
+command = { type = relation which = TUN value = 25 }
+command = { type = relation which = YEM value = 25 }
+command = { type = relation which = PER value = 25 }
+command = { type = sleepevent which = 91318 }
+}
+}
+
+event = {
+id = 91318
+random = no
+country = OTT
+
+trigger = {
+owned = { province = 1008 } #Palestine
+owned = { province = 1010 }
+owned = { province = 1011 }
+owned = { province = 1172 }
+owned = { province = 1013 }
+event = 91317
+NOT =  {
+atwar = OTT
+}
+}
+
+name = "EVT_91318_NAME"
+desc = "EVT_91318_DESC"
+style = 2
+picture = "politics2"
+
+date = { day = 1 month = june year = 1940 }
+offset = 70
+deathdate = { day = 29 month = august year = 1943 }
+
+action_a = {
+name = "EVT_91318_OPTIONA"
+ai_chance = 92
+command = { type = dissent value = -10 }
+command = { type = domestic which = democratic value = -1 }
+command = { type = relation which = LBY value = 50 }
+command = { type = relation which = SAU value = 50 }
+command = { type = relation which = OMN value = 50 }
+command = { type = relation which = TUN value = 50 }
+command = { type = relation which = YEM value = 50 }
+command = { type = relation which = PER value = 50 }
+}
+
+action_b = {
+name = "EVT_91318_OPTIONB" # The sick man of Europe can't take no more tongue.gif
+ai_chance = 0
+command = { type = dissent value = 10 }
+command = { type = domestic which = freedom value = 3 }
+command = { type = construct which = ic where = 1008 value = 2 } 
+command = { type = money value = 100 }
+command = { type = add_division which = "'Sons of Solomon' Infantry Division" value = infantry when = 8 }
+command = { type = add_division which = "Dragoons of Mount Zion" value = cavalry when = 8 }
+command = { type = relation which = LBY value = -50 }
+command = { type = relation which = SAU value = -50 }
+command = { type = relation which = OMN value = -50 }
+command = { type = relation which = TUN value = -50 }
+command = { type = relation which = YEM value = -50 }
+command = { type = relation which = PER value = -50 }
+}
+
+action_c = {
+name = "EVT_91318_OPTIONC"
+ai_chance = 8
+command = { type = dissent value = -25 }
+command = { type = domestic which = political_left value = -1 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = belligerence value = 5 }
+command = { type = manpowerpool value = -10 }
+command = { type = revolt which = 1008 }
+command = { type = revolt which = 1011 }
+command = { type = revolt which = 1013 }
+command = { type = relation which = LBY value = 80 }
+command = { type = relation which = SAU value = 80 }
+command = { type = relation which = OMN value = 80 }
+command = { type = relation which = TUN value = 80 }
+command = { type = relation which = YEM value = 80 }
+command = { type = relation which = PER value = 80 }
+command = { type = relation which = AZB value = 50 }
+command = { type = relation which = KYG value = 80 } # Turkestan approves of the new rightwing approach
+command = { type = relation which = KAZ value = 50 }
+command = { type = relation which = AFG value = 50 }
+command = { type = relation which = ALB value = 50 }
+command = { type = relation which = BOS value = 50 }
+command = { type = relation which = SIK value = 50 }
+}
+}
+
+
+
+
+event = {
+id = 91327
+tag = { TUR OTT }
+style = 2
+
+trigger = {
+		NOT = {
+			exists = SYR
+                        exists = ARA
+		}
+		control = { province = 1016 data = -1 }
+	}
+
+picture = "riot1"
+date = { day = 10 month = july year = 1944 }
+
+name = "EVT_91327_NAME"
+desc = "EVT_91327_DESC"
+
+action_a = {
+name = "EVT_91327_OPTIONA"
+command = { type = dissent value = 10 }
+command = { trigger = { control = { province = 1048 data = -1 } } type = revolt which = 1048 }
+command = { trigger = { control = { province = 1044 data = -1 } } type = revolt which = 1044 }
+command = { trigger = { control = { province = 1034 data = -1 } } type = revolt which = 1034 }
+command = { trigger = { control = { province = 1036 data = -1 } } type = revolt which = 1046 }
+command = { trigger = { control = { province = 1032 data = -1 } } type = revolt which = 1032 }
+command = { trigger = { control = { province = 1041 data = -1 } } type = revolt which = 1041 }
+command = { trigger = { control = { province = 1031 data = -1 } } type = revolt which = 1031 }
+command = { trigger = { control = { province = 1172 data = -1 } } type = revolt which = 1172 }
+command = { trigger = { control = { province = 1022 data = -1 } } type = revolt which = 1022 }
+command = { trigger = { control = { province = 1023 data = -1 } } type = revolt which = 1023 }
+command = { trigger = { control = { province = 1025 data = -1 } } type = revolt which = 1025 }
+command = { trigger = { control = { province = 1026 data = -1 } } type = revolt which = 1026 }
+command = { trigger = { control = { province = 1035 data = -1 } } type = revolt which = 1035 }
+command = { trigger = { control = { province = 1036 data = -1 } } type = revolt which = 1036 }
+
+}
+}
+
+event = {
+id = 91328
+tag = { TUR OTT }
+style = 2
+
+trigger = {
+		NOT = {
+			exists = SYR
+		}
+		control = { province = 1016 data = -1 }
+	}
+
+picture = "riot1"
+date = { day = 10 month = july year = 1946 }
+
+name = "EVT_91328_NAME"
+desc = "EVT_91328_DESC"
+
+action_a = {
+name = "EVT_91328_OPTIONA"
+command = { type = dissent value = 10 }
+command = { trigger = { control = { province = 1048 data = -1 } } type = revolt which = 1048 }
+command = { trigger = { control = { province = 1044 data = -1 } } type = revolt which = 1044 }
+command = { trigger = { control = { province = 1034 data = -1 } } type = revolt which = 1034 }
+command = { trigger = { control = { province = 1036 data = -1 } } type = revolt which = 1046 }
+command = { trigger = { control = { province = 1032 data = -1 } } type = revolt which = 1032 }
+command = { trigger = { control = { province = 1041 data = -1 } } type = revolt which = 1041 }
+command = { trigger = { control = { province = 1031 data = -1 } } type = revolt which = 1031 }
+command = { trigger = { control = { province = 1172 data = -1 } } type = revolt which = 1172 }
+command = { trigger = { control = { province = 1022 data = -1 } } type = revolt which = 1022 }
+command = { trigger = { control = { province = 1023 data = -1 } } type = revolt which = 1023 }
+command = { trigger = { control = { province = 1025 data = -1 } } type = revolt which = 1025 }
+command = { trigger = { control = { province = 1026 data = -1 } } type = revolt which = 1026 }
+command = { trigger = { control = { province = 1035 data = -1 } } type = revolt which = 1035 }
+command = { trigger = { control = { province = 1036 data = -1 } } type = revolt which = 1036 }
+}
+}
+
+event = {
+ id = 91329
+ country = OTT
+ style = 2
+ save_date = yes
+ picture = "riot1"
+
+ trigger = { 
+ control = { province = 1029 data = OTT }
+ random = 40
+ NOT = {
+ exists = KUR
+ }
+ government = fascist
+ }
+
+ date = { day = 4 month = april year = 1938 }
+ offset = 25
+ deathdate = { day = 9 month = august year = 1939 }
+
+
+ name = "EVT_91329_NAME"
+ desc = "EVT_91329_DESC"
+
+ action_a = {
+ name = "EVT_91329_OPTIONA"
+ command = { type = dissent value = 5 }
+ command = { type = removecore which = 1029 }
+ command = { type = removecore which = 1036 }
+ command = { type = removecore which = 1063 }
+ command = { type = removecore which = 1064 }
+ command = { type = removecore which = 1060 }
+ command = { type = removecore which = 1027 }
+ command = { type = removecore which = 1062 }
+ command = { type = removecore which = 1014 }
+ command = { type = removecore which = 1015 }
+ command = { type = independence which = KUR value = 1 when = 0 }
+ command = { type = secedeprovince which = KUR value = 1029 }
+ command = { type = secedeprovince which = KUR value = 1036 }
+ command = { type = secedeprovince which = KUR value = 1063 }
+ command = { type = secedeprovince which = KUR value = 1064 }
+ command = { type = secedeprovince which = KUR value = 1060 }
+ command = { type = secedeprovince which = KUR value = 1027 }
+ command = { type = secedeprovince which = KUR value = 1062 }
+ command = { type = secedeprovince which = KUR value = 1014 }
+ command = { type = secedeprovince which = KUR value = 1015 }
+ command = { type = control which = KUR value = 1029 }
+ command = { type = control which = KUR value = 1036 }
+ command = { type = control which = KUR value = 1063 }
+ command = { type = control which = KUR value = 1064 }
+ command = { type = control which = KUR value = 1060 }
+ command = { type = control which = KUR value = 1027 }
+ command = { type = control which = KUR value = 1062 }
+ command = { type = control which = KUR value = 1014 }
+ command = { type = control which = KUR value = 1015 }
+ command = { type = setflag which = KUR_OTTUPR }
+ command = { type = trigger which = 377190 }
+
+ }
+ }
+
+
+
+ event = {
+ id = 377189
+ country = OTT
+ style = 2
+ trigger = { 
+
+ control = { province = 1029 data = OTT } 
+ NOT = {
+ exists = KUR
+ }     
+ NOT = {
+ core = { province = 1029 data = OTT }
+ }
+ }
+ picture = "riot1"
+
+ date = { day = 1 month = January year = 1936 }
+ offset =  10
+ deathdate = { day = 29 month = december year = 1960 }
+
+ name = "EVT_377189_NAME"
+ desc = "EVT_377189_DESC"
+ action_a = {
+ name = "EVT_377189_OPTIONA"
+ command = { type = dissent value = -3 }
+ command = { type = addcore which = 1029 }
+ command = { type = addcore which = 1036 }
+ command = { type = addcore which = 1063 }
+ command = { type = addcore which = 1064 }
+ command = { type = addcore which = 1060 }
+ command = { type = addcore which = 1027 }
+ command = { type = addcore which = 1062 }
+ command = { type = addcore which = 1014 }
+ command = { type = addcore which = 1015 }
+
+
+ }
+ }
+
+ event = {
+ id = 377190
+ country = OTT
+ style = 2
+
+ picture = "riot1"
+
+ name = "EVT_377190_NAME"
+ desc = "EVT_377190_DESC"
+
+ action_a = {
+ name = "EVT_377190_OPTIONA"
+ ai_chance = 100
+
+ command = { type = war which = KUR }
+ command = { type = trigger which = 377191 }
+
+ }
+ action_b = {
+ name = "EVT_377190_OPTIONB"
+ ai_chance = 0
+
+ command = { type = dissent value = 10 }
+ command = { type = trigger which = 377191 }
+ }
+ }
+
+ event = {
+ id = 377191
+ country = KUR
+ style = 2
+
+ picture = "riot1"
+
+ name = "EVT_377191_NAME"
+ desc = "EVT_377191_DESC"
+
+ action_a = {
+ name = "EVT_377191_OPTIONA"
+ command = { type = ai which = "kaiserreich/Kurdistan.ai" }
+ command = { type = set_domestic which = democratic value = 5 }
+ command = { type = set_domestic which = political_left value = 4 }
+ command = { type = headofstate which = 548033  } 
+ command = { type = headofgovernment which = 548002  }
+ command = { type = construct which = land_fort where = 1029 value = 3 }
+ command = { type = construct which = land_fort where = 1036 value = 2 }
+ command = { type = construct which = land_fort where = 1063 value = 2 }
+ command = { type = construct which = land_fort where = 1064 value = 2 }
+ command = { type = construct which = land_fort where = 1060 value = 2 }
+ command = { type = construct which = land_fort where = 1027 value = 2 }
+ command = { type = construct which = land_fort where = 1062 value = 2 }
+ command = { type = construct which = land_fort where = 1014 value = 2 }
+ command = { type = construct which = land_fort where = 1015 value = 2 }
+ command = { type = manpowerpool value = 50 }
+ command = { type = add_corps which = "I Kurdish Corps" value = land when = -1 where = 1029 }
+ command = { type = add_division which = "al-Mushati al-1i" value = infantry when = 8 }
+ command = { type = add_division which = "al-Mushati al-10i" value = militia when = 4 }
+ command = { type = add_corps which = "Mosul Corps" value = land when = -1 where = 1029 }
+ command = { type = add_division which = "Mosul Garrison" value = garrison when = 4 }
+ command = { type = add_division which = "2nd Mosul Garrison" value = garrison when = 4 }
+ command = { type = add_corps which = "II Kurdish Corps" value = land when = -1 where = 1036 }
+ command = { type = add_division which = "al-Mushati al-2i" value = militia when = 4 }
+ command = { type = add_corps which = "III Kurdish Corps" value = land when = -1 where = 1063 }
+ command = { type = add_division which = "al-Mushati al-3i" value = militia when = 4 }
+ command = { type = add_corps which = "IV Kurdish Corps" value = land when = -1 where = 1064 }
+ command = { type = add_division which = "al-Mushati al-4i" value = militia when = 4 }
+ command = { type = add_corps which = "V Kurdish Corps" value = land when = -1 where = 1060 }
+ command = { type = add_division which = "al-Mushati al-5i" value = militia when = 4 }
+ command = { type = add_corps which = "VI Kurdish Corps" value = land when = -1 where = 1027 }
+ command = { type = add_division which = "al-Mushati al-6i" value = militia when = 4 }
+ command = { type = add_corps which = "VII Kurdish Corps" value = land when = -1 where = 1062 }
+ command = { type = add_division which = "al-Mushati al-7i" value = militia when = 4 }
+ command = { type = add_corps which = "VIII Kurdish Corps" value = land when = -1 where = 1014 }
+ command = { type = add_division which = "al-Mushati al-8i" value = militia when = 4 }
+ command = { type = add_corps which = "IX Kurdish Corps" value = land when = -1 where = 1015 }
+ command = { type = add_division which = "al-Mushati al-9i" value = militia when = 4 }
+ command = { type = supplies value = 5000 }
+
+
+ }
+
+
+ }
+
+event = {
+id = 77192
+country = OTT
+style = 2
+picture = "fortification2"
+
+trigger = { 
+control = { province = 1029 data = OTT }
+control = { province = 1036 data = OTT }
+NOT = { exists = KUR }
+flag = KUR_OTTUPR
+}
+
+date = { day = 1 month = January year = 1936 }
+offset =  10
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_77192_NAME"
+desc = "EVT_77192_DESC"
+
+action_a = {
+name = "EVT_77192_OPTIONA" 
+command = { type = construct which = land_fort where = 1029 value = -3 }
+command = { type = construct which = land_fort where = 1036 value = -3 }
+command = { type = construct which = land_fort where = 1063 value = -3 }
+command = { type = construct which = land_fort where = 1064 value = -3 }
+command = { type = construct which = land_fort where = 1060 value = -3 }
+command = { type = construct which = land_fort where = 1027 value = -3 }
+command = { type = construct which = land_fort where = 1062 value = -3 }
+command = { type = construct which = land_fort where = 1015 value = -3 }
+command = { type = construct which = land_fort where = 1014 value = -3 }
+command = { type = clrflag which = KUR_OTTUPR }
+}
+}
+
+event = {
+id = 77193
+country = OTT
+style = 2
+trigger = { 
+event = { id = 91329 days = 100 } #Kurdish Uprising 100 days ago
+control = { province = 1029 data = KUR } 
+random = 25
+flag = KUR_OTTUPR  
+war = { country = OTT country = KUR }
+}
+picture = "riot1"
+
+date = { day = 1 month = January year = 1936 }
+offset =  200
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_77193_NAME"
+desc = "EVT_77193_DESC"
+action_a = {
+name = "EVT_77193_OPTIONA"
+ai_chance = 30
+command = { type = dissent value = 5 }
+command = { type = peace which = KUR value = 0 }
+command = { type = clrflag which = KUR_OTTUPR }
+}
+
+action_b = {
+name = "EVT_77193_OPTIONB"
+ai_chance = 70
+command = { type = dissent value = 2 }
+}
+}
+
+event = {
+id = 91330
+country = OTT
+style = 2
+
+
+date = { day = 1 month = september year = 1936 }
+offset = 50
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_91330_NAME"
+desc = "EVT_91330_DESC"
+
+action_a = {
+name = "EVT_91330_OPTIONA"
+ai_chance = 65
+command = { type = desert_attack which = cavalry value = 15 }
+command = { type = desert_defense which = cavalry value = 5 }
+command = { type = desert_move which = cavalry value = 3 }
+command = { type = add_Division which = "Imperial Camel Corps" value = cavalry when = 8 }
+command = { type = money value = -100 }
+command = { type = dissent value = -1 }
+}
+action_b = {
+name = "EVT_91330_OPTIONB"
+ai_chance = 35
+command = { type = dissent value = -1 }
+}
+}
+
+event = {
+id = 91331
+random = no
+country = OTT
+
+name = "EVT_91331_NAME"
+desc = "EVT_91331_DESC"
+style = 2
+picture = "foreign_policy"
+
+
+trigger = {
+	exists = SAU
+	NOT = { puppet = { country = SAU country = OTT } }
+        control = { province = 1048 data = OTT } 
+        control = { province = 1044 data = OTT }
+        control = { province = 1046 data = OTT }
+        control = { province = 1032 data = OTT }
+        control = { province = 1041 data = OTT }
+        
+	}
+
+date = { day = 1 month = november year = 1938  }
+offset = 25
+deathdate = { day = 29 month = november year = 1938 }
+
+action_a = {
+  name = "EVT_91331_OPTIONA"
+  ai_chance = 65
+  command = { type = dissent value = 5 }
+  command = { type = province_revoltrisk which = 1048 value = 15 }
+  command = { type = province_revoltrisk which = 1044 value = 15 }
+  command = { type = province_revoltrisk which = 1046 value = 15 }
+  command = { type = province_revoltrisk which = 1032 value = 15 }
+  command = { type = province_revoltrisk which = 1041 value = 15 }
+  
+}
+
+action_b = {
+  name = "EVT_91331_OPTIONB"
+  ai_chance = 25
+  command = { type = domestic which = free_market value = 1 }
+  command = { type = domestic which = democratic value = 1 }
+  command = { type = dissent value = 1 }
+  command = { type = sleepevent which = 91332 }
+  command = { type = relation which = SAU value = 10 }
+}  
+
+action_c = {
+  name = "EVT_91331_OPTIONC"
+  ai_chance = 10
+  command = { type = domestic which = democratic value = -1 }
+  command = { type = domestic which = free_market value = -1 }
+  command = { type = dissent value = 10 }
+  command = { type = relation which = SAU value = -10 }
+  command = { type = relation which = EGY value = -10 }
+}
+}
+
+event = {
+id = 91332
+random = no
+country = OTT
+
+name = "EVT_91332_NAME"
+desc = "EVT_91332_DESC"
+style = 2
+picture = "foreign_policy"
+
+
+trigger = {
+	exists = SAU
+	NOT = { puppet = { country = SAU country = OTT } }
+        control = { province = 1048 data = OTT } 
+        control = { province = 1044 data = OTT }
+        control = { province = 1046 data = OTT }
+        control = { province = 1032 data = OTT }
+        control = { province = 1041 data = OTT }
+	}
+
+date = { day = 1 month = september year = 1939  }
+offset = 25
+deathdate = { day = 29 month = september year = 1939 }
+
+action_a = {
+  name = "EVT_91332_OPTIONA"
+  ai_chance = 40
+  command = { type = province_revoltrisk which = 1046 value = 30 }
+  command = { type = province_revoltrisk which = 1048 value = 30 }
+  command = { type = province_revoltrisk which = 1044 value = 30 }
+  command = { type = province_revoltrisk which = 1032 value = 30 }
+  command = { type = province_revoltrisk which = 1041 value = 30 }
+  
+}
+
+action_b = {
+  name = "EVT_91332_OPTIONB"
+  ai_chance = 35
+  command = { type = domestic which = democratic value = -1 }
+  command = { type = dissent value = 5 }
+  command = { type = province_revoltrisk which = 1046 value = 15 }
+  command = { type = province_revoltrisk which = 1048 value = 15 }
+  command = { type = province_revoltrisk which = 1044 value = 15 }
+  command = { type = province_revoltrisk which = 1032 value = 15 }
+  command = { type = province_revoltrisk which = 1041 value = 15 }
+  command = { type = relation which = SAU value = -5 }
+  command = { type = relation which = EGY value = -5 }
+  command = { type = relation which = LBY value = -5 }
+  command = { type = relation which = OMN value = -5 }
+  command = { type = relation which = TUN value = -5 }
+}  
+
+action_c = {
+  name = "EVT_91332_OPTIONC"
+  ai_chance = 30
+  command = { type = domestic which = democratic value = -1 }
+  command = { type = domestic which = free_market value = -1 }
+  command = { type = dissent value = 5 }
+  command = { type = belligerence which = OTT value = 5 }
+  command = { type = revolt which = 1046 }
+  command = { type = revolt which = 1048 }
+  command = { type = revolt which = 1044 }
+  command = { type = revolt which = 1032 }
+  command = { type = revolt which = 1041 }
+  command = { type = sleepevent which = 91333 }
+  command = { type = relation which = SAU value = -10 }
+  command = { type = relation which = EGY value = -5 }
+  command = { type = relation which = LBY value = -5 }
+  command = { type = relation which = OMN value = -10 }
+  command = { type = relation which = TUN value = -5 }
+}
+}
+
+
+event = {
+id = 91333
+random = no
+country = OTT
+
+name = "EVT_91333_NAME"
+desc = "EVT_91333_DESC"
+style = 2
+picture = "foreign_policy"
+
+
+trigger = {
+	exists = SAU
+        control = { province = 1048 data = OTT } 
+        control = { province = 1044 data = OTT }
+        control = { province = 1046 data = OTT }
+        control = { province = 1032 data = OTT }
+        control = { province = 1041 data = OTT }
+	}
+
+date = { day = 27 month = october year = 1939  }
+offset = 2
+deathdate = { day = 29 month = november year = 1939 }
+
+action_a = {
+  name = "EVT_91333_OPTIONA"
+         trigger = {
+         	NOT = { puppet = { country = SAU country = OTT }
+            war = { country = SAU country = OTT }	
+	}
+         }  
+  ai_chance = 10
+  command = { type = dissent value = 5 }
+  command = { type = secedeprovince which = SAU value = 1048 }
+  command = { type = secedeprovince which = SAU value = 1044 }
+  command = { type = secedeprovince which = SAU value = 1046 }
+  command = { type = secedeprovince which = SAU value = 1032 }
+  command = { type = secedeprovince which = SAU value = 1041 }
+  command = { type = belligerence which = OTT value = -5 }
+  command = { type = trigger which = 77082 }
+  command = { type = relation which = SAU value = 30 }
+  command = { type = relation which = EGY value = 5 }
+  command = { type = relation which = LBY value = 5 }
+  command = { type = relation which = OMN value = 5 }
+  command = { type = relation which = TUN value = 5 }
+}
+
+action_b = {
+  name = "EVT_91333_OPTIONB"
+  ai_chance = 60
+  command = { type = domestic which = democratic value = -1 }
+  command = { type = dissent value = 5 }
+  command = { type = revolt which = 1048 }
+  command = { type = revolt which = 1044 }
+  command = { type = revolt which = 1046 }
+  command = { type = revolt which = 1032 }
+  command = { type = revolt which = 1041 }
+  command = { type = belligerence which = OTT value = 5 }
+  command = { type = relation which = SAU value = -10 }
+  command = { type = relation which = EGY value = -5 }
+  command = { type = relation which = LBY value = -5 }
+  command = { type = relation which = OMN value = -5 }
+  command = { type = relation which = TUN value = -5 }
+}  
+
+action_c = {
+  name = "EVT_91333_OPTIONC"
+           trigger = {
+         	NOT = { puppet = { country = SAU country = OTT }
+            war = { country = SAU country = OTT }	
+	}
+         }
+  ai_chance = 30
+  command = { type = domestic which = democratic value = -1 }
+  command = { type = dissent value = 5 }
+  command = { type = revolt which = 1048 }
+  command = { type = revolt which = 1044 }
+  command = { type = revolt which = 1046 }
+  command = { type = revolt which = 1032 }
+  command = { type = revolt which = 1041 }
+  command = { type = belligerence which = OTT value = 10 }
+  command = { type = end_non_aggression which = SAU where = OTT }
+  command = { type = end_non_aggression which = OTT where = SAU }
+  command = { type = war which = SAU }
+  command = { type = relation which = SAU value = -50 }
+  command = { type = relation which = EGY value = -20 }
+  command = { type = relation which = LBY value = -5 }
+  command = { type = relation which = OMN value = -20 }
+  command = { type = relation which = TUN value = -5 }
+  command = { type = trigger which = 77083 }
+}  
+}
+
+event = {
+id = 77082
+random = no
+country = SAU
+
+
+name = "EVT_77082_NAME"
+desc = "EVT_77082_DESC"
+style = 2
+picture = "foreign_policy"
+
+action_a = {
+
+name = "EVT_77082_OPTIONA"
+  command = { type = dissent value = -5}
+  command = { type = addcore which = 1048 }
+  command = { type = addcore which = 1044 }
+  command = { type = addcore which = 1046 }
+  command = { type = addcore which = 1032 }
+  command = { type = addcore which = 1041 }
+}
+}
+
+event = {
+id = 77083
+random = no
+country = EGY
+
+name = "EVT_77083_NAME"
+desc = "EVT_77083_DESC"
+style = 2
+picture = "foreign_policy"
+
+action_a = {
+  name = "EVT_77083_OPTIONA"
+  ai_chance = 50
+command = { type = war which = OTT }
+command = { type = add_division which = "Al-Quds Infantry Division" value = infantry when = 10 }  # Al Quds is Arabic for Jerusalem
+command = { type = add_division which = "Qubbat As-Sakhrah Cavalry Division" value = cavalry when = 6 } # Qubbat As-Sakhrah is the Arabic name for the Dome of the Rock
+command = { type = add_division which = "1st. Egyptian Volunteers" value = militia when = 5 }
+command = { type = add_division which = "2nd. Egyptian Volunteers" value = militia when = 5 }
+command = { type = relation which = OTT value = -75 }
+command = { type = relation which = LBY value = 20 }
+command = { type = relation which = SAU value = 50 }
+command = { type = relation which = OMN value = 30 }
+command = { type = relation which = TUN value = 20 }
+command = { type = relation which = YEM value = 20 }
+command = { type = trigger which = 91324 }
+command = { type = dissent value = -10 }
+command = { type = belligerence value = 5 }
+}
+
+action_b = {
+name = "EVT_77083_OPTIONB"
+ai_chance = 50
+command = { type = relation which = OTT value = 25 }
+command = { type = relation which = LBY value = -10 }
+command = { type = relation which = SAU value = -50 }
+command = { type = relation which = OMN value = -10 }
+command = { type = relation which = TUN value = -10 }
+command = { type = relation which = YEM value = -10 } 
+command = { type = dissent value = 10 }
+}
+}
+
+
+event = {
+	id = 77093
+	random = no
+	country = EGY
+	trigger = {
+		exists = GER
+                
+                OR = {
+                flag = GER_CON_Capitulation
+                flag = GER_Capitulation
+                }
+                NOT = {
+                puppet = { country = EGY country = GER }
+                alliance = { country = GER country = EGY }
+                war = { country = GER country = EGY }
+	}
+        control = { province = 900 data = GER }
+	control = { province = 1007 data = GER }
+        control = { province = 787 data = EGY }
+        control = { province = 791 data = EGY }
+        }
+	
+	name = "EVT_77093_NAME"
+	desc = "EVT_77093_DESC"		
+	style = 2
+        
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 10 
+	deathdate = { day = 29 month = january year = 1960 }
+
+	action_a = {
+        ai_chance = 100
+		name = "EVT_77093_OPTIONA"
+		command = { type = addcore which = 900 }
+                command = { type = addcore which = 1007 }
+		command = { type = relation which = GER value = -100 }
+                command = { type = trigger which = 77094 }
+                
+	}
+        action_b = {
+        ai_chance = 0
+		name = "EVT_77093_OPTIONB"
+		command = { type = relation which = GER value = 100 }
+		command = { type = dissent value = 5 }
+                
+	}
+}
+
+event = {
+	id = 77094
+	random = no
+	country = GER
+	## triggered by 77093
+	
+	name = "EVT_77094_NAME"
+	desc = "EVT_77094_DESC"		
+	style = 2
+        
+
+	action_a = {
+        ai_chance = 100
+		name = "EVT_77094_OPTIONA"
+		command = { type = secedeprovince which = EGY value = 900 }
+		command = { type = secedeprovince which = EGY value = 1007 }
+                command = { type = dissent value = 1 }
+                
+	}
+        action_b = {
+        ai_chance = 0
+		name = "EVT_77094_OPTIONB"
+		command = { type = war which = EGY }
+                command = { type = dissent value = 5 }
+                
+	}
+}
+
+
+ event = {
+ id = 377104
+ country = OTT
+ style = 2
+ picture = "riot1"
+
+ trigger = { 
+ event = { id = 91329 days = 20 } #Kurdish Uprising 60 days ago
+ war = { country = OTT country = KUR }
+ control = { province = 387 data = OTT }
+ control = { province = 388 data = OTT }
+ random = 60
+ government = fascist
+ }
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 15
+ deathdate = { day = 29 month = december year = 1945 }
+
+
+ name = "EVT_377104_NAME"
+ desc = "EVT_377104_DESC"
+
+ action_a = {
+ name = "EVT_377104_OPTIONA"
+ command = { type = dissent value = 2 }
+ command = { type = removecore which = 388 }
+ command = { type = addclaim which = 388 }
+ command = { type = independence which = CYP value = 1 when = 0 }
+ command = { type = secedeprovince which = CYP value = 388 }
+ command = { type = setflag which = CYP_OTTUPR }
+ command = { type = trigger which = 377107 }
+
+ }
+ }
+
+
+
+ event = {
+ id = 377105
+ country = OTT
+ style = 2
+ trigger = { 
+
+ control = { province = 387 data = OTT } 
+ control = { province = 388 data = OTT }
+ NOT = {
+ exists = CYP
+ }     
+ flag = CYP_OTTUPR
+ }
+ picture = "riot1"
+
+ date = { day = 1 month = January year = 1936 }
+ offset =  10
+ deathdate = { day = 29 month = december year = 1960 }
+
+ name = "EVT_377105_NAME"
+ desc = "EVT_377105_DESC"
+ action_a = {
+ name = "EVT_377105_OPTIONA"
+ command = { type = dissent value = -3 }
+ command = { type = addcore which = 388 }
+
+
+ }
+ }
+
+ event = {
+ id = 377106
+ country = OTT
+ style = 2
+
+ picture = "riot1"
+
+ name = "EVT_377106_NAME"
+ desc = "EVT_377106_DESC"
+
+ action_a = {
+ name = "EVT_377106_OPTIONA"
+ ai_chance = 100
+
+ command = { type = war which = CYP }
+ command = { type = add_corps which = "I. Devlet-i Aliye Ordusu" value = land when = -1 where = 387 }
+ command = { type = add_division which = "1. Redif Piyade Firkasi" value = militia when = 4 }
+ command = { type = trigger which = 377191 }
+
+ }
+ action_b = {
+ name = "EVT_377106_OPTIONB"
+ ai_chance = 0
+
+ command = { type = dissent value = 10 }
+ command = { type = clrflag which = CYP_OTTUPR }
+ }
+ }
+
+ event = {
+ id = 377107
+ country = CYP
+ style = 2
+ save_date = yes
+
+ picture = "riot1"
+
+ name = "EVT_377107_NAME"
+ desc = "EVT_377107_DESC"
+
+ action_a = {
+ name = "EVT_377107_OPTIONA"
+ command = { type = set_domestic which = democratic value = 4     }
+ command = { type = set_domestic which = political_left value = 4  }
+ command = { type = headofstate which = 560031 }
+ command = { type = headofgovernment which = 560032 } 
+ command = { type = construct which = land_fort where = 388 value = 3 }
+ command = { type = manpowerpool value = 50 }
+ command = { type = add_corps which = "I. Kypros Lóchos" value = land when = -1 where = 388 }
+ command = { type = add_division which = "1. Astynomia Diairesi" value = militia when = 4 }
+ command = { type = add_division which = "2. Astynomia Diairesi" value = militia when = 4 }
+ command = { type = supplies value = 1000 }
+ command = { type = event which = 377106 where = OTT when = 1  }
+
+
+ }
+
+
+ }
+
+ event = {
+ id = 377108
+ country = OTT
+ style = 2
+ picture = "fortification2"
+
+ trigger = { 
+ control = { province = 387 data = OTT }
+ control = { province = 388 data = OTT }
+ NOT = { exists = CYP }
+ flag = CYP_OTTUPR
+ }
+
+ date = { day = 1 month = January year = 1936 }
+ offset =  10
+ deathdate = { day = 29 month = december year = 1960 }
+
+ name = "EVT_377108_NAME"
+ desc = "EVT_377108_DESC"
+
+ action_a = {
+ name = "EVT_377108_OPTIONA" 
+ command = { type = construct which = land_fort where = 388 value = -3 }
+ command = { type = clrflag which = CYP_OTTUPR }
+ }
+ }
+
+ event = {
+ id = 377109
+ country = OTT
+ style = 2
+ trigger = { 
+ event = { id = 377107 days = 100 } #Cypriot Uprising 100 days ago
+ control = { province = 387 data = CYP }
+ control = { province = 388 data = CYP } 
+ random = 60
+ flag = CYP_OTTUPR  
+ war = { country = OTT country = CYP }
+ }
+ picture = "riot1"
+
+ date = { day = 1 month = January year = 1936 }
+ offset =  200
+ deathdate = { day = 29 month = december year = 1960 }
+
+ name = "EVT_377109_NAME"
+ desc = "EVT_377109_DESC"
+ action_a = {
+ name = "EVT_377109_OPTIONA"
+ ai_chance = 60
+ command = { type = dissent value = 2 }
+ command = { type = peace which = CYP value = 0 }
+ command = { type = secedeprovince which = CYP value = 387 }
+ command = { type = secedeprovince which = CYP value = 388 }
+ command = { type = clrflag which = CYP_OTTUPR }
+ }
+
+ action_b = {
+ name = "EVT_377109_OPTIONB"
+ ai_chance = 40
+ command = { type = dissent value = 4 }
+ }
+ }
+
+ event = {
+      id = 377110
+      random = no
+      country = GRE
+
+      decision = {
+      NOT = { war = { country = GRE country = OTT } }
+      war = { country = CYP country = OTT }
+      NOT = {    ispuppet = GRE }
+      NOT = {    ispuppet = CYP }
+      NOT = { alliance = { country = GRE country = OTT } }
+      control = { province = 377 data = GRE }
+      control = { province = 368 data = GRE }
+      control = { province = 372 data = GRE }
+       }
+
+      decision_trigger = {
+          manpower = 6
+          supplies = 1000 
+          money = 100
+          }
+
+      trigger = { 
+      NOT = { war = { country = GRE country = OTT } }
+      war = { country = CYP country = OTT }
+      NOT = {    ispuppet = GRE }
+      NOT = {    ispuppet = CYP }
+      NOT = { alliance = { country = GRE country = OTT } }
+      control = { province = 377 data = GRE }
+      control = { province = 368 data = GRE }
+      control = { province = 372 data = GRE }
+       }
+
+      date = { day = 1 month = january year = 1936 }
+      offset = 15
+      deathdate = { day = 29 month = december year = 1940 }
+
+      name = "EVT_377110_NAME"
+      desc = "EVT_377110_DESC"
+      picture = "Wehrmacht"
+      decision_picture = "decision_foreign_volunteers"
+
+      action_a = {
+          ai_chance = 70
+          name = "EVT_377110_OPTIONA"
+          command = { type = domestic which = interventionism value = 1 }
+          command = { type = relation which = OTT value = -50 }
+          command = { type = relation which = CYP value = 200 }
+          command = { type = money value = -100 }
+          command = { type = manpowerpool value = -6 }
+          command = { type = resource which = supplies value = -500 }
+          command = { type = trigger which = 377111 }
+      }
+      action_b = {
+          ai_chance = 30
+          name = "EVT_377110_OPTIONB"
+          command = { type = domestic which = interventionism value = -1 }
+         command = { type = relation which = OTT value = 50 }
+          command = { type = relation which = CYP value = -200 }
+          command = { type = dissent value = 5 }
+      }
+ }
+
+ event = {
+      id = 377111
+      random = no
+      country = CYP
+
+      name = "EVT_377111_NAME"
+      desc = "EVT_377111_DESC"
+      style = 2
+      picture = "Wehrmacht"
+
+      action_a = {
+          name = "EVT_377111_OPTIONA"
+          command = { type = supplies value = 500 } 
+          command = { type = steal_tech which = GRE }
+          command = { type = manpowerpool value = 2 }
+          command = { type = add_division value = infantry when = 9 }
+      }
+ }
+
+ event = {
+     id = 377112
+     random = no
+     country = GRE
+
+     trigger = {
+                 
+         event = 377111
+         
+                   
+                 NOT = { war = { country = CYP country = OTT } }
+                
+         
+     }
+     name = "EVT_377112_NAME"
+     desc = "EVT_377112_DESC"
+
+
+     style = 2
+     picture = "soviet_replacement"
+
+     date = { day = 18 month = july year = 1936 }
+     offset = 30
+     deathdate = { day = 29 month = december year = 1960 }
+
+     action_a = {
+         name = "EVT_377112_OPTIONA" 
+         command = { type = manpowerpool value = 5 }         # Soldiers return home
+         command = { type = dissent value = -1 }
+         command = { type = gain_tech which = -1 }         # get random tech blueprints
+         command = { type = add_leader_skill which = -1 value = 1 }
+         command = { type = add_leader_skill which = -1 value = 1 }
+     }
+ }
+
+ event = {
+ id = 377113
+ random = no
+ country = CYP
+ style= 2
+ picture = "politics2"
+
+ trigger = { 
+ atwar = no
+ control = { province = 377 data = GRE }
+ control = { province = 368 data = GRE }
+ control = { province = 372 data = GRE }
+ control = { province = 387 data = CYP }
+ control = { province = 388 data = CYP }
+ NOT =  {
+ ispuppet = CYP
+ }
+ }
+
+ date = { day = 1 month = january year = 1936 }
+ offset =  50
+ deathdate = { day = 29 month = december year = 1960 }
+
+ name = "EVT_377113_NAME"
+ desc = "EVT_377113_DESC"
+
+ action_a = {
+ ai_chance = 100
+ trigger = { 
+ NOT =  {
+ ispuppet = GRE
+ }
+ exists = GRE                        
+ }
+ name = "EVT_377113_OPTIONA"
+ command = { type = relation which = GRE value = 100 }
+ command = { type = trigger which = 377114 }
+ }
+ action_b = {
+ ai_chance = 0
+ name = "EVT_377113_OPTIONB"
+ command = { type = domestic which = interventionism value = -1 }
+ command = { type = domestic which = defense_lobby value = -1 }
+ }
+ }
+
+
+ event = {
+ id = 377114
+ random = no
+ country = GRE
+ style= 2
+ picture = "politics2"
+
+
+ name = "EVT_377114_NAME"
+ desc = "EVT_377114_DESC"
+
+ action_a = {
+ name = "EVT_377114_OPTIONA"
+ ai_chance = 100
+ command = { type = domestic which = interventionism value = 1 }
+ command = { type = inherit which = CYP  }
+ command = { type = dissent value = -5 }
+ command = { type = addcore which = 388 }
+ command = { type = addcore which = 387 }
+ }
+
+ action_b = {
+ name = "EVT_377114_OPTIONB"
+ ai_chance = 0
+ command = { type = domestic which = interventionism value = -1 }
+ command = { type = domestic which = defense_lobby value = -1 }
+ command = { type = relation which = OTT value = 15 }
+ command = { type = relation which = CYP value = -30 }
+ command = { type = dissent value = 3 }
+ }
+ }
+
+
+ event = {
+ id = 377115
+ random = no
+ country = ARM
+ persistent = yes
+
+ trigger = {
+ puppet = { country = ARM country = OTT  }
+ war = { country = OTT country = KUR }
+ event = 377102
+ control = { province = 711 data = ARM }
+ }
+
+
+ name = "EVT_377115_NAME"
+ desc = "EVT_377115_DESC"
+ style = 2
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 30
+ deathdate = { day = 29 month = december year = 1960 }
+
+ action_a = {
+ name = "EVT_377115_OPTIONA"
+ ai_chance = 80
+ command = { type = add_division value = militia when = 4 }
+ command = { type = add_division value = militia when = 4 }
+ command = { type = headofstate which = 515001 }
+ command = { type = headofgovernment which = 515002 }
+ command = { type = leave_alliance }
+ command = { type = construct which = land_fort where = 711 value = 1 }
+ command = { type = peace which = EGY value = 1 }
+ command = { type = peace which = SAU value = 1 }
+ command = { type = peace which = PER value = 1 }
+ command = { type = peace which = ALB value = 1 }
+ command = { type = peace which = KUR value = 1 }
+ command = { type = peace which = RUS value = 1 }
+ command = { type = peace which = FRA value = 1 }
+ command = { type = peace which = LBY value = 1 }
+ command = { type = peace which = OMN value = 1 }
+ command = { type = addcore which = 386 }
+ command = { type = addcore which = 1063 }
+ command = { type = addcore which = 1067 }
+ command = { type = event which = 377116 where = OTT when = 1  }
+ }
+ action_b = {
+ name = "EVT_377115_OPTIONB"
+ ai_chance = 5
+ command = { type = dissent value = 1 }
+ }
+ }
+
+ event = {
+ id = 377116
+ random = no
+ country = OTT
+ save_date = yes
+
+ name = "EVT_377116_NAME"
+ desc = "EVT_377116_DESC"
+ style = 2
+
+ action_a = {
+ name = "EVT_377116_OPTIONA"
+ ai_chance = 10
+ command = { type = end_mastery which = ARM }
+ command = { type = secedeprovince which = ARM value = 386 }
+ }
+
+ action_b = {
+ name = "EVT_377116_OPTIONB"
+ ai_chance = 90
+ command = { type = secedeprovince which = ARM value = 386 }
+ command = { type = end_mastery which = ARM }
+ command = { type = war which = ARM }
+ }
+ }
+
+ event = {
+ id = 377117
+ country = OTT
+ style = 2
+ trigger = { 
+ event = { id = 377116 days = 100 } #Armenian Uprising 100 days ago
+ control = { province = 711 data = ARM }
+ war = { country = OTT country = ARM }
+ }
+ picture = "riot1"
+
+ date = { day = 1 month = January year = 1936 }
+ offset =  80
+ deathdate = { day = 29 month = december year = 1960 }
+
+ name = "EVT_377117_NAME"
+ desc = "EVT_377117_DESC"
+
+ action_a = {
+ name = "EVT_377117_OPTIONA"
+ ai_chance = 70
+ command = { type = dissent value = 2 }
+ command = { type = peace which = ARM value = 1 }
+ }
+
+ action_b = {
+ name = "EVT_377117_OPTIONB"
+ ai_chance = 30
+ command = { type = dissent value = 7 }
+ }
+ }
+
+event = {
+	id = 377118
+	random = no
+	country = YEM
+	trigger = {
+		exists = GER
+                
+                OR = {
+                flag = GER_CON_Capitulation
+                flag = GER_Capitulation
+                }
+                NOT = {
+                puppet = { country = YEM country = GER }
+                alliance = { country = GER country = YEM }
+                war = { country = GER country = YEM }
+	}
+        control = { province = 1053 data = GER }
+	control = { province = 1050 data = YEM }
+        
+        }
+	
+	name = "EVT_377118_NAME"
+	desc = "EVT_377118_DESC"		
+	style = 2
+        
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 10 
+	deathdate = { day = 29 month = january year = 1960 }
+
+	action_a = {
+        ai_chance = 100
+		name = "EVT_377118_OPTIONA"
+		command = { type = addcore which = 1053 }
+		command = { type = relation which = GER value = -100 }
+                command = { type = trigger which = 377119 }
+                
+	}
+        action_b = {
+        ai_chance = 0
+		name = "EVT_377118_OPTIONB"
+		command = { type = relation which = GER value = 100 }
+		command = { type = dissent value = 5 }
+                
+	}
+}
+
+event = {
+	id = 377119
+	random = no
+	country = GER
+	## triggered by 377118
+	
+	name = "EVT_377119_NAME"
+	desc = "EVT_377119_DESC"		
+	style = 2
+        
+
+	action_a = {
+        ai_chance = 100
+		name = "EVT_377119_OPTIONA"
+		command = { type = secedeprovince which = YEM value = 1053 }
+                command = { type = dissent value = 1 }
+                
+	}
+        action_b = {
+        ai_chance = 0
+		name = "EVT_377119_OPTIONB"
+		command = { type = war which = YEM }
+                command = { type = dissent value = 2 }
+                
+	}
+}
+
+
+#########################################################################
+#Treaty of Jerusalem
+#########################################################################
+
+event = {
+id = 377131
+country = OTT
+style = 2
+  
+trigger = {
+war = { country = OTT country = EGY }
+	OR = {
+control = { province = 1019 data = EGY } 
+control = { province = 1172 data = EGY } 
+ }
+	OR = {
+control = { province = 1019 data = SAU } 
+control = { province = 1172 data = SAU } 
+war = { country = OTT country = SAU } 
+ } 
+NOT = { control = { province = 1045 data = OTT } }
+control = { province = 787 data = EGY }
+NOT = { control = { province = 1085 data = OTT } }
+NOT = {
+alliance = { country = EGY country = GER }
+alliance = { country = EGY country = CAN }
+alliance = { country = EGY country = JAP }
+alliance = { country = EGY country = RUS }
+alliance = { country = OTT country = GER }
+alliance = { country = OTT country = CAN }
+alliance = { country = OTT country = JAP }
+alliance = { country = OTT country = RUS }
+ispuppet = EGY
+ispuppet = OTT
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 25
+deathdate = { day = 1 month = january year = 1960 }
+
+name = "EVT_377131_NAME"
+desc = "EVT_377131_DESC"
+picture = "Peace_conference"
+
+action_a = {
+ai_chance = 80
+name =  "EVT_377131_OPTIONA"
+command = { type = trigger which = 377132 }
+command = { type = dissent value = 15 }
+}
+
+action_b = {
+ai_chance = 20
+name = "EVT_377131_OPTIONB"
+command = { type = dissent value = 20 }
+}
+}
+
+
+
+event = {
+id = 377132
+country = EGY
+style = 2
+
+
+name = "EVT_377132_NAME"
+desc = "EVT_377132_DESC"
+picture = "Peace_conference"
+
+action_a = {
+ai_chance = 100
+name =  "EVT_377132_OPTIONA"
+       command = { type = dissent value = -5 }
+       command = { type = industrial_modifier which = total value = 2 }
+       command = { type = free_ic value = 1 }
+       command = { trigger = { war = { country = OTT country = PER } } type = setflag which = PER_VIC }
+       command = { trigger = { war = { country = OTT country = SAU } } type = setflag which = SAU_VIC }
+       command = { type = non_aggression which = EGY where = OTT }
+       command = { trigger = { alliance = { country = EGY country = SAU } } type = non_aggression which = OTT where = SAU }
+       command = { trigger = { alliance = { country = EGY country = PER } } type = non_aggression which = OTT where = PER }
+       command = { type = event which = 377133 where = OTT when = 1  }
+}
+
+action_b = {
+ai_chance = 0
+name = "EVT_377132_OPTIONB"
+       command = { type = dissent value = 2 }
+       command = { type = belligerence which = EGY value = 5  }
+       command = { type = trigger which = 377134 }
+}
+}
+
+
+event = {
+id = 377133
+country = OTT
+style = 2
+
+
+name = "EVT_377133_NAME"
+desc = "EVT_377133_DESC"
+picture = "Peace_conference"
+
+action_a = {
+name =  "EVT_377133_OPTIONA"
+command = { type = leave_alliance } 
+command = { type = dissent value = 2 }
+command = { trigger = { war = { country = OTT country = PER } } type = peace which = PER value = 0 }
+command = { trigger = { war = { country = OTT country = SAU } } type = peace which = SAU value = 0 }
+command = { trigger = { flag = SAU_VIC } type = non_aggression which = OTT where = SAU }
+command = { trigger = { flag = PER_VIC } type = non_aggression which = OTT where = PER }
+command = { trigger = { OR = { flag = PER_VIC alliance = { country = EGY country = PER } } } type = secedeprovince which = PER value = 1028 when = 1 } #Al Amarah
+command = { trigger = { OR = { flag = PER_VIC alliance = { country = EGY country = PER } } } type = secedeprovince which = PER value = 1027 when = 1 } #Arbil
+command = { trigger = { OR = { flag = PER_VIC alliance = { country = EGY country = PER } } } type = secedeprovince which = PER value = 1035 when = 1 } #Kut
+command = { trigger = { OR = { flag = PER_VIC alliance = { country = EGY country = PER } } } type = secedeprovince which = PER value = 1036 when = 1 } #Kirkuk
+command = { trigger = { exists = KUR OR = { flag = PER_VIC alliance = { country = EGY country = PER } } } type = removecore which = 1034 }
+command = { trigger = { exists = KUR OR = { flag = PER_VIC alliance = { country = EGY country = PER } } } type = removecore which = 1033 }
+  command = { type = removecore which = 1004 }
+  command = { type = removecore which = 1005 }
+  command = { type = removecore which = 1006 }
+  command = { type = removecore which = 1007 } #The Sinai
+  command = { type = removecore which = 1049 } #Mecca
+  command = { type = removecore which = 1044 }
+  command = { type = removecore which = 1046 }
+  command = { type = removecore which = 1048 } #Arabian Desert
+  command = { type = removecore which = 1008 }
+  command = { type = removecore which = 1009 }
+  command = { type = removecore which = 1010 }
+  command = { type = removecore which = 1011 }
+  command = { type = removecore which = 1013 }
+  command = { type = removecore which = 1014 }
+  command = { type = removecore which = 1015 }
+  command = { type = removecore which = 1016 }
+  command = { type = removecore which = 1017 }
+  command = { type = removecore which = 1018 }
+  command = { type = removecore which = 1019 }
+  command = { type = removecore which = 1020 }
+  command = { type = removecore which = 1021 }
+  command = { type = removecore which = 1022 }
+  command = { type = removecore which = 1023 }
+  command = { type = removecore which = 1024 }
+  command = { type = removecore which = 1025 }
+  command = { type = removecore which = 1026 }
+  command = { type = removecore which = 1172 }  #Greater Syria
+  command = { type = removecore which = 1027 }
+  command = { type = removecore which = 1028 }
+  command = { type = removecore which = 1029 }
+  command = { type = removecore which = 1030 }
+  command = { type = removecore which = 1031 }
+  command = { type = removecore which = 1032 }
+  command = { type = removecore which = 1033 }
+  command = { type = removecore which = 1034 }
+  command = { type = removecore which = 1035 } 
+  command = { type = removecore which = 1036 }
+  command = { type = removecore which = 1037 }
+  command = { type = removecore which = 1041 } #Mesopotamia 
+  command = { type = removeclaim which = 1004 }
+  command = { type = removeclaim which = 1005 }
+  command = { type = removeclaim which = 1006 }
+  command = { type = removeclaim which = 1007 } #The Sinai
+  command = { type = removeclaim which = 1049 } #Mecca  
+  command = { type = removeclaim which = 1044 }
+  command = { type = removeclaim which = 1046 }
+  command = { type = removeclaim which = 1048 } #Arabian Desert
+  command = { type = removeclaim which = 1008 }
+  command = { type = removeclaim which = 1009 }
+  command = { type = removeclaim which = 1010 }
+  command = { type = removeclaim which = 1011 }
+  command = { type = removeclaim which = 1013 }
+  command = { type = removeclaim which = 1014 }
+  command = { type = removeclaim which = 1015 }
+  command = { type = removeclaim which = 1016 }
+  command = { type = removeclaim which = 1017 }
+  command = { type = removeclaim which = 1018 }
+  command = { type = removeclaim which = 1019 }
+  command = { type = removeclaim which = 1020 }
+  command = { type = removeclaim which = 1021 }
+  command = { type = removeclaim which = 1022 }
+  command = { type = removeclaim which = 1023 }
+  command = { type = removeclaim which = 1024 }
+  command = { type = removeclaim which = 1025 }
+  command = { type = removeclaim which = 1026 }
+  command = { type = removeclaim which = 1172 }  #Greater Syria
+  command = { type = removeclaim which = 1027 }
+  command = { type = removeclaim which = 1028 }
+  command = { type = removeclaim which = 1029 }
+  command = { type = removeclaim which = 1030 }
+  command = { type = removeclaim which = 1031 }
+  command = { type = removeclaim which = 1032 }
+  command = { type = removeclaim which = 1033 }
+  command = { type = removeclaim which = 1034 }
+  command = { type = removeclaim which = 1035 } 
+  command = { type = removeclaim which = 1036 }
+  command = { type = removeclaim which = 1037 }
+  command = { type = removeclaim which = 1041 } #Mesopotamia  
+	   command = { type = secedearea which = EGY value = IRAQ when = 1 }
+	   command = { type = secedearea which = EGY value = LEBANON_SYRIA when = 1 }
+       command = { type = secedearea which = EGY value = TRANSJORDAN when = 1 }
+	   command = { type = secedearea which = EGY value = PALESTINE when = 1 }
+	   command = { type = secedeprovince which = EGY value = 1048 when = 1 } #Medina
+	   command = { type = secedeprovince which = EGY value = 1046 when = 1 } #Al-Jawf
+	   command = { type = secedeprovince which = EGY value = 1044 when = 1 } #Hayel
+	   command = { type = secedeprovince which = EGY value = 1041 when = 1 } #Kuwait
+	   command = { type = secedeprovince which = EGY value = 1004 when = 1 }
+	   command = { type = secedeprovince which = EGY value = 1005 when = 1 }
+	   command = { type = secedeprovince which = EGY value = 1006 when = 1 }
+	   command = { type = secedeprovince which = EGY value = 1007 when = 1 } #Sinai	   
+command = { type = end_mastery which = ALB }
+command = { type = end_mastery which = LBY }
+command = { type = end_mastery which = ARM }
+command = { type = end_mastery which = OMN }
+command = { type = end_mastery which = U02 }
+command = { trigger = { war = { country = OTT country = GRE } } type = setflag which = OTT_GEG }
+command = { trigger = { NOT = { alliance = { country = ALB country = RUS } } } type = peace which = ALB value = 1 }
+command = { trigger = { NOT = { alliance = { country = CYP country = RUS } } } type = peace which = CYP value = 1 }
+command = { trigger = { NOT = { alliance = { country = ARM country = RUS } } } type = peace which = ARM value = 1 }
+command = { trigger = { NOT = { alliance = { country = LBY country = RUS } } } type = peace which = LBY value = 1 }
+command = { trigger = { NOT = { alliance = { country = OMN country = RUS } } } type = peace which = OMN value = 1 }
+command = { trigger = { NOT = { alliance = { country = GRE country = RUS } } } type = peace which = GRE value = 1 }
+command = { trigger = { NOT = { alliance = { country = BUL country = RUS } } } type = peace which = BUL value = 1 }
+command = { trigger = { NOT = { alliance = { country = ROM country = RUS } } } type = peace which = ROM value = 1 }
+command = { trigger = { NOT = { alliance = { country = URU country = RUS } } } type = peace which = URU value = 1 }
+command = { trigger = { NOT = { alliance = { country = YUG country = RUS } } } type = peace which = YUG value = 1 }
+command = { trigger = { NOT = { alliance = { country = SER country = RUS } } } type = peace which = SER value = 1 }
+command = { trigger = { NOT = { alliance = { country = MTN country = RUS } } } type = peace which = MTN value = 1 }
+command = { trigger = { NOT = { alliance = { country = GEO country = RUS } } } type = peace which = GEO value = 1 }
+command = { trigger = { NOT = { alliance = { country = KUR country = RUS } } } type = peace which = KUR value = 1 }
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 384 when = 1 }
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 385 when = 1 }
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 409 when = 1 }
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 378 when = 1 }
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 379 when = 1 }
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 381 when = 1 }
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 383 when = 1 }
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 325 when = 1 }
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 319 when = 1 }
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 324 when = 1 }
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 363 when = 1 }
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 370 when = 1 }
+command = { trigger = { flag = OTT_GEG } type = removecore which =   370  }
+command = { trigger = { flag = OTT_GEG } type = removecore which =   325  }
+command = { trigger = { flag = OTT_GEG } type = removeclaim which =  324  }
+command = { trigger = { flag = OTT_GEG } type = removeclaim which =  319  }
+command = { trigger = { flag = OTT_GEG } type = removeclaim which =  363  }
+command = { trigger = { flag = OTT_GEG } type = removecore which = 383 }
+command = { trigger = { flag = OTT_GEG } type = removecore which = 381 }
+command = { trigger = { flag = OTT_GEG } type = removecore which = 378 }
+command = { trigger = { flag = OTT_GEG } type = removecore which = 379 }
+command = { trigger = { flag = OTT_GEG } type = removecore which = 387 }
+command = { trigger = { flag = OTT_GEG } type = removecore which = 388 }
+command = { trigger = { flag = OTT_GEG } type = removecore which = 384 }
+command = { trigger = { flag = OTT_GEG } type = removecore which = 385 }
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 382 when = 1 }
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 380 when = 1 }
+command = { trigger = { flag = OTT_GEG } type = removeclaim which = 382 }
+command = { trigger = { flag = OTT_GEG } type = removeclaim which = 380 }
+command = { trigger = { flag = OTT_GEG exists = U02 puppet = { country = U02 country = OTT  } } type = trigger which = 907161 }
+command = { trigger = { exists = CYP NOT = { puppet = { country = CYP country = OTT  } } } type = secedeprovince which = CYP value = 387 when = 1 }
+command = { trigger = { exists = CYP NOT = { puppet = { country = CYP country = OTT  } } } type = secedeprovince which = CYP value = 388 when = 1 }
+command = { trigger = { exists = ARM NOT = { puppet = { country = ARM country = OTT  } } } type = secedeprovince which = ARM value = 386 when = 1 }
+command = { type = clrflag which = PER_VIC }
+command = { type = clrflag which = SAU_VIC }
+command = { type = clrflag which = OTT_GEG }
+command = { type = clrflag which = OTT_RUW }
+command = { type = event which = 377135 where = EGY when = 2 }
+}
+
+}
+
+event = {
+id = 377134
+country = OTT
+style = 2
+
+
+name = "EVT_377134_NAME"
+desc = "EVT_377134_DESC"
+picture = "Peace_conference"
+
+action_a = {
+name =  "EVT_377134_OPTIONA"
+command = { type = dissent value = 5 }
+}
+
+}
+
+
+event = {
+id = 377135
+country = EGY
+style = 2
+
+
+name = "EVT_377135_NAME"
+desc = "EVT_377135_DESC"
+picture = "Peace_conference"
+
+
+action = {
+trigger = { 
+core = { province = 1016 data = SAU }
+core = { province = 1034 data = SAU }
+}
+ai_chance =  100
+name =  "EVT_377135_OPTIONA"
+       command = { type = dissent value = -5 }
+	   command = { type = secedearea which = SAU value = IRAQ when = 1 }
+	   command = { type = secedearea which = SAU value = LEBANON_SYRIA when = 1 }
+       command = { type = secedearea which = SAU value = TRANSJORDAN when = 1 }
+	   command = { type = secedearea which = SAU value = PALESTINE when = 1 }
+	   command = { type = secedeprovince which = SAU value = 1048 when = 1 } #Medina
+	   command = { type = secedeprovince which = SAU value = 1046 when = 1 } #Al-Jawf
+	   command = { type = secedeprovince which = SAU value = 1044 when = 1 } #Hayel
+	   command = { type = secedeprovince which = SAU value = 1041 when = 1 } #Kuwait
+	   command = { type = industrial_modifier which = total value = 2 }
+       command = { type = free_ic value = 2 }
+
+}
+
+action = {
+trigger = { 
+core = { province = 1016 data = EGY }
+core = { province = 1034 data = SAU }
+}
+ai_chance =  100
+name =  "EVT_377135_OPTIONB"
+       command = { type = dissent value = -5 }
+	   command = { type = secedearea which = SAU value = IRAQ when = 1 }
+	   command = { type = secedeprovince which = SAU value = 1048 when = 1 } #Medina
+	   command = { type = secedeprovince which = SAU value = 1046 when = 1 } #Al-Jawf
+	   command = { type = secedeprovince which = SAU value = 1044 when = 1 } #Hayel
+	   command = { type = secedeprovince which = SAU value = 1041 when = 1 } #Kuwait
+	   command = { type = industrial_modifier which = total value = 2 }
+       command = { type = free_ic value = 2 }
+
+}
+
+action = {
+ai_chance =  0
+name =  "EVT_377135_OPTIONC"
+	   command = { type = secedeprovince which = SAU value = 1048 when = 1 } #Medina
+	   command = { type = secedeprovince which = SAU value = 1046 when = 1 } #Al-Jawf
+	   command = { type = secedeprovince which = SAU value = 1044 when = 1 } #Hayel
+       command = { type = dissent value = 15 }
+
+}
+}
+
+#########################################################################
+#Kurds leaving
+#########################################################################
+
+event = {
+id = 377136
+country = PER
+style = 2
+
+trigger = {
+   exists = KUR
+   atwar = KUR
+   NOT = { war = { country = PER country = KUR } }
+}
+
+name = "EVT_377136_NAME"
+desc = "EVT_377136_DESC"
+picture = "Afghanistan"
+
+date = { day = 1 month = january year = 1936 }
+offset = 2
+deathdate = { day = 29 month = december year= 1960 }
+
+action_a = {
+   name = "EVT_377136_OPTIONA"
+   ai_chance = 90
+   command = { type = manpowerpool value = -5 }
+   command = { type = trigger which = 377137 } #KUR volunteers
+   }
+
+action_b = {
+   name = "EVT_377136_OPTIONB"
+   ai_chance = 10
+   command = { type = dissent value = 4 }
+   command = { type = relation which = KUR value = -20 }
+   command = { type = relation which = OTT value = 20 }
+   }
+
+}
+
+event = {
+id = 377137
+country = KUR
+style = 2
+#triggered by 377136
+
+name = "EVT_377137_NAME"
+desc = "EVT_377137_DESC"
+picture = "Afghanistan"
+
+action_a = {
+   name = "EVT_377137_OPTIONA"
+   command = { type = add_division which = "Persian Volunteers" value = infantry when = 7 }
+   command = { type = manpowerpool value = 5 }
+   command = { type = dissent value = -2 }
+   }
+}
+
+
+event = {
+id = 377138
+random = no
+country = OTT
+
+trigger = {
+        OR = {
+        event = 377133
+        event = 377144
+        AND = {
+        event = 907124
+        NOT = { 
+        war = { country = GRE country = OTT }
+        }
+        }
+        AND = {
+        event = 907122
+        NOT = { 
+        war = { country = GRE country = OTT }
+        }
+        }
+	}
+        }
+
+name = "EVT_377138_NAME"
+desc = "EVT_377138_DESC"
+style = 2
+picture = "british_protesting"
+
+ 
+ date = { day = 1 month = january year = 1936 }
+ offset = 30
+ deathdate = { day = 10 month = november year = 1970 }
+
+
+
+
+action_a = {
+	name = "EVT_377138_OPTIONA"
+	ai_chance = 70
+	command = { type = dissent value = -10  }
+        command = { type = country which = TUR }
+        command = { type = set_domestic which = democratic value = 7 }
+	command = { type = set_domestic which = political_left value = 3 }
+        command = { trigger = { control = { province = 1014 data = TUR } } type = addcore which = 1014 }
+        command = { trigger = { control = { province = 1015 data = TUR } } type = addcore which = 1015 }
+        command = { trigger = { control = { province = 1027 data = TUR } } type = addcore which = 1027 }
+        command = { trigger = { control = { province = 1029 data = TUR } } type = addcore which = 1029 }
+        command = { trigger = { control = { province = 1033 data = TUR } } type = addcore which = 1033 }
+        command = { trigger = { control = { province = 1034 data = TUR } } type = addcore which = 1034 }
+        command = { trigger = { control = { province = 387 data = TUR } } type = addcore which = 387 }
+        command = { trigger = { control = { province = 388 data = TUR } } type = addcore which = 388 }
+        command = { trigger = { control = { province = 378 data = TUR } } type = addcore which = 378 }
+        command = { trigger = { control = { province = 379 data = TUR } } type = addcore which = 379 }
+        command = { trigger = { control = { province = 381 data = TUR } } type = addcore which = 381 }
+        command = { trigger = { control = { province = 383 data = TUR } } type = addcore which = 383 }
+        command = { type = capital which = 1075 }
+        command = { type = trigger which = 377139 }     
+	} 
+
+action_b = {
+	name = "EVT_377138_OPTIONB"
+	ai_chance = 30
+	command = { type = dissent value = 15  }
+	}
+}
+
+event = {
+	id = 377139
+	random = no
+	country = TUR
+
+	name = "EVT_377139_NAME"
+	desc = "EVT_377139_DESC"
+	style = 2
+	picture = "regency"
+
+	action_a = {
+		ai_chance = 60
+		name = "EVT_377139_OPTIONA"
+		command = { type = set_domestic which = democratic value = 3 }
+		command = { type = set_domestic which = political_left value = 2 }
+		command = { type = headofstate which = 12011 }
+                command = { type = headofgovernment which = 12012 }  
+		command = { type = setflag which = TUR_NAT }
+	}
+	action_b = {
+		ai_chance = 20
+		name = "EVT_377139_OPTIONB"
+		command = { type = set_domestic which = democratic value = 1 }
+		command = { type = set_domestic which = political_left value = 10 }
+		command = { type = headofstate which = 12021 }
+                command = { type = headofgovernment which = 12022 }
+		command = { type = setflag which = TUR_SYN }
+	}
+	action_c = {
+		ai_chance = 20
+		name = "EVT_377139_OPTIONC"
+                command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = setflag which = TUR_DEM }
+	}
+}
+
+
+event = {
+	id = 377140
+	random = no
+	country = TUR
+	style = 2
+        save_date = yes
+
+        trigger = {
+        flag = TUR_DEM
+        } 
+
+	name = "EVT_377140_NAME"
+	desc = "EVT_377140_DESC"
+	picture = "bra_vote" 
+
+        date = { day = 1 month = january year = 1936 }
+        offset = 30
+        deathdate = { day = 10 month = november year = 1970 }
+
+	action_a = {
+		ai_chance = 50
+		name = "EVT_377140_OPTIONA"
+ 		command = { type = dissent value = -2 }
+		command = { type = set_domestic which = democratic value = 10 }
+		command = { type = set_domestic which = political_left value = 1 }
+		command = { type = headofstate which = 12031 }
+		command = { type = headofgovernment which = 12032 } 
+		command = { type = foreignminister which = 12035 }
+		command = { type = armamentminister which = 12047 } 
+		command = { type = ministerofsecurity which = 12062 } 
+	}
+	action_b = {
+		ai_chance = 50
+		name = "EVT_377140_OPTIONB"
+ 		command = { type = dissent value = -2 }
+		command = { type = set_domestic which = democratic value = 10 }
+		command = { type = set_domestic which = political_left value = 6 }
+		command = { type = headofstate which = 12096 }
+		command = { type = headofgovernment which = 12033 } 
+		command = { type = foreignminister which = 12036 } 
+		command = { type = armamentminister which = 12045 } 
+		command = { type = ministerofsecurity which = 12057 }
+	}
+}
+
+event = {
+	id = 377147
+	random = no
+	country = TUR
+	style = 2
+        save_date = yes
+
+        trigger = {
+        flag = TUR_DEM
+        government = democratic
+        event = { id = 377140 days = 1480 }
+        } 
+
+	name = "EVT_377147_NAME"
+	desc = "EVT_377147_DESC"
+	picture = "bra_vote" 
+
+        date = { day = 1 month = january year = 1936 }
+        offset = 30
+        deathdate = { day = 10 month = november year = 1970 }
+
+	action_a = {
+		ai_chance = 50
+		name = "EVT_377147_OPTIONA"
+ 		command = { type = dissent value = -2 }
+		command = { type = set_domestic which = democratic value = 10 }
+		command = { type = set_domestic which = political_left value = 1 }
+		command = { type = headofstate which = 12031 }
+		command = { type = headofgovernment which = 12032 } 
+		command = { type = foreignminister which = 12035 }
+		command = { type = armamentminister which = 12047 } 
+		command = { type = ministerofsecurity which = 12062 } 
+	}
+	action_b = {
+		ai_chance = 50
+		name = "EVT_377147_OPTIONB"
+ 		command = { type = dissent value = -2 }
+		command = { type = set_domestic which = democratic value = 10 }
+		command = { type = set_domestic which = political_left value = 6 }
+		command = { type = headofstate which = 12096 }
+		command = { type = headofgovernment which = 12033 } 
+		command = { type = foreignminister which = 12036 } 
+		command = { type = armamentminister which = 12045 } 
+		command = { type = ministerofsecurity which = 12057 }
+	}
+}
+
+event = {
+	id = 377148
+	random = no
+	country = TUR
+	style = 2
+        save_date = yes
+
+        trigger = {
+        flag = TUR_DEM
+        government = democratic
+        event = { id = 377147 days = 1480 }
+        } 
+
+	name = "EVT_377148_NAME"
+	desc = "EVT_377148_DESC"
+	picture = "bra_vote" 
+
+        date = { day = 1 month = january year = 1936 }
+        offset = 30
+        deathdate = { day = 10 month = november year = 1970 }
+
+	action_a = {
+		ai_chance = 50
+		name = "EVT_377148_OPTIONA"
+ 		command = { type = dissent value = -2 }
+		command = { type = set_domestic which = democratic value = 10 }
+		command = { type = set_domestic which = political_left value = 1 }
+		command = { type = headofstate which = 12031 }
+		command = { type = headofgovernment which = 12032 } 
+		command = { type = foreignminister which = 12035 }
+		command = { type = armamentminister which = 12047 } 
+		command = { type = ministerofsecurity which = 12062 } 
+	}
+	action_b = {
+		ai_chance = 50
+		name = "EVT_377148_OPTIONB"
+ 		command = { type = dissent value = -2 }
+		command = { type = set_domestic which = democratic value = 10 }
+		command = { type = set_domestic which = political_left value = 6 }
+		command = { type = headofstate which = 12096 }
+		command = { type = headofgovernment which = 12033 } 
+		command = { type = foreignminister which = 12036 } 
+		command = { type = armamentminister which = 12045 } 
+		command = { type = ministerofsecurity which = 12057 }
+	}
+}
+
+event = {
+	id = 377149
+	random = no
+	country = TUR
+	style = 2
+	picture = "diplomatic_campaign"
+
+	trigger = {
+		government = communist
+                flag = TUR_SYN
+		NOT = { 
+		atwar = TUR
+                }
+                event = 377139
+		NOT = {
+			alliance = { country = CAN country = TUR }
+			alliance = { country = GER country = TUR }
+			alliance = { country = JAP country = TUR }
+			alliance = { country = FRA country = TUR }
+			alliance = { country = RUS country = TUR }
+			alliance = { country = SOV country = TUR }
+			ispuppet = TUR
+		}
+		participant = { country = FRA value = 3 } #Commune of France is part of Syndicalist Internationale
+	}
+
+	name = "EVT_377149_NAME"
+	desc = "EVT_377149_DESC"
+
+	date = { day = 3 month = january year = 1936 }
+	offset = 40
+	deathdate = { day = 10 month = december year = 1960 }
+		
+	action_a = {
+		ai_chance = 95
+		name = "EVT_377149_OPTIONA"
+		command = { type = trigger which = 377150 }
+		command = { type = domestic which = defense_lobby value = 1 }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = dissent value = 4 }
+	}
+	action_b = {
+		ai_chance = 5
+		name = "EVT_377149_OPTIONB"
+		command = { type = dissent value = -5 }
+		command = { type = domestic which = defense_lobby value = -1 }
+		command = { type = domestic which = interventionism value = -1 }
+	}
+}
+
+event = {
+	id = 377150
+	random = no
+	country = FRA
+	style = 2
+	picture = "diplomatic_campaign"
+
+	name = "EVT_377150_NAME"
+	desc = "EVT_377150_DESC"
+
+	action_a = {
+		ai_chance = 80
+		name = "EVT_377150_OPTIONA"
+		command = { type = alliance which = TUR }
+		command = { type = relation which = TUR value = 100 }
+		command = { type = dissent value = -7 }
+                command = { type = relation which = EGY value = -50 }
+                command = { type = relation which = SAU value = -50 }
+                command = { type = relation which = PER value = -50 }
+		command = { type = domestic which = defense_lobby value = 1 }
+		command = { type = trigger which = 377151 }
+	}
+	action_b = {
+		ai_chance = 20
+		name = "EVT_377150_OPTIONB"
+		command = { type = dissent value = 1 }
+		command = { type = relation which = TUR value = -100 }
+                command = { type = relation which = EGY value = 50 }
+                command = { type = relation which = SAU value = 50 }
+                command = { type = relation which = PER value = 50 }
+	}
+}
+event = {
+	id = 377151
+	random = no
+	country = TUR
+	style = 2
+	picture = "diplomatic_campaign"
+
+	name = "EVT_377151_NAME"
+	desc = "EVT_377151_DESC"
+
+	action_a = {
+		name = "EVT_377151_OPTIONA"
+		command = { type = dissent value = -3 }
+		command = { type = relation which = CAN value = -150 }
+		command = { type = relation which = GER value = -150 }
+		command = { type = end_trades which = CAN where = TUR }
+		command = { type = end_trades which = GER where = TUR }
+	}
+}
+
+event = {
+	id = 377141
+	random = no
+	country = TUR
+
+	trigger = {
+	flag = TUR_NAT
+		}
+	
+	name = "EVT_377141_NAME"
+	desc = "EVT_377141_DESC"		
+	style = 2
+        picture = "ottomanemp"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 10 
+	deathdate = { day = 29 month = january year = 1960 }
+
+	action_a = {
+        ai_chance = 1
+	name = "EVT_377141_OPTIONA"
+ command = { type = dissent value = -5 }
+  command = { type = addclaim which = 1044 }
+  command = { type = addclaim which = 1046 }
+  command = { type = addclaim which = 1048 } #Arabian Desert
+  command = { type = addclaim which = 900 }
+  command = { type = addclaim which = 1004 }
+  command = { type = addclaim which = 1005 }
+  command = { type = addclaim which = 1006 }
+  command = { type = addclaim which = 1007 } #Sinai  
+  command = { type = addclaim which = 1008 }
+  command = { type = addclaim which = 1009 }
+  command = { type = addclaim which = 1010 }
+  command = { type = addclaim which = 1011 }
+  command = { type = addclaim which = 1013 }
+  command = { type = addclaim which = 1014 }
+  command = { type = addclaim which = 1015 }
+  command = { type = addclaim which = 1016 }
+  command = { type = addclaim which = 1017 }
+  command = { type = addclaim which = 1018 }
+  command = { type = addclaim which = 1019 }
+  command = { type = addclaim which = 1020 }
+  command = { type = addclaim which = 1021 }
+  command = { type = addclaim which = 1022 }
+  command = { type = addclaim which = 1023 }
+  command = { type = addclaim which = 1024 }
+  command = { type = addclaim which = 1025 }
+  command = { type = addclaim which = 1026 }
+  command = { type = addclaim which = 1172 }  #Greater Syria
+  command = { type = addclaim which = 1027 }
+  command = { type = addclaim which = 1028 }
+  command = { type = addclaim which = 1029 }
+  command = { type = addclaim which = 1030 }
+  command = { type = addclaim which = 1031 }
+  command = { type = addclaim which = 1032 }
+  command = { type = addclaim which = 1033 }
+  command = { type = addclaim which = 1034 }
+  command = { type = addclaim which = 1035 } 
+  command = { type = addclaim which = 1036 }
+  command = { type = addclaim which = 1037 }
+  command = { type = addclaim which = 1041 } #Mesopotamia 
+ command = { type = relation which = KUR value = -200 }
+ command = { type = relation which = EGY value = -200 }
+ command = { type = relation which = SAU value = -200 }
+ command = { type = relation which = PER value = -200 }
+ command = { type = relation which = GRE value = -200 }
+ command = { type = relation which = CYP value = -200 }
+ command = { type = relation which = ARM value = -200 }
+ command = { type = domestic which = interventionism value = 5 }
+	}
+	action_b = {
+        ai_chance = 95
+		name = "EVT_377141_OPTIONB"	
+                trigger = {	
+        NOT = {
+        control = { province = 1064 data = TUR } 
+        owned = { province = 1064 data = TUR }
+        } 
+        } 
+		command = { type = dissent value = -3 }
+		command = { type = addclaim which = 386 }
+		command = { type = addclaim which = 1015 }
+		command = { type = addclaim which = 1027 }
+		command = { type = addclaim which = 1029 }
+ command = { type = addclaim which = 1054 }
+ command = { type = addclaim which = 1059 }
+  command = { type = addclaim which = 1060 }
+  command = { type = addclaim which = 1061 }
+  command = { type = addclaim which = 1062 }
+  command = { type = addclaim which = 1063 }
+  command = { type = addclaim which = 1064 }
+ command = { type = relation which = KUR value = -200 }
+ command = { type = relation which = GRE value = -200 }
+ command = { type = relation which = CYP value = -200 }
+ command = { type = relation which = ARM value = -200 }
+ command = { type = domestic which = interventionism value = 3 }
+	}	
+
+		action_c = {
+                ai_chance = 3
+		name = "EVT_377141_OPTIONC"
+                trigger = {	
+                control = { province = 384 data = GRE }
+                control = { province = 409 data = GRE }
+                } 
+		command = { type = dissent value = 3 }
+ command = { type = addclaim which = 384 }
+ command = { type = addclaim which = 385 }
+ command = { type = addclaim which = 409 }
+ command = { type = addclaim which = 1377 }
+ command = { type = addclaim which = 388 }
+ command = { type = addclaim which = 387 }
+ command = { type = relation which = GRE value = -200 }
+ command = { type = relation which = CYP value = -200 }
+ command = { type = relation which = ARM value = -100 }
+ command = { type = domestic which = interventionism value = 1 }
+	}
+
+	action_d = {
+        ai_chance = 1
+		name = "EVT_377141_OPTIOND"	
+		command = { type = dissent value = 5 }
+ command = { type = relation which = KUR value = 50 }
+ command = { type = relation which = GRE value = 50 }
+ command = { type = relation which = CYP value = 50 }
+ command = { type = relation which = ARM value = 50 }
+ command = { type = domestic which = interventionism value = -5 }
+	}
+      }
+
+
+
+
+event = {
+id = 377142
+country = OTT
+style = 2
+  
+trigger = {
+war = { country = OTT country = EGY }
+control = { province = 1019 data = EGY } 
+control = { province = 1016 data = EGY }
+control = { province = 1172 data = EGY } 
+control = { province = 1056 data = EGY } 
+NOT = { control = { province = 1045 data = OTT } }
+control = { province = 787 data = EGY }
+NOT = { control = { province = 1085 data = OTT } }
+NOT = { control = { province = 1034 data = OTT } }
+NOT = { control = { province = 1029 data = OTT } }
+NOT = {
+alliance = { country = OTT country = GER }
+alliance = { country = OTT country = CAN }
+alliance = { country = OTT country = JAP }
+alliance = { country = OTT country = RUS }
+ispuppet = EGY
+ispuppet = OTT
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 25
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_377142_NAME"
+desc = "EVT_377142_DESC"
+picture = "Peace_conference"
+
+action_a = {
+ai_chance = 100
+name =  "EVT_377142_OPTIONA"
+command = { type = trigger which = 377143 }
+command = { type = dissent value = 20 }
+command = { type = sleepevent which = 377131 }
+}
+
+action_b = {
+ai_chance = 0
+name = "EVT_377142_OPTIONB"
+command = { type = dissent value = 30 }
+command = { type = sleepevent which = 377143 }
+}
+}
+
+
+
+event = {
+id = 377143
+country = EGY
+style = 2
+
+
+name = "EVT_377143_NAME"
+desc = "EVT_377143_DESC"
+picture = "Peace_conference"
+
+action_a = {
+ai_chance = 100
+name =  "EVT_377143_OPTIONA"
+       command = { type = dissent value = -5 }
+       command = { type = peace which = OTT value = 0 }
+       command = { type = industrial_modifier which = total value = 3 }
+       command = { type = free_ic value = 3 }
+       command = { type = addcore which = 1172 }
+       command = { type = addcore which = 1009 }
+       command = { type = addcore which = 1011 }
+       command = { type = addcore which = 1013 }
+       command = { type = addcore which = 1010 }
+       command = { type = addcore which = 1008 }
+       command = { type = addcore which = 1018 }
+       command = { type = addcore which = 1019 }
+       command = { type = addcore which = 1016 }
+       command = { type = addcore which = 1020 }
+       command = { type = addcore which = 1017 }
+       command = { type = addcore which = 1021 }
+       command = { type = addcore which = 1014 }
+       command = { type = addcore which = 1054 }
+       command = { trigger = { war = { country = OTT country = PER } } type = setflag which = PER_VIC }
+       command = { trigger = { war = { country = OTT country = SAU } } type = setflag which = SAU_VIC }
+       command = { trigger = { war = { country = OTT country = RUS } } type = setflag which = RUS_VIC }
+       command = { type = non_aggression which = EGY where = OTT }
+       command = { type = trade which = OTT where = EGY money = -1 when = 1800 value = 1 }	#forced trade for 5 years!
+       command = { type = trade which = OTT where = EGY supplies = -4 when = 1800 value = 1 }	#forced trade for 5 years!
+       command = { trigger = { alliance = { country = EGY country = SAU } } type = trade which = OTT where = SAU money = -1 when = 1800 value = 1 }	#forced trade for 5 years!
+       command = { trigger = { alliance = { country = EGY country = SAU } } type = trade which = OTT where = SAU supplies = -4 when = 1800 value = 1 }	#forced trade for 5 years!
+       command = { trigger = { alliance = { country = EGY country = PER } } type = trade which = OTT where = PER money = -1 when = 1800 value = 1 }	#forced trade for 5 years!
+       command = { trigger = { alliance = { country = EGY country = PER } } type = trade which = OTT where = PER supplies = -4 when = 1800 value = 1 }	#forced trade for 5 years!
+       command = { trigger = { alliance = { country = EGY country = SAU } } type = non_aggression which = OTT where = SAU }
+       command = { trigger = { alliance = { country = EGY country = PER } } type = non_aggression which = OTT where = PER }
+       command = { type = event which = 377144 where = OTT when = 1  }
+}
+
+action_b = {
+ai_chance = 0
+name = "EVT_377143_OPTIONB"
+       command = { type = dissent value = 2 }
+       command = { type = addcore which = 1172 }
+       command = { type = addcore which = 1009 }
+       command = { type = addcore which = 1011 }
+       command = { type = addcore which = 1013 }
+       command = { type = addcore which = 1010 }
+       command = { type = addcore which = 1008 }
+       command = { type = addcore which = 1018 }
+       command = { type = addcore which = 1019 }
+       command = { type = addcore which = 1016 }
+       command = { type = addcore which = 1020 }
+       command = { type = addcore which = 1017 }
+       command = { type = addcore which = 1021 }
+       command = { type = addcore which = 1014 }
+       command = { type = addcore which = 1054 }
+       command = { type = belligerence which = EGY value = 5  }
+       command = { type = dissent value = 10 }
+       command = { type = trigger which = 377145 }
+}
+}
+
+
+event = {
+id = 377144
+country = OTT
+style = 2
+
+
+name = "EVT_377144_NAME"
+desc = "EVT_377144_DESC"
+picture = "Peace_conference"
+
+action_a = {
+name =  "EVT_377144_OPTIONA"
+command = { type = leave_alliance when = 1 } 
+command = { trigger = { war = { country = OTT country = PER } } type = peace which = PER value = 0 }
+command = { trigger = { war = { country = OTT country = RUS } } type = peace which = RUS value = 0 }
+command = { trigger = { war = { country = OTT country = SAU } } type = peace which = SAU value = 0 }
+command = { trigger = { flag = SAU_VIC } type = trade which = OTT where = SAU money = -1 when = 1800 value = 1 }	#forced trade for 5 years!
+command = { trigger = { flag = SAU_VIC } type = trade which = OTT where = SAU supplies = -4 when = 1800 value = 1 }	#forced trade for 5 years!
+command = { trigger = { flag = PER_VIC } type = trade which = OTT where = PER money = -1 when = 1800 value = 1 }	#forced trade for 5 years!
+command = { trigger = { flag = PER_VIC } type = trade which = OTT where = PER supplies = -4 when = 1800 value = 1 }	#forced trade for 5 years!
+command = { trigger = { flag = RUS_VIC } type = trade which = OTT where = RUS money = -1 when = 1800 value = 1 }	#forced trade for 5 years!
+command = { trigger = { flag = RUS_VIC } type = trade which = OTT where = RUS supplies = -4 when = 1800 value = 1 }	#forced trade for 5 years!
+command = { trigger = { flag = SAU_VIC } type = non_aggression which = OTT where = SAU }
+command = { trigger = { flag = PER_VIC } type = non_aggression which = OTT where = PER }
+command = { trigger = { flag = RUS_VIC } type = non_aggression which = OTT where = RUS }
+command = { type = secedeprovince which = EGY value = 1172 }
+command = { type = secedeprovince which = EGY value = 1009 }
+command = { type = secedeprovince which = EGY value = 1011 }
+command = { type = secedeprovince which = EGY value = 1013 }
+command = { type = secedeprovince which = EGY value = 1010 }
+command = { type = secedeprovince which = EGY value = 1008 }
+command = { type = secedeprovince which = EGY value = 1004 }
+command = { type = secedeprovince which = EGY value = 1005 }
+command = { type = secedeprovince which = EGY value = 1006 }
+command = { type = secedeprovince which = EGY value = 1018 }
+command = { type = secedeprovince which = EGY value = 1019 }
+command = { type = secedeprovince which = EGY value = 1016 }
+command = { type = secedeprovince which = EGY value = 1020 }
+command = { type = secedeprovince which = EGY value = 1017 }
+command = { type = secedeprovince which = EGY value = 1021 }
+command = { type = secedeprovince which = EGY value = 1014 }
+command = { type = secedeprovince which = EGY value = 1054 }
+command = { trigger = { OR = { flag = SAU_VIC alliance = { country = EGY country = SAU } } } type = secedeprovince which = SAU value = 1048 }
+command = { trigger = { OR = { flag = SAU_VIC alliance = { country = EGY country = SAU } } } type = secedeprovince which = SAU value = 1044 }
+command = { trigger = { OR = { flag = SAU_VIC alliance = { country = EGY country = SAU } } } type = secedeprovince which = SAU value = 1046 }
+command = { trigger = { OR = { flag = SAU_VIC alliance = { country = EGY country = SAU } } } type = secedeprovince which = SAU value = 1041 }
+command = { trigger = { OR = { flag = SAU_VIC alliance = { country = EGY country = SAU } } } type = secedeprovince which = SAU value = 1031 }
+command = { trigger = { OR = { flag = SAU_VIC alliance = { country = EGY country = SAU } } } type = secedeprovince which = SAU value = 1032 }
+command = { trigger = { OR = { flag = SAU_VIC alliance = { country = EGY country = SAU } } } type = secedeprovince which = SAU value = 1030 }
+command = { trigger = { OR = { flag = SAU_VIC alliance = { country = EGY country = SAU } } } type = secedeprovince which = SAU value = 1022 }
+command = { trigger = { OR = { flag = SAU_VIC alliance = { country = EGY country = SAU } } } type = secedeprovince which = SAU value = 1025 }
+command = { trigger = { OR = { flag = SAU_VIC alliance = { country = EGY country = SAU } } } type = secedeprovince which = SAU value = 1024 }
+command = { trigger = { OR = { flag = SAU_VIC alliance = { country = EGY country = SAU } } } type = secedeprovince which = SAU value = 1026 }
+command = { trigger = { OR = { flag = SAU_VIC alliance = { country = EGY country = SAU } } } type = secedeprovince which = SAU value = 1023 }
+command = { trigger = { OR = { flag = PER_VIC alliance = { country = EGY country = PER } } } type = secedeprovince which = PER value = 1033 }
+command = { trigger = { OR = { flag = PER_VIC alliance = { country = EGY country = PER } } } type = secedeprovince which = PER value = 1028 }
+command = { trigger = { OR = { flag = PER_VIC alliance = { country = EGY country = PER } } } type = secedeprovince which = PER value = 1037 }
+command = { trigger = { OR = { flag = PER_VIC alliance = { country = EGY country = PER } } } type = secedeprovince which = PER value = 1035 }
+command = { trigger = { OR = { flag = PER_VIC alliance = { country = EGY country = PER } } } type = secedeprovince which = PER value = 1036 }
+command = { trigger = { OR = { flag = PER_VIC alliance = { country = EGY country = PER } } } type = secedeprovince which = PER value = 1027 }
+command = { trigger = { OR = { flag = PER_VIC alliance = { country = EGY country = PER } } } type = secedeprovince which = PER value = 1034 }
+command = { trigger = { OR = { flag = PER_VIC alliance = { country = EGY country = PER } } } type = secedeprovince which = PER value = 1015 }
+command = { trigger = { OR = { flag = PER_VIC alliance = { country = EGY country = PER } } } type = secedeprovince which = PER value = 1029 }
+command = { trigger = { OR = { flag = PER_VIC alliance = { country = EGY country = PER } } } type = secedeprovince which = PER value = 1062 }
+command = { type = removecore which = 1172 }
+command = { type = removecore which = 1049 }
+command = { type = removecore which = 1009 }
+command = { type = removecore which = 1011 }
+command = { type = removecore which = 1013 }
+command = { type = removecore which = 1010 }
+command = { type = removecore which = 1008 }
+command = { type = removeclaim which = 1048 }
+command = { type = removeclaim which = 1044 }
+command = { type = removeclaim which = 1046 }
+command = { type = removeclaim which = 1041 }
+command = { type = removeclaim which = 1031 }
+command = { type = removeclaim which = 1032 }
+command = { type = removeclaim which = 1030 }
+command = { type = removeclaim which = 1022 }
+command = { type = removeclaim which = 1025 }
+command = { type = removecore which = 1024 }
+command = { type = removeclaim which = 1026 }
+command = { type = removecore which = 1023 }
+command = { type = removeclaim which = 1004 }
+command = { type = removeclaim which = 1005 }
+command = { type = removeclaim which = 1006 }
+command = { type = removecore which = 1028 }
+command = { type = removecore which = 1037 }
+command = { type = removecore which = 1035 }
+command = { type = removecore which = 1036 }
+command = { type = removecore which = 1015 }
+command = { type = removecore which = 1029 }
+command = { type = removecore which = 1027 }
+command = { type = removecore which = 1034 }
+command = { type = removecore which = 1033 }
+command = { type = end_mastery which = ALB }
+command = { type = end_mastery which = LBY }
+command = { type = end_mastery which = ARM }
+command = { type = end_mastery which = OMN }
+command = { type = end_mastery which = U02 }
+command = { trigger = { war = { country = OTT country = GRE } } type = setflag which = OTT_GEG }
+command = { trigger = { NOT = { alliance = { country = ALB country = RUS } } } type = peace which = ALB value = 1 }
+command = { trigger = { NOT = { alliance = { country = CYP country = RUS } } } type = peace which = CYP value = 1 }
+command = { trigger = { NOT = { alliance = { country = ARM country = RUS } } } type = peace which = ARM value = 1 }
+command = { trigger = { NOT = { alliance = { country = LBY country = RUS } } } type = peace which = LBY value = 1 }
+command = { trigger = { NOT = { alliance = { country = OMN country = RUS } } } type = peace which = OMN value = 1 }
+command = { trigger = { NOT = { alliance = { country = GRE country = RUS } } } type = peace which = GRE value = 1 }
+command = { trigger = { NOT = { alliance = { country = BUL country = RUS } } } type = peace which = BUL value = 1 }
+command = { trigger = { NOT = { alliance = { country = ROM country = RUS } } } type = peace which = ROM value = 1 }
+command = { trigger = { NOT = { alliance = { country = URU country = RUS } } } type = peace which = URU value = 1 }
+command = { trigger = { NOT = { alliance = { country = YUG country = RUS } } } type = peace which = YUG value = 1 }
+command = { trigger = { NOT = { alliance = { country = SER country = RUS } } } type = peace which = SER value = 1 }
+command = { trigger = { NOT = { alliance = { country = MTN country = RUS } } } type = peace which = MTN value = 1 }
+command = { trigger = { NOT = { alliance = { country = GEO country = RUS } } } type = peace which = GEO value = 1 }
+command = { trigger = { NOT = { alliance = { country = KUR country = RUS } } } type = peace which = KUR value = 1 }
+
+command = { type = secedeprovince which = BUL value = 370 }
+command = { type = secedeprovince which = BUL value = 325 }
+command = { type = secedeprovince which = BUL value = 324 }
+command = { type = secedeprovince which = BUL value = 319 }
+command = { type = secedeprovince which = BUL value = 363 }
+
+command = { trigger = { flag = RUS_VIC } type = secedeprovince which = RUS value = 409 }
+command = { trigger = { flag = RUS_VIC } type = secedeprovince which = RUS value = 1076 }
+command = { trigger = { flag = RUS_VIC } type = secedeprovince which = RUS value = 1078 }
+command = { trigger = { flag = RUS_VIC } type = secedeprovince which = RUS value = 384 }
+command = { trigger = { flag = RUS_VIC } type = secedeprovince which = RUS value = 385 }
+command = { trigger = { flag = RUS_VIC } type = secedeprovince which = RUS value = 1067 }
+command = { trigger = { flag = RUS_VIC } type = secedeprovince which = RUS value = 1063 }
+command = { trigger = { flag = RUS_VIC } type = secedeprovince which = RUS value = 386 }
+command = { trigger = { flag = RUS_VIC } type = secedeprovince which = RUS value = 711 }
+command = { trigger = { flag = RUS_VIC } type = secedeprovince which = RUS value = 714 }
+command = { trigger = { flag = RUS_VIC } type = secedeprovince which = RUS value = 712 }
+command = { trigger = { flag = RUS_VIC } type = secedeprovince which = RUS value = 710 }
+command = { trigger = { flag = RUS_VIC } type = secedeprovince which = RUS value = 708 }
+command = { trigger = { flag = RUS_VIC } type = secedeprovince which = RUS value = 707 }
+command = { trigger = { flag = RUS_VIC } type = secedeprovince which = RUS value = 709 }
+
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 384 }
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 385 }
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 409 }
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 378 }
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 379 }
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 381 }
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 383 }
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 325 }
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 319 }
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 324 }
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 363 }
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 370 }
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 1377 }
+command = { trigger = { flag = OTT_GEG NOT = { flag = RUS_VIC } } type = secedeprovince which = GRE value = 384 }
+command = { trigger = { flag = OTT_GEG NOT = { flag = RUS_VIC } } type = secedeprovince which = GRE value = 385 }
+command = { trigger = { flag = OTT_GEG NOT = { flag = RUS_VIC } } type = secedeprovince which = GRE value = 409 }
+command = { trigger = { flag = OTT_GEG } type = removecore which =   370  }
+command = { trigger = { flag = OTT_GEG } type = removecore which =   325  }
+command = { trigger = { flag = OTT_GEG } type = removeclaim which =  324  }
+command = { trigger = { flag = OTT_GEG } type = removeclaim which =  319  }
+command = { trigger = { flag = OTT_GEG } type = removeclaim which =  363  }
+command = { trigger = { flag = OTT_GEG } type = removecore which = 383 }
+command = { trigger = { flag = OTT_GEG } type = removecore which = 381 }
+command = { trigger = { flag = OTT_GEG } type = removecore which = 378 }
+command = { trigger = { flag = OTT_GEG } type = removecore which = 379 }
+command = { trigger = { flag = OTT_GEG } type = removecore which = 387 }
+command = { trigger = { flag = OTT_GEG } type = removecore which = 388 }
+command = { trigger = { flag = OTT_GEG } type = removecore which = 384 }
+command = { trigger = { flag = OTT_GEG } type = removecore which = 385 }
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 382 }
+command = { trigger = { flag = OTT_GEG } type = secedeprovince which = GRE value = 380 }
+command = { trigger = { flag = OTT_GEG } type = removeclaim which = 382 }
+command = { trigger = { flag = OTT_GEG } type = removeclaim which = 380 }
+command = { trigger = { flag = OTT_GEG exists = U02 puppet = { country = U02 country = OTT  } } type = trigger which = 907161 }
+command = { trigger = { exists = CYP NOT = { puppet = { country = CYP country = OTT  } } } type = secedeprovince which = CYP value = 387 }
+command = { trigger = { exists = CYP NOT = { puppet = { country = CYP country = OTT  } } } type = secedeprovince which = CYP value = 388 }
+command = { trigger = { exists = ARM NOT = { puppet = { country = ARM country = OTT  } } } type = secedeprovince which = ARM value = 386 }
+command = { type = clrflag which = PER_VIC }
+command = { type = clrflag which = SAU_VIC }
+command = { type = clrflag which = OTT_GEG }
+command = { type = clrflag which = RUS_GEG }
+command = { type = trigger which = 377146 }
+command = { type = dissent value = 2 }
+}
+
+}
+
+event = {
+id = 377145
+country = OTT
+style = 2
+
+
+name = "EVT_377145_NAME"
+desc = "EVT_377145_DESC"
+picture = "Peace_conference"
+
+action_a = {
+name =  "EVT_377145_OPTIONA"
+command = { type = dissent value = 1 }
+}
+
+}
+
+
+event = {
+id = 377146
+country = SAU
+style = 2
+
+
+name = "EVT_377146_NAME"
+desc = "EVT_377146_DESC"
+picture = "Peace_conference"
+
+action_a = {
+name =  "EVT_377146_OPTIONA"
+       command = { type = dissent value = -5 }
+       command = { type = industrial_modifier which = total value = 2 }
+       command = { type = free_ic value = 2 }
+       command = { type = addcore which = 1048 }
+       command = { type = addcore which = 1044 }
+       command = { type = addcore which = 1046 }
+       command = { type = addcore which = 1041 }
+       command = { type = addcore which = 1031 }
+       command = { type = addcore which = 1032 }
+       command = { type = addcore which = 1030 }
+       command = { type = addcore which = 1022 }
+       command = { type = addcore which = 1025 }
+       command = { type = addcore which = 1024 }
+       command = { type = addcore which = 1026 }
+       command = { type = addcore which = 1023 }
+}
+}
+
+
+event = {
+id = 377152
+country = EGY
+style = 2
+  
+trigger = {
+event = 377126 
+war = { country = OTT country = EGY }
+control = { province = 1004 data = OTT } 
+control = { province = 1029 data = OTT }
+control = { province = 1172 data = OTT } 
+OR = {
+NOT = { control = { province = 1045 data = SAU } }
+AND = {
+control = { province = 1045 data = SAU }
+puppet = { country = SAU country = OTT }
+}
+NOT = { war = { country = OTT country = SAU } }
+}
+OR = {
+NOT = { control = { province = 1085 data = PER } }
+AND = {
+control = { province = 1085 data = PER }
+puppet = { country = PER country = OTT }
+}
+NOT = { war = { country = OTT country = PER } }
+}
+NOT = {
+alliance = { country = OTT country = GER }
+alliance = { country = OTT country = CAN }
+alliance = { country = OTT country = JAP }
+alliance = { country = OTT country = RUS }
+ispuppet = EGY
+ispuppet = OTT
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 25
+deathdate = { day = 1 month = january year = 1960 }
+
+name = "EVT_377152_NAME"
+desc = "EVT_377152_DESC"
+picture = "Peace_conference"
+
+action_a = {
+ai_chance = 100
+name =  "EVT_377152_OPTIONA"
+command = { type = trigger which = 377153 }
+command = { type = dissent value = 5 }
+}
+action_b = {
+ai_chance = 0
+name = "EVT_377152_OPTIONB"
+command = { type = dissent value = 10 }
+command = { type = sleepevent which = 377153 }
+}
+}
+
+
+
+event = {
+id = 377153
+country = OTT
+style = 2
+
+
+name = "EVT_377153_NAME"
+desc = "EVT_377153_DESC"
+picture = "Peace_conference"
+
+action_a = {
+ai_chance = 100
+name =  "EVT_377153_OPTIONA"
+       command = { type = dissent value = -5 }
+       command = { type = peace which = EGY value = 0 }
+       command = { type = addclaim which = 791 }
+       command = { type = non_aggression which = EGY where = OTT }
+       command = { type = trade which = EGY where = OTT money = -1 when = 1800 value = 1 }	#forced trade for 5 years!
+       command = { type = trade which = EGY where = OTT supplies = -4 when = 1800 value = 1 }	#forced trade for 5 years!
+       command = { type = trigger which = 377154 }
+}
+action_b = {
+ai_chance = 0
+name = "EVT_377153_OPTIONB"
+       command = { type = dissent value = 2 }
+       command = { type = addclaim which = 791 }
+       command = { type = belligerence which = OTT value = 5  }
+       command = { type = dissent value = 10 }
+       command = { type = trigger which = 377155 }
+}
+}
+
+
+event = {
+id = 377154
+country = EGY
+style = 2
+
+
+name = "EVT_377154_NAME"
+desc = "EVT_377154_DESC"
+picture = "Peace_conference"
+
+action_a = {
+name =  "EVT_377154_OPTIONA"
+command = { type = secedeprovince which = OTT value = 791 }
+command = { type = dissent value = 2 }
+}
+
+}
+
+event = {
+id = 377155
+country = EGY
+style = 2
+
+
+name = "EVT_377155_NAME"
+desc = "EVT_377155_DESC"
+picture = "Peace_conference"
+
+action_a = {
+name =  "EVT_377155_OPTIONA"
+command = { type = dissent value = 1 }
+}
+
+}
+
+
+event = {
+	id = 377157
+	random = no
+	country = OTT
+	trigger = {
+		exists = GER
+                
+                OR = {
+                flag = GER_CON_Capitulation
+                flag = GER_Capitulation
+                }
+                NOT = {
+                puppet = { country = OTT country = GER }
+                alliance = { country = GER country = OTT }
+                atwar = OTT
+	}
+        control = { province = 900 data = GER }
+	control = { province = 1007 data = GER }
+        control = { province = 1005 data = OTT }
+        control = { province = 1006 data = OTT }
+        }
+	
+	name = "EVT_377157_NAME"
+	desc = "EVT_377157_DESC"		
+	style = 2
+        
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 10 
+	deathdate = { day = 29 month = january year = 1960 }
+
+	action_a = {
+        ai_chance = 100
+		name = "EVT_377157_OPTIONA"
+		command = { type = addclaim which = 900 }
+                command = { type = addclaim which = 1007 }
+		command = { type = relation which = GER value = -100 }
+                command = { type = trigger which = 377158 }
+                
+	}
+        action_b = {
+        ai_chance = 0
+		name = "EVT_377157_OPTIONB"
+		command = { type = relation which = GER value = 100 }
+		command = { type = dissent value = 5 }
+                
+	}
+}
+
+event = {
+	id = 377158
+	random = no
+	country = GER
+	## triggered by 377157
+	
+	name = "EVT_377158_NAME"
+	desc = "EVT_377158_DESC"		
+	style = 2
+        
+
+	action_a = {
+        ai_chance = 100
+		name = "EVT_377158_OPTIONA"
+		command = { type = secedeprovince which = OTT value = 900 }
+		command = { type = secedeprovince which = OTT value = 1007 }
+                command = { type = dissent value = 1 }
+                
+	}
+        action_b = {
+        ai_chance = 0
+		name = "EVT_377158_OPTIONB"
+		command = { type = war which = OTT }
+                command = { type = dissent value = 5 }
+                
+	}
+}
+
+event = {
+ id = 377159
+ country = KUR
+ style = 2
+ picture = "politics5"
+
+      trigger = {
+      NOT = { 
+      government = communist
+      ispuppet = KUR
+      atwar = KUR
+      }
+      }
+         
+      date = { day = 1 month = january year = 1936 }
+      offset = 10 
+      deathdate = { day = 29 month = december year = 1960 }
+
+       name = "EVT_377159_NAME"
+       desc = "EVT_377159_DESC"
+
+       action_a = {
+       name = "EVT_377159_OPTIONA"
+       ai_chance = 40
+       command = { type = money value = -50 }
+       command = { type = dissent value = 2 }
+       command = { type = set_domestic which = democratic value = 8 }
+       command = { type = set_domestic which = freedom value = 6 }
+       command = { type = event which = 377160 where = KUR when = 10  }
+       }
+
+       action_b = {
+       name = "EVT_377159_OPTIONB"
+       ai_chance = 60
+       command = { type = dissent value = 1 }
+       command = { type = headofstate which = 548037 } 
+       command = { type = headofgovernment which = 548038 } 
+       command = { type = set_domestic which = democratic value = 4 }
+       command = { type = set_domestic which = political_left value = 3 }
+       command = { type = set_domestic which = freedom value = 4 }
+       }
+       }
+
+event = {
+ id = 377160
+ country = KUR
+ style = 2
+ picture = "politics5"
+
+
+     name = "EVT_377160_NAME"
+     desc = "EVT_377160_DESC"
+
+     action_a = {
+     name = "EVT_377160_OPTIONA"
+     ai_chance = 20
+     command = { type = headofstate which = 548012 } #Mustapha Barzani
+     command = { type = headofgovernment which = 548014 } #Cami Teimourian
+     command = { type = set_domestic which = democratic value = 3 }
+     command = { type = set_domestic which = political_left value = 7 }
+     command = { type = set_domestic which = freedom value = 6 }
+     command = { type = event which = 377161 where = KUR when = 5  }
+     }
+
+     action_b = {
+     name = "EVT_377160_OPTIONB"
+     ai_chance = 25
+     command = { type = headofstate which = 548033 } #Mustafa Pasha Yamolki
+     command = { type = headofgovernment which = 548034 } #
+     command = { type = set_domestic which = democratic value = 9 }
+     command = { type = domestic which = free_market value = 1 }
+     command = { type = set_domestic which = political_left value = 5 }
+     command = { type = set_domestic which = freedom value = 8 }
+     } 
+
+     action_c = {
+     name = "EVT_377160_OPTIONC"
+     ai_chance = 35
+     command = { type = headofstate which = 548011 } #Qazi Mohammed
+     command = { type = headofgovernment which = 548013 } #
+     command = { type = set_domestic which = democratic value = 9 }
+     command = { type = set_domestic which = political_left value = 9 }
+     command = { type = set_domestic which = freedom value = 8 }
+     }
+
+     action_d = {
+     name = "EVT_377160_OPTIOND"
+     ai_chance = 15
+     command = { type = headofstate which = 548001 } #Seyid Riza Dershimi
+     command = { type = headofgovernment which = 548002 } #Sayed Mehmed Celaleddin
+     command = { type = set_domestic which = democratic value = 4 }
+     command = { type = set_domestic which = political_left value = 3 }
+     command = { type = set_domestic which = freedom value = 4 }
+     }
+     }
+
+
+event = {
+ id = 377161
+ country = KUR
+ style = 2
+ picture = "politics5"
+
+ name = "EVT_377161_NAME"
+ desc = "EVT_377161_DESC"
+
+ action_a = {
+ name = "EVT_377161_OPTIONA"
+ ai_chance = 80
+ trigger = {
+         participant = { country = FRA value = 3 }
+         ispuppet = FRA
+         control = { province = 55 data = FRA }
+         }
+ command = { type = money value = -10 }
+ command = { type = dissent value = -1 }
+ command = { type = trigger which = 377162 }
+ command = { type = domestic which = interventionism value = 5 }
+ command = { type = set_relation which = GER value = -20 }
+ command = { type = set_relation which = RUS value = -20 }
+ }
+
+ action_b = {
+ name = "EVT_377161_OPTIONB"
+ ai_chance = 20
+ command = { type = dissent value = 1 }
+ command = { type = domestic which = interventionism value = -1 }
+ }
+ }
+
+ event = {
+ id = 377162
+ country = FRA
+ style = 2
+ picture = "politics5"
+
+ name = "EVT_377162_NAME"
+ desc = "EVT_377162_DESC"
+
+ action_a = {
+ name = "EVT_377162_OPTIONA"
+ ai_chance = 0
+ command = { type = money value = -10 }
+ command = { type = dissent value = 1 }
+ command = { type = alliance which = KUR }
+ command = { type = trigger which = 377163 }
+ command = { type = relation which = KUR value = 150 }
+ }
+
+ action_b = {
+ name = "EVT_377162_OPTIONB"
+ ai_chance = 40
+ command = { type = dissent value = -1 }
+ command = { type = domestic which = interventionism value = -1 }
+ command = { type = relation which = KUR value = 25 }
+ command = { type = guarantee which = FRA where = KUR }
+ }
+
+ action_b = {
+ name = "EVT_377162_OPTIONC"
+ ai_chance = 60
+ command = { type = relation which = KUR value = -50 }
+ }
+ }
+
+
+ event = {
+ id = 377163
+ country = KUR
+ style = 2
+ picture = "politics5"
+     
+ name = "EVT_377163_NAME"
+ desc = "EVT_377163_DESC"
+
+ action_a = {
+ name = "EVT_377163_OPTIONA"
+ command = { type = dissent value = -1 }
+ command = { type = domestic which = interventionism value = 1 }                  
+ }
+ }
+
+
+event = {
+id = 377174
+country = OTT
+style = 2
+
+#triggered by event 91312-- if Egypt chooses to claim any land, (actions a, b, or c) then this event will be triggered.
+
+name = "EVT_377174_NAME"
+desc = "EVT_91838_DESC"
+picture = "politics3"
+
+ action_a = {
+	name = "EVT_377174_OPTIONA"
+	ai_chance = 50
+		command = { type = domestic which = democratic value = -1 }
+		command = { type = domestic which = freedom value = -2 }
+       		command = { type = dissent value = 5 }
+		command = { type = sleepevent which = 377172 } #No demand for special elections in the event of Ottoman victory in the war against the Arab Bloc.
+                command = { type = headofgovernment which = 549004  }
+	}
+
+action_b = {
+	name = "EVT_377174_OPTIONB"
+	ai_chance = 50
+		command = { type = domestic which = freedom value = 1 }
+       		command = { type = dissent value = 7 } #More dissent in the short term.
+	}
+}
+
+
+event = {
+ id = 377171
+ country = OTT
+ style = 2
+
+     trigger = {
+              OR = {
+              event = 377154 #Treaty of Beyrut- Egypt accepts the treaty and sulks.
+              AND = { #in case somehow the Treaty of Beyrut doesn't fire and the player manages to defeat the Arab bloc without events.
+                 event = 377126 #The Arab War event must have fired
+                 OR = {
+                     NOT = { exists = EGY }
+                     puppet = { country = EGY country = OTT } 
+                 }
+                 OR = {
+                     AND = {
+                         control = { province = 1085 data = PER }
+                         puppet = { country = PER country = OTT }
+                     }
+                     NOT = { 
+                     war = { country = OTT country = PER } 
+                     }
+                 }    
+                 OR = {
+                     AND = {
+                         control = { province = 1045 data = SAU }
+                         puppet = { country = SAU country = OTT }
+                     }
+                     NOT = { 
+                     war = { country = OTT country = SAU } 
+                     }
+                 }
+             }
+         }
+     }
+
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 3
+ deathdate = { day = 29 month = december year = 1963 }
+
+ name = "EVT_377171_NAME"
+ desc = "EVT_377171_DESC"
+ picture = "Sedantag"
+
+ action_a = {
+     name =  "EVT_377171_OPTIONA"
+     command = { type = dissent value = -3 }
+     }
+ }
+
+
+event = {
+ id = 377172
+ country = OTT
+ style = 2
+
+    trigger = {
+     event = 377171
+     NOT = {
+           government = democratic
+           government = communist
+           }
+            }
+
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 35
+ deathdate = { day = 29 month = december year = 1963 }
+
+ name = "EVT_377172_NAME"
+ desc = "EVT_661963_DESC"
+ picture = "Peace_conference"
+
+ action_a = {
+     name =  "EVT_377172_OPTIONA"
+     ai_chance = 20
+     command = { type = dissent value = 10 }
+     command = { type = sleepevent which = 377173 }
+     }
+
+ action_b = {
+     name =  "EVT_377172_OPTIONB"
+     ai_chance = 80
+     command = { type = dissent value = -3 }
+     command = { type = sleepevent which = 377175 }
+     }
+ }
+
+ event = {
+ id = 377173
+ random =  no
+ country = OTT
+ save_date = yes
+
+    trigger = {
+      event = 377172
+      NOT = { 
+      government = communist
+      ideology = fascist 
+      }
+      }
+
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 35
+ deathdate = { day = 29 month = december year = 1963 }
+
+
+    name = "EVT_377173_NAME"
+    desc = "EVT_377173_DESC"
+    style = 2
+    picture = "rusdumaelect"
+
+    action_a = {
+          name = "EVT_377173_OPTIONA"
+          ai_chance = 40
+          command = { type = set_domestic which = democratic value = 5 }
+          command = { type = set_domestic which = political_left value = 3 }
+          command = { type = domestic which = freedom  value = 4 }
+          command = { trigger = { minister = 549070 } type = headofstate which = 549001 } #Abdul Mejid II, here changed to PA
+          command = { trigger = { NOT = { minister = 549070 } } type = headofstate which = 549096 } #Ahmed IV, SC
+          command = { type = headofgovernment which = 549009 } #Huseyn Rauf Pasha, PA
+          command = { type = foreignminister which = 549020 } #Prince Ahmed Nihad, FA
+          command = { type = armamentminister which = 549034 } #Mahmut Celal Pasha. PA
+          command = { type = ministerofsecurity which = 549042 } #Mahmut Esat Pasha, PA
+          command = { type = ministerofintelligence which = 549049 } #Aref al-Aref Pasha, FA
+    	  }
+
+    action_b = {
+          name = "EVT_377173_OPTIONB"
+          ai_chance = 30
+          command = { type = set_domestic which = democratic value = 8 }
+          command = { type = set_domestic which = political_left value = 4 }
+          command = { type = domestic which = freedom  value = 7 }
+          command = { trigger = { minister = 549070 } type = headofstate which = 549070 } #Abdul Mejid II, ML
+          command = { trigger = { NOT = { minister = 549070 } } type = headofstate which = 549096 } #Ahmed IV, SC
+          command = { type = headofgovernment which = 549073 } #Prince Sabahaddin, ML
+          command = { type = foreignminister which = 549074 } #Osman Wilfred Kemal, ML
+          command = { type = armamentminister which = 549075 } #Ali Kemal Bey, ML
+          command = { type = ministerofsecurity which = 549076  } #Refik Halit Pasha/Refik Halit Karay
+          command = { type = ministerofintelligence which = 549050 } #Osman Nevres Pasha, SC
+          }
+
+ action_c = {
+          name = "EVT_377173_OPTIONC"
+          ai_chance = 15
+          command = { type = dissent value = 7 }
+          command = { type = set_domestic which = democratic value = 7 }
+          command = { type = set_domestic which = political_left value = 7 }
+          command = { type = domestic which = freedom  value = 6 }
+          command = { trigger = { minister = 549070 } type = headofstate which = 549071 } #Abdul Mejid II, SD
+          command = { trigger = { NOT = { minister = 549070 } } type = headofstate which = 549096 } #Ahmed IV, SC
+          command = { type = headofgovernment which = 549377 } #Yunus Nadi Abalioglu, SD
+          command = { type = foreignminister which = 549078 } #Ethem Nejat, LWR
+          command = { type = armamentminister which = 549079 } #Sadrettin Celal Antel, SD
+          command = { type = ministerofsecurity which = 549080 } #Halide Edip Adivar, SD
+          command = { type = ministerofintelligence which = 549081 } #Sefik Hüsnü, SD   
+          }
+
+ action_d = {
+          name = "EVT_377173_OPTIOND"
+          ai_chance = 15
+          command = { type = dissent value = 5 }
+          command = { type = set_domestic which = democratic value = 3 }
+          command = { type = set_domestic which = political_left value = 1 }
+          command = { type = domestic which = freedom  value = 2 }
+          command = { trigger = { minister = 549070 } type = headofstate which = 549001 } #Abdul Mejid II, FA
+          command = { trigger = { NOT = { minister = 549070 } } type = headofstate which = 549002 } #Ahmed IV, PA
+          command = { type = headofgovernment which = 549005 } #Hüseyin Nihâl Pasha, NS
+          command = { type = foreignminister which = 549017 } #Yusuf Akcora Pasha, NS
+          command = { type = armamentminister which = 549032 } #Sadri Maksudi Pasha, NS
+          command = { type = ministerofsecurity which = 549039 } #Behaeddin Shakir Pasha, NS
+          command = { type = ministerofintelligence which = 549047 } #Behaeddin Shakir Pasha, NS 
+          }
+ }
+
+event = {
+id = 377175
+country = OTT
+style = 2
+
+   trigger = {
+		OR = {
+			event = 377174
+			event = 377172
+		}
+  	     }
+
+
+ date = { day = 1 month = june year = 1940 }
+ offset = 16
+ deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_377175_NAME"
+desc = "EVT_377175_DESC"
+picture = "Riot1"
+
+ action_a = {
+	name =  "EVT_377175_OPTIONA"
+       	command = { type = dissent value = 5 }
+	}
+ }
+
+
+event = {
+id = 377176
+country = OTT
+style = 2
+
+   trigger = {
+	event = 377175
+  	}
+
+
+ date = { day = 25 month = july year = 1940 }
+ offset = 2
+ deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_377176_NAME"
+desc = "EVT_377176_DESC"
+picture = "ottoman3"
+
+ action_a = {
+	name =  "EVT_377176_OPTIONA"
+	ai_chance = 55
+	command = { type = domestic which = freedom  value = -1 }
+       	command = { type = dissent value = 4 } #Shooting people can sometimes work. Sometimes.
+	}
+
+ action_b = {
+	name =  "EVT_377176_OPTIONB"
+	ai_chance = 45
+       	command = { type = dissent value = 1 } #The public is wary.
+	}
+}
+
+
+event = {
+id = 377177
+country = OTT
+style = 2
+
+   trigger = {
+		event = 377176
+  	     }
+
+
+ date = { day = 6 month = august year = 1940 }
+ offset = 2
+ deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_377177_NAME"
+desc = "EVT_377177_DESC"
+picture = "ottoman1"
+
+ action_a = {
+	name =  "EVT_377177_OPTIONA"
+       	command = { type = dissent value = 5 }
+	}
+}
+
+
+event = {
+id = 377178
+country = OTT
+style = 2
+
+   trigger = {
+		event = 377176
+  	     }
+
+
+ date = { day = 8 month = august year = 1940 }
+ offset = 2
+ deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_377178_NAME"
+desc = "EVT_377178_DESC"
+picture = "ottoman1"
+
+ action_a = {
+	name =  "EVT_377178_OPTIONA"
+        ai_chance = 55
+       		command = { type = dissent value = -7 }
+         	command = { type = set_domestic which = democratic value = 7 }
+         	command = { type = set_domestic which = political_left value = 4 }
+         	command = { type = domestic which = freedom  value = 2 }
+         	command = { trigger = { minister = 549070 } type = headofstate which = 549070 } #Abdul Mejid II, ML
+                command = { trigger = { NOT = { minister = 549070 } } type = headofstate which = 549096 } #Ahmed IV, SC
+	 	command = { type = headofgovernment which = 549014 } #Hasan Âli Pasha, ML. Historically Hasan Âli Yücel, Minister of Education
+         	command = { type = foreignminister which = 549030} #Necdet Pasha, ML
+         	command = { type = armamentminister which = 549036 } #Refik Pasha, ML
+         	command = { type = ministerofsecurity which = 549036 } #Ali Kemal Bey, ML
+         	command = { type = ministerofintelligence which = 549075 } #Osman Nevres Pasha, SC
+	}
+
+ action_b = {
+	name =  "EVT_377178_OPTIONB"
+	ai_chance = 55
+		command = { type = domestic which = freedom  value = -1 }
+       		command = { type = dissent value = 4 } #Shooting people can sometimes work. Sometimes.
+	}
+}
+
+
+
+
+event = {
+id = 377179
+country = TUR
+style = 2
+  
+trigger = {
+war = { country = TUR country = EGY }
+control = { province = 1019 data = EGY } 
+control = { province = 1016 data = EGY }
+control = { province = 1172 data = EGY } 
+control = { province = 1156 data = EGY } 
+NOT = { control = { province = 1045 data = TUR } }
+control = { province = 787 data = EGY }
+NOT = { control = { province = 1085 data = TUR } }
+NOT = { control = { province = 1034 data = TUR } }
+NOT = { control = { province = 1029 data = TUR } }
+NOT = {
+event = 377142 
+alliance = { country = EGY country = GER }
+alliance = { country = EGY country = CAN }
+alliance = { country = EGY country = JAP }
+alliance = { country = EGY country = RUS }
+ispuppet = EGY
+ispuppet = TUR
+}
+lost_national = { country = TUR value = 15 }
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 25
+deathdate = { day = 1 month = january year = 1960 }
+
+name = "EVT_377179_NAME"
+desc = "EVT_377179_DESC"
+picture = "Peace_conference"
+
+action_a = {
+ai_chance = 100
+name =  "EVT_377179_OPTIONA"
+command = { type = trigger which = 377132 }
+command = { type = dissent value = 20 }
+command = { type = sleepevent which = 377131 }
+}
+action_b = {
+ai_chance = 20
+name = "EVT_377179_OPTIONB"
+command = { type = dissent value = 30 }
+command = { type = sleepevent which = 377143 }
+}
+}
+
+
+
+event = {
+id = 377180
+country = EGY
+style = 2
+
+
+name = "EVT_377180_NAME"
+desc = "EVT_377180_DESC"
+picture = "Peace_conference"
+
+action_a = {
+ai_chance = 100
+name =  "EVT_377180_OPTIONA"
+       command = { type = dissent value = -5 }
+       command = { type = peace which = TUR value = 0 }
+       command = { type = industrial_modifier which = total value = 3 }
+       command = { type = free_ic value = 3 }
+       command = { type = addcore which = 1172 }
+       command = { type = addcore which = 1009 }
+       command = { type = addcore which = 1011 }
+       command = { type = addcore which = 1013 }
+       command = { type = addcore which = 1010 }
+       command = { type = addcore which = 1008 }
+       command = { type = addcore which = 1018 }
+       command = { type = addcore which = 1019 }
+       command = { type = addcore which = 1016 }
+       command = { type = addcore which = 1020 }
+       command = { type = addcore which = 1017 }
+       command = { type = addcore which = 1021 }
+       command = { type = addcore which = 1014 }
+       command = { type = addcore which = 1054 }
+       command = { trigger = { war = { country = TUR country = PER } } type = setflag which = PER_VIC }
+       command = { trigger = { war = { country = TUR country = SAU } } type = setflag which = SAU_VIC }
+       command = { type = non_aggression which = EGY where = TUR }
+       command = { type = trade which = TUR where = EGY money = -1 when = 1800 value = 1 }	#forced trade for 5 years!
+       command = { type = trade which = TUR where = EGY supplies = -4 when = 1800 value = 1 }	#forced trade for 5 years!
+       command = { trigger = { alliance = { country = EGY country = SAU } } type = trade which = TUR where = SAU money = -1 when = 1800 value = 1 }	#forced trade for 5 years!
+       command = { trigger = { alliance = { country = EGY country = SAU } } type = trade which = TUR where = SAU supplies = -4 when = 1800 value = 1 }	#forced trade for 5 years!
+       command = { trigger = { alliance = { country = EGY country = PER } } type = trade which = TUR where = PER money = -1 when = 1800 value = 1 }	#forced trade for 5 years!
+       command = { trigger = { alliance = { country = EGY country = PER } } type = trade which = TUR where = PER supplies = -4 when = 1800 value = 1 }	#forced trade for 5 years!
+       command = { trigger = { alliance = { country = EGY country = SAU } } type = non_aggression which = TUR where = SAU }
+       command = { trigger = { alliance = { country = EGY country = PER } } type = non_aggression which = TUR where = PER }
+       command = { type = trigger which = 377181 }
+}
+
+action_b = {
+ai_chance = 0
+name = "EVT_377180_OPTIONB"
+       command = { type = dissent value = 2 }
+       command = { type = addcore which = 1172 }
+       command = { type = addcore which = 1009 }
+       command = { type = addcore which = 1011 }
+       command = { type = addcore which = 1013 }
+       command = { type = addcore which = 1010 }
+       command = { type = addcore which = 1008 }
+       command = { type = addcore which = 1018 }
+       command = { type = addcore which = 1019 }
+       command = { type = addcore which = 1016 }
+       command = { type = addcore which = 1020 }
+       command = { type = addcore which = 1017 }
+       command = { type = addcore which = 1021 }
+       command = { type = addcore which = 1014 }
+       command = { type = addcore which = 1054 }
+       command = { type = belligerence which = EGY value = 5  }
+       command = { type = dissent value = 10 }
+       command = { type = trigger which = 377182 }
+}
+}
+
+
+event = {
+id = 377181
+country = TUR
+style = 2
+
+
+name = "EVT_377181_NAME"
+desc = "EVT_377181_DESC"
+picture = "Peace_conference"
+
+action_a = {
+name =  "EVT_377181_OPTIONA"
+command = { trigger = { war = { country = TUR country = PER } } type = peace which = PER value = 0 }
+command = { trigger = { war = { country = TUR country = SAU } } type = peace which = SAU value = 0 }
+command = { trigger = { flag = SAU_VIC } type = trade which = TUR where = SAU money = -1 when = 1800 value = 1 }	#forced trade for 5 years!
+command = { trigger = { flag = SAU_VIC } type = trade which = TUR where = SAU supplies = -4 when = 1800 value = 1 }	#forced trade for 5 years!
+command = { trigger = { flag = PER_VIC } type = trade which = TUR where = PER money = -1 when = 1800 value = 1 }	#forced trade for 5 years!
+command = { trigger = { flag = PER_VIC } type = trade which = TUR where = PER supplies = -4 when = 1800 value = 1 }	#forced trade for 5 years!
+command = { trigger = { flag = SAU_VIC } type = non_aggression which = TUR where = SAU }
+command = { trigger = { flag = PER_VIC } type = non_aggression which = TUR where = PER }
+command = { type = secedeprovince which = EGY value = 1172 }
+command = { type = secedeprovince which = EGY value = 1009 }
+command = { type = secedeprovince which = EGY value = 1011 }
+command = { type = secedeprovince which = EGY value = 1013 }
+command = { type = secedeprovince which = EGY value = 1010 }
+command = { type = secedeprovince which = EGY value = 1008 }
+command = { type = secedeprovince which = EGY value = 1004 }
+command = { type = secedeprovince which = EGY value = 1005 }
+command = { type = secedeprovince which = EGY value = 1006 }
+command = { type = secedeprovince which = EGY value = 1018 }
+command = { type = secedeprovince which = EGY value = 1019 }
+command = { type = secedeprovince which = EGY value = 1016 }
+command = { type = secedeprovince which = EGY value = 1020 }
+command = { type = secedeprovince which = EGY value = 1017 }
+command = { type = secedeprovince which = EGY value = 1021 }
+command = { type = secedeprovince which = EGY value = 1014 }
+command = { type = secedeprovince which = EGY value = 1054 }
+command = { trigger = { OR = { flag = SAU_VIC alliance = { country = EGY country = SAU } } } type = secedeprovince which = SAU value = 1048 }
+command = { trigger = { OR = { flag = SAU_VIC alliance = { country = EGY country = SAU } } } type = secedeprovince which = SAU value = 1044 }
+command = { trigger = { OR = { flag = SAU_VIC alliance = { country = EGY country = SAU } } } type = secedeprovince which = SAU value = 1046 }
+command = { trigger = { OR = { flag = SAU_VIC alliance = { country = EGY country = SAU } } } type = secedeprovince which = SAU value = 1041 }
+command = { trigger = { OR = { flag = SAU_VIC alliance = { country = EGY country = SAU } } } type = secedeprovince which = SAU value = 1031 }
+command = { trigger = { OR = { flag = SAU_VIC alliance = { country = EGY country = SAU } } } type = secedeprovince which = SAU value = 1032 }
+command = { trigger = { OR = { flag = SAU_VIC alliance = { country = EGY country = SAU } } } type = secedeprovince which = SAU value = 1030 }
+command = { trigger = { OR = { flag = SAU_VIC alliance = { country = EGY country = SAU } } } type = secedeprovince which = SAU value = 1022 }
+command = { trigger = { OR = { flag = SAU_VIC alliance = { country = EGY country = SAU } } } type = secedeprovince which = SAU value = 1025 }
+command = { trigger = { OR = { flag = SAU_VIC alliance = { country = EGY country = SAU } } } type = secedeprovince which = SAU value = 1024 }
+command = { trigger = { OR = { flag = SAU_VIC alliance = { country = EGY country = SAU } } } type = secedeprovince which = SAU value = 1026 }
+command = { trigger = { OR = { flag = SAU_VIC alliance = { country = EGY country = SAU } } } type = secedeprovince which = SAU value = 1023 }
+command = { trigger = { OR = { flag = PER_VIC alliance = { country = EGY country = PER } } } type = secedeprovince which = PER value = 1033 }
+command = { trigger = { OR = { flag = PER_VIC alliance = { country = EGY country = PER } } } type = secedeprovince which = PER value = 1028 }
+command = { trigger = { OR = { flag = PER_VIC alliance = { country = EGY country = PER } } } type = secedeprovince which = PER value = 1037 }
+command = { trigger = { OR = { flag = PER_VIC alliance = { country = EGY country = PER } } } type = secedeprovince which = PER value = 1035 }
+command = { trigger = { OR = { flag = PER_VIC alliance = { country = EGY country = PER } } } type = secedeprovince which = PER value = 1036 }
+command = { trigger = { OR = { flag = PER_VIC alliance = { country = EGY country = PER } } } type = secedeprovince which = PER value = 1027 }
+command = { trigger = { OR = { flag = PER_VIC alliance = { country = EGY country = PER } } } type = secedeprovince which = PER value = 1034 }
+command = { trigger = { OR = { flag = PER_VIC alliance = { country = EGY country = PER } } } type = secedeprovince which = PER value = 1015 }
+command = { trigger = { OR = { flag = PER_VIC alliance = { country = EGY country = PER } } } type = secedeprovince which = PER value = 1029 }
+command = { trigger = { OR = { flag = PER_VIC alliance = { country = EGY country = PER } } } type = secedeprovince which = PER value = 1062 }
+command = { type = removecore which = 1172 }
+command = { type = removecore which = 1009 }
+command = { type = removecore which = 1011 }
+command = { type = removecore which = 1013 }
+command = { type = removecore which = 1010 }
+command = { type = removecore which = 1008 }
+command = { type = removeclaim which = 1048 }
+command = { type = removeclaim which = 1044 }
+command = { type = removeclaim which = 1046 }
+command = { type = removeclaim which = 1041 }
+command = { type = removeclaim which = 1031 }
+command = { type = removeclaim which = 1032 }
+command = { type = removeclaim which = 1030 }
+command = { type = removeclaim which = 1022 }
+command = { type = removeclaim which = 1025 }
+command = { type = removecore which = 1024 }
+command = { type = removeclaim which = 1026 }
+command = { type = removecore which = 1023 }
+command = { type = removeclaim which = 1004 }
+command = { type = removeclaim which = 1005 }
+command = { type = removeclaim which = 1006 }
+command = { type = removecore which = 1028 }
+command = { type = removecore which = 1037 }
+command = { type = removecore which = 1035 }
+command = { type = removecore which = 1036 }
+command = { type = removecore which = 1015 }
+command = { type = removecore which = 1029 }
+command = { type = removecore which = 1027 }
+command = { type = removecore which = 1034 }
+command = { type = removecore which = 1033 }
+command = { type = end_mastery which = ALB }
+command = { type = end_mastery which = LBY }
+command = { type = end_mastery which = ARM }
+command = { type = end_mastery which = OMN }
+command = { type = end_mastery which = U02 }
+command = { type = peace which = CYP value = 1 }
+command = { type = peace which = ARM value = 1 }
+command = { type = peace which = LBY value = 1 }
+command = { type = peace which = OMN value = 1 }
+command = { type = peace which = GRE value = 1 }
+command = { type = peace which = BUL value = 1 }
+command = { type = peace which = ROM value = 1 }
+command = { type = peace which = URU value = 1 }
+command = { type = peace which = YUG value = 1 }
+command = { type = peace which = SER value = 1 }
+command = { type = peace which = MTN value = 1 }
+command = { type = peace which = GEO value = 1 }
+command = { type = peace which = KUR value = 1 }
+command = { trigger = { exists = CYP NOT = { puppet = { country = CYP country = TUR  } } } type = secedeprovince which = CYP value = 387 }
+command = { trigger = { exists = CYP NOT = { puppet = { country = CYP country = TUR  } } } type = secedeprovince which = CYP value = 388 }
+command = { trigger = { exists = ARM NOT = { puppet = { country = ARM country = TUR  } } } type = secedeprovince which = ARM value = 386 }
+command = { type = clrflag which = PER_VIC }
+command = { type = clrflag which = SAU_VIC }
+command = { type = trigger which = 377146 }
+command = { type = dissent value = 2 }
+}
+
+}
+
+event = {
+id = 377182
+country = TUR
+style = 2
+
+
+name = "EVT_377182_NAME"
+desc = "EVT_377182_DESC"
+picture = "Peace_conference"
+
+action_a = {
+name =  "EVT_377182_OPTIONA"
+command = { type = dissent value = 1 }
+}
+}
+
+
+
+####################
+#Cores on Arab lands
+####################
+event = {
+	id = 377203
+	country = OTT
+	style = 2
+
+	trigger = {
+        control = { province = 1032 data = OTT } 
+	owned = { province = 1032 data = OTT } #Basrah
+        control = { province = 409 data = OTT } 
+	owned = { province = 409 data = OTT } #Istanbul
+        control = { province = 1075 data = OTT } 
+	owned = { province = 1075 data = OTT } #Ankara
+        control = { province = 1034 data = OTT } 
+	owned = { province = 1034 data = OTT } #Baghdad
+        control = { province = 1016 data = OTT } 
+	owned = { province = 1016 data = OTT } #Damascus
+        control = { province = 1172 data = OTT } 
+	owned = { province = 1172 data = OTT } #Jerusalem
+        NOT = {
+        lost_national = { country = OTT value = 5 }
+        ispuppet = OTT
+        government = communist
+        exists = ARA
+        war = { country = OTT country = EGY } 
+        war = { country = OTT country = ARA } 
+        war = { country = OTT country = SAU } 
+        }
+	}
+
+	name = "EVT_377203_NAME"
+	desc = "EVT_377203_DESC"
+	picture = "ottoman_troops"
+
+	date = { day = 1 month = january year = 1945 }
+	offset = 100  
+	deathdate = { day = 29 month = december year = 1964 }
+
+	action_a = {
+		name = "EVT_377203_OPTIONA"
+		command = { type = dissent value = 3 }
+		command = { type = addcore which = 1032 }
+		command = { type = addcore which = 1030 }
+		command = { type = addcore which = 1031 }
+		command = { type = addcore which = 1041 }
+	}
+}
+
+event = {
+	id = 377263
+	country = OTT
+	style = 2
+	save_date = yes
+
+	trigger = {
+	event = { id = 377203 days = 150 }
+        control = { province = 1032 data = OTT } 
+	owned = { province = 1032 data = OTT } #Basrah
+        control = { province = 409 data = OTT } 
+	owned = { province = 409 data = OTT } #Istanbul
+        control = { province = 1075 data = OTT } 
+	owned = { province = 1075 data = OTT } #Ankara
+        control = { province = 1034 data = OTT } 
+	owned = { province = 1034 data = OTT } #Baghdad
+        control = { province = 1016 data = OTT } 
+	owned = { province = 1016 data = OTT } #Damascus
+        control = { province = 1172 data = OTT } 
+	owned = { province = 1172 data = OTT } #Jerusalem
+        control = { province = 1022 data = OTT } 
+        owned = { province = 1022 data = OTT } #Amman
+        NOT = {
+        lost_national = { country = OTT value = 5 }
+        ispuppet = OTT
+        government = communist
+        exists = ARA
+        war = { country = OTT country = EGY } 
+        war = { country = OTT country = ARA } 
+        war = { country = OTT country = SAU } 
+        }
+	}
+
+	name = "EVT_377263_NAME"
+	desc = "EVT_377263_DESC"
+	picture = "ottoman_troops"
+
+	date = { day = 1 month = january year = 1945 }
+	offset = 100  
+	deathdate = { day = 29 month = december year = 1964 }
+
+	action_a = {
+		name = "EVT_377263_OPTIONA"
+		command = { type = dissent value = 3 }
+		command = { type = addcore which = 1022 }
+		command = { type = addcore which = 1026 }
+		command = { type = addcore which = 1025 }
+	}
+}
+
+event = {
+	id = 377264
+	country = OTT
+	style = 2
+	save_date = yes
+
+	trigger = {
+	event = { id = 377263 days = 150 }
+        control = { province = 1032 data = OTT } 
+	owned = { province = 1032 data = OTT } #Basrah
+        control = { province = 409 data = OTT } 
+	owned = { province = 409 data = OTT } #Istanbul
+        control = { province = 1075 data = OTT } 
+	owned = { province = 1075 data = OTT } #Ankara
+        control = { province = 1034 data = OTT } 
+	owned = { province = 1034 data = OTT } #Baghdad
+        control = { province = 1016 data = OTT } 
+	owned = { province = 1016 data = OTT } #Damascus
+        control = { province = 1172 data = OTT } 
+	owned = { province = 1172 data = OTT } #Jerusalem
+        control = { province = 1022 data = OTT } 
+        owned = { province = 1022 data = OTT } #Amman
+        control = { province = 1049 data = OTT } 
+	owned = { province = 1049 data = OTT } #Mecca
+        NOT = {
+        lost_national = { country = OTT value = 5 }
+        ispuppet = OTT
+        government = communist
+        exists = ARA
+        war = { country = OTT country = EGY } 
+        war = { country = OTT country = ARA } 
+        war = { country = OTT country = SAU } 
+        }
+	}
+
+	name = "EVT_377264_NAME"
+	desc = "EVT_377264_DESC"
+	picture = "ottoman_troops"
+
+	date = { day = 1 month = january year = 1945 }
+	offset = 100  
+	deathdate = { day = 29 month = december year = 1964 }
+
+	action_a = {
+		name = "EVT_377264_OPTIONA"
+		command = { type = dissent value = 3 }
+		command = { type = addcore which = 1049 }
+		command = { type = addcore which = 1048 }
+		command = { type = addcore which = 1044 }
+		command = { type = addcore which = 1046 }
+	}
+}
+
+event = {
+	id = 377299
+	random = no
+	country = OTT
+
+	trigger = {
+	event = { id = 377264 days = 150 }
+        control = { province = 1032 data = OTT } 
+	owned = { province = 1032 data = OTT } #Basrah
+        control = { province = 409 data = OTT } 
+	owned = { province = 409 data = OTT } #Istanbul
+        control = { province = 1075 data = OTT } 
+	owned = { province = 1075 data = OTT } #Ankara
+        control = { province = 1034 data = OTT } 
+	owned = { province = 1034 data = OTT } #Baghdad
+        control = { province = 1016 data = OTT } 
+	owned = { province = 1016 data = OTT } #Damascus
+        control = { province = 1172 data = OTT } 
+	owned = { province = 1172 data = OTT } #Jerusalem
+        control = { province = 1022 data = OTT } 
+        owned = { province = 1022 data = OTT } #Amman
+        control = { province = 1049 data = OTT } 
+	owned = { province = 1049 data = OTT } #Mecca
+        control = { province = 1045 data = OTT } 
+	owned = { province = 1045 data = OTT } #Riyhad
+        NOT = {
+        lost_national = { country = OTT value = 5 }
+        ispuppet = OTT
+        government = communist
+        exists = ARA
+        exists = SAU
+        war = { country = OTT country = EGY } 
+        war = { country = OTT country = ARA } 
+        }
+	}
+	
+	name = "EVT_377299_NAME"
+	desc = "EVT_377299_DESC"
+	picture = "ottoman_troops"
+
+	date = { day = 1 month = january year = 1945 }
+	offset = 100  
+	deathdate = { day = 29 month = december year = 1964 }
+
+	action = {
+		name = "EVT_377299_OPTIONA"
+		command = { type = dissent value = 5 }
+		command = { type = addcore which = 1045 }
+		command = { type = addcore which = 1040 } 
+		command = { type = addcore which = 1047 } 
+		command = { type = addcore which = 1038 } 
+		command = { type = addcore which = 1039 } 
+	}
+}
+
+event = {
+	id = 377265
+	country = OTT
+	style = 2
+	save_date = yes
+
+	trigger = {
+	event = { id = 377263 days = 250 }
+        control = { province = 1032 data = OTT } 
+	owned = { province = 1032 data = OTT } #Basrah
+        control = { province = 409 data = OTT } 
+	owned = { province = 409 data = OTT } #Istanbul
+        control = { province = 1075 data = OTT } 
+	owned = { province = 1075 data = OTT } #Ankara
+        control = { province = 1034 data = OTT } 
+	owned = { province = 1034 data = OTT } #Baghdad
+        control = { province = 1016 data = OTT } 
+	owned = { province = 1016 data = OTT } #Damascus
+        control = { province = 1172 data = OTT } 
+	owned = { province = 1172 data = OTT } #Jerusalem
+        control = { province = 1022 data = OTT } 
+        owned = { province = 1022 data = OTT } #Amman
+        control = { province = 1004 data = OTT } 
+	owned = { province = 1004 data = OTT } #El Arish
+        NOT = {
+        lost_national = { country = OTT value = 5 }
+        ispuppet = OTT
+        government = communist
+        exists = ARA
+        war = { country = OTT country = EGY } 
+        war = { country = OTT country = ARA } 
+        war = { country = OTT country = SAU } 
+        }
+	}
+
+	name = "EVT_377265_NAME"
+	desc = "EVT_377265_DESC"
+	picture = "ottoman_troops"
+
+	date = { day = 1 month = january year = 1945 }
+	offset = 100  
+	deathdate = { day = 29 month = december year = 1964 }
+
+	action_a = {
+		name = "EVT_377265_OPTIONA"
+		command = { type = dissent value = 3 }
+		command = { type = addcore which = 1006 }
+		command = { type = addcore which = 1004 }
+		command = { type = addcore which = 1005 }
+	}
+}
+
+event = {
+	id = 377266
+	country = OTT
+	style = 2
+
+	trigger = {
+        event = { id = 377265 days = 250 }
+        control = { province = 1032 data = OTT } 
+	owned = { province = 1032 data = OTT } #Basrah
+        control = { province = 409 data = OTT } 
+	owned = { province = 409 data = OTT } #Istanbul
+        control = { province = 1075 data = OTT } 
+	owned = { province = 1075 data = OTT } #Ankara
+        control = { province = 1034 data = OTT } 
+	owned = { province = 1034 data = OTT } #Baghdad
+        control = { province = 1016 data = OTT } 
+	owned = { province = 1016 data = OTT } #Damascus
+        control = { province = 1172 data = OTT } 
+	owned = { province = 1172 data = OTT } #Jerusalem
+        control = { province = 1022 data = OTT } 
+        owned = { province = 1022 data = OTT } #Amman
+        control = { province = 1004 data = OTT } 
+	owned = { province = 1004 data = OTT } #El Arish
+        control = { province = 900 data = OTT } 
+	owned = { province = 900 data = OTT } #Suez
+	}
+
+	name = "EVT_377266_NAME"
+	desc = "EVT_377266_DESC"
+	picture = "ottoman_troops"
+
+	date = { day = 1 month = january year = 1945 }
+	offset = 100  
+	deathdate = { day = 29 month = december year = 1964 }
+
+	action_a = {
+		name = "EVT_377266_OPTIONA"
+		command = { type = dissent value = 3 }
+		command = { type = addcore which = 1007 }
+		command = { type = addcore which = 900 }
+                command = { type = addcore which = 791 }
+	}
+}
+
+
+
+#########################################################################
+# Death of Yahya al Hamid
+#########################################################################
+event = {
+id = 377235
+random = no
+country = YEM
+style = 2
+
+trigger = {
+	headofstate = 93001
+	NOT = {
+		event = 377236 #Yahya al Hamid NOT HoS
+	}
+}
+
+
+    date = { day = 17 month = february year = 1948 }
+    offset = 1
+    deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_377235_NAME" #(Yahya al Hamid HoS)
+desc = "EVT_377235_DESC"
+picture = "minister_died"
+
+action_a = {
+	name = "EVT_377235_OPTIONA"
+	command = { type = headofstate which = 93002 } #Ahmad bin Yahya 
+		command = { type = headofgovernment which = 93005 }
+		command = { type = sleepminister which = 93001 }
+		command = { type = sleepminister which = 93004 }
+		command = { type = sleepminister which = 93007 }
+		command = { type = sleepminister which = 93013 }
+		command = { type = sleepminister which = 93024 }
+		command = { type = sleepminister which = 93030 }
+		command = { type = sleepminister which = 93035 }
+		command = { type = sleepminister which = 93042 }
+		command = { type = sleepleader which = 320000 }  
+                command = { type = sleepevent which = 377236 }
+	}
+}
+
+
+event = {
+id = 377236
+random = no
+country = YEM
+style = 2
+
+trigger = {
+	NOT = {
+		headofstate = 93001
+		event = 377235 #Yahya al Hamid  HoS
+	}
+}
+
+name = "EVT_377236_NAME" #Yahya al Hamid NOT HoS
+desc = "EVT_377236_DESC"
+picture = "minister_died"
+
+    date = { day = 17 month = february year = 1948 }
+    offset = 1
+    deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+	name = "EVT_377236_OPTIONA"
+		command = { type = sleepminister which = 93001 }
+		command = { type = sleepminister which = 93004 }
+		command = { type = sleepminister which = 93007 }
+		command = { type = sleepminister which = 93013 }
+		command = { type = sleepminister which = 93024 }
+		command = { type = sleepminister which = 93030 }
+		command = { type = sleepminister which = 93035 }
+		command = { type = sleepminister which = 93042 }
+		command = { type = sleepleader which = 320000 } 
+                command = { type = sleepevent which = 377235 } 
+	}
+}

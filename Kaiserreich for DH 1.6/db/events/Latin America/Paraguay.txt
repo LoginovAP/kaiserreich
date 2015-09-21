@@ -1,0 +1,248 @@
+#########
+#Paraguay
+#########
+event = {
+	id = 557500
+	country = PAR
+	picture = "gold"
+	style = 2
+
+	trigger = { 
+        NOT = {
+        ispuppet = PAR
+        }
+        }
+
+	name = "EVT_557500_NAME"
+	desc = "EVT_557500_DESC"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 100
+	deathdate = { day = 20 month = february year = 1966 }
+
+	action_a = {
+		ai_chance = 50
+		name = "EVT_557500_OPTIONA"
+		command = { type = domestic which = freedom value = -1 }
+		command = { type = dissent value = -1 }
+		command = { type = industrial_modifier which = supplies value = -1 }
+		command = { type = manpowerpool value = -10 }
+		command = { type = relation which = ARG value = -25 }
+		command = { type = trigger which = 557501 }
+	}
+	action_b = {
+		ai_chance = 50
+		name = "EVT_557500_OPTIONB"
+		command = { type = dissent value = 1 }
+		command = { type = domestic which = freedom value = 1 }
+		command = { type = industrial_modifier which = supplies value = 1 }
+		command = { type = relation which = ARG value = 15 }
+	}
+}
+
+event = {
+	id = 557501
+	country = ARG
+	picture = "economic"
+	style = 2
+
+	name = "EVT_557501_NAME"
+	desc = "EVT_557501_DESC"
+
+	action_a = {
+		name = "EVT_557501_OPTIONA"
+		command = { type = manpowerpool value = 10 }
+                command = { type = dissent value = 2 }
+	}
+}
+
+
+event = { 
+	id = 258002
+	random = no
+	country = PAR
+
+	trigger = {
+		OR = {
+		government = democratic
+                ideology = paternal_autocrat
+		}
+		}
+
+	date = { day = 1 month = january year = 1945 }
+	offset = 15
+	deathdate = { day = 29 month = december year = 1945 }
+
+	name = "EVT_258002_NAME"
+	desc = "EVT_258002_DESC"
+        style = 2
+
+	action_a = {
+	ai_chance = 45
+		name = "EVT_258002_OPTIONA"
+		command = { type = set_domestic which = democratic value = 4 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = headofstate which = 42125 } # Frutos
+		command = { type = headofgovernment which = 42135 } # Frutos
+		command = { type = dissent value = -1 }
+	}
+	action_b = {
+	ai_chance = 35
+		name = "EVT_258002_OPTIONB"
+		command = { type = set_domestic which = democratic value = 6 }
+		command = { type = set_domestic which = political_left value = 5 }
+		command = { type = headofstate which = 42136 } #Guggiari
+		command = { type = headofgovernment which = 42137 } #Guggiari
+		command = { type = dissent value = -1 }
+	}
+	action_c = {
+	ai_chance = 20
+		name = "EVT_258002_OPTIONC"
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 7 }
+		command = { type = headofstate which = 42061 } #Rafael Franco
+		command = { type = headofgovernment which = 42138 } #Rafael Franco
+		command = { type = dissent value = 2 }
+	}
+}
+
+event = { 
+	id = 258003
+	random = no
+	country = PAR
+
+	trigger = { 
+                OR = {
+		government = democratic
+                ideology = paternal_autocrat
+		}
+		}
+
+	date = { day = 1 month = january year = 1950 }
+	offset = 15
+	deathdate = { day = 29 month = december year = 1950 }
+
+	name = "EVT_258003_NAME"
+	desc = "EVT_258003_DESC"
+        style = 2
+
+	action_a = {
+	ai_chance = 40
+		name = "EVT_258003_OPTIONA"
+		command = { type = set_domestic which = democratic value = 4 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = headofstate which = 42126 } # Gonzales
+		command = { type = headofgovernment which = 42139 } # Gonzales
+		command = { type = dissent value = -1 }
+	}
+	action_b = {
+	ai_chance = 40
+		name = "EVT_258003_OPTIONB"
+		command = { type = set_domestic which = democratic value = 6 }
+		command = { type = set_domestic which = political_left value = 5 }
+		command = { type = headofstate which = 42140 } #Riart
+		command = { type = headofgovernment which = 42141 } #Riart
+		command = { type = dissent value = -1 }
+	}
+	action_c = {
+	ai_chance = 20
+		name = "EVT_258003_OPTIONC"
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 7 }
+		command = { type = headofstate which = 42061 } #Stefanich
+		command = { type = headofgovernment which = 42138 } #Stefanich
+		command = { type = dissent value = 1 }
+	}
+}
+
+event = { 
+	id = 258004
+	random = no
+	country = PAR
+
+	trigger = { 
+                OR = {
+		government = democratic
+                ideology = paternal_autocrat
+		}
+		}
+
+	date = { day = 1 month = january year = 1955 }
+	offset = 15
+	deathdate = { day = 29 month = december year = 1955 }
+
+	name = "EVT_258004_NAME"
+	desc = "EVT_258004_DESC"
+        style = 2
+
+	action_a = {
+	ai_chance = 30
+		name = "EVT_258004_OPTIONA"
+		command = { type = set_domestic which = democratic value = 4 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = headofstate which = 42128 } # Lopez
+		command = { type = headofgovernment which = 42134 } # Lopez
+	}
+	action_b = {
+	ai_chance = 45
+		name = "EVT_258004_OPTIONB"
+		command = { type = set_domestic which = democratic value = 6 }
+		command = { type = set_domestic which = political_left value = 5 }
+		command = { type = headofstate which = 42062 } #Paiva
+		command = { type = headofgovernment which = 42066 } #Paiva
+	}
+	action_c = {
+	ai_chance = 25
+		name = "EVT_258004_OPTIONC"
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 7 }
+		command = { type = headofstate which = 42135 } #Peralta
+		command = { type = headofgovernment which = 42136 } #Peralta
+	}
+}
+
+event = { 
+	id = 258005
+	random = no
+	country = PAR
+
+	trigger = { 
+                OR = {
+		government = democratic
+                ideology = paternal_autocrat
+		}
+		}
+
+	date = { day = 1 month = january year = 1960 }
+	offset = 15
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "EVT_258005_NAME"
+	desc = "EVT_258005_DESC"
+        style = 2
+
+	action_a = {
+	ai_chance = 20
+		name = "EVT_258005_OPTIONA"
+		command = { type = set_domestic which = democratic value = 4 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = headofstate which = 42137 } # Pereira
+		command = { type = headofgovernment which = 42138 } # Pereira
+	}
+	action_b = {
+	ai_chance = 50
+		name = "EVT_258005_OPTIONB"
+		command = { type = set_domestic which = democratic value = 6 }
+		command = { type = set_domestic which = political_left value = 5 }
+		command = { type = headofstate which = 42139 } #Pastore
+		command = { type = headofgovernment which = 42140 } #Pastore
+	}
+	action_c = {
+	ai_chance = 30
+		name = "EVT_258005_OPTIONC"
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 7 }
+		command = { type = headofstate which = 42141 } #Valdovinos
+		command = { type = headofgovernment which = 42142 } #Valdovinos
+	}
+}

@@ -1,0 +1,926 @@
+###############################
+# 90431-44  - Nantong - Events by Sarmy #
+#edits and new events by thegreatplant
+###############################
+
+event = {
+id = 90431
+country = CGX
+picture = "Burning"
+style = 2
+
+name = "EVT_90431_NAME"
+desc = "EVT_90431_DESC"
+
+date = { day = 11 month = february year = 1936 }
+
+action_a = {
+name = "EVT_90431_OPTIONA"
+	command = { type = dissent value = 3 }
+	}
+}
+
+event = {
+id = 90432
+country = CGX
+picture = "urbanwarfare3"
+style = 2
+
+name = "EVT_90432_NAME"
+desc = "EVT_90432_DESC"
+
+date = { day = 5 month = march year = 1936 }
+
+action_a = {
+ai_chance = 25
+name = "EVT_90432_OPTIONA"
+	command = { }
+	}
+
+action_b = {
+ai_chance = 25
+name = "EVT_90432_OPTIONB"
+	command = { type = capital which = 1369 }
+	}
+
+action_c = {
+ai_chance = 25
+name = "EVT_90432_OPTIONC"
+	command = { type = capital which = 1308 }
+	}
+
+action_d = {
+ai_chance = 25
+name = "EVT_90432_OPTIOND"
+	command = { type = capital which = 1352 }
+	}
+}
+
+event = {
+id = 90434
+random = no
+country = CSX
+picture = "economic"
+style = 2
+
+name = "EVT_90434_NAME"
+desc = "EVT_90434_DESC"
+
+action_a = {
+ai_chance = 70
+name = "EVT_90434_OPTIONA"
+	command = { type = construct which = ic where = -1 value = -1 } 
+	command = { type = construct which = ic where = -1 value = -1 } 
+	command = { type = construct which = ic where = -1 value = -1 } 
+	command = { type = construct which = ic where = -1 value = -1 }
+	command = { type = construct which = ic where = -1 value = -1 } 
+	command = { type = construct which = ic where = -1 value = -1 } 
+	command = { type = construct which = ic where = -1 value = -1 } 
+	command = { type = construct which = ic where = -1 value = -1 }
+	command = { type = construct which = ic where = -1 value = -1 } 
+	command = { type = construct which = ic where = -1 value = -1 }
+	command = { type = setflag which = CSX_FREE }
+	command = { type = relation which = CGX value = -100 }
+	command = { type = dissent value = 5 }
+	}
+
+action_b = {
+name = "EVT_90434_OPTIONB"
+ai_chance = 30
+	command = { type = money value = -500 }
+	command = { type = setflag which = CSX_FREE }
+	command = { type = dissent value = 5 }
+}
+}
+
+event = {
+id = 890700
+random = no
+country = CGX
+picture = "economic"
+style = 2
+
+
+name = "EVT_890700_NAME"
+desc = "EVT_890700_DESC"
+
+action_a = {
+name = "EVT_890700_OPTIONA" #People begin to worry about their job security, 1/3rd of China becomes unemployed overnight
+ai_chance = 20
+	command = { type = construct which = ic where = -1 value = -1 }
+	command = { type = construct which = ic where = -1 value = -1 }
+	command = { type = construct which = ic where = -1 value = -1 }
+	command = { type = setflag which = CGX_IronRiceBowl }
+	command = { type = relation which = GER value = 5 }
+	command = { type = money value = 100 }
+	command = { type = dissent value = 15 }
+	}
+
+action_b = {
+name = "EVT_890700_OPTIONB" #The first step to becoming Chinatized.
+ai_chance = 30
+	command = { type = relation which = GER value = -5 }
+	command = { type = setflag which = CGX_Reform }
+	command = { type = dissent value = -10 }
+	}
+
+action_c = {
+name = "EVT_890700_OPTIONC" #Leads to resentment with the Qing, who if reformed will take an eye for an eye
+ai_chance = 40
+	command = { type = setflag which = CGX_CSX_Downsize }
+	command = { type = money value = -100 }
+	command = { type = dissent value = 3 }
+	}
+
+action_d = {
+name = "EVT_890700_OPTIOND"
+ai_chance = 30
+	command = { type = setflag which = CGX_Nothing }
+	command = { type = dissent value = 20 }
+	}
+}
+
+event = {
+id = 890701
+random = no
+country = CSX
+picture = "economic"
+style = 2
+
+trigger = { flag = CGX_CSX_Downsize }
+
+date = { day = 1 month = january year = 1936 }
+offset =  10
+deathdate = { day = 29 month = december year = 1940 }
+
+name = "EVT_890701_NAME"
+desc = "EVT_890701_DESC"
+
+action_a = {
+name = "EVT_890701_OPTIONA"
+ai_chance = 70
+	command = { type = construct which = ic where = -1 value = -1 } 
+	command = { type = construct which = ic where = -1 value = -1 } 
+	command = { type = construct which = ic where = -1 value = -1 } 
+	command = { type = construct which = ic where = -1 value = -1 }
+	command = { type = construct which = ic where = -1 value = -1 } 
+	command = { type = relation which = CGX value = -100 }
+	command = { type = relation which = GER value = -25 }
+	command = { type = dissent value = 5 }
+        command = { type = clrflag which = CGX_CSX_Downsize }
+	}
+
+action_b = {
+name = "EVT_890701_OPTIONB"
+ai_chance = 30
+	command = { type = money value = -300 }
+	command = { type = dissent value = 5 }
+        command = { type = clrflag which = CGX_CSX_Downsize }
+}
+}
+
+event = {
+id = 890702
+random = no
+country = CGX
+picture = "Chinese Workforce"
+style = 2
+
+trigger = { 
+	NOT = { 
+	atwar = CGX
+        }
+	flag = CGX_IronRiceBowl
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  10
+deathdate = { day = 29 month = december year = 1940 }
+
+name = "EVT_890702_NAME"
+desc = "EVT_890702_DESC"
+
+action_a = {
+name = "EVT_890702_OPTIONA"
+ai_chance = 10
+	command = { type = clrflag which = CGX_IronRiceBowl }
+	command = { type = money value = -500 }
+	command = { type = dissent value = -5 }
+	}
+
+action_b = {
+ai_chance = 90
+name = "EVT_890702_OPTIONB"
+	command = { type = money value = 250 }
+	command = { type = dissent value = 10 }
+	command = { type = setflag which = CGX_IronRiceBowl2 }
+	}
+}
+
+event = {
+id = 890703
+random = no
+country = CGX
+picture = "Guerillas"
+style = 2
+
+trigger = { 
+	NOT = { 
+	atwar = CGX
+        }
+	flag = CGX_IronRiceBowl
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  10
+deathdate = { day = 29 month = december year = 1940 }
+
+name = "EVT_890703_NAME"
+desc = "EVT_890703_DESC"
+
+action_a = {
+name = "EVT_890703_OPTIONA"
+ai_chance = 10
+	command = { type = dissent value = 4 }
+        command = { type = industrial_modifier which = total value = -4 }
+	}
+
+action_b = {
+ai_chance = 90
+name = "EVT_890703_OPTIONB"
+	command = { type = dissent value = 7 }
+	}
+}
+
+
+
+#890705 in Republican China
+
+event = {
+id = 627096
+random = no
+country = CGX
+picture = "economic"
+style = 2
+
+trigger = { 
+	NOT = { 
+	atwar = CGX
+        }
+	flag = CGX_Reform
+}
+
+date = { day = 1 month = november year = 1936 }
+offset =  10
+deathdate = { day = 29 month = december year = 1940 }
+
+name = "EVT_627096_NAME"
+desc = "EVT_627096_DESC"
+
+action_a = {
+ai_chance = 20
+name = "EVT_627096_OPTIONA"
+	command = { type = setflag which = CGX_Reform_Continue }
+	command = { type = money value = -250 }	
+	command = { type = dissent value = -10 }
+	}
+
+action_b = {
+ai_chance = 60
+name = "EVT_627096_OPTIONB"
+	command = { type = clrflag which = CGX_Reform }
+	command = { type = money value = 250 }
+	command = { type = dissent value = 5 }
+	}
+
+action_c = {
+ai_chance = 20
+name = "EVT_627096_OPTIONC"
+	command = { type = setflag which = CGX_CSX_Downsize }
+	command = { type = money value = -100 }
+	command = { type = dissent value = 20 }
+	}
+}
+
+event = {
+id = 627094
+country = CGX
+picture = "China_Rally"
+style = 2
+
+trigger = { 
+	NOT = { 
+	atwar = CGX
+        }
+	flag = CGX_Reform_Continue
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  10
+deathdate = { day = 29 month = december year = 1940 }
+
+name = "EVT_627094_NAME"
+desc = "EVT_627094_DESC"
+
+action_a = {
+ai_chance = 75
+name = "EVT_627094_OPTIONA"
+command = { type = clrflag which = CGX_Reform_Continue }
+command = { type = headofgovernment which = 502022 }
+command = { type = foreignminister which = 502023 }
+command = { type = chiefofstaff which = 502024 }
+command = { type = chiefofarmy which = 502025 }
+command = { type = chiefofnavy which = 502026 }
+command = { type = chiefofair which = 502027 }
+command = { type = ministerofsecurity which = 502028 }
+command = { type = ministerofintelligence which = 502029 }
+command = { type = armamentminister which = 502030 }
+command = { type = dissent value = -5 }
+command = { type = relation which = GER value = -25 }
+command = { type = end_puppet }
+command = { type = trigger which = 627098 }
+}
+
+action_b = {
+ai_chance = 10
+name = "EVT_627094_OPTIONB"
+command = { type = clrflag which = CGX_Reform_Continue }
+command = { type = trigger which = 627097 }
+command = { type = sleepevent which = 6552504 }
+command = { type = sleepevent which = 6552506 }
+command = { type = sleepevent which = 890705 }
+command = { type = dissent value = -5 }
+}
+
+action_c = {
+ai_chance = 20
+name = "EVT_627094_OPTIONC"
+command = { type = clrflag which = CGX_Reform_Continue }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = switch_allegiance which = -1 where = CSX }
+command = { type = trigger which = 627095 }
+}
+}
+
+event = {
+id = 627095
+country = CSX
+picture = "China_Rally"
+style = 2
+
+name = "EVT_627095_NAME"
+desc = "EVT_627095_DESC"
+
+action_a = {
+name = "EVT_627095_OPTIONA"
+			
+	command = { type = addcore which = 1378 }
+	command = { type = addcore which = 1360 }
+	command = { type = addcore which = 1301 }
+	command = { type = addcore which = 1304 }
+	command = { type = addcore which = 1305 }
+	command = { type = addcore which = 1306 }
+	command = { type = addcore which = 1307 }
+	command = { type = addcore which = 1308 }
+	command = { type = addcore which = 1309 }
+	command = { type = addcore which = 1310 }
+	command = { type = addcore which = 1311 }
+	command = { type = addcore which = 1312 }
+	command = { type = addcore which = 1313 }
+	command = { type = addcore which = 1314 }
+	command = { type = addcore which = 1315 }
+	command = { type = addcore which = 1318 }
+	command = { type = addcore which = 1347 }
+	command = { type = addcore which = 1348 }
+	command = { type = addcore which = 1349 }
+	command = { type = addcore which = 1350 }
+	command = { type = addcore which = 1351 }
+	command = { type = addcore which = 1352 }
+	command = { type = addcore which = 1353 }
+	command = { type = addcore which = 1354 }
+	command = { type = addcore which = 1355 }
+	command = { type = addcore which = 1356 }
+	command = { type = addcore which = 1357 }
+	command = { type = addcore which = 1359 }
+	command = { type = addcore which = 1368 }
+	command = { type = addcore which = 1369 }
+	command = { type = addcore which = 1370 }
+	command = { type = addcore which = 1373 }
+	command = { type = addcore which = 1374 }
+	command = { type = addcore which = 1375 }
+	command = { type = addcore which = 1376 }
+        command = { type = addcore which = 1377 }
+	command = { type = addcore which = 1379 }
+	command = { type = addcore which = 1380 }
+	command = { type = addcore which = 1381 }
+	command = { type = addcore which = 1382 }
+        command = { type = addcore which = 1382 }
+	command = { type = dissent value = -10 }
+	command = { type = inherit which = CGX }
+	command = { type = sleepevent which = 63081 }
+	}
+}
+
+event = {
+id = 627097
+country = CGX
+picture = "China_Rally"
+style = 2
+
+name = "EVT_627097_NAME"
+desc = "EVT_627097_DESC"
+
+action_a = {
+name = "EVT_627097_OPTIONA"
+command = { type = dissent value = -1 }
+command = { type = end_access which = GER }
+command = { type = leave_alliance }
+command = { type = end_puppet }
+command = { type = country which = CHI }
+command = { type = ai which = "kaiserreich/Republican China.ai" }
+command = { type = set_domestic which = democratic value = 7 }
+command = { type = set_domestic which = political_left value = 4 } 
+}
+}
+
+event = {
+	id = 627098
+	random = no
+	country = GER
+
+	name = "EVT_627098_NAME"
+	desc = "EVT_627098_DESC"
+	picture = "Chinese Infantry2"
+	style = 2
+
+	action_a = {
+        ai_chance = 100
+		name = "EVT_627098_OPTIONA"
+		command = { type = relation which = CGX value = -50 }
+		command = { type = dissent value = 3 }
+	}
+        action_b = {
+        ai_chance = 0
+		name = "EVT_627098_OPTIONB"
+		command = { type = war which = CGX }
+		command = { type = dissent value = 5 }
+	}
+}
+
+event = {
+id = 627099
+country = CHI
+picture = "China_Rally"
+style = 2
+
+trigger = { 
+	event = 627097 }
+
+date = { day = 1 month = january year = 1936 }
+offset =  10
+deathdate = { day = 29 month = december year = 1944 }
+
+name = "EVT_627099_NAME"
+desc = "EVT_627099_DESC"
+
+action_a = {
+name = "EVT_627099_OPTIONA"
+command = { type = dissent value = -10 }
+command = { type = addcore which = 1378 }
+#AOG	
+        command = { type = addcore which = 1360 }
+	command = { type = addcore which = 1301 }
+	command = { type = addcore which = 1304 }
+	command = { type = addcore which = 1305 }
+	command = { type = addcore which = 1306 }
+	command = { type = addcore which = 1307 }
+	command = { type = addcore which = 1308 }
+	command = { type = addcore which = 1309 }
+	command = { type = addcore which = 1310 }
+	command = { type = addcore which = 1311 }
+	command = { type = addcore which = 1312 }
+	command = { type = addcore which = 1313 }
+	command = { type = addcore which = 1314 }
+	command = { type = addcore which = 1315 }
+	command = { type = addcore which = 1318 }
+	command = { type = addcore which = 1347 }
+	command = { type = addcore which = 1348 }
+	command = { type = addcore which = 1349 }
+	command = { type = addcore which = 1350 }
+	command = { type = addcore which = 1351 }
+	command = { type = addcore which = 1352 }
+	command = { type = addcore which = 1353 }
+	command = { type = addcore which = 1354 }
+	command = { type = addcore which = 1355 }
+	command = { type = addcore which = 1356 }
+	command = { type = addcore which = 1357 }
+	command = { type = addcore which = 1359 }
+	command = { type = addcore which = 1368 }
+	command = { type = addcore which = 1369 }
+	command = { type = addcore which = 1370 }
+	command = { type = addcore which = 1373 }
+	command = { type = addcore which = 1374 }
+	command = { type = addcore which = 1375 }
+	command = { type = addcore which = 1376 }
+        command = { type = addcore which = 1377 }
+	command = { type = addcore which = 1379 }
+	command = { type = addcore which = 1380 }
+	command = { type = addcore which = 1381 }
+	command = { type = addcore which = 1382 }
+        command = { type = addcore which = 1382 }
+
+#Yunnan
+	command = { type = addcore which = 1389 }
+	command = { type = addcore which = 1390 }
+	command = { type = addcore which = 1384 }
+	command = { type = addcore which = 1385 }
+	command = { type = addcore which = 1387 }
+	command = { type = addcore which = 1386 }
+	command = { type = addcore which = 1388 }
+	command = { type = addcore which = 1292 }
+	command = { type = addcore which = 1293 }
+	command = { type = addcore which = 1291 }
+	command = { type = addcore which = 1300 }
+	command = { type = addcore which = 1303 }
+	command = { type = addcore which = 1261 }
+	command = { type = addcore which = 1262 }
+	command = { type = addcore which = 1296 }
+	command = { type = addcore which = 1297 }
+	command = { type = addcore which = 1298 }
+	command = { type = addcore which = 1299 }
+	command = { type = addcore which = 1302 }
+        command = { type = addcore which = 1267 }
+
+#Legation Cities
+	command = { type = addcore which = 1338 }
+	command = { type = addcore which = 1358 }
+	command = { type = addcore which = 1371 }
+	command = { type = addcore which = 1346 }
+	command = { type = addcore which = 1372 }
+
+#German Possessions
+	command = { type = addcore which = 1241 }
+	command = { type = addcore which = 1245 }
+        command = { type = addcore which = 1328 }
+	command = { type = addcore which = 1331 }
+        command = { type = addcore which = 1365 }
+        command = { type = addcore which = 1367 }
+
+#Taiwan
+        command = { type = addcore which = 1361 }
+	command = { type = addcore which = 1362 }
+        command = { type = addcore which = 1363 }
+	command = { type = addcore which = 1364 }
+
+#Xibei San Ma
+   
+        command = { type = addcore which = 1268 }
+	command = { type = addcore which = 1270 }
+        command = { type = addcore which = 1264 }
+	command = { type = addcore which = 1272 } 
+        command = { type = addcore which = 1265 }
+	command = { type = addcore which = 1266 }
+        command = { type = addcore which = 1283 }
+	command = { type = addcore which = 1284 }
+        command = { type = addcore which = 1285 }
+        command = { type = addcore which = 1273 }
+	command = { type = addcore which = 1279 } 
+        command = { type = addcore which = 1280 }
+	command = { type = addcore which = 1281 }
+        command = { type = addcore which = 1277 }
+	command = { type = addcore which = 1274 }
+        command = { type = addcore which = 1275 } 
+        command = { type = addcore which = 1282 }
+        command = { type = addcore which = 1276 }          
+         
+
+	command = { type = headofstate which = 183500 }
+	command = { type = headofgovernment which = 183501 }
+	command = { type = foreignminister which = 183502 }
+	command = { type = ministerofsecurity which = 183503 }
+	command = { type = ministerofintelligence which = 183504 }
+	command = { type = armamentminister which = 183505 }
+	command = { type = chiefofstaff which = 183506 }
+	command = { type = chiefofarmy which = 183507 }
+	command = { type = chiefofnavy which = 183508 }
+	command = { type = chiefofair which = 183509 }
+
+	command = { type = set_relation which = CYN value = 149 }
+	command = { type = set_relation which = GER value = -149 }
+	command = { type = set_relation which = MAN value = -39 }
+	command = { type = set_relation which = BUR value = 19 }
+	command = { type = set_relation which = SIA value = -19 }
+	command = { type = set_relation which = JAP value = -19 }
+	command = { type = set_relation which = CSX value = -49 }
+
+	command = { type = manpowerpool value = 50 }
+	command = { type = supplies value = 250 }
+	command = { type = setflag which = CHI_free }
+}
+}
+
+event = {
+	id = 750200
+	random = no
+	country = CGX
+	style = 2
+
+	trigger = {
+                NOT = { atwar = CGX }
+                OR = {
+                AND = {
+                flag = GER_CON_Capitulation
+                puppet = { country = CGX country = GER  }
+                }
+                AND = {
+                flag = GER_Capitulation
+                puppet = { country = CGX country = GER  }
+                }
+                AND = {
+                NOT = { exists = GER }
+                NOT = { ispuppet = CGX }
+                }
+                }
+		}
+
+	name = "EVT_750200_NAME"
+	desc = "EVT_750200_DESC"
+        picture = "GerPOW"
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 5
+	deathdate = { day = 29 month = december year = 1964 }
+
+
+	action = {
+		ai_chance = 30
+		name = "EVT_750200_OPTIONA"
+                trigger = {
+                exists = CSX
+                control = { province = 1247 data = CSX }
+                }
+		command = { type = dissent value = 5 } 
+                command = { trigger = { puppet = { country = CGX country = GER  } } type = end_puppet }
+                command = { type = trigger which = 750201 }
+		}
+
+	action = {
+		ai_chance = 10
+		name = "EVT_750200_OPTIONB"
+                trigger = {
+                exists = JAP
+                control = { province = 1552 data = JAP }
+                NOT = {
+                ispuppet = JAP
+                flag = JAP_ISO
+                }
+                }
+		command = { type = dissent value = 5 }
+                command = { trigger = { puppet = { country = CGX country = GER  } } type = end_puppet } 
+                command = { type = trigger which = 750202 } 
+		}
+
+	action = {
+		ai_chance = 25
+		name = "EVT_750200_OPTIONC"
+                trigger = {
+                exists = RUS
+                control = { province = 572 data = RUS }
+                control = { province = 553 data = RUS }
+                control = { province = 1162 data = RUS }
+                control = { province = 1186 data = RUS }
+                NOT = {
+                exists = PRI
+                exists = SIB
+                exists = SOV
+                exists = TRA
+                ispuppet = RUS
+                flag = RUS_ISO
+                }
+                }
+                command = { type = dissent value = 5 } 
+                command = { trigger = { puppet = { country = CGX country = GER  } } type = end_puppet } 
+                command = { type = trigger which = 750203 } 		
+                }
+
+        action = {
+		ai_chance = 10
+		name = "EVT_750200_OPTIOND"
+                trigger = {
+                exists = USA
+                control = { province = 1887 data = USA }
+                control = { province = 1809 data = USA }
+                control = { province = 1832 data = USA }
+                control = { province = 1789 data = USA }
+                control = { province = 1955 data = USA }
+                control = { province = 1734 data = USA }
+                NOT = {
+                exists = CSA
+                exists = TEX
+                exists = U10
+                exists = CAL
+                exists = U15
+                ispuppet = USA
+                }
+                }
+                command = { type = dissent value = 5 } 
+                command = { trigger = { puppet = { country = CGX country = GER  } } type = end_puppet } 
+                command = { type = trigger which = 750204 } 		
+                }
+
+        action = {
+		ai_chance = 40
+		name = "EVT_750200_OPTIONE"
+                command = { type = dissent value = -10 } 
+                command = { type = end_puppet }
+                command = { trigger = { NOT = { exists = CHI } } type = country which = CHI } 
+                command = { trigger = { exists = CHI } type = trigger which = 6280031 }
+                command = { trigger = { puppet = { country = CGX country = GER  } } type = end_puppet }
+                command = { type = ai which = "kaiserreich/Republican China.ai" }
+                command = { type = set_domestic which = democratic value = 7 }
+	        command = { type = set_domestic which = political_left value = 4 } 		
+                }
+
+	action = {
+		ai_chance =  5
+		name = "EVT_750200_OPTIONF"
+                command = { type = dissent value = 25 } 
+                command = { trigger = { puppet = { country = CGX country = GER  } } type = end_puppet } 
+                }
+
+
+	        }
+
+
+event = {
+id = 750201
+country = CSX
+style = 2
+picture = "Chinese Big Swords"
+
+name = "EVT_750201_NAME"
+desc = "EVT_750201_DESC"
+
+action_a = {
+name = "EVT_750201_OPTIONA"
+	command = { type = addcore which = 1378 }
+	command = { type = addcore which = 1360 }
+	command = { type = addcore which = 1301 }
+	command = { type = addcore which = 1304 }
+	command = { type = addcore which = 1305 }
+	command = { type = addcore which = 1306 }
+	command = { type = addcore which = 1307 }
+	command = { type = addcore which = 1308 }
+	command = { type = addcore which = 1309 }
+	command = { type = addcore which = 1310 }
+	command = { type = addcore which = 1311 }
+	command = { type = addcore which = 1312 }
+	command = { type = addcore which = 1313 }
+	command = { type = addcore which = 1314 }
+	command = { type = addcore which = 1315 }
+	command = { type = addcore which = 1318 }
+	command = { type = addcore which = 1347 }
+	command = { type = addcore which = 1348 }
+	command = { type = addcore which = 1349 }
+	command = { type = addcore which = 1350 }
+	command = { type = addcore which = 1351 }
+	command = { type = addcore which = 1352 }
+	command = { type = addcore which = 1353 }
+	command = { type = addcore which = 1354 }
+	command = { type = addcore which = 1355 }
+	command = { type = addcore which = 1356 }
+	command = { type = addcore which = 1357 }
+	command = { type = addcore which = 1359 }
+	command = { type = addcore which = 1368 }
+	command = { type = addcore which = 1369 }
+	command = { type = addcore which = 1370 }
+	command = { type = addcore which = 1373 }
+	command = { type = addcore which = 1374 }
+	command = { type = addcore which = 1375 }
+	command = { type = addcore which = 1376 }
+        command = { type = addcore which = 1377 }
+	command = { type = addcore which = 1379 }
+	command = { type = addcore which = 1380 }
+	command = { type = addcore which = 1381 }
+	command = { type = addcore which = 1382 }
+        command = { type = addcore which = 1383 }
+
+	command = { type = dissent value = -10 }
+	command = { type = inherit which = CGX value = 1 }
+	command = { type = sleepevent which = 63081 }
+	command = { type = setflag which = AOG_annex }
+	}
+}
+
+
+event = {
+id = 750202
+country = JAP
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_750202_NAME"
+desc = "EVT_750202_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_750202_OPTIONA"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = dissent value = -10 }
+command = { type = make_puppet which = CGX }
+command = { type = relation which = CGX value = 50 }
+command = { type = relation which = CSX value = -10 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_750202_OPTIONB"
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = CGX value = -25 }
+command = { type = relation which = CSX value = 10 }
+}
+}
+
+event = {
+id = 750203
+country = RUS
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_750203_NAME"
+desc = "EVT_750203_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_750203_OPTIONA"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = dissent value = -10 }
+command = { type = make_puppet which = CGX }
+command = { type = relation which = CGX value = 50 }
+command = { type = relation which = CSX value = -10 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_750203_OPTIONB"
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = CGX value = -25 }
+command = { type = relation which = CSX value = 10 }
+}
+}
+
+event = {
+id = 750204
+country = USA
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_750204_NAME"
+desc = "EVT_750204_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_750204_OPTIONA"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = dissent value = -10 }
+command = { type = make_puppet which = CGX }
+command = { type = relation which = CGX value = 50 }
+command = { type = relation which = CSX value = -10 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_750204_OPTIONB"
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = CGX value = -25 }
+command = { type = relation which = CSX value = 10 }
+}
+}

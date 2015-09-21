@@ -1,0 +1,3624 @@
+
+
+################### POSTWAR USA
+### Reed and the CSA escape to France
+event = {
+id = 800320
+random = 2
+country = USA
+trigger = {
+ flag = END_ACW
+ not = {
+  headofstate = 6208
+ }
+ flag = ACW_CSA
+exists = FRA
+}
+name = "EVT_800320_NAME"
+desc = "EVT_800320_DESC"
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1954 }
+
+action_a = {
+ name = "EVT_800320_OPTIONA"
+ command = { type = relation which = FRA value = -25 }
+}
+}
+
+
+
+event = {
+id = 906501
+country = USA
+style = 2
+picture = "kaicharlescoughlin"
+
+#Triggered by 906500; db/events/kaiserreich/Papacy/Papacy
+
+name = "EVT_906501_NAME"
+desc = "EVT_906500_DESC"
+
+#Three years from today, Father Charles Coughlin started doing weekly radio broadcast on CBS and more than 50 million turn on their 
+#radios and listen. He is a raving Anti-Semite, claiming that the Syndicalist Revolution in France was 'foremented by the Jew' and that the 
+#Berlin Stock Market Crash is an 'International Conspiracy of Jewish Bankers' and somehow people still tune in. The Roman Catholic Church 
+#has begun to take notice, and have condemnded his actions, asking that we shut his hate speech down immediately. He is a founding member 
+#of the dangerous and radical American First party and he claims if the America First doesn't get 10 million votes in the upcoming election he'll 
+#hang up his mic. We may be able to speed us his depature from CBS Radio and force him off the air by refusing to renew his permit.
+
+action_a = {
+ai_chance = 50
+name = "EVT_906501_OPTIONA"
+	command = { type = relation which = ITA value = 20 }
+	command = { type = dissent value = 5 }
+	}
+action_b = {
+ai_chance = 50
+name = "EVT_906501_OPTIONB"
+	command = { type = relation which = ITA value = -15 }
+	command = { type = dissent value = 3 }
+	}
+}
+
+### New England rejoins the Union
+event = {
+id = 906502
+random = 2
+country = USA
+##triggered by 
+
+name = "EVT_906502_NAME"
+desc = "EVT_906502_DESC"
+style = 2
+
+action_a = {
+name = "EVT_906502_OPTIONA"
+command = { type = inherit which = U10 }
+command = { Type = dissent value = -5 }
+}
+}
+
+
+#############################################
+#Democracy after Civil War - MacArthur
+#############################################
+event = {
+id = 906508
+random = no
+country = USA
+style = 2
+picture = "macarthurdic"
+
+date = { day = 1 month = january year = 1937 }
+offset = 30
+deathdate = { day = 29 month = december year = 1947 }
+
+trigger = {
+	event = 908500
+	event = 908501
+	headofstate = 6208
+NOT = {
+	exists = TEX
+	exists = CSA	
+	}
+}
+name = "EVT_906508_NAME"
+desc = "EVT_906508_DESC"
+
+action_a = {
+ai_chance = 50
+name = "EVT_906508_OPTIONA"
+command = { type = headofstate which = 6242 }
+command = { type = set_domestic which = democratic value = 10 }
+command = { type = set_domestic which = political_left value = 6 }
+command = { type = set_domestic which = free_market value = 8 }
+command = { type = dissent value = 5 }
+command = { type = sleepevent which = 906531 }
+}
+
+action_b = { 
+ai_chance = 50
+name = "EVT_906508_OPTIONB"
+command = { type = dissent value = 10 }
+}
+}
+
+ event = {
+ id = 906531
+ random = no
+ country = USA
+ style = 2
+
+ trigger = {
+ event = 906508
+ government = fascist
+ headofstate = 6208 #fascist MacArthur
+ }
+
+ name = "EVT_906531_NAME"
+ desc = "EVT_755818_DESC"
+ picture = "macarthurdic"
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 30
+ deathdate = { day = 1 month = january year = 1960 }
+ 
+ action_a = {
+ ai_chance = 50
+ name = "EVT_906531_OPTIONA"
+ command = { type = dissent value = -5 }
+ command = { type = setflag which = USA_MIN_JUNTA }
+ command = { type = set_domestic which = democratic value = 5 }
+ command = { type = set_domestic which = political_left value = 5 }
+ }
+
+ action_b = {
+ ai_chance = 20
+ name = "EVT_906531_OPTIONB"
+ command = { type = dissent value = -10 }
+ command = { type = setflag which = USA_MAX_JUNTA }
+ command = { type = set_domestic which = democratic value = 4 }
+ command = { type = set_domestic which = political_left value = 3 }
+ }
+
+ action_c = {
+ ai_chance = 20
+ name = "EVT_906531_OPTIONC"
+ command = { type = dissent value = 5 }
+ command = { type = setflag which = USA_TOTALITARIAN }
+ command = { type = set_domestic which = democratic value = 2 }
+ command = { type = set_domestic which = political_left value = 0 }
+ }
+ }
+
+ event = {
+ id = 906532
+ random = no
+ country = USA
+ style = 2
+
+ trigger = {
+ government = fascist
+ headofstate = 6208 #fascist MacArthur
+ flag = USA_MIN_JUNTA
+ }
+
+ date = { day = 1 month = january year = 1940 }
+ offset = 30
+ deathdate = { day = 1 month = january year = 1960 }
+
+ name = "EVT_906532_NAME"
+ desc = "EVT_906532_DESC"
+ picture = "us1936elections"
+
+ action_a ={
+ ai_chance = 15
+ name = "EVT_906532_OPTIONA"
+ command = { type = headofstate which = 6236 } # Garner
+ command = { type = headofgovernment which = 6044 } # Henry Wallace
+ command = { type = setflag which = OPPOSITION_WINS }
+ command = { type = dissent value = -5 }
+ }
+
+ action_b = {
+ ai_chance = 15
+ name = "EVT_906532_OPTIONB"
+ command = { type = headofstate which = 6239 } # Knox
+ command = { type = headofgovernment which = 6241 } # Dewey
+ command = { type = setflag which = OPPOSITION_WINS }
+ command = { type = dissent value = -5 }
+ }
+
+ action_c = {
+ ai_chance = 70
+ name = "EVT_906532_OPTIONC"
+ command = { type = headofstate which = 6256 } #Eisenhower
+ command = { type = dissent value = 5 }
+ }
+ }
+
+ event = {
+ id = 906529
+ random = no
+ country = USA
+ style = 2
+
+ trigger = {
+ government = fascist
+ headofstate = 6256 #fascist Eisenhower
+ flag = USA_MIN_JUNTA
+ }
+
+ date = { day = 1 month = january year = 1944 }
+ offset = 30
+ deathdate = { day = 1 month = january year = 1960 }
+
+ name = "EVT_906529_NAME"
+ desc = "EVT_906529_DESC"
+ picture = "us1936elections"
+
+ action_a ={
+ ai_chance = 15
+ name = "EVT_906529_OPTIONA"
+ command = { type = headofstate which = 6243 } # Hull
+ command = { type = headofgovernment which = 6046 } # Truman
+ command = { type = setflag which = OPPOSITION_WINS }
+ command = { type = dissent value = -5 }
+ }
+
+ action_b = {
+ ai_chance = 15
+ name = "EVT_906529_OPTIONB"
+ command = { type = headofstate which = 6038 } # Dewey
+ command = { type = headofgovernment which = 6050 } # Bricker
+ command = { type = setflag which = OPPOSITION_WINS }
+ command = { type = dissent value = -5 }
+ }
+
+ action_c = {
+ ai_chance = 70
+ name = "EVT_906529_OPTIONC"
+ command = { type = headofstate which = 6256 } #Eisenhower
+ command = { type = dissent value = 5 }
+ }
+ }
+
+ event = {
+ id = 906530
+ random = no
+ country = USA
+ style = 2
+
+ trigger = {
+ government = fascist
+ headofstate = 6256 #fascist Eisenhower
+ flag = USA_MIN_JUNTA
+ }
+
+ date = { day = 1 month = january year = 1948 }
+ offset = 30
+ deathdate = { day = 1 month = january year = 1960 }
+
+ name = "EVT_906530_NAME"
+ desc = "EVT_906530_DESC"
+ picture = "us1936elections"
+
+ action_a ={
+ ai_chance = 15
+ name = "EVT_906530_OPTIONA"
+ command = { type = headofstate which = 6032 } # Walace
+ command = { type = headofgovernment which = 6247 } # Harriman
+ command = { type = setflag which = OPPOSITION_WINS }
+ command = { type = dissent value = -5 }
+ }
+
+ action_b = {
+ ai_chance = 15
+ name = "EVT_906530_OPTIONB"
+ command = { type = headofstate which = 6038 } # Dewey
+ command = { type = headofgovernment which = 6050 } # Bricker
+ command = { type = setflag which = OPPOSITION_WINS }
+ command = { type = dissent value = -5 }
+ }
+
+ action_c = {
+ ai_chance = 70
+ name = "EVT_906530_OPTIONC"
+ command = { type = headofstate which = 6256 } #Eisenhower
+ command = { type = dissent value = 5 }
+ }
+ }
+
+ ########################################################################
+ #Opposition wins elections
+ ########################################################################
+ event = {
+ id = 906533
+ random = no
+ country = USA
+ style = 2
+
+ date = { day = 1 month = january year = 1938 }
+ offset = 30
+ deathdate = { day = 29 month = december year = 1960 }
+
+ trigger = {
+ government = fascist
+ flag = OPPOSITION_WINS
+ }
+
+ name = "EVT_906533_NAME"
+ desc = "EVT_906533_DESC"
+ picture = "macarthurdic"
+
+ action_a = {
+ ai_chance = 30
+ name = "EVT_906533_OPTIONA"
+ command = { type = set_domestic which = democratic value = 9 }
+ command = { type = clrflag which = USA_MIN_JUNTA }
+ command = { type = clrflag which = USA_MAX_JUNTA }
+ command = { type = clrflag which = OPPOSITION_WINS }
+ command = { type = dissent value = -20 }
+ }
+
+ action_b = {
+ ai_chance = 70
+ name = "EVT_906533_OPTIONB"
+ command = { type = headofstate which = 6208 }
+ command = { type = headofgovernment which = 6257 }
+ command = { type = dissent value = 10 }
+ command = { type = clrflag which = USA_MIN_JUNTA }
+ command = { type = clrflag which = OPPOSITION_WINS }
+ command = { type = setflag which = USA_TOTALITARIAN }
+ command = { type = set_domestic which = democratic value = 2 }
+ command = { type = set_domestic which = political_left value = 0 }
+ }
+ }
+
+###########################################################################
+ #Opposition becomes more radical
+ ###########################################################################
+ event = {
+ id = 906534
+ random = no
+ country = USA
+ style = 2
+
+ date = { day = 1 month = january year = 1938 }
+ offset = 60
+ deathdate = { day = 1 month = january year = 1960 }
+
+ trigger = {
+ government = fascist
+ headofstate = 6208 #fascist MacArthur
+ flag = USA_TOTALITARIAN
+ }
+
+ name = "EVT_906534_NAME"
+ desc = "EVT_906534_DESC"
+ picture = "CSA"
+
+ action_a = {
+ name = "EVT_906534_OPTIONA"
+ command = { type = dissent value = 10 }
+ }
+ }
+
+##############################################################################
+ #MacArthur is killed!
+ ##############################################################################
+ event = {
+ id = 906535
+ random = no
+ country = USA
+ style = 2
+
+ date = { day = 1 month = january year = 1939 }
+ offset = 280
+ deathdate = { day = 1 month = january year = 1952 }
+
+ trigger = {
+ government = fascist
+ headofstate = 6208 #fascist MacArthur
+ random = 40
+ event = 906512
+ }
+
+ name = "EVT_906535_NAME"
+ desc = "EVT_906535_DESC"
+ picture = "macarthurdic"
+
+ action_a = {
+ ai_chance = 30
+ name = "EVT_906535_OPTIONA"
+ command = { type = sleepminister which = 6181 }
+ command = { type = sleepminister which = 6182 }
+ command = { type = sleepminister which = 6208 }
+ command = { type = sleepminister which = 6238 }
+ command = { type = sleepminister which = 6242 }
+ command = { type = sleepleader which = 60250 }
+ command = { type = sleepteam which = 123 }
+ command = { type = set_domestic which = democratic value = 2 }
+ command = { type = set_domestic which = political_left value = 0  }
+ command = { type = headofstate which = 6256 }
+ command = { type = headofgovernment which = 6257 }
+ command = { type = dissent value = 10 }
+ }
+
+ action_b = {
+ ai_chance = 40
+ name = "EVT_906535_OPTIONB"
+ command = { type = sleepminister which = 6181 }
+ command = { type = sleepminister which = 6182 }
+ command = { type = sleepminister which = 6208 }
+ command = { type = sleepminister which = 6238 }
+ command = { type = sleepminister which = 6242 }
+ command = { type = sleepleader which = 60250 }
+ command = { type = sleepteam which = 123 }
+ command = { type = trigger which = 906536 }
+ command = { type = dissent value = 15 }
+ }
+
+ action_c = {
+ ai_chance = 40
+ name = "EVT_906535_OPTIONC"
+ command = { type = sleepminister which = 6181 }
+ command = { type = sleepminister which = 6182 }
+ command = { type = sleepminister which = 6208 }
+ command = { type = sleepminister which = 6238 }
+ command = { type = sleepminister which = 6242 }
+ command = { type = sleepleader which = 60250 }
+ command = { type = sleepteam which = 123 }
+ command = { type = dissent value = -5 }
+ command = { type = set_domestic which = democratic value = 10 }
+ command = { type = set_domestic which = political_left value = 3 }
+ command = { type = headofstate which = 6038 } # Dewey
+ command = { type = headofgovernment which = 6250 } # Bricker
+ command = { type = foreignminister which = 6066 } # Vandenberg
+ command = { type = armamentminister which = 6091 } # Vinson
+ command = { type = ministerofsecurity which = 6005 } # J E Hoover
+ command = { type = clrflag which = USA_TOTALITARIAN }
+ }
+ }
+
+event = {
+ id = 906536
+ random = no
+ country = USA
+ style = 2
+
+ name = "EVT_906536_NAME"
+ desc = "EVT_906536_DESC"
+ picture = "CSA"
+
+ action_a = {
+ name = "EVT_906536_OPTIONA"
+ command = { type = dissent value = 15 }
+ command = { type = set_domestic which = democratic value = 2 }
+ command = { type = set_domestic which = political_left value = 0  }
+ command = { type = headofstate which = 6256 }
+ command = { type = headofgovernment which = 6257 }
+ command = { type = strength which = land when = 1 where = 0 value = -0.20 } #land units lose 20% strenght (deserters)
+ command = { type = strength which = naval when = 1 where = 0 value = -1.00 } #naval units cease to exist
+ command = { type = removecore which = 1952 }
+		command = { type = removecore which = 1951 }
+		command = { type = removecore which = 1948 }
+		command = { type = removecore which = 1949 }
+		command = { type = removecore which = 1953 }
+		command = { type = removecore which = 1961 }
+		command = { type = removecore which = 1962 }
+		command = { type = removecore which = 1963 }
+		command = { type = removecore which = 1964 }
+		command = { type = removecore which = 1940 }
+		command = { type = removecore which = 1935 }
+		command = { type = removecore which = 1946 }
+		command = { type = removecore which = 1936 }
+		command = { type = removecore which = 1944 }
+                command = { type = removecore which = 1952 }
+                command = { type = removecore which = 1938 }
+                command = { type = removecore which = 1937 }
+                command = { type = removecore which = 1931 }
+                command = { type = removecore which = 1939 }
+                command = { type = removecore which = 1942 }
+                command = { type = removecore which = 1941 }
+                command = { type = removecore which = 1943 }
+                command = { type = removecore which = 1812 }
+		command = { type = removecore which = 1813 }
+		command = { type = removecore which = 1814 }
+		command = { type = removecore which = 1815 }
+		command = { type = removecore which = 1816 }
+		command = { type = removecore which = 1818 }
+		command = { type = removecore which = 1941 }
+		command = { type = removecore which = 1942 }
+                command = { type = removecore which = 1943 }
+                command = { type = removecore which = 1928 }
+		command = { type = removecore which = 1922 }
+		command = { type = removecore which = 1926 }
+		command = { type = removecore which = 1925 }
+		command = { type = removecore which = 1923 }
+		command = { type = removecore which = 1927 }
+		command = { type = removecore which = 1920 }
+		command = { type = removecore which = 1924 }
+		command = { type = removecore which = 1921 }
+                command = { type = removecore which = 1932 }
+		command = { type = removecore which = 1934 }
+		command = { type = removecore which = 1919 }
+		command = { type = removecore which = 1929 }
+		command = { type = removecore which = 1930 }
+		command = { type = removecore which = 1916 }
+                command = { type = removecore which = 1918 }
+                command = { type = removecore which = 1933 }
+		command = { type = removecore which = 1911 }
+		command = { type = removecore which = 1913 }
+		command = { type = removecore which = 1915 }
+		command = { type = removecore which = 1917 }
+                command = { type = removecore which = 1955 }
+		command = { type = removecore which = 1962 }
+		command = { type = removecore which = 1964 }
+		command = { type = removecore which = 1961 }
+		command = { type = removecore which = 1957 }
+		command = { type = removecore which = 1963 }
+		command = { type = removecore which = 1958 }
+		command = { type = removecore which = 1960 }
+		command = { type = removecore which = 1941 }
+		command = { type = removecore which = 1942 }
+		command = { type = removecore which = 1943 }
+		command = { type = removecore which = 1959 }
+		command = { type = removecore which = 1954 }
+		command = { type = removecore which = 1956 }
+		command = { type = removecore which = 1946 }
+		command = { type = removecore which = 1947 }
+		command = { type = removecore which = 1950 }
+		command = { type = removecore which = 1945 }
+                command = { type = removecore which = 1890 }
+		command = { type = removecore which = 1884 }
+		command = { type = removecore which = 1885 }
+		command = { type = removecore which = 1888 }
+                command = { type = removecore which = 1889 }
+		command = { type = removecore which = 1883 }
+		command = { type = removecore which = 1891 }
+		command = { type = removecore which = 1892 }
+		command = { type = removecore which = 1887 }
+		command = { type = removecore which = 1886 }
+		command = { type = removecore which = 1880 }
+		command = { type = removecore which = 1873 }
+		command = { type = removecore which = 1875 }
+		command = { type = removecore which = 1876 }
+		command = { type = removecore which = 1874 }
+		command = { type = removecore which = 1877 }
+		command = { type = removecore which = 1878 }
+		command = { type = removecore which = 1882 }
+		command = { type = removecore which = 1879 }
+		command = { type = removecore which = 1872 }
+		command = { type = removecore which = 1784 }
+		command = { type = removecore which = 1786 }
+                command = { type = removecore which = 1785 }
+		command = { type = removecore which = 1787 }
+		command = { type = removecore which = 1790 }
+		command = { type = removecore which = 1794 }
+		command = { type = removecore which = 1788 }
+		command = { type = removecore which = 1789 }
+		command = { type = removecore which = 1796 }
+		command = { type = removecore which = 1793 }
+		command = { type = removecore which = 1799 }
+                command = { type = removecore which = 1791 }
+		command = { type = removecore which = 1792 }
+		command = { type = removecore which = 1800 }
+                command = { type = removecore which = 1893 }
+		command = { type = removecore which = 1894 }
+                command = { type = removecore which = 1895 }
+                command = { type = removecore which = 1861 }
+		command = { type = removecore which = 1870 }
+		command = { type = removecore which = 1871 }
+		command = { type = removecore which = 1869 }
+                command = { type = removecore which = 1881 }
+                command = { type = removecore which = 1795 }
+                command = { type = removecore which = 2141 }
+                command = { type = removecore which = 2147 }
+                command = { type = removecore which = 2140 }
+                command = { type = removecore which = 2142 }
+                command = { type = removecore which = 2139 }
+                command = { type = removecore which = 2143 }
+                command = { type = removecore which = 2144 }
+                command = { type = removecore which = 2145 }
+                command = { type = removecore which = 2146 }
+                command = { type = removecore which = 2150 }
+                command = { type = removecore which = 2151 }
+                command = { type = removecore which = 2174 }
+                command = { type = removecore which = 1778 }
+                command = { type = removecore which = 889 }
+                command = { type = removecore which = 1848 }
+		command = { type = removecore which = 1832 }
+		command = { type = removecore which = 1841 }
+		command = { type = removecore which = 1831 }
+		command = { type = removecore which = 1843 }
+		command = { type = removecore which = 1839 }
+		command = { type = removecore which = 1823 }
+		command = { type = removecore which = 1829 }
+		command = { type = removecore which = 1830 }
+		command = { type = removecore which = 1826 }
+		command = { type = removecore which = 1842 }
+		command = { type = removecore which = 1844 }
+                command = { type = removecore which = 1845 }
+		command = { type = removecore which = 1819 }
+                command = { type = removecore which = 1827 }
+		command = { type = removecore which = 1828 }
+		command = { type = removecore which = 1811 }
+		command = { type = removecore which = 1817 }
+		command = { type = removecore which = 1820 }
+		command = { type = removecore which = 1822 }
+		command = { type = removecore which = 1821 }
+		command = { type = removecore which = 1824 }
+		command = { type = removecore which = 1825 }
+                command = { type = removecore which = 1798 }
+                command = { type = removecore which = 1803 }
+		command = { type = removecore which = 1804 }
+		command = { type = removecore which = 1797 }
+		command = { type = removecore which = 1795 }
+                command = { type = removecore which = 1806 }
+                command = { type = removecore which = 1810 }
+		command = { type = removecore which = 1805 }
+		command = { type = removecore which = 1801 }
+		command = { type = removecore which = 1807 }
+		command = { type = removecore which = 1808 }
+		command = { type = removecore which = 1802 }
+		command = { type = removecore which = 1840 }
+                command = { type = removecore which = 1809 }
+                command = { type = capital which = 1908 }
+                command = { trigger = { control = { province = 1789 data = USA } NOT = { exists = U10 } } type = setflag which = U10_LIB }
+                command = { trigger = { control = { province = 1789 data = USA } NOT = { exists = U10 } } type = independence which = U10 value = 1 when = 1 }
+                command = { trigger = { control = { province = 1734 data = USA } NOT = { exists = U15 } } type = independence which = U15 value = 1 when = 1 }
+                command = { trigger = { NOT = { exists = U06 } } type = setflag which = U06_LIB }
+                command = { trigger = { NOT = { exists = U06 } } type = independence which = U06 value = 1 when = 1 }
+                command = { trigger = { NOT = { exists = U32 } } type = setflag which = U32_LIB }
+                command = { trigger = { NOT = { exists = U32 } } type = independence which = U32 value = 1 when = 1 }
+                command = { trigger = { control = { province = 1765 data = USA } NOT = { exists = U09 } } type = independence which = U09 value = 1 when = 1 }
+                command = { trigger = { NOT = { exists = CAL } } type = setflag which = CAL_LIB }
+                command = { trigger = { NOT = { exists = CAL } } type = independence which = CAL value = 1 when = 1 }
+                command = { type = secedeprovince which = CUB value = 1778 }
+                command = { type = secedeprovince which = NIC value = 889 }
+                command = { type = secedeprovince which = CAL value = 1893 }
+		command = { type = secedeprovince which = CAL value = 1894 }
+                command = { type = secedeprovince which = CAL value = 1895 }
+                command = { type = secedeprovince which = CAL value = 1861 }
+		command = { type = secedeprovince which = CAL value = 1870 }
+		command = { type = secedeprovince which = CAL value = 1871 }
+		command = { type = secedeprovince which = CAL value = 1869 }
+                command = { type = secedeprovince which = CAL value = 1881 }
+                command = { type = secedeprovince which = CAL value = 2141 }
+                command = { type = secedeprovince which = CAL value = 2147 }
+                command = { type = secedeprovince which = CAL value = 2140 }
+                command = { type = secedeprovince which = CAL value = 2142 }
+	        command = { type = secedeprovince which = CAL value = 2139 }
+	        command = { type = secedeprovince which = CAL value = 2143 }
+	        command = { type = secedeprovince which = CAL value = 2144 }
+	        command = { type = secedeprovince which = CAL value = 2145 }
+	        command = { type = secedeprovince which = CAL value = 2146 }
+	        command = { type = secedeprovince which = CAL value = 2150 }
+	        command = { type = secedeprovince which = CAL value = 2151 }
+                command = { type = secedeprovince which = CAL value = 2174 }
+                command = { type = secedeprovince which = U10 value = 1795 }
+                command = { type = secedeprovince which = U06 value = 1952 }
+		command = { type = secedeprovince which = U06 value = 1951 }
+		command = { type = secedeprovince which = U06 value = 1948 }
+		command = { type = secedeprovince which = U06 value = 1949 }
+		command = { type = secedeprovince which = U06 value = 1953 }
+		command = { type = secedeprovince which = U06 value = 1961 }
+		command = { type = secedeprovince which = U06 value = 1962 }
+		command = { type = secedeprovince which = U06 value = 1963 }
+		command = { type = secedeprovince which = U06 value = 1964 }
+		command = { type = secedeprovince which = U06 value = 1940 }
+		command = { type = secedeprovince which = U06 value = 1935 }
+		command = { type = secedeprovince which = U06 value = 1946 }
+		command = { type = secedeprovince which = U06 value = 1936 }
+		command = { type = secedeprovince which = U06 value = 1944 }
+                command = { type = secedeprovince which = U06 value = 1952 }
+                command = { type = secedeprovince which = U06 value = 1938 }
+                command = { type = secedeprovince which = U06 value = 1937 }
+                command = { type = secedeprovince which = U06 value = 1931 }
+                command = { type = secedeprovince which = U06 value = 1939 }
+                command = { type = secedeprovince which = U06 value = 1942 }
+                command = { type = secedeprovince which = U06 value = 1941 }
+                command = { type = secedeprovince which = U06 value = 1943 }
+                command = { type = secedeprovince which = U06 value = 1812 }
+		command = { type = secedeprovince which = U06 value = 1813 }
+		command = { type = secedeprovince which = U06 value = 1814 }
+		command = { type = secedeprovince which = U06 value = 1815 }
+		command = { type = secedeprovince which = U06 value = 1816 }
+		command = { type = secedeprovince which = U06 value = 1818 }
+		command = { type = secedeprovince which = U06 value = 1941 }
+		command = { type = secedeprovince which = U06 value = 1942 }
+                command = { type = secedeprovince which = U06 value = 1943 }
+                command = { type = secedeprovince which = U06 value = 1928 }
+		command = { type = secedeprovince which = U06 value = 1922 }
+		command = { type = secedeprovince which = U06 value = 1926 }
+		command = { type = secedeprovince which = U06 value = 1925 }
+		command = { type = secedeprovince which = U06 value = 1923 }
+		command = { type = secedeprovince which = U06 value = 1927 }
+		command = { type = secedeprovince which = U06 value = 1920 }
+		command = { type = secedeprovince which = U06 value = 1924 }
+		command = { type = secedeprovince which = U06 value = 1921 }
+                command = { type = secedeprovince which = U06 value = 1932 }
+		command = { type = secedeprovince which = U06 value = 1934 }
+		command = { type = secedeprovince which = U06 value = 1919 }
+		command = { type = secedeprovince which = U06 value = 1929 }
+		command = { type = secedeprovince which = U06 value = 1930 }
+		command = { type = secedeprovince which = U06 value = 1916 }
+                command = { type = secedeprovince which = U06 value = 1918 }
+                command = { type = secedeprovince which = U06 value = 1933 }
+		command = { type = secedeprovince which = U06 value = 1911 }
+		command = { type = secedeprovince which = U06 value = 1913 }
+		command = { type = secedeprovince which = U06 value = 1915 }
+		command = { type = secedeprovince which = U06 value = 1917 }
+                command = { trigger = { flag = CAL_LIB } type = sleepevent which = 903953 }
+                command = { type = sleepevent which = 800215 }
+                command = { type = sleepevent which = 800216 }
+                command = { type = sleepevent which = 800217 }
+                command = { trigger = { flag = U06_LIB } type = trigger which = 11800147 }
+                command = { trigger = { flag = U10_LIB } type = trigger which = 11800150 }
+                command = { trigger = { flag = CAL_LIB } type = trigger which = 11800151 }
+                command = { trigger = { flag = U32_LIB } type = trigger which = 11800166 }
+ }
+ }
+
+##################################################################
+ #Freedom of speech
+ ##################################################################
+ event = {
+ id = 906537
+ random = no
+ country = USA
+ style = 2
+
+ trigger = {
+ government = fascist
+ OR = {
+ flag = USA_MAX_JUNTA
+ flag = USA_MIN_JUNTA
+ flag = USA_TOTALITARIAN
+ }
+ }
+
+ date = { day = 1 month = january year = 1938 }
+ offset = 60
+ deathdate = { day = 29 month = december year = 1945 }
+
+ name = "EVT_906537_NAME"
+ desc = "EVT_906537_DESC"
+ picture = "diplomatic_campaign"
+
+ action_a = {
+ ai_chance = 75
+ name = "EVT_906537_OPTIONA"
+ command = { type = domestic which = freedom value = -1 }
+ command = { type = domestic which = democratic value = -2 }
+ }
+
+ action_b = {
+ ai_chance = 25
+ name = "EVT_906537_OPTIONB"
+ command = { type = dissent value = -3}
+ }
+ }
+ ################################################################
+ #Protestors
+ ################################################################
+ event = {
+ id = 906538
+ random = no
+ country = USA
+ style = 2
+
+ trigger = {
+ government = fascist
+ NOT = {
+ exists = CSA
+ exists = TEX
+ }
+ OR = {
+ flag = USA_MAX_JUNTA
+ flag = USA_MIN_JUNTA
+ flag = USA_TOTALITARIAN
+ }
+ }
+
+ date = { day = 1 month = january year = 1938 }
+ offset = 60
+ deathdate = { day = 29 month = december year = 1945 }
+
+ name = "EVT_906538_NAME"
+ desc = "EVT_906538_DESC"
+ picture = "Depression1"
+
+ action_a = {
+ ai_chance = 25
+ name = "EVT_906538_OPTIONA"
+ command = { type = dissent value = 5 }
+ command = { type = domestic which = democratic value = -2 }
+ }
+
+ action_b = {
+ ai_chance = 25
+ name = "EVT_906538_OPTIONB"
+ trigger = {
+ NOT = { 
+ war = { country = USA country = CAN } 
+ }
+ }
+ command = { type = dissent value = 4 }
+ command = { type = trigger which = 906539 }
+ command = { type = domestic which = democratic value = -1 }
+ command = { type = relation which = CAN value = -10 }
+ }
+
+ action_c = {
+ ai_chance = 50
+ name = "EVT_906538_OPTIONC"
+ command = { type = dissent value = -3 }
+ }
+ }
+
+ event = {
+ id = 906539
+ random = no
+ country = CAN
+ style = 2
+
+ name = "EVT_906539_NAME"
+ desc = "EVT_906539_DESC"
+ picture = "Depression1"
+
+ action_a = {
+ name = "EVT_906539_OPTIONA"
+ command = { type = manpowerpool value = 40 }
+ command = { type = money value = 50 }
+ command = { type = dissent value = 1 }
+ command = { type = relation which = USA value = -10 }
+ }
+ }
+ #################################################
+ #Education reforms
+ #################################################
+ event = {
+ id = 906540
+ random = no
+ country = USA
+ style = 2
+
+ trigger = {
+ government = fascist
+ OR = {
+ flag = USA_MAX_JUNTA
+ flag = USA_MIN_JUNTA
+ flag = USA_TOTALITARIAN
+ }
+ }
+
+ date = { day = 1 month = july year = 1938 }
+ offset = 60
+ deathdate = { day = 29 month = december year = 1945 }
+
+
+ name = "EVT_906540_NAME"
+ desc = "EVT_906540_DESC"
+ picture = "Depression1"
+
+ action_a = {
+ ai_chance = 60
+ name = "EVT_906540_OPTIONA"
+ command = { type = domestic which = freedom value = -1 }
+ command = { type = domestic which = professional_army value = 2 }
+ command = { type = money value = -100 }
+ }
+
+ action_b = {
+ ai_chance = 40
+ name = "EVT_906540_OPTIONB"
+ command = { type = domestic which = freedom value = -1 }
+ command = { type = money value = -25 }
+ }
+
+ action_c = {
+ name = "EVT_906540_OPTIONC"
+ command = { type = dissent value = 1 }
+ }
+ }
+ ##########################################################
+ #Confiscation of money
+ ##########################################################
+ event = {
+ id = 906541
+ random = no
+ country = USA
+ style = 2
+
+ trigger = {
+ government = fascist
+ OR = {
+ flag = USA_MAX_JUNTA
+ flag = USA_MIN_JUNTA
+ flag = USA_TOTALITARIAN
+ }
+ }
+
+ name = "EVT_906541_NAME"
+ desc = "EVT_906541_DESC"
+ picture = "money_devaluation"
+
+ date = { day = 1 month = january year = 1938 }
+ offset = 60
+ deathdate = { day = 29 month = december year = 1945 }
+
+
+ action_a = {
+ ai_chance = 50
+ name = "EVT_906541_OPTIONA"
+ command = { type = domestic which = democratic value = -1 }
+ command = { type = domestic which = free_market value = -2 }
+ }
+
+ action_b = {
+ ai_chance = 50
+ name = "EVT_906541_OPTIONB"
+ command = { type = domestic which = free_market value = 1 }
+ }
+ }
+
+ event = {
+ id = 906542
+ random = no
+ country = USA
+ style = 2
+
+ date = { day = 1 month = january year = 1938 }
+ offset = 60
+ deathdate = { day = 29 month = december year = 1945 }
+
+ trigger = {
+ government = fascist
+ OR = {
+ flag = USA_MAX_JUNTA
+ flag = USA_MIN_JUNTA
+ flag = USA_TOTALITARIAN
+ }
+ }
+
+ name = "EVT_906542_NAME"
+ desc = "EVT_906542_DESC"
+ picture = "diplomatic_campaign"
+
+ action_a = {
+ ai_chance = 70
+ name = "EVT_906542_OPTIONA"
+ command = { type = domestic which = freedom value = -1 }
+ command = { type = domestic which = democratic value = -1 }
+ command = { type = dissent value = 3 }
+ }
+
+ action_b ={
+ ai_chance = 30
+ name = "EVT_906542_OPTIONB"
+ command = { type = dissent value = -3 }
+ }
+ }
+
+ event = {
+ id = 906543
+ random = no
+ country = USA
+ style = 2
+
+ trigger = {
+ government = fascist
+ OR = {
+ flag = USA_MAX_JUNTA
+ flag = USA_MIN_JUNTA
+ flag = USA_TOTALITARIAN
+ }
+ }
+
+ date = { day = 1 month = january year = 1939 }
+ offset = 60
+ deathdate = { day = 29 month = december year = 1945 }
+
+ name = "EVT_906543_NAME"
+ desc = "EVT_906543_DESC"
+ picture = "diplomatic_campaign"
+
+ action_a = {
+ ai_chance = 99
+ name = "EVT_906543_OPTIONA"
+ command = { type = dissent value = 5 }
+ command = { type = domestic which = freedom value = -1 }
+ }
+
+ action_b = {
+ ai_chance = 0
+ name = "EVT_906543_OPTIONB"
+ command = { type = dissent value = 1 }
+ }
+ }
+
+event = {
+ id = 906544
+ random = no
+ country = USA
+ style = 2
+
+ trigger = {
+ government = fascist
+ flag = USA_MAX_JUNTA
+ }
+
+ name = "EVT_906544_NAME"
+ desc = "EVT_906544_DESC"
+ picture = "congress1"
+
+ date = { day = 1 month = january year = 1940 }
+ offset = 180
+ deathdate = { day = 29 month = december year = 1941 }
+
+
+ action_a = {
+ ai_chance = 30
+ name = "EVT_906544_OPTIONA"
+ command = { type = clrflag which = USA_MIN_JUNTA }
+ command = { type = setflag which = USA_TOTALITARIAN }
+ command = { type = set_domestic which = democratic value = 2 }
+ command = { type = set_domestic which = political_left value = 0 }
+ }
+
+ action_b = {
+ ai_chance = 70
+ name = "EVT_906544_OPTIONB"
+ command = { type = dissent value = 2 }
+ }
+
+ action_c = {
+ ai_chance = 5
+ name = "EVT_906544_OPTIONC"
+ command = { type = set_domestic which = democratic value = 9 }
+ command = { type = set_domestic which = freedom value = 9 }
+ command = { type = set_domestic which = political_left value = 5 }
+ command = { type = clrflag which = USA_MIN_JUNTA }
+ command = { type = clrflag which = USA_MAX_JUNTA }
+ command = { type = headofstate which = 6236 } # Garner
+ command = { type = headofgovernment which = 6044 } # Henry Wallace
+ command = { type = foreignminister which = 6003 } # Hull
+ command = { type = armamentminister which = 6078 } # Hopkins
+ command = { type = ministerofsecurity which = 6005 } # J Edgar Hoover
+ command = { type = dissent value = -10 }
+ }
+ }
+
+ event = {
+ id = 906545
+ random = no
+ country = USA
+ style = 2
+
+ trigger = {
+ government = fascist
+ flag = USA_MAX_JUNTA
+ }
+
+ name = "EVT_906545_NAME"
+ desc = "EVT_906545_DESC"
+ picture = "congress1"
+
+ date = { day = 1 month = january year = 1944 }
+ offset = 60
+ deathdate = { day = 29 month = december year = 1945 }
+
+ action_a = {
+ name = "EVT_906545_OPTIONA"
+ command = { type = dissent value = 3 }
+ }
+ }
+
+ event = {
+ id = 906546
+ random = no
+ country = USA
+ style = 2
+
+ trigger = {
+ government = fascist
+ event = 906545
+ flag = USA_MAX_JUNTA
+ }
+
+ name = "EVT_906546_NAME"
+ desc = "EVT_906546_DESC"
+ picture = "congress1"
+
+ date = { day = 1 month = january year = 1944 }
+ offset = 180
+ deathdate = { day = 29 month = december year = 1945 }
+
+
+ action_a = {
+ ai_chance = 5
+ name = "EVT_906546_OPTIONA"
+ command = { type = clrflag which = USA_MIN_JUNTA }
+ command = { type = clrflag which = USA_MAX_JUNTA }
+ command = { type = setflag which = USA_TOTALITARIAN }
+ command = { type = set_domestic which = democratic value = 2 }
+ command = { type = set_domestic which = political_left value = 0 }
+ }
+
+ action_b = {
+ ai_chance = 90
+ name = "EVT_906546_OPTIONB"
+ command = { type = dissent value = 1 }
+ }
+
+ action_c = {
+ ai_chance = 5
+ name = "EVT_906546_OPTIONC"
+ command = { type = set_domestic which = democratic value = 9 }
+ command = { type = set_domestic which = freedom value = 9 }
+ command = { type = set_domestic which = political_left value = 5 }
+ command = { type = clrflag which = USA_MIN_JUNTA }
+ command = { type = clrflag which = USA_MAX_JUNTA }
+ command = { type = headofstate which = 6243 } # Hull
+ command = { type = headofgovernment which = 6046 } # Truman
+ command = { type = foreignminister which = 6203 } # Connally
+ command = { type = armamentminister which = 6078 } # Hopkins
+ command = { type = ministerofsecurity which = 6005 } # J Edgar Hoover
+ command = { type = dissent value = -10 }
+ }
+ }
+
+ event = {
+ id = 906526
+ random = no
+ country = USA
+ style = 2
+
+ trigger = {
+ government = fascist
+ flag = USA_MAX_JUNTA
+ }
+
+ name = "EVT_906526_NAME"
+ desc = "EVT_906526_DESC"
+ picture = "congress1"
+
+ date = { day = 1 month = january year = 1948 }
+ offset = 180
+ deathdate = { day = 1 month = january year = 1949 }
+
+
+ action_a = {
+ ai_chance = 5
+ name = "EVT_906526_OPTIONA"
+ command = { type = clrflag which = USA_MIN_JUNTA }
+ command = { type = clrflag which = USA_MAX_JUNTA }
+ command = { type = setflag which = USA_TOTALITARIAN }
+ command = { type = set_domestic which = democratic value = 2 }
+ command = { type = set_domestic which = political_left value = 0 }
+ }
+
+ action_b = {
+ ai_chance = 80
+ name = "EVT_906526_OPTIONB"
+ command = { type = dissent value = 1 }
+ }
+
+ action_c = {
+ ai_chance = 15
+ name = "EVT_906526_OPTIONC"
+ command = { type = set_domestic which = democratic value = 9 }
+ command = { type = set_domestic which = freedom value = 9 }
+ command = { type = set_domestic which = political_left value = 3 }
+ command = { type = headofstate which = 6255 } # Thurmoud
+ command = { type = headofgovernment which = 6050 } # Bricker
+ command = { type = foreignminister which = 6245 } # Dulles
+ command = { type = armamentminister which = 6090 } # Rockefeller
+ command = { type = ministerofsecurity which = 6253 } # Lodge
+ command = { type = clrflag which = USA_MIN_JUNTA }
+ command = { type = clrflag which = USA_MAX_JUNTA }
+ command = { type = dissent value = -10 }
+ }
+ }
+
+ #########################################################################
+ #Death of Mac Arthur
+ #########################################################################
+ event = {
+ id = 906527
+ random = no
+ country = USA
+ style = 2
+
+ trigger = {
+ headofstate = 6256 #fascist Eisenhower
+ flag = USA_MIN_JUNTA
+ NOT= {
+ event = 906535
+ }
+ }
+
+ name = "EVT_906527_NAME"
+ desc = "EVT_906527_DESC"
+ picture = "minister_died"
+
+ date = { day = 1 month = january year = 1952 }
+ offset = 180
+ deathdate = { day = 29 month = december year = 1955 }
+
+ action_a = {
+ ai_chance = 50
+ name = "EVT_906527_OPTIONA"
+ command = { type = clrflag which = USA_MIN_JUNTA }
+ command = { type = dissent value = -10 }
+ command = { type = set_domestic which = democratic value = 9 }
+ command = { type = set_domestic which = freedom value = 9 }
+ command = { type = set_domestic which = political_left value = 3 }
+ command = { type = sleepminister which = 6181 }
+ command = { type = sleepminister which = 6182 }
+ command = { type = sleepminister which = 6208 }
+ command = { type = sleepminister which = 6238 }
+ command = { type = headofstate which = 6255 } # Thurmoud
+ command = { type = headofgovernment which = 6050 } # Bricker
+ command = { type = foreignminister which = 6245 } # Dulles
+ command = { type = armamentminister which = 6090 } # Rockefeller
+ command = { type = ministerofsecurity which = 6253 } # Lodge
+ }
+
+ action_b = {
+ ai_chance = 25
+ name = "EVT_906527_OPTIONB"
+ command = { type = clrflag which = USA_MIN_JUNTA }
+ command = { type = clrflag which = USA_MAX_JUNTA }
+ command = { type = setflag which = USA_TOTALITARIAN }
+ command = { type = set_domestic which = democratic value = 2 }
+ command = { type = set_domestic which = political_left value = 0 }
+ command = { type = sleepminister which = 6181 }
+ command = { type = sleepminister which = 6182 }
+ command = { type = sleepminister which = 6208 }
+ command = { type = sleepminister which = 6238 }
+ }
+
+ action_c = {
+ ai_chance = 10
+ name = "EVT_906527_OPTIONC"
+ command = { type = sleepminister which = 6181 }
+ command = { type = sleepminister which = 6182 }
+ command = { type = sleepminister which = 6208 }
+ command = { type = sleepminister which = 6238 }
+ command = { type = sleepminister which = 6242 }
+ command = { type = sleepleader which = 60250 }
+ command = { type = sleepteam which = 123 }
+ command = { type = trigger which = 906515 }
+ command = { type = dissent value = 15 }
+ }
+ }
+ #########################################################################
+ #Death of Mac Arthur
+ #########################################################################
+ event = {
+ id = 906528
+ random = no
+ country = USA
+ style = 2
+
+ trigger = {
+ headofstate = 6208 #fascist MacArthur
+ OR = {
+ flag = USA_MAX_JUNTA
+ flag = USA_TOTALITARIAN
+ }
+ }
+
+ name = "EVT_906528_NAME"
+ desc = "EVT_906528_DESC"
+ picture = "minister_died"
+
+ date = { day = 1 month = january year = 1952 }
+ offset = 180
+ deathdate = { day = 29 month = december year = 1955 }
+
+ action_a = {
+ ai_chance = 30
+ name = "EVT_906528_OPTIONA"
+ command = { type = clrflag which = USA_MAX_JUNTA }
+ command = { type = dissent value = -10 }
+ command = { type = set_domestic which = democratic value = 9 }
+ command = { type = set_domestic which = freedom value = 9 }
+ command = { type = set_domestic which = political_left value = 3 }
+ command = { type = sleepminister which = 6181 }
+ command = { type = sleepminister which = 6182 }
+ command = { type = sleepminister which = 6208 }
+ command = { type = sleepminister which = 6238 }
+ command = { type = sleepminister which = 6242 }
+ command = { type = sleepleader which = 60250 }
+ command = { type = sleepteam which = 123 }
+ command = { type = headofstate which = 6255 } # Thurmoud
+ command = { type = headofgovernment which = 6050 } # Bricker
+ command = { type = foreignminister which = 6245 } # Dulles
+ command = { type = armamentminister which = 6090 } # Rockefeller
+ command = { type = ministerofsecurity which = 6253 } # Lodge
+ }
+
+ action_b = {
+ ai_chance = 35
+ name = "EVT_906528_OPTIONB"
+ command = { type = clrflag which = USA_MAX_JUNTA }
+ command = { type = setflag which = USA_TOTALITARIAN }
+ command = { type = set_domestic which = democratic value = 2 }
+ command = { type = set_domestic which = political_left value = 0 }
+ command = { type = sleepminister which = 6181 }
+ command = { type = sleepminister which = 6182 }
+ command = { type = sleepminister which = 6208 }
+ command = { type = sleepminister which = 6238 }
+ command = { type = sleepminister which = 6242 }
+ command = { type = sleepleader which = 60250 }
+ command = { type = sleepteam which = 123 }
+ }
+
+ action_c = {
+ ai_chance = 40
+ name = "EVT_906528_OPTIONC"
+ command = { type = sleepminister which = 6181 }
+ command = { type = sleepminister which = 6182 }
+ command = { type = sleepminister which = 6208 }
+ command = { type = sleepminister which = 6238 }
+ command = { type = sleepminister which = 6242 }
+ command = { type = sleepleader which = 60250 }
+ command = { type = sleepteam which = 123 }
+ command = { type = trigger which = 906515 }
+ command = { type = dissent value = 15 }
+ }
+ }
+
+event = {
+id = 906547
+country = U06
+style = 2
+
+trigger =  { 
+        flag = U06_LIB
+	NOT = { 
+        government = communist
+	alliance = { country = U06 country = USA }
+        alliance = { country = U06 country = GER } 
+        alliance = { country = U06 country = JAP }
+        alliance = { country = U06 country = CAN } 
+        alliance = { country = U06 country = FRA }
+        alliance = { country = U06 country = ENG } 
+        alliance = { country = U06 country = U07 }
+        alliance = { country = U06 country = RUS }
+        ispuppet = U06
+        atwar = U06
+	} 
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 70
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_906547_NAME"
+desc = "EVT_906547_DESC"
+picture = "diplomatic_campaign"
+
+action_a = {
+ai_chance = 70
+name = "EVT_906547_OPTIONA"
+trigger = {
+exists = CAN
+NOT = { ispuppet = CAN }
+participant = { country = CAN value = 1 }
+}
+command = { trigger = { NOT = { alliance = { country = CAN country = U07 } } } type = trigger which = 906548 }
+command = { trigger = { alliance = { country = CAN country = U07 } } type = trigger which = 906549 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = dissent value = 2 }
+command = { type = clrflag which = U06_LIB }
+command = { type = relation which = CAN value = 20 }
+}
+
+action_b = {
+ai_chance = 50
+name = "EVT_906547_OPTIONB"
+trigger = {
+exists = GER
+NOT = { ispuppet = GER }
+control = { province = 163 data = GER }
+control = { province = 145 data = GER }
+NOT = { war = { country = GER country = CAN } }
+participant = { country = GER value = 2 }
+}
+command = { type = trigger which = 906550 } # German response
+command = { type = domestic which = interventionism value = 1 }
+command = { type = dissent value = 2 }
+command = { type = clrflag which = U06_LIB }
+command = { type = relation which = GER value = 20 }
+}
+
+action_c = {
+ai_chance = 10
+name = "EVT_906547_OPTIONC"
+trigger = {
+exists = RUS
+control = { province = 691 data = RUS }
+control = { province = 1186 data = RUS }
+control = { province = 572 data = RUS }
+control = { province = 1162 data = RUS }
+NOT = { 
+alliance = { country = RUS country = JAP }
+alliance = { country = RUS country = FRA }
+alliance = { country = RUS country = CAN }
+alliance = { country = RUS country = GER }
+ispuppet = RUS
+exists = TRA 
+atwar = RUS 
+flag = RUS_BOL
+exists = SOV
+}
+}
+command = { type = trigger which = 906551 } # Russian response
+command = { type = domestic which = interventionism value = 1 }
+command = { type = dissent value = 2 }
+command = { type = clrflag which = U06_LIB }
+command = { type = relation which = RUS value = 20 }
+}
+
+action_d = {
+ai_chance = 15
+name = "EVT_906547_OPTIOND"
+command = { type = dissent value = -1 }
+command = { type = belligerence which = TEX value = -10  }
+}
+}
+
+event = {
+id = 906548
+country = CAN
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_906548_NAME"
+desc = "EVT_906548_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_906548_OPTIONA"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = alliance which = U06 }
+command = { type = relation which = U06 value = 50 }
+command = { type = relation which = USA value = -10 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_906548_OPTIONB"
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = U06 value = -25 }
+command = { type = relation which = USA value = 10 }
+}
+}
+
+
+event = {
+id = 906549
+country = U07
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_906549_NAME"
+desc = "EVT_906549_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_906549_OPTIONA"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = alliance which = U06 }
+command = { type = relation which = U06 value = 50 }
+command = { type = relation which = USA value = -10 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_906549_OPTIONB"
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = U06 value = -25 }
+command = { type = relation which = USA value = 10 }
+}
+}
+
+event = {
+id = 906550
+country = GER
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_906550_NAME"
+desc = "EVT_906550_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_906550_OPTIONA"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = alliance which = U06 }
+command = { type = relation which = U06 value = 50 }
+command = { type = relation which = USA value = -10 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_906550_OPTIONB"
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = U06 value = -25 }
+command = { type = relation which = USA value = 10 }
+}
+}
+
+
+event = {
+id = 906551
+country = RUS
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_906551_NAME"
+desc = "EVT_906551_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_906551_OPTIONA"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = alliance which = U06 }
+command = { type = relation which = U06 value = 50 }
+command = { type = relation which = USA value = -10 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_906551_OPTIONB"
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = U06 value = -25 }
+command = { type = relation which = USA value = 10 }
+}
+}
+
+event = {
+id = 906552
+country = U10
+style = 2
+
+trigger =  { 
+        flag = U10_LIB
+	NOT = { 
+        government = communist
+	alliance = { country = U10 country = USA }
+        alliance = { country = U10 country = GER } 
+        alliance = { country = U10 country = JAP }
+        alliance = { country = U10 country = CAN } 
+        alliance = { country = U10 country = FRA }
+        alliance = { country = U10 country = ENG } 
+        alliance = { country = U10 country = U07 }
+        alliance = { country = U10 country = RUS }
+        ispuppet = U10
+        atwar = U10
+	} 
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 70
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_906552_NAME"
+desc = "EVT_906552_DESC"
+picture = "diplomatic_campaign"
+
+action_a = {
+ai_chance = 70
+name = "EVT_906552_OPTIONA"
+trigger = {
+exists = CAN
+NOT = { ispuppet = CAN }
+participant = { country = CAN value = 1 }
+}
+command = { trigger = { NOT = { alliance = { country = CAN country = U07 } } } type = trigger which = 906553 }
+command = { trigger = { alliance = { country = CAN country = U07 } } type = trigger which = 906554 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = dissent value = 2 }
+command = { type = clrflag which = U10_LIB }
+command = { type = relation which = CAN value = 20 }
+}
+
+action_b = {
+ai_chance = 50
+name = "EVT_906552_OPTIONB"
+trigger = {
+exists = GER
+NOT = { ispuppet = GER }
+control = { province = 163 data = GER }
+control = { province = 145 data = GER }
+participant = { country = GER value = 2 }
+NOT = { war = { country = GER country = CAN } }
+}
+command = { type = trigger which = 906555 } # German response
+command = { type = domestic which = interventionism value = 1 }
+command = { type = dissent value = 2 }
+command = { type = clrflag which = U10_LIB }
+command = { type = relation which = GER value = 20 }
+}
+
+action_c = {
+ai_chance = 10
+name = "EVT_906552_OPTIONC"
+trigger = {
+exists = RUS
+control = { province = 691 data = RUS }
+control = { province = 1186 data = RUS }
+control = { province = 572 data = RUS }
+control = { province = 1162 data = RUS }
+NOT = { 
+alliance = { country = RUS country = JAP }
+alliance = { country = RUS country = FRA }
+alliance = { country = RUS country = CAN }
+alliance = { country = RUS country = GER }
+ispuppet = RUS
+exists = TRA 
+atwar = RUS 
+flag = RUS_BOL
+exists = SOV
+}
+}
+command = { type = trigger which = 906556 } # Russian response
+command = { type = domestic which = interventionism value = 1 }
+command = { type = dissent value = 2 }
+command = { type = clrflag which = U10_LIB }
+command = { type = relation which = RUS value = 20 }
+}
+
+action_d = {
+ai_chance = 15
+name = "EVT_906552_OPTIOND"
+command = { type = dissent value = -1 }
+command = { type = belligerence which = U10 value = -10  }
+}
+}
+
+event = {
+id = 906553
+country = CAN
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_906553_NAME"
+desc = "EVT_906553_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_906553_OPTIONA"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = alliance which = U10 }
+command = { type = relation which = U10 value = 50 }
+command = { type = relation which = USA value = -10 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_906553_OPTIONB"
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = U10 value = -25 }
+command = { type = relation which = USA value = 10 }
+}
+}
+
+
+event = {
+id = 906554
+country = U07
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_906554_NAME"
+desc = "EVT_906554_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_906554_OPTIONA"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = alliance which = U10 }
+command = { type = relation which = U10 value = 50 }
+command = { type = relation which = USA value = -10 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_906554_OPTIONB"
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = U10 value = -25 }
+command = { type = relation which = USA value = 10 }
+}
+}
+
+event = {
+id = 906555
+country = GER
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_906555_NAME"
+desc = "EVT_906555_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_906555_OPTIONA"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = alliance which = U10 }
+command = { type = relation which = U10 value = 50 }
+command = { type = relation which = USA value = -10 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_906555_OPTIONB"
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = U10 value = -25 }
+command = { type = relation which = USA value = 10 }
+}
+}
+
+
+event = {
+id = 906556
+country = RUS
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_906556_NAME"
+desc = "EVT_906556_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_906556_OPTIONA"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = alliance which = U10 }
+command = { type = relation which = U10 value = 50 }
+command = { type = relation which = USA value = -10 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_906556_OPTIONB"
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = U10 value = -25 }
+command = { type = relation which = USA value = 10 }
+}
+}
+
+event = {
+id = 906557
+country = CAL
+style = 2
+
+trigger =  { 
+        flag = CAL_LIB
+	NOT = { 
+        government = communist
+	alliance = { country = CAL country = USA }
+        alliance = { country = CAL country = GER } 
+        alliance = { country = CAL country = JAP }
+        alliance = { country = CAL country = CAN } 
+        alliance = { country = CAL country = FRA }
+        alliance = { country = CAL country = ENG } 
+        alliance = { country = CAL country = U07 }
+        alliance = { country = CAL country = RUS }
+        ispuppet = CAL
+        atwar = CAL
+	} 
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_906557_NAME"
+desc = "EVT_906557_DESC"
+picture = "diplomatic_campaign"
+
+action = {
+ai_chance = 70
+name = "EVT_906557_OPTIONA"
+trigger = {
+exists = CAN
+NOT = { ispuppet = CAN }
+NOT = { war = { country = RUS country = CAN } }
+participant = { country = CAN value = 1 }
+}
+command = { trigger = { NOT = { alliance = { country = CAN country = U07 } } } type = trigger which = 906558 }
+command = { trigger = { alliance = { country = CAN country = U07 } } type = trigger which = 906559 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = dissent value = 2 }
+command = { type = clrflag which = CAL_LIB }
+command = { type = relation which = CAN value = 20 }
+}
+
+action = {
+ai_chance = 50
+name = "EVT_906557_OPTIONB"
+trigger = {
+exists = GER
+NOT = { ispuppet = GER }
+control = { province = 163 data = GER }
+control = { province = 145 data = GER }
+participant = { country = GER value = 2 }
+}
+command = { type = trigger which = 906560 } # German response
+command = { type = domestic which = interventionism value = 1 }
+command = { type = dissent value = 2 }
+command = { type = clrflag which = CAL_LIB }
+command = { type = relation which = GER value = 20 }
+}
+
+action = {
+ai_chance = 30
+name = "EVT_906557_OPTIONC"
+trigger = {
+exists = JAP
+NOT = { ispuppet = JAP }
+control = { province = 1552 data = JAP }
+control = { province = 1554 data = JAP }
+NOT = {
+flag = JAP_ISO
+atwar = JAP
+}
+}
+command = { type = trigger which = 906561 } # Japan response
+command = { type = domestic which = interventionism value = 1 }
+command = { type = dissent value = 2 }
+command = { type = clrflag which = CAL_LIB }
+command = { type = relation which = JAP value = 20 }
+}
+
+action = {
+ai_chance = 10
+name = "EVT_906557_OPTIOND"
+trigger = {
+exists = RUS
+control = { province = 691 data = RUS }
+control = { province = 1186 data = RUS }
+control = { province = 572 data = RUS }
+control = { province = 1162 data = RUS }
+NOT = { 
+alliance = { country = RUS country = JAP }
+alliance = { country = RUS country = FRA }
+alliance = { country = RUS country = CAN }
+alliance = { country = RUS country = GER }
+ispuppet = RUS
+exists = TRA 
+atwar = RUS 
+flag = RUS_BOL
+exists = SOV
+}
+}
+command = { type = trigger which = 906562 } # Russian response
+command = { type = domestic which = interventionism value = 1 }
+command = { type = dissent value = 2 }
+command = { type = clrflag which = CAL_LIB }
+command = { type = relation which = RUS value = 20 }
+}
+
+action = {
+ai_chance = 15
+name = "EVT_906557_OPTIONE"
+command = { type = dissent value = -1 }
+command = { type = belligerence which = CAL value = -10  }
+}
+}
+
+event = {
+id = 906558
+country = CAN
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_906558_NAME"
+desc = "EVT_906558_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_906558_OPTIONA"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = alliance which = CAL }
+command = { type = relation which = CAL value = 50 }
+command = { type = relation which = USA value = -10 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_906558_OPTIONB"
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = CAL value = -25 }
+command = { type = relation which = USA value = 10 }
+}
+}
+
+
+event = {
+id = 906559
+country = U07
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_906559_NAME"
+desc = "EVT_906559_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_906559_OPTIONA"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = alliance which = CAL }
+command = { type = relation which = CAL value = 50 }
+command = { type = relation which = USA value = -10 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_906559_OPTIONB"
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = CAL value = -25 }
+command = { type = relation which = USA value = 10 }
+}
+}
+
+event = {
+id = 906560
+country = GER
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_906560_NAME"
+desc = "EVT_906560_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_906560_OPTIONA"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = alliance which = CAL }
+command = { type = relation which = CAL value = 50 }
+command = { type = relation which = USA value = -10 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_906560_OPTIONB"
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = CAL value = -25 }
+command = { type = relation which = USA value = 10 }
+}
+}
+
+
+event = {
+id = 906561
+country = JAP
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_906561_NAME"
+desc = "EVT_906561_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_906561_OPTIONA"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = alliance which = CAL }
+command = { type = relation which = CAL value = 50 }
+command = { type = relation which = USA value = -10 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_906561_OPTIONB"
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = CAL value = -25 }
+command = { type = relation which = USA value = 10 }
+}
+}
+
+event = {
+id = 906562
+country = RUS
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_906562_NAME"
+desc = "EVT_906562_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_906562_OPTIONA"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = alliance which = CAL }
+command = { type = relation which = CAL value = 50 }
+command = { type = relation which = USA value = -10 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_906562_OPTIONB"
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = CAL value = -25 }
+command = { type = relation which = USA value = 10 }
+}
+}
+
+event = {
+id = 906568
+country = U32
+style = 2
+
+trigger =  { 
+        flag = U32_LIB
+	NOT = { 
+        government = communist
+	alliance = { country = U32 country = USA }
+        alliance = { country = U32 country = GER } 
+        alliance = { country = U32 country = JAP }
+        alliance = { country = U32 country = CAN } 
+        alliance = { country = U32 country = FRA }
+        alliance = { country = U32 country = ENG } 
+        alliance = { country = U32 country = U07 }
+        alliance = { country = U32 country = RUS }
+        ispuppet = U32
+        atwar = U32
+	} 
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 70
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_906568_NAME"
+desc = "EVT_906568_DESC"
+picture = "diplomatic_campaign"
+
+action_a = {
+ai_chance = 70
+name = "EVT_906568_OPTIONA"
+trigger = {
+exists = CAN
+NOT = { ispuppet = CAN }
+participant = { country = CAN value = 1 }
+}
+command = { trigger = { NOT = { alliance = { country = CAN country = U07 } } } type = trigger which = 906569 }
+command = { trigger = { alliance = { country = CAN country = U07 } } type = trigger which = 906565 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = dissent value = 2 }
+command = { type = clrflag which = U32_LIB }
+command = { type = relation which = CAN value = 20 }
+}
+
+action_b = {
+ai_chance = 50
+name = "EVT_906568_OPTIONB"
+trigger = {
+exists = GER
+NOT = { ispuppet = GER }
+control = { province = 163 data = GER }
+control = { province = 145 data = GER }
+participant = { country = GER value = 2 }
+NOT = { war = { country = GER country = CAN } }
+}
+command = { type = trigger which = 906566 } # German response
+command = { type = domestic which = interventionism value = 1 }
+command = { type = dissent value = 2 }
+command = { type = clrflag which = U32_LIB }
+command = { type = relation which = GER value = 20 }
+}
+
+action_c = {
+ai_chance = 10
+name = "EVT_906568_OPTIONC"
+trigger = {
+exists = RUS
+control = { province = 691 data = RUS }
+control = { province = 1186 data = RUS }
+control = { province = 572 data = RUS }
+control = { province = 1162 data = RUS }
+NOT = { 
+alliance = { country = RUS country = JAP }
+alliance = { country = RUS country = FRA }
+alliance = { country = RUS country = CAN }
+alliance = { country = RUS country = GER }
+ispuppet = RUS
+exists = TRA 
+atwar = RUS 
+flag = RUS_BOL
+exists = SOV
+}
+}
+command = { type = trigger which = 906567 } # Russian response
+command = { type = domestic which = interventionism value = 1 }
+command = { type = dissent value = 2 }
+command = { type = clrflag which = U32_LIB }
+command = { type = relation which = RUS value = 20 }
+}
+
+action_d = {
+ai_chance = 15
+name = "EVT_906568_OPTIOND"
+command = { type = dissent value = -1 }
+command = { type = belligerence which = U32 value = -10  }
+}
+}
+
+event = {
+id = 906569
+country = CAN
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_906569_NAME"
+desc = "EVT_906569_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_906569_OPTIONA"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = alliance which = U32 }
+command = { type = relation which = U32 value = 50 }
+command = { type = relation which = USA value = -10 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_906569_OPTIONB"
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = U32 value = -25 }
+command = { type = relation which = USA value = 10 }
+}
+}
+
+
+event = {
+id = 906565
+country = U07
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_906565_NAME"
+desc = "EVT_906565_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_906565_OPTIONA"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = alliance which = U32 }
+command = { type = relation which = U32 value = 50 }
+command = { type = relation which = USA value = -10 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_906565_OPTIONB"
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = U32 value = -25 }
+command = { type = relation which = USA value = 10 }
+}
+}
+
+event = {
+id = 906566
+country = GER
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_906566_NAME"
+desc = "EVT_906566_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_906566_OPTIONA"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = alliance which = U32 }
+command = { type = relation which = U32 value = 50 }
+command = { type = relation which = USA value = -10 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_906566_OPTIONB"
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = U32 value = -25 }
+command = { type = relation which = USA value = 10 }
+}
+}
+
+
+event = {
+id = 906567
+country = RUS
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_906567_NAME"
+desc = "EVT_906567_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_906567_OPTIONA"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = alliance which = U32 }
+command = { type = relation which = U32 value = 50 }
+command = { type = relation which = USA value = -10 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_906567_OPTIONB"
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = U32 value = -25 }
+command = { type = relation which = USA value = 10 }
+}
+}
+
+###########
+ # 1940 elections
+ ############
+
+
+ event = {
+     id = 9993711
+     random = no
+     country = USA
+     style = 2
+
+     trigger = {
+     flag = END_ACW
+     headofstate = 6235 # Curtis
+     }
+
+     name = "EVT_9993711_NAME"
+     desc = "EVT_9993711_DESC"
+     picture = "us1936elections"
+
+
+     date = { day = 5 month = november year = 1940 }
+
+     action_a = {
+         name = "EVT_9993711_OPTIONA"
+         ai_chance = 60
+         command = { type = headofstate which = 6239 } # Knox
+         command = { type = headofgovernment which = 6241 } # Dewey
+         command = { type = foreignminister which = 6066 } # Vandenberg
+         command = { type = armamentminister which = 6240 } # Landon
+         command = { type = ministerofsecurity which = 6005 } # J E Hoover
+         command = { type = set_domestic which = political_left value = 3 }
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = dissent value = -5 }
+         command = { type = sleepevent which = 9993712 }
+         command = { type = sleepevent which = 9993713 }
+         command = { type = sleepevent which = 9993714 }
+     }
+     action_b = {
+         name = "EVT_9993711_OPTIONB"
+         ai_chance = 40
+         command = { type = headofstate which = 6236 } # Garner
+         command = { type = headofgovernment which = 6044 } # Henry Wallace
+         command = { type = foreignminister which = 6003 } # Hull
+         command = { type = armamentminister which = 6078 } # Hopkins
+         command = { type = ministerofsecurity which = 6005 } # J Edgar Hoover
+         command = { type = set_domestic which = political_left value = 6 }
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = dissent value = -2 }
+         command = { type = sleepevent which = 9993712 }
+         command = { type = sleepevent which = 9993713 }
+         command = { type = sleepevent which = 9993714 }
+     }
+ }
+
+
+ event = {
+     id = 9993712
+     random = no
+     country = USA
+     style = 2
+
+     trigger = {
+     flag = END_ACW
+     headofstate = 6293 # Knox (Curtis can die in office).
+     }
+
+     name = "EVT_9993712_NAME"
+     desc = "EVT_9993712_DESC"
+     picture = "us1936elections"
+
+
+     date = { day = 5 month = november year = 1940 }
+
+     action_a = {
+         name = "EVT_9993712_OPTIONA"
+         ai_chance = 60
+         command = { type = headofstate which = 6239 } # Knox
+         command = { type = headofgovernment which = 6241 } # Dewey
+         command = { type = foreignminister which = 6066 } # Vandenberg
+         command = { type = armamentminister which = 6240 } # Landon
+         command = { type = ministerofsecurity which = 6005 } # J E Hoover
+         command = { type = set_domestic which = political_left value = 3 }
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = dissent value = -5 }
+         command = { type = sleepevent which = 9993711 }
+         command = { type = sleepevent which = 9993713 }
+         command = { type = sleepevent which = 9993714 }
+     }
+     action_b = {
+         name = "EVT_9993712_OPTIONB"
+         ai_chance = 40
+         command = { type = headofstate which = 6236 } # Garner
+         command = { type = headofgovernment which = 6044 } # Henry Wallace
+         command = { type = foreignminister which = 6003 } # Hull
+         command = { type = armamentminister which = 6078 } # Hopkins
+         command = { type = ministerofsecurity which = 6005 } # J Edgar Hoover
+         command = { type = set_domestic which = political_left value = 6 }
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = dissent value = -2 }
+         command = { type = sleepevent which = 9993711 }
+         command = { type = sleepevent which = 9993713 }
+         command = { type = sleepevent which = 9993714 }
+     }
+ }
+
+ event = {
+     id = 9993713
+     random = no
+     country = USA
+     style = 2
+
+     trigger = {
+     flag = END_ACW
+     headofstate = 6236 # Garner.
+     }
+
+     name = "EVT_9993713_NAME"
+     desc = "EVT_9993713_DESC"
+     picture = "us1936elections"
+
+
+     date = { day = 5 month = november year = 1940 }
+
+     action_a = {
+         name = "EVT_9993713_OPTIONA"
+         ai_chance = 60
+         command = { type = headofstate which = 6236 } # Garner
+         command = { type = headofgovernment which = 6044 } # Henry Wallace
+         command = { type = foreignminister which = 6003 } # Hull
+         command = { type = armamentminister which = 6078 } # Hopkins
+         command = { type = ministerofsecurity which = 6005 } # J Edgar Hoover
+         command = { type = set_domestic which = political_left value = 6 }
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = dissent value = -2 }
+         command = { type = sleepevent which = 9993711 }
+         command = { type = sleepevent which = 9993712 }
+         command = { type = sleepevent which = 9993714 }
+     }
+     action_b = {
+         name = "EVT_9993713_OPTIONB"
+         ai_chance = 40
+         command = { type = headofstate which = 6239 } # Knox
+         command = { type = headofgovernment which = 6241 } # Dewey
+         command = { type = foreignminister which = 6066 } # Vandenberg
+         command = { type = armamentminister which = 6240 } # Landon
+         command = { type = ministerofsecurity which = 6005 } # J E Hoover
+         command = { type = set_domestic which = political_left value = 3 }
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = dissent value = -5 }
+         command = { type = sleepevent which = 9993711 }
+         command = { type = sleepevent which = 9993712 }
+         command = { type = sleepevent which = 9993714 }
+     }
+ }
+
+ event = {
+     id = 9993714
+     random = no
+     country = USA
+     style = 2
+
+     trigger = {
+     flag = END_ACW
+     headofstate = 6242 # MacArthur.
+     }
+
+     name = "EVT_9993714_NAME"
+     desc = "EVT_9993714_DESC"
+     picture = "us1936elections"
+
+
+     date = { day = 5 month = november year = 1940 }
+
+     action_a = {
+         name = "EVT_9993714_OPTIONA"
+         ai_chance = 70
+         command = { type = headofstate which = 6242 } # Mac
+         command = { type = headofgovernment which = 6048 } # Knox
+         command = { type = foreignminister which = 6066 } # Vandenberg
+         command = { type = armamentminister which = 6240 } # Landon
+         command = { type = ministerofsecurity which = 6005 } # J E Hoover
+         command = { type = set_domestic which = political_left value = 3 }
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = dissent value = -5 }
+         command = { type = sleepevent which = 9993711 }
+         command = { type = sleepevent which = 9993712 }
+         command = { type = sleepevent which = 9993713 }
+     }
+     action_b = {
+         name = "EVT_9993714_OPTIONB"
+         ai_chance = 30
+         command = { type = headofstate which = 6236 } # Garner
+         command = { type = headofgovernment which = 6044 } # Henry Wallace
+         command = { type = foreignminister which = 6003 } # Hull
+         command = { type = armamentminister which = 6078 } # Hopkins
+         command = { type = ministerofsecurity which = 6005 } # J Edgar Hoover
+         command = { type = set_domestic which = political_left value = 6 }
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = dissent value = -2 }
+         command = { type = sleepevent which = 9993711 }
+         command = { type = sleepevent which = 9993712 }
+         command = { type = sleepevent which = 9993713 }
+     }
+ }
+
+ #######################
+ #  1944
+ #######################
+
+ event = {
+     id = 9993715
+     random = no
+     country = USA
+     style = 2
+
+     trigger = {
+     flag = END_ACW
+     headofstate = 6239 # Knox
+     }
+
+     name = "EVT_9993715_NAME"
+     desc = "EVT_9993715_DESC"
+     picture = "us1936elections"
+
+
+     date = { day = 5 month = november year = 1944 }
+
+     action_a = {
+         name = "EVT_9993715_OPTIONA"
+         ai_chance = 60
+         command = { type = headofstate which = 6038 } # Dewey
+         command = { type = headofgovernment which = 6050 } # Bricker
+         command = { type = foreignminister which = 6066 } # Vandenberg
+         command = { type = armamentminister which = 6091} # Vinson
+         command = { type = ministerofsecurity which = 6005 } # J E Hoover
+         command = { type = set_domestic which = political_left value = 3 }
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = dissent value = -5 }
+         command = { type = sleepevent which = 9993716 }
+         command = { type = sleepevent which = 9993717 }
+         command = { type = sleepevent which = 9993718 }
+     }
+     action_b = {
+         name = "EVT_9993715_OPTIONB"
+         ai_chance = 40
+         command = { type = headofstate which = 6243 } # Hull
+         command = { type = headofgovernment which = 6046 } # Truman
+         command = { type = foreignminister which = 6203 } # Connally
+         command = { type = armamentminister which = 6078 } # Hopkins
+         command = { type = ministerofsecurity which = 6005 } # J Edgar Hoover
+         command = { type = set_domestic which = political_left value = 6 }
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = dissent value = -2 }
+         command = { type = sleepevent which = 9993716 }
+         command = { type = sleepevent which = 9993717 }
+         command = { type = sleepevent which = 9993718 }
+     }
+ }
+
+
+ event = {
+     id = 9993716
+     random = no
+     country = USA
+     style = 2
+
+     trigger = {
+     flag = END_ACW
+     headofstate = 6038 # Dewey (Knox can die in office).
+     }
+
+     name = "EVT_9993716_NAME"
+     desc = "EVT_9993716_DESC"
+     picture = "us1936elections"
+
+
+     date = { day = 5 month = november year = 1944 }
+
+     action_a = {
+         name = "EVT_9993716_OPTIONA"
+         ai_chance = 60
+         command = { type = headofstate which = 6038 } # Dewey
+         command = { type = headofgovernment which = 6250 } # Bricker
+         command = { type = foreignminister which = 6066 } # Vandenberg
+         command = { type = armamentminister which = 6091 } # Vinson
+         command = { type = ministerofsecurity which = 6005 } # J E Hoover
+         command = { type = set_domestic which = political_left value = 3 }
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = dissent value = -5 }
+         command = { type = sleepevent which = 9993715 }
+         command = { type = sleepevent which = 9993717 }
+         command = { type = sleepevent which = 9993718 }
+     }
+     action_b = {
+         name = "EVT_9993716_OPTIONB"
+         ai_chance = 40
+         command = { type = headofstate which = 6243 } # Hull
+         command = { type = headofgovernment which = 6046 } # Truman
+         command = { type = foreignminister which = 6203 } # Connally
+         command = { type = armamentminister which = 6078 } # Hopkins
+         command = { type = ministerofsecurity which = 6005 } # J Edgar Hoover
+         command = { type = set_domestic which = political_left value = 6 }
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = dissent value = -2 }
+         command = { type = sleepevent which = 9993715 }
+         command = { type = sleepevent which = 9993717 }
+         command = { type = sleepevent which = 9993718 }
+     }
+ }
+
+ event = {
+     id = 9993717
+     random = no
+     country = USA
+     style = 2
+
+     trigger = {
+     flag = END_ACW
+     headofstate = 6236 # Garner
+     }
+
+     name = "EVT_9993717_NAME"
+     desc = "EVT_9993717_DESC"
+     picture = "us1936elections"
+
+
+     date = { day = 5 month = november year = 1944 }
+
+     action_a = {
+         name = "EVT_9993717_OPTIONA"
+         ai_chance = 50
+         command = { type = headofstate which = 6032 } # Wallace
+         command = { type = headofgovernment which = 6047 } # Barkley
+         command = { type = foreignminister which = 6203 } # Connally
+         command = { type = armamentminister which = 6078 } # Hopkins
+         command = { type = ministerofsecurity which = 6005 } # J Edgar Hoover
+         command = { type = set_domestic which = political_left value = 6 }
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = dissent value = -2 }
+         command = { type = sleepevent which = 9993715 }
+         command = { type = sleepevent which = 9993716 }
+         command = { type = sleepevent which = 9993718 }
+     }
+     action_b = {
+         name = "EVT_9993717_OPTIONB"
+         ai_chance = 50
+         command = { type = headofstate which = 6244 } # Taft
+         command = { type = headofgovernment which = 6051 } # Thurmond
+         command = { type = foreignminister which = 6066 } # Vandenberg
+         command = { type = armamentminister which = 6091 } # Vinson
+         command = { type = ministerofsecurity which = 6005 } # J E Hoover
+         command = { type = set_domestic which = political_left value = 3 }
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = dissent value = -5 }
+         command = { type = sleepevent which = 9993715 }
+         command = { type = sleepevent which = 9993716 }
+         command = { type = sleepevent which = 9993718 }
+     }
+ }
+
+ event = {
+     id = 9993718
+     random = no
+     country = USA
+     style = 2
+
+     trigger = {
+     flag = END_ACW
+     headofstate = 6242 # MacArthur
+     }
+
+     name = "EVT_9993718_NAME"
+     desc = "EVT_9993718_DESC"
+     picture = "us1936elections"
+
+
+     date = { day = 5 month = november year = 1944 }
+
+     action_a = {
+         name = "EVT_9993718_OPTIONA"
+         ai_chance = 40
+         command = { type = headofstate which = 6242 } # MacArthur
+         command = { type = headofgovernment which = 6050 } # Bricker
+         command = { type = foreignminister which = 6066 } # Vandenberg
+         command = { type = armamentminister which = 6091 } # Vinson
+         command = { type = ministerofsecurity which = 6005 } # J Edgar Hoover
+         command = { type = set_domestic which = political_left value = 6 }
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = dissent value = -5 }
+         command = { type = sleepevent which = 9993715 }
+         command = { type = sleepevent which = 9993716 }
+         command = { type = sleepevent which = 9993717 }
+     }
+     action_b = {
+     name = "EVT_9993718_OPTIONB"
+         ai_chance = 60
+         command = { type = headofstate which = 6243 } # Hull
+         command = { type = headofgovernment which = 6047 } # Harriman
+         command = { type = foreignminister which = 6203 } # Connally
+         command = { type = armamentminister which = 6078 } # Hopkins
+         command = { type = ministerofsecurity which = 6005 } # J Edgar Hoover
+         command = { type = set_domestic which = political_left value = 6 }
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = dissent value = -5 }
+         command = { type = sleepevent which = 9993715 }
+         command = { type = sleepevent which = 9993716 }
+         command = { type = sleepevent which = 9993717 }
+     }
+ }
+
+#######################
+#  1948
+#######################
+
+event = {
+     id = 9993719
+     random = no
+     country = USA
+     style = 2
+
+     trigger = {
+     flag = END_ACW
+     headofstate = 6038 # Dewey
+     }
+
+     name = "EVT_9993719_NAME"
+     desc = "EVT_9993719_DESC"
+     picture = "us1936elections"
+
+
+     date = { day = 5 month = november year = 1948 }
+
+     action_a = {
+         name = "EVT_9993719_OPTIONA"
+         ai_chance = 60
+         command = { type = headofstate which = 6038 } # Dewey
+         command = { type = headofgovernment which = 6050 } # Bricker
+         command = { type = foreignminister which = 6245 } # Dulles
+         command = { type = armamentminister which = 6090 } # Rockefeller
+         command = { type = ministerofsecurity which = 6246 } # A. Dulles
+         command = { type = set_domestic which = political_left value = 6 }
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = dissent value = -5 }
+         command = { type = sleepevent which = 9993720 }
+         command = { type = sleepevent which = 9993721 }
+         command = { type = sleepevent which = 9993722 }
+         command = { type = sleepevent which = 9993723 }
+     }
+     action_b = {
+     name = "EVT_9993719_OPTIONB"
+         ai_chance = 40
+         command = { type = headofstate which = 6032 } # Walace
+         command = { type = headofgovernment which = 6247 } # Harriman
+         command = { type = foreignminister which = 6060 } # Stettinius
+         command = { type = armamentminister which = 6248 } # Truman
+         command = { type = ministerofsecurity which = 6249 } # Donovan
+         command = { type = set_domestic which = political_left value = 6 }
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = dissent value = -5 }
+         command = { type = sleepevent which = 9993720 }
+         command = { type = sleepevent which = 9993721 }
+         command = { type = sleepevent which = 9993722 }
+         command = { type = sleepevent which = 9993723 }
+     }
+ }
+
+event = {
+     id = 9993720
+     random = no
+     country = USA
+     style = 2
+
+     trigger = {
+     flag = END_ACW
+     headofstate = 6242 # MacArthur
+     }
+
+     name = "EVT_9993720_NAME"
+     desc = "EVT_9993720_DESC"
+     picture = "us1936elections"
+
+
+     date = { day = 5 month = november year = 1948 }
+
+     action_a = {
+         name = "EVT_9993720_OPTIONA"
+         ai_chance = 40
+         command = { type = headofstate which = 6250 } # Bricker
+         command = { type = headofgovernment which = 6051 } # Thurmond
+         command = { type = foreignminister which = 6245 } # Dulles
+         command = { type = armamentminister which = 6090 } # Rockefeller
+         command = { type = ministerofsecurity which = 6246 } # A. Dulles
+         command = { type = set_domestic which = political_left value = 6 }
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = dissent value = -5 }
+         command = { type = sleepevent which = 9993719 }
+         command = { type = sleepevent which = 9993721 }
+         command = { type = sleepevent which = 9993722 }
+         command = { type = sleepevent which = 9993723 }
+     }
+     action_b = {
+     name = "EVT_9993720_OPTIONB"
+         ai_chance = 60
+         command = { type = headofstate which = 6032 } # Walace
+         command = { type = headofgovernment which = 6251 } # Stevenson
+         command = { type = foreignminister which = 6060 } # Stettinius
+         command = { type = armamentminister which = 6248 } # Truman
+         command = { type = ministerofsecurity which = 6249 } # Donovan
+         command = { type = set_domestic which = political_left value = 6 }
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = dissent value = -5 }
+         command = { type = sleepevent which = 9993719 }
+         command = { type = sleepevent which = 9993721 }
+         command = { type = sleepevent which = 9993722 }
+         command = { type = sleepevent which = 9993723 }
+     }
+ }
+
+ event = {
+     id = 9993721
+     random = no
+     country = USA
+     style = 2
+
+     trigger = {
+     flag = END_ACW
+     headofstate = 6242 # Taft
+     }
+
+     name = "EVT_9993721_NAME"
+     desc = "EVT_9993721_DESC"
+     picture = "us1936elections"
+
+
+     date = { day = 5 month = november year = 1948 }
+
+     action_a = {
+         name = "EVT_9993721_OPTIONA"
+         ai_chance = 60
+         command = { type = headofstate which = 6244 } # Taft
+         command = { type = headofgovernment which = 6050 } # Bricker
+         command = { type = foreignminister which = 6245 } # Dulles
+         command = { type = armamentminister which = 6090 } # Rockefeller
+         command = { type = ministerofsecurity which = 6253 } # Lodge
+         command = { type = set_domestic which = political_left value = 6 }
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = dissent value = -5 }
+         command = { type = sleepevent which = 9993719 }
+         command = { type = sleepevent which = 9993720 }
+         command = { type = sleepevent which = 9993722 }
+         command = { type = sleepevent which = 9993723 }
+     }
+     action_b = {
+     name = "EVT_9993721_OPTIONB"
+         ai_chance = 40
+         command = { type = headofstate which = 6252 } # Barkley
+         command = { type = headofgovernment which = 6251 } # Stevenson
+         command = { type = foreignminister which = 6060 } # Stettinius
+         command = { type = armamentminister which = 6248 } # Truman
+         command = { type = ministerofsecurity which = 6249 } # Donovan
+         command = { type = set_domestic which = political_left value = 6 }
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = dissent value = -5 }
+         command = { type = sleepevent which = 9993719 }
+         command = { type = sleepevent which = 9993720 }
+         command = { type = sleepevent which = 9993722 }
+         command = { type = sleepevent which = 9993723 }
+     }
+ }
+
+event = {
+     id = 9993722
+     random = no
+     country = USA
+     style = 2
+
+     trigger = {
+     flag = END_ACW
+     headofstate = 6243 # Hull
+     }
+
+     name = "EVT_9993722_NAME"
+     desc = "EVT_9993722_DESC"
+     picture = "us1936elections"
+
+
+     date = { day = 5 month = november year = 1948 }
+
+     action_a = {
+         name = "EVT_9993722_OPTIONA"
+         ai_chance = 50
+         command = { type = headofstate which = 6252 } # Harriman
+         command = { type = headofgovernment which = 6251 } # Stevenson
+         command = { type = foreignminister which = 6060 } # Stettinius
+         command = { type = armamentminister which = 6248 } # Truman
+         command = { type = ministerofsecurity which = 6249 } # Donovan
+         command = { type = set_domestic which = political_left value = 6 }
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = dissent value = -5 }
+         command = { type = sleepevent which = 9993719 }
+         command = { type = sleepevent which = 9993720 }
+         command = { type = sleepevent which = 9993721 }
+         command = { type = sleepevent which = 9993723 }
+     }
+     action_b = {
+     name = "EVT_9993722_OPTIONB"
+         ai_chance = 50
+         command = { type = headofstate which = 6244 } # Taft
+         command = { type = headofgovernment which = 6051 } # Thurmond
+         command = { type = foreignminister which = 6245 } # Dulles
+         command = { type = armamentminister which = 6090 } # Rockefeller
+         command = { type = ministerofsecurity which = 6253 } # Lodge
+         command = { type = set_domestic which = political_left value = 6 }
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = dissent value = -5 }
+         command = { type = sleepevent which = 9993719 }
+         command = { type = sleepevent which = 9993720 }
+         command = { type = sleepevent which = 9993721 }
+         command = { type = sleepevent which = 9993723 }
+     }
+ }
+
+event = {
+     id = 9993723
+     random = no
+     country = USA
+     style = 2
+
+     trigger = {
+     flag = END_ACW
+     headofstate = 6032 # Wallace
+     }
+
+     name = "EVT_9993723_NAME"
+     desc = "EVT_9993723_DESC"
+     picture = "us1936elections"
+
+
+     date = { day = 5 month = november year = 1948 }
+
+     action_a = {
+         name = "EVT_9993723_OPTIONA"
+         ai_chance = 50
+         command = { type = headofstate which = 6032 } # Walace
+         command = { type = headofgovernment which = 6046 } # Truman
+         command = { type = foreignminister which = 6060 } # Stettinius
+         command = { type = armamentminister which = 6248 } # Truman
+         command = { type = ministerofsecurity which = 6249 } # Donovan
+         command = { type = set_domestic which = political_left value = 6 }
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = dissent value = -5 }
+         command = { type = sleepevent which = 9993719 }
+         command = { type = sleepevent which = 9993720 }
+         command = { type = sleepevent which = 9993721 }
+         command = { type = sleepevent which = 9993722 }
+     }
+     action_b = {
+     name = "EVT_9993723_OPTIONB"
+         ai_chance = 50
+         command = { type = headofstate which = 6255 } # Thurmoud
+         command = { type = headofgovernment which = 6050 } # Bricker
+         command = { type = foreignminister which = 6245 } # Dulles
+         command = { type = armamentminister which = 6090 } # Rockefeller
+         command = { type = ministerofsecurity which = 6253 } # Lodge
+         command = { type = set_domestic which = political_left value = 6 }
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = dissent value = -5 }
+         command = { type = sleepevent which = 9993719 }
+         command = { type = sleepevent which = 9993720 }
+         command = { type = sleepevent which = 9993721 }
+         command = { type = sleepevent which = 9993722 }
+     }
+ }
+
+event = {
+	id = 658601
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 27 month = august year = 1936 }
+
+	action_a = {
+		name = "EVT_658601_OPTIONA"
+		command = { type = sleepminister which = 6004 } #George H. Dern
+	}
+}
+
+event = {
+	id = 658602
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 16 month = february year = 1936 }
+
+	action_a = {
+		name = "EVT_658602_OPTIONA"
+		command = { type = sleepminister which = 6231 } #Roy D. Chapin
+	}
+}
+
+event = {
+	id = 658603
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 21 month = september year = 1938 }
+
+	action_a = {
+		name = "EVT_658603_OPTIONA"
+		command = { type = sleepminister which = 6010 } #Oscar Westover
+	}
+}
+
+
+event = {
+	id = 658604
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 7 month = july year = 1939 }
+
+	action_a = {
+		name = "EVT_658604_OPTIONA"
+		command = { type = sleepminister which = 6009 } #Claude A. Swanson
+	}
+}
+
+
+event = {
+	id = 658605
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 11 month = april year = 1943 }
+
+	action_a = {
+		name = "EVT_658605_OPTIONA"
+		command = { type = sleepminister which = 6085 } #Daniel C. Roper
+	}
+}
+
+
+event = {
+	id = 658606
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 29 month = january year = 1944 }
+
+	action_a = {
+		name = "EVT_658606_OPTIONA"
+		command = { type = sleepminister which = 6078 } #Harry Hopkins
+	}
+}
+
+
+event = {
+	id = 658607
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 2 month = july year = 1944 }
+
+	action_a = {
+		name = "EVT_658607_OPTIONA"
+		command = { type = sleepminister which = 6093 } #Norman H. Davis
+	}
+}
+
+event = {
+	id = 658608
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 4 month = october year = 1944 }
+
+	action_a = {
+		name = "EVT_658608_OPTIONA"
+		command = { type = sleepminister which = 6067 } #Al Smith
+	}
+}
+
+event = {
+	id = 658609
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 13 month = march year = 1945 }
+
+	action_a = {
+		name = "EVT_658609_OPTIONA"
+		command = { type = sleepminister which = 6007 } #Malin Craig
+		command = { type = sleepminister which = 6008 } #Malin Craig
+		command = { type = sleepleader which = 60112 } #Malin Craig
+	}
+}
+
+
+event = {
+	id = 658610
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 25 month = july year = 1945 }
+
+	action_a = {
+		name = "EVT_658610_OPTIONA"
+		command = { type = sleepminister which = 6104 } #Victor Selden Clark
+	}
+}
+
+event = {
+	id = 658611
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_658611_NAME"
+	desc = "EVT_658611_DESC"
+	picture = "minister_died"
+
+	date = { day = 7 month = april year = 1947 }
+
+	action_a = {
+		name = "EVT_658611_OPTIONA"
+		command = { type = sleepminister which = 6096 } #Henry Ford
+	}
+}
+
+event = {
+	id = 658612
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 12 month = november year = 1947 }
+
+	action_a = {
+		name = "EVT_658612_OPTIONA"
+		command = { type = sleepminister which = 6065 } #John Bassett Moore
+	}
+}
+
+
+
+event = {
+	id = 658613
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 22 month = may year = 1949 }
+
+	action_a = {
+		name = "EVT_658613_OPTIONA"
+		command = { type = sleepminister which = 6155 } #James Forrestal
+	}
+}
+
+
+event = {
+	id = 658614
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 26 month = june year = 1949 }
+
+	action_a = {
+		name = "EVT_658614_OPTIONA"
+		command = { type = sleepminister which = 6232 } #Ray L. Wilbur
+	}
+}
+
+event = {
+	id = 658615
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 19 month = july year = 1949 }
+
+	action_a = {
+		name = "EVT_658615_OPTIONA"
+		command = { type = sleepminister which = 6107 } #Frank Murphy
+	}
+}
+
+event = {
+	id = 658616
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 29 month = october year = 1949 }
+
+	action_a = {
+		name = "EVT_658616_OPTIONA"
+		command = { type = sleepminister which = 6060 } #Edward Stettinius
+	}
+}
+
+event = {
+	id = 658617
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 29 month = may year = 1950 }
+
+	action_a = {
+		name = "EVT_658617_OPTIONA"
+		command = { type = sleepminister which = 6097 } #William Lemke
+	}
+}
+
+event = {
+	id = 658618
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 20 month = october year = 1950 }
+
+	action_a = {
+		name = "EVT_658618_OPTIONA"
+		command = { type = sleepminister which = 6061 } #Henry L. Stimson
+		command = { type = sleepminister which = 6207 } #Henry L. Stimson
+	}
+}
+
+event = {
+	id = 658619
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 18 month = april year = 1951 }
+
+	action_a = {
+		name = "EVT_658619_OPTIONA"
+		command = { type = sleepminister which = 6066 } #Arthur Vandenberg
+	}
+}
+
+
+event = {
+	id = 658620
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 22 month = january year = 1952 }
+
+	action_a = {
+		name = "EVT_658620_OPTIONA"
+		command = { type = sleepminister which = 6083 } #Robert P. Patterson
+	}
+}
+
+event = {
+	id = 658621
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 3 month = february year = 1952 }
+
+	action_a = {
+		name = "EVT_658621_OPTIONA"
+		command = { type = sleepminister which = 6199 } #Harold Ickes
+	}
+}
+
+event = {
+	id = 658622
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 13 month = june year = 1952 }
+
+	action_a = {
+		name = "EVT_658622_OPTIONA"
+		command = { type = sleepminister which = 6075 } #Robert Minor
+	}
+}
+
+event = {
+	id = 658623
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 1 month = august year = 1952 }
+
+	action_a = {
+		name = "EVT_658623_OPTIONA"
+		command = { type = sleepminister which = 6160 } #Andrew Higgins
+	}
+}
+
+event = {
+	id = 658624
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 4 month = may year = 1953 }
+
+	action_a = {
+		name = "EVT_658624_OPTIONA"
+		command = { type = sleepminister which = 6206 } #Robert F. Wagner
+	}
+}
+
+event = {
+	id = 658625
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 8 month = september year = 1953 }
+
+	action_a = {
+		name = "EVT_658625_OPTIONA"
+		command = { type = sleepminister which = 6091 } #Fred M. Vinson
+	}
+}
+
+event = {
+	id = 658626
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 2 month = april year = 1954 }
+
+	action_a = {
+		name = "EVT_658626_OPTIONA"
+		command = { type = sleepminister which = 6130 } #Hoyt Vandenberg
+		command = { type = sleepleader which = 60358 } #Hoyt Vandenberg
+	}
+}
+
+
+event = {
+	id = 658627
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 10 month = june year = 1954 }
+
+	action_a = {
+		name = "EVT_658627_OPTIONA"
+		command = { type = sleepminister which = 6234 } #Charles F. Adams III
+	}
+}
+
+event = {
+	id = 658628
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 13 month = june year = 1954 }
+
+	action_a = {
+		name = "EVT_658628_OPTIONA"
+		command = { type = sleepminister which = 6110 } #Hugh S. Gibson
+	}
+}
+
+event = {
+	id = 658629
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 9 month = october year = 1954 }
+
+	action_a = {
+		name = "EVT_658629_OPTIONA"
+		command = { type = sleepminister which = 6108 } #Robert H. Jackson
+	}
+}
+
+event = {
+	id = 658630
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 13 month = february year = 1955 }
+
+	action_a = {
+		name = "EVT_658630_OPTIONA"
+		command = { type = sleepleader which = 60336 } #Brehon B. Somervell
+	}
+}
+
+event = {
+	id = 658631
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 11 month = june year = 1958 }
+
+	action_a = {
+		name = "EVT_658631_OPTIONA"
+		command = { type = sleepminister which = 6114 } #William Aalto
+	}
+}
+
+event = {
+	id = 658632
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 21 month = june year = 1958 }
+
+	action_a = {
+		name = "EVT_658632_OPTIONA"
+		command = { type = sleepminister which = 6183 } #Robert L. Ghormley
+	}
+}
+
+
+event = {
+	id = 658633
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 3 month = february year = 1959 }
+
+	action_a = {
+		name = "EVT_658633_OPTIONA"
+		command = { type = sleepminister which = 6124 } #Vincent Astor
+	}
+}
+
+event = {
+	id = 658634
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 8 month = february year = 1959 }
+
+	action_a = {
+		name = "EVT_658634_OPTIONA"
+		command = { type = sleepminister which = 6128 } #William J. Donovan
+		command = { type = sleepleader which = 60134 } #William J. Donovan
+	}
+}
+
+
+event = {
+	id = 658636
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 20 month = june year = 1959 }
+
+	action_a = {
+		name = "EVT_658636_OPTIONA"
+		command = { type = sleepminister which = 6176 } #William D. Leahy
+		command = { type = sleepminister which = 6162 } #William D. Leahy
+		command = { type = sleepleader which = 60429 } #William D. Leahy
+	}
+}
+
+
+event = {
+	id = 658637
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 16 month = august year = 1959 }
+
+	action_a = {
+		name = "EVT_658637_OPTIONA"
+		command = { type = sleepminister which = 6197 } #William Halsey
+	}
+}
+
+event = {
+	id = 658638
+	random = no
+	country = USA
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 16 month = october year = 1959 }
+
+	action_a = {
+		name = "EVT_658638_OPTIONA"
+		command = { type = sleepminister which = 6064 } #George C. Marshall
+		command = { type = sleepminister which = 6136 } #George C. Marshall
+		command = { type = sleepminister which = 6144 } #George C. Marshall
+		command = { type = sleepleader which = 60254 } #George C. Marshall
+	}
+}

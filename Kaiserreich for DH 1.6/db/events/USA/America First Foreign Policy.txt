@@ -1,0 +1,897 @@
+########################################
+#### America First Foreign Policy
+########################################
+# 91722 - 91732
+
+### The Long Doctrine
+event = { 
+	id = 91722
+	random = no
+	country = TEX
+	trigger = {
+		flag = END_ACW
+                NOT = {
+                exists = USA
+                exists = CSA
+                ispuppet = TEX
+	        atwar = TEX
+                }
+	}
+
+	name = "EVT_91722_NAME"
+	desc = "EVT_91722_DESC"
+	style = 2
+
+	date = { day = 20 month = february year = 1939 }
+	offset = 20
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		name = "EVT_91722_OPTIONA"
+		ai_chance = 99	
+		command = { type = domestic which = interventionism value = 2 }
+		command = { type = relation which = ENG value = -50 }
+		command = { type = relation which = FRA value = -50 }
+                command = { type = relation which = RSI value = -50 }
+		command = { type = relation which = SOV value = -50 }
+		command = { type = relation which = CAL value = 50 }
+		command = { type = relation which = CAN value = 50 }
+                command = { type = relation which = JAP value = 50 }
+		command = { type = relation which = GER value = 50 }
+		command = { type = trigger which = 91732 }
+                command = { type = trigger which = 91733 }
+                command = { type = trigger which = 91734 }
+                command = { type = trigger which = 91735 }
+	}
+	action_b = {
+		name = "EVT_91722_OPTIONB"
+		ai_chance = 1
+		command = { type = dissent value = 1 }
+		command = { type = domestic which = interventionism value = -2 }
+	}
+}
+
+### The American Union Navy
+event = {
+	id = 91723
+	random = no
+	country = TEX
+	trigger = {
+		flag = END_ACW
+		NOT = {
+                exists = USA
+                exists = CSA
+                ispuppet = TEX
+	        atwar = TEX
+                }
+	}
+
+	name = "EVT_91723_NAME"
+	desc = "EVT_91723_DESC"
+	style = 2
+
+	date = { day = 15 month = march year = 1939 }
+	offset = 50
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		name = "EVT_91723_OPTIONA"
+		ai_chance = 66
+		command = { type = build_time which = battleship when = on_upgrade value = -5 where = relative }
+		command = { type = build_time which = carrier when = on_upgrade value = -5 where = relative }
+		command = { type = build_time which = heavy_cruiser when = on_upgrade value = -5 where = relative }
+	}
+	action_b = {
+		name = "EVT_91723_OPTIONB"
+		ai_chance = 34
+		command = { type = build_cost which = battlecruiser when = on_upgrade value = -5 where = relative }
+		command = { type = build_cost which = light_cruiser when = on_upgrade value = -5 where = relative }
+		command = { type = build_cost which = submarine when = on_upgrade value = -5 where = relative }
+	}
+}
+
+### The Syndicate Threat
+event = {
+	id = 91724
+	random = no
+	country = TEX
+	trigger = {
+                OR = {
+		war = { country = FRA country = GER }
+                war = { country = SOV country = GER }
+		war = { country = ENG country = GER }
+                }
+		NOT = {
+                exists = USA
+                exists = CSA
+                ispuppet = TEX
+	        atwar = TEX
+                }
+                OR = {
+		control = { province = 163 data = FRA }
+                control = { province = 163 data = SOV }
+                control = { province = 163 data = RSI }
+                control = { province = 163 data = ENG }
+                }
+	}
+
+	name = "EVT_91724_NAME"
+	desc = "EVT_91724_DESC"
+	style = 2
+        picture = "spread_revolution"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 40
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		name = "EVT_91724_OPTIONA"
+		ai_chance = 10
+		command = { type = dissent value = -1 }
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = relation which = CAN value = -25 }
+		command = { type = relation which = GER value = -25 }
+	}
+	action_b = {
+		name = "EVT_91724_OPTIONB"
+		ai_chance = 65
+		command = { type = dissent value = 3 }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = supplies which = -4000 }
+                command = { type = manpowerpool value = -10 }
+		command = { type = relation which = FRA value = -25 }
+		command = { type = relation which = GER value = 25 }
+		command = { type = trigger which = 91738 }
+	}
+	action_c = {
+		name = "EVT_91724_OPTIONC"
+		ai_chance = 25
+                trigger = {
+                war = { country = GER country = CAN }
+                }
+		command = { trigger = { exists = FRA } type = war which = FRA }
+                command = { type = dissent value = 7 }
+                command = { type = domestic which = interventionism value = 3 }
+                command = { type = relation which = CAN value = 70 }
+		command = { type = relation which = GER value = 70 }
+                command = { type = relation which = VIC value = 70 }
+		command = { type = relation which = PAK value = 70 }
+	}
+
+        action_d = {
+		name = "EVT_91724_OPTIOND"
+		ai_chance = 25
+                trigger = {
+                NOT = { war = { country = GER country = CAN } }
+                }
+		command = { type = alliance which = GER }
+                command = { type = dissent value = 7 }
+                command = { type = domestic which = interventionism value = 3 }
+                command = { type = relation which = CAN value = 70 }
+		command = { type = relation which = GER value = 70 }
+                command = { type = relation which = VIC value = 70 }
+		command = { type = relation which = PAK value = 70 }
+	}
+}
+
+### Seizing New England AUS Canada
+event = {
+	id = 91725
+	random = no
+	country = TEX
+
+        decision = {
+        flag = END_ACW
+		exists = U10
+		NOT = {
+                        exists = USA
+                        exists = CSA
+			alliance = { country = TEX country = U10 }
+			}
+		NOT = {
+			war = { country = TEX country = U10 }
+                        war = { country = TEX country = CAL }
+                        war = { country = TEX country = MEX }
+			}
+		garrison = { country = TEX province = 1795 type = land size = 3 area = yes } #New York
+		garrison = { country = TEX province = 1845 type = land size = 3 area = yes } #Detroit
+		NOT = {
+			lost_vp = { country = TEX value = 10 }
+			}
+         
+    }
+    
+    decision_trigger = {
+        garrison = { country = TEX province = 1795 type = land size = 3 area = yes } #New York
+	garrison = { country = TEX province = 1845 type = land size = 3 area = yes } #Detroit
+    }
+
+	trigger = {
+		flag = END_ACW
+		exists = U10
+		NOT = {
+                        exists = USA
+                        exists = CSA
+			alliance = { country = TEX country = U10 }
+			}
+		NOT = {
+			war = { country = TEX country = U10 }
+                        war = { country = TEX country = CAL }
+                        war = { country = TEX country = MEX }
+			}
+		garrison = { country = TEX province = 1795 type = land size = 3 area = yes } #New York
+		garrison = { country = TEX province = 1845 type = land size = 3 area = yes } #Detroit
+		NOT = {
+			lost_vp = { country = TEX value = 10 }
+			}
+		OR = {
+			AND = {
+				random = 50
+				month = 4
+				NOT = {
+					month = 6
+					}
+				}
+			AND = {
+				random = 75
+				month = 6
+				NOT = {
+					month = 8
+					}
+				}
+			AND = {
+				month = 8
+				NOT = {
+					month = 10
+					}
+				}
+			}	
+		}
+
+	name = "EVT_91725_NAME"
+	desc = "EVT_91725_DESC"
+	style = 2
+        picture = "American_Infantry"
+        decision_picture = "decision_grand_offensive2"
+
+	date = { day = 11 month = may year = 1940 }
+	offset = 25
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		name = "EVT_91725_OPTIONA"
+		ai_chance = 98
+		command = { type = setflag which = AUS_NE_DEM }
+                
+command = { type = addcore   which = 1784   }
+command = { type = addcore   which = 1786   }
+command = { type = addcore   which = 1785   }
+command = { type = addcore   which = 1787   }
+command = { type = addcore   which = 1790   }
+command = { type = addcore   which = 1794   }
+command = { type = addcore   which = 1788   }
+command = { type = addcore   which = 1789   }
+command = { type = addcore   which = 1796   }
+command = { type = addcore   which = 1793   }
+command = { type = addcore   which = 1799   }
+command = { type = addcore   which = 1791   }
+command = { type = addcore   which = 1792   }
+command = { type = addcore   which = 1800   }
+		command = { type = relation which = CAN value = -50 }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = dissent value = -1 }
+	}
+	action_b = {
+		name = "EVT_91725_OPTIONB"
+		ai_chance = 2
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = dissent value = 5 }
+	}
+}
+
+### If Canada is allied with New England
+event = {
+	id = 91726
+	random = no
+	country = CAN
+	trigger = {
+		flag = AUS_NE_DEM
+		alliance = { country = CAN country = U10 }
+		not = {
+			alliance = { country = TEX country = CAN }
+		}
+	}
+
+	name = "EVT_91726_NAME"
+	desc = "EVT_91726_DESC"
+	style = 2
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 2
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		name = "EVT_91726_OPTIONA"
+		ai_chance = 70
+		command = { type = trigger which = 91727 }
+		command = { type = dissent value = -1 }
+		command = { type = domestic which = political_left value = -1 }
+		command = { type = clrflag which = AUS_NE_DEM }
+	}
+	action_b = {
+		name = "EVT_91726_OPTIONB"
+		ai_chance = 30
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = dissent which = 3 }
+	}
+}
+
+### New England Stands Alone
+event = {
+	id = 91727
+	random = no
+	country = U10
+	## triggered by 91726
+
+	name = "EVT_91727_NAME"
+	desc = "EVT_91727_DESC"
+	style = 2
+
+	action_a = {
+		name = "EVT_91727_OPTIONA"
+		ai_chance = 90
+		command = { type = leave_alliance }
+		command = { type = trigger which = 91728 }
+	}
+	action_b = {
+		name = "EVT_91727_OPTIONB"
+		ai_chance = 10
+		command = { type = leave_alliance }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = domestic which = defense_lobby value = 2 }
+		command = { type = dissent value = -1 }
+		command = { type = trigger which = 91729 }
+	}
+}
+
+### New England surrender
+event = {
+	id = 91728
+	random = no
+	country = TEX
+	## triggered by 91727
+
+	name = "EVT_91728_NAME"
+	desc = "EVT_91728_DESC"
+	style = 2
+
+	action_a = {
+		name = "EVT_91728_OPTIONA"
+		command = { type = inherit which = U10 }
+		command = { type = dissent value = -1 }
+	}
+}
+
+### New England refuses to surrender
+event = {
+	id = 91729
+	random = no
+	country = TEX
+	## triggered by 91727
+
+	name = "EVT_91729_NAME"
+	desc = "EVT_91729_DESC"
+	style = 2
+
+	action_a = {
+		name = "EVT_91729_OPTIONA"
+		ai_chance = 98
+		command = { type = war which = U10 }
+		command = { type = dissent value = 5 }
+	}
+	action_b = {
+		name = "EVT_91729_OPTIONB"
+		ai_chance = 2
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = dissent value = -1 }
+	}
+}
+
+### The Entente stands with New England
+event = {
+	id = 91730
+	random = no
+	country = U10
+	trigger = {
+		flag = AUS_NE_DEM
+		event = 91726
+	}
+
+	name = "EVT_91730_NAME"
+	desc = "EVT_91730_DESC"
+	style = 2
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 10
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		name = "EVT_91730_OPTIONA"
+		ai_chance = 40
+		command = { type = leave_alliance }
+		command = { type = trigger which = 91728 }
+	}
+	action_b = {
+		name = "EVT_91730_OPTIONB"
+		ai_chance = 60
+		command = { type = leave_alliance }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = domestic which = defense_lobby value = 2 }
+		command = { type = dissent value = -1 }
+		command = { type = trigger which = 91729 }
+	}
+}
+
+### New England no allies.
+event = {
+	id = 91731
+	random = no
+	country = U10
+	trigger = {
+		not = {
+			flag = AUS_NE_DEM
+			event = 91726
+		}
+		event = 91725
+	}
+
+	name = "EVT_91731_NAME"
+	desc = "EVT_91731_DESC"
+	style = 2
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 10
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		name = "EVT_91731_OPTIONA"
+		ai_chance = 99
+		command = { type = trigger which = 91728 }
+	}
+	action_b = {
+		name = "EVT_91731_OPTIONB"
+		ai_chance = 1
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = domestic which = defense_lobby value = 2 }
+		command = { type = dissent value = -1 }
+		command = { type = trigger which = 91729 }
+	}
+}
+
+event = {
+	id = 91732
+	country = MEX
+	random = no
+        style = 2
+
+	trigger = {
+		government = communist
+		}
+
+	name = "EVT_91732_NAME"
+	desc = "EVT_91732_DESC"
+
+	action_a = {
+		name = "EVT_91732_OPTIONA"
+		command = { type = relation which = TEX value = -75 }
+		}
+	}
+
+event = {
+	id = 91733
+	country = BRA
+	random = no
+        style = 2
+
+	trigger = {
+		government = communist
+		}
+
+	name = "EVT_91733_NAME"
+	desc = "EVT_91733_DESC"
+
+	action_a = {
+		name = "EVT_91733_OPTIONA"
+		command = { type = relation which = TEX value = -75 }
+		}
+	}
+
+event = {
+	id = 91734
+	country = GUA
+	random = no
+        style = 2
+
+	trigger = {
+		government = communist
+		}
+
+	name = "EVT_91734_NAME"
+	desc = "EVT_91734_DESC"
+
+	action_a = {
+		name = "EVT_91734_OPTIONA"
+		command = { type = relation which = TEX value = -75 }
+		}
+	}
+
+event = {
+	id = 91735
+	country = BOL
+	random = no
+        style = 2
+
+	trigger = {
+		government = communist
+		}
+
+	name = "EVT_91735_NAME"
+	desc = "EVT_91735_DESC"
+
+	action_a = {
+		name = "EVT_91735_OPTIONA"
+		command = { type = relation which = TEX value = -75 }
+		}
+	}
+
+### THE PSA and the TEX
+event = {
+id = 91736
+country = TEX
+random = no
+trigger = {
+	flag = END_ACW
+	exists = CAL
+	NOT = {
+                alliance = { country = CAL country = TEX }
+		alliance = { country = CAL country = CAN }
+		alliance = { country = CAL country = JAP }
+                ispuppet = TEX
+	        atwar = TEX
+                exists = USA
+                exists = CSA
+	}
+}
+
+name = "EVT_91736_NAME"
+desc = "EVT_91736_DESC"
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 60
+deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+	name = "EVT_91736_OPTIONA"
+	ai_chance = 90
+	command = { type = dissent value = 3 }
+	command = { type = war which = CAL }
+	}
+action_b = {
+	name = "EVT_91736_OPTIONB"
+	ai_chance = 10
+	command = { type = relation which = CAL value = 100 }
+	command = { type = dissent value = 1 }
+	}
+}
+
+### THE Mexico and the TEX
+event = {
+id = 91737
+country = TEX
+random = no
+trigger = {
+        event = 91732
+        event = 91722
+	flag = END_ACW
+	exists = MEX
+        control = { province = 1888 data = TEX } 
+        control = { province = 1955 data = TEX }
+        control = { province = 1832 data = TEX } 
+	NOT = {
+                alliance = { country = MEX country = TEX }
+		alliance = { country = MEX country = CAN }
+		alliance = { country = MEX country = GER }
+                ispuppet = TEX
+                ispuppet = MEX
+	        atwar = TEX
+                exists = USA
+                exists = CAL
+                exists = CSA
+	}
+}
+
+name = "EVT_91737_NAME"
+desc = "EVT_91737_DESC"
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 60
+deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+	name = "EVT_91737_OPTIONA"
+	ai_chance = 90
+	command = { type = dissent value = 1 }
+        command = { type = domestic which = interventionism value = 1 }
+	command = { type = domestic which = defense_lobby value = 1 }
+	command = { type = war which = MEX }
+	}
+action_b = {
+	name = "EVT_91737_OPTIONB"
+	ai_chance = 10
+	command = { type = relation which = MEX value = 100 }
+	command = { type = dissent value = 3 }
+        command = { type = domestic which = interventionism value = -1 }
+	}
+}
+
+event = {
+id = 91738
+country = GER
+style = 2
+
+name = "EVT_91738_NAME"
+desc = "EVT_91738_DESC"
+picture = "Supplies1"
+
+action_a = {
+	name = "EVT_91738_OPTIONA"
+	command = { type = relation which = TEX value = 100 }
+	command = { type = supplies value = 4000 }
+	command = { type = manpowerpool value = 10 }
+	}
+}
+########################################
+#### TEX demanding the return of colonies
+#### 91739 - 
+#### Adapted by Milites 
+########################################
+
+event = { 
+id = 91739
+random = no
+country = TEX
+picture = "pennsylvania"
+trigger = {
+flag = END_ACW
+owned = { province = 889 data = CAN } # Canal Zone
+control = { province = 889 data = CAN }
+
+
+NOT = {
+  ispuppet = TEX
+  war = { country = TEX country = CAN }
+}
+}
+
+name = "EVT_91739_NAME"
+desc = "EVT_91739_DESC"
+style = 2
+
+date = { day = 9 month = march year = 1939 }
+offset = 30
+deathdate = { day = 29 month = december year = 1964 }
+
+action_a = {
+name = "EVT_91739_OPTIONA"
+ai_chance = 90
+command = { type = relation which = CAN value = -50 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = dissent value = -1 }
+command = { type = trigger which = 91740 }
+}
+
+action_b = {
+name = "EVT_91739_OPTIONB"
+ai_chance = 10
+command = { type = domestic which = interventionism value = -1 }
+command = { type = dissent value = 5 }
+}
+}
+
+# Canada's reply
+
+event = { 
+id = 91740
+random = no
+country = CAN
+picture = "pennsylvania"
+
+# triggered by 91739
+
+name = "EVT_91740_NAME"
+desc = "EVT_91740_DESC"
+style = 2
+
+action_a = {
+name = "EVT_91740_OPTIONA"
+ai_chance = 80
+command = { type = relation which = TEX value = 25 }
+command = { type = secedeprovince which = TEX value = 889 }
+command = { type = dissent value = 1 }
+command = { type = trigger which = 91741 }
+}
+
+action_b = {
+name = "EVT_91740_OPTIONB"
+ai_chance = 20
+command = { type = relation which = TEX value = -50 }
+command = { type = dissent value = -1 }
+command = { type = trigger which = 91742 }
+}
+}
+
+# Canada accepts!
+
+event = { 
+id = 91741
+random = no
+country = USA
+
+# triggered by 91740
+
+name = "EVT_91741_NAME"
+desc = "EVT_91741_DESC"
+style = 2
+
+action_a = {
+name = "EVT_91741_OPTIONA"
+command = { type = addcore which = 889 }
+command = { type = relation which = CAN value = 25 }
+command = { type = dissent value = -1 }
+}
+}
+
+# Canada refuses!
+
+event = { 
+id = 91742
+random = no
+country = TEX
+
+# triggered by 91740
+
+name = "EVT_91742_NAME"
+desc = "EVT_91742_DESC"
+style = 2
+
+action_a = {
+name = "EVT_91742_OPTIONA"
+ai_chance = 97
+command = { type = relation which = CAN value = -15 }
+command = { type = addcore which = 889 }
+}
+
+action_b = {
+name = "EVT_91742_OPTIONB"
+ai_chance = 3
+command = { type = war which = CAN }
+command = { type = addcore which = 889 }
+}
+}
+
+event = { 
+id = 91743
+random = no
+country = TEX
+
+trigger = {
+flag = END_ACW
+owned = { province = 1778 data = CUB } # Guantanamo
+control = { province = 1778 data = CUB }
+
+
+NOT = {
+  ispuppet = TEX
+  war = { country = USA country = TEX }
+  war = { country = USA country = TEX }
+}
+}
+
+name = "EVT_91743_NAME"
+desc = "EVT_91743_DESC"
+style = 2
+picture = "guantanamobaynav"
+
+date = { day = 9 month = march year = 1937 }
+offset = 30
+deathdate = { day = 29 month = december year = 1964 }
+
+action_a = {
+name = "EVT_91743_OPTIONA"
+ai_chance = 90
+command = { type = relation which = CUB value = -50 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = end_non_aggression which = TEX where = CUB }
+command = { type = end_non_aggression which = CUB where = TEX }
+command = { type = dissent value = -1 }
+command = { type = trigger which = 91744 }
+}
+
+action_b = {
+name = "EVT_91743_OPTIONB"
+ai_chance = 10
+command = { type = domestic which = interventionism value = -1 }
+command = { type = dissent value = 5 }
+}
+}
+
+event = { 
+id = 91744
+random = no
+country = CUB
+picture = "pennsylvania"
+
+name = "EVT_91744_NAME"
+desc = "EVT_91744_DESC"
+style = 2
+
+action_a = {
+name = "EVT_91744_OPTIONA"
+ai_chance = 80
+command = { type = relation which = TEX value = 25 }
+command = { type = secedeprovince which = TEX value = 1778 }
+command = { type = dissent value = 1 }
+command = { type = trigger which = 91745 }
+}
+
+action_b = {
+name = "EVT_91744_OPTIONB"
+ai_chance = 20
+command = { type = relation which = USA value = -50 }
+command = { type = dissent value = -1 }
+command = { type = trigger which = 91746 }
+}
+}
+
+event = { 
+id = 91745
+random = no
+country = TEX
+
+name = "EVT_91745_NAME"
+desc = "EVT_91745_DESC"
+style = 2
+
+action_a = {
+name = "EVT_91745_OPTIONA"
+command = { type = addcore which = 1778 }
+command = { type = relation which = CUB value = 25 }
+command = { type = dissent value = -1 }
+}
+}
+
+event = { 
+id = 91746
+random = no
+country = TEX
+
+name = "EVT_91746_NAME"
+desc = "EVT_91746_DESC"
+style = 2
+
+action_a = {
+name = "EVT_91746_OPTIONA"
+ai_chance = 80
+command = { type = relation which = CUB value = -15 }
+command = { type = addcore which = 1778 }
+}
+
+action_b = {
+name = "EVT_91746_OPTIONB"
+ai_chance = 20
+command = { type = war which = CUB }
+command = { type = addcore which = 1778 }
+}
+}

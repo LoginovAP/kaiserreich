@@ -1,0 +1,3493 @@
+event = {
+	id = 730900
+	random = no
+	country = ROM
+
+	decision = {
+		NOT = {
+			war = { country = ROM country = HUN }
+			alliance = { country = ROM country = HUN }
+		}
+	}
+
+	decision_trigger = {
+		OR = {
+			garrison = { country = ROM province = 312 size = 1 } #Turnu Severin
+			garrison = { country = ROM province = 315 size = 1 } #Craiova
+			
+		}
+	}
+
+	trigger = {
+		NOT = {
+			war = { country = ROM country = HUN }
+			alliance = { country = ROM country = HUN }
+		}
+		OR = {
+			AND = { ai = yes random = 3 }		
+			AND = { 
+				ai = no
+				OR = {
+					garrison = { country = ROM province = 312 size = 1 } #Turnu Severin
+					garrison = { country = ROM province = 315 size = 1 } #Craiova
+					
+				}
+			}
+		}
+	}
+   
+	name = "EVT_730900_NAME"
+	desc = "EVT_9999_DESC" 
+	style = 2
+	picture = "ReoocuOlt"
+	decision_picture = "decision_oltenia"
+
+	date = { day = 0 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action = {
+		name = "EVT_730900_OPTIONA"
+		command = { type = relation which = HUN value = -15 }
+		command = { type = relation which = BUL value = -5 }
+		command = { type = relation which = GER value = -10 }
+		command = { type = relation which = AUS value = -5 }
+		command = { type = belligerence which = ROM value = 3 }
+		command = { type = dissent value = -2 }
+		command = { type = money value = 50 }
+		command = { type = peacetime_ic_mod value = 2 }
+		command = { type = trigger which = 730902 } # Hungary Gears up for war
+                command = { type = trigger which = 730908 } # Bulgarian reaction
+                command = { type = trigger which = 730909 } # German reaction
+		command = { type = domestic which = defense_lobby value = 1 }
+		
+	}
+}
+
+event = {
+    id = 730901
+    country = ROM
+
+    trigger = {
+        NOT = { event = 730900 }
+        NOT = { war = { country = ROM country = HUN } }
+        NOT = { alliance = { country = ROM country = HUN } }
+		NOT = {
+			OR = {
+				garrison = { country = ROM province = 312 size = 1 } #Turnu Severin
+				garrison = { country = ROM province = 315 size = 1 } #Craiova
+				
+			}
+		}
+    }
+
+    name = "EVT_730901_NAME"
+    desc = "EVT_730901_DESC"
+    picture = "great_war_manifestion"
+    style = 2
+    persistent = yes
+
+    date = { day = 1 month = february year = 1936 }
+    offset = 7
+    deathdate = { day = 29 month = march year = 1937 }
+
+    action_a = {
+        name = "EVT_730901_OPTIONA"
+        command = { type = dissent value = 3 }
+    }
+}
+
+event = {
+    id = 730902
+    country = HUN
+
+    name = "EVT_730902_NAME"
+    desc = "EVT_730902_DESC"
+    picture = "ReoocuOlt"
+    style = 2
+    
+    action_a = {
+    name = "EVT_730902_OPTIONA"
+    command = { type = relation which = ROM value = -15 }
+    command = { type = construct which = land_fort where = 291 value = 1 } # Timisoara/Temesvár
+    command = { type = construct which = land_fort where = 293 value = 1 } # Sibiu/Mármarossziget
+    }
+}
+
+event = {
+    id = 730908
+    country = BUL
+
+    name = "EVT_730908_NAME"
+    desc = "EVT_730908_DESC"
+    picture = "ReoocuOlt"
+    style = 2
+    
+    action_a = {
+    name = "EVT_730908_OPTIONA"
+    command = { type = relation which = ROM value = -15 }
+    }
+}
+
+event = {
+    id = 730909
+    country = GER
+
+    name = "EVT_730909_NAME"
+    desc = "EVT_730909_DESC"
+    picture = "ReoocuOlt"
+    style = 2
+    
+    action_a = {
+    name = "EVT_730909_OPTIONA"
+    command = { type = relation which = ROM value = -15 }
+    }
+}
+
+######################
+#
+# The oil of Ploesti
+#
+######################
+
+event = {
+    id = 730903
+    country = GER
+
+    trigger = {
+        event = 730909 
+        NOT = { war = { country = GER country = ROM } }
+        NOT = { alliance = { country = GER country = ROM } }
+    }
+
+    name = "EVT_730903_NAME"
+    desc = "EVT_730903_DESC"
+    style = 2
+    picture = "Industry"
+
+    date = { day = 6 month = february year = 1936 }
+    offset = 2
+    deathdate = { day = 10 month = april year = 1943 }
+    
+    action_a = {
+    name = "EVT_730903_OPTIONA"
+    ai_chance = 40
+    command = { type = money value = -40 }
+    command = { type = event which = 730914 where = ROM when = 5  }
+    }
+    
+    action_b = {
+    name = "EVT_730903_OPTIONB"
+    ai_chance = 40
+    command = { type = event which = 730915 where = ROM when = 5  }
+    command = { type = money value = -30  }
+    }
+
+    action_c = {
+    name = "EVT_730903_OPTIONC"
+    ai_chance = 10
+    command = { type = event which = 730904 where = ROM when = 5  }
+    }    
+    }
+    
+
+
+    
+event = {
+    id = 730904
+    country = ROM
+    
+    name = "EVT_730904_NAME"
+    desc = "EVT_730904_DESC"
+    style = 2
+    picture = "Industry"
+
+    action_a = {
+        name = "EVT_730904_OPTIONA"
+        command = { type = dissent value = -3 }
+        command = { type = trade which = ROM where = GER oil = -30 when = 30600 value = 1 }    #forced trade for 85 more years!
+        command = { type = trigger which = 730905 }
+        command = { type = money value = -50 } #compensation to German companies
+        command = { type = domestic which = free_market value = -1 }
+        command = { type = free_money value = -1 } #loss of tax income
+        command = { type = relation which = GER value = -20 }
+        
+    }
+}
+
+
+event = {
+    id = 730905 
+    country = GER
+    
+    name = "EVT_730905_NAME"
+    desc = "EVT_730905_DESC"
+    style = 2
+    picture = "Industry"
+    
+    action_a = {
+    name = "EVT_730905_OPTIONA"
+    command = { type = dissent value = 1 }
+    command = { type = money value = 100 }
+    command = { type = relation which = ROM value = -20 }
+    }
+}
+
+event = {
+    id = 730910
+    country = GER
+    style = 2
+
+    trigger = {
+        NOT = { 
+        ispuppet = URU
+        exists = ROM 
+        }
+        control = { province = 311 data = URU }
+        NOT = { war = { country = GER country = URU } }
+        NOT = { alliance = { country = GER country = URU } }
+    }
+
+    name = "EVT_730910_NAME"
+    desc = "EVT_730910_DESC"
+    picture = "Industry"
+
+	date = { day = 1 month = january year = 1937 }
+	offset = 3
+	deathdate = { day = 29 month = december year = 1950 }
+    
+    action_a = {
+    name = "EVT_730910_OPTIONA"
+    command = { type = relation which = URU value = -15 }
+    command = { type = trigger which = 730911 }
+    }
+}
+    
+event = {
+    id = 730911
+    country = URU
+    
+    name = "EVT_730911_NAME"
+    desc = "EVT_730911_DESC"
+    style = 2
+    picture = "Industry"
+
+	action_a = {
+        name = "EVT_730911_OPTIONA"
+        ai_chance = 50
+                trigger = {
+                NOT = {
+                atwar = GER
+                }
+                }
+		command = { type = dissent value = 3 }
+		command = { type = trade which = URU where = GER oil = -30 when = 30600 value = 1 }	#forced trade for 85 more years!
+		command = { type = trigger which = 730912 }
+                command = { type = relation which = GER value = 20 }
+    }
+
+        action_b = {
+        name = "EVT_730911_OPTIONB"
+        ai_chance = 50
+                trigger = {
+                war = { country = FRA country = GER }
+                }
+		command = { type = dissent value = -3 }
+                command = { type = relation which = GER value = -60 }
+		command = { type = trigger which = 730913 }
+    }
+}
+
+
+event = {
+    id = 730912 
+    country = GER
+    
+    name = "EVT_730912_NAME"
+    desc = "EVT_730912_DESC"
+    style = 2
+    picture = "Industry"
+    
+    action_a = {
+    name = "EVT_730912_OPTIONA"
+    command = { type = dissent value = -1 }
+    }
+}
+
+event = {
+    id = 730913 
+    country = GER
+    
+    name = "EVT_730913_NAME"
+    desc = "EVT_730913_DESC"
+    style = 2
+    picture = "Industry"
+    
+    action_a = {
+    name = "EVT_730913_OPTIONA"
+    ai_chance = 100
+    command = { type = dissent value = 1 }
+    command = { type = relation which = URU value = -60 }
+    command = { type = end_trades which = GER where = URU }
+    }
+
+    action_b = {
+    name = "EVT_730913_OPTIONB"
+    ai_chance = 0
+    command = { type = dissent value = 1 }
+    command = { type = belligerence which = GER value = 1  }
+    command = { type = war which = URU }
+    }
+}
+
+
+
+event = {
+    id = 730914
+    country = ROM
+    
+    name = "EVT_730914_NAME"
+    desc = "EVT_730914_DESC"
+    style = 2
+    picture = "Politics6"
+
+    action_a = {
+        name = "EVT_730914_OPTIONA"
+        command = { type = event which = 730904 where = ROM when = 5  }
+        command = { type = event which = 730920 where = ROM when = 10  }
+        command = { type = dissent value = 1 }
+        
+    }
+}
+
+
+event = {
+id = 730915
+random = no
+country = ROM
+one_action = yes
+style = 2
+picture = "FAUD1"
+
+name = "EVT_730915_NAME"
+desc = "EVT_730915_DESC"
+
+
+action_a = {
+name = "EVT_730915_OPTIONB"
+ai_chance = 1
+command = { type = event which = 730904 where = ROM when = 5  }
+command = { type = trigger which = 730916 }
+command = { type = dissent value = -1 }
+}
+
+action_b = {
+name = "EVT_730915_OPTIONC"
+ai_chance = 2
+command = { type = event which = 730904 where = ROM when = 5  }
+command = { type = event which = 730917 where = ROM when = 1  }
+command = { type = trigger which = 730916 }
+command = { type = dissent value = 4 }
+}
+
+action_c = {
+name = "EVT_730915_OPTIOND"
+ai_chance = 20
+command = { type = event which = 730904 where = ROM when = 5  }
+command = { type = event which = 730918 where = ROM when = 1  }
+command = { type = trigger which = 730916 }
+command = { type = dissent value = 3 }
+}
+
+action_d = {
+name = "EVT_730915_OPTIONE"
+ai_chance = 80
+command = { type = event which = 730904 where = ROM when = 5  }
+command = { type = event which = 730919 where = ROM when = 1  }
+command = { type = trigger which = 730916 }
+command = { type = relation which = HUN value = -15 }
+command = { type = relation which = BUL value = -15 }
+command = { type = relation which = GER value = -15 }
+command = { type = relation which = AUS value = -15 }
+command = { type = relation which = UKR value = -15 }
+command = { type = relation which = FRA value = -15 }
+command = { type = relation which = RUS value = -15 }
+command = { type = dissent value = 2 }
+}
+}
+
+event = {
+    id = 730916 
+    country = GER
+    
+    name = "EVT_730916_NAME"
+    desc = "EVT_730916_DESC"
+    style = 2
+    picture = "assassinationofker"
+ 
+    action_a = {
+    name = "EVT_730916_OPTIONA"
+    command = {  }
+    }
+}
+
+########
+#Street violence
+########
+
+event = {
+    id = 730917 
+    country = ROM
+    
+    name = "EVT_730917_NAME"
+    desc = "EVT_730917_DESC"
+    style = 2
+    picture = "Striker"
+ 
+    action_a = {
+    name = "EVT_730917_OPTIONA"
+    ai_chance = 20
+    command = { type = dissent value = 1 }
+    command = { type = money value = -5 }
+    command = { type = supplies value = -20 }
+    command = { type = manpowerpool value = -1 }
+    command = { type = event which = 730922 where = ROM when = 2  }
+    }
+    
+    action_b = {
+    name = "EVT_730917_OPTIONB"
+    ai_chance = 80
+    command = { type = dissent value = 3 }
+    command = { type = money value = -25 }
+    command = { type = supplies value = -50 }
+    command = { type = manpowerpool value = -5 }
+    command = { type = event which = 730921 where = ROM when = 2  }
+    }
+}
+
+event = {
+    id = 730918 
+    country = ROM
+    
+    name = "EVT_730918_NAME"
+    desc = "EVT_730918_DESC"
+    style = 2
+    picture = "Striker"
+ 
+    action_a = {
+    name = "EVT_730918_OPTIONA"
+    ai_chance = 40
+    command = { type = dissent value = 1 }
+    command = { type = money value = -5 }
+    command = { type = supplies value = -20 }
+    command = { type = manpowerpool value = -1 }
+    command = { type = event which = 730922 where = ROM when = 2  }
+    }
+    
+    action_b = {
+    name = "EVT_730918_OPTIONB"
+    ai_chance = 60
+    command = { type = dissent value = 3 }
+    command = { type = money value = -25 }
+    command = { type = supplies value = -50 }
+    command = { type = manpowerpool value = -5 }
+    command = { type = event which = 730921 where = ROM when = 2  }
+    }
+}
+
+event = {
+    id = 730919 
+    country = ROM
+    
+    name = "EVT_730919_NAME"
+    desc = "EVT_730919_DESC"
+    style = 2
+    picture = "Striker"
+ 
+    action_a = {
+    name = "EVT_730919_OPTIONA"
+    ai_chance = 50
+    command = { type = dissent value = 1 }
+    command = { type = money value = -5 }
+    command = { type = supplies value = -20 }
+    command = { type = manpowerpool value = -1 }
+    command = { type = event which = 730922 where = ROM when = 2  }
+    }
+    
+    action_b = {
+    name = "EVT_730919_OPTIONB"
+    ai_chance = 50
+    command = { type = dissent value = 3 }
+    command = { type = money value = -25 }
+    command = { type = supplies value = -50 }
+    command = { type = manpowerpool value = -5 }
+    command = { type = event which = 730921 where = ROM when = 2  }
+    }
+}
+
+event = {
+    id = 730920 
+    country = ROM
+    
+    name = "EVT_730920_NAME"
+    desc = "EVT_730920_DESC"
+    style = 2
+    picture = "Politics5"
+ 
+    action_a = {
+    name = "EVT_730920_OPTIONA"
+    ai_chance = 10
+    command = { type = dissent value = 1 }
+    }
+    
+    action_b = {
+    name = "EVT_730920_OPTIONB"
+    ai_chance = 90
+    command = { type = dissent value = 2 }
+    command = { type = event which = 730922 where = ROM when = 2  }
+    }
+}
+
+
+############
+#
+#Execution of Cuza
+#
+############
+event = {
+    id = 730921 
+    country = ROM
+    
+    name = "EVT_730921_NAME"
+    desc = "EVT_730921_DESC"
+    style = 2
+    picture = "politics5"
+ 
+    action_a = {
+    name = "EVT_730921_OPTIONA"
+    command = { type = dissent value = 1 }
+    command = { type = event which = 730922 where = ROM when = 2  }
+    }
+}
+
+event = {
+    id = 730922 
+    country = ROM
+    
+    name = "EVT_730922_NAME"
+    desc = "EVT_730922_DESC"
+    style = 2
+    picture = "massterror2"
+ 
+    action_a = {
+    name = "EVT_730922_OPTIONA"
+    command = { type = dissent value = 1 }
+    command = { type = headofgovernment which = 22074 } #Sima
+    command = { type = sleepminister which = 22002 } #A.C. Cuza
+    }
+} 
+
+
+
+###################
+#
+# War between Germany and the Commune
+#
+####################
+
+event = {
+    id = 730906
+    tag = { ROM URU }
+    trigger = {
+        war = { country = FRA country = GER } 
+        NOT = { war = { country = ROM country = GER } }
+        NOT = { war = { country = URU country = GER } }
+        OR = {  
+        AND = {
+        country = ROM
+        event = 730905 
+        }
+        AND = {
+        country = URU
+        event = 730912 
+        }
+        }
+    }
+    
+	name = "EVT_730906_NAME"
+    desc = "EVT_730906_DESC"
+    style = 2
+    picture = "Industry"
+
+	date = { day = 1 month = february year = 1936 }
+    offset = 5 
+    deathdate = { day = 29 month = december year = 1960 }
+    
+    
+	action_a = {
+	name = "EVT_730906_OPTIONA"
+        ai_chance = 95
+    command = { type = end_trades which = ROM where = GER }
+    command = { type = end_trades which = URU where = GER }
+    command = { type = dissent value = -5 }
+    command = { type = relation which = GER value = -10 }
+    command = { type = trigger which = 730907 }
+    }
+
+    action_b = {
+	name = "EVT_730906_OPTIONB"
+        ai_chance = 5
+    command = { type = dissent value = 4 }
+    command = { type = relation which = GER value = 30 }
+    }
+}
+
+event = {
+    id = 730907 
+    country = GER
+
+    name = "EVT_730907_NAME"
+    desc = "EVT_730907_DESC"
+    style = 2
+    picture = "Industry"
+    
+    action_a = {
+    name = "EVT_730907_OPTIONA"
+    command = { type = dissent value = 2 } 
+    }
+}
+
+
+######################
+#
+# Civil War
+#
+######################
+
+event = {
+id = 730807
+random = no
+country = ROM
+
+trigger = {
+random = 60
+NOT = {
+ exists = URU
+ atwar = ROM
+}
+OR = {
+flag = ROM_BUC
+dissent = 20
+}
+government = fascist
+}
+
+name = "EVT_730807_NAME"
+desc = "EVT_730807_DESC"
+style = 2
+picture = "Romcivwar"
+
+date = { day = 1 month = january year = 1937 }
+offset = 80
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+name = "EVT_730807_OPTIONA"
+command = { type = strength which = land when = 0 where = 0 org = 0 value = 0 } #remove all land units
+command = { type = strength which = air when = 0 where = 0 org = 0 value = 0 } #remove all air units
+command = { type = leave_alliance }
+command = { type = independence which = URU value = 1 when = 0 }
+command = { type = dissent value = 10 }
+command = { type = secedeprovince which = URU value = 302 } 
+command = { type = secedeprovince which = URU value = 303 } 
+command = { type = secedeprovince which = URU value = 304 } 
+command = { type = secedeprovince which = URU value = 305 } 
+command = { type = secedeprovince which = URU value = 306 }
+command = { type = secedeprovince which = URU value = 297 } 
+command = { type = secedeprovince which = URU value = 298 } 
+command = { type = secedeprovince which = URU value = 299 }
+command = { type = secedeprovince which = URU value = 313 }
+command = { type = secedeprovince which = URU value = 292 }
+command = { type = secedeprovince which = URU value = 293 }
+command = { type = secedeprovince which = URU value = 300 }
+command = { type = secedeprovince which = URU value = 301 }
+command = { type = add_division value = militia when = 4 }
+command = { type = add_division value = militia when = 4 }
+command = { type = add_division value = militia when = 4 }
+command = { type = add_division value = militia when = 4 }
+command = { type = add_division value = militia when = 4 }
+command = { type = add_division value = militia when = 4 }
+command = { type = add_division value = militia when = 4 }
+command = { type = add_division value = infantry when = 8 }
+command = { type = add_division value = infantry when = 8 }
+command = { type = add_division value = infantry when = 8 }
+command = { type = add_division value = cavalry when = 5 }
+command = { type = add_division value = cavalry when = 5 }
+command = { type = trigger which = 730808 }
+ 
+}
+}
+
+
+
+event = {
+id = 730808
+random = no
+country = URU
+
+
+
+name = "EVT_730808_NAME"
+desc = "EVT_730808_DESC"
+style = 2
+
+
+action_a = {
+name = "EVT_730808_OPTIONA"
+
+command = { type = set_domestic which = democratic value = 7 }
+command = { type = set_domestic which = political_left value = 4 }
+command = { type = headofstate which = 22331 } #Carol II
+command = { type = headofgovernment which = 22302 } #Tatarescu
+command = { type = foreignminister which = 22358 } #Titulescu
+command = { type = armamentminister which = 22387 } #Bratianu
+command = { type = ministerofsecurity which = 22305 } #Micescu
+command = { type = ministerofintelligence which = 22306 } #Moruzov
+command = { type = chiefofstaff which = 22425 } #Ilcusu
+command = { type = chiefofarmy which = 22442 } #Sanatescu
+command = { type = chiefofnavy which = 22452 } #Caranfil
+command = { type = chiefofair which = 22310 } #Jienescu
+command = { type = non_aggression which = URU where = HUN }
+command = { type = non_aggression which = URU where = SER }
+command = { type = non_aggression which = URU where = MTN }
+command = { type = non_aggression which = URU where = GRE }
+command = { type = ai which = "kaiserreich/Romania.ai" }
+command = { type = supplies value = 10000 }
+command = { type = oilpool value = 25000 }
+command = { type = metalpool value = 25000 }
+command = { type = energypool value = 50000 }
+command = { type = rarematerialspool value = 5000 }
+command = { type = control which = URU value = 302 }
+command = { type = control which = URU value = 303 }
+command = { type = control which = URU value = 304 }
+command = { type = control which = URU value = 305 }
+command = { type = control which = URU value = 306 }
+command = { type = control which = URU value = 297 }
+command = { type = control which = URU value = 298 }
+command = { type = control which = URU value = 299 }
+command = {  type = capital which =  297 }
+
+command = { type = add_division value = militia when = 4 }
+command = { type = add_division value = militia when = 4 }
+command = { type = add_division value = militia when = 4 }
+command = { type = add_division value = militia when = 4 }
+command = { type = add_division value = militia when = 4 }
+command = { type = add_division value = infantry when = 8 }
+command = { type = add_division value = infantry when = 8 }
+command = { type = add_division value = infantry when = 8 }
+command = { type = add_division value = cavalry when = 5 }
+command = { type = add_division value = cavalry when = 5 }
+command = { type = manpowerpool value = 300 }
+command = { type = war which = ROM }
+command = { type = dissent value = -10 }
+command = { type = set_relation which = GER value = 60 }
+command = { type = set_relation which = RUS value = 100 }
+command = { type = set_relation which = CAN value = 70 }
+command = { type = set_relation which = FRA value = -70 }
+command = { type = set_relation which = ENG value = -50 }
+command = { type = set_relation which = RSI value = -70 }
+command = { type = set_relation which = POL value = 60 }
+command = { type = set_relation which = HUN value = 10 }
+command = { type = set_relation which = UKR value = 50 }
+command = { type = set_relation which = BUL value = -10 }
+command = { type = set_relation which = SER value = 50 }
+command = { type = secedeprovince which = ROM value = 314 } 
+command = { type = secedeprovince which = ROM value = 310 } 
+command = { type = secedeprovince which = ROM value = 309 } 
+command = { type = secedeprovince which = ROM value = 311 } 
+command = { type = secedeprovince which = ROM value = 316 }
+command = { type = secedeprovince which = ROM value = 308 } 
+command = { type = secedeprovince which = ROM value = 315 } 
+command = { type = secedeprovince which = ROM value = 312 }
+command = { type = secedeprovince which = ROM value = 289 }
+command = { type = secedeprovince which = ROM value = 291 }
+command = { type = secedeprovince which = ROM value = 295 }
+command = { type = secedeprovince which = ROM value = 285 }
+command = { type = secedeprovince which = ROM value = 286 }
+
+
+
+}
+}
+
+
+####Foreign interventions
+event = {
+id = 730809
+random = no
+country = SER
+
+decision = {
+                atwar = no
+		war = { country = ROM country = URU }
+		NOT = {    ispuppet = ROM }
+		NOT = {    ispuppet = URU }
+                NOT = {    ispuppet = SER }
+		control = { province = 338 data = SER }
+                }
+
+decision_trigger = {
+manpower = 10
+supplies = 500
+money = 50
+}
+
+trigger = {
+atwar = no
+war = { country = ROM country = URU }
+NOT = {    ispuppet = ROM }
+NOT = {    ispuppet = URU }
+NOT = {    ispuppet = SER }
+control = { province = 338 data = SER }
+}
+
+name = "EVT_730809_NAME"
+desc = "EVT_730809_DESC"
+style = 2
+decision_picture = "decision_foreign_volunteers"
+picture = "foreign_volunteers"
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1960 }
+
+action = {
+name = "EVT_730809_OPTIONA"
+ai_chance = 40
+command = { type = domestic which = interventionism value = 1 }
+command = { type = relation which = ROM value = 20 }
+command = { type = relation which = URU value = -20 }
+command = { type = money value = -50 }
+command = { type = manpowerpool value = -10 }
+command = { type = supplies value = -500 }
+command = { type = trigger which = 730812 } #ROM
+command = { type = belligerence which = SER value = 1 }
+}
+
+action = {
+name = "EVT_730809_OPTIONB"
+ai_chance = 40
+command = { type = domestic which = interventionism value = 1 }
+command = { type = relation which = ROM value = -20 }
+command = { type = relation which = URU value = 20 }
+command = { type = money value = -50 }
+command = { type = manpowerpool value = -10 }
+command = { type = supplies value = -500 }
+command = { type = trigger which = 730813 } #URU
+command = { type = belligerence which = SER value = 1 }
+}
+
+action = {
+name = "EVT_730809_OPTIONC"
+ai_chance = 20
+command = { type = domestic which = interventionism value = -1 }
+command = { type = belligerence which = SER value = -1 }
+}
+
+action = {
+ ai_chance = 0
+ name = "EVT_730809_OPTIOND"
+ command = { type = alliance which = ROM }
+ }
+
+action = {
+ ai_chance = 0
+ name = "EVT_730809_OPTIONE"
+ command = { type = alliance which = URU }
+ }
+}
+
+
+event = {
+id = 730810
+random = no
+country = AUS
+
+decision = {
+                atwar = no
+		war = { country = ROM country = URU }
+		NOT = {    ispuppet = ROM }
+		NOT = {    ispuppet = URU }
+                NOT = {    ispuppet = AUS }
+		control = { province = 195 data = AUS }
+                }
+
+decision_trigger = {
+manpower = 15
+supplies = 500
+money = 50
+}
+
+trigger = {
+                atwar = no
+		war = { country = ROM country = URU }
+		NOT = {    ispuppet = ROM }
+		NOT = {    ispuppet = URU }
+                NOT = {    ispuppet = AUS }
+		control = { province = 195 data = AUS }
+}
+
+name = "EVT_730810_NAME"
+desc = "EVT_730810_DESC"
+style = 2
+decision_picture = "decision_foreign_volunteers"
+picture = "foreign_volunteers"
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1960 }
+
+
+action_a = {
+name = "EVT_730810_OPTIONA"
+ai_chance = 20
+command = { type = domestic which = interventionism value = 1 }
+command = { type = relation which = ROM value = 20 }
+command = { type = relation which = URU value = -20 }
+command = { type = money value = -50 }
+command = { type = manpowerpool value = -15 }
+command = { type = supplies value = -500 }
+command = { type = trigger which = 730814 } #ROM
+command = { type = belligerence which = AUS value = 1 }
+}
+action_b = {
+name = "EVT_730810_OPTIONB"
+ai_chance = 20
+command = { type = domestic which = interventionism value = 1 }
+command = { type = relation which = ROM value = -20 }
+command = { type = relation which = URU value = 20 }
+command = { type = money value = -50 }
+command = { type = manpowerpool value = -15 }
+command = { type = supplies value = -500 }
+command = { type = trigger which = 730815 } #URU
+command = { type = belligerence which = AUS value = 1 }
+}
+action_c = {
+name = "EVT_730810_OPTIONC"
+ai_chance = 60
+command = { type = domestic which = interventionism value = -1 }
+command = { type = belligerence which = AUS value = -1 }
+}
+}
+
+
+event = {
+id = 730811
+random = no
+country = UKR
+
+decision = {
+                atwar = no
+		war = { country = ROM country = URU }
+		NOT = {    ispuppet = ROM }
+		NOT = {    ispuppet = URU }
+                NOT = {    ispuppet = UKR }
+		control = { province = 617 data = UKR }
+                }
+
+decision_trigger = {
+manpower = 15
+supplies = 500
+money = 50
+}
+
+trigger = {
+                atwar = no
+		war = { country = ROM country = URU }
+		NOT = {    ispuppet = ROM }
+		NOT = {    ispuppet = URU }
+                NOT = {    ispuppet = UKR }
+		control = { province = 617 data = UKR }
+}
+
+name = "EVT_730811_NAME"
+desc = "EVT_730811_DESC"
+style = 2
+decision_picture = "decision_foreign_volunteers"
+picture = "foreign_volunteers"
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+name = "EVT_730811_OPTIONA"
+ai_chance = 80
+command = { type = domestic which = interventionism value = 1 }
+command = { type = relation which = ROM value = -20 }
+command = { type = relation which = URU value = 20 }
+command = { type = money value = -50 }
+command = { type = manpowerpool value = -15 }
+command = { type = supplies value = -500 }
+command = { type = trigger which = 730816 } #URU
+command = { type = belligerence which = UKR value = 1 }
+}
+
+action_b = {
+name = "EVT_730811_OPTIONB"
+ai_chance = 20
+command = { type = domestic which = interventionism value = -1 }
+command = { type = belligerence which = UKR value = -1 }
+}
+}
+
+event = {
+id = 730812
+random = no
+country = ROM
+
+name = "EVT_730812_NAME"
+desc = "EVT_730812_DESC"
+style = 2
+picture = "SCW_Soviet Intervention"
+
+action_a = {
+name = "EVT_730812_OPTIONA" 
+command = { type = money value = 100 }
+command = { type = manpowerpool value = 10 }
+command = { type = supplies value = 2500 }
+command = { type = add_division which = "Brigada Sârba" value = infantry when = 8 }
+command = { type = add_division which = "Brigada Banateana" value = infantry when = 8 }
+}
+}
+
+
+event = {
+id = 730813
+random = no
+country = URU
+
+name = "EVT_730813_NAME"
+desc = "EVT_730813_DESC"
+style = 2
+picture = "SCW_Soviet Intervention"
+
+action_a = {
+name = "EVT_730813_OPTIONA" 
+command = { type = money value = -100 }
+command = { type = manpowerpool value = 10 }
+command = { type = supplies value = 2500 }
+command = { type = add_division which = "Brigada Sârba" value = infantry when = 8 }
+command = { type = add_division which = "Brigada din Timoc" value = infantry when = 8 }
+}
+}
+
+
+event = {
+id = 730814
+random = no
+country = ROM
+
+name = "EVT_730814_NAME"
+desc = "EVT_730814_DESC"
+style = 2
+picture = "Wehrmacht"
+
+action_a = {
+name = "EVT_730814_OPTIONA" 
+command = { type = money value = -100 }
+command = { type = manpowerpool value = 10 }
+command = { type = supplies value = 2500 }
+command = { type = add_division which = "Brigada Austriaca" value = infantry when = 8 }
+command = { type = add_division which = "Interceptoare Austreci" value = interceptor when = 7 }
+}
+}
+
+
+event = {
+id = 730815
+random = no
+country = URU
+
+name = "EVT_730815_NAME"
+desc = "EVT_730815_DESC"
+style = 2
+picture = "Wehrmacht"
+
+action_a = {
+name = "EVT_730815_OPTIONA" 
+command = { type = money value = -100 }
+command = { type = manpowerpool value = 10 }
+command = { type = supplies value = 2500 }
+command = { type = add_division which = "Brigada Austriaca" value = infantry when = 8 }
+command = { type = add_division which = "Interceptoare Austreci" value = interceptor when = 7 }
+}
+}
+
+
+event = {
+id = 730816
+random = no
+country = URU
+
+name = "EVT_730816_NAME"
+desc = "EVT_730816_DESC"
+style = 2
+picture = "Wehrmacht"
+
+action_a = {
+name = "EVT_730816_OPTIONA" 
+command = { type = money value = -100 }
+command = { type = manpowerpool value = 10 }
+command = { type = supplies value = 2500 }
+command = { type = add_division which = "Brigada Odessa" value = infantry when = 8 }
+command = { type = add_division which = "Brigada Tiraspol" value = infantry when = 8 }
+command = { type = add_division which = "Brigada Balta" value = infantry when = 8 }
+}
+}
+
+#########################################################################
+#  Romanian Civil War - Russian Intervention
+#########################################################################
+event = {
+	id = 730837
+	random = no
+	country = RUS
+
+	decision = {
+		war = { country = ROM country = URU }
+		OR = {
+			AND = {
+				NOT = { exists = TRA }
+				control = { province = 694 data = RUS }
+			}
+			AND = {
+				exists = TRA
+				control = { province = 694 data = TRA }
+				OR = {
+					puppet = { country = TRA country = RUS }
+					alliance = { country = RUS country = TRA }
+				}
+			}
+		}
+		NOT = { 
+			flag = RUS_ISO
+			government = communist
+			exists = SOV
+			OR = {
+				war = { country = RUS country = URU }
+				war = { country = RUS country = ROM }
+			}
+		}
+	}
+	
+	decision_trigger = {
+		manpower = 15
+                supplies = 1000
+                money = 100
+	}	
+	
+	trigger = {
+		war = { country = ROM country = URU }
+		OR = {
+			AND = {
+				NOT = { exists = TRA }
+				control = { province = 694 data = RUS }
+			}
+			AND = {
+				exists = TRA
+				control = { province = 694 data = TRA }
+				OR = {
+					puppet = { country = TRA country = RUS }
+					alliance = { country = RUS country = TRA }
+				}
+			}
+		}
+		NOT = { 
+			flag = RUS_ISO
+			government = communist
+			exists = SOV
+			OR = {
+				war = { country = RUS country = URU }
+				war = { country = RUS country = ROM }
+			}
+		}
+	}
+
+	name = "EVT_730837_NAME"
+	desc = "EVT_730837_DESC"
+
+	style = 2
+	picture = "soviet_reinforcements"
+
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 10
+	deathdate = { day = 29 month = december year = 1960 }
+
+
+	action_a = {
+		name = "EVT_730837_OPTIONA" # Send material and volunteers
+		ai_chance = 10
+                trigger = {
+                government = fascist
+                }
+		command = { type = relation which = ROM value = 20 }
+		command = { type = relation which = URU value = -20 }
+		command = { type = relation which = FRA value = -5 }
+		command = { type = relation which = ENG value = -5 }
+		command = { type = relation which = ITA value = -5 }
+                command = { type = relation which = GER value = -5 }
+		command = { type = manpowerpool value = -15 }
+		command = { type = supplies value = -1000 }
+		command = { type = money value = -100 }
+                command = { type = trigger which = 730838    }
+		command = { type = belligerence which = RUS value = 1 }
+		
+	}
+       
+        action_b = {
+		name = "EVT_730837_OPTIONB" # Send material and volunteers
+		ai_chance = 70
+                trigger = {
+                NOT = { government = fascist }
+                }
+		command = { type = relation which = URU value = 20 }
+		command = { type = relation which = ROM value = -20 }
+		command = { type = relation which = ITA value = 5 }
+                command = { type = relation which = GER value = 5 }
+		command = { type = manpowerpool value = -15 }
+		command = { type = supplies value = -1000 }
+		command = { type = money value = -100 }
+                command = { type = trigger which = 730839   }
+		command = { type = belligerence which = RUS value = 1 }
+		
+	}
+        
+	action_c = {
+		name = "EVT_730837_OPTIONC" 
+		ai_chance = 5
+		command = { type = relation which = URU value = -20 }
+		command = { type = relation which = ROM value = 20 }
+		command = { type = dissent value = 2 }
+		command = { type = belligerence which = RUS value = -1 }
+		
+	}
+}
+
+
+
+
+event = {
+	id = 730838  
+	random = no
+	country = ROM
+
+	name = "EVT_730838_NAME"
+	desc = "EVT_730838_DESC"
+
+	style = 2
+	picture = "foreign_volunteers"
+
+	action_a = {
+		name = "EVT_730838_OPTIONA" 
+		command = { type = manpowerpool value = 10 }
+		command = { type = supplies value = 1500 }
+		command = { type = add_division value = infantry when = 9 }
+		command = { type = add_division value = infantry when = 9 }
+	}
+}
+
+event = {
+	id = 730839 
+	random = no
+	country = URU
+
+	name = "EVT_730839_NAME"
+	desc = "EVT_730839_DESC"
+
+	style = 2
+	picture = "foreign_volunteers"
+
+	action_a = {
+		name = "EVT_730839_OPTIONA" 
+		command = { type = manpowerpool value = 10 }
+		command = { type = supplies value = 1500 }
+		command = { type = add_division value = infantry when = 9 }
+		command = { type = add_division value = infantry when = 9 }
+	}
+}
+
+
+
+##################################################  #######################
+#  Romanian Civil War ends - An important experience 
+##################################################  #######################
+event = {
+	id = 730840 
+	random = no
+	country = RUS
+
+	trigger = {
+                OR = {
+		event = 730838
+		event = 730839
+                }   
+		OR = {
+			event = 730831
+                        event = 730832
+			}
+	}
+	name = "EVT_730840_NAME"
+	desc = "EVT_730840_DESC"
+
+
+	style = 2
+	picture = "soviet_replacement"
+
+	date = { day = 18 month = july year = 1936 }
+	offset = 50
+	deathdate = { day = 29 month = december year = 1960 }
+
+	action_a = {
+		name = "EVT_730840_OPTIONA" 
+		command = { type = relation which = URU value = 10 }	# 
+		command = { type = manpowerpool value = 5 }	 	# Soldiers return home
+		command = { type = dissent value = -1 }
+		command = { type = gain_tech which = -1 } 		# get random tech blueprints
+		command = { type = add_leader_skill which = -1 value = 1 }
+		command = { type = add_leader_skill which = -1 value = 1 }
+	}
+}
+
+
+event = {
+	id = 730841
+	random = no
+	country = SER
+
+	trigger = {
+                OR = {
+		event = 730812
+		event = 730813
+                }   
+		OR = {
+			event = 730831
+                        event = 730832
+			}
+	}
+	name = "EVT_730841_NAME"
+	desc = "EVT_730841_DESC"
+
+
+	style = 2
+	picture = "soviet_replacement"
+
+	date = { day = 18 month = july year = 1936 }
+	offset = 50
+	deathdate = { day = 29 month = december year = 1960 }
+
+	action_a = {
+		name = "EVT_730841_OPTIONA"
+		command = { type = relation which = URU value = 10 }	# 
+		command = { type = manpowerpool value = 5 }	 	# Soldiers return home
+		command = { type = dissent value = -1 }
+		command = { type = gain_tech which = -1 } 		# get random tech blueprints
+		command = { type = add_leader_skill which = -1 value = 1 }
+		command = { type = add_leader_skill which = -1 value = 1 }
+	}
+}
+
+event = {
+	id = 730842
+	random = no
+	country = AUS
+
+	trigger = {
+                OR = {
+		event = 730814
+		event = 730815
+                }   
+		OR = {
+			event = 730831
+                        event = 730832
+			}
+	}
+	name = "EVT_730842_NAME"
+	desc = "EVT_730842_DESC"
+
+
+	style = 2
+	picture = "soviet_replacement"
+
+	date = { day = 18 month = july year = 1936 }
+	offset = 50
+	deathdate = { day = 29 month = december year = 1960 }
+
+	action_a = {
+		name = "EVT_730842_OPTIONA"  
+		command = { type = relation which = URU value = 10 }	# 
+		command = { type = manpowerpool value = 5 }	 	# Soldiers return home
+		command = { type = dissent value = -1 }
+		command = { type = gain_tech which = -1 } 		# get random tech blueprints
+		command = { type = add_leader_skill which = -1 value = 1 }
+		command = { type = add_leader_skill which = -1 value = 1 }
+	}
+}
+
+event = {
+	id = 730843
+	random = no
+	country = UKR
+
+	trigger = {
+		event = 730816
+		event = 730839  
+		OR = {
+			event = 730831
+                        event = 730832
+			}
+	}
+	name = "EVT_730843_NAME"
+	desc = "EVT_730843_DESC"
+
+
+	style = 2
+	picture = "soviet_replacement"
+
+	date = { day = 18 month = july year = 1936 }
+	offset = 50
+	deathdate = { day = 29 month = december year = 1960 }
+
+	action_a = {
+		name = "EVT_730843_OPTIONA" 
+		command = { type = relation which = URU value = 10 }	# 
+		command = { type = manpowerpool value = 5 }	 	# Soldiers return home
+		command = { type = dissent value = -1 }
+		command = { type = gain_tech which = -1 } 		# get random tech blueprints
+		command = { type = add_leader_skill which = -1 value = 1 }
+		command = { type = add_leader_skill which = -1 value = 1 }
+	}
+}
+
+
+event = {
+    id = 730844
+    random = no
+    country = URU
+
+    trigger = {
+    government = democratic
+    event = 730831 }
+
+    name = "EVT_730844_NAME"
+    desc = "EVT_730844_DESC"
+
+    date = { day = 1 month = january year = 1936 }
+    offset = 15
+    deathdate = { day = 29 month = december year = 1966 }
+
+    action_a = {
+        name = "EVT_730844_OPTIONA"
+        ai_chance = 75
+        command = { type = setflag which = URU_ELECT_YES }
+    }
+    action_b = {
+        name = "EVT_730844_OPTIONB"
+        ai_chance = 25
+        command = { type = headofstate which = 22332 } #Carol II
+        command = { type = headofgovernment which = 22342 } 
+	command = { type = foreignminister which =  22359 } 
+        command = { type = set_domestic which = democratic value = 3 }
+        command = { type = set_domestic which = political_left value = 4 }
+        command = { type = set_domestic which = free_market value = 6 }
+        command = { type = set_domestic which = freedom value = 3 }
+        command = { type = set_domestic which = defense_lobby value = 10 }
+        command = { type = set_domestic which = interventionism value = 10 }
+    }
+}
+
+event = {
+id = 730845
+random = no
+country = URU
+style = 2
+save_date = yes
+
+trigger = {
+government = democratic
+flag = URU_ELECT_YES
+}
+
+
+name = "EVT_730845_NAME"
+desc = "EVT_730845_DESC"
+
+
+picture = "rusdumaelect"
+
+date = { day = 1 month = january year = 1936 }
+offset = 100
+deathdate = { day = 29 month = december year = 1960 }
+
+
+action_a = {
+name = "EVT_730845_OPTIONA"
+ai_chance = 40
+command = { type = set_domestic which = democratic value = 7 }
+command = { type = set_domestic which = political_left value = 3 }
+command = { type = headofstate which = 22322 }
+command = { type = headofgovernment which = 22302 }
+command = { type = foreignminister which = 22303 }
+command = { type = armamentminister which = 22304 }
+command = { type = ministerofsecurity which = 22305 }
+command = { type = ministerofintelligence which = 22306 }
+command = { type = clrflag which = URU_ELECT_YES }
+}
+
+action_b = {
+name = "EVT_730845_OPTIONB"
+ai_chance = 40
+command = { type = set_domestic which = democratic value = 8 }
+command = { type = set_domestic which = political_left value = 8 }
+command = { type = headofstate which = 22322 } 
+command = { type = headofgovernment which = 22355 }
+command = { type = foreignminister which = 22384 }
+command = { type = ministerofsecurity which = 22402 }
+command = { type = clrflag which = URU_ELECT_YES }
+} 
+
+action_c = {
+name = "EVT_730845_OPTIONC"
+ai_chance = 20
+command = { type = set_domestic which = democratic value = 10 }
+command = { type = set_domestic which = political_left value = 5 }
+command = { type = headofstate which = 22322 } 
+command = { type = headofgovernment which = 22341 }
+command = { type = foreignminister which = 22358 }
+command = { type = armamentminister which = 22387 }
+command = { type = ministerofsecurity which = 22399 }
+command = { type = ministerofintelligence which = 22413 }
+command = { type = clrflag which = URU_ELECT_YES }
+} 
+
+action_d = {
+	ai_chance =  0
+	name = "EVT_730845_OPTIOND"
+		command = { type = dissent value = 25 }
+		command = { type = headofstate which = 22332 } #Carol II
+        command = { type = set_domestic which = democratic value = 3 }
+        command = { type = set_domestic which = political_left value = 4 }
+        command = { type = set_domestic which = free_market value = 6 }
+        command = { type = set_domestic which = freedom value = 3 }
+        command = { type = set_domestic which = defense_lobby value = 10 }
+        command = { type = set_domestic which = interventionism value = 10 }
+		command = { type = headofgovernment which = 22342 } 
+		command = { type = foreignminister which =  22359 } 
+		command = { type = clrflag which = URU_ELECT_YES }
+		}
+	}
+
+
+event = {
+id = 730846
+random = no
+country = URU
+style = 2
+save_date = yes
+
+trigger = {
+government = democratic
+event = { id = 730845 days = 1480 }
+}
+
+
+name = "EVT_730846_NAME"
+desc = "EVT_730846_DESC"
+
+
+picture = "rusdumaelect"
+
+date = { day = 1 month = january year = 1936 }
+offset = 100
+deathdate = { day = 29 month = december year = 1960 }
+
+
+action_a = {
+name = "EVT_730846_OPTIONA"
+ai_chance = 40
+command = { type = set_domestic which = democratic value = 7 }
+command = { type = set_domestic which = political_left value = 3 }
+command = { type = headofstate which = 22322 }
+command = { type = headofgovernment which = 22302 }
+command = { type = foreignminister which = 22303 }
+command = { type = armamentminister which = 22304 }
+command = { type = ministerofsecurity which = 22305 }
+command = { type = ministerofintelligence which = 22306 }
+
+}
+
+action_b = {
+name = "EVT_730846_OPTIONB"
+ai_chance = 40
+command = { type = set_domestic which = democratic value = 8 }
+command = { type = set_domestic which = political_left value = 8 }
+command = { type = headofstate which = 22322 } 
+command = { type = headofgovernment which = 22355 }
+command = { type = foreignminister which = 22384 }
+command = { type = ministerofsecurity which = 22402 }
+
+} 
+
+action_c = {
+name = "EVT_730846_OPTIONC"
+ai_chance = 20
+command = { type = set_domestic which = democratic value = 10 }
+command = { type = set_domestic which = political_left value = 5 }
+command = { type = headofstate which = 22322 } 
+command = { type = headofgovernment which = 22341 }
+command = { type = foreignminister which = 22358 }
+command = { type = armamentminister which = 22387 }
+command = { type = ministerofsecurity which = 22399 }
+command = { type = ministerofintelligence which = 22413 }
+
+} 
+
+action_d = {
+	ai_chance =  0
+	name = "EVT_730846_OPTIOND"
+		command = { type = dissent value = 25 }
+		command = { type = headofstate which = 22332 } #Carol II
+        command = { type = set_domestic which = democratic value = 3 }
+        command = { type = set_domestic which = political_left value = 4 }
+        command = { type = set_domestic which = free_market value = 6 }
+        command = { type = set_domestic which = freedom value = 3 }
+        command = { type = set_domestic which = defense_lobby value = 10 }
+        command = { type = set_domestic which = interventionism value = 10 }
+		command = { type = headofgovernment which = 22342 } 
+		command = { type = foreignminister which =  22359 } 
+		
+		}
+	}
+
+event = {
+id = 730847
+random = no
+country = URU
+style = 2
+save_date = yes
+
+trigger = {
+government = democratic
+event = { id = 730846 days = 1480 }
+}
+
+
+name = "EVT_730847_NAME"
+desc = "EVT_730847_DESC"
+
+
+picture = "rusdumaelect"
+
+date = { day = 1 month = january year = 1936 }
+offset = 100
+deathdate = { day = 29 month = december year = 1960 }
+
+
+action_a = {
+name = "EVT_730847_OPTIONA"
+ai_chance = 40
+command = { type = set_domestic which = democratic value = 7 }
+command = { type = set_domestic which = political_left value = 3 }
+command = { type = headofstate which = 22322 }
+command = { type = headofgovernment which = 22302 }
+command = { type = foreignminister which = 22303 }
+command = { type = armamentminister which = 22304 }
+command = { type = ministerofsecurity which = 22305 }
+command = { type = ministerofintelligence which = 22306 }
+
+}
+
+action_b = {
+name = "EVT_730847_OPTIONB"
+ai_chance = 40
+command = { type = set_domestic which = democratic value = 8 }
+command = { type = set_domestic which = political_left value = 8 }
+command = { type = headofstate which = 22322 } 
+command = { type = headofgovernment which = 22355 }
+command = { type = foreignminister which = 22384 }
+command = { type = ministerofsecurity which = 22402 }
+
+} 
+
+action_c = {
+name = "EVT_730847_OPTIONC"
+ai_chance = 20
+command = { type = set_domestic which = democratic value = 10 }
+command = { type = set_domestic which = political_left value = 5 }
+command = { type = headofstate which = 22322 } 
+command = { type = headofgovernment which = 22341 }
+command = { type = foreignminister which = 22358 }
+command = { type = armamentminister which = 22387 }
+command = { type = ministerofsecurity which = 22399 }
+command = { type = ministerofintelligence which = 22413 }
+
+} 
+
+action_d = {
+	ai_chance =  0
+	name = "EVT_730847_OPTIOND"
+		command = { type = dissent value = 25 }
+		command = { type = headofstate which = 22332 } #Carol II
+        command = { type = set_domestic which = democratic value = 3 }
+        command = { type = set_domestic which = political_left value = 4 }
+        command = { type = set_domestic which = free_market value = 6 }
+        command = { type = set_domestic which = freedom value = 3 }
+        command = { type = set_domestic which = defense_lobby value = 10 }
+        command = { type = set_domestic which = interventionism value = 10 }
+		command = { type = headofgovernment which = 22342 } 
+		command = { type = foreignminister which =  22359 } 
+		
+		}
+	}
+
+
+
+event = {
+	id = 730831
+	random = no
+	country = URU
+
+	trigger = {
+        OR  = {
+        event = 730807
+        event = 730830
+        }
+        NOT  = {
+        ispuppet = URU
+        }
+        OR = {
+	war = { country = ROM country = URU } 
+        NOT  = {
+        exists = ROM
+        } 
+        } 
+        control = { province = 316 data = URU  } 
+ 	NOT  = {
+		control = { province = 311 data = ROM }  ## Ploesti
+		control = { province = 316 data = ROM  } ## Bucharest
+		control = { province = 297 data = ROM } ## Iasi
+		control = { province = 304 data = ROM  } ## Chisinev
+		
+		}
+	}
+
+	name = "EVT_730831_NAME"
+	desc = "EVT_730831_DESC"
+
+
+	style = 2
+	picture = "kingdomromvic"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		name = "EVT_730831_OPTIONA"
+		command = { type = inherit which = ROM } 
+		command = {  type = capital which =  316 }
+		command = { type = strength which = militia when = 0 where = 0 org = 0 value = 0 } #remove all militias
+                command = { type = add_division value = infantry when = 8 }
+                command = { type = add_division value = infantry when = 8 }
+                command = { type = add_division value = infantry when = 8 }
+                command = { type = add_division value = interceptor when = 8 }
+                command = { type = add_division value = destroyer when = 4 }
+		command = { type = setflag which = URU_VIC }
+	}
+
+
+}
+
+
+event = {
+id = 730833
+random = no
+country = URU
+trigger = {
+ flag = URU_VIC
+ NOT = {
+  exists = ROM
+ }
+exists = SER
+}
+name = "EVT_730833_NAME"
+desc = "EVT_730833_DESC"
+style = 2
+
+date = { day = 1 month = january year = 1936 }
+offset = 4
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+ai_chance = 20
+ name = "EVT_730833_OPTIONA"
+ command = { type = dissent value = 1 }
+ command = { type = relation which = SER value = -10 }
+}
+action_b = {
+ai_chance = 80
+ name = "EVT_730833_OPTIONB"
+ command = { type = dissent value = -1 }
+ command = { type = relation which = SER value = -20 }
+ command = { type = trigger which = 730834 }
+}
+}
+
+event = {
+id = 730834
+random = no
+country = SER
+
+
+name = "EVT_730834_NAME"
+desc = "EVT_730834_DESC"
+style = 2
+
+
+action_a = {
+ai_chance = 50
+ name = "EVT_730834_OPTIONA"
+ command = { type = dissent value = 1 }
+ command = { type = relation which = URU value = 50 }
+ command = { type = trigger which = 730835 }
+}
+action_b = {
+ai_chance = 50
+ name = "EVT_730834_OPTIONB"
+ command = { type = dissent value = -1 }
+ command = { type = relation which = URU value = -20 }
+}
+}
+
+
+event = {
+id = 730835
+country = URU
+style = 2
+picture = "Corneliu_Zelea_Codreanu"
+
+name = "EVT_730835_NAME"
+desc = "EVT_730835_DESC"
+
+action_a = {
+name = "EVT_730835_OPTIONA"
+ai_chance = 70
+command = { type = dissent value = -2 }
+command = { type = sleepminister which = 22353 }
+command = { type = sleepminister which = 22354 }
+command = { type = sleepminister which = 22382 }
+command = { type = sleepminister which = 22410 }
+command = { type = sleepminister which = 22307 }
+command = { type = sleepminister which = 22348 }
+command = { type = sleepminister which = 22376 }
+command = { type = sleepminister which = 22001 }
+command = { type = sleepminister which = 22002 }
+command = { type = sleepminister which = 22003 }
+command = { type = sleepminister which = 22007 }
+command = { type = sleepminister which = 22032 }
+command = { type = sleepminister which = 22034 }
+command = { type = sleepminister which = 22054 }
+command = { type = sleepleader which = 4303 }
+}
+
+action_b = {
+name = "EVT_730835_OPTIONB"
+ai_chance = 30
+command = { type = dissent value = 4 }
+}
+}
+
+
+event = {
+
+	id = 730836
+	random = no
+	country = URU
+	trigger = {
+		flag = URU_VIC
+                control = { province = 316 data = URU  }
+                
+		}
+
+	name = "EVT_730836_NAME"
+	desc = "EVT_730836_DESC"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 10
+	deathdate = { day = 29 month = december year = 1960 }
+
+	action_a = {
+		name = "EVT_730836_OPTIONA"
+		command = { type = capital which = 316 } #Bucharest
+		command = { type = dissent value = -1 }
+		}
+	}
+
+
+event = {
+	id = 730832
+	random = no
+	country = ROM
+
+	trigger = {
+        OR  = {
+        event = 730807
+        event = 730830
+        }
+	NOT  = {
+        ispuppet = ROM
+        }
+        OR = {
+	war = { country = ROM country = URU } 
+        NOT  = {
+        exists = URU
+        } 
+        } 
+        control = { province = 316 data = ROM  }  
+ 	NOT  = {
+		control = { province = 311 data = URU }  ## Ploesti
+		control = { province = 316 data = URU  } ## Bucharest
+		control = { province = 297 data = URU } ## Iasi
+		control = { province = 304 data = URU  } ## Chisinev
+		
+		}
+	}
+
+	name = "EVT_730832_NAME"
+	desc = "EVT_730832_DESC"
+
+
+	style = 2
+	picture = "ironguardvic"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		name = "EVT_730832_OPTIONA"
+		command = { type = inherit which = URU } 
+		command = {  type = capital which =  316 }
+		command = { type = strength which = militia when = 0 where = 0 org = 0 value = 0 } #remove all militias
+                command = { type = add_division value = infantry when = 8 }
+                command = { type = add_division value = infantry when = 8 }
+                command = { type = add_division value = infantry when = 8 }
+                command = { type = add_division value = interceptor when = 8 }
+                command = { type = add_division value = destroyer when = 4 }		
+	}
+
+
+}
+
+
+####Victory of Socialism
+event = {
+id = 730820
+random = no
+country = UKR
+
+decision = {
+government = communist
+exists = URU
+NOT = {
+ ispuppet = URU
+ exists = ROM
+ atwar = UKR
+ alliance = { country = UKR country = URU }
+}
+}
+
+decision_trigger = {
+        
+    }
+
+trigger = {
+government = communist
+exists = URU
+NOT = {
+ ispuppet = URU
+ exists = ROM
+ atwar = UKR
+ alliance = { country = UKR country = URU }
+}
+}
+
+name = "EVT_730820_NAME"
+desc = "EVT_730820_DESC"
+style = 2
+picture = "spread_revolution"
+decision_picture = "decision_spread_revolution"
+
+
+date = { day = 20 month = january year = 1937 }
+offset = 50
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+name = "EVT_730820_OPTIONA"
+ai_chance = 70
+command = { type = trigger which = 730821 }
+command = { type = domestic which = interventionism value = 1 }
+}
+action_b = {
+name = "EVT_730820_OPTIONB"
+ai_chance = 30
+command = { type = relation which = URU value = 30 }
+}
+}
+
+event = {
+id = 730821
+random = no
+country = URU
+
+name = "EVT_730821_NAME"
+desc = "EVT_730821_DESC"
+style = 2
+picture = "soviet_law"
+
+
+action_a = {
+name = "EVT_730821_OPTIONA"
+ai_chance = 50
+command = { type = set_domestic which = political_left value = 8 }
+command = { type = set_domestic which = democratic value = 2 }
+command = { type = leave_alliance }
+command = { type = relation which = UKR value = 200 }
+command = { type = headofstate which = 22337 } #Mihai I
+command = { type = headofgovernment which = 22351 } #Groza
+command = { type = foreignminister which = 22381 } #Parhon
+command = { type = armamentminister which = 22398 } #Luca
+command = { type = ministerofsecurity which = 22412 } #Georgescu
+command = { type = ministerofintelligence which = 22421 } #Nicolai
+command = { type = chiefofstaff which = 22431 } #Lascar
+command = { type = chiefofarmy which = 22444 } #Rascu
+command = { type = chiefofnavy which = 22453 } #Iliesca
+command = { type = chiefofair which = 22461 } #Ionescu
+command = { type = dissent value = 10 }
+command = { type = trigger which = 730850 }
+
+}
+action_b = {
+name = "EVT_730821_OPTIONB"
+ai_chance = 50
+command = { type = trigger which = 730822 }
+command = { type = relation which = UKR value = -100 }
+command = { type = dissent value = 2 }
+}
+}
+
+event = {
+id = 730822
+random = no
+country = UKR
+
+name = "EVT_730822_NAME"
+desc = "EVT_730822_DESC"
+style = 2
+picture = "soviet_law"
+
+
+action_a = {
+name = "EVT_730822_OPTIONA"
+ai_chance = 85
+command = { type = dissent value = 3 }
+
+}
+action_b = {
+name = "EVT_730822_OPTIONB"
+ai_chance = 15
+command = { type = dissent value = -5 }
+command = { type = addcore which = 302 }
+command = { type = addcore which = 303 }
+command = { type = addcore which = 304 }
+command = { type = addcore which = 305 }
+command = { type = addcore which = 306 }
+command = { type = war which = URU }
+}
+} 
+
+event = {
+id = 730850
+random = no
+country = UKR
+
+name = "EVT_730850_NAME"
+desc = "EVT_730850_DESC"
+style = 2
+picture = "soviet_law"
+
+action_a = {
+name = "EVT_730850_OPTIONA"
+command = { type = dissent value = -5 }
+command = { type = make_puppet which = URU }
+}
+}
+
+
+####Peace events
+event = {
+id = 730823
+random = no
+country = UKR
+
+trigger = {
+war = { country = UKR country = URU }
+control = { province = 302 data = UKR }
+control = { province = 303 data = UKR }
+control = { province = 304 data = UKR }
+control = { province = 305 data = UKR }
+control = { province = 306 data = UKR }
+control = { province = 297 data = UKR }
+NOT = {
+ispuppet = UKR
+ispuppet = URU
+alliance = { country = UKR country = FRA }
+alliance = { country = UKR country = RUS }
+alliance = { country = UKR country = GER }
+alliance = { country = URU country = RUS }
+alliance = { country = URU country = GER }
+}
+}
+name = "EVT_730823_NAME"
+desc = "EVT_730823_DESC"
+style = 2
+
+
+action_a = {
+name = "EVT_730823_OPTIONA"
+ai_chance = 100
+command = { type = trigger which = 730825 }
+command = { type = addcore which = 302 }
+command = { type = addcore which = 303 }
+command = { type = addcore which = 304 }
+command = { type = addcore which = 305 }
+command = { type = addcore which = 306 }
+}
+action_b = {
+name = "EVT_730823_OPTIONB"
+ai_chance = 0
+command = { type = dissent value = 5 }
+command = { type = addcore which = 302 }
+command = { type = addcore which = 303 }
+command = { type = addcore which = 304 }
+command = { type = addcore which = 305 }
+command = { type = addcore which = 306 }
+command = { type = belligerence which = UKR value = 1 }
+}
+}
+
+
+event = {
+id = 730824
+random = no
+country = URU
+
+trigger = {
+war = { country = UKR country = URU }
+control = { province = 620 data = URU }
+control = { province = 621 data = URU }
+control = { province = 626 data = URU }
+control = { province = 625 data = URU }
+control = { province = 619 data = URU }
+NOT = {
+ispuppet = UKR
+ispuppet = URU
+alliance = { country = UKR country = FRA }
+alliance = { country = UKR country = RUS }
+alliance = { country = UKR country = GER }
+alliance = { country = URU country = RUS }
+alliance = { country = URU country = GER }
+}
+}
+name = "EVT_730824_NAME"
+desc = "EVT_730824_DESC"
+style = 2
+
+
+action_a = {
+name = "EVT_730824_OPTIONA"
+ai_chance = 5
+command = { type = trigger which = 730826 }
+command = { type = dissent value = 5 }
+}
+action_b = {
+name = "EVT_730824_OPTIONB"
+ai_chance = 95
+command = { type = addcore which = 620 }
+command = { type = addcore which = 621 }
+command = { type = addcore which = 626 }
+command = { type = addcore which = 625 }
+command = { type = addcore which = 619 }
+command = { type = trigger which = 730827 }
+}
+
+action_c = {
+name = "EVT_730824_OPTIONC"
+ai_chance = 0
+command = { type = dissent value = 5 }
+command = { type = addcore which = 620 }
+command = { type = addcore which = 621 }
+command = { type = addcore which = 626 }
+command = { type = addcore which = 625 }
+command = { type = addcore which = 619 }
+command = { type = belligerence which = URU value = 1 }
+}
+
+}
+
+event = {
+id = 730825
+random = no
+country = URU
+
+
+name = "EVT_730825_NAME"
+desc = "EVT_730825_DESC"
+style = 2
+
+
+action_a = {
+name = "EVT_730825_OPTIONA"
+ai_chance = 100
+command = { type = peace which = UKR }
+command = { type = secedeprovince which = UKR value = 302 }
+command = { type = secedeprovince which = UKR value = 303 }
+command = { type = secedeprovince which = UKR value = 304 }
+command = { type = secedeprovince which = UKR value = 305 }
+command = { type = secedeprovince which = UKR value = 306 }
+command = { type = dissent value = 5 }
+}
+action_b = {
+name = "EVT_730825_OPTIONB"
+ai_chance = 0
+command = { }
+}
+}
+
+event = {
+id = 730826
+random = no
+country = UKR
+
+
+name = "EVT_730826_NAME"
+desc = "EVT_730826_DESC"
+style = 2
+
+
+action_a = {
+name = "EVT_730826_OPTIONA"
+ai_chance = 100
+command = { type = peace which = URU }
+}
+action_b = {
+name = "EVT_730826_OPTIONB"
+ai_chance = 0
+command = { type = dissent value = 10 }
+}
+}
+
+event = {
+id = 730827
+random = no
+country = UKR
+
+
+name = "EVT_730827_NAME"
+desc = "EVT_730827_DESC"
+style = 2
+
+action_a = {
+name = "EVT_730827_OPTIONA"
+ai_chance = 90
+command = { type = peace which = URU }
+command = { type = secedeprovince which = URU value = 620 }
+command = { type = secedeprovince which = URU value = 621 }
+command = { type = secedeprovince which = URU value = 626 }
+command = { type = secedeprovince which = URU value = 625 }
+command = { type = secedeprovince which = URU value = 619 }
+command = { type = dissent value = 10 }
+}
+action_b = {
+name = "EVT_730827_OPTIONB"
+ai_chance = 10
+command = { }
+}
+}
+
+#### Terror events in civil war
+event = {
+	id = 966627
+	country = ROM
+	persistent = yes
+
+	trigger = { 
+		random = 8
+		war = { country = ROM country = URU }
+	}
+	
+	name = "EVT_966627_NAME" 
+	desc = "EVT_966627_DESC" 
+	style = 2
+	picture = "massterror1"
+	
+	date = { day = 1 month = june year = 1936 }
+	offset = 22
+	deathdate = { day = 29 month = december year = 1960 }
+	
+	action = {
+		name = "EVT_966627_OPTIONA" # Peasants won't appeciate
+		command = { type = dissent value = 1 }
+	}
+}
+
+event = {
+	id = 966628
+	country = URU
+	persistent = yes
+
+	trigger = { 
+		random = 8
+		war = { country = ROM country = URU }
+	}
+	
+	name = "EVT_966628_NAME" 
+	desc = "EVT_966628_DESC" 
+	style = 2
+	picture = "massterror1"
+	
+	date = { day = 1 month = june year = 1936 }
+	offset = 22
+	deathdate = { day = 29 month = december year = 1960 }
+	
+	action = {
+		name = "EVT_966628_OPTIONA" # Peasants won't appeciate
+		command = { type = dissent value = 1 }
+	}
+}
+
+
+event = {
+	id = 966700
+	random = no
+	country = URU
+	
+        decision = {
+
+                NOT = { 
+		atwar = URU
+		exists = ROM
+                ispuppet = URU
+		}
+                control = { province = 307 data = BUL } 
+                NOT = { puppet = { country = BUL country = URU  } }
+                NOT = { 
+                alliance = { country = URU country = BUL } 
+                alliance = { country = GER country = BUL } 
+                guarantee = { country = GER country = BUL }
+                }
+        }
+
+        decision_trigger = {
+        }
+ 
+	trigger = {
+		
+		NOT = { 
+		atwar = URU
+		exists = ROM
+                ispuppet = URU
+		}
+                control = { province = 307 data = BUL } 
+                NOT = { puppet = { country = BUL country = URU  } }
+                NOT = { 
+                alliance = { country = URU country = BUL } 
+                alliance = { country = GER country = BUL } 
+                guarantee = { country = GER country = BUL }
+                }
+	}
+
+	name = "EVT_966700_NAME"
+	desc = "EVT_966700_DESC"
+	style = 2
+	picture = "Dobrudzha"
+        decision_picture = "decision_dobrudza"
+
+	date = { day = 15 month = march year = 1938 }
+	offset = 10
+	deathdate = { day = 29 month = december year = 1960 }
+
+	action_a = {
+		name = "EVT_966700_OPTIONA"
+		ai_chance = 30
+                command = { type = trigger which = 966701    }
+                command = { type = relation which = BUL value = -20 }
+                command = { type = addcore which = 307 }
+	}
+
+        action_b = {
+        ai_chance = 50
+        name = "EVT_966700_OPTIONB"
+        trigger = {
+        alliance = { country = URU country = SER }
+        }
+        command = { type = dissent value = -5 }
+        command = { type = war which = BUL }
+        }
+
+        action_c = {
+        ai_chance = 50
+        name = "EVT_966700_OPTIONC"
+        command = { type = trigger which = 966710    }
+        }
+        
+	action_d = {
+		name = "EVT_966700_OPTIOND" 
+		ai_chance = 20
+		command = { type = relation which = BUL value = 20 }
+		command = { type = dissent value = 5 }
+	}
+}
+
+event = {
+	id = 966701
+	random = no
+	country = BUL	
+
+	name = "EVT_966701_NAME"
+	desc = "EVT_966701_DESC"
+
+	style = 2
+	picture = "Dobrudzha"
+
+	action_a = {
+		name = "EVT_966701_OPTIONA"
+		ai_chance = 90
+                command = { type = trigger which = 966702    }
+                command = { type = dissent value = -2 }
+                command = { type = relation which = URU value = -20 }
+	}
+        
+	action_b = {
+		name = "EVT_966701_OPTIONB"
+		ai_chance = 10
+                command = { type = trigger which = 966704    }
+	}
+
+	action_c = {
+		name = "EVT_966701_OPTIONC"
+		ai_chance = 0
+                command = { type = relation which = URU value = 20 }
+                command = { type = trigger which = 966703    }
+		command = { type = dissent value = 4 }
+	}
+}
+
+event = {
+id = 966702
+country = URU
+picture = "Dobrudzha"
+random = no
+persistent = no
+style = 2
+
+name = "EVT_966702_NAME"
+desc = "EVT_966702_DESC"
+
+action_a = {
+ai_chance = 50
+name = "EVT_966702_OPTIONA"
+trigger = {
+        alliance = { country = URU country = SER }
+        }
+command = { type = dissent value = -5 }
+command = { type = war which = BUL }
+}
+
+action_b = {
+ai_chance = 50
+name = "EVT_966702_OPTIONB"
+command = { type = trigger which = 966710    }
+}
+
+action_c = {
+ai_chance = 20
+name = "EVT_966702_OPTIONC"
+command = { type = relation which = BUL value = 25 }
+command = { type = dissent value = 10 }
+}
+}
+
+event = {
+	id = 966703
+	random = no
+	country = BUL
+        picture = "Dobrudzha"
+	style = 2
+        one_action = yes
+
+
+
+
+	name = "EVT_966703_NAME"
+	desc = "EVT_966703_DESC"
+	
+
+	action_a = {
+		name = "EVT_966703_OPTIONB"
+                ai_chance = 45
+		command = { type = dissent value = -5 }	
+                command = { type = trigger which = 966704    }
+		
+		}
+        action_b = {
+		name = "EVT_966703_OPTIONC"
+                ai_chance = 55
+		command = { type = dissent value = 2 }	
+                command = { type = secedeprovince which = URU value = 307 }
+                command = { type = removecore which = 307 }
+		
+		}
+
+}
+
+event = {
+	id = 966704
+	random = no
+	country = URU
+	style = 2
+
+	
+
+	name = "EVT_966704_NAME"
+	desc = "EVT_966704_DESC"
+	
+
+	action_a = {
+		ai_chance = 10
+		name = "EVT_966704_OPTIONA"
+		command = { type = trigger which = 966705 }
+		}
+
+	action_b = {
+		ai_chance = 30
+		name = "EVT_966704_OPTIONB"
+		trigger = {
+                alliance = { country = URU country = SER }
+                }
+                command = { type = dissent value = -5 }
+                command = { type = war which = BUL }
+        
+		}
+
+        action_c = {
+                ai_chance = 50
+                name = "EVT_966704_OPTIONC"
+                command = { type = trigger which = 966710  }
+        }
+}
+
+event = {
+	id = 966705
+	random = no
+	country = BUL
+        picture = "Dobrudzha"
+	style = 2
+        one_action = yes
+
+
+
+
+	name = "EVT_966705_NAME"
+	desc = "EVT_966705_DESC"
+	
+
+	action_a = {
+		name = "EVT_966705_OPTIONB"
+                ai_chance = 100
+		command = { type = dissent value = -5 }	
+                command = { type = trigger which = 966706  }
+		
+		}
+        action_b = {
+		name = "EVT_966705_OPTIONC"
+                ai_chance = 0
+		command = { type = dissent value = 2 }	
+                command = { type = trigger which = 966707  }
+		
+		}
+
+}
+
+
+event = {
+id = 966706
+country = URU
+picture = "Dobrudzha"
+random = no
+style = 2
+
+name = "EVT_966706_NAME"
+desc = "EVT_966706_DESC"
+
+action_a = {
+name = "EVT_966706_OPTIONA"
+command = { type = relation which = BUL value = -100 }
+command = { type = dissent value = 2 }
+}
+}
+
+event = {
+id = 966707
+country = URU
+picture = "Dobrudzha"
+random = no
+style = 2
+
+name = "EVT_966707_NAME"
+desc = "EVT_966707_DESC"
+
+
+action_a = {
+name = "EVT_966707_OPTIONA"
+command = { type = relation which = BUL value = 25 }
+command = { type = dissent value = -5 }
+command = { type = trigger which = 966708 }
+}
+}
+
+event = {
+id = 966708
+country = BUL
+picture = "Dobrudzha"
+random = no
+style = 2
+
+name = "EVT_966708_NAME"
+desc = "EVT_966708_DESC"
+
+action_a = {
+ai_chance = 1
+name = "EVT_966708_OPTIONA"
+command = { type = relation which = URU value = -5 }
+command = { type = dissent value = 1 }
+command = { type = secedeprovince which = URU value = 307 }
+}
+
+action_b = {
+ai_chance = 99
+name = "EVT_966708_OPTIONB"
+command = { type = relation which = URU value = -50 }
+command = { type = dissent value = -1 }
+command = { type = trigger which = 966709 }
+}
+}
+
+event = {
+	id = 966709
+	random = no
+	country = URU
+	style = 2
+
+	
+
+	name = "EVT_966709_NAME"
+	desc = "EVT_966709_DESC"
+	
+
+	action_a = {
+		ai_chance = 10
+		name = "EVT_966709_OPTIONA"
+		command = { type = relation which = URU value = -50 }
+                command = { type = dissent value = 3 }
+		}
+
+	action_b = {
+		ai_chance = 30
+		name = "EVT_966709_OPTIONB"
+		trigger = {
+                alliance = { country = URU country = SER }
+                }
+                command = { type = dissent value = -5 }
+                command = { type = war which = BUL }
+        
+		}
+
+        action_c = {
+                ai_chance = 50
+                name = "EVT_966709_OPTIONC"
+                command = { type = trigger which = 966710  }
+        }
+}
+
+
+event = {
+id = 966710
+country = BUL
+picture = "Dobrudzha"
+random = no
+persistent = no
+style = 2
+
+name = "EVT_966710_NAME"
+desc = "EVT_966710_DESC"
+
+action_a = {
+ai_chance = 40
+name = "EVT_966710_OPTIONA"
+command = { type = revolt which = 307 }
+}
+
+action_b = {
+ai_chance = 40
+name = "EVT_966710_OPTIONB"
+command = { type = revolt which = 307 }
+command = { type = war which = URU }
+}
+
+action_c = {
+ai_chance = 20
+name = "EVT_966710_OPTIONC"
+command = { type = secedeprovince which = URU value = 307 }
+command = { type = dissent value = 10 }
+}
+}
+
+
+
+
+event = {
+	id = 966711
+	random = no
+	country = ROM	
+	
+        decision = {
+
+                NOT = { 
+		atwar = ROM
+		exists = URU
+                ispuppet = ROM
+		}
+                control = { province = 307 data = BUL } 
+                NOT = { puppet = { country = BUL country = ROM  } }
+                NOT = { 
+                alliance = { country = ROM country = BUL } 
+                alliance = { country = GER country = BUL } 
+                guarantee = { country = GER country = BUL }
+                }
+        }
+
+        decision_trigger = {
+        }
+ 
+	trigger = {
+		
+		NOT = { 
+		atwar = ROM
+		exists = URU
+                ispuppet = ROM
+		}
+                control = { province = 307 data = BUL } 
+                NOT = { puppet = { country = BUL country = ROM  } }
+                NOT = { 
+                alliance = { country = ROM country = BUL } 
+                alliance = { country = GER country = BUL } 
+                guarantee = { country = GER country = BUL }
+                }
+        }
+
+	name = "EVT_966711_NAME"
+	desc = "EVT_966711_DESC"
+	style = 2
+	picture = "Dobrudzha"
+        decision_picture = "decision_dobrudza"
+
+	date = { day = 15 month = march year = 1938 }
+	offset = 10
+	deathdate = { day = 29 month = december year = 1960 }
+
+	action_a = {
+		name = "EVT_966711_OPTIONA"
+		ai_chance = 30
+                command = { type = trigger which = 966712    }
+                command = { type = relation which = BUL value = -20 }
+                command = { type = addcore which = 307 }
+	}
+
+        action_b = {
+        ai_chance = 50
+        name = "EVT_966711_OPTIONB"
+        trigger = {
+        alliance = { country = ROM country = SER }
+        }
+        command = { type = dissent value = -5 }
+        command = { type = war which = BUL }
+        }
+
+        action_c = {
+        ai_chance = 50
+        name = "EVT_966711_OPTIONC"
+        command = { type = trigger which = 966721    }
+        }
+        
+	action_d = {
+		name = "EVT_966711_OPTIOND" 
+		ai_chance = 20
+		command = { type = relation which = BUL value = 20 }
+		command = { type = dissent value = 5 }
+	}
+}
+
+event = {
+	id = 966712
+	random = no
+	country = BUL	
+
+	name = "EVT_966712_NAME"
+	desc = "EVT_966712_DESC"
+
+	style = 2
+	picture = "Dobrudzha"
+
+	action_a = {
+		name = "EVT_966712_OPTIONA"
+		ai_chance = 90
+                command = { type = trigger which = 966713    }
+                command = { type = dissent value = -2 }
+                command = { type = relation which = ROM value = -20 }
+	}
+        
+	action_b = {
+		name = "EVT_966712_OPTIONB"
+		ai_chance = 10
+                command = { type = trigger which = 966715    }
+	}
+
+	action_c = {
+		name = "EVT_966712_OPTIONC"
+		ai_chance = 0
+                command = { type = relation which = ROM value = 20 }
+                command = { type = trigger which = 966714    }
+		command = { type = dissent value = 4 }
+	}
+}
+
+event = {
+id = 966713
+country = ROM
+picture = "Dobrudzha"
+random = no
+persistent = no
+style = 2
+
+name = "EVT_966713_NAME"
+desc = "EVT_966713_DESC"
+
+action_a = {
+ai_chance = 50
+name = "EVT_966713_OPTIONA"
+trigger = {
+        alliance = { country = ROM country = SER }
+        }
+command = { type = dissent value = -5 }
+command = { type = war which = BUL }
+}
+
+action_b = {
+ai_chance = 50
+name = "EVT_966713_OPTIONB"
+command = { type = trigger which = 966721    }
+}
+
+action_c = {
+ai_chance = 20
+name = "EVT_966713_OPTIONC"
+command = { type = relation which = BUL value = 25 }
+command = { type = dissent value = 10 }
+}
+}
+
+event = {
+	id = 966714
+	random = no
+	country = BUL
+        picture = "Dobrudzha"
+	style = 2
+        one_action = yes
+
+
+
+
+	name = "EVT_966714_NAME"
+	desc = "EVT_966714_DESC"
+	
+
+	action_a = {
+		name = "EVT_966714_OPTIONB"
+                ai_chance = 45
+		command = { type = dissent value = -5 }	
+                command = { type = trigger which = 966717    }
+		
+		}
+        action_b = {
+		name = "EVT_966714_OPTIONC"
+                ai_chance = 55
+		command = { type = dissent value = 2 }	
+                command = { type = trigger which = 966718    }
+		
+		}
+
+}
+
+event = {
+	id = 966715
+	random = no
+	country = ROM
+	style = 2
+
+	
+
+	name = "EVT_966715_NAME"
+	desc = "EVT_966715_DESC"
+	
+
+	action_a = {
+		ai_chance = 10
+		name = "EVT_966715_OPTIONA"
+		command = { type = trigger which = 966716 }
+		}
+
+	action_b = {
+		ai_chance = 30
+		name = "EVT_966715_OPTIONB"
+		trigger = {
+                alliance = { country = ROM country = SER }
+                }
+                command = { type = dissent value = -5 }
+                command = { type = war which = BUL }
+        
+		}
+
+        action_c = {
+                ai_chance = 50
+                name = "EVT_966715_OPTIONC"
+                command = { type = trigger which = 966721  }
+        }
+}
+
+event = {
+	id = 966716
+	random = no
+	country = BUL
+        picture = "Dobrudzha"
+	style = 2
+        one_action = yes
+
+
+
+
+	name = "EVT_966716_NAME"
+	desc = "EVT_966716_DESC"
+	
+
+	action_a = {
+		name = "EVT_966716_OPTIONB"
+                ai_chance = 100
+		command = { type = dissent value = -5 }	
+                command = { type = trigger which = 966717  }
+		
+		}
+        action_b = {
+		name = "EVT_966716_OPTIONC"
+                ai_chance = 0
+		command = { type = dissent value = 2 }	
+                command = { type = trigger which = 966718  }
+		
+		}
+
+}
+
+
+event = {
+id = 966717
+country = ROM
+picture = "Dobrudzha"
+random = no
+style = 2
+
+name = "EVT_966717_NAME"
+desc = "EVT_966717_DESC"
+
+action_a = {
+name = "EVT_966717_OPTIONA"
+command = { type = relation which = BUL value = -100 }
+command = { type = dissent value = 2 }
+}
+}
+
+event = {
+id = 966718
+country = ROM
+picture = "Dobrudzha"
+random = no
+style = 2
+
+name = "EVT_966718_NAME"
+desc = "EVT_966718_DESC"
+
+
+action_a = {
+name = "EVT_966718_OPTIONA"
+command = { type = relation which = BUL value = 25 }
+command = { type = dissent value = -5 }
+command = { type = trigger which = 966719 }
+}
+}
+
+event = {
+id = 966719
+country = BUL
+picture = "Dobrudzha"
+random = no
+style = 2
+
+name = "EVT_966719_NAME"
+desc = "EVT_966719_DESC"
+
+action_a = {
+ai_chance = 1
+name = "EVT_966719_OPTIONA"
+command = { type = relation which = ROM value = -5 }
+command = { type = dissent value = 1 }
+command = { type = secedeprovince which = ROM value = 307 }
+}
+
+action_b = {
+ai_chance = 99
+name = "EVT_966719_OPTIONB"
+command = { type = relation which = ROM value = -50 }
+command = { type = dissent value = -1 }
+command = { type = trigger which = 966720 }
+}
+}
+
+event = {
+	id = 966720
+	random = no
+	country = ROM
+	style = 2
+
+	
+
+	name = "EVT_966720_NAME"
+	desc = "EVT_966720_DESC"
+	
+
+	action_a = {
+		ai_chance = 10
+		name = "EVT_966720_OPTIONA"
+		command = { type = relation which = ROM value = -50 }
+                command = { type = dissent value = 3 }
+		}
+
+	action_b = {
+		ai_chance = 30
+		name = "EVT_966720_OPTIONB"
+		trigger = {
+                alliance = { country = ROM country = SER }
+                }
+                command = { type = dissent value = -5 }
+                command = { type = war which = BUL }
+        
+		}
+
+        action_c = {
+                ai_chance = 50
+                name = "EVT_966720_OPTIONC"
+                command = { type = trigger which = 966721 }
+        }
+}
+
+
+event = {
+id = 966721
+country = BUL
+picture = "Dobrudzha"
+random = no
+style = 2
+
+name = "EVT_966721_NAME"
+desc = "EVT_966721_DESC"
+
+action_a = {
+ai_chance = 60
+name = "EVT_966721_OPTIONA"
+command = { type = revolt which = 307 }
+}
+
+action_b = {
+ai_chance = 40
+name = "EVT_966721_OPTIONB"
+command = { type = revolt which = 307 }
+command = { type = war which = ROM }
+}
+
+action_c = {
+ai_chance = 10
+name = "EVT_966721_OPTIONC"
+command = { type = secedeprovince which = ROM value = 307 }
+command = { type = dissent value = 10 }
+}
+}
+
+
+event = {
+	id = 966722
+	random = no
+	country = URU
+	
+        decision = {
+        exists = UKR
+        control = { province = 617 data = UKR }
+        control = { province = 626 data = UKR }
+        control = { province = 304 data = URU }
+        control = { province = 307 data = URU }
+        control = { province = 288 data = URU }
+                NOT = {
+		ispuppet = UKR
+                exists = ROM
+                atwar = URU
+                alliance = { country = UKR country = URU }
+                alliance = { country = UKR country = RUS }
+                alliance = { country = UKR country = SOV }
+                alliance = { country = UKR country = GER }
+                alliance = { country = UKR country = FRA }
+		}
+	}
+
+        decision_trigger = {
+        }
+
+	trigger = {
+        exists = UKR
+        control = { province = 617 data = UKR }
+        control = { province = 626 data = UKR }
+        control = { province = 304 data = URU }
+        control = { province = 307 data = URU }
+        control = { province = 288 data = URU }
+                NOT = {
+		ispuppet = UKR
+                exists = ROM
+                atwar = URU
+                alliance = { country = UKR country = URU }
+                alliance = { country = UKR country = RUS }
+                alliance = { country = UKR country = FRA }
+                alliance = { country = UKR country = SOV }
+                alliance = { country = UKR country = GER }
+		}
+	}
+
+	name = "EVT_966722_NAME"
+	desc = "EVT_966722_DESC"
+	style = 2
+	picture = "Odessa"
+        decision_picture = "decision_statusofodessa"
+
+	date = { day = 15 month = august year = 1937 }
+	offset = 10
+	deathdate = { day = 29 month = december year = 1960 }
+
+	action_a = {
+		name = "EVT_966722_OPTIONA"
+		ai_chance = 50
+                command = { type = addclaim which = 620 }
+                command = { type = addclaim which = 621 }
+                command = { type = addclaim which = 626 }
+                command = { type = addclaim which = 625 }
+                command = { type = addclaim which = 619 }
+                command = { type = war which = UKR }
+	}
+        
+	action_b = {
+		name = "EVT_966722_OPTIONB" 
+		ai_chance = 50
+		command = { type = dissent value = 1 }
+}
+}
+
+event = {
+	id = 966723
+	random = no
+	country = ROM
+	
+	decision = {
+               exists = UKR
+        control = { province = 617 data = UKR }
+        control = { province = 626 data = UKR }
+        control = { province = 304 data = ROM }
+        control = { province = 307 data = ROM }
+        control = { province = 288 data = ROM }
+                NOT = {
+		ispuppet = UKR
+                exists = URU
+                atwar = ROM
+                alliance = { country = UKR country = ROM }
+                alliance = { country = UKR country = RUS }
+                alliance = { country = UKR country = FRA }
+                alliance = { country = UKR country = SOV }
+                alliance = { country = UKR country = GER }
+		}
+	}
+
+        decision_trigger = {
+        }
+
+	trigger = {
+        exists = UKR
+        control = { province = 617 data = UKR }
+        control = { province = 626 data = UKR }
+        control = { province = 304 data = ROM }
+        control = { province = 307 data = ROM }
+        control = { province = 288 data = ROM }
+                NOT = {
+		ispuppet = UKR
+                exists = URU
+                atwar = ROM
+                alliance = { country = UKR country = ROM }
+                alliance = { country = UKR country = RUS }
+                alliance = { country = UKR country = FRA }
+                alliance = { country = UKR country = SOV }
+                alliance = { country = UKR country = GER }
+		}
+	}
+
+	name = "EVT_966723_NAME"
+	desc = "EVT_966723_DESC"
+	style = 2
+	picture = "Odessa"
+        decision_picture = "decision_statusofodessa"
+
+	date = { day = 15 month = august year = 1937 }
+	offset = 10
+	deathdate = { day = 29 month = december year = 1960 }
+
+	action_a = {
+		name = "EVT_966723_OPTIONA"
+		ai_chance = 50
+                command = { type = addclaim which = 620 }
+                command = { type = addclaim which = 621 }
+                command = { type = addclaim which = 626 }
+                command = { type = addclaim which = 625 }
+                command = { type = addclaim which = 619 }
+                command = { type = war which = UKR }
+	}
+        
+	action_b = {
+		name = "EVT_966723_OPTIONB" 
+		ai_chance = 50
+		command = { type = dissent value = 1 }
+}
+}
+
+####Peace events
+event = {
+id = 966724
+random = no
+country = UKR
+
+trigger = {
+war = { country = UKR country = ROM }
+control = { province = 302 data = UKR }
+control = { province = 303 data = UKR }
+control = { province = 304 data = UKR }
+control = { province = 305 data = UKR }
+control = { province = 306 data = UKR }
+control = { province = 297 data = UKR }
+NOT = {
+ispuppet = UKR
+ispuppet = ROM
+alliance = { country = UKR country = FRA }
+alliance = { country = UKR country = RUS }
+alliance = { country = UKR country = GER }
+alliance = { country = ROM country = RUS }
+alliance = { country = ROM country = GER }
+}
+}
+name = "EVT_966724_NAME"
+desc = "EVT_966724_DESC"
+style = 2
+
+
+action_a = {
+name = "EVT_966724_OPTIONA"
+ai_chance = 100
+command = { type = trigger which = 966726 }
+command = { type = addcore which = 302 }
+command = { type = addcore which = 303 }
+command = { type = addcore which = 304 }
+command = { type = addcore which = 305 }
+command = { type = addcore which = 306 }
+}
+action_b = {
+name = "EVT_966724_OPTIONB"
+ai_chance = 0
+command = { type = dissent value = 5 }
+command = { type = addcore which = 302 }
+command = { type = addcore which = 303 }
+command = { type = addcore which = 304 }
+command = { type = addcore which = 305 }
+command = { type = addcore which = 306 }
+command = { type = belligerence which = UKR value = 1 }
+}
+}
+
+
+event = {
+id = 966725
+random = no
+country = ROM
+
+trigger = {
+war = { country = UKR country = ROM }
+control = { province = 620 data = ROM }
+control = { province = 621 data = ROM }
+control = { province = 626 data = ROM }
+control = { province = 625 data = ROM }
+control = { province = 619 data = ROM }
+NOT = {
+ispuppet = UKR
+ispuppet = ROM
+alliance = { country = UKR country = FRA }
+alliance = { country = UKR country = RUS }
+alliance = { country = UKR country = GER }
+alliance = { country = ROM country = RUS }
+alliance = { country = ROM country = GER }
+}
+}
+name = "EVT_966725_NAME"
+desc = "EVT_966725_DESC"
+style = 2
+
+
+action_a = {
+name = "EVT_966725_OPTIONA"
+ai_chance = 5
+command = { type = trigger which = 966727 }
+command = { type = dissent value = 5 }
+}
+action_b = {
+name = "EVT_966725_OPTIONB"
+ai_chance = 95
+command = { type = addcore which = 620 }
+command = { type = addcore which = 621 }
+command = { type = addcore which = 626 }
+command = { type = addcore which = 625 }
+command = { type = addcore which = 619 }
+command = { type = trigger which = 966728 }
+}
+
+action_c = {
+name = "EVT_966725_OPTIONC"
+ai_chance = 0
+command = { type = dissent value = 5 }
+command = { type = addcore which = 620 }
+command = { type = addcore which = 621 }
+command = { type = addcore which = 626 }
+command = { type = addcore which = 625 }
+command = { type = addcore which = 619 }
+command = { type = belligerence which = ROM value = 1 }
+}
+
+}
+
+event = {
+id = 966726
+random = no
+country = ROM
+
+
+name = "EVT_966726_NAME"
+desc = "EVT_966726_DESC"
+style = 2
+
+
+action_a = {
+name = "EVT_966726_OPTIONA"
+ai_chance = 100
+command = { type = peace which = UKR value = 1 }
+command = { type = secedeprovince which = UKR value = 302 }
+command = { type = secedeprovince which = UKR value = 303 }
+command = { type = secedeprovince which = UKR value = 304 }
+command = { type = secedeprovince which = UKR value = 305 }
+command = { type = secedeprovince which = UKR value = 306 }
+command = { type = dissent value = 5 }
+}
+action_b = {
+name = "EVT_966726_OPTIONB"
+ai_chance = 0
+command = { }
+}
+}
+
+event = {
+id = 966727
+random = no
+country = UKR
+
+
+name = "EVT_966727_NAME"
+desc = "EVT_966727_DESC"
+style = 2
+
+
+action_a = {
+name = "EVT_966727_OPTIONA"
+ai_chance = 100
+command = { type = peace which = ROM value = 1 }
+}
+action_b = {
+name = "EVT_966727_OPTIONB"
+ai_chance = 0
+command = { type = dissent value = 10 }
+}
+}
+
+event = {
+id = 966728
+random = no
+country = UKR
+
+
+name = "EVT_966728_NAME"
+desc = "EVT_966728_DESC"
+style = 2
+
+action_a = {
+name = "EVT_966728_OPTIONA"
+ai_chance = 90
+command = { type = peace which = ROM value = 1 }
+command = { type = secedeprovince which = ROM value = 620 }
+command = { type = secedeprovince which = ROM value = 621 }
+command = { type = secedeprovince which = ROM value = 626 }
+command = { type = secedeprovince which = ROM value = 625 }
+command = { type = secedeprovince which = ROM value = 619 }
+command = { type = dissent value = 10 }
+}
+action_b = {
+name = "EVT_966728_OPTIONB"
+ai_chance = 10
+command = { }
+}
+}

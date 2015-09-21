@@ -1,0 +1,179 @@
+# Liberation of the UK Events VI: General Domestic Events
+#
+# IDs 830376-830380
+#
+# 830376 - The Proclamation of Liberty Day
+# 830377 - The Progressive Government and Liberty Day
+# 830378 - Liberty Day to be Expanded
+# 830379 - Liberty Day
+# 830380 - Liberty Day (at war with CoF)
+
+event = {
+
+	id = 830376
+	random = no
+	country = U07
+	style = 2
+
+	trigger = {
+		day = 19
+		month = 0
+		NOT = {
+			day = 20
+			}
+		NOT = {
+			month = 1
+			}
+		}
+
+	date = { day = 1 month = january year = 1937 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "EVT_830376_NAME"
+	desc = "EVT_830376_DESC"
+
+	action_a = {
+		name = "EVT_830376_OPTIONA"
+		command = { type = dissent value = -1 }
+		command = { type = setflag which = UK_LIBERTY_DAY }
+		}
+	}
+
+event = {
+
+	id = 830377
+	random = no
+	country = U07
+	style = 2
+
+	trigger = {
+                event = 830376
+		flag = UK_PROG_GOVT
+		}
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "EVT_830377_NAME"
+	desc = "EVT_830377_DESC"
+
+	action_a = {
+		name = "EVT_830377_OPTIONA"
+                ai_chance = 40
+		command = { type = clrflag which = UK_LIBERTY_DAY }
+                command = { type = dissent value = 5 }
+                command = { type = relation which = FRA value = 20 }
+		}
+
+        action_b = {
+		name = "EVT_830377_OPTIONB"
+                ai_chance = 60
+		command = { type = dissent value = -5 }
+                command = { type = relation which = FRA value = -20 }
+		}
+
+	}
+
+event = {
+
+	id = 830378
+	random = no
+	country = U07
+        style = 2
+
+	trigger = {
+		event = 830377
+		NOT = {
+			flag = UK_PROG_GOVT
+                        flag = UK_LIBERTY_DAY
+			}
+		}
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "EVT_830378_NAME"
+	desc = "EVT_830378_DESC"
+
+	action_a = {
+		name = "EVT_830378_OPTIONA"
+		command = { type = setflag which = UK_LIBERTY_DAY }
+		}
+	}
+
+event = {
+
+	id = 830379
+	random = no
+	persistent = yes
+	country = U07
+        style = 2
+
+	trigger = {
+                event = 830376 
+		day = 19
+		month = 0
+		NOT = {
+			day = 20
+			}
+		NOT = {
+			month = 1
+			}
+		NOT = {
+			war = { country = U07 country = FRA }
+			}
+		flag = UK_LIBERTY_DAY
+		}
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "EVT_830379_NAME"
+	desc = "EVT_830379_DESC"
+
+	action_a = {
+		name = "EVT_830379_OPTIONA"
+		command = { type = relation which = FRA value = -10 }
+		command = { type = relation which = RSI value = -5 }
+		command = { type = relation which = CSA value = -5 }
+		}
+	}
+
+event = {
+
+	id = 830380
+	random = no
+	persistent = yes
+	country = U07
+        style = 2
+
+	trigger = {
+                event = 830376 
+		day = 19
+		month = 0
+		NOT = {
+			day = 20
+			}
+		NOT = {
+			month = 1
+			}
+		war = { country = U07 country = FRA }
+		flag = UK_LIBERTY_DAY
+		}
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "EVT_830380_NAME"
+	desc = "EVT_830380_DESC"
+
+	action_a = {
+		name = "EVT_830380_OPTIONA"
+		command = { type = dissent value = -1 }
+		}
+	}

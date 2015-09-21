@@ -1,0 +1,1129 @@
+###########
+####Madras Republic Domestic Events
+###########
+
+event = {
+	id = 101530
+	random = no
+	country = U35
+
+	name = "EVT_101530_NAME"
+	desc = "EVT_101530_DESC"
+	style = 2
+        picture = "Japanese Voting"
+	
+	date = { day = 15 month = March year = 1936 }
+	
+action_a = {
+	name = "EVT_101530_OPTIONA"
+	ai_chance = 30 
+	command = { type = dissent value = 10 }
+	command = { type = headofstate which = 75911210 }
+	command = { type = headofgovernment which = 75911211 }
+	command = { type = foreignminister which = 75911212 }
+	command = { type = armamentminister which = 75911213 }
+	command = { type = ministerofsecurity which = 75911214 }
+	command = { type = setflag which = Swa1 }
+}
+
+action_b = {
+	name = "EVT_101530_OPTIONB"
+	ai_chance = 70
+	command = { type = dissent value = 5 }
+	command = { type = set_domestic which = democratic value = 6 }
+	command = { type = set_domestic which = political_left value = 3 }
+	command = { type = set_domestic which = freedom value = 4 }
+	command = { type = headofstate which = 75911214 }
+	command = { type = headofgovernment which = 75911215 }
+	command = { type = foreignminister which = 75911216 }
+	command = { type = armamentminister which = 75911217 }
+	command = { type = ministerofsecurity which = 75911218 }
+	command = { type = setflag which = Jus1 }
+}
+}
+
+event = {
+	id = 101531
+	random = no
+	country = U35
+	
+	name = "EVT_101531_NAME"
+	desc = "EVT_101531_DESC"
+	style = 2
+        picture = "SrinivasaIyengarkai"
+
+
+	date = { day = 1 month = March year = 1936 }
+
+action_a = {
+	name = "EVT_101531_OPTIONA"
+	command = { type = dissent value = 1 }
+}	 
+}
+
+event = {
+	id = 101532
+	random = no
+	country = U35
+	trigger = {
+		flag = Swa1
+	}
+
+	name = "EVT_101532_NAME"
+	desc = "EVT_101532_DESC"
+	style = 2
+	picture = "Industry2"
+
+	date = { day = 1 month = April year = 1936 }
+
+action_a = {
+	name = "EVT_101532_OPTIONA"
+	ai_chance = 40
+	command = { type = setflag which = SwaB }
+	command = { type = clrflag which = Swa1 }
+	command = { type = dissent value = -2 }
+}
+action_b = {
+	name = "EVT_101532_OPTIONB"
+	ai_chance = 40
+	command = { type = setflag which = SwaS }
+	command = { type = clrflag which = Swa1 }
+}
+action_c = {
+	name = "EVT_101532_OPTIONC"
+	ai_chance = 20
+	command = { type = dissent value = 10 }
+}  
+}  
+
+event = {
+	id = 101533
+	random = no
+	country = U35
+	trigger = {
+		atwar = no
+	}
+	
+	name = "EVT_101533_NAME"
+	desc = "EVT_101533_DESC"
+	style = 2
+	picture = "railway1"
+	
+	date = { day = 1 month = August year = 1936 }
+
+action_a = {  
+	name = "EVT_101533_OPTIONA"
+	command = { type = construct which = ic where = -1 value = 1 }
+	command = { type = add_prov_resource which = -1 value = 4 where = energy }
+	command = { type = add_prov_resource which = -1 value = 3 where = metal }
+	command = { type = money value = -75 }
+	command = { type = dissent value = -2 }
+	}
+}
+
+event = {
+	id = 101534
+	random = no
+	country = U35
+	trigger = {
+		event = 101533
+		atwar = no
+	}
+
+	name = "EVT_101534_NAME"
+	desc = "EVT_101534_DESC"
+	style = 2
+	picture = "railway1"
+
+	date = { day = 1 month = July year = 1937 }
+
+action_a = { 
+	name = "EVT_101534_OPTIONA"
+	command = { type = construct which = ic where = -1 value = 1 }
+	command = { type = construct which = ic where = -3 value = 1 }
+	command = { type = money value = -150 }
+	command = { type = add_prov_resource which = -1 value = 6 where = energy }
+	command = { type = add_prov_resource which = -1 value = 5 where = metal }
+	command = { type = dissent value = -4 }
+}
+}
+
+event = {
+	id = 101535
+	random = no 
+	country = U35
+	trigger = {
+		OR = {
+		flag = SwaB
+		flag = SwaS
+		}
+	}
+	
+	name = "EVT_101535_NAME"
+	desc = "EVT_101535_DESC"
+	style = 2
+	picture = "Gold"
+
+	date = { day = 1 month = July year = 1936 }
+	offset = 7
+	deathdate = { day = 1 month = August year = 1936 }
+
+action_a = { 
+	name = "EVT_101535_OPTIONA"
+	ai_chance = 40
+	command = { type = dissent value = 5 }
+	command = { type = setflag which = poortax }
+	}
+action_b = {
+	name = "EVT_101535_OPTIONB"
+	ai_chance = 30
+	command = { type = dissent value = 4 }
+	command = { type = setflag which = brahtax }
+	}
+action_c = {
+	name = "EVT_101535_OPTIONC"
+	ai_chance = 20 
+	command = { type = dissent value = 8 }
+	command = { type = setflag which = alltax }
+	}
+action_d = {
+	name = "EVT_101535_OPTIOND"
+	ai_chance = 20
+	command = { type = setflag which = devaidswa }
+	} 
+	}
+	
+
+event = {
+	id = 101536
+	random = no
+	country = U35
+	trigger = {
+		flag = Jus1
+	}
+
+	name = "EVT_101536_NAME"
+	desc = "EVT_101536_DESC"
+	style = 2
+	picture = "Industry2"
+
+	date = { day = 1 month = April year = 1936 }
+
+action_a = {
+	name = "EVT_101536_OPTIONA"
+	ai_chance = 55
+	command = { type = setflag which = JusB }
+	command = { type = dissent value = -2 }
+}
+action_b = {
+	name = "EVT_101536_OPTIONB"
+	ai_chance = 40
+	command = { type = setflag which = JusS }
+}
+action_c = {
+	name = "EVT_101536_OPTIONC"
+	ai_chance = 5
+	command = { type = dissent value = 10 }
+}  
+}  	
+
+
+event = {
+	id = 101537
+	random = no 
+	country = U35
+	trigger = {
+		OR = {
+		flag = JusB
+		flag = JusS
+		}
+	}
+	
+	name = "EVT_101537_NAME"
+	desc = "EVT_101537_DESC"
+	style = 2
+	picture = "Gold"
+
+	date = { day = 1 month = July year = 1936 }
+	offset = 7
+	deathdate = { day = 1 month = August year = 1936 }
+
+action_a = { 
+	name = "EVT_101537_OPTIONA"
+	ai_chance = 10
+	command = { type = dissent value = 5 }
+	command = { type = setflag which = poortax }
+	}
+
+action_b = {
+	name = "EVT_101537_OPTIONB"
+	ai_chance = 40
+	command = { type = dissent value = 4 }
+	command = { type = setflag which = brahtax }
+	}
+
+action_c = {
+	name = "EVT_101537_OPTIONC"
+	ai_chance = 40 
+	command = { type = dissent value = 8 }
+	command = { type = setflag which = alltax }
+	}
+
+action_d = {
+	name = "EVT_101537_OPTIOND"
+	ai_chance = 10
+	command = { type = setflag which = devaidjus }
+	} 
+}
+
+#
+#Investment Events - Small Investment
+#
+
+
+event = {
+	id = 101538
+	random = no
+	country = U35
+	persistent = yes
+	trigger = {
+                random = 50
+		OR = {
+		flag = JusS
+		flag = JusB
+		flag = SwaS
+		flag = SwaB
+		flag = Jusaidsmall
+		flag = Jusaidbig 
+		flag = Swaaidsmall
+		flag = Swaaidsbig
+		}
+	}
+ 
+	name = "EVT_101538_NAME"
+	desc = "EVT_101538_DESC"
+	style = 2
+	
+	date = { day = 1 month = January year = 1937 }
+	offset = 300
+	deathdate = { day = 1 month = August year = 1939 }
+
+action_a = {
+	name = "EVT_101538_OPTIONA"
+	command = { type = money value = -50 }
+	command = { type = construct which = infrastructure where = -1 value = 5 }
+	command = { type = industrial_modifier which = supplies value = 3 }
+}
+}
+
+event = {
+	id = 101539
+	random = no
+	country = U35
+	persistent = yes
+	trigger = {
+                random = 50
+		OR = {
+		flag = JusS
+		flag = JusB
+		flag = SwaS
+		flag = SwaB
+		flag = Jusaidsmall
+		flag = Jusaidbig 
+		flag = Swaaidsmall
+		flag = Swaaidsbig
+		}
+	}
+
+	name = "EVT_101539_NAME"
+	desc = "EVT_101539_DESC"
+	style = 2
+
+
+	date = { day = 1 month = January year = 1937 }
+	offset = 300
+	deathdate = { day = 1 month = August year = 1939 }
+
+action_a = {
+	name = "EVT_101539_OPTIONA"
+	command = { type = money value = -50 }
+	command = { type = add_prov_resource which = metal value = 4 where = 1506 }
+}
+}
+
+event = {
+	id = 101540
+	random = no
+	country = U35
+	persistent = yes
+	trigger = {
+                random = 50
+		OR = {
+		flag = JusS
+		flag = JusB
+		flag = SwaS
+		flag = SwaB
+		flag = Jusaidsmall
+		flag = Jusaidbig 
+		flag = Swaaidsmall
+		flag = Swaaidsbig
+		}
+	}
+
+	name = "EVT_101540_NAME"
+	desc = "EVT_101540_DESC"
+	style = 2
+
+
+	date = { day = 1 month = January year = 1937 }
+	offset = 300
+	deathdate = { day = 1 month = August year = 1939 }
+
+action_a = {
+	name = "EVT_101540_OPTIONA"
+	command = { type = money value = -50 }
+	command = { type = add_prov_resource which = rare_materials value = 4 where = 1499 }	
+}
+}
+
+event = {
+	id = 101541
+	random = no
+	country = U35
+	persistent = yes
+	trigger = {
+                random = 50
+		OR = {
+		flag = JusS
+		flag = JusB
+		flag = SwaS
+		flag = SwaB
+		flag = Jusaidsmall
+		flag = Jusaidbig 
+		flag = Swaaidsmall
+		flag = Swaaidsbig
+		}
+	}
+
+	name = "EVT_101541_NAME"
+	desc = "EVT_101541_DESC"
+	style = 2
+
+
+	date = { day = 1 month = January year = 1937 }
+	offset = 300
+	deathdate = { day = 1 month = August year = 1939 }
+
+action_a = {
+	name = "EVT_101541_OPTIONA"
+	command = { type = money value = -50 }
+	command = { type = add_prov_resource which = energy value = 7 where = -1 }	
+}
+}
+
+#
+#Investment Events - Big Improvements
+#
+
+event = {
+	id = 101542
+	random = no
+	country = U35
+	persistent = yes
+	trigger = {
+                random = 50
+		OR = {
+		flag = JusB
+		flag = SwaB
+		flag = Jusaidbig 
+		flag = Swaaidsbig
+		}
+	}
+
+	name = "EVT_101542_NAME"
+	desc = "EVT_101542_DESC"
+	style = 2
+
+
+	date = { day = 1 month = January year = 1937 }
+	offset = 350
+	deathdate = { day = 1 month = August year = 1939 }
+
+action_a = {
+	name = "EVT_101542_OPTIONA"
+	command = { type = money value = -100 }
+	command = { type = construct which = IC where = 1500 value = 1 }
+}
+}
+
+event = {
+	id = 101543
+	random = no
+	country = U35
+	persistent = yes
+	trigger = {
+                random = 50
+		OR = {
+		flag = JusB
+		flag = SwaB
+		flag = Jusaidbig 
+		flag = Swaaidsbig
+		}
+	}
+
+	name = "EVT_101543_NAME"
+	desc = "EVT_101543_DESC"
+	style = 2
+
+
+	date = { day = 1 month = January year = 1937 }
+	offset = 350
+	deathdate = { day = 1 month = August year = 1939 }
+
+action_a = {
+	name = "EVT_101543_OPTIONA"
+	command = { type = money value = -150 }
+	command = { type = construct which = ic where = 1500 value = 1 }
+	command = { type = construct which = infrastructure where = -1 value = 5 }
+	command = { type = construct which = infrastructure where = -1 value = 5 }
+	command = { type = construct which = infrastructure where = -1 value = 5 }
+}
+}
+
+event = {
+	id = 101544
+	random = no
+	country = U35
+	persistent = yes
+	trigger = {
+                random = 50
+		OR = {
+		flag = JusB
+		flag = SwaB
+		flag = Jusaidbig 
+		flag = Swaaidsbig
+		}
+	}
+
+	name = "EVT_101544_NAME"
+	desc = "EVT_101544_DESC"
+	style = 2
+
+
+	date = { day = 1 month = January year = 1937 }
+	offset = 300
+	deathdate = { day = 1 month = August year = 1939 }
+
+action_a = {
+	name = "EVT_101544_OPTIONA"
+	command = { type = money value = -150 }
+	command = { type = construct which = ic where = 1500 value = 1 }
+	command = { type = add_prov_resource which = metal value = 3 where = 1500 }
+
+}
+}
+
+#
+#Negative Investment Events
+#	
+
+event = {
+	id = 101545
+	random = no
+	country = U35
+	persistent = yes
+	trigger = {
+                random = 50
+		OR = {
+		flag = JusS
+		flag = JusB
+		flag = SwaS
+		flag = SwaB
+		flag = Jusaidsmall
+		flag = Jusaidbig 
+		flag = Swaaidsmall
+		flag = Swaaidsbig
+		}
+	}
+
+	name = "EVT_101545_NAME"
+	desc = "EVT_101545_DESC"
+	style = 2
+
+
+	date = { day = 1 month = January year = 1937 }
+	offset = 400
+	deathdate = { day = 1 month = August year = 1940 }
+
+action_a = {
+	name = "EVT_101545_OPTIONA"
+	command = { type = money value = -150 }
+	command = { type = dissent value = 3 }	
+}
+}
+
+event = {
+	id = 101546
+	random = no
+	country = U35
+	persistent = yes
+	trigger = {
+                random = 50
+		OR = {
+		flag = JusS
+		flag = JusB
+		flag = SwaS
+		flag = SwaB
+		flag = Jusaidsmall
+		flag = Jusaidbig 
+		flag = Swaaidsmall
+		flag = Swaaidsbig
+		}
+	}
+
+	name = "EVT_101546_NAME"
+	desc = "EVT_101546_DESC"
+	style = 2
+
+
+	date = { day = 1 month = January year = 1937 }
+	offset = 300
+	deathdate = { day = 1 month = August year = 1940 }
+
+action_a = {
+	name = "EVT_101546_OPTIONA"
+	command = { type = money value = -50 }
+	command = { type = dissent value = 5 }	
+}
+}
+
+event = {
+	id = 101547
+	random = no
+	country = U35
+	persistent = yes
+	trigger = {
+                random = 50
+		OR = {
+		flag = JusS
+		flag = JusB
+		flag = Jusaidsmall
+		flag = Jusaidbig 
+		}
+	}
+
+	name = "EVT_101547_NAME"
+	desc = "EVT_101547_DESC"
+	style = 2
+
+
+	date = { day = 1 month = January year = 1937 }
+	offset = 120
+	deathdate = { day = 1 month = August year = 1940 }
+
+action_a = {
+	name = "EVT_101547_OPTIONA"
+	command = { type = money value = -50 }
+	command = { type = dissent value = 2 } #Net loss of anger	
+}
+}
+
+#
+#Tax Events - 1939
+#
+
+event = {
+	id = 101548
+	random = no
+	country = U35
+	trigger = {
+		OR = {
+		flag = poortax
+		flag = brahtax
+		flag = Swaaidsmall
+		flag = Jusaidsmall
+		}
+	}
+
+	name = "EVT_101548_NAME"
+	desc = "EVT_101548_DESC"
+	style = 2
+
+
+	date = { day = 1 month = September year = 1939 }
+	offset = 14
+	deathdate = { day = 1 month = October year = 1939 }
+
+action_a = {
+	name = "EVT_101548_OPTIONA"
+	command = { type = free_money value = -3 }
+	command = { type = setflag which = GerDebt }	
+}
+}
+
+event = {
+	id = 101549
+	random = no
+	country = U35
+	persistent = yes
+	trigger = {
+		OR = {
+		flag = alltax
+		flag = Jusaidbig
+		flag = Swaaidbig
+		}
+	}
+
+	name = "EVT_101549_NAME"
+	desc = "EVT_101549_DESC"
+	style = 2
+
+
+	date = { day = 1 month = September year = 1939 }
+	offset = 120
+	deathdate = { day = 1 month = October year = 1940 }
+
+action_a = {
+	name = "EVT_101549_OPTIONA"
+	command = { type = dissent value = -5 }
+	command = { type = money value = 100 }	
+}
+}
+
+###########
+####Madras Foreign Events
+###########
+
+event = {
+	id = 101597
+	country = IND
+	random = no
+	trigger = {
+		flag = devaidswa
+	}
+
+	name = "EVT_101597_NAME"
+	desc = "EVT_101597_DESC"
+	style = 2
+	
+	date = { day = 1 month = August year = 1936 }
+	offset = 7
+	deathdate = { day = 1 month = September year = 1936 }
+
+action_a = {
+	ai_chance = 70
+	name = "EVT_101597_OPTIONA"
+	command = { type = dissent value = 1 }
+        command = { type = relation which = U35 value = -20 }
+	command = { type = trigger which = 101583 }
+}
+
+action_b = {
+	ai_chance = 20
+	name = "EVT_101597_OPTIONB"
+	command = { type = dissent value = 3 }
+	command = { type = money value = -300 }
+	command = { type = trigger which = 101584 }
+}
+
+action_c = {
+	ai_chance = 10
+	name = "EVT_101597_OPTIONC"
+	command = { type = dissent value = 5 }
+	command = { type = money value = -500 }
+	command = { type = free_money value = -2 }
+        command = { type = relation which = U35 value = 20 }
+	command = { type = trigger which = 101585 }
+}
+}
+
+event = {
+	id = 101583
+	country = U35
+	random = no
+	trigger = {
+	}
+
+	name = "EVT_101583_NAME"
+	desc = "EVT_101583_DESC"
+	style = 2
+
+action_a = {
+	name = "EVT_101583_OPTIONA"
+	command = { type = trigger which = 101598 }
+	}
+}
+
+event = {
+	id = 101584
+	country = U35
+	random = no
+	trigger = {
+
+	}
+
+	name = "EVT_101584_NAME"
+	desc = "EVT_101584_DESC"
+	style = 2
+
+action_a = {
+	name = "EVT_101584_OPTIONA"
+	command = { type = money value = 300 }
+	command = { type = setflag which = swaaidsmall }
+	}
+}
+
+event = {
+	id = 101585
+	country = IND
+	random = no
+	trigger = {
+	}
+
+	name = "EVT_101585_NAME"
+	desc = "EVT_101585_DESC"
+	style = 2
+action_a = {
+	name = "EVT_101585_OPTIONA"
+	command = { type = money value = 500 }
+	command = { type = free_money value = 2 }
+	command = { type = setflag which = swaaidbig }
+}
+}
+event = {
+	id = 101586
+	country = IND
+	random = no
+	trigger = {
+		flag = devaidjus
+	}
+
+	name = "EVT_101586_NAME"
+	desc = "EVT_101586_DESC"
+	style = 2
+	
+	date = { day = 1 month = August year = 1936 }
+	offset = 7
+	deathdate = { day = 1 month = September year = 1936 }
+
+action_a = {
+	ai_chance = 70
+	name = "EVT_101586_OPTIONA"
+	command = { type = dissent value = 1 }
+	command = { type = clrflag which = devaidjus }
+        command = { type = relation which = U35 value = -20 }
+	command = { type = trigger which = 101587 }
+}
+
+action_b = {
+	ai_chance = 20
+	name = "EVT_101586_OPTIONB"
+	command = { type = dissent value = 3 }
+	command = { type = money value = -300 }
+	command = { type = clrflag which = devaidjus }
+	command = { type = trigger which = 101588 }
+}
+
+action_c = {
+	ai_chance = 10
+	name = "EVT_101586_OPTIONC"
+	command = { type = dissent value = 5 }
+	command = { type = money value = -500 }
+	command = { type = free_money value = -2 }
+	command = { type = clrflag which = devaidjus }
+        command = { type = relation which = U35 value = 20 }
+	command = { type = trigger which = 101589 }
+}
+}
+
+
+event = {
+	id = 101587
+	country = U35
+	random = no
+	trigger = {
+	}
+
+	name = "EVT_101587_NAME"
+	desc = "EVT_101587_DESC"
+	style = 2
+
+action_a = {
+	name = "EVT_101587_OPTIONA"
+	command = { type = trigger which = 101598 }
+	}
+}
+
+event = {
+	id = 101598
+	random = no 
+	country = U35
+	
+	name = "EVT_101598_NAME"
+	desc = "EVT_101598_DESC"
+	style = 2
+	picture = "Gold"
+
+
+action_a = { 
+	name = "EVT_101598_OPTIONA"
+	ai_chance = 40
+	command = { type = dissent value = 5 }
+	command = { type = setflag which = poortax }
+	}
+action_b = {
+	name = "EVT_101598_OPTIONB"
+	ai_chance = 30
+	command = { type = dissent value = 4 }
+	command = { type = setflag which = brahtax }
+	}
+action_c = {
+	name = "EVT_101598_OPTIONC"
+	ai_chance = 20 
+	command = { type = dissent value = 8 }
+	command = { type = setflag which = alltax }
+	}
+	}
+
+event = {
+	id = 101588
+	country = U35
+	random = no
+	trigger = {
+
+	}
+
+	name = "EVT_101588_NAME"
+	desc = "EVT_101588_DESC"
+	style = 2
+
+action_a = {
+	name = "EVT_101588_OPTIONA"
+	command = { type = money value = 300 }
+	command = { type = setflag which = jusaidsmall }
+	}
+}
+
+event = {
+	id = 101589
+	country = U35
+	random = no
+
+	name = "EVT_101589_NAME"
+	desc = "EVT_101589_DESC"
+	style = 2
+action_a = {
+	name = "EVT_101589_OPTIONA"
+	command = { type = money value = 500 }
+	command = { type = free_money value = 2 }
+	command = { type = setflag which = jusaidbig }
+}
+}
+
+event = {
+	id = 101590
+	country = U35
+	random = no
+        save_date = yes
+	trigger = {
+		event = 101533
+	}
+
+	name = "EVT_101590_NAME"
+	desc = "EVT_101590_DESC"
+	style = 2
+	
+	date = { day = 1 month = June year = 1936 }
+	offset = 14
+	deathdate = { day = 1 month = August year = 1936 }
+
+action_a = {
+	ai_chance = 30
+	name = "EVT_101590_OPTIONA"
+	command = { type = money value = -200 }
+	command = { type = free_money value = -2 }
+        command = { type = relation which = GER value = 20 }
+	command = { type = setflag which = loanpaid }
+}
+action_b = {
+	ai_chance = 70
+	name = "EVT_101590_OPTIONB"
+	command = { type = dissent value = -1 }
+        command = { type = relation which = GER value = -20 }
+	command = { type = setflag which = debtdebt }
+}
+}
+
+event = {
+	id = 101591
+	country = U35
+	random = no
+	trigger = {
+		flag = loanpaid
+		OR = {
+		event = { id = 101590 days = 2880 }
+		event = { id = 101592 days = 2880 }
+		}
+	}
+
+	name = "EVT_101591_NAME"
+	desc = "EVT_101591_DESC"
+	style = 2
+	
+	date = { day = 1 month = June year = 1938 }
+	offset = 14
+	deathdate = { day = 1 month = August year = 1940 }
+
+action_a = {
+	name = "EVT_101591_OPTIONA"
+	command = { type = free_money value = 2 }
+	command = { type = clrflag which = loanpaid }
+}
+}
+
+event = {
+	id = 101592
+	country = U35
+	random = no
+        save_date = yes
+	trigger = {
+		flag = debtdebt
+	}
+
+	name = "EVT_101592_NAME"
+	desc = "EVT_101592_DESC"
+	style = 2
+	
+	date = { day = 1 month = June year = 1938 }
+	offset = 14
+	deathdate = { day = 1 month = August year = 1938 }
+
+action_a = {
+	name = "EVT_101592_OPTIONA"
+	command = { type = money value = -400 }
+	command = { type = free_money value = -3 }
+	command = { type = setflag which = loanpaid }
+	command = { type = clrflag which = debtdebt }
+}
+}
+
+event = {
+	id = 101593
+	country = U35
+	random = no
+	trigger = {
+		event = 101573
+	}
+
+	name = "EVT_101593_NAME"
+	desc = "EVT_101593_DESC"
+	style = 2
+	
+	date = { day = 1 month = January year = 1940 }
+	offset = 14
+	deathdate = { day = 1 month = August year = 1960 }
+
+action_a = {
+	ai_chance = 80
+	name = "EVT_101593_OPTIONA"
+	command = { type = end_puppet }
+	command = { type = trigger which = 101594 }
+        }
+
+action_b = {
+	ai_chance = 20
+	name = "EVT_101593_OPTIONB"
+	command = { type = end_puppet }
+	command = { type = event which = 101595 where = U35 when = 15  }
+}
+}
+
+event = {
+	id = 101594
+	country = IND
+	random = no
+
+	name = "EVT_101594_NAME"
+	desc = "EVT_101594_DESC"
+	style = 2
+	
+
+action_a = {
+	ai_chance = 80
+	name = "EVT_101594_OPTIONA"
+	command = { type = dissent value = 5 }	
+	command = { type = secedeprovince which = U35 value = 1493 }
+  	command = { type = secedeprovince which = U35 value = 1494 }
+  	command = { type = secedeprovince which = U35 value = 1495 }
+  	command = { type = secedeprovince which = U35 value = 1496 }
+  	command = { type = secedeprovince which = U35 value = 1497 }
+  	command = { type = secedeprovince which = U35 value = 1498 }
+  	command = { type = secedeprovince which = U35 value = 1501 }
+	command = { type = secedeprovince which = U35 value = 1502 }
+  	command = { type = secedeprovince which = U35 value = 1503 }
+  	command = { type = secedeprovince which = U35 value = 1504 }
+  	command = { type = secedeprovince which = U35 value = 1505 }
+  	command = { type = secedeprovince which = U35 value = 1507 }
+        command = { type = event which = 101195 where = U35 when = 15  }
+}
+
+action_b = {
+	ai_chance = 20
+	name = "EVT_101594_OPTIONB"
+	command = { type = dissent value = -2 }
+	command = { type = war which = U35 }
+}
+}
+
+event = {
+	id = 101595
+	country = U35
+	random = no
+	
+
+	name = "EVT_101595_NAME"
+	desc = "EVT_9983_DESC"
+	style = 2
+	
+
+action_a = {
+        ai_chance = 50
+	name = "EVT_101595_OPTIONA"
+		command = { type = country which = U34 }
+		command = { type = domestic which = political_left value = -7 }
+		command = { type = domestic which = democratic value = -9 }
+                command = { type = manpowerpool value = 40 }
+		command = { type = dissent value = 30 } 
+	}
+
+action_b = {
+        ai_chance = 50
+	name = "EVT_101595_OPTIONB"
+		command = { type = dissent value = 40 }
+		command = { type = trigger which = 101196 }
+	}
+}
+
+event = {
+	id = 101596
+	country = PRK
+	random = no
+	
+
+	name = "EVT_101596_NAME"
+	desc = "EVT_101596_DESC"
+	style = 2
+
+action_a = {
+        ai_chance = 70
+	name = "EVT_101596_OPTIONA"
+	command = { type = inherit which = U35 }
+	}
+
+action_b = {
+        ai_chance = 5
+	name = "EVT_101596_OPTIONB"
+        command = { type = peace which = U35 value = 1 }
+	command = { type = make_puppet which = U35 }
+	}
+}

@@ -1,0 +1,1262 @@
+##################################
+###### FLAVOUR EVENTS
+##################################
+
+event = {
+id = 666700
+country = CGX
+style = 2
+picture = "treasure"
+
+date = { day = 18 month = november year = 1941 }
+offset = 5
+deathdate = { day = 29 month = december year = 1947 }
+
+name = "EVT_666700_NAME"
+desc = "EVT_666700_DESC"
+
+action_a = {
+ai_chance = 25
+name = "EVT_666700_OPTIONA"
+command = { type = relation which = GER value = 30 }
+command = { type = dissent value = 3 }
+command = { type = money value = 500 }
+}
+
+action_b = {
+ai_chance = 75
+name = "EVT_666700_OPTIONB"
+command = { type = relation which = GER value = -50 }
+command = { type = money value = -50 }
+command = { type = dissent value = -1 }
+}
+}
+
+event = {
+id = 666701
+country = GER
+style = 2
+persistent = yes
+picture = "Sedantag"
+
+trigger = {
+	day = 1
+	month = 8
+	NOT = {
+		day = 2
+		}
+	NOT = {
+		month = 9
+		}
+	}
+
+date = { day = 0 month = january year = 1936 }
+offset = 1
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_666701_NAME"
+desc = "EVT_666701_DESC"
+
+action_a = {
+name = "EVT_666701_OPTIONA"
+command = { type = dissent value = -1 }
+}
+}
+
+event = {
+id = 666702
+country = GER
+style = 2
+picture = "Schwabenland"
+
+date = { day = 23 month = december year = 1936 }
+
+name = "EVT_666702_NAME"
+desc = "EVT_666702_DESC"
+
+action_a = {
+name = "EVT_666702_OPTIONA"
+command = { type = dissent value = -1 }
+}
+}
+
+event = {
+id = 666703
+country = GER
+style = 2
+picture = "Hoffmann"
+
+date = { day = 23 month = june year = 1938 }
+
+name = "EVT_666703_NAME"
+desc = "EVT_666703_DESC"
+
+action_a = {
+name = "EVT_666703_OPTIONA"
+command = { type = dissent value = -1 }
+}
+}
+
+event = {
+id = 666704
+country = GER
+style = 2
+picture = "Hoffmann"
+
+trigger = {
+	OR = {
+		owned = { province = 850 data = GER } #Daressalam
+		AND = {
+			exists = CON
+			NOT = {
+				war = { country = CON country = GER }
+				}
+			}
+		}
+	}
+
+date = { day = 9 month = june year = 1939 }
+
+name = "EVT_666704_NAME"
+desc = "EVT_666704_DESC"
+
+action_a = {
+name = "EVT_666704_OPTIONA"
+command = { type = setflag which = flagofthephoenix }
+}
+}
+
+
+
+
+event = {
+id = 666705
+country = GER
+style = 2
+picture = "Richthofen"
+
+trigger = {
+flag = flagofthephoenix
+random = 50
+}
+
+date = { day = 19 month = june year = 1939 }
+offset = 4
+deathdate = { day = 25 month = june year = 1939 }
+
+name = "EVT_666705_NAME"
+desc = "EVT_666705_DESC"
+
+action_a = {
+name = "EVT_666705_OPTIONA"
+command = { type = dissent value = -1 }
+command = { type = clrflag which = flagofthephoenix }
+command = { type = sleepevent which = 666706 }
+command = { type = sleepevent which = 666707 }
+}
+}
+
+
+
+event = {
+id = 666706
+country = GER
+style = 2
+picture = "Hoffmann"
+
+trigger = {
+flag = flagofthephoenix
+random = 50
+}
+
+date = { day = 19 month = june year = 1939 }
+offset = 4
+deathdate = { day = 25 month = june year = 1939 }
+
+name = "EVT_666706_NAME"
+desc = "EVT_666706_DESC"
+
+action_a = {
+name = "EVT_666706_OPTIONA"
+command = { type = dissent value = -1 }
+command = { type = clrflag which = flagofthephoenix }
+command = { type = sleepevent which = 666705 }
+command = { type = sleepevent which = 666707 }
+}
+}
+
+event = {
+id = 666707
+country = GER
+
+trigger = {
+flag = flagofthephoenix
+}
+
+date = { day = 26 month = june year = 1939 }
+
+name = "EVT_666707_NAME"
+desc = "EVT_666707_DESC"
+
+action_a = {
+name = "EVT_666707_OPTIONA"
+command = { type = dissent value = 2 }
+}
+}
+
+event = {
+id = 666708
+country = GER
+style = 2
+picture = "Kaiserreich_Mein_Kampf"
+
+date = { day = 13 month = May year = 1936 }
+
+name = "EVT_666708_NAME"
+desc = "EVT_666708_DESC"
+
+action_a = {
+name = "EVT_666708_OPTIONA"
+command = { type = dissent value = -1 }
+}
+}
+
+
+event = {
+id = 666709
+country = GER
+style = 2
+picture = "Kaiserreich_Mein_Kampf"
+
+date = { day = 28 month = March year = 1938 }
+
+name = "EVT_666709_NAME"
+desc = "EVT_666709_DESC"
+
+action_a = {
+name = "EVT_666709_OPTIONA"
+command = { type = dissent value = -1 }
+}
+}
+
+event = {
+id = 666710
+country = GER
+style = 2
+picture = "Kaiserreich Dietrich 1"
+
+date = { day = 13 month = july year = 1937 }
+
+name = "EVT_666710_NAME"
+desc = "EVT_666710_DESC"
+
+action_a = {
+name = "EVT_666710_OPTIONA"
+command = { type = dissent value = -1 }
+}
+}
+
+event = {
+id = 666711
+random = no
+country = GER
+
+name = "EVT_666711_NAME"
+desc = "EVT_666711_DESC"
+style = 2
+picture = "Kaiserreich_Reichswagen"
+
+date = { day = 26 month = february year = 1936 }
+
+action_a = {
+	name = "EVT_666711_OPTIONA"
+	command = { type = dissent value = -1  }
+	} 
+}
+
+event = {
+id = 666712
+random = no
+country = GER
+
+name = "EVT_666712_NAME"
+desc = "EVT_666712_DESC"
+style = 2
+picture = "minister_died"
+
+date = { day = 8 month = may year = 1936 }
+
+action_a = {
+	name = "EVT_666712_OPTIONA"
+	command = { }
+	} 
+}
+
+event = {
+id = 666713
+random = no
+country = AUS
+
+name = "EVT_666713_NAME"
+desc = "EVT_666713_DESC"
+style = 2
+picture = "minister_died"
+
+date = { day = 12 month = june year = 1936 }
+
+action_a = {
+	name = "EVT_666713_OPTIONA"
+	command = { }
+	} 
+}
+
+event = {
+id = 666714
+random = no
+country = BEL
+
+name = "EVT_666714_NAME"
+desc = "EVT_666714_DESC"
+style = 2
+picture = "news_paper"
+
+date = { day = 1 month = september year = 1936 }
+
+action_a = {
+	name = "EVT_666714_OPTIONA"
+	command = { type = dissent value = -1 }
+	} 
+}
+
+event = {
+id = 666715
+random = no
+country = GER
+
+name = "EVT_666715_NAME"
+desc = "EVT_666715_DESC"
+style = 2
+picture = "WilhelmII_Funeral"
+
+date = { day = 24 month = july year = 1936 }
+
+action_a = {
+	name = "EVT_666715_OPTIONA"
+	command = { }
+	} 
+}
+
+
+
+event = {
+id = 666718
+random = no
+country = AUS
+
+name = "EVT_666718_NAME"
+desc = "EVT_666718_DESC"
+style = 2
+picture = "WilhelmII_Funeral"
+
+date = { day = 29 month = december year = 1936 }
+
+action_a = {
+	name = "EVT_666718_OPTIONA"
+	command = { type = sleepminister which = 23116 }
+	} 
+}
+
+event = {
+id = 666719
+random = no
+country = HUN
+
+name = "EVT_666719_NAME"
+desc = "EVT_666719_DESC"
+style = 2
+picture = "WilhelmII_Funeral"
+
+date = { day = 29 month = december year = 1936 }
+
+action_a = {
+	name = "EVT_666719_OPTIONA"
+        command = {  }
+	} 
+}
+
+event = {
+id = 666720
+random = no
+country = HUN
+
+name = "EVT_666720_NAME"
+desc = "EVT_666720_DESC"
+style = 2
+picture = "minister_died"
+
+date = { day = 6 month = october year = 1936 }
+
+action_a = {
+	name = "EVT_666720_OPTIONA"
+	command = { type = sleepminister which = 21002 }
+	command = { type = sleepminister which = 21006 }
+	} 
+}
+
+event = {
+id = 666721
+random = no
+country = MEX
+
+trigger = {
+	NOT = {
+		war = { country = MEX country = GER }
+	}
+}
+name = "EVT_666721_NAME"
+desc = "EVT_666721_DESC"
+style = 2
+picture = "Gold"
+
+date = { day = 19 month = march year = 1936 }
+
+action_a = {
+	name = "EVT_666721_OPTIONA"
+	ai_chance = 50
+	command = { type = money value = 500 }
+	command = { type = dissent value = 1  }
+	}
+action_b = {
+	name = "EVT_666721_OPTIONB"
+	ai_chance = 50
+	command = { type = dissent value = -1  }
+	command = { type = sleepevent which = 666722 }
+	}
+}
+
+event = {
+id = 666722
+random = no
+country = GER
+
+name = "EVT_666722_NAME"
+desc = "EVT_666722_DESC"
+style = 2
+picture = "mexico"
+
+date = { day = 26 month = march year = 1936 }
+
+action_a = {
+	name = "EVT_666722_OPTIONA"
+	command = { type = relation which = MEX value = -65 } 
+	} 
+}
+
+event = {
+id = 666723
+random = no
+country = SWE
+picture = "WilhelmII"
+style = 2
+
+trigger = {
+	NOT = { 
+		atwar = GER 
+		atwar = SWE
+		government = communist
+	}
+	headofstate = 7001 #Gustav V
+}
+
+date = { day = 16 month = january year = 1941 }
+
+name = "EVT_666723_NAME"
+desc = "EVT_666723_DESC"
+
+action_a = {
+	name = "EVT_666723_OPTIONA"
+	command = { type = dissent value = -2 }
+	command = { type = trigger which = 666724 }
+	}
+}
+
+event = {
+id = 666724
+random = no
+country = GER
+picture = "WilhelmII"
+style = 2
+
+trigger = {
+
+	event = 666723
+
+	}
+
+name = "EVT_666724_NAME"
+desc = "EVT_666724_DESC"
+
+action_a = {
+	name = "EVT_666724_OPTIONA"
+	command = { type = dissent value = -2 }
+	command = { type = relation which = SWE value = 100 }
+	}
+}
+
+###############################################
+###### FLAVOUR EVENTS by TheFlyingDutchman
+###############################################
+
+event = {
+id = 666725
+random = no
+country = RSI
+
+name = "EVT_666725_NAME"
+desc = "EVT_666725_DESC"
+style = 2
+picture = "minister_died"
+
+date = { day = 20 month = july year = 1937 }
+
+action_a = {
+name = "EVT_666725_OPTIONA"
+command = { type = dissent value = 1 } # Mussolini stirrs up trouble
+}
+}
+
+event = {
+id = 666726
+random = no
+country = ITA
+
+trigger = {
+	exists = RSI
+	NOT = {
+		owned = { province = 418 data = ITA }
+		owned = { province = 415 data = ITA }
+		owned = { province = 420 data = ITA }
+		owned = { province = 423 data = ITA }
+		owned = { province = 421 data = ITA }
+		owned = { province = 427 data = ITA }
+		owned = { province = 424 data = ITA }
+		owned = { province = 426 data = ITA }
+		owned = { province = 422 data = ITA }
+                owned = { province = 428 data = ITA }
+		owned = { province = 425 data = ITA }
+                owned = { province = 431 data = ITA }
+		owned = { province = 432 data = ITA }
+                owned = { province = 433 data = ITA }
+		owned = { province = 430 data = ITA }
+                owned = { province = 417 data = ITA }
+		war = { country = RSI country = ITA }
+		}
+	}
+
+name = "EVT_666726_NAME"
+desc = "EVT_666726_DESC"
+style = 2
+picture = "minister_died"
+
+date = { day = 1 month = march year = 1938 }
+
+action_a = {
+name = "EVT_666726_OPTIONA"
+command = { type = dissent value = 1 } # nationalist backlash
+}
+}
+
+event = {
+id = 666727
+random = no
+country = OTT
+
+name = "EVT_666727_NAME"
+desc = "EVT_666727_DESC"
+style = 2
+picture = "minister_died"
+
+date = { day = 10 month = november year = 1938 }
+
+action_a = {
+name = "EVT_666727_OPTIONA"
+command = { type = sleepminister which = 549052 }
+command = { type = sleepminister which = 12001 }
+command = { type = sleepteam which = 15706 }
+}
+}
+
+event = {
+id = 666728
+random = no
+country = AUS
+
+name = "EVT_666728_NAME"
+desc = "EVT_666728_DESC"
+style = 2
+picture = "minister_died"
+
+date = { day = 6 month = may year = 1939 }
+
+action_a = {
+	name = "EVT_666728_OPTIONA"
+	command = { }
+	}
+}
+
+event = {
+id = 666729
+random = no
+country = GER
+
+trigger = {
+	exists = HOL
+	NOT = {
+		war = { country = GER country = HOL }
+		}
+	}
+
+name = "EVT_666729_NAME"
+desc = "EVT_666729_DESC"
+style = 2
+picture = "minister_died"
+
+date = { day = 23 month = december year = 1939 }
+
+action_a = {
+name = "EVT_666729_OPTIONA"
+command = { type = relation which = HOL value = 20 } # diplomats meeting at the funeral
+}
+}
+
+event = {
+id = 666730
+random = no
+country = CAN
+
+trigger = {
+	NOT = {
+		exists = U07
+		}
+	}
+
+name = "EVT_666730_NAME"
+desc = "EVT_666730_DESC"
+style = 2
+picture = "minister_died"
+
+date = { day = 9 month = november year = 1940}
+
+action_a = {
+name = "EVT_666730_OPTIONA"
+command = { type = dissent value = 1  } # emigré's ready to stir up trouble
+}
+}
+
+event = {
+id = 666731
+random = no
+country = HOL
+
+name = "EVT_666731_NAME"
+desc = "EVT_666731_DESC"
+style = 2
+picture = "minister_died"
+
+date = { day = 18 month = september year = 1944}
+
+action_a = {
+name = "EVT_666731_OPTIONA"
+command = { type = dissent value = 1  }
+command = { type = sleepminister which = 8063 }
+command = { type = sleepminister which = 8002 }
+}
+}
+
+event = {
+id = 666732
+random = no
+country = EAF
+picture = "Chinese Workforce"
+style = 2
+
+name = "EVT_666732_NAME"
+desc = "EVT_666732_DESC"
+
+date = { day = 12 month = september year = 1937 }
+
+action_a = {
+name = "EVT_666732_OPTIONA"
+ai_chance = 75
+command = { type = resource which = supplies value = -100 }
+command = { type = money value = -30 }
+command = { type = dissent value = -1 }
+}
+action_b = {
+name = "EVT_666732_OPTIONB"
+ai_chance = 25
+command = { type = dissent value = 8 } # Hong Kong is the economic heart of the legation cities
+}
+}
+
+event = {
+id = 666733
+random = no
+country = OTT
+style = 2
+
+name = "EVT_666733_NAME"
+desc = "EVT_666733_DESC"
+
+date = { day = 27 month = september year = 1939 }
+
+action_a = {
+name = "EVT_666733_OPTIONA"
+ai_chance = 80
+command = { type = resource which = supplies value = -300 }
+command = { type = money value = -50 }
+command = { type = dissent value = -5 }
+}
+action_b = {
+name = "EVT_666733_OPTIONB"
+ai_chance = 20
+command = { type = dissent value = 8 }
+}
+}
+
+event = {
+id = 666735
+random = no
+country = VIC
+
+name = "EVT_666735_NAME"
+desc = "EVT_666735_DESC"
+style = 2
+picture = "minister_died"
+
+date = { day = 8 month = july year = 1942}
+
+action_a = {
+name = "EVT_666735_OPTIONA"
+command = { type = dissent value = 1  }
+command = { type = sleepminister which = 57049 }
+command = { type = sleepminister which = 57051 }
+command = { type = sleepleader which = 380088 }
+}
+}
+
+event = {
+id = 666737
+random = no
+country = CAN
+
+trigger = {
+	OR = {
+		incabinet = 45009
+		incabinet = 45118
+		incabinet = 45120
+		}
+	}
+
+name = "EVT_666737_NAME"
+desc = "EVT_666737_DESC"
+style = 2
+picture = "minister_died"
+
+date = { day = 11 month = march year = 1936 }
+
+action_a = {
+name = "EVT_666737_OPTIONA"
+ai_chance = 80
+command = { type = dissent value = 2 } # the lords aren't pleased
+}
+action_b = {
+name = "EVT_666737_OPTIONB"
+ai_chance = 20
+command = { type = chiefofnavy which = 45146 }
+command = { type = dissent value = 3 } # government bows to British demands
+}
+}
+
+event = {
+id = 666738
+random = no
+country = GER
+
+name = "EVT_666738_NAME"
+desc = "EVT_666738_DESC"
+style = 2
+picture = "minister_died"
+
+date = { day = 9 month = april year = 1937 }
+
+action_a = {
+name = "EVT_666738_OPTIONA"
+command = { type = dissent value = 1  } # even Ludendorff had his supporters
+command = { type = sleepminister which = 179 }
+command = { type = sleepminister which = 271 }
+}
+}
+
+event = {
+id = 666766
+random = no
+country = GER
+
+name = "EVT_666766_NAME"
+desc = "EVT_666766_DESC"
+style = 2
+picture = "minister_died2"
+
+date = { day = 6 month = march year = 1940 }
+
+action_a = {
+	name = "EVT_666766_OPTIONA"
+	command = { type = dissent value = -1  }  
+	} 
+}
+
+###############################################
+###### FLAVOUR EVENTS by Yuriswe
+###############################################
+
+event = {
+id = 666767
+random = no
+country = AUS
+
+name = "EVT_666767_NAME"
+desc = "EVT_666767_DESC"
+style = 2
+picture = "WilhelmII_Funeral"
+
+date = { day = 25 month = february year = 1940 }
+
+action_a = {
+	name = "EVT_666767_OPTIONA"
+	command = { type = dissent value = -1  }  
+	} 
+}
+
+event = {
+id = 666768
+random = no
+country = AUS
+
+name = "EVT_666768_NAME"
+desc = "EVT_666768_DESC"
+style = 2
+picture = "WilhelmII_Funeral"
+
+date = { day = 2 month = september year = 1956 }
+
+action_a = {
+	name = "EVT_666768_OPTIONA"
+	command = { type = dissent value = -1  }  
+	} 
+}
+
+event = {
+id = 666769
+random = no
+country = CZE
+
+name = "EVT_666769_NAME"
+desc = "EVT_666769_DESC"
+style = 2
+picture = "WilhelmII_Funeral"
+
+date = { day = 12 month = august year = 1938 }
+
+action_a = {
+	name = "EVT_666769_OPTIONA"
+	command = { type = dissent value = -1  }  
+	} 
+}
+
+event = {
+id = 666770
+random = no
+country = AUS
+
+name = "EVT_666770_NAME"
+desc = "EVT_666770_DESC"
+style = 2
+picture = "WilhelmII_Funeral"
+
+date = { day = 12 month = august year = 1938 }
+
+action_a = {
+	name = "EVT_666770_OPTIONA"
+	command = { type = dissent value = -1  }  
+	} 
+}
+
+event = {
+id = 666771
+random = no
+country = SLO
+
+name = "EVT_666771_NAME"
+desc = "EVT_666771_DESC"
+style = 2
+
+trigger = { 
+headofgovernment = 31034 
+}
+
+picture = "WilhelmII_Funeral"
+
+date = { day = 20 month = august year = 1946 }
+
+action_a = {
+	name = "EVT_666771_OPTIONA"
+	command = { type = dissent value = 1  } 
+	command = { type = sleepminister which = 31034 }
+	command = { type = headofgovernment which = 31036 } 
+	} 
+}
+
+event = {
+id = 666772
+random = no
+country = HUN   
+
+trigger = { 
+NOT = { exists = SLO }
+ }
+
+name = "EVT_666772_NAME"
+desc = "EVT_666772_DESC"
+style = 2
+picture = "minister_died"
+
+date = { day = 16 month = august year = 1938 }
+
+action_a = {
+	name = "EVT_666772_OPTIONA"
+	command = { type = sleepminister which = 31001 }
+	command = { type = sleepevent which = 338 }
+	command = { type = sleepevent which = 13013011 }
+	} 
+}
+
+
+event = {
+id = 3206350
+country = GER
+style = 2
+picture = "Afghanistan"
+
+date = { day = 12 month = july year = 1937 }
+
+name = EVT_3206350_NAME
+desc = EVT_3206350_DESC
+
+action_a = {
+name = "EVT_3206350_NAME"
+command = { type = dissent value = -2 }
+}
+}
+
+event = {
+id = 3206351
+country = TIB
+style = 2
+picture = "Afghanistan"
+
+date = { day = 18 month = august year = 1937 }
+
+name = "EVT_3206351_NAME"
+desc = "EVT_3206351_DESC"
+
+action_a = {
+ai_chance = 100
+name = "EVT_3206351_OPTIONA"
+command = { type = dissent value = -1 }
+command = { type = relation which = GER value = 15 }
+command = { type = money value = 1 } 
+command = { type = setflag which = TibGIFT }
+}
+
+action_b = {
+ai_chance = 0
+name = "EVT_3206351_OPTIONB"
+command = { type = dissent value = -1 }
+command = { type = money value = 1 } 
+command = { type = relation which = GER value = -5 }
+command = { type = setflag which = TibNOGIFT }
+}
+}
+
+event = {
+id = 3206352
+country = GER
+style = 2
+#picture = "yeti"
+
+trigger={ 
+flag = TibGIFT 
+}
+
+date = { day = 1 month = january year = 1938 }
+offset = 75
+deathdate = { day = 10 month = december year = 1938 }
+
+name = "EVT_3206352_NAME"
+desc = "EVT_3206352_DESC"
+
+action_a = {
+name = "EVT_3206352_OPTIONA"
+command = { type = dissent value = -1 }
+command = { type = relation which = TIB value = 15 }
+}
+}
+
+event = {
+id = 3206353
+country = GER
+style = 2
+picture = "Afghanistan"
+
+trigger={ 
+flag = TibNOGIFT 
+}
+
+date = { day = 1 month = january year = 1938 }
+offset = 75
+deathdate = { day = 10 month = december year = 1938 }
+
+name = "EVT_3206353_NAME"
+desc = "EVT_3206353_DESC"
+
+action_a = {
+name = "EVT_3206353_OPTIONA"
+command = { type = dissent value = 1 }
+command = { type = clrflag which = TibNOGIFT }
+}
+}
+
+event = {
+id = 3206354
+country = TIB
+style = 2
+picture = "Afghanistan"
+
+trigger={ 
+flag = TibGIFT 
+}
+
+date = { day = 1 month = august year = 1938 }
+offset = 75
+deathdate = { day = 10 month = november year = 1939 }
+
+name = "EVT_3206354_NAME"
+desc = "EVT_3206354_DESC"
+
+action_a = {
+name = "EVT_3206354_OPTIONA"
+command = { type = dissent value = -2 }
+command = { type = relation which = GER value = 15 }
+command = { type = money value = 50 }
+}
+}
+
+event = {
+id = 3206355
+country = GER
+style = 2
+picture = "Afghanistan"
+
+date = { day = 23 month = july year = 1938 }
+
+name = "EVT_3206355_NAME"
+
+desc = "EVT_3206355_DESC"
+
+action_a = {
+name = "EVT_3206355_OPTIONA"
+command = { type = dissent value = -1 }
+}
+}
+
+
+
+event = {
+id = 3206356
+country = GER
+style = 2
+picture = "Afghanistan"
+
+trigger={ 
+flag = TibGIFT ##It pays to make nice!
+exists = GER
+control = { province = 163 data = GER }
+control = { province = 171 data = GER }
+control = { province = 179 data = GER }
+control = { province = 167 data = GER } ##These basically check that Germany is still present in it's home lands as opposed to being in Africa after the 'Kaiserreich in Exile' event chain.
+}
+
+date = { day = 1 month = january year = 1950 }
+offset = 45
+deathdate = { day = 10 month = april year = 1950 }
+
+name = "EVT_3206356_NAME"
+desc = "EVT_3206356_DESC"
+
+action_a = {
+name = "EVT_3206356_OPTIONA"
+command = { type = dissent value = -3 }
+command = { type = money value = -50 }
+}
+}
+
+event = {
+id = 3206357
+country = TIB
+style = 2
+picture = "Afghanistan"
+
+trigger={ 
+flag = TibGIFT ##It pays to make nice!
+exists = GER
+control = { province = 163 data = GER }
+control = { province = 171 data = GER }
+control = { province = 179 data = GER }
+control = { province = 167 data = GER } ##These basically check that Germany is still present in it's home lands as opposed to being in Africa after the 'Kaiserreich in Exile' event chain.
+}
+
+
+date = { day = 1 month = april year = 1950 }
+offset = 20
+deathdate = { day = 10 month = may year = 1950 }
+
+name = "EVT_3206357_NAME"
+desc = "EVT_3206357_DESC"
+
+action_a = {
+name = "EVT_3206357_OPTIONA"
+command = { type = relation which = GER value = 15 }
+command = { type = money value = 50 }
+}
+}
+
+event = {
+id = 3206358
+country = GER
+style = 2
+picture = "Afghanistan"
+
+trigger={ 
+flag = TibGIFT ##It pays to make nice!
+exists = GER
+control = { province = 163 data = GER }
+control = { province = 171 data = GER }
+control = { province = 179 data = GER }
+control = { province = 167 data = GER } ##These basically check that Germany is still present in it's home lands as opposed to being in Africa after the 'Kaiserreich in Exile' event chain.
+random = 50
+}
+
+
+date = { day = 8 month = may year = 1950 }
+offset = 4
+deathdate = { day = 20 month = september year = 1950 }
+
+name = "EVT_3206358_NAME"
+desc = "EVT_3206358_DESC"
+
+action_a = {
+name = "EVT_3206358_OPTIONA"
+command = { type = dissent value = -1 }
+command = { type = clrflag which = TibGIFT }
+command = { type = sleepevent which = 3206359 }
+}
+}
+
+
+
+event = {
+id = 3206359
+country = GER
+style = 2
+picture = "Afghanistan"
+
+trigger={ 
+flag = TibGIFT ##It pays to make nice!
+exists = GER
+control = { province = 163 data = GER }
+control = { province = 171 data = GER }
+control = { province = 179 data = GER }
+control = { province = 167 data = GER } ##These basically check that Germany is still present in it's home lands as opposed to being in Africa after the 'Kaiserreich in Exile' event chain.
+random = 50
+}
+
+date = { day = 8 month = may year = 1950 }
+offset = 4
+deathdate = { day = 20 month = september year = 1950 }
+
+name = "EVT_3206359_NAME"
+desc = "EVT_3206359_DESC"
+
+action_a = {
+name = "EVT_3206359_OPTIONA"
+command = { type = dissent value = 1 }
+command = { type = clrflag which = TibGIFT }
+command = { type = sleepevent which = 3206358 }
+}
+}
+
+
+event = {
+id = 999000
+random = no
+country = SCH
+style = 2
+
+trigger = { 
+
+NOT = {
+ atwar = SCH
+exists = AUS
+exists = U24
+exists = U25      #Austria does not exist in any form
+}
+random = 30
+}
+
+name = "EVT_999000_NAME"
+desc = "EVT_999000_DESC"
+picture = "Bank"
+
+date = { day = 0 month = january year = 1936 }
+offset = 30
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+name = "EVT_999000_OPTIONA"
+command = { type = money value = 150 }
+}
+
+
+}
+
+
+event = {
+ id = 999001
+ random = no
+ country = HUN
+ style = 2
+
+ name = "EVT_999001_NAME"
+ desc = "EVT_999001_DESC"
+
+
+ picture = "minister_died"
+
+ date = { day = 4 month = october year = 1941 }
+
+ action_a = {
+     name = "EVT_999001_OPTIONA"
+         command = {  }
+     }
+ }

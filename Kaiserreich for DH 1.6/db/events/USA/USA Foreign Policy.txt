@@ -1,0 +1,2673 @@
+event = {
+id = 55820
+country = USA
+style = 2
+picture = "Americanempire"
+
+trigger = {
+OR = {
+war = { country = USA country = TEX }
+war = { country = USA country = CSA }
+war = { country = USA country = CAL }
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 25
+deathdate = { day = 29 month = december year = 1947 }
+
+name = "EVT_55820_NAME"
+desc = "EVT_55820_DESC"
+
+action_a = {
+ai_chance = 100
+name = "EVT_55820_OPTIONA"
+command = { type = dissent value = -3 }
+command = { type = relation which = CAN value = -5 }
+command = { type = relation which = MEX value = -5 }
+command = { type = relation which = ARG value = -5 }
+command = { type = relation which = BRA value = -5 }
+command = { type = relation which = NIC value = -5 }
+command = { type = relation which = HON value = -5 }
+command = { type = relation which = VEN value = -5 }
+command = { type = relation which = COL value = -5 }
+command = { type = relation which = PRU value = -5 }
+command = { type = relation which = ECU value = -5 }
+command = { type = relation which = BOL value = -5 }
+command = { type = relation which = CHL value = -5 }
+command = { type = relation which = GUA value = -5 }
+
+command = { type = end_guarantee which = USA where = CAN }
+command = { type = end_guarantee which = USA where = MEX }
+command = { type = end_guarantee which = USA where = ARG }
+command = { type = end_guarantee which = USA where = BRA }
+command = { type = end_guarantee which = USA where = NIC }
+command = { type = end_guarantee which = USA where = HON }
+command = { type = end_guarantee which = USA where = VEN }
+command = { type = end_guarantee which = USA where = COL }
+command = { type = end_guarantee which = USA where = PRU }
+command = { type = end_guarantee which = USA where = ECU }
+command = { type = end_guarantee which = USA where = BOL }
+command = { type = end_guarantee which = USA where = CHL }
+command = { type = end_guarantee which = USA where = GUA }
+command = { type = end_guarantee which = USA where = CUB }
+command = { type = end_guarantee which = USA where = HAI }
+command = { type = end_guarantee which = USA where = DOM }
+command = { type = end_guarantee which = USA where = PAN }
+}
+action_b = {
+ai_chance = 0
+name = "EVT_55820_OPTIONB"
+command = { type = relation which = CAN value = 10 }
+command = { type = relation which = MEX value = 10 }
+command = { type = relation which = ARG value = 10 }
+command = { type = relation which = BRA value = 10 }
+command = { type = relation which = NIC value = 10 }
+command = { type = relation which = HON value = 10 }
+command = { type = relation which = VEN value = 10 }
+command = { type = relation which = COL value = 10 }
+command = { type = relation which = PRU value = 10 }
+command = { type = relation which = ECU value = 10 }
+command = { type = relation which = BOL value = 10 }
+command = { type = relation which = CHL value = 10 }
+command = { type = relation which = GUA value = 10 }
+command = { type = dissent value = 3 }
+command = { type = belligerence value = -1 }
+command = { type = sleepevent which = 55821 } #Reviving Monroe Doctrine
+}
+}
+
+event = {
+id = 55821
+random = no
+country = USA
+style = 2
+picture = "diplomatic_campaign"
+
+trigger = {
+flag = END_ACW
+event = 55820
+NOT = {
+exists = TEX
+exists = CSA
+exists = U10
+exists = CAL
+ispuppet = USA
+}
+}
+
+name = "EVT_55821_NAME"
+desc = "EVT_55821_DESC"
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1970 }
+
+
+action_a = {
+ai_chance = 100
+name = "EVT_55821_OPTIONA"
+command = { type = dissent value = -1 }
+command = { type = belligerence value = 3 }
+command = { type = relation which = CAN value = 10 }
+command = { type = relation which = MEX value = 10 }
+command = { type = relation which = ARG value = 10 }
+command = { type = relation which = BRA value = 10 }
+command = { type = relation which = NIC value = 10 }
+command = { type = relation which = HON value = 10 }
+command = { type = relation which = VEN value = 10 }
+command = { type = relation which = COL value = 10 }
+command = { type = relation which = PRU value = 10 }
+command = { type = relation which = ECU value = 10 }
+command = { type = relation which = BOL value = 10 }
+command = { type = relation which = CHL value = 10 }
+command = { type = relation which = GUA value = 10 }
+}
+
+action_b = {
+ai_chance = 0
+name = "EVT_55821_OPTIONB"
+command = { type = dissent value = 3 }
+command = { type = sleepevent which = 3450020 } #Help for Brasil from US
+command = { type = sleepevent which = 3450054 } #US and Central American War
+command = { type = sleepevent which = 3450052 } #US and Honduras Civil War
+}
+}
+##########################################################
+#US and Grand American War (support only for Brazil
+#Thanks to Straczynski!
+##########################################################
+event = {
+id = 3450050
+random = no
+country = USA
+style = 2
+ 
+decision = {
+ flag = END_ACW
+ war = { country = BRA country = ARG }
+ NOT = {
+ lost_national = { country = USA value = 5 }
+ war = { country = USA country = BRA }
+ war = { country = USA country = ARG }
+ alliance = { country = USA country = ARG }
+ alliance = { country = USA country = BRA }
+ alliance = { country = USA country = GER } #to avoid confusion when US allied with Germany backs enemy of German ally
+ ispuppet = USA
+ government = communist
+ }
+ }
+
+ decision_trigger = {
+ control = { province = 1809 data = USA } 
+ control = { province = 1795 data = USA } 
+ control = { province = 1789 data = USA } 
+ control = { province = 1795 data = USA } 
+ control = { province = 1955 data = USA } 
+ control = { province = 1845 data = USA } 
+ NOT = {
+ ispuppet = USA
+ exists = TEX
+ exists = CSA
+ exists = CAL
+ exists = U10
+ }
+ }
+
+ trigger = { 
+ control = { province = 1809 data = USA } 
+ control = { province = 1795 data = USA } 
+ control = { province = 1789 data = USA } 
+ control = { province = 1795 data = USA } 
+ control = { province = 1955 data = USA } 
+ control = { province = 1845 data = USA } 
+ flag = END_ACW
+ war = { country = BRA country = ARG }
+ NOT = {
+ war = { country = USA country = BRA }
+ war = { country = USA country = ARG }
+ alliance = { country = USA country = ARG }
+ alliance = { country = USA country = BRA }
+ alliance = { country = USA country = GER } #to avoid confusion when US allied with Germany backs enemy of German ally
+ government = communist
+ ispuppet = USA
+ exists = TEX
+ exists = CSA
+ exists = CAL
+ exists = U10
+ government = communist
+ }
+ }
+
+date = { day = 1 month = january year = 1936 }
+offset = 30
+deathdate = { day = 29 month = december year = 1970 }
+ 
+name = "EVT_3450050_NAME"
+desc = "EVT_3450050_DESC"
+picture = "foreign_volunteers"
+decision_picture = "decision_foreign_volunteers"
+
+action_a = {
+trigger = {
+government = democratic
+government = { type = democratic country = BRA } 
+}
+name = "EVT_3450050_OPTIONA"
+ai_chance = 50
+command = { type = relation which = BRA value = 100 }
+command = { type = manpowerpool value = -20 }
+command = { type = money value = -50 }
+command = { type = dissent value = -2 }
+command = { type = event which = 3450051 where = BRA when = 4  }
+}
+
+action_b = {
+trigger = {
+flag = POSTCW_INT 
+government = { type = fascist country = BRA } 
+}
+name = "EVT_3450050_OPTIONB"
+ai_chance = 50
+command = { type = relation which = BRA value = 100 }
+command = { type = manpowerpool value = -20 }
+command = { type = money value = -50 }
+command = { type = dissent value = 1 }
+command = { type = event which = 3450051 where = BRA when = 4  }
+}
+
+action_c = {
+trigger = {
+government = { type = communist country = BRA } 
+NOT = {
+government = { type = communist country = ARG } 
+}
+}
+name = "EVT_3450050_OPTIONC"
+ai_chance = 50
+command = { type = relation which = ARG value = 100 }
+command = { type = manpowerpool value = -20 }
+command = { type = dissent value = 1 }
+command = { type = money value = -50 }
+command = { type = event which = 3450102 where = BRA when = 4  }
+}
+
+action_d = {
+name = "EVT_3450050_OPTIOND"
+ai_chance = 20
+command = { type = relation which = BRA value = -50 }
+command = { type = dissent value = 1 }
+}
+}
+
+event = {
+id = 3450051
+country = BRA
+style = 2
+picture = "lend_lease" 
+
+name = "EVT_3450051_NAME"
+desc = "EVT_3450051_DESC"
+
+action_a = {
+name = "EVT_3450051_OPTIONA"
+command = { type = supplies value = 1000 }
+command = { type = money value = 50 }
+command = { type = manpowerpool value = 10 }
+command = { type = add_division value = infantry when = 9 }
+command = { type = steal_tech which = USA }
+}
+}
+
+event = {
+id = 3450102
+country = ARG
+style = 2
+picture = "lend_lease" 
+
+name = "EVT_3450102_NAME"
+desc = "EVT_3450102_DESC"
+
+action_a = {
+name = "EVT_3450102_OPTIONA"
+command = { type = supplies value = 1000 }
+command = { type = money value = 50 }
+command = { type = manpowerpool value = 10 }
+command = { type = add_division value = infantry when = 9 }
+command = { type = steal_tech which = USA }
+}
+}
+
+event = {
+	id = 3450103
+	random = no
+	country = USA
+
+	trigger = {
+		event = 3450050
+                NOT = {
+                government = communist
+                war = { country = BRA country = ARG }
+                }
+		OR = {
+                        event = 3450051
+			event = 3450102
+			}
+	}
+
+	name = "EVT_3450103_NAME"
+	desc = "EVT_3450103_DESC"
+	style = 2
+	picture = "foreign_volunteers"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 20
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		name = "EVT_3450103_OPTIONA" 
+		command = { trigger = { event = 3450051 } type = relation which = BRA value = 10 }	
+                command = { trigger = { event = 3450102 } type = relation which = ARG value = 10 }	
+		command = { type = manpowerpool value = 5 }	 	# Soldiers return home
+		command = { type = dissent value = -1 }
+		command = { type = gain_tech which = -1 } 		# get random tech blueprints
+		command = { type = add_leader_skill which = -1 value = 1 }
+		command = { type = add_leader_skill which = -1 value = 1 }
+	}
+}					
+#############################################################
+#US and Honduras Civil War
+#############################################################
+event = {
+id = 3450052
+random = no
+country = USA
+style = 2
+picture = "urbanwarfare5"
+
+name = "EVT_3450052_NAME"
+desc = "EVT_3450052_DESC"
+
+action_a = {
+ai_chance = 50
+name = "EVT_3450052_OPTIONA"
+command = { type = dissent value = -2 }
+command = { type = manpowerpool value = -3 }
+command = { type = money value = -50 }
+command = { type = supplies value = -500 }
+command = { type = event which = 3450053 where = HON when = 3  }
+}
+
+action_c = {
+ai_chance = 50
+name = "EVT_3450052_OPTIONB"
+command = { type = dissent value = 3 }
+}
+}
+
+
+event = {
+id = 3450053
+random = no
+country = HON
+style = 2
+picture = "foreign_volunteers"
+
+name = "EVT_3450053_NAME"
+desc = "EVT_3450053_DESC"
+
+action_a = {
+name = "EVT_3450053_OPTIONA"
+command = { type = dissent value = -3 }
+command = { type = money value = 25 }
+command = { type = supplies value = 300 }
+command = { type = manpowerpool value = 3 }
+}
+}
+############################################################
+#US and Central American War
+############################################################
+event = { 
+id = 3450054
+random = no
+country = USA
+style = 2
+
+decision = {
+ government = { type = communist country = GUA } # Centroamerica must be syndicalist
+ OR = {
+ AND = {
+ war = { country = NIC country = GUA }
+ NOT = {
+ government = { type = communist country = NIC } 
+ }
+ }
+ AND = {
+ war = { country = GUA country = MEX }
+ NOT = {
+ government = { type = communist country = MEX }
+ }
+ }
+ }
+ flag = END_ACW
+ NOT = {
+ ispuppet = USA
+ lost_national = { country = USA value = 5 }
+ war = { country = USA country = GUA }
+ war = { country = USA country = NIC }
+ war = { country = USA country = HON }
+ war = { country = USA country = MEX }
+ alliance = { country = NIC country = USA }
+ alliance = { country = MEX country = USA }
+ alliance = { country = HON country = USA }
+ alliance = { country = GUA country = USA } #it shouldn't be possible but in case...
+ }
+ }
+
+ decision_trigger = {
+ control = { province = 1809 data = USA } 
+ control = { province = 1795 data = USA } 
+ control = { province = 1789 data = USA } 
+ control = { province = 1795 data = USA } 
+ control = { province = 1955 data = USA } 
+ control = { province = 1845 data = USA } 
+ NOT = {
+ exists = TEX
+ exists = CSA
+ exists = CAL
+ exists = U10
+ }
+ }
+
+ trigger = {
+ government = { type = communist country = GUA } # Centroamerica must be syndicalist
+ OR = {
+ AND = {
+ war = { country = NIC country = GUA }
+ NOT = {
+ government = { type = communist country = NIC } 
+ }
+ }
+ AND = {
+ war = { country = GUA country = MEX }
+ NOT = {
+ government = { type = communist country = MEX }
+ }
+ }
+ }
+ NOT = {
+ lost_national = { country = USA value = 5 }
+ war = { country = USA country = GUA }
+ war = { country = USA country = NIC }
+ war = { country = USA country = HON }
+ war = { country = USA country = MEX }
+ alliance = { country = NIC country = USA }
+ alliance = { country = MEX country = USA }
+ alliance = { country = HON country = USA }
+ alliance = { country = GUA country = USA } #it shouldn't be possible but in case...
+ }
+ control = { province = 1809 data = USA } 
+ control = { province = 1795 data = USA } 
+ control = { province = 1789 data = USA } 
+ control = { province = 1795 data = USA } 
+ control = { province = 1955 data = USA } 
+ control = { province = 1845 data = USA } 
+ NOT = {
+ ispuppet = USA
+ exists = TEX
+ exists = CSA
+ exists = CAL
+ exists = U10
+ }
+ }
+
+date = { day = 1 month = january year = 1936 }
+offset = 30
+deathdate = { day = 29 month = december year = 1970 }
+ 
+name = "EVT_3450054_NAME"
+desc = "EVT_3450054_DESC"
+picture = "foreign_volunteers"
+decision_picture = "decision_foreign_volunteers"
+
+action = {
+trigger = {
+war = { country = NIC country = GUA }
+NOT = {
+war = { country = MEX country = GUA }
+}
+}
+name = "EVT_3450054_OPTIONA"
+command = { type = supplies value = -750 }
+command = { type = money value = -75 }
+command = { type = manpowerpool value = -5 }
+command = { type = relation which = GUA value = -50 }
+command = { type = relation which = NIC value = 50 }
+command = { type = relation which = HON value = 50 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = event which = 3450055 where = NIC when = 3  }
+command = { type = event which = 3450057 where = HON when = 3  }
+}
+
+action = {
+trigger = {
+war = { country = MEX country = GUA }
+NOT = {
+war = { country = NIC country = GUA }
+}
+}
+name = "EVT_3450054_OPTIONB"
+command = { type = supplies value = -1000 }
+command = { type = money value = -250 }
+command = { type = manpowerpool value = -10 }
+command = { type = relation which = GUA value = -50 }
+command = { type = relation which = MEX value = 50 }
+command = { type = relation which = HON value = 50 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = event which = 3450056 where = MEX when = 3  }
+command = { type = event which = 3450057 where = HON when = 3  }
+}
+
+action = {
+trigger = {
+war = { country = MEX country = GUA }
+war = { country = NIC country = GUA }
+}
+name = "EVT_3450054_OPTIONC"
+command = { type = supplies value = -2000 }
+command = { type = money value = -200 }
+command = { type = manpowerpool value = -20 }
+command = { type = relation which = GUA value = -50 }
+command = { type = relation which = MEX value = 50 }
+command = { type = relation which = HON value = 50 }
+command = { type = relation which = NIC value = 50 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = event which = 3450055 where = NIC when = 3  }
+command = { type = event which = 3450056 where = MEX when = 3  }
+command = { type = event which = 3450057 where = HON when = 3  }
+}
+
+action = {
+ai_chance = 15
+name = "EVT_3450054_OPTIOND"
+command = { type = dissent value = 2 }
+command = { type = relation which = GUA value = 50 }
+command = { type = relation which = MEX value = -50 }
+command = { type = relation which = HON value = -50 }
+command = { trigger = { war = { country = GUA country = NIC } } type = relation which = NIC value = -50 }
+command = { type = domestic which = interventionism value = -2 }
+}
+}
+
+event = { 
+id = 3450055
+random = no
+country = NIC
+style = 2
+picture = "foreign_volunteers"
+
+name = "EVT_3450055_NAME"
+desc = "EVT_3450055_DESC"
+
+action = {
+name = "EVT_3450055_OPTIONA"
+command = { type = supplies value = 1250 }
+command = { type = money value = 50 }
+command = { type = manpowerpool value = 5 }
+}
+}
+
+event = { 
+id = 3450056
+random = no
+country = MEX
+style = 2
+picture = "foreign_volunteers"
+
+name = "EVT_3450056_NAME"
+desc = "EVT_3450056_DESC"
+
+action = {
+name = "EVT_3450056_OPTIONA"
+command = { type = supplies value = 500 }
+command = { type = money value = 125 }
+command = { type = manpowerpool value = 5 }
+}
+}
+
+event = { 
+id = 3450057
+random = no
+country = HON
+style = 2
+picture = "foreign_volunteers"
+
+name = "EVT_3450057_NAME"
+desc = "EVT_3450057_DESC"
+
+action = {
+name = "EVT_3450057_OPTIONA"
+command = { type = supplies value = 250 }
+command = { type = money value = 25 }
+command = { type = manpowerpool value = 5 }
+}
+}
+
+
+event = {
+	id = 3450104
+	random = no
+	country = USA
+
+	trigger = {
+		event = 3450054
+                NOT = {
+                government = communist
+                war = { country = NIC country = GUA }
+                war = { country = HON country = GUA }
+                war = { country = MEX country = GUA }
+                }
+		OR = {
+                        event = 3450055
+			event = 3450056
+                        event = 3450057
+			}
+	}
+	name = "EVT_3450104_NAME"
+	desc = "EVT_3450104_DESC"
+	style = 2
+	picture = "foreign_volunteers"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 20
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		name = "EVT_3450104_OPTIONA" 
+		command = { trigger = { NOT = { government = { type = communist country = NIC } } } type = relation which = NIC value = 10 }	# only if United provinces are not syndicalist
+                command = { trigger = { NOT = { government = { type = communist country = HON } } } type = relation which = HON value = 10 }	# only if Honduras is not syndicalist 
+                command = { trigger = { NOT = { government = { type = communist country = MEX } } } type = relation which = MEX value = 10 }	# only if Mexico are not syndicalist 
+		command = { type = manpowerpool value = 5 }	 	# Soldiers return home
+		command = { type = dissent value = -1 }
+		command = { type = gain_tech which = -1 } 		# get random tech blueprints
+		command = { type = add_leader_skill which = -1 value = 1 }
+		command = { type = add_leader_skill which = -1 value = 1 }
+	}
+}			
+
+######################################################
+#Office of Strategic Services
+######################################################
+event = {
+id = 3450080
+random = no
+country = USA
+style = 2
+
+trigger = {
+flag = END_ACW
+NOT = { 
+ispuppet = USA	
+exists = TEX 
+exists = CSA
+}
+}
+
+date = { day = 1 month = january year = 1940 }
+offset = 60
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_3450080_NAME"
+desc = "EVT_3450080_DESC"
+picture = "Diet"
+
+action_a = {
+ai_chance = 95
+name = "EVT_3450080_OPTIONA"
+command = { type = dissent value = 3 }
+command = { type = domestic which = freedom value = -1 }
+command = { type = setflag which = USA_OSS }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_3450080_OPTIONB"
+command = { type = domestic which = freedom value = 1 }
+command = { type = dissent value = -5 }
+}
+}
+######################################################
+#The University of Free World
+######################################################
+event = {
+id = 3450081
+random = no
+country = USA
+style = 2
+
+decision = {
+flag = END_ACW
+NOT = { 
+ispuppet = USA	
+government = fascist
+headofstate = 6208
+}
+}
+
+decision_trigger = {
+      NOT = {
+      exists = TEX 
+      exists = CSA
+      }
+    }
+
+trigger = {
+flag = END_ACW
+NOT = { 
+ispuppet = USA	
+government = fascist
+headofstate = 6208
+}
+}
+
+date = { day = 1 month = january year = 1940 }
+offset = 90
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_3450081_NAME"
+desc = "EVT_3450081_DESC"
+picture = "invest_research"
+decision_picture = "decision_invest_research"
+
+action = {
+ai_chance = 70
+name = "EVT_3450081_OPTIONA"
+command = { type = relation which = FRA value = -50 }
+command = { type = relation which = ENG value = -50 }
+command = { type = relation which = SOV value = -50 }
+command = { type = relation which = RSI value = -50 }
+command = { type = money value = -25 }
+}
+
+action = {
+ai_chance = 30
+name = "EVT_3450081_OPTIONB"
+command = { type = dissent value = 1 }
+}
+}
+
+event = { 
+id = 3450082
+random = no
+tag = { BOL BRA CUB CHL ECU GUA MEX PAR PRU U01 U27 U33 VEN }
+style = 2
+#this event won't trigger for La Plata as they are a pro-German country
+
+	trigger = {
+		OR = { government = fascist government = democratic }
+		event = 3450081
+		NOT = { government = communist }
+		NOT = { local_flag = US_MILITARYAID local_flag = US_CIVILIAN_AID }
+	}
+
+date = { day = 1 month = january year = 1940 }
+offset = 60
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_3450082_NAME"
+desc = "EVT_3450082_DESC"
+picture = "invest_research"
+
+action = {
+trigger = {
+OR = {
+government = democratic
+ideology = paternal_autocrat
+}
+}
+ai_chance = 75
+name = "EVT_3450082_OPTIONA"
+command = { type = relation which = USA value = 100 }
+command = { type = money value = 300 }
+command = { type = construct which = ic where = -1 value = 1 }
+command = { type = construct which = ic where = -1 value = 1 }
+command = { type = construct which = ic where = -1 value = 1 }
+command = { type = construct which = ic where = -1 value = 1 }
+command = { type = construct which = ic where = -1 value = 1 }
+command = { type = local_setflag which = US_CIVILIAN_AID }
+}
+
+action = {
+trigger = {
+government = fascist
+ideology = paternal_autocrat 
+}
+ai_chance = 75
+name = "EVT_3450082_OPTIONB"
+command = { type = add_leader_skill which = -1 value = 2 }
+command = { type = add_leader_skill which = -1 value = 2 }
+command = { type = add_leader_skill which = -1 value = 1 }
+command = { type = add_leader_skill which = -1 value = 1 }
+command = { type = add_leader_skill which = -1 value = 1 }
+command = { type = max_organization which = land value = 3 }
+command = { type = morale which = land value = 2 }
+command = { type = attrition_mod value = 3 }
+command = { type = relation which = USA value = 100 }
+command = { type = local_setflag which = US_MILITARYAID }
+}
+
+action = {
+ai_chance = 50
+name = "EVT_3450082_OPTIONC"
+command = { type = relation which = USA value = -100 }
+command = { type = dissent value = 5 }
+}
+}
+
+event = { 
+id = 3450101
+random = no
+style = 2
+tag = { BOL BRA CUB CHL ECU GUA MEX PAR PRU U01 U27 U33 VEN }
+
+trigger = {
+event = 3450100
+government = communist 
+OR = {
+local_flag = US_MILITARYAID
+local_flag = US_CIVILIANAID
+}
+}
+
+date = { day = 1 month = january year = 1940 }
+offset = 60
+deathdate = { day = 29 month = december year = 1970 }
+
+name = "EVT_3450101_NAME"
+desc = "EVT_3450101_DESC"
+picture = "invest_research"
+
+action = {
+name = "EVT_3450101_OPTIONA"
+command = { trigger = { local_flag = US_CIVILIANAID } type = construct which = ic where = -1 value = -1 }
+command = { trigger = { local_flag = US_CIVILIANAID } type = construct which = ic where = -1 value = -1 }
+command = { trigger = { local_flag = US_CIVILIANAID } type = construct which = ic where = -1 value = -1 }
+command = { trigger = { local_flag = US_CIVILIANAID } type = construct which = ic where = -1 value = -1 }
+command = { trigger = { local_flag = US_CIVILIANAID } type = construct which = ic where = -1 value = -1 }
+command = { trigger = { local_flag = US_MILITARYAID } type = max_organization which = land value = -3 }
+command = { trigger = { local_flag = US_MILITARYAID } type = morale which = land value = -2 }
+command = { trigger = { local_flag = US_MILITARYAID } type = attrition_mod value = -3 }
+command = { type = money value = -300 }
+command = { type = relation which = USA value = -150 }
+command = { type = dissent value = 2 }
+}
+}
+
+######################################################
+#Question about PSA:
+#When CAL is USA puppet - 906509 - 906515
+#When CAL is in alliance - 906516 - 905619
+######################################################
+#question about PSA 
+######################################################
+event = {
+id = 906509
+random = no
+country = USA
+style = 2
+
+decision = {
+puppet = { country = CAL  country = USA }
+NOT = { 
+        ispuppet = USA	
+}
+}
+
+decision_trigger = {
+      NOT = {
+      atwar = USA
+      exists = TEX 
+      exists = CSA
+      }
+    }
+
+trigger = {
+puppet = { country = CAL  country = USA }
+NOT = { 
+        ispuppet = USA
+	atwar = USA
+	exists = TEX 
+	exists = CSA	
+}
+}
+
+name = "EVT_906509_NAME"
+desc = "EVT_91840_DESC"
+picture = "diplomatic_campaign"
+decision_picture = "decision_diplomatic_campaign"
+
+
+date = { day = 1 month = january year = 1937 }
+offset = 5
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = { 
+ai_chance = 50
+name = "EVT_906509_OPTIONA"
+command = { type = event which = 906510 where = CAL when = 1  } 
+command = { type = relation which = CAL value = -40 }
+}
+
+action_b = {
+ai_chance = 40
+name = "EVT_906509_OPTIONB"
+command = { trigger = { government = democratic } type = dissent value = -5 }
+command = { trigger = { NOT = { government = democratic } } type = dissent value = 1 }
+command = { type = relation which = CAL value = 40 }
+}
+}
+###
+###PSA response
+###
+event = {
+id = 906510
+random = no
+country = CAL
+persistent = yes
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_906510_NAME"
+desc = "EVT_906510_DESC"
+
+
+action_a = { 
+ai_chance = 75
+name = "EVT_906510_OPTIONA"
+command = { trigger = { NOT = { alliance = { country = CAL country = USA } } } type = leave_alliance }
+command = { type = end_puppet }
+command = { type = event which = 906511 where = USA when = 1  } 
+command = { trigger = { government = democratic } type = dissent value = -7 }
+command = { trigger = { NOT = { government = democratic } } type = dissent value = -2 }
+}
+
+action_b = {
+ai_chance = 25
+name = "EVT_906510_OPTIONB"
+command = { trigger = { government = democratic } type = dissent value = 7 }
+command = { trigger = { NOT = { government = democratic } } type = dissent value = 2 }
+command = { type = event which = 906512 where = USA when = 1  } 
+}
+}
+###
+###USA declaration of war
+###
+event = {
+id = 906511
+random = no
+country = USA
+persistent = yes
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_906511_NAME"
+desc = "EVT_906511_DESC"
+
+action_a = { 
+ai_chance = 60
+name = "EVT_906511_OPTIONA"
+command = { type = end_mastery which = CAL }
+command = { type = war which = CAL }
+command = { trigger = { government = democratic } type = dissent value = 7 }
+command = { trigger = { NOT = { government = democratic } } type = dissent value = 2 }
+command = { type = addclaim which = 1890 }
+command = { type = addclaim which = 1884 }
+command = { type = addclaim which = 1885 }
+command = { type = addclaim which = 1888 }
+command = { type = addclaim which = 1889 }
+command = { type = addclaim which = 1883 }
+command = { type = addclaim which = 1891 }
+command = { type = addclaim which = 1892 }
+command = { type = addclaim which = 1887 }
+command = { type = addclaim which = 1886 }
+command = { type = addclaim which = 1880 }
+command = { type = addclaim which = 1873 }
+command = { type = addclaim which = 1875 }
+command = { type = addclaim which = 1876 }
+command = { type = addclaim which = 1874 }
+command = { type = addclaim which = 1877 }
+command = { type = addclaim which = 1878 }
+command = { type = addclaim which = 1882 }
+command = { type = addclaim which = 1879 }
+command = { type = addclaim which = 1872 }
+command = { type = addclaim which = 1893 }
+command = { type = addclaim which = 1894 }
+command = { type = addclaim which = 1895 }
+command = { type = addclaim which = 1861 }
+command = { type = addclaim which = 1870 }
+command = { type = addclaim which = 1871 }
+command = { type = addclaim which = 1869 }
+command = { type = addclaim which = 1881 }
+command = { type = addclaim which = 2141 } #Alaska+Islands
+command = { type = addclaim which = 2147 } 
+command = { type = addclaim which = 2140 }
+command = { type = addclaim which = 2174 }
+command = { type = addclaim which = 2142 }
+command = { type = addclaim which = 2139 }
+command = { type = addclaim which = 2143 }
+command = { type = addclaim which = 2144 }
+command = { type = addclaim which = 2145 }
+command = { type = addclaim which = 2146 }
+command = { type = addclaim which = 2150 }
+command = { type = addclaim which = 2151 }
+command = { type = addclaim which = 1734 }
+command = { type = addclaim which = 1736 }
+command = { type = addclaim which = 1737 }
+command = { type = addclaim which = 1735 }
+command = { type = addclaim which = 1738 }
+command = { type = addclaim which = 1739 }
+command = { type = addclaim which = 1673 }
+command = { type = addclaim which = 1745 }
+command = { type = addclaim which = 1747 }
+command = { type = addclaim which = 1751 }
+command = { type = addclaim which = 1733 }
+}
+
+action_b = { 
+ai_chance = 15
+name = "EVT_906511_OPTIONB"
+command = { type = end_mastery which = CAL }
+command = { type = dissent value = 5 }
+command = { type = relation which = CAL value = 20 }
+}
+
+action_c = {
+ai_chance = 15 
+name = "EVT_906511_OPTIONC"
+command = { type = end_mastery which = CAL }
+command = { type = addclaim which = 1890 }
+command = { type = addclaim which = 1884 }
+command = { type = addclaim which = 1885 }
+command = { type = addclaim which = 1888 }
+command = { type = addclaim which = 1889 }
+command = { type = addclaim which = 1883 }
+command = { type = addclaim which = 1891 }
+command = { type = addclaim which = 1892 }
+command = { type = addclaim which = 1887 }
+command = { type = addclaim which = 1886 }
+command = { type = addclaim which = 1880 }
+command = { type = addclaim which = 1873 }
+command = { type = addclaim which = 1875 }
+command = { type = addclaim which = 1876 }
+command = { type = addclaim which = 1874 }
+command = { type = addclaim which = 1877 }
+command = { type = addclaim which = 1878 }
+command = { type = addclaim which = 1882 }
+command = { type = addclaim which = 1879 }
+command = { type = addclaim which = 1872 }
+command = { type = addclaim which = 1893 }
+command = { type = addclaim which = 1894 }
+command = { type = addclaim which = 1895 }
+command = { type = addclaim which = 1861 }
+command = { type = addclaim which = 1870 }
+command = { type = addclaim which = 1871 }
+command = { type = addclaim which = 1869 }
+command = { type = addclaim which = 1881 }
+command = { type = addclaim which = 2141 } #Alaska+Islands
+command = { type = addclaim which = 2147 } 
+command = { type = addclaim which = 2140 }
+command = { type = addclaim which = 2174 }
+command = { type = addclaim which = 2142 }
+command = { type = addclaim which = 2139 }
+command = { type = addclaim which = 2143 }
+command = { type = addclaim which = 2144 }
+command = { type = addclaim which = 2145 }
+command = { type = addclaim which = 2146 }
+command = { type = addclaim which = 2150 }
+command = { type = addclaim which = 2151 }
+command = { type = addclaim which = 1734 }
+command = { type = addclaim which = 1736 }
+command = { type = addclaim which = 1737 }
+command = { type = addclaim which = 1735 }
+command = { type = addclaim which = 1738 }
+command = { type = addclaim which = 1739 }
+command = { type = addclaim which = 1673 }
+command = { type = addclaim which = 1745 }
+command = { type = addclaim which = 1747 }
+command = { type = addclaim which = 1751 }
+command = { type = addclaim which = 1733 }
+}
+}
+###
+###PSA submits
+###
+event = {
+id = 906512
+random = no
+country = USA
+persistent = yes
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_906512_NAME"
+desc = "EVT_906512_DESC"
+
+
+action_a = { 
+name = "EVT_906512_OPTIONA"
+command = { type = inherit which = CAL }
+command = { type = addcore which = 1890 }
+command = { type = addcore which = 1884 }
+command = { type = addcore which = 1885 }
+command = { type = addcore which = 1888 }
+command = { type = addcore which = 1889 }
+command = { type = addcore which = 1883 }
+command = { type = addcore which = 1891 }
+command = { type = addcore which = 1892 }
+command = { type = addcore which = 1887 }
+command = { type = addcore which = 1886 }
+command = { type = addcore which = 1880 }
+command = { type = addcore which = 1873 }
+command = { type = addcore which = 1875 }
+command = { type = addcore which = 1876 }
+command = { type = addcore which = 1874 }
+command = { type = addcore which = 1877 }
+command = { type = addcore which = 1878 }
+command = { type = addcore which = 1882 }
+command = { type = addcore which = 1879 }
+command = { type = addcore which = 1872 }
+command = { type = addcore which = 1893 }
+command = { type = addcore which = 1894 }
+command = { type = addcore which = 1895 }
+command = { type = addcore which = 1861 }
+command = { type = addcore which = 1870 }
+command = { type = addcore which = 1871 }
+command = { type = addcore which = 1869 }
+command = { type = addcore which = 1881 }
+command = { trigger = { control = { province = 2142 data = USA } } type = addcore which = 2141 } #Alaska+Islands
+command = { trigger = { control = { province = 2142 data = USA } } type = addcore which = 2147 } 
+command = { trigger = { control = { province = 2142 data = USA } } type = addcore which = 2140 }
+command = { trigger = { control = { province = 2142 data = USA } } type = addcore which = 2142 }
+command = { trigger = { control = { province = 2142 data = USA } } type = addcore which = 2139 }
+command = { trigger = { control = { province = 2142 data = USA } } type = addcore which = 2143 }
+command = { trigger = { control = { province = 2142 data = USA } } type = addcore which = 2144 }
+command = { trigger = { control = { province = 2142 data = USA } } type = addcore which = 2145 }
+command = { trigger = { control = { province = 2142 data = USA } } type = addcore which = 2146 }
+command = { trigger = { control = { province = 2142 data = USA } } type = addcore which = 2150 }
+command = { trigger = { control = { province = 2142 data = USA } } type = addcore which = 2151 }
+command = { trigger = { control = { province = 2142 data = USA } } type = addcore which = 2174 }
+command = { trigger = { control = { province = 1734 data = USA } } type = addcore which = 1734 } #Hawaii
+command = { trigger = { control = { province = 1734 data = USA } } type = addcore which = 1736 }
+command = { trigger = { control = { province = 1734 data = USA } } type = addcore which = 1737 }
+command = { trigger = { control = { province = 1734 data = USA } } type = addcore which = 1735 }
+command = { trigger = { control = { province = 1734 data = USA } } type = addcore which = 1738 }
+command = { type = dissent value = 2 }
+}
+}
+
+
+######################################################
+#PSA in the alliance with USA
+######################################################
+event = {
+id = 906516
+random = no
+country = USA
+style = 2
+
+decision = {
+alliance = { country = CAL country = USA }
+NOT = {
+ispuppet = USA
+ispuppet = CAL
+}
+}
+
+decision_trigger = {
+      NOT = {
+      atwar = USA
+      exists = TEX 
+      exists = CSA
+      }
+    }
+
+trigger = {
+alliance = { country = CAL country = USA }
+NOT = { 
+ispuppet = USA
+ispuppet = CAL
+atwar = USA
+exists = TEX 
+exists = CSA	
+}
+}
+
+
+name = "EVT_906516_NAME"
+desc = "EVT_906516_DESC"
+picture = "diplomatic_campaign"
+decision_picture = "decision_diplomatic_campaign"
+
+
+date = { day = 1 month = january year = 1937 }
+offset = 5
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = { 
+ai_chance = 45
+name = "EVT_906516_OPTIONA"
+command = { type = trigger which = 906517 } 
+command = { type = leave_alliance }
+command = { type = relation which = CAL value = -40 }
+command = { type = dissent value = 3 }
+}
+
+action_b = {
+ai_chance = 45
+trigger = {
+flag = CAL_CIV_GOV
+government = democratic
+}
+name = "EVT_906516_OPTIONB"
+command = { type = dissent value = -5 }
+command = { type = relation which = CAL value = 50 }
+}
+
+action_c = {
+ai_chance = 10
+name = "EVT_906516_OPTIONC"
+command = { type = relation which = CAL value = -40 }
+command = { type = trigger which = 906510 }
+}
+}
+
+event = {
+id = 906517
+random = no
+country = CAL
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_906517_NAME"
+desc = "EVT_906517_DESC"
+
+action_a = { 
+name = "EVT_906517_OPTIONA"
+command = { type = relation which = USA value = -50 }
+}
+}
+
+
+#####################################################
+#PSA and USA have no deals - 
+#####################################################
+event = {
+id = 906520
+random = no
+country = USA
+style = 2
+
+decision = {
+government = democratic
+NOT = { 
+ispuppet = USA	
+ispuppet = CAL
+alliance = { country = CAL country = USA }
+}
+exists = CAL
+}
+
+decision_trigger = {
+      NOT = {
+      atwar = USA
+      exists = TEX 
+      exists = CSA
+      }
+    }
+
+trigger ={
+government = democratic
+NOT = {
+atwar = USA
+ispuppet = USA	
+ispuppet = CAL
+alliance = { country = CAL country = USA }
+exists = TEX 
+exists = CSA
+}
+exists = CAL
+}
+
+name = "EVT_906520_NAME"
+desc = "EVT_906520_DESC"
+picture = "diplomatic_campaign"
+decision_picture = "decision_diplomatic_campaign"
+
+date = { day = 1 month = january year = 1937 }
+offset = 5
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+ai_chance = 15
+name = "EVT_906520_OPTIONA"
+command = { type = dissent value = 7 }
+command = { type = war which = CAL }
+command = { type = addclaim which = 1890 }
+command = { type = addclaim which = 1884 }
+command = { type = addclaim which = 1885 }
+command = { type = addclaim which = 1888 }
+command = { type = addclaim which = 1889 }
+command = { type = addclaim which = 1883 }
+command = { type = addclaim which = 1891 }
+command = { type = addclaim which = 1892 }
+command = { type = addclaim which = 1887 }
+command = { type = addclaim which = 1886 }
+command = { type = addclaim which = 1880 }
+command = { type = addclaim which = 1873 }
+command = { type = addclaim which = 1875 }
+command = { type = addclaim which = 1876 }
+command = { type = addclaim which = 1874 }
+command = { type = addclaim which = 1877 }
+command = { type = addclaim which = 1878 }
+command = { type = addclaim which = 1882 }
+command = { type = addclaim which = 1879 }
+command = { type = addclaim which = 1872 }
+command = { type = addclaim which = 1893 }
+command = { type = addclaim which = 1894 }
+command = { type = addclaim which = 1895 }
+command = { type = addclaim which = 1861 }
+command = { type = addclaim which = 1870 }
+command = { type = addclaim which = 1871 }
+command = { type = addclaim which = 1869 }
+command = { type = addclaim which = 1881 }
+command = { type = addclaim which = 2141 } #Alaska+Islands
+command = { type = addclaim which = 2147 } 
+command = { type = addclaim which = 2140 }
+command = { type = addclaim which = 2174 }
+command = { type = addclaim which = 2142 }
+command = { type = addclaim which = 2139 }
+command = { type = addclaim which = 2143 }
+command = { type = addclaim which = 2144 }
+command = { type = addclaim which = 2145 }
+command = { type = addclaim which = 2146 }
+command = { type = addclaim which = 2150 }
+command = { type = addclaim which = 2151 }
+command = { type = addclaim which = 1734 }
+command = { type = addclaim which = 1736 }
+command = { type = addclaim which = 1737 }
+command = { type = addclaim which = 1735 }
+command = { type = addclaim which = 1738 }
+command = { type = addclaim which = 1739 }
+command = { type = addclaim which = 1673 }
+command = { type = addclaim which = 1745 }
+command = { type = addclaim which = 1747 }
+command = { type = addclaim which = 1751 }
+command = { type = addclaim which = 1733 }
+command = { type = sleepevent which = 906521 }
+}
+
+action_b = {
+ai_chance = 15
+name = "EVT_906520_OPTIONB"
+command = { type = dissent value = 1 }
+command = { type = addclaim which = 1890 }
+command = { type = addclaim which = 1884 }
+command = { type = addclaim which = 1885 }
+command = { type = addclaim which = 1888 }
+command = { type = addclaim which = 1889 }
+command = { type = addclaim which = 1883 }
+command = { type = addclaim which = 1891 }
+command = { type = addclaim which = 1892 }
+command = { type = addclaim which = 1887 }
+command = { type = addclaim which = 1886 }
+command = { type = addclaim which = 1880 }
+command = { type = addclaim which = 1873 }
+command = { type = addclaim which = 1875 }
+command = { type = addclaim which = 1876 }
+command = { type = addclaim which = 1874 }
+command = { type = addclaim which = 1877 }
+command = { type = addclaim which = 1878 }
+command = { type = addclaim which = 1882 }
+command = { type = addclaim which = 1879 }
+command = { type = addclaim which = 1872 }
+command = { type = addclaim which = 1893 }
+command = { type = addclaim which = 1894 }
+command = { type = addclaim which = 1895 }
+command = { type = addclaim which = 1861 }
+command = { type = addclaim which = 1870 }
+command = { type = addclaim which = 1871 }
+command = { type = addclaim which = 1869 }
+command = { type = addclaim which = 1881 }
+command = { type = addclaim which = 2141 } #Alaska+Islands
+command = { type = addclaim which = 2147 } 
+command = { type = addclaim which = 2140 }
+command = { type = addclaim which = 2174 }
+command = { type = addclaim which = 2142 }
+command = { type = addclaim which = 2139 }
+command = { type = addclaim which = 2143 }
+command = { type = addclaim which = 2144 }
+command = { type = addclaim which = 2145 }
+command = { type = addclaim which = 2146 }
+command = { type = addclaim which = 2150 }
+command = { type = addclaim which = 2151 }
+command = { type = addclaim which = 1734 }
+command = { type = addclaim which = 1736 }
+command = { type = addclaim which = 1737 }
+command = { type = addclaim which = 1735 }
+command = { type = addclaim which = 1738 }
+command = { type = addclaim which = 1739 }
+command = { type = addclaim which = 1673 }
+command = { type = addclaim which = 1745 }
+command = { type = addclaim which = 1747 }
+command = { type = addclaim which = 1751 }
+command = { type = addclaim which = 1733 }
+command = { type = relation which = CAL value = -20 }
+command = { type = sleepevent which = 906521 }
+}
+
+action_c = {
+ai_chance = 35
+name = "EVT_906520_OPTIONC"
+command = { type = dissent value = 5 }
+command = { type = relation which = CAL value = 50 }
+command = { type = sleepevent which = 906521 }
+}
+
+action_d = {
+ai_chance = 5
+name = "EVT_906520_OPTIOND"
+trigger = {
+NOT = {
+alliance = { country = CAL country = CAN }
+alliance = { country = CAL country = GER }
+alliance = { country = CAL country = RUS }
+alliance = { country = CAL country = JAP }
+}
+}
+command = { type = trigger which = 906522 }
+command = { type = dissent value = 6 }
+command = { type = relation which = CAL value = 100 }
+command = { type = sleepevent which = 906521 }
+}
+}
+
+event = {
+id = 906521
+random = no
+country = USA
+style = 2
+
+decision = {
+government = fascist
+NOT = { 
+ispuppet = USA	
+ispuppet = CAL
+alliance = { country = CAL country = USA }
+}
+exists = CAL
+}
+
+decision_trigger = {
+      NOT = {
+      atwar = USA
+      exists = TEX 
+      exists = CSA
+      }
+    }
+
+trigger ={
+government = fascist
+NOT = {
+atwar = USA
+ispuppet = USA	
+ispuppet = CAL
+alliance = { country = CAL country = USA }
+exists = TEX 
+exists = CSA
+}
+exists = CAL
+}
+
+name = "EVT_906521_NAME"
+desc = "EVT_906521_DESC"
+picture = "diplomatic_campaign"
+decision_picture = "decision_diplomatic_campaign"
+
+date = { day = 1 month = january year = 1937 }
+offset = 5
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+ai_chance = 40
+name = "EVT_906521_OPTIONA"
+command = { type = dissent value = 2 }
+command = { type = war which = CAL }
+command = { type = addclaim which = 1890 }
+command = { type = addclaim which = 1884 }
+command = { type = addclaim which = 1885 }
+command = { type = addclaim which = 1888 }
+command = { type = addclaim which = 1889 }
+command = { type = addclaim which = 1883 }
+command = { type = addclaim which = 1891 }
+command = { type = addclaim which = 1892 }
+command = { type = addclaim which = 1887 }
+command = { type = addclaim which = 1886 }
+command = { type = addclaim which = 1880 }
+command = { type = addclaim which = 1873 }
+command = { type = addclaim which = 1875 }
+command = { type = addclaim which = 1876 }
+command = { type = addclaim which = 1874 }
+command = { type = addclaim which = 1877 }
+command = { type = addclaim which = 1878 }
+command = { type = addclaim which = 1882 }
+command = { type = addclaim which = 1879 }
+command = { type = addclaim which = 1872 }
+command = { type = addclaim which = 1893 }
+command = { type = addclaim which = 1894 }
+command = { type = addclaim which = 1895 }
+command = { type = addclaim which = 1861 }
+command = { type = addclaim which = 1870 }
+command = { type = addclaim which = 1871 }
+command = { type = addclaim which = 1869 }
+command = { type = addclaim which = 1881 }
+command = { type = addclaim which = 2141 } #Alaska+Islands
+command = { type = addclaim which = 2147 } 
+command = { type = addclaim which = 2140 }
+command = { type = addclaim which = 2174 }
+command = { type = addclaim which = 2142 }
+command = { type = addclaim which = 2139 }
+command = { type = addclaim which = 2143 }
+command = { type = addclaim which = 2144 }
+command = { type = addclaim which = 2145 }
+command = { type = addclaim which = 2146 }
+command = { type = addclaim which = 2150 }
+command = { type = addclaim which = 2151 }
+command = { type = addclaim which = 1734 }
+command = { type = addclaim which = 1736 }
+command = { type = addclaim which = 1737 }
+command = { type = addclaim which = 1735 }
+command = { type = addclaim which = 1738 }
+command = { type = addclaim which = 1739 }
+command = { type = addclaim which = 1673 }
+command = { type = addclaim which = 1745 }
+command = { type = addclaim which = 1747 }
+command = { type = addclaim which = 1751 }
+command = { type = addclaim which = 1733 }
+command = { type = sleepevent which = 906520 }
+}
+
+action_b = {
+ai_chance = 35
+name = "EVT_906521_OPTIONB"
+command = { type = dissent value = 4 }
+command = { type = addclaim which = 1890 }
+command = { type = addclaim which = 1884 }
+command = { type = addclaim which = 1885 }
+command = { type = addclaim which = 1888 }
+command = { type = addclaim which = 1889 }
+command = { type = addclaim which = 1883 }
+command = { type = addclaim which = 1891 }
+command = { type = addclaim which = 1892 }
+command = { type = addclaim which = 1887 }
+command = { type = addclaim which = 1886 }
+command = { type = addclaim which = 1880 }
+command = { type = addclaim which = 1873 }
+command = { type = addclaim which = 1875 }
+command = { type = addclaim which = 1876 }
+command = { type = addclaim which = 1874 }
+command = { type = addclaim which = 1877 }
+command = { type = addclaim which = 1878 }
+command = { type = addclaim which = 1882 }
+command = { type = addclaim which = 1879 }
+command = { type = addclaim which = 1872 }
+command = { type = addclaim which = 1893 }
+command = { type = addclaim which = 1894 }
+command = { type = addclaim which = 1895 }
+command = { type = addclaim which = 1861 }
+command = { type = addclaim which = 1870 }
+command = { type = addclaim which = 1871 }
+command = { type = addclaim which = 1869 }
+command = { type = addclaim which = 1881 }
+command = { type = addclaim which = 2141 } #Alaska+Islands
+command = { type = addclaim which = 2147 } 
+command = { type = addclaim which = 2140 }
+command = { type = addclaim which = 2174 }
+command = { type = addclaim which = 2142 }
+command = { type = addclaim which = 2139 }
+command = { type = addclaim which = 2143 }
+command = { type = addclaim which = 2144 }
+command = { type = addclaim which = 2145 }
+command = { type = addclaim which = 2146 }
+command = { type = addclaim which = 2150 }
+command = { type = addclaim which = 2151 }
+command = { type = addclaim which = 1734 }
+command = { type = addclaim which = 1736 }
+command = { type = addclaim which = 1737 }
+command = { type = addclaim which = 1735 }
+command = { type = addclaim which = 1738 }
+command = { type = addclaim which = 1739 }
+command = { type = addclaim which = 1673 }
+command = { type = addclaim which = 1745 }
+command = { type = addclaim which = 1747 }
+command = { type = addclaim which = 1751 }
+command = { type = addclaim which = 1733 }
+command = { type = relation which = CAL value = -20 }
+command = { type = sleepevent which = 906520 }
+}
+
+action_c = {
+ai_chance = 15
+name = "EVT_906521_OPTIONC"
+command = { type = dissent value = 5 }
+command = { type = relation which = CAL value = 50 }
+command = { type = sleepevent which = 906520 }
+}
+
+action_d = {
+ai_chance = 10
+name = "EVT_906521_OPTIOND"
+command = { type = trigger which = 906522 }
+command = { type = dissent value = 8 }
+command = { type = relation which = CAL value = 100 }
+command = { type = sleepevent which = 906520 }
+}
+}
+
+
+event = {
+id = 906522
+random = no
+country = CAL
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_906522_NAME"
+desc = "EVT_906522_DESC"
+
+action_a = {
+ai_chance = 75
+name = "EVT_906522_OPTIONA"
+command = { type = alliance which = USA }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_906522_OPTIONB"
+command = { type = relation which = USA value = -100 }
+}
+
+action_c = {
+ai_chance = 20
+name = "EVT_906522_OPTIONC"
+command = { type = trigger which = 906523 }
+}
+}
+
+event = {
+id = 906523
+random = no
+country = USA
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_906523_NAME"
+desc = "EVT_906523_DESC"
+
+action_a ={
+ai_chance = 75
+name = "EVT_906523_OPTIONA"
+command = { type = non_aggression which = USA where = CAL }
+command = { type = relation which = CAL value = 50 }
+}
+
+action_b ={
+ai_chance = 20
+name = "EVT_906523_OPTIONB"
+command = { type = relation which = CAL value = -30 }
+}
+}
+
+
+
+
+
+
+
+###USA and Second Weltkrieg
+
+event = {
+ id = 3450000
+ random = no
+ country = USA
+ style = 2
+ picture = "diplomatic_campaign" 
+ decision_picture = "decision_diplomatic_campaign"
+
+ decision = {
+     war = { country = GER country = FRA }
+     war = { country = CAN country = ENG }
+     NOT = {
+     government = communist
+     alliance = { country = CAN country = USA }
+     alliance = { country = GER country = CAN }    
+ }
+ }
+
+
+
+      decision_trigger = {
+      NOT = {
+      government = communist
+      atwar = USA
+      ispuppet = USA
+      exists = TEX
+      exists = CSA
+      exists = CAL
+      exists = U10
+      }
+      }
+
+ trigger = { 
+     war = { country = GER country = FRA }
+     war = { country = CAN country = ENG }
+     NOT = {
+     government = communist
+     ispuppet = USA
+     atwar = USA
+     exists = TEX
+     exists = CSA
+     exists = CAL
+     exists = U10
+     alliance = { country = CAN country = USA }
+     alliance = { country = GER country = CAN }
+ }
+ }
+
+      date = { day = 1 month = january year = 1939 }
+      offset = 15
+      deathdate = { day = 29 month = december year = 1963 }
+
+ name = "EVT_3450000_NAME"
+ desc = "EVT_91855_DESC"
+
+ action = {
+ ai_chance = 30
+ name = "EVT_3450000_OPTIONA"
+ command = { type = dissent value = 15 }
+ command = { type = sleepevent which = 3450006 }
+ command = { type = sleepevent which = 3450011 }
+ command = { type = set_relation which = CAN value = 200 }
+ command = { type = trigger which = 3450001 }
+ command = { type = domestic which = interventionism value = 4 }
+ }
+
+ action  = {
+ ai_chance = 30
+ trigger = {
+ relation = { which = GER value = 100 }
+ NOT = {
+ lost_vp = { country = GER value = 10 }
+ war = { country = CAN country = GER }
+ }
+ }
+ name = "We should join the Mitteleuropa"
+ command = { type = dissent value = 20 }
+ command = { type = sleepevent which = 3450006 }
+ command = { type = sleepevent which = 3450011 }
+ command = { type = set_relation which = GER value = 200 }
+ command = { type = trigger which = 3450012 }
+ command = { type = domestic which = interventionism value = 4 }
+ }
+
+ action  = {
+ ai_chance = 50 
+ name = "We should lend Canada a hand, but not join war...for now at least"
+ command = { type = setflag which = US_SUP_CAN }
+ command = { type = supplies value = -1000 }
+ command = { type = peacetime_ic_mod value = 5 }
+ command = { type = relation which = CAN value = 50 }
+ command = { type = industrial_modifier which = supplies value = -2 }
+ command = { type = dissent value = 1 }
+ command = { type = domestic which = interventionism value = 2 }
+ }
+
+ action = {
+ ai_chance = 30
+ trigger = {
+ relation = { which = GER value = 10 }
+ NOT = {
+ lost_vp = { country = GER value = 10 }
+ war = { country = CAN country = GER }
+ }
+ }
+ name = "EVT_3450000_OPTIONB"
+ command = { type = setflag which = US_SUP_GER }
+ command = { type = supplies value = -1000 }
+ command = { type = industrial_modifier which = supplies value = -10 }
+ command = { type = relation which = GER value = 50 }
+ command = { type = sleepevent which = 3450006 }
+ command = { type = dissent value = 2 }
+ command = { type = domestic which = interventionism value = 2 }
+ }
+
+ action  = {
+ ai_chance = 20
+ name = "Declare neutrality"
+ command = { type = dissent value = -3 }
+ command = { type = free_money value = 20 }
+ command = { type = sleepevent which = 3450006 }
+ command = { type = sleepevent which = 3450011 }
+ command = { type = set_domestic which = interventionism value = 1 }
+ }
+ }
+
+ event = { 
+ id = 3450001
+ country = CAN
+ style = 2
+ picture = "diplomatic_campaign" 
+
+ name = "EVT_3450001_NAME"
+ desc = "EVT_3450001_DESC"
+      
+ action_a = {
+ name = "EVT_3450001_OPTIONA"
+ ai_chance = 100
+ command = { type = dissent value = -10 }
+ command = { type = alliance which = USA }
+ command = { type = set_relation which = USA value = 200 }
+ command = { type = clrflag which = US_SUP_CAN }
+ command = { type = trigger which = 3450014 }
+ }
+
+ action_b = {
+ ai_chance = 0
+ name = "EVT_3450001_OPTIONB"
+ command = { type = dissent value = 4 }
+ command = { type = relation which = USA value = -100 }
+ }
+ }
+
+ event = {
+id = 3450014
+random = no
+country = USA
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_3450014_NAME"
+desc = "EVT_3450014_DESC"
+
+action_a = {
+name = "EVT_3450014_OPTIONA"
+command = { type = dissent value = -3 }
+command = { type = relation which = FRA value = -150 }
+command = { type = relation which = ENG value = -150 }
+command = { type = relation which = GER value = -20 }
+command = { type = relation which = CAN value = 200 }
+command = { trigger = { alliance = { country = CAN country = VIC } } type = relation which = VIC value = 150 }
+command = { trigger = { alliance = { country = CAN country = RUS } } type = relation which = RUS value = 150 }
+command = { trigger = { alliance = { country = CAN country = AST } } type = relation which = AST value = 150 }
+command = { trigger = { alliance = { country = CAN country = SAF } } type = relation which = SAF value = 150 }
+command = { trigger = { alliance = { country = CAN country = PAK } } type = relation which = PAK value = 150 }
+command = { trigger = { alliance = { country = CAN country = HOL } } type = relation which = HOL value = 150 }
+command = { trigger = { alliance = { country = CAN country = IRE } } type = relation which = IRE value = 150 }
+command = { trigger = { alliance = { country = CAN country = ICL } } type = relation which = ICL value = 150 }
+command = { trigger = { alliance = { country = CAN country = ITA } } type = relation which = ITA value = 150 }
+command = { trigger = { alliance = { country = CAN country = GUY } } type = relation which = GUY value = 150 }
+command = { type = end_trades which = ENG where = USA }
+command = { type = end_trades which = FRA where = USA } 
+#maybe new ai?
+}
+}
+
+ event = { 
+ id = 3450012
+ country = GER
+ style = 2
+ picture = "diplomatic_campaign" 
+
+ name = "EVT_3450012_NAME"
+ desc = "EVT_3450012_DESC"
+   
+ action_a = {
+ name = "EVT_3450012_OPTIONA"
+ ai_chance = 100
+ command = { type = dissent value = -10 }
+ command = { type = alliance which = USA }
+ command = { type = set_relation which = USA value = 200 }
+ command = { type = clrflag which = US_SUP_GER }
+ command = { type = trigger which = 3450013 }
+ }
+
+ action_b = {
+ ai_chance = 0
+ name = "EVT_3450012_OPTIONB"
+ command = { type = dissent value = 4 }
+ command = { type = relation which = USA value = -100 }
+ }
+ }
+
+ event = {
+id = 3450013
+random = no
+country = USA
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_3450013_NAME"
+desc = "EVT_3450013_DESC"
+
+action_a = {
+name = "EVT_3450013_OPTIONA"
+command = { type = dissent value = -3 }
+command = { type = relation which = FRA value = -150 }
+command = { type = relation which = ENG value = -150 }
+command = { type = relation which = CAN value = -20 }
+command = { type = relation which = VIC value = -20 }
+command = { type = relation which = GER value = 200 }
+command = { trigger = { alliance = { country = GER country = UKR } } type = relation which = UKR value = 150 }
+command = { trigger = { alliance = { country = GER country = BLR } } type = relation which = BLR value = 150 }
+command = { trigger = { alliance = { country = GER country = BUR } } type = relation which = BUR value = 150 }
+command = { trigger = { alliance = { country = GER country = BEL } } type = relation which = BEL value = 150 }
+command = { trigger = { alliance = { country = GER country = U24 } } type = relation which = U24 value = 150 }
+command = { trigger = { alliance = { country = GER country = U25 } } type = relation which = U25 value = 150 }
+command = { trigger = { alliance = { country = GER country = AUS } } type = relation which = AUS value = 150 }
+command = { trigger = { alliance = { country = GER country = OTT } } type = relation which = OTT value = 150 }
+command = { trigger = { alliance = { country = GER country = TRA } } type = relation which = TRA value = 150 }
+command = { trigger = { alliance = { country = GER country = ITA } } type = relation which = ITA value = 150 }
+command = { trigger = { alliance = { country = GER country = CGX } } type = relation which = CGX value = 150 }
+command = { trigger = { alliance = { country = GER country = VIE } } type = relation which = VIE value = 150 }
+command = { trigger = { alliance = { country = GER country = CSX } } type = relation which = CSX value = 150 }
+command = { trigger = { alliance = { country = GER country = RUS } } type = relation which = RUS value = 150 }
+command = { type = end_trades which = ENG where = USA }
+command = { type = end_trades which = FRA where = USA } 
+#maybe new ai?
+}
+}
+
+ event = {
+ id = 3450002
+ country = CAN
+ persistent = yes
+ style = 2
+ picture = "lend_lease" 
+
+ trigger = {
+ flag = US_SUP_CAN
+ exists = USA 
+ OR = {
+ war = { country = ENG country = CAN }
+ war = { country = FRA country = CAN }
+ war = { country = SPR country = CAN }
+ war = { country = RSI country = CAN }
+ }
+ NOT = {
+ ispuppet = USA
+ ispuppet = CAN
+ alliance = { country = USA country = CAN }
+ war = { country = USA country = CAN }
+ }
+ }
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 90
+ deathdate = { day = 29 month = december year = 1970 }
+
+ name = "EVT_3450002_NAME"
+ desc = "EVT_3450002_DESC"
+
+ action_a = {
+ name = "EVT_3450002_OPTIONA"
+ command = { type = supplies value = 1000 }
+ command = { type = steal_tech which = USA }
+ command = { type = money value = -100 }
+ command = { type = manpowerpool value = 1 }
+ }
+ }
+
+ event = {
+ id = 3450003
+ country = GER
+ persistent = yes
+ style = 2
+ picture = "lend_lease" 
+
+ trigger = {
+ flag = US_SUP_GER
+ exists = USA
+ OR = {
+ war = { country = ENG country = GER }
+ war = { country = FRA country = GER }
+ war = { country = SPR country = GER }
+ war = { country = RSI country = GER }
+ }
+ NOT = {
+ ispuppet = USA
+ ispuppet = GER
+ alliance = { country = USA country = GER }
+ war = { country = USA country = GER }
+ }
+ }
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 90
+ deathdate = { day = 29 month = december year = 1970 }
+
+ name = "EVT_3450003_NAME"
+ desc = "EVT_3450003_DESC"
+
+ action_a = {
+ name = "EVT_3450003_OPTIONA"
+ command = { type = supplies value = 1000 }
+ command = { type = steal_tech which = USA }
+ command = { type = money value = -100 }
+ command = { type = manpowerpool value = 1 }
+ }
+ }
+
+ event = {
+ id = 3450004
+ country = USA
+ style = 2
+ picture = "diplomatic_campaign" 
+
+ trigger = {
+ war = { country = USA country = TEX }
+ war = { country = USA country = CSA }
+ }
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 40
+ deathdate = { day = 29 month = december year = 1970 }
+
+ name = "EVT_3450004_NAME"
+ desc = "EVT_3450004_DESC"
+
+ action_a = {
+ ai_chance = 90
+ name = "EVT_3450004_OPTIONA"
+ command = { type = dissent value = -2 }
+ command = { type = domestic which = freedom value = -3 }
+ command = { type = domestic which = defense_lobby value = 1 }
+ command = { type = suppression which = police value = 10 }
+ command = { type = money value = -100 }
+ command = { type = belligerence which = USA value = 2 }
+ }
+
+ action_b = {
+ ai_chance = 10
+ name = "EVT_3450004_OPTIONB"
+ command = { type = sleepevent which = 340005 }
+ command = { type = belligerence which = USA value = -2 }
+ command = { type = dissent value = 1 }
+ }
+ }
+
+ event = {
+ id = 3450005
+ country = USA
+ style = 2
+ picture = "diplomatic_campaign" 
+
+ trigger = {
+ event = 3450004
+ NOT = {
+ atwar = USA
+ exists = TEX
+ exists = CSA 
+ }
+ flag = END_ACW
+ }
+
+ date = { day = 1 month = january year = 1937 }
+ offset = 90
+ deathdate = { day = 29 month = december year = 1970 }
+
+ name = "EVT_3450005_NAME"
+ desc = "EVT_3450005_DESC"
+
+ action_a = {
+ ai_chance = 80
+ name = "EVT_3450005_OPTIONA"
+ command = { type = dissent value = 1 }
+ }
+
+ action_b = {
+ ai_chance = 20
+ name = "EVT_3450005_OPTIONB"
+ command = { type = dissent value = -5 }
+ command = { type = domestic which = freedom value = 3 }
+ command = { type = domestic which = defense_lobby value = -1 }
+ command = { type = sleepevent which = 3450006 }
+ }
+
+ action_c ={
+ trigger = {
+ government = fascist
+ }
+ ai_chance = 100
+ name = "EVT_3450005_OPTIONC"
+ command = { type = dissent value = 3 }
+ command = { type = belligerence which = USA value = 5 }
+ }
+ }
+
+ event = {
+ id = 3450006
+ country = USA
+ style = 2
+ save_date = yes
+ picture = "diplomatic_campaign" 
+
+ trigger = {
+ event = 3450005
+ flag = US_SUP_CAN
+ NOT = {
+ atwar = USA
+ ispuppet = USA
+ government = communist
+ alliance = { country = USA country = CAN }
+ alliance = { country = USA country = GER } 
+ }
+ }
+
+ date = { day = 1 month = january year = 1938 }
+ offset = 90
+ deathdate = { day = 29 month = december year = 1970 }
+
+ name = "EVT_3450006_NAME"
+ desc = "EVT_3450006_DESC"
+
+ action_a = {
+ ai_chance = 99
+ name = "EVT_3450006_OPTIONA"
+ command = { type = dissent value = 3 }
+ command = { type = peacetime_ic_mod value = 2 }
+ command = { type = sleepevent which = 3450011 }
+ command = { type = belligerence which = USA value = 2 }
+ command = { type = relation which = CAN value = 50 }
+ }
+
+ action_b = {
+ ai_chance = 1
+ name = "EVT_3450006_OPTIONB"
+ command = { type = dissent value = -4 }
+ command = { type = sleepevent which = 3450011 }
+ }
+ }
+
+ event = {
+ id = 3450011
+ country = USA
+ style = 2
+ save_date = yes
+ picture = "diplomatic_campaign" 
+
+ trigger = {
+ event = 3450005
+ flag = US_SUP_GER
+ NOT = {
+ atwar = USA
+ ispuppet = USA
+ government = communist
+ alliance = { country = USA country = CAN }
+ alliance = { country = USA country = GER } 
+ }
+ }
+
+ date = { day = 1 month = january year = 1938 }
+ offset = 90
+ deathdate = { day = 29 month = december year = 1970 }
+
+ name = "EVT_3450011_NAME"
+ desc = "EVT_3450011_DESC"
+
+ action_a = {
+ ai_chance = 99
+ name = "EVT_3450011_OPTIONA"
+ command = { type = dissent value = 3 }
+ command = { type = peacetime_ic_mod value = 30 }
+ command = { type = sleepevent which = 3450006 }
+ command = { type = belligerence which = USA value = 2 }
+ command = { type = relation which = GER value = 50 }
+ }
+
+ action_b = {
+ ai_chance = 1
+ name = "EVT_3450011_OPTIONB"
+ command = { type = dissent value = -4 }
+ command = { type = sleepevent which = 3450006 }
+ }
+ }
+
+
+
+ event = { 
+ id = 3450019
+ country = USA
+ style = 2
+ picture = "diplomatic_campaign" 
+
+ trigger = {
+ event = { id = 3450006 days = 300 } 
+ NOT = {
+ government = communist
+ atwar = USA
+ ispuppet = USA
+ alliance = { country = CAN country = USA }
+ alliance = { country = GER country = CAN }      
+ } 
+ }
+
+ name = "EVT_3450019_NAME"
+ desc = "EVT_3450019_DESC"
+      
+ action_a = {
+ name = "EVT_3450019_OPTIONA"
+ ai_chance = 100
+ command = { type = dissent value = 1 }
+ command = { type = set_relation which = CAN value = 200 }
+ command = { type = trigger which = 3450001 }
+ command = { type = domestic which = interventionism value = 4 }
+ }
+
+ action_b = {
+ ai_chance = 0
+ name = "EVT_3450019_OPTIONB"
+ command = { type = dissent value = -1 }
+ command = { type = relation which = CAN value = -40 }
+ }
+ }
+
+ event = { 
+ id = 3450020
+ country = USA
+ style = 2
+ picture = "diplomatic_campaign" 
+
+ trigger = {
+ event = { id = 3450011 days = 300 }
+ NOT = {
+ government = communist
+ atwar = USA
+ ispuppet = USA
+ alliance = { country = CAN country = USA }
+ alliance = { country = GER country = CAN }      
+ } 
+ } 
+
+ name = "EVT_3450020_NAME"
+ desc = "EVT_3450020_DESC"
+      
+ action_a = {
+ name = "EVT_3450020_OPTIONA"
+ ai_chance = 100
+ command = { type = dissent value = 4 }
+ command = { type = set_relation which = GER value = 200 }
+ command = { type = trigger which = 3450012 }
+ command = { type = domestic which = interventionism value = 4 }
+ }
+
+ action_b = {
+ ai_chance = 0
+ name = "EVT_3450020_OPTIONB"
+ command = { type = dissent value = -2 }
+ command = { type = relation which = GER value = -40 }
+ }
+ }
+
+event = {
+ id = 3450007
+ country = USA
+ style = 2
+ picture = "Syndicalists" 
+
+ trigger = {
+ atwar = GER
+ OR = {
+ AND = {
+ control = { province = 131 data = SOV }
+ government = { type = communist country = SOV }
+ }
+ AND = {
+ control = { province = 131 data = FRA }
+ government = { type = communist country = FRA }
+ }
+ AND = {
+ control = { province = 131 data = RSI }
+ government = { type = communist country = RSI }
+ }
+ AND = {
+ control = { province = 131 data = ENG }
+ government = { type = communist country = ENG }
+ }
+ AND = {
+ control = { province = 131 data = GEO }
+ government = { type = communist country = GEO }
+ } #why not? :P 
+ }
+ NOT = {
+ atwar = yes
+ government = communist
+ }
+ }
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 90
+ deathdate = { day = 29 month = december year = 1970 }
+
+ name = "EVT_3450007_NAME"
+ desc = "EVT_3450007_DESC"
+
+ action_a = {
+ name = "EVT_3450007_OPTIONA"
+ command = { type = peacetime_ic_mod value = 40 }
+ command = { type = belligerence which = USA value = 1 }
+ command = { type = domestic which = interventionism value = 1 }
+ }
+ }
+
+ event = {
+ id = 3450008
+ country = USA
+ style = 2
+ picture = "Syndicalists" 
+
+ trigger = {
+ atwar = GER
+ OR = {
+ AND = {
+ control = { province = 163 data = SOV }
+ government = { type = communist country = SOV }
+ }
+ AND = {
+ control = { province = 163 data = FRA }
+ government = { type = communist country = FRA }
+ }
+ AND = {
+ control = { province = 163 data = RSI }
+ government = { type = communist country = RSI }
+ }
+ AND = {
+ control = { province = 163 data = ENG }
+ government = { type = communist country = ENG }
+ }
+ AND = {
+ control = { province = 163 data = GEO }
+ government = { type = communist country = GEO }
+ } #why not? :P 
+ }
+ NOT = {
+ atwar = yes
+ government = communist
+ }
+ }
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 90
+ deathdate = { day = 29 month = december year = 1970 }
+
+ name = "EVT_3450008_NAME"
+ desc = "EVT_3450008_DESC"
+
+ action_a = {
+ name = "EVT_3450008_OPTIONA"
+ command = { type = peacetime_ic_mod value = 60 }
+ command = { type = belligerence which = USA value = 1 }
+ command = { type = domestic which = interventionism value = 1 }
+ }
+ }
+
+
+ event = {
+ id = 3450022
+ country = USA
+ style = 2
+ picture = "Syndicalists" 
+
+ trigger = {
+ atwar = VIC
+ OR = {
+ AND = {
+ control = { province = 727 data = SOV }
+ government = { type = communist country = SOV }
+ }
+ AND = {
+ control = { province = 727 data = FRA }
+ government = { type = communist country = FRA }
+ }
+ AND = {
+ control = { province = 727 data = RSI }
+ government = { type = communist country = RSI }
+ }
+ AND = {
+ control = { province = 727 data = ENG }
+ government = { type = communist country = ENG }
+ }
+ AND = {
+ control = { province = 727 data = GEO }
+ government = { type = communist country = GEO }
+ } #why not? :P 
+ }
+ OR = {
+ AND = {
+ control = { province = 163 data = SOV }
+ government = { type = communist country = SOV }
+ }
+ AND = {
+ control = { province = 163 data = FRA }
+ government = { type = communist country = FRA }
+ }
+ AND = {
+ control = { province = 163 data = RSI }
+ government = { type = communist country = RSI }
+ }
+ AND = {
+ control = { province = 163 data = ENG }
+ government = { type = communist country = ENG }
+ }
+ AND = {
+ control = { province = 163 data = U14 }
+ government = { type = communist country = U14 }
+ }
+ AND = {
+ control = { province = 163 data = U31 }
+ government = { type = communist country = U31 }
+ }
+ AND = {
+ control = { province = 163 data = GEO }
+ government = { type = communist country = GEO }
+ } #why not? :P 
+ }
+ NOT = {
+ atwar = yes
+ government = communist
+ }
+ }
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 90
+ deathdate = { day = 29 month = december year = 1970 }
+
+ name = "EVT_3450022_NAME"
+ desc = "EVT_3450022_DESC"
+
+ action_a = {
+ name = "EVT_3450022_OPTIONA"
+ command = { type = peacetime_ic_mod value = 70 }
+ command = { type = belligerence which = USA value = 1 }
+ command = { type = domestic which = interventionism value = 1 }
+ }
+ }
+
+
+
+ event = {
+ id = 3450009
+ country = USA
+ style = 2
+ picture = "Americanempire" 
+
+ trigger = {
+ OR = {
+ war = { country = CAN country = SOV } 
+ war = { country = CAN country = FRA }
+ war = { country = CAN country = RSI }
+ war = { country = CAN country = ENG }
+ war = { country = CAN country = GEO }
+ }
+ lost_national = { country = CAN value = 10 }
+ OR = {
+ control = { province = 2132 data = SOV }
+ control = { province = 2132 data = FRA }
+ control = { province = 2132 data = RSI }
+ control = { province = 2132 data = ENG }
+ control = { province = 2132 data = GEO } 
+ }
+ OR = {
+ control = { province = 2134 data = SOV }
+ control = { province = 2134 data = FRA }
+ control = { province = 2134 data = RSI }
+ control = { province = 2134 data = ENG }
+ control = { province = 2134 data = GEO } 
+ }
+ OR = {
+ control = { province = 2117 data = SOV }
+ control = { province = 2117 data = FRA }
+ control = { province = 2117 data = RSI }
+ control = { province = 2117 data = ENG }
+ control = { province = 2117 data = GEO } 
+ }
+ NOT = { 
+ alliance = { country = CAN country = SOV }
+ alliance = { country = CAN country = FRA }
+ alliance = { country = CAN country = RSI }
+ alliance = { country = CAN country = ENG }
+ alliance = { country = CAN country = GEO }
+ atwar = USA
+ ispuppet = CAN
+ ispuppet = USA
+ exists = CSA
+ exists = TEX
+ government = communist
+ }
+ control = { province = 1809 data = USA }
+ control = { province = 1832 data = USA }
+ control = { province = 1955 data = USA }
+ }
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 40
+ deathdate = { day = 29 month = december year = 1970 }
+
+ name = "EVT_3450009_NAME"
+ desc = "EVT_3450009_DESC"
+
+ action_a = {
+ ai_chance = 100
+ name = "EVT_3450009_OPTIONA"
+ command = { trigger = { war = { country = CAN country = SOV }  OR = { control = { province = 2132 data = SOV } control = { province = 2134 data = SOV } control = { province = 2117 data = SOV } } } type = trigger which = 3450010 }
+ command = { trigger = { war = { country = CAN country = FRA }  OR = { control = { province = 2132 data = FRA } control = { province = 2134 data = FRA } control = { province = 2117 data = FRA } } } type = trigger which = 3450015 }
+ command = { trigger = { war = { country = CAN country = RSI }  OR = { control = { province = 2132 data = RSI } control = { province = 2134 data = RSI } control = { province = 2117 data = RSI } } } type = trigger which = 3450016 }
+ command = { trigger = { war = { country = CAN country = ENG }  OR = { control = { province = 2132 data = ENG } control = { province = 2134 data = ENG } control = { province = 2117 data = ENG } } } type = trigger which = 3450017 }
+ command = { trigger = { war = { country = CAN country = GEO }  OR = { control = { province = 2132 data = GEO } control = { province = 2134 data = GEO } control = { province = 2117 data = GEO } } } type = trigger which = 3450018 }
+ }
+
+ action_b = {
+ ai_chance = 0
+ name = "EVT_3450009_OPTIONB"
+ command = { type = dissent value = 20 }
+ }
+ }
+
+ event = {
+ id = 3450010
+ country = SOV
+ style = 2
+ picture = "American_Infantry" 
+
+ name = "EVT_3450010_NAME"
+ desc = "EVT_3450010_DESC"
+
+ action_a = {
+ ai_chance = 99
+ name = "EVT_3450010_OPTIONA"
+ command = { type = war which = USA }
+ command = { type = dissent value = 1 }
+ }
+
+ action_b = {
+ ai_chance = 1
+ name = "EVT_3450010_OPTIONB"
+ command = { type = peace which = CAN value = 0 }
+ command = { type = relation which = USA value = 50 }
+ command = { type = relation which = CAN value = 50 }
+ command = { type = dissent value = 3 }
+ }
+ }
+
+ event = {
+ id = 3450015
+ country = FRA
+ style = 2
+ picture = "American_Infantry" 
+
+ name = "EVT_3450015_NAME"
+ desc = "EVT_3450015_DESC"
+
+ action_a = {
+ ai_chance = 99
+ name = "EVT_3450015_OPTIONA"
+ command = { type = war which = USA }
+ command = { type = dissent value = 1 }
+ }
+
+ action_b = {
+ ai_chance = 1
+ name = "EVT_3450015_OPTIONB"
+ command = { type = peace which = CAN value = 0 }
+ command = { type = relation which = USA value = 50 }
+ command = { type = relation which = CAN value = 50 }
+ command = { type = dissent value = 3 }
+ }
+ }
+
+ event = {
+ id = 3450016
+ country = RSI
+ style = 2
+ picture = "American_Infantry" 
+
+ name = "EVT_3450016_NAME"
+ desc = "EVT_3450016_DESC"
+
+ action_a = {
+ ai_chance = 99
+ name = "EVT_3450016_OPTIONA"
+ command = { type = war which = USA }
+ command = { type = dissent value = 1 }
+ }
+
+ action_b = {
+ ai_chance = 1
+ name = "EVT_3450016_OPTIONB"
+ command = { type = peace which = CAN value = 0 }
+ command = { type = relation which = USA value = 50 }
+ command = { type = relation which = CAN value = 50 }
+ command = { type = dissent value = 3 }
+ }
+ }
+
+ event = {
+ id = 3450017
+ country = ENG
+ style = 2
+ picture = "American_Infantry" 
+
+ name = "EVT_3450017_NAME"
+ desc = "EVT_3450017_DESC"
+
+ action_a = {
+ ai_chance = 99
+ name = "EVT_3450017_OPTIONA"
+ command = { type = war which = USA }
+ command = { type = dissent value = 1 }
+ }
+
+ action_b = {
+ ai_chance = 1
+ name = "EVT_3450017_OPTIONB"
+ command = { type = peace which = CAN value = 0 }
+ command = { type = relation which = USA value = 50 }
+ command = { type = relation which = CAN value = 50 }
+ command = { type = dissent value = 3 }
+ }
+ }
+
+ event = {
+ id = 3450018
+ country = GEO
+ style = 2
+ picture = "American_Infantry" 
+
+ name = "EVT_3450018_NAME"
+ desc = "EVT_3450018_DESC"
+
+ action_a = {
+ ai_chance = 99
+ name = "EVT_3450018_OPTIONA"
+ command = { type = war which = USA }
+ command = { type = dissent value = 1 }
+ }
+
+ action_b = {
+ ai_chance = 1
+ name = "EVT_3450018_OPTIONB"
+ command = { type = peace which = CAN value = 0 }
+ command = { type = relation which = USA value = 50 }
+ command = { type = relation which = CAN value = 50 }
+ command = { type = dissent value = 3 }
+ }
+ }
+

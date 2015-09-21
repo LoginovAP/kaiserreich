@@ -1,0 +1,1592 @@
+########################################
+#### Norway
+########################################
+
+event = {
+id = 97000
+country = ENG
+picture = "foreign_policy"
+style = 2
+
+trigger = { 
+government = communist
+headofstate = 1204 # Mosley
+NOT = { ispuppet = NOR }
+NOT = {  
+war = { country = ENG country = NOR } 
+}
+}
+
+name = "EVT_97000_NAME"
+desc = "EVT_97000_DESC"
+
+date = { day = 10 month = january year = 1937 }
+offset = 10
+deathdate = { day = 1 month = february year = 1937 }
+
+action_a = {
+ai_chance = 99
+name = "EVT_97000_OPTIONA"
+command = { type = relation which = NOR value = 100 }
+command = { type = relation which = SWE value = -10 }
+command = { type = relation which = GER value = -25 }
+command = { type = domestic which = interventionism value = 2 }
+command = { type = setflag which = eng_inv_sca }
+command = { type = trigger which = 97004 }
+}
+action_b = {
+ai_chance = 1
+name = "EVT_97000_OPTIONB"
+command = { type = relation which = NOR value = -50 }
+command = { type = domestic which = free_market value = 1 }
+command = { type = setflag which = no_eng_inv_sca }
+}
+}
+
+event = {
+id = 97001
+country = ENG
+picture = "foreign_policy"
+style = 2
+
+trigger = { 
+government = communist
+headofstate = 1207 # Horner
+NOT = { ispuppet = NOR }
+NOT = {  
+war = { country = ENG country = NOR } 
+}
+}
+
+name = "EVT_97001_NAME"
+desc = "EVT_97001_DESC"
+
+date = { day = 10 month = january year = 1936 }
+offset = 10
+deathdate = { day = 1 month = february year = 1937 }
+
+action_a = {
+ai_chance = 90
+name = "EVT_97001_OPTIONA"
+command = { type = relation which = NOR value = 100 }
+command = { type = relation which = SWE value = -10 }
+command = { type = relation which = GER value = -25 }
+command = { type = domestic which = interventionism value = 2 }
+command = { type = setflag which = eng_inv_sca }
+command = { type = trigger which = 97004 }
+}
+action_b = {
+ai_chance = 10
+name = "EVT_97001_OPTIONB"
+command = { type = relation which = NOR value = -50 }
+command = { type = domestic which = free_market value = 1 }
+command = { type = setflag which = no_eng_inv_sca }
+}
+}
+
+event = {
+id = 97002
+country = ENG
+picture = "foreign_policy"
+style = 2
+
+trigger = { 
+government = communist
+
+OR = { headofstate = 1187 # Glais
+headofstate = 1213    }
+NOT = { ispuppet = NOR }
+NOT = {  
+war = { country = ENG country = NOR } 
+}
+}
+
+name = "EVT_97002_NAME"
+desc = "EVT_97002_DESC"
+
+date = { day = 10 month = january year = 1936 }
+offset = 10
+deathdate = { day = 1 month = february year = 1937 }
+
+action_a = {
+ai_chance = 70
+name = "EVT_97002_OPTIONA"
+command = { type = relation which = NOR value = 100 }
+command = { type = relation which = SWE value = -10 }
+command = { type = relation which = GER value = -25 }
+command = { type = domestic which = interventionism value = 2 }
+command = { type = setflag which = eng_inv_sca }
+command = { type = trigger which = 97004 }
+}
+action_b = {
+ai_chance = 30
+name = "EVT_97002_OPTIONB"
+command = { type = relation which = NOR value = -50 }
+command = { type = domestic which = free_market value = 1 }
+command = { type = setflag which = no_eng_inv_sca }
+}
+}
+
+event = {
+id = 97003
+country = ENG
+picture = "foreign_policy"
+style = 2
+
+trigger = { 
+government = communist
+headofstate = 1205 # Kenney
+NOT = { ispuppet = NOR }
+NOT = {  
+war = { country = ENG country = NOR } 
+}
+}
+
+name = "EVT_97003_NAME"
+desc = "EVT_97003_DESC"
+
+date = { day = 10 month = january year = 1936 }
+offset = 10
+deathdate = { day = 1 month = february year = 1937 }
+
+action_a = {
+ai_chance = 30
+name = "EVT_97003_OPTIONA"
+command = { type = relation which = NOR value = 100 }
+command = { type = relation which = SWE value = -10 }
+command = { type = relation which = GER value = -25 }
+command = { type = domestic which = interventionism value = 2 }
+command = { type = setflag which = eng_inv_sca }
+command = { type = trigger which = 97004 }
+}
+action_b = {
+ai_chance = 70
+name = "EVT_97003_OPTIONB"
+command = { type = relation which = NOR value = -50 }
+command = { type = domestic which = free_market value = 1 }
+command = { type = setflag which = no_eng_inv_sca }
+}
+}
+
+############## Response
+
+event = {
+id = 97004
+country = NOR
+picture = "finish_fortunes_of_war"
+style = 2
+
+name = "EVT_97004_NAME"
+desc = "EVT_97004_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_97004_OPTIONA"
+command = { type = relation which = ENG value = 100 }
+command = { type = relation which = SWE value = -75 }
+command = { type = relation which = GER value = -10 }
+command = { type = relation which = DEN value = -25 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = political_left value = 3 }
+command = { type = guarantee which = ENG where = NOR }
+command = { type = access which = ENG }
+}
+action_b = {
+ai_chance = 5
+name = "EVT_97004_OPTIONB"
+command = { type = relation which = ENG value = -50 }
+command = { type = relation which = SWE value = 25 }
+command = { type = relation which = GER value = 10 }
+command = { type = relation which = DEN value = 10 }
+command = { type = set_domestic which = interventionism value = -1 }
+command = { type = end_guarantee which = ENG where = NOR }
+command = { type = clrflag which = eng_inv_sca }
+}
+}
+
+############## Partnership
+
+event = {
+id = 97005
+country = NOR
+picture = "economic"
+style = 2
+
+date = { day = 1 month = march year = 1937 }
+
+trigger = { 
+flag = eng_inv_sca
+exists = ENG
+NOT = { war = { country = ENG country = NOR }
+}
+}
+
+name = "EVT_97005_NAME"
+desc = "EVT_97005_DESC"
+
+
+action_a = {
+name = "EVT_97005_OPTIONA"
+command = { type = construct which = ic where = 493 value = 2 }
+command = { type = relation which = ENG value = 30 }
+}
+}
+
+event = {
+id = 97006
+country = NOR
+picture = "finish_officers"
+style = 2
+
+trigger = {
+flag = eng_inv_sca
+exists = ENG
+NOT = { war = { country = ENG country = NOR }
+}
+}
+
+date = { day = 1 month = august year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1938 }
+
+name = "EVT_97006_NAME"
+desc = "EVT_97006_DESC"
+
+action_a = {
+name = "EVT_97006_OPTIONA"
+command = { type = add_leader_skill which = -1 value = 2 }
+command = { type = add_leader_skill which = -1 value = 2 }
+command = { type = add_leader_skill which = -1 value = 1 }
+command = { type = add_leader_skill which = -1 value = 1 }
+}
+}
+
+event = {
+id = 97007
+country = NOR
+picture = "red"
+style = 2
+
+trigger = { 
+flag = eng_inv_sca
+exists = ENG
+NOT = { 
+ispuppet = NOR
+war = { country = ENG country = NOR } 
+}
+}
+
+date = { day = 10 month = january year = 1937 }
+offset = 10
+deathdate = { day = 1 month = february year = 1938 }
+
+name = "EVT_97007_NAME"
+desc = "EVT_97007_DESC"
+
+action_a = {
+ai_chance = 60
+name = "EVT_97007_OPTIONA"
+	command = { type = relation which = ENG value = 35 }
+	command = { type = relation which = FRA value = 20 }
+	command = { type = sleepevent which = 97008 }
+	command = { type = domestic which = interventionism value = 1 }
+	command = { type = set_domestic which = political_left value = 8 }
+	command = { type = set_domestic which = democratic value = 4 }
+	command = { type = set_domestic which = free_market value = 2 }
+	command = { type = setflag which = lwr_nor }
+	command = { type = dissent value = 5 }
+	}
+
+action_b = {
+ai_chance = 30
+name = "EVT_97007_OPTIONB"
+	command = { type = relation which = ENG value = -200 }
+	command = { type = domestic which = defense_lobby value = -1 }
+	command = { type = domestic which = freedom value = -1 }
+	command = { type = domestic which = political_left value = -3 }
+	command = { type = domestic which = democratic value = -1 }
+	command = { type = dissent value = 12 }
+	command = { type = setflag which = nap_nor }
+        command = { type = clrflag which = eng_inv_sca }
+	command = { type = money value = -50 }
+	command = { type = supplies value = -200 }
+        command = { type = end_trades which = ENG where = NOR }
+        command = { type = end_access which = ENG where = NOR }
+        command = { type = end_non_aggression which = NOR where = ENG }
+        command = { type = end_non_aggression which = ENG where = NOR }
+        command = { type = end_guarantee which = ENG where = NOR }
+        command = { type = end_guarantee which = NOR where = ENG }
+        command = { type = end_trades which = ENG where = NOR }
+        command = { type = end_access which = NOR where = ENG }
+        command = { type = event which = 97008 where = NOR when = 4  }
+	}
+
+action_c = {
+ai_chance = 10
+name = "EVT_97007_OPTIONC"
+command = { type = relation which = ENG value = -50 }
+command = { type = set_domestic which = freedom value = -1 }
+command = { type = dissent value = 30 }
+command = { type = money value = -25 }
+command = { type = supplies value = -100 }
+}
+}
+
+event = {
+id = 97008
+country = NOR
+picture = "finnish_flag"
+style = 2
+
+
+name = "EVT_97008_NAME"
+desc = "EVT_97008_DESC"
+
+action_a = {
+ai_chance = 20
+name = "EVT_97008_OPTIONA"
+command = { type = relation which = ENG value = -200 }
+command = { type = relation which = FRA value = -200 }
+command = { type = relation which = RSI value = -25 }
+command = { type = relation which = SWE value = 50 }
+command = { type = relation which = GER value = 25 }
+command = { type = relation which = ROM value = 25 }
+command = { type = set_domestic which = interventionism value = 2 }
+command = { type = set_domestic which = defense_lobby value = 2 }
+command = { type = set_domestic which = political_left value = 2 }
+command = { type = set_domestic which = democratic value = 3 }
+command = { type = end_non_aggression which = NOR where = ENG }
+command = { type = end_non_aggression which = ENG where = NOR }
+command = { type = dissent value = 18 }
+command = { type = end_access which = ENG }
+}
+
+action_b = {
+ai_chance = 80
+name = "EVT_97008_OPTIONB"
+command = { type = relation which = ENG value = -70 }
+command = { type = relation which = FRA value = -20 }
+command = { type = relation which = SWE value = 20 }
+command = { type = relation which = GER value = 50 }
+command = { type = domestic which = defense_lobby value = -1 }
+command = { type = set_domestic which = political_left value = 5 }
+command = { type = set_domestic which = democratic value = 7 }
+command = { type = end_non_aggression which = NOR where = ENG }
+command = { type = end_non_aggression which = ENG where = NOR }
+command = { type = dissent value = 8 }
+command = { type = end_access which = ENG }
+}
+}
+
+event = {
+id = 97009
+random = no
+country = ENG
+
+trigger = { 
+flag = nap_nor
+headofstate = 1204 # Mosley
+}
+
+    name = "EVT_97009_NAME"
+    desc = "EVT_97009_DESC"
+    style = 2
+    picture = "FAUD1"
+
+date = { day = 10 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = march year = 1938 }
+
+      action_a = {
+ai_chance = 1
+name = "EVT_97009_OPTIONA"
+	command = { type = relation which = NOR value = 10 }
+	command = { type = relation which = SWE value = 10 }
+	command = { type = relation which = FIN value = 10 }
+	command = { type = relation which = DEN value = 10 }
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = clrflag which = eng_inv_sca }
+        command = { type = sleepevent which = 97010 }
+        command = { type = sleepevent which = 97011 }
+        command = { type = sleepevent which = 97012 }
+        command = { type = end_trades which = ENG where = NOR }
+        command = { type = end_access which = ENG where = NOR }
+	}
+
+action_b = {
+ai_chance = 99
+trigger = {
+NOT = { 
+ispuppet = ENG
+atwar = ENG
+}
+}
+name = "EVT_97009_OPTIONB"
+        command = { type = end_non_aggression which = NOR where = ENG }
+        command = { type = end_non_aggression which = ENG where = NOR }
+	command = { type = war which = NOR }
+	command = { type = relation which = FRA value = 75 }
+	command = { type = relation which = SWE value = -25 }
+	command = { type = relation which = GER value = -15 }
+	command = { type = domestic which = defense_lobby value = 3 }
+	command = { type = domestic which = interventionism value = 3 }
+        command = { type = sleepevent which = 97010 }
+        command = { type = sleepevent which = 97011 }
+        command = { type = sleepevent which = 97012 }
+        command = { type = end_trades which = ENG where = NOR }
+        command = { type = end_access which = ENG where = NOR }
+	}
+}
+
+event = {
+id = 97010
+random = no
+country = ENG
+
+trigger = { 
+flag = nap_nor
+OR = { headofstate = 1207 # Horner
+headofstate = 1213    }
+}
+
+    name = "EVT_97010_NAME"
+    desc = "EVT_97010_DESC"
+    style = 2
+    picture = "FAUD1"
+
+date = { day = 10 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = march year = 1938 }
+
+      action_a = {
+ai_chance = 30
+name = "EVT_97010_OPTIONA"
+	command = { type = relation which = NOR value = 10 }
+	command = { type = relation which = SWE value = 10 }
+	command = { type = relation which = FIN value = 10 }
+	command = { type = relation which = DEN value = 10 }
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = clrflag which = eng_inv_sca }
+        command = { type = sleepevent which = 97009 }
+        command = { type = sleepevent which = 97011 }
+        command = { type = sleepevent which = 97012 }
+        command = { type = end_trades which = ENG where = NOR }
+        command = { type = end_access which = ENG where = NOR }
+	}
+
+action_b = {
+ai_chance = 70
+trigger = {
+NOT = { 
+ispuppet = ENG
+atwar = ENG
+}
+}
+name = "EVT_97010_OPTIONB"
+        command = { type = end_non_aggression which = NOR where = ENG }
+        command = { type = end_non_aggression which = ENG where = NOR }
+	command = { type = war which = NOR }
+	command = { type = relation which = FRA value = 75 }
+	command = { type = relation which = SWE value = -25 }
+	command = { type = relation which = GER value = -15 }
+	command = { type = domestic which = defense_lobby value = 3 }
+	command = { type = domestic which = interventionism value = 3 }
+        command = { type = sleepevent which = 97009 }
+        command = { type = sleepevent which = 97011 }
+        command = { type = sleepevent which = 97012 }
+        command = { type = end_trades which = ENG where = NOR }
+        command = { type = end_access which = ENG where = NOR }
+	}
+}
+
+event = {
+id = 97011
+random = no
+country = ENG
+
+trigger = { 
+flag = nap_nor
+headofstate = 1187 # Glais
+}
+
+    name = "EVT_97011_NAME"
+    desc = "EVT_97011_DESC"
+    style = 2
+    picture = "FAUD1"
+
+date = { day = 10 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = march year = 1938 }
+
+      action_a = {
+ai_chance = 70
+name = "EVT_97011_OPTIONA"
+	command = { type = relation which = NOR value = 10 }
+	command = { type = relation which = SWE value = 10 }
+	command = { type = relation which = FIN value = 10 }
+	command = { type = relation which = DEN value = 10 }
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = clrflag which = eng_inv_sca }
+        command = { type = sleepevent which = 97009 }
+        command = { type = sleepevent which = 97010 }
+        command = { type = sleepevent which = 97012 }
+        command = { type = end_trades which = ENG where = NOR }
+        command = { type = end_access which = ENG where = NOR }
+	}
+
+action_b = {
+ai_chance = 30
+trigger = {
+NOT = { 
+ispuppet = ENG
+atwar = ENG
+}
+}
+name = "EVT_97011_OPTIONB"
+        command = { type = end_non_aggression which = NOR where = ENG }
+        command = { type = end_non_aggression which = ENG where = NOR }
+	command = { type = war which = NOR }
+	command = { type = relation which = FRA value = 75 }
+	command = { type = relation which = SWE value = -25 }
+	command = { type = relation which = GER value = -15 }
+	command = { type = domestic which = defense_lobby value = 3 }
+	command = { type = domestic which = interventionism value = 3 }
+        command = { type = sleepevent which = 97009 }
+        command = { type = sleepevent which = 97010 }
+        command = { type = sleepevent which = 97012 }
+        command = { type = end_trades which = ENG where = NOR }
+        command = { type = end_access which = ENG where = NOR }
+	}
+}
+
+event = {
+id = 97012
+random = no
+country = ENG
+
+trigger = { 
+flag = nap_nor
+headofstate = 1205 # Kenney
+
+
+}
+
+    name = "EVT_97012_NAME"
+    desc = "EVT_97012_DESC"
+    style = 2
+    picture = "FAUD1"
+
+date = { day = 10 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = march year = 1938 }
+
+      action_a = {
+ai_chance = 99
+name = "EVT_97012_OPTIONA"
+	command = { type = relation which = NOR value = 10 }
+	command = { type = relation which = SWE value = 10 }
+	command = { type = relation which = FIN value = 10 }
+	command = { type = relation which = DEN value = 10 }
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = clrflag which = eng_inv_sca }
+        command = { type = sleepevent which = 97009 }
+        command = { type = sleepevent which = 97010 }
+        command = { type = sleepevent which = 97011 }
+        command = { type = end_trades which = ENG where = NOR }
+        command = { type = end_access which = ENG where = NOR }
+	}
+
+action_b = {
+ai_chance = 1
+trigger = {
+NOT = { 
+ispuppet = ENG
+atwar = ENG
+}
+}
+name = "EVT_97012_OPTIONB"
+        command = { type = end_non_aggression which = NOR where = ENG }
+        command = { type = end_non_aggression which = ENG where = NOR }
+	command = { type = war which = NOR }
+	command = { type = relation which = FRA value = 75 }
+	command = { type = relation which = SWE value = -25 }
+	command = { type = relation which = GER value = -15 }
+	command = { type = domestic which = defense_lobby value = 3 }
+	command = { type = domestic which = interventionism value = 3 }
+        command = { type = sleepevent which = 97009 }
+        command = { type = sleepevent which = 97010 }
+        command = { type = sleepevent which = 97011 }
+        command = { type = end_trades which = ENG where = NOR }
+        command = { type = end_access which = ENG where = NOR }
+	}
+}
+
+
+
+
+event = {
+id = 97013
+random = no
+country = NOR
+trigger = { 
+flag = syn_swe
+government = communist
+exists = SWE
+NOT = {
+ispuppet = NOR
+ispuppet = SWE
+war = { country = SWE country = NOR } 
+}
+}
+    
+name = "EVT_97013_NAME"
+desc = "EVT_97013_DESC"
+
+
+date = { day = 10 month = february year = 1936 }
+offset = 10
+deathdate = { day = 1 month = march year = 1960 }
+
+
+action_a = {
+ai_chance = 45
+name = "EVT_97013_OPTIONA"
+command = { type = relation which = ENG value = 10 }
+command = { type = relation which = SWE value = 100 }
+command = { type = relation which = GER value = -50 }
+command = { type = set_domestic which = interventionism value = 1 }
+command = { type = alliance which = SWE }
+command = { type = dissent value = -1 }
+
+      }
+
+      action_b = {
+ai_chance = 0
+name = "EVT_97013_OPTIONB"
+command = { type = relation which = SWE value = 75 }
+command = { type = supplies value = -100 }
+      }
+
+      action_c = {
+ai_chance = 50
+name = "EVT_97013_OPTIONC"
+command = { type = inherit which = SWE value = 1 }
+command = { type = set_domestic which = interventionism value = 2 }
+command = { type = set_domestic which = defense_lobby value = -1 }
+command = { type = dissent value = 15 } # People resisting integration
+command = { type = supplies value = -500 }
+command = { type = money value = -50 }
+command = { type = addcore which = 2152 }
+command = { type = addcore which = 2155 }
+command = { type = addcore which = 2154 }
+command = { type = addcore which = 2156 }
+command = { type = addcore which = 526 }
+command = { type = addcore which = 2157 }
+command = { type = addcore which = 2153 }
+command = { type = addcore which = 2161 }
+command = { type = addcore which = 2160 }
+command = { type = addcore which = 2158 }
+command = { type = addcore which = 2159 }
+command = { type = addcore which = 2165 }
+command = { type = addcore which = 2162 }
+command = { type = addcore which = 2164 }
+command = { type = addcore which = 2163 }
+command = { type = addcore which = 2167 }
+command = { type = addcore which = 2166 }
+command = { type = country which =  SCA }
+command = { type = add_division value = infantry when = 9 where = artillery }
+command = { type = ai which = "kaiserreich/Scandinavia.ai" }
+command = { trigger = { government = fascist } type = headofstate which = 514032 } # Gustav V autocratic
+command = { trigger = { government = democratic } type = headofstate which = 514031 } # Gustav V democrat
+command = { trigger = { government = communist } type = headofstate which = 514033 }
+      }
+}
+
+
+
+event = {
+id = 97014
+random = no
+country = NOR
+picture = "bolshevik_troops"
+style = 2
+
+name = "EVT_97014_NAME"
+desc = "EVT_97014_DESC"
+
+action_a = {
+name = "EVT_97014_OPTIONA"
+command = { }
+}
+}
+
+event = {
+id = 97015
+random = no
+country = FIN
+picture = "finish_soldiers"
+style = 2
+
+trigger = {
+atwar = no
+war = { country = NOR country = SWE }
+NOT = { ispuppet = FIN
+puppet = { country = SWE country = FIN  }
+alliance = { country = FIN country = SWE }
+alliance = { country = FIN country = NOR }
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 1 month = february year = 1960 }
+
+name = "EVT_97015_NAME"
+desc = "EVT_97015_DESC"
+
+action_a = {
+ai_chance = 5
+name = "EVT_97015_OPTIONA"
+trigger = {
+NOT = {
+alliance = { country = NOR country = ENG }
+alliance = { country = NOR country = FRA }
+}
+}
+command = { type = end_non_aggression which = FIN where = SWE }
+command = { type = end_non_aggression which = FIN where = NOR }
+command = { type = domestic which = interventionism value = 3 }
+command = { type = domestic which = defense_lobby value = 3 }
+command = { type = relation which = ENG value = -50 }
+command = { type = relation which = SWE value = -150 }
+command = { type = relation which = NOR value = -150 }
+command = { type = relation which = GER value = -25 }
+command = { type = relation which = DEN value = -50 }
+command = { type = relation which = RUS value = -50 }
+command = { type = war which = SWE }
+command = { type = war which = NOR }
+command = { type = addcore which = 495 }
+command = { type = addcore which = 496 }
+command = { type = addcore which = 497 }
+command = { type = addcore which = 494 }
+command = { type = addcore which = 2166 }
+command = { type = addcore which = 2167 }
+command = { type = addcore which = 526 }
+command = { type = addcore which = 2163 }
+command = { type = addcore which = 2165 }
+command = { type = dissent value = 5 }
+}
+action_b = {
+ai_chance = 20
+name = "EVT_97015_OPTIONB"
+trigger = {
+NOT = {
+alliance = { country = NOR country = ENG }
+alliance = { country = NOR country = FRA }
+}
+}
+command = { type = end_non_aggression which = FIN where = SWE }
+command = { type = end_non_aggression which = FIN where = NOR }
+command = { type = domestic which = interventionism value = 2 }
+command = { type = domestic which = defense_lobby value = 2 }
+command = { type = relation which = ENG value = -75 }
+command = { type = relation which = SWE value = 50 }
+command = { type = relation which = NOR value = -170 }
+command = { type = relation which = GER value = -30 }
+command = { type = relation which = RUS value = -30 }
+command = { type = relation which = DEN value = -50 }
+command = { type = war which = NOR }
+command = { type = addcore which = 495 }
+command = { type = addcore which = 496 }
+command = { type = addcore which = 497 }
+command = { type = addcore which = 494 }
+command = { type = dissent value = 1 }
+}
+action_c = {
+ai_chance = 30
+name = "EVT_97015_OPTIONC"
+command = { type = end_non_aggression which = FIN where = SWE }
+command = { type = end_non_aggression which = FIN where = NOR }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = relation which = ENG value = -25 }
+command = { type = relation which = NOR value = 50 }
+command = { type = relation which = SWE value = -170 }
+command = { type = relation which = GER value = -40 }
+command = { type = relation which = RUS value = -40 }
+command = { type = relation which = DEN value = -50 }
+command = { type = addcore which = 2166 }
+command = { type = addcore which = 2167 }
+command = { type = addcore which = 526 }
+command = { type = addcore which = 2163 }
+command = { type = addcore which = 2165 }
+command = { type = war which = SWE }
+command = { type = dissent value = 1 }
+}
+action_d = {
+ai_chance = 35
+name = "EVT_97015_OPTIOND"
+command = { type = relation which = ENG value = 25 }
+command = { type = relation which = NOR value = 50 }
+command = { type = relation which = SWE value = 50 }
+command = { type = relation which = GER value = 10 }
+command = { type = relation which = RUS value = 10 }
+command = { type = relation which = DEN value = 25 }
+}
+}
+
+event = {
+    id = 97016
+    random = no
+    country = NOR
+    style = 2
+
+    name = "EVT_97016_NAME"
+    desc = "EVT_97016_DESC"
+    picture = "GeorgeV_Funeral"
+
+    date = { year = 1937 month = september day = 2 }
+    
+	action_a = {
+		name = "EVT_97016_OPTIONA"
+		command = { type = sleepminister which = 14009 }
+		command = { type = sleepminister which = 14010 }
+		command = { type = sleepleader which = 9647 }
+	}
+}
+
+event = {
+     id = 97030
+     country = NOR
+     random = no
+     style = 2
+
+     trigger = { 
+     OR = {
+     government = democratic
+     ideology = paternal_autocrat 
+     }
+     NOT = { 
+     ispuppet = NOR 
+     } 
+     }
+
+     name = "EVT_97030_NAME"
+     desc = "EVT_97030_DESC"
+     picture = "election"
+
+     date = { day = 19 month = october year = 1936 }
+     offset = 15
+     deathdate = { day = 19 month = november year = 1936 }
+
+     action_a = {
+         ai_chance = 40
+         name = "EVT_97030_OPTIONA"
+         command = { type = headofstate which = 14001 } #H.M. Haakon VII
+         command = { type = headofgovernment which = 14002 } #Johan Nygaardsvold
+         command = { type = foreignminister which = 14003 } #Halvdan Koht
+         command = { type = armamentminister which = 14004 } #Adolf Indrebo
+         command = { type = ministerofsecurity which = 14005 } #Trygve H. Lie
+         command = { type = ministerofintelligence which = 14006 } #Alfred Roscher-Lund
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = set_domestic which = political_left value = 10 }
+     }
+     action_b = {
+         ai_chance = 25
+         name = "EVT_97030_OPTIONB"
+         command = { type = headofstate which = 14032 } #H.M. Haakon VII
+         command = { type = headofgovernment which = 14036 } #C.J. Hambro
+         command = { type = foreignminister which = 14046 } #C.J. Hambro
+         command = { type = armamentminister which = 14057 } #Benjamin Vogt
+         command = { type = ministerofsecurity which = 14069 } #Erling Sandberg
+         command = { type = ministerofintelligence which = 14011 } #Erling Sandberg
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 4 }
+     }
+     action_c = {
+         ai_chance = 20
+         name = "EVT_97030_OPTIONC"
+         command = { type = headofstate which = 14032 } #H.M. Haakon VII
+         command = { type = headofgovernment which = 14012 } #Jacob Worm-Müller
+         command = { type = foreignminister which = 14043 } #J. L. Mowinckel
+         command = { type = armamentminister which = 14055 } #Frederic Beichmann
+         command = { type = ministerofsecurity which = 14068 } #Arne Sunde
+         command = { type = ministerofintelligence which = 14073 } #Gunnar Jahn
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 7 }
+     }
+     action_d = {
+         name = "EVT_97030_OPTIOND"
+         ai_chance = 15
+         command = { type = headofstate which = 14032 } #H.M. Haakon VII
+         command = { type = headofgovernment which = 14013 } #Jens Hundseid
+         command = { type = foreignminister which = 14045 } #Erik Andreas Colban
+         command = { type = armamentminister which = 14056 } #Johan H. Andresen
+         command = { type = ministerofsecurity which = 14014 } #Bertram Dybwad Brochmann
+         command = { type = ministerofintelligence which = 14071 } #Bertram Dybwad Brochmann
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 5 }
+     }
+ }
+
+ event = {
+     id = 97031
+     country = NOR
+     random = no
+     style = 2
+
+     trigger = { 
+     OR = {
+     government = democratic
+     ideology = paternal_autocrat 
+     }
+     NOT = { 
+     ispuppet = NOR 
+     } 
+     }
+
+     name = "EVT_97031_NAME"
+     desc = "EVT_97031_DESC"
+     picture = "election"
+
+     date = { day = 16 month = october year = 1939 }
+     offset = 15
+     deathdate = { day = 16 month = november year = 1939 }
+
+     action_a = {
+         ai_chance = 40
+         name = "EVT_97031_OPTIONA"
+         command = { type = headofstate which = 14001 } #H.M. Haakon VII
+         command = { type = headofgovernment which = 14002 } #Johan Nygaardsvold
+         command = { type = foreignminister which = 14003 } #Halvdan Koht
+         command = { type = armamentminister which = 14004 } #Adolf Indrebo
+         command = { type = ministerofsecurity which = 14005 } #Trygve H. Lie
+         command = { type = ministerofintelligence which = 14006 } #Alfred Roscher-Lund
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = set_domestic which = political_left value = 10 }
+     }
+     action_b = {
+         ai_chance = 25
+         name = "EVT_97031_OPTIONB"
+         command = { type = headofstate which = 14032 } #H.M. Haakon VII
+         command = { type = headofgovernment which = 14036 } #C.J. Hambro
+         command = { type = foreignminister which = 14046 } #C.J. Hambro
+         command = { type = armamentminister which = 14057 } #Benjamin Vogt
+         command = { type = ministerofsecurity which = 14069 } #Erling Sandberg
+         command = { type = ministerofintelligence which = 14011 } #Erling Sandberg
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 4 }
+     }
+     action_c = {
+         ai_chance = 20
+         name = "EVT_97031_OPTIONC"
+         command = { type = headofstate which = 14032 } #H.M. Haakon VII
+         command = { type = headofgovernment which = 14012 } #Jacob Worm-Müller
+         command = { type = foreignminister which = 14043 } #J. L. Mowinckel
+         command = { type = armamentminister which = 14055 } #Frederic Beichmann
+         command = { type = ministerofsecurity which = 14068 } #Arne Sunde
+         command = { type = ministerofintelligence which = 14073 } #Gunnar Jahn
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 7 }
+     }
+     action_d = {
+         name = "EVT_97031_OPTIOND"
+         ai_chance = 15
+         command = { type = headofstate which = 14032 } #H.M. Haakon VII
+         command = { type = headofgovernment which = 14013 } #Jens Hundseid
+         command = { type = foreignminister which = 14045 } #Erik Andreas Colban
+         command = { type = armamentminister which = 14056 } #Johan H. Andresen
+         command = { type = ministerofsecurity which = 14014 } #Bertram Dybwad Brochmann
+         command = { type = ministerofintelligence which = 14071 } #Bertram Dybwad Brochmann
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 5 }
+     }
+ }
+
+ event = {
+     id = 97032
+     country = NOR
+     random = no
+     style = 2
+
+     trigger = { 
+     OR = {
+     government = democratic
+     ideology = paternal_autocrat 
+     }
+     NOT = { 
+     ispuppet = NOR 
+     } 
+     }
+
+     name = "EVT_97032_NAME"
+     desc = "EVT_97032_DESC"
+     picture = "election"
+
+     date = { day = 19 month = october year = 1942 }
+     offset = 15
+     deathdate = { day = 19 month = november year = 1942 }
+
+     action_a = {
+         ai_chance = 40
+         name = "EVT_97032_OPTIONA"
+         command = { type = headofstate which = 14001 } #H.M. Haakon VII
+         command = { type = headofgovernment which = 14002 } #Johan Nygaardsvold
+         command = { type = foreignminister which = 14003 } #Halvdan Koht
+         command = { type = armamentminister which = 14004 } #Adolf Indrebo
+         command = { type = ministerofsecurity which = 14005 } #Trygve H. Lie
+         command = { type = ministerofintelligence which = 14006 } #Alfred Roscher-Lund
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = set_domestic which = political_left value = 10 }
+     }
+     action_b = {
+         ai_chance = 25
+         name = "EVT_97032_OPTIONB"
+         command = { type = headofstate which = 14032 } #H.M. Haakon VII
+         command = { type = headofgovernment which = 14036 } #C.J. Hambro
+         command = { type = foreignminister which = 14046 } #C.J. Hambro
+         command = { type = armamentminister which = 14057 } #Benjamin Vogt
+         command = { type = ministerofsecurity which = 14069 } #Erling Sandberg
+         command = { type = ministerofintelligence which = 14011 } #Erling Sandberg
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 4 }
+     }
+     action_c = {
+         ai_chance = 20
+         name = "EVT_97032_OPTIONC"
+         command = { type = headofstate which = 14032 } #H.M. Haakon VII
+         command = { type = headofgovernment which = 14012 } #Jacob Worm-Müller
+         command = { type = foreignminister which = 14043 } #J. L. Mowinckel
+         command = { type = armamentminister which = 14055 } #Frederic Beichmann
+         command = { type = ministerofsecurity which = 14068 } #Arne Sunde
+         command = { type = ministerofintelligence which = 14073 } #Gunnar Jahn
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 7 }
+     }
+     action_d = {
+         name = "EVT_97032_OPTIOND"
+         ai_chance = 15
+         command = { type = headofstate which = 14032 } #H.M. Haakon VII
+         command = { type = headofgovernment which = 14013 } #Jens Hundseid
+         command = { type = foreignminister which = 14045 } #Erik Andreas Colban
+         command = { type = armamentminister which = 14056 } #Johan H. Andresen
+         command = { type = ministerofsecurity which = 14014 } #Bertram Dybwad Brochmann
+         command = { type = ministerofintelligence which = 14071 } #Bertram Dybwad Brochmann
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 5 }
+     }
+ }
+
+ event = {
+     id = 97033
+     country = NOR
+     random = no
+     style = 2
+
+     trigger = { 
+     OR = {
+     government = democratic
+     ideology = paternal_autocrat 
+     }
+     NOT = { 
+     ispuppet = NOR 
+     } 
+     }
+
+     name = "EVT_97033_NAME"
+     desc = "EVT_97033_DESC"
+     picture = "election"
+
+     date = { day = 15 month = october year = 1945 }
+     offset = 15
+     deathdate = { day = 15 month = november year = 1945 }
+
+     action_a = {
+         ai_chance = 40
+         name = "EVT_97033_OPTIONA"
+         command = { type = headofstate which = 14001 } #H.M. Haakon VII
+         command = { type = headofgovernment which = 14015 } #Oscar Torp
+         command = { type = foreignminister which = 14003 } #Halvdan Koht
+         command = { type = armamentminister which = 14004 } #Adolf Indrebo
+         command = { type = ministerofsecurity which = 14005 } #Trygve H. Lie
+         command = { type = ministerofintelligence which = 14006 } #Alfred Roscher-Lund
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = set_domestic which = political_left value = 10 }
+     }
+
+     action_b = {
+         ai_chance = 25
+         name = "EVT_97033_OPTIONB"
+         command = { type = headofstate which = 14032 } #H.M. Haakon VII
+         command = { type = headofgovernment which = 14036 } #C.J. Hambro
+         command = { type = foreignminister which = 14046 } #C.J. Hambro
+         command = { type = armamentminister which = 14057 } #Benjamin Vogt
+         command = { type = ministerofsecurity which = 14069 } #Erling Sandberg
+         command = { type = ministerofintelligence which = 14011 } #Erling Sandberg
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 4 }
+     }
+     action_c = {
+         ai_chance = 20
+         name = "EVT_97033_OPTIONC"
+         command = { type = headofstate which = 14032 } #H.M. Haakon VII
+         command = { type = headofgovernment which = 14012 } #Jacob Worm-Müller
+         command = { type = foreignminister which = 14043 } #J. L. Mowinckel
+         command = { type = armamentminister which = 14055 } #Frederic Beichmann
+         command = { type = ministerofsecurity which = 14068 } #Arne Sunde
+         command = { type = ministerofintelligence which = 14073 } #Gunnar Jahn
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 7 }
+     }
+
+     action_d = {
+         name = "EVT_97033_OPTIOND"
+         ai_chance = 10
+         command = { type = headofstate which = 14014 } #H.M. Haakon VII
+         command = { type = headofgovernment which = 14016 } #Per Borten
+         command = { type = foreignminister which = 14045 } #Erik Andreas Colban
+         command = { type = armamentminister which = 14056 } #Johan H. Andresen
+         command = { type = ministerofsecurity which = 14014 } #Bertram Dybwad Brochmann
+         command = { type = ministerofintelligence which = 14071 } #Bertram Dybwad Brochmann
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 5 }
+     }
+ }
+
+ event = {
+     id = 97034
+     country = NOR
+     random = no
+     style = 2
+
+     trigger = { 
+     OR = {
+     government = democratic
+     ideology = paternal_autocrat 
+     }
+     NOT = { 
+     ispuppet = NOR 
+     } 
+     }
+
+     name = "EVT_97034_NAME"
+     desc = "EVT_97034_DESC"
+     picture = "election"
+
+     date = { day = 11 month = october year = 1948 }
+     offset = 15
+     deathdate = { day = 11 month = november year = 1948 }
+
+     action_a = {
+         ai_chance = 40
+         name = "EVT_97034_OPTIONA"
+         command = { type = headofstate which = 14001 } #H.M. Haakon VII
+         command = { type = headofgovernment which = 14015 } #Oscar Torp
+         command = { type = foreignminister which = 14003 } #Halvdan Koht
+         command = { type = armamentminister which = 14004 } #Adolf Indrebo
+         command = { type = ministerofsecurity which = 14005 } #Trygve H. Lie
+         command = { type = ministerofintelligence which = 14006 } #Alfred Roscher-Lund
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = set_domestic which = political_left value = 10 }
+     }
+
+     action_b = {
+         ai_chance = 25
+         name = "EVT_97034_OPTIONB"
+         command = { type = headofstate which = 14032 } #H.M. Haakon VII
+         command = { type = headofgovernment which = 14036 } #C.J. Hambro
+         command = { type = foreignminister which = 14046 } #C.J. Hambro
+         command = { type = armamentminister which = 14057 } #Benjamin Vogt
+         command = { type = ministerofsecurity which = 14069 } #Erling Sandberg
+         command = { type = ministerofintelligence which = 14011 } #Erling Sandberg
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 4 }
+     }
+     action_c = {
+         ai_chance = 20
+         name = "EVT_97034_OPTIONC"
+         command = { type = headofstate which = 14032 } #H.M. Haakon VII
+         command = { type = headofgovernment which = 14012 } #Jacob Worm-Müller
+         command = { type = foreignminister which = 14043 } #J. L. Mowinckel
+         command = { type = armamentminister which = 14055 } #Frederic Beichmann
+         command = { type = ministerofsecurity which = 14068 } #Arne Sunde
+         command = { type = ministerofintelligence which = 14073 } #Gunnar Jahn
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 7 }
+     }
+
+     action_d = {
+         name = "EVT_97034_OPTIOND"
+         ai_chance = 10
+         command = { type = headofstate which = 14014 } #H.M. Haakon VII
+         command = { type = headofgovernment which = 14016 } #Per Borten
+         command = { type = foreignminister which = 14045 } #Erik Andreas Colban
+         command = { type = armamentminister which = 14056 } #Johan H. Andresen
+         command = { type = ministerofsecurity which = 14014 } #Bertram Dybwad Brochmann
+         command = { type = ministerofintelligence which = 14071 } #Bertram Dybwad Brochmann
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 5 }
+     }
+ }
+
+ event = {
+     id = 97035
+     country = NOR
+     random = no
+     style = 2
+
+     trigger = { 
+     OR = {
+     government = democratic
+     ideology = paternal_autocrat 
+     }
+     NOT = { 
+     ispuppet = NOR 
+     } 
+     }
+
+     name = "EVT_97035_NAME"
+     desc = "EVT_97035_DESC"
+     picture = "election"
+
+     date = { day = 20 month = october year = 1952 }
+     offset = 15
+     deathdate = { day = 20 month = november year = 1952 }
+
+     action_a = {
+         ai_chance = 45
+         name = "EVT_97035_OPTIONA"
+         command = { type = headofstate which = 14001 } #H.M. Haakon VII
+         command = { type = headofgovernment which = 14037 } #Einar Gerhardsen
+         command = { type = foreignminister which = 14003 } #Halvdan Koht
+         command = { type = armamentminister which = 14004 } #Adolf Indrebo
+         command = { type = ministerofsecurity which = 14005 } #Trygve H. Lie
+         command = { type = ministerofintelligence which = 14006 } #Alfred Roscher-Lund
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = set_domestic which = political_left value = 10 }
+     }
+
+     action_b = {
+         ai_chance = 25
+         name = "EVT_97035_OPTIONB"
+         command = { type = headofstate which = 14032 } #H.M. Haakon VII
+         command = { type = headofgovernment which = 14036 } #C.J. Hambro
+         command = { type = foreignminister which = 14046 } #C.J. Hambro
+         command = { type = armamentminister which = 14057 } #Benjamin Vogt
+         command = { type = ministerofsecurity which = 14069 } #Erling Sandberg
+         command = { type = ministerofintelligence which = 14011 } #Erling Sandberg
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 4 }
+     }
+     action_c = {
+         ai_chance = 20
+         name = "EVT_97035_OPTIONC"
+         command = { type = headofstate which = 14032 } #H.M. Haakon VII
+         command = { type = headofgovernment which = 14012 } #Jacob Worm-Müller
+         command = { type = foreignminister which = 14043 } #J. L. Mowinckel
+         command = { type = armamentminister which = 14055 } #Frederic Beichmann
+         command = { type = ministerofsecurity which = 14068 } #Arne Sunde
+         command = { type = ministerofintelligence which = 14073 } #Gunnar Jahn
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 7 }
+     }
+
+     action_d = {
+         name = "EVT_97035_OPTIOND"
+         ai_chance = 10
+         command = { type = headofstate which = 14014 } #H.M. Haakon VII
+         command = { type = headofgovernment which = 14016 } #Per Borten
+         command = { type = foreignminister which = 14045 } #Erik Andreas Colban
+         command = { type = armamentminister which = 14056 } #Johan H. Andresen
+         command = { type = ministerofsecurity which = 14014 } #Bertram Dybwad Brochmann
+         command = { type = ministerofintelligence which = 14071 } #Bertram Dybwad Brochmann
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 5 }
+     }
+ }
+
+ event = {
+     id = 97036
+     country = NOR
+     random = no
+     style = 2
+
+     trigger = { 
+     OR = {
+     government = democratic
+     ideology = paternal_autocrat 
+     }
+     NOT = { 
+     ispuppet = NOR 
+     } 
+     }
+
+     name = "EVT_97036_NAME"
+     desc = "EVT_97036_DESC"
+     picture = "election"
+
+     date = { day = 19 month = october year = 1956 }
+     offset = 15
+     deathdate = { day = 19 month = november year = 1956 }
+
+     action_a = {
+         ai_chance = 45
+         name = "EVT_97036_OPTIONA"
+         command = { type = headofstate which = 14001 } #H.M. Haakon VII
+         command = { type = headofgovernment which = 14037 } #Einar Gerhardsen
+         command = { type = foreignminister which = 14003 } #Halvdan Koht
+         command = { type = armamentminister which = 14004 } #Adolf Indrebo
+         command = { type = ministerofsecurity which = 14005 } #Trygve H. Lie
+         command = { type = ministerofintelligence which = 14006 } #Alfred Roscher-Lund
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = set_domestic which = political_left value = 10 }
+     }
+
+     action_b = {
+         ai_chance = 25
+         name = "EVT_97036_OPTIONB"
+         command = { type = headofstate which = 14032 } #H.M. Haakon VII
+         command = { type = headofgovernment which = 14036 } #C.J. Hambro
+         command = { type = foreignminister which = 14046 } #C.J. Hambro
+         command = { type = armamentminister which = 14057 } #Benjamin Vogt
+         command = { type = ministerofsecurity which = 14069 } #Erling Sandberg
+         command = { type = ministerofintelligence which = 14011 } #Erling Sandberg
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 4 }
+     }
+     action_c = {
+         ai_chance = 20
+         name = "EVT_97036_OPTIONC"
+         command = { type = headofstate which = 14032 } #H.M. Haakon VII
+         command = { type = headofgovernment which = 14012 } #Jacob Worm-Müller
+         command = { type = foreignminister which = 14043 } #J. L. Mowinckel
+         command = { type = armamentminister which = 14055 } #Frederic Beichmann
+         command = { type = ministerofsecurity which = 14068 } #Arne Sunde
+         command = { type = ministerofintelligence which = 14073 } #Gunnar Jahn
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 7 }
+     }
+
+     action_d = {
+         name = "EVT_97036_OPTIOND"
+         ai_chance = 10
+         command = { type = headofstate which = 14014 } #H.M. Haakon VII
+         command = { type = headofgovernment which = 14016 } #Per Borten
+         command = { type = foreignminister which = 14045 } #Erik Andreas Colban
+         command = { type = armamentminister which = 14056 } #Johan H. Andresen
+         command = { type = ministerofsecurity which = 14014 } #Bertram Dybwad Brochmann
+         command = { type = ministerofintelligence which = 14071 } #Bertram Dybwad Brochmann
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 5 }
+     }
+ }
+
+ event = {
+     id = 97037
+     country = NOR
+     random = no
+     style = 2
+
+     trigger = { 
+     OR = {
+     government = democratic
+     ideology = paternal_autocrat 
+     }
+     NOT = { 
+     ispuppet = NOR 
+     } 
+     }
+
+     name = "EVT_97037_NAME"
+     desc = "EVT_97037_DESC"
+     picture = "election"
+
+     date = { day = 19 month = october year = 1960 }
+     offset = 15
+     deathdate = { day = 19 month = november year = 1960 }
+
+     action_a = {
+         ai_chance = 50
+         name = "EVT_97037_OPTIONA"
+         command = { type = headofstate which = 14017 } #H.M. Olav V
+         command = { type = headofgovernment which = 14037 } #Einar Gerhardsen
+         command = { type = foreignminister which = 14003 } #Halvdan Koht
+         command = { type = armamentminister which = 14004 } #Adolf Indrebo
+         command = { type = ministerofsecurity which = 14005 } #Trygve H. Lie
+         command = { type = ministerofintelligence which = 14006 } #Alfred Roscher-Lund
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = set_domestic which = political_left value = 10 }
+     }
+
+     action_b = {
+         ai_chance = 30
+         name = "EVT_97037_OPTIONB"
+         command = { type = headofstate which = 14018 } #H.M. Olav V
+         command = { type = headofgovernment which = 14036 } #C.J. Hambro
+         command = { type = foreignminister which = 14046 } #C.J. Hambro
+         command = { type = armamentminister which = 14057 } #Benjamin Vogt
+         command = { type = ministerofsecurity which = 14069 } #Erling Sandberg
+         command = { type = ministerofintelligence which = 14011 } #Erling Sandberg
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 4 }
+     }
+
+     action_c = {
+         ai_chance = 10
+         name = "EVT_97037_OPTIONC"
+         command = { type = headofstate which = 14018 } #H.M. Olav V
+         command = { type = headofgovernment which = 14012 } #Jacob Worm-Müller
+         command = { type = foreignminister which = 14043 } #J. L. Mowinckel
+         command = { type = armamentminister which = 14055 } #Frederic Beichmann
+         command = { type = ministerofsecurity which = 14068 } #Arne Sunde
+         command = { type = ministerofintelligence which = 14073 } #Gunnar Jahn
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 7 }
+     }
+
+     action_d = {
+         name = "EVT_97037_OPTIOND"
+         ai_chance = 10
+         command = { type = headofstate which = 14018 } #H.M. Olav V
+         command = { type = headofgovernment which = 14016 } #Per Borten
+         command = { type = foreignminister which = 14045 } #Erik Andreas Colban
+         command = { type = armamentminister which = 14056 } #Johan H. Andresen
+         command = { type = ministerofsecurity which = 14014 } #Bertram Dybwad Brochmann
+         command = { type = ministerofintelligence which = 14071 } #Bertram Dybwad Brochmann
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 5 }
+     }
+ }
+
+
+event = {
+id = 97038
+country = NOR
+style = 2
+picture = "diplomatic_campaign"
+
+trigger = {
+government = communist
+NOT = {
+alliance = { country = FRA country = NOR }
+alliance = { country = ENG country = NOR }
+alliance = { country = SOV country = NOR }
+atwar = NOR
+ispuppet = NOR
+}
+control = { province = 55 data = FRA }
+exists = FRA
+participant = { country = FRA value = 3 } #Commune of France is part of Syndicalist Internationale
+}
+
+date = { day = 7 month = january year = 1936 }
+offset = 30
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_97038_NAME"
+desc = "EVT_97038_DESC"
+
+        action_a = {
+		ai_chance = 95
+		name = "EVT_97038_OPTIONA"
+		command = { type = trigger which = 97039 }
+		command = { type = domestic which = defense_lobby value = 1 }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = dissent value = 4 }
+	}
+	action_b = {
+		ai_chance = 5
+		name = "EVT_97038_OPTIONB"
+		command = { type = dissent value = -5 }
+		command = { type = domestic which = defense_lobby value = -1 }
+		command = { type = domestic which = interventionism value = -1 }
+	}
+}
+
+event = {
+	id = 97039
+	random = no
+	country = FRA
+	style = 2
+	picture = "diplomatic_campaign"
+
+	name = "EVT_97039_NAME"
+	desc = "EVT_97039_DESC"
+
+	action_a = {
+		ai_chance = 100
+		name = "EVT_97039_OPTIONA"
+		command = { type = alliance which = NOR }
+		command = { type = relation which = NOR value = 150 }
+		command = { type = dissent value = -4 }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = trigger which = 97040 }
+	}
+	action_b = {
+		ai_chance = 0
+		name = "EVT_97039_OPTIONB"
+		command = { type = dissent value = 1 }
+		command = { type = relation which = NOR value = -100 }
+	}
+}
+event = {
+	id = 97040
+	random = no
+	country = NOR
+	style = 2
+	picture = "diplomatic_campaign"
+
+	name = "EVT_97040_NAME"
+	desc = "EVT_97040_DESC"
+
+	action_a = {
+		name = "EVT_97040_OPTIONA"
+		command = { type = dissent value = -3 }
+		command = { type = relation which = CAN value = -150 }
+		command = { type = relation which = GER value = -150 }
+                command = { type = relation which = FRA value = 150 }
+                command = { type = relation which = RSI value = 150 }
+                command = { type = relation which = ENG value = 150 }
+		command = { type = end_trades which = CAN where = NOR }
+		command = { type = end_trades which = GER where = NOR }
+	}
+}
+
+event = {
+id = 97041
+random = no
+country = SCA
+style = 2
+
+trigger = {
+government = communist
+NOT = {
+ispuppet = SCA
+}
+}
+
+name = "EVT_97041_NAME"
+desc = "EVT_97041_DESC"
+picture = "Riot1"
+
+date = { day = 1 month = january year = 1936 }
+offset = 2
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+name = "EVT_97041_OPTIONA"
+	command = { type = set_domestic which = democratic value = 2 }
+	command = { type = set_domestic which = political_left value = 8 }
+	command = { type = headofstate which = 514021 }
+	command = { type = headofgovernment which = 514022 }
+	command = { type = dissent value = -5 }
+	command = { type = manpowerpool value = 50 }
+	command = { type = set_relation which = FRA value = 50 }
+	command = { type = set_relation which = ENG value = 50 }
+	command = { type = set_relation which = RSI value = 50 }
+	command = { type = set_relation which = PRK value = 50 }
+	command = { type = set_relation which = SPR value = 50 }
+	command = { type = set_relation which = GEO value = 50 }
+	command = { type = ai which = "kaiserreich/Scandinavia.ai" }
+	}
+}

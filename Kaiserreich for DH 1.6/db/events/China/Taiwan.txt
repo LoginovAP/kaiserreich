@@ -1,0 +1,3851 @@
+################################
+## Taiwan events by Dermaglen ##
+################################
+
+################
+#Freedom       #
+################
+
+# General events for making Taiwan free manually
+
+event = {
+id = 976540
+random = no
+country = U30
+style = 2
+picture = "Taiwan"
+
+trigger = { atwar = no }
+date = { day = 1 month = january year = 1936 }
+offset = 1
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976540_NAME"
+desc = "EVT_976540_DESC"
+
+action_a = {
+name = "EVT_976540_OPTIONA"
+command = { type = supplies value = 300 }
+command = { type = rarematerialspool value = 300 }
+command = { type = energypool value = 300 }
+command = { type = oilpool value = 300 }
+command = { type = metalpool value = 300 }
+command = { type = money value = 75 }
+command = { type = manpowerpool value = 50 }
+command = { type = setflag which = TAI_freed }
+}
+}
+
+event = {
+id = 976541
+random = no
+country = U30
+style = 2
+picture = "China_Army"
+
+trigger = { 
+atwar = no
+flag = TAI_freed
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 7
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976541_NAME"
+desc = "EVT_976541_DESC"
+
+action_a = {
+name = "EVT_976541_OPTIONA"
+command = { type = max_organization which = land value = 5 }
+command = { type = morale which = land value = 5 }
+command = { type = add_corps which = "First Taiwanese Corps" value = land where = 1361 }
+command = { type = add_division which = "Di'1 Shi" value = infantry when = 7 where = artillery }
+command = { type = add_division which = "1. Min Shi" value = militia when = 4 }
+command = { type = add_corps which = "Second Taiwanese Corps" value = land where = 1362 }
+command = { type = add_division which = "2. Min Shi" value = militia when = 4 }
+command = { type = add_corps which = "Taiwanese Fleet" value = naval where = 1362 }
+command = { type = add_division which = "1. Quzujian Dadui" value = destroyer when = 3 }
+command = { type = add_division which = "1. Kongyunji Dadui" value = transport when = 1 }
+command = { type = domestic which = professional_army value = 1 }
+command = { type = setflag which = TAI_freedom }
+command = { type = clrflag  which = TAI_freed } 
+}
+}
+
+# Events for becoming free after Korea
+
+event = {
+id = 976542
+random = no
+country = JAP
+style = 2
+picture = "Taiwan"
+
+trigger = { 
+flag = kor_japfree
+NOT = { exists = U30 }
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  3
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_976542_NAME"
+desc = "EVT_976542_DESC"
+
+action_a = {
+name = "EVT_976542_OPTIONA"
+ai_chance = 85
+command = { type = removeclaim which = 1361 }
+command = { type = removeclaim which = 1362 }
+command = { type = removeclaim which = 1363 }
+command = { type = removeclaim which = 1364 }
+command = { type = removecore which = 1361 }
+command = { type = removecore which = 1362 }
+command = { type = removecore which = 1363 }
+command = { type = removecore which = 1364 }
+command = { type = independence which = U30 value = 1 when = 1 }
+command = { type = make_puppet which = U30 }
+command = { type = flag_ext where = U30 which = "_JAP" }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = domestic which = democratic value = 1 }
+command = { type = dissent value = 5 }
+command = { type = event which = 976543 where = U30 when = 2  }
+}
+
+action_b = {
+name = "EVT_976542_OPTIONB"
+ai_chance = 15
+command = { type = domestic which = defense_lobby value = -1 }
+command = { type = domestic which = democratic value = -1 }
+command = { type = dissent value = 5 }
+command = { type = setflag which = TAI_military }
+}
+}
+
+event = {
+id = 976543
+random = no
+country = U30
+style = 2
+picture = "Taiwan"
+
+
+name = "EVT_976543_NAME"
+desc = "EVT_976543_DESC"
+
+action_a = {
+name = "EVT_976543_OPTIONA"
+command = { type = alliance which = JAP } 
+command = { type = set_relation which = JAP value = 200 }
+command = { type = supplies value = 500 }
+command = { type = oilpool value = 250 }
+command = { type = metalpool value = 250 }
+command = { type = energypool value = 500 }
+command = { type = rarematerialspool value = 250 }
+command = { type = money value = 75 }
+command = { type = manpowerpool value = 50 }
+command = { type = sleepevent which = 976540 }
+command = { type = setflag which = TAI_Japanese }
+command = { type = setflag which = TAI_freed }
+command = { type = add_corps which = "First Taiwanese Corps" value = land where = 1361 }
+command = { type = add_division which = "1. Min Shi" value = militia when = 4 }
+command = { type = add_corps which = "Second Taiwanese Corps" value = land where = 1362 }
+command = { type = add_division which = "2. Min Shi" value = militia when = 4 }
+command = { type = add_corps which = "Taiwanese Fleet" value = naval where = 1362 }
+command = { type = add_division which = "1. Quzujian Dadui" value = destroyer when = 3 }
+command = { type = add_division which = "1. Kongyunji Dadui" value = transport when = 1 }
+}
+}
+
+event = {
+id = 976544
+random = no
+country = JAP
+style = 2
+save_date = yes
+
+trigger = { 
+flag = TAI_military 
+NOT = { exists = U30 }
+control = { province = 1362 data = JAP }
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  25
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_976544_NAME"
+desc = "EVT_976544_DESC"
+picture = "politics2"
+
+action_a = {
+name = "EVT_976544_OPTIONA"
+command = { type = independence which = U30 value = 1 when = 1 }
+command = { type = secedeprovince which = U30 value = 1361 }
+command = { type = secedeprovince which = U30 value = 1362 }
+command = { type = secedeprovince which = U30 value = 1363 }
+command = { type = secedeprovince which = U30 value = 1364 }
+command = { type = control which = U30 value = 1361 }
+command = { type = control which = U30 value = 1362 }
+command = { type = control which = U30 value = 1363 }
+command = { type = control which = U30 value = 1364 }
+command = { type = war which = U30 }
+command = { type = trigger which = 976545 }
+command = { type = dissent value = 5 }
+command = { type = addclaim   which = 1361   }
+command = { type = addclaim   which = 1362   }
+command = { type = addclaim   which = 1363   }
+command = { type = addclaim   which = 1364   }
+}
+}
+
+event = {
+id = 976545
+random = no
+country = U30
+style = 2
+picture = "politics2"
+
+name = "EVT_976545_NAME"
+desc = "EVT_976545_DESC" 
+
+action_a = {
+name = "EVT_976545_OPTIONA"
+command = { type = set_domestic which = democratic value = 4 }
+command = { type = set_domestic which = political_left value = 4 }
+command = { type = headofstate which = 910923 }
+command = { type = headofgovernment which = 910921 }
+command = { type = add_corps which = "Taiwanese Army" value = land where = 1361 }
+command = { type = add_division which = "Di'2 Shi" value = infantry when = 8 }
+command = { type = add_division which = "Taipei Militia" value = militia when = 4 }
+command = { type = add_corps which = "1st Taiwanese People's Militia" value = land where = 1362 }
+command = { type = add_division which = "1. Min Shi" value = militia when = 4 }
+command = { type = add_corps which = "2nd Taiwanese People's Militia" value = land where = 1363 }
+command = { type = add_division which = "2. Min Shi" value = militia when = 4 }
+command = { type = add_corps which = "Taiwanese Fleet" value = naval where = 1362 }
+command = { type = add_division which = "1. Quzujian Dadui" value = destroyer when = 2 }
+command = { type = add_division which = "2. Quzujian Dadui" value = destroyer when = 2 }
+command = { type = add_division which = "3. Quzujian Dadui" value = destroyer when = 2 }
+command = { type = domestic which = professional_army value = 1 }
+command = { type = setflag which = TAI_freedomfight }
+}
+}
+
+event = {
+id = 976546
+random = no
+country = CSX
+style = 2
+
+decision = { 
+flag = TAI_freedomfight
+NOT = { flag = JNBT }
+war = { country = JAP country = U30 }
+}
+
+decision_trigger = { 
+}
+
+trigger = { 
+flag = TAI_freedomfight
+NOT = { flag = JNBT }
+war = { country = JAP country = U30 }
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  5
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_976546_NAME"
+desc = "EVT_976546_DESC"
+picture = "Wehrmacht"
+decision_picture = "decision_foreign_volunteers"
+
+action_a = {
+name = "EVT_976546_OPTIONA"
+ai_chance = 90
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = relation which = U30 value = 50 }
+command = { type = relation which = JAP value = -30 }
+command = { type = supplies value = -500 }
+command = { type = manpowerpool value = -20 }
+command = { type = dissent value = -1 }
+command = { type = trigger which = 976547 }
+}
+action_b = {
+name = "EVT_976546_OPTIONB"
+ai_chance = 10
+command = { type = domestic which = interventionism value = -1 }
+command = { type = domestic which = defense_lobby value = -1 }
+command = { type = relation which = JAP value = 15 }
+command = { type = relation which = U30 value = -30 }
+command = { type = dissent value = 3 }
+}
+}
+
+event = {
+id = 976547
+random = no
+country = U30
+style = 2
+picture = "Qing_Marching"
+
+name = "EVT_976547_NAME"
+desc = "EVT_976547_DESC"
+
+action_a = {
+name = "EVT_976547_OPTIONA"
+command = { type = add_corps which = "Qing Volunteer Army" value = land where = 1362 }
+command = { type = add_division which = "1. Qing Shi" value = militia when = 4 }
+command = { type = supplies value = 500 }
+}
+}
+
+event = {
+id = 976548
+random = no
+country = CGX
+style = 2
+
+decision = { 
+flag = TAI_freedomfight
+NOT = { flag = JNBT }
+war = { country = JAP country = U30 }
+}
+
+decision_trigger = { 
+}
+
+trigger = { 
+flag = TAI_freedomfight
+NOT = { flag = JNBT }
+war = { country = JAP country = U30 }
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  7
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_976548_NAME"
+desc = "EVT_976548_DESC"
+picture = "Wehrmacht"
+decision_picture = "decision_foreign_volunteers"
+
+action_a = {
+name = "EVT_976548_OPTIONA"
+ai_chance = 25
+command = { type = domestic which = interventionism value = 1 }
+command = { type = relation which = U30 value = 30 }
+command = { type = relation which = JAP value = -20 }
+command = { type = relation which = GER value = -30 }
+command = { type = supplies value = -500 }
+command = { type = manpowerpool value = -10 }
+command = { type = dissent value = -1 }
+command = { type = trigger which = 976549 }
+}
+action_b = {
+name = "EVT_976548_OPTIONB"
+ai_chance = 75
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = JAP value = 30 }
+command = { type = relation which = GER value = 15 }
+command = { type = relation which = U30 value = -20 }
+command = { type = dissent value = 3 }
+}
+}
+
+event = {
+id = 976549
+random = no
+country = U30
+style = 2
+picture = "Chinese Infantry2"
+
+name = "EVT_976549_NAME"
+desc = "EVT_976549_DESC"
+
+action_a = {
+name = "EVT_976549_OPTIONA"
+command = { type = supplies value = 500 }
+}
+}
+
+event = {
+id = 976550
+random = no
+country = KOR
+style = 2
+
+decision = { 
+flag = TAI_freedomfight
+NOT = { 
+flag = JNBT 
+alliance = { country = KOR country = JAP }
+ispuppet = KOR
+}
+war = { country = JAP country = U30 }
+}
+
+decision_trigger = { 
+}
+
+trigger = { 
+flag = TAI_freedomfight
+NOT = { 
+flag = JNBT 
+alliance = { country = KOR country = JAP }
+ispuppet = KOR
+}
+war = { country = JAP country = U30 }
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  8
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_976550_NAME"
+desc = "EVT_976550_DESC"
+picture = "Wehrmacht"
+decision_picture = "decision_foreign_volunteers"
+
+action_a = {
+name = "EVT_976550_OPTIONA"
+ai_chance = 60
+trigger = {
+NOT = { ispuppet = KOR }
+NOT = { war = { country = KOR country = JAP } }
+}
+command = { type = domestic which = interventionism value = 1 }
+command = { type = relation which = U30 value = 30 }
+command = { type = relation which = JAP value = -50 }
+command = { type = supplies value = -500 }
+command = { type = manpowerpool value = -30 }
+command = { type = dissent value = -1 }
+command = { type = trigger which = 976551 }
+}
+action_b = {
+name = "EVT_976550_OPTIONB"
+ai_chance = 20
+trigger = {
+NOT = { ispuppet = KOR } 
+war = { country = U30 country = JAP }
+war = { country = KOR country = JAP }
+}
+command = { type = domestic which = interventionism value = 2 }
+command = { type = leave_alliance when = 1 } 
+command = { type = alliance which = U30 }
+command = { type = set_relation which = JAP value = -150 }
+command = { type = set_relation which = U30 value = 100 }
+command = { type = supplies value = -500 }
+command = { type = manpowerpool value = -30 }
+command = { type = dissent value = -5 }
+command = { type = trigger which = 976552 }
+}
+action_c = {
+name = "EVT_976550_OPTIONC"
+ai_chance = 0
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = JAP value = 20 }
+command = { type = relation which = U30 value = -40 }
+command = { type = dissent value = 3 }
+}
+}
+
+event = {
+id = 976551
+random = no
+country = U30
+style = 2
+picture = "Chinese Infantry2"
+
+name = "EVT_976551_NAME"
+desc = "EVT_976551_DESC"
+
+action_a = {
+name = "EVT_976551_OPTIONA"
+command = { type = add_corps which = "Korean Volunteer Army" value = land where = 1362 }
+command = { type = add_division which = "Seoul Volunteers" value = militia when = 4 }
+command = { type = supplies value = 500 }
+}
+}
+
+event = {
+id = 976552
+random = no
+country = U30
+style = 2
+picture = "Chinese Infantry2"
+
+name = "EVT_976552_NAME"
+desc = "EVT_976552_DESC"
+
+action_a = {
+name = "EVT_976552_OPTIONA"
+command = { type = relation which = KOR value = 200 }
+command = { type = supplies value = 500 }
+command = { type = setflag which = TAI_KOR }
+}
+}
+
+event = {
+id = 976553
+random = no
+country = MAN
+style = 2
+picture = "Chinese_Fighting"
+
+trigger = { 
+flag = TAI_KOR
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  3
+deathdate = { day = 29 month = december year = 1949 }
+
+name = "EVT_976553_NAME"
+desc = "EVT_976553_DESC"
+
+action_a = {
+ai_chance = 50
+name = "EVT_976553_OPTIONA"
+command = { type = dissent value = 5 }
+}
+
+action_b = {
+ai_chance = 15
+name = "EVT_976553_OPTIONB"
+command = { type = peace which = KOR value = 1 }
+command = { type = peace which = U30 value = 1 }
+command = { type = peace which = PRI value = 1 }
+command = { type = peace which = SIB value = 1 }
+command = { type = peace which = CSX value = 1 }
+command = { type = peace which = CHC value = 1 }
+command = { type = peace which = EAF value = 1 }
+command = { type = leave_alliance when = 1 } 
+command = { type = end_puppet }
+command = { type = end_access which = JAP }
+command = { type = set_relation which = JAP value = -50 }
+command = { type = relation which = CSX value = 30 }
+command = { type = set_relation which = KOR value = 50 }
+command = { type = set_relation which = U30 value = 50 }
+command = { type = end_access which = JAP where = MAN }
+command = { type = end_access which = MAN where = JAP }
+command = { type = addcore which = 1240 }
+command = { type = addcore which = 1236 }
+command = { type = addcore which = 1235 }
+command = { type = addcore which = 1216 }
+command = { type = addcore which = 1219 }
+command = { trigger = { control = { province = 1239 data = JAP } } type = addcore which = 1239 }
+command = { trigger = { control = { province = 1246 data = JAP } } type = addcore which = 1246 }
+command = { trigger = { control = { province = 1247 data = JAP } } type = addcore which = 1247 }
+}
+
+action_c = {
+ai_chance = 35
+name = "EVT_976553_OPTIONC"
+command = { type = leave_alliance when = 1 } 
+command = { type = peace which = KOR value = 1 }
+command = { type = peace which = U30 value = 1 }
+command = { type = peace which = PRI value = 1 }
+command = { type = peace which = SIB value = 1 }
+command = { type = peace which = CSX value = 1 }
+command = { type = peace which = CHC value = 1 }
+command = { type = peace which = EAF value = 1 }
+command = { type = end_puppet }
+command = { type = end_access which = JAP }
+command = { type = set_relation which = JAP value = -50 }
+command = { type = relation which = CSX value = 30 }
+command = { type = set_relation which = KOR value = 150 }
+command = { type = set_relation which = U30 value = 150 }
+command = { type = setflag which = TAI_MAN }
+command = { type = trigger which = 976671 }
+command = { type = end_access which = JAP where = MAN }
+command = { type = end_access which = MAN where = JAP }
+command = { type = addcore which = 1240 }
+command = { type = addcore which = 1236 }
+command = { type = addcore which = 1235 }
+command = { type = addcore which = 1216 }
+command = { type = addcore which = 1219 }
+command = { trigger = { control = { province = 1239 data = JAP } } type = addcore which = 1239 }
+command = { trigger = { control = { province = 1246 data = JAP } } type = addcore which = 1246 }
+command = { trigger = { control = { province = 1247 data = JAP } } type = addcore which = 1247 }
+}
+
+action_d = {
+ai_chance = 0
+name = "EVT_976553_OPTIOND"
+trigger = {
+exists = CSX
+NOT = {
+exists = CHC
+atwar = CSX
+ispuppet = CSX
+}
+}
+command = { type = leave_alliance when = 1 } 
+command = { type = peace which = KOR value = 1 }
+command = { type = peace which = U30 value = 1 }
+command = { type = peace which = PRI value = 1 }
+command = { type = peace which = SIB value = 1 }
+command = { type = peace which = CSX value = 1 }
+command = { type = peace which = CHC value = 1 }
+command = { type = trigger which = 627066 }
+}
+}
+
+
+event = {
+id = 976671
+random = no
+country = KOR
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_976671_NAME"
+desc = "EVT_976671_DESC"
+
+action_a = {
+name = "EVT_976671_OPTIONA"
+command = { type = dissent value = -3 }
+command = { type = alliance which = MAN }
+command = { type = relation which = MAN value = 150 }
+#maybe new ai?
+}
+}
+
+event = {
+id = 976554
+random = no
+country = PRI
+style = 2
+picture = "Chinese_Fighting"
+
+trigger = { 
+flag = TAI_KOR
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  3
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_976554_NAME"
+desc = "EVT_976554_DESC"
+
+action_a = {
+ai_chance = 50
+trigger = {
+alliance = { country = PRI country = JAP }
+}
+name = "EVT_976554_OPTIONA"
+command = { type = dissent value = 5 }
+}
+
+action_b = {
+ai_chance = 15
+name = "EVT_976554_OPTIONB"
+command = { type = leave_alliance when = 1 } 
+command = { type = peace which = KOR value = 1 }
+command = { type = peace which = U30 value = 1 }
+command = { type = peace which = SIB value = 1 }
+command = { type = peace which = MAN value = 1 }
+command = { type = peace which = CSX value = 1 }
+command = { type = peace which = CHC value = 1 }
+command = { type = peace which = EAF value = 1 }
+command = { type = end_puppet }
+command = { type = end_access which = JAP }
+command = { type = set_relation which = JAP value = -50 }
+command = { type = relation which = CSX value = 30 }
+command = { type = set_relation which = KOR value = 50 }
+command = { type = set_relation which = U30 value = 50 }
+}
+
+action_c = {
+ai_chance = 35
+name = "EVT_976554_OPTIONC"
+command = { type = leave_alliance when = 1 } 
+command = { type = peace which = KOR value = 1 }
+command = { type = peace which = U30 value = 1 }
+command = { type = peace which = SIB value = 1 }
+command = { type = peace which = MAN value = 1 }
+command = { type = peace which = CSX value = 1 }
+command = { type = peace which = CHC value = 1 }
+command = { type = peace which = EAF value = 1 }
+command = { type = end_puppet }
+command = { type = end_access which = JAP }
+command = { type = set_relation which = JAP value = -70 }
+command = { type = relation which = CSX value = 10 }
+command = { type = relation which = CSX value = 30 }
+command = { type = set_relation which = KOR value = 150 }
+command = { type = set_relation which = U30 value = 150 }
+command = { type = setflag which = TAI_PRI }
+command = { type = trigger which = 976672 }
+}
+action_d = {
+trigger = {
+	exists = RUS
+	NOT = { exists = SIB }
+	control = { province = 1162 data = RUS } #Irkutsk
+}
+ai_chance = 25
+name = "EVT_976554_OPTIOND"
+command = { type = leave_alliance when = 1 } 
+command = { type = peace which = KOR value = 1 }
+command = { type = peace which = U30 value = 1 }
+command = { type = peace which = SIB value = 1 }
+command = { type = peace which = MAN value = 1 }
+command = { type = peace which = CSX value = 1 }
+command = { type = peace which = CHC value = 1 }
+command = { type = peace which = EAF value = 1 }
+command = { type = trigger which = 750068 }
+}
+}
+
+event = {
+id = 976672
+random = no
+country = KOR
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_976672_NAME"
+desc = "EVT_976672_DESC"
+
+action_a = {
+name = "EVT_976672_OPTIONA"
+command = { type = dissent value = -3 }
+command = { type = alliance which = PRI }
+command = { type = relation which = PRI value = 150 }
+#maybe new ai?
+}
+}
+
+event = {
+id = 976555
+random = no
+country = JAP
+style = 2
+picture = "Chinese_Fighting"
+
+trigger = {
+AND = {
+flag = TAI_KOR
+flag = TAI_MAN
+flag = TAI_PRI
+NOT = { flag = JAP_ISO }
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  7
+deathdate = { day = 29 month = december year = 1949 }
+
+name = "EVT_976555_NAME"
+desc = "EVT_976555_DESC"
+
+action_a = {
+ai_chance = 30
+name = "EVT_976555_OPTIONA"
+command = { type = dissent value = -5 }
+command = { type = addclaim which = 1230 }
+command = { type = addclaim which = 1231 }
+command = { type = addclaim which = 1232 }
+command = { type = addclaim which = 1233 }
+command = { type = addclaim which = 1228 }
+command = { type = addclaim which = 1229 }
+command = { type = addclaim which = 1224 }
+command = { type = addclaim which = 1226 }
+command = { type = addclaim which = 1225 }
+command = { type = addclaim which = 1227 }
+command = { type = addclaim which = 1223 }
+command = { type = addclaim which = 1221 }
+command = { type = addclaim which = 1222 }
+command = { type = addclaim which = 1361 }
+command = { type = addclaim which = 1362 }
+command = { type = addclaim which = 1363 }
+command = { type = addclaim which = 1364 }
+command = { type = clrflag  which = TAI_KOR } 
+command = { type = clrflag  which = TAI_MAN } 
+command = { type = clrflag  which = TAI_PRI } 
+}
+action_b = {
+ai_chance = 40
+name = "EVT_976555_OPTIONB"
+command = { type = peace which = KOR value = 0 }
+command = { type = peace which = U30 value = 0 }
+command = { type = peace which = MAN value = 0 }
+command = { type = peace which = PRI value = 0 }
+command = { type = relation which = KOR value = 100 }
+command = { type = relation which = U30 value = 100 }
+command = { type = relation which = MAN value = 100 }
+command = { type = relation which = RSI value = 100 }
+command = { type = secedeprovince which = KOR value = 1230 }
+command = { type = secedeprovince which = KOR value = 1231 }
+command = { type = secedeprovince which = KOR value = 1232 }
+command = { type = secedeprovince which = KOR value = 1233 }
+command = { type = secedeprovince which = KOR value = 1228 }
+command = { type = secedeprovince which = KOR value = 1229 }
+command = { type = secedeprovince which = KOR value = 1224 }
+command = { type = secedeprovince which = KOR value = 1226 }
+command = { type = secedeprovince which = KOR value = 1225 }
+command = { type = secedeprovince which = KOR value = 1227 }
+command = { type = secedeprovince which = KOR value = 1223 }
+command = { type = secedeprovince which = KOR value = 1221 }
+command = { type = secedeprovince which = KOR value = 1222 }
+command = { type = removeclaim   which = 1361   }
+command = { type = removeclaim   which = 1362   }
+command = { type = removeclaim   which = 1363   }
+command = { type = removeclaim   which = 1364   }
+command = { type = dissent value = 4 }
+command = { type = trigger which = 976557 }
+command = { type = trigger which = 976558 }
+command = { type = trigger which = 976559 }
+command = { type = trigger which = 976560 }
+command = { type = secedeprovince which = MAN value = 1240 }
+command = { type = secedeprovince which = MAN value = 1236 }
+command = { type = secedeprovince which = MAN value = 1235 }
+command = { type = secedeprovince which = MAN value = 1216 }
+command = { type = secedeprovince which = MAN value = 1239 }
+command = { type = secedeprovince which = MAN value = 1246 }
+command = { type = secedeprovince which = MAN value = 1247 }
+command = { type = clrflag  which = TAI_KOR } 
+command = { type = clrflag  which = TAI_MAN } 
+command = { type = clrflag  which = TAI_PRI } 
+}
+action_c = {
+ai_chance = 30
+name = "EVT_976555_OPTIONC"
+command = { type = peace which = KOR value = 0 }
+command = { type = peace which = U30 value = 0 }
+command = { type = peace which = MAN value = 0 }
+command = { type = peace which = PRI value = 0 }
+command = { type = secedeprovince which = KOR value = 1230 }
+command = { type = secedeprovince which = KOR value = 1231 }
+command = { type = secedeprovince which = KOR value = 1232 }
+command = { type = secedeprovince which = KOR value = 1233 }
+command = { type = secedeprovince which = KOR value = 1228 }
+command = { type = secedeprovince which = KOR value = 1229 }
+command = { type = secedeprovince which = KOR value = 1224 }
+command = { type = secedeprovince which = KOR value = 1226 }
+command = { type = secedeprovince which = KOR value = 1225 }
+command = { type = secedeprovince which = KOR value = 1227 }
+command = { type = secedeprovince which = KOR value = 1223 }
+command = { type = secedeprovince which = KOR value = 1221 }
+command = { type = secedeprovince which = KOR value = 1222 }
+command = { type = removeclaim   which = 1361   }
+command = { type = removeclaim   which = 1362   }
+command = { type = removeclaim   which = 1363   }
+command = { type = removeclaim   which = 1364   }
+command = { type = relation which = KOR value = 10 }
+command = { type = relation which = U30 value = 10 }
+command = { type = relation which = MAN value = 10 }
+command = { type = relation which = RSI value = 10 }
+command = { type = secedeprovince which = MAN value = 1240 }
+command = { type = secedeprovince which = MAN value = 1236 }
+command = { type = secedeprovince which = MAN value = 1235 }
+command = { type = secedeprovince which = MAN value = 1216 }
+command = { type = secedeprovince which = MAN value = 1239 }
+command = { type = secedeprovince which = MAN value = 1246 }
+command = { type = secedeprovince which = MAN value = 1247 }
+command = { type = dissent value = 7 }
+command = { type = clrflag  which = TAI_KOR } 
+command = { type = clrflag  which = TAI_MAN } 
+command = { type = clrflag  which = TAI_PRI } 
+}
+}
+
+event = {
+id = 976556
+random = no
+country = JAP
+style = 2
+picture = "Chinese_Fighting"
+
+trigger = {
+AND = {
+flag = TAI_KOR
+flag = TAI_MAN
+flag = TAI_PRI
+flag = JAP_ISO
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  7
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_976556_NAME"
+desc = "EVT_976556_DESC"
+
+action_a = {
+ai_chance = 15
+name = "EVT_976556_OPTIONA"
+command = { type = dissent value = 2 }
+command = { type = addclaim which = 1230 }
+command = { type = addclaim which = 1231 }
+command = { type = addclaim which = 1232 }
+command = { type = addclaim which = 1233 }
+command = { type = addclaim which = 1228 }
+command = { type = addclaim which = 1229 }
+command = { type = addclaim which = 1224 }
+command = { type = addclaim which = 1226 }
+command = { type = addclaim which = 1225 }
+command = { type = addclaim which = 1227 }
+command = { type = addclaim which = 1223 }
+command = { type = addclaim which = 1221 }
+command = { type = addclaim which = 1222 }
+command = { type = clrflag  which = TAI_KOR } 
+command = { type = clrflag  which = TAI_MAN } 
+command = { type = clrflag  which = TAI_PRI } 
+}
+action_b = {
+ai_chance = 15
+name = "EVT_976556_OPTIONB"
+command = { type = peace which = KOR value = 0 }
+command = { type = peace which = U30 value = 0 }
+command = { type = peace which = MAN value = 0 }
+command = { type = peace which = PRI value = 0 }
+command = { type = relation which = KOR value = 100 }
+command = { type = relation which = U30 value = 100 }
+command = { type = relation which = MAN value = 100 }
+command = { type = relation which = RSI value = 100 }
+command = { type = secedeprovince which = KOR value = 1230 }
+command = { type = secedeprovince which = KOR value = 1231 }
+command = { type = secedeprovince which = KOR value = 1232 }
+command = { type = secedeprovince which = KOR value = 1233 }
+command = { type = secedeprovince which = KOR value = 1228 }
+command = { type = secedeprovince which = KOR value = 1229 }
+command = { type = secedeprovince which = KOR value = 1224 }
+command = { type = secedeprovince which = KOR value = 1226 }
+command = { type = secedeprovince which = KOR value = 1225 }
+command = { type = secedeprovince which = KOR value = 1227 }
+command = { type = secedeprovince which = KOR value = 1223 }
+command = { type = secedeprovince which = KOR value = 1221 }
+command = { type = secedeprovince which = KOR value = 1222 }
+command = { type = removeclaim   which = 1361   }
+command = { type = removeclaim   which = 1362   }
+command = { type = removeclaim   which = 1363   }
+command = { type = removeclaim   which = 1364   }
+command = { type = dissent value = 4 }
+command = { type = trigger which = 976557 }
+command = { type = trigger which = 976558 }
+command = { type = trigger which = 976559 }
+command = { type = trigger which = 976560 }
+command = { type = secedeprovince which = MAN value = 1240 }
+command = { type = secedeprovince which = MAN value = 1236 }
+command = { type = secedeprovince which = MAN value = 1235 }
+command = { type = secedeprovince which = MAN value = 1216 }
+command = { type = secedeprovince which = MAN value = 1239 }
+command = { type = secedeprovince which = MAN value = 1246 }
+command = { type = secedeprovince which = MAN value = 1247 }
+command = { type = clrflag  which = TAI_KOR } 
+command = { type = clrflag  which = TAI_MAN } 
+command = { type = clrflag  which = TAI_PRI } 
+command = { type = sleepevent which = 976561 }
+}
+action_c = {
+ai_chance = 70
+name = "EVT_976556_OPTIONC"
+command = { type = peace which = KOR value = 0 }
+command = { type = peace which = U30 value = 0 }
+command = { type = peace which = MAN value = 0 }
+command = { type = peace which = PRI value = 0 }
+command = { type = secedeprovince which = KOR value = 1230 }
+command = { type = secedeprovince which = KOR value = 1231 }
+command = { type = secedeprovince which = KOR value = 1232 }
+command = { type = secedeprovince which = KOR value = 1233 }
+command = { type = secedeprovince which = KOR value = 1228 }
+command = { type = secedeprovince which = KOR value = 1229 }
+command = { type = secedeprovince which = KOR value = 1224 }
+command = { type = secedeprovince which = KOR value = 1226 }
+command = { type = secedeprovince which = KOR value = 1225 }
+command = { type = secedeprovince which = KOR value = 1227 }
+command = { type = secedeprovince which = KOR value = 1223 }
+command = { type = secedeprovince which = KOR value = 1221 }
+command = { type = secedeprovince which = KOR value = 1222 }
+command = { type = removeclaim   which = 1361   }
+command = { type = removeclaim   which = 1362   }
+command = { type = removeclaim   which = 1363   }
+command = { type = removeclaim   which = 1364   }
+command = { type = relation which = KOR value = 10 }
+command = { type = relation which = U30 value = 10 }
+command = { type = relation which = MAN value = 10 }
+command = { type = relation which = RSI value = 10 }
+command = { type = secedeprovince which = MAN value = 1240 }
+command = { type = secedeprovince which = MAN value = 1236 }
+command = { type = secedeprovince which = MAN value = 1235 }
+command = { type = secedeprovince which = MAN value = 1216 }
+command = { type = secedeprovince which = MAN value = 1239 }
+command = { type = secedeprovince which = MAN value = 1246 }
+command = { type = secedeprovince which = MAN value = 1247 }
+command = { type = dissent value = 4 }
+command = { type = clrflag  which = TAI_KOR } 
+command = { type = clrflag  which = TAI_MAN } 
+command = { type = clrflag  which = TAI_PRI } 
+}
+}
+
+event = {
+id = 976557
+random = no
+country = MAN
+style = 2
+picture = "japan"
+
+name = "EVT_976557_NAME"
+desc = "EVT_976557_DESC"
+
+action_a = {
+ai_chance = 30
+name = "EVT_976557_OPTIONA"
+command = { type = leave_alliance when = 1 } 
+command = { type = alliance which = JAP }
+command = { type = set_relation which = JAP value = 150 }
+command = { type = relation which = CSX value = -30 }
+command = { type = dissent value = 3 }
+}
+
+action_b = {
+ai_chance = 10
+name = "EVT_976557_OPTIONB"
+command = { type = leave_alliance when = 1 } 
+command = { type = set_relation which = JAP value = 0 }
+command = { type = dissent value = -5 }
+}
+action_c = {
+ai_chance = 60
+name = "EVT_976557_OPTIONC"
+trigger = {
+exists = CSX
+NOT = {
+        ispuppet = CSX
+        }
+}
+command = { type = setflag which = CSX_MAN }
+command = { type = leave_alliance when = 1 } 
+command = { type = trigger which = 627066 }
+}
+}
+
+event = {
+id = 976558
+random = no
+country = PRI
+style = 2
+picture = "japan"
+
+name = "EVT_976558_NAME"
+desc = "EVT_976558_DESC"
+
+action_a = {
+ai_chance = 30
+name = "EVT_976558_OPTIONA"
+command = { type = leave_alliance when = 1 } 
+command = { type = alliance which = JAP }
+command = { type = set_relation which = JAP value = 150 }
+command = { type = dissent value = 3 }
+}
+
+action_b = {
+ai_chance = 10
+name = "EVT_976558_OPTIONB"
+command = { type = leave_alliance when = 1 } 
+command = { type = set_relation which = JAP value = 0 }
+command = { type = dissent value = -5 }
+}
+
+action_c = {
+ai_chance = 60
+name = "EVT_976558_OPTIONC"
+trigger = {
+exists = RUS
+NOT = {
+        exists = SOV
+        exists = SIB
+        ispuppet = RUS
+        }
+}
+command = { type = leave_alliance when = 1 } 
+command = { type = trigger which = 750068 }
+}
+}
+
+event = {
+id = 976559
+random = no
+country = KOR
+style = 2
+picture = "japan"
+
+name = "EVT_976559_NAME"
+desc = "EVT_976559_DESC"
+
+action_a = {
+ai_chance = 50
+name = "EVT_976559_OPTIONA"
+command = { type = leave_alliance when = 1 } 
+command = { type = alliance which = JAP }
+command = { type = set_relation which = JAP value = 150 }
+command = { type = dissent value = 3 }
+}
+
+action_b = {
+ai_chance = 50
+name = "EVT_976559_OPTIONB"
+command = { type = leave_alliance when = 1 } 
+command = { type = set_relation which = JAP value = 0 }
+command = { type = dissent value = -5 }
+}
+}
+
+event = {
+id = 976560
+random = no
+country = U30
+style = 2
+picture = "japan"
+
+name = "EVT_976560_NAME"
+desc = "EVT_976560_DESC"
+
+action_a = {
+ai_chance = 30
+name = "EVT_976560_OPTIONA"
+command = { type = leave_alliance when = 1 } 
+command = { type = alliance which = JAP }
+command = { type = set_relation which = JAP value = 150 }
+command = { type = dissent value = 3 }
+command = { type = sleepevent which = 976540 }
+command = { type = setflag which = TAI_freedom }
+command = { type = setflag which = TAI_wonwar }
+}
+
+action_b = {
+ai_chance = 70
+name = "EVT_976560_OPTIONB"
+command = { type = leave_alliance when = 1 } 
+command = { type = set_relation which = JAP value = 0 }
+command = { type = dissent value = -5 }
+command = { type = sleepevent which = 976540 }
+command = { type = setflag which = TAI_freedom }
+command = { type = setflag which = TAI_wonwar }
+}
+}
+
+event = {
+id = 976561
+random = no
+country = JAP
+style = 2
+picture = "Taiwan"
+
+trigger = { 
+war = { country = JAP country = U30 } 
+event = { id = 976544 days = 100 } #Rebellion in Taiwan 100 days ago
+AND = {
+flag = TAI_freedomfight
+control = { province = 1361 data = U30 }
+control = { province = 1362 data = U30 }
+control = { province = 1363 data = U30 }
+control = { province = 1364 data = U30 }
+NOT = { flag = TAI_KOR }
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  50
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_976561_NAME"
+desc = "EVT_976561_DESC"
+
+action_a = {
+name = "EVT_976561_OPTIONA"
+ai_chance = 70
+command = { type = peace which = U30 value = 0 }
+command = { type = set_relation which = U30 value = 30 }
+command = { type = dissent value = 3 }
+command = { type = removeclaim   which = 1361   }
+command = { type = removeclaim   which = 1362   }
+command = { type = removeclaim   which = 1363   }
+command = { type = removeclaim   which = 1364   }
+command = { type = trigger which = 976562 }
+}
+action_b = {
+name = "EVT_976561_OPTIONB"
+ai_chance = 30
+command = { type = dissent value = 3 }
+}
+}
+
+event = {
+id = 976562
+random = no
+country = U30
+style = 2
+picture = "japan"
+
+name = "EVT_976562_NAME"
+desc = "EVT_976562_DESC"
+
+action_a = {
+name = "EVT_976562_OPTIONA"
+command = { type = set_relation which = JAP value = 0 }
+command = { type = dissent value = -5 }
+command = { type = sleepevent which = 976540 }
+command = { type = setflag which = TAI_freedom }
+command = { type = setflag which = TAI_wonwar }
+}
+}
+
+event = {
+id = 976563
+random = no
+country = U30
+style = 2
+picture = "Chinese Infantry Trainfull"
+
+trigger = { 
+AND = {
+flag = TAI_wonwar
+event = 976551
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  3
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_976563_NAME"
+desc = "EVT_976563_DESC"
+
+action_a = {
+name = "EVT_976563_OPTIONA"
+command = { type = relation which = KOR value = 50 }
+command = { type = dissent value = -1 }
+}
+}
+
+event = {
+id = 976564
+random = no
+country = U30
+style = 2
+picture = "Chinese Infantry Trainfull"
+
+trigger = { 
+AND = {
+flag = TAI_wonwar
+event = 976549
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  2
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_976564_NAME"
+desc = "EVT_976564_DESC"
+
+action_a = {
+name = "EVT_976564_OPTIONA"
+command = { type = relation which = CGX value = 50 }
+command = { type = dissent value = -1 }
+}
+}
+
+event = {
+id = 976565
+random = no
+country = U30
+style = 2
+picture = "Chinese Infantry Trainfull"
+
+trigger = { 
+AND = {
+flag = TAI_wonwar
+event = 976547
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  1
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976565_NAME"
+desc = "EVT_976565_DESC"
+
+action_a = {
+name = "EVT_976565_OPTIONA"
+command = { type = relation which = CSX value = 50 }
+command = { type = dissent value = -1 }
+}
+}
+
+# Qing event
+
+event = {
+id = 976566
+random = no
+country = CSX
+style = 2
+picture = "Taiwan"
+
+trigger = { 
+control = { province = 1361 data = CSX }
+control = { province = 1362 data = CSX }
+control = { province = 1363 data = CSX }
+control = { province = 1364 data = CSX }
+NOT = { war = { country = CSX country = JAP } }
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  7
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976566_NAME"
+desc = "EVT_976566_DESC"
+
+action_a = {
+ai_chance = 0
+name = "EVT_976566_OPTIONA"
+command = { type = domestic which = democratic value = 1 }
+command = { type = independence which = U30 value = 1 when = 0 }
+command = { type = dissent value = -1 }
+command = { type = trigger which = 976567 }
+command = { type = setflag which = TAI_Qing }
+}
+action_b = {
+ai_chance = 100
+name = "EVT_976566_OPTIONB"
+command = { type = domestic which = democratic value = -1 }
+command = { type = addcore which = 1361 }
+command = { type = addcore which = 1362 }
+command = { type = addcore which = 1363 }
+command = { type = addcore which = 1364 }
+command = { type = dissent value = 2 }
+}
+}
+
+event = {
+id = 976567
+random = no
+country = U30
+style = 2
+picture = "Chinese New Year"
+
+name = "EVT_976567_NAME"
+desc = "EVT_976567_DESC"
+
+action_a = {
+name = "EVT_976567_OPTIONA"
+command = { type = headofstate which = 910920 }
+command = { type = headofgovernment which = 910946 }
+command = { type = armamentminister which =  910940 }
+command = { type = alliance which = CSX }
+command = { type = supplies value = 300 }
+command = { type = rarematerialspool value = 300 }
+command = { type = energypool value = 300 }
+command = { type = oilpool value = 300 }
+command = { type = metalpool value = 300 }
+command = { type = money value = 75 }
+command = { type = manpowerpool value = 50 }
+command = { type = sleepevent which = 976540 }
+command = { type = setflag which = TAI_freed }
+}
+}
+
+#Republican China event
+
+event = {
+id = 976568
+random = no
+country = CHI
+style = 2
+picture = "Taiwan"
+
+trigger = { 
+AND = {
+control = { province = 1361 data = CHI }
+control = { province = 1362 data = CHI }
+control = { province = 1363 data = CHI }
+control = { province = 1364 data = CHI }
+NOT = { war = { country = CHI country = JAP } }
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  7
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976568_NAME"
+desc = "EVT_976568_DESC"
+
+action_a = {
+ai_chance = 0
+name = "EVT_976568_OPTIONA"
+command = { type = domestic which = democratic value = 1 }
+command = { type = independence which = U30 value = 1 when = 1 }
+command = { type = dissent value = -3 }
+command = { type = trigger which = 976569 }
+command = { type = setflag which = TAI_Repchi }
+}
+action_b = {
+ai_chance = 100
+name = "EVT_976568_OPTIONB"
+command = { type = addcore which = 1361 }
+command = { type = addcore which = 1362 }
+command = { type = addcore which = 1363 }
+command = { type = addcore which = 1364 }
+command = { type = dissent value = 1 }
+}
+}
+
+event = {
+id = 976569
+random = no
+country = U30
+style = 2
+picture = "Chinese New Year"
+
+name = "EVT_976569_NAME"
+desc = "EVT_976569_DESC"
+
+action_a = {
+name = "EVT_976569_OPTIONA"
+command = { type = alliance which = CHI }
+command = { type = supplies value = 300 }
+command = { type = rarematerialspool value = 300 }
+command = { type = energypool value = 300 }
+command = { type = oilpool value = 300 }
+command = { type = metalpool value = 300 }
+command = { type = money value = 75 }
+command = { type = manpowerpool value = 50 }
+command = { type = sleepevent which = 976540 }
+command = { type = setflag which = TAI_freed }
+}
+}
+
+#Germany events - 1. if AOG exists and frienldy 2. if AOG doesn't exists and not friendly
+
+event = {
+id = 976570
+random = no
+country = GER
+style = 2
+picture = "Taiwan"
+
+trigger = { 
+AND = {
+control = { province = 1361 data = GER }
+control = { province = 1362 data = GER }
+control = { province = 1363 data = GER }
+control = { province = 1364 data = GER }
+NOT = { war = { country = GER country = JAP } }
+exists = CGX
+puppet = { country = CGX country = GER }
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  7
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976570_NAME"
+desc = "EVT_976570_DESC"
+
+action_a = {
+ai_chance = 40
+name = "EVT_976570_OPTIONA"
+command = { type = independence which = U30 value = 1 when = 0 }
+command = { type = dissent value = 1 }
+command = { type = trigger which = 976573 }
+command = { type = setflag which = TAI_German }
+}
+action_b = {
+ai_chance = 40
+name = "EVT_976570_OPTIONB"
+command = { type = secedeprovince which = CGX value = 1361 }
+command = { type = secedeprovince which = CGX value = 1362 }
+command = { type = secedeprovince which = CGX value = 1363 }
+command = { type = secedeprovince which = CGX value = 1364 }
+command = { type = relation which = CGX value = 30 }
+command = { type = trigger which = 976572 }
+command = { type = dissent value = -1 }
+}
+action_c = {
+ai_chance = 20
+name = "EVT_976570_OPTIONC"
+command = { type = dissent value = -1 }
+command = { type = relation which = CGX value = -10 }
+}
+}
+
+event = {
+id = 976571
+random = no
+country = GER
+style = 2
+picture = "Taiwan"
+
+trigger = { 
+AND = {
+control = { province = 1361 data = GER }
+control = { province = 1362 data = GER }
+control = { province = 1363 data = GER }
+control = { province = 1364 data = GER }
+NOT = { war = { country = GER country = JAP } }
+OR = { 
+	NOT = { exists = CGX }
+	NOT = { puppet = { country = CGX country = GER } }
+}
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  7
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976571_NAME"
+desc = "EVT_976571_DESC"
+
+action_a = {
+ai_chance = 40
+name = "EVT_976571_OPTIONA"
+command = { type = independence which = U30 value = 1 when = 0 }
+command = { type = trigger which = 976573 }
+command = { type = dissent value = 1 }
+command = { type = setflag which = TAI_German }
+}
+action_b = {
+ai_chance = 40
+name = "EVT_976571_OPTIONB"
+command = { type = secedeprovince which = CSX value = 1361 }
+command = { type = secedeprovince which = CSX value = 1362 }
+command = { type = secedeprovince which = CSX value = 1363 }
+command = { type = secedeprovince which = CSX value = 1364 }
+command = { type = relation which = CSX value = 50 }
+command = { type = dissent value = 1 }
+}
+action_c = {
+ai_chance = 20
+name = "EVT_976571_OPTIONC"
+command = { type = dissent value = -1 }
+command = { type = relation which = CSX value = -10 }
+}
+}
+
+event = {
+id = 976572
+random = no
+country = CGX
+style = 2
+picture = "Taiwan"
+
+name = "EVT_976572_NAME"
+desc = "EVT_976572_DESC"
+
+action_a = {
+name = "EVT_976572_OPTIONA"
+command = { type = dissent value = 1 }
+}
+}
+
+event = {
+id = 976573
+random = no
+country = U30
+style = 2
+picture = "german_replacements"
+
+name = "EVT_976573_NAME"
+desc = "EVT_976573_DESC"
+
+action_a = {
+name = "EVT_976573_OPTIONA"
+command = { type = alliance which = GER }
+command = { type = supplies value = 300 }
+command = { type = rarematerialspool value = 300 }
+command = { type = energypool value = 300 }
+command = { type = oilpool value = 300 }
+command = { type = metalpool value = 300 }
+command = { type = money value = 75 }
+command = { type = manpowerpool value = 50 }
+command = { type = waketeam which = 54707 }
+command = { type = waketeam which = 54708 }
+command = { type = sleepevent which = 976540 }
+command = { type = setflag which = TAI_freed }
+}
+}
+
+#################
+# First Reforms #
+#################
+
+event = {
+id = 976574
+random = no
+country = U30
+style = 2
+picture = "politics1"
+
+trigger = { 
+flag = TAI_freedom
+NOT = { flag = TAI_Qing }
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  25
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976574_NAME"
+desc = "EVT_976574_DESC"
+
+action_a = {
+name = "EVT_976574_OPTIONA"
+ai_chance = 75
+command = { type = domestic which = free_market value = -1 }
+command = { type = peacetime_ic_mod value = 5 }
+command = { type = supplies value = -300 }
+command = { type = money value = -30 }
+command = { type = dissent value = -1 }
+command = { type = setflag which = TAI_economy }
+}
+action_b = {
+name = "EVT_976574_OPTIONB"
+ai_chance = 25
+command = { type = domestic which = professional_army value = -1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = supplies value = -300 }
+command = { type = money value = -30 }
+command = { type = manpowerpool value = -20 }
+command = { type = peacetime_ic_mod value = -7 }
+command = { type = dissent value = 5 }
+command = { type = setflag which = TAI_army }
+}
+}
+
+event = {
+id = 976575
+random = no
+country = U30
+style = 2
+picture = "Chinese Workforce"
+
+trigger = { flag = TAI_economy }
+date = { day = 1 month = january year = 1936 }
+offset =  15
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976575_NAME"
+desc = "EVT_976575_DESC"
+
+action_a = {
+name = "EVT_976575_OPTIONA"
+ai_chance = 40
+command = { type = domestic which = interventionism value = 1 }
+command = { type = dissent value = 1 }
+command = { type = setflag which = TAI_industry }
+}
+action_b = {
+name = "EVT_976575_OPTIONB"
+ai_chance = 30
+command = { type = domestic which = free_market value = -1 }
+command = { type = peacetime_ic_mod value = 5 }
+command = { type = dissent value = -3 }
+command = { type = setflag which = TAI_agriculture }
+}
+action_c = {
+name = "EVT_976575_OPTIONC"
+ai_chance = 30
+command = { type = dissent value = -1 }
+command = { type = setflag which = TAI_resource }
+}
+}
+
+event = {
+id = 976576
+random = no
+country = U30
+style = 2
+picture = "factory"
+
+trigger = { flag = TAI_industry }
+date = { day = 1 month = january year = 1936 }
+offset =  50
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976576_NAME"
+desc = "EVT_976576_DESC"
+
+action_a = {
+name = "EVT_976576_OPTIONA"
+ai_chance = 50
+command = { type = domestic which = free_market value = -1 }
+command = { type = construct which = ic where = 1362 value = 3 }
+command = { type = gain_tech which = 5820 }
+command = { type = gain_tech which = 5050 }
+command = { type = gain_tech which = 5830 }
+command = { type = dissent value = 1 }
+command = { type = setflag which = TAI_reformed }
+}
+action_b = {
+name = "EVT_976576_OPTIONB"
+ai_chance = 50
+command = { type = domestic which = free_market value = 1 }
+command = { type = construct which = ic where = 1362 value = 1 } 
+command = { type = construct which = ic where = 1363 value = 1 } 
+command = { type = construct which = ic where = 1364 value = 1 }
+command = { type = dissent value = -1 }
+command = { type = setflag which = TAI_reformed }
+}
+}
+
+event = {
+id = 976577
+random = no
+country = U30
+style = 2
+picture = "agrireform"
+
+trigger = { flag = TAI_agriculture }
+date = { day = 1 month = january year = 1936 }
+offset =  50
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976577_NAME"
+desc = "EVT_976577_DESC"
+
+action_a = {
+name = "EVT_976577_OPTIONA"
+command = { type = domestic which = free_market value = 1 }
+command = { type = relative_manpower value = 3 }
+command = { type = money value = 75 }
+command = { type = manpowerpool value = 10 }
+command = { type = gain_tech which = 5700 }
+command = { type = gain_tech which = 5710 }
+command = { type = gain_tech which = 5010 }
+command = { type = gain_tech which = 5020 }
+command = { type = dissent value = -1 }
+command = { type = setflag which = TAI_reformed }
+}
+}
+
+
+event = {
+id = 976578
+random = no
+country = U30
+style = 2
+picture = "TAIresource"
+
+trigger = { flag = TAI_resource }
+date = { day = 1 month = january year = 1936 }
+offset =  50
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976578_NAME"
+desc = "EVT_976578_DESC"
+
+action_a = {
+name = "EVT_976578_OPTIONA"
+command = { type = domestic which = free_market value = -1 }
+command = { type = relative_manpower value = 1 }
+command = { type = money value = -30 }
+command = { type = add_prov_resource which = 1361 value = 6 where = metal }
+command = { type = add_prov_resource which = 1364 value = 3 where = rare_materials }
+command = { type = add_prov_resource which = 1364 value = 9 where = energy }
+command = { type = construct which = ic where = 1323 value = 1 }
+command = { type = setflag which = TAI_reformed }
+}
+}
+
+event = {
+id = 976579
+random = no
+country = U30
+style = 2
+picture = "Chinese Infantry2"
+
+trigger = { flag = TAI_army }
+date = { day = 1 month = january year = 1936 }
+offset =  15
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976579_NAME"
+desc = "EVT_976579_DESC"
+
+action_a = {
+name = "EVT_976579_OPTIONA"
+ai_chance = 33
+command = { type = domestic which = professional_army value = 1 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = dissent value = 1 }
+command = { type = setflag which = TAI_sea }
+}
+action_b = {
+name = "EVT_976579_OPTIONB"
+ai_chance = 33
+command = { type = domestic which = professional_army value = 1 }
+command = { type = dissent value = -1 }
+command = { type = setflag which = TAI_land }
+}
+action_c = {
+name = "EVT_976579_OPTIONC"
+ai_chance = 34
+command = { type = domestic which = professional_army value = 1 }
+command = { type = dissent value = 1 }
+command = { type = setflag which = TAI_air }
+}
+}
+
+event = {
+id = 976580
+random = no
+country = U30
+style = 2
+picture = "japanese_navy3"
+
+trigger = { 
+flag = TAI_sea
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 60
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976580_NAME"
+desc = "EVT_976580_DESC"
+
+action_a = {
+name = "EVT_976580_OPTIONA"
+command = { type = max_organization which = land value = 5 }
+command = { type = morale which = land value = 5 }
+command = { type = add_division which = "Formosa" value = light_cruiser when = 2 }
+command = { type = add_division which = "2. Quzujian Dadui" value = destroyer when = 2 }
+command = { type = add_division which = "3. Quzujian Dadui" value = destroyer when = 2 }
+}
+}
+
+event = {
+id = 976581
+random = no
+country = U30
+style = 2
+picture = "Chinese Benz"
+
+trigger = { 
+flag = TAI_land
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 60
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976581_NAME"
+desc = "EVT_976581_DESC"
+
+action_a = {
+name = "EVT_976581_OPTIONA"
+command = { type = max_organization which = land value = 5 }
+command = { type = morale which = land value = 5 }
+command = { type = add_division which = "Di'2 Shi" value = infantry when = 1 where = artillery }
+command = { type = add_division which = "Di'3 Shi" value = infantry when = 1 }
+}
+}
+
+event = {
+id = 976582
+random = no
+country = U30
+style = 2
+picture = "he_111"
+
+trigger = { 
+flag = TAI_air
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 60
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976582_NAME"
+desc = "EVT_976582_DESC"
+
+action_a = {
+name = "EVT_976582_OPTIONA"
+command = { type = max_organization which = land value = 5 }
+command = { type = morale which = land value = 5 }
+command = { type = add_division which = "1. Zhandouji Dadui" value = interceptor when = 1 }
+}
+}
+
+#####################
+#Elections          #
+#####################
+
+event = {
+id = 976583
+random = no
+country = U30
+style = 2
+picture = "parliamentary_scandal"
+
+trigger = { 
+	flag = TAI_reformed
+	atwar = no 
+}
+date = { day = 1 month = january year = 1936 }
+offset = 15
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976583_NAME"
+desc = "EVT_976583_DESC"
+
+action_a = {
+name = "EVT_976583_OPTIONA"
+ai_chance = 80
+command = { type = dissent value = -3 }
+command = { type = setflag which = TAI_elections }
+}
+action_b = {
+name = "EVT_976583_OPTIONB"
+ai_chance = 20
+command = { type = set_domestic which = democratic value = 5 }
+command = { type = set_domestic which = political_left value = 2 }
+command = { type = headofstate which = 910921 }
+command = { type = headofgovernment which = 910923 }
+command = { type = foreignminister which = 910925 }
+command = { type = armamentminister which =  910927 }
+command = { type = ministerofintelligence which = 910929 }
+command = { type = dissent value = 10 }
+command = { type = setflag which = TAI_noelection }
+}
+}
+
+event = {
+id = 976584
+random = no
+country = U30
+style = 2
+picture = "election"
+
+trigger = { flag = TAI_elections }
+date = { day = 1 month = january year = 1936 }
+offset =  45
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976584_NAME"
+desc = "EVT_976584_DESC"
+
+action_a = {
+name = "EVT_976584_OPTIONA"
+ai_chance = 95
+command = { type = set_domestic which = democratic value = 6 }
+command = { type = set_domestic which = political_left value = 3 }
+command = { type = headofstate which = 910922 }
+command = { type = headofgovernment which = 910924 }
+command = { type = armamentminister which =  910927 }
+command = { type = foreignminister which = 910926 }
+command = { type = relation which = GER value = 30 }
+command = { type = relation which = JAP value = 20 }
+command = { type = relation which = EAF value = 20 }
+command = { type = relation which = AST value = 20 }
+command = { type = dissent value = 3 }
+command = { type = setflag which = TAI_nationalist }
+}
+action_b = {
+	trigger = { 
+        NOT = {
+        ispuppet = U30
+        }
+		}
+name = "EVT_976584_OPTIONB"
+ai_chance = 5
+command = { type = set_domestic which = democratic value = 5 }
+command = { type = set_domestic which = political_left value = 8 }
+command = { type = headofstate which = 910930 }
+command = { type = headofgovernment which = 910931 }
+command = { type = foreignminister which = 910932 }
+command = { type = armamentminister which = 910933 }
+command = { type = ministerofsecurity which = 910934 }
+command = { type = ministerofintelligence which = 910935 }
+command = { type = chiefofstaff which = 910936 }
+command = { type = chiefofarmy which = 910937 }
+command = { type = chiefofnavy which = 910938 }
+command = { type = chiefofair which = 910939 }
+command = { type = relation which = FRA value = 30 }
+command = { type = relation which = ENG value = 20 }
+command = { type = relation which = RSI value = 20 }
+command = { type = relation which = PRK value = 20 }
+command = { type = dissent value = 5 }
+command = { type = setflag which = TAI_syndicalist }
+}
+}
+
+#####################
+#Syndicalist        #
+#####################
+
+event = {
+id = 976585
+random = no
+country = U30
+style = 2
+picture = "Taiwan_sind"
+
+trigger = { flag = TAI_syndicalist }
+date = { day = 1 month = january year = 1936 }
+offset =  7
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976585_NAME"
+desc = "EVT_976585_DESC"
+
+action_a = {
+name = "EVT_976585_OPTIONA"
+ai_chance = 95
+command = { type = domestic which = interventionism value = 1 }
+command = { type = relation which = FRA value = 50 }
+command = { type = relation which = PRK value = 50 }
+command = { type = dissent value = -1 }
+command = { type = setflag which = TAI_needhelp }
+}
+
+action_b = {
+name = "EVT_976585_OPTIONB"
+ai_chance = 5
+command = { type = domestic which = interventionism value = -1 }
+command = { type = domestic which = defense_lobby value = -1 }
+command = { type = relation which = FRA value = -30 }
+command = { type = relation which = PRK value = -30 }
+command = { type = dissent value = 1 }
+}
+}
+
+event = {
+id = 976586
+random = no
+country = FRA
+style = 2
+picture = "Taiwan_sind"
+
+trigger = { 
+flag = TAI_needhelp
+government = communist
+exists = U30
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  2
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976586_NAME"
+desc = "EVT_976586_DESC"
+
+action_a = {
+name = "EVT_976586_OPTIONA"
+ai_chance = 30
+command = { type = relation which = U30 value = 30 }
+command = { type = guarantee which = FRA where = U30 }
+}
+action_b = {
+name = "EVT_976586_OPTIONB"
+ai_chance = 30
+command = { type = relation which = U30 value = 50 }
+command = { type = manpowerpool value = -1 }
+command = { type = setflag which = FRA_advisorstai }
+}
+action_c = {
+name = "EVT_976586_OPTIONC"
+ai_chance = 35
+command = { type = supplies value = -300 }
+command = { type = money value = -50 }
+command = { type = manpowerpool value = -10 }
+command = { type = relation which = U30 value = 70 }
+command = { type = guarantee which = FRA where = U30 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = setflag which = FRA_fullhelptai }
+}
+action_d = {
+name = "EVT_976586_OPTIOND"
+ai_chance = 5
+command = { type = relation which = U30 value = -30 }
+command = { type = domestic which = interventionism value = -1 }
+}
+}
+
+event = {
+id = 976587
+random = no
+country = U30
+style = 2
+picture = "226"
+
+trigger = { flag = FRA_advisorstai }
+date = { day = 1 month = january year = 1936 }
+offset = 7
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976587_NAME"
+desc = "EVT_976587_DESC"
+
+action_a = {
+name = "EVT_976587_OPTIONA"
+command = { type = max_organization which = land value = 5 }
+command = { type = morale which = land value = 5 }
+command = { type = domestic which = professional_army value = 1 }
+}
+}
+
+event = {
+id = 976588
+random = no
+country = U30
+style = 2
+picture = "226"
+
+trigger = { flag = FRA_fullhelptai }
+date = { day = 1 month = january year = 1936 }
+offset = 7
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976588_NAME"
+desc = "EVT_976588_DESC"
+
+action_a = {
+name = "EVT_976588_OPTIONA"
+command = { type = max_organization which = land value = 5 }
+command = { type = morale which = land value = 5 }
+command = { type = domestic which = professional_army value = 2 }
+command = { type = add_division which = "French Volunteers" value = militia when = 1 }
+}
+}
+
+event = {
+id = 976589
+random = no
+country = PRK
+style = 2
+picture = "Taiwan_sind"
+
+trigger = { 
+flag = TAI_needhelp
+government = communist
+exists = U30
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  2
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976589_NAME"
+desc = "EVT_976589_DESC"
+
+action_a = {
+name = "EVT_976589_OPTIONA"
+ai_chance = 50
+command = { type = relation which = U30 value = 30 }
+command = { type = guarantee which = PRK where = U30 }
+}
+action_b = {
+name = "EVT_976589_OPTIONB"
+ai_chance = 20
+command = { type = relation which = U30 value = 50 }
+command = { type = manpowerpool value = -1 }
+command = { type = setflag which = PRK_advisorstai }
+}
+action_c = {
+name = "EVT_976589_OPTIONC"
+ai_chance = 20
+command = { type = supplies value = -300 }
+command = { type = money value = -70 }
+command = { type = manpowerpool value = -10 }
+command = { type = relation which = U30 value = 70 }
+command = { type = guarantee which = PRK where = U30 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = setflag which = PRK_fullhelptai }
+}
+action_d = {
+name = "EVT_976589_OPTIOND"
+ai_chance = 10
+command = { type = relation which = U30 value = -30 }
+command = { type = domestic which = interventionism value = -1 }
+}
+}
+
+event = {
+id = 976590
+random = no
+country = U30
+style = 2
+picture = "226"
+
+trigger = { flag = PRK_advisorstai }
+date = { day = 1 month = january year = 1936 }
+offset = 7
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976590_NAME"
+desc = "EVT_976590_DESC"
+
+action_a = {
+name = "EVT_976590_OPTIONA"
+command = { type = max_organization which = land value = 5 }
+command = { type = morale which = land value = 5 }
+command = { type = domestic which = professional_army value = 1 }
+}
+}
+
+event = {
+id = 976591
+random = no
+country = U30
+style = 2
+picture = "226"
+
+trigger = { flag = PRK_fullhelptai }
+date = { day = 1 month = january year = 1936 }
+offset = 7
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976591_NAME"
+desc = "EVT_976591_DESC"
+
+action_a = {
+name = "EVT_976591_OPTIONA"
+command = { type = max_organization which = land value = 5 }
+command = { type = morale which = land value = 5 }
+command = { type = domestic which = professional_army value = 2 }
+command = { type = add_division which = "French Volunteers" value = militia when = 1 }
+}
+}
+
+event = {
+id = 976592
+random = no
+country = U30
+style = 2
+picture = "China_Army"
+
+trigger = { 
+atwar = no
+OR = {
+	flag = PRK_advisortai
+	flag = PRK_fullhelptai
+	flag = FRA_advisortai
+	flag = FRA_fullhelptai 
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 14
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976592_NAME"
+desc = "EVT_976592_DESC"
+
+action_a = {
+name = "EVT_976592_OPTIONA"
+command = { type = remove_division which = "Di'1 Shi" value = U30 }
+command = { type = remove_division which = "1. Min Shi" value = U30 }
+command = { type = remove_division which = "2. Min Shi" value = U30 }
+command = { type = add_corps which = "Taiwanese Worker's Army" value = land where = 1362 }
+command = { type = add_division which = "Xinbian Di'1 Shi" value = infantry when = 1 where = artillery }
+command = { type = add_division which = "1. Youji Zongdui" value = militia when = 1 }
+command = { type = add_division which = "2. Youji Zongdui" value = militia when = 1 }
+command = { type = domestic which = professional_army value = -1 }
+command = { type = setflag which = TAI_redarmy }
+}
+}
+
+event = {
+id = 976593
+random = no
+persistent = no
+country = U30
+style = 2
+picture = "China_Army"
+
+trigger = { 
+flag = TAI_redarmy
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 90
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976593_NAME"
+desc = "EVT_976593_DESC"
+
+action_a = {
+name = "EVT_976593_OPTIONA"
+command = { type = add_division which = "Xinbian Di'2 Shi" value = infantry when = 1 }
+command = { type = add_division which = "3. Youji Zongdui" value = militia when = 1 }
+}
+}
+
+event = {
+id = 976595
+random = no
+persistent = no
+country = U30
+style = 2
+picture = "China_Army"
+
+trigger = { 
+flag = TAI_redarmy
+event = 976593
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 120
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976595_NAME"
+desc = "EVT_976595_DESC"
+
+action_a = {
+name = "EVT_976595_OPTIONA"
+command = { type = add_division which = "Xinbian Di'3 Shi" value = infantry when = 1 }
+command = { type = add_division which = "4. Youji Zongdui" value = militia when = 1 }
+}
+}
+
+event = {
+id = 976596
+random = no
+persistent = no
+country = U30
+style = 2
+picture = "China_Army"
+
+trigger = { 
+flag = TAI_redarmy
+event = 976595
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 150
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976596_NAME"
+desc = "EVT_976596_DESC"
+
+action_a = {
+name = "EVT_976596_OPTIONA"
+command = { type = add_division which = "Xinbian Di'4 Shi" value = infantry when = 1 }
+command = { type = add_division which = "5. Youji Zongdui" value = militia when = 1 }
+}
+}
+
+event = {
+id = 976597
+random = no
+country = U30
+style = 2
+picture = "Bank"
+
+trigger = { 
+flag = TAI_syndicalist
+event = 976585
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  21
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976597_NAME"
+desc = "EVT_976597_DESC"
+
+action_a = {
+name = "EVT_976597_OPTIONA"
+ai_chance = 80
+command = { type = money value = 50 }
+command = { type = free_money value = -0.5 }
+command = { type = dissent value = -2 }
+command = { type = domestic which = democratic value = -1 }
+command = { type = domestic which = political_left value = 1 }
+command = { type = domestic which = free_market value = -1 }
+command = { type = relation which = FRA value = 15 }
+command = { type = relation which = PRK value = 10 }
+command = { type = relation which = JAP value = -15 }
+command = { type = relation which = CGX value = -30 }
+command = { type = relation which = GER value = -30 }
+command = { type = relation which = CSX value = -30 }
+}
+action_b = {
+name = "EVT_976597_OPTIONB"
+ai_chance = 20
+command = { type = free_money value = 0.3 }
+command = { type = dissent value = 3 }
+command = { type = domestic which = democratic value = 1 }
+command = { type = domestic which = political_left value = -1 }
+command = { type = domestic which = free_market value = 1 }
+command = { type = relation which = FRA value = -20 }
+command = { type = relation which = PRK value = -10 }
+}
+}
+
+event = {
+id = 976598
+random = no
+country = U30
+style = 2
+picture = "Industry2"
+
+trigger = { 
+flag = TAI_syndicalist
+event = 976597
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  21
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976598_NAME"
+desc = "EVT_976598_DESC"
+
+action_a = {
+name = "EVT_976598_OPTIONA"
+ai_chance = 60
+command = { type = money value = -20 }
+command = { type = industrial_modifier which = total value = 5 }
+command = { type = domestic which = democratic value = 1 }
+command = { type = domestic which = political_left value = 1 }
+command = { type = domestic which = free_market value = 1 }
+command = { type = relation which = FRA value = 30 }
+command = { type = relation which = PRK value = 15 }
+command = { type = relation which = JAP value = -25 }
+command = { type = relation which = CGX value = -25 }
+command = { type = relation which = GER value = -25 }
+command = { type = relation which = CSX value = -25 }
+command = { type = dissent value = 1 }
+}
+action_b = {
+name = "EVT_976598_OPTIONB"
+ai_chance = 30
+command = { type = money value = -35 }
+command = { type = industrial_modifier which = total value = 5 }
+command = { type = free_supplies value = 10 }
+command = { type = domestic which = democratic value = -1 }
+command = { type = domestic which = political_left value = 2 }
+command = { type = domestic which = free_market value = -2 }
+command = { type = relation which = FRA value = 20 }
+command = { type = relation which = PRK value = 10 }
+command = { type = relation which = JAP value = -30 }
+command = { type = relation which = CGX value = -30 }
+command = { type = relation which = GER value = -30 }
+command = { type = relation which = CSX value = -30 }
+command = { type = dissent value = 3 }
+}
+action_c = {
+name = "EVT_976598_OPTIONC"
+ai_chance = 10
+command = { type = money value = 30 }
+command = { type = domestic which = democratic value = 1 }
+command = { type = domestic which = political_left value = -2 }
+command = { type = domestic which = free_market value = 2 }
+command = { type = relation which = FRA value = -30 }
+command = { type = relation which = PRK value = -25 }
+command = { type = dissent value = 5 }
+}
+}
+
+event = {
+id = 976599
+random = no
+country = U30
+style = 2
+picture = "agriculture2"
+
+trigger = { 
+flag = TAI_syndicalist
+event = 976598
+NOT = { flag = TAI_Japanese }
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  21
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976599_NAME"
+desc = "EVT_976599_DESC"
+
+action_a = {
+name = "EVT_976599_OPTIONA"
+ai_chance = 45
+command = { type = money value = 20 }
+command = { type = domestic which = democratic value = -1 }
+command = { type = domestic which = political_left value = 1 }
+command = { type = domestic which = free_market value = -1 }
+command = { type = relation which = FRA value = 25 }
+command = { type = relation which = PRK value = 15 }
+command = { type = relation which = JAP value = -100 }
+command = { type = relation which = CGX value = -30 }
+command = { type = relation which = GER value = -30 }
+command = { type = relation which = CSX value = -30 }
+command = { type = setflag which = TAI_landtakenseize }
+command = { type = dissent value = 3 }
+}
+action_b = {
+name = "EVT_976599_OPTIONB"
+ai_chance = 45
+command = { type = money value = -70 }
+command = { type = domestic which = democratic value = 1 }
+command = { type = domestic which = political_left value = 1 }
+command = { type = domestic which = free_market value = 1 }
+command = { type = setflag which = TAI_landtaken }
+command = { type = dissent value = 1 }
+}
+action_c = {
+name = "EVT_976599_OPTIONC"
+ai_chance = 10
+command = { type = domestic which = democratic value = 1 }
+command = { type = domestic which = political_left value = -2 }
+command = { type = domestic which = free_market value = 1 }
+command = { type = relation which = FRA value = -30 }
+command = { type = relation which = PRK value = -25 }
+command = { type = dissent value = 5 }
+}
+}
+
+event = {
+id = 976600
+random = no
+country = U30
+style = 2
+#picture = "agriculture"
+
+trigger = { 
+flag = TAI_syndicalist
+event = 976598
+flag = TAI_Japanese
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  21
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976600_NAME"
+desc = "EVT_976600_DESC"
+
+action_a = {
+name = "EVT_976600_OPTIONA"
+ai_chance = 20
+command = { type = money value = -20 }
+command = { type = resource which = supplies value = -20 }
+command = { type = domestic which = democratic value = -1 }
+command = { type = domestic which = political_left value = 1 }
+command = { type = domestic which = free_market value = -1 }
+command = { type = relation which = FRA value = 25 }
+command = { type = relation which = PRK value = 15 }
+command = { type = relation which = JAP value = -150 }
+command = { type = relation which = CGX value = -30 }
+command = { type = relation which = GER value = -30 }
+command = { type = relation which = CSX value = -30 }
+command = { type = setflag which = TAI_landtakenseize }
+command = { type = dissent value = 3 }
+}
+action_b = {
+name = "EVT_976600_OPTIONB"
+ai_chance = 65
+command = { type = money value = -50 }
+command = { type = resource which = supplies value = -40 }
+command = { type = domestic which = democratic value = 1 }
+command = { type = domestic which = political_left value = 1 }
+command = { type = domestic which = free_market value = 1 }
+command = { type = setflag which = TAI_landtaken }
+command = { type = dissent value = 1 }
+}
+action_c = {
+name = "EVT_976600_OPTIONC"
+ai_chance = 15
+command = { type = domestic which = democratic value = 1 }
+command = { type = domestic which = political_left value = -2 }
+command = { type = domestic which = free_market value = 1 }
+command = { type = relation which = FRA value = -30 }
+command = { type = relation which = PRK value = -25 }
+command = { type = dissent value = 5 }
+}
+}
+
+event = {
+id = 976601
+random = no
+country = U30
+style = 2
+picture = "agrireform"
+
+trigger = { 
+OR = {
+	flag = TAI_landtaken
+	flag = TAI_landtakenseize
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  21
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976601_NAME"
+desc = "EVT_976601_DESC"
+
+action_a = {
+name = "EVT_976601_OPTIONA"
+ai_chance = 40
+command = { type = supplies value = 150 }
+command = { type = free_supplies value = 7 }
+command = { type = dissent value = 3 }
+}
+action_b = {
+name = "EVT_976601_OPTIONB"
+ai_chance = 35
+command = { type = supplies value = 120 }
+command = { type = free_supplies value = 5 }
+command = { type = dissent value = -3 }
+}
+action_c = {
+name = "EVT_976601_OPTIONC"
+ai_chance = 20
+command = { type = supplies value = 200 }
+command = { type = free_supplies value = 10 }
+command = { type = dissent value = 7 }
+}
+}
+
+event = {
+id = 976602
+random = no
+country = U30
+style = 2
+picture = "Chinese Workforce"
+
+trigger = { 
+flag = TAI_syndicalist
+event = 976601
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  21
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976602_NAME"
+desc = "EVT_976602_DESC"
+
+action_a = {
+name = "EVT_976602_OPTIONA"
+ai_chance = 40
+command = { type = money value = -10 }
+command = { type = resource which = supplies value = -70 }
+command = { type = manpowerpool value = -15 }
+command = { type = dissent value = 3 }
+command = { type = setflag which = TAI_urbanisation_force }
+}
+action_b = {
+name = "EVT_976602_OPTIONB"
+ai_chance = 35
+command = { type = money value = -30 }
+command = { type = resource which = supplies value = -50 }
+command = { type = manpowerpool value = -10 }
+command = { type = dissent value = 1 }
+command = { type = setflag which = TAI_urbanisation_prop }
+}
+action_c = {
+name = "EVT_976602_OPTIONC"
+ai_chance = 25
+command = { type = money value = -40 }
+command = { type = resource which = supplies value = -100 } 
+command = { type = manpowerpool value = -12 }
+command = { type = add_division value = militia when = 1 }
+command = { type = add_division value = militia when = 1 }
+command = { type = add_division value = militia when = 1 }
+command = { type = dissent value = -1 }
+}
+}
+
+event = {
+id = 976603
+random = no
+persistent = no
+country = U30
+style = 2
+picture = "Industry2"
+
+trigger = { 
+flag = TAI_urbanisation_force
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 60
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976603_NAME"
+desc = "EVT_976603_DESC"
+
+action_a = {
+name = "EVT_976603_OPTIONA"
+command = { type = money value = 10 }
+command = { type = resource which = supplies value = -50 }
+command = { type = construct which = ic where = 1362 value = 1 }
+command = { type = province_manpower which = 1363 value = 1 }
+command = { type = manpowerpool value = 5 }
+}
+}
+
+event = {
+id = 976604
+random = no
+persistent = no
+country = U30
+style = 2
+picture = "Industry2"
+
+trigger = { 
+flag = TAI_urbanisation_force
+event = 976603
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 90
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976604_NAME"
+desc = "EVT_976604_DESC"
+
+action_a = {
+name = "EVT_976604_OPTIONA"
+command = { type = money value = 10 }
+command = { type = resource which = supplies value = -50 }
+command = { type = construct which = ic where = 1362 value = 1 }
+command = { type = province_manpower which = 1363 value = 1 }
+command = { type = manpowerpool value = 5 }
+}
+}
+
+event = {
+id = 976605
+random = no
+persistent = no
+country = U30
+style = 2
+picture = "Industry2"
+
+trigger = { 
+flag = TAI_urbanisation_force
+event = 976604
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 120
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976605_NAME"
+desc = "EVT_976605_DESC"
+
+action_a = {
+name = "EVT_976605_OPTIONA"
+command = { type = money value = 10 }
+command = { type = resource which = supplies value = -50 }
+command = { type = construct which = ic where = 1362 value = 1 }
+command = { type = province_manpower which = 1363 value = 1 }
+command = { type = manpowerpool value = 5 }
+}
+}
+
+event = {
+id = 976606
+random = no
+persistent = no
+country = U30
+style = 2
+picture = "Industry2"
+
+trigger = { 
+flag = TAI_urbanisation_prop
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 70
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976606_NAME"
+desc = "EVT_976606_DESC"
+
+action_a = {
+name = "EVT_976606_OPTIONA"
+command = { type = money value = 25 }
+command = { type = resource which = supplies value = -30 }
+command = { type = construct which = ic where = 1362 value = 1 }
+command = { type = province_manpower which = 1363 value = 1 }
+command = { type = manpowerpool value = 3 }
+}
+}
+
+event = {
+id = 976607
+random = no
+persistent = no
+country = U30
+style = 2
+picture = "Industry2"
+
+trigger = { 
+flag = TAI_urbanisation_prop
+event = 976606
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 100
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976607_NAME"
+desc = "EVT_976607_DESC"
+
+action_a = {
+name = "EVT_976607_OPTIONA"
+command = { type = money value = 25 }
+command = { type = resource which = supplies value = -30 }
+command = { type = construct which = ic where = 1362 value = 1 }
+command = { type = province_manpower which = 1363 value = 1 }
+command = { type = manpowerpool value = 3 }
+}
+}
+
+event = {
+id = 976608
+random = no
+persistent = no
+country = U30
+style = 2
+picture = "Industry2"
+
+trigger = { 
+flag = TAI_urbanisation_prop
+event = 976607
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 130
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976608_NAME"
+desc = "EVT_976608_DESC"
+
+action_a = {
+name = "EVT_976608_OPTIONA"
+command = { type = money value = 25 }
+command = { type = resource which = supplies value = -30 }
+command = { type = construct which = ic where = 1362 value = 1 }
+command = { type = province_manpower which = 1363 value = 1 }
+command = { type = manpowerpool value = 3 }
+}
+}
+#####################
+#Nationalist        #
+#####################
+
+#####################
+#No Elections       #
+#####################
+
+event = {
+id = 976620
+random = no
+country = U30
+style = 2
+picture = "politics2"
+
+trigger = { flag = TAI_noelection }
+date = { day = 1 month = january year = 1936 }
+offset =  15
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976620_NAME"
+desc = "EVT_976620_DESC"
+
+action_a = {
+name = "EVT_976620_OPTIONA"
+ai_chance = 60
+command = { type = domestic which = democratic value = -1 }
+command = { type = domestic which = political_left value = -1 }
+command = { type = domestic which = freedom value = -1 }
+command = { type = dissent value = 3 }
+command = { type = setflag which = TAI_arrest }
+}
+action_b = {
+name = "EVT_976620_OPTIONB"
+ai_chance = 40
+command = { type = domestic which = democratic value = 1 }
+command = { type = domestic which = political_left value = 1 }
+command = { type = domestic which = freedom value = 1 }
+command = { type = dissent value = -1 }
+command = { type = setflag which = TAI_noaciton }
+}
+}
+
+#no action
+
+event = {
+id = 976621
+random = no
+country = U30
+style = 2
+picture = "politics2"
+
+trigger = { flag = TAI_noaction }
+date = { day = 1 month = january year = 1936 }
+offset =  25
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976621_NAME"
+desc = "EVT_976621_DESC"
+
+action_a = {
+name = "EVT_976621_OPTIONA"
+ai_chance = 60
+command = { type = domestic which = democratic value = -1 }
+command = { type = domestic which = political_left value = -1 }
+command = { type = dissent value = 5 }
+command = { type = setflag which = TAI_martial }
+}
+action_b = {
+name = "EVT_976621_OPTIONB"
+ai_chance = 40
+command = { type = domestic which = democratic value = 3 }
+command = { type = domestic which = political_left value = 2 }
+command = { type = ministerofsecurity which = 910944 }
+command = { type = armamentminister which = 910933 }
+command = { type = dissent value = -5 }
+command = { type = setflag which = TAI_colaitional }
+}
+}
+
+event = {
+id = 976622
+random = no
+country = U30
+style = 2
+#picture = "execution2"
+
+trigger = { flag = TAI_martial }
+date = { day = 1 month = january year = 1936 }
+offset =  10
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976622_NAME"
+desc = "EVT_976622_DESC"
+
+action_a = {
+name = "EVT_976622_OPTIONA"
+ai_chance = 55
+command = { type = domestic which = democratic value = -1 }
+command = { type = domestic which = political_left value = -1 }
+command = { type = dissent value = 5 }
+command = { type = setflag which = TAI_execution }
+}
+action_b = {
+name = "EVT_976622_OPTIONB"
+ai_chance = 45
+command = { type = domestic which = democratic value = 1 }
+command = { type = domestic which = political_left value = 1 }
+command = { type = dissent value = 1 }
+}
+}
+
+event = {
+id = 976623
+random = no
+country = FRA
+style = 2
+#picture = "execution2"
+
+trigger = { 
+flag = TAI_execution
+government = communist
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  12
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976623_NAME"
+desc = "EVT_976623_DESC"
+
+action_a = {
+name = "EVT_976623_OPTIONA"
+ai_chance = 85
+command = { type = domestic which = interventionism value = 1 }
+command = { type = dissent value = -1 }
+command = { type = trigger which = 976624 }
+}
+action_b = {
+name = "EVT_976623_OPTIONB"
+ai_chance = 15
+command = { type = domestic which = interventionism value = -1 }
+command = { type = dissent value = 2 }
+}
+}
+
+event = {
+id = 976624
+random = no
+country = U30
+style = 2
+#picture = "Chinese_Fighting2"
+
+name = "EVT_976624_NAME"
+desc = "EVT_976624_DESC"
+action_a = {
+name = "EVT_976624_OPTIONA"
+command = { type = dissent value = 1 }
+command = { type = setflag which = TAI_civilwar }
+}
+}
+
+event = {
+id = 976625
+country = U30
+style = 2
+#picture = "Chinese_Fighting2"
+
+trigger = { 
+flag = TAI_civilwar
+random = 25
+NOT = { event = 976626 } #Syndicalist Victory
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  2
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976625_NAME"
+desc = "EVT_976625_DESC"
+action_a = {
+name = "EVT_976625_OPTIONA"
+command = { type = dissent value = -3 }
+command = { type = relation which = FRA value = -70 }
+command = { type = sleepevent which = 976596 }
+command = { type = sleepevent which = 976626 }
+command = { type = setflag which = TAI_nationalist }
+}
+}
+
+event = {
+id = 976626
+country = U30
+style = 2
+#picture = "Chinese_Fighting2"
+
+trigger = { 
+flag = TAI_civilwar
+random = 25
+NOT = { event = 976625 } #Nationalist Victory
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  2
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976626_NAME"
+desc = "EVT_976626_DESC"
+
+action_a = {
+name = "EVT_976626_OPTIONA"
+command = { type = set_domestic which = democratic value = 4 }
+command = { type = set_domestic which = political_left value = 9 }
+command = { type = headofstate which = 910930 }
+command = { type = headofgovernment which = 910931 }
+command = { type = foreignminister which = 910932 }
+command = { type = armamentminister which = 910933 }
+command = { type = ministerofsecurity which = 910934 }
+command = { type = ministerofintelligence which = 910935 }
+command = { type = chiefofstaff which = 910936 }
+command = { type = chiefofarmy which = 910937 }
+command = { type = chiefofnavy which = 910938 }
+command = { type = chiefofair which = 910939 }
+command = { type = set_relation which = FRA value = 120 }
+command = { type = set_relation which = ENG value = 70 }
+command = { type = set_relation which = RSI value = 70 }
+command = { type = set_relation which = PRK value = 70 }
+command = { type = set_relation which = JAP value = -100 }
+command = { type = set_relation which = CSX value = -100 }
+command = { type = set_relation which = GER value = -100 }
+command = { type = dissent value = -5 }
+command = { type = sleepevent which = 976595 }
+command = { type = sleepevent which = 976625 }
+command = { type = setflag which = TAI_syndicalist }
+}
+}
+
+event = {
+id = 976627
+random = no
+country = U30
+style = 2
+picture = "China_Recapture"
+
+trigger = { 
+NOT = { flag = TAI_execution }
+event = 976593
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  20
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976627_NAME"
+desc = "EVT_976627_DESC"
+
+action_a = {
+name = "EVT_976627_OPTIONA"
+ai_chance = 40
+command = { type = domestic which = democratic value = -1 }
+command = { type = dissent value = 5 }
+command = { type = setflag which = TAI_civilwar }
+}
+action_b = {
+name = "EVT_976627_OPTIONB"
+ai_chance = 40
+command = { type = domestic which = democratic value = 3 }
+command = { type = domestic which = political_left value = 2 }
+command = { type = ministerofsecurity which = 910944 }
+command = { type = armamentminister which = 910933 }
+command = { type = dissent value = -5 }
+}
+action_c = {
+name = "EVT_976627_OPTIONC"
+ai_chance = 20
+command = { type = domestic which = interventionism value = -1 }
+command = { type = dissent value = 1 }
+command = { type = setflag which = TAI_wait }
+}
+}
+
+#banned party
+
+event = {
+id = 976628
+random = no
+country = U30
+style = 2
+picture = "politics2"
+
+trigger = { flag = TAI_noelection }
+date = { day = 1 month = january year = 1936 }
+offset =  45
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976628_NAME"
+desc = "EVT_976628_DESC"
+
+action_a = {
+name = "EVT_976628_OPTIONA"
+ai_chance = 35
+command = { type = domestic which = democratic value = -1 }
+command = { type = domestic which = political_left value = -1 }
+command = { type = dissent value = 5 }
+command = { type = setflag which = TAI_martial }
+}
+action_b = {
+name = "EVT_976628_OPTIONB"
+ai_chance = 35
+command = { type = domestic which = democratic value = 3 }
+command = { type = domestic which = political_left value = 2 }
+command = { type = ministerofsecurity which = 910944 }
+command = { type = armamentminister which = 910933 }
+command = { type = dissent value = -5 }
+command = { type = setflag which = TAI_colaitional }
+}
+action_c = {
+name = "EVT_976628_OPTIONC"
+ai_chance = 30
+command = { type = domestic which = interventionism value = -1 }
+command = { type = dissent value = -1 }
+command = { type = setflag which = TAI_wait }
+command = { type = peacetime_ic_mod value = -20 }
+command = { type = tc_mod value = -15 }
+command = { type = setflag which = TAI_wait }
+}
+}
+
+event = {
+id = 976629
+random = no
+country = U30
+style = 2
+picture = "politics1"
+
+trigger = { flag = TAI_wait }
+date = { day = 1 month = january year = 1936 }
+offset =  45
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976629_NAME"
+desc = "EVT_976629_DESC"
+
+action_a = {
+name = "EVT_976629_OPTIONA"
+ai_chance = 55
+command = { type = domestic which = democratic value = 2 }
+command = { type = domestic which = political_left value = 1 }
+command = { type = peacetime_ic_mod value = 20 }
+command = { type = tc_mod value = 10 }
+command = { type = dissent value = -5 }
+command = { type = setflag which = TAI_elections }
+}
+action_b = {
+name = "EVT_976629_OPTIONB"
+ai_chance = 30
+command = { type = domestic which = democratic value = 3 }
+command = { type = domestic which = political_left value = 2 }
+command = { type = ministerofsecurity which = 910944 }
+command = { type = armamentminister which = 910933 }
+command = { type = peacetime_ic_mod value = 20 }
+command = { type = tc_mod value = 10 }
+command = { type = dissent value = -5 }
+command = { type = setflag which = TAI_colaitional }
+}
+action_c = {
+name = "EVT_976629_OPTIONC"
+ai_chance = 15
+command = { type = domestic which = democratic value = -1 }
+command = { type = domestic which = political_left value = -1 }
+command = { type = peacetime_ic_mod value = 20 }
+command = { type = tc_mod value = 10 }
+command = { type = dissent value = 1 }
+command = { type = setflag which = TAI_nochange }
+}
+}
+
+event = {
+id = 976630
+random = no
+country = U30
+style = 2
+picture = "politics2"
+
+trigger = { 
+flag = TAI_nochange
+random = 20 
+}
+
+date = { day = 1 month = january year = 1936 }
+offset =  15
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_976630_NAME"
+desc = "EVT_976630_DESC"
+action_a = {
+name = "EVT_976630_OPTIONA"
+command = { type = dissent value = 1 }
+command = { type = setflag which = TAI_civilwar }
+}
+}
+
+event = {
+id = 976661
+random = no
+country = JAP
+style = 2
+picture = "Taiwan"
+
+
+
+name = "EVT_976661_NAME"
+desc = "EVT_976661_DESC"
+
+action_a = {
+name = "EVT_976661_OPTIONA"
+ai_chance = 30
+         command = { type = removeclaim which = 1361 }
+         command = { type = removeclaim which = 1362 }
+         command = { type = removeclaim which = 1363 }
+         command = { type = removeclaim which = 1364 }		
+        command = { type = independence which = U30 value = 1 when = 1 }
+		command = { type = flag_ext where = U30 which = "_JAP" }
+        command = { type = make_puppet which = U30 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = domestic which = democratic value = 1 }
+command = { type = dissent value = 5 }
+command = { type = event which = 976543 where = U30 when = 2  }
+}
+
+action_b = {
+name = "EVT_976661_OPTIONB"
+ai_chance = 70
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = dissent value = 2 }
+command = { type = setflag which = TAI_military }
+}
+}
+
+
+#####################
+#Qing rule          #
+#####################
+
+
+#####################
+#Flavor events      #
+#####################
+event = {
+id = 976660
+country = U30
+style = 2
+
+trigger = {  }
+
+date = { day = 9 month = july year = 1939 }
+
+name = "EVT_976660_NAME"
+desc = "EVT_976660_DESC"
+
+action_a = {
+name = "EVT_976660_OPTIONA"
+command = { type = dissent value = 1 }
+command = { type = sleepminister which = 910916 }
+command = { type = sleepminister which = 910917 }
+command = { type = sleepleader which = 875412 }
+command = { type = chiefofstaff which = 910943 }
+command = { type = chiefofarmy which = 910944 }
+}
+}
+
+
+##Naval Blockade of Taiwan
+event = {
+	id = 340097
+	random = no
+	country = JAP
+	
+	
+	name = "EVT_340097_NAME"
+	desc = "EVT_340097_DESC"
+	style = 2
+	picture = "navalblockade"
+	decision_picture = "decision_navalblockadej"
+	
+	decision = {
+		war = { country = JAP country = U30 }
+		event = 976544
+	}
+	
+	decision_trigger = {
+		garrison = { country = JAP province = 2515   type = naval size = 3 area = no }
+		oil = 100
+		supplies = 500
+    }
+
+	trigger = { 
+		war = { country = JAP country = U30 }
+		event = 976544
+		garrison = { country = JAP province = 2515   type = naval size = 3 area = no }
+	}
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 2
+	deathdate = { day = 29 month = december year = 1940 }
+
+	action_a = {
+		name = "EVT_340097_OPTIONA" 
+		command = { type = setflag which = JNBT }
+		command = { type = belligerence which = JAP value = 5  }
+		command = { type = supplies value = -500 }
+		command = { type = oilpool value = -100 }
+		command = { type = trigger which = 340098 }
+	}
+}
+
+event = {
+	id = 340098
+	random = no
+	country = U30
+	
+	name = "EVT_340098_NAME"
+	desc = "EVT_340098_DESC"
+	style = 2
+	picture = "SCW_German Intervention"
+	
+	action_a = {
+		name = "EVT_340098_OPTIONA"
+		command = { type = supplies value = -500 }
+		command = { type = industrial_modifier which = total value = -2 }
+		command = { type = embargo which = ENG where = U30 value = 3 }
+		command = { type = embargo which = SWE where = U30 value = 3 }
+		command = { type = embargo which = SOV where = U30 value = 3 }
+		command = { type = embargo which = SPA where = U30 value = 3 }
+		command = { type = embargo which = POR where = U30 value = 3 }
+		command = { type = embargo which = GRE where = U30 value = 3 }
+		command = { type = embargo which = CAL where = U30 value = 3 }
+		command = { type = embargo which = USA where = U30 value = 3 }
+		command = { type = embargo which = CAN where = U30 value = 3 }
+		command = { type = embargo which = MEX where = U30 value = 3 }
+		command = { type = embargo which = BRA where = U30 value = 3 }
+		command = { type = embargo which = ARG where = U30 value = 3 }
+		command = { type = embargo which = CGX where = U30 value = 3 }
+		command = { type = embargo which = CHI where = U30 value = 3 }
+		command = { type = embargo which = CSX where = U30 value = 3 }
+		command = { type = embargo which = AST where = U30 value = 3 }
+		command = { type = embargo which = RUS where = U30 value = 3 }
+	}
+}
+
+event = {
+	id = 340305
+	random = no
+	country = JAP
+	style = 2
+	picture = "navalblockade"
+	persistent = yes
+
+	trigger = { 
+		flag = JNBT
+		war = { country = JAP country = U30 }
+	}
+	
+	date = { day = 1 month = january year = 1936 }
+	offset = 90
+	deathdate = { day = 29 month = december year = 1940 }
+
+	name = "EVT_340305_NAME"
+	desc = "EVT_340305_DESC"
+
+	action_a = {
+		name = "EVT_340305_OPTIONA"
+		ai_chance = 90
+		command = { type = supplies value = -300 }
+		command = { type = oilpool value = -70 }
+		command = { type = belligerence which = JAP value = 3  }
+	}
+	action_b = {
+		name = "EVT_340305_OPTIONB"
+		ai_chance = 10
+		command = { type = clrflag which = JNBT }
+		command = { type = trigger which = 340304 }
+		command = { type = belligerence which = JAP value = -1  }
+	}
+}
+
+event = {
+	id = 340303
+	random = no
+	country = JAP
+	style = 2
+	picture = "navalblockade"
+
+	trigger = { flag = JNBT
+		NOT = { war = { country = JAP country = U30 } }
+	}
+	date = { day = 1 month = january year = 1936 }
+	offset = 10
+	deathdate = { day = 29 month = december year = 1940 }
+
+	name = "EVT_340303_NAME"
+	desc = "EVT_340303_DESC"
+
+	action_a = {
+		name = "EVT_340303_OPTIONA"
+		command = { type = clrflag which = JNBT }
+		command = { type = trigger which = 340304 }
+		command = { type = belligerence which = JAP value = -1  }
+	}
+}
+
+event = {
+	id = 340304
+	random = no
+	country = U30
+	style = 2
+	picture = "navalblockade"
+
+
+	name = "EVT_340304_NAME"
+	desc = "EVT_340304_DESC"
+
+	action_a = {
+		name = "EVT_340304_OPTIONA"
+		command = { type = supplies value = 500 }
+		command = { type = industrial_modifier which = total value = 2 }
+		command = { type = embargo which = ENG where = U30 value = 0 }
+		command = { type = embargo which = SWE where = U30 value = 0 }
+		command = { type = embargo which = SOV where = U30 value = 0 }
+		command = { type = embargo which = SPA where = U30 value = 0 }
+		command = { type = embargo which = POR where = U30 value = 0 }
+		command = { type = embargo which = GRE where = U30 value = 0 }
+		command = { type = embargo which = CAL where = U30 value = 0 }
+		command = { type = embargo which = USA where = U30 value = 0 }
+		command = { type = embargo which = CAN where = U30 value = 0 }
+		command = { type = embargo which = MEX where = U30 value = 0 }
+		command = { type = embargo which = BRA where = U30 value = 0 }
+		command = { type = embargo which = ARG where = U30 value = 0 }
+		command = { type = embargo which = CGX where = U30 value = 0 }
+		command = { type = embargo which = CHI where = U30 value = 0 }
+		command = { type = embargo which = CSX where = U30 value = 0 }
+		command = { type = embargo which = AST where = U30 value = 0 }
+		command = { type = embargo which = RUS where = U30 value = 0 }
+	}
+}
+
+
+event = {
+	id = 976662
+	random = no
+	country = GER
+
+    decision = {
+		NOT = { war = { country = JAP country = GER } }
+		NOT = { flag = JNBT }
+		war = { country = JAP country = U30 }
+		NOT = {    ispuppet = U30 }
+		NOT = {    ispuppet = GER }
+		NOT = { alliance = { country = JAP country = GER } }
+		control = { province = 163 data = GER }
+	}
+	
+	decision_trigger = {
+		manpower = 2
+		supplies = 1000 
+		money = 100
+	}
+	
+	trigger = { 
+		NOT = { war = { country = JAP country = GER } }
+		NOT = { flag = JNBT }
+		war = { country = JAP country = U30 }
+		NOT = {    ispuppet = U30 }
+		NOT = {    ispuppet = GER }
+		NOT = { alliance = { country = JAP country = GER } }
+		control = { province = 163 data = GER }
+	}
+	
+	date = { day = 1 month = january year = 1936 }
+	offset = 15
+	deathdate = { day = 29 month = december year = 1940 }
+	
+	name = "EVT_976662_NAME"
+	desc = "EVT_976662_DESC"
+	picture = "Wehrmacht"
+	decision_picture = "decision_foreign_volunteers"
+        style = 2
+	
+	action_a = {
+		ai_chance = 70
+		name = "EVT_976662_OPTIONA"
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = relation which = JAP value = -50 }
+		command = { type = relation which = PRI value = -50 }
+		command = { type = relation which = U30 value = 50 }
+		command = { type = money value = -100 }
+		command = { type = manpowerpool value = -2 }
+		command = { type = resource which = supplies value = -500 }
+		command = { type = trigger which = 976663 }
+		command = { type = dissent value = 1 }
+	}
+	action_b = {
+		ai_chance = 30
+		name = "EVT_976662_OPTIONB"
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = relation which = JAP value = 50 }
+		command = { type = relation which = PRI value = 50 }
+		command = { type = relation which = U30 value = -50 }
+		command = { type = dissent value = -1 }
+	}
+}
+
+event = {
+	id = 976663
+	random = no
+	country = U30
+	
+	name = "EVT_976663_NAME"
+	desc = "EVT_976663_DESC"
+	style = 2
+	picture = "Wehrmacht"
+	
+	action_a = {
+		name = "EVT_976663_OPTIONA"
+		command = { type = supplies value = 500 } 
+		command = { type = steal_tech which = GER }
+		command = { type = manpowerpool value = 2 }
+		command = { type = max_organization which = land value = 2 }
+		command = { type = morale which = land value = 2 }
+	}
+}
+
+event = {
+	id = 976664
+	random = no
+	country = GER
+
+	trigger = {
+		event = 976663
+		NOT = { war = { country = U30 country = JAP } }
+	}
+
+	name = "EVT_976664_NAME"
+	desc = "EVT_976664_DESC"
+
+	style = 2
+	picture = "soviet_replacement"
+
+	date = { day = 18 month = july year = 1936 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1960 }
+
+	action_a = {
+		name = "EVT_976664_OPTIONA" # Great! 
+		command = { type = manpowerpool value = 2 }	 	# Soldiers return home
+		command = { type = dissent value = -1 }
+		command = { type = gain_tech which = -1 } 		# get random tech blueprints
+		command = { type = add_leader_skill which = -1 value = 1 }
+		command = { type = add_leader_skill which = -1 value = 1 }
+	}
+}
+
+
+event = {
+	id = 976665
+	random = no
+	country = RUS
+	
+	decision = {
+		NOT = { war = { country = JAP country = RUS } }
+		NOT = { flag = JNBT }
+		war = { country = JAP country = U30 }
+		NOT = {    ispuppet = U30 }
+		NOT = {    ispuppet = RUS }
+		NOT = { alliance = { country = JAP country = RUS } }
+		control = { province = 1162 data = RUS } 
+		control = { province = 1186 data = RUS } 
+		NOT = { exists = SIB }
+		NOT = { exists = SOV }
+	}
+	
+	decision_trigger = {
+		manpower = 2
+		supplies = 1000 
+		money = 100
+	}
+	
+	trigger = { 
+		NOT = { war = { country = JAP country = RUS } }
+		NOT = { flag = JNBT }
+		war = { country = JAP country = U30 }
+		NOT = {    ispuppet = U30 }
+		NOT = {    ispuppet = RUS }
+		NOT = { alliance = { country = JAP country = RUS } }
+		control = { province = 1162 data = RUS } 
+		control = { province = 1186 data = RUS } 
+		NOT = { exists = SIB }
+		NOT = { exists = SOV }
+	}
+	
+	date = { day = 1 month = january year = 1936 }
+	offset = 15
+	deathdate = { day = 29 month = december year = 1940 }
+	
+	name = "EVT_976665_NAME"
+	desc = "EVT_976665_DESC"
+	picture = "soviet_replacement"
+	decision_picture = "decision_foreign_volunteers"
+        style = 2
+	
+	action_a = {
+		ai_chance = 70
+		name = "EVT_976665_OPTIONA"
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = relation which = JAP value = -50 }
+		command = { type = relation which = PRI value = -50 }
+		command = { type = relation which = U30 value = 50 }
+		command = { type = money value = -100 }
+		command = { type = manpowerpool value = -2 }
+		command = { type = resource which = supplies value = -500 }
+		command = { type = trigger which = 976666 }
+		command = { type = dissent value = 1 }
+	}
+	action_b = {
+		ai_chance = 30
+		name = "EVT_976665_OPTIONB"
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = relation which = JAP value = 50 }
+		command = { type = relation which = PRI value = 50 }
+		command = { type = relation which = U30 value = -50 }
+		command = { type = dissent value = -1 }
+	}
+}
+
+event = {
+	id = 976666
+	random = no
+	country = U30
+	
+	name = "EVT_976666_NAME"
+	desc = "EVT_976666_DESC"
+	style = 2
+	picture = "soviet_replacement"
+	
+	action_a = {
+		name = "EVT_976666_OPTIONA"
+		command = { type = supplies value = 500 } 
+		command = { type = steal_tech which = RUS }
+		command = { type = manpowerpool value = 1 }
+		command = { type = max_organization which = land value = 1 }
+		command = { type = morale which = land value = 2 }
+	}
+}
+
+event = {
+	id = 976667
+	random = no
+	country = RUS
+
+	trigger = {
+		event = 976666
+		NOT = { war = { country = U30 country = JAP } }
+	}
+
+	name = "EVT_976667_NAME"
+	desc = "EVT_976667_DESC"
+
+	style = 2
+	picture = "soviet_replacement"
+
+	date = { day = 18 month = july year = 1936 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1960 }
+
+	action_a = {
+		name = "EVT_976667_OPTIONA" # Great! 
+		command = { type = manpowerpool value = 2 }	 	# Soldiers return home
+		command = { type = dissent value = -1 }
+		command = { type = gain_tech which = -1 } 		# get random tech blueprints
+		command = { type = add_leader_skill which = -1 value = 1 }
+		command = { type = add_leader_skill which = -1 value = 1 }
+	}
+}
+
+event = {
+	id = 976668
+	random = no
+	country = SOV
+	
+	decision = {
+		NOT = { war = { country = JAP country = SOV } }
+		NOT = { flag = JNBT }
+		war = { country = JAP country = U30 }
+		NOT = {    ispuppet = U30 }
+		NOT = {    ispuppet = SOV }
+		NOT = { alliance = { country = JAP country = SOV } }
+		control = { province = 1162 data = SOV } 
+		control = { province = 1186 data = SOV } 
+		NOT = { exists = SIB }
+		NOT = { exists = RUS }
+	}
+	
+	decision_trigger = {
+		manpower = 2
+		supplies = 1000 
+		money = 100
+	}
+	
+	trigger = { 
+		NOT = { war = { country = JAP country = SOV } }
+		NOT = { flag = JNBT }
+		war = { country = JAP country = U30 }
+		NOT = {    ispuppet = U30 }
+		NOT = {    ispuppet = SOV }
+		NOT = { alliance = { country = JAP country = SOV } }
+		control = { province = 1162 data = SOV } 
+		control = { province = 1186 data = SOV } 
+		NOT = { exists = SIB }
+		NOT = { exists = RUS }
+	}
+	
+	date = { day = 1 month = january year = 1936 }
+	offset = 15
+	deathdate = { day = 29 month = december year = 1940 }
+	
+	name = "EVT_976668_NAME"
+	desc = "EVT_976668_DESC"
+	picture = "soviet_replacement"
+	decision_picture = "decision_foreign_volunteers"
+        style = 2
+	
+	action_a = {
+		ai_chance = 70
+		name = "EVT_976668_OPTIONA"
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = relation which = JAP value = -50 }
+		command = { type = relation which = PRI value = -50 }
+		command = { type = relation which = U30 value = 50 }
+		command = { type = money value = -100 }
+		command = { type = manpowerpool value = -2 }
+		command = { type = resource which = supplies value = -500 }
+		command = { type = trigger which = 976669 }
+		command = { type = dissent value = 1 }
+	}
+	action_b = {
+		ai_chance = 30
+		name = "EVT_976668_OPTIONB"
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = relation which = JAP value = 50 }
+		command = { type = relation which = PRI value = 50 }
+		command = { type = relation which = U30 value = -50 }
+		command = { type = dissent value = -1 }
+	}
+}
+
+event = {
+	id = 976669
+	random = no
+	country = U30
+
+	name = "EVT_976669_NAME"
+	desc = "EVT_976669_DESC"
+	style = 2
+	picture = "soviet_replacement"
+
+	action_a = {
+		name = "EVT_976669_OPTIONA"
+		command = { type = supplies value = 500 } 
+		command = { type = steal_tech which = SOV }
+		command = { type = manpowerpool value = 2 }
+		command = { type = max_organization which = land value = 1 }
+		command = { type = morale which = land value = 2 }
+	}
+}
+
+event = {
+	id = 976670
+	random = no
+	country = SOV
+
+	trigger = {
+		event = 976669
+		NOT = { war = { country = U30 country = JAP } }
+	}
+
+	name = "EVT_976670_NAME"
+	desc = "EVT_976670_DESC"
+
+	style = 2
+	picture = "soviet_replacement"
+
+	date = { day = 18 month = july year = 1936 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1960 }
+
+	action_a = {
+		name = "EVT_976670_OPTIONA" # Great! 
+		command = { type = manpowerpool value = 2 }	 	# Soldiers return home
+		command = { type = dissent value = -1 }
+		command = { type = gain_tech which = -1 } 		# get random tech blueprints
+		command = { type = add_leader_skill which = -1 value = 1 }
+		command = { type = add_leader_skill which = -1 value = 1 }
+	}
+}

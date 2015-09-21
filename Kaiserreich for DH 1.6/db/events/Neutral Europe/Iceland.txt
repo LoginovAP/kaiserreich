@@ -1,0 +1,1480 @@
+#########################################################
+### Iceland has no money for fuel
+#########################################################
+event = {
+id = 83100
+country = ICL
+random = no
+picture = "Supplies1"
+
+trigger = {
+exists = CAN
+}
+
+name = "EVT_83100_NAME"
+desc = "EVT_83100_DESC"
+style = 2
+
+date = { day = 5 month = october year = 1938 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+name = "EVT_83100_OPTIONA"
+command = { type = oilpool value = -10 }
+}
+}
+
+# Canada approaches Iceland with fuel for fishing rights
+# events in Britain.txt and Canada Foreign.txt
+### Deciding on fishing rights
+event = {
+id = 83101
+country = ICL
+random = no
+# triggered by Canadian event 830100
+
+name = "EVT_83101_NAME"
+desc = "EVT_83101_DESC"
+style = 2
+picture = "diplomatic_campaign"
+
+action_a = {
+ai_chance = 95
+name = "EVT_83101_OPTIONA"
+command = { type = dissent value = 1 }
+command = { type = oilpool value = 100 }
+command = { type = setflag which = canicedeal }
+command = { type = relation which = CAN value = 40 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_83101_OPTIONB"
+command = { type = sleepevent which = 830101 }
+command = { type = relation which = CAN value = -20 }
+}
+}
+
+# Canada receives the news events
+# if the news is good then UB has event about Canadian meddling
+
+### Fisherman protest deal
+event = {
+id = 83102
+country = ICL
+random = no
+
+trigger = {
+flag = canicedeal
+exists = CAN
+}
+
+name = "EVT_83102_NAME"
+desc = "EVT_83102_DESC"
+style = 2
+picture = "FORA"
+
+date = { day = 11 month = november year = 1938 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+name = "EVT_83102_OPTIONA"
+command = { type = dissent value = 1 }
+}
+}
+
+### Opposition demands the end to the deal
+event = {
+id = 83103
+country = ICL
+random = no
+
+trigger = {
+event = 83102
+}
+
+name = "EVT_83103_NAME"
+desc = "EVT_83103_DESC"
+style = 2
+picture = "FORA"
+
+date = { day = 18 month = november year = 1938 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+ai_chance = 90
+name = "EVT_83103_OPTIONA"
+command = { type = dissent which = 2 }
+}
+
+action_b = {
+ai_chance = 10
+name = "EVT_83103_OPTIONB"
+command = { type = clrflag which = canicedeal }
+command = { type = trigger which = 830103 }
+}
+}
+
+
+### Reykjavik riots
+event = {
+id = 83104
+country = ICL
+random = no
+
+trigger = {
+event = 83103
+flag = canicedeal
+}
+
+name = "EVT_83104_NAME"
+desc = "EVT_83104_DESC"
+style = 2
+picture = "FORA"
+
+date = { day = 01 month = january year = 1936 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+name = "EVT_83104_OPTIONA"
+command = { type = dissent value = 4 }
+}
+}
+
+# Canada and UB have Reykjavik riots
+
+### Request a modification to the deal
+event = {
+id = 83105
+country = ICL
+random = no
+
+trigger = {
+event = 83104
+exists = CAN
+NOT = {
+ispuppet = CAN
+ispuppet = ICL
+}
+}
+
+name = "EVT_83105_NAME"
+desc = "EVT_83105_DESC"
+style = 2
+
+date = { day = 26 month = november year = 1938 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+name = "EVT_83105_OPTIONA"
+command = { type = dissent value = -1 }
+}
+}
+
+# Canada will modify the request and give the rights if we let them station troops in Iceland
+# UB has Canadian troops in Reykjavik
+
+### Canadian troops enter Reykjavik
+event = {
+id = 83106
+country = ICL
+random = no
+
+trigger = {
+event = 830108
+}
+
+name = "EVT_83106_NAME"
+desc = "EVT_83106_DESC"
+style = 2
+
+date = { day = 29 month = november year = 1938 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+name = "EVT_83106_OPTIONA"
+	command = { }
+}
+}
+
+# Union of Britain blockades Iceland demanding the removal of Canadian forces
+# Canada has Iceland Blockade
+
+### UB blockades Iceland
+event = {
+id = 83107
+country = ICL
+random = no
+# triggered by UB blockade event
+
+name = "EVT_83107_NAME"
+desc = "EVT_83107_DESC"
+style = 2
+
+action_a = {
+name = "EVT_83107_OPTIONA"
+	command = { }
+}
+}
+
+# Canada responds to the blockade with either war or running the blockade
+
+### The December Crisis
+event = {
+id = 83108
+country = ICL
+random = no
+
+trigger = {
+event = 83107
+not = { war = { country = ENG country = CAN } }
+}
+
+name = "EVT_83108_NAME"
+desc = "EVT_83108_DESC"
+style = 2
+
+date = { day = 20 month = december year = 1938 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+ai_chance = 25
+name = "EVT_83108_OPTIONA"
+command = { type = setflag which = electice }
+command = { type = clrflag which = nofuelice }
+}
+action_b = {
+ai_chance = 75
+name = "EVT_83108_OPTIONB"
+command = { type = setflag which = electno }
+command = { type = clrflag which = nofuelice }
+}
+}
+
+### The opposition leaves the government
+event = {
+id = 83109
+country = ICL
+random = no
+
+trigger = {
+flag = electno
+}
+
+name = "EVT_83109_NAME"
+desc = "EVT_83109_DESC"
+style = 2
+
+date = { day = 22 month = december year = 1938 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+name = "EVT_83109_OPTIONA"
+command = { type = dissent value = 3 }
+}
+}
+
+### The people storm the government building
+event = {
+id = 83110
+country = ICL
+random = no
+
+trigger = {
+event = 83109
+}
+
+name = "EVT_83110_NAME"
+desc = "EVT_83110_DESC"
+style = 2
+
+date = { day = 27 month = december year = 1938 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+ai_chance = 90
+trigger = {
+exists = CAN
+NOT = { ispuppet = CAN }
+}
+name = "EVT_83110_OPTIONA"
+command = { type = trigger which = 830108 }
+}
+
+action_b = {
+ai_chance = 10
+name = "EVT_83110_OPTIONB"
+command = { type = dissent value = 2 }
+}
+}
+
+# if Canada intervenes then UB gets a chance to intervene as well. 
+# If only Canada intervenes then the protestors are beaten
+# If canada and UB both intervene then a random event will decide the winner
+# if Canada does not intervene then the protestors win
+
+### Canadian troops secure Reykjavik
+event = {
+id = 83111
+country = ICL
+random = no
+
+name = "EVT_83111_NAME"
+desc = "EVT_83111_DESC"
+style = 2
+
+action_a = {
+name = "EVT_83111_OPTIONA"
+command = { type = setflag which = canicewin }
+}
+}
+
+# Canada and UB also get a Canada helps secure Reykjavik event
+
+### Canadian troops refuse to help
+event = {
+id = 83112
+country = ICL
+random = no
+# triggered by 830108
+
+name = "EVT_83112_NAME"
+desc = "EVT_83112_DESC"
+style = 2
+
+action_a = {
+name = "EVT_83112_OPTIONA"
+command = { type = setflag which = canicelose }
+}
+}
+
+# Canada and UB get a protestors win in Iceland
+
+### UB intervenes random winner
+event = {
+id = 83113
+country = ICL
+random = no
+# trigger event = 100104
+
+name = "EVT_83113_NAME"
+desc = "EVT_83113_DESC"
+style = 2
+
+action_a = {
+name = "EVT_83113_OPTIONA"
+command = { type = setflag which = canengice }
+}
+}
+
+# Canada and UB get skirmish in Reykjavik event
+
+### Random event 1 = Canada wins
+event = {
+id = 83114
+country = ICL
+
+trigger = {
+random = 25
+flag = canengice
+}
+
+name = "EVT_83114_NAME"
+desc = "EVT_83114_DESC"
+style = 2
+
+date = { day = 07 month = january year = 1939 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+name = "EVT_83114_OPTIONA"
+command = { type = sleepevent which = 83115 }
+command = { type = relation which = CAN value = 40 }
+command = { type = setflag which = canicewin }
+}
+}
+
+# UB has a chance to declare war but will most likely remove its forces and lift the blockade
+
+### Random event 2 = UB wins
+event = {
+id = 83115
+country = ICL
+
+trigger = {
+random = 25
+flag = canengice
+}
+
+name = "EVT_83115_NAME"
+desc = "EVT_83115_DESC"
+style = 2
+
+date = { day = 07 month = january year = 1939 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+name = "EVT_83115_OPTIONA"
+command = { type = sleepevent which = 83114 }
+command = { type = setflag which = canicelose }
+}
+}
+
+### Icelandic Elections
+event = {
+   id = 83116
+   random = no
+   country = ICL
+
+   trigger = {
+        flag = electice
+   }
+
+   name = "EVT_83116_NAME"
+   desc = "EVT_83116_DESC"
+   style = 2
+
+   date = { day = 17 month = june year = 1939 }
+   offset = 3
+   deathdate = { day = 29 month = december year= 1960 }
+
+   action_a = {
+        name = "EVT_83116_OPTIONA"
+        ai_chance = 10
+        command = { type = dissent value = -1 }
+   }
+
+   action_b = {
+        name = "EVT_83116_OPTIONB"
+        ai_chance = 35
+        command = { type = set_domestic which = democratic value = 2 }
+command = { type = set_domestic which = political_left value = 9 }
+command = { type = set_domestic which = freedom value = 1 }
+command = { type = set_domestic which = free_market value = 0 }
+command = { type = set_domestic which = professional_army value = 4 }
+command = { type = set_domestic which = defense_lobby value = 3 }
+command = { type = set_domestic which = interventionism value = 5 }
+command = { type = setflag which = icesocial }
+command = { type = trigger which = 83117  }
+   }
+
+   action_c = {
+name = "EVT_83116_OPTIONC"
+ai_chance = 20
+ command = { type = set_domestic which = democratic value = 7 }
+command = { type = set_domestic which = political_left value = 5 }
+command = { type = set_domestic which = freedom value = 8 }
+command = { type = set_domestic which = free_market value = 7 }
+command = { type = set_domestic which = professional_army value = 4 }
+command = { type = set_domestic which = defense_lobby value = 1 }
+command = { type = set_domestic which = interventionism value = 2 }
+   }
+
+   action_d = {
+name = "EVT_83116_OPTIOND"
+ai_chance = 35
+ command = { type = set_domestic which = democratic value = 3 }
+command = { type = set_domestic which = political_left value = 0 }
+command = { type = set_domestic which = freedom value = 3 }
+command = { type = set_domestic which = free_market value = 2 }
+command = { type = set_domestic which = professional_army value = 7 }
+command = { type = set_domestic which = defense_lobby value = 8 }
+command = { type = set_domestic which = interventionism value = 7 }
+command = { type = setflag which = icenationals }
+command = { type = trigger which = 83118  }
+   }
+}
+# Canada has a chance to declare war but may instead evacuate its troops 45% for war
+
+### UB installs the Popular Unity Party in Iceland
+event = {
+id = 83117
+country = ICL
+random = no
+
+name = "EVT_83117_NAME"
+desc = "EVT_83117_DESC"
+style = 2
+
+action_a = {
+name = "EVT_83117_OPTIONA"
+command = { type = set_domestic which = democratic value = 2 }
+command = { type = set_domestic which = political_left value = 9 }
+command = { type = set_domestic which = freedom value = 1 }
+command = { type = set_domestic which = free_market value = 0 }
+command = { type = set_domestic which = professional_army value = 4 }
+command = { type = set_domestic which = defense_lobby value = 3 }
+command = { type = set_domestic which = interventionism value = 5 }
+command = { type = setflag which = icesocial }
+}
+}
+
+
+
+###
+event = {
+id = 83118
+country = ICL
+random = no
+# triggered by 830114
+name = "EVT_83118_NAME"
+desc = "EVT_83118_DESC"
+style = 2
+
+action_a = {
+name = "EVT_83118_OPTIONA"
+command = { type = set_domestic which = democratic value = 4 }
+command = { type = set_domestic which = political_left value = 1 }
+command = { type = set_domestic which = freedom value = 3 }
+command = { type = set_domestic which = free_market value = 2 }
+command = { type = set_domestic which = professional_army value = 7 }
+command = { type = set_domestic which = defense_lobby value = 8 }
+command = { type = set_domestic which = interventionism value = 7 }
+              command = { type = setflag which = icenationals }
+}
+}
+
+### The Entente Deal
+event = {
+id = 83119
+country = ICL
+random = no
+
+trigger = {
+        event = 83116
+	exists = CAN
+	NOT = {
+                war = { country = ICL country = CAN }
+		ispuppet = CAN
+                flag = icesocial
+                government = communist
+	}
+}
+
+name = "EVT_83119_NAME"
+desc = "EVT_83119_DESC"
+style = 2
+picture = "Iceland"
+
+date = { day = 21 month = january year = 1939 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+ai_chance = 80
+name = "EVT_83119_OPTIONA"
+command = { type = trigger which = 83120 }
+command = { type = metalpool value = 1000 }
+command = { type = energypool value = 1150 }
+command = { type = oilpool value = 500 }
+}
+
+action_b = {
+ai_chance = 20
+name = "EVT_83119_OPTIONB"
+command = { type = clrflag which = nofuelice }
+command = { type = dissent value = 1 }
+}
+}
+
+event = {
+id = 83120
+country = CAN
+random = no
+
+name = "EVT_83120_NAME"
+desc = "EVT_83120_DESC"
+style = 2
+picture = "Iceland"
+
+action_a = {
+name = "EVT_83120_OPTIONA"
+command = { type = alliance which = ICL }
+command = { type = relation which = ICL value = 80 }
+command = { type = dissent value = -1 }
+}
+}
+
+### Alliance with the Syndicalists
+event = {
+id = 83121
+country = ICL
+random = no
+
+trigger = {
+        government = communist
+	flag = icesocial
+	exists = ENG
+	NOT = {
+                war = { country = ICL country = ENG }
+		ispuppet = ENG
+                ispuppet = ICL
+	}
+}
+
+name = "EVT_83121_NAME"
+desc = "EVT_83121_DESC"
+style = 2
+picture = "Iceland"
+
+date = { day = 21 month = january year = 1939 }
+offset = 3
+deathdate = { day = 29 month = december year = 1954 }
+
+action_a = {
+ai_chance = 95
+name = "EVT_83121_OPTIONA"
+command = { type = trigger which = 83122 }
+command = { type = metalpool value = 1000 }
+command = { type = energypool value = 1150 }
+command = { type = oilpool value = 500 }
+command = { type = relation which = ENG value = 80 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_83121_OPTIONB"
+command = { type = dissent value = 1 }
+}
+}
+
+event = {
+id = 83122
+country = ENG
+random = no
+
+name = "EVT_83122_NAME"
+desc = "EVT_83122_DESC"
+style = 2
+picture = "Iceland"
+
+action_a = {
+name = "EVT_83122_OPTIONA"
+command = { type = alliance which = ICL }
+command = { type = relation which = ICL value = 80 }
+command = { type = dissent value = -1 }
+}
+}
+
+
+
+
+event = {
+ id = 781000
+ country = ICL
+ random = no
+
+ trigger = {
+         government = communist
+         event = 83122
+         exists = FRA
+         exists = ENG
+         alliance = { country = ENG country = FRA }
+         OR = {
+                 war = { country = GER country = ENG }
+                 war = { country = CAN country = ENG }
+                 }
+         NOT = {
+                 ispuppet = ENG
+                 ispuppet = FRA
+                 ispuppet = ICL
+                 alliance = { country = ICL country = CAN }
+                 alliance = { country = ICL country = ENG }
+                 alliance = { country = ICL country = FRA }
+                 atwar = ICL
+         }
+ }
+
+ name = "EVT_781000_NAME"
+ desc = "EVT_781000_DESC"
+ style = 2
+ picture = "Iceland"
+
+ date = { day = 1 month = january year = 1937 }
+ offset = 30
+ deathdate = { day = 29 month = december year = 1960 }
+
+ action_a = {
+ ai_chance = 15
+ name = "EVT_781000_OPTIONA"
+ command = { type = trigger which = 781001 }
+ command = { type = relation which = FRA value = 100 }
+ command = { type = relation which = ENG value = 100 }
+ command = { type = relation which = RSI value = 100 }
+ command = { type = dissent value = 6 }
+ command = { type = add_corps which = "Herfylkingin Íslands" value = land where = 1 }
+ command = { type = add_division which = "Herfylkingin Íslands" value = infantry when = 7 where = artillery }
+ }
+
+ action_b = {
+ ai_chance = 35
+ name = "EVT_781000_OPTIONB"
+ command = { type = trigger which = 781002 }
+ command = { type = relation which = FRA value = 50 }
+ command = { type = relation which = ENG value = 50 }
+ command = { type = relation which = GER value = -100 }
+ command = { type = dissent value = 3 }
+ }
+
+ action_c = {
+ ai_chance = 50
+ name = "EVT_781000_OPTIONC"
+ command = { type = dissent value = -1 }
+ command = { type = relation which = FRA value = -20 }
+ command = { type = relation which = ENG value = -20 }
+ command = { type = relation which = GER value = 10 }
+ }
+ }
+
+ event = {
+ id = 781001
+ country = FRA
+ random = no
+
+ name = "EVT_781001_NAME"
+ desc = "EVT_781001_DESC"
+ style = 2
+ picture = "Iceland"
+
+ action_a = {
+ ai_chance = 99
+ name = "EVT_781001_OPTIONA"
+ command = { type = alliance which = ICL }
+ command = { type = dissent value = -1 }
+ command = { type = relation which = ICL value = 200 }
+ }
+
+ action_b = {
+ ai_chance = 1
+ name = "EVT_781001_OPTIONB"
+ command = { type = relation which = ICL value = -50 }
+ }
+ }
+
+ event = {
+ id = 781002
+ country = FRA
+ random = no
+
+ name = "EVT_781002_NAME"
+ desc = "EVT_781002_DESC"
+ style = 2
+ picture = "Iceland"
+
+ action_a = {
+ ai_chance = 99
+ name = "EVT_781002_OPTIONA"
+ command = { type = access which = ICL }
+ command = { type = relation which = ICL value = 100 }
+ command = { type = trigger which = 781003 }
+ }
+
+ action_b = {
+ ai_chance = 1
+ name = "EVT_781002_OPTIONB"
+ command = { type = relation which = ICL value = -50 }
+ }
+ }
+
+ event = {
+ id = 781003
+ country = ENG
+ random = no
+
+ name = "EVT_781003_NAME"
+ desc = "EVT_781003_DESC"
+ style = 2
+ picture = "Iceland"
+
+ action_a = {
+ ai_chance = 99
+ name = "EVT_781003_OPTIONA"
+ command = { type = access which = ICL }
+ command = { type = relation which = ICL value = 100 }
+ }
+
+ action_b = {
+ ai_chance = 1
+ name = "EVT_781003_OPTIONB"
+ command = { type = relation which = ICL value = -50 }
+ }
+ }
+
+
+
+###############################################
+###UoB Section of the Iceland issue
+###############################################
+
+### Canadian troops enter Iceland
+event = {
+    id = 100100
+    random = no
+    country = ENG
+
+    trigger = {
+         flag = canicedeal 
+    }
+    name = "EVT_100100_NAME"
+    desc = "EVT_100100_DESC"
+    style = 2
+    picture = "Iceland"
+
+    date = { day = 24 month = october year = 1938 }
+    offset = 1
+    deathdate = { day = 29 month = december year= 1960 }
+
+    action_a = {
+         name = "EVT_100100_OPTIONA"
+	 command = { }
+    }
+}
+
+### Reykjavik Ritos
+event = {
+    id = 100101
+    random = no
+    country = ENG
+
+    trigger = {
+         event = 83104
+    }
+    name = "EVT_100101_NAME"
+    desc = "EVT_100101_DESC"
+    style = 2
+    picture = "FORA"
+
+    date = { day = 1 month = january year = 1936 }
+    offset = 1
+    deathdate = { day = 29 month = december year= 1960 }
+
+    action_a = {
+         name = "EVT_100101_OPTIONA"
+         command = { type = supplies value = -20 }
+    }
+}
+
+### Royalist troops enter Iceland
+event = {
+    id = 100102
+    random = no
+    country = ENG
+ 
+    trigger = {
+         event = 830105
+    }
+    name = "EVT_100102_NAME"
+    desc = "EVT_100102_DESC"
+    style = 2
+    picture = "Iceland"
+
+    date = { day = 1 month = january year = 1936 }
+    offset = 1
+    deathdate = { day = 29 month = december year= 1960 }
+
+    action_a = {
+         name = "EVT_100102_OPTIONA"
+	 command = { }
+    }
+}
+
+### Blockading Iceland
+event = {
+    id = 100103
+    random = no
+    country = ENG
+
+    trigger = {
+         event = 100102
+    }
+
+    name = "EVT_100103_NAME"
+    desc = "EVT_100103_DESC"
+    style = 2
+    picture = "uobnavy"
+
+    date = { day = 2 month = december year = 1938 }
+    offset = 1
+    deathdate = { day = 29 month = december year= 1960 }
+
+    action_a = {
+         name = "EVT_100103_OPTIONA"
+         ai_chance = 95
+         command = { type = trigger which = 83107 }
+         command = { type = trigger which = 830106 }
+         command = { type = relation which = CAN value = -40 }
+         command = { type = relation which = ICL value = -40 }
+         command = { type = belligerence which = ENG value = 4  }
+  }
+
+    action_b = {
+         name = "EVT_100103_OPTIONB"
+         ai_chance = 5
+         command = { type = dissent value = 1 }
+    }
+}
+
+### Canada intervenes in Iceland
+event = {
+    id = 100104
+    random = no
+    country = ENG
+
+    name = "EVT_100104_NAME"
+    desc = "EVT_100104_DESC"
+    style = 2
+    picture = "Iceland"
+
+    action_a = {
+         name = "EVT_100104_OPTIONA"
+         ai_chance = 90
+	 command = { type = trigger which = 83113 }
+    }
+
+    action_b = {
+         name = "EVT_100104_OPTIONB"
+         ai_chance = 10
+         command = { type = dissent value = 3 }
+	 command = { type = trigger which = 83111 }
+    }
+}
+
+### Canada secures Iceland
+event = {
+    id = 100105
+    random = no
+    country = ENG
+
+    trigger = {
+         flag = canicewin
+         event = 83111
+    }
+
+    name = "EVT_100105_NAME"
+    desc = "EVT_100105_DESC"
+    style = 2
+    picture = "Iceland"
+
+    date = { day = 1 month = january year = 1936 }
+    offset = 1
+    deathdate = { day = 29 month = december year= 1960 }
+
+    action_a = {
+         name = "EVT_100105_OPTIONA"
+	 command = { }
+    }
+}
+
+### The Workers triumph in Iceland
+event = {
+    id = 100106
+    random = no
+    country = ENG
+ 
+    trigger = {
+         flag = canicelose
+         event = 83112
+    }
+
+    name = "EVT_100106_NAME"
+    desc = "EVT_100106_DESC"
+    style = 2
+    picture = "FORA"
+
+    date = { day = 1 month = january year = 1936 }
+    offset = 1
+    deathdate = { day = 29 month = december year= 1960 }
+
+    action_a = {
+         name = "EVT_100106_OPTIONA"
+	command = { }
+    }
+}
+
+### Royalist and Union forces clash
+event = {
+    id = 100107
+    random = no
+    country = ENG
+
+    trigger = {
+    flag = canengice
+    event = 83113
+    }
+
+    name = "EVT_100107_NAME"
+    desc = "EVT_100107_DESC"
+    style = 2
+    picture = "urbanwarfare5"
+
+    date = { day = 1 month = january year = 1936 }
+    offset = 1
+    deathdate = { day = 29 month = december year= 1960 }
+
+    action_a = {
+         name = "EVT_100107_OPTIONA"
+	command = { }
+    }
+}
+
+### UB loses in Iceland
+event = {
+    id = 100108
+    random = no
+    country = ENG
+
+    trigger = {
+         flag = canengice
+ flag = canicewin 
+ event = 830112
+    }
+
+    name = "EVT_100108_NAME"
+    desc = "EVT_100108_DESC"
+    style = 2
+    picture = "Iceland"
+
+    date = { day = 1 month = january year = 1936 }
+    offset = 1
+    deathdate = { day = 29 month = december year= 1960 }
+
+    action_a = {
+         name = "EVT_100108_OPTIONA"
+         ai_chance = 10
+         command = { type = war which = CAN }
+         command = { type = war which = ICL }
+    }
+
+    action_b = {
+         name = "EVT_100108_OPTIONB"
+         ai_chance = 90
+         command = { type = dissent value = 2 }
+    }
+}
+
+
+
+########################################################
+### Canadian section of Iceland Issue
+########################################################
+### Canada sends a deal for fuel
+event = {
+    id = 830100
+    random = no
+    country = CAN
+
+    trigger = {
+         event = 83100
+         exists = ICL
+         NOT = {
+         ispuppet = ICL
+         ispuppet = CAN
+         }
+    }
+    name = "EVT_830100_NAME"
+    desc = "EVT_830100_DESC"
+    style = 2
+    picture = "diplomatic_campaign"
+
+    date = { day = 09 month = october year = 1938 }
+    offset = 3
+    deathdate = { day = 29 month = december year= 1960 }
+
+    action_a = {
+         name = "EVT_830100_OPTIONA"
+         ai_chance = 90
+         command = { type = trigger which = 83101 }
+    }
+    action_b = {
+         name = "EVT_830100_OPTIONB"
+         ai_chance = 10
+	 command = { type = sleepevent which = 83101 }
+    }
+}
+
+### Canada gets positive news
+event = {
+    id = 830101
+    random = no
+    country = CAN
+
+    trigger = {
+         flag = canicedeal
+    }
+
+    name = "EVT_830101_NAME"
+    desc = "EVT_830101_DESC"
+    style = 2
+    picture = "diplomatic_campaign"
+
+    date = { day = 22 month = october year = 1938 }
+    offset = 2
+    deathdate = { day = 29 month = december year= 1960 }
+
+    action_a = {
+         name = "EVT_830101_OPTIONA"
+         command = { type = oilpool value = -50 }
+         command = { type = relation which = ICL value = 40 }
+    }
+}
+
+### Canada gets negative news
+event = {
+    id = 830102
+    random = no
+    country = CAN
+    trigger = {
+         flag = cannodeal
+    }
+    name = "EVT_830102_NAME"
+    desc = "EVT_830102_DESC"
+    style = 2
+    picture = "diplomatic_campaign"
+
+    date = { day = 22 month = october year = 1938 }
+    offset = 2
+    deathdate = { day = 29 month = december year= 1960 }
+
+    action_a = {
+         name = "EVT_830102_OPTIONA"
+	 command = { type = relation which = ICL value = -20 }
+    }
+}
+
+### Iceland cancels the deal
+event = {
+    id = 830103
+    random = no
+    country = CAN
+    # triggered by 83103
+
+    name = "EVT_830103_NAME"
+    desc = "EVT_830103_DESC"
+    style = 2
+    picture = "diplomatic_campaign"
+    
+    action_a = {
+         name = "EVT_830103_OPTIONA"
+	 command = { type = relation which = ICL value = -20 }
+ }
+}
+
+### Reykjavik Riots
+event = {
+    id = 830104
+    random = no
+    country = CAN
+
+    trigger = {
+         event = 83104
+         exists = ICL
+         NOT = {
+         ispuppet = ICL
+         ispuppet = CAN
+         }
+    }
+
+    name = "EVT_830104_NAME"
+    desc = "EVT_830104_DESC"
+    style = 2
+    picture = "FORA"
+
+    date = { day = 1 month = january year = 1936 }
+    offset = 1
+    deathdate = { day = 29 month = december year= 1960 }
+
+    action_a = {
+         name = "EVT_830104_OPTIONA"
+	command = { }
+    }
+}
+
+### Iceland wishes to modify the agreement
+event = {
+    id = 830105
+    random = no
+    country = CAN
+
+    trigger = {
+         event = 83105
+         exists = ICL
+         NOT = {
+         ispuppet = ICL
+         ispuppet = CAN
+         }
+    }
+
+    name = "EVT_830105_NAME"
+    desc = "EVT_830105_DESC"
+    style = 2
+    picture = "American_Infantry"
+
+    date = { day = 1 month = january year = 1936 }
+    offset = 1
+    deathdate = { day = 29 month = december year= 1960 }
+
+    action_a = {
+         name = "EVT_830105_OPTIONA"
+	command = { }       
+    }
+}
+
+### Iceland Blockaded
+event = {
+    id = 830106
+    random = no
+    country = CAN
+    # triggered by UB blockade event
+             
+    name = "EVT_830106_NAME"
+    desc = "EVT_830106_DESC"
+    style = 2
+    picture = "uobnavy"
+    
+    action_a = {
+         name = "EVT_830106_OPTIONA"
+	command = { }
+    }
+}
+
+### Canada responds to the Blockade
+event = {
+    id = 830107
+    random = no
+    country = CAN
+
+    trigger = {
+         event = 830106
+         exists = ICL
+         NOT = {
+         alliance = { country = ENG country = ICL }
+         ispuppet = ICL
+         ispuppet = CAN
+         }
+    }
+
+    name = "EVT_830107_NAME"
+    desc = "EVT_830107_DESC"
+    style = 2
+    picture = "uobnavy"
+
+    date = { day = 05 month = december year = 1938 }
+    offset = 2
+    deathdate = { day = 29 month = december year = 1960 }
+
+    action_a = {
+         name = "EVT_830107_OPTIONA"
+         ai_chance = 15
+         command = { type = war which = ENG }
+         command = { type = alliance which = ICL }
+    }
+    action_b = {
+         name = "EVT_830107_OPTIONB"
+         ai_chance = 85         
+         command = { type = dissent value = 1 }
+    }
+}
+
+### Iceland asks for Canadian help
+event = {
+    id = 830108
+    random = no
+    country = CAN
+    # triggered by 83110
+    name = "EVT_830108_NAME"
+    desc = "EVT_830108_DESC"
+    style = 2
+    picture = "diplomatic_campaign"
+    
+    action_a = {
+         name = "EVT_830108_OPTIONA"
+         ai_chance = 75
+	 command = { type = trigger which = 100104 }
+    }
+
+    action_b = {
+         name = "EVT_830108_OPTIONB"
+         ai_chance = 25
+         command = { type = dissent value = 2 }
+         command = { type = trigger which = 83112 }
+    }
+}
+
+### Canadian troops secure Reykjavik
+event = {
+    id = 830109
+    random = no
+    country = CAN
+
+    trigger = {
+         flag = canicewin
+    }
+
+    name = "EVT_830109_NAME"
+    desc = "EVT_830109_DESC"
+    style = 2
+    picture = "militaryparade1"
+
+    date = { day = 1 month = january year = 1936 }
+    offset = 1
+    deathdate = { day = 29 month = december year= 1960 }
+
+    action_a = {
+         name = "EVT_830109_OPTIONA"
+	command = { }
+    }
+}
+
+### The Icelandic government falls
+event = {
+    id = 830110
+    random = no
+    country = CAN
+
+    trigger = {
+         flag = canicelose 
+    }
+
+    name = "EVT_830110_NAME"
+    desc = "EVT_830110_DESC"
+    style = 2
+    picture = "FORA"
+
+    date = { day = 1 month = january year = 1936 }
+    offset = 1
+    deathdate = { day = 29 month = december year= 1960 }
+
+    action_a = {
+         name = "EVT_830110_OPTIONA"
+         command = { type = dissent value = 1 }    
+    }
+}
+
+### Canadian and English troops skirmish
+event = {
+    id = 830111
+    random = no
+    country = CAN
+
+    trigger = {
+         flag = canengice
+    }
+
+    name = "EVT_830111_NAME"
+    desc = "EVT_830111_DESC"
+    style = 2
+    picture = "urbanwarfare5"
+
+    date = { day = 1 month = january year = 1936 }
+    offset = 1
+    deathdate = { day = 29 month = december year= 1960 }
+
+    action_a = {
+         name = "EVT_830111_OPTIONA"
+	command = { }
+    }
+}
+
+### Canada wins the battle
+event = {
+    id = 830112
+    random = no
+    country = CAN
+
+    trigger = {
+        flag = canengice  
+        flag = canicewin
+    }
+
+    name = "EVT_830112_NAME"
+    desc = "EVT_830112_DESC"
+    style = 2
+    picture = "urbanwarfare5"
+
+    date = { day = 1 month = january year = 1936 }
+    offset = 1
+    deathdate = { day = 29 month = december year= 1960 }
+
+    action_a = {
+         name = "EVT_830112_OPTIONA"
+         command = { type = dissent value = -1 }
+    }
+}
+
+### Canada loses the battle
+event = {
+    id = 830113
+    random = no
+    country = CAN
+
+    trigger = {
+         flag = canicelose
+         flag = canengice
+         event = 100106
+    }
+
+    name = "EVT_830113_NAME"
+    desc = "EVT_830113_DESC"
+    style = 2
+    picture = "urbanwarfare5"
+
+    date = { day = 1 month = january year = 1936 }
+    offset = 1
+    deathdate = { day = 29 month = december year= 1960 }
+
+    action_a = {
+         name = "EVT_830113_OPTIONA"
+         ai_chance = 45
+         command = { type = war which = ENG }
+    }
+
+    action_b = {
+         name = "EVT_830113_OPTIONB"
+         ai_chance = 55
+         command = { type = dissent value = 2 }
+    }
+}
+
+### Canada gets a chance to install a government of its choosing
+event = {
+id = 830114
+country = CAN
+random = no
+
+trigger = {
+event = 830109
+}
+
+name = "EVT_830114_NAME"
+desc = "EVT_830114_DESC"
+style = 2
+picture = "politics4"
+
+date = { day = 01 month = january year = 1936 }
+offset = 1
+deathdate = { day = 29 month = december year = 1954 }
+
+action_a = {
+ai_chance = 75
+name = "EVT_830114_OPTIONA"
+command = { type = domestic which = democratic value = 1}
+}
+
+action_b = {
+ai_chance = 25
+name = "EVT_830114_OPTIONB"
+command = { type = trigger which = 83118 }
+command = { type = domestic which = democratic value = -1}
+}
+}

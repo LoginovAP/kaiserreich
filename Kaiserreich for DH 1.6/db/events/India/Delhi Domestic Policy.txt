@@ -1,0 +1,4668 @@
+#################################################################################
+#Delhi Government
+#################################################################################
+####  by Milites
+
+####
+
+event = {
+id = 101000
+random = no
+country = PAK
+style = 2
+picture = "British_Raj"
+
+trigger = {
+NOT =
+{ atwar = PAK  }
+
+}
+
+date = { day = 2 month = january year = 1936 }
+
+name = "EVT_101000_NAME"
+desc = "EVT_101000_DESC"
+
+action_a = {
+name = "EVT_101000_OPTIONA"
+        command = { type = trigger which = 101001 }
+	}
+}
+
+event = {
+id = 101001
+random = no
+country = PAK
+style = 2
+picture = "British_Raj"
+
+name = "EVT_101001_NAME"
+desc = "EVT_101001_DESC"
+
+action_a = {
+name = "EVT_101001_OPTIONA"
+	command = { }
+	}
+}
+################################################################################?#
+#Death of George V - Delhi in Chaos
+################################################################################?#
+
+event = {
+id = 101002
+random = no
+country = PAK
+style = 2
+picture = "GeorgeV_Funeral"
+
+trigger = {
+	headofstate = 564001
+}
+
+date = { day = 19 month = january year = 1936 }
+
+name = "EVT_101002_NAME"
+desc = "EVT_101002_DESC"
+
+action_a = {
+name = "EVT_101002_OPTIONA"
+	command = { type = sleepminister which = 564001 }
+	command = { type = headofstate which = 564076 }
+        command = { type = dissent value = 5 }
+        command = { type = setflag which = coronationcrisis }
+	}
+}
+
+event = {
+id = 101003
+country = PAK
+picture = "EdwardVIIIcrowned"
+style = 2
+
+trigger = { event = 830002 }
+
+date = { day = 10 month = january year = 1936 }
+offset = 5
+deathdate = { day = 29 month = december year = 1953 }
+
+name = "EVT_101003_NAME"
+desc = "EVT_101003_DESC"
+
+action_a = {
+ai_chance = 100
+name = "EVT_101003_OPTIONA"
+        command = { type = relation which = CAN value = 75 }
+        command = { type = relation which = AST value = 60 }
+        command = { type = relation which = GUY value = 50 }
+        command = { type = relation which = VIC value = 40 }
+        command = { type = dissent value = 5 }
+        command = { type = setflag which = PAKDOMINION1 }
+    }
+}
+################################################################################?#
+#Fifth Anglo-Afghan War
+################################################################################?#
+
+event = {
+	id = 101004
+	country = AFG
+	style = 2
+	picture = "afghanwar"
+        decision_picture = "decision_afghanwar"
+
+	decision = {
+		exists = PAK	
+		NOT = { 
+                ispuppet = PAK
+                alliance = { country = AFG country = PAK } 
+                atwar = AFG
+                }
+                flag = coronationcrisis	
+	}
+
+	decision_trigger = {
+                control = { province = 2171 data = AFG } #Kabul
+                OR = {
+		control = { province = 1537 data = AFG } #Peshawar
+                control = { province = 1459 data = PAK }
+                }
+	}
+
+
+	trigger = {
+		exists = PAK	
+		NOT = { 
+                ispuppet = PAK
+                alliance = { country = PAK country = AFG } 
+                atwar = AFG
+                }
+                flag = coronationcrisis
+                control = { province = 2171 data = AFG } #Kabul
+                OR = {
+		control = { province = 1537 data = AFG } #Peshawar
+                control = { province = 1459 data = PAK }
+                }	
+	}
+
+	date = { day = 1 month = february year = 1936 }
+	offset =  30
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "EVT_101004_NAME"
+	desc = "EVT_101004_DESC"
+
+	action_a = {
+		ai_chance = 100
+		name = "EVT_101004_OPTIONA"
+                command = { type = war which = PAK }
+		command = { type = dissent value = -5 }
+	}
+	action_b = {
+		ai_chance = 0
+		name = "EVT_101004_OPTIONB"
+		command = { type = dissent value = 15 }
+	}
+
+}
+################################################################################?#
+#Fifth Anglo-Afghan War - Afghan Victory
+################################################################################?#
+
+event = {
+id = 101005
+random = no
+country = AFG
+
+	trigger = {
+	        war = { country = AFG country = PAK } 
+		control = { province = 2171 data = AFG }
+		control = { province = 2169 data = AFG }
+		control = { province = 1530 data = AFG }
+		control = { province = 1459 data = AFG }
+		control = { province = 1533 data = AFG }
+                }
+
+name = "EVT_101005_NAME"
+desc = "EVT_101005_DESC"
+style = 2
+picture = "afghanwar"
+
+date = { day = 1 month = january year = 1936 }
+offset = 5
+deathdate = { day = 29 month = june year = 1960 }
+
+action_a = {
+ai_chance = 98
+name = "EVT_101005_OPTIONA"
+command = { type = trigger which = 101007 }
+command = { type = addcore which = 1539 }
+command = { type = addcore which = 1540 }
+command = { type = addcore which = 1534 }
+command = { type = addcore which = 1538 }
+command = { type = addcore which = 1533 }
+command = { type = dissent value = -3 }
+}
+
+action_b = {
+ai_chance = 1
+name = "EVT_101005_OPTIONB"
+command = { type = dissent value = 5 } 
+command = { type = trigger which = 101008 }
+command = { type = addcore which = 1539 }
+command = { type = addcore which = 1540 }
+command = { type = addcore which = 1534 }
+command = { type = addcore which = 1538 }
+command = { type = addcore which = 1533 }
+command = { type = addcore which = 1530 }
+command = { type = addcore which = 1536 }
+}
+
+action_c = {
+ai_chance = 1
+name = "EVT_101005_OPTIONC"
+command = { type = dissent value = 5 } 
+}
+} 
+
+event = {
+id = 101007
+country = PAK
+style = 2
+picture = "afghanwar"
+
+name = "EVT_101007_NAME"
+desc = "EVT_101007_DESC"
+
+action_a = {
+ai_chance = 90
+name = "EVT_101007_OPTIONA"
+command = { type = dissent value = 6 }
+command = { type = peace which = AFG value = 0 }
+command = { type = secedeprovince which = AFG value = 1539 }
+command = { type = secedeprovince which = AFG value = 1540 }
+command = { type = secedeprovince which = AFG value = 1534 }
+command = { type = secedeprovince which = AFG value = 1538 } 
+command = { type = secedeprovince which = AFG value = 1533 } 
+}
+
+action_b = {
+ai_chance = 10
+name = "EVT_101007_OPTIONB"
+command = { type = dissent value = 20 } 
+}
+}
+
+event = {
+id = 101008
+country = PAK
+style = 2
+picture = "afghanwar"
+
+name = "EVT_101008_NAME"
+desc = "EVT_101008_DESC"
+
+action_a = {
+ai_chance = 40
+name = "EVT_101008_OPTIONA"
+command = { type = dissent value = 6 }
+command = { type = peace which = AFG value = 0 }
+command = { type = secedeprovince which = AFG value = 1539 }
+command = { type = secedeprovince which = AFG value = 1540 }
+command = { type = secedeprovince which = AFG value = 1534 }
+command = { type = secedeprovince which = AFG value = 1538 } 
+command = { type = secedeprovince which = AFG value = 1533 } 
+command = { type = secedeprovince which = AFG value = 1530 } 
+command = { type = secedeprovince which = AFG value = 1536 }
+}
+
+action_b = {
+ai_chance = 60
+name = "EVT_101008_OPTIONB"
+command = { type = dissent value = 5 } 
+}
+}
+################################################################################?#
+#Fifth Anglo-Afghan War - Indian Victory
+################################################################################?#
+
+event = {
+id = 101009
+random = no
+country = PAK
+
+	trigger = {
+
+	        war = { country = AFG country = PAK } 
+		control = { province = 1537 data = PAK }
+		control = { province = 1529 data = PAK }
+                }
+
+name = "EVT_101009_NAME"
+desc = "EVT_101009_DESC"
+style = 2
+picture = "afghanwar"
+
+date = { day = 1 month = january year = 1936 }
+offset = 5
+deathdate = { day = 29 month = june year = 1960 }
+
+action_a = {
+ai_chance = 75
+name = "EVT_101009_OPTIONA"
+command = { type = trigger which = 101010 }
+command = { type = addcore which = 1529 }
+command = { type = addcore which = 1537 }
+command = { type = waketeam which = 12525 }
+command = { type = dissent value = -3 }
+}
+
+action_b = {
+ai_chance = 25
+name = "EVT_101009_OPTIONB"
+command = { type = supplies value = 500 }
+command = { type = dissent value = 2 } 
+}
+}
+
+event = {
+id = 101010
+country = AFG
+style = 2
+picture = "British_raj"
+
+name = "EVT_101010_NAME"
+desc = "EVT_101010_DESC"
+
+action_a = {
+ai_chance = 100
+name = "EVT_101010_OPTIONA"
+command = { type = dissent value = 5 }
+command = { type = peace which = PAK value = 0 }
+command = { type = peace which = GER value = 0 }
+command = { type = peace which = CAN value = 0 }
+command = { type = secedeprovince which = PAK value = 1529 }
+command = { type = secedeprovince which = PAK value = 1537 }
+command = { type = removecore which = 1529 }
+command = { type = removecore which = 1537 }
+command = { type = removeclaim which = 1538 }
+command = { type = sleepteam which = 7604 }
+command = { type = non_aggression which = AFG where = PAK }
+command = { type = event which = 777001 where = AFG when = 14 } #In Afghanistan file
+}
+
+action_b = {
+ai_chance = 0
+name = "EVT_101010_OPTIONB"
+command = { type = dissent value = 15 } 
+}
+} 
+################################################################################?#
+#Imperial Durbar 1936
+################################################################################?#
+
+event = {
+id = 101011
+random = no
+country = PAK
+picture = "indiandurbar"
+style = 2
+
+    trigger = {
+                flag = PAKDOMINION1
+                owned = { province = 1459 data = PAK }
+                owned = { province = 1529 data = PAK }
+                owned = { province = 1537 data = PAK }
+                control = { province = 1459 data = PAK }
+}
+
+date = { day = 1 month = june year = 1936 }
+offset = 15
+deathdate = { day = 29 month = august year = 1960 }
+
+name = "EVT_101011_NAME"
+desc = "EVT_101011_DESC"
+
+action_a = {
+ai_chance = 80
+name = "EVT_101011_OPTIONA"
+        command = { type = relation which = CAN value = 25 }
+        command = { type = dissent value = -5 }
+	command = { type = sleepminister which = 564076 }
+        command = { type = headofstate which = 564079 }
+        command = { type = setflag which = PAKDOMINION2 }
+        command = { type = clrflag which = coronationcrisis } 
+    }
+
+action_b = {
+ai_chance = 20
+name = "EVT_101011_OPTIONB"
+        command = { type = relation which = CAN value = 5 }
+        command = { type = dissent value = -3 }
+	command = { type = sleepminister which = 564076 }
+        command = { type = headofstate which = 564083 }
+        command = { type = domestic which = democratic value = 1 }
+        command = { type = domestic which = freedom value = 2 }
+        command = { type = wakeminister which = 564103 }
+        command = { type = wakeminister which = 564104 }
+        command = { type = wakeminister which = 564105 }
+        command = { type = wakeminister which = 564106 } 
+        command = { type = setflag which = PAKViceroy }
+        command = { type = clrflag which = coronationcrisis } 
+    }
+}
+################################################################################?#
+#Dominion Elections
+################################################################################?#
+
+event = {
+	id = 101012
+	random = no
+	country = PAK
+	style = 2
+        save_date = yes
+
+	trigger = {
+                flag = PAKDOMINION2
+		owned = { province = 1459 data = PAK }
+		control = { province = 1459 data = PAK }
+                OR = {
+			government = democratic
+			ideology = paternal_autocrat
+		}
+		}
+
+
+	name = "EVT_101012_NAME"
+	desc = "EVT_101012_DESC"
+        picture = "indianelection"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 5
+	deathdate = { day = 29 month = december year = 1960 }
+
+
+
+        action_a = {
+	        ai_chance =  35
+	        name = "EVT_101012_OPTIONA"
+                command = { type = domestic which = freedom value = 2 }
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = -3  } 
+		command = { type = headofstate which = 564081 } 
+		command = { type = headofgovernment which = 564060 }
+		command = { type = foreignminister which =  564061 }
+		command = { type = ministerofsecurity which = 564005 }
+		command = { type = armamentminister which = 564038 }
+                command = { type = setflag which = PAKLiberal }
+
+		}
+        action_b = {
+	        ai_chance =  10
+	        name = "EVT_101012_OPTIONB"
+		command = { type = dissent value = -2 }  
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = set_domestic which = democratic value = 8 }
+                command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = headofstate which = 564080 } 
+		command = { type = headofgovernment which = 564065 }
+		command = { type = foreignminister which =  564066 }
+		command = { type = ministerofsecurity which = 564067 }
+		command = { type = armamentminister which = 564068 }
+                command = { type = setflag which = PAKSwaraj }
+
+		}
+        action_c = {
+	        ai_chance =  25
+	        name = "EVT_101012_OPTIONC"
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 8 }
+		command = { type = dissent value = -3 }
+		command = { type = headofstate which = 564082 } 
+		command = { type = headofgovernment which = 564069 }
+		command = { type = foreignminister which =  564070 }
+		command = { type = ministerofsecurity which = 564071 }
+		command = { type = armamentminister which = 564072 }
+                command = { type = setflag which = PAKJinnah }
+
+		}
+        action_d = {
+	        ai_chance =  30
+	        name = "EVT_101012_OPTIOND"
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = 2 }
+		command = { type = headofstate which = 564079 } 
+		command = { type = headofgovernment which = 564073 }
+		command = { type = foreignminister which =  564035 }
+		command = { type = ministerofsecurity which = 564074 }
+		command = { type = armamentminister which = 564075 }
+                command = { type = setflag which = PAKUnionist }
+                }
+
+}
+################################################################################?#
+#Dominion Elections - Viceroy
+################################################################################?#
+
+event = {
+	id = 101013
+	random = no
+	country = PAK
+	style = 2
+        save_date = yes
+
+	trigger = {
+                flag = PAKViceroy
+		owned = { province = 1459 data = PAK }
+		control = { province = 1459 data = PAK }
+                OR = {
+			government = democratic
+			ideology = paternal_autocrat
+		}
+		}
+
+
+	name = "EVT_101013_NAME"
+	desc = "EVT_101013_DESC"
+        picture = "indianelection"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1960 }
+
+
+
+        action_a = {
+	        ai_chance =  35
+	        name = "EVT_101013_OPTIONA"
+                command = { type = domestic which = freedom value = 2 }
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = -3  } 
+		command = { type = headofstate which = 564083 } 
+		command = { type = headofgovernment which = 564060 }
+		command = { type = foreignminister which =  564061 }
+		command = { type = ministerofsecurity which = 564005 }
+		command = { type = armamentminister which = 564038 }
+                command = { type = setflag which = PAKLiberal }
+
+		}
+        action_b = {
+	        ai_chance =  10
+	        name = "EVT_101013_OPTIONB"
+		command = { type = dissent value = -2 }  
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = set_domestic which = democratic value = 8 }
+                command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = headofstate which = 564083 } 
+		command = { type = headofgovernment which = 564065 }
+		command = { type = foreignminister which =  564066 }
+		command = { type = ministerofsecurity which = 564067 }
+		command = { type = armamentminister which = 564068 }
+                command = { type = setflag which = PAKSwaraj }
+
+		}
+        action_c = {
+	        ai_chance =  25
+	        name = "EVT_101013_OPTIONC"
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 8 }
+		command = { type = dissent value = -3 }
+		command = { type = headofstate which = 564083 } 
+		command = { type = headofgovernment which = 564069 }
+		command = { type = foreignminister which =  564070 }
+		command = { type = ministerofsecurity which = 564071 }
+		command = { type = armamentminister which = 564072 }
+                command = { type = setflag which = PAKJinnah }
+
+		}
+        action_d = {
+	        ai_chance =  25
+	        name = "EVT_101013_OPTIOND"
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = 2 }
+		command = { type = headofstate which = 564083 } 
+		command = { type = headofgovernment which = 564073 }
+		command = { type = foreignminister which =  564035 }
+		command = { type = ministerofsecurity which = 564074 }
+		command = { type = armamentminister which = 564075 }
+                command = { type = setflag which = PAKUnionist }
+                }
+
+}
+
+################################################################################?#
+#Status of the Diarchy - Liberal
+################################################################################?#
+
+event = {
+	id = 101014
+	country = PAK
+	style = 2
+	picture = "diarchy"
+        decision_picture = "decision_diarchy"
+
+	decision = {	
+		NOT = { 
+                ispuppet = PAK 
+                war = { country = PAK country = AFG }
+                }
+                flag = PAKLiberal	
+	}
+
+	decision_trigger = {
+                control = { province = 1529 data = PAK } #Quetta
+                OR = {
+		control = { province = 1537 data = PAK } #Peshawar
+                control = { province = 1459 data = PAK }
+                }
+	}
+
+
+	trigger = {	
+		NOT = { 
+                ispuppet = PAK
+                war = { country = PAK country = AFG }
+                }
+                flag = PAKLiberal
+                control = { province = 1529 data = PAK } #Quetta
+                OR = {
+		control = { province = 1537 data = PAK } #Peshawar
+                control = { province = 1459 data = PAK }
+                }	
+	}
+
+	date = { day = 1 month = august year = 1936 }
+	offset =  50
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "EVT_101014_NAME"
+	desc = "EVT_101014_DESC"
+
+	action_a = {
+		ai_chance = 50
+		name = "EVT_101014_OPTIONA"
+		command = { type = dissent value = -5 }
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = domestic which = free_market value = 1 }
+                command = { type = event which = 101026 where = PAK when = 14 }
+
+	}
+	action_b = {
+		ai_chance = 35
+		name = "EVT_101014_OPTIONB"
+		command = { type = dissent value = 5 }
+                command = { type = domestic which = freedom value = -1 }
+                command = { type = domestic which = free_market value = 2 }
+                command = { type = event which = 101027 where = PAK when = 14 }
+	}
+	action_c = {
+		ai_chance = 15
+		name = "EVT_101014_OPTIONC"
+                command = { type = event which = 101028 where = PAK when = 14 }
+		command = { type = dissent value = 3 }
+	}
+
+}
+################################################################################?#
+#Status of the Diarchy - Swaraj
+################################################################################?#
+
+event = {
+	id = 101015
+	country = PAK
+	style = 2
+	picture = "diarchy"
+        decision_picture = "decision_diarchy"
+
+	decision = {	
+		NOT = { 
+                ispuppet = PAK 
+                war = { country = PAK country = AFG }
+                }
+                flag = PAKSwaraj	
+	}
+
+	decision_trigger = {
+                control = { province = 1529 data = PAK } #Quetta
+                OR = {
+		control = { province = 1537 data = PAK } #Peshawar
+                control = { province = 1459 data = PAK }
+                }
+	}
+
+
+	trigger = {	
+		NOT = { 
+                ispuppet = PAK
+                war = { country = PAK country = AFG }
+                }
+                flag = PAKSwaraj
+                control = { province = 1529 data = PAK } #Quetta
+                OR = {
+		control = { province = 1537 data = PAK } #Peshawar
+                control = { province = 1459 data = PAK }
+                }	
+	}
+
+	date = { day = 1 month = august year = 1936 }
+	offset =  50
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "EVT_101015_NAME"
+	desc = "EVT_101015_DESC"
+
+	action_a = {
+		ai_chance = 35
+		name = "EVT_101015_OPTIONA"
+		command = { type = dissent value = -5 }
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = domestic which = free_market value = 1 }
+                command = { type = event which = 101026 where = PAK when = 14 }
+
+	}
+	action_b = {
+		ai_chance = 35
+		name = "EVT_101015_OPTIONB"
+		command = { type = dissent value = 5 }
+                command = { type = domestic which = freedom value = -1 }
+                command = { type = domestic which = free_market value = 2 }
+                command = { type = event which = 101027 where = PAK when = 14 }
+	}
+	action_c = {
+		ai_chance = 30
+		name = "EVT_101015_OPTIONC"
+		command = { type = dissent value = 3 }
+                command = { type = event which = 101028 where = PAK when = 14 }
+	}
+
+}
+################################################################################?#
+#Status of the Diarchy - Jinnah
+################################################################################?#
+
+event = {
+	id = 101016
+	country = PAK
+	style = 2
+	picture = "diarchy"
+        decision_picture = "decision_diarchy"
+
+	decision = {	
+		NOT = { 
+                ispuppet = PAK 
+                war = { country = PAK country = AFG }
+                }
+                flag = PAKJinnah	
+	}
+
+	decision_trigger = {
+                control = { province = 1529 data = PAK } #Quetta
+                OR = {
+		control = { province = 1537 data = PAK } #Peshawar
+                control = { province = 1459 data = PAK }
+                }
+	}
+
+
+	trigger = {	
+		NOT = { 
+                ispuppet = PAK
+                war = { country = PAK country = AFG }
+                }
+                flag = PAKJinnah
+                control = { province = 1529 data = PAK } #Quetta
+                OR = {
+		control = { province = 1537 data = PAK } #Peshawar
+                control = { province = 1459 data = PAK }
+                }	
+	}
+
+	date = { day = 1 month = august year = 1936 }
+	offset =  50
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "EVT_101016_NAME"
+	desc = "EVT_101016_DESC"
+
+	action_a = {
+		ai_chance = 25
+		name = "EVT_101016_OPTIONA"
+		command = { type = dissent value = -5 }
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = domestic which = free_market value = 1 }
+                command = { type = event which = 101026 where = PAK when = 14 }
+
+	}
+	action_b = {
+		ai_chance = 65
+		name = "EVT_101016_OPTIONB"
+		command = { type = dissent value = 5 }
+                command = { type = domestic which = freedom value = -1 }
+                command = { type = domestic which = free_market value = 2 }
+                command = { type = event which = 101027 where = PAK when = 14 }
+	}
+	action_c = {
+		ai_chance = 10
+		name = "EVT_101016_OPTIONC"
+                command = { type = event which = 101028 where = PAK when = 14 }
+		command = { type = dissent value = 3 }
+	}
+
+}
+################################################################################?#
+#Status of the Diarchy - Jinnah
+################################################################################?#
+
+event = {
+	id = 101017
+	country = PAK
+	style = 2
+	picture = "diarchy"
+        decision_picture = "decision_diarchy"
+
+	decision = {	
+		NOT = { 
+                ispuppet = PAK 
+                war = { country = PAK country = AFG }
+                }
+                flag = PAKUnionist	
+	}
+
+	decision_trigger = {
+                control = { province = 1529 data = PAK } #Quetta
+                OR = {
+		control = { province = 1537 data = PAK } #Peshawar
+                control = { province = 1459 data = PAK }
+                }
+	}
+
+
+	trigger = {	
+		NOT = { 
+                ispuppet = PAK
+                war = { country = PAK country = AFG }
+                }
+                flag = PAKUnionist
+                control = { province = 1529 data = PAK } #Quetta
+                OR = {
+		control = { province = 1537 data = PAK } #Peshawar
+                control = { province = 1459 data = PAK }
+                }	
+	}
+
+	date = { day = 1 month = august year = 1936 }
+	offset =  50
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "EVT_101017_NAME"
+	desc = "EVT_101017_DESC"
+
+	action_a = {
+		ai_chance = 25
+		name = "EVT_101017_OPTIONA"
+		command = { type = dissent value = -5 }
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = domestic which = free_market value = 1 }
+                command = { type = event which = 101026 where = PAK when = 14 }
+
+	}
+	action_b = {
+		ai_chance = 65
+		name = "EVT_101017_OPTIONB"
+		command = { type = dissent value = 5 }
+                command = { type = domestic which = freedom value = -1 }
+                command = { type = domestic which = free_market value = 1 }
+                command = { type = domestic which = defense_lobby value = 1 }
+                command = { type = event which = 101027 where = PAK when = 14 }
+	}
+	action_c = {
+		ai_chance = 10
+		name = "EVT_101017_OPTIONC"
+		command = { type = dissent value = 10 }
+                command = { type = domestic which = freedom value = -1 }
+                command = { type = domestic which = free_market value = 2 }
+                command = { type = event which = 101028 where = PAK when = 14 }
+	}
+
+}
+################################################################################?#
+#Reforming the economy - Liberal
+################################################################################?#
+
+event = {
+	id = 101018
+	country = PAK
+	style = 2
+	picture = "indianeconomy"
+        decision_picture = "decision_indianeconomy"
+
+	decision = {	
+		NOT = { 
+                ispuppet = PAK 
+                war = { country = PAK country = AFG }
+                }
+                flag = PAKLiberal	
+	}
+
+	decision_trigger = {
+                control = { province = 1529 data = PAK } #Quetta
+                OR = {
+		control = { province = 1537 data = PAK } #Peshawar
+                control = { province = 1459 data = PAK }
+                }
+	}
+
+
+	trigger = {	
+		NOT = { 
+                ispuppet = PAK
+                war = { country = PAK country = AFG }
+                }
+                flag = PAKLiberal
+                control = { province = 1529 data = PAK } #Quetta
+                OR = {
+		control = { province = 1537 data = PAK } #Peshawar
+                control = { province = 1459 data = PAK }
+                }	
+	}
+
+	date = { day = 1 month = november year = 1936 }
+	offset =  50
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "EVT_101018_NAME"
+	desc = "EVT_101018_DESC"
+
+	action_a = {
+		ai_chance = 50
+		name = "EVT_101018_OPTIONA"
+		command = { type = dissent value = -1 }
+                command = { type = money value = 350 }
+                command = { type = domestic which = free_market value = 3 }
+
+	}
+	action_b = {
+		ai_chance = 35
+		name = "EVT_101018_OPTIONB"
+                command = { type = dissent value = -2 } 
+                command = { type = money value = 20 }
+				command = { type = set_domestic which = free_market value = 6 }
+	}
+	action_c = {
+		ai_chance = 15
+		name = "EVT_101018_OPTIONC"
+		command = { type = dissent value = 3 }
+                command = { type = domestic which = free_market value = -2 }
+	}
+
+}
+
+################################################################################?#
+#Reforming the economy - Swaraj
+################################################################################?#
+
+event = {
+	id = 101019
+	country = PAK
+	style = 2
+	picture = "indianeconomy"
+        decision_picture = "decision_indianeconomy"
+
+	decision = {	
+		NOT = { 
+                ispuppet = PAK 
+                war = { country = PAK country = AFG }
+                }
+                flag = PAKSwaraj	
+	}
+
+	decision_trigger = {
+                control = { province = 1529 data = PAK } #Quetta
+                OR = {
+		control = { province = 1537 data = PAK } #Peshawar
+                control = { province = 1459 data = PAK }
+                }
+	}
+
+
+	trigger = {	
+		NOT = { 
+                ispuppet = PAK
+                war = { country = PAK country = AFG }
+                }
+                flag = PAKSwaraj
+                control = { province = 1529 data = PAK } #Quetta
+                OR = {
+		control = { province = 1537 data = PAK } #Peshawar
+                control = { province = 1459 data = PAK }
+                }	
+	}
+
+	date = { day = 1 month = november year = 1936 }
+	offset =  50
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "EVT_101019_NAME"
+	desc = "EVT_101019_DESC"
+
+	action_a = {
+		ai_chance = 50
+		name = "EVT_101019_OPTIONA"
+		command = { type = dissent value = -2 }
+                command = { type = money value = 400 }
+                command = { type = domestic which = free_market value = -1 }
+                command = { type = domestic which = freedom value = 1 }
+
+	}
+	action_b = {
+		ai_chance = 35
+		name = "EVT_101019_OPTIONB"
+                command = { type = dissent value = 2 } 
+                command = { type = money value = 20 }
+                command = { type = domestic which = free_market value = 3 }
+	}
+	action_c = {
+		ai_chance = 15
+		name = "EVT_101019_OPTIONC"
+		command = { type = dissent value = 5 }
+                command = { type = domestic which = free_market value = -2 }
+	}
+
+}
+################################################################################?#
+#Reforming the economy - Jinnah
+################################################################################?#
+
+event = {
+	id = 101020
+	country = PAK
+	style = 2
+	picture = "indianeconomy"
+        decision_picture = "decision_indianeconomy"
+
+	decision = {	
+		NOT = { 
+                ispuppet = PAK 
+                war = { country = PAK country = AFG }
+                }
+                flag = PAKJinnah	
+	}
+
+	decision_trigger = {
+                control = { province = 1529 data = PAK } #Quetta
+                OR = {
+		control = { province = 1537 data = PAK } #Peshawar
+                control = { province = 1459 data = PAK }
+                }
+	}
+
+
+	trigger = {	
+		NOT = { 
+                ispuppet = PAK
+                war = { country = PAK country = AFG }
+                }
+                flag = PAKJinnah
+                control = { province = 1529 data = PAK } #Quetta
+                OR = {
+		control = { province = 1537 data = PAK } #Peshawar
+                control = { province = 1459 data = PAK }
+                }	
+	}
+
+	date = { day = 1 month = november year = 1936 }
+	offset =  50
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "EVT_101020_NAME"
+	desc = "EVT_101020_DESC"
+
+	action_a = {
+		ai_chance = 50
+		name = "EVT_101020_OPTIONA"
+		command = { type = dissent value = -3 }
+                command = { type = money value = 100 }
+                command = { type = domestic which = free_market value = -2 }
+                command = { type = domestic which = freedom value = 1 }
+
+	}
+	action_b = {
+		ai_chance = 35
+		name = "EVT_101020_OPTIONB"
+                command = { type = dissent value = 3 } 
+                command = { type = money value = 200 }
+                command = { type = domestic which = free_market value = 3 }
+	}
+	action_c = {
+		ai_chance = 15
+		name = "EVT_101020_OPTIONC"
+		command = { type = dissent value = 1 }
+                command = { type = domestic which = free_market value = 1 }
+                command = { type = domestic which = freedom value = 2 }
+	}
+
+}
+################################################################################?#
+#Reforming the economy - Unionist
+################################################################################?#
+
+event = {
+	id = 101021
+	country = PAK
+	style = 2
+	picture = "indianeconomy"
+        decision_picture = "decision_indianeconomy"
+
+	decision = {	
+		NOT = { 
+                ispuppet = PAK 
+                war = { country = PAK country = AFG }
+                }
+                flag = PAKUnionist	
+	}
+
+	decision_trigger = {
+                control = { province = 1529 data = PAK } #Quetta
+                OR = {
+		control = { province = 1537 data = PAK } #Peshawar
+                control = { province = 1459 data = PAK }
+                }
+	}
+
+
+	trigger = {	
+		NOT = { 
+                ispuppet = PAK
+                war = { country = PAK country = AFG }
+                }
+                flag = PAKUnionist
+                control = { province = 1529 data = PAK } #Quetta
+                OR = {
+		control = { province = 1537 data = PAK } #Peshawar
+                control = { province = 1459 data = PAK }
+                }	
+	}
+
+	date = { day = 1 month = november year = 1936 }
+	offset =  50
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "EVT_101021_NAME"
+	desc = "EVT_101021_DESC"
+
+	action_a = {
+		ai_chance = 50
+		name = "EVT_101021_OPTIONA"
+		command = { type = dissent value = 2 }
+                command = { type = money value = 300 }
+                command = { type = domestic which = free_market value = 1 }
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = domestic which = defense_lobby value = 1 }
+
+	}
+	action_b = {
+		ai_chance = 35
+		name = "EVT_101021_OPTIONB"
+                command = { type = dissent value = 5 } 
+                command = { type = money value = 200 }
+                command = { type = domestic which = free_market value = 3 }
+                command = { type = domestic which = freedom value = 1 }
+	}
+	action_c = {
+		ai_chance = 15
+		name = "EVT_101021_OPTIONC"
+		command = { type = dissent value = 1 }
+                command = { type = domestic which = free_market value = 1 }
+                command = { type = domestic which = freedom value = 2 }
+	}
+
+}
+################################################################################?#
+#Indian Industry Act 1937 - Liberal
+################################################################################?#
+
+event = {
+	id = 101022
+	country = PAK
+	style = 2
+	picture = "indianeconomy"
+        decision_picture = "decision_indianeconomy"
+
+	decision = {	
+		NOT = { 
+                ispuppet = PAK 
+                war = { country = PAK country = AFG }
+                }
+                flag = PAKLiberal	
+	}
+
+	decision_trigger = {
+                control = { province = 1529 data = PAK } #Quetta
+                OR = {
+		control = { province = 1537 data = PAK } #Peshawar
+                control = { province = 1459 data = PAK }
+                }
+	}
+
+
+	trigger = {	
+		NOT = { 
+                ispuppet = PAK
+                war = { country = PAK country = AFG }
+                }
+                flag = PAKLiberal
+                control = { province = 1529 data = PAK } #Quetta
+                OR = {
+		control = { province = 1537 data = PAK } #Peshawar
+                control = { province = 1459 data = PAK }
+                }	
+	}
+
+	date = { day = 1 month = february year = 1937 }
+	offset =  50
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "EVT_101022_NAME"
+	desc = "EVT_101022_DESC"
+
+	action_a = {
+		ai_chance = 50
+		name = "EVT_101022_OPTIONA"
+		command = { type = dissent value = 5 }
+                command = { type = domestic which = free_market value = 2 }
+
+	}
+	action_b = {
+		ai_chance = 35
+		name = "EVT_101022_OPTIONB"
+                command = { type = dissent value = -1 } 
+                command = { type = money value = 20 }
+                command = { type = gain_tech which = 5060 }
+                command = { type = domestic which = free_market value = -1 }
+	}
+	action_c = {
+		ai_chance = 15
+		name = "EVT_101022_OPTIONC"
+		command = { type = dissent value = -5 }
+                command = { type = domestic which = free_market value = -2 }
+	}
+
+}
+################################################################################?#
+#Indian Industry Act 1937 - Swaraj
+################################################################################?#
+
+event = {
+	id = 101023
+	country = PAK
+	style = 2
+	picture = "indianeconomy"
+        decision_picture = "decision_indianeconomy"
+
+	decision = {	
+		NOT = { 
+                ispuppet = PAK 
+                war = { country = PAK country = AFG }
+                }
+                flag = PAKSwaraj	
+	}
+
+	decision_trigger = {
+                control = { province = 1529 data = PAK } #Quetta
+                OR = {
+		control = { province = 1537 data = PAK } #Peshawar
+                control = { province = 1459 data = PAK }
+                }
+	}
+
+
+	trigger = {	
+		NOT = { 
+                ispuppet = PAK
+                war = { country = PAK country = AFG }
+                }
+                flag = PAKSwaraj
+                control = { province = 1529 data = PAK } #Quetta
+                OR = {
+		control = { province = 1537 data = PAK } #Peshawar
+                control = { province = 1459 data = PAK }
+                }	
+	}
+
+	date = { day = 1 month = february year = 1937 }
+	offset =  50
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "EVT_101023_NAME"
+	desc = "EVT_101023_DESC"
+
+	action_a = {
+		ai_chance = 40
+		name = "EVT_101023_OPTIONA"
+		command = { type = dissent value = 5 }
+                command = { type = domestic which = free_market value = 2 }
+
+	}
+	action_b = {
+		ai_chance = 50
+		name = "EVT_101023_OPTIONB"
+                command = { type = dissent value = -1 } 
+                command = { type = money value = 20 }
+                command = { type = gain_tech which = 5060 }
+                command = { type = domestic which = free_market value = -1 }
+	}
+	action_c = {
+		ai_chance = 10
+		name = "EVT_101023_OPTIONC"
+		command = { type = dissent value = -5 }
+                command = { type = domestic which = free_market value = -2 }
+	}
+
+}
+################################################################################?#
+#Indian Industry Act 1937 - Unionist
+################################################################################?#
+
+event = {
+	id = 101024
+	country = PAK
+	style = 2
+	picture = "indianeconomy"
+        decision_picture = "decision_indianeconomy"
+
+	decision = {	
+		NOT = { 
+                ispuppet = PAK 
+                war = { country = PAK country = AFG }
+                }
+                flag = PAKJinnah	
+	}
+
+	decision_trigger = {
+                control = { province = 1529 data = PAK } #Quetta
+                OR = {
+		control = { province = 1537 data = PAK } #Peshawar
+                control = { province = 1459 data = PAK }
+                }
+	}
+
+
+	trigger = {	
+		NOT = { 
+                ispuppet = PAK
+                war = { country = PAK country = AFG }
+                }
+                flag = PAKJinnah
+                control = { province = 1529 data = PAK } #Quetta
+                OR = {
+		control = { province = 1537 data = PAK } #Peshawar
+                control = { province = 1459 data = PAK }
+                }	
+	}
+
+	date = { day = 1 month = february year = 1937 }
+	offset =  50
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "EVT_101024_NAME"
+	desc = "EVT_101023_DESC"
+
+	action_a = {
+		ai_chance = 20
+		name = "EVT_101024_OPTIONA"
+		command = { type = dissent value = 5 }
+                command = { type = domestic which = free_market value = 2 }
+
+	}
+	action_b = {
+		ai_chance = 60
+		name = "EVT_101024_OPTIONB"
+                command = { type = dissent value = -1 } 
+                command = { type = money value = 20 }
+                command = { type = gain_tech which = 5060 }
+                command = { type = domestic which = free_market value = -1 }
+	}
+	action_c = {
+		ai_chance = 20
+		name = "EVT_101024_OPTIONC"
+		command = { type = dissent value = -5 }
+                command = { type = domestic which = free_market value = -2 }
+	}
+
+}
+################################################################################?#
+#Indian Industry Act 1937 - Jinnah
+################################################################################?#
+
+event = {
+	id = 101025
+	country = PAK
+	style = 2
+	picture = "indianeconomy"
+        decision_picture = "decision_indianeconomy"
+
+	decision = {	
+		NOT = { 
+                ispuppet = PAK 
+                war = { country = PAK country = AFG }
+                }
+                flag = PAKUnionist	
+	}
+
+	decision_trigger = {
+                control = { province = 1529 data = PAK } #Quetta
+                OR = {
+		control = { province = 1537 data = PAK } #Peshawar
+                control = { province = 1459 data = PAK }
+                }
+	}
+
+
+	trigger = {	
+		NOT = { 
+                ispuppet = PAK
+                war = { country = PAK country = AFG }
+                }
+                flag = PAKUnionist
+                control = { province = 1529 data = PAK } #Quetta
+                OR = {
+		control = { province = 1537 data = PAK } #Peshawar
+                control = { province = 1459 data = PAK }
+                }	
+	}
+
+	date = { day = 1 month = february year = 1937 }
+	offset =  50
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "EVT_101025_NAME"
+	desc = "EVT_101025_DESC"
+
+	action_a = {
+		ai_chance = 60
+		name = "EVT_101025_OPTIONA"
+		command = { type = dissent value = 5 }
+                command = { type = domestic which = free_market value = 2 }
+
+	}
+	action_b = {
+		ai_chance = 30
+		name = "EVT_101025_OPTIONB"
+                command = { type = dissent value = -1 } 
+                command = { type = money value = 20 }
+                command = { type = gain_tech which = 5060 }
+                command = { type = domestic which = free_market value = -1 }
+	}
+	action_c = {
+		ai_chance = 10
+		name = "EVT_101025_OPTIONC"
+		command = { type = dissent value = -5 }
+                command = { type = domestic which = free_market value = -2 }
+	}
+
+}
+################################################################################?#
+#The Case of the Princely Armies - Option A
+################################################################################?#
+event = {
+              id = 101026
+              country = PAK
+              style = 2
+              picture = "princelyarmies"
+
+              
+              name = "EVT_101026_NAME"
+              desc = "EVT_101026_DESC"
+
+              action_a = {
+                  ai_chance = 39
+                  name = "EVT_101026_OPTIONA"
+                  command = { type = domestic which = defense_lobby value = 3 }
+                  command = { type = remove_division which = "Bikaner Camel Corps" value = PAK }
+                  command = { type = remove_division which = "Dungar Lancers" value = PAK }
+                  command = { type = remove_division which = "Sadul Light Infantry" value = PAK }
+                  command = { type = remove_division which = "1st Jammu and Kashmir Infantry" value = PAK }
+                  command = { type = remove_division which = "1st Bahawalpar Infantry" value = PAK }
+                  command = { type = remove_division which = "2nd Bahawalpar Light Infantry" value = PAK }
+                  command = { type = remove_division which = "1st Gwalior Jayaji Lancers" value = PAK }
+                  command = { type = remove_division which = "1st Gwalior Maharani Sakhya Raja's Own Battalion" value = PAK }
+                  command = { type = remove_division which = "2nd Gwalior Maharaja Jajaji Rao's Battalion" value = PAK }
+                  command = { type = remove_division which = "Kapurthala Jagatjit Infantry" value = PAK }
+                  command = { type = remove_division which = "Kapurthala Paramjit Infantry" value = PAK }
+                  command = { type = event which = 101030 where = PAK when = 90 }
+                  command = { type = dissent value = 3 }
+                  }
+              action_a = {
+                  ai_chance = 60
+                  name = "EVT_101026_OPTIONB"
+                  command = { type = domestic which = defense_lobby value = 2 }
+                  command = { type = remove_division which = "Bikaner Camel Corps" value = PAK }
+                  command = { type = remove_division which = "Dungar Lancers" value = PAK }
+                  command = { type = remove_division which = "Sadul Light Infantry" value = PAK }
+                  command = { type = remove_division which = "1st Jammu and Kashmir Infantry" value = PAK }
+                  command = { type = remove_division which = "1st Bahawalpar Infantry" value = PAK }
+                  command = { type = remove_division which = "2nd Bahawalpar Light Infantry" value = PAK }
+                  command = { type = remove_division which = "1st Gwalior Jayaji Lancers" value = PAK }
+                  command = { type = remove_division which = "1st Gwalior Maharani Sakhya Raja's Own Battalion" value = PAK }
+                  command = { type = remove_division which = "2nd Gwalior Maharaja Jajaji Rao's Battalion" value = PAK }
+                  command = { type = remove_division which = "Kapurthala Jagatjit Infantry" value = PAK }
+                  command = { type = remove_division which = "Kapurthala Paramjit Infantry" value = PAK }
+                  command = { type = event which = 101029 where = PAK when = 90 }
+                  command = { type = relation which = IND value = 10 }
+                  command = { type = dissent value = 2 }
+                  }
+              action_a = {
+                  ai_chance = 1
+                  name = "EVT_101026_OPTIONC"
+                  command = { type = domestic which = defense_lobby value = -3 }
+                  command = { type = dissent value = 10 }
+                  }
+
+
+ }
+################################################################################?#
+#The Case of the Princely Armies - Option B
+################################################################################?#
+event = {
+              id = 101027
+              country = PAK
+              style = 2
+              picture = "princelyarmies"
+
+              
+              name = "EVT_101027_NAME"
+              desc = "EVT_101026_DESC"
+
+              action_a = {
+                  ai_chance = 60
+                  name = "EVT_101027_OPTIONA"
+                  command = { type = domestic which = defense_lobby value = 3 }
+                  command = { type = remove_division which = "Bikaner Camel Corps" value = PAK }
+                  command = { type = remove_division which = "Dungar Lancers" value = PAK }
+                  command = { type = remove_division which = "Sadul Light Infantry" value = PAK }
+                  command = { type = remove_division which = "1st Jammu and Kashmir Infantry" value = PAK }
+                  command = { type = remove_division which = "1st Bahawalpar Infantry" value = PAK }
+                  command = { type = remove_division which = "2nd Bahawalpar Light Infantry" value = PAK }
+                  command = { type = remove_division which = "1st Gwalior Jayaji Lancers" value = PAK }
+                  command = { type = remove_division which = "1st Gwalior Maharani Sakhya Raja's Own Battalion" value = PAK }
+                  command = { type = remove_division which = "2nd Gwalior Maharaja Jajaji Rao's Battalion" value = PAK }
+                  command = { type = remove_division which = "Kapurthala Jagatjit Infantry" value = PAK }
+                  command = { type = remove_division which = "Kapurthala Paramjit Infantry" value = PAK }
+                  command = { type = event which = 101029 where = PAK when = 120 }
+                  command = { type = dissent value = 3 }
+                  }
+              action_a = {
+                  ai_chance = 39
+                  name = "EVT_101027_OPTIONB"
+                  command = { type = domestic which = defense_lobby value = 2 }
+                  command = { type = remove_division which = "Bikaner Camel Corps" value = PAK }
+                  command = { type = remove_division which = "Dungar Lancers" value = PAK }
+                  command = { type = remove_division which = "Sadul Light Infantry" value = PAK }
+                  command = { type = remove_division which = "1st Jammu and Kashmir Infantry" value = PAK }
+                  command = { type = remove_division which = "1st Bahawalpar Infantry" value = PAK }
+                  command = { type = remove_division which = "2nd Bahawalpar Light Infantry" value = PAK }
+                  command = { type = remove_division which = "1st Gwalior Jayaji Lancers" value = PAK }
+                  command = { type = remove_division which = "1st Gwalior Maharani Sakhya Raja's Own Battalion" value = PAK }
+                  command = { type = remove_division which = "2nd Gwalior Maharaja Jajaji Rao's Battalion" value = PAK }
+                  command = { type = remove_division which = "Kapurthala Jagatjit Infantry" value = PAK }
+                  command = { type = remove_division which = "Kapurthala Paramjit Infantry" value = PAK }
+                  command = { type = event which = 101030 where = PAK when = 120 }
+                  command = { type = relation which = IND value = 10 }
+                  command = { type = dissent value = 2 }
+                  }
+              action_a = {
+                  ai_chance = 1
+                  name = "EVT_101027_OPTIONC"
+                  command = { type = domestic which = defense_lobby value = -3 }
+                  command = { type = dissent value = 10 }
+                  }
+
+
+ }
+################################################################################?#
+#The Case of the Princely Armies - Option C
+################################################################################?#
+event = {
+              id = 101028
+              country = PAK
+              style = 2
+              picture = "princelyarmies"
+
+              
+              name = "EVT_101028_NAME"
+              desc = "EVT_101026_DESC"
+
+              action_a = {
+                  ai_chance = 70
+                  name = "EVT_101028_OPTIONA"
+                  command = { type = domestic which = defense_lobby value = 3 }
+                  command = { type = remove_division which = "Bikaner Camel Corps" value = PAK }
+                  command = { type = remove_division which = "Dungar Lancers" value = PAK }
+                  command = { type = remove_division which = "Sadul Light Infantry" value = PAK }
+                  command = { type = remove_division which = "1st Jammu and Kashmir Infantry" value = PAK }
+                  command = { type = remove_division which = "1st Bahawalpar Infantry" value = PAK }
+                  command = { type = remove_division which = "2nd Bahawalpar Light Infantry" value = PAK }
+                  command = { type = remove_division which = "1st Gwalior Jayaji Lancers" value = PAK }
+                  command = { type = remove_division which = "1st Gwalior Maharani Sakhya Raja's Own Battalion" value = PAK }
+                  command = { type = remove_division which = "2nd Gwalior Maharaja Jajaji Rao's Battalion" value = PAK }
+                  command = { type = remove_division which = "Kapurthala Jagatjit Infantry" value = PAK }
+                  command = { type = remove_division which = "Kapurthala Paramjit Infantry" value = PAK }
+                  command = { type = event which = 101030 where = PAK when = 90 }
+                  command = { type = dissent value = 3 }
+                  }
+              action_a = {
+                  ai_chance = 29
+                  name = "EVT_101028_OPTIONB"
+                  command = { type = domestic which = defense_lobby value = 2 }
+                  command = { type = remove_division which = "Bikaner Camel Corps" value = PAK }
+                  command = { type = remove_division which = "Dungar Lancers" value = PAK }
+                  command = { type = remove_division which = "Sadul Light Infantry" value = PAK }
+                  command = { type = remove_division which = "1st Jammu and Kashmir Infantry" value = PAK }
+                  command = { type = remove_division which = "1st Bahawalpar Infantry" value = PAK }
+                  command = { type = remove_division which = "2nd Bahawalpar Light Infantry" value = PAK }
+                  command = { type = remove_division which = "1st Gwalior Jayaji Lancers" value = PAK }
+                  command = { type = remove_division which = "1st Gwalior Maharani Sakhya Raja's Own Battalion" value = PAK }
+                  command = { type = remove_division which = "2nd Gwalior Maharaja Jajaji Rao's Battalion" value = PAK }
+                  command = { type = remove_division which = "Kapurthala Jagatjit Infantry" value = PAK }
+                  command = { type = remove_division which = "Kapurthala Paramjit Infantry" value = PAK }
+                  command = { type = event which = 101029 where = PAK when = 90 }
+                  command = { type = relation which = IND value = 10 }
+                  command = { type = dissent value = 2 }
+                  }
+              action_a = {
+                  ai_chance = 1
+                  name = "EVT_101028_OPTIONC"
+                  command = { type = domestic which = defense_lobby value = -3 }
+                  command = { type = dissent value = 10 }
+                  }
+
+
+ }
+################################################################################?#
+#Refitting - Princely version.
+################################################################################?#
+event = {
+              id = 101029
+              country = PAK
+              style = 2
+              picture = "princelyarmies"
+
+              
+              name = "EVT_101029_NAME"
+              desc = "EVT_101029_DESC"
+
+              action_a = {
+                  ai_chance = 100
+                  name = "EVT_101029_OPTIONA"
+                  command = { type = dissent value = 2 }
+                  command = { type = add_corps which = "Bikaner State Forces" value = land where = 1527 }
+                  command = { type = add_division which = "Bikaner Camel Corps" value = cavalry when = 8 }
+                  command = { type = add_division which = "Dungar Lancers" value = cavalry when = 8 }
+                  command = { type = add_division which = "Sadul Light Infantry" value = infantry when = 7 }
+                  command = { type = add_corps which = "Jammu and Kashmir State Forces" value = land where = 1540 }
+                  command = { type = add_division which = "1st Jammu and Kashmir Infantry" value = infantry when = 7 }
+                  command = { type = add_corps which = "Bahawalpar State Forces" value = land where = 1536 }
+                  command = { type = add_division which = "1st Bahawalpar Infantry" value = infantry when = 7 where = light_armor_brigade }
+                  command = { type = add_division which = "2nd Bahawalpar Light Infantry" value = militia when = 4 }
+                  command = { type = add_corps which = "Gwalior State Forces" value = land where = 1523 }
+                  command = { type = add_division which = "1st Gwalior Jayaji Lancers" value = cavalry when = 8 where = artillery }
+                  command = { type = add_division which = "1st Gwalior Maharani Sakhya Raja's Own Battalion" value = infantry when = 7 where = artillery }
+                  command = { type = add_division which = "2nd Gwalior Maharaja Jajaji Rao's Battalion" value = infantry when = 7 }
+                  command = { type = add_corps which = "Kapurthala State Forces" value = land where = 1530 }
+                  command = { type = add_division which = "Kapurthala Jagatjit Infantry" value = infantry when = 7 }
+                  command = { type = add_division which = "Kapurthala Paramjit Infantry" value = infantry when = 7 }
+                  command = { type = manpowerpool value = -50 }
+                  }
+
+
+ }
+################################################################################?#
+#Refitting - Government version.
+################################################################################?#
+event = {
+              id = 101030
+              country = PAK
+              style = 2
+              picture = "princelyarmies"
+
+              
+              name = "EVT_101030_NAME"
+              desc = "EVT_101030_DESC"
+
+              action_a = {
+                  ai_chance = 100
+                  name = "EVT_101030_OPTIONA"
+                  command = { type = dissent value = 2 }
+                  command = { type = add_corps which = "1st Rajput Union Corps" value = land where = 1527 }
+                  command = { type = add_division which = "Bikaner Camel Corps" value = cavalry when = 8 }
+                  command = { type = add_division which = "1st Rajput Cavalry Division" value = cavalry when = 8 }
+                  command = { type = add_division which = "Rajput State Infantry" value = infantry when = 7 }
+                  command = { type = add_corps which = "Jammu and Kashmir Union Forces" value = land where = 1540 }
+                  command = { type = add_division which = "1st Jammu and Kashmir Infantry" value = infantry when = 7 }
+                  command = { type = add_corps which = "1st Punjabi Corps" value = land where = 1536 }
+                  command = { type = add_division which = "1st Bahawalpar Infantry" value = infantry when = 7 where = light_armor_brigade }
+                  command = { type = add_division which = "2nd Bahawalpar Light Infantry" value = militia when = 4 }
+                  command = { type = add_corps which = "1st Maratha Corps" value = land where = 1523 }
+                  command = { type = add_division which = "1st Maratha Jayaji Lancers" value = cavalry when = 8 where = artillery }
+                  command = { type = add_division which = "1st Maratha Infantry Division" value = infantry when = 7 where = artillery }
+                  command = { type = add_division which = "2nd Maratha Infantry Division" value = infantry when = 7 }
+                  command = { type = add_corps which = "2nd Punjabi Corps" value = land where = 1530 }
+                  command = { type = add_division which = "1st Kapurthala Infantry" value = infantry when = 7 }
+                  command = { type = add_division which = "2nd Kapurthala Infantry" value = infantry when = 7 }
+                  command = { type = manpowerpool value = -50 }
+                  }
+
+
+ }
+
+################################################################################?#
+#What to do with Princely military commanders
+################################################################################?#
+event = {
+	id = 101031
+	random = no
+	country = PAK
+	style = 2
+        save_date = yes
+	
+trigger = {
+		owned = { province = 1487 data = PAK }
+		control = { province = 1487 data = PAK }
+		owned = { province = 1488 data = PAK }
+		control = { province = 1488 data = PAK }
+		NOT = {
+                exists = IND
+                war = { country = PAK country = PRK }
+				war = { country = PAK country = BUR }
+                }
+
+	}
+
+
+	name = "EVT_101031_NAME"
+	desc = "EVT_101031_DESC"
+        picture = "princelyarmies"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 120
+	deathdate = { day = 29 month = december year = 1960 }
+
+
+        action = {
+	        ai_chance =  80
+	        name = "EVT_101031_OPTIONA"
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = wakeleader which = 564131 }
+                command = { type = wakeleader which = 564132 }
+                command = { type = wakeleader which = 564133 }
+                command = { type = wakeleader which = 564134 }
+                command = { type = wakeleader which = 564135 }
+                command = { type = wakeleader which = 564136 }
+                command = { type = wakeleader which = 564137 }
+                command = { type = wakeleader which = 564138 }
+                command = { type = wakeleader which = 564139 }
+                command = { type = wakeleader which = 564140 }
+                command = { type = wakeleader which = 564141 }
+                command = { type = wakeleader which = 564142 }
+                command = { type = wakeleader which = 564143 }
+                command = { type = wakeleader which = 564144 }
+                command = { type = wakeleader which = 564145 }
+                command = { type = wakeleader which = 564146 }
+                command = { type = wakeleader which = 564147 }
+                command = { type = wakeleader which = 564148 }
+                command = { type = wakeleader which = 564149 }
+                command = { type = wakeleader which = 564150 }
+                command = { type = wakeleader which = 564151 }
+                command = { type = wakeleader which = 564152 }
+                command = { type = wakeleader which = 564153 }
+                command = { type = wakeleader which = 564154 }
+                command = { type = wakeleader which = 564155 }
+                command = { type = wakeleader which = 564156 }
+                command = { type = wakeleader which = 564164 }
+                command = { type = wakeleader which = 564165 }
+                command = { type = wakeleader which = 564166 }
+                command = { type = wakeminister which = 564107 }
+                command = { type = wakeminister which = 564108 }
+                command = { type = wakeminister which = 564109 }
+                command = { type = wakeminister which = 564110 }
+		command = { type = gain_tech which = -1 } # get random tech blueprints
+		command = { type = dissent value = 5  } # Traitors in our ranks?
+		}
+
+        action = {
+	        ai_chance =  15
+	        name = "EVT_101031_OPTIONB"
+                command = { type = domestic which = freedom value = 2 }
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = wakeleader which = 564131 }
+                command = { type = wakeleader which = 564132 }
+                command = { type = wakeleader which = 564133 }
+                command = { type = wakeleader which = 564134 }
+                command = { type = wakeleader which = 564135 }
+                command = { type = wakeleader which = 564136 }
+                command = { type = wakeleader which = 564137 }
+                command = { type = wakeleader which = 564138 }
+                command = { type = wakeleader which = 564139 }
+                command = { type = wakeleader which = 564140 }
+                command = { type = wakeleader which = 564141 }
+                command = { type = wakeleader which = 564142 }
+                command = { type = wakeleader which = 564143 }
+                command = { type = wakeleader which = 564144 }
+                command = { type = wakeleader which = 564145 }
+                command = { type = wakeleader which = 564146 }
+                command = { type = wakeleader which = 564147 }
+                command = { type = wakeleader which = 564148 }
+                command = { type = wakeleader which = 564149 }
+                command = { type = wakeleader which = 564150 }
+                command = { type = wakeleader which = 564151 }
+                command = { type = wakeleader which = 564152 }
+                command = { type = wakeleader which = 564153 }
+                command = { type = wakeleader which = 564154 }
+                command = { type = wakeleader which = 564155 }
+                command = { type = wakeleader which = 564156 }
+                command = { type = wakeleader which = 564157 }
+                command = { type = wakeleader which = 564158 }
+                command = { type = wakeleader which = 564159 }
+                command = { type = wakeleader which = 564160 }
+                command = { type = wakeleader which = 564161 }
+                command = { type = wakeleader which = 564162 }
+                command = { type = wakeleader which = 564163 }
+                command = { type = wakeleader which = 564164 }
+                command = { type = wakeleader which = 564165 }
+                command = { type = wakeleader which = 564166 }
+                command = { type = wakeminister which = 564107 }
+                command = { type = wakeminister which = 564108 }
+                command = { type = wakeminister which = 564109 }
+                command = { type = wakeminister which = 564110 }
+		command = { type = gain_tech which = -1 } # get random tech blueprints
+		command = { type = gain_tech which = -1 } # get random tech blueprints
+		command = { type = add_leader_skill which = -1 value = 1 }
+		command = { type = add_leader_skill which = -1 value = 1 }
+		command = { type = dissent value = 10  }
+		}
+
+        action = {
+	        ai_chance =  5
+	        name = "EVT_101031_OPTIONC"
+		command = { type = dissent value = -1  } 
+                command = { type = domestic which = freedom value = -2 }
+		}
+
+		  
+}
+################################################################################?#
+#What to do with the Bhartiya Commune's military commanders/Moderate politicians
+################################################################################?#
+event = {
+	id = 101032
+	random = no
+	country = PAK
+	style = 2
+	
+trigger = {
+		owned = { province = 1447 data = PAK }
+		control = { province = 1447 data = PAK }
+		owned = { province = 1444 data = PAK }
+		control = { province = 1444 data = PAK }
+		NOT = { 
+                exists = PRK 
+                war = { country = PAK country = IND }
+                war = { country = PAK country = BUR }
+		}
+	}
+
+
+	name = "EVT_101032_NAME"
+	desc = "EVT_101032_DESC"
+        picture = "princelyarmies"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 100
+	deathdate = { day = 29 month = december year = 1960 }
+
+
+        action = {
+	        ai_chance =  75
+	        name = "EVT_101032_OPTIONA"
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = wakeleader which = 564170 }
+                command = { type = wakeleader which = 564171 }
+                command = { type = wakeleader which = 564172 }
+                command = { type = wakeleader which = 564173 }
+                command = { type = wakeleader which = 564174 }
+		command = { type = gain_tech which = -1 } # get random tech blueprints
+		command = { type = dissent value = 5  } # Traitors in our ranks?
+		}
+
+        action = {
+	        ai_chance =  25
+	        name = "EVT_101032_OPTIONB"
+		command = { type = dissent value = -1  } 
+                command = { type = domestic which = freedom value = -2 }
+		}
+
+
+        action = {
+			trigger = { 
+                OR = {
+                headofgovernment = 564069
+				headofgovernment = 564122
+                }
+                }
+	        ai_chance =  50
+	        name = "EVT_101032_OPTIONC"
+		command = { type = dissent value = 10  } 
+                command = { type = wakeleader which = 564170 }
+                command = { type = wakeleader which = 564171 }
+                command = { type = wakeleader which = 564172 }
+                command = { type = wakeleader which = 564173 }
+                command = { type = wakeleader which = 564174 }
+                command = { type = wakeminister which = 564113 }
+                command = { type = wakeminister which = 564114 }
+                command = { type = wakeminister which = 564115 }
+                command = { type = wakeminister which = 564116 }
+		command = { type = gain_tech which = -1 } # get random tech blueprints
+		command = { type = gain_tech which = -1 } # get random tech blueprints
+                command = { type = domestic which = freedom value = 2 }
+		}
+
+		  
+}
+
+#####################################################
+#Death of Ganga Singh, Sir Sikander Hayat Khan and others
+#####################################################
+event = {
+id = 101033
+random = no
+country = PAK
+style = 2
+picture = "sikanderevent"
+
+trigger = {
+	headofgovernment = 564073
+	}
+
+date = { day = 25 month = december year = 1942 }
+
+name = "EVT_101033_NAME"
+desc = "EVT_101033_DESC"
+
+action = {
+        ai_chance =  100
+        name = "EVT_101033_OPTIONA"
+	command = { type = sleepminister which = 564073 }
+	command = { type = sleepminister which = 564028 }
+	command = { type = sleepleader which = 564032 }
+	command = { type = headofgovernment which = 564112 }
+        command = { type = dissent value = 1 }
+	}
+}
+
+event = {
+id = 101034
+random = no
+country = PAK
+style = 2
+picture = "sikanderevent"
+
+trigger = {
+	NOT = {
+		headofgovernment = 564073
+	}
+}
+
+
+date = { day = 25 month = december year = 1942 }
+
+name = "EVT_101034_NAME"
+desc = "EVT_101034_DESC"
+
+action = {
+        ai_chance =  100
+        name = "EVT_101034_OPTIONA"
+	command = { type = sleepminister which = 564073 }
+	command = { type = sleepminister which = 564028 }
+	command = { type = sleepleader which = 564032 }
+        command = { type = dissent value = 1 }
+	}
+}
+
+event = {
+id = 101035
+random = no
+country = PAK
+style = 2
+picture = "Gangasinghevent"
+
+date = { day = 2 month = february year = 1943 }
+
+name = "EVT_101035_NAME"
+desc = "EVT_101035_DESC"
+
+action = {
+	trigger = { flag = PAKDOMINION2 }
+        ai_chance =  100
+        name = "EVT_101035_OPTIONA"
+	command = { type = sleepminister which = 564002 }
+	command = { type = sleepminister which = 564007 }
+	command = { type = sleepminister which = 564103 }
+	command = { type = sleepminister which = 564104 }
+	command = { type = sleepminister which = 564105 }
+	command = { type = sleepminister which = 564106 }
+	command = { type = sleepleader which = 564031 }
+        command = { type = sleepteam which = 12507 }
+        command = { type = dissent value = 3 }
+	}
+
+action = {
+	trigger = { flag = PAKVICEROY }
+        ai_chance =  20
+        name = "EVT_101035_OPTIONB"
+	command = { type = headofstate which = 564117 } 
+	command = { type = sleepminister which = 564002 }
+	command = { type = sleepminister which = 564007 }
+	command = { type = sleepminister which = 564083 }
+	command = { type = sleepminister which = 564103 }
+	command = { type = sleepminister which = 564104 }
+	command = { type = sleepminister which = 564105 }
+	command = { type = sleepminister which = 564106 }
+	command = { type = sleepleader which = 564031 }
+        command = { type = sleepteam which = 12507 }
+        command = { type = dissent value = 3 }
+        command = { type = local_setflag which = viceroy_Ambedkar }
+	}
+
+action = {
+	trigger = { flag = PAKVICEROY }
+        ai_chance =  30
+        name = "EVT_101035_OPTIONC"
+	command = { type = headofstate which = 564119 } 
+	command = { type = sleepminister which = 564002 }
+	command = { type = sleepminister which = 564007 }
+	command = { type = sleepminister which = 564083 }
+	command = { type = sleepminister which = 564103 }
+	command = { type = sleepminister which = 564104 }
+	command = { type = sleepminister which = 564105 }
+	command = { type = sleepminister which = 564106 }
+	command = { type = sleepleader which = 564031 }
+        command = { type = sleepteam which = 12507 }
+        command = { type = dissent value = 3 }
+        command = { type = local_setflag which = viceroy_Tata }
+	}
+
+action = {
+	trigger = { flag = PAKVICEROY }
+        ai_chance =  50
+        name = "EVT_101035_OPTIOND"
+	command = { type = headofstate which = 564118 } 
+	command = { type = sleepminister which = 564002 }
+	command = { type = sleepminister which = 564007 }
+	command = { type = sleepminister which = 564083 }
+	command = { type = sleepminister which = 564103 }
+	command = { type = sleepminister which = 564104 }
+	command = { type = sleepminister which = 564105 }
+	command = { type = sleepminister which = 564106 }
+	command = { type = sleepleader which = 564031 }
+        command = { type = sleepteam which = 12507 }
+        command = { type = dissent value = 3 }
+        command = { type = local_setflag which = viceroy_Chatterjee }
+	}
+}
+
+event = {
+id = 101036
+random = no
+country = PAK
+style = 2
+picture = "Gaekwad"
+
+date = { day = 6 month = february year = 1939 }
+
+name = "EVT_101036_NAME"
+desc = "EVT_101036_DESC"
+
+action = {
+        ai_chance =  100
+        name = "EVT_101036_OPTIONA"	        
+        command = { type = sleepminister which = 564043 }
+	command = { type = sleepleader which = 564034 }
+        command = { type = dissent value = 1 }
+	}
+}
+
+event = {
+id = 101037
+random = no
+country = PAK
+style = 2
+picture = "Jinnahfuneral"
+
+trigger = {
+	headofgovernment = 564069
+	}
+
+date = { day = 11 month = september year = 1948 }
+
+name = "EVT_101037_NAME"
+desc = "EVT_101037_DESC"
+
+action = {
+        ai_chance =  100
+        name = "EVT_101037_OPTIONA"
+	command = { type = sleepminister which = 564069 }
+	command = { type = headofgovernment which = 564122 }
+        command = { type = dissent value = 3 }
+	}
+}
+
+event = {
+id = 101038
+random = no
+country = PAK
+style = 2
+picture = "Jinnahfuneral"
+
+trigger = {
+	NOT = {
+		headofgovernment = 564069
+	}
+}
+
+
+date = { day = 11 month = september year = 1948 }
+
+name = "EVT_101038_NAME"
+desc = "EVT_101038_DESC"
+
+action = {
+        ai_chance =  100
+        name = "EVT_101038_OPTIONA"
+	command = { type = sleepminister which = 564069 }
+        command = { type = dissent value = 3 }
+	}
+}
+
+event = {
+id = 101041
+random = no
+country = PAK
+style = 2
+picture = "Khengarideath"
+
+date = { day = 15 month = january year = 1942 }
+
+name = "EVT_101041_NAME"
+desc = "EVT_101041_DESC"
+
+action = {
+        ai_chance =  100
+        name = "EVT_101041_OPTIONA"	        
+        command = { type = sleepminister which = 564044 }
+		command = { type = sleepminister which = 564053 }
+	    command = { type = sleepleader which = 564035 }
+        command = { type = dissent value = 1 }
+	}
+}
+#####################################################
+#Flavour events
+#####################################################
+event = {
+	id = 101039
+	random = no
+	country = PAK
+	style = 2
+	
+trigger = {
+		owned = { province = 1500 data = PAK }
+		control = { province = 1500 data = PAK }
+                alliance = { country = PAK country = VIC }
+		NOT = { 
+                exists = U35
+                war = { country = PAK country = IND }
+		}
+	}
+
+
+	name = "EVT_101039_NAME"
+	desc = "EVT_101039_DESC"
+        picture = "pondicherry"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 100
+	deathdate = { day = 29 month = december year = 1966 }
+
+
+        action = {
+	        ai_chance =  50
+	        name = "EVT_101039_OPTIONA"
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = money value = 20 } # French investments
+		        command = { type = gain_tech which = -1 } # get random tech blueprints
+                command = { type = relation which = VIC value = 50 }
+		        command = { type = dissent value = 2  } # Special rights for Europeans?
+		}
+
+        action = {
+	        ai_chance =  30
+	        name = "EVT_101039_OPTIONB"
+		command = { type = dissent value = -1  } 
+                command = { type = relation which = VIC value = -10 }
+		}
+
+
+        action = {
+	        ai_chance =  20
+	        name = "EVT_101039_OPTIONC"
+		command = { type = dissent value = -3  } 
+                command = { type = domestic which = freedom value = -1 }
+                command = { type = relation which = VIC value = -50 }
+		}
+
+		  
+}
+
+event = {
+	id = 101040
+	random = no
+	country = PAK
+	style = 2
+	save_date = yes
+	
+trigger = {
+		owned = { province = 1459 data = PAK }
+		control = { province = 1459 data = PAK }
+		owned = { province = 1447 data = PAK }
+		control = { province = 1447 data = PAK }
+		owned = { province = 1487 data = PAK }
+		control = { province = 1487 data = PAK }
+		owned = { province = 1517 data = PAK }
+		control = { province = 1517 data = PAK }		
+        event = 101069
+		event = 101031
+		NOT = { 
+				exists = IND
+				exists = PRK
+                war = { country = PAK country = BUR }
+		}
+	}
+
+
+	name = "EVT_101040_NAME"
+	desc = "EVT_101040_DESC"
+        picture = "bombayplan"
+
+	date = { day = 1 month = january year = 1941 }
+	offset = 120
+	deathdate = { day = 29 month = december year = 1966 }
+
+
+        action = {
+	        ai_chance =  60
+	        name = "EVT_101040_OPTIONA"
+		        command = { type = dissent value = -2  } 
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = money value = -2000 } # payment!
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+                command = { type = construct which = ic where = -1 value = 1 }
+                command = { type = construct which = ic where = -1 value = 1 }
+                command = { type = domestic which = free_market value = -1 }
+		}
+
+        action = {
+	        ai_chance =  40
+	        name = "EVT_101040_OPTIONB"
+		        command = { type = dissent value = 1  } 
+                command = { type = money value = 200 }
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+                command = { type = construct which = ic where = -1 value = 1 }
+                command = { type = domestic which = free_market value = 1 }
+		}
+
+        action = {
+		trigger = { headofgovernment = 564069 }
+	        ai_chance =  70
+	        name = "EVT_101040_OPTIONC"
+		        command = { type = dissent value = -3  } 
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = money value = -2000 } # payment!
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+                command = { type = construct which = ic where = -1 value = 2 }
+                command = { type = construct which = ic where = -1 value = 1 }
+                command = { type = domestic which = free_market value = -2 }
+				command = { type = local_setflag which = Delhi_5_year_plan } #events to follow
+		}
+
+		  
+}
+
+event = {
+	id = 101043
+	random = no
+	country = PAK
+	style = 2
+	save_date = yes
+	
+trigger = {
+		owned = { province = 1459 data = PAK }
+		control = { province = 1459 data = PAK }
+		owned = { province = 1447 data = PAK }
+		control = { province = 1447 data = PAK }
+		owned = { province = 1487 data = PAK }
+		control = { province = 1487 data = PAK }
+		owned = { province = 1517 data = PAK }
+		control = { province = 1517 data = PAK }		
+        event = { id = 101040 days = 1825 }
+		local_flag = Delhi_5_year_plan
+		NOT = { 
+				exists = IND
+				exists = PRK
+                war = { country = PAK country = BUR }
+		}
+	}
+
+
+	name = "EVT_101043_NAME"
+	desc = "EVT_101043_DESC"
+        picture = "bombayplan"
+
+	date = { day = 1 month = january year = 1941 }
+	offset = 120
+	deathdate = { day = 29 month = december year = 1966 }
+	
+        action = {
+	        ai_chance =  100
+	        name = "EVT_101043_OPTIONA"
+		        command = { type = dissent value = -3  } 
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = money value = -2000 } # payment!
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+                command = { type = construct which = ic where = -1 value = 2 }
+                command = { type = construct which = ic where = -1 value = 1 }
+				command = { type = construct which = ic where = -1 value = 1 }
+				command = { type = construct which = ic where = -1 value = 1 }
+				command = { type = construct which = ic where = -1 value = 1 }
+
+		}
+		
+        action = {
+	        ai_chance =  0
+	        name = "EVT_101043_OPTIONB"
+		        command = { type = dissent value = 2  } 
+                command = { type = domestic which = free_market value = 3 }
+                command = { type = money value = -2000 } # payment!
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+                command = { type = construct which = ic where = -1 value = 2 }
+                command = { type = construct which = ic where = -1 value = 1 }
+				command = { type = construct which = ic where = -1 value = 1 }
+				command = { type = construct which = ic where = -1 value = 1 }
+				command = { type = construct which = ic where = -1 value = 1 }
+				command = { type = local_clrflag which = Delhi_5_year_plan } 
+				command = { type = sleepevent which = 1010100 }
+
+		}		
+
+		  
+}
+
+event = {
+	id = 1010100
+	random = no
+	country = PAK
+	style = 2
+	save_date = yes
+	
+trigger = {
+		owned = { province = 1459 data = PAK }
+		control = { province = 1459 data = PAK }
+		owned = { province = 1447 data = PAK }
+		control = { province = 1447 data = PAK }
+		owned = { province = 1487 data = PAK }
+		control = { province = 1487 data = PAK }
+		owned = { province = 1517 data = PAK }
+		control = { province = 1517 data = PAK }		
+        event = { id = 101043 days = 1825 }
+		local_flag = Delhi_5_year_plan
+		NOT = { 
+				exists = IND
+				exists = PRK
+                war = { country = PAK country = BUR }
+		}
+	}
+
+
+	name = "EVT_1010100_NAME"
+	desc = "EVT_1010100_DESC"
+        picture = "industry"
+
+	date = { day = 1 month = january year = 1941 }
+	offset = 120
+	deathdate = { day = 29 month = december year = 1966 }
+	
+        action = {
+	        ai_chance =  100
+	        name = "EVT_1010100_OPTIONA"
+		        command = { type = dissent value = -3  } 
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = money value = -2000 } # payment!
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+                command = { type = construct which = ic where = -1 value = 2 }
+                command = { type = construct which = ic where = -1 value = 1 }
+				command = { type = construct which = ic where = -1 value = 1 }
+
+		}
+		
+        action = {
+	        ai_chance =  0
+	        name = "EVT_1010100_OPTIONB"
+		        command = { type = dissent value = 2  } 
+                command = { type = domestic which = free_market value = 3 }
+                command = { type = money value = -2000 } # payment!
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+                command = { type = construct which = ic where = -1 value = 1 }
+                command = { type = construct which = ic where = -1 value = 1 }
+				command = { type = construct which = ic where = -1 value = 1 }
+				command = { type = local_clrflag which = Delhi_5_year_plan } 
+				command = { type = sleepevent which = 1010101 }
+
+		}		
+
+		  
+}
+
+event = {
+	id = 1010101
+	random = no
+	country = PAK
+	style = 2
+	save_date = yes
+	
+trigger = {
+		owned = { province = 1459 data = PAK }
+		control = { province = 1459 data = PAK }
+		owned = { province = 1447 data = PAK }
+		control = { province = 1447 data = PAK }
+		owned = { province = 1487 data = PAK }
+		control = { province = 1487 data = PAK }
+		owned = { province = 1517 data = PAK }
+		control = { province = 1517 data = PAK }		
+        event = { id = 1010100 days = 1825 }
+		local_flag = Delhi_5_year_plan
+		NOT = { 
+				exists = IND
+				exists = PRK
+                war = { country = PAK country = BUR }
+		}
+	}
+
+
+	name = "EVT_1010101_NAME"
+	desc = "EVT_1010101_DESC"
+        picture = "bombayplan"
+
+	date = { day = 1 month = january year = 1941 }
+	offset = 120
+	deathdate = { day = 29 month = december year = 1966 }
+	
+        action = {
+	        ai_chance =  100
+	        name = "EVT_1010101_OPTIONA"
+		        command = { type = dissent value = -3  } 
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = money value = -2000 } # payment!
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+                command = { type = construct which = ic where = -1 value = 1 }
+                command = { type = construct which = ic where = -1 value = 1 }
+				command = { type = construct which = ic where = -1 value = 1 }
+				command = { type = local_clrflag which = Delhi_5_year_plan } 
+
+		}		
+
+		  
+}
+
+event = {
+	id = 101042
+	random = no
+	country = PAK
+	style = 2
+	
+trigger = {
+		core = { province = 1459 data = PAK }
+		owned = { province = 1459 data = PAK }
+		control = { province = 1459 data = PAK }
+		core = { province = 1447 data = PAK }
+		owned = { province = 1447 data = PAK }
+		control = { province = 1447 data = PAK }
+		core = { province = 1487 data = PAK }
+		owned = { province = 1487 data = PAK }
+		control = { province = 1487 data = PAK }
+		core = { province = 1517 data = PAK }
+		owned = { province = 1517 data = PAK }
+		control = { province = 1517 data = PAK }		
+        event = 101069
+		event = 101031
+		NOT = { 
+				exists = IND
+				exists = PRK
+                war = { country = PAK country = BUR }
+		}
+	}
+
+
+	name = "EVT_101042_NAME"
+	desc = "EVT_101042_DESC"
+    picture = "delhivictor"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 15
+	deathdate = { day = 29 month = december year = 1966 }
+
+
+        action = {
+	        ai_chance =  100
+	            name = "EVT_101042_OPTIONA"
+		        command = { type = dissent value = -5  } 
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+				command = { type = name where = PAK which = PAK_UNI_NAME }
+		}
+		  
+}
+#####################################################
+#Integration of the PF if not cored
+#####################################################
+event = {
+	id = 1010102
+	random = no
+	country = PAK
+	style = 2
+    save_date = yes
+	
+trigger = {
+		owned = { province = 1517 data = PAK }
+		control = { province = 1517 data = PAK }
+		owned = { province = 1482 data = PAK }
+		control = { province = 1482 data = PAK }
+		NOT = { 
+		exists = IND 
+		exists = PRK
+		war = { country = PAK country = AFG }
+		war = { country = PAK country = BUR }
+		war = { country = PAK country = U35 }
+		}
+		}
+
+
+	name = "EVT_1010102_NAME"
+	desc = "EVT_1010102_DESC"
+    picture = "Marathaevent"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 50
+	deathdate = { day = 29 month = december year = 1960 }
+
+
+        action = {
+	        ai_chance =  70
+	        name = "EVT_1010102_OPTIONA"
+			command = { type = domestic which = freedom value = 1 }
+		    command = { type = dissent value = -2 }
+            command = { type = addclaim which = 1478 }
+			command = { type = addclaim which = 1482 }
+			command = { type = addclaim which = 1484 }
+			command = { type = addclaim which = 1485 }
+			command = { type = addclaim which = 1486 }
+			command = { type = addclaim which = 1492 }
+			command = { type = addclaim which = 1508 }
+			command = { type = addclaim which = 1512 }
+			command = { type = addclaim which = 1513 }
+			command = { type = addclaim which = 1514 }
+			command = { type = addclaim which = 1515 }
+			command = { type = addclaim which = 1516 }
+			command = { type = addclaim which = 1517 }
+			command = { type = addclaim which = 1520 }			
+			command = { type = local_setflag which = PAK_Maratha_mild }
+		}
+		
+        action = {
+	        ai_chance =  30
+	        name = "EVT_1010102_OPTIONB"
+            command = { type = province_revoltrisk which = 1478 value = 50 }
+			command = { type = province_revoltrisk which = 1482 value = 50 }
+			command = { type = province_revoltrisk which = 1484 value = 50 }
+			command = { type = province_revoltrisk which = 1485 value = 50 }
+			command = { type = province_revoltrisk which = 1486 value = 50 }
+			command = { type = province_revoltrisk which = 1492 value = 50 }
+			command = { type = province_revoltrisk which = 1508 value = 50 }
+			command = { type = province_revoltrisk which = 1512 value = 50 }
+			command = { type = province_revoltrisk which = 1513 value = 50 }
+			command = { type = province_revoltrisk which = 1514 value = 50 }
+			command = { type = province_revoltrisk which = 1515 value = 50 }
+			command = { type = province_revoltrisk which = 1516 value = 50 }
+			command = { type = province_revoltrisk which = 1517 value = 50 }
+			command = { type = province_revoltrisk which = 1520 value = 50 }
+            command = { type = addclaim which = 1478 }
+			command = { type = addclaim which = 1482 }
+			command = { type = addclaim which = 1484 }
+			command = { type = addclaim which = 1485 }
+			command = { type = addclaim which = 1486 }
+			command = { type = addclaim which = 1492 }
+			command = { type = addclaim which = 1508 }
+			command = { type = addclaim which = 1512 }
+			command = { type = addclaim which = 1513 }
+			command = { type = addclaim which = 1514 }
+			command = { type = addclaim which = 1515 }
+			command = { type = addclaim which = 1516 }
+			command = { type = addclaim which = 1517 }
+			command = { type = addclaim which = 1520 }			
+			command = { type = domestic which = freedom value = -2 }
+		    command = { type = dissent value = 4 }
+			command = { type = local_setflag which = PAK_Maratha_harsh }
+		}		
+
+		  
+}
+
+event = {
+		id = 1010103
+		country = PAK
+		style = 2
+                 
+                trigger = {
+                local_flag = PAK_Maratha_mild
+                random = 45 
+		        owned = { province = 1517 data = PAK }
+		        control = { province = 1517 data = PAK }
+		        owned = { province = 1516 data = PAK }
+		        control = { province = 1516 data = PAK }
+                }	
+		
+		name = "EVT_1010103_NAME"							
+		desc = "EVT_1010103_DESC"
+        picture = "Marathaevent"
+		
+            date = { day = 1 month = january year = 1936 }
+	        offset = 110
+	        deathdate = { day = 29 month = december year = 1960 }
+
+		action_a = {
+		name = "EVT_1010103_OPTIONA"
+            command = { type = waketeam which = 12538 }
+			command = { type = waketeam which = 12539 }
+            command = { type = addcore which = 1478 }
+			command = { type = addcore which = 1482 }
+			command = { type = addcore which = 1484 }
+			command = { type = addcore which = 1485 }
+			command = { type = addcore which = 1486 }
+			command = { type = addcore which = 1492 }
+			command = { type = addcore which = 1508 }
+			command = { type = addcore which = 1512 }
+			command = { type = addcore which = 1513 }
+			command = { type = addcore which = 1514 }
+			command = { type = addcore which = 1515 }
+			command = { type = addcore which = 1516 }
+			command = { type = addcore which = 1517 }
+			command = { type = addcore which = 1520 }	
+                command = { type = dissent value = -5 } 
+                command = { type = local_clrflag which = PAK_Maratha_mild }
+		}		
+
+		  
+}
+
+event = {
+		id = 1010104
+		country = PAK
+		style = 2
+                 
+                trigger = {
+                local_flag = PAK_Maratha_harsh
+                random = 30 
+		        owned = { province = 1517 data = PAK }
+		        control = { province = 1517 data = PAK }
+		        owned = { province = 1516 data = PAK }
+		        control = { province = 1516 data = PAK }
+                }	
+		
+		name = "EVT_1010104_NAME"							
+		desc = "EVT_1010104_DESC"
+        picture = "Marathaevent"
+		
+            date = { day = 1 month = january year = 1936 }
+	        offset = 150
+	        deathdate = { day = 29 month = december year = 1960 }
+
+		action_a = {
+		name = "EVT_1010104_OPTIONA"
+            command = { type = waketeam which = 12538 }
+			command = { type = waketeam which = 12539 }
+            command = { type = addcore which = 1478 }
+			command = { type = addcore which = 1482 }
+			command = { type = addcore which = 1484 }
+			command = { type = addcore which = 1485 }
+			command = { type = addcore which = 1486 }
+			command = { type = addcore which = 1492 }
+			command = { type = addcore which = 1508 }
+			command = { type = addcore which = 1512 }
+			command = { type = addcore which = 1513 }
+			command = { type = addcore which = 1514 }
+			command = { type = addcore which = 1515 }
+			command = { type = addcore which = 1516 }
+			command = { type = addcore which = 1517 }
+			command = { type = addcore which = 1520 }	
+            command = { type = province_revoltrisk which = 1478 value = -50 }
+			command = { type = province_revoltrisk which = 1482 value = -50 }
+			command = { type = province_revoltrisk which = 1484 value = -50 }
+			command = { type = province_revoltrisk which = 1485 value = -50 }
+			command = { type = province_revoltrisk which = 1486 value = -50 }
+			command = { type = province_revoltrisk which = 1492 value = -50 }
+			command = { type = province_revoltrisk which = 1508 value = -50 }
+			command = { type = province_revoltrisk which = 1512 value = -50 }
+			command = { type = province_revoltrisk which = 1513 value = -50 }
+			command = { type = province_revoltrisk which = 1514 value = -50 }
+			command = { type = province_revoltrisk which = 1515 value = -50 }
+			command = { type = province_revoltrisk which = 1516 value = -50 }
+			command = { type = province_revoltrisk which = 1517 value = -50 }
+			command = { type = province_revoltrisk which = 1520 value = -50 }			
+                command = { type = dissent value = -5 } 
+                command = { type = local_clrflag which = PAK_Maratha_harsh }
+		}		
+
+		  
+}
+event = {
+	id = 1010105
+	random = no
+	country = PAK
+	style = 2
+    save_date = yes
+	
+trigger = {
+		owned = { province = 1507 data = PAK }
+		control = { province = 1507 data = PAK }
+		owned = { province = 1495 data = PAK }
+		control = { province = 1495 data = PAK }
+		event = { id = 1010102 days = 35 }
+        OR = { 
+			NOT = { exists = U35 }
+			puppet = { country = U35 country = PAK  }
+		}		
+		NOT = { 
+		core = { province = 1487 data = PAK }
+		exists = U12 
+		exists = U44 
+		exists = U45
+		exists = IND
+		exists = PRK
+		war = { country = PAK country = U35 }
+		war = { country = PAK country = BUR }
+		war = { country = PAK country = AFG }
+		}
+		}
+
+
+	name = "EVT_1010105_NAME"
+	desc = "EVT_1010105_DESC"
+    picture = "Mysoredurbar"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 50
+	deathdate = { day = 29 month = december year = 1960 }
+
+
+        action = {
+	        ai_chance =  60
+	        name = "EVT_1010105_OPTIONA"
+			command = { type = addclaim which = 1487 }
+			command = { type = addclaim which = 1488 }
+			command = { type = addclaim which = 1489 }
+			command = { type = addclaim which = 1490 }
+			command = { type = addclaim which = 1491 }
+			command = { type = addclaim which = 1494 }
+			command = { type = addclaim which = 1495 }
+			command = { type = addclaim which = 1496 }
+			command = { type = addclaim which = 1497 }
+			command = { type = addclaim which = 1498 }
+			command = { type = addclaim which = 1501 }
+			command = { type = addclaim which = 1502 }
+			command = { type = addclaim which = 1503 }
+			command = { type = addclaim which = 1504 }
+			command = { type = addclaim which = 1505 }
+			command = { type = addclaim which = 1507 }			
+			command = { type = domestic which = freedom value = 1 }
+		    command = { type = dissent value = -2 }
+			command = { type = local_setflag which = PAK_Drav_mild }
+		}
+		
+        action = {
+	        ai_chance =  30
+	        name = "EVT_1010105_OPTIONB"
+            command = { type = province_revoltrisk which = 1487 value = 50 }
+			command = { type = province_revoltrisk which = 1488 value = 50 }
+			command = { type = province_revoltrisk which = 1489 value = 50 }
+			command = { type = province_revoltrisk which = 1490 value = 50 }
+			command = { type = province_revoltrisk which = 1494 value = 50 }
+			command = { type = province_revoltrisk which = 1495 value = 50 }
+			command = { type = province_revoltrisk which = 1496 value = 50 }
+			command = { type = province_revoltrisk which = 1497 value = 50 }
+			command = { type = province_revoltrisk which = 1498 value = 50 }
+			command = { type = province_revoltrisk which = 1491 value = 50 }
+			command = { type = province_revoltrisk which = 1501 value = 50 }
+			command = { type = province_revoltrisk which = 1502 value = 50 }
+			command = { type = province_revoltrisk which = 1503 value = 50 }
+			command = { type = province_revoltrisk which = 1504 value = 50 }
+			command = { type = province_revoltrisk which = 1505 value = 50 }
+			command = { type = province_revoltrisk which = 1507 value = 50 }
+			command = { type = addclaim which = 1487 }
+			command = { type = addclaim which = 1488 }
+			command = { type = addclaim which = 1489 }
+			command = { type = addclaim which = 1490 }
+			command = { type = addclaim which = 1491 }
+			command = { type = addclaim which = 1494 }
+			command = { type = addclaim which = 1495 }
+			command = { type = addclaim which = 1496 }
+			command = { type = addclaim which = 1497 }
+			command = { type = addclaim which = 1498 }
+			command = { type = addclaim which = 1501 }
+			command = { type = addclaim which = 1502 }
+			command = { type = addclaim which = 1503 }
+			command = { type = addclaim which = 1504 }
+			command = { type = addclaim which = 1505 }
+			command = { type = addclaim which = 1507 }			
+			command = { type = domestic which = freedom value = -2 }
+		    command = { type = dissent value = 4 }
+			command = { type = local_setflag which = PAK_Drav_harsh }
+		}		
+
+		  
+}
+
+event = {
+		id = 1010106
+		country = PAK
+		style = 2
+                 
+                trigger = {
+                local_flag = PAK_Drav_mild
+                random = 45 
+		        owned = { province = 1501 data = PAK }
+		        control = { province = 1501 data = PAK }
+		        owned = { province = 1507 data = PAK }
+		        control = { province = 1507 data = PAK }
+                }	
+		
+		name = "EVT_1010106_NAME"							
+		desc = "EVT_1010106_DESC"
+        picture = "Mysoredurbar"
+		
+            date = { day = 1 month = january year = 1936 }
+	        offset = 110
+	        deathdate = { day = 29 month = december year = 1960 }
+
+		action_a = {
+		name = "EVT_1010106_OPTIONA"
+            command = { type = waketeam which = 12531 }
+            command = { type = waketeam which = 12532 }
+			command = { type = addcore which = 1487 }
+			command = { type = addcore which = 1488 }
+			command = { type = addcore which = 1489 }
+			command = { type = addcore which = 1490 }
+			command = { type = addcore which = 1491 }
+			command = { type = addcore which = 1494 }
+			command = { type = addcore which = 1495 }
+			command = { type = addcore which = 1496 }
+			command = { type = addcore which = 1497 }
+			command = { type = addcore which = 1498 }
+			command = { type = addcore which = 1501 }
+			command = { type = addcore which = 1502 }
+			command = { type = addcore which = 1503 }
+			command = { type = addcore which = 1504 }
+			command = { type = addcore which = 1505 }
+			command = { type = addcore which = 1507 }
+                command = { type = dissent value = -5 } 
+                command = { type = local_clrflag which = PAK_Drav_mild }
+		}		
+
+		  
+}
+
+event = {
+		id = 1010107
+		country = PAK
+		style = 2
+                 
+                trigger = {
+                local_flag = PAK_Drav_harsh
+                random = 30 
+		        owned = { province = 1501 data = PAK }
+		        control = { province = 1501 data = PAK }
+		        owned = { province = 1507 data = PAK }
+		        control = { province = 1507 data = PAK }
+                }	
+		
+		name = "EVT_1010107_NAME"							
+		desc = "EVT_1010107_DESC"
+        picture = "Mysoredurbar"
+		
+            date = { day = 1 month = january year = 1936 }
+	        offset = 155
+	        deathdate = { day = 29 month = december year = 1960 }
+
+		action_a = {
+		name = "EVT_1010107_OPTIONA"
+            command = { type = waketeam which = 12635 }
+			command = { type = addcore which = 1487 }
+			command = { type = addcore which = 1488 }
+			command = { type = addcore which = 1489 }
+			command = { type = addcore which = 1490 }
+			command = { type = addcore which = 1491 }
+			command = { type = addcore which = 1494 }
+			command = { type = addcore which = 1495 }
+			command = { type = addcore which = 1496 }
+			command = { type = addcore which = 1497 }
+			command = { type = addcore which = 1498 }
+			command = { type = addcore which = 1501 }
+			command = { type = addcore which = 1502 }
+			command = { type = addcore which = 1503 }
+			command = { type = addcore which = 1504 }
+			command = { type = addcore which = 1505 }
+			command = { type = addcore which = 1507 }
+			command = { type = province_revoltrisk which = 1487 value = -50 }
+			command = { type = province_revoltrisk which = 1488 value = -50 }
+			command = { type = province_revoltrisk which = 1489 value = -50 }
+			command = { type = province_revoltrisk which = 1490 value = -50 }
+			command = { type = province_revoltrisk which = 1494 value = -50 }
+			command = { type = province_revoltrisk which = 1495 value = -50 }
+			command = { type = province_revoltrisk which = 1496 value = -50 }
+			command = { type = province_revoltrisk which = 1497 value = -50 }
+			command = { type = province_revoltrisk which = 1498 value = -50 }
+			command = { type = province_revoltrisk which = 1491 value = -50 }
+			command = { type = province_revoltrisk which = 1501 value = -50 }
+			command = { type = province_revoltrisk which = 1502 value = -50 }
+			command = { type = province_revoltrisk which = 1503 value = -50 }
+			command = { type = province_revoltrisk which = 1504 value = -50 }
+			command = { type = province_revoltrisk which = 1505 value = -50 }
+			command = { type = province_revoltrisk which = 1507 value = -50 }
+                command = { type = dissent value = -5 } 
+                command = { type = local_clrflag which = PAK_Drav_harsh }
+		}		
+
+		  
+}
+#####################################################
+#Upgrading tech teams after unification
+#####################################################
+event = {
+	id = 1010108
+	random = no
+	country = PAK
+	style = 2
+	
+trigger = {
+		core = { province = 1459 data = PAK }
+		owned = { province = 1459 data = PAK }
+		control = { province = 1459 data = PAK }
+		core = { province = 1447 data = PAK }
+		owned = { province = 1447 data = PAK }
+		control = { province = 1447 data = PAK }
+		core = { province = 1487 data = PAK }
+		owned = { province = 1487 data = PAK }
+		control = { province = 1487 data = PAK }
+		core = { province = 1517 data = PAK }
+		owned = { province = 1517 data = PAK }
+		control = { province = 1517 data = PAK }		
+        event = 101042
+		NOT = { 
+				exists = IND
+				exists = PRK
+                war = { country = PAK country = BUR }
+				war = { country = PAK country = U35 }
+		}
+	}
+
+
+	name = "EVT_1010108_NAME"
+	desc = "EVT_1010108_DESC"
+    picture = "Indianairforce"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 150
+	deathdate = { day = 29 month = december year = 1966 }
+
+
+        action = {
+	        ai_chance =  80
+	            name = "EVT_1010108_OPTIONA"
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+				command = { type = construct which = infrastructure where = -1 value = 10 }
+		        command = { type = dissent value = -1 }
+		        command = { type = money value = -135 }
+		        command = { type = sleepteam which = 12510  }
+		        command = { type = waketeam which = 12511  }
+		  command = { type = build_time which = cas value = -5 where = relative when = on_upgrade }
+		  command = { type = build_time which = interceptor value = -5 where = relative when = on_upgrade }
+		  command = { type = build_time which = multi_role value = -5 where = relative when = on_upgrade }
+		  command = { type = build_time which = naval_bomber value = -5 where = relative when = on_upgrade }
+		  command = { type = build_time which = strategic_bomber value = -5 where = relative when = on_upgrade }
+		  command = { type = build_time which = tactical_bomber value = -5 where = relative when = on_upgrade }
+		  command = { type = build_time which = transport_plane value = -5 where = relative when = on_upgrade }
+		  command = { type = build_time which = cag value = -5 where = relative when = on_upgrade }
+		  command = { type = build_time which = escort value = -5 where = relative when = on_upgrade }				
+		}
+        action = {
+	        ai_chance =  20
+	            name = "EVT_1010108_OPTIONB"
+		        command = { type = dissent value = 5 }
+		}		
+		  
+}
+
+#####################################################
+#Election 1940
+#####################################################
+event = {
+	id = 101044
+	random = no
+	country = PAK
+	style = 2
+        save_date = yes
+       
+        trigger = {
+        OR = {
+        AND = {
+                flag = PAKDOMINION2
+                event = { id = 101012 days = 1480 }
+		}
+		AND = {
+                flag = PAKViceroy
+                event = { id = 101013 days = 1480 }
+		}
+		}
+				}
+
+	name = "EVT_101044_NAME"
+	desc = "EVT_101044_DESC"
+        picture = "indianelection"
+
+	date = { day = 1 month = january year = 1940 }
+	offset = 10
+	deathdate = { day = 29 month = december year = 1960 }
+
+
+
+        action = {
+		trigger = { flag = PAKDOMINION2 }
+	        ai_chance =  40
+	        name = "EVT_101044_OPTIONA"
+                command = { type = domestic which = freedom value = 2 }
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = -3  } 
+		command = { type = headofstate which = 564081 } 
+		command = { type = headofgovernment which = 564060 }
+		command = { type = foreignminister which =  564061 }
+		command = { type = ministerofsecurity which = 564005 }
+		command = { type = armamentminister which = 564038 }
+
+		}
+        action = {
+		trigger = { flag = PAKDOMINION2 }
+	        ai_chance =  25
+	        name = "EVT_101044_OPTIONB"
+		command = { type = dissent value = -2 }  
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = set_domestic which = democratic value = 8 }
+                command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = headofstate which = 564080 } 
+		command = { type = headofgovernment which = 564065 }
+		command = { type = foreignminister which =  564066 }
+		command = { type = ministerofsecurity which = 564067 }
+		command = { type = armamentminister which = 564068 }
+
+		}
+        action = {
+		trigger = { flag = PAKDOMINION2 }
+	        ai_chance =  10
+	        name = "EVT_101044_OPTIONC"
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 8 }
+		command = { type = dissent value = -3 }
+		command = { type = headofstate which = 564082 } 
+		command = { type = headofgovernment which = 564069 }
+		command = { type = foreignminister which =  564070 }
+		command = { type = ministerofsecurity which = 564071 }
+		command = { type = armamentminister which = 564072 }
+
+		}
+        action = {
+		trigger = { flag = PAKDOMINION2 }
+	        ai_chance =  25
+	        name = "EVT_101044_OPTIOND"
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = 2 }
+		command = { type = headofstate which = 564079 } 
+		command = { type = headofgovernment which = 564073 }
+		command = { type = foreignminister which =  564035 }
+		command = { type = ministerofsecurity which = 564074 }
+		command = { type = armamentminister which = 564075 }
+                }
+
+        action = {
+		trigger = { flag = PAKViceroy }
+	        ai_chance =  30
+	        name = "EVT_101044_OPTIONE"
+                command = { type = domestic which = freedom value = 2 }
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = -3  } 
+		command = { type = headofstate which = 564083 } 
+		command = { type = headofgovernment which = 564060 }
+		command = { type = foreignminister which =  564061 }
+		command = { type = ministerofsecurity which = 564005 }
+		command = { type = armamentminister which = 564038 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+	        ai_chance =  25
+	        name = "EVT_101044_OPTIONF"
+		command = { type = dissent value = -2 }  
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = set_domestic which = democratic value = 8 }
+                command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = headofstate which = 564083 } 
+		command = { type = headofgovernment which = 564065 }
+		command = { type = foreignminister which =  564066 }
+		command = { type = ministerofsecurity which = 564067 }
+		command = { type = armamentminister which = 564068 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+	        ai_chance =  10
+	        name = "EVT_101044_OPTIONG"
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 8 }
+		command = { type = dissent value = -3 }
+		command = { type = headofstate which = 564083 } 
+		command = { type = headofgovernment which = 564069 }
+		command = { type = foreignminister which =  564070 }
+		command = { type = ministerofsecurity which = 564071 }
+		command = { type = armamentminister which = 564072 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+	        ai_chance =  35
+	        name = "EVT_101044_OPTIONERR"
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = 2 }
+		command = { type = headofstate which = 564083 } 
+		command = { type = headofgovernment which = 564073 }
+		command = { type = foreignminister which =  564035 }
+		command = { type = ministerofsecurity which = 564074 }
+		command = { type = armamentminister which = 564075 }
+                }
+
+}
+#####################################################
+#Election 1944
+#####################################################
+event = {
+	id = 101045
+	random = no
+	country = PAK
+	style = 2
+        save_date = yes
+
+	trigger = {
+                event = { id = 101044 days = 1480 }
+                OR = {
+			    government = democratic
+			    ideology = paternal_autocrat
+		}
+		}
+
+
+	name = "EVT_101045_NAME"
+	desc = "EVT_101045_DESC"
+        picture = "indianelection"
+
+	date = { day = 1 month = january year = 1944 }
+	offset = 50
+	deathdate = { day = 29 month = december year = 1960 }
+
+
+
+        action = {
+		trigger = { flag = PAKDOMINION2 }
+	        ai_chance =  40
+	        name = "EVT_101045_OPTIONA"
+                command = { type = domestic which = freedom value = 2 }
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = -3  } 
+		command = { type = headofstate which = 564081 } 
+		command = { type = headofgovernment which = 564060 }
+		command = { type = foreignminister which =  564061 }
+		command = { type = ministerofsecurity which = 564005 }
+		command = { type = armamentminister which = 564038 }
+
+		}
+        action = {
+		trigger = { flag = PAKDOMINION2 }
+	        ai_chance =  25
+	        name = "EVT_101045_OPTIONB"
+		command = { type = dissent value = -2 }  
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = set_domestic which = democratic value = 8 }
+                command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = headofstate which = 564080 } 
+		command = { type = headofgovernment which = 564065 }
+		command = { type = foreignminister which =  564066 }
+		command = { type = ministerofsecurity which = 564067 }
+		command = { type = armamentminister which = 564068 }
+
+		}
+        action = {
+		trigger = { flag = PAKDOMINION2 }
+	        ai_chance =  10
+	        name = "EVT_101045_OPTIONC"
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 8 }
+		command = { type = dissent value = -3 }
+		command = { type = headofstate which = 564082 } 
+		command = { type = headofgovernment which = 564069 }
+		command = { type = foreignminister which =  564070 }
+		command = { type = ministerofsecurity which = 564071 }
+		command = { type = armamentminister which = 564072 }
+
+		}
+        action = {
+		trigger = { flag = PAKDOMINION2 }
+	        ai_chance =  25
+	        name = "EVT_101045_OPTIOND"
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = 2 }
+		command = { type = headofstate which = 564079 } 
+		command = { type = headofgovernment which = 564112 }
+		command = { type = foreignminister which =  564035 }
+		command = { type = ministerofsecurity which = 564111 }
+		command = { type = armamentminister which = 564075 }
+                }
+
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Ambedkar }
+	        ai_chance =  20
+	        name = "EVT_101045_OPTIONE"
+                command = { type = domestic which = freedom value = 2 }
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = -3  } 
+	        command = { type = headofstate which = 564117 } 
+		command = { type = headofgovernment which = 564060 }
+		command = { type = foreignminister which =  564061 }
+		command = { type = ministerofsecurity which = 564005 }
+		command = { type = armamentminister which = 564038 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Ambedkar }
+	        ai_chance =  15
+	        name = "EVT_101045_OPTIONF"
+		command = { type = dissent value = -2 }  
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = set_domestic which = democratic value = 8 }
+                command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 6 }
+	        command = { type = headofstate which = 564117 } 
+		command = { type = headofgovernment which = 564065 }
+		command = { type = foreignminister which =  564066 }
+		command = { type = ministerofsecurity which = 564067 }
+		command = { type = armamentminister which = 564068 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Ambedkar }
+	        ai_chance =  40
+	        name = "EVT_101045_OPTIONG"
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 8 }
+		command = { type = dissent value = -3 }
+	        command = { type = headofstate which = 564117 }  
+		command = { type = headofgovernment which = 564069 }
+		command = { type = foreignminister which =  564070 }
+		command = { type = ministerofsecurity which = 564071 }
+		command = { type = armamentminister which = 564072 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Ambedkar }
+	        ai_chance =  35
+	        name = "EVT_101045_OPTIONERR"
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = 2 }
+	        command = { type = headofstate which = 564117 } 
+		command = { type = headofgovernment which = 564112 }
+		command = { type = foreignminister which =  564035 }
+		command = { type = ministerofsecurity which = 564111 }
+		command = { type = armamentminister which = 564075 }
+                }
+
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Tata }
+	        ai_chance =  30
+	        name = "EVT_101045_OPTIONERR"
+                command = { type = domestic which = freedom value = 2 }
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = -3  } 
+	        command = { type = headofstate which = 564119 } 
+		command = { type = headofgovernment which = 564060 }
+		command = { type = foreignminister which =  564061 }
+		command = { type = ministerofsecurity which = 564005 }
+		command = { type = armamentminister which = 564038 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Tata }
+	        ai_chance =  25
+	        name = "EVT_101045_OPTIONERR"
+		command = { type = dissent value = -2 }  
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = set_domestic which = democratic value = 8 }
+                command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 6 }
+	        command = { type = headofstate which = 564119 }
+		command = { type = headofgovernment which = 564065 }
+		command = { type = foreignminister which =  564066 }
+		command = { type = ministerofsecurity which = 564067 }
+		command = { type = armamentminister which = 564068 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Tata }
+	        ai_chance =  10
+	        name = "EVT_101045_OPTIONERR"
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 8 }
+		command = { type = dissent value = -3 }
+	        command = { type = headofstate which = 564119 } 
+		command = { type = headofgovernment which = 564069 }
+		command = { type = foreignminister which =  564070 }
+		command = { type = ministerofsecurity which = 564071 }
+		command = { type = armamentminister which = 564072 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Tata }
+	        ai_chance =  35
+	        name = "EVT_101045_OPTIONERR"
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = 2 }
+	        command = { type = headofstate which = 564119 }
+		command = { type = headofgovernment which = 564112 }
+		command = { type = foreignminister which =  564035 }
+		command = { type = ministerofsecurity which = 564111 }
+		command = { type = armamentminister which = 564075 }
+                }
+
+
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Chatterjee }
+	        ai_chance =  30
+	        name = "EVT_101045_OPTIONERR"
+                command = { type = domestic which = freedom value = 2 }
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = -3  } 
+	        command = { type = headofstate which = 564118 } 
+		command = { type = headofgovernment which = 564060 }
+		command = { type = foreignminister which =  564061 }
+		command = { type = ministerofsecurity which = 564005 }
+		command = { type = armamentminister which = 564038 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Chatterjee }
+	        ai_chance =  25
+	        name = "EVT_101045_OPTIONERR"
+		command = { type = dissent value = -2 }  
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = set_domestic which = democratic value = 8 }
+                command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 6 }
+	        command = { type = headofstate which = 564118 }
+		command = { type = headofgovernment which = 564065 }
+		command = { type = foreignminister which =  564066 }
+		command = { type = ministerofsecurity which = 564067 }
+		command = { type = armamentminister which = 564068 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Chatterjee }
+	        ai_chance =  10
+	        name = "EVT_101045_OPTIONERR"
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 8 }
+		command = { type = dissent value = -3 }
+	        command = { type = headofstate which = 564118 } 
+		command = { type = headofgovernment which = 564069 }
+		command = { type = foreignminister which =  564070 }
+		command = { type = ministerofsecurity which = 564071 }
+		command = { type = armamentminister which = 564072 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Chatterjee }
+	        ai_chance =  35
+	        name = "EVT_101045_OPTIONERR"
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = 2 }
+	        command = { type = headofstate which = 564118 }
+		command = { type = headofgovernment which = 564112 }
+		command = { type = foreignminister which =  564035 }
+		command = { type = ministerofsecurity which = 564111 }
+		command = { type = armamentminister which = 564075 }
+                }
+
+
+}
+#####################################################
+#Election 1948
+#####################################################
+event = {
+	id = 101046
+	random = no
+	country = PAK
+	style = 2
+        save_date = yes
+
+	trigger = {
+                event = { id = 101045 days = 1480 }
+                OR = {
+			    government = democratic
+			    ideology = paternal_autocrat
+		}
+		}
+
+
+	name = "EVT_101046_NAME"
+	desc = "EVT_101046_DESC"
+        picture = "indianelection"
+
+	date = { day = 1 month = january year = 1948 }
+	offset = 50
+	deathdate = { day = 29 month = december year = 1960 }
+
+
+
+        action = {
+		trigger = { flag = PAKDOMINION2 }
+	        ai_chance =  40
+	        name = "EVT_101046_OPTIONA"
+                command = { type = domestic which = freedom value = 2 }
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = -3  } 
+		command = { type = headofstate which = 564081 } 
+		command = { type = headofgovernment which = 564060 }
+		command = { type = foreignminister which =  564061 }
+		command = { type = ministerofsecurity which = 564005 }
+		command = { type = armamentminister which = 564038 }
+
+		}
+        action = {
+		trigger = { flag = PAKDOMINION2 }
+	        ai_chance =  25
+	        name = "EVT_101046_OPTIONB"
+		command = { type = dissent value = -2 }  
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = set_domestic which = democratic value = 8 }
+                command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = headofstate which = 564080 } 
+		command = { type = headofgovernment which = 564065 }
+		command = { type = foreignminister which =  564066 }
+		command = { type = ministerofsecurity which = 564067 }
+		command = { type = armamentminister which = 564068 }
+
+		}
+        action = {
+		trigger = { flag = PAKDOMINION2 }
+	        ai_chance =  10
+	        name = "EVT_101046_OPTIONC"
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 8 }
+		command = { type = dissent value = -3 }
+		command = { type = headofstate which = 564082 } 
+		command = { type = headofgovernment which = 564069 }
+		command = { type = foreignminister which =  564070 }
+		command = { type = ministerofsecurity which = 564071 }
+		command = { type = armamentminister which = 564072 }
+
+		}
+        action = {
+		trigger = { flag = PAKDOMINION2 }
+	        ai_chance =  25
+	        name = "EVT_101046_OPTIOND"
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = 2 }
+		command = { type = headofstate which = 564079 } 
+		command = { type = headofgovernment which = 564112 }
+		command = { type = foreignminister which =  564035 }
+		command = { type = ministerofsecurity which = 564111 }
+		command = { type = armamentminister which = 564075 }
+                }
+
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Ambedkar }
+	        ai_chance =  30
+	        name = "EVT_101046_OPTIONE"
+                command = { type = domestic which = freedom value = 2 }
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = -3  } 
+	        command = { type = headofstate which = 564117 } 
+		command = { type = headofgovernment which = 564060 }
+		command = { type = foreignminister which =  564061 }
+		command = { type = ministerofsecurity which = 564005 }
+		command = { type = armamentminister which = 564038 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Ambedkar }
+	        ai_chance =  25
+	        name = "EVT_101046_OPTIONF"
+		command = { type = dissent value = -2 }  
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = set_domestic which = democratic value = 8 }
+                command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 6 }
+	        command = { type = headofstate which = 564117 } 
+		command = { type = headofgovernment which = 564065 }
+		command = { type = foreignminister which =  564066 }
+		command = { type = ministerofsecurity which = 564067 }
+		command = { type = armamentminister which = 564068 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Ambedkar }
+	        ai_chance =  10
+	        name = "EVT_101046_OPTIONG"
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 8 }
+		command = { type = dissent value = -3 }
+	        command = { type = headofstate which = 564117 }  
+		command = { type = headofgovernment which = 564069 }
+		command = { type = foreignminister which =  564070 }
+		command = { type = ministerofsecurity which = 564071 }
+		command = { type = armamentminister which = 564072 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Ambedkar }
+	        ai_chance =  35
+	        name = "EVT_101046_OPTIONERR"
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = 2 }
+	        command = { type = headofstate which = 564117 } 
+		command = { type = headofgovernment which = 564112 }
+		command = { type = foreignminister which =  564035 }
+		command = { type = ministerofsecurity which = 564111 }
+		command = { type = armamentminister which = 564075 }
+                }
+
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Tata }
+	        ai_chance =  30
+	        name = "EVT_101046_OPTIONERR"
+                command = { type = domestic which = freedom value = 2 }
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = -3  } 
+	        command = { type = headofstate which = 564119 } 
+		command = { type = headofgovernment which = 564060 }
+		command = { type = foreignminister which =  564061 }
+		command = { type = ministerofsecurity which = 564005 }
+		command = { type = armamentminister which = 564038 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Tata }
+	        ai_chance =  25
+	        name = "EVT_101046_OPTIONERR"
+		command = { type = dissent value = -2 }  
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = set_domestic which = democratic value = 8 }
+                command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 6 }
+	        command = { type = headofstate which = 564119 }
+		command = { type = headofgovernment which = 564065 }
+		command = { type = foreignminister which =  564066 }
+		command = { type = ministerofsecurity which = 564067 }
+		command = { type = armamentminister which = 564068 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Tata }
+	        ai_chance =  10
+	        name = "EVT_101046_OPTIONERR"
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 8 }
+		command = { type = dissent value = -3 }
+	        command = { type = headofstate which = 564119 } 
+		command = { type = headofgovernment which = 564069 }
+		command = { type = foreignminister which =  564070 }
+		command = { type = ministerofsecurity which = 564071 }
+		command = { type = armamentminister which = 564072 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Tata }
+	        ai_chance =  35
+	        name = "EVT_101046_OPTIONERR"
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = 2 }
+	        command = { type = headofstate which = 564119 }
+		command = { type = headofgovernment which = 564112 }
+		command = { type = foreignminister which =  564035 }
+		command = { type = ministerofsecurity which = 564111 }
+		command = { type = armamentminister which = 564075 }
+                }
+
+
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Chatterjee }
+	        ai_chance =  30
+	        name = "EVT_101046_OPTIONERR"
+                command = { type = domestic which = freedom value = 2 }
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = -3  } 
+	        command = { type = headofstate which = 564118 } 
+		command = { type = headofgovernment which = 564060 }
+		command = { type = foreignminister which =  564061 }
+		command = { type = ministerofsecurity which = 564005 }
+		command = { type = armamentminister which = 564038 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Chatterjee }
+	        ai_chance =  25
+	        name = "EVT_101046_OPTIONERR"
+		command = { type = dissent value = -2 }  
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = set_domestic which = democratic value = 8 }
+                command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 6 }
+	        command = { type = headofstate which = 564118 }
+		command = { type = headofgovernment which = 564065 }
+		command = { type = foreignminister which =  564066 }
+		command = { type = ministerofsecurity which = 564067 }
+		command = { type = armamentminister which = 564068 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Chatterjee }
+	        ai_chance =  10
+	        name = "EVT_101046_OPTIONERR"
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 8 }
+		command = { type = dissent value = -3 }
+	        command = { type = headofstate which = 564118 } 
+		command = { type = headofgovernment which = 564069 }
+		command = { type = foreignminister which =  564070 }
+		command = { type = ministerofsecurity which = 564071 }
+		command = { type = armamentminister which = 564072 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Chatterjee }
+	        ai_chance =  35
+	        name = "EVT_101046_OPTIONERR"
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = 2 }
+	        command = { type = headofstate which = 564118 }
+		command = { type = headofgovernment which = 564112 }
+		command = { type = foreignminister which =  564035 }
+		command = { type = ministerofsecurity which = 564111 }
+		command = { type = armamentminister which = 564075 }
+                }
+
+
+}
+
+#####################################################
+#Election 1952
+#####################################################
+event = {
+	id = 101047
+	random = no
+	country = PAK
+	style = 2
+        save_date = yes
+
+	trigger = {
+                event = { id = 101046 days = 1480 }
+                OR = {
+			    government = democratic
+			    ideology = paternal_autocrat
+		}
+		}
+
+
+	name = "EVT_101047_NAME"
+	desc = "EVT_101047_DESC"
+        picture = "indianelection"
+
+	date = { day = 1 month = january year = 1952 }
+	offset = 50
+	deathdate = { day = 29 month = december year = 1960 }
+
+
+
+        action = {
+		trigger = { flag = PAKDOMINION2 }
+	        ai_chance =  40
+	        name = "EVT_101047_OPTIONA"
+                command = { type = domestic which = freedom value = 2 }
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = -3  } 
+		command = { type = headofstate which = 564081 } 
+		command = { type = headofgovernment which = 564060 }
+		command = { type = foreignminister which =  564061 }
+		command = { type = ministerofsecurity which = 564005 }
+		command = { type = armamentminister which = 564038 }
+
+		}
+        action = {
+		trigger = { flag = PAKDOMINION2 }
+	        ai_chance =  25
+	        name = "EVT_101047_OPTIONB"
+		command = { type = dissent value = -2 }  
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = set_domestic which = democratic value = 8 }
+                command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = headofstate which = 564080 } 
+		command = { type = headofgovernment which = 564065 }
+		command = { type = foreignminister which =  564066 }
+		command = { type = ministerofsecurity which = 564067 }
+		command = { type = armamentminister which = 564068 }
+
+		}
+        action = {
+		trigger = { flag = PAKDOMINION2 }
+	        ai_chance =  25
+	        name = "EVT_101047_OPTIONC"
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 8 }
+		command = { type = dissent value = -3 }
+		command = { type = headofstate which = 564082 } 
+		command = { type = headofgovernment which = 564122 }
+		command = { type = foreignminister which =  564070 }
+		command = { type = ministerofsecurity which = 564071 }
+		command = { type = armamentminister which = 564072 }
+
+		}
+        action = {
+		trigger = { flag = PAKDOMINION2 }
+	        ai_chance =  25
+	        name = "EVT_101047_OPTIOND"
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = 2 }
+		command = { type = headofstate which = 564079 } 
+		command = { type = headofgovernment which = 564112 }
+		command = { type = foreignminister which =  564035 }
+		command = { type = ministerofsecurity which = 564111 }
+		command = { type = armamentminister which = 564075 }
+                }
+
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Ambedkar }
+	        ai_chance =  30
+	        name = "EVT_101047_OPTIONE"
+                command = { type = domestic which = freedom value = 2 }
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = -3  } 
+	        command = { type = headofstate which = 564117 } 
+		command = { type = headofgovernment which = 564060 }
+		command = { type = foreignminister which =  564061 }
+		command = { type = ministerofsecurity which = 564005 }
+		command = { type = armamentminister which = 564038 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Ambedkar }
+	        ai_chance =  25
+	        name = "EVT_101047_OPTIONF"
+		command = { type = dissent value = -2 }  
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = set_domestic which = democratic value = 8 }
+                command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 6 }
+	        command = { type = headofstate which = 564117 } 
+		command = { type = headofgovernment which = 564065 }
+		command = { type = foreignminister which =  564066 }
+		command = { type = ministerofsecurity which = 564067 }
+		command = { type = armamentminister which = 564068 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Ambedkar }
+	        ai_chance =  25
+	        name = "EVT_101047_OPTIONG"
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 8 }
+		command = { type = dissent value = -3 }
+	        command = { type = headofstate which = 564117 }  
+		command = { type = headofgovernment which = 564122 }
+		command = { type = foreignminister which =  564070 }
+		command = { type = ministerofsecurity which = 564071 }
+		command = { type = armamentminister which = 564072 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Ambedkar }
+	        ai_chance =  35
+	        name = "EVT_101047_OPTIONERR"
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = 2 }
+	        command = { type = headofstate which = 564117 } 
+		command = { type = headofgovernment which = 564112 }
+		command = { type = foreignminister which =  564035 }
+		command = { type = ministerofsecurity which = 564111 }
+		command = { type = armamentminister which = 564075 }
+                }
+
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Tata }
+	        ai_chance =  30
+	        name = "EVT_101047_OPTIONERR"
+                command = { type = domestic which = freedom value = 2 }
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = -3  } 
+	        command = { type = headofstate which = 564119 } 
+		command = { type = headofgovernment which = 564060 }
+		command = { type = foreignminister which =  564061 }
+		command = { type = ministerofsecurity which = 564005 }
+		command = { type = armamentminister which = 564038 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Tata }
+	        ai_chance =  25
+	        name = "EVT_101047_OPTIONERR"
+		command = { type = dissent value = -2 }  
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = set_domestic which = democratic value = 8 }
+                command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 6 }
+	        command = { type = headofstate which = 564119 }
+		command = { type = headofgovernment which = 564065 }
+		command = { type = foreignminister which =  564066 }
+		command = { type = ministerofsecurity which = 564067 }
+		command = { type = armamentminister which = 564068 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Tata }
+	        ai_chance =  10
+	        name = "EVT_101047_OPTIONERR"
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 8 }
+		command = { type = dissent value = -3 }
+	        command = { type = headofstate which = 564119 } 
+		command = { type = headofgovernment which = 564122 }
+		command = { type = foreignminister which =  564070 }
+		command = { type = ministerofsecurity which = 564071 }
+		command = { type = armamentminister which = 564072 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Tata }
+	        ai_chance =  35
+	        name = "EVT_101047_OPTIONERR"
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = 2 }
+	        command = { type = headofstate which = 564119 }
+		command = { type = headofgovernment which = 564112 }
+		command = { type = foreignminister which =  564035 }
+		command = { type = ministerofsecurity which = 564111 }
+		command = { type = armamentminister which = 564075 }
+                }
+
+
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Chatterjee }
+	        ai_chance =  30
+	        name = "EVT_101047_OPTIONERR"
+                command = { type = domestic which = freedom value = 2 }
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = -3  } 
+	        command = { type = headofstate which = 564118 } 
+		command = { type = headofgovernment which = 564060 }
+		command = { type = foreignminister which =  564061 }
+		command = { type = ministerofsecurity which = 564005 }
+		command = { type = armamentminister which = 564038 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Chatterjee }
+	        ai_chance =  25
+	        name = "EVT_101047_OPTIONERR"
+		command = { type = dissent value = -2 }  
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = set_domestic which = democratic value = 8 }
+                command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 6 }
+	        command = { type = headofstate which = 564118 }
+		command = { type = headofgovernment which = 564065 }
+		command = { type = foreignminister which =  564066 }
+		command = { type = ministerofsecurity which = 564067 }
+		command = { type = armamentminister which = 564068 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Chatterjee }
+	        ai_chance =  10
+	        name = "EVT_101047_OPTIONERR"
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 8 }
+		command = { type = dissent value = -3 }
+	        command = { type = headofstate which = 564118 } 
+		command = { type = headofgovernment which = 564122 }
+		command = { type = foreignminister which =  564070 }
+		command = { type = ministerofsecurity which = 564071 }
+		command = { type = armamentminister which = 564072 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Chatterjee }
+	        ai_chance =  35
+	        name = "EVT_101047_OPTIONERR"
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = 2 }
+	        command = { type = headofstate which = 564118 }
+		command = { type = headofgovernment which = 564112 }
+		command = { type = foreignminister which =  564035 }
+		command = { type = ministerofsecurity which = 564111 }
+		command = { type = armamentminister which = 564075 }
+                }
+
+
+}
+#####################################################
+#Election 1956
+#####################################################
+event = {
+	id = 101048
+	random = no
+	country = PAK
+	style = 2
+        save_date = yes
+
+	trigger = {
+                event = { id = 101047 days = 1480 }
+                OR = {
+			    government = democratic
+			    ideology = paternal_autocrat
+		}
+		}
+
+
+	name = "EVT_101048_NAME"
+	desc = "EVT_101048_DESC"
+        picture = "indianelection"
+
+	date = { day = 1 month = january year = 1956 }
+	offset = 50
+	deathdate = { day = 29 month = december year = 1960 }
+
+
+
+        action = {
+		trigger = { flag = PAKDOMINION2 }
+	        ai_chance =  40
+	        name = "EVT_101048_OPTIONA"
+                command = { type = domestic which = freedom value = 2 }
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = -3  } 
+		command = { type = headofstate which = 564081 } 
+		command = { type = headofgovernment which = 564060 }
+		command = { type = foreignminister which =  564061 }
+		command = { type = ministerofsecurity which = 564005 }
+		command = { type = armamentminister which = 564038 }
+
+		}
+        action = {
+		trigger = { flag = PAKDOMINION2 }
+	        ai_chance =  25
+	        name = "EVT_101048_OPTIONB"
+		command = { type = dissent value = -2 }  
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = set_domestic which = democratic value = 8 }
+                command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = headofstate which = 564080 } 
+		command = { type = headofgovernment which = 564065 }
+		command = { type = foreignminister which =  564066 }
+		command = { type = ministerofsecurity which = 564067 }
+		command = { type = armamentminister which = 564068 }
+
+		}
+        action = {
+		trigger = { flag = PAKDOMINION2 }
+	        ai_chance =  10
+	        name = "EVT_101048_OPTIONC"
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 8 }
+		command = { type = dissent value = -3 }
+		command = { type = headofstate which = 564082 } 
+		command = { type = headofgovernment which = 564122 }
+		command = { type = foreignminister which =  564070 }
+		command = { type = ministerofsecurity which = 564071 }
+		command = { type = armamentminister which = 564072 }
+
+		}
+        action = {
+		trigger = { flag = PAKDOMINION2 }
+	        ai_chance =  25
+	        name = "EVT_101048_OPTIOND"
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = 2 }
+		command = { type = headofstate which = 564079 } 
+		command = { type = headofgovernment which = 564112 }
+		command = { type = foreignminister which =  564035 }
+		command = { type = ministerofsecurity which = 564111 }
+		command = { type = armamentminister which = 564075 }
+                }
+
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Ambedkar }
+	        ai_chance =  30
+	        name = "EVT_101048_OPTIONE"
+                command = { type = domestic which = freedom value = 2 }
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = -3  } 
+	        command = { type = headofstate which = 564117 } 
+		command = { type = headofgovernment which = 564060 }
+		command = { type = foreignminister which =  564061 }
+		command = { type = ministerofsecurity which = 564005 }
+		command = { type = armamentminister which = 564038 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Ambedkar }
+	        ai_chance =  25
+	        name = "EVT_101048_OPTIONF"
+		command = { type = dissent value = -2 }  
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = set_domestic which = democratic value = 8 }
+                command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 6 }
+	        command = { type = headofstate which = 564117 } 
+		command = { type = headofgovernment which = 564065 }
+		command = { type = foreignminister which =  564066 }
+		command = { type = ministerofsecurity which = 564067 }
+		command = { type = armamentminister which = 564068 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Ambedkar }
+	        ai_chance =  10
+	        name = "EVT_101048_OPTIONG"
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 8 }
+		command = { type = dissent value = -3 }
+	        command = { type = headofstate which = 564117 }  
+		command = { type = headofgovernment which = 564122 }
+		command = { type = foreignminister which =  564070 }
+		command = { type = ministerofsecurity which = 564071 }
+		command = { type = armamentminister which = 564072 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Ambedkar }
+	        ai_chance =  35
+	        name = "EVT_101048_OPTIONERR"
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = 2 }
+	        command = { type = headofstate which = 564117 } 
+		command = { type = headofgovernment which = 564112 }
+		command = { type = foreignminister which =  564035 }
+		command = { type = ministerofsecurity which = 564111 }
+		command = { type = armamentminister which = 564075 }
+                }
+
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Tata }
+	        ai_chance =  30
+	        name = "EVT_101048_OPTIONERR"
+                command = { type = domestic which = freedom value = 2 }
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = -3  } 
+	        command = { type = headofstate which = 564119 } 
+		command = { type = headofgovernment which = 564060 }
+		command = { type = foreignminister which =  564061 }
+		command = { type = ministerofsecurity which = 564005 }
+		command = { type = armamentminister which = 564038 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Tata }
+	        ai_chance =  25
+	        name = "EVT_101048_OPTIONERR"
+		command = { type = dissent value = -2 }  
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = set_domestic which = democratic value = 8 }
+                command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 6 }
+	        command = { type = headofstate which = 564119 }
+		command = { type = headofgovernment which = 564065 }
+		command = { type = foreignminister which =  564066 }
+		command = { type = ministerofsecurity which = 564067 }
+		command = { type = armamentminister which = 564068 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Tata }
+	        ai_chance =  10
+	        name = "EVT_101048_OPTIONERR"
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 8 }
+		command = { type = dissent value = -3 }
+	        command = { type = headofstate which = 564119 } 
+		command = { type = headofgovernment which = 564122 }
+		command = { type = foreignminister which =  564070 }
+		command = { type = ministerofsecurity which = 564071 }
+		command = { type = armamentminister which = 564072 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Tata }
+	        ai_chance =  35
+	        name = "EVT_101048_OPTIONERR"
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = 2 }
+	        command = { type = headofstate which = 564119 }
+		command = { type = headofgovernment which = 564112 }
+		command = { type = foreignminister which =  564035 }
+		command = { type = ministerofsecurity which = 564111 }
+		command = { type = armamentminister which = 564075 }
+                }
+
+
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Chatterjee }
+	        ai_chance =  30
+	        name = "EVT_101048_OPTIONERR"
+                command = { type = domestic which = freedom value = 2 }
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = -3  } 
+	        command = { type = headofstate which = 564118 } 
+		command = { type = headofgovernment which = 564060 }
+		command = { type = foreignminister which =  564061 }
+		command = { type = ministerofsecurity which = 564005 }
+		command = { type = armamentminister which = 564038 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Chatterjee }
+	        ai_chance =  25
+	        name = "EVT_101048_OPTIONERR"
+		command = { type = dissent value = -2 }  
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = set_domestic which = democratic value = 8 }
+                command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 6 }
+	        command = { type = headofstate which = 564118 }
+		command = { type = headofgovernment which = 564065 }
+		command = { type = foreignminister which =  564066 }
+		command = { type = ministerofsecurity which = 564067 }
+		command = { type = armamentminister which = 564068 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Chatterjee }
+	        ai_chance =  10
+	        name = "EVT_101048_OPTIONERR"
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 8 }
+		command = { type = dissent value = -3 }
+	        command = { type = headofstate which = 564118 } 
+		command = { type = headofgovernment which = 564122 }
+		command = { type = foreignminister which =  564070 }
+		command = { type = ministerofsecurity which = 564071 }
+		command = { type = armamentminister which = 564072 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Chatterjee }
+	        ai_chance =  35
+	        name = "EVT_101048_OPTIONERR"
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = 2 }
+	        command = { type = headofstate which = 564118 }
+		command = { type = headofgovernment which = 564112 }
+		command = { type = foreignminister which =  564035 }
+		command = { type = ministerofsecurity which = 564111 }
+		command = { type = armamentminister which = 564075 }
+                }
+
+
+}
+#####################################################
+#Election 1960
+#####################################################
+event = {
+	id = 101049
+	random = no
+	country = PAK
+	style = 2
+        save_date = yes
+
+	trigger = {
+                event = { id = 101048 days = 1480 }
+                OR = {
+			    government = democratic
+			    ideology = paternal_autocrat
+		}
+		}
+
+
+	name = "EVT_101049_NAME"
+	desc = "EVT_101049_DESC"
+        picture = "indianelection"
+
+	date = { day = 1 month = january year = 1960 }
+	offset = 50
+	deathdate = { day = 29 month = december year = 1960 }
+
+
+
+        action = {
+		trigger = { flag = PAKDOMINION2 }
+	        ai_chance =  20
+	        name = "EVT_101049_OPTIONA"
+                command = { type = domestic which = freedom value = 2 }
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = -3  } 
+		command = { type = headofstate which = 564081 } 
+		command = { type = headofgovernment which = 564060 }
+		command = { type = foreignminister which =  564061 }
+		command = { type = ministerofsecurity which = 564005 }
+		command = { type = armamentminister which = 564038 }
+
+		}
+        action = {
+		trigger = { flag = PAKDOMINION2 }
+	        ai_chance =  25
+	        name = "EVT_101049_OPTIONB"
+		command = { type = dissent value = -2 }  
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = set_domestic which = democratic value = 8 }
+                command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = headofstate which = 564080 } 
+		command = { type = headofgovernment which = 564065 }
+		command = { type = foreignminister which =  564066 }
+		command = { type = ministerofsecurity which = 564067 }
+		command = { type = armamentminister which = 564068 }
+
+		}
+        action = {
+		trigger = { flag = PAKDOMINION2 }
+	        ai_chance =  30
+	        name = "EVT_101049_OPTIONC"
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 8 }
+		command = { type = dissent value = -3 }
+		command = { type = headofstate which = 564082 } 
+		command = { type = headofgovernment which = 564122 }
+		command = { type = foreignminister which =  564070 }
+		command = { type = ministerofsecurity which = 564071 }
+		command = { type = armamentminister which = 564072 }
+
+		}
+        action = {
+		trigger = { flag = PAKDOMINION2 }
+	        ai_chance =  25
+	        name = "EVT_101049_OPTIOND"
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = 2 }
+		command = { type = headofstate which = 564079 } 
+		command = { type = headofgovernment which = 564112 }
+		command = { type = foreignminister which =  564035 }
+		command = { type = ministerofsecurity which = 564111 }
+		command = { type = armamentminister which = 564075 }
+                }
+
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Ambedkar }
+	        ai_chance =  30
+	        name = "EVT_101049_OPTIONE"
+                command = { type = domestic which = freedom value = 2 }
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = -3  } 
+	        command = { type = headofstate which = 564117 } 
+		command = { type = headofgovernment which = 564060 }
+		command = { type = foreignminister which =  564061 }
+		command = { type = ministerofsecurity which = 564005 }
+		command = { type = armamentminister which = 564038 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Ambedkar }
+	        ai_chance =  25
+	        name = "EVT_101049_OPTIONF"
+		command = { type = dissent value = -2 }  
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = set_domestic which = democratic value = 8 }
+                command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 6 }
+	        command = { type = headofstate which = 564117 } 
+		command = { type = headofgovernment which = 564065 }
+		command = { type = foreignminister which =  564066 }
+		command = { type = ministerofsecurity which = 564067 }
+		command = { type = armamentminister which = 564068 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Ambedkar }
+	        ai_chance =  10
+	        name = "EVT_101049_OPTIONG"
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 8 }
+		command = { type = dissent value = -3 }
+	        command = { type = headofstate which = 564117 }  
+		command = { type = headofgovernment which = 564122 }
+		command = { type = foreignminister which =  564070 }
+		command = { type = ministerofsecurity which = 564071 }
+		command = { type = armamentminister which = 564072 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Ambedkar }
+	        ai_chance =  35
+	        name = "EVT_101049_OPTIONERR"
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = 2 }
+	        command = { type = headofstate which = 564117 } 
+		command = { type = headofgovernment which = 564112 }
+		command = { type = foreignminister which =  564035 }
+		command = { type = ministerofsecurity which = 564111 }
+		command = { type = armamentminister which = 564075 }
+                }
+
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Tata }
+	        ai_chance =  30
+	        name = "EVT_101049_OPTIONERR"
+                command = { type = domestic which = freedom value = 2 }
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = -3  } 
+	        command = { type = headofstate which = 564119 } 
+		command = { type = headofgovernment which = 564060 }
+		command = { type = foreignminister which =  564061 }
+		command = { type = ministerofsecurity which = 564005 }
+		command = { type = armamentminister which = 564038 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Tata }
+	        ai_chance =  25
+	        name = "EVT_101049_OPTIONERR"
+		command = { type = dissent value = -2 }  
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = set_domestic which = democratic value = 8 }
+                command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 6 }
+	        command = { type = headofstate which = 564119 }
+		command = { type = headofgovernment which = 564065 }
+		command = { type = foreignminister which =  564066 }
+		command = { type = ministerofsecurity which = 564067 }
+		command = { type = armamentminister which = 564068 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Tata }
+	        ai_chance =  10
+	        name = "EVT_101049_OPTIONERR"
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 8 }
+		command = { type = dissent value = -3 }
+	        command = { type = headofstate which = 564119 } 
+		command = { type = headofgovernment which = 564122 }
+		command = { type = foreignminister which =  564070 }
+		command = { type = ministerofsecurity which = 564071 }
+		command = { type = armamentminister which = 564072 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Tata }
+	        ai_chance =  35
+	        name = "EVT_101049_OPTIONERR"
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = 2 }
+	        command = { type = headofstate which = 564119 }
+		command = { type = headofgovernment which = 564112 }
+		command = { type = foreignminister which =  564035 }
+		command = { type = ministerofsecurity which = 564111 }
+		command = { type = armamentminister which = 564075 }
+                }
+
+
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Chatterjee }
+	        ai_chance =  30
+	        name = "EVT_101049_OPTIONERR"
+                command = { type = domestic which = freedom value = 2 }
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = -3  } 
+	        command = { type = headofstate which = 564118 } 
+		command = { type = headofgovernment which = 564060 }
+		command = { type = foreignminister which =  564061 }
+		command = { type = ministerofsecurity which = 564005 }
+		command = { type = armamentminister which = 564038 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Chatterjee }
+	        ai_chance =  25
+	        name = "EVT_101049_OPTIONERR"
+		command = { type = dissent value = -2 }  
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = set_domestic which = democratic value = 8 }
+                command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 6 }
+	        command = { type = headofstate which = 564118 }
+		command = { type = headofgovernment which = 564065 }
+		command = { type = foreignminister which =  564066 }
+		command = { type = ministerofsecurity which = 564067 }
+		command = { type = armamentminister which = 564068 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Chatterjee }
+	        ai_chance =  35
+	        name = "EVT_101049_OPTIONERR"
+                command = { type = set_domestic which = democratic value = 7 }
+                command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 8 }
+		command = { type = dissent value = -3 }
+	        command = { type = headofstate which = 564118 } 
+		command = { type = headofgovernment which = 564122 }
+		command = { type = foreignminister which =  564070 }
+		command = { type = ministerofsecurity which = 564071 }
+		command = { type = armamentminister which = 564072 }
+
+		}
+        action = {
+		trigger = { flag = PAKViceroy }
+                trigger = { local_flag = viceroy_Chatterjee }
+	        ai_chance =  10
+	        name = "EVT_101049_OPTIONERR"
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 6 }
+		command = { type = dissent value = 2 }
+	        command = { type = headofstate which = 564118 }
+		command = { type = headofgovernment which = 564112 }
+		command = { type = foreignminister which =  564035 }
+		command = { type = ministerofsecurity which = 564111 }
+		command = { type = armamentminister which = 564075 }
+                }
+
+
+}

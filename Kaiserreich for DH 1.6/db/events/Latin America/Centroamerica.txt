@@ -1,0 +1,1411 @@
+##############
+#Centroamerica
+##############
+event = {
+	id = 56700
+	country = GUA
+	random = no
+	style = 2
+
+	trigger = { 
+        OR = {
+	ideology = social_democrat
+	government = communist 
+        }
+	NOT = { ispuppet = GUA } 
+        }
+
+	name = "EVT_56700_NAME"
+	desc = "EVT_56700_DESC"
+	picture = "Peace_conference"
+
+	date = { day = 1 month = august year = 1937 }
+	offset = 2
+	deathdate = { day = 29 month = august year = 1937 }
+
+	action_a = {
+		name = "EVT_56700_OPTIONA"
+		command = { type = dissent value = -1 }
+	}
+}
+
+event = {
+	id = 56701
+	country = GUA
+	random = no
+	style = 2
+
+	trigger = { event = 56700 }
+
+	name = "EVT_56701_NAME"
+	desc = "EVT_56701_DESC"
+	picture = "Peace_conference"
+
+	date = { day = 3 month = august year = 1937 }
+	offset = 2
+	deathdate = { day = 29 month = september year = 1937 }
+
+	action_a = {
+		ai_chance = 35
+		name = "EVT_56701_OPTIONA"
+		command = { type = setflag which = GUA_ECO_LWR }
+	}
+	action_b = {
+		ai_chance = 40
+		name = "EVT_56701_OPTIONB"
+		command = { type = domestic which = free_market value = -1 }
+		command = { type = setflag which = GUA_ECO_LE }
+	}
+	action_c = {
+		ai_chance = 25
+		name = "EVT_56701_OPTIONC"
+		command = { type = domestic which = free_market value = 1 }
+		command = { type = setflag which = GUA_ECO_SD }
+	}
+}
+
+event = {
+	id = 56702
+	country = GUA
+	random = no
+	style = 2
+
+	trigger = { event = 56701 }
+
+	name = "EVT_56702_NAME"
+	desc = "EVT_56702_DESC"
+	picture = "Peace_conference"
+
+	date = { day = 5 month = august year = 1937 }
+	offset = 2
+	deathdate = { day = 29 month = september year = 1937 }
+
+	action_a = {
+		ai_chance = 40
+		name = "EVT_56702_OPTIONA"
+		command = { type = dissent value = 1 }
+		command = { type = setflag which = GUA_CAP_LWR }
+	}
+	action_b = {
+		ai_chance = 20
+		name = "EVT_56702_OPTIONB"
+		command = { type = domestic which = free_market value = 2 }
+		command = { type = dissent value = 3 }
+		command = { type = relation which = GER value = 50 }
+		command = { type = relation which = USA value = 50 }
+		command = { type = relation which = CAN value = 50 }
+		command = { type = relation which = ARG value = 50 }
+		command = { type = relation which = RUS value = 50 }
+		command = { type = setflag which = GUA_CAP_LE }
+	}
+	action_c = {
+		ai_chance = 40
+		name = "EVT_56702_OPTIONC"
+		command = { type = domestic which = free_market value = 1 }
+		command = { type = dissent value = 2 }
+		command = { type = end_trades which = GER }
+		command = { type = end_trades which = USA }
+		command = { type = end_trades which = CAN }
+		command = { type = end_trades which = ARG }
+		command = { type = end_trades which = RUS }
+		command = { type = relation which = GER value = -50 }
+		command = { type = relation which = USA value = -50 }
+		command = { type = relation which = CAN value = -50 }
+		command = { type = relation which = ARG value = -50 }
+		command = { type = relation which = RUS value = -50 }
+		command = { type = setflag which = GUA_CAP_SD }
+	}
+}
+
+event = {
+	id = 56703
+	country = GUA
+	random = no
+	style = 2
+
+	trigger = { event = 56702 }
+
+	name = "EVT_56703_NAME"
+	desc = "EVT_56703_DESC"
+	picture = "Peace_conference"
+
+	date = { day = 7 month = august year = 1937 }
+	offset = 2
+	deathdate = { day = 29 month = september year = 1937 }
+
+	action_a = {
+		ai_chance = 50
+		name = "EVT_56703_OPTIONA"
+		command = { type = domestic which = freedom value = 1 }
+		command = { type = dissent value = -1 }
+		command = { type = setflag which = GUA_MAY_LWR }
+	}
+	action_b = {
+		ai_chance = 20
+		name = "EVT_56703_OPTIONB"
+		command = { type = domestic which = freedom value = -2 }
+		command = { type = dissent value = 5 }
+		command = { type = setflag which = GUA_MAY_LE }
+	}
+	action_c = {
+		ai_chance = 30
+		name = "EVT_56703_OPTIONC"
+		command = { type = domestic which = freedom value = 2 }
+		command = { type = dissent value = 2 }
+		command = { type = setflag which = GUA_MAY_SD }
+	}
+}
+
+event = {
+	id = 56704
+	country = GUA
+	random = no
+	style = 2
+
+	trigger = { event = 56703 }
+
+	name = "EVT_56704_NAME"
+	desc = "EVT_56704_DESC"
+	picture = "Peace_conference"
+
+	date = { day = 9 month = august year = 1937 }
+	offset = 2
+	deathdate = { day = 29 month = september year = 1937 }
+
+	action_a = {
+		ai_chance = 75
+		name = "EVT_56704_OPTIONA"
+		command = { type = domestic which = defense_lobby value = 2 }
+		command = { type = dissent value = -1 }
+		command = { type = setflag which = GUA_ARM_LWR }
+		command = { type = setflag which = GUA_ARM_LE }
+	}
+	action_b = {
+		ai_chance = 25
+		name = "EVT_56704_OPTIONB"
+		command = { type = domestic which = defense_lobby value = -2 }
+		command = { type = dissent value = 2 }
+		command = { type = setflag which = GUA_ARM_SD }
+	}
+}
+
+event = {
+	id = 56705
+	country = GUA
+	random = no
+	style = 2
+
+	trigger = { OR = {
+	AND = {
+	flag = GUA_ECO_LWR
+	flag = GUA_ARM_LWR
+	flag = GUA_MAY_LWR }
+	AND = {
+	flag = GUA_ARM_LWR
+	flag = GUA_MAY_LWR
+	flag = GUA_CAP_LWR }
+	AND = {
+	flag = GUA_CAP_LWR
+	flag = GUA_ECO_LWR
+	flag = GUA_ARM_LWR }
+	AND = {
+	flag = GUA_CAP_LWR
+	flag = GUA_ECO_LWR
+	flag = GUA_ARM_LWR
+	flag = GUA_MAY_LWR } }
+	event = 56704 }
+
+	name = "EVT_56705_NAME"
+	desc = "EVT_56705_DESC"
+	picture = "Peace_conference"
+
+	date = { day = 11 month = august year = 1937 }
+	offset = 2
+	deathdate = { day = 29 month = september year = 1937 }
+
+	action_a = {
+		name = "EVT_56705_OPTIONA"
+		command = { type = headofstate which = 46014 } #Romualdo Jímenez Oreamurio
+		command = { type = headofgovernment which = 46023 } #Francisco Javier Arana
+		command = { type = foreignminister which = 46003 } #Laura H. de Salazar
+		command = { type = armamentminister which = 46043 } #Juan Arevalo Bermejo
+		command = { type = ministerofsecurity which = 46052 } #Juan Y. Masquez
+		command = { type = ministerofintelligence which = 46006 } #Adrian Recinos
+		command = { type = chiefofstaff which = 46067 } #Juan Pablo Esquerra
+		command = { type = chiefofarmy which = 46074 } #Manuel Corovél Kirsch
+		command = { type = chiefofnavy which = 46082 } #Noel Esto Niño Miranda
+		command = { type = chiefofair which = 46089 } #Joel Garcia Zaldana
+		command = { type = set_domestic which = political_left value = 10 }
+		command = { type = set_domestic which = democratic value = 5 }
+		command = { type = clrflag which = GUA_CAP_LWR }
+		command = { type = clrflag which = GUA_ECO_LWR }
+		command = { type = clrflag which = GUA_ARM_LWR }
+		command = { type = clrflag which = GUA_MAY_LWR }
+		command = { type = clrflag which = GUA_CAP_LE }
+		command = { type = clrflag which = GUA_ECO_LE }
+		command = { type = clrflag which = GUA_ARM_LE }
+		command = { type = clrflag which = GUA_MAY_LE }
+		command = { type = clrflag which = GUA_CAP_SD }
+		command = { type = clrflag which = GUA_ECO_SD }
+		command = { type = clrflag which = GUA_ARM_SD }
+		command = { type = clrflag which = GUA_MAY_SD }
+		command = { type = sleepevent which = 56706 }
+		command = { type = sleepevent which = 56707 }
+		command = { type = sleepevent which = 56708 }
+	}
+}
+
+event = {
+	id = 56706
+	country = GUA
+	random = no
+	style = 2
+
+	trigger = { OR = {
+	AND = {
+	flag = GUA_ECO_LE
+	flag = GUA_ARM_LE
+	flag = GUA_MAY_LE }
+	AND = {
+	flag = GUA_ARM_LE
+	flag = GUA_MAY_LE
+	flag = GUA_CAP_LE }
+	AND = {
+	flag = GUA_CAP_LE
+	flag = GUA_ECO_LE
+	flag = GUA_ARM_LE }
+	AND = {
+	flag = GUA_CAP_LE
+	flag = GUA_ECO_LE
+	flag = GUA_ARM_LE
+	flag = GUA_MAY_LE } }
+	event = 56704 }
+
+	name = "EVT_56706_NAME"
+	desc = "EVT_56706_DESC"
+	picture = "Peace_conference"
+
+	date = { day = 11 month = august year = 1937 }
+	offset = 2
+	deathdate = { day = 29 month = september year = 1937 }
+
+	action_a = {
+		name = "EVT_56706_OPTIONA"
+		command = { type = headofstate which = 46000 } #Jose Manuel Fortuny
+		command = { type = headofgovernment which = 46001 } #Víctor Manuel Gutiérrez
+		command = { type = foreignminister which = 46031 } #Luis Cardenal
+		command = { type = armamentminister which = 46042 } #Luís Fernandéz Rodríguez
+		command = { type = ministerofsecurity which = 46050 } #Franco Hernandez Ávila
+		command = { type = ministerofintelligence which = 46006 } #Adrian Recinos
+		command = { type = chiefofstaff which = 46007 } #Augustín Farabundo Martí
+		command = { type = chiefofarmy which = 46008 } #Salvador Cayetano Carpio
+		command = { type = chiefofnavy which = 46083 } #Raul Rodolfí Sanchez
+		command = { type = chiefofair which = 46090 } #Manuel Mora Valverde
+		command = { type = set_domestic which = political_left value = 9 }
+		command = { type = set_domestic which = democratic value = 4 }
+		command = { type = clrflag which = GUA_CAP_LWR }
+		command = { type = clrflag which = GUA_ECO_LWR }
+		command = { type = clrflag which = GUA_ARM_LWR }
+		command = { type = clrflag which = GUA_MAY_LWR }
+		command = { type = clrflag which = GUA_CAP_LE }
+		command = { type = clrflag which = GUA_ECO_LE }
+		command = { type = clrflag which = GUA_ARM_LE }
+		command = { type = clrflag which = GUA_MAY_LE }
+		command = { type = clrflag which = GUA_CAP_SD }
+		command = { type = clrflag which = GUA_ECO_SD }
+		command = { type = clrflag which = GUA_ARM_SD }
+		command = { type = clrflag which = GUA_MAY_SD }
+		command = { type = sleepevent which = 56705 }
+		command = { type = sleepevent which = 56707 }
+		command = { type = sleepevent which = 56708 }
+	}
+}
+
+event = {
+	id = 56707
+	country = GUA
+	random = no
+	style = 2
+
+	trigger = { OR = {
+	AND = {
+	flag = GUA_ECO_SD
+	flag = GUA_ARM_SD
+	flag = GUA_MAY_SD }
+	AND = {
+	flag = GUA_ARM_SD
+	flag = GUA_MAY_SD
+	flag = GUA_CAP_SD }
+	AND = {
+	flag = GUA_CAP_SD
+	flag = GUA_ECO_SD
+	flag = GUA_ARM_SD }
+	AND = {
+	flag = GUA_CAP_SD
+	flag = GUA_ECO_SD
+	flag = GUA_ARM_SD
+	flag = GUA_MAY_SD } }
+	event = 56704 }
+
+	name = "EVT_56707_NAME"
+	desc = "EVT_56707_DESC"
+	picture = "Peace_conference"
+
+	date = { day = 11 month = august year = 1937 }
+	offset = 2
+	deathdate = { day = 29 month = september year = 1937 }
+
+	action_a = {
+		name = "EVT_56707_OPTIONA"
+		command = { type = headofstate which = 46013 } #Andrés Ignacio Menéndez
+		command = { type = headofgovernment which = 46024 } #Jose Figueres Ferrer
+		command = { type = foreignminister which = 46032 } #Julio Enrique Ávila
+		command = { type = armamentminister which = 46044 } #Jacopo Arbenz Guzman
+		command = { type = ministerofsecurity which = 46051 } #Guillermo Cuadra
+		command = { type = ministerofintelligence which = 46059 } #Jose Figueres Ferrer
+		command = { type = chiefofstaff which = 46068 } #Felipe Abreu Castro
+		command = { type = chiefofarmy which = 46075 } #Manuel Orellana
+		command = { type = chiefofnavy which = 46084 } #Tomas Mendoza Urribe
+		command = { type = chiefofair which = 46091 } #Guillermo Macho Nuñez
+		command = { type = set_domestic which = political_left value = 8 }
+		command = { type = set_domestic which = democratic value = 8 }
+		command = { type = clrflag which = GUA_CAP_LWR }
+		command = { type = clrflag which = GUA_ECO_LWR }
+		command = { type = clrflag which = GUA_ARM_LWR }
+		command = { type = clrflag which = GUA_MAY_LWR }
+		command = { type = clrflag which = GUA_CAP_LE }
+		command = { type = clrflag which = GUA_ECO_LE }
+		command = { type = clrflag which = GUA_ARM_LE }
+		command = { type = clrflag which = GUA_MAY_LE }
+		command = { type = clrflag which = GUA_CAP_SD }
+		command = { type = clrflag which = GUA_ECO_SD }
+		command = { type = clrflag which = GUA_ARM_SD }
+		command = { type = clrflag which = GUA_MAY_SD }
+		command = { type = sleepevent which = 56705 }
+		command = { type = sleepevent which = 56706 }
+		command = { type = sleepevent which = 56708 }
+	}
+}
+
+event = {
+	id = 56708
+	country = GUA
+	random = no
+	style = 2
+
+	trigger = {
+	event = 56704
+	NOT = { OR = {
+	event = 56705
+	event = 56706
+	event = 56707 } } }
+
+	name = "EVT_56708_NAME"
+	desc = "EVT_56708_DESC"
+	picture = "Peace_conference"
+
+	date = { day = 12 month = august year = 1937 }
+	offset = 2
+	deathdate = { day = 29 month = september year = 1937 }
+
+	action_a = {
+		name = "EVT_56708_OPTIONA"
+		command = { type = headofstate which = 46014 } #Romualdo Jímenez Oreamurio
+		command = { type = headofgovernment which = 46001 } #Víctor Manuel Gutiérrez
+		command = { type = foreignminister which = 46031 } #Luis Cardenal
+		command = { type = armamentminister which = 46042 } #Luís Fernandéz Rodríguez
+		command = { type = ministerofsecurity which = 46052 } #Juan Y. Masquez
+		command = { type = ministerofintelligence which = 46006 } #Adrian Recinos
+		command = { type = chiefofstaff which = 46067 } #Juan Pablo Esquerra
+		command = { type = chiefofarmy which = 46074 } #Manuel Corovél Kirsch
+		command = { type = chiefofnavy which = 46082 } #Noel Esto Niño Miranda
+		command = { type = chiefofair which = 46089 } #Joel Garcia Zaldana
+		command = { type = set_domestic which = political_left value = 10 }
+		command = { type = set_domestic which = democratic value = 5 }
+		command = { type = clrflag which = GUA_CAP_LWR }
+		command = { type = clrflag which = GUA_ECO_LWR }
+		command = { type = clrflag which = GUA_ARM_LWR }
+		command = { type = clrflag which = GUA_MAY_LWR }
+		command = { type = clrflag which = GUA_CAP_LE }
+		command = { type = clrflag which = GUA_ECO_LE }
+		command = { type = clrflag which = GUA_ARM_LE }
+		command = { type = clrflag which = GUA_MAY_LE }
+		command = { type = clrflag which = GUA_CAP_SD }
+		command = { type = clrflag which = GUA_ECO_SD }
+		command = { type = clrflag which = GUA_ARM_SD }
+		command = { type = clrflag which = GUA_MAY_SD }
+		command = { type = sleepevent which = 56705 }
+		command = { type = sleepevent which = 56706 }
+		command = { type = sleepevent which = 56707 }
+	}
+}
+
+###############
+#1942 elections
+###############
+event = {
+	id = 56709
+	country = GUA
+	random = no
+	style = 2
+
+	trigger = { 
+        OR = {
+	ideology = social_democrat
+	government = communist 
+        }
+	NOT = { ispuppet = GUA } 
+        }
+
+	name = "EVT_56709_NAME"
+	desc = "EVT_56709_DESC"
+	picture = "Peace_conference"
+
+	date = { day = 1 month = august year = 1942 }
+	offset = 2
+	deathdate = { day = 29 month = september year = 1942 }
+
+	action_a = {
+		name = "EVT_56709_OPTIONA"
+		command = { type = dissent value = -1 }
+	}
+}
+
+event = {
+	id = 56710
+	country = GUA
+	random = no
+	style = 2
+
+	trigger = { event = 56709 }
+
+	name = "EVT_56710_NAME"
+	desc = "EVT_56710_DESC"
+	picture = "Peace_conference"
+
+	date = { day = 3 month = august year = 1942 }
+	offset = 2
+	deathdate = { day = 29 month = september year = 1942 }
+
+	action_a = {
+		ai_chance = 35
+		name = "EVT_56710_OPTIONA"
+		command = { type = construct which = naval_base where = 2088 value = 2 }
+		command = { type = construct which = air_base where = 2088 value = 2 }
+		command = { type = supplies value = -500 }
+		command = { type = money value = -30 }
+		command = { type = setflag which = GUA_ECO_LWR }
+	}
+	action_b = {
+		ai_chance = 30
+		name = "EVT_56710_OPTIONB"
+		command = { type = construct which = ic where = 2088 value = 1 }
+		command = { type = supplies value = -500 }
+		command = { type = money value = -30 }
+		command = { type = setflag which = GUA_ECO_LE }
+	}
+	action_c = {
+		ai_chance = 35
+		name = "EVT_56710_OPTIONC"
+		command = { type = add_prov_resource which = -1 value = 2 where = metal }
+		command = { type = add_prov_resource which = -1 value = 5 where = rare_materials }
+		command = { type = supplies value = -500 }
+		command = { type = money value = -30 }
+		command = { type = setflag which = GUA_ECO_SD }
+	}
+}
+
+event = {
+	id = 56711
+	country = GUA
+	random = no
+	style = 2
+
+	trigger = { event = 56710 }
+
+	name = "EVT_56711_NAME"
+	desc = "EVT_56711_DESC"
+	picture = "Peace_conference"
+
+	date = { day = 5 month = august year = 1942 }
+	offset = 2
+	deathdate = { day = 29 month = september year = 1942 }
+
+	action_a = {
+		ai_chance = 40
+		name = "EVT_56711_OPTIONA"
+		command = { type = domestic which = defense_lobby value = 1 }
+		command = { type = setflag which = GUA_FOR_LWR }
+	}
+	action_b = {
+		ai_chance = 45
+		name = "EVT_56711_OPTIONB"
+		command = { type = domestic which = defense_lobby value = 2 }
+		command = { type = setflag which = GUA_FOR_LE }
+	}
+	action_c = {
+		ai_chance = 15
+		name = "EVT_56711_OPTIONC"
+		command = { type = domestic which = defense_lobby value = -2 }
+		command = { type = setflag which = GUA_FOR_SD }
+	}
+}
+
+event = {
+	id = 56712
+	country = GUA
+	random = no
+	style = 2
+
+	trigger = { event = 56711 }
+
+	name = "EVT_56712_NAME"
+	desc = "EVT_56712_DESC"
+	picture = "Peace_conference"
+
+	date = { day = 7 month = august year = 1942 }
+	offset = 2
+	deathdate = { day = 29 month = september year = 1942 }
+
+	action_a = {
+		ai_chance = 40
+		name = "EVT_56712_OPTIONA"
+		command = { type = domestic which = freedom value = -1 }
+		command = { type = setflag which = GUA_CAT_LWR }
+	}
+	action_b = {
+		ai_chance = 45
+		name = "EVT_56712_OPTIONB"
+		command = { type = domestic which = freedom value = -2 }
+		command = { type = setflag which = GUA_CAT_LE }
+	}
+	action_c = {
+		ai_chance = 15
+		name = "EVT_56712_OPTIONC"
+		command = { type = domestic which = freedom value = 2 }
+		command = { type = setflag which = GUA_CAT_LE }
+	}
+}
+
+event = {
+	id = 56713
+	country = GUA
+	random = no
+	style = 2
+
+	trigger = { OR = {
+	AND = {
+	flag = GUA_ECO_LWR 
+	flag = GUA_FOR_LWR }
+	AND = {
+	flag = GUA_ECO_LWR 
+	flag = GUA_CAT_LWR }
+	AND = {
+	flag = GUA_FOR_LWR 
+	flag = GUA_CAT_LWR } }
+	event = 56712 }
+
+	name = "EVT_56713_NAME"
+	desc = "EVT_56713_DESC"
+	picture = "Peace_conference"
+
+	date = { day = 9 month = august year = 1942 }
+	offset = 2
+	deathdate = { day = 29 month = september year = 1942 }
+
+	action_a = {
+		name = "EVT_56713_OPTIONA"
+		command = { type = headofstate which = 46014 } #Romualdo Jímenez Oreamurio
+		command = { type = headofgovernment which = 46023 } #Francisco Javier Arana
+		command = { type = foreignminister which = 46003 } #Laura H. de Salazar
+		command = { type = armamentminister which = 46043 } #Juan Arevalo Bermejo
+		command = { type = ministerofsecurity which = 46052 } #Juan Y. Masquez
+		command = { type = ministerofintelligence which = 46006 } #Adrian Recinos
+		command = { type = chiefofstaff which = 46067 } #Juan Pablo Esquerra
+		command = { type = chiefofarmy which = 46074 } #Manuel Corovél Kirsch
+		command = { type = chiefofnavy which = 46082 } #Noel Esto Niño Miranda
+		command = { type = chiefofair which = 46089 } #Joel Garcia Zaldana
+		command = { type = set_domestic which = political_left value = 10 }
+		command = { type = set_domestic which = democratic value = 5 }
+		command = { type = clrflag which = GUA_CAT_LWR }
+		command = { type = clrflag which = GUA_ECO_LWR }
+		command = { type = clrflag which = GUA_FOR_LWR }
+		command = { type = clrflag which = GUA_CAT_LE }
+		command = { type = clrflag which = GUA_ECO_LE }
+		command = { type = clrflag which = GUA_FOR_LE }
+		command = { type = clrflag which = GUA_CAT_SD }
+		command = { type = clrflag which = GUA_ECO_SD }
+		command = { type = clrflag which = GUA_FOR_SD }
+		command = { type = sleepevent which = 56714 }
+		command = { type = sleepevent which = 56715 }
+		command = { type = sleepevent which = 56716 }
+	}
+}
+
+event = {
+	id = 56714
+	country = GUA
+	random = no
+	style = 2
+
+	trigger = { OR = {
+	AND = {
+	flag = GUA_ECO_LE
+	flag = GUA_ARM_LE
+	flag = GUA_MAY_LE }
+	AND = {
+	flag = GUA_ARM_LE
+	flag = GUA_MAY_LE
+	flag = GUA_CAP_LE }
+	AND = {
+	flag = GUA_CAP_LE
+	flag = GUA_ECO_LE
+	flag = GUA_ARM_LE }
+	AND = {
+	flag = GUA_CAP_LE
+	flag = GUA_ECO_LE
+	flag = GUA_ARM_LE
+	flag = GUA_MAY_LE } }
+	event = 56704 }
+
+	name = "EVT_56714_NAME"
+	desc = "EVT_56714_DESC"
+	picture = "Peace_conference"
+
+	date = { day = 11 month = august year = 1942 }
+	offset = 2
+	deathdate = { day = 29 month = september year = 1942 }
+
+	action_a = {
+		name = "EVT_56714_OPTIONA"
+		command = { type = headofstate which = 46000 } #Jose Manuel Fortuny
+		command = { type = headofgovernment which = 46001 } #Víctor Manuel Gutiérrez
+		command = { type = foreignminister which = 46031 } #Luis Cardenal
+		command = { type = armamentminister which = 46042 } #Luís Fernandéz Rodríguez
+		command = { type = ministerofsecurity which = 46050 } #Franco Hernandez Ávila
+		command = { type = ministerofintelligence which = 46006 } #Adrian Recinos
+		command = { type = chiefofstaff which = 46007 } #Augustín Farabundo Martí
+		command = { type = chiefofarmy which = 46008 } #Salvador Cayetano Carpio
+		command = { type = chiefofnavy which = 46083 } #Raul Rodolfí Sanchez
+		command = { type = chiefofair which = 46090 } #Manuel Mora Valverde
+		command = { type = set_domestic which = political_left value = 9 }
+		command = { type = set_domestic which = democratic value = 4 }
+		command = { type = clrflag which = GUA_CAP_LWR }
+		command = { type = clrflag which = GUA_ECO_LWR }
+		command = { type = clrflag which = GUA_ARM_LWR }
+		command = { type = clrflag which = GUA_MAY_LWR }
+		command = { type = clrflag which = GUA_CAP_LE }
+		command = { type = clrflag which = GUA_ECO_LE }
+		command = { type = clrflag which = GUA_ARM_LE }
+		command = { type = clrflag which = GUA_MAY_LE }
+		command = { type = clrflag which = GUA_CAP_SD }
+		command = { type = clrflag which = GUA_ECO_SD }
+		command = { type = clrflag which = GUA_ARM_SD }
+		command = { type = clrflag which = GUA_MAY_SD }
+		command = { type = sleepevent which = 56713 }
+		command = { type = sleepevent which = 56715 }
+		command = { type = sleepevent which = 56716 }
+	}
+}
+
+event = {
+	id = 56715
+	country = GUA
+	random = no
+	style = 2
+
+	trigger = { OR = {
+	AND = {
+	flag = GUA_ECO_SD
+	flag = GUA_ARM_SD
+	flag = GUA_MAY_SD }
+	AND = {
+	flag = GUA_ARM_SD
+	flag = GUA_MAY_SD
+	flag = GUA_CAP_SD }
+	AND = {
+	flag = GUA_CAP_SD
+	flag = GUA_ECO_SD
+	flag = GUA_ARM_SD }
+	AND = {
+	flag = GUA_CAP_SD
+	flag = GUA_ECO_SD
+	flag = GUA_ARM_SD
+	flag = GUA_MAY_SD } }
+	event = 56704 }
+
+	name = "EVT_56715_NAME"
+	desc = "EVT_56715_DESC"
+	picture = "Peace_conference"
+
+	date = { day = 11 month = august year = 1942 }
+	offset = 2
+	deathdate = { day = 29 month = september year = 1942 }
+
+	action_a = {
+		name = "EVT_56715_OPTIONA"
+		command = { type = headofstate which = 46013 } #Andrés Ignacio Menéndez
+		command = { type = headofgovernment which = 46024 } #Jose Figueres Ferrer
+		command = { type = foreignminister which = 46032 } #Julio Enrique Ávila
+		command = { type = armamentminister which = 46044 } #Jacopo Arbenz Guzman
+		command = { type = ministerofsecurity which = 46051 } #Guillermo Cuadra
+		command = { type = ministerofintelligence which = 46059 } #Jose Figueres Ferrer
+		command = { type = chiefofstaff which = 46068 } #Felipe Abreu Castro
+		command = { type = chiefofarmy which = 46075 } #Manuel Orellana
+		command = { type = chiefofnavy which = 46084 } #Tomas Mendoza Urribe
+		command = { type = chiefofair which = 46091 } #Guillermo Macho Nuñez
+		command = { type = set_domestic which = political_left value = 8 }
+		command = { type = set_domestic which = democratic value = 8 }
+		command = { type = clrflag which = GUA_CAP_LWR }
+		command = { type = clrflag which = GUA_ECO_LWR }
+		command = { type = clrflag which = GUA_ARM_LWR }
+		command = { type = clrflag which = GUA_MAY_LWR }
+		command = { type = clrflag which = GUA_CAP_LE }
+		command = { type = clrflag which = GUA_ECO_LE }
+		command = { type = clrflag which = GUA_ARM_LE }
+		command = { type = clrflag which = GUA_MAY_LE }
+		command = { type = clrflag which = GUA_CAP_SD }
+		command = { type = clrflag which = GUA_ECO_SD }
+		command = { type = clrflag which = GUA_ARM_SD }
+		command = { type = clrflag which = GUA_MAY_SD }
+		command = { type = sleepevent which = 56713 }
+		command = { type = sleepevent which = 56714 }
+		command = { type = sleepevent which = 56716 }
+	}
+}
+
+event = {
+	id = 56716
+	country = GUA
+	random = no
+	style = 2
+
+	trigger = {
+	event = 56712
+	NOT = { 
+        OR = {
+	event = 56713
+	event = 56714
+	event = 56715 
+        } 
+        } 
+        }
+
+	name = "EVT_56716_NAME"
+	desc = "EVT_56716_DESC"
+	picture = "Peace_conference"
+
+	date = { day = 12 month = august year = 1942 }
+	offset = 2
+	deathdate = { day = 29 month = september year = 1942 }
+
+	action_a = {
+		name = "EVT_56716_OPTIONA"
+		command = { type = headofstate which = 46000 } #Jose Manuel Fortuny
+		command = { type = headofgovernment which = 46024 } #Jose Figueres Ferrer
+		command = { type = foreignminister which = 46032 } #Julio Enrique Ávila
+		command = { type = armamentminister which = 46044 } #Jacopo Arbenz Guzman
+		command = { type = ministerofsecurity which = 46050 } #Franco Hernandez Ávila
+		command = { type = ministerofintelligence which = 46006 } #Adrian Recinos
+		command = { type = chiefofstaff which = 46007 } #Augustín Farabundo Martí
+		command = { type = chiefofarmy which = 46008 } #Salvador Cayetano Carpio
+		command = { type = chiefofnavy which = 46083 } #Raul Rodolfí Sanchez
+		command = { type = chiefofair which = 46090 } #Manuel Mora Valverde
+		command = { type = set_domestic which = political_left value = 9 }
+		command = { type = set_domestic which = democratic value = 4 }
+		command = { type = clrflag which = GUA_CAP_LWR }
+		command = { type = clrflag which = GUA_ECO_LWR }
+		command = { type = clrflag which = GUA_ARM_LWR }
+		command = { type = clrflag which = GUA_MAY_LWR }
+		command = { type = clrflag which = GUA_CAP_LE }
+		command = { type = clrflag which = GUA_ECO_LE }
+		command = { type = clrflag which = GUA_ARM_LE }
+		command = { type = clrflag which = GUA_MAY_LE }
+		command = { type = clrflag which = GUA_CAP_SD }
+		command = { type = clrflag which = GUA_ECO_SD }
+		command = { type = clrflag which = GUA_ARM_SD }
+		command = { type = clrflag which = GUA_MAY_SD }
+		command = { type = sleepevent which = 56713 }
+		command = { type = sleepevent which = 56714 }
+		command = { type = sleepevent which = 56715 }
+	}
+}
+
+#####
+#1947
+#####
+event = {
+	id = 56717
+	country = GUA
+	random = no
+	style = 2
+
+	trigger = { 
+        OR = {
+	ideology = social_democrat
+	government = communist 
+        }
+	NOT = { ispuppet = GUA } 
+        }
+
+	name = "EVT_56717_NAME"
+	desc = "EVT_56717_DESC"
+	picture = "Peace_conference"
+
+	date = { day = 1 month = august year = 1947 }
+	offset = 2
+	deathdate = { day = 29 month = august year = 1947 }
+
+	action_a = {
+		ai_chance = 33
+		name = "EVT_56717_OPTIONA"
+		command = { type = headofstate which = 46017 } #Jacopo Arbenz Guzman
+		command = { type = headofgovernment which = 46023 } #Francisco Javier Arana
+		command = { type = foreignminister which = 46003 } #Laura H. de Salazar
+		command = { type = armamentminister which = 46043 } #Juan Arevalo Bermejo
+		command = { type = ministerofsecurity which = 46052 } #Juan Y. Masquez
+		command = { type = ministerofintelligence which = 46006 } #Adrian Recinos
+		command = { type = chiefofstaff which = 46067 } #Juan Pablo Esquerra
+		command = { type = chiefofarmy which = 46074 } #Manuel Corovél Kirsch
+		command = { type = chiefofnavy which = 46082 } #Noel Esto Niño Miranda
+		command = { type = chiefofair which = 46089 } #Joel Garcia Zaldana
+		command = { type = set_domestic which = political_left value = 10 }
+		command = { type = set_domestic which = democratic value = 5 }
+	}
+	action_b = {
+		ai_chance = 34
+                name = "EVT_56717_OPTIONB"
+		command = { type = headofstate which = 46000 } #Jose Manuel Fortuny
+		command = { type = headofgovernment which = 46001 } #Víctor Manuel Gutiérrez
+		command = { type = foreignminister which = 46031 } #Luis Cardenal
+		command = { type = armamentminister which = 46042 } #Luís Fernandéz Rodríguez
+		command = { type = ministerofsecurity which = 46050 } #Franco Hernandez Ávila
+		command = { type = ministerofintelligence which = 46006 } #Adrian Recinos
+		command = { type = chiefofstaff which = 46007 } #Augustín Farabundo Martí
+		command = { type = chiefofarmy which = 46008 } #Salvador Cayetano Carpio
+		command = { type = chiefofnavy which = 46083 } #Raul Rodolfí Sanchez
+		command = { type = chiefofair which = 46090 } #Manuel Mora Valverde
+		command = { type = set_domestic which = political_left value = 9 }
+		command = { type = set_domestic which = democratic value = 4 }
+	}
+	action_b = {
+		ai_chance = 33
+                name = "EVT_56717_OPTIONC"
+		command = { type = headofstate which = 46013 } #Andrés Ignacio Menéndez
+		command = { type = headofgovernment which = 46024 } #Jose Figueres Ferrer
+		command = { type = foreignminister which = 46032 } #Julio Enrique Ávila
+		command = { type = armamentminister which = 46044 } #Jacopo Arbenz Guzman
+		command = { type = ministerofsecurity which = 46051 } #Guillermo Cuadra
+		command = { type = ministerofintelligence which = 46059 } #Jose Figueres Ferrer
+		command = { type = chiefofstaff which = 46068 } #Felipe Abreu Castro
+		command = { type = chiefofarmy which = 46075 } #Manuel Orellana
+		command = { type = chiefofnavy which = 46084 } #Tomas Mendoza Urribe
+		command = { type = chiefofair which = 46091 } #Guillermo Macho Nuñez
+		command = { type = set_domestic which = political_left value = 8 }
+		command = { type = set_domestic which = democratic value = 8 }
+	}
+}
+
+#####
+#1952
+#####
+event = {
+	id = 56718
+	country = GUA
+	random = no
+	style = 2
+
+	trigger = { 
+        OR = {
+	ideology = social_democrat
+	government = communist 
+        }
+	NOT = { ispuppet = GUA } 
+        }
+
+	name = "EVT_56718_NAME"
+	desc = "EVT_56718_DESC"
+	picture = "Peace_conference"
+
+	date = { day = 1 month = august year = 1952 }
+	offset = 2
+	deathdate = { day = 29 month = august year = 1952 }
+
+	action_a = {
+		ai_chance = 33
+		name = "EVT_56718_OPTIONA"
+		command = { type = headofstate which = 46017 } #Jacopo Arbenz Guzman
+		command = { type = headofgovernment which = 46023 } #Francisco Javier Arana
+		command = { type = foreignminister which = 46003 } #Laura H. de Salazar
+		command = { type = armamentminister which = 46043 } #Juan Arevalo Bermejo
+		command = { type = ministerofsecurity which = 46052 } #Juan Y. Masquez
+		command = { type = ministerofintelligence which = 46006 } #Adrian Recinos
+		command = { type = chiefofstaff which = 46067 } #Juan Pablo Esquerra
+		command = { type = chiefofarmy which = 46074 } #Manuel Corovél Kirsch
+		command = { type = chiefofnavy which = 46082 } #Noel Esto Niño Miranda
+		command = { type = chiefofair which = 46089 } #Joel Garcia Zaldana
+		command = { type = set_domestic which = political_left value = 10 }
+		command = { type = set_domestic which = democratic value = 5 }
+	}
+	action_b = {
+		ai_chance = 34
+                name = "EVT_56718_OPTIONB"
+		command = { type = headofstate which = 46000 } #Jose Manuel Fortuny
+		command = { type = headofgovernment which = 46001 } #Víctor Manuel Gutiérrez
+		command = { type = foreignminister which = 46031 } #Luis Cardenal
+		command = { type = armamentminister which = 46042 } #Luís Fernandéz Rodríguez
+		command = { type = ministerofsecurity which = 46050 } #Franco Hernandez Ávila
+		command = { type = ministerofintelligence which = 46006 } #Adrian Recinos
+		command = { type = chiefofstaff which = 46007 } #Augustín Farabundo Martí
+		command = { type = chiefofarmy which = 46008 } #Salvador Cayetano Carpio
+		command = { type = chiefofnavy which = 46083 } #Raul Rodolfí Sanchez
+		command = { type = chiefofair which = 46090 } #Manuel Mora Valverde
+		command = { type = set_domestic which = political_left value = 9 }
+		command = { type = set_domestic which = democratic value = 4 }
+	}
+	action_b = {
+		ai_chance = 33
+                name = "EVT_56718_OPTIONC"
+		command = { type = headofstate which = 46013 } #Andrés Ignacio Menéndez
+		command = { type = headofgovernment which = 46024 } #Jose Figueres Ferrer
+		command = { type = foreignminister which = 46032 } #Julio Enrique Ávila
+		command = { type = armamentminister which = 46044 } #Jacopo Arbenz Guzman
+		command = { type = ministerofsecurity which = 46051 } #Guillermo Cuadra
+		command = { type = ministerofintelligence which = 46059 } #Jose Figueres Ferrer
+		command = { type = chiefofstaff which = 46068 } #Felipe Abreu Castro
+		command = { type = chiefofarmy which = 46075 } #Manuel Orellana
+		command = { type = chiefofnavy which = 46084 } #Tomas Mendoza Urribe
+		command = { type = chiefofair which = 46091 } #Guillermo Macho Nuñez
+		command = { type = set_domestic which = political_left value = 8 }
+		command = { type = set_domestic which = democratic value = 8 }
+	}
+}
+
+#####
+#1957
+#####
+event = {
+	id = 56719
+	country = GUA
+	random = no
+	style = 2
+
+	trigger = { 
+        OR = {
+	ideology = social_democrat
+	government = communist 
+        }
+	NOT = { ispuppet = GUA } 
+        }
+
+	name = "EVT_56719_NAME"
+	desc = "EVT_56719_DESC"
+	picture = "Peace_conference"
+
+	date = { day = 1 month = august year = 1957 }
+	offset = 2
+	deathdate = { day = 29 month = august year = 1957 }
+
+	action_a = {
+		ai_chance = 33
+		name = "EVT_56719_OPTIONA"
+		command = { type = headofstate which = 46017 } #Jacopo Arbenz Guzman
+		command = { type = headofgovernment which = 46023 } #Francisco Javier Arana
+		command = { type = foreignminister which = 46003 } #Laura H. de Salazar
+		command = { type = armamentminister which = 46043 } #Juan Arevalo Bermejo
+		command = { type = ministerofsecurity which = 46052 } #Juan Y. Masquez
+		command = { type = ministerofintelligence which = 46006 } #Adrian Recinos
+		command = { type = chiefofstaff which = 46067 } #Juan Pablo Esquerra
+		command = { type = chiefofarmy which = 46074 } #Manuel Corovél Kirsch
+		command = { type = chiefofnavy which = 46082 } #Noel Esto Niño Miranda
+		command = { type = chiefofair which = 46089 } #Joel Garcia Zaldana
+		command = { type = set_domestic which = political_left value = 10 }
+		command = { type = set_domestic which = democratic value = 5 }
+	}
+	action_b = {
+		ai_chance = 34
+                name = "EVT_56719_OPTIONB"
+		command = { type = headofstate which = 46000 } #Jose Manuel Fortuny
+		command = { type = headofgovernment which = 46001 } #Víctor Manuel Gutiérrez
+		command = { type = foreignminister which = 46031 } #Luis Cardenal
+		command = { type = armamentminister which = 46042 } #Luís Fernandéz Rodríguez
+		command = { type = ministerofsecurity which = 46050 } #Franco Hernandez Ávila
+		command = { type = ministerofintelligence which = 46006 } #Adrian Recinos
+		command = { type = chiefofstaff which = 46007 } #Augustín Farabundo Martí
+		command = { type = chiefofarmy which = 46008 } #Salvador Cayetano Carpio
+		command = { type = chiefofnavy which = 46083 } #Raul Rodolfí Sanchez
+		command = { type = chiefofair which = 46090 } #Manuel Mora Valverde
+		command = { type = set_domestic which = political_left value = 9 }
+		command = { type = set_domestic which = democratic value = 4 }
+	}
+	action_b = {
+		ai_chance = 33
+                name = "EVT_56719_OPTIONC"
+		command = { type = headofstate which = 46013 } #Andrés Ignacio Menéndez
+		command = { type = headofgovernment which = 46024 } #Jose Figueres Ferrer
+		command = { type = foreignminister which = 46032 } #Julio Enrique Ávila
+		command = { type = armamentminister which = 46044 } #Jacopo Arbenz Guzman
+		command = { type = ministerofsecurity which = 46051 } #Guillermo Cuadra
+		command = { type = ministerofintelligence which = 46059 } #Jose Figueres Ferrer
+		command = { type = chiefofstaff which = 46068 } #Felipe Abreu Castro
+		command = { type = chiefofarmy which = 46075 } #Manuel Orellana
+		command = { type = chiefofnavy which = 46084 } #Tomas Mendoza Urribe
+		command = { type = chiefofair which = 46091 } #Guillermo Macho Nuñez
+		command = { type = set_domestic which = political_left value = 8 }
+		command = { type = set_domestic which = democratic value = 8 }
+	}
+}
+
+#############################################
+###### Union with Centroamerica # 
+#############################################
+# Panama
+event = {
+        id = 61062
+        random = no
+        country = PAN
+        trigger = {
+                exists = GUA
+                OR = { 
+                        ideology = left_wing_radical
+                        ideology = leninist
+                        ideology = stalinist
+                }
+                NOT = { 
+                        ispuppet = PAN
+                        war = { country = GUA country = PAN }
+                }
+
+        }
+ 
+        name = "EVT_61062_NAME"
+        desc = "EVT_61062_DESC"
+        style = 2
+        picture = "comunista"
+ 
+        date = { day = 1 month = january year = 1936 }
+        offset = 180
+        deathdate = { day = 1 month = january year = 1970 }
+ 
+        action_a = {
+                ai_chance = 35
+                name = "EVT_61062_OPTIONA"
+                command = { type = trigger which = 61063 }
+        }
+        action_b = {
+                ai_chance = 35
+                name = "EVT_61062_OPTIONB"
+                command = { type = relation which = GUA value = 200 }
+                command = { type = trigger which = 61064 }
+        }
+        action_c = {
+                ai_chance = 30
+                name = "EVT_61062_OPTIONC"
+                command = { type = relation which = GUA value = -100 }
+        }
+
+}
+
+event = {
+        id = 61063
+        random = no
+        country = GUA
+ 
+        name = "EVT_61063_NAME"
+        desc = "EVT_61063_DESC"
+        style = 2
+        picture = "comunista"
+ 
+ 
+        action_a = {
+                name = "EVT_61063_OPTIONA"
+                ai_chance = 50
+                command = { type = inherit which = PAN }
+                command = { type = addcore which = 2078 }
+                command = { type = addcore which = 2077 }
+                command = { type = addcore which = 889 }
+                command = { type = dissent value = -5 }
+        }
+        action_b = {
+                name = "EVT_61063_OPTIONB"
+                ai_chance = 50
+                command = { type = inherit which = PAN }
+                command = { type = addcore which = 2078 }
+                command = { type = addcore which = 2077 }
+                command = { type = addcore which = 889 }
+                command = { type = waketeam which = 7902 }
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = dissent value = -5 }
+        }
+}
+
+event = {
+        id = 61064
+        random = no
+        country = GUA
+ 
+        name = "EVT_61064_NAME"
+        desc = "EVT_61064_DESC"
+        style = 2
+        picture = "comunista"
+ 
+ 
+        action_a = {
+                name = "EVT_61064_OPTIONA"
+                command = { type = relation which = PAN value = 200 }
+                command = { type = alliance which = PAN }
+                command = { type = dissent value = -2 }
+        }
+}
+
+# Honduras
+event = {
+        id = 61065
+        random = no
+        country = HON
+        trigger = {
+                exists = GUA
+                OR = { 
+                        ideology = left_wing_radical
+                        ideology = leninist
+                        ideology = stalinist
+                }
+                NOT = { 
+                        ispuppet = HON
+                        war = { country = GUA country = HON }
+                }
+
+        }
+ 
+        name = "EVT_61065_NAME"
+        desc = "EVT_61065_DESC"
+        style = 2
+        picture = "comunista"
+ 
+        date = { day = 1 month = january year = 1936 }
+        offset = 180
+        deathdate = { day = 1 month = january year = 1970 }
+ 
+        action_a = {
+                ai_chance = 35
+                name = "EVT_61065_OPTIONA"
+                command = { type = trigger which = 61066 }
+        }
+        action_b = {
+                ai_chance = 35
+                name = "EVT_61065_OPTIONB"
+                command = { type = relation which = GUA value = 200 }
+                command = { type = trigger which = 61067 }
+        }
+        action_c = {
+                ai_chance = 30
+                name = "EVT_61065_OPTIONC"
+                command = { type = relation which = GUA value = -100 }
+        }
+
+}
+
+event = {
+        id = 61066
+        random = no
+        country = GUA
+ 
+        name = "EVT_61066_NAME"
+        desc = "EVT_61066_DESC"
+        style = 2
+        picture = "comunista"
+ 
+ 
+        action_a = {
+                name = "EVT_61066_OPTIONA"
+                ai_chance = 50
+                command = { type = inherit which = HON }
+                command = { type = addcore which = 2084 }
+                command = { type = addcore which = 2085 }
+                command = { type = waketeam which = 7908 }
+                command = { type = waketeam which = 7903 }
+                command = { type = dissent value = -5 }
+        }
+        action_b = {
+                name = "EVT_61066_OPTIONB"
+                ai_chance = 50
+                command = { type = inherit which = HON }
+                command = { type = addcore which = 2084 }
+                command = { type = addcore which = 2085 }
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = dissent value = -5 }
+        }
+}
+
+event = {
+        id = 61067
+        random = no
+        country = GUA
+ 
+        name = "EVT_61067_NAME"
+        desc = "EVT_61067_DESC"
+        style = 2
+        picture = "comunista"
+ 
+ 
+        action_a = {
+                name = "EVT_61067_OPTIONA"
+                command = { type = relation which = HON value = 200 }
+                command = { type = alliance which = HON }
+                command = { type = dissent value = -2 }
+        }
+}
+
+# United Provinces
+event = {
+        id = 61068
+        random = no
+        country = NIC
+
+        trigger = {
+                exists = GUA
+                OR = { 
+                        ideology = left_wing_radical
+                        ideology = leninist
+                        ideology = stalinist
+                }
+                NOT = { 
+                        ispuppet = NIC
+                        war = { country = GUA country = NIC }
+                }
+
+        }
+ 
+        name = "EVT_61068_NAME"
+        desc = "EVT_61068_DESC"
+        style = 2
+        picture = "comunista"
+ 
+        date = { day = 1 month = january year = 1936 }
+        offset = 180
+        deathdate = { day = 1 month = january year = 1970 }
+ 
+        action_a = {
+                ai_chance = 35
+                name = "EVT_61068_OPTIONA"
+                command = { type = trigger which = 61069 }
+        }
+        action_b = {
+                ai_chance = 35
+                name = "EVT_61068_OPTIONB"
+                command = { type = relation which = GUA value = 200 }
+                command = { type = trigger which = 61070 }
+        }
+        action_c = {
+                ai_chance = 30
+                name = "EVT_61068_OPTIONC"
+                command = { type = relation which = GUA value = -100 }
+        }
+
+}
+
+event = {
+        id = 61069
+        random = no
+        country = GUA
+ 
+        name = "EVT_61069_NAME"
+        desc = "EVT_61069_DESC"
+        style = 2
+        picture = "comunista"
+ 
+ 
+        action_a = {
+                name = "EVT_61069_OPTIONA"
+                ai_chance = 50
+                command = { type = inherit which = NIC }
+                command = { type = addcore which = 2080 }
+                command = { type = addcore which = 2082 }
+                command = { type = addcore which = 2081 } # Since Panama usually joins the United Provinces
+                command = { type = addcore which = 2083 } # Since Panama usually joins the United Provinces
+                command = { type = addcore which = 2078 }
+                command = { type = addcore which = 2077 }
+                command = { type = addcore which = 889 }
+                command = { type = waketeam which = 7906 }
+                command = { type = dissent value = -5 }
+        }
+        action_b = {
+                name = "EVT_61069_OPTIONB"
+                ai_chance = 50
+                command = { type = inherit which = NIC }
+                command = { type = addcore which = 2080 }
+                command = { type = addcore which = 2082 }
+                command = { type = addcore which = 2081 } # Since Panama usually joins the United Provinces
+                command = { type = addcore which = 2083 } # Since Panama usually joins the United Provinces
+                command = { type = addcore which = 2078 }
+                command = { type = addcore which = 2077 }
+                command = { type = addcore which = 889 }
+                command = { type = domestic which = freedom value = 1 }
+                command = { type = dissent value = -5 }
+        }
+}
+
+event = {
+        id = 61070
+        random = no
+        country = GUA
+ 
+        name = "EVT_61070_NAME"
+        desc = "EVT_61070_DESC"
+        style = 2
+        picture = "comunista"
+ 
+ 
+        action_a = {
+                name = "EVT_61070_OPTIONA"
+                command = { type = relation which = NIC value = 200 }
+                command = { type = alliance which = NIC }
+                command = { type = dissent value = -2 }
+        }
+}
+
+##################################################################
+#United Provinces Surrender (if they conquer Panama but not Panama Canal)
+##################################################################
+event = {
+id = 63100
+random = no
+country = GUA
+style = 2
+picture = "foreign_volunteers"
+
+trigger = {		
+	war = { country = GUA country = NIC }
+	control = { province = 2080 data = -3 }
+	control = { province = 2081 data = -3 }
+        control = { province = 2078 data = NIC }
+	NOT = {
+        alliance = { country = NIC country = CAN }
+        alliance = { country = NIC country = USA }
+        alliance = { country = NIC country = COL }
+        alliance = { country = NIC country = RUS }
+        alliance = { country = NIC country = GER }
+        control = { province = 889 data = -2 }
+        ispuppet = GUA
+        ispuppet = NIC
+        lost_national = { country = GUA value = 2 }
+	control = { province = 2080 data = NIC }
+	control = { province = 2081 data = NIC }
+	owned = { province = 889 data = -3 } #Panama Canal
+	control = { province = 889 data = -3 } #Panama Canal
+	}
+} 
+ 
+name = "EVT_63100_NAME"
+desc = "EVT_63100_DESC"
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1970 }
+ 
+action_a = {
+name = "EVT_63100_OPTIONA"
+command = { type = peace which = NIC value = 1 }
+command = { type = inherit which = NIC }
+}
+}

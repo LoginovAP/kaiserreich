@@ -1,0 +1,1553 @@
+event = {
+	id = 700626
+	random = no
+	country = PER
+	picture = "Marshalldead"
+	style = 2
+	
+	trigger = { headofstate = 53001 }
+	
+	date = { day = 26 month = july year = 1944 }
+	
+	name = "EVT_700626_NAME"
+	desc = "EVT_700626_DESC"
+	
+	action_a = {
+		name = "EVT_700626_OPTIONA"
+		command = { type = dissent value = 1  }
+		command = { type = sleepminister which = 53001 }
+		command = { type = headofstate which = 53032 }
+	}
+}
+
+event = {
+	id =  700638
+	random = no
+	country = PER
+	picture = "Marshalldead"
+	style = 2
+	
+	trigger = {
+		NOT = {
+			headofstate = 53001
+			event = 700626 #Reza Pahlavi HoS
+		}
+	}
+	
+	date = { day = 26 month = july year = 1944 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1963 }
+	
+	name = "EVT_700638_NAME"
+	desc = "EVT_700638_DESC"
+	
+	action_a = {
+		name = "EVT_700638_OPTIONA"
+		command = { type = dissent value = 1  }
+		command = { type = sleepminister which = 53001 }
+		command = { type = sleepminister which = 53007 }
+		command = { type = sleepleader which = 440016 }
+	}
+}
+
+event = {
+	id = 700627
+	country = PER
+	random = no
+	
+	name = "EVT_700627_NAME"
+	desc = "EVT_700627_DESC"
+	style = 2
+	picture = "Industry"
+	
+	date = { day = 27 month = september year = 1937 }
+	
+	action_a = {
+		ai_chance = 80
+		name = "EVT_700627_OPTIONA"
+		command = { type = free_money value = 0.5 }
+		command = { type = money value = -50 }
+	}
+	action_b = {
+		ai_chance = 20
+		name = "EVT_700627_OPTIONB"
+		command = { type = dissent value = 1 }
+	}
+}
+
+event = {
+    id = 700630
+    country = PER
+    random = no
+
+    trigger = { 
+    event = 730907 
+    NOT = {
+    event = 077168
+    ispuppet = PER
+    ispuppet = GER
+    government = communist
+    war = { country = PER country = GER } 
+    lost_national = { country = PER value = 5 }
+    }
+    control = { province = 145 data = GER } 
+    control = { province = 163 data = GER } 
+    }
+
+    name = "EVT_700630_NAME"
+    desc = "EVT_700630_DESC"
+    style = 2
+    picture = "oil_supply"
+
+    date = { day = 10 month = august year = 1936 }
+    offset = 7
+    deathdate = { day = 29 month = december year = 1966 }
+
+    action_a = {
+	ai_chance = 30
+        name = "EVT_700630_OPTIONA"
+        command = { type = relation which = GER value = -30 }
+        command = { type = add_prov_resource which = 1825 value = 20 where = oil }
+    }
+
+    action_b = {
+	ai_chance = 70
+        name = "EVT_700630_OPTIONB"
+        command = { type = relation which = GER value = 30 }
+        command = { type = trigger which = 700631 }
+    }
+}
+
+event = {
+    id = 700631
+    country = GER
+    random = no
+
+    name = "EVT_700631_NAME"
+    desc = "EVT_700631_DESC"
+    style = 2
+    picture = "oil_supply"
+
+    action_a = {
+	ai_chance = 30
+        name = "EVT_700631_OPTIONA"
+        command = { type = relation which = PER value = 5 }
+        command = { type = trigger which = 700633 }
+    }
+
+    action_b = {
+	ai_chance = 70
+        name = "EVT_700631_OPTIONB"
+        command = { type = relation which = PER value = 30 }
+        command = { type = trigger which = 700632 }
+        command = { type = trade which = PER where = GER oil = -5 money = 1 when = 7200 value = 1 }	#forced trade for 20 years!
+    }
+}
+
+event = {
+    id = 700632
+    country = PER
+    random = no
+
+    name = "EVT_700632_NAME"
+    desc = "EVT_700632_DESC"
+    style = 2
+    picture = "oil_supply"
+
+    action_a = {
+        name = "EVT_700632_OPTIONA"
+        command = { type = relation which = GER value = 30 }
+        command = { type = gain_tech which = 5327 }
+        command = { type = gain_tech which = 5330 }
+        command = { type = gain_tech which = 5200 }
+    }
+}
+
+event = {
+    id = 700633
+    country = PER
+    random = no
+
+    name = "EVT_700633_NAME"
+    desc = "EVT_700633_DESC"
+    style = 2
+    picture = "oil_supply"
+
+    action_a = {
+        name = "EVT_700633_OPTIONA"
+        command = { type = relation which = GER value = -5 }
+    }
+}
+
+event = {
+    id = 700634
+    country = PER
+    random = no
+    save_date = yes
+	
+	trigger = { 
+        event = 730632 
+        NOT = {
+        lost_national = { country = PER value = 5 }
+        }
+        }
+	
+    name = "EVT_700634_NAME"
+    desc = "EVT_700634_DESC"
+    style = 2
+    picture = "oil_supply"
+
+	date = { day = 10 month = august year = 1936 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1966 }
+	
+    action_a = {
+        ai_chance = 70
+        name = "EVT_700634_OPTIONA"
+        command = { type = money value = -300 }
+    }
+    action_b = {
+        ai_chance = 30
+        name = "EVT_700634_OPTIONB"
+        command = { type = sleepevent which = 700635 }
+        command = { type = sleepevent which = 700636 }
+        command = { type = sleepevent which = 700637 }
+    }
+}
+
+event = {
+    id = 700635
+    country = PER
+    random = no
+	
+    trigger = {
+		event = { id = 700634 days = 200 } 
+                control = { province = 1084 data = PER }
+    }
+	
+    name = "EVT_700635_NAME"
+    desc = "EVT_700635_DESC"
+    style = 2
+    picture = "oil_supply"
+
+    date = { day = 1 month = january year = 1936 }
+    offset = 30
+    deathdate = { day = 29 month = december year = 1966 }
+	
+    action_a = {
+        name = "EVT_700635_OPTIONA"
+        command = { type = construct which = ic where = 1084 value = 1 } #Kermanshah
+    }
+}
+
+event = {
+    id = 700636
+    country = PER
+    random = no
+	
+    trigger = {
+		event = { id = 700634 days = 400 } 
+                control = { province = 1083 data = PER }
+    }
+	
+    name = "EVT_700636_NAME"
+    desc = "EVT_700636_DESC"
+    style = 2
+    picture = "oil_supply"
+
+    date = { day = 1 month = january year = 1936 }
+    offset = 30
+    deathdate = { day = 29 month = december year = 1966 }
+	
+    action_a = {
+        name = "EVT_700636_OPTIONA"
+        command = { type = construct which = ic where = 1083 value = 1 } #Tabriz
+    }
+}
+
+event = {
+    id = 700637
+    country = PER
+    random = no
+
+    trigger = {
+		event = { id = 700634 days = 600 } 
+                control = { province = 1085 data = PER }
+    }
+
+    name = "EVT_700637_NAME"
+    desc = "EVT_700637_DESC"
+    style = 2
+    picture = "oil_supply"
+
+    date = { day = 1 month = january year = 1936 }
+    offset = 30
+    deathdate = { day = 29 month = december year = 1966 }
+
+    action_a = {
+        name = "EVT_700637_OPTIONA"
+        command = { type = construct which = ic where = 1085 value = 1 } #Teheran
+    }
+    }
+
+
+event = {
+     id = 700648
+     country = PER
+     random = no
+
+     trigger = {
+     NOT = {
+        ispuppet = PER
+        atwar = PER
+        control = { province = 713 data = -3 } 
+        control = { province = 711 data = -3 } 
+        control = { province = 2172 data = -3 } 
+        government = communist
+        }
+        control = { province = 1036 data = PER } 
+        control = { province = 1034 data = PER }
+     }
+
+     name = "EVT_700648_NAME"
+     desc = "EVT_700648_DESC"
+     style = 2
+     picture = "event_PER"
+
+     date = { day = 10 month = august year = 1936 }
+     offset = 90
+     deathdate = { day = 29 month = december year = 1966 }
+
+     action_a = {
+         name = "EVT_700648_OPTIONA"
+         ai_chance = 70
+     command = { type = dissent value = 1  }
+     command = { type = relation which = GER value = -10 }
+     command = { type = relation which = RUS value = -10 }
+     command = { type = addclaim which = 711 }
+     command = { type = addclaim which = 712 }
+     command = { type = addclaim which = 713 }
+     command = { type = addclaim which = 714 }
+     command = { type = addclaim which = 2172 }
+     command = { type = domestic which = interventionism value = 8 }
+       
+
+     }
+     action_b = {
+         name = "EVT_700648_OPTIONB"
+         ai_chance = 30
+         command = { type = relation which = GER value = 30 }
+         command = { type = relation which = RUS value = 30 }
+         command = { type = dissent value = 1  }
+         command = { type = domestic which = interventionism value = -1 }
+         command = { type = sleepevent which = 700649 }
+     }
+     }
+
+
+event = {
+     id = 700649
+     country = PER
+     random = no
+
+        decision = {
+        event = 700648 
+        exists = AZB
+        NOT = { war = { country = PER country = AZB } }
+        NOT = {
+        alliance = { country = PER country = AZB }
+        alliance = { country = AZB country = GER }
+        alliance = { country = AZB country = SOV }
+        alliance = { country = AZB country = RUS }
+        atwar = PER
+        ispuppet = AZB
+        ispuppet = PER
+        }
+        control = { province = 1036 data = PER } 
+        control = { province = 1034 data = PER }
+        }
+
+        decision_trigger = {
+        }
+
+	trigger = {
+        event = 700648 
+        exists = AZB
+        NOT = { war = { country = PER country = AZB } }
+        NOT = {
+        alliance = { country = PER country = AZB }
+        alliance = { country = AZB country = GER }
+        alliance = { country = AZB country = SOV }
+        alliance = { country = AZB country = RUS }
+        atwar = PER
+        ispuppet = AZB
+        ispuppet = PER
+        }
+        control = { province = 1036 data = PER } 
+        control = { province = 1034 data = PER }
+        }
+
+     name = "EVT_700649_NAME"
+     desc = "EVT_700649_DESC"
+     style = 2
+     picture = "caucasusgeo"
+     decision_picture = "decision_status_geo"
+
+        date = { day = 1 month = january year = 1937 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1960 }
+
+        action = {
+		ai_chance = 20
+		name = "EVT_700649_OPTIONA"
+                command = { type = belligerence which = PER value = 10  }
+                command = { type = war which = AZB }
+                command = { type = dissent value = 4 }
+		}
+
+	action = {
+		ai_chance = 25
+		name = "EVT_700649_OPTIONB"
+                command = { type = belligerence which = PER value = 5  }
+                command = { type = dissent value = 1 }
+                command = { type = trigger which = 700650 }
+                }
+
+        action = {
+		ai_chance = 25
+		name = "EVT_700649_OPTIONC"
+                command = { type = trigger which = 700653 }
+                } 
+
+        action = {
+		ai_chance = 1
+		name = "EVT_700649_OPTIOND"
+                command = { type = belligerence which = PER value = -3  }
+                command = { type = dissent value = 4 }
+}
+     }
+
+
+event = {
+	id = 700650
+	country = AZB
+	style = 2
+        picture = "caucasusgeo"
+
+	name = "EVT_700650_NAME"
+	desc = "EVT_700650_DESC"
+
+	action_a = {
+		ai_chance = 30
+		name = "EVT_700650_OPTIONA"
+                command = { type = trigger which = 700651 }
+                command = { type = dissent value = 4 } 
+		}
+
+	action_b = {
+		ai_chance = 70
+		name = "EVT_700650_OPTIONB"
+                command = { type = dissent value = -2 }
+                command = { type = relation which = PER value = -20 }
+                command = { type = trigger which = 700652 }
+                }
+
+        action_c = {
+		ai_chance = 70
+                trigger = {
+                exists = RUS
+                control = { province = 691 data = RUS }
+                NOT = {
+                flag = RUS_ISO
+                exists = SOV
+                exists = SIB
+                exists = TRA
+                ispuppet = RUS
+                atwar = RUS
+                }
+                } 
+		name = "EVT_700650_OPTIONC"
+                command = { type = dissent value = -2 }
+                command = { type = relation which = PER value = -20 }
+                command = { type = trigger which = 700655 }
+                }
+                }
+
+event = {
+	id = 700651
+	country = PER
+	style = 2
+        picture = "caucasusgeo"
+
+	name = "EVT_700651_NAME"
+	desc = "EVT_700651_DESC"
+
+
+	action = {
+		name = "EVT_700651_OPTIONA"
+                command = { type = dissent value = 2 }
+                command = { type = inherit which = AZB  }
+                }
+                }
+
+event = {
+	id = 700652
+	country = PER
+	style = 2
+        picture = "Army"
+
+	name = "EVT_700652_NAME"
+	desc = "EVT_700652_DESC"
+
+	action_a = {
+		ai_chance = 85
+		name = "EVT_700652_OPTIONA"
+                command = { type = dissent value = -1 } 
+                command = { type = war which = AZB }
+		}
+
+	action_b = {
+		ai_chance = 15
+		name = "EVT_700652_OPTIONB"
+                command = { type = dissent value = 2 }
+                command = { type = relation which = AZB value = 20 }
+                }
+                }
+
+event = {
+	id = 700653
+	country = AZB
+	style = 2
+        picture = "Peace_conference"
+	  
+	name = "EVT_700653_NAME"
+	desc = "EVT_700653_DESC"
+
+	action_a = {
+		ai_chance = 70
+		name = "EVT_700653_OPTIONA"
+                command = { type = trigger which = 700654 }
+		}
+
+	action_b = {
+		ai_chance = 30
+		name = "EVT_700653_OPTIONB"
+		command = { type = relation which = PER value = -40 }
+                command = { type = trigger which = 700652 }
+}
+        action_c = {
+		ai_chance = 70
+                trigger = {
+                exists = RUS
+                control = { province = 691 data = RUS }
+                NOT = {
+                flag = RUS_ISO
+                exists = SOV
+                exists = SIB
+                exists = TRA
+                ispuppet = RUS
+                atwar = RUS
+                }
+                } 
+		name = "EVT_700653_OPTIONC"
+                command = { type = dissent value = -2 }
+                command = { type = relation which = PER value = -20 }
+                command = { type = trigger which = 700655 }
+                }
+}
+
+event = {
+	id = 700654
+	random = no
+	country = PER
+	style = 2
+
+	
+
+	name = "EVT_700654_NAME"
+	desc = "EVT_700654_DESC"
+        picture = "Peace_conference"
+
+	action_a = {
+		name = "EVT_700654_OPTIONA"
+                command = { type = dissent value = -10 }
+                command = { type = removeclaim which = 712 }
+                command = { type = removeclaim which = 713 }
+                command = { type = make_puppet which = AZB }
+		}
+
+}
+
+
+event = {
+     id = 700655
+     country = RUS
+     random = no
+
+     name = "EVT_700655_NAME"
+     desc = "EVT_700655_DESC"
+     style = 2
+     picture = "oil_supply"
+
+
+     action_a = {
+         name = "EVT_700655_OPTIONA"
+         ai_chance = 30
+         command = { type = relation which = PER value = 30 }
+         command = { type = relation which = AZB value = -30 }
+         command = { type = dissent value = 5  }
+         command = { type = trigger which = 700656 }
+     }
+
+     action_b = {
+         name = "EVT_700655_OPTIONB"
+         ai_chance = 70
+         command = { type = relation which = PER value = -30 }
+         command = { type = relation which = AZB value = 30 }
+         command = { type = dissent value = -1  }
+         command = { type = guarantee which = RUS where = AZB }
+         command = { type = trigger which = 700657 }
+     }
+     }
+
+
+event = {
+	id = 700656
+	country = AZB
+	style = 2
+        picture = "caucasusgeo"
+
+	name = "EVT_700656_NAME"
+	desc = "EVT_700656_DESC"
+
+	action_a = {
+		ai_chance = 70
+		name = "EVT_700656_OPTIONA"
+                command = { type = trigger which = 700651 }
+                command = { type = dissent value = 4 } 
+		}
+
+	action_b = {
+		ai_chance = 30
+		name = "EVT_700656_OPTIONB"
+                command = { type = dissent value = -2 }
+                command = { type = relation which = PER value = -20 }
+                command = { type = trigger which = 700652 }
+                }
+                }
+
+event = {
+     id = 700657
+     country = PER
+     random = no
+
+     name = "EVT_700657_NAME"
+     desc = "EVT_700657_DESC"
+     style = 2
+     picture = "soviet_replacement"
+
+
+     action_a = {
+         name = "EVT_700657_OPTIONA"
+         ai_chance = 5
+         command = { type = relation which = RUS value = -30 }
+         command = { trigger = { alliance = { country = PER country = EGY } } type = leave_alliance }
+         command = { type = dissent value = 2  }
+         command = { type = war which = AZB }
+         command = { type = trigger which = 700658 }
+     }
+
+     action_b = {
+         name = "EVT_700657_OPTIONB"
+         ai_chance = 95
+         command = { type = relation which = RUS value = 30 }
+         command = { type = dissent value = 3  }
+         command = { type = trigger which = 700659 }
+     }
+     }
+
+
+event = {
+     id = 700658
+     country = RUS
+     random = no
+
+     name = "EVT_700658_NAME"
+     desc = "EVT_700658_DESC"
+     style = 2
+     picture = "caucasusgeo"
+
+
+     action_a = {
+         name = "EVT_700658_OPTIONA"
+         ai_chance = 70
+         command = { type = dissent value = 1  }
+         command = { type = war which = PER }
+         command = { trigger = { NOT = { alliance = { country = RUS country = GER } alliance = { country = RUS country = JAP } alliance = { country = RUS country = CAN } alliance = { country = RUS country = FRA } } } type = alliance which = AZB }
+     }
+
+     action_b = {
+         name = "EVT_700658_OPTIONB"
+         ai_chance = 30
+         command = { type = relation which = PER value = 30 }
+         command = { type = dissent value = 3  }
+         command = { type = trigger which = 700670 }
+     }
+     }
+
+
+event = {
+     id = 700659
+     country = RUS
+     random = no
+
+     name = "EVT_700659_NAME"
+     desc = "EVT_700659_DESC"
+     style = 2
+     picture = "caucasusgeo"
+
+
+     action_a = {
+         name = "EVT_700659_OPTIONA"
+         command = { type = dissent value = -1  }
+         command = { type = relation which = AZB value = 30 }   
+     }
+     }
+
+event = {
+     id = 700670
+     country = PER
+     random = no
+
+     name = "EVT_700670_NAME"
+     desc = "EVT_700670_DESC"
+     style = 2
+     picture = "caucasusgeo"
+
+
+     action_a = {
+         name = "EVT_700670_OPTIONA"
+         command = { type = dissent value = -1  }
+     }
+     }
+
+
+
+##############################
+#Cores on former Persian lands
+##############################
+event = {
+	id = 700671
+	country = PER
+	style = 2
+
+	trigger = {
+		event = { id = 077271 days = 1780 }
+		owned = { province = 2172 data = -1 } #Herat
+                control = { province = 2172 data = -1 }
+	}
+
+	name = "EVT_700671_NAME"
+	desc = "EVT_700671_DESC"
+	picture = "soldiers"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 100  
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		name = "EVT_700671_OPTIONA"
+		command = { type = dissent value = 1 }
+		command = { type = addcore which = 2172 }
+	}
+}
+
+event = {
+	id = 700672
+	country = PER
+	style = 2
+
+	trigger = {
+		event = { id = 077274 days = 1780 }
+		owned = { province = 711 data = -1 } #Yerevan
+                control = { province = 711 data = -1 }
+	}
+
+	name = "EVT_700672_NAME"
+	desc = "EVT_700672_DESC"
+	picture = "soldiers"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 100  
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		name = "EVT_700672_OPTIONA"
+		command = { type = dissent value = 3 }
+		command = { type = addcore which = 711 }
+		command = { type = addcore which = 714 }
+	}
+}
+
+event = {
+	id = 700673
+	country = PER
+	style = 2
+
+	trigger = {
+		event = { id = 077276 days = 1780 }
+		owned = { province = 713 data = -1 } #Baku
+                control = { province = 713 data = -1 }
+	}
+
+	name = "EVT_700673_NAME"
+	desc = "EVT_700673_DESC"
+	picture = "soldiers"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 100  
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		name = "EVT_700673_OPTIONA"
+		command = { type = dissent value = 3 }
+		command = { type = addcore which = 712 }
+		command = { type = addcore which = 713 }
+	}
+}
+##############################
+#New Persian domestic events
+##############################
+event = {
+	id = 701000
+	random = no
+	country = PER
+	style = 2
+
+	trigger = {
+        control = { province = 1085 data = PER }
+		}
+
+	name = "EVT_701000_NAME"
+	desc = "EVT_701000_DESC"
+        picture = "persianconstitutuin"
+
+	date = { day = 1 month = february year = 1936 }
+
+	action_a = {
+		name = "EVT_701000_OPTIONA"
+		command = { type = dissent value = 1 }
+	}
+}
+
+event = {
+	id = 701001
+	random = no
+	country = PER
+	style = 2
+
+	trigger = {
+        control = { province = 1080 data = PER }
+		}
+
+	name = "EVT_701001_NAME"
+	desc = "EVT_701001_DESC"
+        picture = "vereshkbridge"
+
+	date = { day = 12 month = april year = 1936 }
+
+	action_a = {
+		name = "EVT_701001_OPTIONA"
+		command = { type = construct which = infrastructure where = 1080 value = 10 }
+		command = { type = dissent value = -1 }
+	}
+}
+
+event = {
+	id = 701002
+	random = no
+	country = PER
+	style = 2
+
+	trigger = {
+        control = { province = 1085 data = PER }
+		}
+
+	name = "EVT_701002_NAME"
+	desc = "EVT_701002_DESC"
+    picture = "persianarmy"
+
+	date = { day = 7 month = march year = 1936 }
+
+	action_a = {
+	    ai_chance =  50
+		name = "EVT_701002_OPTIONA"
+		command = { type = chiefofstaff which = 53202 }
+		command = { type = waketeam which = 6115 }
+		command = { type = activate which = 6010 }	
+		command = { type = gain_tech which = 6010  }
+		command = { type = gain_tech which = 6020  }	
+		command = { type = relation which = GER value = 20 } 
+        command = { type = remove_division which = "Persian Gendarmerie Division" value = PER }
+        command = { type = add_corps which = "Tehran Gendarmerie Corps" value = land where = 1085 }	
+        command = { type = add_division which = "Persian Gendarmerie Division" value = bergsjaeger when = 7 }		
+		command = { type = dissent value = 2 }
+	}
+	action_b = {
+	ai_chance =  50
+		name = "EVT_701002_OPTIONB"
+		command = { type = chiefofstaff which = 53007 }
+		command = { type = waketeam which = 6108 }
+		command = { type = activate which = 6390 }	
+		command = { type = gain_tech which = 6390  }
+		command = { type = gain_tech which = 6400  }	
+        command = { type = remove_division which = "Persian Cossack Battalions 1&2" value = PER }
+        command = { type = add_corps which = "Persian Cossack Division" value = land where = 1085 }	
+        command = { type = add_division which = "Persian Cossack Division" value = cavalry when = 7 }		
+		command = { type = relation which = CAN value = 20 }
+        command = { type = relation which = RUS value = 15 }  		
+		command = { type = dissent value = 2 }
+	}
+	action_c = {
+	ai_chance =  0
+		name = "EVT_701002_OPTIONC"
+		command = { type = activate which = 6210 }	
+		command = { type = gain_tech which = 6210  }		
+		command = { type = dissent value = 15 }
+	}	
+	
+}
+
+event = {
+	id = 701003
+	random = no
+	country = PER
+	style = 2
+
+	    trigger = {
+        control = { province = 1085 data = PER }
+		}
+
+	name = "EVT_701003_NAME"
+	desc = "EVT_701003_DESC"
+        picture = "industry2"
+
+	date = { day = 2 month = december year = 1936 }
+
+	action_a = {
+		name = "EVT_701003_OPTIONA"
+		command = { type = waketeam which = 6116 }
+		command = { type = construct which = infrastructure where = -1 value = 10 }
+	}
+}
+#########################################################
+#Election Events
+#########################################################
+event = {
+	id = 701100
+	random = no
+	country = PER
+	style = 2
+    save_date = yes
+
+	trigger = {
+	
+		owned = { province = 1085 data = PER }
+		control = { province = 1085 data = PER }
+		NOT = { ispuppet = PER }
+                OR = {
+			government = democratic
+			ideology = paternal_autocrat
+			}
+}
+	name = "EVT_701100_NAME"
+	desc = "EVT_701100_DESC"
+        picture = "persianconstitutuin"
+
+	date = { day = 1 month = may year = 1937 }
+	offset = 5
+	deathdate = { day = 29 month = december year = 1960 }
+
+        action_a = {
+	        ai_chance =  40
+	        name = "EVT_701100_OPTIONA"
+		        command = { type = dissent value = 5  }  
+		        command = { type = set_domestic which = democratic value = 7 }
+		        command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		        command = { type = headofstate which = 53201 } # Ahmad Shah ML
+		        command = { type = headofgovernment which = 53193 } # Teymourtash
+		        command = { type = foreignminister which =  53195 } # Mohammad-Ali Foroughi
+		        command = { type = armamentminister which = 53196 } # Ali-Akbar Davar
+		        command = { type = ministerofsecurity which = 53191 } # Ahmad Kasravi
+				command = { type = domestic which = free_market value = 2 }
+                command = { type = local_setflag which = PER_Revivalparty }
+		}
+        action_b = {
+	        ai_chance =  25
+	        name = "EVT_701100_OPTIONB"
+			   command = { type = set_domestic which = democratic value = 7 }
+		       command = { type = set_domestic which = political_left value = 3 }
+		       command = { type = set_domestic which = freedom value = 5 }	
+		       command = { type = headofstate which = 53161 } # Ahmad Shah PA
+		       command = { type = headofgovernment which = 53165 } # Firouz Mirza Nosrat-ed-Dowleh Qajar
+		       command = { type = foreignminister which =  53176 } # Samad Khan Momtaz os-Saltaneh
+		       command = { type = armamentminister which = 53004 } # Mohammad-Taqi Bahar
+		       command = { type = ministerofsecurity which = 53180 } # Fathollah Khan Akbar
+               command = { type = local_setflag which = PER_Traditionalist }			   
+		       command = { type = dissent value = -2 }
+		} 
+ 
+        action_c = {
+	        ai_chance =  25
+	        name = "EVT_701100_OPTIONC"
+		        command = { type = dissent value = 3  }  
+		        command = { type = set_domestic which = democratic value = 8 }
+		        command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 7 }
+				command = { type = domestic which = free_market value = 1 }
+		        command = { type = headofstate which = 53201 } # Ahmad Shah ML
+		        command = { type = headofgovernment which = 53197 } # Mossadegh
+		        command = { type = foreignminister which =  53198 } # Ali Shayegan
+		        command = { type = armamentminister which = 53199 } # Ahmad Zirakzadeh
+		        command = { type = ministerofsecurity which = 53200 } # Abol-Ghasem Kashani
+                command = { type = local_setflag which = PER_Mossadegh }
+		}
+
+        action_d = {
+	        ai_chance =  10
+	        name = "EVT_701100_OPTIOND"
+		        command = { type = dissent value = 3  }  
+		        command = { type = set_domestic which = democratic value = 7 }
+		        command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 7 }
+				command = { type = domestic which = free_market value = -1 }
+		        command = { type = headofstate which = 53201 } # Ahmad Shah ML
+		        command = { type = headofgovernment which = 53130 } # Mohsen Sadr
+		        command = { type = foreignminister which =  53203 } # Mohammad Khiabani
+		        command = { type = armamentminister which = 53159 } # Yadollah Sahabi
+		        command = { type = ministerofsecurity which = 53200 } # Abol-Ghasem Kashani
+                command = { type = local_setflag which = PER_Democratparty }
+		}		
+
+}
+
+event = {
+	id = 701101
+	random = no
+	country = PER
+	style = 2
+    save_date = yes
+
+	trigger = {
+	
+		owned = { province = 1085 data = PER }
+		control = { province = 1085 data = PER }
+		event = { id = 701100 days = 1480 } #1941
+		NOT = { ispuppet = PER }
+            OR = {
+			government = democratic
+			ideology = paternal_autocrat
+			}
+}
+	name = "EVT_701101_NAME"
+	desc = "EVT_701101_DESC"
+        picture = "persianconstitutuin"
+
+	date = { day = 1 month = may year = 1937 }
+	offset = 5
+	deathdate = { day = 29 month = december year = 1960 }
+
+        action_a = {
+	        ai_chance =  40
+	        name = "EVT_701101_OPTIONA"
+		        command = { type = dissent value = 5  }  
+		        command = { type = set_domestic which = democratic value = 7 }
+		        command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		        command = { type = headofstate which = 53201 } # Ahmad Shah ML
+		        command = { type = headofgovernment which = 53193 } # Teymourtash
+		        command = { type = foreignminister which =  53195 } # Mohammad-Ali Foroughi
+		        command = { type = armamentminister which = 53196 } # Ali-Akbar Davar
+		        command = { type = ministerofsecurity which = 53191 } # Ahmad Kasravi
+				command = { type = domestic which = free_market value = 2 }
+                command = { type = local_setflag which = PER_Revivalparty }
+		}
+        action_b = {
+	        ai_chance =  25
+	        name = "EVT_701101_OPTIONB"
+			   command = { type = set_domestic which = democratic value = 7 }
+		       command = { type = set_domestic which = political_left value = 3 }
+		       command = { type = set_domestic which = freedom value = 5 }	
+		       command = { type = headofstate which = 53161 } # Ahmad Shah PA
+		       command = { type = headofgovernment which = 53165 } # Firouz Mirza Nosrat-ed-Dowleh Qajar
+		       command = { type = foreignminister which =  53176 } # Samad Khan Momtaz os-Saltaneh
+		       command = { type = armamentminister which = 53004 } # Mohammad-Taqi Bahar
+		       command = { type = ministerofsecurity which = 53180 } # Fathollah Khan Akbar
+               command = { type = local_setflag which = PER_Traditionalist }			   
+		       command = { type = dissent value = -2 }
+		} 
+ 
+        action_c = {
+	        ai_chance =  25
+	        name = "EVT_701101_OPTIONC"
+		        command = { type = dissent value = 3  }  
+		        command = { type = set_domestic which = democratic value = 8 }
+		        command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 7 }
+				command = { type = domestic which = free_market value = 1 }
+		        command = { type = headofstate which = 53201 } # Ahmad Shah ML
+		        command = { type = headofgovernment which = 53197 } # Mossadegh
+		        command = { type = foreignminister which =  53198 } # Ali Shayegan
+		        command = { type = armamentminister which = 53199 } # Ahmad Zirakzadeh
+		        command = { type = ministerofsecurity which = 53200 } # Abol-Ghasem Kashani
+                command = { type = local_setflag which = PER_Mossadegh }
+		}
+
+        action_d = {
+	        ai_chance =  10
+	        name = "EVT_701101_OPTIOND"
+		        command = { type = dissent value = 3  }  
+		        command = { type = set_domestic which = democratic value = 7 }
+		        command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 7 }
+				command = { type = domestic which = free_market value = -1 }
+		        command = { type = headofstate which = 53201 } # Ahmad Shah ML
+		        command = { type = headofgovernment which = 53130 } # Mohsen Sadr
+		        command = { type = foreignminister which =  53203 } # Mohammad Khiabani
+		        command = { type = armamentminister which = 53159 } # Yadollah Sahabi
+		        command = { type = ministerofsecurity which = 53200 } # Abol-Ghasem Kashani
+                command = { type = local_setflag which = PER_Democratparty }
+		}		
+
+}
+
+event = {
+	id = 701102
+	random = no
+	country = PER
+	style = 2
+    save_date = yes
+
+	trigger = {
+	
+		owned = { province = 1085 data = PER }
+		control = { province = 1085 data = PER }
+		event = { id = 701101 days = 1480 } #1945
+		NOT = { ispuppet = PER }
+            OR = {
+			government = democratic
+			ideology = paternal_autocrat
+			}
+}
+	name = "EVT_701102_NAME"
+	desc = "EVT_701102_DESC"
+        picture = "persianconstitutuin"
+
+	date = { day = 1 month = may year = 1937 }
+	offset = 5
+	deathdate = { day = 29 month = december year = 1964 }
+
+        action_a = {
+	        ai_chance =  20
+	        name = "EVT_701102_OPTIONA"
+		        command = { type = dissent value = 5  }  
+		        command = { type = set_domestic which = democratic value = 7 }
+		        command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		        command = { type = headofstate which = 53201 } # Ahmad Shah ML
+		        command = { type = headofgovernment which = 53193 } # Teymourtash
+		        command = { type = foreignminister which =  53195 } # Mohammad-Ali Foroughi
+		        command = { type = armamentminister which = 53196 } # Ali-Akbar Davar
+		        command = { type = ministerofsecurity which = 53191 } # Ahmad Kasravi
+				command = { type = domestic which = free_market value = 2 }
+		}
+        action_b = {
+	        ai_chance =  25
+	        name = "EVT_701102_OPTIONB"
+			   command = { type = set_domestic which = democratic value = 7 }
+		       command = { type = set_domestic which = political_left value = 3 }
+		       command = { type = set_domestic which = freedom value = 5 }	
+		       command = { type = headofstate which = 53161 } # Ahmad Shah PA
+		       command = { type = headofgovernment which = 53165 } # Firouz Mirza Nosrat-ed-Dowleh Qajar
+		       command = { type = foreignminister which =  53176 } # Samad Khan Momtaz os-Saltaneh
+		       command = { type = armamentminister which = 53004 } # Mohammad-Taqi Bahar
+		       command = { type = ministerofsecurity which = 53180 } # Fathollah Khan Akbar			   
+		       command = { type = dissent value = -2 }
+		} 
+ 
+        action_c = {
+	        ai_chance =  25
+	        name = "EVT_701102_OPTIONC"
+		        command = { type = dissent value = 3  }  
+		        command = { type = set_domestic which = democratic value = 8 }
+		        command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 7 }
+				command = { type = domestic which = free_market value = 1 }
+		        command = { type = headofstate which = 53201 } # Ahmad Shah ML
+		        command = { type = headofgovernment which = 53197 } # Mossadegh
+		        command = { type = foreignminister which =  53198 } # Ali Shayegan
+		        command = { type = armamentminister which = 53199 } # Ahmad Zirakzadeh
+		        command = { type = ministerofsecurity which = 53200 } # Abol-Ghasem Kashani
+		}
+
+        action_d = {
+	        ai_chance =  30
+	        name = "EVT_701102_OPTIOND"
+		        command = { type = dissent value = 3  }  
+		        command = { type = set_domestic which = democratic value = 7 }
+		        command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 7 }
+				command = { type = domestic which = free_market value = -1 }
+		        command = { type = headofstate which = 53201 } # Ahmad Shah ML
+		        command = { type = headofgovernment which = 53130 } # Mohsen Sadr
+		        command = { type = foreignminister which =  53203 } # Mohammad Khiabani
+		        command = { type = armamentminister which = 53159 } # Yadollah Sahabi
+		        command = { type = ministerofsecurity which = 53200 } # Abol-Ghasem Kashani
+		}		
+
+}
+
+event = {
+	id = 701103
+	random = no
+	country = PER
+	style = 2
+    save_date = yes
+
+	trigger = {
+	
+		owned = { province = 1085 data = PER }
+		control = { province = 1085 data = PER }
+		event = { id = 701102 days = 1480 } #1949
+		NOT = { ispuppet = PER }
+            OR = {
+			government = democratic
+			ideology = paternal_autocrat
+			}
+}
+	name = "EVT_701103_NAME"
+	desc = "EVT_701103_DESC"
+        picture = "persianconstitutuin"
+
+	date = { day = 1 month = may year = 1937 }
+	offset = 5
+	deathdate = { day = 29 month = december year = 1960 }
+
+        action_a = {
+	        ai_chance =  20
+	        name = "EVT_701103_OPTIONA"
+		        command = { type = dissent value = 5  }  
+		        command = { type = set_domestic which = democratic value = 7 }
+		        command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		        command = { type = headofstate which = 53201 } # Ahmad Shah ML
+		        command = { type = headofgovernment which = 53193 } # Teymourtash
+		        command = { type = foreignminister which =  53195 } # Mohammad-Ali Foroughi
+		        command = { type = armamentminister which = 53196 } # Ali-Akbar Davar
+		        command = { type = ministerofsecurity which = 53191 } # Ahmad Kasravi
+				command = { type = domestic which = free_market value = 2 }
+		}
+        action_b = {
+	        ai_chance =  25
+	        name = "EVT_701103_OPTIONB"
+			   command = { type = set_domestic which = democratic value = 7 }
+		       command = { type = set_domestic which = political_left value = 3 }
+		       command = { type = set_domestic which = freedom value = 5 }	
+		       command = { type = headofstate which = 53161 } # Ahmad Shah PA
+		       command = { type = headofgovernment which = 53165 } # Firouz Mirza Nosrat-ed-Dowleh Qajar
+		       command = { type = foreignminister which =  53176 } # Samad Khan Momtaz os-Saltaneh
+		       command = { type = armamentminister which = 53004 } # Mohammad-Taqi Bahar
+		       command = { type = ministerofsecurity which = 53180 } # Fathollah Khan Akbar			   
+		       command = { type = dissent value = -2 }
+		} 
+ 
+        action_c = {
+	        ai_chance =  45
+	        name = "EVT_701103_OPTIONC"
+		        command = { type = dissent value = 3  }  
+		        command = { type = set_domestic which = democratic value = 8 }
+		        command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 7 }
+				command = { type = domestic which = free_market value = 1 }
+		        command = { type = headofstate which = 53201 } # Ahmad Shah ML
+		        command = { type = headofgovernment which = 53197 } # Mossadegh
+		        command = { type = foreignminister which =  53198 } # Ali Shayegan
+		        command = { type = armamentminister which = 53199 } # Ahmad Zirakzadeh
+		        command = { type = ministerofsecurity which = 53200 } # Abol-Ghasem Kashani
+		}
+
+        action_d = {
+	        ai_chance =  30
+	        name = "EVT_701103_OPTIOND"
+		        command = { type = dissent value = 3  }  
+		        command = { type = set_domestic which = democratic value = 7 }
+		        command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 7 }
+				command = { type = domestic which = free_market value = -1 }
+		        command = { type = headofstate which = 53201 } # Ahmad Shah ML
+		        command = { type = headofgovernment which = 53130 } # Mohsen Sadr
+		        command = { type = foreignminister which =  53203 } # Mohammad Khiabani
+		        command = { type = armamentminister which = 53159 } # Yadollah Sahabi
+		        command = { type = ministerofsecurity which = 53200 } # Abol-Ghasem Kashani
+		}		
+
+}
+
+event = {
+	id = 701104
+	random = no
+	country = PER
+	style = 2
+    save_date = yes
+
+	trigger = {
+	
+		owned = { province = 1085 data = PER }
+		control = { province = 1085 data = PER }
+		event = { id = 701103 days = 1480 } #1953
+		NOT = { ispuppet = PER }
+            OR = {
+			government = democratic
+			ideology = paternal_autocrat
+			}
+}
+	name = "EVT_701104_NAME"
+	desc = "EVT_701104_DESC"
+        picture = "persianconstitutuin"
+
+	date = { day = 1 month = may year = 1937 }
+	offset = 5
+	deathdate = { day = 29 month = december year = 1960 }
+
+        action_a = {
+	        ai_chance =  20
+	        name = "EVT_701104_OPTIONA"
+		        command = { type = dissent value = 5  }  
+		        command = { type = set_domestic which = democratic value = 7 }
+		        command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		        command = { type = headofstate which = 53201 } # Ahmad Shah ML
+		        command = { type = headofgovernment which = 53193 } # Teymourtash
+		        command = { type = foreignminister which =  53195 } # Mohammad-Ali Foroughi
+		        command = { type = armamentminister which = 53196 } # Ali-Akbar Davar
+		        command = { type = ministerofsecurity which = 53191 } # Ahmad Kasravi
+				command = { type = domestic which = free_market value = 2 }
+		}
+        action_b = {
+	        ai_chance =  25
+	        name = "EVT_701104_OPTIONB"
+			   command = { type = set_domestic which = democratic value = 7 }
+		       command = { type = set_domestic which = political_left value = 3 }
+		       command = { type = set_domestic which = freedom value = 5 }	
+		       command = { type = headofstate which = 53161 } # Ahmad Shah PA
+		       command = { type = headofgovernment which = 53165 } # Firouz Mirza Nosrat-ed-Dowleh Qajar
+		       command = { type = foreignminister which =  53176 } # Samad Khan Momtaz os-Saltaneh
+		       command = { type = armamentminister which = 53004 } # Mohammad-Taqi Bahar
+		       command = { type = ministerofsecurity which = 53180 } # Fathollah Khan Akbar			   
+		       command = { type = dissent value = -2 }
+		} 
+ 
+        action_c = {
+	        ai_chance =  45
+	        name = "EVT_701104_OPTIONC"
+		        command = { type = dissent value = 3  }  
+		        command = { type = set_domestic which = democratic value = 8 }
+		        command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 7 }
+				command = { type = domestic which = free_market value = 1 }
+		        command = { type = headofstate which = 53201 } # Ahmad Shah ML
+		        command = { type = headofgovernment which = 53197 } # Mossadegh
+		        command = { type = foreignminister which =  53198 } # Ali Shayegan
+		        command = { type = armamentminister which = 53199 } # Ahmad Zirakzadeh
+		        command = { type = ministerofsecurity which = 53200 } # Abol-Ghasem Kashani
+		}
+
+        action_d = {
+	        ai_chance =  30
+	        name = "EVT_701104_OPTIOND"
+		        command = { type = dissent value = 3  }  
+		        command = { type = set_domestic which = democratic value = 7 }
+		        command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 7 }
+				command = { type = domestic which = free_market value = -1 }
+		        command = { type = headofstate which = 53201 } # Ahmad Shah ML
+		        command = { type = headofgovernment which = 53130 } # Mohsen Sadr
+		        command = { type = foreignminister which =  53203 } # Mohammad Khiabani
+		        command = { type = armamentminister which = 53159 } # Yadollah Sahabi
+		        command = { type = ministerofsecurity which = 53200 } # Abol-Ghasem Kashani
+		}		
+
+}
+
+event = {
+	id = 701105
+	random = no
+	country = PER
+	style = 2
+    save_date = yes
+
+	trigger = {
+	
+		owned = { province = 1085 data = PER }
+		control = { province = 1085 data = PER }
+		event = { id = 701104 days = 1480 } #1957
+		NOT = { ispuppet = PER }
+            OR = {
+			government = democratic
+			ideology = paternal_autocrat
+			}
+}
+	name = "EVT_701105_NAME"
+	desc = "EVT_701105_DESC"
+        picture = "persianconstitutuin"
+
+	date = { day = 1 month = may year = 1937 }
+	offset = 5
+	deathdate = { day = 29 month = december year = 1960 }
+
+        action_a = {
+	        ai_chance =  20
+	        name = "EVT_701105_OPTIONA"
+		        command = { type = dissent value = 5  }  
+		        command = { type = set_domestic which = democratic value = 7 }
+		        command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		        command = { type = headofstate which = 53201 } # Ahmad Shah ML
+		        command = { type = headofgovernment which = 53193 } # Teymourtash
+		        command = { type = foreignminister which =  53195 } # Mohammad-Ali Foroughi
+		        command = { type = armamentminister which = 53196 } # Ali-Akbar Davar
+		        command = { type = ministerofsecurity which = 53191 } # Ahmad Kasravi
+				command = { type = domestic which = free_market value = 2 }
+		}
+        action_b = {
+	        ai_chance =  25
+	        name = "EVT_701105_OPTIONB"
+			   command = { type = set_domestic which = democratic value = 7 }
+		       command = { type = set_domestic which = political_left value = 3 }
+		       command = { type = set_domestic which = freedom value = 5 }	
+		       command = { type = headofstate which = 53161 } # Ahmad Shah PA
+		       command = { type = headofgovernment which = 53165 } # Firouz Mirza Nosrat-ed-Dowleh Qajar
+		       command = { type = foreignminister which =  53176 } # Samad Khan Momtaz os-Saltaneh
+		       command = { type = armamentminister which = 53004 } # Mohammad-Taqi Bahar
+		       command = { type = ministerofsecurity which = 53180 } # Fathollah Khan Akbar			   
+		       command = { type = dissent value = -2 }
+		} 
+ 
+        action_c = {
+	        ai_chance =  45
+	        name = "EVT_701105_OPTIONC"
+		        command = { type = dissent value = 3  }  
+		        command = { type = set_domestic which = democratic value = 8 }
+		        command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 7 }
+				command = { type = domestic which = free_market value = 1 }
+		        command = { type = headofstate which = 53201 } # Ahmad Shah ML
+		        command = { type = headofgovernment which = 53197 } # Mossadegh
+		        command = { type = foreignminister which =  53198 } # Ali Shayegan
+		        command = { type = armamentminister which = 53199 } # Ahmad Zirakzadeh
+		        command = { type = ministerofsecurity which = 53200 } # Abol-Ghasem Kashani
+		}
+
+        action_d = {
+	        ai_chance =  30
+	        name = "EVT_701105_OPTIOND"
+		        command = { type = dissent value = 3  }  
+		        command = { type = set_domestic which = democratic value = 7 }
+		        command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 7 }
+				command = { type = domestic which = free_market value = -1 }
+		        command = { type = headofstate which = 53201 } # Ahmad Shah ML
+		        command = { type = headofgovernment which = 53130 } # Mohsen Sadr
+		        command = { type = foreignminister which =  53203 } # Mohammad Khiabani
+		        command = { type = armamentminister which = 53159 } # Yadollah Sahabi
+		        command = { type = ministerofsecurity which = 53200 } # Abol-Ghasem Kashani
+		}		
+
+}
+
+event = {
+	id = 701106
+	random = no
+	country = PER
+	style = 2
+    save_date = yes
+
+	trigger = {
+	
+		owned = { province = 1085 data = PER }
+		control = { province = 1085 data = PER }
+		event = { id = 701105 days = 1480 } #1961
+		NOT = { ispuppet = PER }
+            OR = {
+			government = democratic
+			ideology = paternal_autocrat
+			}
+}
+	name = "EVT_701106_NAME"
+	desc = "EVT_701106_DESC"
+        picture = "persianconstitutuin"
+
+	date = { day = 1 month = may year = 1937 }
+	offset = 5
+	deathdate = { day = 29 month = december year = 1960 }
+
+        action_a = {
+	        ai_chance =  20
+	        name = "EVT_701106_OPTIONA"
+		        command = { type = dissent value = 5  }  
+		        command = { type = set_domestic which = democratic value = 7 }
+		        command = { type = set_domestic which = political_left value = 5 }
+                command = { type = set_domestic which = freedom value = 6 }
+		        command = { type = headofstate which = 53201 } # Ahmad Shah ML
+		        command = { type = headofgovernment which = 53193 } # Teymourtash
+		        command = { type = foreignminister which =  53195 } # Mohammad-Ali Foroughi
+		        command = { type = armamentminister which = 53196 } # Ali-Akbar Davar
+		        command = { type = ministerofsecurity which = 53191 } # Ahmad Kasravi
+				command = { type = domestic which = free_market value = 2 }
+		}
+        action_b = {
+	        ai_chance =  25
+	        name = "EVT_701106_OPTIONB"
+			   command = { type = set_domestic which = democratic value = 7 }
+		       command = { type = set_domestic which = political_left value = 3 }
+		       command = { type = set_domestic which = freedom value = 5 }	
+		       command = { type = headofstate which = 53161 } # Ahmad Shah PA
+		       command = { type = headofgovernment which = 53165 } # Firouz Mirza Nosrat-ed-Dowleh Qajar
+		       command = { type = foreignminister which =  53176 } # Samad Khan Momtaz os-Saltaneh
+		       command = { type = armamentminister which = 53004 } # Mohammad-Taqi Bahar
+		       command = { type = ministerofsecurity which = 53180 } # Fathollah Khan Akbar			   
+		       command = { type = dissent value = -2 }
+		} 
+ 
+        action_c = {
+	        ai_chance =  45
+	        name = "EVT_701106_OPTIONC"
+		        command = { type = dissent value = 3  }  
+		        command = { type = set_domestic which = democratic value = 8 }
+		        command = { type = set_domestic which = political_left value = 6 }
+                command = { type = set_domestic which = freedom value = 7 }
+				command = { type = domestic which = free_market value = 1 }
+		        command = { type = headofstate which = 53201 } # Ahmad Shah ML
+		        command = { type = headofgovernment which = 53197 } # Mossadegh
+		        command = { type = foreignminister which =  53198 } # Ali Shayegan
+		        command = { type = armamentminister which = 53199 } # Ahmad Zirakzadeh
+		        command = { type = ministerofsecurity which = 53200 } # Abol-Ghasem Kashani
+		}
+
+        action_d = {
+	        ai_chance =  30
+	        name = "EVT_701106_OPTIOND"
+		        command = { type = dissent value = 3  }  
+		        command = { type = set_domestic which = democratic value = 7 }
+		        command = { type = set_domestic which = political_left value = 8 }
+                command = { type = set_domestic which = freedom value = 7 }
+				command = { type = domestic which = free_market value = -1 }
+		        command = { type = headofstate which = 53201 } # Ahmad Shah ML
+		        command = { type = headofgovernment which = 53130 } # Mohsen Sadr
+		        command = { type = foreignminister which =  53203 } # Mohammad Khiabani
+		        command = { type = armamentminister which = 53159 } # Yadollah Sahabi
+		        command = { type = ministerofsecurity which = 53200 } # Abol-Ghasem Kashani
+		}		
+
+}

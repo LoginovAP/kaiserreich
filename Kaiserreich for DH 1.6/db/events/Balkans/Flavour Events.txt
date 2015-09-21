@@ -1,0 +1,269 @@
+event = {
+id = 669000
+country = ROM
+style = 2
+picture = "IorgaNicolaus"
+
+trigger = { 
+	random = 20
+        government = fascist
+	atwar = no
+} 
+
+date = { day = 1 month = january year = 1936 }
+offset = 80
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_669000_NAME"
+desc = "EVT_669000_DESC"
+
+action_a = {
+ai_chance = 70
+name = "EVT_669000_OPTIONA"
+command = { type = sleepevent which = 669002 }
+}
+
+action_b = {
+ai_chance = 30
+name = "EVT_669000_OPTIONB"
+command = { type = sleepevent which = 669001 }
+}
+}
+
+event = {
+id = 669001
+country = ROM
+style = 2
+picture = "IorgaNicolaus"
+
+
+trigger = { event = 669000 } 
+
+
+
+
+date = { day = 1 month = august year = 1936 }
+offset = 180
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_669001_NAME"
+desc = "EVT_669001_DESC"
+
+action_a = {
+name = "EVT_669001_OPTIONA"
+command = { type = dissent value = 3 }
+command = { type = research_mod value = -2 } #Cause the smart people you just imprisoned#
+}
+}
+
+event = {
+id = 669002
+country = ROM
+style = 2
+picture = "IorgaNicolaus"
+
+trigger = { event = 669000 }
+
+date = { day = 1 month = january year = 1937 }
+offset = 60
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_669002_NAME"
+desc = "EVT_669002_DESC"
+
+action_a = {
+ai_chance = 75
+name = "EVT_669002_OPTIONA"
+command = { type = dissent value = 5 }
+command = { type = research_mod value = -2 } #Cause the smart people you just killed#
+command = { type = setflag which = ROM_BUC }
+}
+
+action_b = {
+ai_chance = 25
+name = "EVT_669002_OPTIONB"
+command = { type = dissent value = -3 }
+command = { type = domestic which = democratic value = 1 }
+command = { type = setflag which = ROM_BUC }
+}
+}
+
+event = {
+id = 730806
+persistent = yes
+country = ROM
+style = 2
+picture = "Romunion"
+
+trigger = {
+day = 24
+month = 1
+NOT = {
+day = 25
+}
+NOT = {
+month = 2
+}
+}
+
+date = { day = 0 month = january year = 1936 }
+offset = 1
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_730806_NAME"
+desc = "EVT_730806_DESC"
+
+action_a = {
+name = "EVT_730806_OPTIONA"
+	command = { type = dissent value = -1 }
+	}
+}
+
+event = {
+id = 669007
+persistent = yes
+country = URU
+style = 2
+picture = "Romunion"
+
+trigger = {
+day = 24
+month = 1
+NOT = {
+day = 25
+}
+NOT = {
+month = 2
+}
+}
+
+date = { day = 0 month = january year = 1936 }
+offset = 1
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_669007_NAME"
+desc = "EVT_669007_DESC"
+
+action_a = {
+name = "EVT_669007_OPTIONA"
+	command = { type = dissent value = -1 }
+	}
+}
+
+event = {
+id = 669003
+random = no
+country = BUL
+
+trigger = {
+headofstate = 19043
+}
+
+name = "EVT_669003_NAME"
+desc = "EVT_669003_DESC"
+style = 2
+picture = "news_paper"
+
+date = { day = 18 month = april year = 1936 }
+
+action_a = {
+name = "EVT_669003_OPTIONA"
+ai_chance = 50
+command = { type = dissent value = 3 }
+command = { type = money value = -50 }
+command = { type = trigger which = 669004 }
+}
+action_b = {
+name = "EVT_669003_OPTIONB"
+ai_chance = 50
+command = { type = dissent value = 8 } # Ferdinand has a lot of friends in high places
+command = { type = sleepevent which = 669004 }
+}
+}
+
+event = {
+id = 669004
+random = no
+country = BUL
+
+trigger = {
+headofstate = 19043
+}
+
+name = "EVT_669004_NAME"
+desc = "EVT_669004_DESC"
+style = 2
+picture = "news_paper"
+
+date = { day = 25 month = april year = 1936 }
+
+action_a = {
+name = "EVT_669004_OPTIONA"
+ai_chance = 80
+command = { type = headofgovernment which = 19057 } #'Happy amateur' seems to suit a political patsy
+command = { type = relation which = GER value = -50 } #Filov was well liked by the German government
+}
+action_b = {
+name = "EVT_669004_OPTIONB"
+ai_chance = 20
+command = { type = dissent value = 3 } # Filov is not popular with Ferdinand and friends
+}
+}
+
+event = {
+id = 669005
+random = no
+country = BUL
+
+trigger = { 
+OR = {
+headofstate = 19043 
+headofstate = 19045
+}
+}
+
+name = "EVT_669005_NAME"
+desc = "EVT_669005_DESC"
+style = 2
+picture = "minister_died"
+
+date = { day = 28 month = august year = 1943}
+
+action_a = {
+ai_chance = 60
+name = "EVT_669005_OPTIONA"
+command = { type = dissent value = 1 }
+command = { type = sleepminister which = 19043 }
+command = { type = sleepminister which = 19045 }
+command = { type = headofstate which = 19042 }
+command = { type = relation which = GER value = -50 }
+}
+action_b = {
+ai_chance = 40
+name = "EVT_669005_OPTIONB"
+command = { type = dissent value = 5 }
+command = { type = sleepminister which = 19043}
+command = { type = sleepminister which = 19045 }
+command = { type = headofstate which = 19042 }
+}
+}
+
+event = {
+id = 669006
+random = no
+country = BUL
+
+
+name = "EVT_669006_NAME"
+desc = "EVT_669006_DESC"
+style = 2
+picture = "minister_died"
+
+date = { day = 10 month = september year = 1948 }
+
+action_a = {
+name = "EVT_669006_OPTIONA"
+command = { type = dissent value = 1  }
+command = { type = money value = 20 } # less royal 'pensions'.
+}
+}

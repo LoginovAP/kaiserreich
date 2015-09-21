@@ -1,0 +1,590 @@
+
+event = {
+id = 750800
+random = no
+country = ARM
+style = 2
+
+trigger = {
+puppet = { country = ARM country = OTT }
+}
+
+name = "EVT_750800_NAME"
+desc = "EVT_750800_DESC"
+
+
+date = { day = 3 month = december year = 1936  }
+offset = 5
+deathdate = { day = 10 month = december year = 1936 }
+
+
+
+action_a = {
+ai_chance = 75
+name = "EVT_750800_OPTIONA"
+command = { type = event which = 750801 where = ARM when = 6  }
+  }
+
+action_b = {
+ai_chance = 25
+name = "EVT_750800_OPTIONB" 
+command = { type = relation which = OTT value = 20 }
+}
+}
+
+event = {
+id = 750801
+random = no
+country = ARM
+style = 2
+
+name = "EVT_750801_NAME"
+desc = "EVT_750801_DESC"
+
+action_a = {
+	name = "EVT_750801_OPTIONA"
+	command = { type = event which = 750802 where = OTT when = 1  }
+	command = { type = dissent value = -5 }
+	}
+}
+
+
+event = {
+id = 750802
+random = no
+country = OTT 
+style = 2
+
+name = "EVT_750802_NAME"
+desc = "EVT_750802_DESC"
+picture = "politics2"
+
+action_a = {
+ai_chance = 80
+name = "EVT_750802_OPTIONA"
+command = { type = relation which = ARM value = 50 }
+}
+
+action_b = {
+ai_chance = 20
+name = "EVT_750802_OPTIONB"
+command = { type = relation which = ARM value = -100 }
+command = { type = belligerence which = OTT value = 2  }
+command = { type = dissent value = -5 }
+command = { type = trigger which =  750803 }
+}
+}
+
+event = {
+id = 750803
+random = no
+country = ARM
+style = 2
+
+name = "EVT_750803_NAME"
+desc = "EVT_750803_DESC"
+picture = "ottoman3"
+
+action_a = {
+name = "EVT_750803_OPTIONA"
+command = { type = dissent value = 5 }
+command = { type = relation  which = OTT value = -100 }
+ }
+}
+
+### Armenian Nationalist Agitation
+event = {
+   id = 750810
+   random = no
+   country = ARM
+
+   trigger = {
+        atwar = no
+        puppet = { country = ARM country = OTT }
+   }
+
+   name = "EVT_750810_NAME"
+   desc = "EVT_750810_DESC"
+   style = 2
+
+   date = { day = 11 month = march year = 1937 }
+   offset = 90
+   deathdate = { day = 29 month = december year= 1947 }
+
+   action_a = {
+        name = "EVT_750810_OPTIONA"
+        command = { type = dissent value = 3 }
+   }
+}
+
+### Armenian government bans teaching of Armenian written history
+event = {
+id = 750811
+country = ARM
+random = no
+
+trigger = {
+event = 750810
+atwar = no
+puppet = { country = ARM country = OTT }
+}
+
+name = "EVT_750811_NAME"
+desc = "EVT_750811_DESC"
+style = 2
+
+date = { day = 26 month = july year = 1937 }
+offset = 90
+deathdate = { day = 29 month = december year = 1954 }
+
+action_a = {
+name = "EVT_750811_OPTIONA"
+command = { type = dissent value = 2 }
+}
+}
+
+### The Apostolic Church protests the new law
+event = {
+  id = 750812
+  random = no
+  country = ARM
+
+  trigger = {
+       event = 750811
+       atwar = no
+       puppet = { country = ARM country = OTT }
+  }
+
+  name = "EVT_750812_NAME"
+  desc = "EVT_750812_DESC"
+  style = 2
+
+  date = { day = 1 month = january year = 1936 }
+  offset = 30
+  deathdate = { day = 29 month = december year= 1947 }
+
+  action_a = {
+       name = "EVT_750812_OPTIONA"
+       ai_chance = 85
+       command = { type = dissent value = 2 }
+       command = { type = domestic which = freedom value = -1 }
+  }
+  action_b = {
+       name = "EVT_750812_OPTIONB"
+       ai_chance = 15
+       command = { type = event which = 750819 where = OTT when = 2  }
+       command = { type = domestic which = freedom value = 1 }
+       command = { type = dissent value = -2 }  
+       command = { type = sleepevent which = 750813 }
+  }
+}
+
+### Agitators burn Turkish books
+event = {
+  id = 750813
+  random = no
+  country = ARM
+
+  trigger = {
+       event = 750812
+       puppet = { country = ARM country = OTT }
+  }
+
+  name = "EVT_750813_NAME"
+  desc = "EVT_750813_DESC"
+  style = 2
+
+  date = { day = 10 month = october year = 1937 }
+  offset = 15
+  deathdate = { day = 29 month = december year= 1947 }
+
+  action_a = {
+       name = "EVT_750813_OPTIONA"
+       ai_chance = 80
+       command = { type = dissent value = 10 }
+       command = { type = event which = 750814 where = ARM when = 3  }
+  }
+
+  action_b = {
+       name = "EVT_750813_OPTIONB"
+       ai_chance = 20
+       command = { type = dissent value = 5 }
+       command = { type = event which = 750818 where = ARM when = 3  }
+  }
+
+  action_c = {
+       name = "EVT_750813_OPTIONC"
+       ai_chance = 20
+       command = { type = dissent value = -5 }
+       command = { type = event which = 750819 where = OTT when = 2  }
+  }
+}
+
+### Panic in Armenia
+event = {
+  id = 750814
+  random = no
+  country = ARM
+
+  name = "EVT_750814_NAME"
+  desc = "EVT_750814_DESC"
+  style = 2
+  picture = "news_paper"
+
+  action_a = {
+       name = "EVT_750814_OPTIONA"
+       ai_chance = 80
+       command = { type = trigger which = 750816 }
+       command = { type = dissent value = 5 }
+  }
+
+  action_b = {
+       name = "EVT_750814_OPTIONB"
+       ai_chance = 20
+       command = { type = event which = 750815 where = ARM when = 1  }
+  }
+}
+
+### Nationalist Armenian Government
+event = {
+  id = 750815
+  random = no
+  country = ARM
+  
+  name = "EVT_750815_NAME"
+  desc = "EVT_750815_DESC"
+  style = 2
+  picture = "news_paper"
+
+  action_a = {
+       name = "EVT_750815_OPTIONA"
+       command = { type = end_puppet }
+       command = { type = leave_alliance when = 1 } 
+       command = { type = set_domestic which = democratic value = 2 }
+       command = { type = set_domestic which = political_left value = 1 }
+       command = { type = headofstate which = 515001 }
+       command = { type = headofgovernment which = 515002 }
+       command = { type = set_domestic which = free_market value = 5 }
+       command = { type = set_domestic which = freedom value = 7 }
+       command = { type = set_domestic which = professional_army value = 9 }
+       command = { type = set_domestic which = defense_lobby value = 1 }
+       command = { type = set_domestic which = interventionism value = 7 }  
+       command = { type = add_division which = "Narodnoe opolchenie" value = militia when = 4 }
+       command = { type = add_division which = "Narodnoe opolchenie" value = militia when = 4 }
+       command = { type = construct which = land_fort where = 711 value = 1 } #Yerevan
+       command = { type = event which = 750822 where = OTT when = 1  }
+       command = { type = addcore   which = 386   }
+       command = { type = addcore   which = 1063   }
+       command = { type = addcore   which = 1067   }
+       command = { type = dissent value = -20 }
+   }
+}
+
+### Armenia asks for help 
+event = {
+  id = 750816
+  random = no
+  country = OTT
+  # triggered by 750814
+
+  name = "EVT_750816_NAME"
+  desc = "EVT_750816_DESC"
+  style = 2
+
+  action_a = {
+       name = "EVT_750816_OPTIONA"
+       ai_chance = 25
+       command = { type = relation which = RUS value = -50 }
+       command = { type = supplies value = -100 }
+       command = { type = manpowerpool value = -10 }
+       command = { type = event which = 750817 where = ARM when = 2  }
+  }
+
+  action_b = {
+       name = "EVT_750816_OPTIONB"
+       ai_chance = 75
+       command = { type = dissent value = 1 }
+       command = { type = event which = 750815 where = ARM when = 1  }
+  }
+}
+
+
+### Ottoman troops enter Armenia
+event = {
+  id = 750817
+  random = no
+  country = ARM
+  picture = "news_paper"
+
+  name = "EVT_750817_NAME"
+  desc = "EVT_750817_DESC"
+  style = 2
+
+  action_a = {
+       name = "EVT_750817_OPTIONA"
+	   command = { type = dissent value = 8 }
+           command = { type = relation which = OTT value = 50 }
+       }
+}
+
+### Agitators arrested
+event = {
+	id = 750818
+	random = no
+	country = ARM
+	style = 2
+        picture = "news_paper"
+	
+	name = "EVT_750818_NAME"
+	desc = "EVT_750818_DESC"
+	
+	action_a = {
+		name = "EVT_750818_OPTIONA"
+		command = { type = dissent value = 8 }
+                command = { type = relation which = OTT value = 50 }
+	}
+}
+
+### Ottomans responds to the refusal to arrest the agitators
+event = {
+  id = 750819
+  random = no
+  country = OTT
+
+  name = "EVT_750819_NAME"
+  desc = "EVT_750819_DESC"
+  style = 2
+  picture = "news_paper"
+  
+
+action_a = {
+       name = "EVT_750819_OPTIONA"
+       ai_chance = 35
+       command = { type = trigger which = 750820 }
+       command = { type = relation which = ARM value = -20 }
+  }
+
+  action_b = {
+       name = "EVT_750819_OPTIONB"
+       ai_chance = 65
+       command = { type = trigger which = 750821 }
+       command = { type = relation which = ARM value = -90 }
+  }
+}
+
+### Armenia responds to the Ottoman protest
+event = {
+  id = 750820
+  random = no
+  country = ARM
+  # triggered by #Ott event about turks respond
+
+  name = "EVT_750820_NAME"
+  desc = "EVT_750820_DESC"
+  style = 2
+  
+  action_a = {
+       name = "EVT_750820_OPTIONA"
+       ai_chance = 25
+       command = { type = event which = 750823 where = OTT when = 1  }
+       command = { type = relation which = OTT value = -50 }
+       command = { type = dissent value = -1 }
+  }
+
+  action_b = {
+       name = "EVT_750820_OPTIONB"
+       ai_chance = 75
+       command = { type = event which = 750814 where = ARM when = 3  }
+       command = { type = relation which = OTT value = 50 }
+       command = { type = dissent value = 10 }
+  }
+}
+
+### Armenia responds to the Ottoman threat
+event = {
+	id = 750821
+	random = no
+	country = ARM
+	# triggered by # OTt responds to Armenian refusal
+	
+	name = "EVT_750821_NAME"
+	desc = "EVT_750821_DESC"
+	style = 2
+	
+	action_a = {
+		name = "EVT_750821_OPTIONA"
+		ai_chance = 95
+		command = { type = event which = 750814 where = ARM when = 3  }
+                command = { type = dissent value = 10 }
+	}
+
+	action_b = {
+		name = "EVT_750821_OPTIONB"
+		ai_chance = 5
+                command = { type = leave_alliance when = 1 } 
+		command = { type = end_puppet }
+                command = { type = headofstate which = 515001 }
+                command = { type = headofgovernment which = 515002 }
+		command = { type = dissent value = -10 }
+		command = { type = manpowerpool value = 20 }		
+		command = { type = add_division which = "Narodnoe opolchenie" value = militia when = 4 }
+                command = { type = add_division which = "Narodnoe opolchenie" value = militia when = 4 }
+		command = { type = construct which = land_fort where = 711 value = 1 } #Yerevan
+                command = { type = event which = 750822 where = OTT when = 1  }
+                command = { type = addcore   which = 386   }
+                command = { type = addcore   which = 1063   }
+                command = { type = addcore   which = 1067   }
+	}
+}
+
+
+event = {
+ id = 750822
+ random = no
+ country = OTT
+
+ name = "EVT_750822_NAME"
+ desc = "EVT_750822_DESC"
+ style = 2
+ picture = "armenialib"
+
+ action_a = {
+ name = "EVT_750822_OPTIONA"
+ ai_chance = 10
+ command = { type = end_mastery which = ARM }
+ command = { type = secedeprovince which = ARM value = 386 }
+ command = { type = dissent value = 2 }
+ }
+
+ action_b = {
+ name = "EVT_750822_OPTIONB"
+ ai_chance = 90
+ command = { type = secedeprovince which = ARM value = 386 }
+ command = { type = end_mastery which = ARM }
+ command = { type = war which = ARM }
+ }
+ }
+
+
+### Ottomans responds to the refusal to address Ottoman complaints
+event = {
+  id = 750823
+  random = no
+  country = OTT
+
+  name = "EVT_750823_NAME"
+  desc = "EVT_750823_DESC"
+  style = 2
+  picture = "news_paper"
+  
+
+action_a = {
+       name = "EVT_750823_OPTIONA"
+       ai_chance = 35
+       command = { type = relation which = ARM value = 10 }
+  }
+
+  action_b = {
+       name = "EVT_750823_OPTIONB"
+       ai_chance = 65
+       command = { type = trigger which = 750821 }
+       command = { type = relation which = ARM value = -90 }
+  }
+}
+
+
+event = {
+id = 750826
+picture = "POWs"
+tag = { OTT TUR }
+style = 2
+
+
+trigger = { 
+	control = { province = 711 data = -1 }
+		NOT = {
+		exists = ARM
+		war = { country = -1 country = GEO } 
+                war = { country = -1 country = AZB }
+                war = { country = -1 country = TRA }
+                war = { country = -1 country = PER }
+                war = { country = -1 country = KUR }
+                war = { country = -1 country = SYR }
+                war = { country = -1 country = RUS } 
+                war = { country = -1 country = SOV }      
+	}
+}
+
+name = "EVT_750826_NAME"
+desc = "EVT_750826_DESC"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 15
+	deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+ai_chance = 15
+name = "EVT_750826_OPTIONA"
+        command = { type = addcore   which = 386   }
+        command = { type = addcore   which = 1067  }
+        command = { type = addcore   which = 1063  }
+	command = { type = independence which = ARM value = 1 when = 0 }
+        command = { type = make_puppet which = ARM  }
+	command = { type = supplies value = 200 }
+	command = { type = dissent value = 1 }
+        command = { type = trigger which = 750827 }
+	}
+
+action_b = {
+ai_chance = 75
+name = "EVT_750826_OPTIONB"
+	command = { type = addclaim   which = 711   }
+        command = { type = addclaim   which = 714   }
+        command = { type = addclaim   which = 712   }
+        command = { type = addcore   which = 386   }
+        command = { type = addcore   which = 1067  }
+        command = { type = addcore   which = 1063  }
+        command = { type = domestic which = interventionism value = 1 }
+	command = { type = supplies value = 200 }
+	command = { type = dissent value = 5 }
+	}
+
+action_c = {
+ai_chance = 0
+name = "EVT_750826_OPTIONC"
+        command = { type = addcore   which = 386   }
+        command = { type = addcore   which = 1067  }
+        command = { type = addcore   which = 1063  }
+	command = { type = supplies value = 200 }
+	command = { type = dissent value = 1 }
+	}
+}
+
+
+
+event = {
+	id = 750827
+	country = ARM
+	style = 2
+	picture = "militaryparade1"
+        persistent = yes
+
+	name = "EVT_750827_NAME"
+	desc = "EVT_750827_DESC"
+
+	action_a = {
+		name = "EVT_750827_OPTIONA"
+                command = { type = ai which = "kaiserreich/Armenia.ai" }
+                command = { trigger = { NOT = { government = { type = communist country = OTT } government = { type = communist country = TUR } } } type = set_domestic which = democratic value = 3 }
+		command = { trigger = { NOT = { government = { type = communist country = OTT } government = { type = communist country = TUR } } } type = set_domestic which = political_left value = 3  }
+                command = { trigger = { NOT = { government = { type = communist country = OTT } government = { type = communist country = TUR } } } type = headofstate which = 515034 } 
+                command = { trigger = { NOT = { government = { type = communist country = OTT } government = { type = communist country = TUR } } } type = headofgovernment which = 515035 } 
+		command = { type = removecore which = 712 }
+                command = { type = removecore which = 386 }
+                command = { type = removecore which = 1067 }
+                command = { type = removecore which = 1063 }
+                command = { type = add_division value = cavalry when = 8 }
+		command = { type = add_division value = infantry when = 9 }
+                command = { type = dissent value = 8 }
+	}
+}

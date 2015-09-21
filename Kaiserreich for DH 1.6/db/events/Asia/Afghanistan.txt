@@ -1,0 +1,490 @@
+################################################################################?#
+#Afghanistan Post Loss of Peshawar/Quetta
+################################################################################?#
+event = {
+id = 777001
+country = AFG
+style = 2
+picture = "afghanwar"
+
+name = "EVT_777001_NAME"
+desc = "EVT_777001_DESC"
+
+action_a = {
+ai_chance = 30
+name = "EVT_777001_OPTIONA" #Amanullah Joffrey Baratheon!
+command = { type = switch_allegiance which = 10000 value = 4 where = REB } #Herat Army defects
+command = { type = revolt which = 2170 }
+command = { type = revolt which = 2171 }
+command = { type = revolt which = 2172 }
+command = { type = dissent value = 50 }
+command = { type = setflag which = AFG_Chaos }
+}
+
+action_b = {
+ai_chance = 35
+name = "EVT_777001_OPTIONB"
+command = { type = set_domestic which = democratic value = 1 }
+command = { type = set_domestic which = political_left value = 2 }
+command = { type = headofstate which = 54084 }
+command = { type = headofgovernment which = 54085 }
+command = { type = revolt which = -1 }
+command = { type = revolt which = -1 }
+command = { type = revolt which = -1 }
+command = { type = flag_ext where = AFG which = "_isl" }
+command = { type = dissent value = 20 }
+}
+
+action_c = {
+ai_chance = 35
+name = "EVT_777001_OPTIONC" #Status of reform in Afghanistan events to follow. 
+command = { type = headofstate which = 54083 }
+command = { type = headofgovernment which = 54086 }
+command = { type = flag_ext where = AFG which = "_nad" }
+command = { type = dissent value = 20 }
+command = { type = revolt which = -1 }
+command = { type = revolt which = -1 }
+command = { type = revolt which = -1 }
+}
+}
+################################################################################?#
+#Habibullah Kalakani approaches Turkestan
+################################################################################?# 
+event = {
+	id = 777002
+	random = no
+	country = AFG
+	style = 2
+	
+trigger = {
+                headofgovernment = 54085
+                headofstate = 54084
+		owned = { province = 2170 data = AFG }
+		control = { province = 2170 data = AFG }
+		owned = { province = 2172 data = AFG }
+		control = { province = 2172 data = AFG }
+                exists = KYG 
+		NOT = { 
+		dissent = 10
+                war = { country = PAK country = AFG }
+                war = { country = PRK country = AFG }
+                war = { country = IND country = AFG }
+                war = { country = KYG country = AFG }
+		}
+	}
+
+
+	name = "EVT_777002_NAME"
+	desc = "EVT_777002_DESC"
+        picture = "KYG_BUKHARA"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 100
+	deathdate = { day = 29 month = december year = 1960 }
+
+
+        action = {
+	        ai_chance =  70
+	        name = "EVT_777002_OPTIONA"
+                command = { type = event which = 777003 where = KYG when = 7 }
+                command = { type = domestic which = interventionism value = 2 }
+                command = { type = relation which = KYG value = 100 }
+		command = { type = dissent value = -1  }
+		}
+
+        action = {
+	        ai_chance =  30
+	        name = "EVT_777002_OPTIONB"
+                command = { type = domestic which = interventionism value = -1 }
+		command = { type = dissent value = 2  } 
+		}
+	  
+}
+
+event = {
+              id = 777003
+              country = KYG
+              style = 2
+              picture = "afghanwar"
+
+              
+              name = "EVT_777003_NAME"
+              desc = "EVT_777003_DESC"
+
+              action_a = {
+                  ai_chance = 70
+                  name = "EVT_777003_OPTIONA"
+				  command = { type = alliance which = AFG }
+                  command = { type = event which = 777004 where = AFG when = 4 }
+                  command = { type = domestic which = interventionism value = 2 }
+                  command = { type = domestic which = defense_lobby value = 1 }
+                  command = { type = relation which = AFG value = 100 }
+                  command = { type = sleepevent which = 750510 }
+                  }
+
+              action_b = {
+                  ai_chance = 30
+                  name = "EVT_777003_OPTIONB"
+                  command = { type = domestic which = defense_lobby value = -1 }
+                  command = { type = relation which = AFG value = -100 }
+                  }
+
+
+ }
+
+event = {
+              id = 777004
+              country = AFG
+              style = 2
+              picture = "KYG_BUKHARA"
+
+              
+              name = "EVT_777004_NAME"
+              desc = "EVT_777004_DESC"
+
+              action_a = {
+                  ai_chance = 100
+                  name = "EVT_777004_OPTIONA"
+                  command = { type = relation which = KYG value = 200 }
+		  command = { type = addclaim which = 1529 }
+		  command = { type = addclaim which = 1537 }
+		  command = { type = removeclaim which = 1104 }
+		  command = { type = removeclaim which = 1098 }
+                  }
+
+
+ }
+################################################################################?#
+#Indian conquest of Afghanistan
+################################################################################?#
+
+event = {
+	id = 777500
+	tag = { IND PAK PRK }
+        persistent = yes
+        style = 2
+
+
+	trigger = { 
+		control = { province = 2171 data = -1 } #Kabul
+
+		NOT = {
+		war = { country = -1 country = PER } 
+        war = { country = -1 country = TRK }
+        war = { country = -1 country = TIB }  
+			exists = AFG
+		}
+	}
+
+	name = "EVT_777500_NAME"
+	desc = "EVT_777500_DESC"
+	picture = "afghanwar"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 5
+	deathdate = { day = 1 month = december year = 1963 }
+
+	action = {
+		trigger = { government = communist }
+		ai_chance = 99
+		name = "EVT_777500_OPTIONA"
+		command = { type = addcore which = 1529 }
+		command = { type = addcore which = 1537 }
+		command = { type = independence which = AFG value = 1 when = 0 }
+                command = { type = make_puppet which = AFG }
+                command = { type = trigger which = 777501 }
+		command = { type = supplies value = 1000 }
+                command = { type = alliance which = AFG }
+		command = { type = dissent value = -5 }
+	}
+	action = {
+		trigger = { country = IND }
+		ai_chance = 60
+		name = "EVT_777500_OPTIONB"
+		command = { type = addcore which = 1529 }
+		command = { type = addcore which = 1537 }
+		command = { type = independence which = AFG value = 1 when = 0 }
+                command = { type = make_puppet which = AFG }
+		command = { type = supplies value = 1000 }
+		command = { type = dissent value = -5 }
+                command = { type = alliance which = AFG }
+		command = { type = trigger which = 777502 }
+	}
+	action = {
+		trigger = { country = IND }
+		ai_chance = 39
+		name = "EVT_777500_OPTIONC"
+		command = { type = addcore which = 1529 }
+		command = { type = addcore which = 1537 }
+		command = { type = independence which = AFG value = 1 when = 0 }
+                command = { type = make_puppet which = AFG }
+		command = { type = supplies value = 1000 }
+		command = { type = dissent value = -5 }
+                command = { type = alliance which = AFG }
+		command = { type = trigger which = 777503 }
+	}
+
+	action = {
+		trigger = { country = PAK }
+		ai_chance = 10
+		name = "EVT_777500_OPTIOND"
+		command = { type = addcore which = 1529 }
+		command = { type = addcore which = 1537 }
+                command = { type = waketeam which = 12525 }
+		command = { type = independence which = AFG value = 1 when = 0 }
+                command = { type = make_puppet which = AFG }
+		command = { type = supplies value = 1000 }
+		command = { type = dissent value = 5 }
+                command = { type = alliance which = AFG }
+		command = { type = trigger which = 777502 }
+	}
+
+	action = {
+		trigger = { country = PAK }
+		ai_chance = 60
+		name = "EVT_777500_OPTIONE"
+		command = { type = addcore which = 1529 }
+		command = { type = addcore which = 1537 }
+                command = { type = waketeam which = 12525 }
+		command = { type = independence which = AFG value = 1 when = 0 }
+                command = { type = make_puppet which = AFG }
+		command = { type = supplies value = 1000 }
+		command = { type = dissent value = -2 }
+                command = { type = alliance which = AFG }
+		command = { type = trigger which = 777503 }
+	}
+
+	action = {
+		trigger = { country = PAK }
+		ai_chance = 30
+		name = "EVT_777500_OPTIONF"
+		command = { type = addcore which = 1529 }
+		command = { type = addcore which = 1537 }
+                command = { type = waketeam which = 12525 }
+		command = { type = independence which = AFG value = 1 when = 0 }
+                command = { type = make_puppet which = AFG }
+		command = { type = supplies value = 1000 }
+		command = { type = dissent value = -2 }
+                command = { type = alliance which = AFG }
+		command = { type = trigger which = 777504 }
+	}
+
+	action = {
+		name = "EVT_777500_OPTIONG"
+		ai_chance = 1
+		command = { type = supplies value = 1000 }
+		command = { type = dissent value = -5 } 
+	}	
+}
+
+event = {
+id = 777501
+country = AFG
+persistent = yes
+style = 2
+picture = "afghanwar"
+
+name = "EVT_777501_NAME"
+desc = "EVT_777501_DESC"
+
+action_a = {
+ai_chance = 100
+name = "EVT_777501_OPTIONA"
+command = { type = add_corps which = "Afghan People's Army" value = land where = 2171 }
+command = { type = add_division which = "Kabul Military District" value = infantry when = 4 }
+command = { type = add_division which = "Herat Police Battalion" value = militia when = 4 }
+command = { type = add_division which = "Kandahar Police Battalion" value = militia when = 4 }
+command = { type = relation which = PRK value = 200 }
+command = { type = relation which = FRA value = 200 }
+command = { type = relation which = ENG value = 200 }
+command = { type = relation which = RSI value = 200 }
+command = { type = relation which = GEO value = 200 }
+command = { type = relation which = CSA value = 200 }
+command = { type = flag_ext where = AFG which = "_syn" }
+command = { type = dissent value = 10 }
+}
+}
+
+event = {
+id = 777502
+persistent = yes
+country = AFG
+style = 2
+picture = "afghanwar"
+
+name = "EVT_777502_NAME"
+desc = "EVT_777502_DESC"
+
+action_a = {
+ai_chance = 100
+name = "EVT_777502_OPTIONA"
+command = { type = headofstate which = 54081 }
+command = { type = add_corps which = "Afghan National Army" value = land where = 2171 }
+command = { type = add_division which = "Kabul Military District" value = infantry when = 4 }
+command = { type = add_division which = "Herat Police Battalion" value = militia when = 4 }
+command = { type = add_division which = "Kandahar Police Battalion" value = militia when = 4 }
+command = { type = relation which = GUY value = 200 }
+command = { type = relation which = LIB value = 200 }
+command = { type = relation which = VIC value = 200 }
+command = { type = relation which = AST value = 200 }
+command = { type = relation which = CAN value = 200 }
+command = { type = relation which = PAK value = 200 }
+command = { type = dissent value = 10 }
+}
+}
+
+event = {
+id = 777503
+persistent = yes
+country = AFG
+style = 2
+picture = "afghanwar"
+
+name = "EVT_777503_NAME"
+desc = "EVT_777503_DESC"
+
+action_a = {
+ai_chance = 100
+name = "EVT_777503_OPTIONA"
+command = { type = headofstate which = 54011 }
+command = { type = add_corps which = "Afghan National Army" value = land where = 2171 }
+command = { type = add_division which = "Kabul Military District" value = infantry when = 4 }
+command = { type = add_division which = "Herat Police Battalion" value = militia when = 4 }
+command = { type = add_division which = "Kandahar Police Battalion" value = militia when = 4 }
+command = { type = relation which = GUY value = 200 }
+command = { type = relation which = LIB value = 200 }
+command = { type = relation which = VIC value = 200 }
+command = { type = relation which = AST value = 200 }
+command = { type = relation which = CAN value = 200 }
+command = { type = relation which = PAK value = 200 }
+command = { type = dissent value = 10 }
+}
+}
+
+event = {
+id = 777504
+persistent = yes
+country = AFG
+style = 2
+picture = "afghanwar"
+
+name = "EVT_777504_NAME"
+desc = "EVT_777504_DESC"
+
+action_a = {
+ai_chance = 100
+name = "EVT_777504_OPTIONA"
+command = { type = headofstate which = 54083 }
+command = { type = headofgovernment which = 54086 }
+command = { type = add_corps which = "Afghan National Army" value = land where = 2171 }
+command = { type = add_division which = "Kabul Military District" value = infantry when = 4 }
+command = { type = add_division which = "Herat Police Battalion" value = militia when = 4 }
+command = { type = add_division which = "Kandahar Police Battalion" value = militia when = 4 }
+command = { type = relation which = GUY value = 200 }
+command = { type = relation which = LIB value = 200 }
+command = { type = relation which = VIC value = 200 }
+command = { type = relation which = AST value = 200 }
+command = { type = relation which = CAN value = 200 }
+command = { type = relation which = PAK value = 200 }
+command = { type = flag_ext where = AFG which = "_nad" }
+command = { type = dissent value = 10 }
+}
+}
+################################################################################?#
+#Chaos in Afghanistan!
+################################################################################?# 
+event = {
+	id = 777505
+	random = no
+	country = AFG
+	style = 2
+	
+trigger = {
+        headofstate = 54081
+		flag = AFG_Chaos
+		OR = {
+		control = { province = 2171 data = REB }
+		control = { province = 2172 data = REB }
+		}
+		OR = {
+		control = { province = 2171 data = REB }
+		control = { province = 2169 data = REB }
+		}		
+		NOT = { 
+                war = { country = PAK country = AFG }
+                war = { country = PRK country = AFG }
+                war = { country = IND country = AFG }
+                war = { country = KYG country = AFG }
+		}
+	}
+
+
+	name = "EVT_777505_NAME"
+	desc = "EVT_777505_DESC"
+        picture = "afghanwar"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 50
+	deathdate = { day = 29 month = december year = 1960 }
+
+	
+        action = {
+	        ai_chance =  50
+                name = "EVT_777505_OPTIONA"
+                command = { type = set_domestic which = democratic value = 1 }
+                command = { type = set_domestic which = political_left value = 2 }
+                command = { type = headofstate which = 54084 }
+                command = { type = headofgovernment which = 54085 }
+                command = { type = flag_ext where = AFG which = "_isl" }
+			    command = { type = add_division value = militia when = 4 }
+                command = { type = add_division value = militia when = 4 }				
+                command = { type = clrflag which = AFG_Chaos }
+		        command = { type = dissent value = -10  }
+				command = { type = trigger which = 777506 }
+		}
+
+        action = {
+	        ai_chance =  50
+                name = "EVT_777505_OPTIONB"
+                command = { type = headofstate which = 54083 }
+                command = { type = headofgovernment which = 54086 }
+                command = { type = flag_ext where = AFG which = "_nad" }
+                command = { type = domestic which = interventionism value = -1 }
+			    command = { type = add_division value = militia when = 4 }
+                command = { type = add_division value = militia when = 4 }	
+		        command = { type = clrflag which = AFG_Chaos }
+				command = { type = dissent value = -15  } 
+				command = { type = trigger which = 777506 }
+		}
+	  
+}
+
+event = {
+id = 777506
+country = REB
+style = 2
+picture = "afghanwar"
+
+name = "EVT_777506_NAME"
+desc = "EVT_777506_DESC"
+
+action_a = {
+ai_chance = 100
+name = "EVT_777506_OPTIONA"
+				command = { type = control which = AFG value = 2168 }
+				command = { type = control which = AFG value = 2169 }
+				command = { type = control which = AFG value = 2170 }
+				command = { type = control which = AFG value = 2171 }
+				command = { type = control which = AFG value = 2172 }
+				command = { type = control which = AFG value = 2173 }
+    command = { type = remove_division which = -1 value = -1	}
+	command = { type = remove_division which = -1 value = -1	}
+	command = { type = remove_division which = -1 value = -1	}
+	command = { type = remove_division which = -1 value = -1	}
+	command = { type = remove_division which = -1 value = -1	}
+	command = { type = remove_division which = -1 value = -1	}
+	command = { type = remove_division which = -1 value = -1	}
+	command = { type = remove_division which = -1 value = -1	}
+	command = { type = remove_division which = -1 value = -1	}				
+}
+}

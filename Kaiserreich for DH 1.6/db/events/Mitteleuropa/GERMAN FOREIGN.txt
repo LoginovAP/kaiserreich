@@ -1,0 +1,2019 @@
+
+
+##################################
+###### FOREIGN EVENTS
+##################################
+
+###### British Landing in Denmark
+
+event = {
+	id = 900830
+
+	country = GER
+	style = 2
+	picture = "alsaceorwar"
+
+	trigger = {
+		war = { country = ENG country = DEN }
+		NOT = {   war = { country = ENG country = GER } }
+		NOT = {   war = { country = GER country = DEN } }
+                NOT = {   war = { country = GER country = FRA } }
+		NOT = { alliance = { country = DEN country = FRA } }
+		NOT = { alliance = { country = DEN country = CAN } }
+		NOT = { alliance = { country = DEN country = RUS } }
+                control = { province = 145 data = GER } 
+                control = { province = 163 data = GER } 
+                control = { province = 184 data = GER } 
+		NOT = {
+		ispuppet = DEN
+		ispuppet = ENG
+		ispuppet = GER
+		}
+	}
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 3
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "EVT_900830_NAME"
+	desc = "EVT_900830_DESC"
+	
+	action_a = {
+		ai_chance = 80
+		name = "EVT_900830_OPTIONA"
+		command = { type = belligerence which = GER value = 1 }
+		command = { type = relation which = DEN value = 50 }
+		command = { type = relation which = ENG value = -50 }
+		command = { type = dissent value = -3 }
+		command = { type = trigger which = 555804 }
+		command = { type = trigger which = 555803 }
+	}
+	action_b = {
+		ai_chance = 20
+		name = "EVT_900830_OPTIONB"
+		command = { type = belligerence which = GER value = -3 }
+		command = { type = relation which = DEN value = -50 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = dissent value = 3 }
+	}
+}
+
+event = {
+	id = 555803
+	country = ENG
+	style = 2
+	picture = "Wehrmacht"
+
+	name = "EVT_555803_NAME"
+	desc = "EVT_555803_DESC"
+
+	action_a = {
+		ai_chance = 80
+		name = "EVT_555803_OPTIONA"
+		command = { type = belligerence which = ENG value = -3 }
+		command = { type = relation which = DEN value = 50 }
+		command = { type = relation which = GER value = 50 }
+		command = { type = peace which = DEN value = 0 }
+		command = { type = dissent value = 3 }
+		command = { type = trigger which = 555805 }
+		command = { type = trigger which = 555807 }
+	}
+	action_b = {
+		ai_chance = 20
+		name = "EVT_555803_OPTIONB"
+		command = { type = belligerence which = ENG value = 3 }
+		command = { type = relation which = DEN value = -50 }
+		command = { type = relation which = ENG value = -50 }
+		command = { type = dissent value = -3 }
+		command = { type = trigger which = 555806 }
+	}
+}
+
+event = {
+	id = 555804
+	country = DEN
+	style = 2
+	picture = "Wehrmacht"
+
+	name = "EVT_555804_NAME"
+	desc = "EVT_555804_DESC"
+
+	action_a = {
+		name = "EVT_555804_OPTIONA"
+		command = { type = relation which = GER value = 50 }
+		command = { type = dissent value = -3 }
+	}
+}
+
+event = {
+	id = 555805
+	country = GER
+	style = 2
+	picture = "Wehrmacht"
+
+	name = "EVT_555805_NAME"
+	desc = "EVT_555805_DESC"
+
+	action_a = {
+		name = "EVT_555805_OPTIONA"
+		command = { type = relation which = DEN value = 25 }
+		command = { type = dissent value = -5 }
+	}
+}
+
+event = {
+	id = 555806
+	country = GER
+	style = 2
+	picture = "alsaceorwar"
+
+	name = "EVT_555806_NAME"
+	desc = "EVT_555806_DESC"
+
+	action_a = {
+		ai_chance = 99
+		name = "EVT_555806_OPTIONA"
+		command = { type = war which = ENG }
+		command = { type = alliance which = DEN }
+	}
+	action_b = {
+		ai_chance = 1
+		name = "EVT_555806_OPTIONB"
+		command = { type = dissent value = 3 }
+	}
+}
+
+event = {
+	id = 555807
+	country = DEN
+	style = 2
+	picture = "Wehrmacht"
+
+	name = "EVT_555807_NAME"
+	desc = "EVT_555807_DESC"
+
+	action_a = {
+		name = "EVT_555807_OPTIONA"
+		command = { type = dissent value = -10 }
+		command = { type = relation which = GER value = 200 }
+	}
+}
+
+#### Italian Federation
+event = {
+	id = 900815
+
+	country = GER
+	style = 2
+	picture = "alsaceorwar"
+
+	trigger = {
+		war = { country = FRA country = ITA }
+		NOT = {   war = { country = FRA country = GER } }
+		NOT = {   war = { country = GER country = ITA } }
+		NOT = { alliance = { country = ITA country = AUS } }
+		NOT = { alliance = { country = ITA country = CAN } }
+                control = { province = 145 data = GER } 
+                control = { province = 163 data = GER } 
+                control = { province = 184 data = GER } 
+		NOT = {
+		ispuppet = ITA
+		ispuppet = FRA
+		ispuppet = GER
+		}
+	}
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 3
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "EVT_900815_NAME"
+	desc = "EVT_900815_DESC"
+	
+	action_a = {
+		ai_chance = 80
+		name = "EVT_900815_OPTIONA"
+		command = { type = belligerence which = GER value = 1 }
+		command = { type = relation which = ITA value = 50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = dissent value = -3 }
+		command = { type = trigger which = 900817 }
+		command = { type = trigger which = 900816 }
+	}
+	action_b = {
+		ai_chance = 20
+		name = "EVT_900815_OPTIONB"
+		command = { type = belligerence which = GER value = -3 }
+		command = { type = relation which = ITA value = -50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = dissent value = 3 }
+	}
+}
+
+event = {
+	id = 900816
+	country = FRA
+	style = 2
+	picture = "Wehrmacht"
+
+
+	name = "EVT_900816_NAME"
+	desc = "EVT_900816_DESC"
+
+	action_a = {
+		ai_chance = 70
+		name = "EVT_900816_OPTIONA"
+		command = { type = belligerence which = FRA value = -3 }
+		command = { type = relation which = ITA value = 50 }
+		command = { type = relation which = GER value = 50 }
+		command = { type = peace which = ITA value = 0 }
+                command = { type = peace which = AUS value = 0 }
+                command = { type = peace which = U24 value = 0 }
+                command = { type = peace which = U25 value = 0 }
+		command = { type = dissent value = 3 }
+		command = { type = trigger which = 900818 }
+		command = { type = trigger which = 900829 }
+	}
+	action_b = {
+		ai_chance = 30
+		name = "EVT_900816_OPTIONB"
+		command = { type = belligerence which = ENG value = 3 }
+		command = { type = relation which = ITA value = -50 }
+		command = { type = relation which = GER value = -100 }
+		command = { type = dissent value = -3 }
+		command = { type = trigger which = 900819 }
+	}
+}
+
+event = {
+	id = 900817
+	country = ITA
+	style = 2
+	picture = "Wehrmacht"
+
+
+	name = "EVT_900817_NAME"
+	desc = "EVT_900817_DESC"
+
+	action_a = {
+		name = "EVT_900817_OPTIONA"
+		command = { type = relation which = GER value = 50 }
+		command = { type = dissent value = -3 }
+	}
+}
+
+event = {
+	id = 900818
+	country = ITA
+	style = 2
+	picture = "Wehrmacht"
+
+	name = "EVT_900818_NAME"
+	desc = "EVT_900818_DESC"
+
+	action_a = {
+	name = "EVT_900818_OPTIONA"
+	command = { type = dissent value = -10 }
+	}
+}
+
+event = {
+	id = 900819
+	country = GER
+	style = 2
+	picture = "alsaceorwar"
+
+	name = "EVT_900819_NAME"
+	desc = "EVT_900819_DESC"
+
+	action_a = {
+		ai_chance = 99
+		name = "EVT_900819_OPTIONA"
+		command = { type = war which = FRA }
+		command = { type = alliance which = ITA }
+	}
+	action_b = {
+		ai_chance = 1
+		name = "EVT_900819_OPTIONB"
+		command = { type = dissent value = 3 }
+	}
+}
+
+#### Kingdom of Spain
+event = {
+	id = 900824
+	country = GER
+	style = 2
+	picture = "alsaceorwar"
+
+	trigger = {
+		war = { country = FRA country = SPA }
+		NOT = {   war = { country = FRA country = GER } }
+		NOT = {   war = { country = GER country = SPA } }
+		NOT = { alliance = { country = SPA country = AUS } }
+		NOT = { alliance = { country = SPA country = CAN } }
+                control = { province = 145 data = GER } 
+                control = { province = 163 data = GER } 
+                control = { province = 184 data = GER } 
+		NOT = {
+		ispuppet = SPA
+		ispuppet = FRA
+		ispuppet = GER
+		}
+	}
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 3
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "EVT_900824_NAME"
+	desc = "EVT_900824_DESC"
+	
+	action_a = {
+		ai_chance = 80
+		name = "EVT_900824_OPTIONA"
+		command = { type = belligerence which = GER value = 1 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = FRA value = -50 }
+		command = { type = dissent value = -3 }
+		command = { type = trigger which = 900826 }
+		command = { type = trigger which = 900825 }
+	}
+	action_b = {
+		ai_chance = 20
+		name = "EVT_900824_OPTIONB"
+		command = { type = belligerence which = GER value = -3 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = dissent value = 3 }
+	}
+}
+
+event = {
+	id = 900825
+	country = FRA
+	style = 2
+	picture = "Wehrmacht"
+
+	name = "EVT_900825_NAME"
+	desc = "EVT_900825_DESC"
+
+	action_a = {
+		ai_chance = 70
+		name = "EVT_900825_OPTIONA"
+		command = { type = belligerence which = FRA value = -3 }
+		command = { type = relation which = SPA value = 50 }
+		command = { type = relation which = GER value = 50 }
+		command = { type = peace which = SPA value = 0 }
+		command = { type = dissent value = 3 }
+		command = { type = trigger which = 900827 }
+		command = { type = trigger which = 900829 }
+	}
+	action_b = {
+		ai_chance = 30
+		name = "EVT_900825_OPTIONB"
+		command = { type = belligerence which = FRA value = 3 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = GER value = -100 }
+		command = { type = dissent value = -3 }
+		command = { type = trigger which = 900828 }
+	}
+}
+
+event = {
+	id = 900826
+	country = SPA
+	style = 2
+	picture = "Wehrmacht"
+
+	name = "EVT_900826_NAME"
+	desc = "EVT_900826_DESC"
+
+	action_a = {
+		name = "EVT_900826_OPTIONA"
+		command = { type = relation which = GER value = 50 }
+		command = { type = dissent value = -3 }
+	}
+}
+
+
+event = {
+	id = 900827
+	country = SPA
+	style = 2
+	picture = "Wehrmacht"
+
+
+	name = "EVT_900827_NAME"
+	desc = "EVT_900827_DESC"
+
+	action_a = {
+		name = "EVT_900827_OPTIONA"
+		command = { type = dissent value = -10 }
+		command = { type = relation which = GER value = 200 }
+	}
+}
+
+event = {
+	id = 900828
+	country = GER
+	style = 2
+	picture = "alsaceorwar"
+
+
+	name = "EVT_900828_NAME"
+	desc = "EVT_900828_DESC"
+
+	action_a = {
+		ai_chance = 99
+		name = "EVT_900828_OPTIONA"
+		command = { type = war which = FRA }
+		command = { type = alliance which = SPA }
+	}
+	action_b = {
+		ai_chance = 1
+		name = "EVT_900828_OPTIONB"
+		command = { type = dissent value = 3 }
+	}
+}
+
+event = {
+	id = 900829
+	country = GER
+	style = 2
+	picture = "Wehrmacht"
+
+	name = "EVT_900829_NAME"
+	desc = "EVT_900829_DESC"
+
+	action_a = {
+		name = "EVT_900829_OPTIONA"
+		command = { type = dissent value = -5 }
+	}
+}
+
+
+#### Flandern-Wallonien
+
+event = {
+id = 555800
+country = GER
+style = 2
+picture = "liberation00"
+
+trigger = { 
+	control = { province = 116 data = GER } #Antwerp
+	control = { province = 114 data = GER } #Brussels
+	control = { province = 115 data = GER } #Mon
+	control = { province = 117 data = GER } #Ghent
+	control = { province = 112 data = GER } #Namur
+	control = { province = 113 data = GER } #Dunkerque
+	control = { province = 51 data = GER } #Lille
+	control = { province = 52 data = GER } #Valencienes
+	control = { province = 103 data = GER } #Reims
+        control = { province = 102 data = GER }
+	war = { country = GER country = FRA }
+		NOT = { 
+		exists = BEL 
+                exists = FLA
+                exists = WLL
+		control = { province = 55 data = FRA } # Paris
+	} 
+} 
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_555800_NAME"
+desc = "EVT_555800_DESC"
+
+action_a = {
+ai_chance = 60
+name = "EVT_555800_OPTIONA"
+command = { type = independence which = BEL value = 1 }
+command = { type = trigger which = 555801 }
+}
+
+action_b = {
+ai_chance = 40
+name = "EVT_555800_OPTIONB"
+command = { type = independence which = FLA value = 1 }
+command = { type = independence which = WLL value = 1 }
+command = { type = make_puppet which = FLA }
+command = { type = make_puppet which = WLL }
+command = { type = trigger which = 900831 }
+command = { type = trigger which = 900832 }
+}
+
+action_b = {
+ai_chance = 10
+name = "EVT_555800_OPTIONC"
+command = { type = belligerence which = GER value = 3 }
+}
+}
+
+
+event = {
+id = 900831
+country = FLA
+style = 2
+picture = "liberation00"
+
+name = "EVT_900831_NAME"
+desc = "EVT_900831_DESC"
+
+action_a = {
+name = "EVT_900831_OPTIONA"
+command = { type = alliance which = GER }
+command = { type = secedeprovince which = GER value = 108 } #Liège
+command = { type = secedeprovince which = GER value = 110 } #Bastogne
+command = { type = secedeprovince which = GER value = 111 } #Arlon
+command = { trigger = { government = fascist } type = headofstate which = 510125 }
+command = { trigger = { government = fascist } type = headofgovernment which = 510045 }
+command = { trigger = { government = democratic } type = headofstate which = 510126 }
+command = { trigger = { government = democratic } type = headofgovernment which = 510094 }
+command = { type = removecore which = 51 } #Liège
+command = { type = set_relation which = GER value = 100 }
+	}
+}
+
+event = {
+id = 900832
+country = WLL
+style = 2
+picture = "liberation00"
+
+name = "EVT_900832_NAME"
+desc = "EVT_900832_DESC"
+
+action_a = {
+name = "EVT_900832_OPTIONA"
+command = { type = alliance which = GER }
+command = { type = secedeprovince which = GER value = 108 } #Liège
+command = { type = secedeprovince which = GER value = 110 } #Bastogne
+command = { type = secedeprovince which = GER value = 111 } #Arlon
+command = { trigger = { government = fascist } type = headofstate which = 511043 }
+command = { trigger = { government = fascist } type = headofgovernment which = 511014 }
+command = { trigger = { government = democratic } type = headofstate which = 511044 }
+command = { type = removecore which = 108 } #Liège
+command = { type = removecore which = 110 } #Bastogne
+command = { type = removecore which = 111 } #Arlon
+command = { type = removecore which = 52 }
+command = { type = removecore which = 103 }
+command = { type = set_relation which = GER value = 100 }
+	}
+}
+
+event = {
+id = 555801
+country = BEL
+style = 2
+picture = "liberation00"
+
+name = "EVT_555801_NAME"
+desc = "EVT_555801_DESC"
+
+action_a = {
+name = "EVT_555801_OPTIONA"
+command = { type = alliance which = GER }
+command = { type = ai which = "kaiserreich/Belgium.ai" }
+command = { type = secedeprovince which = GER value = 108 } #Liège
+command = { type = secedeprovince which = GER value = 110 } #Bastogne
+command = { type = secedeprovince which = GER value = 111 } #Arlon
+command = { type = headofstate which = 15157 }
+command = { type = headofgovernment which = 15159 }
+command = { type = removecore which = 108 } #Liège
+command = { type = removecore which = 110 } #Bastogne
+command = { type = removecore which = 111 } #Arlon
+command = { type = set_relation which = GER value = 100 }
+command = { type = trigger which = 555802 }
+	}
+}
+
+event = {
+id = 555802
+country = GER
+style = 2
+picture = "liberation00"
+
+name = "EVT_555802_NAME"
+desc = "EVT_555802_DESC"
+
+action_a = {
+	name = "EVT_555802_OPTIONA"
+	command = { type = make_puppet which = BEL }
+	command = { type = belligerence which = GER value = -5 }
+	command = { type = dissent value = -3 }
+	}
+}
+
+#########################################################################
+#  Southern Wallonia given to Flandern-Wallonia
+#########################################################################
+
+event = {
+id = 900809
+picture = "constitutional"
+country = GER
+style = 2
+
+trigger = { 
+	owned = { province = 108 data = GER } #Liège
+	owned = { province = 110 data = GER } #Bastogne
+	owned = { province = 111 data = GER } #Arlon
+	control = { province = 108 data = GER } #Liège
+	control = { province = 110 data = GER } #Bastogne
+	control = { province = 111 data = GER } #Arlon
+        OR = {
+	alliance = { country = GER country = BEL }
+        alliance = { country = GER country = BEL }
+        }
+	OR = {
+		event = 666051 #The French are Defeated 
+		event = 666052 #The French are Defeated 
+		event = 666053 #The French are Defeated 
+		event = 666054 #The French are Defeated 
+	}
+}
+
+name = "EVT_900809_NAME"
+desc = "EVT_900809_DESC"
+
+date = { day = 1 month = january year = 1936 }
+offset = 30
+deathdate = { day = 1 month = december year = 1953 }
+
+action_a = {
+	name = "EVT_900809_OPTIONA"
+	ai_chance = 50
+	command = { type = dissent value = 2 }
+	command = { trigger = { alliance = { country = GER country = BEL } } type = secedeprovince which = BEL value = 108 } #Liège
+	command = { trigger = { alliance = { country = GER country = BEL } } type = secedeprovince which = BEL value = 111 } #Arlon
+        command = { trigger = { alliance = { country = GER country = WLL } } type = secedeprovince which = WLL value = 108 } #Liège
+	command = { trigger = { alliance = { country = GER country = WLL } } type = secedeprovince which = WLL value = 111 } #Arlon
+        command = { type = removeclaim which = 108 }
+        command = { type = removeclaim which = 111 }
+	command = { type = relation which = BEL value = 50 }
+        command = { type = relation which = WLL value = 50 }
+	command = { trigger = { alliance = { country = GER country = BEL } } type = trigger which = 900810 }
+        command = { trigger = { alliance = { country = GER country = WLL } } type = trigger which = 900833 }
+	}
+action_b = {
+	ai_chance = 50
+	name = "EVT_900809_OPTIONB"
+	command = { type = dissent value = 7 }
+        command = { type = addcore which = 108 }
+        command = { type = addcore which = 111 }
+        command = { type = belligerence which = GER value = 3  }
+	command = { type = relation which = BEL value = -30 }
+        command = { type = relation which = WLL value = -30 }
+	}
+}
+
+#########################################################################
+#  Southern Wallonia given to Flandern-Wallonia FLA-WLL response
+#########################################################################
+
+event = {
+id = 900810
+picture = "constitutional"
+country = BEL
+style = 2
+
+#triggered by GER 900809
+
+name = "EVT_900810_NAME"
+desc = "EVT_900810_DESC"
+
+action_a = {
+	name = "EVT_900810_OPTIONA"
+	command = { type = dissent value = -3 }
+	command = { type = addcore which = 108 } #Liège
+	command = { type = addcore which = 110 } #Bastogne
+	}
+}
+
+event = {
+id = 900833
+picture = "constitutional"
+country = WLL
+style = 2
+
+#triggered by GER 900809
+
+name = "EVT_900833_NAME"
+desc = "EVT_900833_DESC"
+
+action_a = {
+	name = "EVT_900833_OPTIONA"
+	command = { type = dissent value = -3 }
+	command = { type = addcore which = 108 } #Liège
+	command = { type = addcore which = 110 } #Bastogne
+	}
+}
+
+
+
+#########################################################################
+#  Germany splitting Netherlands with FLAWLL
+#########################################################################
+
+event = {
+id = 900811
+picture = "constitutional"
+country = GER
+style = 2
+
+trigger = { 
+	owned = { province = 125 data = GER } #Rotterdam
+	owned = { province = 122 data = GER } #Amsterdam
+	owned = { province = 123 data = GER } #Utrecht
+	owned = { province = 118 data = GER } #Eindhoven
+	owned = { province = 119 data = GER } #Arnhem
+	owned = { province = 124 data = GER } #Leeuwarden
+	owned = { province = 120 data = GER } #Groningen
+        owned = { province = 121 data = GER }	
+	control = { province = 125 data = GER } #Rotterdam
+	control = { province = 122 data = GER } #Amsterdam
+	control = { province = 123 data = GER } #Utrecht
+	control = { province = 118 data = GER } #Eindhoven
+	control = { province = 119 data = GER } #Arnhem
+	control = { province = 124 data = GER } #Leeuwarden
+	control = { province = 120 data = GER } #Groningen
+        control = { province = 121 data = GER }
+        NOT = {
+        control = { province = 116 data = -2 }
+        }
+	}
+
+name = "EVT_900811_NAME"
+desc = "EVT_900811_DESC"
+
+date = { day = 1 month = january year = 1936 }
+offset = 30
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+	name = "EVT_900811_OPTIONA"
+	ai_chance = 70
+        trigger = {
+        OR = {
+	alliance = { country = GER country = BEL }
+        alliance = { country = GER country = FLA }
+        }
+        OR = {
+        NOT = {
+        alliance = { country = GER country = INO }
+        }
+        AND = {
+        alliance = { country = GER country = INO }
+        NOT = {
+        event = 6552943 
+        }
+        }
+        }
+        }
+	command = { type = dissent value = 1 }
+	command = { type = addcore which = 124 } #Groningen
+        command = { type = addclaim which = 119 } #Arnhem
+        command = { type = addclaim which = 121 } #Maastricht
+	command = { trigger = { alliance = { country = GER country = BEL } } type = secedeprovince which = BEL value = 123 } #Rotterdam
+	command = { trigger = { alliance = { country = GER country = BEL } } type = secedeprovince which = BEL value = 118 } #Amsterdam
+	command = { trigger = { alliance = { country = GER country = BEL } } type = secedeprovince which = BEL value = 120 } #Utrecht
+	command = { trigger = { alliance = { country = GER country = BEL } } type = secedeprovince which = BEL value = 122 } #Eindhoven
+        command = { trigger = { alliance = { country = GER country = BEL } } type = secedeprovince which = BEL value = 125 }
+        command = { trigger = { alliance = { country = GER country = FLA } } type = secedeprovince which = FLA value = 123 } #Rotterdam
+	command = { trigger = { alliance = { country = GER country = FLA } } type = secedeprovince which = FLA value = 118 } #Amsterdam
+	command = { trigger = { alliance = { country = GER country = FLA } } type = secedeprovince which = FLA value = 120 } #Utrecht
+	command = { trigger = { alliance = { country = GER country = FLA } } type = secedeprovince which = FLA value = 122 } #Eindhoven
+        command = { trigger = { alliance = { country = GER country = FLA } } type = secedeprovince which = FLA value = 125 }
+	command = { type = relation which = BEL value = 50 }
+        command = { type = relation which = FLA value = 50 }
+	command = { trigger = { alliance = { country = GER country = BEL } } type = trigger which = 900812 }
+        command = { trigger = { alliance = { country = GER country = FLA } } type = trigger which = 900834 }
+}
+
+action_b = {
+	name = "EVT_900811_OPTIONB"
+	ai_chance = 60
+        trigger = {
+        NOT = {
+        exists = HOL
+        }
+        }
+	command = { type = dissent value = -1 }
+        command = { type = independence which = HOL value = 1 when = 0 }
+        command = { type = alliance which = HOL }
+        command = { trigger = { alliance = { country = GER country = INO } event = 6552943 }  type = alliance which = HOL }
+        command = { trigger = { OR = { NOT = { alliance = { country = GER country = INO } } AND = { alliance = { country = GER country = INO } NOT = { event = 6552943 } } } } type = make_puppet which = HOL }
+        command = { trigger = { OR = { NOT = { alliance = { country = GER country = INO } } AND = { alliance = { country = GER country = INO } NOT = { event = 6552943 } } } } type = event which = 900840 where = HOL when = 2 }
+        command = { trigger = { NOT = { government = communist } alliance = { country = GER country = INO } event = 6552943 } type = event which = 900839 where = HOL when = 2  }
+}
+
+action_c = {
+	name = "EVT_900811_OPTIONC"
+	ai_chance = 0
+	command = { type = dissent value = 3 }
+	command = { type = relation which = BEL value = -30 }
+        command = { type = relation which = FLA value = -30 }
+	}
+}
+
+
+event = {
+	id = 900839
+	random = no
+	country = HOL
+	
+	name = "EVT_900839_NAME"
+	desc = "EVT_900839_DESC"		
+	style = 2
+        picture = "Riot2"
+
+	action_a = {
+		name = "EVT_900839_OPTIONA"
+                command = { type = dissent value = -5 }
+                command = { trigger = { government = democratic minister = 8185 } type = headofstate which = 8185 }
+                command = { trigger = { government = fascist minister = 8037 } type = headofstate which = 8037 }
+                command = { trigger = { government = democratic NOT = { minister = 8185 } } type = headofstate which = 8187 }
+                command = { trigger = { government = fascist NOT = { minister = 8037 } } type = headofstate which = 8200 }
+                command = { trigger = { NOT = { ispuppet = INO } } type = make_puppet which = INO }
+                command = { type = ai which = "kaiserreich/Holland.ai" }
+                command = { type = add_division value = infantry when = 9 }		
+	        command = { type = add_division value = infantry when = 9 }		
+	        command = { type = add_division value = infantry when = 9 }	
+	        command = { type = add_division value = cavalry when = 9 }		
+	        command = { type = add_division value = interceptor when = 9 }
+                command = { type = add_division value = transport when = 1 }
+                command = { type = add_division value = light_cruiser when = 3 }
+                command = { type = add_division value = destroyer when = 4 }
+                command = { type = add_division value = destroyer when = 4 }
+                command = { type = manpowerpool value = 50 }
+                command = { type = transport_pool which = HOL value = 50 }
+	        command = { type = escort_pool which = HOL value = 10 }
+	}
+
+} 
+
+
+event = {
+	id = 900840
+	random = no
+	country = HOL
+	
+	name = "EVT_900840_NAME"
+	desc = "EVT_900840_DESC"		
+	style = 2
+        picture = "Riot2"
+
+	action_a = {
+		name = "EVT_900840_OPTIONA"
+                command = { type = dissent value = -5 }
+                command = { trigger = { government = democratic } type = headofstate which = 8198 }
+                command = { trigger = { government = fascist } type = headofstate which = 8199 }
+                command = { type = ai which = "kaiserreich/Holland.ai" }
+                command = { type = dissent value = 5 }
+                command = { type = add_division value = infantry when = 9 }		
+	        command = { type = add_division value = infantry when = 9 }		
+	        command = { type = add_division value = infantry when = 9 }	
+	        command = { type = add_division value = cavalry when = 9 }		
+	        command = { type = add_division value = interceptor when = 9 }
+                command = { type = add_division value = transport when = 1 }
+                command = { type = add_division value = light_cruiser when = 3 }
+                command = { type = add_division value = destroyer when = 4 }
+                command = { type = add_division value = destroyer when = 4 }
+                command = { type = manpowerpool value = 50 }
+                command = { type = transport_pool which = HOL value = 50 }
+	        command = { type = escort_pool which = HOL value = 10 }
+	}
+
+} 
+
+#########################################################################
+#  Splitting Netherlands FLA-WLL response
+#########################################################################
+
+event = {
+id = 900812
+picture = "constitutional"
+country = BEL
+style = 2
+
+#triggered by GER 900811
+
+name = "EVT_900812_NAME"
+desc = "EVT_900812_DESC"
+
+action_a = {
+	name = "EVT_900812_OPTIONA"
+	command = { type = dissent value = -3 }
+	command = { type = addcore which = 118 } 
+	command = { type = addcore which = 123 } 
+        command = { type = addclaim which = 120 } 
+        command = { type = addclaim which = 122 }
+        command = { type = addclaim which = 125 } 
+	}
+}
+
+event = {
+id = 900834
+picture = "constitutional"
+country = FLA
+style = 2
+
+#triggered by GER 900811
+
+name = "EVT_900834_NAME"
+desc = "EVT_900834_DESC"
+
+action_a = {
+	name = "EVT_900834_OPTIONA"
+	command = { type = dissent value = -3 }
+	command = { type = addcore which = 118 } 
+	command = { type = addcore which = 123 } 
+        command = { type = addclaim which = 120 } 
+        command = { type = addclaim which = 122 }
+        command = { type = addclaim which = 125 } 
+        command = { type = removecore which = 121 }
+	}
+}
+
+#########################################################################
+#  German War events from PTEAP by General Grant
+#########################################################################
+
+event = {
+	id = 900813
+	random = no
+	country = GER
+
+	name = "EVT_900813_NAME"
+	desc = "EVT_900813_DESC"
+	style = 2
+        picture = "Volkssturm"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1960 }
+
+	trigger = {
+                OR = {
+		war = { country = RUS country = GER }
+                war = { country = SOV country = GER }
+                }
+                OR = {
+                OR = {
+		control = { province = 159 data = RUS }
+                control = { province = 159 data = SOV }
+                }
+                OR = {
+                control = { province = 158 data = RUS }
+                control = { province = 158 data = SOV }
+                }
+                OR = {
+                control = { province = 165 data = RUS }
+                control = { province = 165 data = SOV }
+                }
+                }
+		control = { province = 163 data = GER }
+		control = { province = 160 data = GER }
+                control = { province = 162 data = GER }
+		control = { province = 172 data = GER }
+	}
+
+	action_a = {
+		name = "EVT_900813_OPTIONA" #
+		command = { type = dissent value = 2 } #panic
+		command = { type = construct which = land_fort where = 163 value = 3 }
+		command = { type = construct which = land_fort where = 160 value = 5 }
+		command = { type = construct which = land_fort where = 172 value = 3 }
+                command = { type = construct which = land_fort where = 162 value = 3 }
+		command = { type = manpowerpool value = 120 }
+		command = { type = supplies value = 5000 }
+		command = { type = add_corps which = "Berlin Kommandos" value = land when = -1 where = 163 }
+		command = { type = add_division which = "1.'Berlin' Reserve" value = infantry when = 10 }
+                command = { trigger = { ai = yes } type = add_division which = "12.'Berlin' Reserve" value = infantry when = 10 }
+                command = { trigger = { ai = yes } type = add_division which = "13.'Berlin' Reserve" value = infantry when = 10 }
+		command = { type = add_division which = "2.'Potsdam' Reserve" value = infantry when = 10 }
+		command = { type = add_division which = "3.'Brandenburg' Reserve" value = infantry when = 10 }
+		command = { type = add_corps which = "Pommern Korps" value = land when = -1 where = 162 }
+		command = { type = add_division which = "4.'Stralsund' Reserve" value = infantry when = 10 }
+		command = { trigger = { ai = yes } type = add_division which = "14.'Stettin' Reserve" value = infantry when = 10 }
+                command = { trigger = { ai = yes } type = add_division which = "15.'Stettin' Reserve" value = infantry when = 10 }
+                command = { type = add_division which = "5.'Stettin' Reserve" value = infantry when = 10 }
+		command = { type = add_division which = "6.'Grefswald' Reserve" value = infantry when = 10 }
+		command = { type = add_corps which = "Saschen Korps" value = land when = -1 where = 172 }
+		command = { type = add_division which = "7.'Cottbus' Reserve" value = infantry when = 10 }
+		command = { type = add_division which = "8.'Leipzig' Reserve" value = infantry when = 10 }
+		command = { type = add_division which = "9.'Dresden' Reserve" value = infantry when = 10 }
+                command = { trigger = { ai = yes } type = add_division which = "16.'Dresden' Reserve" value = infantry when = 10 }
+                command = { trigger = { ai = yes } type = add_division which = "17.'Dresden' Reserve" value = infantry when = 10 }
+		command = { type = add_corps which = "Mecklenburg Korps" value = land when = -1 where = 160 }
+		command = { type = add_division which = "10.'Schwerin' Reserve" value = militia when = 5 }
+		command = { type = add_division which = "11.'Rostock' Reserve" value = militia when = 5 }
+                command = { trigger = { ai = yes } type = add_division which = "18.'Rostock' Reserve" value = militia when = 5 }
+                command = { trigger = { ai = yes } type = add_division which = "19.'Rostock' Reserve" value = militia when = 5 }
+
+	}
+}
+
+event = {
+	id = 900814
+	random = no
+	country = GER
+
+	name = "EVT_900814_NAME"
+	desc = "EVT_900814_DESC"
+	style = 2
+        picture = "Volkssturm"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1960 }
+
+	trigger = {
+		war = { country = FRA country = GER }	
+		control = { province = 104 data = FRA }
+		control = { province = 107 data = FRA }
+		control = { province = 106 data = FRA }
+                control = { province = 112 data = FRA }
+
+	}
+
+	action_a = {
+		name = "EVT_900814_OPTIONA" #
+		command = { type = dissent value = 2 } #panic
+		command = { type = construct which = land_fort where = 130 value = 3 }
+		command = { type = construct which = land_fort where = 132 value = 3 }
+		command = { type = construct which = land_fort where = 127 value = 3 }
+		command = { type = construct which = land_fort where = 131 value = 3 }
+		command = { type = manpowerpool value = 100 }
+		command = { type = supplies value = 3000 }
+		command = { type = add_corps which = "Rheinland Kommandos" value = land when = -1 where = 130 }
+		command = { type = add_division which = "1.'Köln' Reserve" value = infantry when = 10 }
+		command = { type = add_division which = "2.'Dusseldorf' Reserve" value = infantry when = 10 }
+		command = { type = add_division which = "3.'Essen' Reserve" value = infantry when = 10 }
+                command = { trigger = { ai = yes NOT = { ai = FRA } } type = add_division which = "12.'Essen' Reserve" value = infantry when = 10 }
+                command = { trigger = { ai = yes NOT = { ai = FRA } } type = add_division which = "13.'Essen' Reserve" value = infantry when = 10 }
+		command = { type = add_corps which = "Hessen Korps" value = land when = -1 where = 132 }
+		command = { type = add_division which = "4.'Kassel' Reserve" value = infantry when = 10 }
+                command = { trigger = { ai = yes NOT = { ai = FRA } } type = add_division which = "14.'Kassel' Reserve" value = infantry when = 10 }
+                command = { trigger = { ai = yes NOT = { ai = FRA } } type = add_division which = "15.'Kassel' Reserve" value = infantry when = 10 }
+		command = { type = add_division which = "5.'Darmstadt' Reserve" value = infantry when = 10 }
+		command = { type = add_corps which = "Baden Korps" value = land when = -1 where = 127 }
+		command = { type = add_division which = "6.'Heidelberg' Reserve" value = infantry when = 10 }
+		command = { type = add_division which = "7.'Stuttgart' Reserve" value = infantry when = 10 }
+                command = { trigger = { ai = yes NOT = { ai = FRA } } type = add_division which = "16.'Stuttgart' Reserve" value = infantry when = 10 }
+                command = { trigger = { ai = yes NOT = { ai = FRA } } type = add_division which = "17.'Stuttgart' Reserve" value = infantry when = 10 }
+		command = { type = add_corps which = "Würtemberg Korps" value = land when = -1 where = 131 }
+		command = { type = add_division which = "8.'Sigmaringen' Reserve" value = infantry when = 10 }
+		command = { type = add_division which = "9.'Karslruhe' Reserve" value = infantry when = 10 }
+                command = { trigger = { ai = yes NOT = { ai = FRA } } type = add_division which = "18.'Karslruhe' Reserve" value = infantry when = 10 }
+                command = { trigger = { ai = yes NOT = { ai = FRA } } type = add_division which = "19.'Karslruhe' Reserve" value = infantry when = 10 }
+		command = { type = add_corps which = "Rhur Volksturm" value = land when = -1 where = 129 }
+		command = { type = add_division which = "10.'Dortmund' Reserve" value = militia when = 5 }
+                command = { trigger = { ai = yes NOT = { ai = FRA } } type = add_division which = "20.'Dortmund' Reserve" value = militia when = 5 }
+                command = { trigger = { ai = yes NOT = { ai = FRA } } type = add_division which = "21.'Dortmund' Reserve" value = militia when = 5 }
+		command = { type = add_division which = "11.'Bonn' Reserve" value = militia when = 5 }
+	}
+}
+###Spanish Morocco
+event = {
+	id = 3967213
+	country = GER
+	style = 2
+	picture = "Gibraltar"
+
+
+	trigger = {
+		control = { province = 715 data = SPR }
+		NOT = { exists = EUS }
+		NOT = { exists = SPA }
+		NOT = { war = { country = GER country = SPR } }
+		NOT = { alliance = { country = GER country = SPR } }
+		NOT = { puppet = { country = SPR country = GER  } }
+	}
+
+	date = { day = 7 month = january year = 1936 }
+	offset = 20
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "EVT_3967213_NAME"
+	desc = "EVT_3967213_DESC"
+
+	action_a = {
+		name = "EVT_3967213_OPTIONA"
+		ai_chance = 95
+		command = { type = supplies value = -100 }
+		command = { type = relation which = SPR value = -20 }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = manpowerpool value = -1 }
+		command = { type = trigger which = 3967214  }
+    }
+	action_b = {
+		name = "EVT_3967213_OPTIONB"
+		ai_chance = 5
+		command = { type = domestic which = interventionism value = -1 }
+    }
+}
+
+
+event = {
+	id = 3967214
+	country = SPR
+	style = 2
+	picture = "SCW_French Intervention"
+
+	name = "EVT_3967214_NAME"
+	desc = "EVT_3967214_DESC"
+
+	action_a = {
+		name = "EVT_3967214_OPTIONA"
+		ai_chance = 100
+		command = { type = dissent value = 2 }
+		command = { type = secedeprovince which = GER value = 715 }
+		command = { type = secedeprovince which = GER value = 716 }
+		command = { type = secedeprovince which = GER value = 987 }
+		command = { type = secedeprovince which = GER value = 988 }
+		command = { type = secedeprovince which = GER value = 989 }
+	}
+	action_b = {
+		name = "EVT_3967214_OPTIONB"
+		ai_chance = 0
+		command = { type = dissent value = 10 }
+		command = { type = secedeprovince which = GER value = 715 }
+		command = { type = secedeprovince which = GER value = 716 }
+		command = { type = secedeprovince which = GER value = 987 }
+		command = { type = secedeprovince which = GER value = 988 }
+		command = { type = secedeprovince which = GER value = 989 }
+		command = { type = war which = GER }
+	}
+}
+
+####Madagascar
+event = {
+    id = 908150
+    random = no
+    country = GER
+
+    trigger = {
+		control = { province = 1001 data = GER }
+		control = { province = 1002 data = GER }
+		control = { province = 1003 data = GER }
+		control = { province = 163 data = GER }
+		control = { province = 145 data = GER }
+		NOT = { 
+                war = { country = GER country = FRA }
+		war = { country = GER country = RUS } 
+                exists = MAD
+                }
+	}
+
+    name = "EVT_908150_NAME"
+    desc = "EVT_908150_DESC"
+    picture = "mongolia4"
+    style = 2
+
+    date = { day = 1 month = january year = 1942 }
+    offset = 100
+    deathdate = { day = 29 month = december year = 1966 }
+
+    action_a = {
+        ai_chance = 80
+        name = "EVT_908150_OPTIONA"
+        command = { type = dissent value = 2 }
+        command = { type = money value = -150 }
+    }
+    action_b = {
+        ai_chance = 20
+        name = "EVT_908150_OPTIONB"
+        command = { type = dissent value = 1 }
+        command = { type = sleepevent which = 908151 }
+        command = { type = sleepevent which = 908152 }
+        command = { type = sleepevent which = 908153 }
+    }
+}
+
+event = {
+    id = 908151
+    random = no
+    country = GER
+
+    trigger = {
+		event = 908150
+		control = { province = 1001 data = GER }
+		control = { province = 1002 data = GER }
+		control = { province = 1003 data = GER }
+	}
+
+    name = "EVT_908151_NAME"
+    desc = "EVT_908151_DESC"
+    picture = "mongolia4"
+    style = 2
+
+    date = { day = 1 month = january year = 1943 }
+    offset = 210
+    deathdate = { day = 29 month = december year = 1966 }
+
+    action_a = {
+        ai_chance = 80
+        name = "EVT_908151_OPTIONA"
+        command = { type = add_prov_resource which = 1001 value = 10 where = rare_materials }
+        command = { type = money value = -100 }
+        command = { type = sleepevent which = 908153 }
+    }
+    action_b = {
+        ai_chance = 20
+        name = "EVT_908151_OPTIONB"
+        command = { type = dissent value = 1 }
+        command = { type = add_prov_resource which = 1001 value = 10 where = rare_materials }
+        command = { type = sleepevent which = 908152 }
+    }
+}
+
+event = {
+    id = 908152
+    random = no
+    country = GER
+
+    trigger = {
+		event = 908151
+		control = { province = 1001 data = GER }
+		control = { province = 1002 data = GER }
+		control = { province = 1003 data = GER } 
+	}
+
+    name = "EVT_908152_NAME"
+    desc = "EVT_908152_DESC"
+    picture = "private_sector"
+    style = 2
+
+    date = { day = 1 month = january year = 1943 }
+    offset = 210
+    deathdate = { day = 29 month = december year = 1966 }
+
+    action_a = {
+        name = "EVT_908152_OPTIONA"
+        command = { type = dissent value = -1 }
+        command = { type = construct which = ic where = 1001 value = 1 }
+        command = { type = add_prov_resource which = 1002 value = 5 where = rare_materials }
+        command = { type = add_prov_resource which = 1001 value = 5 where = rare_materials }
+        command = { type = construct which = infrastructure where = 1001 value = 10 }
+
+    }
+}
+
+event = {
+    id = 908153
+    random = no
+    country = GER
+
+    trigger = {
+		event = 908151
+		control = { province = 1001 data = GER }
+		control = { province = 1002 data = GER }
+		control = { province = 1003 data = GER } 
+	}
+
+    name = "EVT_908153_NAME"
+    desc = "EVT_908153_DESC"
+    picture = "Riot1"
+    style = 2
+
+    date = { day = 1 month = january year = 1943 }
+    offset = 60
+    deathdate = { day = 29 month = december year = 1966 }
+
+    action_a = {
+        name = "EVT_908153_OPTIONA"
+        command = { type = dissent value = 2 }
+        command = { type = revolt which = 1001 }
+    }
+}
+
+
+event = {
+id = 900835
+country = GER
+style = 2
+  
+trigger = {
+event = { id = 666050 days = 900 }
+war = { country = GER country = ENG }
+control = { province = 163 data = GER } 
+control = { province = 145 data = GER } 
+control = { province = 184 data = GER }
+control = { province = 29 data = ENG }
+control = { province = 21 data = ENG }
+control = { province = 12 data = ENG }
+control = { province = 26 data = ENG }
+control = { province = 25 data = ENG }
+control = { province = 19 data = ENG }
+control = { province = 15 data = ENG }
+control = { province = 11 data = ENG }
+control = { province = 17 data = ENG }
+control = { province = 20 data = ENG }
+control = { province = 24 data = ENG }
+OR = {
+control = { province = 55 data = GER }
+AND = {
+puppet = { country = U08 country = GER  }
+control = { province = 55 data = U08 }
+}
+AND = {
+puppet = { country = U22 country = GER  }
+control = { province = 55 data = U22 }
+}
+AND = {
+alliance = { country = VIC country = GER }
+control = { province = 55 data = VIC }
+}
+}
+NOT = {
+exists = FRA
+ispuppet = GER
+war = { country = GER country = SOV }
+war = { country = GER country = RUS }
+}
+}
+
+date = { day = 1 month = january year = 1941 }
+offset = 25
+deathdate = { day = 1 month = january year = 1960 }
+
+name = "EVT_900835_NAME"
+desc = "EVT_900835_DESC"
+picture = "Peace_conference"
+
+action_a = {
+ai_chance = 85
+name =  "EVT_900835_OPTIONA"
+command = { type = trigger which = 900836 }
+command = { type = dissent value = 2 }
+}
+action_b = {
+ai_chance = 15
+name = "EVT_900835_OPTIONB"
+command = { type = dissent value = 3 }
+}
+}
+
+
+
+event = {
+id = 900836
+country = ENG
+style = 2
+
+
+name = "EVT_900836_NAME"
+desc = "EVT_900836_DESC"
+picture = "Peace_conference"
+
+action_a = {
+ai_chance = 40
+name =  "EVT_900836_OPTIONA"
+command = { type = dissent value = -5 }
+command = { type = peace which = GER value = 0 }
+command = { type = peace which = DEN value = 0 }
+command = { type = secederegion which = GER value = France }  
+command = { type = trigger which = 900837 }
+}
+
+action_b = {
+ai_chance = 2
+trigger = {
+NOT = {
+alliance = { country = ENG country = CSA }
+} 
+}
+name = "EVT_900836_OPTIONB"
+command = { type = dissent value = 4 }
+command = { type = belligerence which = ENG value = 5  }
+command = { type = trigger which = 900838 }
+}
+
+action_c = {
+ai_chance = 70
+trigger = {
+alliance = { country = ENG country = CSA }
+}
+name = "EVT_900836_OPTIONC"
+command = { type = dissent value = 1 }
+command = { type = belligerence which = ENG value = 5  }
+command = { type = trigger which = 900838 }
+}
+}
+
+
+event = {
+id = 900837
+country = GER
+style = 2
+
+
+name = "EVT_900837_NAME"
+desc = "EVT_900837_DESC"
+picture = "Peace_conference"
+
+action_a = {
+name =  "EVT_900837_OPTIONA"
+command = { type = dissent value = 2 }
+command = { type = secederegion which = ENG value = Scotland }
+command = { type = secederegion which = ENG value = England }  
+}
+
+}
+
+event = {
+id = 900838
+country = GER
+style = 2
+
+
+name = "EVT_900838_NAME"
+desc = "EVT_900838_DESC"
+picture = "Peace_conference"
+
+action_a = {
+name =  "EVT_900838_OPTIONA"
+command = { type = dissent value = 1 }
+}
+
+}
+
+
+#Flavour#
+
+ event = {
+     id = 111222
+     random = no
+     country = GER
+
+     trigger = {
+     control = { province = 1509 data = GER }
+     control = { province = 1510 data = GER }
+     control = { province = 1511 data = GER }
+ }
+
+     name = "EVT_111222_NAME"
+     desc = "EVT_111222_DESC"
+     style = 2
+     picture = "UPAterror"
+
+
+     date = { day = 1 month = July year = 1936 }
+     offset = 90
+     deathdate = { day = 29 month = December year = 1937 }
+
+     action_a = {
+         name = "EVT_111222_OPTIONA"
+         command = { type = dissent value = 2 }
+         command = { type = relation which = IND value = -10 }
+ }
+ }
+
+ event = {
+     id = 111223
+     random = no
+     tag = { U42 IND PAK PRK JAP RUS U34 U35 SOV }
+
+     trigger = {
+     event = 111222
+     control = { province = 1509 data = -1 }
+     control = { province = 1510 data = -1 }
+     control = { province = 1511 data = -1 }
+ }
+
+     name = "EVT_111223_NAME"
+     desc = "EVT_111223_DESC"
+     style = 2
+     picture = "UPAterror"
+
+
+     date = { day = 1 month = January year = 1936 }
+     offset = 30
+     deathdate = { day = 29 month = December year = 1960 }
+
+     action_a = {
+         name = "EVT_111223_OPTIONA"
+         command = { type = dissent value = 2 }
+ }
+ }
+
+
+
+
+###### British Landing in Norway
+
+event = {
+	id = 69054
+
+	country = GER
+	style = 2
+	picture = "pennsylvania"
+
+	trigger = {
+		war = { country = ENG country = NOR }
+		NOT = {   war = { country = ENG country = GER } }
+		NOT = {   war = { country = GER country = NOR } }
+                NOT = {   war = { country = GER country = FRA } }
+		NOT = { alliance = { country = NOR country = FRA } }
+		NOT = { alliance = { country = NOR country = CAN } }
+		NOT = { alliance = { country = NOR country = RUS } }
+                control = { province = 145 data = GER } 
+                control = { province = 163 data = GER } 
+                control = { province = 184 data = GER } 
+		NOT = {
+		ispuppet = NOR
+		ispuppet = ENG
+		ispuppet = GER
+		}
+	}
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 3
+	deathdate = { day = 29 month = december year = 1960 }
+
+	name = "EVT_69054_NAME"
+	desc = "EVT_69054_DESC"
+	
+	action_a = {
+		ai_chance = 80
+		name = "EVT_69054_OPTIONA"
+		command = { type = belligerence which = GER value = 1 }
+		command = { type = relation which = NOR value = 50 }
+		command = { type = relation which = ENG value = -50 }
+		command = { type = dissent value = -3 }
+		command = { type = trigger which = 69055 }
+		command = { type = trigger which = 69056 }
+	}
+	action_b = {
+		ai_chance = 20
+		name = "EVT_69054_OPTIONB"
+		command = { type = belligerence which = GER value = -3 }
+		command = { type = relation which = NOR value = -50 }
+		command = { type = relation which = ENG value = 50 }
+		command = { type = dissent value = 3 }
+	}
+}
+
+event = {
+	id = 69055
+	country = ENG
+	style = 2
+	picture = "hochseeflotte"
+
+	name = "EVT_69055_NAME"
+	desc = "EVT_69055_DESC"
+
+	action_a = {
+		ai_chance = 95
+		name = "EVT_69055_OPTIONA"
+		command = { type = belligerence which = ENG value = -3 }
+		command = { type = relation which = NOR value = 50 }
+		command = { type = relation which = GER value = 50 }
+		command = { type = peace which = NOR value = 0 }
+		command = { type = dissent value = 3 }
+		command = { type = trigger which = 69057 }
+		command = { type = trigger which = 69059 }
+	}
+	action_b = {
+		ai_chance = 5
+		name = "EVT_69055_OPTIONB"
+		command = { type = belligerence which = ENG value = 3 }
+		command = { type = relation which = NOR value = -50 }
+		command = { type = relation which = ENG value = -50 }
+		command = { type = dissent value = -3 }
+		command = { type = trigger which = 69058 }
+	}
+}
+
+event = {
+	id = 69056
+	country = NOR
+	style = 2
+	picture = "hochseeflotte"
+
+	name = "EVT_69056_NAME"
+	desc = "EVT_69056_DESC"
+
+	action_a = {
+		name = "EVT_69056_OPTIONA"
+		command = { type = relation which = GER value = 50 }
+		command = { type = dissent value = -3 }
+	}
+}
+
+event = {
+	id = 69057
+	country = GER
+	style = 2
+	picture = "hochseeflotte"
+
+	name = "EVT_69057_NAME"
+	desc = "EVT_69057_DESC"
+
+	action_a = {
+		name = "EVT_69057_OPTIONA"
+		command = { type = relation which = NOR value = 25 }
+		command = { type = dissent value = -5 }
+	}
+}
+
+event = {
+	id = 69058
+	country = GER
+	style = 2
+	picture = "pennsylvania"
+
+	name = "EVT_69058_NAME"
+	desc = "EVT_69058_DESC"
+
+	action_a = {
+		ai_chance = 99
+		name = "EVT_69058_OPTIONA"
+		command = { type = war which = ENG }
+		command = { type = alliance which = NOR }
+	}
+	action_b = {
+		ai_chance = 1
+		name = "EVT_69058_OPTIONB"
+		command = { type = dissent value = 3 }
+	}
+}
+
+event = {
+	id = 69059
+	country = NOR
+	style = 2
+	picture = "hochseeflotte"
+
+	name = "EVT_69059_NAME"
+	desc = "EVT_69059_DESC"
+
+	action_a = {
+		name = "EVT_69059_OPTIONA"
+		command = { type = dissent value = -10 }
+		command = { type = relation which = GER value = 200 }
+	}
+}
+#############################################
+###### Treaty with Ireland #
+#############################################
+event = {
+        id = 933330
+        random = no
+        country = GER
+
+        decision = {
+        exists = IRE
+        NOT = {
+                        government = communist
+                        ispuppet = GER
+                        ispuppet = IRE
+                        war = { country = GER country = IRE }
+                }
+        }
+
+        decision_trigger = {
+        NOT = {
+        atwar = GER
+        }
+        OR = {
+                        alliance = { country = GER country = IRE }
+                        AND = {
+                        guarantee = { country = GER country = IRE }
+                        event = 100178
+                        }
+                    non_aggression = { country = GER country = IRE }
+                }
+    }
+
+        trigger = {
+                exists = IRE
+                NOT = {
+                        government = communist
+                        atwar = GER
+                        ispuppet = GER
+                        ispuppet = IRE
+                        war = { country = GER country = IRE }
+                }
+                OR = {
+                        alliance = { country = GER country = IRE }
+                        AND = {
+                        guarantee = { country = GER country = IRE }
+                        event = 100178
+                        }
+                    non_aggression = { country = GER country = IRE }
+                }
+        }
+
+        name = "EVT_933330_NAME"
+        desc = "EVT_933330_DESC"
+        style = 2
+        picture = "ireland"
+        decision_picture = "decision_ersatz_conversion"
+
+        date = { day = 1 month = june year = 1937 }
+        offset = 48
+        deathdate = { day = 1 month = august year = 1960 }
+
+        action_a = {
+                name = "EVT_933330_OPTIONA"
+        ai_chance = 30
+                command = { type = relation which = IRE value = 15 }
+                command = { type = trigger which = 933331 }
+        }
+
+        action_b = {
+                name = "EVT_933330_OPTIONB"
+        ai_chance = 30
+                command = { type = relation which = IRE value = 15 }
+                command = { type = trigger which = 933332 }
+        }
+
+        action_c = {
+                name = "EVT_933330_OPTIONC"
+        ai_chance = 30
+                command = { type = relation which = IRE value = 30 }
+                command = { type = trigger which = 933333 }
+        }
+
+        action_d = {
+                name = "EVT_933330_OPTIOND"
+        ai_chance = 10
+                command = { type = relation which = IRE value = -5 }
+                command = { type = domestic which = interventionism value = -1 }
+        }
+}
+
+event = {
+        id = 933331
+        random = no
+        country = IRE
+
+        name = "EVT_933331_NAME"
+        desc = "EVT_933331_DESC"
+        style = 2
+        picture = "Supplies2"
+
+        action_a = {
+                name = "EVT_933331_OPTIONA"
+        ai_chance = 65
+                command = { type = relation which = GER value = 35 }
+        command = { type = money value = -250 }
+                command = { type = supplies value = 1000 }
+                command = { type = steal_tech which = GER }
+                command = { type = steal_tech which = GER }
+                command = { type = steal_tech which = GER }
+                command = { type = steal_tech which = GER }
+                command = { type = trigger which = 933334 } # Buildup initiated
+        }
+        action_b = {
+                name = "EVT_933331_OPTIONB"
+        ai_chance = 35
+                command = { type = relation which = GER value = -5 }
+                command = { type = trigger which = 933337 } # Offer turned down
+        }
+}
+
+event = {
+        id = 933332
+        random = no
+        country = IRE
+
+        name = "EVT_933332_NAME"
+        desc = "EVT_933332_DESC"
+        style = 2
+        picture = "Supplies2"
+
+        action_a = {
+                name = "EVT_933332_OPTIONA"
+        ai_chance = 65
+                command = { type = relation which = GER value = 35 }
+        command = { type = money value = -250 }
+                command = { type = construct which = ic where = -2 value = 1 }
+                command = { type = construct which = ic where = -1 value = 1 }
+                command = { type = construct which = ic where = -1 value = 1 }
+                command = { type = steal_tech which = GER }
+                command = { type = steal_tech which = GER }
+                command = { type = steal_tech which = GER }
+                command = { type = steal_tech which = GER }
+                command = { type = trigger which = 933335 } # Confirmation
+        }
+        action_b = {
+                name = "EVT_933332_OPTIONB"
+        ai_chance = 35
+                command = { type = relation which = GER value = -5 }
+                command = { type = trigger which = 933337 } # Offer turned down
+        }
+}
+
+event = {
+        id = 933333
+        random = no
+        country = IRE
+
+        name = "EVT_933333_NAME"
+        desc = "EVT_933333_DESC"
+        style = 2
+        picture = "Supplies2"
+
+        action_a = {
+                name = "EVT_933333_OPTIONA"
+        ai_chance = 65
+                command = { type = relation which = GER value = 35 }
+        command = { type = money value = -350 }
+                command = { type = supplies value = 1000 }
+                command = { type = construct which = ic where = -2 value = 1 }
+                command = { type = construct which = ic where = -1 value = 1 }
+                command = { type = construct which = ic where = -1 value = 1 }
+                command = { type = steal_tech which = GER }
+                command = { type = steal_tech which = GER }
+                command = { type = steal_tech which = GER }
+                command = { type = steal_tech which = GER }
+                command = { type = trigger which = 933336 } # Buildup initiated + confirmation
+        }
+        action_b = {
+                name = "EVT_933333_OPTIONB"
+        ai_chance = 35
+                command = { type = relation which = GER value = -5 }
+                command = { type = trigger which = 933337 } # Offer turned down
+        }
+}
+
+event = {
+        id = 933334
+        random = no
+        country = GER
+
+        name = "EVT_933334_NAME"
+        desc = "EVT_933334_DESC"
+        style = 2
+        picture = "Supplies2"
+
+        action_a = {
+                name = "EVT_933334_OPTIONA"
+        command = { type = supplies value = -1500 }
+        command = { type = money value = 250 }
+                command = { type = industrial_modifier which = total value = -15 }
+                command = { type = setflag which = GER_IRE_buildup }
+        }
+}
+
+event = {
+        id = 933335
+        random = no
+        country = GER
+
+        name = "EVT_933335_NAME"
+        desc = "EVT_933335_DESC"
+        style = 2
+        picture = "Supplies2"
+
+        action_a = {
+                name = "EVT_933335_OPTIONA"
+        command = { type = supplies value = -500 }
+        command = { type = money value = 250 }
+        }
+}
+
+event = {
+        id = 933336
+        random = no
+        country = GER
+
+        name = "EVT_933336_NAME"
+        desc = "EVT_933336_DESC"
+        style = 2
+        picture = "Supplies2"
+
+        action_a = {
+                name = "EVT_933336_OPTIONA"
+        command = { type = supplies value = -2000 }
+        command = { type = money value = 250 }
+                command = { type = industrial_modifier which = total value = -15 }
+                command = { type = setflag which = GER_IRE_buildup }
+        }
+}
+
+event = {
+        id = 933337
+        random = no
+        country = GER
+
+        name = "EVT_933337_NAME"
+        desc = "EVT_933337_DESC"
+        style = 2
+        picture = "ireland"
+
+        action_a = {
+                name = "EVT_933337_OPTIONA"
+                command = { type = relation which = IRE value = -5 }
+        }
+}
+
+event = {
+        id = 933338
+        random = no
+        country = GER
+        trigger = {
+                flag = GER_IRE_buildup
+                NOT = {
+                        event = 933340 # Buildup aborted
+                }
+        }
+
+        name = "EVT_933338_NAME"
+        desc = "EVT_933338_DESC"
+        style = 2
+        picture = "boat"
+
+        date = { day = 1 month = june year = 1938 }
+        offset = 300
+        deathdate = { day = 1 month = december year = 1939 }
+
+        action_a = {
+                name = "EVT_933338_OPTIONA"
+                command = { type = clrflag which = GER_IRE_buildup }
+                command = { type = industrial_modifier which = total value = 15 }
+                command = { type = supplies value = -500 }
+                command = { type = trigger which = 933339 }
+        }
+}
+
+event = {
+        id = 933339
+        random = no
+        country = IRE
+
+        name = "EVT_933339_NAME"
+        desc = "EVT_933339_DESC"
+        style = 2
+        picture = "boat"
+
+        action_a = {
+                name = "EVT_933339_OPTIONA"
+                command = { type = supplies value = 500 }
+                command = { type = add_division value = heavy_cruiser when = 4 }
+                command = { type = add_division value = heavy_cruiser when = 4 }
+                command = { type = add_division value = light_cruiser when = 4 }
+                command = { type = add_division value = light_cruiser when = 4 }
+                command = { type = add_division value = destroyer when = 4 }
+                command = { type = add_division value = destroyer when = 4 }
+                command = { type = add_division value = destroyer when = 4 }
+                command = { type = add_division value = interceptor when = 7 }
+                command = { type = add_division value = tactical_bomber when = 4 }
+                command = { type = add_division value = light_armor when = 1 }
+        }
+}
+
+event = {
+        id = 933340
+        random = no
+        country = GER
+        trigger = {
+                flag = GER_IRE_buildup
+                NOT = {
+                        event = 933339 # Buildup completed
+                }
+        OR = {
+            NOT = {
+                exists = IRE
+            }                
+                    war = { country = GER country = IRE }
+                        alliance = { country = IRE country = ENG }
+                        alliance = { country = IRE country = FRA }
+                        alliance = { country = IRE country = CSA }
+                        alliance = { country = IRE country = CAN }
+                    ispuppet = IRE
+        }
+        }
+
+        name = "EVT_933340_NAME"
+        desc = "EVT_933340_DESC"
+        style = 2
+        picture = "failed_objective"
+
+        date = { day = 1 month = june year = 1938 }
+        offset = 5
+        deathdate = { day = 1 month = december year = 1939 }
+
+        action_a = {
+                name = "EVT_933340_OPTIONA"
+                command = { type = clrflag which = GER_IRE_buildup }
+                command = { type = industrial_modifier which = total value = 15 }
+                command = { type = add_division value = heavy_cruiser when = 4 }
+                command = { type = add_division value = heavy_cruiser when = 4 }
+                command = { type = add_division value = light_cruiser when = 4 }
+                command = { type = add_division value = light_cruiser when = 4 }
+                command = { type = add_division value = destroyer when = 4 }
+                command = { type = add_division value = destroyer when = 4 }
+                command = { type = add_division value = destroyer when = 4 }
+                command = { type = add_division value = interceptor when = 7 }
+                command = { type = add_division value = tactical_bomber when = 4 }
+                command = { type = add_division value = light_armor when = 1 }
+        }
+}

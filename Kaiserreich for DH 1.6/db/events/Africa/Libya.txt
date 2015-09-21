@@ -1,0 +1,224 @@
+event = {
+ id = 377101
+ random = no
+ country = LBY
+ persistent = yes
+
+ trigger = {
+ puppet = { country = LBY country = OTT  }
+ atwar = OTT
+ control = { province = 750 data = LBY }
+ control = { province = 761 data = LBY } 
+ control = { province = 765 data = LBY }
+ not = { 
+ local_flag = LBY_TRUEPUPPET
+ }
+ }
+
+
+ name = "EVT_377101_NAME"
+ desc = "EVT_377101_DESC"
+ style = 2
+
+ date = { day = 1 month = january year = 1936 }
+ offset = 60
+ deathdate = { day = 29 month = december year = 1960 }
+
+ action_a = {
+ name = "EVT_377101_OPTIONA"
+ ai_chance = 80
+ command = { type = name where = LBY }
+ command = { type = flag_ext where = LBY }
+ command = { type = add_division value = militia when = 4 }
+ command = { type = add_division value = militia when = 4 }
+ command = { type = leave_alliance }
+ command = { type = peace which = EGY value = 1 }
+ command = { type = peace which = SAU value = 1 }
+ command = { type = peace which = PER value = 1 }
+ command = { type = peace which = KUR value = 1 }
+ command = { type = peace which = RUS value = 1 }
+ command = { type = peace which = FRA value = 1 }
+ command = { type = peace which = ARM value = 1 }
+ command = { type = peace which = ALB value = 1 }
+ command = { type = peace which = CYP value = 1 }
+ command = { type = peace which = GRE value = 1 }
+ command = { type = peace which = SER value = 1 }
+ command = { type = peace which = URU value = 1 }
+ command = { type = peace which = ROM value = 1 }
+ command = { type = peace which = MTN value = 1 }
+ command = { type = peace which = BUL value = 1 }
+ command = { type = trigger which = 377102 }
+ }
+ action_b = {
+ name = "EVT_377101_OPTIONB"
+ ai_chance = 20
+ command = { type = dissent value = 1 }
+ }
+ }
+
+ event = {
+ id = 377102
+ random = no
+ country = OTT
+ save_date = yes
+
+ name = "EVT_377102_NAME"
+ desc = "EVT_377102_DESC"
+ style = 2
+
+ action_a = {
+ name = "EVT_377102_OPTIONA"
+ ai_chance = 50
+ command = { type = end_mastery which = LBY }
+ }
+ action_b = {
+ name = "EVT_377102_OPTIONB"
+ ai_chance = 50
+ command = { type = end_mastery which = LBY }
+ command = { type = war which = LBY }
+ }
+ }
+
+ event = {
+ id = 377103
+ country = OTT
+ style = 2
+ trigger = { 
+ NOT = {
+ ispuppet = OTT
+ ispuppet = LBY
+ alliance = { country = LBY country = RUS }
+ alliance = { country = LBY country = EGY }
+ alliance = { country = LBY country = ITA }
+ alliance = { country = LBY country = VIC }
+ alliance = { country = LBY country = FRA }
+ }
+ event = { id = 377102 days = 100 } #Libyan Uprising 100 days ago
+ control = { province = 750 data = LBY }
+ control = { province = 761 data = LBY } 
+ control = { province = 765 data = LBY }
+ war = { country = OTT country = LBY }
+ }
+ picture = "riot1"
+
+ date = { day = 1 month = January year = 1936 }
+ offset =  80
+ deathdate = { day = 29 month = december year = 1960 }
+
+ name = "EVT_377103_NAME"
+ desc = "EVT_377103_DESC"
+
+ action_a = {
+ name = "EVT_377103_OPTIONA"
+ ai_chance = 70
+ command = { type = dissent value = 2 }
+ command = { type = peace which = LBY value = 1 }
+ }
+
+ action_b = {
+ name = "EVT_377103_OPTIONB"
+ ai_chance = 30
+ command = { type = dissent value = 7 }
+ }
+ }
+
+
+################################################################
+#Alliance with Libya
+################################################################
+event = {
+id = 377128
+random = no
+country = LBY
+style = 2
+picture = "diplomatic_campaign"
+
+trigger = {
+        exists = SAU
+        exists = OTT
+        exists = EGY
+        NOT = { 
+        ispuppet = EGY
+        ispuppet = SAU 
+        ispuppet = LBY
+        government = communist
+        atwar = LBY
+        atwar = EGY
+        }
+        alliance = { country = EGY country = SAU }
+        NOT = { 
+        alliance = { country = LBY country = OTT }
+        alliance = { country = LBY country = EGY } 
+        alliance = { country = EGY country = OTT }
+        }
+	}
+
+date = { day = 1 month = february year = 1937 }
+offset = 30
+deathdate = { day = 29 month = december year = 1944 }
+
+name = "EVT_377128_NAME"
+desc = "EVT_377128_DESC"
+
+action_a = {
+ai_chance = 90
+name = "EVT_377128_OPTIONA"
+command = { type = dissent value = -3 }
+command = { type = trigger which = 377129 } # Arabian response
+}
+
+action_b = {
+ai_chance = 1
+name = "EVT_377128_OPTIONB"
+command = { type = sleepevent which = 377129 }
+command = { type = dissent value = 3 }
+}
+}
+
+event = {
+id = 377129
+random = no
+country = EGY
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_377129_NAME"
+desc = "EVT_377129_DESC"
+
+action_a  = {
+ai_chance = 95
+name = "Yes, Arabian countries should keep together"
+command = { type = alliance which = LBY }
+command = { type = relation which = LBY value = 200 }
+command = { type = relation which = OTT value = -20 }
+command = { type = domestic which = interventionism value = 2 }
+command = { type = domestic which = defense_lobby value = -1 }
+command = { type = trigger which = 377130 }
+}
+
+action_b  = {
+ai_chance = 5
+name = " Refuse them!"
+command = { type = domestic which = interventionism value = -1 }
+command = { type = domestic which = defense_lobby value = 1 }
+}
+}
+
+event = {
+id = 377130
+country = LBY
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_377130_NAME"
+desc = "EVT_377130_DESC"
+
+action_a = {
+name = "EVT_377130_OPTIONA"
+        command = { type = set_relation which = EGY value = 175 }
+        command = { type = set_relation which = SAU value = 175 }
+        command = { type = relation which = OTT value = -20 }
+        command = { type = dissent value = -3 }
+        command = { type = domestic which = interventionism value = 1 }
+	}
+}

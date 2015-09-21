@@ -1,0 +1,1465 @@
+#####################################
+### Syndicalism Spreading in America
+#####################################
+
+#657000	CUB	Syndicalism spreading in America
+#657001	CAN		Cuba asks for protection
+#657002	CSA		Cuba is left alone
+#657003	CUB	Join the Carribean Federation?
+#657004	GUY	Cuban Ministers in our Government?
+#657005	CUB	The Carribbean Federation Denied our Request
+#657006	CUB	The syndicalist want to coup us!
+#657007	CSA		The coup failed!	
+#657008	CSA		The annexation of Cuba
+#657009	GUY	Cuba joins the Carribbean Federation
+#657010	CUB	For the Revolution!
+#657011	GUY	The Spanish Language
+#657012	CSA	A free Cuba?
+#657015	GUY	Growing unrest
+
+event = {
+id = 657000
+country = CUB
+style = 2
+picture = "CSA"
+
+trigger = {
+	control = { province = 1944 data = CSA }
+	control = { province = 1953 data = CSA }
+	control = { province = 1809 data = CSA }
+	exists = CAN
+	NOT = {
+		ispuppet = CUB
+		ispuppet = CAN
+		alliance = { country = CUB country = CAN }
+		alliance = { country = CUB country = CSA }
+	}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = December year = 1960 }
+
+name = "EVT_657000_NAME"
+desc = "EVT_657000_DESC"
+
+action_a = {
+ai_chance = 80
+name = "EVT_657000_OPTIONA"
+	command = { type = domestic which = interventionism value = 2 }
+	command = { type = trigger which = 657001 }
+	}
+action_b = {
+	ai_chance = 20
+	name = "EVT_657000_OPTIONB"
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = trigger which = 657002 }
+	}
+}
+
+### Cuba asks for protection
+event = {
+id = 657001
+country = CAN
+style = 2
+picture = "Guerillas"
+
+name = "EVT_657001_NAME"
+desc = "EVT_657001_DESC"
+
+action_a = {
+	ai_chance = 65
+	name = "EVT_657001_OPTIONA"
+	command = { type = relation which = CUB value = 100 }
+	command = { type = domestic which = interventionism value = 1 }
+	command = { type = alliance which = CUB }
+	}
+action_b = {
+	ai_chance = 30
+	name = "EVT_657001_OPTIONB"
+	command = { type = trigger which = 657003 }
+	}
+action_c = {
+	ai_chance = 5
+	name = "EVT_657001_OPTIONC"
+	command = { type = relation which = CUB value = -100 }
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = dissent value = 5 }
+	command = { type = trigger which = 657002 }
+	}
+}
+
+### Cuba is left alone
+event = {
+id = 657002
+country = CSA
+style = 2
+picture = "Guerillas"
+
+# triggered by 657000, 657001 or 657005
+
+name = "EVT_657002_NAME"
+desc = "EVT_657002_DESC"
+
+action_a = {
+	ai_chance = 60
+	name = "EVT_657002_OPTIONA"
+	command = { type = domestic which = interventionism value = 1 }
+	command = { type = trigger which = 657006 }
+	}
+action_b = {
+	ai_chance = 40
+	name = "EVT_657002_OPTIONB"
+	command = { type = domestic which = interventionism value = -1 }
+	}
+}
+
+### Cuba is asked to join the Carribean Federation
+event = {
+id = 657003
+country = CUB
+style = 2
+#picture = "Carribbean"
+
+# triggered by 657001
+
+name = "EVT_657003_NAME"
+desc = "EVT_657003_DESC"
+
+action_a = {
+	ai_chance = 30
+	name = "EVT_657003_OPTIONA"
+	command = { type = relation which = CAN value = -100 }
+	command = { type = dissent value = 5 }
+	command = { type = domestic which = interventionism value = -1 }
+	}
+action_b = {
+	ai_chance = 10
+	name = "EVT_657003_OPTIONB"
+	command = { type = domestic which = interventionism value = 1 }
+	command = { type = trigger which = 657009 }
+	}
+action_c = {
+	ai_chance = 60
+	name = "EVT_657003_OPTIONC"
+	command = { type = domestic which = interventionism value = 1 }
+	command = { type = trigger which = 657004 }
+	}
+}
+
+### Cuban ministers in the Federation government, changed the ID of this event to make it more ordered
+event = {
+id = 657004
+country = GUY
+style = 2
+picture = "Caribbean"
+
+# triggered by 657003
+
+name = "EVT_657004_NAME"
+desc = "EVT_657004_DESC"
+
+action_a = {
+	ai_chance = 70
+	name = "EVT_657004_OPTIONA"
+	command = { type = relation which = CUB value = 100 }
+	command = { type = armamentminister which = 564049 } #Carlos Prio
+	command = { type = ministerofsecurity which = 564050 } #Sergio Carbo
+	command = { type = ministerofintelligence which = 564051 } #Manuel Ferrara
+	command = { type = trigger which = 657009 }
+	}
+action_b = {
+	ai_chance = 30
+	name = "EVT_657004_OPTIONB" 
+	command = { type = domestic which = democratic value = 1 } 
+	command = { type = relation which = CUB value = -50 }
+	command = { type = relation which = CAN value = -50 }
+	command = { type = dissent value = 5 }
+	command = { type = trigger which = 657005 }
+	}
+}
+
+### The Federation denies the request, changed the number on this event because of order conflict
+event = {
+id = 657005
+country = CUB
+style = 2
+picture = "Caribbean"
+
+# triggered by 657004
+
+name = "EVT_657005_NAME"
+desc = "EVT_657005_DESC"
+
+action_a = {
+	ai_chance = 90
+	name = "EVT_657005_OPTIONA"
+	command = { type = dissent value = 5 }
+	command = { type = trigger which = 657002 } 
+	}
+action_b = {
+	ai_chance = 10
+	name = "EVT_657005_OPTIONB"
+	command = { type = domestic which = interventionism value = 1 }
+	command = { type = trigger which = 657009 }
+	}
+}
+
+### The syndicalist want to coup us!
+event = {
+id = 657006
+country = CUB
+style = 2
+picture = "Guerillas"
+
+# triggered by 657002
+
+name = "EVT_657006_NAME"
+desc = "EVT_657006_DESC"
+
+action_a = {
+	ai_chance = 80
+	name = "EVT_657006_OPTIONA"
+	command = { type = set_domestic which = democratic value = 1 }
+	command = { type = set_domestic which = political_left value = 9 }
+	command = { type = headofstate which = 33201 } #Julio Antonio Mella
+	command = { type = headofgovernment which = 33202 } #Fabio Grobart
+	command = { type = foreignminister which = 33203 } #Luis Amado-Blanco
+	command = { type = armamentminister which = 33204 } #Carlos Rafael Rodríguez
+	command = { type = ministerofsecurity which = 33205 } #Roberto Agramonte
+	command = { type = ministerofintelligence which = 33206 } #Luis Amado-Blanco
+	command = { type = chiefofstaff which = 33207 } #Alberto Bayo
+	command = { type = chiefofarmy which = 33208 } #Alberto Bayo
+	command = { type = chiefofnavy which = 33112 } # Sandalio Junco
+	command = { type = chiefofair which = 33210 } #Mario Torres Menier
+	command = { type = alliance which = CSA } 
+	command = { type = trigger which = 657012 } 
+	}
+action_b = {
+	ai_chance = 20
+	name = "EVT_657006_OPTIONB"
+	command = { type = set_domestic which = democratic value = -1 }
+	command = { type = set_domestic which = freedom value = -1 }
+	command = { type = domestic which = defense_lobby value = 1 }
+	command = { type = trigger which = 657007 } 
+	}
+}
+
+### The coup failed!
+event = {
+id = 657007
+country = CSA
+style = 2
+picture = "Guerillas"
+
+# triggered by 657006
+
+name = "EVT_657007_NAME"
+desc = "EVT_657007_DESC"
+
+action_a = {
+	ai_chance = 40
+	name = "EVT_657007_OPTIONA"
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = dissent value = 2 }
+	}
+action_b = {
+	ai_chance = 60
+	name = "EVT_657007_OPTIONB"
+	command = { type = domestic which = interventionism value = 1 }
+	command = { type = war which = CUB }
+	}
+}
+
+### The annexation of Cuba
+event = {
+id = 657008
+country = CSA
+style = 2
+picture = "Guerillas"
+
+trigger = {
+	NOT = {
+		exists = CUB
+	}
+	owned = { province = 1776 data = CSA } 
+	owned = { province = 1779 data = CSA } 
+	owned = { province = 1775 data = CSA } 
+	owned = { province = 1777 data = CSA }
+        owned = { province = 1778 data = CSA } 
+}
+
+name = "EVT_657008_NAME"
+desc = "EVT_657008_DESC"
+
+action_a = {
+	ai_chance = 80
+	name = "EVT_657008_OPTIONA"
+	command = { type = independence which = CUB value = 1 when = 0 }
+	command = { type = trigger which = 657010 } 
+	}
+action_b = {
+	ai_chance = 20
+	name = "EVT_657008_OPTIONB"
+	command = { type = dissent value = 1 }
+	}
+}
+
+
+### Cuba is inherited by the Federation.
+event = {
+id = 657009
+country = GUY
+style = 2
+picture = "Caribbean"
+
+# triggered by 657003,  657004 or 657005
+
+name = "EVT_657009_NAME"
+desc = "EVT_657009_DESC"
+
+action_a = {
+	name = "EVT_657009_OPTIONA"
+	command = { type = inherit which = CUB }
+	command = { type = dissent value = 3 }
+	command = { type = addcore which = 1776 }
+	command = { type = addcore which = 1779 }
+	command = { type = addcore which = 1775 }
+	command = { type = addcore which = 1777 }
+        command = { type = addcore which = 1778 }
+	command = { type = manpowerpool value = 30 }
+        command = { type = waketeam which = 15217 }
+        command = { type = waketeam which = 15218 }
+        command = { type = waketeam which = 15219 }
+        command = { type = waketeam which = 15220 }
+        command = { type = waketeam which = 15221 }
+        command = { type = waketeam which = 15222 }
+	command = { type = trigger which = 657011 }
+	}
+}
+
+
+### For the revolution!
+event = {
+id = 657010
+country = CUB
+style = 2
+picture = "Guerillas"
+
+# triggered by 657002
+
+name = "EVT_657010_NAME"
+desc = "EVT_657010_DESC"
+
+action_a = {
+	name = "EVT_657010_OPTIONA"
+	command = { type = set_domestic which = democratic value = 1 }
+	command = { type = set_domestic which = political_left value = 9 }
+	command = { type = headofstate which = 33201 } #Julio Antonio Mella
+	command = { type = headofgovernment which = 33202 } #Fabio Grobart
+	command = { type = foreignminister which = 33203 } #Luis Amado-Blanco
+	command = { type = armamentminister which = 33204 } #Carlos Rafael Rodríguez
+	command = { type = ministerofsecurity which = 33205 } #Roberto Agramonte
+	command = { type = ministerofintelligence which = 33206 } #Luis Amado-Blanco
+	command = { type = chiefofstaff which = 33207 } #Alberto Bayo
+	command = { type = chiefofarmy which = 33208 } #Alberto Bayo
+	command = { type = chiefofnavy which = 33112 } # Sandalio Junco
+	command = { type = chiefofair which = 33210 } #Mario Torres Menier
+	command = { type = alliance which = CSA } 
+	command = { type = trigger which = 657012 } 
+	}
+}
+
+### The Official Language
+event = {
+id = 657011
+country = GUY
+style = 2
+picture = "Caribbean"
+
+name = "EVT_657011_NAME"
+desc = "EVT_657011_DESC"
+
+action_a = {
+	ai_chance = 50
+	name = "EVT_657011_OPTIONA"
+	command = { type = dissent value = 10 } 
+	}
+action_b = {
+	ai_chance = 50
+	name = "EVT_657011_OPTIONB"
+	command = { type = dissent value = -5 }
+	}
+}
+
+event = {
+id = 657012
+country = CSA
+style = 2
+
+name = "EVT_657012_NAME"
+desc = "EVT_657012_DESC"
+
+action_a = {
+	ai_chance = 50
+	name = "EVT_657012_OPTIONA"
+	command = { type = domestic which = democratic value = 1 }
+	}
+action_b = {
+	ai_chance = 50
+	name = "EVT_657012_OPTIONB"
+	command = { type = make_puppet which = CUB }
+	command = { type = domestic which = democratic value = -1 }
+	}
+}
+
+### Growing unrest
+event = {
+id = 657015
+country = GUY
+style = 2
+picture = "Caribbean"
+
+trigger = {
+	control = { province = 1777 data = GUY }
+	control = { province = 1776 data = GUY }
+        owned = { province = 1777 data = GUY } 
+	owned = { province = 1776 data = GUY } 
+	dissent = 10
+        NOT = {
+        government = communist
+        }
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 10
+deathdate = { day = 29 month = December year = 1960 }
+
+name = "EVT_657015_NAME"
+desc = "EVT_657015_DESC"
+
+
+action_a = {
+	ai_chance = 50
+	name = "EVT_657015_OPTIONA"
+	command = { type = dissent value = 7 } 
+}
+action_b = {
+	ai_chance = 50
+	name = "EVT_657015_OPTIONB"
+	command = { type = dissent value = 5 }
+	command = { type = supplies value = -100 }
+	}
+}
+
+
+event = {
+	id = 1657050
+	random = no
+	country = CUB
+
+	trigger = {
+	headofstate = 33032 #Gerardo Machado
+	NOT = { headofgovernment = 33038 } } #Gerardo Machado
+
+	name = "EVT_1657050_NAME"
+	desc = "EVT_1657050_DESC"
+	style = 2
+        picture = "minister_died"
+
+	date = { day = 29 month = march year = 1939 }
+
+	action_a = {
+		name = "EVT_1657050_OPTIONA"
+		command = { type = sleepminister which = 33032 }
+		command = { type = sleepminister which = 33038 }
+		command = { type = sleepminister which = 33075 }
+		command = { type = headofstate which = 33034 } #Fulgencio Batista
+		command = { type = dissent value = 1 }
+	}
+}
+
+event = {
+	id = 1657051
+	random = no
+	country = CUB
+
+	trigger = {
+	headofgovernment = 33038 #Gerardo Machado
+	NOT = { headofstate = 33038 } } #Gerardo Machado
+
+	name = "EVT_1657051_NAME"
+	desc = "EVT_1657051_DESC"
+	style = 2
+        picture = "minister_died"
+
+	date = { day = 29 month = march year = 1939 }
+
+	action_a = {
+		name = "EVT_1657051_OPTIONA"
+		command = { type = sleepminister which = 33032 }
+		command = { type = sleepminister which = 33038 }
+		command = { type = sleepminister which = 33075 }
+		command = { type = headofstate which = 33034 } #Fulgencio Batista
+		command = { type = dissent value = 1 }
+	}
+}
+
+event = {
+	id = 1657052
+	random = no
+	country = CUB
+
+	trigger = {
+	headofgovernment = 33038 #Gerardo Machado
+	headofstate = 33038 } #Gerardo Machado
+
+	name = "EVT_1657052_NAME"
+	desc = "EVT_1657052_DESC"
+	style = 2
+        picture = "minister_died"
+
+	date = { day = 29 month = march year = 1939 }
+
+	action_a = {
+		name = "EVT_1657052_OPTIONA"
+		command = { type = sleepminister which = 33032 }
+		command = { type = sleepminister which = 33038 }
+		command = { type = sleepminister which = 33075 }
+		command = { type = headofstate which = 33034 } #Fulgencio Batista
+		command = { type = dissent value = 1 }
+	}
+}
+
+event = {
+	id = 1657053
+	random = no
+	country = CUB
+
+	trigger = {
+	OR = { NOT = {
+	event = 1657050
+	event = 1657051
+	event = 1657052 } }
+	OR = { NOT = {
+	headofstate = 33032 #Gerardo Machado
+	headofgovernment = 33038 } } } #Gerardo Machado
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+	style = 2
+
+	date = { day = 29 month = march year = 1939 }
+
+	action_a = {
+		name = "EVT_1657053_OPTIONA"
+		command = { type = sleepminister which = 33032 }
+		command = { type = sleepminister which = 33038 }
+		command = { type = sleepminister which = 33075 }
+		command = { type = dissent value = 1 }
+	}
+}
+
+event = {
+	id = 1657054
+	random = no
+	country = CUB
+
+	trigger = { headofgovernment = 33002 } #Miguel Mariano Gómez
+
+	name = "EVT_1657054_NAME"
+	desc = "EVT_1657054_DESC"
+	style = 2
+        picture = "minister_died"
+
+	date = { day = 26 month = october year = 1950 }
+
+	action_a = {
+		name = "EVT_1657054_OPTIONA"
+		command = { type = sleepminister which = 33002 }
+		command = { type = sleepminister which = 33031 }
+		command = { type = sleepminister which = 33062 }
+		command = { type = headofgovernment which = 33039 } #Eduardo Chibas
+		command = { type = dissent value = 1 }
+	}
+}
+
+event = {
+	id = 1657055
+	random = no
+	country = CUB
+	style = 2
+
+	trigger = { NOT = {
+	event = 1657055
+	headofgovernment = 33002 } } #Miguel Mariano Gómez
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { day = 26 month = october year = 1950 }
+
+	action_a = {
+		name = "EVT_1657055_OPTIONA"
+		command = { type = sleepminister which = 33002 }
+		command = { type = sleepminister which = 33031 }
+		command = { type = sleepminister which = 33062 }
+		command = { type = dissent value = 1 }
+	}
+}
+
+event = {
+	id = 1657056
+	random = no
+	country = CUB
+
+	trigger = { headofgovernment = 33039 } #Eduardo Chibas
+
+	name = "EVT_1657056_NAME"
+	desc = "EVT_1657056_DESC"
+	style = 2
+        picture = "minister_died"
+
+	date = { day = 16 month = august year = 1951 }
+
+	action_a = {
+		name = "EVT_1657056_OPTIONA"
+		command = { type = sleepminister which = 33039 }
+		command = { type = sleepminister which = 33047 }
+		command = { type = sleepminister which = 33063 }
+		command = { type = headofgovernment which = 33040 } #Eugenio Molinet Castro
+		command = { type = dissent value = 1 }
+	}
+}
+
+event = {
+	id = 1657057
+	random = no
+	country = CUB
+
+	trigger = { NOT = {
+	event = 1657056
+	headofgovernment = 33039 } } #Eduardo Chibas
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+	style = 2
+
+	date = { day = 16 month = august year = 1951 }
+
+	action_a = {
+		name = "EVT_1657057_OPTIONA"
+		command = { type = sleepminister which = 33039 }
+		command = { type = sleepminister which = 33047 }
+		command = { type = sleepminister which = 33063 }
+		command = { type = dissent value = 1 }
+	}
+}
+
+### Cuban Revolution!
+
+event = {
+	id = 1657015
+	country = CSA
+	style = 2
+
+	trigger = {
+	government = communist
+	exists = CUB
+	NOT = { OR = {
+	alliance = { country = CUB country = CSA }
+	ispuppet = CUB
+	ispuppet = CSA } }
+	NOT = { event = 675010 } } #Syndicalist Cuba event
+
+	date = { day = 1 month = january year = 1953 }
+	offset = 300
+	deathdate = { day = 29 month = december year = 1966 }
+
+	name = "EVT_1657015_NAME"
+	desc = "EVT_1657015_DESC"
+
+	action_a = {
+		ai_chance = 90
+		name = "EVT_1657015_OPTIONA"
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = relation which = CAN value = -20 }
+		command = { type = relation which = GUY value = -20 }
+		command = { type = relation which = CUB value = -40 }
+		command = { type = money value = -100 }
+		command = { type = supplies value = -200 }
+		command = { type = sleepevent which = 1657016 }
+		command = { type = sleepevent which = 1657017 }
+		command = { type = sleepevent which = 1657018 }
+	}
+	action_b = {
+		ai_chance = 10
+		name = "EVT_1657015_OPTIONB"
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = relation which = CUB value = 10 }
+	}
+}
+
+event = {
+	id = 1657016
+	country = GUA
+	style = 2
+
+	trigger = {
+	government = communist
+	exists = CUB
+	NOT = { OR = {
+	alliance = { country = CUB country = GUA }
+	ispuppet = CUB
+	ispuppet = GUA } }
+	NOT = { event = 675012 } } #Syndicalist Cuba event
+
+	date = { day = 1 month = january year = 1953 }
+	offset = 300
+	deathdate = { day = 29 month = december year = 1966 }
+
+	name = "EVT_1657016_NAME"
+	desc = "EVT_1657016_DESC"
+
+	action_a = {
+		ai_chance = 90
+		name = "EVT_1657016_OPTIONA"
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = relation which = CAN value = -20 }
+		command = { type = relation which = GUY value = -20 }
+		command = { type = relation which = CUB value = -40 }
+		command = { type = money value = -100 }
+		command = { type = supplies value = -200 }
+		command = { type = sleepevent which = 1657015 }
+		command = { type = sleepevent which = 1657017 }
+		command = { type = sleepevent which = 1657018 }
+	}
+	action_b = {
+		ai_chance = 10
+		name = "EVT_1657016_OPTIONB"
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = relation which = CUB value = 10 }
+	}
+}
+
+event = {
+	id = 1657017
+	country = MEX
+	style = 2
+
+	trigger = {
+	government = communist
+	exists = CUB
+	NOT = { OR = {
+	alliance = { country = CUB country = MEX }
+	ispuppet = CUB
+	ispuppet = MEX } }
+	NOT = { event = 675012 } } #Syndicalist Cuba event
+
+	date = { day = 1 month = january year = 1953 }
+	offset = 300
+	deathdate = { day = 29 month = december year = 1966 }
+
+	name = "EVT_1657017_NAME"
+	desc = "EVT_1657017_DESC"
+
+	action_a = {
+		ai_chance = 90
+		name = "EVT_1657017_OPTIONA"
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = relation which = CAN value = -20 }
+		command = { type = relation which = GUY value = -20 }
+		command = { type = relation which = CUB value = -40 }
+		command = { type = money value = -100 }
+		command = { type = supplies value = -200 }
+		command = { type = sleepevent which = 1657015 }
+		command = { type = sleepevent which = 1657016 }
+		command = { type = sleepevent which = 1657018 }
+	}
+	action_b = {
+		ai_chance = 10
+		name = "EVT_1657017_OPTIONB"
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = relation which = CUB value = 10 }
+	}
+}
+
+event = {
+	id = 1657018
+	country = CUB
+	style = 2
+
+	trigger = { OR = {
+	event = 5059
+	event = 505901
+	event = 505902 }
+	NOt = { government = communist } }
+
+	date = { day = 1 month = january year = 1953 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1966 }
+
+	name = "EVT_1657018_NAME"
+	desc = "EVT_1657018_DESC"
+
+	action_a = {
+		name = "EVT_1657018_OPTIONA"
+		command = { type = dissent value = 1 }
+		command = { type = industrial_modifier which = total value = -5 }
+	}
+}
+
+event = {
+	id = 1657019
+	country = CUB
+	style = 2
+
+	trigger = { event = 1657018 }
+
+	date = { day = 1 month = january year = 1953 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1966 }
+
+	name = "EVT_1657019_NAME"
+	desc = "EVT_1657019_DESC"
+
+	action_a = {
+		ai_chance = 50
+		name = "EVT_1657019_OPTIONA"
+		command = { type = dissent value = 1 }
+	}
+	action_b = {
+		ai_chance = 50
+		name = "EVT_1657019_OPTIONB"
+		command = { type = trigger which = 1657021 }
+	}
+}
+
+event = {
+	id = 1657020
+	country = CUB
+	style = 2
+
+	trigger = { event = 1657019 }
+
+	date = { day = 1 month = january year = 1953 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1966 }
+
+	name = "EVT_1657020_NAME"
+	desc = "EVT_1657020_DESC"
+
+	action_a = {
+		ai_chance = 20
+		name = "EVT_1657020_OPTIONA"
+		command = { type = dissent value = -5 }
+ 		command = { type = set_domestic which = democratic value = 8 }
+ 		command = { type = set_domestic which = political_left value = 4 }
+		command = { type = industrial_modifier which = total value = 5 }
+	}
+	action_b = {
+		ai_chance = 80
+		name = "EVT_1657020_OPTIONB"
+		command = { type = trigger which = 1657021 }
+	}
+}
+
+event = {
+	id = 1657021
+	country = CUB
+	style = 2
+
+	name = "EVT_1657021_NAME"
+	desc = "EVT_1657021_DESC"
+
+	action_a = {
+		name = "EVT_1657021_OPTIONA"
+		command = { type = dissent value = 10 }
+		command = { type = domestic which = political_left value = -1 }
+		command = { type = domestic which = democratic value = -1 }
+		command = { type = setflag which = CUB_REV_1 }
+	}
+}
+
+event = {
+	id = 1657022
+	country = CUB
+	style = 2
+
+	trigger = { flag = CUB_REV_1 }
+
+	date = { day = 1 month = january year = 1953 }
+	offset = 5
+	deathdate = { day = 29 month = december year = 1966 }
+
+	name = "EVT_1657022_NAME"
+	desc = "EVT_1657022_DESC"
+
+	action_a = {
+		name = "EVT_1657022_OPTIONA"
+		command = { }
+	}
+}
+
+event = {
+	id = 1657023
+	country = CUB
+	style = 2
+
+	trigger = {
+	flag = CUB_REV_1
+	event = 1657022
+	random = 50
+	NOT = { event = 1657024 } }
+
+	date = { day = 1 month = january year = 1953 }
+	offset = 5
+	deathdate = { day = 29 month = december year = 1966 }
+
+	name = "EVT_1657023_NAME"
+	desc = "EVT_1657023_DESC"
+
+	action_a = {
+		name = "EVT_1657023_OPTIONA"
+		command = { type = setflag which = MONCADA_GOV }
+		command = { type = clrflag which = CUB_REV_1 }
+		command = { type = sleepevent which = 1657024 }
+	}
+}
+
+event = {
+	id = 1657024
+	country = CUB
+	style = 2
+
+	trigger = {
+	flag = CUB_REV_1
+	event = 505907
+	random = 50
+	NOT = { event = 1657023 } }
+
+	date = { day = 1 month = january year = 1953 }
+	offset = 5
+	deathdate = { day = 29 month = december year = 1966 }
+
+	name = "EVT_1657024_NAME"
+	desc = "EVT_1657024_DESC"
+
+	action_a = {
+		name = "EVT_1657024_OPTIONA"
+		command = { type = setflag which = MONCADA_REB }
+		command = { type = dissent value = 5 }
+		command = { type = sleepevent which = 1657023 }
+	}
+}
+
+event = {
+	id = 1657025
+	country = CUB
+	style = 2
+
+	trigger = { flag = MONCADA_GOV }
+
+	date = { day = 1 month = january year = 1953 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1966 }
+
+	name = "EVT_1657025_NAME"
+	desc = "EVT_1657025_DESC"
+
+	action_a = {
+		name = "EVT_1657025_OPTIONA"
+		command = { type = dissent value = 1 }
+	}
+}
+
+event = {
+	id = 1657026
+	country = CUB
+	style = 2
+
+	trigger = {
+	flag = MONCADA_GOV
+	event = 1657025 }
+
+	date = { day = 1 month = march year = 1953 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1966 }
+
+	name = "EVT_1657026_NAME"
+	desc = "EVT_1657026_DESC"
+
+	action_a = {
+		name = "EVT_1657026_OPTIONA"
+		ai_chance = 85
+		command = { type = dissent value = 5 }
+		command = { type = domestic which = freedom value = -1 }
+		command = { type = domestic which = political_left value = -1 }
+		command = { type = trigger which = 1657027 }
+	}
+	action_b = {
+		name = "EVT_1657026_OPTIONB"
+		ai_chance = 15
+		command = { type = dissent value = 1 }
+		command = { type = domestic which = freedom value = 1 }
+	}
+}
+
+event = {
+	id = 1657027
+	country = CUB
+	style = 2
+
+	name = "EVT_1657027_NAME"
+	desc = "EVT_1657027_DESC"
+
+	action_a = {
+		name = "EVT_1657027_OPTIONA"
+		command = { type = sleepminister which = 33101 } #Fidel
+		command = { type = sleepminister which = 33095 } #Fidel
+	}
+}
+
+event = {
+	id = 1657028
+	country = CSA
+	style = 2
+
+	trigger = {
+	government = communist
+	exists = CUB
+	event = 1657026 }
+
+	date = { day = 1 month = march year = 1953 }
+	offset = 60
+	deathdate = { day = 29 month = december year = 1966 }
+
+	name = "EVT_1657028_NAME"
+	desc = "EVT_1657028_DESC"
+
+	action_a = {
+		ai_chance = 90
+		name = "EVT_1657028_OPTIONA"
+		command = { type = relation which = CUB value = -20 }
+		command = { type = sleepevent which = 1657029 }
+		command = { type = sleepevent which = 1657030 }
+		command = { type = setflag which = CUB_CSA }
+	}
+	action_b = {
+		ai_chance = 10
+		name = "EVT_1657028_OPTIONB"
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = dissent value = 1 }
+		command = { type = relation which = CUB value = 10 }
+	}
+}
+
+event = {
+	id = 1657029
+	country = GUA
+	style = 2
+
+	trigger = {
+	government = communist
+	exists = CUB
+	event = 1657026 }
+
+	date = { day = 1 month = march year = 1953 }
+	offset = 80
+	deathdate = { day = 29 month = december year = 1966 }
+
+	name = "EVT_1657029_NAME"
+	desc = "EVT_1657029_DESC"
+
+	action_a = {
+		ai_chance = 90
+		name = "EVT_1657029_OPTIONA"
+		command = { type = relation which = CUB value = -20 }
+		command = { type = sleepevent which = 1657028 }
+		command = { type = sleepevent which = 1657030 }
+		command = { type = setflag which = CUB_GUA }
+	}
+	action_b = {
+		ai_chance = 10
+		name = "EVT_1657029_OPTIONB"
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = dissent value = 1 }
+		command = { type = relation which = CUB value = 10 }
+	}
+}
+
+event = {
+	id = 1657030
+	country = MEX
+	style = 2
+
+	trigger = {
+	government = communist
+	exists = CUB
+	event = 1657026 }
+
+	date = { day = 1 month = march year = 1953 }
+	offset = 80
+	deathdate = { day = 29 month = december year = 1966 }
+
+	name = "EVT_1657030_NAME"
+	desc = "EVT_1657030_DESC"
+
+	action_a = {
+		ai_chance = 90
+		name = "EVT_1657030_OPTIONA"
+		command = { type = relation which = CUB value = -20 }
+		command = { type = sleepevent which = 1657028 }
+		command = { type = sleepevent which = 1657029 }
+		command = { type = setflag which = CUB_MEX }
+	}
+	action_b = {
+		ai_chance = 10
+		name = "EVT_1657030_OPTIONB"
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = dissent value = 1 }
+		command = { type = relation which = CUB value = 10 }
+	}
+}
+
+event = {
+	id = 1657031
+	country = CSA
+	style = 2
+
+	trigger = {
+	government = communist
+	exists = CUB
+	flag = CUB_CSA }
+
+	date = { day = 1 month = march year = 1956 }
+	offset = 500
+	deathdate = { day = 29 month = december year = 1966 }
+
+	name = "EVT_1657031_NAME"
+	desc = "EVT_1657031_DESC"
+
+	action_a = {
+		ai_chance = 99
+		name = "EVT_1657031_OPTIONA"
+		command = { type = relation which = CUB value = -20 }
+		command = { type = sleepevent which = 1657032 }
+		command = { type = sleepevent which = 1657033 }
+		command = { type = money value = -100 }
+		command = { type = supplies value = -200 }
+		command = { type = setflag which = CUB_REV_2 }
+	}
+	action_b = {
+		ai_chance = 1
+		name = "EVT_1657031_OPTIONB"
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = dissent value = 5 }
+		command = { type = relation which = CUB value = 10 }
+	}
+}
+
+event = {
+	id = 1657032
+	country = MEX
+	style = 2
+
+	trigger = {
+	government = communist
+	exists = CUB
+	flag = CUB_MEX }
+
+	date = { day = 1 month = march year = 1956 }
+	offset = 500
+	deathdate = { day = 29 month = december year = 1966 }
+
+	name = "EVT_1657032_NAME"
+	desc = "EVT_1657032_DESC"
+
+	action_a = {
+		ai_chance = 99
+		name = "EVT_1657032_OPTIONA"
+		command = { type = relation which = CUB value = -20 }
+		command = { type = sleepevent which = 1657031 }
+		command = { type = sleepevent which = 1657033 }
+		command = { type = money value = -100 }
+		command = { type = supplies value = -200 }
+		command = { type = setflag which = CUB_REV_2 }
+	}
+	action_b = {
+		ai_chance = 1
+		name = "EVT_1657032_OPTIONB"
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = dissent value = 5 }
+		command = { type = relation which = CUB value = 10 }
+	}
+}
+
+event = {
+	id = 1657033
+	country = GUA
+	style = 2
+
+	trigger = {
+	government = communist
+	exists = CUB
+	flag = CUB_GUA }
+
+	date = { day = 1 month = march year = 1956 }
+	offset = 500
+	deathdate = { day = 29 month = december year = 1966 }
+
+	name = "EVT_1657033_NAME"
+	desc = "EVT_1657033_DESC"
+
+	action_a = {
+		ai_chance = 99
+		name = "EVT_1657033_OPTIONA"
+		command = { type = relation which = CUB value = -20 }
+		command = { type = sleepevent which = 1657031 }
+		command = { type = sleepevent which = 1657032 }
+		command = { type = money value = -100 }
+		command = { type = supplies value = -200 }
+		command = { type = setflag which = CUB_REV_2 }
+	}
+	action_b = {
+		ai_chance = 1
+		name = "EVT_1657033_OPTIONB"
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = dissent value = 5 }
+		command = { type = relation which = CUB value = 10 }
+	}
+}
+
+event = {
+	id = 1657034
+	country = CUB
+	style = 2
+
+	trigger = { flag = CUB_REV_2 }
+
+	date = { day = 1 month = march year = 1956 }
+	offset = 50
+	deathdate = { day = 29 month = december year = 1966 }
+
+	name = "EVT_1657034_NAME"
+	desc = "EVT_1657034_DESC"
+
+	action_a = {
+		name = "EVT_1657034_OPTIONA"
+		command = { type = dissent value = 5 }
+	}
+}
+
+event = {
+	id = 1657035
+	country = CUB
+	style = 2
+
+	trigger = { OR = {
+	event = 1657034
+	flag = MONCADA_REB } }
+
+	date = { day = 1 month = january year = 1953 }
+	offset = 50
+	deathdate = { day = 29 month = december year = 1966 }
+
+	name = "EVT_1657035_NAME"
+	desc = "EVT_1657035_DESC"
+
+	action_a = {
+		ai_chance = 80
+		name = "EVT_1657035_OPTIONA"
+		command = { type = dissent value = 5 }
+		command = { type = setflag which = CUB_REV_START }
+	}
+	action_b = {
+		ai_chance = 20
+		name = "EVT_1657035_OPTIONB"
+		command = { type = trigger which = 1657043 }
+	}
+}
+
+event = {
+	id = 1657036
+	country = CUB
+	style = 2
+
+	trigger = { flag = CUB_REV_START }
+
+	date = { day = 1 month = january year = 1953 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1966 }
+
+	name = "EVT_1657036_NAME"
+	desc = "EVT_1657036_DESC"
+
+	action_a = {
+		name = "EVT_1657036_OPTIONA"
+		command = { }
+	}
+}
+
+event = {
+	id = 1657037
+	country = CUB
+	style = 2
+
+	trigger = {
+	event = 505921
+	random = 20 }
+
+	name = "EVT_1657037_NAME"
+	desc = "EVT_1657037_DESC"
+
+	date = { day = 1 month = january year = 1953 }
+	offset = 5
+	deathdate = { day = 29 month = december year = 1966 }
+
+	action_a = {
+		name = "EVT_1657037_OPTIONA"
+		command = { type = dissent value = -5 }
+		command = { type = clrflag which = CUB_REV_START }
+		command = { type = sleepevent which = 1657038 }
+	}
+}
+
+event = {
+	id = 1657038
+	country = CUB
+	style = 2
+
+	trigger = {
+	event = 505921
+	random = 80 }
+
+	name = "EVT_1657038_NAME"
+	desc = "EVT_1657038_DESC"
+
+	date = { day = 1 month = january year = 1953 }
+	offset = 5
+	deathdate = { day = 29 month = december year = 1966 }
+
+	action_a = {
+		name = "EVT_1657038_OPTIONA"
+		command = { type = dissent value = 5 }
+		command = { type = sleepevent which = 1657037 }
+	}
+}
+
+event = {
+	id = 1657039
+	country = CUB
+	style = 2
+
+	trigger = {
+	flag = CUB_REV_START
+	event = 1657038 }
+
+	name = "EVT_1657039_NAME"
+	desc = "EVT_1657039_DESC"
+
+	date = { day = 1 month = january year = 1953 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1966 }
+
+	action_a = {
+		name = "EVT_1657039_OPTIONA"
+		command = { }
+	}
+}
+
+event = {
+	id = 1657040
+	country = CUB
+	style = 2
+
+	trigger = {
+	event = 1657039
+	random = 20 }
+
+	name = "EVT_1657040_NAME"
+	desc = "EVT_1657040_DESC"
+
+	date = { day = 1 month = january year = 1953 }
+	offset = 5
+	deathdate = { day = 29 month = december year = 1966 }
+
+	action_a = {
+		name = "EVT_1657040_OPTIONA"
+		command = { type = dissent value = -5 }
+		command = { type = clrflag which = CUB_REV_START }
+		command = { type = sleepevent which = 1657041 }
+	}
+}
+
+event = {
+	id = 1657041
+	country = CUB
+	style = 2
+
+	trigger = {
+	event = 1657039
+	random = 80 }
+
+	name = "EVT_1657041_NAME"
+	desc = "EVT_1657041_DESC"
+
+	date = { day = 1 month = january year = 1953 }
+	offset = 5
+	deathdate = { day = 29 month = december year = 1966 }
+
+	action_a = {
+		name = "EVT_1657041_OPTIONA"
+		command = { type = dissent value = 5 }
+		command = { type = sleepevent which = 1657040 }
+	}
+}
+
+event = {
+	id = 1657042
+	country = CUB
+	style = 2
+
+	trigger = { event = 1657041 }
+
+	name = "EVT_1657042_NAME"
+	desc = "EVT_1657042_DESC"
+
+	date = { day = 1 month = january year = 1953 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1966 }
+
+	action_a = {
+		name = "EVT_1657042_OPTIONA"
+		command = { type = trigger which = 1657043 }
+	}
+}
+
+event = {
+	id = 1657043
+	country = CUB
+	style = 2
+
+	name = "EVT_1657043_NAME"
+	desc = "EVT_1657043_DESC"
+
+	action_a = {
+		name = "EVT_1657043_OPTIONA"
+		command = { type = dissent value = -50 }
+		command = { type = trigger which = 505928 }
+ 		command = { type = set_domestic which = democratic value = 5 }
+ 		command = { type = set_domestic which = political_left value = 9 }
+ 		command = { type = headofstate which = 33216 } #Raúl Castro
+ 		command = { type = headofgovernment which = 33218 } #Camilo Cienfuegos
+ 		command = { type = armamentminister which = 33204 } #Carlos Rafael Rodríguez
+ 		command = { type = foreignminister which = 33217 } #Raúl Castro
+ 		command = { type = ministerofsecurity which = 33101 } #Fidel Castro (if he wasn't shot previously)
+ 		command = { type = ministerofintelligence which = 33095 } #Fidel Castro (if he wasn't shot previously)
+ 		command = { type = chiefofnavy which = 33112 } #Sandalio Junco
+ 		command = { type = chiefofair which = 33210 } #Mario Torres Menier
+ 		command = { type = chiefofstaff which = 33219 } #Camilo Cienfuegos
+	}
+}

@@ -1,0 +1,3115 @@
+event = {
+id = 979101
+random = no
+country = GRE
+
+name = "EVT_979101_NAME"
+desc = "EVT_979101_DESC"
+style = 2
+picture = "Metaxasdic"
+
+date = { day = 8 month = february year = 1936 }
+
+action_a = {
+	name = "EVT_979101_OPTIONA"
+	ai_chance = 95
+	command = { type = set_domestic which = democratic value = 4 }
+	command = { type = set_domestic which = political_left value = 0 }
+	command = { type = headofstate which = 18037 } #H.R.H. Georgios II
+	command = { type = headofgovernment which = 18049 } #Ioannis Metaxas
+	command = { type = foreignminister which = 18070 } #Ioannis Metaxas
+	command = { type = armamentminister which = 18091 } #Alexiou Tsamotos
+	command = { type = ministerofsecurity which = 18122 } #Christos Tsigantes
+	command = { type = ministerofintelligence which = 18134 } #Anastassios Bardivilias
+	command = { type = chiefofstaff which = 18150 } #Alexandros Papagos
+	command = { type = chiefofarmy which = 18008 } #Alexandros Papagos
+	command = { type = chiefofnavy which = 18009 } #Anastassio Sakellariou
+	command = { type = chiefofair which = 18185 } #Panagotis Papanikolaou
+	command = { type = dissent value = -5 }
+        command = { type = relation which = GER value = -10 }
+        command = { type = relation which = BUL value = -10 }
+        command = { type = industrial_modifier which = total value = 2 }
+	}
+
+action_b = {
+	name = "EVT_979101_OPTIONB"
+	ai_chance = 0
+	command = { type = dissent value = 10  }
+        command = { type = relation which = GER value = 10 }
+        command = { type = relation which = BUL value = 10 }
+	}
+}
+
+event = {
+id = 979102
+random = no
+country = GRE
+trigger = {
+	NOT = { 
+		headofgovernment = 18049
+		
+		}
+	}
+
+name = "EVT_979102_NAME"
+desc = "EVT_979102_DESC"
+style = 2
+picture = "minister_died"
+
+date = { day = 29 month = january year = 1941 }
+
+action_a = {
+	name = "EVT_979102_OPTIONA"
+	command = { type = sleepminister which = 18049 } 
+	command = { type = sleepminister which = 18070 } 
+	command = { type = sleepevent which = 979103 }
+	} 
+}
+
+event = {
+id = 979103
+random = no
+country = GRE
+trigger = {
+	
+		headofgovernment = 18049
+		
+		
+	}
+
+name = "EVT_979103_NAME"
+desc = "EVT_979103_DESC"
+style = 2
+picture = "minister_died"
+
+date = { day = 29 month = january year = 1941 }
+
+action_a = {
+	name = "EVT_979103_OPTIONA"
+	ai_chance = 20
+	command = { type = dissent value = -4 }
+        command = { type = set_domestic which = democratic value = 8 }
+	command = { type = set_domestic which = political_left value = 4 }
+        command = { type = headofstate which = 18031 }
+        command = { type = headofgovernment which = 18046 }
+        command = { type = foreignminister which =  18067 }
+        command = { type = armamentminister which = 18089 }
+        command = { type = ministerofsecurity which = 18109 }
+        command = { type = ministerofintelligence which = 18132 }
+        command = { type = sleepminister which = 18049 } 
+	command = { type = sleepminister which = 18070 } 
+	command = { type = sleepevent which = 979102 }    
+	} 
+
+action_b = {
+	name = "EVT_979103_OPTIONB"
+	ai_chance = 40
+	command = { type = dissent value = 5 }
+        command = { type = set_domestic which = democratic value = 4 }
+	command = { type = set_domestic which = political_left value = 0 }
+        command = { type = headofstate which = 18037 }
+        command = { type = headofgovernment which = 18050 }
+        command = { type = foreignminister which =  18060 }
+        command = { type = sleepevent which = 979102 }
+	} 
+
+action_c = {
+	name = "EVT_979103_OPTIONC"
+	ai_chance =  40
+	command = { type = dissent value = 10  }
+        command = { type = set_domestic which = democratic value = 4 }
+	command = { type = set_domestic which = political_left value = 0 }
+	command = { type = headofstate which = 18037 }
+        command = { type = headofgovernment which = 18050 }
+        command = { type = foreignminister which =  18071 }
+        command = { type = sleepevent which = 979102 }
+	}
+
+}
+
+event = {
+	id = 979104
+	random = no
+	country = GRE
+	style = 2
+	
+	trigger = {
+		headofstate = 18031
+		random = 95
+		}
+
+	date = { day = 10 month = march year = 1947 }
+	offset = 10 
+	deathdate = { day = 20 month = april year = 1947 }
+
+	name = "EVT_979104_NAME"
+	desc = "EVT_979104_DESC"
+	picture = "minister_died"
+
+	action_a = {
+		name = "EVT_979104_OPTIONA"
+		command = { type = sleepminister which = 18031 }
+		command = { type = sleepminister which = 18034 }
+                command = { type = sleepminister which = 18037 }
+		command = { type = headofstate which = 18033 }
+                command = { type = sleepevent which = 979105 }
+                command = { type = sleepevent which = 979106 }
+                command = { type = sleepevent which = 979107 }
+		}
+	}
+
+event = {
+	id = 979106
+	random = no
+	country = GRE
+	style = 2
+	
+	trigger = {
+		headofstate = 18034
+		random = 95
+		}
+
+	date = { day = 10 month = march year = 1947 }
+	offset = 10 
+	deathdate = { day = 20 month = april year = 1947 }
+
+	name = "EVT_979106_NAME"
+	desc = "EVT_979106_DESC"
+	picture = "minister_died"
+
+	action_a = {
+		name = "EVT_979106_OPTIONA"
+		command = { type = sleepminister which = 18031 }
+		command = { type = sleepminister which = 18034 }
+                command = { type = sleepminister which = 18037 }
+		command = { type = headofstate which = 18043 }
+                command = { type = sleepevent which = 979105 }
+                command = { type = sleepevent which = 979104 }
+                command = { type = sleepevent which = 979107 }
+		}
+	}
+
+event = {
+id = 979105
+random = no
+country = GRE
+trigger = {
+	NOT = { 
+               OR = {
+		headofstate = 18037
+		headofstate = 18031
+                headofstate = 18034
+		}
+            }
+	}
+
+name = "EVT_979105_NAME"
+desc = "EVT_979105_DESC"
+style = 2
+picture = "minister_died"
+
+date = { day = 10 month = march year = 1947 }
+	offset = 10 
+	deathdate = { day = 20 month = april year = 1947 }
+
+
+action_a = {
+		name = "EVT_979105_OPTIONA"
+		command = { type = sleepminister which = 18031 }
+		command = { type = sleepminister which = 18034 }
+                command = { type = sleepminister which = 18037 }
+                command = { type = sleepevent which = 979104 }
+                command = { type = sleepevent which = 979106 }
+                command = { type = sleepevent which = 979107 }
+		}
+}
+
+event = {
+	id = 979107
+	random = no
+	country = GRE
+	style = 2
+	
+	trigger = {
+		headofstate = 18037
+		random = 95
+		}
+
+	date = { day = 10 month = march year = 1947 }
+	offset = 10 
+	deathdate = { day = 20 month = april year = 1947 }
+
+	name = "EVT_979107_NAME"
+	desc = "EVT_979107_DESC"
+	picture = "minister_died"
+
+	action_a = {
+		name = "EVT_979107_OPTIONA"
+		command = { type = sleepminister which = 18031 }
+		command = { type = sleepminister which = 18034 }
+		command = { type = sleepminister which = 18037 }
+		command = { type = headofstate which = 18036 }
+		command = { type = sleepevent which = 979104 }
+		command = { type = sleepevent which = 979105 }
+		command = { type = sleepevent which = 979106 }
+	}
+}
+
+event = {
+	id = 9070806
+	random = no
+	country = GRE
+	style = 2
+	
+	trigger = {
+		owned = { province = 360 data = ALB }
+		control = { province = 360 data = ALB }
+		NOT = {
+                        atwar = GRE
+			alliance = { country = GRE country = ALB }
+			ispuppet = GRE
+			puppet = { country = ALB country = GRE }
+		}
+		war = { country = ALB country = OTT }
+		owned = { province = 369 data = GRE }
+		control = { province = 369 data = GRE }
+	}
+	
+	name = "EVT_9070806_NAME"
+	desc = "EVT_9070806_DESC"
+	picture = "militaryparade1"    
+	
+	date = { day = 1 month = january year = 1936 }
+	offset = 10
+	deathdate = { day = 1 month = december year = 1960 }
+	
+	action_a = {
+		ai_chance = 70
+		name = "EVT_9070806_OPTIONA"
+		command = { type = belligerence which = GRE value = 1  }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = addcore  which =  360 }
+		command = { type = dissent value = 3 }  ## Reflects difficulty of integrating new territory
+		command = { type = trigger which = 9070807 }
+	}
+	action_b = {
+		ai_chance = 30
+		name = "EVT_9070806_OPTIONB"
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = relation which = ALB value = 60 }
+	}
+}
+
+event = {
+	id = 9070807
+	random = no
+	country = ALB
+	style = 2
+	
+	
+	name = "EVT_9070807_NAME"
+	desc = "EVT_9070807_DESC"
+	picture = "militaryparade1"
+	
+	action_a = {
+		ai_chance = 100
+		name =  "EVT_9070807_OPTIONA"
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = dissent value = 3 }
+		command = { type = secedeprovince which = GRE value = 360 }
+	}
+	action_b = {
+		ai_chance = 0
+		name = "EVT_9070807_OPTIONB"
+		command = { type = domestic which = interventionism value = 2 }
+		command = { type = secedeprovince which = GRE value = 329 }
+		command = { type = war which = GRE }
+	}  
+}
+
+######################
+#
+# The Ottoman variant
+#
+######################
+
+event = {
+id = 907100
+country = GRE
+picture = "Megali"
+decision_picture = "decision_peace_conference"
+random = no
+style = 2
+save_date = yes
+
+decision = {
+exists = OTT
+OR = {
+exists = SER
+exists = YUG
+}
+OR = {
+AND = {
+exists = URU
+NOT = {
+exists = ROM
+}
+}
+AND = {
+exists = ROM
+NOT = {
+exists = URU
+}
+}
+}
+NOT = { 
+exists = TUR
+atwar = GRE
+atwar = SER
+atwar = URU
+atwar = ROM
+atwar = YUG
+ispuppet = GRE
+ispuppet = OTT
+alliance = { country = OTT country = GRE }
+}
+control = { province = 363 data = GRE }
+control = { province = 364 data = GRE }
+control = { province = 365 data = GRE }
+control = { province = 366 data = GRE }
+control = { province = 370 data = GRE }
+control = { province = 409 data = OTT }
+control = { province = 1077 data = OTT }
+OR = {
+AND = {
+NOT = {
+exists = BUL
+}
+control = { province = 321 data = SER }
+}
+AND = {
+exists = BUL
+puppet = { country = BUL country = SER }
+}
+AND = {
+exists = BUL
+puppet = { country = BUL country = YUG }
+}
+}
+}
+
+decision_trigger = {
+}
+
+trigger = {
+exists = OTT
+OR = {
+exists = SER
+exists = YUG
+}
+OR = {
+AND = {
+exists = URU
+NOT = {
+exists = ROM
+}
+}
+AND = {
+exists = ROM
+NOT = {
+exists = URU
+}
+}
+}
+NOT = {
+exists = TUR 
+atwar = GRE
+atwar = SER
+atwar = URU
+atwar = ROM
+atwar = YUG
+ispuppet = GRE
+ispuppet = OTT
+alliance = { country = OTT country = GRE }
+}
+control = { province = 363 data = GRE }
+control = { province = 364 data = GRE }
+control = { province = 365 data = GRE }
+control = { province = 366 data = GRE }
+control = { province = 370 data = GRE }
+control = { province = 409 data = OTT }
+control = { province = 1077 data = OTT }
+OR = {
+AND = {
+NOT = {
+exists = BUL
+}
+control = { province = 321 data = SER }
+}
+AND = {
+exists = BUL
+puppet = { country = BUL country = SER }
+}
+AND = {
+exists = BUL
+puppet = { country = BUL country = YUG }
+}
+}
+}
+
+name = "EVT_907100_NAME"
+desc = "EVT_907100_DESC"
+
+date = { day = 1 month = april year = 1938 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+ai_chance = 70
+name = "EVT_907100_OPTIONA"
+command = { type = relation which = ROM value = 15 }
+command = { type = relation which = URU value = 15 }
+command = { type = relation which = SER value = 15 }
+command = { type = relation which = YUG value = 15 }
+command = { trigger = { exists = SER NOT = { exists = YUG } } type = trigger which = 907101 }
+command = { trigger = { exists = ROM NOT = { exists = URU } } type = trigger which = 907102 }
+command = { trigger = { exists = YUG NOT = { exists = SER } } type = trigger which = 907126 }
+command = { trigger = { exists = URU NOT = { exists = ROM } } type = trigger which = 907127 }
+command = { type = addcore which = 384 }
+command = { type = addcore which = 385 }
+command = { type = addcore which = 409 }
+command = { type = addcore which = 1076 }
+command = { type = addcore which = 381 }
+command = { type = addcore which = 383 }
+command = { type = addcore which = 378 }
+command = { type = addcore which = 379 }
+command = { type = addcore which = 387 }
+command = { type = addcore which = 388 }
+command = { type = addcore which = 1078 }
+command = { type = addcore which = 1077 }
+command = { type = setflag which = GRE_ANS }
+command = { type = sleepevent which = 907163 }
+}
+
+action_b = {
+ai_chance = 30
+name = "EVT_907100_OPTIONB"
+trigger = {
+control = { province = 163 data = GER }
+control = { province = 145 data = GER }
+control = { province = 383 data = OTT }
+control = { province = 379 data = OTT }
+exists = GER
+NOT = { 
+war = { country = GER country = OTT }
+ispuppet = GER
+}
+}
+command = { type = relation which = GER value = 15 }
+command = { type = trigger which = 907108 }
+command = { type = addcore which = 384 }
+command = { type = addcore which = 385 }
+command = { type = addcore which = 409 }
+command = { type = addcore which = 387 }
+command = { type = addcore which = 388 }
+command = { type = addcore which = 1076 }
+command = { type = addcore which = 381 }
+command = { type = addcore which = 383 }
+command = { type = addcore which = 378 }
+command = { type = addcore which = 379 }
+command = { type = addcore which = 1078 }
+command = { type = addcore which = 1077 }
+command = { type = sleepevent which = 907163 }
+}
+
+action_c = {
+ai_chance = 0
+name = "EVT_907100_OPTIONC"
+command = { type = dissent value = 2 }
+}
+}
+
+event = {
+     id = 907101
+     random = no
+     country = SER
+     style = 2
+     picture = "Megali"
+
+     name = "EVT_907101_NAME"
+     desc = "EVT_907101_DESC"
+
+     action_a = {
+         ai_chance = 50
+         trigger = {
+         NOT = {
+         ispuppet = SER
+         }
+         }
+         name = "EVT_907101_OPTIONA"
+         command = { type = trigger which = 907103 }
+     }
+     action_b = {
+         ai_chance = 50
+         trigger = {
+         ispuppet = SER
+         }
+         name = "EVT_907101_OPTIONB"
+         command = { type = dissent value = 2 }
+         command = { type = trigger which = 907104 }
+}
+
+     action_c = {
+         ai_chance = 0
+         name = "EVT_907101_OPTIONC"
+         command = { type = dissent value = 2 }
+         command = { type = trigger which = 907104 }
+     }
+ }
+
+event = {
+     id = 907126
+     random = no
+     country = YUG
+     style = 2
+     picture = "Megali"
+
+     name = "EVT_907126_NAME"
+     desc = "EVT_907126_DESC"
+
+     action_a = {
+         ai_chance = 50
+         trigger = {
+         NOT = {
+         ispuppet = YUG
+         }
+         }
+         name = "EVT_907126_OPTIONA"
+         command = { type = trigger which = 907128 }
+     }
+     action_b = {
+         ai_chance = 100
+         trigger = {
+         ispuppet = YUG
+         }
+         name = "EVT_907126_OPTIONB"
+         command = { type = dissent value = 2 }
+         command = { type = trigger which = 907129 }
+}
+
+     action_c = {
+         ai_chance = 0
+         name = "EVT_907126_OPTIONC"
+         command = { type = dissent value = 2 }
+         command = { type = trigger which = 907129 }
+     }
+ }
+
+event = {
+     id = 907127
+     random = no
+     country = URU
+     style = 2
+     picture = "Megali"
+
+     name = "EVT_907127_NAME"
+     desc = "EVT_907127_DESC"
+
+     action_a = {
+         ai_chance = 50
+         trigger = {
+         NOT = {
+         ispuppet = URU
+         }
+         }
+         name = "EVT_907127_OPTIONA"
+         command = { type = trigger which = 907130 }
+     }
+     action_b = {
+         ai_chance = 100
+         trigger = {
+         ispuppet = URU
+         }
+         name = "EVT_907127_OPTIONB"
+         command = { type = dissent value = 2 }
+         command = { type = trigger which = 907131 }
+}
+
+     action_c = {
+         ai_chance = 0
+         name = "EVT_907127_OPTIONC"
+         command = { type = dissent value = 2 }
+         command = { type = trigger which = 907131 }
+     }
+ }
+
+event = {
+     id = 907102
+     random = no
+     country = ROM
+     style = 2
+     picture = "Megali"
+
+     name = "EVT_907102_NAME"
+     desc = "EVT_907102_DESC"
+
+     action_a = {
+         ai_chance = 50
+         trigger = {
+         NOT = {
+         ispuppet = ROM
+         }
+         }
+         name = "EVT_907102_OPTIONA"
+         command = { type = trigger which = 907105 }
+     }
+
+     action_b = {
+         ai_chance = 50
+         trigger = {
+         ispuppet = ROM
+         }
+         name = "EVT_907102_OPTIONB"
+         command = { type = dissent value = 2 }
+         command = { type = trigger which = 907106 }
+}
+
+     action_c = {
+         ai_chance = 20
+         name = "EVT_907102_OPTIONC"
+         command = { type = dissent value = 2 }
+         command = { type = trigger which = 907106 }
+     }
+ }
+
+event = {
+     id = 907103
+     random = no
+     country = GRE
+     style = 2
+     picture = "Megali"
+
+     name = "EVT_907103_NAME"
+     desc = "EVT_907103_DESC"
+
+     action_a = {
+         ai_chance = 100
+         name = "EVT_907103_OPTIONA"
+	 command = { trigger = { NOT = { alliance = { country = GRE country = SER } alliance = { country = GRE country = YUG } } } type = alliance which = SER }
+         command = { type = relation which = SER value = 15 }
+    }
+ }
+
+event = {
+     id = 907128
+     random = no
+     country = GRE
+     style = 2
+     picture = "Megali"
+
+     name = "EVT_907128_NAME"
+     desc = "EVT_907128_DESC"
+
+     action_a = {
+         ai_chance = 100
+         name = "EVT_907128_OPTIONA"
+	 command = { trigger = { NOT = { alliance = { country = GRE country = SER } alliance = { country = GRE country = YUG } } } type = alliance which = YUG }
+         command = { type = relation which = YUG value = 15 }
+     }
+ }
+
+event = {
+     id = 907129
+     random = no
+     country = GRE
+     style = 2
+     picture = "Megali"
+
+     name = "EVT_907129_NAME"
+     desc = "EVT_907129_DESC"
+
+     action_a = {
+         ai_chance = 100
+         name = "EVT_907129_OPTIONA"
+         command = { type = relation which = YUG value = -25 }
+         command = { trigger = { alliance = { country = GRE country = YUG } } type = leave_alliance }
+     }
+ }
+
+event = {
+     id = 907104
+     random = no
+     country = GRE
+     style = 2
+     picture = "Megali"
+
+     name = "EVT_907104_NAME"
+     desc = "EVT_907104_DESC"
+
+     action_a = {
+         ai_chance = 100
+         name = "EVT_907104_OPTIONA"
+         command = { type = relation which = SER value = -25 }
+         command = { trigger = { alliance = { country = GRE country = SER } } type = leave_alliance }
+     }
+ }
+
+event = {
+     id = 907105
+     random = no
+     country = GRE
+     style = 2
+     picture = "Megali"
+
+     name = "EVT_907105_NAME"
+     desc = "EVT_907105_DESC"
+
+     action_a = {
+         ai_chance = 100
+         name = "EVT_907105_OPTIONA"
+	 command = { trigger = { NOT = { alliance = { country = GRE country = ROM } } } type = alliance which = ROM }
+         command = { type = relation which = ROM value = 25 }
+     }
+ }
+
+event = {
+     id = 907106
+     random = no
+     country = GRE
+     style = 2
+     picture = "Megali"
+
+     name = "EVT_907106_NAME"
+     desc = "EVT_907106_DESC"
+
+     action_a = {
+         ai_chance = 100
+         name = "EVT_907106_OPTIONA"
+         command = { type = relation which = ROM value = -25 }
+         command = { trigger = { alliance = { country = GRE country = ROM } } type = leave_alliance }
+     }
+ }
+
+event = {
+     id = 907130
+     random = no
+     country = GRE
+     style = 2
+     picture = "Megali"
+
+     name = "EVT_907130_NAME"
+     desc = "EVT_907130_DESC"
+
+     action_a = {
+         ai_chance = 100
+         name = "EVT_907130_OPTIONA"
+	 command = { trigger = { NOT = { alliance = { country = GRE country = URU } } } type = alliance which = URU }
+         command = { type = relation which = URU value = 25 }
+
+     }
+ }
+
+event = {
+     id = 907131
+     random = no
+     country = GRE
+     style = 2
+     picture = "Megali"
+
+     name = "EVT_907131_NAME"
+     desc = "EVT_907131_DESC"
+
+     action_a = {
+         ai_chance = 100
+         name = "EVT_907131_OPTIONA"
+         command = { type = relation which = URU value = -25 }
+         command = { trigger = { alliance = { country = GRE country = ROM } } type = leave_alliance }
+     }
+ }
+
+event = {
+id = 907107
+country = GRE
+picture = "Greekarmy"
+random = no
+style = 2
+
+trigger = {
+                control = { province = 409 data = OTT }
+                control = { province = 1077 data = OTT }
+                NOT = {
+                atwar = GRE
+                }
+                flag = GRE_ANS
+                event = { id = 907100 days = 40 } 
+}
+
+
+name = "EVT_907107_NAME"
+desc = "EVT_907107_DESC"
+
+date = { day = 1 month = april year = 1938 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+ai_chance = 50
+trigger = {
+OR = {
+alliance = { country = GRE country = SER }
+alliance = { country = GRE country = YUG }
+alliance = { country = GRE country = ROM }
+alliance = { country = GRE country = URU }
+}
+}
+name = "EVT_907107_OPTIONA"
+command = { type = war which = OTT }
+command = { trigger = { puppet = { country = ALB country = OTT } } type = war which = ALB }
+command = { type = clrflag which = GRE_ANS }
+}
+
+action_a = {
+ai_chance = 70
+trigger = {
+NOT = {
+alliance = { country = GRE country = SER }
+alliance = { country = GRE country = YUG }
+alliance = { country = GRE country = ROM }
+alliance = { country = GRE country = URU }
+}
+}
+name = "EVT_907107_OPTIONB"
+command = { type = dissent value = 4 }
+command = { type = clrflag which = GRE_ANS }
+}
+
+action_c = {
+ai_chance = 20
+name = "EVT_907107_OPTIONC"
+command = { type = dissent value = 15 }
+command = { type = clrflag which = GRE_ANS }
+}
+}
+
+event = {
+id = 907108
+country = GER
+picture = "Venizel"
+random = no
+style = 2
+
+name = "EVT_907108_NAME"
+desc = "EVT_907108_DESC"
+
+action_a = {
+ai_chance = 30
+name = "EVT_907108_OPTIONA"
+command = { type = relation which = OTT value = 25 }
+command = { type = relation which = GRE value = -25 }
+command = { type = guarantee which = GER where = OTT }
+command = { type = trigger which = 907109 }
+}
+action_b = {
+ai_chance = 20
+name = "EVT_907108_OPTIONB"
+command = { type = relation which = OTT value = -25 }
+command = { type = relation which = GRE value = 70 }
+command = { type = end_guarantee which = GER where = OTT }
+command = { type = end_guarantee which = GER where = ALB }
+command = { type = trigger which = 907110 }
+}
+
+action_c = {
+ai_chance = 40
+name = "EVT_907108_OPTIONC"
+command = { type = relation which = GRE value = -5 }
+command = { type = relation which = OTT value = -5 }
+command = { type = end_guarantee which = GER where = OTT }
+command = { type = end_guarantee which = GER where = GRE }
+command = { type = end_guarantee which = GER where = ALB }
+command = { type = trigger which = 907119 }
+}
+}
+
+event = {
+id = 907109
+country = GRE
+picture = "Venizel"
+random = no
+style = 2
+
+name = "EVT_907109_NAME"
+desc = "EVT_907109_DESC"
+
+action_a = {
+ai_chance = 30
+name = "EVT_907109_OPTIONA"
+command = { type = dissent value = 5 }
+}
+
+action_b = {
+ai_chance = 0
+name = "EVT_907109_OPTIONB"
+command = { type = war which = OTT }
+command = { trigger = { puppet = { country = ALB country = OTT } } type = war which = ALB }
+}
+
+action_c = {
+ai_chance = 50
+name = "EVT_907109_OPTIONC"
+command = { type = relation which = ROM value = 15 }
+command = { type = relation which = URU value = 15 }
+command = { type = relation which = SER value = 15 }
+command = { type = relation which = YUG value = 15 }
+command = { trigger = { exists = SER NOT = { exists = YUG } } type = trigger which = 907101 }
+command = { trigger = { exists = ROM NOT = { exists = URU } } type = trigger which = 907102 }
+command = { trigger = { exists = YUG NOT = { exists = SER } } type = trigger which = 907126 }
+command = { trigger = { exists = URU NOT = { exists = ROM } } type = trigger which = 907127 }
+command = { type = addcore which = 384 }
+command = { type = addcore which = 385 }
+command = { type = addcore which = 387 }
+command = { type = addcore which = 388 }
+command = { type = addcore which = 409 }
+command = { type = addcore which = 1076 }
+command = { type = addcore which = 381 }
+command = { type = addcore which = 383 }
+command = { type = addcore which = 378 }
+command = { type = addcore which = 379 }
+command = { type = addcore which = 1078 }
+command = { type = addcore which = 1077 }
+command = { type = setflag which = GRE_ANS }
+}
+
+}
+
+event = {
+id = 907110
+country = GRE
+picture = "Venizel"
+random = no
+style = 2
+
+name = "EVT_907110_NAME"
+desc = "EVT_907110_DESC"
+
+action_a = {
+ai_chance = 100
+name = "EVT_907110_OPTIONA"
+command = { type = trigger which = 907111 }
+command = { type = relation which = OTT value = -50 }
+}
+
+action_b = {
+ai_chance = 0
+name = "EVT_907110_OPTIONB"
+command = { type = dissent value = 10 }
+}
+}
+
+event = {
+id = 907111
+country = OTT
+picture = "Venizel"
+random = no
+style = 2
+
+name = "EVT_907111_NAME"
+desc = "EVT_907111_DESC"
+
+action_a = {
+ai_chance = 60
+name = "EVT_907111_OPTIONA"
+command = { type = trigger which = 907112 }
+command = { type = dissent value = 5 }
+command = { type = belligerence which = OTT value = -3  }
+command = { type = relation which = GER value = 20 }
+command = { type = relation which = GRE value = 20 }
+}
+
+action_b = {
+ai_chance = 40
+name = "EVT_907111_OPTIONB"
+command = { type = trigger which = 907125 }
+command = { type = dissent value = -10 }
+command = { type = belligerence which = OTT value = 3  }
+command = { type = relation which = GER value = -20 }
+command = { type = relation which = GRE value = -20 }
+}
+}
+
+event = {
+id = 907112
+country = GRE
+picture = "Venizel"
+random = no
+style = 2
+
+name = "EVT_907112_NAME"
+desc = "EVT_907112_DESC"
+
+action_a = {
+name = "EVT_907112_OPTIONA"
+command = { type = trigger which = 907113 }
+}
+}
+
+event = {
+id = 907113
+country = OTT
+picture = "Venizel"
+random = no
+style = 2
+
+name = "EVT_907113_NAME"
+desc = "EVT_907113_DESC"
+
+action_a = {
+ai_chance = 70
+name = "EVT_907113_OPTIONA"
+command = { type = trigger which = 907114 }
+command = { type = secedeprovince which = GRE value = 381 }
+command = { type = secedeprovince which = GRE value = 383 }
+command = { type = secedeprovince which = GRE value = 378 }
+command = { type = secedeprovince which = GRE value = 379 }
+command = { type = secedeprovince which = GRE value = 387 }
+command = { type = secedeprovince which = GRE value = 388 }
+command = { type = removecore which = 381 }
+command = { type = removecore which = 383 }
+command = { type = removecore which = 378 }
+command = { type = removecore which = 379 }
+command = { type = removecore which = 387 }
+command = { type = removecore which = 388 }
+command = { type = dissent value = 5 }
+}
+
+action_b = {
+ai_chance = 30
+name = "EVT_907113_OPTIONB"
+command = { type = trigger which = 907115 }
+command = { type = dissent value = -5 }
+command = { type = relation which = GRE value = -20 }
+}
+}
+
+event = {
+id = 907114
+country = GRE
+picture = "Venizel"
+random = no
+style = 2
+
+name = "EVT_907114_NAME"
+desc = "EVT_907114_DESC"
+
+action_a = {
+name = "EVT_907114_OPTIONA"
+command = { type = dissent value = -5 }
+command = { type = relation which = OTT value = 20 }
+}
+}
+
+event = {
+id = 907115
+country = GRE
+picture = "Venizel"
+random = no
+style = 2
+
+name = "EVT_907115_NAME"
+desc = "EVT_907115_DESC"
+
+action_a = {
+ai_chance = 0
+name = "EVT_907115_OPTIONA"
+command = { type = war which = OTT }
+command = { trigger = { puppet = { country = ALB country = OTT } } type = war which = ALB }
+}
+
+action_b = {
+ai_chance = 100
+name = "EVT_907115_OPTIONB"
+command = { type = relation which = ROM value = 15 }
+command = { type = relation which = URU value = 15 }
+command = { type = relation which = SER value = 15 }
+command = { type = relation which = YUG value = 15 }
+command = { trigger = { exists = SER NOT = { exists = YUG } } type = trigger which = 907101 }
+command = { trigger = { exists = ROM NOT = { exists = URU } } type = trigger which = 907102 }
+command = { trigger = { exists = YUG NOT = { exists = SER } } type = trigger which = 907126 }
+command = { trigger = { exists = URU NOT = { exists = ROM } } type = trigger which = 907127 }
+command = { type = addcore which = 384 }
+command = { type = addcore which = 385 }
+command = { type = addcore which = 409 }
+command = { type = addcore which = 1076 }
+command = { type = addcore which = 381 }
+command = { type = addcore which = 383 }
+command = { type = addcore which = 378 }
+command = { type = addcore which = 379 }
+command = { type = addcore which = 1078 }
+command = { type = addcore which = 1077 }
+command = { type = setflag which = GRE_ANS }
+}
+
+action_c = {
+ai_chance = 5
+name = "EVT_907115_OPTIONC"
+command = { type = dissent value = 15 }
+}
+}
+
+
+event = {
+id = 907119
+country = GRE
+picture = "Venizel"
+random = no
+style = 2
+
+name = "EVT_907119_NAME"
+desc = "EVT_907119_DESC"
+
+action_a = {
+ai_chance = 50
+name = "EVT_907119_OPTIONA"
+command = { type = trigger which = 907120 }
+command = { type = relation which = CAN value = -50 }
+command = { type = relation which = VIC value = -50 }
+}
+
+action_b = {
+ai_chance = 0
+name = "EVT_907119_OPTIONB"
+command = { type = war which = OTT }
+command = { trigger = { puppet = { country = ALB country = OTT } } type = war which = ALB }
+}
+
+action_c = {
+ai_chance = 100
+name = "EVT_907119_OPTIONC"
+command = { type = relation which = ROM value = 15 }
+command = { type = relation which = URU value = 15 }
+command = { type = relation which = SER value = 15 }
+command = { type = relation which = YUG value = 15 }
+command = { trigger = { exists = SER NOT = { exists = YUG } } type = trigger which = 907101 }
+command = { trigger = { exists = ROM NOT = { exists = URU } } type = trigger which = 907102 }
+command = { trigger = { exists = YUG NOT = { exists = SER } } type = trigger which = 907126 }
+command = { trigger = { exists = URU NOT = { exists = ROM } } type = trigger which = 907127 }
+command = { type = addcore which = 384 }
+command = { type = addcore which = 385 }
+command = { type = addcore which = 409 }
+command = { type = addcore which = 1076 }
+command = { type = addcore which = 381 }
+command = { type = addcore which = 383 }
+command = { type = addcore which = 378 }
+command = { type = addcore which = 379 }
+command = { type = addcore which = 1078 }
+command = { type = addcore which = 1077 }
+command = { type = setflag which = GRE_ANS }
+}
+
+action_d = {
+ai_chance = 10
+name = "EVT_907119_OPTIOND"
+command = { type = dissent value = 15 }
+}
+}
+
+event = {
+id = 907120
+country = OTT
+picture = "Venizel"
+random = no
+style = 2
+
+name = "EVT_907120_NAME"
+desc = "EVT_907120_DESC"
+
+action_a = {
+ai_chance = 5
+name = "EVT_907120_OPTIONA"
+command = { type = trigger which = 907112 }
+command = { type = dissent value = 5 }
+}
+
+action_b = {
+ai_chance = 95
+name = "EVT_907120_OPTIONB"
+command = { type = trigger which = 907125 }
+command = { type = dissent value = -5 }
+}
+}
+
+event = {
+id = 907121
+country = GRE
+picture = "Greekpeace"
+random = no
+style = 2
+
+trigger = {
+NOT = { 
+flag = OTT_BUL
+ispuppet = GRE
+ispuppet = OTT
+}
+war = { country = GRE country = OTT }
+OR = {
+control = { province = 384 data = GRE }
+AND = {
+alliance = { country = ROM country = GRE }
+control = { province = 384 data = ROM } 
+}
+AND = {
+alliance = { country = URU country = GRE }
+control = { province = 384 data = URU } 
+}
+AND = {
+alliance = { country = SER country = GRE }
+control = { province = 384 data = ROM } 
+}
+AND = {
+alliance = { country = YUG country = GRE }
+control = { province = 384 data = ROM } 
+}
+AND = {
+alliance = { country = BUL country = GRE }
+control = { province = 384 data = BUL } 
+}
+}
+OR = {
+control = { province = 385 data = GRE }
+AND = {
+alliance = { country = ROM country = GRE }
+control = { province = 385 data = ROM } 
+}
+AND = {
+alliance = { country = URU country = GRE }
+control = { province = 385 data = URU } 
+}
+AND = {
+alliance = { country = SER country = GRE }
+control = { province = 385 data = ROM } 
+}
+AND = {
+alliance = { country = YUG country = GRE }
+control = { province = 385 data = ROM } 
+}
+AND = {
+alliance = { country = BUL country = GRE }
+control = { province = 385 data = BUL } 
+}
+}
+OR = {
+control = { province = 409 data = GRE }
+AND = {
+alliance = { country = ROM country = GRE }
+control = { province = 409 data = ROM } 
+}
+AND = {
+alliance = { country = URU country = GRE }
+control = { province = 409 data = URU } 
+}
+AND = {
+alliance = { country = SER country = GRE }
+control = { province = 409 data = ROM } 
+}
+AND = {
+alliance = { country = YUG country = GRE }
+control = { province = 409 data = ROM } 
+}
+AND = {
+alliance = { country = BUL country = GRE }
+control = { province = 409 data = BUL } 
+}
+}
+}
+
+name = "EVT_907121_NAME"
+desc = "EVT_907121_DESC"
+
+date = { day = 1 month = april year = 1938 }
+offset = 10
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+ai_chance = 35
+name = "EVT_907121_OPTIONA"
+command = { type = trigger which = 907122 }
+}
+
+action_b = {
+ai_chance = 65
+name = "EVT_907121_OPTIONB"
+command = { type = dissent value = 5 }
+}
+}
+
+event = {
+id = 907122
+country = OTT
+picture = "Greekpeace"
+random = no
+style = 2
+
+name = "EVT_907122_NAME"
+desc = "EVT_907122_DESC"
+
+action_a = {
+ai_chance = 25
+name = "EVT_907122_OPTIONA"
+         command = { type = peace which = GRE value = 0 }
+         command = { type = peace which = SER value = 0 }
+         command = { type = peace which = ROM value = 0 }
+         command = { type = secedeprovince which = GRE value = 384 }
+         command = { type = secedeprovince which = GRE value = 385 }
+         command = { type = secedeprovince which = GRE value = 409 }
+         command = { type = secedeprovince which = GRE value = 378 }
+         command = { type = secedeprovince which = GRE value = 379 }
+         command = { type = secedeprovince which = GRE value = 381 }
+         command = { type = secedeprovince which = GRE value = 383 }
+         command = { type = secedeprovince which = GRE value = 325 }
+         command = { type = secedeprovince which = GRE value = 319 }
+         command = { type = secedeprovince which = GRE value = 324 }
+         command = { type = secedeprovince which = GRE value = 363 }
+         command = { type = secedeprovince which = GRE value = 370 }
+         command = { type = removecore which =   370  }
+	 command = { type = removecore which =   325  }
+	 command = { type = removeclaim which =  324  }
+         command = { type = removeclaim which =  319  }
+         command = { type = removeclaim which =  363  }
+         command = { type = removecore which = 383 }
+	 command = { type = removecore which = 381 }
+	 command = { type = removecore which = 378 }
+	 command = { type = removecore which = 379 }
+	 command = { type = removecore which = 387 }
+	 command = { type = removecore which = 388 }
+         command = { type = removecore which = 384 }
+	 command = { type = removecore which = 385 }
+         command = { type = secedeprovince which = GRE value = 382 }
+         command = { type = secedeprovince which = GRE value = 380 }
+         command = { type = removeclaim which = 382 }
+	 command = { type = removeclaim which = 380 }
+         command = { type = capital which =  1075 }
+         command = { trigger = { exists = U02 puppet = { country = U02 country = OTT  } } type = trigger which = 907132 }
+         command = { type = end_mastery which = U02 }
+         command = { type = dissent value = 20 }
+}
+
+action_b = {
+ai_chance = 75
+name = "EVT_907122_OPTIONB"
+command = { type = dissent value = 5 }
+}
+}
+
+event = {
+id = 907123
+country = GRE
+picture = "Greekpeace"
+random = no
+style = 2
+
+trigger = {
+NOT = {
+flag = OTT_BUL 
+ispuppet = GRE
+ispuppet = OTT
+}
+war = { country = GRE country = OTT }
+OR = {
+control = { province = 384 data = GRE }
+AND = {
+alliance = { country = ROM country = GRE }
+control = { province = 384 data = ROM } 
+}
+AND = {
+alliance = { country = URU country = GRE }
+control = { province = 384 data = URU } 
+}
+AND = {
+alliance = { country = SER country = GRE }
+control = { province = 384 data = ROM } 
+}
+AND = {
+alliance = { country = YUG country = GRE }
+control = { province = 384 data = ROM } 
+}
+AND = {
+alliance = { country = BUL country = GRE }
+control = { province = 384 data = BUL } 
+}
+}
+OR = {
+control = { province = 385 data = GRE }
+AND = {
+alliance = { country = ROM country = GRE }
+control = { province = 385 data = ROM } 
+}
+AND = {
+alliance = { country = URU country = GRE }
+control = { province = 385 data = URU } 
+}
+AND = {
+alliance = { country = SER country = GRE }
+control = { province = 385 data = ROM } 
+}
+AND = {
+alliance = { country = YUG country = GRE }
+control = { province = 385 data = ROM } 
+}
+AND = {
+alliance = { country = BUL country = GRE }
+control = { province = 385 data = BUL } 
+}
+}
+OR = {
+control = { province = 409 data = GRE }
+AND = {
+alliance = { country = ROM country = GRE }
+control = { province = 409 data = ROM } 
+}
+AND = {
+alliance = { country = URU country = GRE }
+control = { province = 409 data = URU } 
+}
+AND = {
+alliance = { country = SER country = GRE }
+control = { province = 409 data = ROM } 
+}
+AND = {
+alliance = { country = YUG country = GRE }
+control = { province = 409 data = ROM } 
+}
+AND = {
+alliance = { country = BUL country = GRE }
+control = { province = 409 data = BUL } 
+}
+}
+OR = {
+control = { province = 1076 data = GRE }
+AND = {
+alliance = { country = ROM country = GRE }
+control = { province = 1076 data = ROM } 
+}
+AND = {
+alliance = { country = URU country = GRE }
+control = { province = 1076 data = URU } 
+}
+AND = {
+alliance = { country = SER country = GRE }
+control = { province = 1076 data = ROM } 
+}
+AND = {
+alliance = { country = YUG country = GRE }
+control = { province = 1076 data = ROM } 
+}
+AND = {
+alliance = { country = BUL country = GRE }
+control = { province = 1076 data = BUL } 
+}
+}
+OR = {
+control = { province = 1078 data = GRE }
+AND = {
+alliance = { country = ROM country = GRE }
+control = { province = 1078 data = ROM } 
+}
+AND = {
+alliance = { country = URU country = GRE }
+control = { province = 1078 data = URU } 
+}
+AND = {
+alliance = { country = SER country = GRE }
+control = { province = 1078 data = ROM } 
+}
+AND = {
+alliance = { country = YUG country = GRE }
+control = { province = 1078 data = ROM } 
+}
+AND = {
+alliance = { country = BUL country = GRE }
+control = { province = 1078 data = BUL } 
+}
+}
+OR = {
+control = { province = 1077 data = GRE }
+AND = {
+alliance = { country = ROM country = GRE }
+control = { province = 1077 data = ROM } 
+}
+AND = {
+alliance = { country = URU country = GRE }
+control = { province = 1077 data = URU } 
+}
+AND = {
+alliance = { country = SER country = GRE }
+control = { province = 1077 data = ROM } 
+}
+AND = {
+alliance = { country = YUG country = GRE }
+control = { province = 1077 data = ROM } 
+}
+AND = {
+alliance = { country = BUL country = GRE }
+control = { province = 1077 data = BUL } 
+}
+}
+}
+
+name = "EVT_907123_NAME"
+desc = "EVT_907123_DESC"
+
+date = { day = 1 month = april year = 1938 }
+offset = 10
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+ai_chance = 85
+name = "EVT_907123_OPTIONA"
+command = { type = trigger which = 907124 }
+}
+
+action_b = {
+ai_chance = 15
+name = "EVT_907123_OPTIONB"
+command = { type = dissent value = 5 }
+}
+}
+
+event = {
+id = 907124
+country = OTT
+picture = "Greekpeace"
+random = no
+style = 2
+
+name = "EVT_907124_NAME"
+desc = "EVT_907124_DESC"
+
+action_a = {
+ai_chance = 90
+name = "EVT_907124_OPTIONA"
+         command = { type = peace which = GRE value = 0 }
+         command = { type = peace which = SER value = 0 }
+         command = { type = peace which = ROM value = 0 }
+         command = { type = secedeprovince which = GRE value = 384 }
+         command = { type = secedeprovince which = GRE value = 385 }
+         command = { type = secedeprovince which = GRE value = 409 }
+         command = { type = secedeprovince which = GRE value = 378 }
+         command = { type = secedeprovince which = GRE value = 379 }
+         command = { type = secedeprovince which = GRE value = 381 }
+         command = { type = secedeprovince which = GRE value = 383 }
+         command = { type = secedeprovince which = GRE value = 1077 }
+         command = { type = secedeprovince which = GRE value = 1078 }
+         command = { type = secedeprovince which = GRE value = 1076 }
+         command = { type = secedeprovince which = GRE value = 325 }
+         command = { type = secedeprovince which = GRE value = 319 }
+         command = { type = secedeprovince which = GRE value = 324 }
+         command = { type = secedeprovince which = GRE value = 363 }
+         command = { type = secedeprovince which = GRE value = 370 }
+         command = { type = removecore which =   370  }
+	 command = { type = removecore which =   325  }
+	 command = { type = removeclaim which =  324  }
+         command = { type = removeclaim which =  319  }
+         command = { type = removeclaim which =  363  }
+         command = { type = removecore which = 383 }
+	 command = { type = removecore which = 381 }
+	 command = { type = removecore which = 378 }
+	 command = { type = removecore which = 379 }
+	 command = { type = removecore which = 387 }
+	 command = { type = removecore which = 388 }
+         command = { type = removecore which = 384 }
+	 command = { type = removecore which = 385 }
+         command = { type = secedeprovince which = GRE value = 382 }
+         command = { type = secedeprovince which = GRE value = 380 }
+         command = { type = removeclaim which = 382 }
+	 command = { type = removeclaim which = 380 }
+         command = { type = capital which =  1075 }
+         command = { type = dissent value = 25 }
+         command = { trigger = { exists = U02 puppet = { country = U02 country = OTT  } } type = trigger which = 907132 }
+         command = { type = end_mastery which = U02 }
+}
+
+action_b = {
+ai_chance = 10
+name = "EVT_907124_OPTIONB"
+         command = { type = dissent value = 35 }
+}
+}
+
+event = {
+     id = 907132
+     random = no
+     country = GRE
+     style = 2
+
+     name = "EVT_907132_NAME"
+     desc = "EVT_907132_DESC"
+     picture = "crete"
+
+     action_a = {
+         name = "EVT_907132_OPTIONA"
+         command = { type = dissent value = -1 }
+         command = { type = addcore which = 382 }
+         command = { type = addcore which = 380 }
+         command = { type = inherit which = U02 }
+     }
+ }
+
+event = {
+id = 907125
+country = GRE
+picture = "Venizel"
+random = no
+style = 2
+
+name = "EVT_907125_NAME"
+desc = "EVT_907125_DESC"
+
+action_a = {
+ai_chance = 0
+name = "EVT_907125_OPTIONA"
+command = { type = war which = OTT }
+command = { trigger = { puppet = { country = ALB country = OTT } } type = war which = ALB }
+}
+
+action_b = {
+ai_chance = 80
+name = "EVT_907125_OPTIONB"
+command = { type = relation which = ROM value = 15 }
+command = { type = relation which = URU value = 15 }
+command = { type = relation which = SER value = 15 }
+command = { type = relation which = YUG value = 15 }
+command = { trigger = { exists = SER NOT = { exists = YUG } } type = trigger which = 907101 }
+command = { trigger = { exists = ROM NOT = { exists = URU } } type = trigger which = 907102 }
+command = { trigger = { exists = YUG NOT = { exists = SER } } type = trigger which = 907126 }
+command = { trigger = { exists = URU NOT = { exists = ROM } } type = trigger which = 907127 }
+command = { type = addcore which = 384 }
+command = { type = addcore which = 385 }
+command = { type = addcore which = 409 }
+command = { type = addcore which = 1076 }
+command = { type = addcore which = 381 }
+command = { type = addcore which = 383 }
+command = { type = addcore which = 378 }
+command = { type = addcore which = 379 }
+command = { type = addcore which = 1078 }
+command = { type = addcore which = 1077 }
+command = { type = setflag which = GRE_ANS }
+}
+
+action_c = {
+ai_chance = 5
+name = "EVT_907125_OPTIONC"
+command = { type = dissent value = 10 }
+}
+}
+
+######################
+#
+# The Turkey variant
+#
+######################
+
+
+event = {
+id = 907163
+country = GRE
+picture = "Megali"
+decision_picture = "decision_peace_conference"
+random = no
+style = 2
+save_date = yes
+
+decision = {
+exists = TUR
+OR = {
+exists = SER
+exists = YUG
+}
+OR = {
+AND = {
+exists = URU
+NOT = {
+exists = ROM
+}
+}
+AND = {
+exists = ROM
+NOT = {
+exists = URU
+}
+}
+}
+NOT = { 
+exists = OTT
+atwar = GRE
+atwar = SER
+atwar = URU
+atwar = ROM
+atwar = YUG
+ispuppet = GRE
+ispuppet = TUR
+alliance = { country = TUR country = GRE }
+alliance = { country = TUR country = FRA }
+}
+control = { province = 363 data = GRE }
+control = { province = 364 data = GRE }
+control = { province = 365 data = GRE }
+control = { province = 366 data = GRE }
+control = { province = 370 data = GRE }
+control = { province = 409 data = TUR }
+control = { province = 1077 data = TUR }
+OR = {
+AND = {
+NOT = {
+exists = BUL
+}
+control = { province = 321 data = SER }
+}
+AND = {
+exists = BUL
+puppet = { country = BUL country = SER }
+}
+AND = {
+exists = BUL
+puppet = { country = BUL country = YUG }
+}
+}
+}
+
+decision_trigger = {
+}
+
+trigger = {
+exists = TUR
+OR = {
+exists = SER
+exists = YUG
+}
+OR = {
+AND = {
+exists = URU
+NOT = {
+exists = ROM
+}
+}
+AND = {
+exists = ROM
+NOT = {
+exists = URU
+}
+}
+}
+NOT = {
+exists = OTT
+atwar = GRE
+atwar = SER
+atwar = URU
+atwar = ROM
+atwar = YUG
+ispuppet = GRE
+ispuppet = TUR
+alliance = { country = TUR country = GRE }
+alliance = { country = TUR country = FRA }
+}
+control = { province = 363 data = GRE }
+control = { province = 364 data = GRE }
+control = { province = 365 data = GRE }
+control = { province = 366 data = GRE }
+control = { province = 370 data = GRE }
+control = { province = 409 data = TUR }
+control = { province = 1077 data = TUR }
+OR = {
+AND = {
+NOT = {
+exists = BUL
+}
+control = { province = 321 data = SER }
+}
+AND = {
+exists = BUL
+puppet = { country = BUL country = SER }
+}
+AND = {
+exists = BUL
+puppet = { country = BUL country = YUG }
+}
+}
+}
+
+name = "EVT_907163_NAME"
+desc = "EVT_907163_DESC"
+
+date = { day = 1 month = april year = 1938 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+ai_chance = 70
+name = "EVT_907163_OPTIONA"
+command = { type = relation which = ROM value = 15 }
+command = { type = relation which = URU value = 15 }
+command = { type = relation which = SER value = 15 }
+command = { type = relation which = YUG value = 15 }
+command = { trigger = { exists = SER NOT = { exists = YUG } } type = trigger which = 907133 }
+command = { trigger = { exists = ROM NOT = { exists = URU } } type = trigger which = 907143 }
+command = { trigger = { exists = YUG NOT = { exists = SER } } type = trigger which = 907136 }
+command = { trigger = { exists = URU NOT = { exists = ROM } } type = trigger which = 907139 }
+command = { type = addcore which = 384 }
+command = { type = addcore which = 385 }
+command = { type = addcore which = 409 }
+command = { type = addcore which = 1076 }
+command = { type = addcore which = 381 }
+command = { type = addcore which = 383 }
+command = { type = addcore which = 378 }
+command = { type = addcore which = 379 }
+command = { type = addcore which = 387 }
+command = { type = addcore which = 388 }
+command = { type = addcore which = 1078 }
+command = { type = addcore which = 1077 }
+command = { type = setflag which = GRE_ANS }
+command = { type = sleepevent which = 907100 }
+}
+
+action_b = {
+ai_chance = 30
+name = "EVT_907163_OPTIONB"
+trigger = {
+control = { province = 163 data = GER }
+control = { province = 145 data = GER }
+control = { province = 383 data = OTT }
+control = { province = 379 data = OTT }
+exists = GER
+NOT = { 
+war = { country = GER country = TUR }
+ispuppet = GER
+}
+}
+command = { type = relation which = GER value = 15 }
+command = { type = trigger which = 907147 }
+command = { type = addcore which = 384 }
+command = { type = addcore which = 385 }
+command = { type = addcore which = 409 }
+command = { type = addcore which = 387 }
+command = { type = addcore which = 388 }
+command = { type = addcore which = 1076 }
+command = { type = addcore which = 381 }
+command = { type = addcore which = 383 }
+command = { type = addcore which = 378 }
+command = { type = addcore which = 379 }
+command = { type = addcore which = 1078 }
+command = { type = addcore which = 1077 }
+command = { type = sleepevent which = 907100 }
+}
+
+action_c = {
+ai_chance = 0
+name = "EVT_907163_OPTIONC"
+command = { type = dissent value = 3 }
+}
+}
+
+event = {
+     id = 907133
+     random = no
+     country = SER
+     style = 2
+     picture = "Megali"
+
+     name = "EVT_907133_NAME"
+     desc = "EVT_907133_DESC"
+
+     action_a = {
+         ai_chance = 50
+         trigger = {
+         NOT = {
+         ispuppet = SER
+         }
+         }
+         name = "EVT_907133_OPTIONA"
+         command = { type = trigger which = 907134 }
+     }
+     action_b = {
+         ai_chance = 50
+         trigger = {
+         ispuppet = SER
+         }
+         name = "EVT_907133_OPTIONB"
+         command = { type = dissent value = 2 }
+         command = { type = trigger which = 907135 }
+}
+
+     action_c = {
+         ai_chance = 0
+         name = "EVT_907133_OPTIONC"
+         command = { type = dissent value = 2 }
+         command = { type = trigger which = 907135 }
+     }
+ }
+
+event = {
+     id = 907136
+     random = no
+     country = YUG
+     style = 2
+     picture = "Megali"
+
+     name = "EVT_907136_NAME"
+     desc = "EVT_907136_DESC"
+
+     action_a = {
+         ai_chance = 50
+         trigger = {
+         NOT = {
+         ispuppet = YUG
+         }
+         }
+         name = "EVT_907136_OPTIONA"
+         command = { type = trigger which = 907137 }
+     }
+     action_b = {
+         ai_chance = 100
+         trigger = {
+         ispuppet = YUG
+         }
+         name = "EVT_907136_OPTIONB"
+         command = { type = dissent value = 2 }
+         command = { type = trigger which = 907138 }
+}
+
+     action_c = {
+         ai_chance = 0
+         name = "EVT_907136_OPTIONC"
+         command = { type = dissent value = 2 }
+         command = { type = trigger which = 907138 }
+     }
+ }
+
+event = {
+     id = 907139
+     random = no
+     country = URU
+     style = 2
+     picture = "Megali"
+
+     name = "EVT_907139_NAME"
+     desc = "EVT_907139_DESC"
+
+     action_a = {
+         ai_chance = 50
+         trigger = {
+         NOT = {
+         ispuppet = URU
+         }
+         }
+         name = "EVT_907139_OPTIONA"
+         command = { type = trigger which = 907140 }
+     }
+     action_b = {
+         ai_chance = 100
+         trigger = {
+         ispuppet = URU
+         }
+         name = "EVT_907139_OPTIONB"
+         command = { type = dissent value = 2 }
+         command = { type = trigger which = 907141 }
+}
+
+     action_c = {
+         ai_chance = 0
+         name = "EVT_907139_OPTIONC"
+         command = { type = dissent value = 2 }
+         command = { type = trigger which = 907141 }
+     }
+ }
+
+event = {
+     id = 907143
+     random = no
+     country = ROM
+     style = 2
+     picture = "Megali"
+
+     name = "EVT_907143_NAME"
+     desc = "EVT_907143_DESC"
+
+     action_a = {
+         ai_chance = 50
+         trigger = {
+         NOT = {
+         ispuppet = ROM
+         }
+         }
+         name = "EVT_907143_OPTIONA"
+         command = { type = trigger which = 907144 }
+     }
+
+     action_b = {
+         ai_chance = 50
+         trigger = {
+         ispuppet = ROM
+         }
+         name = "EVT_907143_OPTIONB"
+         command = { type = dissent value = 2 }
+         command = { type = trigger which = 907145 }
+}
+
+     action_c = {
+         ai_chance = 20
+         name = "EVT_907143_OPTIONC"
+         command = { type = dissent value = 2 }
+         command = { type = trigger which = 907145 }
+     }
+ }
+
+event = {
+     id = 907134
+     random = no
+     country = GRE
+     style = 2
+     picture = "Megali"
+
+     name = "EVT_907134_NAME"
+     desc = "EVT_907134_DESC"
+
+     action_a = {
+         ai_chance = 100
+         name = "EVT_907134_OPTIONA"
+	 command = { trigger = { NOT = { alliance = { country = GRE country = SER } alliance = { country = GRE country = YUG } } } type = alliance which = SER }
+         command = { type = relation which = SER value = 15 }
+    }
+ }
+
+event = {
+     id = 907137
+     random = no
+     country = GRE
+     style = 2
+     picture = "Megali"
+
+     name = "EVT_907137_NAME"
+     desc = "EVT_907137_DESC"
+
+     action_a = {
+         ai_chance = 100
+         name = "EVT_907137_OPTIONA"
+	 command = { trigger = { NOT = { alliance = { country = GRE country = SER } alliance = { country = GRE country = YUG } } } type = alliance which = YUG }
+         command = { type = relation which = YUG value = 15 }
+     }
+ }
+
+event = {
+     id = 907138
+     random = no
+     country = GRE
+     style = 2
+     picture = "Megali"
+
+     name = "EVT_907138_NAME"
+     desc = "EVT_907138_DESC"
+
+     action_a = {
+         ai_chance = 100
+         name = "EVT_907138_OPTIONA"
+         command = { type = relation which = YUG value = -25 }
+         command = { trigger = { alliance = { country = GRE country = YUG } } type = leave_alliance }
+     }
+ }
+
+event = {
+     id = 907135
+     random = no
+     country = GRE
+     style = 2
+     picture = "Megali"
+
+     name = "EVT_907135_NAME"
+     desc = "EVT_907135_DESC"
+
+     action_a = {
+         ai_chance = 100
+         name = "EVT_907135_OPTIONA"
+         command = { type = relation which = SER value = -25 }
+         command = { trigger = { alliance = { country = GRE country = SER } } type = leave_alliance }
+     }
+ }
+
+event = {
+     id = 907144
+     random = no
+     country = GRE
+     style = 2
+     picture = "Megali"
+
+     name = "EVT_907144_NAME"
+     desc = "EVT_907144_DESC"
+
+     action_a = {
+         ai_chance = 100
+         name = "EVT_907144_OPTIONA"
+	 command = { trigger = { NOT = { alliance = { country = GRE country = ROM } } } type = alliance which = ROM }
+         command = { type = relation which = ROM value = 25 }
+     }
+ }
+
+event = {
+     id = 907145
+     random = no
+     country = GRE
+     style = 2
+     picture = "Megali"
+
+     name = "EVT_907145_NAME"
+     desc = "EVT_907145_DESC"
+
+     action_a = {
+         ai_chance = 100
+         name = "EVT_907145_OPTIONA"
+         command = { type = relation which = ROM value = -25 }
+         command = { trigger = { alliance = { country = GRE country = ROM } } type = leave_alliance }
+     }
+ }
+
+event = {
+     id = 907140
+     random = no
+     country = GRE
+     style = 2
+     picture = "Megali"
+
+     name = "EVT_907140_NAME"
+     desc = "EVT_907140_DESC"
+
+     action_a = {
+         ai_chance = 100
+         name = "EVT_907140_OPTIONA"
+	 command = { trigger = { NOT = { alliance = { country = GRE country = URU } } } type = alliance which = URU }
+         command = { type = relation which = URU value = 25 }
+
+     }
+ }
+
+event = {
+     id = 907141
+     random = no
+     country = GRE
+     style = 2
+     picture = "Megali"
+
+     name = "EVT_907141_NAME"
+     desc = "EVT_907141_DESC"
+
+     action_a = {
+         ai_chance = 100
+         name = "EVT_907141_OPTIONA"
+         command = { type = relation which = URU value = -25 }
+         command = { trigger = { alliance = { country = GRE country = ROM } } type = leave_alliance }
+     }
+ }
+
+event = {
+id = 907146
+country = GRE
+picture = "Greekarmy"
+random = no
+style = 2
+
+trigger = {
+                control = { province = 409 data = TUR }
+                control = { province = 1077 data = TUR }
+                NOT = {
+                atwar = GRE
+                }
+                flag = GRE_ANS
+                event = { id = 907163 days = 40 } 
+}
+
+
+name = "EVT_907146_NAME"
+desc = "EVT_907146_DESC"
+
+date = { day = 1 month = april year = 1938 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+ai_chance = 50
+trigger = {
+OR = {
+alliance = { country = GRE country = SER }
+alliance = { country = GRE country = YUG }
+alliance = { country = GRE country = ROM }
+alliance = { country = GRE country = URU }
+}
+}
+name = "EVT_907146_OPTIONA"
+command = { type = war which = TUR }
+command = { trigger = { puppet = { country = ALB country = TUR } } type = war which = ALB }
+command = { type = clrflag which = GRE_ANS }
+}
+
+action_a = {
+ai_chance = 70
+trigger = {
+NOT = {
+alliance = { country = GRE country = SER }
+alliance = { country = GRE country = YUG }
+alliance = { country = GRE country = ROM }
+alliance = { country = GRE country = URU }
+}
+}
+name = "EVT_907146_OPTIONB"
+command = { type = dissent value = 4 }
+command = { type = clrflag which = GRE_ANS }
+}
+
+action_c = {
+ai_chance = 20
+name = "EVT_907146_OPTIONC"
+command = { type = dissent value = 15 }
+command = { type = clrflag which = GRE_ANS }
+}
+}
+
+event = {
+id = 907147
+country = GER
+picture = "Venizel"
+random = no
+style = 2
+
+name = "EVT_907147_NAME"
+desc = "EVT_907147_DESC"
+
+action_a = {
+ai_chance = 30
+name = "EVT_907147_OPTIONA"
+command = { type = relation which = TUR value = 25 }
+command = { type = relation which = GRE value = -25 }
+command = { type = guarantee which = GER where = TUR }
+command = { type = trigger which = 907148 }
+}
+action_b = {
+ai_chance = 20
+name = "EVT_907147_OPTIONB"
+command = { type = relation which = TUR value = -25 }
+command = { type = relation which = GRE value = 70 }
+command = { type = end_guarantee which = GER where = TUR }
+command = { type = end_guarantee which = GER where = ALB }
+command = { type = trigger which = 907149 }
+}
+
+action_c = {
+ai_chance = 40
+name = "EVT_907147_OPTIONC"
+command = { type = relation which = GRE value = -5 }
+command = { type = relation which = TUR value = -5 }
+command = { type = end_guarantee which = GER where = TUR }
+command = { type = end_guarantee which = GER where = GRE }
+command = { type = end_guarantee which = GER where = ALB }
+command = { type = trigger which = 907155 }
+}
+}
+
+event = {
+id = 907148
+country = GRE
+picture = "Venizel"
+random = no
+style = 2
+
+name = "EVT_907148_NAME"
+desc = "EVT_907148_DESC"
+
+action_a = {
+ai_chance = 30
+name = "EVT_907148_OPTIONA"
+command = { type = dissent value = 5 }
+}
+
+action_b = {
+ai_chance = 0
+name = "EVT_907148_OPTIONB"
+command = { type = war which = TUR }
+command = { trigger = { puppet = { country = ALB country = TUR } } type = war which = ALB }
+}
+
+action_c = {
+ai_chance = 70
+name = "EVT_907148_OPTIONC"
+command = { type = relation which = ROM value = 15 }
+command = { type = relation which = URU value = 15 }
+command = { type = relation which = SER value = 15 }
+command = { type = relation which = YUG value = 15 }
+command = { trigger = { exists = SER NOT = { exists = YUG } } type = trigger which = 907133 }
+command = { trigger = { exists = ROM NOT = { exists = URU } } type = trigger which = 907143 }
+command = { trigger = { exists = YUG NOT = { exists = SER } } type = trigger which = 907136 }
+command = { trigger = { exists = URU NOT = { exists = ROM } } type = trigger which = 907139 }
+command = { type = addcore which = 384 }
+command = { type = addcore which = 385 }
+command = { type = addcore which = 409 }
+command = { type = addcore which = 1076 }
+command = { type = addcore which = 381 }
+command = { type = addcore which = 383 }
+command = { type = addcore which = 378 }
+command = { type = addcore which = 379 }
+command = { type = addcore which = 387 }
+command = { type = addcore which = 388 }
+command = { type = addcore which = 1078 }
+command = { type = addcore which = 1077 }
+command = { type = setflag which = GRE_ANS }
+}
+
+}
+
+event = {
+id = 907149
+country = GRE
+picture = "Venizel"
+random = no
+style = 2
+
+name = "EVT_907149_NAME"
+desc = "EVT_907149_DESC"
+
+action_a = {
+ai_chance = 100
+name = "EVT_907149_OPTIONA"
+command = { type = trigger which = 907150 }
+command = { type = relation which = OTT value = -50 }
+}
+
+action_b = {
+ai_chance = 0
+name = "EVT_907149_OPTIONB"
+command = { type = dissent value = 10 }
+}
+}
+
+event = {
+id = 907150
+country = TUR
+picture = "Venizel"
+random = no
+style = 2
+
+name = "EVT_907150_NAME"
+desc = "EVT_907150_DESC"
+
+action_a = {
+ai_chance = 60
+name = "EVT_907150_OPTIONA"
+command = { type = trigger which = 907151 }
+command = { type = dissent value = 5 }
+command = { type = belligerence which = TUR value = -3  }
+command = { type = relation which = GER value = 20 }
+}
+
+action_b = {
+ai_chance = 40
+name = "EVT_907150_OPTIONB"
+command = { type = trigger which = 907162 }
+command = { type = dissent value = -10 }
+command = { type = belligerence which = TUR value = 3  }
+command = { type = relation which = GER value = -20 }
+}
+}
+
+event = {
+id = 907151
+country = GRE
+picture = "Venizel"
+random = no
+style = 2
+
+name = "EVT_907151_NAME"
+desc = "EVT_907151_DESC"
+
+action_a = {
+name = "EVT_907151_OPTIONA"
+command = { type = trigger which = 907152 }
+}
+}
+
+event = {
+id = 907152
+country = TUR
+picture = "Venizel"
+random = no
+style = 2
+
+name = "EVT_907152_NAME"
+desc = "EVT_907152_DESC"
+
+action_a = {
+ai_chance = 70
+name = "EVT_907152_OPTIONA"
+command = { type = trigger which = 907153 }
+command = { type = secedeprovince which = GRE value = 381 }
+command = { type = secedeprovince which = GRE value = 383 }
+command = { type = secedeprovince which = GRE value = 378 }
+command = { type = secedeprovince which = GRE value = 379 }
+command = { type = secedeprovince which = GRE value = 387 }
+command = { type = secedeprovince which = GRE value = 388 }
+command = { type = removecore which = 381 }
+command = { type = removecore which = 383 }
+command = { type = removecore which = 378 }
+command = { type = removecore which = 379 }
+command = { type = removecore which = 387 }
+command = { type = removecore which = 388 }
+command = { type = dissent value = 5 }
+}
+
+action_b = {
+ai_chance = 30
+name = "EVT_907152_OPTIONB"
+command = { type = trigger which = 907154 }
+command = { type = dissent value = -5 }
+command = { type = relation which = GRE value = -20 }
+}
+}
+
+event = {
+id = 907153
+country = GRE
+picture = "Venizel"
+random = no
+style = 2
+
+name = "EVT_907153_NAME"
+desc = "EVT_907153_DESC"
+
+action_a = {
+name = "EVT_907153_OPTIONA"
+command = { type = dissent value = -5 }
+command = { type = relation which = TUR value = 20 }
+}
+}
+
+event = {
+id = 907154
+country = GRE
+picture = "Venizel"
+random = no
+style = 2
+
+name = "EVT_907154_NAME"
+desc = "EVT_907154_DESC"
+
+action_a = {
+ai_chance = 0
+name = "EVT_907154_OPTIONA"
+command = { type = war which = TUR }
+command = { trigger = { puppet = { country = ALB country = TUR } } type = war which = TUR }
+}
+
+action_b = {
+ai_chance = 70
+name = "EVT_907154_OPTIONB"
+command = { type = relation which = ROM value = 15 }
+command = { type = relation which = URU value = 15 }
+command = { type = relation which = SER value = 15 }
+command = { type = relation which = YUG value = 15 }
+command = { trigger = { exists = SER NOT = { exists = YUG } } type = trigger which = 907133 }
+command = { trigger = { exists = ROM NOT = { exists = URU } } type = trigger which = 907143 }
+command = { trigger = { exists = YUG NOT = { exists = SER } } type = trigger which = 907136 }
+command = { trigger = { exists = URU NOT = { exists = ROM } } type = trigger which = 907139 }
+command = { type = addcore which = 384 }
+command = { type = addcore which = 385 }
+command = { type = addcore which = 409 }
+command = { type = addcore which = 1076 }
+command = { type = addcore which = 381 }
+command = { type = addcore which = 383 }
+command = { type = addcore which = 378 }
+command = { type = addcore which = 379 }
+command = { type = addcore which = 387 }
+command = { type = addcore which = 388 }
+command = { type = addcore which = 1078 }
+command = { type = addcore which = 1077 }
+command = { type = setflag which = GRE_ANS }
+}
+
+action_c = {
+ai_chance = 5
+name = "EVT_907154_OPTIONC"
+command = { type = dissent value = 15 }
+}
+}
+
+
+event = {
+id = 907155
+country = GRE
+picture = "Venizel"
+random = no
+style = 2
+
+name = "EVT_907155_NAME"
+desc = "EVT_907155_DESC"
+
+action_a = {
+ai_chance = 50
+name = "EVT_907155_OPTIONA"
+command = { type = trigger which = 907156 }
+command = { type = relation which = CAN value = -50 }
+command = { type = relation which = VIC value = -50 }
+}
+
+action_b = {
+ai_chance = 0
+name = "EVT_907155_OPTIONB"
+command = { type = war which = TUR }
+command = { trigger = { puppet = { country = ALB country = TUR } } type = war which = ALB }
+}
+
+action_c = {
+ai_chance = 70
+name = "EVT_907155_OPTIONC"
+command = { type = relation which = ROM value = 15 }
+command = { type = relation which = URU value = 15 }
+command = { type = relation which = SER value = 15 }
+command = { type = relation which = YUG value = 15 }
+command = { trigger = { exists = SER NOT = { exists = YUG } } type = trigger which = 907133 }
+command = { trigger = { exists = ROM NOT = { exists = URU } } type = trigger which = 907143 }
+command = { trigger = { exists = YUG NOT = { exists = SER } } type = trigger which = 907136 }
+command = { trigger = { exists = URU NOT = { exists = ROM } } type = trigger which = 907139 }
+command = { type = addcore which = 384 }
+command = { type = addcore which = 385 }
+command = { type = addcore which = 409 }
+command = { type = addcore which = 1076 }
+command = { type = addcore which = 381 }
+command = { type = addcore which = 383 }
+command = { type = addcore which = 378 }
+command = { type = addcore which = 379 }
+command = { type = addcore which = 387 }
+command = { type = addcore which = 388 }
+command = { type = addcore which = 1078 }
+command = { type = addcore which = 1077 }
+command = { type = setflag which = GRE_ANS }
+}
+
+action_d = {
+ai_chance = 10
+name = "EVT_907155_OPTIOND"
+command = { type = dissent value = 15 }
+}
+}
+
+event = {
+id = 907156
+country = OTT
+picture = "Venizel"
+random = no
+style = 2
+
+name = "EVT_907156_NAME"
+desc = "EVT_907156_DESC"
+
+action_a = {
+ai_chance = 5
+name = "EVT_907156_OPTIONA"
+command = { type = trigger which = 907151 }
+command = { type = dissent value = 5 }
+}
+
+action_b = {
+ai_chance = 95
+name = "EVT_907156_OPTIONB"
+command = { type = trigger which = 907162 }
+command = { type = dissent value = -5 }
+}
+}
+
+event = {
+id = 907157
+country = GRE
+picture = "Greekpeace"
+random = no
+style = 2
+
+trigger = {
+NOT = { 
+ispuppet = GRE
+ispuppet = TUR
+}
+war = { country = GRE country = TUR }
+OR = {
+control = { province = 384 data = GRE }
+AND = {
+alliance = { country = ROM country = GRE }
+control = { province = 384 data = ROM } 
+}
+AND = {
+alliance = { country = URU country = GRE }
+control = { province = 384 data = URU } 
+}
+AND = {
+alliance = { country = SER country = GRE }
+control = { province = 384 data = ROM } 
+}
+AND = {
+alliance = { country = YUG country = GRE }
+control = { province = 384 data = ROM } 
+}
+AND = {
+alliance = { country = BUL country = GRE }
+control = { province = 384 data = BUL } 
+}
+}
+OR = {
+control = { province = 385 data = GRE }
+AND = {
+alliance = { country = ROM country = GRE }
+control = { province = 385 data = ROM } 
+}
+AND = {
+alliance = { country = URU country = GRE }
+control = { province = 385 data = URU } 
+}
+AND = {
+alliance = { country = SER country = GRE }
+control = { province = 385 data = ROM } 
+}
+AND = {
+alliance = { country = YUG country = GRE }
+control = { province = 385 data = ROM } 
+}
+AND = {
+alliance = { country = BUL country = GRE }
+control = { province = 385 data = BUL } 
+}
+}
+OR = {
+control = { province = 409 data = GRE }
+AND = {
+alliance = { country = ROM country = GRE }
+control = { province = 409 data = ROM } 
+}
+AND = {
+alliance = { country = URU country = GRE }
+control = { province = 409 data = URU } 
+}
+AND = {
+alliance = { country = SER country = GRE }
+control = { province = 409 data = ROM } 
+}
+AND = {
+alliance = { country = YUG country = GRE }
+control = { province = 409 data = ROM } 
+}
+AND = {
+alliance = { country = BUL country = GRE }
+control = { province = 409 data = BUL } 
+}
+}
+}
+
+name = "EVT_907157_NAME"
+desc = "EVT_907157_DESC"
+
+date = { day = 1 month = april year = 1938 }
+offset = 10
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+ai_chance = 70
+name = "EVT_907157_OPTIONA"
+command = { type = trigger which = 907158 }
+}
+
+action_b = {
+ai_chance = 30
+name = "EVT_907157_OPTIONB"
+command = { type = dissent value = 5 }
+}
+}
+
+event = {
+id = 907158
+country = TUR
+picture = "Greekpeace"
+random = no
+style = 2
+
+name = "EVT_907158_NAME"
+desc = "EVT_907158_DESC"
+
+action_a = {
+ai_chance = 25
+name = "EVT_907158_OPTIONA"
+         command = { type = peace which = GRE value = 0 }
+         command = { type = peace which = SER value = 0 }
+         command = { type = peace which = ROM value = 0 }
+         command = { type = secedeprovince which = GRE value = 384 }
+         command = { type = secedeprovince which = GRE value = 385 }
+         command = { type = secedeprovince which = GRE value = 409 }
+         command = { type = secedeprovince which = GRE value = 378 }
+         command = { type = secedeprovince which = GRE value = 379 }
+         command = { type = secedeprovince which = GRE value = 381 }
+         command = { type = secedeprovince which = GRE value = 383 }
+         command = { type = secedeprovince which = GRE value = 325 }
+         command = { type = secedeprovince which = GRE value = 319 }
+         command = { type = secedeprovince which = GRE value = 324 }
+         command = { type = secedeprovince which = GRE value = 363 }
+         command = { type = secedeprovince which = GRE value = 370 }
+         command = { type = removecore which =   370  }
+	 command = { type = removecore which =   325  }
+	 command = { type = removeclaim which =  324  }
+         command = { type = removeclaim which =  319  }
+         command = { type = removeclaim which =  363  }
+         command = { type = removecore which = 383 }
+	 command = { type = removecore which = 381 }
+	 command = { type = removecore which = 378 }
+	 command = { type = removecore which = 379 }
+	 command = { type = removecore which = 387 }
+	 command = { type = removecore which = 388 }
+         command = { type = removecore which = 384 }
+	 command = { type = removecore which = 385 }
+         command = { type = secedeprovince which = GRE value = 382 }
+         command = { type = secedeprovince which = GRE value = 380 }
+         command = { type = removeclaim which = 382 }
+	 command = { type = removeclaim which = 380 }
+         command = { type = capital which =  1075 }
+         command = { trigger = { exists = U02 puppet = { country = U02 country = TUR  } } type = trigger which = 907161 }
+         command = { type = end_mastery which = U02 }
+         command = { type = dissent value = 20 }
+}
+
+action_b = {
+ai_chance = 75
+name = "EVT_907158_OPTIONB"
+command = { type = dissent value = 5 }
+}
+}
+
+event = {
+id = 907159
+country = GRE
+picture = "Greekpeace"
+random = no
+style = 2
+
+trigger = {
+NOT = {
+ispuppet = GRE
+}
+war = { country = GRE country = TUR }
+OR = {
+control = { province = 384 data = GRE }
+AND = {
+alliance = { country = ROM country = GRE }
+control = { province = 384 data = ROM } 
+}
+AND = {
+alliance = { country = URU country = GRE }
+control = { province = 384 data = URU } 
+}
+AND = {
+alliance = { country = SER country = GRE }
+control = { province = 384 data = ROM } 
+}
+AND = {
+alliance = { country = YUG country = GRE }
+control = { province = 384 data = ROM } 
+}
+AND = {
+alliance = { country = BUL country = GRE }
+control = { province = 384 data = BUL } 
+}
+}
+OR = {
+control = { province = 385 data = GRE }
+AND = {
+alliance = { country = ROM country = GRE }
+control = { province = 385 data = ROM } 
+}
+AND = {
+alliance = { country = URU country = GRE }
+control = { province = 385 data = URU } 
+}
+AND = {
+alliance = { country = SER country = GRE }
+control = { province = 385 data = ROM } 
+}
+AND = {
+alliance = { country = YUG country = GRE }
+control = { province = 385 data = ROM } 
+}
+AND = {
+alliance = { country = BUL country = GRE }
+control = { province = 385 data = BUL } 
+}
+}
+OR = {
+control = { province = 409 data = GRE }
+AND = {
+alliance = { country = ROM country = GRE }
+control = { province = 409 data = ROM } 
+}
+AND = {
+alliance = { country = URU country = GRE }
+control = { province = 409 data = URU } 
+}
+AND = {
+alliance = { country = SER country = GRE }
+control = { province = 409 data = ROM } 
+}
+AND = {
+alliance = { country = YUG country = GRE }
+control = { province = 409 data = ROM } 
+}
+AND = {
+alliance = { country = BUL country = GRE }
+control = { province = 409 data = BUL } 
+}
+}
+OR = {
+control = { province = 1076 data = GRE }
+AND = {
+alliance = { country = ROM country = GRE }
+control = { province = 1076 data = ROM } 
+}
+AND = {
+alliance = { country = URU country = GRE }
+control = { province = 1076 data = URU } 
+}
+AND = {
+alliance = { country = SER country = GRE }
+control = { province = 1076 data = ROM } 
+}
+AND = {
+alliance = { country = YUG country = GRE }
+control = { province = 1076 data = ROM } 
+}
+AND = {
+alliance = { country = BUL country = GRE }
+control = { province = 1076 data = BUL } 
+}
+}
+OR = {
+control = { province = 1078 data = GRE }
+AND = {
+alliance = { country = ROM country = GRE }
+control = { province = 1078 data = ROM } 
+}
+AND = {
+alliance = { country = URU country = GRE }
+control = { province = 1078 data = URU } 
+}
+AND = {
+alliance = { country = SER country = GRE }
+control = { province = 1078 data = ROM } 
+}
+AND = {
+alliance = { country = YUG country = GRE }
+control = { province = 1078 data = ROM } 
+}
+AND = {
+alliance = { country = BUL country = GRE }
+control = { province = 1078 data = BUL } 
+}
+}
+OR = {
+control = { province = 1077 data = GRE }
+AND = {
+alliance = { country = ROM country = GRE }
+control = { province = 1077 data = ROM } 
+}
+AND = {
+alliance = { country = URU country = GRE }
+control = { province = 1077 data = URU } 
+}
+AND = {
+alliance = { country = SER country = GRE }
+control = { province = 1077 data = ROM } 
+}
+AND = {
+alliance = { country = YUG country = GRE }
+control = { province = 1077 data = ROM } 
+}
+AND = {
+alliance = { country = BUL country = GRE }
+control = { province = 1077 data = BUL } 
+}
+}
+}
+
+name = "EVT_907159_NAME"
+desc = "EVT_907159_DESC"
+
+date = { day = 1 month = april year = 1938 }
+offset = 10
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+ai_chance = 100
+name = "EVT_907159_OPTIONA"
+command = { type = trigger which = 907160 }
+}
+
+action_b = {
+ai_chance = 0
+name = "EVT_907159_OPTIONB"
+command = { type = dissent value = 5 }
+}
+}
+
+event = {
+id = 907160
+country = TUR
+picture = "Greekpeace"
+random = no
+style = 2
+
+name = "EVT_907160_NAME"
+desc = "EVT_907160_DESC"
+
+action_a = {
+ai_chance = 90
+name = "EVT_907160_OPTIONA"
+         command = { type = peace which = GRE value = 0 }
+         command = { type = peace which = SER value = 0 }
+         command = { type = peace which = ROM value = 0 }
+         command = { type = secedeprovince which = GRE value = 384 }
+         command = { type = secedeprovince which = GRE value = 385 }
+         command = { type = secedeprovince which = GRE value = 409 }
+         command = { type = secedeprovince which = GRE value = 378 }
+         command = { type = secedeprovince which = GRE value = 379 }
+         command = { type = secedeprovince which = GRE value = 381 }
+         command = { type = secedeprovince which = GRE value = 383 }
+         command = { type = secedeprovince which = GRE value = 1077 }
+         command = { type = secedeprovince which = GRE value = 1078 }
+         command = { type = secedeprovince which = GRE value = 1076 }
+         command = { type = secedeprovince which = GRE value = 325 }
+         command = { type = secedeprovince which = GRE value = 319 }
+         command = { type = secedeprovince which = GRE value = 324 }
+         command = { type = secedeprovince which = GRE value = 363 }
+         command = { type = secedeprovince which = GRE value = 370 }
+         command = { type = removecore which =   370  }
+	 command = { type = removecore which =   325  }
+	 command = { type = removeclaim which =  324  }
+         command = { type = removeclaim which =  319  }
+         command = { type = removeclaim which =  363  }
+         command = { type = removecore which = 383 }
+	 command = { type = removecore which = 381 }
+	 command = { type = removecore which = 378 }
+	 command = { type = removecore which = 379 }
+	 command = { type = removecore which = 387 }
+	 command = { type = removecore which = 388 }
+         command = { type = removecore which = 384 }
+	 command = { type = removecore which = 385 }
+         command = { type = secedeprovince which = GRE value = 382 }
+         command = { type = secedeprovince which = GRE value = 380 }
+         command = { type = removeclaim which = 382 }
+	 command = { type = removeclaim which = 380 }
+         command = { type = capital which =  1075 }
+         command = { type = dissent value = 25 }
+         command = { trigger = { exists = U02 puppet = { country = U02 country = TUR  } } type = trigger which = 907161 }
+         command = { type = end_mastery which = U02 }
+}
+
+action_b = {
+ai_chance = 10
+name = "EVT_907160_OPTIONB"
+         command = { type = dissent value = 35 }
+}
+}
+
+event = {
+     id = 907161
+     random = no
+     country = GRE
+     style = 2
+
+     name = "EVT_907161_NAME"
+     desc = "EVT_907161_DESC"
+     picture = "crete"
+
+     action_a = {
+         name = "EVT_907161_OPTIONA"
+         command = { type = dissent value = -1 }
+         command = { type = addcore which = 382 }
+         command = { type = addcore which = 380 }
+         command = { type = inherit which = U02 }
+     }
+ }
+
+event = {
+id = 907162
+country = GRE
+picture = "Venizel"
+random = no
+style = 2
+
+name = "EVT_907162_NAME"
+desc = "EVT_907162_DESC"
+
+action_a = {
+ai_chance = 0
+name = "EVT_907162_OPTIONA"
+command = { type = war which = TUR }
+command = { trigger = { puppet = { country = ALB country = TUR } } type = war which = ALB }
+}
+
+action_b = {
+ai_chance = 80
+name = "EVT_907162_OPTIONB"
+command = { type = relation which = ROM value = 15 }
+command = { type = relation which = URU value = 15 }
+command = { type = relation which = SER value = 15 }
+command = { type = relation which = YUG value = 15 }
+command = { trigger = { exists = SER NOT = { exists = YUG } } type = trigger which = 907101 }
+command = { trigger = { exists = ROM NOT = { exists = URU } } type = trigger which = 907102 }
+command = { trigger = { exists = YUG NOT = { exists = SER } } type = trigger which = 907126 }
+command = { trigger = { exists = URU NOT = { exists = ROM } } type = trigger which = 907127 }
+command = { type = addcore which = 384 }
+command = { type = addcore which = 385 }
+command = { type = addcore which = 409 }
+command = { type = addcore which = 1076 }
+command = { type = addcore which = 381 }
+command = { type = addcore which = 383 }
+command = { type = addcore which = 378 }
+command = { type = addcore which = 379 }
+command = { type = addcore which = 1078 }
+command = { type = addcore which = 1077 }
+command = { type = setflag which = GRE_ANS }
+}
+
+action_c = {
+ai_chance = 5
+name = "EVT_907162_OPTIONC"
+command = { type = dissent value = 10 }
+}
+}
+
+event = {
+id = 11000124
+random = no
+country = GRE
+persistent = yes
+style = 2
+picture = "1821revolution"
+
+trigger = {
+day = 25
+month = 2
+NOT = {
+day = 26
+}
+NOT = {
+month = 3
+}
+}
+     
+date = { day = 0 month = january year = 1936 }
+offset = 1
+deathdate = { day = 29 month = december year = 1963 }
+     
+name = "EVT_11000124_NAME"
+desc = "EVT_11000124_DESC"
+
+action = {
+name = "EVT_11000124_OPTIONA"
+command = { type = dissent value = -1 }
+}
+
+}

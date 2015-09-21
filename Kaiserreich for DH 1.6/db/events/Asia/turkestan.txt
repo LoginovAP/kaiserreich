@@ -1,0 +1,2565 @@
+####  War in central Asia!
+
+event = {
+id = 750500
+random = no
+country = KYG
+style = 2
+picture = "cavalryattack"
+
+trigger = {
+war = { country = KAZ country = KYG }
+}
+
+name = "EVT_750500_NAME"
+desc = "EVT_750500_DESC"
+
+date = { day = 1 month = january year = 1936 }
+offset = 30
+deathdate = { day = 9 month = december year = 1960 }
+
+
+action_a = {
+ai_chance = 60
+name = "EVT_750500_OPTIONA"
+command = { type = trigger which = 555410 }
+command = { type = add_division value = cavalry when = 6  }
+command = { type = add_division value = cavalry when = 6  }
+command = { type = add_division value = cavalry when = 6 }
+command = { type = add_division value = infantry when = 7 }
+command = { type = add_division value = infantry when = 7 }
+command = { type = add_division value = infantry when = 7 }
+command = { type = add_division value = infantry when = 7 }
+command = { type = dissent value = 8 }
+command = { type = addcore which = 1113 }
+command = { type = addcore which = 706 }
+command = { type = addcore which = 502 }
+command = { type = addcore which = 498 }
+command = { type = addcore which = 499 }
+command = { type = addcore which = 1140 }
+command = { type = addcore which = 1114 }
+command = { type = addcore which = 1117 }
+command = { type = addcore which = 1118 }
+command = { type = addcore which = 1116 }
+command = { type = addcore which = 1111 }
+command = { type = addcore which = 500 }
+command = { type = addcore which = 503 }
+command = { type = addcore which = 505 }
+command = { type = addcore which = 507 }
+command = { type = addcore which = 504 }
+command = { type = addcore which = 506 }
+command = { type = addcore which = 1108 }
+command = { type = addcore which = 1109 }
+command = { type = addcore which = 1101 }
+command = { type = addcore which = 1107 }
+command = { type = addcore which = 1110 }
+command = { type = addcore which = 1112 }
+command = { type = trigger which = 750502 }
+command = { type = trigger which = 750504 }
+command = { type = trigger which = 750506 }
+command = { type = belligerence which = KYG value = 10  }
+}
+
+action_b = {
+ai_chance = 40
+name = "EVT_750500_OPTIONB"
+command = { type = trigger which = 555410 }
+command = { type = dissent value = -5 }
+command = { type = addcore which = 1113 }
+command = { type = addcore which = 706 }
+command = { type = addcore which = 502 }
+command = { type = addcore which = 498 }
+command = { type = addcore which = 499 }
+command = { type = addcore which = 1140 }
+command = { type = addcore which = 1114 }
+command = { type = addcore which = 1117 }
+command = { type = addcore which = 1118 }
+command = { type = addcore which = 1116 }
+command = { type = addcore which = 1111 }
+command = { type = addcore which = 500 }
+command = { type = addcore which = 503 }
+command = { type = addcore which = 505 }
+command = { type = addcore which = 507 }
+command = { type = addcore which = 504 }
+command = { type = addcore which = 506 }
+command = { type = addcore which = 1108 }
+command = { type = addcore which = 1109 }
+command = { type = addcore which = 1110 }
+command = { type = addcore which = 1112 }
+command = { type = addcore which = 1101 }
+command = { type = addcore which = 1107 }
+command = { type = trigger which = 750502 }
+command = { type = trigger which = 750504 }
+command = { type = trigger which = 750506 }
+}
+}
+
+
+#####  Border incidents & international relations
+
+event = {
+	id = 750501
+	random = no
+	country = KYG
+	style = 2
+        picture = "Mountain1"
+
+	trigger = {
+	exists = KAZ
+	NOT = { 
+        atwar= KYG
+        ispuppet = KYG 
+        }
+	}
+
+	name = "EVT_750501_NAME"
+	desc = "EVT_750501_DESC"
+
+	date = { day = 1 month = august year = 1937 }
+	offset = 200
+	deathdate = { day = 9 month = november year = 1938  }
+
+
+	action_a = {
+		ai_chance = 60
+		name = "EVT_750501_OPTIONA"
+                command = { type = war which = KAZ  }
+                command = { type = trigger which = 750500 }
+		}
+
+	action_b = {
+		ai_chance = 40
+		name = "EVT_750501_OPTIONB"
+                command = { type = dissent value = 3 }
+		}
+
+}
+
+
+
+event = {
+	id = 750508
+	random = no
+	country = KYG
+	style = 2
+        picture = "Mountain1"
+
+	trigger = {
+	exists = KAZ
+	NOT = { atwar= KYG }
+        NOT = {
+        alliance = { country = KYG country = KAZ }
+        ispuppet = KYG
+        }
+	}
+
+	name = "EVT_750508_NAME"
+	desc = "EVT_750508_DESC"
+
+	date = { day = 1 month = august year = 1938 }
+	offset = 100
+	deathdate = { day = 9 month = august year = 1948 }
+
+
+	action_a = {
+		ai_chance = 80
+		name = "EVT_750508_OPTIONA"
+                command = { type = war which = KAZ  }
+                command = { type = trigger which = 750500 }
+		}
+
+	action_b = {
+		ai_chance = 20
+		name = "EVT_750508_OPTIONB"
+                command = { type = dissent value = 5 }
+		}
+
+}
+
+
+
+
+event = {
+	id = 750502
+	random = no
+	country = PER
+
+	trigger = {
+		war = { country = KAZ country = KYG }
+		event = 750500
+		NOT = {
+		atwar = PER
+                ispuppet = PER
+		}
+	        }
+
+	name = "EVT_750502_NAME"
+	desc = "EVT_750502_DESC"
+	style = 2
+	picture = "SCW_French_Intervention"
+
+
+	action_a = {
+		name = "EVT_750502_OPTIONA"
+		ai_chance = 48
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = relation which = KYG value = -50 }
+		command = { type = relation which = KAZ value = 50 }
+		command = { type = money value = -50 }
+		command = { type = manpowerpool value = -50 }
+		command = { type = resource which = supplies value = -200 }
+		command = { type = trigger which = 750503 }
+
+
+	}
+	action_b = {
+		ai_chance = 0
+		name = "EVT_750502_OPTIONB"
+		command = { type = domestic which = interventionism value = 2 }
+		command = { type = relation which = KYG  value = -90 }
+		command = { type = relation which = KAZ value = 90 }
+		command = { type = money value = -50 }
+		command = { type = manpowerpool value = -50 }
+		command = { type = resource which = supplies value = -200 }
+		command = { type = trigger which = 750503 }
+		command = { type = war which = KYG }
+	}
+
+	action_c = {
+		ai_chance = 50
+		name = "EVT_750502_OPTIONC"
+		command = { type = relation which = KYG value = 50 }
+		command = { type = relation which = KAZ value = -50 }
+	}
+}
+
+
+event = {
+	id = 750503 
+	random = no
+	country = KAZ
+
+
+	name = "EVT_750503_NAME"
+	desc = "EVT_750503_DESC"
+	style = 2
+	picture = "SCW_German Intervention"
+
+	action_a = {
+		name = "EVT_750503_OPTIONA" # Great!
+		command = { type = supplies value = 200 }
+		command = { type = add_division value = infantry when = 7 }
+		
+	
+	}
+}
+
+
+
+event = {
+	id = 750504
+	random = no
+	country = AFG
+
+	trigger = {
+		war = { country = KAZ country = KYG }
+		event = 750500
+		NOT = {
+		atwar = AFG
+                ispuppet = AFG
+		}
+	        }
+
+	name = "EVT_750504_NAME"
+	desc = "EVT_750504_DESC"
+	style = 2
+	picture = "SCW_French_Intervention"
+
+
+	
+	action_a = {
+		ai_chance = 0
+		name = "EVT_750504_OPTIONA"
+		command = { type = domestic which = interventionism value = 2 }
+		command = { type = relation which = KYG  value = -90 }
+		command = { type = relation which = KAZ value = 90 }
+		command = { type = money value = -50 }
+		command = { type = war which = KYG }
+	}
+
+	action_c = {
+		ai_chance = 97
+		name = "EVT_750504_OPTIONB"
+		command = { type = relation which = KYG value = 50 }
+		command = { type = relation which = KAZ value = -50 }
+	}
+}
+
+
+
+
+event = {
+id = 750506
+random = no
+country = CXB
+
+trigger = {
+ war = { country = KAZ country = KYG }
+ event = 750500
+ NOT = {
+  atwar = CXB
+  ispuppet = CXB
+ }
+        }
+
+name = "EVT_750506_NAME"
+desc = "EVT_750506_DESC"
+style = 2
+picture = "SCW_French_Intervention"
+
+action_a = {
+ name = "EVT_750506_OPTIONA"
+ ai_chance = 70
+ command = { type = domestic which = interventionism value = 1 }
+ command = { type = relation which = KYG value = -50 }
+ command = { type = relation which = KAZ value = 50 }
+ command = { type = money value = -50 }
+ command = { type = manpowerpool value = -50 }
+ command = { type = resource which = supplies value = -200 }
+ command = { type = trigger which = 750507 }
+}
+
+action_b = {
+ ai_chance = 0
+ name = "EVT_750506_OPTIONB"
+ command = { type = domestic which = interventionism value = 2 }
+ command = { type = leave_alliance } ## To avoid general chinese invasion!
+ command = { type = relation which = KYG  value = -90 }
+ command = { type = relation which = KAZ value = 90 }
+ command = { type = money value = -50 }
+ command = { type = manpowerpool value = -50 }
+ command = { type = resource which = supplies value = -200 }
+ command = { type = trigger which = 750507 }
+ command = { type = war which = KYG }
+}
+
+action_c = {
+ ai_chance = 20
+ name = "EVT_750506_OPTIONC"
+ command = { type = relation which = KYG value = 50 }
+ command = { type = relation which = KAZ value = -50 }
+}
+}
+
+
+event = {
+id = 750507 
+random = no
+country = KAZ
+
+
+name = "EVT_750507_NAME"
+desc = "EVT_750507_DESC"
+style = 2
+picture = "SCW_German Intervention"
+
+action_a = {
+ name = "EVT_750507_OPTIONA" # Great!
+ command = { type = supplies value = 200 }
+ command = { type = add_division value = infantry when = 7 }
+ command = { type = add_division value = militia when = 4 }
+}
+}
+
+
+
+event = {
+	id = 750509 
+	random = no
+	country = KYG
+
+	trigger = {
+	owned = { province = 504 data = KYG }
+        NOT = { exists = KAZ }  
+        NOT = {
+        ispuppet = KYG
+	}
+        }
+
+	name = "EVT_750509_NAME"
+	desc = "EVT_750509_DESC"
+	style = 2
+	picture = "VIC"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 40
+	deathdate = { day = 29 month = december year = 1960 }
+
+	action_a = {
+		name = "EVT_750509_OPTIONA"
+		ai_chance = 85
+                command = { type = ai which = "switch\Caliphate_KYG.ai" }   
+		command = { type = belligerence which = KYG value = 10  }
+		command = { type = dissent value = -5 }
+		command = { type = inherit which = KAZ }
+                command = { type = addcore which = 660  }
+                command = { type = addcore which = 666  }
+                command = { type = addcore which = 667  }
+                command = { type = addcore which = 1134 }
+                command = { type = addcore which = 690  }
+                command = { type = addcore which = 501  }
+                command = { type = addcore which = 1115  }
+				command = { type = addcore which = 498 }
+                command = { type = addcore which = 499 }
+                command = { type = addcore which = 502  }
+				command = { type = addcore which = 664 } #Tatarstan	
+				command = { type = addcore which = 672 }
+				command = { type = addcore which = 674 }
+				command = { type = addcore which = 1131 } #Bashkortostan
+                command = { type = clrflag which = RUS_CENASIAPEACE } #If Kyrgystan decides to be expanstionist, Russia can forget about peace in Siberia
+                command = { type = setflag which = KYG_EXP  }
+		}
+
+	action_b = {
+		name = "EVT_750509_OPTIONB"
+		ai_chance = 15
+		command = { type = belligerence which = KYG value = -10  }
+		command = { type = dissent value = 5 }
+		command = { type = inherit which = KAZ }
+		}
+}
+
+
+##### Delhi at war series
+
+
+event = {
+	id = 750510
+	random = no
+	country = KYG
+	persistent = yes
+	style = 2
+
+	trigger = {
+	atwar = PAK
+	flag = KYG_EXP
+        OR = {
+        exists = AFG
+        exists = PER
+        exists = PAK
+        }
+        NOT = {
+        ispuppet = KYG
+	    atwar = KYG
+		exists = PRK
+		exists = IND
+	}
+	}
+
+	name = "EVT_750510_NAME"
+	desc = "EVT_750510_DESC"
+
+	date = { day = 1 month = november year = 1938 }  
+	offset = 90
+	deathdate = { day = 29 month = november year = 1949 }
+
+
+	action_a = {
+		ai_chance = 10
+		name = "EVT_750510_OPTIONA"
+		command = { type = war which = PAK }
+		command = { type = war which = PER }
+		command = { trigger = { NOT = { alliance = { country = KYG country = AFG } } } type = war which = AFG }
+		command = { type = relation which = PAK value = -150 }
+		}
+
+	action_b = {
+		ai_chance = 40
+		name = "EVT_750510_OPTIONB"
+		command = { type = war which = PER }
+		command = { trigger = { NOT = { war = { country = PAK country = AFG } } } type = trigger which = 750511 }
+		}
+
+	action_c = {
+		ai_chance = 30
+		name = "EVT_750510_OPTIONC"
+                command = { type = relation which = PAK value = 20 }
+		}
+}
+
+
+
+event = {
+	id = 750511
+	random = no
+	country = PAK
+	style = 2
+
+	name = "EVT_750511_NAME"
+	desc = "EVT_750511_DESC"
+
+
+	action_a = {
+		ai_chance = 25
+		trigger = {
+        NOT = {
+        exists = IND
+	    exists = PRK
+        }
+        }
+		name = "EVT_750511_OPTIONA"
+		command = { type = war which = KYG  }
+		command = { type = alliance which = PER }
+		}
+
+	action_b = {
+		ai_chance = 50
+		name = "EVT_750511_OPTIONB"
+		command = { type = end_guarantee which = PAK where = PER }
+		command = { type = end_guarantee which = PAK where = AFG }
+		}
+
+	action_c = {
+		ai_chance = 25
+		trigger = {
+		        NOT = {
+        exists = IND
+	    exists = PRK
+        }
+        }
+		name = "EVT_750511_OPTIONC"
+		command = { type = war which = PER }
+		}
+}
+
+
+
+event = {
+	id = 750512
+	random = no
+	country = KYG
+	persistent = yes
+	style = 2
+
+	trigger = {
+	atwar = RUS
+	flag = KYG_EXP
+	NOT = {
+	atwar = KYG
+	ispuppet = KYG
+	}   
+	}
+
+	name = "EVT_750512_NAME"
+	desc = "EVT_750512_DESC"
+
+	date = { day = 1 month = july year = 1938 }
+	offset = 90
+	deathdate = { day = 29 month = december year = 1963 }
+
+
+	action_a = {
+		ai_chance = 60
+		name = "EVT_750512_OPTIONA"
+                command = { type = war which = RUS }
+		}
+
+	action_b = {
+		ai_chance = 40
+		name = "EVT_750512_OPTIONB"
+                command = { type = relation which = RUS value = 20 }
+		}
+}
+
+
+
+#####
+##### New KYG events by Straczynski
+
+event = {
+	id = 750520
+	picture = "KYG_BUKHARA"
+	random = no
+	country = KYG
+	style = 2
+	
+	trigger = { headofstate = 521071 }
+
+name = "EVT_750520_NAME"
+desc = "EVT_750520_DESC"
+
+date = { day = 1 month =january year = 1943 }
+offset = 200
+deathdate = { day = 1 month = january year = 1970 }
+
+action = {
+	ai_chance = 80
+	name = "EVT_750520_OPTIONA"
+	command = { type = dissent value = -2 }
+	command = { type = headofstate which = 521074 }
+	command = { type = sleepminister which = 521071 }
+        command = { type = sleepleader which = 521023 }
+        command = { type = event which = 750690 where = KYG when = 80 }
+	}
+
+action = {
+	ai_chance = 5
+	name = "EVT_750520_OPTIONB"
+	command = { type = dissent value = 5 }
+	command = { type = domestic which = freedom value = -1 }
+	command = { type = headofstate which = 521077 }
+	command = { type = sleepminister which = 521071 }
+        command = { type = sleepleader which = 521023 }
+	}
+
+action = {
+	ai_chance = 15
+	name = "EVT_750520_OPTIONC"
+	command = { type = dissent value = 5 }
+	command = { type = domestic which = freedom value = -1 }
+	command = { type = headofstate which = 12099 }
+        command = { type = headofgovernment which = 12100  }
+	command = { type = sleepminister which = 521071 }
+        command = { type = sleepleader which = 521023 }
+	}
+}
+
+event = {
+     id = 750690
+     random = no
+     country = KYG
+     style = 2
+
+ name = "EVT_750690_NAME"
+ desc = "EVT_750690_DESC"
+
+ action = {
+     name = "EVT_750690_OPTIONA"
+     command = { type = dissent value = 2 } # initial resistance to the idea
+     command = { type = waketeam which = 11705 } # wake the team
+     }
+     }
+
+event = {
+	id = 750521
+	random = no
+	picture = "KYG_ISLAM"
+	country = KYG
+	style = 2
+
+trigger = {
+			flag = KYG_EXP
+			OR = {
+			control = { province = 1085 data = KYG }		# Teheran
+			control = { province = 2171 data = KYG }		# Kabul
+			control = { province = 1459 data = KYG }		# Delhi
+                        control = { province = 504 data = KYG }
+			}
+			NOT = {
+                        atwar = KYG
+                        exists = KAZ
+			government = communist
+			government = democratic
+                        ispuppet = KYG
+			}
+			}
+
+name = "EVT_750521_NAME"
+desc = "EVT_750521_DESC"
+
+date = { day = 1 month =january year = 1936 }
+offset = 100
+deathdate = { day = 1 month = january year = 1970 }
+
+action = {
+	ai_chance = 40
+	name = "EVT_750521_OPTIONA"
+	command = { type = dissent value = 5 }
+	command = { type = domestic which = freedom value = 2 }
+	}
+
+action = {
+	ai_chance = 40
+	name = "EVT_750521_OPTIONB"
+	command = { type = trigger which = 750522 }
+	}
+
+action = {
+	ai_chance = 20
+	name = "EVT_750521_OPTIONC"
+	command = { type = dissent value = 2 }
+	command = { type = domestic which = freedom value = -1 }
+	command = { type = ministerofsecurity which = 521080 }
+	}
+}
+
+event = {
+	id = 750522
+	picture = "KYG_ISLAM"
+	random = no
+	country = KYG
+	style = 2
+
+name = "EVT_750522_NAME"
+desc = "EVT_750522_DESC"
+
+action = {
+	ai_chance = 60
+	name = "EVT_750522_OPTIONA"
+	command = { type = dissent value = 5 }
+	command = { type = headofgovernment which = 521079 }
+	command = { type = domestic which = freedom value = -2 }
+	command = { type = setflag which = TURKESTAN_FUNDAMENTALIST }
+	}
+action = {
+	ai_chance = 20
+	name = "EVT_750522_OPTIONB"
+	command = { type = dissent value = 2 }
+	command = { type = domestic which = freedom value = -1 }
+	command = { type = ministerofsecurity which = 521080 }
+	command = { type = setflag which = TURKESTAN_FUNDAMENTALIST }
+	}
+action = {
+	ai_chance = 20
+	name = "EVT_750522_OPTIONC"
+	command = { type = dissent value = 5 }
+	command = { type = domestic which = freedom value = 2 }
+	}
+}
+
+event = {
+	id = 750523
+	picture = "KYG_ISLAM"
+	random = no
+	country = KYG
+	style = 2
+
+trigger = {
+			NOT = {
+			atwar = KYG
+			}
+			flag = TURKESTAN_FUNDAMENTALIST
+			NOT = {
+			ispuppet = KYG
+			alliance = { country = OTT country = KYG }
+			puppet = { country = OTT country = KYG }
+			puppet = { country = KYG country = OTT }
+			government = communist
+			government = democratic
+			}
+			}
+
+name = "EVT_750523_NAME"
+desc = "EVT_750523_DESC"
+
+date = { day = 1 month =january year = 1936 }
+offset = 200
+deathdate = { day = 1 month = january year = 1970 }
+
+action = {
+	ai_chance = 5
+        trigger = {
+        exists = OTT
+        }
+	name = "EVT_750523_OPTIONA"
+	command = { type = dissent value = 2 }
+	command = { type = relation which = OTT value = 50 }
+	}
+
+action = {
+	ai_chance = 70
+	trigger = {
+				exists = SAU
+				OR = {
+				control = { province = 1085 data = KYG }		# Either Teheran is held by Turkestan...
+				puppet = { country = PER country = KYG }	# ...or Persia is their puppet - or else there won't be much point on a Turkestan-Ottoman War...
+				}
+				NOT = { 
+				war = { country = KYG country = SAU }
+				alliance = { country = OTT country = SAU }
+				puppet = { country = OTT country = SAU }
+				ispuppet = SAU
+				} 
+				}
+	name = "EVT_750523_OPTIONB"
+	command = { type = trigger which = 750524 }
+	command = { type = relation which = OTT value = -50 }
+	}
+
+action = {
+	ai_chance = 25
+	name = "EVT_750523_OPTIONC"
+	command = { type = dissent value = -5 }
+	command = { type = relation which = OTT value = -50 }
+	command = { type = relation which = SAU value = -50 }
+	command = { type = trigger which = 750531 }
+	}
+}
+
+event = {
+	id = 750524
+	picture = "KYG_ISLAM"
+	random = no
+	country = SAU
+	style = 2
+
+name = "EVT_750524_NAME"
+desc = "EVT_750524_DESC"
+
+action = {
+	ai_chance = 20
+	name = "EVT_750524_OPTIONA"
+	command = { type = dissent value = 3 }
+	command = { type = relation which = OTT value = 10 }
+	command = { type = relation which = KYG value = -50 }
+	command = { type = trigger which = 750525 }
+	}
+
+action = {
+	ai_chance = 80
+	name = "EVT_750524_OPTIONB"
+        command = { type = event which = 750526 where = KYG when = 1  }
+        command = { type = event which = 750527 where = SAU when = 1  }
+        command = { type = event which = 750528 where = OTT when = 3  }
+	command = { type = relation which = OTT value = -50 }
+	}
+}
+
+event = {
+	id = 750525
+	picture = "KYG_ISLAM"
+	random = no
+	country = KYG
+	style = 2
+
+name = "EVT_750525_NAME"
+desc = "EVT_750525_DESC"
+
+action = {
+	ai_chance = 10
+	name = "EVT_750525_OPTIONA"
+	command = { type = dissent value = 3 }
+	}
+
+action = {
+	ai_chance = 40
+	name = "EVT_750525_OPTIONB"
+	command = { type = dissent value = -5 }
+	command = { type = relation which = OTT value = -50 }
+	command = { type = relation which = SAU value = -50 }
+	command = { type = trigger which = 750531 }
+	}
+}
+
+event = {
+	id = 750526
+	picture = "KYG_ISLAM"
+	random = no
+	country = KYG
+	style = 2
+
+name = "EVT_750526_NAME"
+desc = "EVT_750526_DESC"
+
+action = {
+	name = "EVT_750526_OPTIONA"
+	command = { type = dissent value = -5 }
+	command = { type = relation which = OTT value = -50 }
+	command = { type = relation which = SAU value = 50 }
+	}
+}
+
+event = {
+	id = 750527
+	random = no
+	country = SAU
+	style = 2
+
+name = "EVT_750527_NAME"
+desc = "EVT_750527_DESC"
+
+action = {
+	name = "EVT_750527_OPTIONA"
+	command = { type = dissent value = -5 }
+	command = { type = relation which = OTT value = -50 }
+	command = { type = relation which = KYG value = 50 }
+	command = { type = trigger which = 750528 }
+	}
+}
+
+event = {
+	id = 750528
+	random = no
+	country = OTT
+	style = 2
+
+name = "EVT_750528_NAME"
+desc = "EVT_750528_DESC"
+
+action = {
+	ai_chance = 20
+	name = "EVT_750528_OPTIONA"
+	command = { type = war which = SAU }
+	command = { type = trigger which = 750529 }
+	}
+
+action = {
+	ai_chance = 80
+	trigger = {
+				NOT = { ispuppet = OTT atwar = OTT } 
+				}
+	name = "EVT_750528_OPTIONB"
+	command = { type = dissent value = 5 }
+	}
+}
+
+event = {
+	id = 750529
+	picture = "KYG_WAR"
+	random = no
+	country = KYG
+	style = 2
+
+name = "EVT_750529_NAME"
+desc = "EVT_750529_DESC"
+
+action = {
+	ai_chance = 95
+	name = "EVT_750529_OPTIONA"
+	command = { trigger = { NOT = { alliance = { country = EGY country = SAU } } } type = trigger which = 750530 }
+        command = { trigger = { alliance = { country = EGY country = SAU } } type = war which = OTT }
+	}
+
+action = {
+	ai_chance = 5
+	name = "EVT_750529_OPTIONB"
+	command = { type = dissent value = 10 }
+	}
+}
+
+event = {
+	id = 750530
+	picture = "KYG_WAR"
+	random = no
+	country = SAU
+	style = 2
+
+name = "EVT_750530_NAME"
+desc = "EVT_750530_DESC"
+
+action = {
+	ai_chance = 99
+	name = "EVT_750530_OPTIONA"
+	command = { type = alliance which = KYG }
+	}
+
+action = {
+	ai_chance = 1
+	name = "EVT_750530_OPTIONB"
+	command = { type = dissent value = 5 }
+	command = { type = morale which = land value = 5 }
+	}
+}
+
+event = {
+	id = 750531
+	picture = "KYG_ISLAM"
+	random = no
+	country = KYG
+	style = 2
+
+name = "EVT_750531_NAME"
+desc = "EVT_750531_DESC"
+
+action = {
+	name = "EVT_750531_OPTIONA"
+	command = { type = dissent value = -5 }
+	command = { type = capital which = 1100 } # Bukhara
+	command = { type = event which = 750548 where = KYG when = 50 }	#The Conference of Bukhara
+	command = { type = event which = 750532 where = OTT when = 5 }	#Ottoman Response
+	                                                command = { 
+                                                        trigger = { 
+							NOT = {
+							war = { country = AFG country = KYG }
+							ispuppet = AFG
+							} 
+							}
+							type = event which = 750533 where = AFG when = 10 } #Afghanistan
+
+	                                                command = { 
+                                                        trigger = { 
+							NOT = {
+							war = { country = AZB country = KYG }
+							ispuppet = AZB
+							} 
+							}
+							type = event which = 750536 where = AZB when = 25 } #Azerbaijan
+
+	                                                command = { 
+                                                        trigger = { 
+							NOT = {
+							war = { country = SIK country = KYG }
+							ispuppet = SIK
+							} 
+							}
+							type = event which = 750539 where = SIK when = 20 } #Sinkiang
+
+	                                                command = { 
+                                                        trigger = { 
+							NOT = {
+							war = { country = CXB country = KYG }
+							ispuppet = CXB
+							} 
+							}
+							type = event which = 750542 where = CXB when = 30 } #Xibei
+
+		                                        command = {                            
+                                                        trigger = { 
+							NOT = {
+							war = { country = PER country = KYG }
+							ispuppet = PER
+							} 
+							}
+							type = event which = 750545 where = PER when = 15 } #Persia
+	}
+}
+
+event = {
+	id = 750532
+	picture = "KYG_BUKHARA"
+	random = no
+	country = OTT
+	style = 2
+
+name = "EVT_750532_NAME"
+desc = "EVT_750532_DESC"
+
+action = {
+	name = "EVT_750532_OPTIONA"
+	command = { type = dissent value = 2 }
+	}
+}
+
+event = {
+	id = 750533
+	picture = "KYG_BUKHARA"
+	random = no
+	country = AFG
+	style = 2
+
+name = "EVT_750533_NAME"
+desc = "EVT_750533_DESC"
+
+action = {
+	ai_chance = 80
+		trigger = {
+				NOT = { 
+				government = communist
+				government = democratic
+				} 
+				}
+	name = "EVT_750533_OPTIONA"
+	command = { type = dissent value = 5 }
+	command = { type = relation which = OTT value = -50 }
+	command = { type = relation which = KYG value = 50 }
+	command = { type = trigger which = 750534 }
+	}
+
+action = {
+	ai_chance = 20
+	name = "EVT_750533_OPTIONB"
+	command = { type = dissent value = -5 }
+	command = { type = relation which = OTT value = 50 }
+	command = { type = relation which = KYG value = -100 }
+	command = { type = trigger which = 750535 }
+	}
+}
+
+event = {
+	id = 750534
+	picture = "KYG_BUKHARA"
+	random = no
+	country = KYG
+	style = 2
+
+name = "EVT_750534_NAME"
+desc = "EVT_750534_DESC"
+
+action = {
+	name = "EVT_750534_OPTIONA"
+	command = { type = dissent value = -1 }
+        command = { type = relation which = AFG value = 90 }
+	}
+}
+
+event = {
+	id = 750535
+	picture = "KYG_BUKHARA"
+	random = no
+	country = KYG
+	style = 2
+
+name = "EVT_750535_NAME"
+desc = "EVT_750535_DESC"
+
+action = {
+	name = "EVT_750535_OPTIONA"
+	command = { type = dissent value = 1 }
+        command = { type = relation which = AFG value = -90 }
+	}
+}
+
+event = {
+	id = 750536
+	picture = "KYG_BUKHARA"
+	random = no
+	country = AZB
+	style = 2
+
+name = "EVT_750536_NAME"
+desc = "EVT_750536_DESC"
+
+action = {
+	ai_chance = 20
+		trigger = {
+				NOT = { 
+				government = communist
+				government = democratic
+				} 
+				}
+	name = "EVT_750536_OPTIONA"
+	command = { type = dissent value = 3 }
+	command = { type = relation which = OTT value = -50 }
+	command = { type = relation which = KYG value = 50 }
+	command = { type = trigger which = 750537 }
+	}
+
+action = {
+	ai_chance = 80
+	name = "EVT_750536_OPTIONB"
+	command = { type = dissent value = -2 }
+	command = { type = relation which = OTT value = 50 }
+	command = { type = relation which = KYG value = -100 }
+	command = { type = trigger which = 750538 }
+	}
+}
+
+event = {
+	id = 750537
+	picture = "KYG_BUKHARA"
+	random = no
+	country = KYG
+	style = 2
+
+name = "EVT_750537_NAME"
+desc = "EVT_750537_DESC"
+
+action = {
+	name = "EVT_750537_OPTIONA"
+	command = { type = dissent value = -1 }
+        command = { type = relation which = AZB value = 90 }
+	}
+}
+
+event = {
+	id = 750538
+	picture = "KYG_BUKHARA"
+	random = no
+	country = KYG
+	style = 2
+
+name = "EVT_750538_NAME"
+desc = "EVT_750538_DESC"
+
+action = {
+	name = "EVT_750538_OPTIONA"
+	command = { type = dissent value = 1 }
+        command = { type = relation which = AZB value = -90 }
+	}
+}
+
+event = {
+	id = 750539
+	picture = "KYG_BUKHARA"
+	random = no
+	country = SIK
+	style = 2
+
+name = "EVT_750539_NAME"
+desc = "EVT_750539_DESC"
+
+action = {
+	ai_chance = 90
+		trigger = {
+				NOT = { 
+				government = communist
+				government = democratic
+				} 
+				}
+	name = "EVT_750539_OPTIONA"
+	command = { type = dissent value = 3 }
+	command = { type = relation which = OTT value = -50 }
+	command = { type = relation which = KYG value = 50 }
+	command = { type = trigger which = 750540 }
+	}
+
+action = {
+	ai_chance = 10
+	name = "EVT_750539_OPTIONB"
+	command = { type = dissent value = -2 }
+	command = { type = relation which = OTT value = 50 }
+	command = { type = relation which = KYG value = -100 }
+	command = { type = trigger which = 750541 }
+	}
+}
+
+event = {
+	id = 750540
+	picture = "KYG_BUKHARA"
+	random = no
+	country = KYG
+	style = 2
+
+name = "EVT_750540_NAME"
+desc = "EVT_750540_DESC"
+
+action = {
+	name = "EVT_750540_OPTIONA"
+	command = { type = dissent value = -1 }
+        command = { type = relation which = SIK value = 90 }
+	}
+}
+
+event = {
+	id = 750541
+	picture = "KYG_BUKHARA"
+	random = no
+	country = KYG
+	style = 2
+
+name = "EVT_750541_NAME"
+desc = "EVT_750541_DESC"
+
+action = {
+	name = "EVT_750541_OPTIONA"
+	command = { type = dissent value = 1 }
+        command = { type = relation which = SIK value = -90 }
+	}
+}
+
+event = {
+	id = 750542
+	picture = "KYG_BUKHARA"
+	random = no
+	country = CXB
+	style = 2
+
+name = "EVT_750542_NAME"
+desc = "EVT_750542_DESC"
+
+action = {
+	ai_chance = 90
+		trigger = {
+				NOT = { 
+				government = communist
+				government = democratic
+				} 
+				}
+	name = "EVT_750542_OPTIONA"
+	command = { type = dissent value = 3 }
+	command = { type = relation which = OTT value = -50 }
+	command = { type = relation which = KYG value = 50 }
+	command = { type = trigger which = 750543 }
+	}
+action = {
+	ai_chance = 10
+	name = "EVT_750542_OPTIONB"
+	command = { type = dissent value = -2 }
+	command = { type = relation which = OTT value = 50 }
+	command = { type = relation which = KYG value = -100 }
+	command = { type = trigger which = 750544 }
+	}
+}
+
+event = {
+	id = 750543
+	picture = "KYG_BUKHARA"
+	random = no
+	country = KYG
+	style = 2
+
+name = "EVT_750543_NAME"
+desc = "EVT_750543_DESC"
+
+action = {
+	name = "EVT_750543_OPTIONA"
+	command = { type = dissent value = -1 }
+        command = { type = relation which = CXB value = 90 }
+	}
+}
+
+event = {
+	id = 750544
+	picture = "KYG_BUKHARA"
+	random = no
+	country = KYG
+	style = 2
+
+name = "EVT_750544_NAME"
+desc = "EVT_750544_DESC"
+
+action = {
+	name = "EVT_750544_OPTIONA"
+	command = { type = dissent value = 1 }
+        command = { type = relation which = CXB value = -90 }
+	}
+}
+
+event = {
+	id = 750545
+	picture = "KYG_BUKHARA"
+	random = no
+	country = PER
+	style = 2
+
+name = "EVT_750545_NAME"
+desc = "EVT_750545_DESC"
+
+action = {
+	ai_chance = 5
+		trigger = {
+				NOT = { 
+				government = communist
+				government = democratic
+				} 
+				}
+	name = "EVT_750545_OPTIONA"
+	command = { type = dissent value = 1 }
+	command = { type = relation which = OTT value = -50 }
+	command = { type = relation which = KYG value = 50 }
+	command = { type = trigger which = 750546 }
+	}
+
+action = {
+	ai_chance = 95
+	name = "EVT_750545_OPTIONB"
+	command = { type = dissent value = -1 }
+	command = { type = relation which = OTT value = 50 }
+	command = { type = relation which = KYG value = -100 }
+	command = { type = trigger which = 750547 }
+	}
+}
+
+event = {
+	id = 750546
+	picture = "KYG_BUKHARA"
+	random = no
+	country = KYG
+	style = 2
+
+name = "EVT_750546_NAME"
+desc = "EVT_750546_DESC"
+
+action = {
+	name = "EVT_750546_OPTIONA"
+	command = { type = dissent value = -1 }
+        command = { type = relation which = PER value = 90 }
+	}
+}
+
+event = {
+	id = 750547
+	picture = "KYG_BUKHARA"
+	random = no
+	country = KYG
+	style = 2
+
+name = "EVT_750547_NAME"
+desc = "EVT_750547_DESC"
+
+action = {
+	name = "EVT_750547_OPTIONA"
+	command = { type = dissent value = 1 }
+        command = { type = relation which = PER value = -90 }
+	}
+}
+
+event = {
+	id = 750548
+	picture = "KYG_BUKHARA"
+	random = no
+	country = KYG
+	style = 2
+
+name = "EVT_750548_NAME"
+desc = "EVT_750548_DESC"
+
+action = {
+	ai_chance = 10
+	name = "EVT_750548_OPTIONA"
+	command = { type = domestic which = interventionism value = -2 }
+	}
+
+action = {
+	ai_chance = 90
+	trigger = {	OR = {
+				event = 750534 #AFG
+				event = 750537 #AZB
+				event = 750540 #SIK
+				event = 750543 #CXB
+				event = 750546 #PER
+				} }
+	name = "EVT_750548_OPTIONB"
+	command = { type = dissent value = -5 }
+	command = { type = money value = -300 }
+	command = { type = event which = 750554 where = KYG when = 25 }
+	command = { trigger = { event = 750534 } type = event which = 750549 where = AFG when = 5 }
+	command = { trigger = { event = 750537 } type = event which = 750550 where = AZB when = 19 }
+	command = { trigger = { event = 750540 } type = event which = 750551 where = SIK when = 15 }
+	command = { trigger = { event = 750543 } type = event which = 750552 where = CXB when = 20 }
+	command = { trigger = { event = 750546 } type = event which = 750553 where = PER when = 10 }
+	}
+}
+
+event = {
+	id = 750549
+	picture = "KYG_BUKHARA"
+	random = no
+	country = AFG
+	style = 2
+
+name = "EVT_750549_NAME"
+desc = "EVT_750549_DESC"
+
+action = {
+	ai_chance = 0
+	name = "EVT_750549_OPTIONA"
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = relation which = KYG value = -50 }
+	}
+
+action = {
+	ai_chance = 100
+	name = "EVT_750549_OPTIONB"
+	command = { type = dissent value = -5 }
+	command = { type = relation which = KYG value = 50 }
+	command = { type = setflag which = BUKHARA_AFG }
+	}
+}
+
+event = {
+	id = 750550
+	picture = "KYG_BUKHARA"
+	random = no
+	country = AZB
+	style = 2
+
+name = "EVT_750550_NAME"
+desc = "EVT_750550_DESC"
+
+action = {
+	ai_chance = 5
+	name = "EVT_750550_OPTIONA"
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = relation which = KYG value = -50 }
+	}
+action = {
+	ai_chance = 95
+	name = "EVT_750550_OPTIONB"
+	command = { type = dissent value = -5 }
+	command = { type = relation which = KYG value = 50 }
+	command = { type = setflag which = BUKHARA_AZB }
+	}
+}
+
+event = {
+	id = 750551
+	picture = "KYG_BUKHARA"
+	random = no
+	country = SIK
+	style = 2
+
+name = "EVT_750551_NAME"
+desc = "EVT_750551_DESC"
+
+action = {
+	ai_chance = 5
+	name = "EVT_750551_OPTIONA"
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = relation which = KYG value = -50 }
+	}
+action = {
+	ai_chance = 95
+	name = "EVT_750551_OPTIONB"
+	command = { type = dissent value = -5 }
+	command = { type = relation which = KYG value = 50 }
+	command = { type = setflag which = BUKHARA_SIK }
+	}
+}
+
+event = {
+	id = 750552
+	picture = "KYG_BUKHARA"
+	random = no
+	country = CXB
+	style = 2
+
+name = "EVT_750552_NAME"
+desc = "EVT_750552_DESC"
+
+action = {
+	ai_chance = 5
+	name = "EVT_750552_OPTIONA"
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = relation which = KYG value = -50 }
+	}
+action = {
+	ai_chance = 95
+	name = "EVT_750552_OPTIONB"
+	command = { type = dissent value = -5 }
+	command = { type = relation which = KYG value = 50 }
+	command = { type = setflag which = BUKHARA_CXB }
+	}
+}
+
+event = {
+	id = 750553
+	picture = "KYG_BUKHARA"
+	random = no
+	country = PER
+	style = 2
+
+name = "EVT_750553_NAME"
+desc = "EVT_750553_DESC"
+
+action = {
+	ai_chance = 50
+	name = "EVT_750553_OPTIONA"
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = relation which = KYG value = -50 }
+	}
+action = {
+	ai_chance = 50
+	name = "EVT_750553_OPTIONB"
+	command = { type = dissent value = 5 }
+	command = { type = relation which = KYG value = 50 }
+	command = { type = setflag which = BUKHARA_PER }
+	}
+}
+
+event = {
+	id = 750554
+	picture = "KYG_BUKHARA"
+	random = no
+	country = KYG
+	style = 2
+
+name = "EVT_750554_NAME"
+desc = "EVT_750554_DESC"
+
+action = {
+	ai_chance = 5
+	name = "EVT_750554_OPTIONA"
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = dissent value = 1 }
+	command = { type = event which = 750561 where = KYG when = 3 }
+	command = { type = event which = 750573 where = KYG when = 8 }
+	}
+
+action = {
+	ai_chance = 95
+	trigger = {	OR = {
+				flag = BUKHARA_AFG
+				flag = BUKHARA_AZB
+				flag = BUKHARA_SIK
+				flag = BUKHARA_CXB
+				flag = BUKHARA_PER
+				} 
+                                }
+	name = "EVT_750554_OPTIONB"
+	command = { type = dissent value = -1 }
+	command = { type = domestic which = interventionism value = 1 }
+	command = { type = event which = 750555 where = KYG when = 1 }
+	command = { type = event which = 750561 where = KYG when = 3 }
+	command = { type = event which = 750567 where = KYG when = 5 }
+	command = { type = event which = 750573 where = KYG when = 8 }
+	}
+}
+
+event = {
+	id = 750555
+	picture = "KYG_BUKHARA"
+	random = no
+	country = KYG
+	style = 2
+
+name = "EVT_750555_NAME"
+desc = "EVT_750555_DESC"
+
+action = {
+	ai_chance = 5
+	name = "EVT_750555_OPTIONA"
+	command = { type = domestic which = freedom value = 2 }
+	command = { type = dissent value = 5 }
+	}
+action = {
+	ai_chance = 95
+	name = "EVT_750555_OPTIONB"
+	command = { type = domestic which = freedom value = -1 }
+	command = { type = relation which = FRA value = -50 }
+	command = { type = relation which = PRK value = -50 }
+	command = { trigger = { flag = BUKHARA_AFG } type = event which = 750556 where = AFG when = 1 }
+	command = { trigger = { flag = BUKHARA_AZB } type = event which = 750557 where = AZB when = 1 }
+	command = { trigger = { flag = BUKHARA_SIK } type = event which = 750558 where = SIK when = 1 }
+	command = { trigger = { flag = BUKHARA_CXB } type = event which = 750559 where = CXB when = 1 }
+	command = { trigger = { flag = BUKHARA_PER } type = event which = 750560 where = PER when = 1 }
+	}
+}
+
+event = {
+	id = 750556
+	picture = "KYG_BUKHARA"
+	random = no
+	country = AFG
+	style = 2
+
+name = "EVT_750556_NAME"
+desc = "EVT_750556_DESC"
+
+action = {
+	ai_chance = 5
+	name = "EVT_750556_OPTIONA"
+	command = { type = domestic which = freedom value = 2 }
+	command = { type = relation which = KYG value = -10 }
+	}
+action = {
+	ai_chance = 95
+	name = "EVT_750556_OPTIONB"
+	command = { type = domestic which = freedom value = -1 }
+	command = { type = relation which = KYG value = 10 }
+	command = { type = relation which = FRA value = -50 }
+	command = { type = relation which = PRK value = -50 }
+	}
+}
+
+event = {
+	id = 750557
+	picture = "KYG_BUKHARA"
+	random = no
+	country = AZB
+	style = 2
+
+name = "EVT_750557_NAME"
+desc = "EVT_750557_DESC"
+
+action = {
+	ai_chance = 25
+	name = "EVT_750557_OPTIONA"
+	command = { type = domestic which = freedom value = 2 }
+	command = { type = relation which = KYG value = -10 }
+	}
+action = {
+	ai_chance = 75
+	name = "EVT_750557_OPTIONB"
+	command = { type = domestic which = freedom value = -1 }
+	command = { type = relation which = KYG value = 10 }
+	command = { type = relation which = FRA value = -50 }
+	command = { type = relation which = PRK value = -50 }
+	}
+}
+
+event = {
+	id = 750558
+	picture = "KYG_BUKHARA"
+	random = no
+	country = SIK
+	style = 2
+
+name = "EVT_750558_NAME"
+desc = "EVT_750558_DESC"
+
+action = {
+	ai_chance = 25
+	name = "EVT_750558_OPTIONA"
+	command = { type = domestic which = freedom value = 2 }
+	command = { type = relation which = KYG value = -10 }
+	}
+action = {
+	ai_chance = 75
+	name = "EVT_750558_OPTIONB"
+	command = { type = domestic which = freedom value = -1 }
+	command = { type = relation which = KYG value = 10 }
+	command = { type = relation which = FRA value = -50 }
+	command = { type = relation which = PRK value = -50 }
+	}
+}
+
+event = {
+	id = 750559
+	picture = "KYG_BUKHARA"
+	random = no
+	country = CXB
+	style = 2
+
+name = "EVT_750559_NAME"
+desc = "EVT_750559_DESC"
+
+action = {
+	ai_chance = 15
+	name = "EVT_750559_OPTIONA"
+	command = { type = domestic which = freedom value = 2 }
+	command = { type = relation which = KYG value = -10 }
+	}
+action = {
+	ai_chance = 85
+	name = "EVT_750559_OPTIONB"
+	command = { type = domestic which = freedom value = -1 }
+	command = { type = relation which = KYG value = 10 }
+	command = { type = relation which = FRA value = -50 }
+	command = { type = relation which = PRK value = -50 }
+	}
+}
+
+event = {
+	id = 750560
+	picture = "KYG_BUKHARA"
+	random = no
+	country = PER
+	style = 2
+
+name = "EVT_750560_NAME"
+desc = "EVT_750560_DESC"
+
+action = {
+	ai_chance = 35
+	name = "EVT_750560_OPTIONA"
+	command = { type = domestic which = freedom value = 2 }
+	command = { type = relation which = KYG value = -10 }
+	}
+action = {
+	ai_chance = 65
+	name = "EVT_750560_OPTIONB"
+	command = { type = dissent value = 5 }
+	command = { type = domestic which = freedom value = -1 }
+	command = { type = relation which = KYG value = 10 }
+	command = { type = relation which = FRA value = -50 }
+	command = { type = relation which = PRK value = -50 }
+	}
+}
+
+event = {
+	id = 750561
+	picture = "KYG_BUKHARA"
+	random = no
+	country = KYG
+	style = 2
+
+name = "EVT_750561_NAME"
+desc = "EVT_750561_DESC"
+
+action = {
+	ai_chance = 5
+	name = "EVT_750561_OPTIONA"
+	command = { type = dissent value = 1 }
+	}
+action = {
+	ai_chance = 95
+	name = "EVT_750561_OPTIONB"
+	command = { type = money value = -200 }
+	command = { type = research_mod value = 5 }
+	command = { trigger = { flag = BUKHARA_AFG } type = event which = 750562 where = AFG when = 1 }
+	command = { trigger = { flag = BUKHARA_AZB } type = event which = 750563 where = AZB when = 1 }
+	command = { trigger = { flag = BUKHARA_SIK } type = event which = 750564 where = SIK when = 1 }
+	command = { trigger = { flag = BUKHARA_CXB } type = event which = 750565 where = CXB when = 1 }
+	command = { trigger = { flag = BUKHARA_PER } type = event which = 750566 where = PER when = 1 }
+	}
+}
+
+event = {
+	id = 750562
+	picture = "KYG_BUKHARA"
+	random = no
+	country = AFG
+	style = 2
+
+name = "EVT_750562_NAME"
+desc = "EVT_750562_DESC"
+
+action = {
+	ai_chance = 5
+	name = "EVT_750562_OPTIONA"
+	command = { type = dissent value = 1 }
+	}
+action = {
+	ai_chance = 95
+	name = "EVT_750562_OPTIONB"
+	command = { type = money value = -200 }
+	command = { type = research_mod value = 5 }
+	}
+}
+
+event = {
+	id = 750563
+	picture = "KYG_BUKHARA"
+	random = no
+	country = AZB
+	style = 2
+
+name = "EVT_750563_NAME"
+desc = "EVT_750563_DESC"
+
+action = {
+	ai_chance = 5
+	name = "EVT_750563_OPTIONA"
+	command = { type = dissent value = 1 }
+	}
+action = {
+	ai_chance = 95
+	name = "EVT_750563_OPTIONB"
+	command = { type = money value = -200 }
+	command = { type = research_mod value = 5 }
+	}
+}
+
+event = {
+	id = 750564
+	picture = "KYG_BUKHARA"
+	random = no
+	country = SIK
+	style = 2
+
+name = "EVT_750564_NAME"
+desc = "EVT_750564_DESC"
+
+action = {
+	ai_chance = 5
+	name = "EVT_750564_OPTIONA"
+	command = { type = dissent value = 1 }
+	}
+action = {
+	ai_chance = 95
+	name = "EVT_750564_OPTIONB"
+	command = { type = money value = -200 }
+	command = { type = research_mod value = 5 }
+	}
+}
+
+event = {
+	id = 750565
+	picture = "KYG_BUKHARA"
+	random = no
+	country = CXB
+	style = 2
+
+name = "EVT_750565_NAME"
+desc = "EVT_750565_DESC"
+
+action = {
+	ai_chance = 5
+	name = "EVT_750565_OPTIONA"
+	command = { type = dissent value = 1 }
+	}
+action = {
+	ai_chance = 95
+	name = "EVT_750565_OPTIONB"
+	command = { type = money value = -200 }
+	command = { type = research_mod value = 5 }
+	}
+}
+
+event = {
+	id = 750566
+	picture = "KYG_BUKHARA"
+	random = no
+	country = PER
+	style = 2
+
+name = "EVT_750566_NAME"
+desc = "EVT_750566_DESC"
+
+action = {
+	ai_chance = 5
+	name = "EVT_750566_OPTIONA"
+	command = { type = dissent value = 1 }
+	}
+action = {
+	ai_chance = 95
+	name = "EVT_750566_OPTIONB"
+	command = { type = money value = -200 }
+	command = { type = research_mod value = 5 }
+	}
+}
+
+event = {
+	id = 750567
+	picture = "KYG_WAR"
+	random = no
+	country = KYG
+	style = 2
+
+name = "EVT_750567_NAME"
+desc = "EVT_750567_DESC"
+
+action = {
+	ai_chance = 5
+	name = "EVT_750567_OPTIONA"
+	command = { type = domestic which = interventionism value = -2 }
+	command = { type = domestic which = defense_lobby value = -2 }
+	command = { type = dissent value = 5 }
+	}
+action = {
+	ai_chance = 95
+	name = "EVT_750567_OPTIONB"
+	command = { type = domestic which = interventionism value = 2 }
+	command = { type = domestic which = defense_lobby value = 2 }
+	command = { trigger = { flag = BUKHARA_AFG NOT = { ispuppet = AFG alliance = { country = AFG country = PAK } } } type = event which = 750568 where = AFG when = 1 }
+	command = { trigger = { flag = BUKHARA_AZB NOT = { ispuppet = AZB alliance = { country = AZB country = GER } alliance = { country = AZB country = PAK } } } type = event which = 750569 where = AZB when = 1 }
+	command = { trigger = { flag = BUKHARA_SIK NOT = { ispuppet = SIK } } type = event which = 750570 where = SIK when = 1 }
+	command = { trigger = { flag = BUKHARA_CXB NOT = { ispuppet = CXB } } type = event which = 750571 where = CXB when = 1 }
+	command = { trigger = { flag = BUKHARA_PER NOT = { ispuppet = PER } } type = event which = 750572 where = PER when = 1 }
+	}
+}
+
+event = {
+	id = 750568
+	picture = "KYG_WAR"
+	random = no
+	country = AFG
+	style = 2
+
+name = "EVT_750568_NAME"
+desc = "EVT_750568_DESC"
+
+action = {
+	ai_chance = 10
+	name = "EVT_750568_OPTIONA"
+	command = { type = domestic which = interventionism value = -2 }
+	command = { type = domestic which = defense_lobby value = -2 }
+	}
+
+action = {
+	ai_chance = 90
+	name = "EVT_750568_OPTIONB"
+	command = { type = domestic which = interventionism value = 2 }
+	command = { type = domestic which = defense_lobby value = 2 }
+	command = { type = event which = 7505681 where = KYG when = 1 }
+        command = { trigger = { flag = BUKHARA_AZB } type = relation which = AZB value = 100 }
+        command = { trigger = { flag = BUKHARA_SIK } type = relation which = SIK value = 100 }
+        command = { trigger = { flag = BUKHARA_CXB } type = relation which = CXB value = 100 }
+        command = { trigger = { flag = BUKHARA_PER } type = relation which = PER value = 100 }
+        command = { type = relation which = KYG value = 100 }
+        command = { type = leave_alliance }
+	}
+}
+
+event = {
+	id = 7505681
+	picture = "KYG_WAR"
+	random = no
+	country = KYG
+	style = 2
+
+name = "EVT_7505681_NAME"
+desc = "EVT_7505681_DESC"
+
+action = {
+	name = "EVT_7505681_OPTIONA"
+	command = { type = alliance which = AFG }
+        command = { type = relation which = AFG value = 100 }
+	}
+}
+
+event = {
+	id = 750569
+	picture = "KYG_WAR"
+	random = no
+	country = AZB
+	style = 2
+
+name = "EVT_750569_NAME"
+desc = "EVT_750569_DESC"
+
+action = {
+	ai_chance = 10
+	name = "EVT_750569_OPTIONA"
+	command = { type = domestic which = interventionism value = -2 }
+	command = { type = domestic which = defense_lobby value = -2 }
+	}
+action = {
+	ai_chance = 90
+	name = "EVT_750569_OPTIONB"
+	command = { type = domestic which = interventionism value = 2 }
+	command = { type = domestic which = defense_lobby value = 2 }
+	command = { type = event which = 7505691 where = KYG when = 1 }
+        command = { trigger = { flag = BUKHARA_AFG } type = relation which = AFG value = 100 }
+        command = { trigger = { flag = BUKHARA_SIK } type = relation which = SIK value = 100 }
+        command = { trigger = { flag = BUKHARA_CXB } type = relation which = CXB value = 100 }
+        command = { trigger = { flag = BUKHARA_PER } type = relation which = PER value = 100 }
+        command = { type = leave_alliance }
+	}
+}
+
+event = {
+	id = 7505691
+	picture = "KYG_WAR"
+	random = no
+	country = KYG
+	style = 2
+
+name = "EVT_7505691_NAME"
+desc = "EVT_7505691_DESC"
+
+action = {
+	name = "EVT_7505691_OPTIONA"
+	command = { type = alliance which = AZB }
+        command = { type = relation which = AZB value = 100 }
+	}
+}
+
+event = {
+	id = 750570
+	picture = "KYG_WAR"
+	random = no
+	country = SIK
+	style = 2
+
+name = "EVT_750570_NAME"
+desc = "EVT_750570_DESC"
+
+action = {
+	ai_chance = 10
+	name = "EVT_750570_OPTIONA"
+	command = { type = domestic which = interventionism value = -2 }
+	command = { type = domestic which = defense_lobby value = -2 }
+	}
+
+action = {
+	ai_chance = 90
+	name = "EVT_750570_OPTIONB"
+	command = { type = domestic which = interventionism value = 2 }
+	command = { type = domestic which = defense_lobby value = 2 }
+	command = { type = event which = 7505701 where = KYG when = 1 }
+        command = { trigger = { flag = BUKHARA_AZB } type = relation which = AZB value = 100 }
+        command = { trigger = { flag = BUKHARA_AFG } type = relation which = AFG value = 100 }
+        command = { trigger = { flag = BUKHARA_CXB } type = relation which = CXB value = 100 }
+        command = { trigger = { flag = BUKHARA_PER } type = relation which = PER value = 100 }
+        command = { type = leave_alliance }
+	}
+}
+
+event = {
+	id = 7505701
+	picture = "KYG_WAR"
+	random = no
+	country = KYG
+	style = 2
+
+name = "EVT_7505701_NAME"
+desc = "EVT_7505701_DESC"
+
+action = {
+	name = "EVT_7505701_OPTIONA"
+	command = { type = alliance which = SIK }
+        command = { type = relation which = SIK value = 100 }
+	}
+}
+
+event = {
+	id = 750571
+	picture = "KYG_WAR"
+	random = no
+	country = CXB
+	style = 2
+
+name = "EVT_750571_NAME"
+desc = "EVT_750571_DESC"
+
+action = {
+	ai_chance = 10
+	name = "EVT_750571_OPTIONA"
+	command = { type = domestic which = interventionism value = -2 }
+	command = { type = domestic which = defense_lobby value = -2 }
+	}
+
+action = {
+	ai_chance = 90
+	name = "EVT_750571_OPTIONB"
+	command = { type = domestic which = interventionism value = 2 }
+	command = { type = domestic which = defense_lobby value = 2 }
+	command = { type = event which = 7505711 where = KYG when = 1 }
+        command = { trigger = { flag = BUKHARA_AZB } type = relation which = AZB value = 100 }
+        command = { trigger = { flag = BUKHARA_SIK } type = relation which = SIK value = 100 }
+        command = { trigger = { flag = BUKHARA_AFG } type = relation which = AFG value = 100 }
+        command = { trigger = { flag = BUKHARA_PER } type = relation which = PER value = 100 }
+        command = { type = leave_alliance }
+	}
+}
+
+event = {
+	id = 7505711
+	picture = "KYG_WAR"
+	random = no
+	country = KYG
+	style = 2
+
+name = "EVT_7505711_NAME"
+desc = "EVT_7505711_DESC"
+
+action = {
+	name = "EVT_7505711_OPTIONA"
+	command = { type = alliance which = CXB }
+        command = { type = relation which = CXB value = 100 }
+	}
+}
+
+event = {
+	id = 750572
+	picture = "KYG_WAR"
+	random = no
+	country = PER
+	style = 2
+
+name = "EVT_750572_NAME"
+desc = "EVT_750572_DESC"
+
+action = {
+	ai_chance = 10
+	name = "EVT_750572_OPTIONA"
+	command = { type = domestic which = interventionism value = -2 }
+	command = { type = domestic which = defense_lobby value = -2 }
+	}
+action = {
+	ai_chance = 90
+	name = "EVT_750572_OPTIONB"
+	command = { type = domestic which = interventionism value = 2 }
+	command = { type = domestic which = defense_lobby value = 2 }
+	command = { type = event which = 7505721 where = KYG when = 1 }
+        command = { trigger = { flag = BUKHARA_AZB } type = relation which = AZB value = 100 }
+        command = { trigger = { flag = BUKHARA_SIK } type = relation which = SIK value = 100 }
+        command = { trigger = { flag = BUKHARA_CXB } type = relation which = CXB value = 100 }
+        command = { trigger = { flag = BUKHARA_AFG } type = relation which = AFG value = 100 }
+        command = { type = leave_alliance }
+	}
+}
+
+event = {
+	id = 7505721
+	picture = "KYG_WAR"
+	random = no
+	country = KYG
+	style = 2
+
+name = "EVT_7505721_NAME"
+desc = "EVT_7505721_DESC"
+
+action = {
+	name = "EVT_7505721_OPTIONA"
+	command = { type = alliance which = PER }
+        command = { type = relation which = PER value = 100 }
+	}
+}
+
+event = {
+	id = 750573
+	picture = "KYG_BUKHARA"
+	random = no
+	country = KYG
+	style = 2
+
+name = "EVT_750573_NAME"
+desc = "EVT_750573_DESC"
+
+action = {
+	name = "EVT_750573_OPTIONA"
+	command = { trigger = { flag = BUKHARA_AFG } type = event which = 750575 where = AFG when = 1 }
+	command = { trigger = { flag = BUKHARA_AZB } type = event which = 750576 where = AZB when = 1 }
+	command = { trigger = { flag = BUKHARA_SIK } type = event which = 750577 where = SIK when = 1 }
+	command = { trigger = { flag = BUKHARA_CXB } type = event which = 750578 where = CXB when = 1 }
+	command = { trigger = { flag = BUKHARA_PER } type = event which = 750579 where = PER when = 1 }
+	}
+}
+
+event = {
+	id = 750575
+	picture = "KYG_BUKHARA"
+	random = no
+	country = AFG
+	style = 2
+
+name = "EVT_750575_NAME"
+desc = "EVT_750575_DESC"
+
+action = {
+	name = "EVT_750575_OPTIONA"
+	command = {  }
+	}
+}
+
+event = {
+	id = 750576
+	picture = "KYG_BUKHARA"
+	random = no
+	country = AZB
+	style = 2
+
+name = "EVT_750576_NAME"
+desc = "EVT_750576_DESC"
+
+action = {
+	name = "EVT_750576_OPTIONA"
+	command = {  }
+	}
+}
+
+event = {
+	id = 750577
+	picture = "KYG_BUKHARA"
+	random = no
+	country = SIK
+	style = 2
+
+name = "EVT_750577_NAME"
+desc = "EVT_750577_DESC"
+
+action = {
+	name = "EVT_750577_OPTIONA"
+	command = {  }
+	}
+}
+
+event = {
+	id = 750578
+	picture = "KYG_BUKHARA"
+	random = no
+	country = CXB
+	style = 2
+
+name = "EVT_750578_NAME"
+desc = "EVT_750578_DESC"
+
+action = {
+	name = "EVT_750578_OPTIONA"
+	command = {  }
+	}
+}
+
+event = {
+	id = 750579
+	picture = "KYG_BUKHARA"
+	random = no
+	country = PER
+	style = 2
+
+name = "EVT_750579_NAME"
+desc = "EVT_750579_DESC"
+
+action = {
+	name = "EVT_750579_OPTIONA"
+	command = {  }
+	}
+}
+
+event = {
+     id = 750691
+     picture = "militaryparade1"
+     random = no
+     country = KYG
+     style = 2
+     
+     trigger = {
+         NOT = {
+             war = { country = KYG country = IRQ }
+             war = { country = KYG country = OTT }
+             war = { country = KYG country = KUR }
+             war = { country = KYG country = TUR }
+             war = { country = KYG country = AZB }
+             war = { country = KYG country = ARM }
+             war = { country = KYG country = AFG }
+             war = { country = KYG country = PAK }
+             exists = PER
+         }
+         control = { province = 1085 data = -1 } #tehran
+     }
+     
+     name = "EVT_750691_NAME"
+     desc = "EVT_750691_DESC"
+     
+     date = { day = 1 month = january year = 1936 }
+     offset = 30
+     deathdate = { day = 29 month = december year = 1965 }
+
+     action = {
+         name = "EVT_750691_OPTIONA"
+         ai_chance = 0
+         command = { type = dissent value = 2 }
+     }
+     
+     
+     action = {
+         name = "EVT_750691_OPTIONB"
+         ai_chance = 25
+         command = { type = dissent value = 3 }
+         command = { type = independence which = PER value = 1 when = 0 }
+         command = { type = make_puppet which = PER }
+         command = { type = event which = 750692 where = PER when = 1 }  
+     }
+
+     action = {
+         name = "EVT_750691_OPTIONC"
+         ai_chance = 25
+         command = { type = dissent value = 3 }
+         command = { type = addclaim which = 1080 }
+         command = { type = addclaim which = 1092 }
+         command = { type = waketeam which = 11706  } # add construction tech team
+         command = { type = sleepteam which = 6102 } # sleep persian tech team if needed
+         command = { type = independence which = PER value = 1 when = 0 }
+         command = { type = make_puppet which = PER }
+         command = { type = event which = 750692 where = PER when = 1 }  
+     }
+     
+     action = {
+         name = "EVT_750691_OPTIOND"
+         ai_chance = 70
+         command = { type = dissent value = 5 }
+         command = { type = relation which = OTT value = -25 } 
+         command = { type = relation which = PAK value = -25 }
+         command = { type = relation which = AZB value = -50 }
+         command = { type = addclaim which = 1080 }
+         command = { type = addclaim which = 1092 }
+         command = { type = addclaim which = 1095 }
+         command = { type = addclaim which = 1093 }
+         command = { type = addclaim which = 1091 }
+         command = { type = independence which = PER value = 1 when = 0 }
+         command = { type = make_puppet which = PER }
+         command = { type = waketeam which = 11706  } # add construction tech team
+         command = { type = sleepteam which = 6102 } # sleep persian tech team if needed
+         command = { type = waketeam which = 11707 } # add mining tech team
+         command = { type = sleepteam which = 6103 } # sleep persian tech team if needed   
+         command = { type = event which = 750692 where = PER when = 1 }  
+     }
+
+     action = {
+         name = "EVT_750691_OPTIONE"
+         ai_chance = 20
+         command = { type = dissent value = 15 }
+         command = { type = relation which = OTT value = -25 } 
+         command = { type = relation which = PAK value = -25 }
+         command = { type = relation which = AZB value = -50 }
+         command = { type = addclaim which = 1080 }
+         command = { type = addclaim which = 1081 }
+         command = { type = addclaim which = 1082 }
+         command = { type = addclaim which = 1083 }
+         command = { type = addclaim which = 1084 }
+         command = { type = addclaim which = 1085 }
+         command = { type = addclaim which = 1086 }
+         command = { type = addclaim which = 1087 }
+         command = { type = addclaim which = 1088 }
+         command = { type = addclaim which = 1089 }
+         command = { type = addclaim which = 1090 }
+         command = { type = addclaim which = 1091 }
+         command = { type = addclaim which = 1092 }
+         command = { type = addclaim which = 1093 }
+         command = { type = addclaim which = 1094 }
+         command = { type = addclaim which = 1095 }
+         command = { type = province_revoltrisk which = 1080 value = 20 }
+         command = { type = province_revoltrisk which = 1081 value = 50 }
+         command = { type = province_revoltrisk which = 1082 value = 30 }
+         command = { type = province_revoltrisk which = 1083 value = 50 }
+         command = { type = province_revoltrisk which = 1084 value = 50 }
+         command = { type = province_revoltrisk which = 1085 value = 50 }
+         command = { type = province_revoltrisk which = 1086 value = 50 }
+         command = { type = province_revoltrisk which = 1087 value = 50 }
+         command = { type = province_revoltrisk which = 1088 value = 50 }
+         command = { type = province_revoltrisk which = 1089 value = 30 }
+         command = { type = province_revoltrisk which = 1090 value = 50 }
+         command = { type = province_revoltrisk which = 1091 value = 30 }
+         command = { type = province_revoltrisk which = 1092 value = 10 }
+         command = { type = province_revoltrisk which = 1093 value = 30 }
+         command = { type = province_revoltrisk which = 1094 value = 50 }
+         command = { type = province_revoltrisk which = 1095 value = 30 }
+         command = { type = dissent value = 15 } # is anyone happy with this merger?
+         command = { type = waketeam which = 11707  } # add mining tech team
+         command = { type = sleepteam which = 6103 } # sleep persian tech team if needed
+         command = { type = waketeam which = 11706  } # add construction tech team
+         command = { type = sleepteam which = 6102 } # sleep persian tech team if needed
+         
+     }
+     }
+
+ event = { 
+     id = 750692
+     picture = "militaryparade1"
+     random = no
+     country = PER
+     style = 2
+     
+     name = "EVT_750692_NAME"
+     desc = "EVT_750692_DESC"
+     
+     
+     action = {
+             command = { type = add_division value = infantry when = 8 }
+             command = { type = add_division value = infantry when = 8 }
+             command = { type = add_division value = cavalry when = 8 }
+     }
+     }
+
+
+event = {
+     id = 11750580
+     random = no
+     country = KYG
+     style = 2
+     picture = "minister_died"
+
+ 	trigger = {
+             OR = {
+                 headofstate = 12099
+                 headofgovernment = 12100    #Ishan Babakhan
+                 }
+             }
+
+ name = "EVT_11750580_NAME"
+ desc = "EVT_11750580_DESC"
+
+ date = { day = 1 month =january year = 1956 }
+ offset = 300
+ deathdate = { day = 1 month = january year = 1970 }
+
+ action = {
+     name = "EVT_11750580_OPTIONA"
+         command = { type = dissent value = 5 }
+         command = { trigger = { headofstate = 12099 } type = headofstate which = 12097 }
+         command = { trigger = { headofgovernment = 12100 } type = headofgovernment which = 12098 }
+         command = { type = sleepminister which = 12099 }
+         command = { type = sleepminister which = 12100 }
+         command = { type = sleepevent which = 11750581 }
+         }
+ }
+
+ event = {
+     id = 11750581
+     random = no
+     country = KYG
+     style = 2
+     picture = "minister_died"
+
+ 	trigger = {
+             NOT = {
+                 headofstate = 12099
+                 headofgovernment = 12100    #Ishan Babakhan
+                 }
+             }
+
+ name = "EVT_11750581_NAME"
+ desc = "EVT_11750581_DESC"
+
+ date = { day = 1 month =january year = 1956 }
+ offset = 300
+ deathdate = { day = 1 month = january year = 1970 }
+
+ action = {
+     name = "EVT_11750581_OPTIONA"
+         command = { type = dissent value = 1 }
+         command = { type = sleepminister which = 12099 }
+         command = { type = sleepminister which = 12100 }
+         command = { type = sleepevent which = 11750580 }
+         }
+ }
+
+
+
+
+event = {
+     id = 750607
+     picture = "KYG_BUKHARA"
+     random = no
+     country = KYG
+     style = 2
+
+     trigger = {
+                 war = { country = PAK country = KYG }  
+                 control = { province = 1459 data = -1 }
+                 NOT = {
+                 alliance = { country = RUS country = PAK }
+                 alliance = { country = SOV country = PAK }
+                 ispuppet = KYG
+                 ispuppet = PAK
+                 lost_national = { country = KYG value = 10 } 
+                 }
+     }
+
+     date = { day = 1 month = january year = 1936 }
+     offset = 20
+     deathdate = { day = 29 month = december year = 1970 }
+
+     name = "EVT_750607_NAME"
+     desc = "EVT_750607_DESC"
+
+     action_a = {
+         ai_chance = 100
+         name = "EVT_750607_OPTIONA"
+         command = { trigger = { NOT = { puppet = { country = AFG country = KYG  } } } type = addclaim which = 2168 }
+         command = { trigger = { NOT = { puppet = { country = AFG country = KYG  } } } type = addclaim which = 2173 }
+         command = { trigger = { NOT = { puppet = { country = AFG country = KYG  } } } type = addclaim which = 2172 }
+         command = { trigger = { NOT = { puppet = { country = AFG country = KYG  } } } type = addclaim which = 2171 }
+         command = { trigger = { NOT = { puppet = { country = AFG country = KYG  } } } type = addclaim which = 2169 }
+         command = { trigger = { NOT = { puppet = { country = AFG country = KYG  } } } type = addclaim which = 2170 }
+         command = { type = addclaim which = 1538 }
+         command = { type = addclaim which = 1533 }
+         command = { type = addclaim which = 1532 }
+         command = { type = addclaim which = 1534 }
+         command = { type = addclaim which = 1537 }
+         command = { type = addclaim which = 1530 }
+         command = { type = addclaim which = 1529 }
+         command = { type = addclaim which = 1536 }
+         command = { type = addclaim which = 1539 }
+         command = { type = event which = 750608 where = PAK when = 1 }
+     }
+
+     action_b = {
+         ai_chance = 0
+         name = "EVT_750607_OPTIONB"
+         command = { type = dissent value = 1 }
+     }
+ }
+
+ event = {
+ id = 750608
+ random = no
+ country = PAK
+ style = 2
+ picture = "KYG_BUKHARA"
+
+ name = "EVT_750608_NAME"
+ desc = "EVT_750608_DESC"
+
+ action_a = {
+         ai_chance = 95
+         name = "EVT_750608_OPTIONA"
+         command = { type = peace which = KYG value = 0 }
+         command = { type = secedeprovince which = KYG value = 1538 }
+         command = { type = secedeprovince which = KYG value = 1533 }
+         command = { type = secedeprovince which = KYG value = 1532 }
+         command = { type = secedeprovince which = KYG value = 1534 }
+         command = { type = secedeprovince which = KYG value = 1537 }
+         command = { type = secedeprovince which = KYG value = 1530 }
+         command = { type = secedeprovince which = KYG value = 1529 }
+         command = { type = secedeprovince which = KYG value = 1536 }
+         command = { type = secedeprovince which = KYG value = 1539 }
+         command = { type = secedeprovince which = KYG value = 2168 }
+         command = { type = secedeprovince which = KYG value = 2173 }
+         command = { type = secedeprovince which = KYG value = 2172 }
+         command = { type = secedeprovince which = KYG value = 2171 }
+         command = { type = secedeprovince which = KYG value = 2169 }
+         command = { type = secedeprovince which = KYG value = 2170 }
+         command = { type = non_aggression which = PAK where = KYG }
+         command = { type = dissent value = 2 }
+         }
+         
+ action = {
+         ai_chance = 5
+         name = "EVT_750608_OPTIONB"
+         command = { type = dissent value = 5 }
+         }
+ }

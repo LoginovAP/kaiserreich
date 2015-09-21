@@ -1,0 +1,1317 @@
+########################################
+#### Denmark
+########################################
+
+### Denmark has economic collapse
+event = {
+id = 95000
+country = DEN
+random = no
+
+name = "EVT_95000_NAME"
+desc = "EVT_95000_DESC"
+picture = "Unemployment3"
+style = 2
+
+date = { day = 5 month = october year = 1936 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+ai_chance = 75
+name = "EVT_95000_OPTIONA"
+command = { type = peacetime_ic_mod value = -10 }
+command = { type = money value = -40  }
+}
+action_b = {
+ai_chance = 25
+name = "EVT_95000_OPTIONB"
+command = { type = peacetime_ic_mod value = -5 }
+command = { type = setflag which = denreforms }
+}
+}
+
+### The Economy collapses
+event = {
+id = 95001
+country = DEN
+random = no
+
+trigger = {
+OR = {
+event = 95000
+event = 95004
+}
+NOT = { flag = denreforms }
+}
+
+name = "EVT_95001_NAME"
+desc = "EVT_95001_DESC"
+picture = "Unemployment3"
+style = 2
+
+date = { day = 12 month = november year = 1936 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+name = "EVT_95001_OPTIONA"
+command = { type = peacetime_ic_mod value = -5 }
+}
+}
+
+### Economic reforms
+event = {
+id = 95002
+country = DEN
+random = no
+
+trigger = {
+event = 95001
+}
+name = "EVT_95002_NAME"
+desc = "EVT_95002_DESC"
+style = 2
+picture = "politics4"
+
+date = { day = 8 month = december year = 1936 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+name = "EVT_95002_OPTIONA"
+command = { type = dissent value = 5 }
+}
+}
+
+### The New Path
+event = {
+id = 95003
+country = DEN
+random = no
+
+trigger = {
+event = 95002
+}
+name = "EVT_95003_NAME"
+desc = "EVT_95003_DESC"
+style = 2
+picture = "economic"
+
+date = { day = 2 month = january year = 1937 }
+offset = 3
+deathdate = { day = 29 month = december year = 1954 }
+
+
+action_a = {
+ai_chance = 75
+name = "EVT_95003_OPTIONA"
+command = { type = setflag which = densweref }
+}
+action_b = {
+ai_chance = 25
+trigger = {
+NOT = {
+exists = ICL
+}
+control = { province = 1 data = DEN }
+}
+name = "EVT_95003_OPTIONB"
+command = { type = setflag which = dennoratl }
+}
+}
+
+### Reforms fail
+event = {
+id = 95004
+country = DEN
+random = no
+
+trigger = {
+flag = denreforms
+}
+
+name = "EVT_95004_NAME"
+desc = "EVT_95004_DESC"
+style = 2
+picture = "economic"
+
+date = { day = 2 month = november year = 1936 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+name = "EVT_95004_OPTIONA"
+command = { type = peacetime_ic_mod value = -2 }
+command = { type = clrflag which = denreforms }
+}
+}
+
+### Denmark industrial reforms
+event = {
+id = 95005
+country = DEN
+random = no
+picture = "Factory"
+
+trigger = {
+flag = densweref
+}
+
+name = "EVT_95005_NAME"
+desc = "EVT_95005_DESC"
+style = 2
+
+date = { day = 10 month = january year = 1937 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+name = "EVT_95005_OPTIONA"
+command = { type = peacetime_ic_mod value = 2 }
+}
+}
+
+### More industrial reforms
+event = {
+id = 95006
+country = DEN
+random = no
+
+trigger = {
+event = 95005
+}
+
+name = "EVT_95006_NAME"
+desc = "EVT_95006_DESC"
+style = 2
+picture = "Industry2"
+
+date = { day = 12 month = february year = 1937 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+
+action_a = {
+name = "EVT_95006_OPTIONA"
+command = { type = peacetime_ic_mod value = 2 }
+}
+}
+
+### The spring industry
+event = {
+id = 95007
+country = DEN
+random = no
+
+trigger = {
+event = 95006
+}
+
+name = "EVT_95007_NAME"
+desc = "EVT_95007_DESC"
+style = 2
+picture = "Industry"
+
+date = { day = 22 month = march year = 1937 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+
+action_a = {
+name = "EVT_95007_OPTIONA"
+command = { type = peacetime_ic_mod value = 4 }
+command = { type = construct which = IC where = 219 value = 1 }
+command = { type = construct which = IC where = 294 value = 1 }
+}
+}
+
+### The Summer Fuel Crisis
+event = {
+id = 95008
+country = DEN
+random = no
+
+trigger = {
+event = 95007
+}
+
+name = "EVT_95008_NAME"
+desc = "EVT_95008_DESC"
+style = 2
+picture = "economic"
+
+date = { day = 14 month = august year = 1937 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+
+action_a = {
+name = "EVT_95008_OPTIONA"
+command = { type = setflag which = nofuelice }
+}
+}
+
+### Protests in Iceland
+event = {
+id = 95009
+country = DEN
+random = no
+picture = "politics2"
+
+trigger = {
+event = 83119
+flag = nofuelice
+}
+
+name = "EVT_95009_NAME"
+desc = "EVT_95009_DESC"
+style = 2
+
+date = { day = 1 month = december year = 1937 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+
+action_a = {
+name = "EVT_95009_OPTIONA"
+command = { type = dissent value = 1 }
+}
+}
+
+### Industrial Expansion 1938
+event = {
+id = 95010
+country = DEN
+random = no
+
+trigger = {
+event = 95009
+}
+
+name = "EVT_95010_NAME"
+desc = "EVT_95010_DESC"
+style = 2
+picture = "economic"
+
+date = { day = 4 month = february year = 1938 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+
+action_a = {
+name = "EVT_95010_OPTIONA"
+command = { type = peacetime_ic_mod value = 3 }
+command = { type = construct which = IC where = 294 value = 1 }
+}
+}
+
+### Iceland criticizes Danish policies
+event = {
+id = 95011
+country = DEN
+random = no
+
+trigger = {
+event = 83120
+NOT = {
+exists = ICL
+}
+control = { province = 1 data = DEN }
+}
+
+name = "EVT_95011_NAME"
+desc = "EVT_95011_DESC"
+style = 2
+picture = "iceland1"
+
+date = { day = 8 month = april year = 1938 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+
+action_a = {
+name = "EVT_95011_OPTIONA"
+command = { type = clrflag which = nofuelice }
+}
+}
+
+### Industrial Reform
+event = {
+id = 95012
+country = DEN
+random = no
+
+trigger = {
+event = 95011
+}
+
+name = "EVT_95012_NAME"
+desc = "EVT_95012_DESC"
+style = 2
+picture = "Industry"
+
+date = { day = 21 month = april year = 1938 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+
+action_a = {
+name = "EVT_95012_OPTIONA"
+command = { type = peacetime_ic_mod value = 2 }
+}
+}
+
+### Industrial Reform/ Final
+event = {
+id = 95013
+country = DEN
+random = no
+
+trigger = {
+event = 95012
+}
+
+name = "EVT_95013_NAME"
+desc = "EVT_95013_DESC"
+style = 2
+picture = "Industry2"
+
+date = { day = 13 month = may year = 1938 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+
+action_a = {
+name = "EVT_95013_OPTIONA"
+command = { type = peacetime_ic_mod value = 2 }
+}
+}
+
+### Iceland demands independence
+event = {
+id = 95014
+country = DEN
+random = no
+# triggered by Iceland event 83121 NOT TRUE! ALWAYS FIRES!!!
+
+trigger = {
+ NOT = { exists = ICL }
+control = { province = 1 data = DEN } 
+}
+
+name = "EVT_95014_NAME"
+desc = "EVT_95014_DESC"
+style = 2
+
+date = { day = 10 month = august year = 1938 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+picture = "iceland1"
+
+action_a = {
+	ai_chance = 100
+	name = "EVT_95014_OPTIONA"
+	command = { type = independence which = ICL value = 1 when = 0 }
+        command = { type = dissent value = 3 }
+        command = { type = trigger which = 95044  }
+	}
+
+action_b = {
+	ai_chance = 0
+	name = "EVT_95014_OPTIONB"
+	command = { type = revolt which = 1 } #Reykjavik
+	command = { type = revolt which = 3 } #Höfn
+        command = { type = dissent value = 1 }
+	}
+}
+
+event = {
+id = 95044
+random = no
+country = ICL
+style = 2
+
+name = "EVT_95044_NAME"
+desc = "EVT_95044_DESC"
+
+action = {
+    name = "EVT_95044_OPTIONA"
+         command = { type = set_domestic which = democratic value = 10 }
+	 command = { type = set_domestic which = political_left value = 7 }
+	 command = { type = headofstate which = 581019 }					
+	 command = { type = headofgovernment which = 581022 }		
+	 command = { type = foreignminister which = 581026 }						
+         command = { type = add_division value = militia when = 4 }
+}
+}
+
+### Advancing the industrial in the North Atl
+event = {
+id = 95015
+country = DEN
+random = no
+
+trigger = {
+flag = dennoratl
+}
+
+name = "EVT_95015_NAME"
+desc = "EVT_95015_DESC"
+style = 2
+picture = "Factory"
+
+date = { day = 10 month = january year = 1937 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+
+action_a = {
+name = "EVT_95015_OPTIONA"
+command = { type = peacetime_ic_mod value = 4 }
+command = { type = construct which = IC where = 1 value = 1 }
+command = { type = construct which = IC where = 3 value = 1 }
+}
+}
+
+### Industry adjustments needed
+event = {
+id = 95016
+country = DEN
+random = no
+
+trigger = {
+event = 95015
+}
+
+name = "EVT_95016_NAME"
+desc = "EVT_95016_DESC"
+style = 2
+picture = "Factory"
+
+date = { day = 4 month = june year = 1937 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+
+action_a = {
+name = "EVT_95016_OPTIONA"
+command = { type = peacetime_ic_mod value = 3 }
+}
+}
+
+### Advancing the industrial in the North Atl
+event = {
+id = 95017
+country = DEN
+random = no
+
+trigger = {
+event = 95016
+}
+
+name = "EVT_95017_NAME"
+desc = "EVT_95017_DESC"
+style = 2
+picture = "Factory"
+
+date = { day = 17 month = october year = 1937 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+name = "EVT_95017_OPTIONA"
+command = { type = peacetime_ic_mod value = 2 }
+command = { type = construct which = IC where = -1 value = 1 }
+}
+}
+
+### Advancing the industrial in the North Atl
+event = {
+id = 95018
+country = DEN
+random = no
+
+trigger = {
+event = 95017
+}
+
+name = "EVT_95018_NAME"
+desc = "EVT_95018_DESC"
+style = 2
+picture = "Factory"
+
+date = { day = 22 month = january year = 1938 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+name = "EVT_95018_OPTIONA"
+command = { type = peacetime_ic_mod value = 1 }
+}
+}
+
+### Industrial reforms complete
+event = {
+id = 95019
+country = DEN
+random = no
+
+trigger = {
+event = 95018
+}
+name = "EVT_95019_NAME"
+desc = "EVT_95019_DESC"
+style = 2
+picture = "Industry"
+
+date = { day = 17 month = march year = 1938 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+action_a = {
+name = "EVT_95019_OPTIONA"
+command = { type = peacetime_ic_mod value = 2 }
+command = { type = construct which = IC where = -1 value = 1 }
+}
+}
+
+event = {
+id = 95030
+random = no
+country = DEN
+picture = "GeorgeV_Funeral"
+style = 2
+
+trigger = {
+	headofgovernment = 16002 #Thorvald Stauning
+}
+
+date = { day = 3 month = may year = 1942 }
+
+name = "EVT_95030_NAME"
+desc = "EVT_95030_DESC"
+
+action_a = {
+	name = "EVT_95030_OPTIONA"
+	command = { type = money value = -50  }
+	command = { type = dissent value = 1  }
+	command = { type = sleepminister which = 16002 }
+	command = { type = headofgovernment which = 16039 }
+	}
+}
+
+
+event = {
+id = 95032
+random = no
+country = DEN
+picture = "GeorgeV_Funeral"
+style = 2
+
+trigger = {
+	headofstate = 16001 #Christian X
+}
+
+date = { day = 20 month = april year = 1947 }
+
+name = "EVT_95032_NAME"
+desc = "EVT_95032_DESC"
+
+action_a = {
+	name = "EVT_95032_OPTIONA"
+	command = { type = dissent value = 1  }
+	command = { type = sleepminister which = 16001 }
+	command = { type = headofstate which = 16138 }
+	}
+}
+
+event = {
+     id = 95038
+     country = DEN
+     random = no
+     style = 2
+
+     trigger = { 
+     OR = {
+     government = democratic
+     ideology = paternal_autocrat 
+     }
+     NOT = { 
+     ispuppet = DEN 
+     } 
+     }
+
+     name = "EVT_95038_NAME"
+     desc = "EVT_95038_DESC"
+     picture = "rusdumaelect"
+
+     date = { day = 26 month = april year = 1936 }
+     offset = 15
+     deathdate = { day = 26 month = may year = 1936 }
+
+     action_a = {
+         ai_chance = 50
+         name = "EVT_95038_OPTIONA"
+         command = { type = headofstate which = 16001 } #H.M. Christian X
+         command = { type = headofgovernment which = 16002 } #Thorvald Stauning
+         command = { type = foreignminister which = 16049 } #Hans Hedtoft
+         command = { type = armamentminister which = 16004 } #Alsing Andersen
+         command = { type = ministerofsecurity which = 16005 } #Karl Kristian Steincke
+         command = { type = ministerofintelligence which = 16088 } #Ejnar Warum
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = set_domestic which = political_left value = 10 }
+     }
+     action_b = {
+         ai_chance = 20
+         name = "EVT_95038_OPTIONB"
+         command = { type = headofstate which = 16137 } #H.M. Christian X
+         command = { type = headofgovernment which = 16013 } #Christmas Moller
+         command = { type = foreignminister which = 16050 } #Ole Bjorn Kraft
+         command = { type = armamentminister which = 16063 } #Soren Brorsen
+         command = { type = ministerofsecurity which = 16078 } #Harald Petersen
+         command = { type = ministerofintelligence which = 16011 } #Harald Petersen
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 4 }
+     }
+     action_c = {
+         ai_chance = 20
+         name = "EVT_95038_OPTIONC"
+         command = { type = headofstate which = 16137 } #H.M. Christian X
+         command = { type = headofgovernment which = 16014 } #Thomas Madsen-Mygdal
+         command = { type = foreignminister which = 16051 } #Otto Carl Mohr
+         command = { type = armamentminister which = 16064 } #Knud Kristensen
+         command = { type = ministerofsecurity which = 16079 } #Didrik G. Nyholm
+         command = { type = ministerofintelligence which = 16092 } #Niels Frederiksen
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 5 }
+     }
+     action_d = {
+         ai_chance = 10
+         name = "EVT_95038_OPTIOND"
+         command = { type = headofstate which = 16001 } #H.M. Christian X
+         command = { type = headofgovernment which = 16015 } #Peter Munch
+         command = { type = foreignminister which = 16051 } #Otto Carl Mohr
+         command = { type = armamentminister which = 16061 } #Gunnar Larsen
+         command = { type = ministerofsecurity which = 16074 } #Peter Christian Schou
+         command = { type = ministerofintelligence which = 16087 } #Laust Jensen Moltesen
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 7 }
+     }
+ }
+
+ event = {
+     id = 95039
+     country = DEN
+     random = no
+     style = 2
+
+     trigger = { 
+     OR = {
+     government = democratic
+     ideology = paternal_autocrat 
+     }
+     NOT = { 
+     ispuppet = DEN 
+     } 
+     }
+
+     name = "EVT_95039_NAME"
+     desc = "EVT_95039_DESC"
+     picture = "rusdumaelect"
+
+     date = { day = 26 month = april year = 1940 }
+     offset = 15
+     deathdate = { day = 26 month = may year = 1940 }
+
+     action_a = {
+         ai_chance = 50
+         name = "EVT_95039_OPTIONA"
+         command = { type = headofstate which = 16001 } #H.M. Christian X
+         command = { type = headofgovernment which = 16002 } #Thorvald Stauning
+         command = { type = foreignminister which = 16049 } #Hans Hedtoft
+         command = { type = armamentminister which = 16004 } #Alsing Andersen
+         command = { type = ministerofsecurity which = 16005 } #Karl Kristian Steincke
+         command = { type = ministerofintelligence which = 16088 } #Ejnar Warum
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = set_domestic which = political_left value = 10 }
+     }
+     action_b = {
+         ai_chance = 20
+         name = "EVT_95039_OPTIONB"
+         command = { type = headofstate which = 16137 } #H.M. Christian X
+         command = { type = headofgovernment which = 16013 } #Christmas Moller
+         command = { type = foreignminister which = 16050 } #Ole Bjorn Kraft
+         command = { type = armamentminister which = 16063 } #Soren Brorsen
+         command = { type = ministerofsecurity which = 16078 } #Harald Petersen
+         command = { type = ministerofintelligence which = 16011 } #Harald Petersen
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 4 }
+     }
+     action_c = {
+         ai_chance = 20
+         name = "EVT_95039_OPTIONC"
+         command = { type = headofstate which = 16137 } #H.M. Christian X
+         command = { type = headofgovernment which = 16014 } #Thomas Madsen-Mygdal
+         command = { type = foreignminister which = 16051 } #Otto Carl Mohr
+         command = { type = armamentminister which = 16064 } #Knud Kristensen
+         command = { type = ministerofsecurity which = 16079 } #Didrik G. Nyholm
+         command = { type = ministerofintelligence which = 16092 } #Niels Frederiksen
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 5 }
+     }
+     action_d = {
+         ai_chance = 10
+         name = "EVT_95039_OPTIOND"
+         command = { type = headofstate which = 16001 } #H.M. Christian X
+         command = { type = headofgovernment which = 16015 } #Peter Munch
+         command = { type = foreignminister which = 16051 } #Otto Carl Mohr
+         command = { type = armamentminister which = 16061 } #Gunnar Larsen
+         command = { type = ministerofsecurity which = 16074 } #Peter Christian Schou
+         command = { type = ministerofintelligence which = 16087 } #Laust Jensen Moltesen
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 7 }
+     }
+ }
+
+ event = {
+     id = 95040
+     country = DEN
+     random = no
+     style = 2
+
+     trigger = { 
+     OR = {
+     government = democratic
+     ideology = paternal_autocrat 
+     }
+     NOT = { 
+     ispuppet = DEN 
+     } 
+     }
+
+     name = "EVT_95040_NAME"
+     desc = "EVT_95040_DESC"
+     picture = "rusdumaelect"
+
+     date = { day = 26 month = april year = 1944 }
+     offset = 15
+     deathdate = { day = 26 month = may year = 1944 }
+
+     action_a = {
+         ai_chance = 35
+         name = "EVT_95040_OPTIONA"
+         command = { type = headofstate which = 16001 } #H.M. Christian X
+         command = { type = headofgovernment which = 16143 } #Hans Hedtoft
+         command = { type = foreignminister which = 16049 } #Hans Hedtoft
+         command = { type = armamentminister which = 16004 } #Alsing Andersen
+         command = { type = ministerofsecurity which = 16005 } #Karl Kristian Steincke
+         command = { type = ministerofintelligence which = 16088 } #Ejnar Warum
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = set_domestic which = political_left value = 10 }
+     }
+     action_b = {
+         ai_chance = 20
+         name = "EVT_95040_OPTIONB"
+         command = { type = headofstate which = 16137 } #H.M. Christian X
+         command = { type = headofgovernment which = 16013 } #Christmas Moller
+         command = { type = foreignminister which = 16050 } #Ole Bjorn Kraft
+         command = { type = armamentminister which = 16063 } #Soren Brorsen
+         command = { type = ministerofsecurity which = 16078 } #Harald Petersen
+         command = { type = ministerofintelligence which = 16011 } #Harald Petersen
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 4 }
+     }
+     action_c = {
+         ai_chance = 25
+         name = "EVT_95040_OPTIONC"
+         command = { type = headofstate which = 16012 } #H.M. Christian X
+         command = { type = headofgovernment which = 16043 } #Knud Kristensen
+         command = { type = foreignminister which = 16051 } #Otto Carl Mohr
+         command = { type = armamentminister which = 16064 } #Knud Kristensen
+         command = { type = ministerofsecurity which = 16079 } #Didrik G. Nyholm
+         command = { type = ministerofintelligence which = 16092 } #Niels Frederiksen
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 5 }
+     }
+     action_d = {
+         ai_chance = 10
+         name = "EVT_95040_OPTIOND"
+         command = { type = headofstate which = 16001 } #H.M. Christian X
+         command = { type = headofgovernment which = 16015 } #Peter Munch
+         command = { type = foreignminister which = 16051 } #Otto Carl Mohr
+         command = { type = armamentminister which = 16061 } #Gunnar Larsen
+         command = { type = ministerofsecurity which = 16074 } #Peter Christian Schou
+         command = { type = ministerofintelligence which = 16087 } #Laust Jensen Moltesen
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 7 }
+     }
+ }
+
+ event = {
+     id = 95033
+     country = DEN
+     random = no
+     style = 2
+
+     trigger = { 
+     OR = {
+     government = democratic
+     ideology = paternal_autocrat 
+     }
+     NOT = { 
+     ispuppet = DEN } 
+     }
+
+     name = "EVT_95033_NAME"
+     desc = "EVT_95033_DESC"
+     picture = "rusdumaelect"
+
+     date = { day = 26 month = april year = 1948 }
+     offset = 15
+     deathdate = { day = 26 month = may year = 1948 }
+
+     action_a = {
+         ai_chance = 45
+         name = "EVT_95033_OPTIONA"
+         command = { type = headofstate which = 16138 } #H.M. Frederik IX
+         command = { type = headofgovernment which = 16143 } #Hans Hedtoft
+         command = { type = foreignminister which = 16049 } #Hans Hedtoft
+         command = { type = armamentminister which = 16004 } #Alsing Andersen
+         command = { type = ministerofsecurity which = 16005 } #Karl Kristian Steincke
+         command = { type = ministerofintelligence which = 16088 } #Ejnar Warum
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = set_domestic which = political_left value = 10 }
+     }
+     action_b = {
+         ai_chance = 15
+         name = "EVT_95033_OPTIONB"
+         command = { type = headofstate which = 16139 } #H.M. Frederik IX
+         command = { type = headofgovernment which = 16016 } #Vilhelm Fibiger
+         command = { type = foreignminister which = 16050 } #Ole Bjorn Kraft
+         command = { type = armamentminister which = 16063 } #Soren Brorsen
+         command = { type = ministerofsecurity which = 16078 } #Harald Petersen
+         command = { type = ministerofintelligence which = 16011 } #Harald Petersen
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 4 }
+     }
+     action_c = {
+         ai_chance = 25
+         name = "EVT_95033_OPTIONC"
+         command = { type = headofstate which = 16139 } #H.M. Frederik IX
+         command = { type = headofgovernment which = 16043 } #Knud Kristensen
+         command = { type = foreignminister which = 16051 } #Otto Carl Mohr
+         command = { type = armamentminister which = 16064 } #Knud Kristensen
+         command = { type = ministerofsecurity which = 16079 } #Didrik G. Nyholm
+         command = { type = ministerofintelligence which = 16092 } #Niels Frederiksen
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 5 }
+     }
+     action_d = {
+         ai_chance = 5
+         name = "EVT_95033_OPTIOND"
+         command = { type = headofstate which = 16139 } #H.M. Frederik IX
+         command = { type = headofgovernment which = 16017 } #Jorgen Jorgensen
+         command = { type = foreignminister which = 16051 } #Otto Carl Mohr
+         command = { type = armamentminister which = 16061 } #Gunnar Larsen
+         command = { type = ministerofsecurity which = 16074 } #Peter Christian Schou
+         command = { type = ministerofintelligence which = 16087 } #Laust Jensen Moltesen
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 7 }
+     }
+ }
+
+ event = {
+     id = 95034
+     country = DEN
+     random = no
+     style = 2
+
+     trigger = { 
+     OR = {
+     government = democratic
+     ideology = paternal_autocrat 
+     }
+     NOT = { 
+     ispuppet = DEN 
+     } 
+     }
+
+     name = "EVT_95034_NAME"
+     desc = "EVT_95034_DESC"
+     picture = "rusdumaelect"
+
+     date = { day = 26 month = april year = 1952 }
+     offset = 15
+     deathdate = { day = 26 month = may year = 1952 }
+
+     action_a = {
+         ai_chance = 45
+         name = "EVT_95034_OPTIONA"
+         command = { type = headofstate which = 16138 } #H.M. Frederik IX
+         command = { type = headofgovernment which = 16143 } #Hans Hedtoft
+         command = { type = foreignminister which = 16049 } #Hans Hedtoft
+         command = { type = armamentminister which = 16004 } #Alsing Andersen
+         command = { type = ministerofsecurity which = 16005 } #Karl Kristian Steincke
+         command = { type = ministerofintelligence which = 16088 } #Ejnar Warum
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = set_domestic which = political_left value = 10 }
+     }
+     action_b = {
+         ai_chance = 15
+         name = "EVT_95034_OPTIONB"
+         command = { type = headofstate which = 16139 } #H.M. Frederik IX
+         command = { type = headofgovernment which = 16016 } #Vilhelm Fibiger
+         command = { type = foreignminister which = 16050 } #Ole Bjorn Kraft
+         command = { type = armamentminister which = 16063 } #Soren Brorsen
+         command = { type = ministerofsecurity which = 16078 } #Harald Petersen
+         command = { type = ministerofintelligence which = 16011 } #Harald Petersen
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 4 }
+     }
+     action_c = {
+         ai_chance = 25
+         name = "EVT_95034_OPTIONC"
+         command = { type = headofstate which = 16139 } #H.M. Frederik IX
+         command = { type = headofgovernment which = 16043 } #Knud Kristensen
+         command = { type = foreignminister which = 16051 } #Otto Carl Mohr
+         command = { type = armamentminister which = 16064 } #Knud Kristensen
+         command = { type = ministerofsecurity which = 16079 } #Didrik G. Nyholm
+         command = { type = ministerofintelligence which = 16092 } #Niels Frederiksen
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 5 }
+     }
+     action_d = {
+         ai_chance = 5
+         name = "EVT_95034_OPTIOND"
+         command = { type = headofstate which = 16139 } #H.M. Frederik IX
+         command = { type = headofgovernment which = 16017 } #Jorgen Jorgensen
+         command = { type = foreignminister which = 16051 } #Otto Carl Mohr
+         command = { type = armamentminister which = 16061 } #Gunnar Larsen
+         command = { type = ministerofsecurity which = 16074 } #Peter Christian Schou
+         command = { type = ministerofintelligence which = 16087 } #Laust Jensen Moltesen
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 7 }
+     }
+ }
+
+ event = {
+     id = 95035
+     country = DEN
+     random = no
+     style = 2
+
+     trigger = { 
+     OR = {
+     government = democratic
+     ideology = paternal_autocrat 
+     }
+     NOT = { 
+     ispuppet = DEN 
+     } 
+     }
+
+     name = "EVT_95035_NAME"
+     desc = "EVT_95035_DESC"
+     picture = "rusdumaelect"
+
+     date = { day = 26 month = april year = 1956 }
+     offset = 15
+     deathdate = { day = 26 month = may year = 1956 }
+
+     action_a = {
+         ai_chance = 45
+         name = "EVT_95035_OPTIONA"
+         command = { type = headofstate which = 16138 } #H.M. Frederik IX
+         command = { type = headofgovernment which = 16143 } #Hans Hedtoft
+         command = { type = foreignminister which = 16049 } #Hans Hedtoft
+         command = { type = armamentminister which = 16004 } #Alsing Andersen
+         command = { type = ministerofsecurity which = 16005 } #Karl Kristian Steincke
+         command = { type = ministerofintelligence which = 16088 } #Ejnar Warum
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = set_domestic which = political_left value = 10 }
+     }
+     action_b = {
+         ai_chance = 15
+         name = "EVT_95035_OPTIONB"
+         command = { type = headofstate which = 16139 } #H.M. Frederik IX
+         command = { type = headofgovernment which = 16016 } #Vilhelm Fibiger
+         command = { type = foreignminister which = 16050 } #Ole Bjorn Kraft
+         command = { type = armamentminister which = 16063 } #Soren Brorsen
+         command = { type = ministerofsecurity which = 16078 } #Harald Petersen
+         command = { type = ministerofintelligence which = 16011 } #Harald Petersen
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 4 }
+     }
+     action_c = {
+         ai_chance = 25
+         name = "EVT_95035_OPTIONC"
+         command = { type = headofstate which = 16139 } #H.M. Frederik IX
+         command = { type = headofgovernment which = 16043 } #Knud Kristensen
+         command = { type = foreignminister which = 16051 } #Otto Carl Mohr
+         command = { type = armamentminister which = 16064 } #Knud Kristensen
+         command = { type = ministerofsecurity which = 16079 } #Didrik G. Nyholm
+         command = { type = ministerofintelligence which = 16092 } #Niels Frederiksen
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 5 }
+     }
+     action_d = {
+         ai_chance = 5
+         name = "EVT_95035_OPTIOND"
+         command = { type = headofstate which = 16139 } #H.M. Frederik IX
+         command = { type = headofgovernment which = 16017 } #Jorgen Jorgensen
+         command = { type = foreignminister which = 16051 } #Otto Carl Mohr
+         command = { type = armamentminister which = 16061 } #Gunnar Larsen
+         command = { type = ministerofsecurity which = 16074 } #Peter Christian Schou
+         command = { type = ministerofintelligence which = 16087 } #Laust Jensen Moltesen
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 7 }
+     }
+ }
+
+ event = {
+     id = 95036
+     country = DEN
+     random = no
+     style = 2
+
+     trigger = { 
+     OR = {
+     government = democratic
+     ideology = paternal_autocrat 
+     }
+     NOT = { 
+     ispuppet = DEN 
+     } 
+     }
+     name = "EVT_95036_NAME"
+     desc = "EVT_95036_DESC"
+     picture = "rusdumaelect"
+
+     date = { day = 26 month = april year = 1960 }
+     offset = 15
+     deathdate = { day = 26 month = may year = 1960 }
+
+     action_a = {
+         ai_chance = 45
+         name = "EVT_95036_OPTIONA"
+         command = { type = headofstate which = 16138 } #H.M. Frederik IX
+         command = { type = headofgovernment which = 16143 } #Hans Hedtoft
+         command = { type = foreignminister which = 16049 } #Hans Hedtoft
+         command = { type = armamentminister which = 16004 } #Alsing Andersen
+         command = { type = ministerofsecurity which = 16005 } #Karl Kristian Steincke
+         command = { type = ministerofintelligence which = 16088 } #Ejnar Warum
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = set_domestic which = political_left value = 10 }
+     }
+     action_b = {
+         ai_chance = 15
+         name = "EVT_95036_OPTIONB"
+         command = { type = headofstate which = 16139 } #H.M. Frederik IX
+         command = { type = headofgovernment which = 16016 } #Vilhelm Fibiger
+         command = { type = foreignminister which = 16050 } #Ole Bjorn Kraft
+         command = { type = armamentminister which = 16063 } #Soren Brorsen
+         command = { type = ministerofsecurity which = 16078 } #Harald Petersen
+         command = { type = ministerofintelligence which = 16011 } #Harald Petersen
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 4 }
+     }
+     action_c = {
+         ai_chance = 25
+         name = "EVT_95036_OPTIONC"
+         command = { type = headofstate which = 16139 } #H.M. Frederik IX
+         command = { type = headofgovernment which = 16043 } #Knud Kristensen
+         command = { type = foreignminister which = 16051 } #Otto Carl Mohr
+         command = { type = armamentminister which = 16064 } #Knud Kristensen
+         command = { type = ministerofsecurity which = 16079 } #Didrik G. Nyholm
+         command = { type = ministerofintelligence which = 16092 } #Niels Frederiksen
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 5 }
+     }
+     action_d = {
+         ai_chance = 5
+         name = "EVT_95036_OPTIOND"
+         command = { type = headofstate which = 16139 } #H.M. Frederik IX
+         command = { type = headofgovernment which = 16017 } #Jorgen Jorgensen
+         command = { type = foreignminister which = 16051 } #Otto Carl Mohr
+         command = { type = armamentminister which = 16061 } #Gunnar Larsen
+         command = { type = ministerofsecurity which = 16074 } #Peter Christian Schou
+         command = { type = ministerofintelligence which = 16087 } #Laust Jensen Moltesen
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 7 }
+     }
+ }
+
+ event = {
+     id = 95037
+     country = DEN
+     random = no
+     style = 2
+
+     trigger = { 
+     OR = {
+     government = democratic
+     ideology = paternal_autocrat 
+     }
+     NOT = { 
+     ispuppet = DEN 
+     } 
+     }
+
+     name = "EVT_95037_NAME"
+     desc = "EVT_95037_DESC"
+     picture = "rusdumaelect"
+
+     date = { day = 26 month = april year = 1964 }
+     offset = 15
+     deathdate = { day = 26 month = may year = 1964 }
+
+     action_a = {
+         ai_chance = 45
+         name = "EVT_95037_OPTIONA"
+         command = { type = headofstate which = 16138 } #H.M. Frederik IX
+         command = { type = headofgovernment which = 16143 } #Hans Hedtoft
+         command = { type = foreignminister which = 16049 } #Hans Hedtoft
+         command = { type = armamentminister which = 16004 } #Alsing Andersen
+         command = { type = ministerofsecurity which = 16005 } #Karl Kristian Steincke
+         command = { type = ministerofintelligence which = 16088 } #Ejnar Warum
+         command = { type = set_domestic which = democratic value = 10 }
+         command = { type = set_domestic which = political_left value = 10 }
+     }
+     action_b = {
+         ai_chance = 15
+         name = "EVT_95037_OPTIONB"
+         command = { type = headofstate which = 16139 } #H.M. Frederik IX
+         command = { type = headofgovernment which = 16016 } #Vilhelm Fibiger
+         command = { type = foreignminister which = 16050 } #Ole Bjorn Kraft
+         command = { type = armamentminister which = 16063 } #Soren Brorsen
+         command = { type = ministerofsecurity which = 16078 } #Harald Petersen
+         command = { type = ministerofintelligence which = 16011 } #Harald Petersen
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 4 }
+     }
+     action_c = {
+         ai_chance = 25
+         name = "EVT_95037_OPTIONC"
+         command = { type = headofstate which = 16139 } #H.M. Frederik IX
+         command = { type = headofgovernment which = 16043 } #Knud Kristensen
+         command = { type = foreignminister which = 16051 } #Otto Carl Mohr
+         command = { type = armamentminister which = 16064 } #Knud Kristensen
+         command = { type = ministerofsecurity which = 16079 } #Didrik G. Nyholm
+         command = { type = ministerofintelligence which = 16092 } #Niels Frederiksen
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 5 }
+     }
+     action_d = {
+         ai_chance = 5
+         name = "EVT_95037_OPTIOND"
+         command = { type = headofstate which = 16139 } #H.M. Frederik IX
+         command = { type = headofgovernment which = 16017 } #Jorgen Jorgensen
+         command = { type = foreignminister which = 16051 } #Otto Carl Mohr
+         command = { type = armamentminister which = 16061 } #Gunnar Larsen
+         command = { type = ministerofsecurity which = 16074 } #Peter Christian Schou
+         command = { type = ministerofintelligence which = 16087 } #Laust Jensen Moltesen
+         command = { type = set_domestic which = democratic value = 8 }
+         command = { type = set_domestic which = political_left value = 7 }
+     }
+ }
+
+
+event = {
+id = 95041
+random = no
+country = DEN
+style = 2
+
+trigger = {
+exists = GER
+NOT = { ispuppet = GER }
+NOT = { war = { country = DEN country = GER } }
+participant = { country = GER value = 2 }
+war = { country = GER country = FRA }
+war = { country = GER country = ENG }
+OR = {
+war = { country = DEN country = ENG }
+war = { country = DEN country = FRA }
+}
+NOT = {
+government = communist
+alliance = { country = CAN country = DEN }
+alliance = { country = GER country = DEN }
+alliance = { country = JAP country = DEN }
+alliance = { country = FRA country = DEN }
+alliance = { country = RUS country = DEN }
+alliance = { country = SOV country = DEN }
+alliance = { country = USA country = DEN }
+}
+NOT = { ispuppet = DEN }
+}
+
+name = "EVT_95041_NAME"
+desc = "EVT_95041_DESC"
+picture = "diplomatic_campaign"
+
+date = { day = 1 month = january year = 1936 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+	
+
+action_a = {
+ai_chance = 100
+name = "EVT_95041_OPTIONA"
+command = { type = trigger which = 95042 }
+command = { type = dissent value = -5 }
+}
+
+action_b = {
+ai_chance = 0
+name = "EVT_95041_OPTIONB"
+command = { type = dissent value = 5 }
+}
+}
+
+event = {
+id = 95042
+random = no
+country = GER
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_95042_NAME"
+desc = "EVT_95042_DESC"
+
+action_a = {
+ai_chance = 100
+name = "EVT_95042_OPTIONA"
+command = { type = alliance which = DEN }
+command = { type = relation which = DEN value = 100 }
+command = { type = dissent value = -3 }
+command = { type = trigger which = 95043 }
+}
+
+action_b = {
+ai_chance = 0
+name = "EVT_95042_OPTIONB"
+command = { type = dissent value = 1 }
+command = { type = relation which = DEN value = -100 }
+}
+}
+
+event = {
+id = 95043
+random = no
+country = DEN
+style = 2
+picture = "diplomatic_campaign"
+
+name = "EVT_95043_NAME"
+desc = "EVT_95043_DESC"
+
+action_a = {
+name = "EVT_95043_OPTIONA"
+command = { type = dissent value = -3 }
+command = { type = relation which = FRA value = -150 }
+command = { type = relation which = ENG value = -150 }
+}
+}

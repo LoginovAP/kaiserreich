@@ -1,0 +1,785 @@
+event = {
+ id = 900
+ random = no
+ country = HUN
+ persistent = yes
+ style = 2
+ picture = "FORA"
+
+     trigger = {
+         day = 14
+         month = 2
+         NOT = {
+         day = 15
+         }
+         NOT = {
+         month = 3
+         }
+     }
+     
+     date = { day = 0 month = january year = 1936 }
+     offset = 1
+     deathdate = { day = 29 month = december year = 1963 }
+     
+     name = "EVT_900_NAME"
+     desc = "EVT_900_DESC"
+     
+     action_a = {
+         name = "EVT_900_OPTIONA"
+         command = { type = dissent value = -1 }
+     }
+ }
+
+event = {
+ id = 901
+ country = HUN
+ style = 2
+ picture = "reichsrat"
+
+ trigger = { 
+     NOT = { 
+     atwar = HUN
+     government = communist
+     ideology = social_democrat
+     ideology = social_liberal
+     ideology = market_liberal
+     ispuppet = HUN
+     headofstate = 21044 # Otto
+     alliance = { country = HUN country = AUS }
+     }
+ }
+
+ date = { day = 1 month = january year = 1937 }
+ offset = 90
+ deathdate = { day = 29 month = june year = 1966 }
+
+ name = "EVT_901_NAME"
+ desc = "EVT_901_DESC"
+
+ action = {
+ ai_chance = 60
+ name = "EVT_901_OPTIONA"
+ command = { type = dissent value = 2 }
+ command = { type = flag_ext where = HUN which = "_nor" }
+ command = { type = event which = 930 where = HUN when = 5 }
+     }
+
+ action = {
+ ai_chance = 40
+ name = "EVT_901_OPTIONB"
+ command = { type = dissent value = 10 }
+ command = { type = event which = 902 where = HUN when = 60 }
+     }
+ }
+
+ event = {
+ id = 930
+ country = HUN
+ random = no
+ style = 2
+ picture = "reichsrat"
+
+     name = "EVT_930_NAME"
+     desc = "EVT_930_DESC"
+     
+     action = {
+     ai_chance = 10
+         name = "EVT_930_OPTIONA"
+         command = { type = headofstate which = 21045 } 
+         command = { type = dissent value = 5 } 
+         command = { type = event which = 931 where = HUN when = 30 } #initiates choosing of future course
+     }
+
+     action = {
+         name = "EVT_930_OPTIONB"
+         ai_chance = 70
+         command = { type = headofstate which = 21180 } 
+         command = { type = set_domestic which = interventionism value = 7 } 
+         command = { type = event which = 932 where = HUN when = 30 } #initiates choosing of future course
+     }
+
+     action = {
+         name = "EVT_930_OPTIONC"
+         ai_chance = 20
+         command = { type = headofstate which = 21201 } 
+         command = { type = dissent value = 8 }
+         command = { type = event which = 933 where = HUN when = 30 } #initiates choosing of future course
+     }
+ }
+
+ event = {
+ id = 931
+ country = HUN
+ random = no
+ style = 2
+ picture = "reichsrat"
+
+     #this is made in case the republic and the monarchy is chosen to have different possible courses, in case scrapped, one of them should be deleted, and links changed accordingly
+     #and was obviously revamped without noting anything...
+     name = "EVT_931_NAME"
+     desc = "EVT_931_DESC"
+     
+     action = {
+     ai_chance = 35
+         name = "EVT_931_OPTIONA"
+         command = { type = relation which = GER value = -10 }
+         command = { type = relation which = ENG value = 10 }
+         command = { type = relation which = FRA value = 10 }
+         command = { type = dissent value = 1 }
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 8 }
+         command = { type = set_domestic which = freedom value = 7 }
+         command = { type = headofstate which = 21045 } 
+         command = { type = headofgovernment which = 21200 }
+         #new SD gov, -rel with GER, +rel with UoB&FRA, 1 dissent, sliders to left, open society
+     }
+
+     action = {
+     ai_chance = 30
+         name = "EVT_931_OPTIONB"
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 4 }
+         command = { type = set_domestic which = freedom value = 3 }
+         command = { type = headofstate which = 21045 } 
+         command = { type = headofgovernment which = 21181 }
+         #new SC gov, closed society
+     }
+
+     action = {
+     ai_chance = 50
+         name = "EVT_931_OPTIONC"
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 3 }
+         command = { type = set_domestic which = freedom value = 3 }
+         command = { type = set_domestic which = free_market value = 7 }
+         command = { type = headofstate which = 21045 } 
+         command = { type = headofgovernment which = 21203 }
+         command = { type = dissent value = -1 }
+         #new SC gov, -1 dissent, sliders to SC, free market
+     }
+
+     action = {
+     ai_chance = 5
+         name = "EVT_931_OPTIOND"
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 5 }
+         command = { type = set_domestic which = freedom value = 6 }
+         command = { type = set_domestic which = free_market value = 7 }
+         command = { type = headofstate which = 21045 } 
+         command = { type = headofgovernment which = 21198 }
+         #new ML gov, sliders to ML & free market,democratic, open society
+     }
+ }
+
+ event = {
+ id = 932
+ country = HUN
+ random = no
+ style = 2
+ picture = "reichsrat"
+
+     #this is made in case the republic and the monarchy is chosen to have different possible courses, in case scrapped, one of them should be deleted, and links changed accordingly
+     name = "EVT_932_NAME"
+     desc = "EVT_932_DESC"
+     
+     action = {
+     ai_chance = 5
+         name = "EVT_932_OPTIONA"
+         command = { type = relation which = GER value = -10 }
+         command = { type = relation which = ENG value = 10 }
+         command = { type = relation which = FRA value = 10 }
+         command = { type = dissent value = 1 }
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 8 }
+         command = { type = set_domestic which = freedom value = 7 }
+         command = { type = headofstate which = 21180 } 
+         command = { type = headofgovernment which = 21200 }
+         #new SD gov, -rel with GER, +rel with UoB&FRA, 1 dissent, sliders to left, open society
+     }
+
+     action = {
+     ai_chance = 60
+         name = "EVT_932_OPTIONB"
+         command = { type = headofgovernment which = 21181 }
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 4 }
+         command = { type = set_domestic which = freedom value = 3 }
+         command = { type = headofstate which = 21180 } 
+         #new AD gov, closed society
+     }
+
+     action = {
+     ai_chance = 20
+         name = "EVT_932_OPTIONC"
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 3 }
+         command = { type = set_domestic which = freedom value = 3 }
+         command = { type = set_domestic which = free_market value = 7 }
+         command = { type = headofstate which = 21180 } 
+         command = { type = headofgovernment which = 21203 }
+         command = { type = dissent value = -1 }
+         #new SC gov, -1 dissent, sliders to SC, free market
+     }
+
+     action = {
+     ai_chance = 5
+         name = "EVT_932_OPTIOND"
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 5 }
+         command = { type = set_domestic which = freedom value = 6 }
+         command = { type = set_domestic which = free_market value = 7 }
+         command = { type = headofstate which = 21180 } 
+         command = { type = headofgovernment which = 21198 }
+         #new ML gov, sliders to ML & free market,democratic, open society
+     }
+
+     action = {
+     ai_chance = 0 #player-only choice, not realistic
+         name = "EVT_932_OPTIONE" #Hinnye! - Kry
+         command = { type = headofstate which = 21041 }
+         command = { type = set_domestic which = democratic value = 2 }
+         command = { type = set_domestic which = political_left value = 1 }
+         command = { type = set_domestic which = freedom value = 1 }
+         command = { type = set_domestic which = free_market value = 2 }
+         command = { type = headofstate which = 21180 } 
+         command = { type = headofgovernment which = 21204 }
+         #new NP gov, sliders to NP & central planning, authoritarian, closed society
+     }
+ }
+
+ event = {
+ id = 933
+ country = HUN
+ random = no
+ style = 2
+ picture = "reichsrat"
+
+     #this is made in case the republic and the monarchy is chosen to have different possible courses, in case scrapped, one of them should be deleted, and links changed accordingly
+     name = "EVT_933_NAME"
+     desc = "EVT_933_DESC"
+     
+     action = {
+     ai_chance = 0 #oops, this election may be rigged
+         name = "EVT_933_OPTIONA"
+         command = { type = relation which = GER value = -10 }
+         command = { type = relation which = ENG value = 10 }
+         command = { type = relation which = FRA value = 10 }
+         command = { type = dissent value = 1 }
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 8 }
+         command = { type = set_domestic which = freedom value = 7 }
+         command = { type = headofstate which = 21201 } 
+         command = { type = headofgovernment which = 21200 }
+         #new SD gov, -rel with GER, +rel with UoB&FRA, 1 dissent, sliders to left, open society
+     }
+
+     action = {
+     ai_chance = 60
+         name = "EVT_933_OPTIONB"
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 3 }
+         command = { type = set_domestic which = freedom value = 3 }
+         command = { type = headofstate which = 21201 } 
+         command = { type = headofgovernment which = 21181 }
+         #new AD gov, closed society
+     }
+
+     action = {
+     ai_chance = 20
+         name = "EVT_933_OPTIONC"
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 4 }
+         command = { type = set_domestic which = freedom value = 3 }
+         command = { type = set_domestic which = free_market value = 7 }
+         command = { type = headofstate which = 21201 } 
+         command = { type = headofgovernment which = 21203 }
+         command = { type = dissent value = -1 }
+         #new SC gov, -1 dissent, sliders to SC, free market
+     }
+
+     action = {
+     ai_chance = 5
+         name = "EVT_933_OPTIOND"
+         command = { type = set_domestic which = democratic value = 7 }
+         command = { type = set_domestic which = political_left value = 5 }
+         command = { type = set_domestic which = freedom value = 6 }
+         command = { type = set_domestic which = free_market value = 7 }
+         command = { type = headofstate which = 21201 } 
+         command = { type = headofgovernment which = 21198 }
+         #new ML gov, sliders to ML & free market,democratic, open society
+     }
+
+     action = {
+     ai_chance = 10 
+         name = "EVT_933_OPTIONE"
+         command = { type = set_domestic which = democratic value = 2 }
+         command = { type = set_domestic which = political_left value = 1 }
+         command = { type = set_domestic which = freedom value = 1 }
+         command = { type = set_domestic which = free_market value = 2 }
+         command = { type = headofstate which = 21201 } 
+         command = { type = headofgovernment which = 21204 }
+         #new NP gov, sliders to NP & central planning, interventionist, authoritarian, closed society
+     }
+
+     action = {
+     ai_chance = 10 
+         name = "EVT_933_OPTIONF"
+         command = { type = set_domestic which = democratic value = 3 }
+         command = { type = set_domestic which = political_left value = 3 }
+         command = { type = set_domestic which = freedom value = 1 }
+         command = { type = set_domestic which = free_market value = 2 }
+         command = { type = set_domestic which = defense_lobby value = 7 }
+         command = { type = set_domestic which = interventionism value = 2 }
+         command = { type = headofstate which = 21201 } 
+         command = { type = headofgovernment which = 21060 }
+         #new PA gov, sliders to PA & central planning, hawk, authoritarian, closed society, isolationism
+     }
+ }
+
+ event = {
+ id = 902
+ country = HUN
+ style = 2
+
+ name = "EVT_902_NAME"
+ desc = "EVT_902_DESC"
+ picture = "reichsrat"
+
+ action = {
+ ai_chance = 25
+ name = "EVT_902_OPTIONA"
+ command = { type = domestic which = defense_lobby value = 1 }
+ command = { type = headofstate which = 21190 }
+     }
+
+ action = {
+ ai_chance = 25
+ name = "EVT_902_OPTIONB"
+ command = { type = dissent value = 1 }
+ command = { type = relation which = GER value = 100 }
+ command = { type = headofstate which = 21191 }
+     }
+
+ action = {
+ ai_chance = 25
+ name = "EVT_902_OPTIONC"
+ command = { type = headofstate which = 21192 }
+     }
+
+ action = {
+ ai_chance = 25
+ name = "EVT_902_OPTIOND"
+ command = { type = dissent value = -1 }
+ command = { type = headofstate which = 21193 }
+     }
+
+ action = {
+ name = "EVT_902_OPTIONE"
+ ai_chance = 35
+ command = { type = dissent value = 3 }
+ command = { type = event which = 934 where = HUN when = 2 } #an action for regents
+     }
+ }
+
+event = {
+ id = 934
+ country = HUN
+ random = no
+ style = 2
+ picture = "reichsrat"
+     
+     name = "EVT_934_NAME"
+     desc = "EVT_934_DESC"
+     
+     action = {
+     name = "EVT_934_OPTIONA"
+     ai_chance = 40
+     command = { type = headofstate which = 21001 }
+         #Bartha-type election
+     }
+
+     action = {
+     name = "EVT_934_OPTIONB"
+     ai_chance = 10
+     command = { type = headofstate which = 21202 }
+         #Bethlen-type election
+     }
+
+     action = {
+     name = "EVT_934_OPTIONC"
+     ai_chance = 30
+     command = { type = headofstate which = 21199 }
+         #Peyer-type election
+     }
+
+     action = {
+     name = "EVT_934_OPTIOND"
+     ai_chance = 20
+     command = { type = headofstate which = 21185 } 
+         #Bethlen-type election
+     }
+     
+ }
+
+
+event = {
+id = 920
+random = no
+country = HUN
+style = 2
+
+trigger = { 
+puppet = { country = CRO country = HUN } 
+event = 901000
+NOT = {
+atwar = HUN
+government = communist
+event = 901008 # Federalism
+}
+}
+
+name = "EVT_920_NAME"
+desc = "EVT_920_DESC"
+picture = "politics2"
+
+date = { day = 1 month = april year = 1937 }
+offset = 30 
+deathdate = { day = 29 month = december  year = 1941  }
+
+action_a = {
+	ai_chance =  25
+	name = "EVT_920_OPTIONA"
+	command = { type = trigger which = 921 }
+        command = { type = dissent value = 1 }
+        command = { type = domestic which = freedom value = 1 }
+        command = { type = relation which = CRO value = 50 }
+	}
+
+action_c = {
+	ai_chance =  75
+	name = "EVT_920_OPTIONB"
+	command = { type = trigger which = 922 }
+        command = { type = dissent value = -2 }
+        command = { type = domestic which = freedom value = -1 }
+        command = { type = relation which = CRO value = -50 }
+	} 
+}
+
+event = {
+id = 921
+random = no
+country = CRO
+style = 2
+
+name = "EVT_921_NAME"
+desc = "EVT_921_DESC"
+picture = "politics2"
+
+action_a = {
+	name = "EVT_921_OPTIONA"
+        ai_chance =  90
+	command = { type = relation which = HUN value = 50 }
+	}
+
+action_b = {
+	ai_chance =  10
+	name = "EVT_921_OPTIONB"
+        command = { type = end_access which = HUN where = CRO }
+        command = { type = end_puppet }
+	command = { type = trigger which = 924  }
+	command = { type = relation which = HUN value = -50 }
+        command = { type = add_division value = militia when = 4 }
+	command = { type = add_division value = infantry when = 7 }
+	}
+
+}
+
+
+
+event = {
+id = 922
+random = no
+country = CRO
+style = 2
+
+
+name = "EVT_922_NAME"
+desc = "EVT_922_DESC"
+picture = "politics2"
+
+action_a = {
+	ai_chance = 60
+	name = "EVT_922_OPTIONA"
+	command = { type = trigger which = 923  }
+        command = { type = dissent value = 10 }
+	}
+
+action_b = {
+	ai_chance = 40
+	name = "EVT_922_OPTIONB"
+        command = { type = end_access which = HUN where = CRO }
+        command = { type = end_puppet }
+	command = { type = trigger which = 924 }
+	command = { type = relation which = HUN value = -150 }
+        command = { type = dissent value = -2 }
+	}
+
+}
+
+event = {
+id = 923
+random = no
+country = HUN
+style = 2
+
+name = "EVT_923_NAME"
+desc = "EVT_923_DESC"
+picture = "military_parade"
+
+action_a = {
+	name = "EVT_923_OPTIONA"
+        command = { trigger = { puppet = { country = BOS country = CRO } } type = make_puppet which = BOS }
+        command = { trigger = { NOT = { exists = BOS } owned = { province = 355 data = CRO } } type = addcore  which =  357 }
+	command = { trigger = { NOT = { exists = BOS } owned = { province = 355 data = CRO } } type = addcore  which =  353 }
+        command = { trigger = { NOT = { exists = BOS } owned = { province = 355 data = CRO } } type = addcore  which =  358 }
+	command = { trigger = { NOT = { exists = BOS } owned = { province = 355 data = CRO } } type = addcore  which =  355 }
+        command = { trigger = { NOT = { exists = BOS } owned = { province = 355 data = CRO } } type = addcore  which =  354 }
+	command = { trigger = { NOT = { exists = BOS } owned = { province = 355 data = CRO } } type = addcore  which =  356 }
+	command = { type = inherit which = CRO }
+	command = { type = waketeam which = 1624 } #Added by Jeff
+	command = { type = waketeam which = 1625 }
+	command = { type = waketeam which = 1626 }
+        command = { type = addcore which = 337 }
+	command = { type = addcore which = 344 }
+	command = { type = addcore which = 345 }
+	command = { type = addcore which = 352 }
+	command = { type = addcore which = 347 }
+	command = { type = addcore which = 350 }
+	command = { type = addcore which = 351 }
+	command = { type = addcore which = 343 }
+	}
+}
+
+
+event = {
+id = 924
+random = no
+country = HUN
+style = 2
+
+name = "EVT_924_NAME"
+desc = "EVT_924_DESC"
+picture = "denmark"
+
+action_a = {
+	ai_chance =  25
+	name = "EVT_924_OPTIONA"
+	command = { type = end_mastery which = CRO }
+	command = { type = dissent value = 10 }
+	command = { trigger = { NOT = { exists = BOS } owned = { province = 355 data = CRO } } type = removeclaim  which =  357 }
+	command = { trigger = { NOT = { exists = BOS } owned = { province = 355 data = CRO } } type = removeclaim  which =  353 }
+        command = { trigger = { NOT = { exists = BOS } owned = { province = 355 data = CRO } } type = removeclaim  which =  358 }
+	command = { trigger = { NOT = { exists = BOS } owned = { province = 355 data = CRO } } type = removeclaim  which =  355 }
+        command = { trigger = { NOT = { exists = BOS } owned = { province = 355 data = CRO } } type = removeclaim  which =  354 }
+	command = { trigger = { NOT = { exists = BOS } owned = { province = 355 data = CRO } } type = removeclaim  which =  356 }
+        command = { type = removeclaim which = 337 }
+	command = { type = removeclaim which = 344 }
+	command = { type = removeclaim which = 345 }
+	command = { type = removeclaim which = 352 }
+	command = { type = removeclaim which = 347 }
+	command = { type = removeclaim which = 350 }
+	command = { type = removeclaim which = 351 }
+	command = { type = removeclaim which = 343 }
+	}
+
+action_b = {
+	ai_chance =  75
+	name = "EVT_924_OPTIONB"
+	command = { type = end_mastery which = CRO }
+	command = { type = war which = CRO }
+        command = { trigger = { NOT = { exists = BOS } owned = { province = 355 data = CRO } } type = addclaim  which =  357 }
+	command = { trigger = { NOT = { exists = BOS } owned = { province = 355 data = CRO } } type = addclaim  which =  353 }
+        command = { trigger = { NOT = { exists = BOS } owned = { province = 355 data = CRO } } type = addclaim  which =  358 }
+	command = { trigger = { NOT = { exists = BOS } owned = { province = 355 data = CRO } } type = addclaim  which =  355 }
+        command = { trigger = { NOT = { exists = BOS } owned = { province = 355 data = CRO } } type = addclaim  which =  354 }
+	command = { trigger = { NOT = { exists = BOS } owned = { province = 355 data = CRO } } type = addclaim  which =  356 }
+        command = { type = addclaim which = 337 }
+	command = { type = addclaim which = 344 }
+	command = { type = addclaim which = 345 }
+	command = { type = addclaim which = 352 }
+	command = { type = addclaim which = 347 }
+	command = { type = addclaim which = 350 }
+	command = { type = addclaim which = 351 }
+	command = { type = addclaim which = 343 }
+	}
+}
+
+
+
+event = {
+id = 925
+random = no
+country = HUN
+style = 2
+
+trigger = { 
+puppet = { country = BOS country = HUN } 
+event = 901000
+owned = { province = 352 data = HUN }
+control = { province = 352 data = HUN } 
+NOT = {
+atwar = HUN
+exists = CRO
+government = communist
+event = 901008 # Federalism
+}
+}
+
+name = "EVT_925_NAME"
+desc = "EVT_925_DESC"
+picture = "politics2"
+
+date = { day = 1 month = april year = 1937 }
+offset = 30 
+deathdate = { day = 29 month = december  year = 1964  }
+
+action_a = {
+	ai_chance =  50
+	name = "EVT_925_OPTIONA"
+	command = { type = trigger which = 926 }
+        command = { type = dissent value = -3 }
+        command = { type = domestic which = freedom value = 1 }
+        command = { type = relation which = BOS value = 50 }
+	}
+
+action_c = {
+	ai_chance =  50
+	name = "EVT_925_OPTIONB"
+	command = { type = trigger which = 927 }
+        command = { type = dissent value = 3 }
+        command = { type = domestic which = freedom value = -1 }
+        command = { type = relation which = BOS value = -50 }
+	} 
+}
+
+
+event = {
+id = 926
+random = no
+country = BOS
+style = 2
+
+name = "EVT_926_NAME"
+desc = "EVT_926_DESC"
+picture = "politics2"
+
+action_a = {
+	name = "EVT_926_OPTIONA"
+        ai_chance =  99
+	command = { type = relation which = HUN value = 50 }
+	}
+
+action_b = {
+	ai_chance =  1
+	name = "EVT_926_OPTIONB"
+        command = { type = end_access which = HUN where = BOS }
+        command = { type = end_puppet }
+	command = { type = trigger which = 929  }
+	command = { type = relation which = HUN value = -50 }
+        command = { type = add_division value = militia when = 4 }
+	command = { type = add_division value = infantry when = 7 }
+	}
+
+}
+
+
+event = {
+id = 927
+random = no
+country = BOS
+style = 2
+
+
+name = "EVT_927_NAME"
+desc = "EVT_927_DESC"
+picture = "politics2"
+
+action_a = {
+	ai_chance = 75
+	name = "EVT_927_OPTIONA"
+	command = { type = trigger which = 928  }
+        command = { type = dissent value = 10 }
+	}
+
+action_b = {
+	ai_chance = 25
+	name = "EVT_927_OPTIONB"
+        command = { type = end_access which = HUN where = BOS }
+        command = { type = end_puppet }
+	command = { type = trigger which = 929 }
+	command = { type = relation which = HUN value = -150 }
+        command = { type = dissent value = -2 }
+	}
+
+}
+
+
+event = {
+id = 928
+random = no
+country = HUN
+style = 2
+
+name = "EVT_928_NAME"
+desc = "EVT_928_DESC"
+picture = "military_parade"
+
+action_a = {
+	name = "EVT_928_OPTIONA"
+	command = { type = inherit which = BOS }
+        command = { type = addcore  which =  357 }
+	command = { type = addcore  which =  353 }
+        command = { type = addcore  which =  358 }
+	command = { type = addcore  which =  355 }
+        command = { type = addcore  which =  354 }
+	command = { type = addcore  which =  356 }
+	}
+}
+
+
+event = {
+id = 929
+random = no
+country = HUN
+style = 2
+
+name = "EVT_929_NAME"
+desc = "EVT_929_DESC"
+picture = "denmark"
+
+action_a = {
+	ai_chance =  50
+	name = "EVT_929_OPTIONA"
+	command = { type = end_mastery which = BOS }
+	command = { type = dissent value = 2 }
+	command = { type = removeclaim  which =  357 }
+	command = { type = removeclaim  which =  353 }
+        command = { type = removeclaim  which =  358 }
+	command = { type = removeclaim  which =  355 }
+        command = { type = removeclaim  which =  354 }
+	command = { type = removeclaim  which =  356 }
+	}
+
+action_b = {
+	ai_chance =  50
+	name = "EVT_929_OPTIONB"
+	command = { type = end_mastery which = BOS }
+	command = { type = war which = BOS }
+        command = { type = addclaim  which =  357 }
+	command = { type = addclaim  which =  353 }
+        command = { type = addclaim  which =  358 }
+	command = { type = addclaim  which =  355 }
+        command = { type = addclaim  which =  354 }
+	command = { type = addclaim  which =  356 }
+	}
+}

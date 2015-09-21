@@ -1,0 +1,428 @@
+#################################################################
+#	Japan - Legation cities Events 
+#	Events by Hasagwan and Kibbles
+#	last edit: 15.09.2009	
+#################################################################
+
+# reserves IDs: 344500 - 344999
+
+## If triads in power
+# 344500	
+# 344501	
+# 344502	
+# 344503	
+
+## If crack down on triads
+# 344530	
+# 344531	
+# 344532	
+# 344533	
+# 344534	
+# 344535	
+# 344536	
+
+
+
+
+
+## If triads in power
+event = {
+id = 344500
+random = no
+country = EAF
+style = 2
+picture = "japanese_officers"
+
+trigger = { 
+flag = TRIAD_POWER
+NOT = {
+                government = communist
+                alliance = { country = JAP country = EAF }
+                alliance = { country = GER country = EAF }
+                alliance = { country = RUS country = EAF }
+                flag = JAP_ISO
+                war = { country = EAF country = JAP }
+                war = { country = EAF country = CGX }
+                ispuppet = EAF
+                ispuppet = JAP
+        }
+}
+
+date = { day = 1 month = august year = 1936 }
+offset = 5
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_344500_NAME"
+desc = "EVT_344500_DESC"
+
+action_a = {
+name = "EVT_344500_OPTIONA"
+ai_chance = 40
+command = { type = domestic which = interventionism value = -1 }
+command = { type = dissent value = -2 }
+}
+
+action_b = {
+name = "EVT_344500_OPTIONB"
+ai_chance = 60
+command = { type = domestic which = interventionism value = 1 }
+command = { type = setflag which = triad_yak }
+command = { type = dissent value = 2 }
+}
+}
+
+event = {
+id = 344501
+random = no
+country = JAP
+style = 2
+picture = "augusta"
+
+trigger = { 
+flag = triad_yak
+government = fascist
+NOT = {
+                war = { country = EAF country = JAP }
+                war = { country = EAF country = CGX }
+                ispuppet = EAF
+                ispuppet = JAP
+        }
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 5
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_344501_NAME"
+desc = "EVT_344501_DESC"
+
+action_a = {
+ai_chance = 80
+name = "EVT_344501_OPTIONA"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = non_aggression which = JAP where = EAF }
+command = { type = relation which = EAF value = 50 }
+command = { type = access which = EAF }
+command = { type = alliance which = EAF }
+command = { type = trigger which = 344503 }
+command = { type = sleepevent which = 344502 }
+}
+
+action_b = {
+ai_chance = 20
+name = "EVT_344501_OPTIONB"
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = EAF value = -50 }
+command = { type = sleepevent which = 344502 }
+}
+}
+
+event = {
+id = 344502
+random = no
+country = JAP
+style = 2
+picture = "augusta"
+
+date = { day = 1 month = january year = 1936 }
+offset = 5
+deathdate = { day = 29 month = december year = 1960 }
+
+trigger = { 
+flag = triad_yak
+government = democratic
+NOT = {
+                war = { country = EAF country = JAP }
+                war = { country = EAF country = CGX }
+                ispuppet = EAF
+                ispuppet = JAP
+        }
+}
+
+name = "EVT_344502_NAME"
+desc = "EVT_344502_DESC"
+
+action_a = {
+ai_chance = 40
+name = "EVT_344502_OPTIONA"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = non_aggression which = JAP where = EAF }
+command = { type = relation which = EAF value = 50 }
+command = { type = access which = EAF }
+command = { type = alliance which = EAF }
+command = { type = trigger which = 344503 }
+command = { type = sleepevent which = 344501 }
+}
+
+action_b = {
+ai_chance = 60
+name = "EVT_344502_OPTIONB"
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = EAF value = -50 }
+command = { type = sleepevent which = 344501 }
+}
+}
+
+event = {
+id = 344503
+random = no
+country = EAF
+style = 2
+save_date = yes
+picture = "japanese_officers"
+
+name = "EVT_344503_NAME"
+desc = "EVT_344503_DESC"
+
+action_a = {
+name = "EVT_344503_OPTIONA"
+command = { type = free_money value = .5 }
+command = { type = free_supplies value = 5 }
+command = { type = relation which = GER value = -20 }
+command = { type = relation which = CAN value = -20 }
+command = { type = relation which = AST value = -20 }
+command = { type = relation which = VIC value = -20 }
+command = { type = relation which = RUS value = -20 }
+command = { type = relation which = USA value = -20 }
+command = { type = relation which = CGX value = -20 }
+command = { type = relation which = CSX value = -20 }
+}
+}
+###if crack down on triads
+event = {
+id = 344530
+random = no
+country = JAP
+style = 2
+picture = "augusta"
+
+trigger = { 
+event = { id = 344503 days = 100 } 
+NOT = {
+ispuppet = JAP
+ispuppet = EAF
+}
+alliance = { country = JAP country = EAF }
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_344530_NAME"
+desc = "EVT_344530_DESC"
+
+action_a = {
+ai_chance = 30
+name = "EVT_344530_OPTIONA"
+command = { type = setflag which = leg_troops }
+command = { type = money value = -10 }
+command = { type = supplies value = -250 }
+command = { type = relation which = GER value = -20 }
+command = { type = relation which = CAN value = -20 }
+command = { type = relation which = AST value = -20 }
+command = { type = relation which = USA value = -20 }
+command = { type = relation which = CSX value = -20 }
+command = { type = relation which = CGX value = -20 }
+command = { type = relation which = RUS value = -20 }
+command = { type = relation which = EAF value = -75 }
+}
+
+action_b = {
+ai_chance = 50
+name = "EVT_344530_OPTIONB"
+command = { type = setflag which = leg_triad }
+command = { type = money value = -50 }
+command = { type = supplies value = -500 }
+command = { type = relation which = GER value = -20 }
+command = { type = relation which = CAN value = -20 }
+command = { type = relation which = AST value = -20 }
+command = { type = relation which = USA value = -20 }
+command = { type = relation which = CSX value = -20 }
+command = { type = relation which = CGX value = -20 }
+command = { type = relation which = RUS value = -20 }
+command = { type = relation which = EAF value = -75 }
+}
+
+action_c = {
+ai_chance = 20
+name = "EVT_344530_OPTIONC"
+command = { type = relation which = EAF value = 25 }
+}
+}
+
+event = {
+id = 344531
+random = no
+country = EAF
+style = 2
+picture = "japanese_officers"
+
+trigger = { 
+flag = leg_troops
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_344531_NAME"
+desc = "EVT_344531_DESC"
+
+action_a = {
+ai_chance = 50
+name = "EVT_344531_OPTIONA"
+command = { type = trigger which = 344532  }
+command = { type = headofgovernment which = 550052   }
+command = { type = foreignminister which = 550057   }
+}
+
+action_b = {
+ai_chance = 50
+name = "EVT_344531_OPTIONB"
+command = { type = leave_alliance }
+command = { type = trigger which = 344533  }
+}
+}
+
+event = {
+id = 344532
+random = no
+country = JAP
+style = 2
+picture = "augusta"
+
+name = "EVT_344532_NAME"
+desc = "EVT_344532_DESC"
+
+action_a = {
+name = "EVT_344532_OPTIONA"
+command = { type = make_puppet which = EAF }
+command = { type = relation which = EAF value = 150 }
+}
+}
+
+event = {
+id = 344533
+random = no
+country = JAP
+style = 2
+picture = "augusta"
+
+name = "EVT_344533_NAME"
+desc = "EVT_344533_DESC"
+
+action_a = {
+ai_chance = 65
+name = "EVT_344533_OPTIONA"
+command = { type = trigger which = 344534  }
+}
+
+action_b = {
+ai_chance = 35
+name = "EVT_344533_OPTIONB"
+command = { type = domestic which = interventionism value = -1 }
+command = { type = dissent value = 2 }
+}
+}
+
+event = {
+id = 344534
+random = no
+country = EAF
+style = 2
+picture = "japanese_officers"
+
+name = "EVT_344534_NAME"
+desc = "EVT_344534_DESC"
+
+action_a = {
+ai_chance = 40
+name = "EVT_344534_OPTIONA"
+command = { type = war which = JAP }
+command = { type = trigger which = 344536  }
+}
+ 
+action_b = {
+ai_chance = 60
+name = "EVT_344534_OPTIONB"
+command = { type = trigger which = 344532  }
+command = { type = headofgovernment which = 550052   }
+command = { type = foreignminister which = 550057   }
+}
+}
+
+event = {
+id = 344535
+random = no
+country = EAF
+style = 2
+picture = "japanese_officers"
+
+trigger = { 
+flag = leg_triad
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 3
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_344535_NAME"
+desc = "EVT_344535_DESC"
+
+action_a = {
+ai_chance = 40
+name = "EVT_344535_OPTIONA"
+command = { type = trigger which = 344532  }
+command = { type = headofgovernment which = 550052   }
+command = { type = foreignminister which = 550057   }
+}
+
+action_b = {
+ai_chance = 60
+name = "EVT_344535_OPTIONB"
+command = { type = leave_alliance }
+command = { type = trigger which = 344536  }
+}
+}
+
+event = {
+id = 344536
+random = no
+country = JAP
+style = 2
+picture = "augusta"
+
+trigger = { 
+flag = leg_triad
+}
+
+
+name = "EVT_344536_NAME"
+desc = "EVT_344536_DESC"
+
+action_a = {
+ai_chance = 60
+name = "EVT_344536_OPTIONA"
+command = { type = war which = EAF }
+command = { type = add_corps which = "Triad Militia" value = land where = 1338 }
+command = { type = add_division which = "Triad Enforcers" value = militia when = 4  where = police }
+command = { type = add_corps which = "Triad Militia" value = land where = 1358 }
+command = { type = add_division which = "Triad Enforcers" value = militia when = 4  where = police }
+command = { type = add_corps which = "Triad Militia" value = land where = 1371 }
+command = { type = add_division which = "Triad Enforcers" value = militia when = 4  where = police }
+command = { type = add_corps which = "Triad Militia" value = land where = 1346 }
+command = { type = add_division which = "Triad Enforcers" value = militia when = 4  where = police }
+command = { type = money value = -20 }
+command = { type = supplies value = -2000 }
+command = { type = manpowerpool value = -5 }
+}
+
+action_b = {
+ai_chance = 40
+name = "EVT_344536_OPTIONB"
+command = { type = war which = EAF }
+command = { type = supplies value = 500 }
+command = { type = manpowerpool value = 25 }
+}
+}

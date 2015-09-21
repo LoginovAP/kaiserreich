@@ -1,0 +1,274 @@
+################################################
+# The Sino Coalition: Defending China from Japan/Russia
+################################################
+event = {
+id = 63022
+country = CSX
+style = 2
+picture = "Chinese Infantry2"
+
+trigger = { 
+        OR = {
+	war = { country = JAP country = CSX }
+        war = { country = GER country = CSX }
+        war = { country = SOV country = CSX }
+        war = { country = RUS country = CSX }
+        }
+        OR = {
+        exists = CHC
+        exists = CYN
+        exists = CXB
+        }
+		NOT = { 
+                ispuppet = CSX
+		alliance = { country = GER country = CSX }
+                alliance = { country = RUS country = CSX }
+                alliance = { country = JAP country = CSX }
+		}
+	}
+
+date = { day = 1 month = january year = 1936 }
+offset = 25
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_63022_NAME"
+desc = "EVT_63022_DESC"
+
+action_a = {
+ai_chance = 80
+name = "EVT_63022_OPTIONA"
+	command = { type = setflag which = CofC }
+	command = { type = dissent value = -1 }
+	}
+
+action_b = {
+ai_chance = 20
+name = "EVT_63022_OPTIONB"
+	command = { type = dissent value = 1 }
+	}
+}
+
+event = {
+id = 63027
+country = CHC
+style = 2
+picture = "Chinese Infantry2"
+
+trigger = { 
+	flag = CofC
+	NOT = { 
+        ispuppet = CHC
+	atwar = CHC 
+	alliance = { country = CSX country = CHC } 
+        }
+	exists = CSX
+	}
+
+date = { day = 1 month = january year = 1936 }
+offset = 5
+deathdate = { day = 29 month = december year = 1963 }
+
+name = "EVT_63027_NAME"
+desc = "EVT_63027_DESC"
+
+action_a = {
+ai_chance = 60
+name = "EVT_63027_OPTIONA"
+	command = { type = ai which = "switch/CHC_atwar_JAP.ai" }
+	command = { type = domestic which = interventionism value = 3 }
+	command = { type = domestic which = defense_lobby value = 3 }
+	command = { type = relation which = CSX value = 50 }
+	command = { type = relation which = GER value = 5 }
+	command = { type = setflag which = CHC_CofC }
+	command = { type = trigger which = 63028 }
+	}
+
+action_b = {
+ai_chance = 0
+name = "EVT_63027_OPTIONB"
+	command = { type = ai which = "switch/CHC_atwar_JAP.ai" }
+	command = { type = domestic which = interventionism value = 2 }
+	command = { type = domestic which = defense_lobby value = 2 }
+	command = { type = relation which = GER value = 5 }
+	command = { trigger = { war = { country = CSX country = JAP } } type = war which = JAP }
+        command = { trigger = { war = { country = CSX country = RUS } } type = war which = RUS }
+        command = { trigger = { war = { country = CSX country = SOV } } type = war which = SOV }
+        command = { trigger = { war = { country = CSX country = GER } } type = war which = GER }
+	}
+
+action_c = {
+ai_chance = 30
+name = "EVT_63027_OPTIONC"
+	command = { type = relation which = CSX value = -25 }
+	}
+}
+
+event = {
+id = 63028
+country = CSX
+style = 2
+picture = "Chinese Infantry2"
+
+name = "EVT_63028_NAME"
+desc = "EVT_63028_DESC"
+
+action_a = {
+name = "EVT_63028_OPTIONA"
+	command = { type = alliance which = CHC }
+        command = { type = dissent value = -5 }
+        command = { type = relation which = CHC value = 70 }
+        command = { type = manpowerpool value = 30 }
+	command = { type = money value = 10 }
+	command = { type = supplies value = 100 }
+	}
+}
+
+event = {
+id = 63029
+country = CYN
+style = 2
+picture = "Chinese Infantry2"
+
+trigger = { 
+flag = CofC
+NOT = { 
+ispuppet = CYN
+ispuppet = CSX
+atwar = CYN 
+}
+NOT = { 
+alliance = { country = CSX country = CYN } 
+}
+exists = CSX
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 5
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_63029_NAME"
+desc = "EVT_63029_DESC"
+
+action_a = {
+ai_chance = 80
+name = "EVT_63029_OPTIONA"
+	command = { type = domestic which = interventionism value = 3 }
+	command = { type = domestic which = defense_lobby value = 3 }
+	#command = { type = ai which = "switch/CYN_atwar_JAP.ai" }
+	command = { type = setflag which = CYN_CofC }
+	command = { type = relation which = CSX value = 50 }
+	command = { type = relation which = GER value = 5 }
+	command = { type = trigger which = 63030 }
+	}
+
+action_b = {
+ai_chance = 0
+name = "EVT_63029_OPTIONB"
+	#command = { type = ai which = "switch/CYN_atwar_JAP.ai" }
+	command = { type = domestic which = interventionism value = 2 }
+	command = { type = domestic which = defense_lobby value = 2 }
+	command = { type = relation which = GER value = 5 }
+	command = { trigger = { war = { country = CSX country = JAP } } type = war which = JAP }
+        command = { trigger = { war = { country = CSX country = RUS } } type = war which = RUS }
+        command = { trigger = { war = { country = CSX country = SOV } } type = war which = SOV }
+        command = { trigger = { war = { country = CSX country = GER } } type = war which = GER }
+	}
+
+action_c = {
+ai_chance = 15
+name = "EVT_63029_OPTIONC"
+	command = { type = relation which = CSX value = -25 }
+	}
+}
+
+event = {
+id = 63030
+country = CSX
+style = 2
+picture = "Chinese Infantry2"
+
+name = "EVT_63030_NAME"
+desc = "EVT_63030_DESC"
+
+action_a = {
+name = "EVT_63030_OPTIONA"
+	command = { type = alliance which = CYN }
+        command = { type = dissent value = -5 }
+        command = { type = relation which = CYN value = 70 }
+        command = { type = manpowerpool value = 30 }
+	command = { type = money value = 10 }
+	command = { type = supplies value = 100 }
+	}
+}
+event = {
+id = 63031
+country = CXB
+style = 2
+picture = "Chinese Infantry2"
+
+trigger = { flag = CofC
+NOT = { 
+ispuppet = CXB 
+ispuppet = CSX
+atwar = CXB
+}
+NOT = { alliance = { country = CHC country = CXB } }
+	exists = CSX
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 5
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_63031_NAME"
+desc = "EVT_63031_DESC"
+
+action_a = {
+ai_chance = 59
+name = "EVT_63031_OPTIONA"
+	command = { type = domestic which = interventionism value = 3 }
+	command = { type = domestic which = defense_lobby value = 3 }
+	command = { type = ai which = "switch/CXB_atwar_JAP.ai" }
+	command = { type = setflag which = CXB_CofC }
+	command = { type = relation which = CSX value = 100 }
+	command = { type = relation which = GER value = 5 }
+	command = { type = trigger which = 63032 }
+	}
+action_b = {
+ai_chance = 0
+name = "EVT_63031_OPTIONB"
+	command = { type = ai which = "switch/CXB_atwar_JAP.ai" }
+	command = { type = domestic which = interventionism value = 2 }
+	command = { type = domestic which = defense_lobby value = 2 }
+	command = { type = relation which = GER value = 5 }
+	command = { trigger = { war = { country = CSX country = JAP } } type = war which = JAP }
+        command = { trigger = { war = { country = CSX country = RUS } } type = war which = RUS }
+        command = { trigger = { war = { country = CSX country = SOV } } type = war which = SOV }
+        command = { trigger = { war = { country = CSX country = GER } } type = war which = GER }
+	}
+action_c = {
+ai_chance = 40
+name = "EVT_63031_OPTIONC"
+	command = { type = relation which = CSX value = -25 }
+	}
+}
+
+event = {
+id = 63032
+country = CSX
+style = 2
+picture = "Chinese Infantry2"
+
+name = "EVT_63032_NAME"
+desc = "EVT_63032_DESC"
+
+action_a = {
+name = "EVT_63032_OPTIONA"
+	command = { type = alliance which = CXB }
+        command = { type = dissent value = -5 }
+        command = { type = relation which = CXB value = 70 }
+        command = { type = manpowerpool value = 30 }
+	command = { type = money value = 10 }
+	command = { type = supplies value = 100 }
+	}
+}

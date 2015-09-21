@@ -1,0 +1,721 @@
+event = {
+id = 655500
+country = VEN
+picture = "gold"
+style = 2
+
+trigger = { 
+	flag = BOL_REVOLT
+	flag = ANL 
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 25
+deathdate = { day = 29 month = december year = 1941 }
+
+name = "EVT_655500_NAME"
+desc = "EVT_655500_DESC"
+
+action_a = {
+name = "EVT_655500_OPTIONA"
+	command = { type = setflag which = VEN_SOCIALIST }
+	command = { type = dissent value = 5 }
+	}
+}
+
+event = {
+id = 655501
+country = VEN
+picture = "gold"
+style = 2
+
+trigger = { 
+	flag = VEN_SOCIALIST
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 29 month = december year = 1941 }
+
+name = "EVT_655501_NAME"
+desc = "EVT_655501_DESC"
+
+action_a = {
+ai_chance = 70
+name = "EVT_655501_OPTIONA"
+	command = { type = trigger which = 655502 }
+	command = { type = dissent value = 10 }
+	}
+action_b = {
+ai_chance = 30
+name = "EVT_655501_OPTIONB"
+	command = { type = clrflag which = VEN_SOCIALIST }
+	command = { type = dissent value = 20 }
+	}
+}
+
+event = {
+id = 655502
+country = VEN
+picture = "gold"
+style = 2
+
+name = "EVT_655502_NAME"
+desc = "EVT_655502_DESC"
+
+action_a = {
+name = "EVT_655502_OPTIONA"
+	command = { type = set_domestic which = democratic value = 3 }
+	command = { type = set_domestic which = political_left value = 8 }
+	command = { type = set_domestic which = free_market value = 1 }
+	command = { type = headofstate which = 38011 }
+	command = { type = headofgovernment which = 38026 }
+	command = { type = foreignminister which = 38037 }
+	command = { type = ministerofsecurity which = 38053 }
+	command = { type = ministerofintelligence which = 38026 }
+	command = { type = armamentminister which = 38051 }
+
+	command = { type = dissent value = -10 }
+	}
+}
+
+event = {
+id = 655503
+country = VEN
+style = 2
+picture = "southamerica"
+
+trigger =  { 
+        flag = VEN_SOCIALIST
+        flag = ANL
+        government = communist
+	NOT = { 
+	alliance = { country = VEN country = ARG }
+        alliance = { country = VEN country = BRA } 
+        alliance = { country = VEN country = COL }
+        alliance = { country = BRA country = ARG } 
+        alliance = { country = BRA country = FRA }
+        alliance = { country = BRA country = ENG } 
+        ispuppet = ARG
+        ispuppet = BRA
+        ispuppet = VEN
+        atwar = VEN
+	} 
+        exists = ARG
+        exists = BRA
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 50
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_655503_NAME"
+desc = "EVT_655503_DESC"
+
+action_a = {
+ai_chance = 70
+name = "EVT_655503_OPTIONA"
+command = { type = trigger which = 655504 } # Brazilian response
+command = { type = domestic which = interventionism value = 1 }
+command = { type = dissent value = 2 }
+}
+
+
+action_b = {
+ai_chance = 15
+name = "EVT_655503_OPTIONB"
+command = { type = relation which = ARG value = -10 }
+command = { type = dissent value = 1 }
+}
+}
+
+event = {
+id = 655504
+country = BRA
+style = 2
+picture = "southamerica"
+
+name = "EVT_655504_NAME"
+desc = "EVT_655504_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_655504_OPTIONA"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = domestic which = defense_lobby value = 1 }
+command = { type = alliance which = VEN }
+command = { type = relation which = VEN value = 50 }
+command = { type = relation which = ARG value = -10 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_655504_OPTIONB"
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = VEN value = -25 }
+command = { type = relation which = ARG value = 10 }
+}
+}
+
+event = {
+id = 55801
+country = VEN
+style = 2
+picture = "Venezuelan_Oil"
+
+date = { day = 5 month = april year = 1936 }
+
+name = "EVT_55801_NAME"
+desc = "EVT_55801_DESC"
+
+action_a = {
+ai_chance = 90
+name = "EVT_55801_OPTIONA"
+	command = { type = industrial_modifier which = total value = 2 }
+	command = { type = domestic which = free_market value = -1 }
+	command = { type = supplies value = -500 }
+	command = { type = dissent value = -3 }
+	command = { type = relation which = HOL value = -10 }
+	command = { type = relation which = ENG value = -10 }
+	command = { type = relation which = SPA value = -10 }
+	command = { type = relation which = SPR value = -10 }
+	command = { type = relation which = POR value = -10 }
+	command = { type = relation which = GER value = -10 }
+	command = { type = relation which = FRA value = -10 }
+	command = { type = relation which = USA value = -10 }
+	command = { type = relation which = CAN value = -10 }
+	command = { type = relation which = ITA value = -10 }
+	command = { type = relation which = RSI value = -10 }
+	command = { type = relation which = BRA value = -10 }
+	command = { type = free_oil value = 5  }
+	command = { type = free_money value = 3 }
+	}
+action_b = {
+ai_chance = 10
+name = "EVT_55801_OPTIONB"
+	command = { type = relation which = HOL value = 5 }
+	command = { type = relation which = ENG value = 5 }
+	command = { type = relation which = SPA value = 5 }
+	command = { type = relation which = SPR value = 5 }
+	command = { type = relation which = POR value = 5 }
+	command = { type = relation which = GER value = 5 }
+	command = { type = relation which = FRA value = 5 }
+	command = { type = relation which = USA value = 5 }
+	command = { type = relation which = CAN value = 5 }
+	command = { type = relation which = ITA value = 5 }
+	command = { type = relation which = RSI value = 5 }
+	command = { type = relation which = BRA value = 5 }
+	command = { type = dissent value = 3 }
+	}
+}
+
+event = {
+	id = 557304
+	country = VEN
+	random = no
+	style = 2
+
+	trigger = {
+	government = democratic
+	NOT = { 
+        OR = {
+	headofstate = 38016 #Isaías Medina Angarita
+	ispuppet = VEN 
+        } 
+        } 
+        }
+
+	name = "EVT_557304_NAME"
+	desc = "EVT_557304_DESC"
+	picture = "politics3"
+
+	date = { day = 1 month = may year = 1941 }
+	offset = 15
+	deathdate = { day = 29 month = may year = 1941 }
+
+	action_a = {
+		ai_chance = 80
+		name = "EVT_557304_OPTIONA"
+		command = { type = headofstate which = 38016 } #Isaías Medina Angarita
+		command = { type = headofgovernment which = 38028 } #Isaías Medina Angarita
+		command = { type = set_domestic which = democratic value = 8 }
+		command = { type = set_domestic which = political_left value = 4 }
+		command = { type = dissent value = 2 }
+	}
+	action_b = {
+		ai_chance = 20
+		name = "EVT_557304_OPTIONB"
+		command = { type = dissent value = 1 }
+	}
+}
+
+event = {
+	id = 557305
+	country = VEN
+	random = no
+	style = 2
+
+	trigger = {
+	government = democratic
+	headofstate = 38016 #Isaías Medina Angarita
+	NOT = { ispuppet = VEN } 
+        }
+
+	name = "EVT_557305_NAME"
+	desc = "EVT_557305_DESC"
+	picture = "Coup2"
+
+	date = { day = 1 month = may year = 1941 }
+	offset = 15
+	deathdate = { day = 29 month = may year = 1941 }
+
+	action_a = {
+		ai_chance = 75
+		name = "EVT_557305_OPTIONA"
+		command = { type = headofstate which = 38017 } #Rómulo Betancourt
+		command = { type = headofgovernment which = 38029 } #Rómulo Betancourt
+		command = { type = set_domestic which = democratic value = 7 }
+		command = { type = set_domestic which = political_left value = 8 }
+		command = { type = dissent value = 2 }
+	}
+	action_b = {
+		ai_chance = 25
+		name = "EVT_557305_OPTIONB"
+		command = { type = dissent value = 1 }
+	}
+}
+
+event = {
+	id = 557306
+	country = VEN
+	random = no
+	style = 2
+
+	trigger = {
+	government = democratic
+	NOT = { ispuppet = VEN } 
+        }
+
+	name = "EVT_557306_NAME"
+	desc = "EVT_557306_DESC"
+	picture = "election"
+
+	date = { day = 15 month = december year = 1947 }
+	offset = 15
+	deathdate = { day = 15 month = january year = 1947 }
+
+	action_a = {
+		ai_chance = 70
+		name = "EVT_557306_OPTIONA"
+		command = { type = headofstate which = 38019 } #Rómulo Gallegos Freire
+		command = { type = headofgovernment which = 38031 } #Rómulo Gallegos Freire
+		command = { type = foreignminister which = 38040 } #Carlos Morales Acorzia
+		command = { type = armamentminister which = 38051 } #Jose Vicente Rangel
+		command = { type = ministerofsecurity which = 38061 } #Concepcion Quijada Gonzalez
+		command = { type = ministerofintelligence which = 38070 } #Luis Monsalvo Mareno
+		command = { type = chiefofstaff which = 38077 } #Raúl Leoni Otero
+		command = { type = chiefofarmy which = 38082 } #Nelson Verde Graterol
+		command = { type = chiefofnavy which = 38090 } #Antonio Casas Gonzalez
+		command = { type = chiefofair which = 38096 } #José Polares Pavon
+		command = { type = set_domestic which = democratic value = 9 }
+		command = { type = set_domestic which = political_left value = 8 }
+		command = { type = domestic which = free_market value = -1 }
+	}
+	action_b = {
+		ai_chance = 30
+		name = "EVT_557306_OPTIONB"
+		command = { type = headofstate which = 38018 } #Rafael Caldera
+		command = { type = headofgovernment which = 38030 } #Rafael Caldera
+		command = { type = foreignminister which = 38041 } #Gonzalo Barrios
+		command = { type = armamentminister which = 38050 } #Julio Garcia Jarpa
+		command = { type = ministerofsecurity which = 38063 } #Isidoro Ruiz Tuerro
+		command = { type = ministerofintelligence which = 38071 } #Robert Letts Sanchez
+		command = { type = chiefofstaff which = 38076 } #Gustavo Gonzalez Lopez
+		command = { type = chiefofarmy which = 38081 } #Tomas Contreras Villalobos
+		command = { type = chiefofnavy which = 38089 } #Carlos Ramos Díaz
+		command = { type = chiefofair which = 38095 } #Miguel Díaz Fraile
+		command = { type = set_domestic which = democratic value = 8 }
+		command = { type = set_domestic which = political_left value = 4 }
+		command = { type = domestic which = free_market value = 1 }
+	}
+}
+
+
+event = {
+	id = 557307
+	country = VEN
+	random = no
+	style = 2
+
+	trigger = {
+	government = democratic
+	NOT = { ispuppet = VEN } 
+        }
+
+	name = "EVT_557307_NAME"
+	desc = "EVT_557307_DESC"
+	picture = "election"
+
+	date = { day = 15 month = december year = 1954 }
+	offset = 15
+	deathdate = { day = 15 month = january year = 1954 }
+
+	action_a = {
+		ai_chance = 40
+		name = "EVT_557307_OPTIONA"
+		command = { type = headofstate which = 38019 } #Rómulo Gallegos Freire
+		command = { type = headofgovernment which = 38031 } #Rómulo Gallegos Freire
+		command = { type = foreignminister which = 38040 } #Carlos Morales Acorzia
+		command = { type = armamentminister which = 38051 } #Jose Vicente Rangel
+		command = { type = ministerofsecurity which = 38061 } #Concepcion Quijada Gonzalez
+		command = { type = ministerofintelligence which = 38070 } #Luis Monsalvo Mareno
+		command = { type = chiefofstaff which = 38077 } #Raúl Leoni Otero
+		command = { type = chiefofarmy which = 38082 } #Nelson Verde Graterol
+		command = { type = chiefofnavy which = 38090 } #Antonio Casas Gonzalez
+		command = { type = chiefofair which = 38096 } #José Polares Pavon
+		command = { type = set_domestic which = democratic value = 9 }
+		command = { type = set_domestic which = political_left value = 8 }
+		command = { type = domestic which = free_market value = -1 }
+	}
+	action_b = {
+		ai_chance = 40
+		name = "EVT_557307_OPTIONB"
+		command = { type = headofstate which = 38018 } #Rafael Caldera
+		command = { type = headofgovernment which = 38030 } #Rafael Caldera
+		command = { type = foreignminister which = 38041 } #Gonzalo Barrios
+		command = { type = armamentminister which = 38050 } #Julio Garcia Jarpa
+		command = { type = ministerofsecurity which = 38063 } #Isidoro Ruiz Tuerro
+		command = { type = ministerofintelligence which = 38071 } #Robert Letts Sanchez
+		command = { type = chiefofstaff which = 38076 } #Gustavo Gonzalez Lopez
+		command = { type = chiefofarmy which = 38081 } #Tomas Contreras Villalobos
+		command = { type = chiefofnavy which = 38089 } #Carlos Ramos Díaz
+		command = { type = chiefofair which = 38095 } #Miguel Díaz Fraile
+		command = { type = set_domestic which = democratic value = 8 }
+		command = { type = set_domestic which = political_left value = 4 }
+		command = { type = domestic which = free_market value = 1 }
+	}
+	action_c = {
+		ai_chance = 20
+		name = "EVT_557307_OPTIONC"
+		command = { type = headofstate which = 38023 } #Wolfgang Larrazábal Ugueto
+		command = { type = headofgovernment which = 38034 } #Wolfgang Larrazábal Ugueto
+		command = { type = foreignminister which = 38037 } #Pedro Leon Castro
+		command = { type = armamentminister which = 38051 } #Jose Vicente Rangel
+		command = { type = ministerofsecurity which = 38062 } #Adolfo Gonzalez Aquilar
+		command = { type = ministerofintelligence which = 38065 } #Pedro Leon Castro
+		command = { type = chiefofstaff which = 38074 } #Antonio Casas Gonzalez
+		command = { type = chiefofarmy which = 38084 } #Wolfgang Larrazábal Ugueto
+		command = { type = chiefofnavy which = 38090 } #Antonio Casas Gonzalez
+		command = { type = chiefofair which = 38092 } #Humberto S. Torres Vilera
+		command = { type = set_domestic which = democratic value = 4 }
+		command = { type = set_domestic which = political_left value = 7 }
+		command = { type = domestic which = free_market value = -2 }
+	}
+}
+
+event = {
+	id = 557308
+	country = VEN
+	random = no
+	style = 2
+
+	trigger = {
+	government = democratic
+	NOT = { ispuppet = VEN } 
+        }
+
+	name = "EVT_557308_NAME"
+	desc = "EVT_557308_DESC"
+	picture = "election"
+
+	date = { day = 15 month = december year = 1961 }
+	offset = 15
+	deathdate = { day = 15 month = january year = 1961 }
+
+	action_a = {
+		ai_chance = 35
+		name = "EVT_557308_OPTIONA"
+		command = { type = headofstate which = 38019 } #Rómulo Gallegos Freire
+		command = { type = headofgovernment which = 38031 } #Rómulo Gallegos Freire
+		command = { type = foreignminister which = 38040 } #Carlos Morales Acorzia
+		command = { type = armamentminister which = 38051 } #Jose Vicente Rangel
+		command = { type = ministerofsecurity which = 38061 } #Concepcion Quijada Gonzalez
+		command = { type = ministerofintelligence which = 38070 } #Luis Monsalvo Mareno
+		command = { type = chiefofstaff which = 38077 } #Raúl Leoni Otero
+		command = { type = chiefofarmy which = 38082 } #Nelson Verde Graterol
+		command = { type = chiefofnavy which = 38090 } #Antonio Casas Gonzalez
+		command = { type = chiefofair which = 38096 } #José Polares Pavon
+		command = { type = set_domestic which = democratic value = 9 }
+		command = { type = set_domestic which = political_left value = 8 }
+		command = { type = domestic which = free_market value = -1 }
+	}
+	action_b = {
+		ai_chance = 35
+		name = "EVT_557308_OPTIONB"
+		command = { type = headofstate which = 38018 } #Rafael Caldera
+		command = { type = headofgovernment which = 38030 } #Rafael Caldera
+		command = { type = foreignminister which = 38041 } #Gonzalo Barrios
+		command = { type = armamentminister which = 38050 } #Julio Garcia Jarpa
+		command = { type = ministerofsecurity which = 38063 } #Isidoro Ruiz Tuerro
+		command = { type = ministerofintelligence which = 38071 } #Robert Letts Sanchez
+		command = { type = chiefofstaff which = 38076 } #Gustavo Gonzalez Lopez
+		command = { type = chiefofarmy which = 38081 } #Tomas Contreras Villalobos
+		command = { type = chiefofnavy which = 38089 } #Carlos Ramos Díaz
+		command = { type = chiefofair which = 38095 } #Miguel Díaz Fraile
+		command = { type = set_domestic which = democratic value = 8 }
+		command = { type = set_domestic which = political_left value = 4 }
+		command = { type = domestic which = free_market value = 1 }
+	}
+	action_c = {
+		ai_chance = 30
+		name = "EVT_557308_OPTIONC"
+		command = { type = headofstate which = 38023 } #Wolfgang Larrazábal Ugueto
+		command = { type = headofgovernment which = 38034 } #Wolfgang Larrazábal Ugueto
+		command = { type = foreignminister which = 38037 } #Pedro Leon Castro
+		command = { type = armamentminister which = 38051 } #Jose Vicente Rangel
+		command = { type = ministerofsecurity which = 38062 } #Adolfo Gonzalez Aquilar
+		command = { type = ministerofintelligence which = 38065 } #Pedro Leon Castro
+		command = { type = chiefofstaff which = 38074 } #Antonio Casas Gonzalez
+		command = { type = chiefofarmy which = 38084 } #Wolfgang Larrazábal Ugueto
+		command = { type = chiefofnavy which = 38090 } #Antonio Casas Gonzalez
+		command = { type = chiefofair which = 38092 } #Humberto S. Torres Vilera
+		command = { type = set_domestic which = democratic value = 4 }
+		command = { type = set_domestic which = political_left value = 7 }
+		command = { type = domestic which = free_market value = -2 }
+	}
+}
+
+event = {
+	id = 557309
+	random = no
+	country = VEN
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { year = 1936 month = may day = 19 }
+
+	action_a = {
+		name = "EVT_557309_OPTIONA"
+		command = { type = sleepminister which = 38035 } #Pedro Itriago Chacín
+	}
+}
+
+event = {
+	id = 557310
+	random = no
+	country = VEN
+	style = 2
+
+	trigger = { NOT = {
+	event = 557311
+	headofstate = 38020 } } #Carlos Delgado Chalbaud
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { year = 1950 month = november day = 13 }
+
+	action_a = {
+		name = "EVT_557310_OPTIONA"
+		command = { type = sleepminister which = 38020 } #Carlos Delgado Chalbaud
+		command = { type = sleepminister which = 38079 } #Carlos Delgado Chalbaud
+		command = { type = sleepleader which = 270004 } #Carlos Delgado Chalbaud
+	}
+}
+
+event = {
+	id = 557311
+	random = no
+	country = VEN
+	style = 2
+
+	trigger = { headofstate = 38020 } #Carlos Delgado Chalbaud
+
+	name = "EVT_557311_NAME"
+	desc = "EVT_557311_DESC"
+	picture = "minister_died"
+
+	date = { year = 1950 month = november day = 13 }
+
+	action_a = {
+		name = "EVT_557311_OPTIONA"
+		command = { type = sleepminister which = 38020 } #Carlos Delgado Chalbaud
+		command = { type = sleepminister which = 38079 } #Carlos Delgado Chalbaud
+		command = { type = sleepleader which = 270004 } #Carlos Delgado Chalbaud
+		command = { type = headofstate which = 38021 } #German Suarez Flamerich
+	}
+}
+
+event = {
+	id = 557312
+	random = no
+	country = VEN
+	style = 2
+
+	trigger = {
+	NOT = { OR = {
+	event = 557313
+	event = 557314
+	event = 557315 } }
+	NOT = { OR = {
+	headofstate = 38014 #Juan Bautista Pérez
+	headofgovernment = 38002 } } } #Juan Bautista Pérez
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { year = 1952 month = may day = 7 }
+
+	action_a = {
+		name = "EVT_557312_OPTIONA"
+		command = { type = sleepminister which = 38014 } #Juan Bautista Pérez
+		command = { type = sleepminister which = 38005 } #Juan Bautista Pérez
+	}
+}
+
+event = {
+	id = 557313
+	random = no
+	country = VEN
+	style = 2
+
+	trigger = {
+	NOT = { OR = {
+	event = 557312
+	event = 557314
+	event = 557315 } }
+	headofstate = 38014 #Juan Bautista Pérez
+	NOT = { headofgovernment = 38002 } } #Juan Bautista Pérez
+
+	name = "EVT_557313_NAME"
+	desc = "EVT_557313_DESC"
+	picture = "minister_died"
+
+	date = { year = 1952 month = may day = 7 }
+
+	action_a = {
+		name = "EVT_557313_OPTIONA"
+		command = { type = sleepminister which = 38014 } #Juan Bautista Pérez
+		command = { type = sleepminister which = 38005 } #Juan Bautista Pérez
+		command = { type = headofstate which = 38001 } #Eleazar López Contreras
+		command = { type = dissent value = 1 }
+	}
+}
+
+event = {
+	id = 557314
+	random = no
+	country = VEN
+	style = 2
+
+	trigger = {
+	NOT = { OR = {
+	event = 557312
+	event = 557313
+	event = 557315 } }
+	NOT = { headofstate = 38014 } #Juan Bautista Pérez
+	headofgovernment = 38002 } #Juan Bautista Pérez
+
+	name = "EVT_557314_NAME"
+	desc = "EVT_557314_DESC"
+	picture = "minister_died"
+
+	date = { year = 1952 month = may day = 7 }
+
+	action_a = {
+		name = "EVT_557314_OPTIONA"
+		command = { type = sleepminister which = 38014 } #Juan Bautista Pérez
+		command = { type = sleepminister which = 38005 } #Juan Bautista Pérez
+		command = { type = headofgovernment which = 38024 } #Eleazar López Contreras
+		command = { type = dissent value = 1 }
+	}
+}
+
+event = {
+	id = 557315
+	random = no
+	country = VEN
+	style = 2
+
+	trigger = { 
+	NOT = { OR = {
+	event = 557312
+	event = 557313
+	event = 557314 } }
+	headofstate = 38014 #Juan Bautista Pérez
+	headofgovernment = 38002 } #Juan Bautista Pérez
+
+	name = "EVT_557315_NAME"
+	desc = "EVT_557315_DESC"
+	picture = "minister_died"
+
+	date = { year = 1952 month = may day = 7 }
+
+	action_a = {
+		name = "EVT_557315_OPTIONA"
+		command = { type = sleepminister which = 38014 } #Juan Bautista Pérez
+		command = { type = sleepminister which = 38005 } #Juan Bautista Pérez
+		command = { type = headofstate which = 38001 } #Eleazar López Contreras
+		command = { type = headofgovernment which = 38024 } #Eleazar López Contreras
+		command = { type = dissent value = 1 }
+	}
+}
+
+event = {
+	id = 557316
+	random = no
+	country = VEN
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { year = 1953 month = february day = 1 }
+
+	action_a = {
+		name = "EVT_557316_OPTIONA"
+		command = { type = sleepminister which = 38039 } #Gustavo Herrera Grau
+	}
+}
+
+event = {
+	id = 557317
+	random = no
+	country = VEN
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { year = 1955 month = august day = 28 }
+
+	action_a = {
+		name = "EVT_557317_OPTIONA"
+		command = { type = sleepminister which = 38056 } #Cesar Zumeta
+	}
+}
+
+event = {
+	id = 557318
+	random = no
+	country = VEN
+	style = 2
+
+	name = "EVT_103_NAME"
+	desc = "EVT_103_DESC"
+	picture = "minister_died"
+
+	date = { year = 1959 month = august day = 21 }
+
+	action_a = {
+		name = "EVT_557318_OPTIONA"
+		command = { type = sleepminister which = 38005 } #Santiago Key Ayala
+	}
+}

@@ -1,0 +1,1010 @@
+######################
+#### The Founding of the 3rd I
+######################
+event = {
+id = 1000000
+picture = "Montmartre"
+country = FRA
+style = 2
+
+trigger = { 
+	atwar = no 
+	government = communist
+	}
+
+name = "EVT_1000000_NAME" #La Troisième Internationale
+desc = "EVT_1000000_DESC"
+
+date = { day = 18 month = march year = 1936 }
+
+action_a = {
+name = "EVT_1000000_OPTIONA"
+ai_chance = 100
+	command = { type = setflag which = 3rdI }
+
+	command = { type = domestic which = interventionism value = 1 }
+
+	command = { type = relation which = CAN value = -30 }
+	command = { type = relation which = GER value = -25 }
+	command = { type = relation which = ITA value = -25 }
+	command = { type = relation which = AUS value = -25 }
+	command = { type = relation which = HUN value = -25 }
+	command = { type = relation which = BUL value = -10 }
+	command = { type = relation which = OTT value = -10 }
+	command = { type = relation which = RUS value = -10 }
+
+	command = { type = relation which = ENG value = 25 }
+	command = { type = relation which = RSI value = 15 }
+	command = { type = relation which = GEO value = 15 }
+	command = { type = relation which = PRK value = 10 }
+	command = { type = relation which = GUA value = 10 }
+
+	command = { type = money value = -10 }
+	command = { type = dissent value = -8 }
+	command = { type = trigger which = 908011 }
+	}
+action_b = {
+name = "EVT_1000000_OPTIONB"
+ai_chance = 0
+	command = { type = domestic which = interventionism value = -1 }
+
+	command = { type = relation which = CAN value = 10 }
+	command = { type = relation which = GER value = 10 }
+	command = { type = relation which = ITA value = 10 }
+	command = { type = relation which = AUS value = 10 }
+	command = { type = relation which = HUN value = 10 }
+	command = { type = relation which = BUL value = 5 }
+	command = { type = relation which = OTT value = 5 }
+	command = { type = relation which = RUS value = 5 }
+
+	command = { type = relation which = ENG value = -50 }
+	command = { type = relation which = RSI value = -25 }
+	command = { type = relation which = GEO value = -25 }
+	command = { type = relation which = PRK value = -25 }
+	command = { type = relation which = GUA value = -15 }
+
+	command = { type = dissent value = 10 }
+	}
+action_c = {
+ai_chance = 0
+name = "EVT_1000000_OPTIONC"
+	command = { type = domestic which = interventionism value = -9 }
+
+	command = { type = ai which = "kaiserreich/switch/FRA_Isolation.ai" }
+
+	command = { type = belligerence which = FRA value = -10 }
+
+	command = { type = setflag which = FRA_ISO }
+
+	command = { type = relation which = ENG value = -100 }
+	command = { type = relation which = RSI value = -100 }
+	command = { type = relation which = GEO value = -100 }
+	command = { type = relation which = PRK value = -100 }
+	command = { type = relation which = GUA value = -100 }
+
+	command = { type = end_mastery which = RSI }
+	command = { type = end_access which = RSI }
+	command = { type = leave_alliance }
+
+	command = { type = dissent value = 30 }
+	}
+}
+
+event = {
+id = 1000001
+picture = "Third International2"
+country = FRA
+style = 2
+
+trigger = { 
+	flag = 3rdI
+}
+
+name = "EVT_1000001_NAME"
+desc = "EVT_1000001_DESC"
+
+date = { day = 2 month = may year = 1936 }
+
+action_a = {
+name = "EVT_1000001_OPTIONA"
+	command = { type = setflag which = 3rdI_1_Invite }
+	}
+}
+
+###############
+#### The Invitations
+###############
+
+event = {
+id = 1000002
+picture = "Third International11"
+country = ENG
+style = 2
+
+trigger = {
+	government = communist
+	flag = 3rdI_1_Invite
+}
+
+name = "EVT_1000002_NAME"
+desc = "EVT_1000002_DESC"
+
+date = { day = 3 month = may year = 1936 }
+
+action_a = {
+ai_chance = 100
+name = "EVT_1000002_OPTIONA"
+	command = { type = setflag which = 3rdI_1_ENG }
+	}
+action_b = {
+ai_chance = 0
+name = "EVT_1000002_OPTIONB"
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = relation which = FRA value = -50 }
+	command = { type = dissent value = 10 }
+	}
+action_c = {
+ai_chance = 0
+name = "EVT_1000002_OPTIONC"
+	command = { type = domestic which = interventionism value = -9 }
+
+	command = { type = ai which = "kaiserreich/switch/ENG_Isolation.ai" }
+
+	command = { type = belligerence which = ENG value = -10 }
+
+	command = { type = setflag which = ENG_ISO }
+
+	command = { type = relation which = FRA value = -100 }
+	command = { type = relation which = RSI value = -100 }
+	command = { type = relation which = GEO value = -100 }
+	command = { type = relation which = PRK value = -100 }
+	command = { type = relation which = GUA value = -100 }
+
+	command = { type = leave_alliance }
+
+	command = { type = dissent value = 20 }
+	command = { type = money value = 10 }
+	}
+}
+
+event = {
+id = 1000003
+picture = "Kaiserreich_RSI_Flag"
+country = RSI
+style = 2
+
+trigger = {
+	government = communist
+	flag = 3rdI_1_Invite
+}
+
+name = "EVT_1000003_NAME"
+desc = "EVT_1000003_DESC"
+
+date = { day = 3 month = may year = 1936 }
+
+action_a = {
+ai_chance = 100
+name = "EVT_1000003_OPTIONA"
+	command = { type = setflag which = 3rdI_1_RSI }
+	}
+action_b = {
+ai_chance = 0
+name = "EVT_1000003_OPTIONB"
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = relation which = FRA value = -50 }
+	command = { type = dissent value = 10 }
+	}
+}
+
+event = {
+id = 1000004
+picture = "Third International11"
+country = GEO
+style = 2
+
+trigger = {
+	government = communist
+	flag = 3rdI_1_Invite
+}
+
+name = "EVT_1000004_NAME"
+desc = "EVT_1000004_DESC"
+
+date = { day = 3 month = may year = 1936 }
+
+action_a = {
+ai_chance = 100
+name = "EVT_1000004_OPTIONA"
+	command = { type = setflag which = 3rdI_1_GEO }
+	}
+action_b = {
+ai_chance = 0
+name = "EVT_1000004_OPTIONB"
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = relation which = FRA value = -50 }
+	command = { type = dissent value = 5 }
+	}
+}
+
+event = {
+id = 1000005
+picture = "Third International11"
+country = PRK
+style = 2
+
+trigger = {
+	government = communist
+	flag = 3rdI_1_Invite
+}
+
+name = "EVT_1000005_NAME"
+desc = "EVT_1000005_DESC"
+
+date = { day = 3 month = may year = 1936 }
+
+action_a = {
+ai_chance = 100
+name = "EVT_1000005_OPTIONA"
+	command = { type = setflag which = 3rdI_1_PRK }
+	}
+action_b = {
+ai_chance = 0
+name = "EVT_1000005_OPTIONB"
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = relation which = FRA value = -50 }
+	command = { type = dissent value = 5 }
+	}
+}
+
+event = {
+id = 1000006
+picture = "Third International11"
+country = MEX
+style = 2
+
+trigger = {
+	government = communist
+	flag = 3rdI_1_Invite
+}
+
+name = "EVT_1000006_NAME"
+desc = "EVT_1000006_DESC"
+
+date = { day = 3 month = may year = 1936 }
+
+action_a = {
+ai_chance = 100
+name = "EVT_1000006_OPTIONA"
+	command = { type = setflag which = 3rdI_1_MEX }
+	}
+action_b = {
+ai_chance = 0
+name = "EVT_1000006_OPTIONB"
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = relation which = FRA value = -50 }
+	command = { type = dissent value = 3 }
+	}
+}
+
+event = {
+id = 1000007
+picture = "Third International11"
+country = NOR
+style = 2
+
+trigger = {
+	government = communist
+	flag = 3rdI_1_Invite
+}
+
+name = "EVT_1000007_NAME"
+desc = "EVT_1000007_DESC"
+
+date = { day = 3 month = may year = 1936 }
+
+action_a = {
+ai_chance = 100
+name = "EVT_1000007_OPTIONA"
+	command = { type = setflag which = 3rdI_1_NOR }
+	}
+action_b = {
+ai_chance = 0
+name = "EVT_1000007_OPTIONB"
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = relation which = FRA value = -50 }
+	command = { type = dissent value = 3 }
+	}
+}
+
+event = {
+id = 1000008
+picture = "Third International11"
+country = UKR
+style = 2
+
+trigger = {
+	government = communist
+	flag = 3rdI_1_Invite
+}
+
+name = "EVT_1000008_NAME"
+desc = "EVT_1000008_DESC"
+
+date = { day = 3 month = may year = 1936 }
+
+action_a = {
+ai_chance = 100
+name = "EVT_1000008_OPTIONA"
+	command = { type = setflag which = 3rdI_1_UKR }
+	}
+action_b = {
+ai_chance = 0
+name = "EVT_1000008_OPTIONB"
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = relation which = FRA value = -50 }
+	command = { type = dissent value = 3 }
+	}
+}
+
+event = {
+id = 1000009
+picture = "Third International11"
+country = USA
+style = 2
+
+trigger = {
+	government = communist
+	flag = 3rdI_1_Invite
+}
+
+name = "EVT_1000009_NAME"
+desc = "EVT_1000009_DESC"
+
+date = { day = 3 month = may year = 1936 }
+
+action_a = {
+ai_chance = 100
+name = "EVT_1000009_OPTIONA"
+	command = { type = setflag which = 3rdI_1_USA }
+	}
+action_b = {
+ai_chance = 0
+name = "EVT_1000009_OPTIONB"
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = relation which = FRA value = -50 }
+	command = { type = dissent value = -3 }
+	}
+}
+
+event = {
+id = 1000010
+picture = "Third International11"
+country = RUS
+style = 2
+
+trigger = {
+	government = communist
+	flag = 3rdI_1_Invite
+}
+
+name = "EVT_1000010_NAME"
+desc = "EVT_1000010_DESC"
+
+date = { day = 3 month = may year = 1936 }
+
+action_a = {
+ai_chance = 100
+name = "EVT_1000010_OPTIONA"
+	command = { type = setflag which = 3rdI_1_RUS }
+	}
+action_b = {
+ai_chance = 0
+name = "EVT_1000010_OPTIONB"
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = relation which = FRA value = -50 }
+	command = { type = dissent value = -3 }
+	}
+}
+
+event = {
+id = 1000011
+picture = "Third International11"
+country = SOV
+style = 2
+
+trigger = {
+	government = communist
+	flag = 3rdI_1_Invite
+}
+
+name = "EVT_1000011_NAME"
+desc = "EVT_1000011_DESC"
+
+date = { day = 3 month = may year = 1936 }
+
+action_a = {
+ai_chance = 100
+name = "EVT_1000011_OPTIONA"
+	command = { type = setflag which = 3rdI_1_SOV }
+	}
+action_b = {
+ai_chance = 0
+name = "EVT_1000011_OPTIONB"
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = relation which = FRA value = -50 }
+	command = { type = dissent value = -3 }
+	}
+}
+
+event = {
+id = 1000012
+picture = "Third International11"
+country = SPR
+style = 2
+
+trigger = {
+	government = communist
+	flag = 3rdI_1_Invite
+}
+
+name = "EVT_1000012_NAME"
+desc = "EVT_1000012_DESC"
+
+date = { day = 3 month = may year = 1936 }
+
+action_a = {
+ai_chance = 100
+name = "EVT_1000012_OPTIONA"
+	command = { type = setflag which = 3rdI_1_SPR }
+	}
+action_b = {
+ai_chance = 0
+name = "EVT_1000012_OPTIONB"
+	command = { type = domestic which = interventionism value = -1 }
+	command = { type = relation which = FRA value = -50 }
+	command = { type = dissent value = -3 }
+	}
+}
+
+#############
+#### The Opening
+#############
+
+event = {
+id = 1000013
+picture = "Third International4"
+country = FRA
+style = 2
+
+trigger = { 
+	flag = 3rdI_1_Invite
+}
+
+name = "EVT_1000013_NAME"
+desc = "EVT_1000013_DESC"
+
+date = { day = 6 month = may year = 1936 }
+
+action_a = {
+name = "EVT_1000013_OPTIONA"
+	command = { type = setflag which = 3rdI_1 }
+	command = { type = dissent value = -5 }
+	}
+}
+
+event = {
+id = 1000014
+picture = "Third International8"
+country = FRA
+style = 2
+
+trigger = { 
+	flag = 3rdI_1
+}
+
+name = "EVT_1000014_NAME"
+desc = "EVT_1000014_DESC"
+
+date = { day = 7 month = may year = 1936 }
+
+action_a = {
+ai_chance = 100
+name = "EVT_1000014_OPTIONA"
+	command = { type = relation which = GER value = -50 }
+	command = { type = relation which = BUL value = -25 }
+	command = { type = relation which = USA value = -25 }
+	command = { type = relation which = RUS value = -25 }
+	command = { type = relation which = ITA value = -25 }
+	command = { type = relation which = HUN value = -25 }
+	command = { type = relation which = AUS value = -25 }
+	command = { type = relation which = CAN value = -25 }
+	command = { type = relation which = VIC value = -25 }
+	command = { type = relation which = FIN value = -25 }
+	command = { type = relation which = AST value = -25 }
+	command = { type = relation which = CON value = -25 }
+	command = { type = relation which = OTT value = -25 }
+	command = { type = relation which = AUS value = -25 }
+
+	command = { type = domestic which = interventionism value = 2 }
+	command = { type = domestic which = defense_lobby value = 2 }
+	command = { type = setflag which = 3rdI_H }
+	command = { type = dissent value = -10 }
+	command = { type = trigger which = 908013 }
+	}
+action_b = {
+ai_chance = 0
+name = "EVT_1000014_OPTIONB"
+	command = { type = domestic which = interventionism value = 1 }
+	command = { type = domestic which = defense_lobby value = -9 }
+	command = { type = setflag which = 3rdI_D }
+	command = { type = dissent value = -5 }
+	}
+}
+
+event = {
+id = 1000015
+picture = "CNT-FAI"
+country = FRA
+style = 2
+
+trigger = { 
+	flag = 3rdI_1
+		NOT = {
+		exists = SPR
+	}
+}
+
+name = "EVT_1000015_NAME"
+desc = "EVT_1000015_DESC"
+
+date = { day = 8 month = may year = 1936 }
+
+action_a = {
+ai_chance = 98
+name = "EVT_1000015_OPTIONA"
+	command = { type = relation which = SPA value = -30 }	
+	command = { type = setflag which = 3rdI_FRA_issue1_Y }
+        command = { type = setflag which = fra_support_cnt }
+	}
+action_b = {
+ai_chance = 2
+name = "EVT_1000015_OPTIONB"
+	command = { type = relation which = SPA value = 10 }
+	command = { type = setflag which = 3rdI_FRA_issue1_N }
+	}
+}
+
+event = {
+id = 1000016
+picture = "CNT-FAI"
+country = ENG
+style = 2
+
+trigger = { 
+	flag = 3rdI_1_ENG
+		NOT = {
+		exists = SPR
+	}
+}
+
+name = "EVT_1000016_NAME"
+desc = "EVT_1000016_DESC"
+
+date = { day = 8 month = may year = 1936 }
+
+action_a = {
+ai_chance = 95
+name = "EVT_1000016_OPTIONA"
+	command = { type = relation which = SPA value = -30 }
+	command = { type = setflag which = 3rdI_ENG_issue1_Y }
+        command = { type = setflag which = eng_support_cnt }
+	}
+action_b = {
+ai_chance = 5
+name = "EVT_1000016_OPTIONB"
+	command = { type = relation which = SPA value = 10 }
+	command = { type = setflag which = 3rdI_ENG_issue1_N }
+	}
+}
+
+event = {
+id = 1000017
+picture = "FAUD1"
+country = FRA
+style = 2
+
+trigger = { 
+	flag = 3rdI_1
+}
+
+name = "EVT_1000017_NAME"
+desc = "EVT_1000017_DESC"
+
+date = { day = 14 month = may year = 1936 }
+
+action_a = {
+ai_chance = 99
+name = "EVT_1000017_OPTIONA"
+	command = { type = setflag which = 3rdI_FRA_issue2_Y }
+	}
+action_b = {
+ai_chance = 1
+name = "EVT_1000017_OPTIONB"
+	command = { type = setflag which = 3rdI_FRA_issue2_N }
+	}
+}
+
+event = {
+id = 1000018
+picture = "FAUD1"
+country = ENG
+style = 2
+
+trigger = { 
+	flag = 3rdI_1_ENG
+}
+
+name = "EVT_1000018_NAME"
+desc = "EVT_1000018_DESC"
+
+date = { day = 14 month = may year = 1936 }
+
+action_a = {
+ai_chance = 95
+name = "EVT_1000018_OPTIONA"
+	command = { type = setflag which = 3rdI_ENG_issue2_Y }
+	}
+action_b = {
+ai_chance = 5
+name = "EVT_1000018_OPTIONB"
+	command = { type = setflag which = 3rdI_ENG_issue2_N }
+	}
+}
+
+event = {
+id = 1000019
+picture = "Reed2"
+country = ENG
+style = 2
+
+trigger = { 
+	flag = 3rdI_1_ENG
+}
+
+name = "EVT_1000019_NAME"
+desc = "EVT_1000019_DESC"
+
+date = { day = 9 month = may year = 1936 }
+
+action_a = {
+ai_chance = 98
+name = "EVT_1000019_OPTIONA"
+	command = { type = relation which = USA value = -30 }
+	command = { type = setflag which = 3rdI_ENG_issue3_Y }
+	}
+action_b = {
+ai_chance = 2
+name = "EVT_1000019_OPTIONB"
+	command = { type = relation which = USA value = 10 }
+	command = { type = setflag which = 3rdI_ENG_issue3_N }
+	}
+}
+
+event = {
+id = 1000020
+picture = "Reed2"
+country = FRA
+style = 2
+
+trigger = { 
+	flag = 3rdI_1
+}
+
+name = "EVT_1000020_NAME"
+desc = "EVT_1000020_DESC"
+
+date = { day = 9 month = may year = 1936 }
+
+action_a = {
+ai_chance = 98
+name = "EVT_1000020_OPTIONA"
+	command = { type = relation which = USA value = -30 }
+	command = { type = setflag which = 3rdI_FRA_issue3_Y }
+	}
+action_b = {
+ai_chance = 2
+name = "EVT_1000020_OPTIONB"
+	command = { type = relation which = USA value = 10 }
+	command = { type = setflag which = 3rdI_FRA_issue3_N }
+	}
+}
+
+event = {
+id = 1000021
+picture = "Reed2"
+country = MEX
+style = 2
+
+trigger = { 
+	flag = 3rdI_1_MEX
+}
+
+name = "EVT_1000021_NAME"
+desc = "EVT_1000021_DESC"
+
+date = { day = 9 month = may year = 1936 }
+
+action_a = {
+ai_chance = 95
+name = "EVT_1000021_OPTIONA"
+	command = { type = relation which = USA value = -30 }
+	command = { type = setflag which = 3rdI_MEX_issue3_Y }
+	}
+action_b = {
+ai_chance = 5
+name = "EVT_1000021_OPTIONB"
+	command = { type = relation which = USA value = 10 }
+	command = { type = setflag which = 3rdI_MEX_issue3_N }
+	}
+}
+
+event = {
+id = 1000022
+picture = "FORA"
+country = FRA
+style = 2
+
+trigger = { 
+	flag = 3rdI_1
+}
+
+name = "EVT_1000022_NAME"
+desc = "EVT_1000022_DESC"
+
+date = { day = 10 month = may year = 1936 }
+
+action_a = {
+ai_chance = 95
+name = "EVT_1000022_OPTIONA"
+	command = { type = setflag which = 3rdI_FRA_issue4_Y }
+	}
+action_b = {
+ai_chance = 5
+name = "EVT_1000022_OPTIONB"
+	command = { type = setflag which = 3rdI_FRA_issue4_N }
+	}
+}
+
+event = {
+id = 1000023
+picture = "Third International7"
+country = FRA
+style = 2
+
+trigger = { 
+	flag = 3rdI_1
+}
+
+name = "EVT_1000023_NAME"
+desc = "EVT_1000023_DESC"
+
+date = { day = 11 month = may year = 1936 }
+
+action_a = {
+ai_chance = 100
+name = "EVT_1000023_OPTIONA"
+	command = { type = dissent value = 3 }
+        command = { type = relative_manpower value = 10 }
+	command = { type = setflag which = 3rdI_FRA_issue5_Y }
+        command = { type = event which = 908056 where = GER when = 30  }
+	}
+
+action_b = {
+ai_chance = 0
+name = "EVT_1000023_OPTIONB"
+	command = { type = dissent value = -1 }
+	command = { type = setflag which = 3rdI_FRA_issue5_N }
+	}
+}
+
+event = {
+ id = 1000024
+ picture = "Third International7"
+ country = ENG
+ style = 2
+
+ trigger = { 
+     flag = 3rdI_1_ENG
+ }
+
+ name = "EVT_1000024_NAME"
+ desc = "EVT_1000024_DESC"
+
+ date = { day = 12 month = may year = 1936 }
+
+ action_a = {
+ name = "EVT_1000024_OPTIONA"
+     command = { type = dissent value = -1 }
+     }
+ }
+
+event = {
+id = 1000025
+picture = "Kaiserreich_RSI_Italy"
+country = RSI
+style = 2
+
+trigger = { 
+	flag = 3rdI_1_RSI
+}
+
+name = "EVT_1000025_NAME"
+desc = "EVT_1000025_DESC"
+
+date = { day = 15 month = may year = 1936 }
+
+action_a = {
+ai_chance = 95
+name = "EVT_1000025_OPTIONA"
+	command = { type = relation which = ITA value = -30 }
+	command = { type = trigger which = 1000026 }
+	command = { type = setflag which = 3rdI_RSI_issue6_Y }
+	}
+action_b = {
+ai_chance = 5
+name = "EVT_1000025_OPTIONB"
+	command = { type = relation which = ITA value = 10 }
+	command = { type = setflag which = 3rdI_RSI_issue6_N }
+	}
+}
+
+event = {
+id = 1000026
+picture = "Kaiserreich_RSI_Italy"
+country = FRA
+style = 2
+
+name = "EVT_1000026_NAME"
+desc = "EVT_1000026_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_1000026_OPTIONA"
+	command = { type = relation which = ITA value = -30 }
+        command = { type = relation which = RSI value = 30 }
+	command = { type = setflag which = 3rdI_RSI_issue6_Y }
+	}
+action_b = {
+ai_chance = 5
+name = "EVT_1000026_OPTIONB"
+	command = { type = relation which = ITA value = 10 }
+        command = { type = relation which = RSI value = -30 }
+	command = { type = setflag which = 3rdI_RSI_issue6_N }
+	}
+}
+
+event = {
+id = 1000027
+picture = "Depression1"
+country = FRA
+style = 2
+
+name = "EVT_1000027_NAME"
+desc = "EVT_1000027_DESC"
+
+date = { day = 16 month = may year = 1936 }
+
+action_a = {
+name = "EVT_1000027_OPTIONA"
+	command = { }
+	}
+}
+
+event = {
+id = 1000028
+picture = "trainingindia"
+country = PRK
+style = 2
+
+trigger = { 
+	flag = 3rdI_1_PRK
+}
+
+name = "EVT_1000028_NAME"
+desc = "EVT_1000028_DESC"
+
+date = { day = 17 month = may year = 1936 }
+
+action_a = {
+ai_chance = 95
+name = "EVT_1000028_OPTIONA"
+	command = { type = relation which = PAK value = -30 }
+	command = { type = relation which = IND value = -30 }
+	command = { type = trigger which = 1000029 }
+	command = { type = trigger which = 1000030 }
+	}
+action_b = {
+ai_chance = 5
+name = "EVT_1000028_OPTIONB"
+	command = { type = relation which = PAK value = 10 }
+	command = { type = relation which = IND value = 10 }
+	}
+}
+event = {
+id = 1000029
+picture = "trainingindia"
+country = FRA
+style = 2
+
+trigger = { 
+	event = 1000028
+	flag = 3rdI_1
+}
+
+name = "EVT_1000029_NAME"
+desc = "EVT_1000029_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_1000029_OPTIONA"
+	command = { type = relation which = PRK value = 20 }
+	command = { type = relation which = PAK value = -20 }
+	command = { type = relation which = IND value = -20 }
+        command = { type = event which = 101267 where = PRK when = 60 }
+	}
+action_b = {
+ai_chance = 5
+name = "EVT_1000029_OPTIONB"
+	command = { type = relation which = PRK value = -20 }
+	command = { type = sleepevent which = 101224 }
+	}
+}
+
+event = {
+id = 1000030
+picture = "trainingindia"
+country = ENG
+style = 2
+
+trigger = { 
+	event = 1000028
+	flag = 3rdI_1
+	flag = 3rdI_1_ENG
+}
+
+name = "EVT_1000030_NAME"
+desc = "EVT_1000030_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_1000030_OPTIONA"
+	command = { type = relation which = PRK value = 20 }
+	command = { type = relation which = PAK value = -20 }
+	command = { type = relation which = IND value = -20 }
+        command = { type = event which = 101268 where = PRK when = 70 }
+	}
+action_b = {
+ai_chance = 5
+name = "EVT_1000030_OPTIONB"
+	command = { type = relation which = PRK value = -20 }
+	command = { type = sleepevent which = 101225 }
+	}
+}
+
+event = {
+id = 1000031
+picture = "Third International11"
+country = FRA
+style = 2
+
+name = "EVT_1000031_NAME"
+desc = "EVT_1000031_DESC"
+
+date = { day = 18 month = may year = 1936 }
+
+action_a = {
+name = "EVT_1000031_OPTIONA"
+	command = { type = dissent value = -3 }
+	}
+}

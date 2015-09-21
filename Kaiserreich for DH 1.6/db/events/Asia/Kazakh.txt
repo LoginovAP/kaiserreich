@@ -1,0 +1,1460 @@
+event = {
+	id = 750400
+	picture = "Kazakhstan"
+	country = KAZ
+	style = 2
+
+
+	name = "EVT_750400_NAME"
+	desc = "EVT_750400_DESC"
+
+	date = { day = 1 month = july year = 1936 }
+	offset = 30
+	deathdate = { day = 29 month = september year = 1936 }
+
+
+	action_a = {
+		ai_chance = 40
+		name = "EVT_750400_OPTIONA"
+		command = { type = headofgovernment which = 520013 }
+                command = { type = dissent value = -10 }
+                command = { type = relation which = TRA value = -80 }
+                command = { type = relation which = RUS value = -80 }
+                command = { type = relation which = KYG value = 40 }
+                command = { type = setflag which = KAZ_TUR  }
+                command = { type = sleepevent which = 750451 }
+                command = { type = sleepevent which = 750460 }
+                command = { type = sleepevent which = 750464 }
+		}
+
+	action_b = {
+		ai_chance = 35
+		name = "EVT_750400_OPTIONB"
+		command = { type = headofgovernment which = 520041 }
+                command = { type = construct which = ic where = 1116 value = 1 }
+                command = { type = construct which = ic where = 1117 value = 1 }
+                command = { type = construct which = ic where = 504 value = 1 }
+                command = { type = construct which = ic where = 505 value = 1 }
+                command = { type = dissent value = 5 }
+                command = { type = relation which = TRA value = -80 }
+                command = { type = relation which = RUS value = 80 }
+                command = { type = relation which = KYG value = -80 }
+                command = { type = setflag which = KAZ_RUS  }
+		}
+
+		action_c = {
+		ai_chance = 25
+		name = "EVT_750400_OPTIONC"
+		command = { type = headofgovernment which = 520014 }
+                command = { type = add_division  value = cavalry when = 6 }
+                command = { type = add_division  value = cavalry when = 6 }
+                command = { type = add_division  value = cavalry when = 6 }
+                command = { type = add_division  value = cavalry when = 6 }
+                command = { type = dissent value = 10 }
+                command = { type = relation which = TRA value = 80 }
+                command = { type = relation which = RUS value = -80 }
+                command = { type = relation which = KYG value = -80 }
+                command = { type = setflag which = KAZ_COS  }
+                command = { type = sleepevent which = 750451 }
+                command = { type = sleepevent which = 750460 }
+                command = { type = sleepevent which = 750464 }
+}
+
+
+}
+
+
+### Cossack Seperatism
+
+event = {
+	id = 750401
+	random = no
+	country = TRA
+	style = 2
+        picture = "Cossacks5"
+	  
+	trigger = {
+        exists = KAZ
+        NOT = {  
+        atwar = TRA 
+        ispuppet = RUS
+        flag = KAZ_COS
+        alliance = { country = TRA country = KAZ }
+        }
+	}
+
+	name = "EVT_750401_NAME"
+	desc = "EVT_750401_DESC"
+	
+
+        date = { day = 1 month = august year = 1936 }
+	offset = 720
+	deathdate = { day = 1 month = january year = 1949 }
+
+	action_a = {
+
+		ai_chance = 30
+		name = "EVT_750401_OPTIONA"
+                command = { type = addcore which = 660 } #Volzhsky
+                command = { type = addcore which = 706 } #Astrakhan
+                command = { type = addcore which = 1113 } #Uralsk
+                command = { type = belligerence which = TRA value = 10  }
+                command = { type = domestic which = interventionism value = 2 }
+                command = { type = trigger which = 750402 }
+                command = { type = relation which = KAZ value = -120 }
+		}
+
+	action_b = {
+		ai_chance = 40
+		name = "EVT_750401_OPTIONB"
+                command = { type = addcore which = 660 } #Volzhsky
+                command = { type = addcore which = 706 } #Astrakhan
+                command = { type = addcore which = 1113 } #Uralsk
+                command = { type = belligerence which = TRA value = 5 }
+                command = { type = domestic which = interventionism value = 1 }
+                command = { type = relation which = KAZ value = -60 }
+                }
+
+	action_c = {
+		ai_chance = 30
+		name = "EVT_750401_OPTIONC"
+                command = { type = domestic which = interventionism value = -2 }
+                command = { type = relation which = KAZ value = 60 }
+                command = { type = dissent value = 10 }  
+}
+}
+
+
+
+
+event = {
+	id = 750402
+	random = no
+	country = KAZ
+	style = 2
+picture = "Cossacks10"
+	  
+	
+	name = "EVT_750402_NAME"
+	desc = "EVT_750402_DESC"
+	
+
+
+	action_a = {
+		ai_chance = 60
+		name = "EVT_750402_OPTIONA"
+		command = { type = war which = TRA }
+		command = { type = dissent value = 15 }  
+		}
+
+	action_b = {
+		ai_chance = 30
+		name = "EVT_750402_OPTIONB"
+		command = { type = secedeprovince which = TRA value = 1113 }
+		command = { type = secedeprovince which = TRA value = 706 }
+		command = { type = secedeprovince which = TRA value = 660 }
+		command = { type = belligerence which = TRA value = 5 }
+		command = { type = domestic which = interventionism value = 1 }
+		}
+
+	action_c = {
+		ai_chance = 10
+		name = "EVT_750402_OPTIONC"
+		command = { type = secedeprovince which = TRA value = 1113 }
+		command = { type = secedeprovince which = TRA value = 706 }
+		command = { type = secedeprovince which = TRA value = 660 }
+		command = { type = removecore which = 1113 }
+		command = { type = removecore which = 706 }
+		command = { type = removecore which = 660 }
+		command = { type = domestic which = interventionism value = -2 }
+		command = { type = relation which = TRA value = 60 }
+		}
+}
+
+
+
+
+### Turkmen Seperatism
+
+event = {
+	id = 750403
+	picture = "Kazakhstan2"
+	country = KYG
+	style = 2
+	  
+	trigger = {
+	exists = KAZ
+	NOT = {  
+	atwar = KYG 
+        flag = KAZ_TUR 
+	alliance = { country = KYG country = KAZ }
+        ispuppet = KYG
+	}
+	}
+
+	name = "EVT_750403_NAME"
+	desc = "EVT_750403_DESC"
+	
+
+	date = { day = 1 month = april year = 1937 }
+	offset = 320
+	deathdate = { day = 29 month = december year = 1952 }
+
+	action_a = {
+		ai_chance = 70
+		name = "EVT_750403_OPTIONA"
+		command = { type = war which = KAZ }
+		command = { type = trigger which = 750500 }
+		command = { type = belligerence which = KYG value = 10 }
+		command = { type = relation which = KAZ value = -200 }
+		}
+
+	action_b = {
+		ai_chance = 15
+		name = "EVT_750403_OPTIONB"
+		command = { type = addcore which = 1118 }
+		command = { type = addcore which = 1110 }
+		command = { type = addcore which = 1112 }
+		command = { type = addcore which = 1108 }
+		command = { type = addcore which = 1109 }
+		command = { type = belligerence which = KYG value = 5 }
+		command = { type = relation which = KAZ value = -60 }
+}
+
+	action_c = {
+		ai_chance = 15
+		name = "EVT_750403_OPTIONC"
+		command = { type = domestic which = interventionism value = -2 }
+		command = { type = relation which = KAZ value = 60 }
+		command = { type = dissent value = 10 }  
+}
+}
+
+
+
+
+
+#### Russian seperatism
+
+
+event = {
+	id = 750404
+	country = RUS
+	style = 2
+        picture = "Kazakhstan2"
+	  
+	trigger = {
+	OR = {
+	flag = RUS_AOD
+	flag = RUS_KGD
+	}
+	exists = KAZ
+	NOT = { 
+        exists = SOV 
+        flag = RUS_ISO
+        flag = KAZ_RUS
+	atwar = RUS 
+	exists = SIB
+	ispuppet = RUS
+        alliance = { country = RUS country = KAZ }
+	}
+	}
+
+	name = "EVT_750404_NAME"
+	desc = "EVT_750404_DESC"
+	
+
+        date = { day = 1 month = may year = 1937 }
+	offset = 120
+	deathdate = { day = 1 month = january year = 1960 }
+
+	action_a = {
+		ai_chance = 40
+		name = "EVT_750404_OPTIONA"
+		command = { type = addcore which = 1113 }
+		command = { type = addcore which = 706 }
+		command = { type = addcore which = 1115 }
+		command = { type = addcore which = 502 }
+		command = { type = addcore which = 501 }
+		command = { type = addcore which = 498 }
+		command = { type = addcore which = 499 }
+		command = { type = addcore which = 1140 }
+		command = { type = addcore which = 660  }
+                command = { type = addcore which = 666  }
+                command = { type = addcore which = 667  }
+                command = { type = addcore which = 1133 }
+                command = { type = addcore which = 1134 }
+                command = { type = addcore which = 1132 }
+                command = { type = addcore which = 1136 }
+                command = { type = addcore which = 1137 }
+                command = { type = addcore which = 1138 }
+                command = { type = addcore which = 1139 }
+                command = { type = addcore which = 1141 }
+                command = { type = addcore which = 664  }
+                command = { type = addcore which = 690  }
+		command = { type = belligerence which = RUS value = 10  }
+		command = { type = domestic which = interventionism value = 2 }
+		command = { type = trigger which = 750406 }
+		command = { type = relation which = KAZ value = -120 }
+		}
+
+	action_b = {
+		ai_chance = 20
+		name = "EVT_750404_OPTIONB"
+		command = { type = addcore which = 1113 }
+		command = { type = addcore which = 706 }
+		command = { type = addcore which = 1115 }
+		command = { type = addcore which = 502 }
+		command = { type = addcore which = 501 }
+		command = { type = addcore which = 498 }
+		command = { type = addcore which = 499 }
+		command = { type = addcore which = 1140 }
+		command = { type = addcore which = 660  }
+                command = { type = addcore which = 666  }
+                command = { type = addcore which = 667  }
+                command = { type = addcore which = 1133 }
+                command = { type = addcore which = 1134 }
+                command = { type = addcore which = 1132 }
+                command = { type = addcore which = 1136 }
+                command = { type = addcore which = 1137 }
+                command = { type = addcore which = 1138 }
+                command = { type = addcore which = 1139 }
+                command = { type = addcore which = 1141 }
+                command = { type = addcore which = 664  }
+                command = { type = addcore which = 690  }
+		command = { type = belligerence which = RUS value = 5 }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = relation which = KAZ value = -60 }
+		}
+
+	action_c = {
+		ai_chance = 20
+		name = "EVT_750404_OPTIONC"
+                trigger = {
+                flag = RUS_EXP
+                }
+		command = { type = relation which = KAZ value = -120 }
+		command = { type = belligerence which = RUS value = 5 }
+		command = { type = addcore which = 1113 }
+		command = { type = addcore which = 706 }
+		command = { type = addcore which = 1115 }
+		command = { type = addcore which = 502 }
+		command = { type = addcore which = 501 }
+		command = { type = addcore which = 498 }
+		command = { type = addcore which = 499 }
+		command = { type = addcore which = 1140 }
+		command = { type = addcore which = 660  }
+                command = { type = addcore which = 666  }
+                command = { type = addcore which = 667  }
+                command = { type = addcore which = 1133 }
+                command = { type = addcore which = 1134 }
+                command = { type = addcore which = 1132 }
+                command = { type = addcore which = 1136 }
+                command = { type = addcore which = 1137 }
+                command = { type = addcore which = 1138 }
+                command = { type = addcore which = 1139 }
+                command = { type = addcore which = 1141 }
+                command = { type = addcore which = 664  }
+                command = { type = addcore which = 690  }
+		command = { type = war which = KAZ }
+		}
+
+	action_d = {
+		ai_chance = 10
+		name = "EVT_750404_OPTIOND"
+                trigger = {
+                flag = RUS_REAL
+                }
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = relation which = KAZ value = 60 }
+		}
+}
+
+
+
+
+event = {
+	id = 750406
+	picture = "Kazakhstan2"
+	country = KAZ
+	style = 2
+	  
+
+	name = "EVT_750406_NAME"
+	desc = "EVT_750406_DESC"
+	
+	action_a = {
+		ai_chance = 40
+		name = "EVT_750406_OPTIONA"
+		command = { type = war which = RUS }
+		command = { type = dissent value = 15 }  
+		}
+
+	action_b = {
+		ai_chance = 30
+		name = "EVT_750406_OPTIONB"
+		command = { type = secedeprovince which = RUS value = 1113 }
+		command = { type = secedeprovince which = RUS  value = 706 }
+		command = { type = secedeprovince which = RUS value = 1115 }
+		command = { type = secedeprovince which = RUS value = 502 }
+		command = { type = setflag which = RUS_CENASIAPEACE } #With Alash-Orda Russian border is stable
+		command = { type = secedeprovince which = RUS value = 501 }
+		command = { type = secedeprovince which = RUS value = 498 }
+		command = { type = secedeprovince which = RUS value = 499 }
+		command = { type = secedeprovince which = RUS value = 1140 }
+		command = { type = secedeprovince which = RUS value = 660 }
+		command = { type = secedeprovince which = RUS value = 666 }
+		command = { type = secedeprovince which = RUS value = 667 }
+		command = { type = secedeprovince which = RUS value = 1133 }
+		command = { type = secedeprovince which = RUS value = 1134 }
+		command = { type = secedeprovince which = RUS value = 1132 }
+		command = { type = secedeprovince which = RUS value = 1136 }
+		command = { type = secedeprovince which = RUS value = 1137 }
+		command = { type = secedeprovince which = RUS value = 1138 }
+		command = { type = secedeprovince which = RUS value = 1139 }
+		command = { type = secedeprovince which = RUS value = 1141 }
+                command = { type = secedeprovince which = RUS value = 664 }
+		command = { type = secedeprovince which = RUS value = 690 }
+		command = { type = belligerence which = RUS value = 5 }
+		command = { type = domestic which = interventionism value = 1 }
+		}
+
+	action_c = {
+		ai_chance = 30
+		name = "EVT_750406_OPTIONC"
+		command = { type = secedeprovince which = RUS value = 1113 }
+		command = { type = secedeprovince which = RUS  value = 706 }
+		command = { type = secedeprovince which = RUS value = 1115 }
+		command = { type = secedeprovince which = RUS value = 502 }
+		command = { type = setflag which = RUS_CENASIAPEACE } #With Alash-Orda Russian border is stable
+		command = { type = secedeprovince which = RUS value = 501 }
+		command = { type = secedeprovince which = RUS value = 498 }
+		command = { type = secedeprovince which = RUS value = 499 }
+		command = { type = secedeprovince which = RUS value = 1140 }
+		command = { type = secedeprovince which = RUS value = 660 }
+		command = { type = secedeprovince which = RUS value = 666 }
+		command = { type = secedeprovince which = RUS value = 667 }
+		command = { type = secedeprovince which = RUS value = 1133 }
+		command = { type = secedeprovince which = RUS value = 1134 }
+		command = { type = secedeprovince which = RUS value = 1132 }
+		command = { type = secedeprovince which = RUS value = 1136 }
+		command = { type = secedeprovince which = RUS value = 1137 }
+		command = { type = secedeprovince which = RUS value = 1138 }
+		command = { type = secedeprovince which = RUS value = 1139 }
+		command = { type = secedeprovince which = RUS value = 1141 }
+                command = { type = secedeprovince which = RUS value = 664 }
+		command = { type = secedeprovince which = RUS value = 690 }
+		command = { type = removecore which = 660 }
+		command = { type = removecore which = 666 }
+		command = { type = removecore which = 667 }
+		command = { type = removecore which = 1133 }
+		command = { type = removecore which = 1134 }
+		command = { type = removecore which = 1132 }
+		command = { type = removecore which = 1136 }
+		command = { type = removecore which = 1137 }
+		command = { type = removecore which = 1138 }
+		command = { type = removecore which = 1139 }
+		command = { type = removecore which = 1141 }
+		command = { type = removecore which = 1113 }
+		command = { type = removecore which = 706 }
+		command = { type = removecore which = 1115 }
+		command = { type = removecore which = 502 }
+		command = { type = removecore which = 501 }
+		command = { type = removecore which = 498 }
+		command = { type = removecore which = 499 }
+		command = { type = removecore which = 1140 }
+                command = { type = removecore which = 664 }
+		command = { type = removecore which = 690 }
+		command = { type = domestic which = interventionism value = -2 }
+		command = { type = relation which = RUS value = 60 }
+		}
+}
+
+
+######
+###  KAZ favours Russia (same as Cossack events....)
+######
+
+###### Relations with Russia
+
+#### Tsarist Russia
+
+
+event = {
+	id = 750451
+	picture = "Tsar"
+	country = KAZ
+	style = 2
+
+	trigger = {
+	flag = RUS_TSAR
+	exists = RUS
+	NOT = { 
+        war = { country = RUS country = KAZ }
+	exists = SOV 
+	ispuppet = RUS
+	}		
+	}
+
+
+	name = "EVT_750451_NAME"
+	desc = "EVT_750451_DESC"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 60
+	deathdate = { day = 1 month = december year = 1960 }
+
+	action_a = {
+		ai_chance = 35
+		name = "EVT_750451_OPTIONA"
+		command = { type = trigger which = 750452  }
+                command = { type = sleepevent which = 750460 }
+		}
+
+	action_b = {
+		ai_chance = 35
+		name = "EVT_750451_OPTIONB"
+		command = { type = trigger which = 750453  }
+                command = { type = sleepevent which = 750460 }
+		}
+
+	action_c = {
+		ai_chance = 40
+                trigger = { NOT = { flag = KAZ_RUS } }
+		name = "EVT_750451_OPTIONC"
+		command = { type = trigger which = 750454  }
+		command = { type = dissent value = 10 }
+                command = { type = sleepevent which = 750460 }
+}
+}
+
+
+
+event = {
+	id = 750452
+	country = RUS
+	style = 2
+        picture = "crownofrussia"
+	
+	name = "EVT_750452_NAME"
+	desc = "EVT_750452_DESC"
+
+	action_a = {
+		ai_chance =  65
+		name = "EVT_750452_OPTIONA"
+		command = { type = relation which = KAZ value = 200 }
+		command = { type = alliance which =  KAZ }
+		command = { type = setflag which = RUS_CENASIAPEACE } #With Alash-Orda Russian border is stable
+		command = { type = sleepevent which = 750460 }
+		command = { type = sleepevent which = 750464 }
+		}
+
+	action_b = {
+		ai_chance = 5
+		name = "EVT_750452_OPTIONB"
+		command = { type = relation which = KAZ value = -80 }
+		command = { type = domestic which = interventionism value = -1 }
+		}
+
+	action_c = {
+		ai_chance = 30
+		name = "EVT_750452_OPTIONC"
+		command = { type = relation which = KAZ value = -200 }
+		command = { type = addcore which = 1113 }
+		command = { type = addcore which = 660  }
+                command = { type = addcore which = 666  }
+                command = { type = addcore which = 667  }
+                command = { type = addcore which = 1133 }
+                command = { type = addcore which = 1134 }
+                command = { type = addcore which = 1132 }
+                command = { type = addcore which = 1136 }
+                command = { type = addcore which = 1137 }
+                command = { type = addcore which = 1138 }
+                command = { type = addcore which = 1139 }
+                command = { type = addcore which = 1141 }
+		command = { type = addcore which = 706 }
+		command = { type = addcore which = 1115 }
+		command = { type = addcore which = 502 }
+		command = { type = addcore which = 501 }
+		command = { type = addcore which = 498 }
+		command = { type = addcore which = 499 }
+		command = { type = addcore which = 1140 }
+		command = { type = belligerence which = RUS value = 10 }
+		command = { type = sleepevent which = 750460 }
+		command = { type = sleepevent which = 750464 }
+		}
+}
+
+
+
+event = {
+	id = 750453
+	picture = "crownofrussia"
+	country = RUS
+	style = 2
+
+	name = "EVT_750453_NAME"
+	desc = "EVT_750453_DESC"
+
+	action_a = {
+		ai_chance = 60
+		name = "EVT_750453_OPTIONA"
+		command = { type = inherit which = KAZ  }
+		command = { type = addcore which = 1113 }
+		command = { type = addcore which = 706 }
+		command = { type = addcore which = 1115 }
+		command = { type = addcore which = 502 }
+		command = { type = addcore which = 660  }
+                command = { type = addcore which = 666  }
+                command = { type = addcore which = 667  }
+                command = { type = addcore which = 1133 }
+                command = { type = addcore which = 1134 }
+                command = { type = addcore which = 1132 }
+                command = { type = addcore which = 1136 }
+                command = { type = addcore which = 1137 }
+                command = { type = addcore which = 1138 }
+                command = { type = addcore which = 1139 }
+                command = { type = addcore which = 1141 }
+		command = { type = addcore which = 501 }
+		command = { type = addcore which = 498 }
+		command = { type = addcore which = 499 }
+		command = { type = addcore which = 1140 }
+		command = { type = addcore which = 1114 }
+		command = { type = addcore which = 1117 }
+		command = { type = addcore which = 1118 }
+		command = { type = addcore which = 1116 }
+		command = { type = addcore which = 1111 }
+		command = { type = addcore which = 500 }
+		command = { type = addcore which = 503 }
+		command = { type = addcore which = 505 }
+		command = { type = addcore which = 507 }
+		command = { type = addcore which = 504 }
+		command = { type = addcore which = 506 }
+		command = { type = addcore which = 1108 }
+		command = { type = addcore which = 1109 }
+		command = { type = addcore which = 1110 }
+		command = { type = addcore which = 1112 }
+                command = { type = addcore which = 1101 }
+		command = { type = addcore which = 1107 }
+		command = { type = dissent value = 10 }  # Integrating the Kazakh territories
+		command = { type = sleepevent which = 750460 }
+		command = { type = sleepevent which = 750464 }
+		}
+
+	action_b = {
+		ai_chance = 35
+		name = "EVT_750453_OPTIONB"
+		command = { type = relation which = KAZ value = 200 }
+		command = { type = alliance which =  KAZ  }
+		command = { type = make_puppet which = KAZ }
+		command = { type = setflag which = RUS_CENASIAPEACE } #With Alash-Orda Russian border is stable
+		command = { type = sleepevent which = 750460 }
+		command = { type = sleepevent which = 750464 }
+		}
+
+	action_c = {
+		ai_chance = 1
+		name = "EVT_750453_OPTIONC"
+		command = { type = relation which = KAZ value = -80 }
+		command = { type = domestic which = interventionism value = -1 }
+		}
+}
+
+
+event = {
+	id = 750454
+	picture = "crownofrussia"
+	country = RUS
+	style = 2
+
+	name = "EVT_750454_NAME"
+	desc = "EVT_750454_DESC"
+
+	action_a = {
+		ai_chance = 30
+		name = "EVT_750454_OPTIONA"
+		command = { type = relation which = KAZ value = -50 }
+		}
+
+	action_b = {
+		ai_chance = 30
+		name = "EVT_750454_OPTIONB"
+		command = { type = relation which = KAZ value = 100 }
+		command = { type = belligerence which = RUS value = -5 }
+		command = { type = money value = -120  }
+		}
+
+	action_c = {
+		ai_chance = 40
+		name = "EVT_750454_OPTIONC"
+		command = { type = relation which = KAZ value = -200 }
+		command = { type = addcore which = 1113 }
+		command = { type = addcore which = 706 }
+		command = { type = addcore which = 1115 }
+		command = { type = addcore which = 502 }
+		command = { type = addcore which = 660  }
+                command = { type = addcore which = 666  }
+                command = { type = addcore which = 667  }
+                command = { type = addcore which = 1133 }
+                command = { type = addcore which = 1134 }
+                command = { type = addcore which = 1132 }
+                command = { type = addcore which = 1136 }
+                command = { type = addcore which = 1137 }
+                command = { type = addcore which = 1138 }
+                command = { type = addcore which = 1139 }
+                command = { type = addcore which = 1141 }
+		command = { type = addcore which = 501 }
+		command = { type = addcore which = 498 }
+		command = { type = addcore which = 499 }
+		command = { type = addcore which = 1140 }
+                command = { type = war which = KAZ }
+		command = { type = belligerence which = RUS value = 10 }
+		command = { type = sleepevent which = 750460 }
+		command = { type = sleepevent which = 750464 }
+}
+}
+
+
+
+## Realpolitik Russia
+
+event = {
+	id = 750460
+	random = no
+	country = KAZ
+	style = 2
+        picture = "Kazakhstan2"
+
+	trigger = {
+	OR = {
+	flag = RUS_AOD
+	flag = RUS_KGD
+	}
+	exists = RUS
+	flag = RUS_REAL
+	NOT = {
+        exists = SOV
+        exists = SIB
+	war = { country = KAZ country = RUS }
+	alliance = { country = KAZ country = RUS }
+        ispuppet = RUS
+	}
+	}
+
+	name = "EVT_750460_NAME"
+	desc = "EVT_750460_DESC"
+
+	date = { day = 3 month = august year = 1937 }
+	offset = 60
+	deathdate = { day = 4 month = october year = 1950 }
+
+	action_a = {
+		ai_chance = 15
+		name = "EVT_750460_OPTIONA"
+                command = { type = trigger which = 750461 }
+                command = { type = sleepevent which = 750451 }
+		}
+
+	action_b = {
+		ai_chance = 35
+		name = "EVT_750460_OPTIONB"
+                trigger = {
+                NOT = {
+                alliance = { country = CAN country = RUS }
+                alliance = { country = JAP country = RUS }
+                alliance = { country = GER country = RUS }
+                alliance = { country = FRA country = RUS }
+                }
+                }
+                command = { type = trigger which = 750462 }
+                command = { type = sleepevent which = 750451 }
+		}
+
+	action_c = {
+		ai_chance = 50
+                trigger = { NOT = { flag = KAZ_RUS } }
+		name = "EVT_750460_OPTIONC"
+                command = { type = trigger which = 750463 }
+                command = { type = sleepevent which = 750451 }
+		}
+}
+
+
+
+
+event = {
+	id = 750461
+	country = RUS
+	style = 2
+        picture = "Kazakhstan2"
+
+	name = "EVT_750461_NAME"
+	desc = "EVT_750461_DESC"
+
+	action_a = {
+		ai_chance = 55
+		name = "EVT_750461_OPTIONA"
+		command = { type = relation which = KAZ value = 200 }
+		command = { type = alliance which =  KAZ }
+		command = { type = make_puppet which = KAZ }
+		command = { type = setflag which = RUS_CENASIAPEACE } #With Alash-Orda Russian border is stable
+		command = { type = add_division value = cavalry when = 6 }
+		command = { type = add_division value = cavalry when = 6 }
+		command = { type = add_division value = cavalry when = 6 }
+		command = { type = sleepevent which = 750460 }
+		command = { type = sleepevent which = 750464 }
+		}
+
+	action_b = {
+		ai_chance = 1
+		name = "EVT_750461_OPTIONB"
+		command = { type = relation which = KAZ value = -80 }
+		}
+
+	action_c = {
+		ai_chance = 30
+		name = "EVT_750461_OPTIONC"
+		command = { type = trigger which = 750406   }
+		command = { type = relation which = KAZ value = -200 }
+		command = { type = addcore which = 1113 }
+		command = { type = addcore which = 706 }
+		command = { type = addcore which = 1115 }
+		command = { type = addcore which = 502 }
+		command = { type = addcore which = 660  }
+                command = { type = addcore which = 666  }
+                command = { type = addcore which = 667  }
+                command = { type = addcore which = 1133 }
+                command = { type = addcore which = 1134 }
+                command = { type = addcore which = 1132 }
+                command = { type = addcore which = 1136 }
+                command = { type = addcore which = 1137 }
+                command = { type = addcore which = 1138 }
+                command = { type = addcore which = 1139 }
+                command = { type = addcore which = 1141 }
+		command = { type = addcore which = 501 }
+		command = { type = addcore which = 498 }
+		command = { type = addcore which = 499 }
+		command = { type = addcore which = 1140 }
+		command = { type = belligerence which = RUS value = 10 }
+		}
+}
+
+
+
+event = {
+	id = 750462
+	country = RUS
+	style = 2
+	picture = "Kazakhstan2"
+	
+	name = "EVT_750462_NAME"
+	desc = "EVT_750462_DESC"
+
+	action_a = {
+		ai_chance = 40
+		name = "EVT_750462_OPTIONA"
+		command = { type = relation which = KAZ value = 200 }
+		command = { type = alliance which =  KAZ }
+		command = { type = setflag which = RUS_CENASIAPEACE } #With Alash-Orda Russian border is stable
+		}
+
+	action_b = {
+		ai_chance = 25
+		name = "EVT_750462_OPTIONB"
+		command = { type = relation which = KAZ value = -80 }
+		}
+
+	action_c = {
+		ai_chance = 35
+		name = "EVT_750462_OPTIONC"
+		command = { type = trigger which = 750406  }
+		command = { type = relation which = KAZ value = -200 }
+		command = { type = addcore which = 1113 }
+		command = { type = addcore which = 706 }
+		command = { type = addcore which = 1115 }
+		command = { type = addcore which = 502 }
+		command = { type = addcore which = 660  }
+                command = { type = addcore which = 666  }
+                command = { type = addcore which = 667  }
+                command = { type = addcore which = 1133 }
+                command = { type = addcore which = 1134 }
+                command = { type = addcore which = 1132 }
+                command = { type = addcore which = 1136 }
+                command = { type = addcore which = 1137 }
+                command = { type = addcore which = 1138 }
+                command = { type = addcore which = 1139 }
+                command = { type = addcore which = 1141 }
+		command = { type = addcore which = 501 }
+		command = { type = addcore which = 498 }
+		command = { type = addcore which = 499 }
+		command = { type = addcore which = 1140 }
+		command = { type = belligerence which = RUS value = 10 }
+		}
+}
+
+
+
+event = {
+	id = 750463
+	country = RUS
+	style = 2
+	picture = "Kazakhstan2"
+	
+	name = "EVT_750463_NAME"
+	desc = "EVT_750463_DESC"
+
+	action_a = {
+		ai_chance = 5
+		name = "EVT_750463_OPTIONA"
+		command = { type = relation which = KAZ value = -80 }
+		}
+
+	action_b = {
+		ai_chance = 25
+		name = "EVT_750463_OPTIONB"
+		command = { type = relation which = KAZ value = 100 }
+		command = { type = belligerence which = RUS value = -5 }
+		command = { type = money value = -120  }
+		}
+
+	action_c = {
+		ai_chance = 50
+		name = "EVT_750463_OPTIONC"
+		command = { type = trigger which = 750406 }
+		command = { type = relation which = KAZ value = -200 }
+		command = { type = addcore which = 1113 }
+		command = { type = addcore which = 706 }
+		command = { type = addcore which = 1115 }
+		command = { type = addcore which = 502 }
+		command = { type = addcore which = 501 }
+		command = { type = addcore which = 498 }
+		command = { type = addcore which = 499 }
+		command = { type = addcore which = 1140 }
+		command = { type = belligerence which = RUS value = 5 }
+		}
+
+        action_d = {
+		ai_chance = 25
+		name = "EVT_750463_OPTIOND"
+                trigger = {
+                flag = RUS_EXP
+                }
+		command = { type = relation which = KAZ value = -200 }
+		command = { type = addcore which = 1113 }
+		command = { type = addcore which = 706 }
+		command = { type = addcore which = 1115 }
+		command = { type = addcore which = 502 }
+		command = { type = addcore which = 660  }
+                command = { type = addcore which = 666  }
+                command = { type = addcore which = 667  }
+                command = { type = addcore which = 1133 }
+                command = { type = addcore which = 1134 }
+                command = { type = addcore which = 1132 }
+                command = { type = addcore which = 1136 }
+                command = { type = addcore which = 1137 }
+                command = { type = addcore which = 1138 }
+                command = { type = addcore which = 1139 }
+                command = { type = addcore which = 1141 }
+		command = { type = addcore which = 501 }
+		command = { type = addcore which = 498 }
+		command = { type = addcore which = 499 }
+		command = { type = addcore which = 1140 }
+		command = { type = belligerence which = RUS value = 5 }
+		command = { type = war which = KAZ }
+		}
+}
+
+#######
+
+
+event = {
+	id = 750469
+	picture = "crownofrussia"
+	country = KAZ
+	style = 2
+
+	trigger = {
+	flag = RUS_TSAR
+	puppet = { country = KAZ country = RUS  } 
+	}
+
+
+	name = "EVT_750469_NAME"
+	desc = "EVT_750469_DESC"
+
+	date = { day = 1 month = january year = 1937 }
+	offset = 60
+	deathdate = { day = 1 month = december year = 1949 }
+
+	action_a = {
+		name = "EVT_750469_OPTIONA"
+   		command = { type = set_domestic which =   democratic value =   4   }
+    		command = { type = set_domestic which = political_left value =   3  }
+		command = { type = headofstate which = 520040 }
+		command = { type = dissent value = -10 }
+		command = { type = trigger which = 750470  }
+		command = { type = free_metal value = 7  }
+		command = { type = free_energy value = 7  }
+		command = { type = free_rare_materials value = 5  }
+		command = { type = free_oil   value = 2  }
+		}
+
+}
+
+
+
+event = {
+	id = 750470
+	picture = "crownofrussia"
+	country = RUS
+	style = 2
+
+	name = "EVT_750470_NAME"
+	desc = "EVT_750470_DESC"
+
+	action_a = {
+	name = "EVT_750470_OPTIONA"
+        command = { type = dissent value = -10 }
+	}
+
+}
+
+#############
+
+event = {
+	id = 750471
+	random = no
+	country = KAZ
+	style = 2
+
+	trigger = {
+	OR = {
+	flag = RUS_AOD
+	flag = RUS_KGD
+	}
+	war = { country = KAZ country = KYG }
+	NOT = {  
+	exists = SOV 
+	exists = SIB
+	}
+	OR = {  
+	flag = RUS_EXP
+	flag = RUS_REAL
+	}
+	NOT = { 
+        alliance = { country = KAZ country = TUR }
+ 	alliance = { country = KAZ country = RUS }
+	puppet = { country = KAZ country = RUS } 
+	war = { country = KAZ country = RUS }
+	war = { country = KYG country = RUS }
+	}
+	}
+
+	name = "EVT_750471_NAME"
+	desc = "EVT_750471_DESC"
+	picture = "politics2"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 20
+	deathdate = { day = 29 month = december year = 1949 }
+
+	action_a = {
+		ai_chance =  20
+		name = "EVT_750471_OPTIONA"
+		command = { type = trigger which = 750472 }
+		command = { type = domestic which = interventionism value = 1 }
+		}
+	
+	action_b = {
+		ai_chance =  60
+		name = "EVT_750471_OPTIONB"
+		command = { type = trigger which = 750474 }
+		}
+		
+
+	action_c = {
+		ai_chance =  20
+		name = "EVT_750471_OPTIONC"
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = trigger which = 750475 }
+		}
+	}
+
+
+
+event = {
+	id = 750472
+	random = no
+	country = RUS
+	style = 2
+        picture = "PustPodoidut"
+
+	name = "EVT_750472_NAME"
+	desc = "EVT_750472_DESC"
+
+	action_a = {
+		ai_chance = 35
+		name = "EVT_750472_OPTIONA"
+                command = { type = relation which = KAZ value = 100 }
+	        command = { type = supplies value = -500 }
+	        command = { type = money value = -100  }
+		command = { type = trigger which = 750473 }
+		}
+
+	action_b = {
+		ai_chance = 25
+		name = "EVT_750472_OPTIONB"
+                command = { type = relation which = KAZ value = 200 }
+                command = { type = alliance which =  KAZ }
+                command = { type = war which = KYG }
+                command = { type = trigger which = 750473 }
+		}
+
+	action_c = {
+		ai_chance = 15
+		name = "EVT_750472_OPTIONC"
+		command = { type = relation which = KAZ value = -80 }
+		command = { type = domestic which = interventionism value = -1 }
+		}
+
+	action_d = {
+		ai_chance = 25
+		name = "EVT_750472_OPTIOND"
+		command = { type = war which = KAZ }
+		command = { type = relation which = KAZ value = -200 }
+		command = { type = relation which = KYG value = -100 }
+		command = { type = addcore which = 1113 }
+		command = { type = addcore which = 706 }
+		command = { type = addcore which = 1115 }
+		command = { type = addcore which = 502 }
+		command = { type = addcore which = 660  }
+                command = { type = addcore which = 666  }
+                command = { type = addcore which = 667  }
+                command = { type = addcore which = 1133 }
+                command = { type = addcore which = 1134 }
+                command = { type = addcore which = 1132 }
+                command = { type = addcore which = 1136 }
+                command = { type = addcore which = 1137 }
+                command = { type = addcore which = 1138 }
+                command = { type = addcore which = 1139 }
+                command = { type = addcore which = 1141 }
+		command = { type = addcore which = 501 }
+		command = { type = addcore which = 498 }
+		command = { type = addcore which = 499 }
+		command = { type = addcore which = 1140 }
+}
+}
+
+
+event = {
+	id = 750473
+	random = no
+	country = KAZ
+
+
+	name = "EVT_750473_NAME"
+	desc = "EVT_750473_DESC"
+	style = 2
+	picture = "SCW_German Intervention"
+
+	action_a = {
+		name = "EVT_750473_OPTIONA" # Great!
+		command = { type = supplies value = 1000 }
+		command = { type = add_division value = infantry when = 8 }
+		command = { type = add_division value = infantry when = 8 }
+		command = { type = add_division value = cavalry  when = 6  }
+	    	command = { type = steal_tech which = RUS }
+	    	command = { type = steal_tech which = RUS }
+
+	}
+}
+
+
+
+event = {
+	id = 750474
+	random = no
+	country = RUS
+	style = 2
+        picture = "PustPodoidut"
+
+
+	name = "EVT_750474_NAME"
+	desc = "EVT_750474_DESC"
+
+	action_a = {
+		ai_chance = 65
+		name = "EVT_750474_OPTIONA"
+                command = { type = inherit which = KAZ  }
+                command = { type = war which = KYG }
+                command = { type = addcore which = 1113 }
+                command = { type = addcore which = 706 }
+                command = { type = addcore which = 1115 }
+                command = { type = addcore which = 502 }
+                command = { type = addcore which = 660  }
+                command = { type = addcore which = 666  }
+                command = { type = addcore which = 667  }
+                command = { type = addcore which = 1133 }
+                command = { type = addcore which = 1134 }
+                command = { type = addcore which = 1132 }
+                command = { type = addcore which = 1136 }
+                command = { type = addcore which = 1137 }
+                command = { type = addcore which = 1138 }
+                command = { type = addcore which = 1139 }
+                command = { type = addcore which = 1141 }
+                command = { type = addcore which = 501 }
+                command = { type = addcore which = 498 }
+                command = { type = addcore which = 499 }
+                command = { type = addcore which = 1140 }
+                command = { type = addcore which = 1114 }
+                command = { type = addcore which = 1117 }
+                command = { type = addcore which = 1118 }
+                command = { type = addcore which = 1116 }
+                command = { type = addcore which = 1111 }
+                command = { type = addcore which = 500 }
+                command = { type = addcore which = 503 }
+                command = { type = addcore which = 505 }
+                command = { type = addcore which = 507 }
+                command = { type = addcore which = 504 }
+                command = { type = addcore which = 506 }
+                command = { type = addcore which = 1108 }
+                command = { type = addcore which = 1109 }
+                command = { type = addcore which = 1110 }
+                command = { type = addcore which = 1112 }
+                command = { type = addcore which = 1101 }
+                command = { type = addcore which = 1107 }
+                command = { type = dissent value = 4 }  # Integration
+		}
+
+
+	action_b = {
+		ai_chance = 35
+		name = "EVT_750474_OPTIONB"
+                command = { type = relation which = KAZ value = -80 }
+                command = { type = domestic which = interventionism value = -1 }
+}
+}
+
+
+
+
+
+event = {
+	id = 750475
+	random = no
+	country = RUS
+	style = 2
+        picture = "PustPodoidut"
+
+	
+	name = "EVT_750475_NAME"
+	desc = "EVT_750475_DESC"
+
+
+	action_a = {
+		ai_chance = 25
+		name = "EVT_750475_OPTIONA"
+		command = { type = dissent value = 10 }	
+		command = { type = relation which = KAZ value = -80 }
+		command = { type = domestic which = interventionism value = -1 }
+		}
+
+	action_b = {
+		ai_chance = 25
+		name = "EVT_750475_OPTIONB"
+		command = { type = war which = KYG }
+		}
+
+	action_c = {
+		ai_chance = 30
+		name = "EVT_750475_OPTIONC"
+		command = { type = war which = KAZ }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = relation which = KAZ value = -200 }
+		command = { type = relation which = KYG value = -100 }
+		command = { type = addcore which = 1113 }
+		command = { type = addcore which = 706 }
+		command = { type = addcore which = 1115 }
+		command = { type = addcore which = 502 }
+		command = { type = addcore which = 660  }
+                command = { type = addcore which = 666  }
+                command = { type = addcore which = 667  }
+                command = { type = addcore which = 1133 }
+                command = { type = addcore which = 1134 }
+                command = { type = addcore which = 1132 }
+                command = { type = addcore which = 1136 }
+                command = { type = addcore which = 1137 }
+                command = { type = addcore which = 1138 }
+                command = { type = addcore which = 1139 }
+                command = { type = addcore which = 1141 }
+		command = { type = addcore which = 501 }
+		command = { type = addcore which = 498 }
+		command = { type = addcore which = 499 }
+		command = { type = addcore which = 1140 }
+		}
+
+	action_d = {
+		ai_chance = 20
+		name = "EVT_750475_OPTIOND"
+		command = { type = war which = KAZ }
+		command = { type = war which = KYG }
+		command = { type = domestic which = interventionism value = 2 }
+		command = { type = relation which = KAZ value = -200 }
+		command = { type = relation which = KYG value = -200 }
+		command = { type = addcore which = 1113 }
+		command = { type = addcore which = 706 }
+		command = { type = addcore which = 1115 }
+		command = { type = addcore which = 502 }
+		command = { type = addcore which = 660  }
+                command = { type = addcore which = 666  }
+                command = { type = addcore which = 667  }
+                command = { type = addcore which = 1133 }
+                command = { type = addcore which = 1134 }
+                command = { type = addcore which = 1132 }
+                command = { type = addcore which = 1136 }
+                command = { type = addcore which = 1137 }
+                command = { type = addcore which = 1138 }
+                command = { type = addcore which = 1139 }
+                command = { type = addcore which = 1141 }
+		command = { type = addcore which = 501 }
+		command = { type = addcore which = 498 }
+		command = { type = addcore which = 499 }
+		command = { type = addcore which = 1140 }
+		}
+}
+
+event = {
+id = 750476
+country = KAZ
+style = 2
+picture = "despedidainternacionales"
+
+trigger = {
+control = { province = 1105 data = KAZ }
+NOT = {
+exists = KYG
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 25
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_750476_NAME"
+desc = "EVT_750476_DESC"
+
+action_a = {
+ai_chance = 80
+name = "EVT_750476_OPTIONA"
+command = { type = belligerence which = KAZ value = 5 }
+command = { type = relation which = RUS value = -50 }
+command = { type = relation which = TRA value = -50 }
+command = { type = dissent value = -5 }
+command = { type = addcore which = 1103 } #Turkestan
+command = { type = addcore which = 1105 }
+command = { type = addcore which = 1104 }
+command = { type = addcore which = 1106 }
+command = { type = addcore which = 1107 }
+command = { type = addcore which = 1099 }
+command = { type = addcore which = 1100 }
+command = { type = addcore which = 1101 }
+command = { type = addcore which = 1102 }
+command = { type = addcore which = 1097 }
+command = { type = addcore which = 1098 }
+command = { type = addcore which = 1112 }
+}
+
+action_b = {
+ai_chance = 15
+name = "EVT_750476_OPTIONB"
+command = { type = independence which = KYG value = 1 when = 1 }
+command = { type = belligerence which = KAZ value = -10 }
+command = { type = secedeprovince which = KYG value = 1103 }
+command = { type = secedeprovince which = KYG value = 1104 }
+command = { type = secedeprovince which = KYG value = 1105 }
+command = { type = secedeprovince which = KYG value = 1106 }
+command = { type = secedeprovince which = KYG value = 1099 }
+command = { type = secedeprovince which = KYG value = 1100 }
+command = { type = secedeprovince which = KYG value = 1102 }
+command = { type = secedeprovince which = KYG value = 1097 }
+command = { type = secedeprovince which = KYG value = 1098 }
+command = { type = relation which = RUS value = 50 }
+command = { type = relation which = TRA value = 25 }
+command = { type = dissent value = 1 }
+command = { type = trigger which = 750477 }
+}
+
+action_c = {
+ai_chance = 5
+name = "EVT_750476_OPTIONC"
+command = { type = independence which = KYG value = 1 when = 0 }
+command = { type = belligerence which = KAZ value = -5 }
+command = { type = relation which = RUS value = -25 }
+command = { type = relation which = TRA value = -25 }
+command = { type = secedeprovince which = KYG value = 1103 }
+command = { type = secedeprovince which = KYG value = 1104 }
+command = { type = secedeprovince which = KYG value = 1105 }
+command = { type = secedeprovince which = KYG value = 1106 }
+command = { type = secedeprovince which = KYG value = 1099 }
+command = { type = secedeprovince which = KYG value = 1100 }
+command = { type = secedeprovince which = KYG value = 1102 }
+command = { type = secedeprovince which = KYG value = 1097 }
+command = { type = secedeprovince which = KYG value = 1098 }
+command = { type = make_puppet which = KYG }
+command = { type = trigger which = 750478 }
+command = { type = dissent value = -3 }
+}
+}
+
+event = {
+id = 750477
+country = KYG
+style = 2
+
+name = "EVT_750477_NAME"
+desc = "EVT_750477_DESC"
+
+action_a = {
+name = "EVT_750477_OPTIONA"
+command = { type = relation which = KAZ value = 100 }
+command = { type = relation which = RUS value = 50 }
+command = { type = relation which = TRA value = 50 }
+command = { type = addcore which = 1103 }
+command = { type = addcore which = 1104 }
+command = { type = addcore which = 1105 }
+command = { type = addcore which = 1106 }
+command = { type = addcore which = 1099 }
+command = { type = addcore which = 1100 }
+command = { type = addcore which = 1102 }
+command = { type = addcore which = 1097 }
+command = { type = addcore which = 1098 }
+command = { type = dissent value = 3 }
+command = { type = set_domestic which = democratic value = 5 }
+command = { type = set_domestic which = political_left value = 2 }
+}
+}
+
+event = {
+id = 750478
+country = KYG
+style = 2
+
+name = "EVT_750478_NAME"
+desc = "EVT_750478_DESC"
+action_a = {
+name = "EVT_750478_OPTIONA"
+command = { type = relation which = KAZ value = 100 }
+command = { type = relation which = RUS value = -50 }
+command = { type = relation which = TRA value = -50 }
+command = { type = addcore which = 1103 }
+command = { type = addcore which = 1104 }
+command = { type = addcore which = 1105 }
+command = { type = addcore which = 1106 }
+command = { type = addcore which = 1099 }
+command = { type = addcore which = 1100 }
+command = { type = addcore which = 1102 }
+command = { type = addcore which = 1097 }
+command = { type = addcore which = 1098 }
+command = { type = dissent value = 5 }
+}
+}

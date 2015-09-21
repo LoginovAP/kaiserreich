@@ -1,0 +1,1387 @@
+########################################
+#### Kingdom of Spain Domestic Policy
+########################################
+
+event = {
+  id = 91281
+  country = SPA
+  picture = "unemployment"
+
+  name = "EVT_91281_NAME"
+  desc = "EVT_91281_DESC"
+
+  style = 2
+  date = { day = 7 month = march year = 1936 }
+
+  action_a = {
+        name = "EVT_91281_OPTIONA"
+        command = { type = dissent value = 5  }
+	command = { type = peacetime_ic_mod value = -10 }
+  }
+}
+
+#######Carlist chain
+event = {
+  id = 91243
+  random = no
+  country = SPA
+  trigger = {
+  }
+  name = "EVT_91243_NAME"
+  desc = "EVT_91243_DESC"
+  style = 2
+  picture = "carlists"
+  date = { day = 29 month = february year = 1936 }
+  action_a = {
+        name = "EVT_91243_OPTIONA"
+        command = { type = dissent value = 1 }
+  } 
+}
+
+event = {
+  id = 91283
+  country = SPA
+  picture = "carlists"
+
+  name = "EVT_91283_NAME"
+  desc = "EVT_91283_DESC"
+
+  style = 2
+
+  date = { day = 29 month = march year = 1936 }
+
+  action_a = {
+        name = "EVT_91283_OPTIONA"
+	command = { type = dissent value = 2 }
+	command = { type = setflag which = xaviers_plan }
+  }
+}
+
+
+event = {
+  id = 91287
+  country = POR
+  picture = "Papal Rally"
+  trigger = { flag = xaviers_plan
+     }
+  name = "EVT_91287_NAME"
+  desc = "EVT_91287_DESC"
+  style = 2
+  date = { day = 1 month = june year = 1936 }
+
+  action_a = {
+        name = "EVT_91287_OPTIONA"
+        ai_chance = 75
+        command = { type = dissent value = -3  }
+	command = { type = setflag which = xavier_port }
+
+  }
+  action_b = {
+        name = "EVT_91287_OPTIONB"
+        ai_chance = 25
+        command = { type = dissent value = 2  }
+  }
+}
+
+event = {
+  id = 91288
+  country = ITA
+  picture = "Papal Rally"
+  trigger = { flag = xaviers_plan
+     
+  }
+  name = "EVT_91288_NAME"
+  desc = "EVT_91288_DESC"
+  style = 2
+  date = { day = 1 month = june year = 1936 }
+
+  action_a = {
+        name = "EVT_91288_OPTIONA"
+        ai_chance = 85
+        command = { type = dissent value = -3  }
+	command = { type = setflag which = xavier_ita }
+
+  }
+  action_b = {
+        name = "EVT_91288_OPTIONB"
+        ai_chance = 15
+        command = { type = dissent value = 2  }
+  }
+}
+
+
+
+
+event = {
+  id = 91291
+  country = SPA
+  picture = "carlists"
+  trigger = { flag = xavier_port
+     
+  }
+  name = "EVT_91291_NAME"
+  desc = "EVT_91291_DESC"
+  style = 2
+  date = { day = 1 month = july year = 1936 }
+  offset = 10
+  deathdate = { day = 29 month = december year= 1960 }
+  action_a = {
+        name = "EVT_91291_OPTIONA"
+	command = { type = peacetime_ic_mod value = 1 }
+	command = { type = relation which = POR value = 10 }
+  }
+}
+
+event = {
+  id = 91292
+  country = SPA
+  picture = "carlists"
+  trigger = { flag = xavier_ita
+     
+  }
+  name = "EVT_91292_NAME"
+  desc = "EVT_91292_DESC"
+  style = 2
+  date = { day = 1 month = july year = 1936 }
+  offset = 10
+  deathdate = { day = 29 month = december year= 1960 }
+
+  action_a = {
+        name = "EVT_91292_OPTIONA"
+	command = { type = peacetime_ic_mod value = 1 }
+command = { type = relation which = ITA value = 10 }
+  }
+}
+
+
+
+
+
+event = {
+  id = 91295
+  country = SPA
+  picture = "carlists"
+  trigger = { 
+ event = 91291
+ event = 91292 
+
+}
+  name = "EVT_91295_NAME"
+  desc = "EVT_91295_DESC"
+
+  style = 2
+
+  date = { day = 10 month = august year = 1936 }
+
+
+  action_a = {
+        name = "EVT_91295_OPTIONA"
+        ai_chance = 25 
+        command = { type = setflag which = SPA_CARLISTS }
+	command = { type = setflag which = xavier_banned }
+	command = { type = dissent value = 10  }
+  }
+  action_b = {
+        name = "EVT_91295_OPTIONB"
+        ai_chance = 25
+	command = { type = dissent value = 10  }
+	command = { type = trigger which = 91203 }
+	command = { type = setflag which = xavier_arrest }
+	command = { type = setflag which = SPA_CARLISTS }
+  }
+
+action_c = {
+name = "EVT_91295_OPTIONC"
+ai_chance = 25
+command = { type = dissent value = 1  }
+command = { type = setflag which = xavier_praised }
+}
+
+action_d = {
+name = "EVT_91295_OPTIOND"
+ai_chance = 25
+command = { type = dissent value = 2  }
+command = { type = setflag which = xavier_ignored }
+}
+}
+
+event = {
+id = 91296
+country = SPA
+style = 2
+picture = "Riot2"
+
+trigger = { 
+random = 20 
+or = {
+flag = xavier_banned
+flag = xavier_ignored
+flag = xavier_arrest }
+}
+
+date = { day = 1 month = January year = 1936 }
+offset =  30
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_91296_NAME"
+desc = "EVT_91296_DESC"
+
+action_a = {
+name = "EVT_91296_OPTIONA"
+command = { type = sleepleader which = -1 }
+command = { type = dissent value = 2  }
+}
+}
+
+event = {
+id = 91297
+country = SPA
+style = 2
+picture = "Demonstrations"
+
+trigger = { 
+random = 20 
+or = {
+flag = xavier_banned
+flag = xavier_ignored }
+}
+
+date = { day = 1 month = January year = 1936 }
+offset =  30
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_91297_NAME"
+desc = "EVT_91297_DESC"
+
+action_a = {
+name = "EVT_91297_OPTIONA"
+command = { type = dissent value = 3 }
+}
+}
+
+####general assassinations
+
+event = {
+id = 91298
+country = SPA
+style = 2
+picture = "Riot3"
+
+trigger = {  
+or = {
+flag = xavier_banned
+flag = xavier_arrest
+flag = cntfai_arrest
+flag = cntfai_disband
+}
+}
+
+date = { day = 1 month = January year = 1936 }
+offset =  30
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_91298_NAME"
+desc = "EVT_91298_DESC"
+
+action_a = {
+name = "EVT_91298_OPTIONA"
+command = { type = sleepminister which = 10005 }
+command = { type = dissent value = 3  }
+}
+}
+
+event = {
+id = 91300
+country = SPA
+style = 2
+picture = "Riot2"
+
+trigger = {  
+or = {
+flag = xavier_banned
+flag = xavier_arrest
+flag = cntfai_arrest
+flag = cntfai_disband
+}
+}
+
+date = { day = 1 month = January year = 1936 }
+offset =  45
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_91300_NAME"
+desc = "EVT_91300_DESC"
+
+action_a = {
+name = "EVT_91300_OPTIONA"
+command = { type = sleepminister which = 10006 }
+command = { type = dissent value = 3  }
+}
+}
+
+######CNT-FAI
+
+event = {
+  id = 91282
+  country = SPA
+  picture = "Unemployment3"
+
+  name = "EVT_91282_NAME"
+  desc = "EVT_91282_DESC"
+
+  style = 2
+
+  date = { day = 27 month = march year = 1936 }
+
+  action_a = {
+        name = "EVT_91282_OPTIONA"
+        ai_chance = 25
+        command = { type = dissent value = 5 }
+	command = { type = setflag which = cntfai_ban }
+	command = { type = domestic which = freedom value = -1 }
+  }
+  action_b = {
+        name = "EVT_91282_OPTIONB"
+        ai_chance = 25
+	command = { type = dissent value = 7 }
+	command = { type = setflag which = cntfai_arrest } 
+	command = { type = domestic which = democratic value = -1 }
+	command = { type = domestic which = political_left value = -1 }
+	command = { type = domestic which = freedom value = -1 }
+	command = { type = setflag which = SPA_CNT }
+  }
+action_c = {
+name = "EVT_91282_OPTIONC"
+ai_chance = 25
+	command = { type = dissent value = 10 }
+	command = { type = setflag which = cntfai_disband } 
+	command = { type = domestic which = democratic value = -1 }
+	command = { type = domestic which = political_left value = -1 }
+	command = { type = domestic which = freedom value = -2 } 
+	command = { type = setflag which = SPA_CNT }
+  }
+
+action_d = {
+name = "EVT_91282_OPTIOND"
+ai_chance = 25
+	command = { type = dissent value = 5 }
+	command = { type = setflag which = cntfai_allow } 
+	command = { type = domestic which = democratic value = 1 }
+	command = { type = domestic which = political_left value = 1 }
+	command = { type = domestic which = freedom value = 1 }
+}
+}
+
+event = {
+id = 91299
+country = SPA
+style = 2
+picture = "Demonstrations"
+
+trigger = { 
+random = 20 
+or = {
+flag = cntfai_ban
+flag = cntfai_arrest }
+}
+
+date = { day = 1 month = January year = 1936 }
+offset =  30
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_91299_NAME"
+desc = "EVT_91299_DESC"
+
+action_a = {
+name = "EVT_91299_OPTIONA"
+command = { type = dissent value = 3 }
+}
+}
+
+event = {
+  id = 91284
+  country = SPA
+  picture = "Demonstrations"
+  trigger = { flag = cntfai_ban
+     }
+  name = "EVT_91284_NAME"
+  desc = "EVT_91284_DESC"
+
+  style = 2
+
+  date = { day = 10 month = april year = 1936 }
+
+  action_a = {
+        name = "EVT_91284_OPTIONA"
+        ai_chance = 75
+        command = { type = dissent value = 5 }
+	command = { type = domestic which = freedom value = -1 }
+  }
+
+  action_b = {
+        name = "EVT_91284_OPTIONB"
+        ai_chance = 25
+	command = { type = setflag which = cntfai_allow } 
+	command = { type = domestic which = democratic value = 1 }
+	command = { type = domestic which = political_left value = 1 }
+	command = { type = domestic which = freedom value = 1 }
+  }
+}
+
+event = {
+  id = 91285
+  country = SPA
+  picture = "prison"
+
+  trigger = { flag = cntfai_arrest
+
+ }
+
+  name = "EVT_91285_NAME"
+  desc = "EVT_91285_DESC"
+  style = 2
+
+  date = { day = 10 month = april year = 1936 }
+
+  action_a = {
+        name = "EVT_91285_OPTIONA"
+        ai_chance = 75
+        command = { type = dissent value = 3 }
+	command = { type = domestic which = freedom value = -1 }
+	command = { type = setflag which = cntfai_flee }
+	command = { type = ministerofsecurity which = 10112 }
+  }
+  action_b = {
+        name = "EVT_91285_OPTIONB"
+        ai_chance = 25
+        command = { type = dissent value = 3  }
+	command = { type = setflag which = cntfai_flee }
+  }
+}
+
+event = {
+  id = 91286
+  country = SPA
+  picture = "Riot1"
+  trigger = { flag = cntfai_disband 
+}
+
+  name = "EVT_91286_NAME"
+  desc = "EVT_91286_DESC"
+  style = 2
+
+  date = { day = 10 month = april year = 1936 }
+
+  action_a = {
+        name = "EVT_91286_OPTIONA"
+        command = { type = dissent value = -3  }
+command = { type = setflag which = cntfai_flee }
+  }
+}
+
+event = {
+id = 91202
+country = FRA
+style = 2
+picture = "brigadasinternacionales"
+
+trigger = { 
+and = {
+flag = cntfai_flee 
+flag = fra_support_cnt
+}
+}
+
+name = "EVT_91202_NAME"
+desc = "EVT_91202_DESC"
+
+  date = { day = 20 month = may year = 1936 }
+  offset = 15
+  deathdate = { day = 29 month = december year= 1960 }
+
+action_a = {
+ai_chance = 85
+name = "EVT_91202_OPTIONA"
+command = { type = relation which = SPA value = -20 }
+command = { type = manpowerpool value = -2 }
+command = { type = resource which = supplies value = -500 }
+command = { type = money value = -10 }
+command = { type = setflag which = fra_support }
+command = { type = dissent value = -3  }
+}
+
+action_b = {
+ai_chance = 10
+name = "EVT_91202_OPTIONB"
+command = { type = relation which = SPA value = -10 }
+command = { type = dissent value = 1  }
+}
+
+action_c = {
+ai_chance = 5
+name = "EVT_91202_OPTIONC"
+command = { type = relation which = SPA value = 10 }
+command = { type = dissent value = 5  }
+}
+}
+
+event = {
+id = 3967016
+country = FRA
+style = 2
+picture = "brigadasinternacionales"
+
+trigger = { 
+flag = cntfai_flee 
+not = {
+flag = fra_support_cnt
+}
+}
+
+name = "EVT_3967016_NAME"
+desc = "EVT_3967016_DESC"
+
+  date = { day = 20 month = may year = 1936 }
+  offset = 15
+  deathdate = { day = 29 month = december year= 1960 }
+
+action_a = {
+ai_chance = 35
+name = "EVT_3967016_OPTIONA"
+command = { type = relation which = SPA value = -20 }
+command = { type = manpowerpool value = -2 }
+command = { type = resource which = supplies value = -500 }
+command = { type = money value = -10 }
+command = { type = setflag which = fra_support }
+command = { type = dissent value = -3  }
+}
+
+action_b = {
+ai_chance = 45
+name = "EVT_3967016_OPTIONB"
+command = { type = relation which = SPA value = -10 }
+command = { type = dissent value = 1  }
+}
+
+action_c = {
+ai_chance = 20
+name = "EVT_3967016_OPTIONC"
+command = { type = relation which = SPA value = 10 }
+command = { type = dissent value = 5  }
+}
+}
+
+
+
+event = {
+id = 91206
+country = RSI
+style = 2
+picture = "brigadasinternacionales"
+
+trigger = { flag = cntfai_flee   }
+
+name = "EVT_91206_NAME"
+desc = "EVT_91206_DESC"
+
+  date = { day = 20 month = may year = 1936 }
+  offset = 15
+  deathdate = { day = 29 month = december year= 1960 }
+
+action_a = {
+ai_chance = 75
+name = "EVT_91206_OPTIONA"
+command = { type = relation which = SPA value = -20 }
+command = { type = manpowerpool value = -2 }
+command = { type = resource which = supplies value = -500 }
+command = { type = money value = -10 }
+command = { type = setflag which = rsi_support }
+command = { type = dissent value = -3  }
+}
+
+action_b = {
+ai_chance = 20
+name = "EVT_91206_OPTIONB"
+command = { type = relation which = SPA value = -10 }
+command = { type = dissent value = 1  }
+}
+
+action_c = {
+ai_chance = 5
+name = "EVT_91206_OPTIONC"
+command = { type = relation which = SPA value = 10 }
+command = { type = dissent value = 5  }
+}
+}
+
+event = {
+id = 91208
+country = ENG
+style = 2
+picture = "brigadasinternacionales"
+
+trigger = { 
+and = {
+flag = cntfai_flee 
+flag = eng_support_cnt
+}
+}
+
+name = "EVT_91208_NAME"
+desc = "EVT_91208_DESC"
+
+  date = { day = 20 month = may year = 1936 }
+  offset = 15
+  deathdate = { day = 29 month = december year= 1960 }
+
+action_a = {
+ai_chance = 75
+name = "EVT_91208_OPTIONA"
+command = { type = relation which = SPA value = -20 }
+command = { type = manpowerpool value = -2 }
+command = { type = resource which = supplies value = -500 }
+command = { type = money value = -10 }
+command = { type = setflag which = eng_support }
+command = { type = dissent value = -3  }
+}
+
+action_b = {
+ai_chance = 20
+name = "EVT_91208_OPTIONB"
+command = { type = relation which = SPA value = -10 }
+command = { type = dissent value = 1  }
+}
+
+action_c = {
+ai_chance = 5
+name = "EVT_91208_OPTIONC"
+command = { type = relation which = SPA value = 10 }
+command = { type = dissent value = 5  }
+}
+}
+
+event = {
+id = 3967017
+country = ENG
+style = 2
+picture = "brigadasinternacionales"
+
+trigger = { 
+flag = cntfai_flee 
+not = {
+flag = eng_support_cnt
+}
+}
+
+name = "EVT_3967017_NAME"
+desc = "EVT_3967017_DESC"
+
+  date = { day = 20 month = may year = 1936 }
+  offset = 15
+  deathdate = { day = 29 month = december year= 1960 }
+
+action_a = {
+ai_chance = 5
+name = "EVT_3967017_OPTIONA"
+command = { type = relation which = SPA value = -20 }
+command = { type = manpowerpool value = -2 }
+command = { type = resource which = supplies value = -500 }
+command = { type = money value = -10 }
+command = { type = setflag which = eng_support }
+command = { type = dissent value = -3  }
+}
+
+action_b = {
+ai_chance = 20
+name = "EVT_3967017_OPTIONB"
+command = { type = relation which = SPA value = -10 }
+command = { type = dissent value = 1  }
+}
+
+action_c = {
+ai_chance = 75
+name = "EVT_3967017_OPTIONC"
+command = { type = relation which = SPA value = 10 }
+command = { type = dissent value = 5  }
+}
+}
+
+
+event = {
+id = 91209
+country = SPA
+style = 2
+picture = "unemployment2"
+
+trigger = { flag = cntfai_allow   }
+
+  date = { day = 10 month = may year = 1936 }
+  offset = 15
+  deathdate = { day = 29 month = december year= 1960 }
+
+name = "EVT_91209_NAME"
+desc = "EVT_91209_DESC"
+
+action_a = {
+name = "EVT_91209_OPTIONA"
+command = { type = dissent value = -1  }
+}
+}
+
+event = {
+id = 91226
+country = SPA
+style = 2
+picture = "mining"
+
+trigger = { flag = cntfai_allow   }
+
+  date = { day = 10 month = june year = 1936 }
+  offset = 15
+  deathdate = { day = 29 month = december year= 1960 }
+
+name = "EVT_91226_NAME"
+desc = "EVT_91226_DESC"
+
+action_a = {
+name = "EVT_91226_OPTIONA"
+command = { type = peacetime_ic_mod value = 2 }
+command = { type = dissent value = -3  }
+command = { type = setflag which = CNT_south }
+}
+}
+
+event = {
+id = 91227
+country = SPA
+style = 2
+picture = "mining"
+
+trigger = { flag = CNT_south   }
+
+  date = { day = 10 month = august year = 1936 }
+  offset = 15
+  deathdate = { day = 29 month = december year= 1960 }
+
+name = "EVT_91227_NAME"
+desc = "EVT_91227_DESC"
+
+action_a = {
+name = "EVT_91227_OPTIONA"
+command = { type = add_prov_resource which = 469 value = 1 where = rare_materials }
+command = { type = add_prov_resource which = 471 value = 1 where = rare_materials }
+command = { type = add_prov_resource which = 463 value = 1 where = rare_materials }
+command = { type = construct which = infrastructure where = 469 value = 10 }
+command = { type = construct which = infrastructure where = 471 value = 10 }
+command = { type = construct which = infrastructure where = 463 value = 10 }
+}
+}
+
+####### and so the next part begins
+
+
+event = {
+id = 91236
+country = SPA
+style = 2
+picture = "Demonstrations"
+
+trigger = { dissent = 35 }
+
+  date = { day = 1 month = january year = 1936 }
+  offset = 5
+  deathdate = { day = 29 month = december year= 1960 }
+
+name = "EVT_91236_NAME"
+desc = "EVT_91236_DESC"
+
+action_a = {
+name = "EVT_91236_OPTIONA"
+	command = { type = setflag which = SPA_CNT }
+        command = { type = setflag which = SPA_CARLISTS }
+}
+}
+
+event = {
+id = 91237
+country = SPA
+style = 2
+picture = "Demonstrations"
+
+  date = { day = 1 month = march year = 1937 }
+  offset = 15
+  deathdate = { day = 29 month = december year= 1960 }
+
+name = "EVT_91237_NAME"
+desc = "EVT_91237_DESC"
+
+action_a = {
+name = "EVT_91237_OPTIONA"
+command = { type = dissent value = 5  }
+command = { type = setflag which = alf_coma }
+}
+}
+
+event = {
+id = 91238
+country = SPA
+style = 2
+picture = "Demonstrations"
+
+trigger = { flag = alf_coma }
+
+  date = { day = 10 month = march year = 1937 }
+  offset = 15
+  deathdate = { day = 29 month = december year= 1960 }
+
+name = "EVT_91238_NAME"
+desc = "EVT_91238_DESC"
+
+action_a = {
+ai_chance = 20
+name = "EVT_91238_OPTIONA"
+command = { type = setflag which = spa_elections }
+}
+
+action_b = {
+ai_chance = 40
+name = "EVT_91238_OPTIONB"
+command = { type = setflag which = spa_fake_elections }
+}
+
+action_c = {
+ai_chance = 40
+name = "EVT_91238_OPTIONC"
+command = { type = setflag which = SPA_CNT }
+command = { type = setflag which = SPA_CARLISTS }
+command = { type = dissent value = 5  }
+}
+}
+
+event = {
+id = 91239
+country = SPA
+style = 2
+picture = "Demonstrations"
+
+trigger = { 
+and = {
+flag = spa_elections
+atwar = no
+}
+not = { 
+flag = SPA_CNT
+flag = SPA_CARLISTS  
+}
+}
+
+date = { day = 10 month = june year = 1937 }
+
+
+name = "EVT_91239_NAME"
+desc = "EVT_91239_DESC"
+
+action_a = {
+ai_chance = 40
+name = "EVT_91239_OPTIONA"
+command = { type = dissent value = -5  }
+}
+
+action_b = {
+ai_chance = 30
+name = "EVT_91239_OPTIONB"
+command = { type = country which = SPR }
+command = { type = set_domestic which =   democratic value = 3  }
+command = { type = set_domestic which = political_left value = 9  }
+command = { type = set_domestic which = free_market value =  1  }
+command = { type = headofstate which = 11040 } #Comité Central de la CNT-FAI
+command = { type = headofgovernment which = 11345 } #Juan García Oliver
+command = { type = foreignminister which = 11346 } #Ángel Pestaña
+command = { type = armamentminister which = 11347 } #Joan Peiró
+command = { type = ministerofsecurity which = 11348 } #Joaquín Ascaso Budriá
+command = { type = ministerofintelligence which = 11349 } #Francisco Ascaso Budría
+command = { type = chiefofstaff which = 11245 } #Buenaventura Durruti Dumange
+command = { type = chiefofarmy which = 11350 } #Gregorio Jover
+command = { type = set_relation which = ITA value = -100 }
+command = { type = set_relation which = GER value = -50 }
+command = { type = set_relation which = FRA value = 100 }
+command = { type = set_relation which = ENG value = 50 }
+command = { type = set_relation which = RSI value = 50 }
+command = { type = dissent value = -5  }
+command = { type = sleepleader which = 3125 }
+     command = { type = sleepleader which = 3126 }
+     command = { type = sleepleader which = 3127 }
+     command = { type = sleepleader which = 3128 }
+     command = { type = sleepleader which = 3129 }
+     command = { type = sleepleader which = 3130 }
+     command = { type = sleepleader which = 3131 }
+     command = { type = sleepleader which = 3132 }
+     command = { type = sleepleader which = 3133 }
+     command = { type = sleepleader which = 3134 }
+     command = { type = sleepleader which = 3135 }
+     command = { type = sleepleader which = 3136 }
+     command = { type = sleepleader which = 3137 }
+     command = { type = sleepleader which = 3138 }
+     command = { type = sleepleader which = 3139 }
+     command = { type = sleepleader which = 3140 }
+     command = { type = sleepleader which = 3141 }
+     command = { type = sleepleader which = 3142 }
+     command = { type = sleepleader which = 3143 }
+     command = { type = sleepleader which = 3144 }
+     command = { type = sleepleader which = 3145 }
+     command = { type = sleepleader which = 3146 }
+     command = { type = sleepleader which = 3147 }
+     command = { type = sleepleader which = 3148 }
+     command = { type = sleepleader which = 3149 }
+     command = { type = sleepleader which = 3150 }
+     command = { type = sleepleader which = 3151 }
+     command = { type = sleepleader which = 3152 }
+     command = { type = sleepleader which = 3153 }
+     command = { type = sleepleader which = 3154 }
+     command = { type = sleepleader which = 3155 }
+     command = { type = sleepleader which = 3156 }
+     command = { type = sleepleader which = 3157 }
+     command = { type = sleepleader which = 3158 }
+     command = { type = sleepleader which = 3159 }
+     command = { type = sleepleader which = 3160 }
+     command = { type = sleepleader which = 3161 }
+     command = { type = sleepleader which = 3162 }
+     command = { type = sleepleader which = 3163 }
+     command = { type = sleepleader which = 3164 }
+     command = { type = sleepleader which = 3165 }
+     command = { type = sleepleader which = 3166 }
+     command = { type = sleepleader which = 3167 }
+     command = { type = sleepleader which = 3168 }
+     command = { type = sleepleader which = 3169 }
+     command = { type = sleepleader which = 3170 }
+     command = { type = sleepleader which = 3171 }
+     command = { type = sleepleader which = 3172 }
+     command = { type = sleepleader which = 3173 }
+     command = { type = sleepleader which = 3174 }
+     command = { type = sleepleader which = 3175 }
+     command = { type = sleepleader which = 3176 }
+     command = { type = sleepleader which = 3177 }
+     command = { type = sleepleader which = 3178 }
+     command = { type = sleepleader which = 3179 }
+     command = { type = sleepleader which = 3180 }
+     command = { type = sleepleader which = 3181 }
+     command = { type = sleepleader which = 3182 }
+     command = { type = sleepleader which = 3183 }
+     command = { type = sleepleader which = 3184 }
+     command = { type = sleepleader which = 3185 }
+     command = { type = sleepleader which = 3186 }
+     command = { type = sleepleader which = 3187 }
+     command = { type = sleepleader which = 3188 }
+     command = { type = sleepleader which = 3189 }
+     command = { type = sleepleader which = 3190 }
+     command = { type = sleepleader which = 3191 }
+     command = { type = sleepleader which = 3192 }
+     command = { type = sleepleader which = 3193 }
+     command = { type = sleepleader which = 3194 }
+     command = { type = sleepleader which = 3195 }
+     command = { type = sleepleader which = 3196 }
+     command = { type = sleepleader which = 3197 }
+     command = { type = sleepleader which = 3198 }
+     command = { type = sleepleader which = 3199 }
+     command = { type = sleepleader which = 3200 }
+     command = { type = sleepleader which = 3201 }
+     command = { type = sleepleader which = 3202 }
+     command = { type = sleepleader which = 3203 }
+     command = { type = sleepleader which = 3204 }
+     command = { type = sleepleader which = 3205 }
+     command = { type = sleepleader which = 3206 }
+     command = { type = sleepleader which = 3207 }
+     command = { type = sleepleader which = 3208 }
+     command = { type = sleepleader which = 3209 }
+     command = { type = sleepleader which = 3210 }
+     command = { type = sleepleader which = 3211 }
+     command = { type = sleepleader which = 3212 }
+     command = { type = sleepleader which = 3213 }
+     command = { type = sleepleader which = 3214 }
+     command = { type = sleepleader which = 3215 }
+     command = { type = sleepleader which = 3216 }
+     command = { type = sleepleader which = 3217 }
+     command = { type = sleepleader which = 3218 }
+     command = { type = sleepleader which = 3219 }
+     command = { type = sleepleader which = 3220 }
+     command = { type = sleepleader which = 3221 }
+     command = { type = sleepleader which = 3222 }
+     command = { type = sleepleader which = 3223 }
+     command = { type = sleepleader which = 3224 }
+     command = { type = sleepleader which = 3225 }
+     command = { type = sleepleader which = 3226 }
+     command = { type = sleepleader which = 3227 }
+     command = { type = sleepleader which = 3228 }
+     command = { type = sleepleader which = 3229 }
+     command = { type = sleepleader which = 3230 }
+     command = { type = sleepleader which = 3231 }
+     command = { type = sleepleader which = 3232 }
+     command = { type = sleepleader which = 3233 }
+     command = { type = sleepleader which = 3234 }
+     command = { type = sleepleader which = 3235 }
+     command = { type = sleepleader which = 3236 }
+     command = { type = sleepleader which = 3237 }
+     command = { type = sleepleader which = 3238 }
+     command = { type = sleepleader which = 3239 }
+     command = { type = sleepleader which = 3240 }
+     command = { type = sleepleader which = 3241 }
+     command = { type = sleepleader which = 3242 }
+     command = { type = sleepleader which = 3243 }
+     command = { type = sleepleader which = 3244 }
+     command = { type = sleepleader which = 3245 }
+     command = { type = sleepleader which = 3246 }
+     command = { type = sleepleader which = 3247 }
+     command = { type = sleepleader which = 3248 }
+     command = { type = sleepleader which = 3249 }
+     command = { type = sleepleader which = 3250 }
+     command = { type = sleepleader which = 3251 }
+}
+
+action_c = {
+ai_chance = 30
+name = "EVT_91239_OPTIONC"
+command = { type = country which = EUS }
+command = { type = set_domestic which = democratic value = 1 }
+command = { type = set_domestic which = political_left value = 2 }
+command = { type = set_domestic which = freedom value = 2 }
+command = { type = headofstate which = 580001  }  #### Change to relevant ones
+command = { type = headofgovernment which = 580002  }
+command = { type = relation which = ITA value = 120 }
+command = { type = relation which = AUS value = 50 }
+command = { type = relation which = HUN value = 50 }
+command = { type = relation which = GER value = -50 }
+command = { type = sleepleader which = 580081 }
+     command = { type = sleepleader which = 580082 }
+     command = { type = sleepleader which = 580083 }
+     command = { type = sleepleader which = 580084 }
+     command = { type = sleepleader which = 580085 }
+     command = { type = sleepleader which = 580086 }
+     command = { type = sleepleader which = 580087 }
+     command = { type = sleepleader which = 580088 }
+     command = { type = sleepleader which = 580089 }
+     command = { type = sleepleader which = 580090 }
+     command = { type = sleepleader which = 580091 }
+     command = { type = sleepleader which = 580092 }
+     command = { type = sleepleader which = 580093 }
+     command = { type = sleepleader which = 580094 }
+     command = { type = sleepleader which = 580095 }
+     command = { type = sleepleader which = 580096 }
+     command = { type = sleepleader which = 580097 }
+     command = { type = sleepleader which = 580098 }
+     command = { type = sleepleader which = 580099 }
+     command = { type = sleepleader which = 580100 }
+     command = { type = sleepleader which = 580101 }
+     command = { type = sleepleader which = 580102 }
+     command = { type = sleepleader which = 580103 }
+     command = { type = sleepleader which = 580104 }
+     command = { type = sleepleader which = 580105 }
+command = { type = dissent value = -5  }
+}
+}
+
+event = {
+id = 91240
+country = SPA
+style = 2
+picture = "Demonstrations"
+
+trigger = { 
+and = {
+flag = spa_elections
+atwar = yes
+}
+}
+
+  date = { day = 10 month = june year = 1937 }
+
+
+name = "EVT_91240_NAME"
+desc = "EVT_91240_DESC"
+
+action_a = {
+name = "EVT_91240_OPTIONA"
+command = { type = dissent value = 5  }
+}
+}
+
+
+event = {
+id = 91241
+country = SPA
+style = 2
+#picture = "urban warfare1"
+
+trigger = { 
+and = { flag = spa_fake_elections
+atwar = no }
+}
+
+  date = { day = 9 month = june year = 1937 }
+
+
+name = "EVT_91241_NAME"
+desc = "EVT_91241_DESC"
+
+action_a = {
+ai_chance = 75
+name = "EVT_91241_OPTIONA"
+command = { type = dissent value = 10  }
+command = { type = revolt which = 440 }
+command = { type = revolt which = 443 }
+command = { type = revolt which = 451 }
+command = { type = revolt which = 436 }
+command = { type = revolt which = 446 }
+command = { type = revolt which = 437 }
+command = { type = revolt which = 438 }
+command = { type = revolt which = 439 }
+command = { type = setflag which = SPA_CNT }
+command = { type = setflag which = SPA_CARLISTS }
+}
+
+action_b = {
+ai_chance = 25
+name = "EVT_91241_OPTIONB"
+command = { type = revolt which = 440 }
+command = { type = revolt which = 443 }
+command = { type = revolt which = 451 }
+command = { type = revolt which = 436 }
+command = { type = revolt which = 446 }
+command = { type = revolt which = 437 }
+command = { type = revolt which = 438 }
+command = { type = revolt which = 439 }
+command = { type = setflag which = election_riots }
+command = { type = dissent value = 5  }
+}
+}
+
+event = {
+id = 91242
+country = SPA
+style = 2
+#picture = "urban warfare2"
+
+trigger = { flag = election_riots }
+
+  date = { day = 10 month = june year = 1937 }
+
+
+name = "EVT_91242_NAME"
+desc = "EVT_91242_DESC"
+
+action_a = {
+name = "EVT_91242_OPTIONA"
+command = { type = dissent value = 20  } 
+command = { type = manpowerpool value = -10 }
+command = { type = setflag which = SPA_CNT }
+command = { type = setflag which = SPA_CARLISTS }
+}
+}
+
+
+
+
+
+#####post-war
+
+event = {
+id = 3967117
+random = no
+country = SPA
+style = 2
+picture = "SPR_Communist Coup"
+
+trigger = { 
+and = {
+flag = spa_win_scw 
+not = {
+event = 3967010
+event = 3967011
+}
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 20
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_3967117_NAME"
+desc = "EVT_3967117_DESC"
+
+action_a = {
+name = "EVT_3967117_OPTIONA"
+ai_chance = 60
+command = { type = headofstate which = 10038 }
+command = { type = dissent value = -2  }
+}
+
+action_b = {
+name = "EVT_3967117_OPTIONB"
+ai_chance = 40
+command = { type = headofstate which = 10038 }
+command = { type = dissent value = -5  }
+command = { type = domestic which = freedom value = 1 }
+command = { type = domestic which = democratic value = 3 }
+}
+}
+
+event = {
+id = 3967118
+random = no
+country = SPA
+style = 2
+picture = "SPR_Communist Coup"
+
+trigger = { 
+flag = spa_win_scw 
+OR = {
+event = 3967010
+event = 3967011
+}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 20
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_3967118_NAME"
+desc = "EVT_3967118_DESC"
+
+action_a = {
+name = "EVT_3967118_OPTIONA"
+ai_chance = 60
+command = { type = headofstate which = 10212 }
+command = { type = dissent value = -5  }
+command = { type = setflag which = spa_jaime }
+}
+
+action_b = {
+name = "EVT_3967118_OPTIONB"
+ai_chance = 30
+command = { type = headofstate which = 10212 }
+command = { type = dissent value = -2  }
+command = { type = domestic which = freedom value = 1 }
+command = { type = domestic which = democratic value = 3 }
+command = { type = setflag which = spa_jaime }
+}
+
+action_c = {
+name = "EVT_3967118_OPTIONC"
+ai_chance = 10
+command = { type = dissent value = 5  }
+command = { type = set_domestic which = democratic value = 5  }
+command = { type = set_domestic which = political_left value = 5  }
+command = { type = name where = SPA which = SPA_REP_NAME }
+command = { type = flag_ext where = SPA which = "_rep" }
+command = { type = headofstate which = 10032 }
+command = { type = headofgovernment which = 10046 }
+}
+}
+
+## Event for deactivating/re-activating of Tech Teams
+event = {
+id = 3967131
+random = no
+country = SPA
+style = 2
+
+trigger = { 
+	exists = EUS
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 20
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_3967131_NAME"
+desc = "EVT_3967131_DESC"
+picture = "Industry"
+
+action_a = {
+	name = "EVT_3967131_OPTIONA"
+	command = { type = sleepteam which =  3104 } #Fábrica de Armas de Trubia
+	command = { type = sleepteam which =  3105 } #Maestranza Artillería Ferrol
+	}
+}
+
+event = {
+id = 3967132
+random = no
+country = SPA
+style = 2
+
+trigger = {
+	random = 25
+	event = 3967131
+	NOT = {
+		exists = EUS
+	}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 20
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_3967132_NAME"
+desc = "EVT_3967132_DESC"
+picture = "Industry"
+
+action_a = {
+	name = "EVT_3967132_OPTIONA"
+	command = { type = waketeam which =  3104 } #Fábrica de Armas de Trubia
+	command = { type = waketeam which =  3105 } #Maestranza Artillería Ferrol
+	}
+}
+
+event = {
+id = 3967133
+random = no
+country = SPA
+style = 2
+
+trigger = { 
+	exists = SPR
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 20
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_3967133_NAME"
+desc = "EVT_3967133_DESC"
+picture = "Industry"
+
+action_a = {
+	name = "EVT_3967133_OPTIONA"
+	command = { type = sleepteam which =  3110 } #Instituto Químico de Sarriá
+	}
+}
+
+event = {
+id = 3967134
+random = no
+country = SPA
+style = 2
+
+trigger = {
+	random = 25
+	event = 3967133
+	NOT = {
+		exists = SPR
+	}
+}
+
+date = { day = 1 month = january year = 1936 }
+offset = 20
+deathdate = { day = 29 month = december year = 1960 }
+
+name = "EVT_3967134_NAME"
+desc = "EVT_3967134_DESC"
+picture = "Industry"
+
+action_a = {
+	name = "EVT_3967134_OPTIONA"
+	command = { type = waketeam which =  3110 } #Instituto Químico de Sarriá
+	}
+}
+
+## end events for Tech Teams

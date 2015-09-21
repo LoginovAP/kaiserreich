@@ -1,0 +1,372 @@
+######################################################
+### Central America 56807-XX (by Kibbles)
+######################################################
+
+event = {
+id = 56807
+country = NIC
+style = 2
+picture = "constitutional"
+
+date = { day = 1 month = april year = 1936 }
+offset = 5
+deathdate = { day = 29 month = january year = 1960 }
+
+name = "EVT_56807_NAME"
+desc = "EVT_56807_DESC"
+
+action_a = {
+ai_chance = 90
+name = "EVT_56807_OPTIONA"
+command = { type = relation which = COL value = -10 } #Colombia
+command = { type = relation which = GUA value = -15 } #Centroamerica
+command = { type = domestic which = interventionism value = 1 }
+command = { type = trigger which = 56808 }
+}
+
+action_b = {
+ai_chance = 10
+name = "EVT_56807_OPTIONB"
+command = { type = sleepevent which = 56808 } #Panamas Response
+}
+}
+
+event = {
+id = 56808
+country = PAN
+style = 2
+picture = "constitutional"
+
+name = "EVT_56808_NAME"
+desc = "EVT_56808_DESC"
+
+action_a = {
+ai_chance = 95
+name = "EVT_56808_OPTIONA"
+command = { type = domestic which = interventionism value = 1 }
+command = { type = relation which = COL value = -15 } #Colombia
+command = { type = relation which = GUA value = -10 } #Centroamerica
+command = { type = dissent value = -3 }
+command = { type = trigger which = 56809 }
+}
+action_b = {
+ai_chance = 5
+name = "EVT_56808_OPTIONB"
+command = { type = domestic which = interventionism value = -1 }
+command = { type = dissent value = 3 }
+command = { type = relation which = NIC value = -25 } #United Provinces
+}
+}
+
+event = {
+id = 56809
+country = NIC
+style = 2
+picture = "technology_stolen"
+
+name = "EVT_56809_NAME"
+desc = "EVT_56809_DESC"
+
+action_a = {
+name = "EVT_56809_OPTIONA"
+command = { type = alliance which = PAN }
+}
+}
+
+event = {
+id = 61093
+random = no
+country = GUA
+style = 2
+
+trigger = { 
+    government = communist
+    exists = PAN
+    NOT = {
+    ispuppet = GUA
+    government = { type = communist country = PAN }
+    }
+}
+
+name = "EVT_61093_NAME"
+desc = "EVT_61093_DESC"
+picture = "urbanwarfare2"
+
+date = { day = 7 month = april year = 1936 }
+offset = 5
+deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+    ai_chance = 98
+    name = "EVT_61093_OPTIONA"
+    command = { type = manpowerpool value = -2 }
+    command = { type = resource which = supplies value = -200 }
+    command = { type = domestic which = interventionism value = 1 }
+    command = { type = relation which = USA value = -30 }
+    command = { type = relation which = PAN value = -30 }
+    command = { type = relation which = NIC value = -30 }
+    }
+
+action_b = {
+    ai_chance = 2
+    name = "EVT_61093_OPTIONB"
+    command = { type = dissent value = 1 }
+    command = { type = domestic which = interventionism value = -1 }
+    command = { type = relation which = USA value = 10 }
+    command = { type = relation which = PAN value = 10 }
+    command = { type = relation which = NIC value = 10 }
+    command = { type = sleepevent which = 56810 }
+    }
+}
+
+event = {
+id = 56810
+country = PAN
+style = 2
+picture = "constitutional"
+
+trigger = { 
+	atwar = no
+}
+
+date = { day = 29 month = april year = 1936 }
+
+name = "EVT_56810_NAME"
+desc = "EVT_56810_DESC"
+
+action_a = {
+name = "EVT_56810_OPTIONA"
+        command = { type = leave_alliance }
+	command = { type = sleepminister which = 95001 }
+	command = { type = sleepminister which = 95002 }
+	command = { type = dissent value = 10 }
+	}
+}
+
+event = {
+id = 56811
+country = NIC
+style = 2
+picture = "constitutional"
+
+trigger = {
+	atwar = no
+}
+
+date = { day = 9 month = may year = 1936 }
+
+name = "EVT_56811_NAME"
+desc = "EVT_56811_DESC"
+
+action_a = {
+ai_chance = 90
+name = "EVT_56811_OPTIONA"
+	command = { type = trigger which = 56812 }
+        command = { type = event which = 56812 where = PAN when = 4  }
+	command = { type = dissent value = 5 }
+	}
+
+action_b = {
+ai_chance = 10
+name = "EVT_56811_OPTIONB"
+        command = { type = dissent value = 7 }
+        command = { type = event which = 56814 where = PAN when = 4  }
+	}
+}
+
+event = {
+id = 56812
+country = PAN
+style = 2
+picture = "constitutional"
+
+name = "EVT_56812_NAME"
+desc = "EVT_56812_DESC"
+
+action_a = {
+ai_chance = 90
+name = "EVT_56812_OPTIONA"
+	command = { type = trigger which = 56813 }
+	}
+
+action_b = {
+ai_chance = 10
+name = "EVT_56812_OPTIONB"
+	command = { type = war which = NIC }
+	}
+}
+
+event = {
+id = 56813
+country = NIC
+style = 2
+picture = "constitutional"
+
+name = "EVT_56813_NAME"
+desc = "EVT_56813_DESC"
+
+action_a = {
+name = "EVT_56813_OPTIONA"
+	command = { type = addcore which = 2078 }
+        command = { type = addcore which = 2077 }
+        command = { type = addcore which = 889 }
+	command = { type = inherit which = PAN value = 1 }
+        command = { type = trigger which = 56816 }
+	command = { type = dissent value = -5 }
+	}
+}
+
+event = {
+id = 56814
+country = PAN
+style = 2
+picture = "politics2"
+
+name = "EVT_56814_NAME"
+desc = "EVT_56814_DESC"
+
+action_a = {
+name = "EVT_56814_OPTIONA"
+ai_chance = 70
+command = { type = relation which = ENG value = 50 }
+command = { type = relation which = SOV value = 50 }
+command = { type = relation which = FRA value = 50 }
+command = { type = relation which = RSI value = 50 }
+command = { type = relation which = GEO value = 50 }
+command = { type = relation which = CSA value = 50 }
+command = { type = relation which = GUA value = 100 }
+command = { type = relation which = ARG value = -100 }
+command = { type = relation which = COL value = -100 }
+command = { type = relation which = NIC value = -100 }
+command = { type = relation which = USA value = -100 }
+command = { type = domestic which = free_market value = -9 }
+command = { type = set_domestic which = democratic value = 3 }
+command = { type = set_domestic which = political_left value = 9 }
+command = { type = trigger which = 56817 }
+}
+
+action_b = {
+name = "EVT_56814_OPTIONB"
+ai_chance = 30
+command = { type = dissent value = 5 }
+command = { type = trigger which = 56816 }
+command = { type = relation which = USA value = 50 }
+}
+}
+
+
+event = {
+     id = 61092
+     random = no
+     country = NIC
+     style = 2
+
+     trigger = {
+     control = { province = 2077 data = NIC } 
+     control = { province = 2080 data = NIC } 
+     war = { country = NIC country = PAN } 
+     NOT = {
+     ispuppet = NIC
+     ispuppet = PAN
+     }
+     }
+
+     name = "EVT_61092_NAME"
+     desc = "EVT_61092_DESC"
+     picture = "militaryparade1"
+
+     date = { day = 15 month = may year = 1936 }
+     offset = 60
+     deathdate = { day = 29 month = december year = 1937 }
+
+     action_a = {
+         ai_chance = 90
+         name = "EVT_61092_OPTIONA"
+ 	 command = { type = inherit which = PAN  }
+ 	 command = { type = addcore which = 2078 }
+ 	 command = { type = addcore which = 2077 }
+ 	 command = { type = addcore which = 889 }
+         }
+
+     action_b = {
+         ai_chance = 10
+         name = "EVT_61092_OPTIONB"
+         command = { type = peace which = PAN value = 1 }
+         command = { type = make_puppet which = PAN }
+         }
+
+ }
+
+
+
+event = {
+ id = 56815
+ country = USA
+ style = 2
+ picture = "constitutional"
+
+ trigger = {
+ event = 56810
+ }
+
+ date = { day = 1 month = may year = 1936 }
+
+ name = "EVT_56815_NAME"
+ desc = "EVT_56815_DESC"
+
+ action_a = {
+ ai_chance = 100
+ name = "EVT_56815_OPTIONA"
+ command = { type = dissent value = 1 }
+ command = { type = relation which = PAN value = 10 }
+ command = { type = relation which = NIC value = 20 }
+ command = { type = relation which = GUA value = -20 }
+ command = { type = belligerence which = USA value = 1  }
+ }
+
+ action_a = {
+ ai_chance = 0
+ name = "EVT_56815_OPTIONB"
+ command = { type = dissent value = 1 }
+ command = { type = relation which = PAN value = -10 }
+ command = { type = relation which = NIC value = -20 }
+ command = { type = relation which = GUA value = 10 }
+ command = { type = belligerence which = USA value = -1  }
+ command = { type = event which = 56814 where = PAN when = 7  }
+ command = { type = sleepevent which = 56811 }
+ }
+ }
+
+ event = {
+ id = 56816
+ country = USA
+ style = 2
+ picture = "panamacanal"
+
+ name = "EVT_56816_NAME"
+ desc = "EVT_56816_DESC"
+
+ action_a = {
+ name = "EVT_56816_OPTIONA"
+ command = { type = dissent value = -1 }
+ command = { type = relation which = NIC value = 70 }
+ command = { type = relation which = GUA value = -20 }
+ }
+ }
+
+ event = {
+ id = 56817
+ country = USA
+ style = 2
+ picture = "partisan_revolt"
+
+ name = "EVT_56817_NAME"
+ desc = "EVT_56817_DESC"
+
+ action_a = {
+ name = "EVT_56817_OPTIONA"
+ command = { type = dissent value = 2 }
+ command = { type = relation which = NIC value = -10 }
+ command = { type = relation which = GUA value = -20 }
+ }
+ }
