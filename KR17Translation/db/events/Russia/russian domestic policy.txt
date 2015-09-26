@@ -317,6 +317,7 @@ command = { type = addcore which = 498 }
 command = { type = addcore which = 1115 }
 command = { type = addcore which = 499 }
 command = { type = addcore which = 502 }
+command = { type = addcore which = 1140 }
 command = { type = ai which = "Kaiserreich\Soviet.ai" }
 }
 
@@ -3156,11 +3157,7 @@ country = RUS
 style = 2
 
 trigger = {
-
-
 headofstate = 4193 #President Dmitri
-
-
 }
 
 name = "EVT_747001_NAME"
@@ -3170,8 +3167,6 @@ picture = "extpower"
 date = { day = 6 month = april year = 1936 }
 offset = 2
 deathdate = { day = 10 month = april year = 1936 }
-
-
 
 action_a = {
 ai_chance = 55
@@ -3219,7 +3214,6 @@ command = { type = manpowerpool value = -60 }
 command = { type = sleepevent which = 750005 }
 command = { type = sleepevent which = 750004 }
 command = { type = sleepevent which = 750006 }
-
 }
 }
 
@@ -3242,8 +3236,6 @@ picture = "extpower"
 date = { day = 6 month = april year = 1936 }
 offset = 2
 deathdate = { day = 10 month = april year = 1936 }
-
-
 
 action_a = {
 ai_chance = 50
@@ -3276,7 +3268,6 @@ command = { type = sleepevent which = 747001  }
 command = { type = resource which = supplies value = -1500 }
 command = { type = setflag which = new_order }
 }
-
 }
 
 #########
@@ -3724,10 +3715,10 @@ random = no
 country = RUS
 style = 2
 
-trigger = {  OR  =  {
+trigger = {  
+OR  =  {
 headofstate = 4156 #Denikin
 headofstate =  4193 #Dimtri Romanov
-
 }
 }
 
@@ -4198,7 +4189,7 @@ command = { type = set_domestic which = political_left value = 9 }
 command = { type = headofstate which = 4162 }
 command = { type = headofgovernment which = 4161  }
 command = { type = flag_ext where = RUS } #reset Russian flag
-command = {  type = country which = SOV }
+command = { type = country which = SOV }
 command = { type = sleepevent which = 750017 }
 command = { type = sleepevent which = 750018 }
 command = { type = sleepevent which = 750019 }
@@ -4663,7 +4654,6 @@ picture = "russiandumaforeign"
 date = { day = 17 month = march year = 1937 }
 offset = 2
 deathdate = { day = 18 month = march year = 1937 }
-
 
 
 action_a = {
@@ -5327,20 +5317,32 @@ command = { type = sleepevent which = 759434 }
 action_d = {
 ai_chance =  5
 name = "EVT_759431_OPTIOND"
-command = { type = dissent value = 25 }
+command = { type = dissent value = 20 }
 command = { type = set_domestic which = democratic value = 3 }
 command = { type = set_domestic which = political_left value = 4 }
 command = { type = set_domestic which = freedom value = 4 }
-command = { type = headofstate which = 4080 } # Kiril Romanov (Autocrat)
-command = { type = headofgovernment which = 4191 } # Vladimir Purishkevich
-command = { type = foreignminister which =  4098 } # Georgi Brassov
+command = { type = headofstate which = 4155 } # Wrangel
+command = { type = headofgovernment which = 4157 } # Shatilov
+command = { type = foreignminister which =  4190 } # Vladimir Nabokov
 command = { type = armamentminister which = 4083 } # Nikolai Maklakov
-command = { type = ministerofsecurity which = 4188 } # Vladimir Kokotsov
-command = { type = ministerofintelligence which = 4184	} # Yusupov
-command = { type = setflag which = RUS_TSAR }
+command = { type = ministerofsecurity which = 4196 } # Sergery Markov
+command = { type = ministerofintelligence which = 4085 } # Mikhail Meandrov
+command = { type = setflag which = RUS_MIL }
 command = { type = clrflag which = RUS_REP }
+command = { type = flag_ext where = RUS which = "_nat" }
+command = { type = clrflag which = RUS_TSAR }
+command = { type = clrflag which = CON_MON }
+command = { type = clrflag which = HoS_Senate }
+command = { type = clrflag which = HoS_Dmitri_P }
+command = { type = clrflag which = HoS_Chernov }
+command = { type = clrflag which = HoS_Maklakov }
+command = { type = clrflag which = HoS_Arkhangelskiy }
+command = { type = clrflag which = HoS_Bukharin }
+command = { type = clrflag which = HoS_Williams }
+command = { type = clrflag which = HoS_Kaplan }
+command = { type = clrflag which = HoS_Markov }
 command = { type = sleepevent which = 759430 }
-command = { type = sleepevent which = 759432 }
+command = { type = sleepevent which = 759431 }
 command = { type = sleepevent which = 759433 }
 command = { type = sleepevent which = 759434 }
 }
@@ -5669,7 +5671,6 @@ NOT = { headofstate = 4193 } # Dmitri Romanov, since he gets officially elected 
 
 name = "EVT_759435_NAME"
 desc = "EVT_759435_DESC"
-
 picture = "russiandumaforeign"
 
 date = { day = 1 month = june year = 1937 }
@@ -5695,7 +5696,7 @@ command = { type = setflag which = HoS_Maklakov }
 action_c = {
 ai_chance =  30
 name = "EVT_759435_OPTIONC"
-command = { type = dissent value = 8 }
+command = { type = dissent value = 7 }
 command = { type = headofstate which = 4193 }
 command = { type = clrflag which = HoS_Senate }
 command = { type = setflag which = HoS_Dmitri_P }
@@ -5704,7 +5705,7 @@ action_d = {
 ai_chance =  5
 name = "EVT_759435_OPTIOND"
 trigger = { NOT = { event = 756016 exists = SOV } }
-command = { type = dissent value = 15 }
+command = { type = dissent value = 9 }
 command = { type = headofstate which = 4314 }
 command = { type = clrflag which = HoS_Senate }
 command = { type = setflag which = HoS_Bukharin }
@@ -6392,7 +6393,7 @@ command = { type = ministerofintelligence which =  4253	} # Dmitri Popov
 command = { type = chiefofstaff which =  4177 } # Rokossovsky
 command = { type = chiefofarmy which =  4275 }
 command = { type = chiefofnavy which =  4142 } # Dushenov
-command = { type = chiefofair which =  4148 } # Nikolai M. Kharlamov
+command = { type = chiefofair which =  4145 } # Nikolai M. Kharlamov
 command = { type = clrflag which = RUS_REP }
 }
 
@@ -7222,7 +7223,7 @@ command = { type = ministerofintelligence which =  4253	} # Dmitri Popov
 command = { type = chiefofstaff which =  4177 } # Rokossovsky
 command = { type = chiefofarmy which =  4275 }
 command = { type = chiefofnavy which =  4142 } # Dushenov
-command = { type = chiefofair which =  4148 } # Nikolai M. Kharlamov
+command = { type = chiefofair which =  4145 } # Nikolai M. Kharlamov
 command = { type = setflag which = Rus_BOL }
 command = { type = clrflag which = RUS_REP }
 }
@@ -8382,7 +8383,7 @@ command = { type = ministerofintelligence which =  4253	} # Dmitri Popov
 command = { type = chiefofstaff which =  4177 } # Rokossovsky
 command = { type = chiefofarmy which =  4275 }
 command = { type = chiefofnavy which =  4142 } # Dushenov
-command = { type = chiefofair which =  4148 } # Nikolai M. Kharlamov
+command = { type = chiefofair which =  4145 } # Nikolai M. Kharlamov
 command = { type = setflag which = Rus_BOL }
 command = { type = clrflag which = RUS_REP }
 }
@@ -9067,7 +9068,7 @@ command = { type = ministerofintelligence which =  4253	} # Dmitri Popov
 command = { type = chiefofstaff which =  4177 } # Rokossovsky
 command = { type = chiefofarmy which =  4275 }
 command = { type = chiefofnavy which =  4142 } # Dushenov
-command = { type = chiefofair which =  4148 } # Nikolai M. Kharlamov
+command = { type = chiefofair which =  4145 } # Nikolai M. Kharlamov
 command = { type = setflag which = Rus_BOL }
 command = { type = clrflag which = RUS_REP }
 }

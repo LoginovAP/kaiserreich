@@ -21,13 +21,12 @@ random = no
 country = FRA
 
 decision = {
-flag = GER_Capitulation
-alliance = { country = FRA country = HUN }
 OR = {
 exists = URU
 exists = ROM
 }
 NOT = {
+control = { province = 163 data = -2 }
 alliance = { country = FRA country = ROM }
 alliance = { country = FRA country = URU }
 war = { country = FRA country = BUL }
@@ -45,8 +44,8 @@ ispuppet = ROM
 
 }
 OR = {
-control = { province = 314 data = ROM }
-control = { province = 314 data = URU }
+control = { province = 316 data = ROM }
+control = { province = 316 data = URU }
 }
 }
 
@@ -56,13 +55,12 @@ control = { province = 288 data = FRA }
 }
 
 trigger = {
-flag = GER_Capitulation
-alliance = { country = FRA country = HUN }
 OR = {
 exists = URU
 exists = ROM
 }
 NOT = {
+control = { province = 163 data = -2 }
 alliance = { country = FRA country = ROM }
 alliance = { country = FRA country = URU }
 war = { country = FRA country = ROM }
@@ -78,9 +76,11 @@ ispuppet = ROM
 war = { country = BUL country = ROM }
 war = { country = BUL country = URU }
 }
+control = { province = 287 data = FRA }
+control = { province = 288 data = FRA }
 OR = {
-control = { province = 314 data = ROM }
-control = { province = 314 data = URU }
+control = { province = 316 data = ROM }
+control = { province = 316 data = URU }
 }
 }
 
@@ -122,22 +122,22 @@ command = { type = belligerence which = FRA value = -5  }
 }
 
 action = {
-
 ai_chance = 30
 name = "EVT_1150000_OPTIONC"
 trigger = {
+OR = {
 puppet = { country = HUN country = FRA  }
+alliance = { country = FRA country = HUN }
+}
 }
 command = { type = secedearea which = HUN value = Transylvania when = 1 }
 command = { type = belligerence which = FRA value = -5 }
-
 }
 
 action = {
-
 ai_chance = 0
 name = "EVT_1150000_OPTIOND"
-command = { type = belligerence which = FRA value = -5 }
+command = { type = belligerence which = FRA value = 3 }
 }
 }
 

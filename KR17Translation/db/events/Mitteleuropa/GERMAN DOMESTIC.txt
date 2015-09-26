@@ -267,7 +267,8 @@ date = { day = 2 month = february year = 1936 }
 action_a = {
 name = "EVT_90520_OPTIONA"
 command = { type = industrial_modifier which = total value = -15 }
-command = { type = dissent value = 10 }
+command = { trigger = { ai = no } type = dissent value = 10 }
+command = { trigger = { ai = yes } type = dissent value = 4 }
 command = { type = event which = 908053 where = GER when = 2  }
 command = { trigger = { ai = yes } type = province_revoltrisk which = 719 value = -80 }  # to prevent uprisings in colonies + rise of the new states, since ai has trouble with quelling them
 command = { trigger = { ai = yes } type = province_revoltrisk which = 720 value = -80 }
@@ -338,20 +339,23 @@ desc = "EVT_908053_DESC"
 action_a = {
 ai_chance = 35
 name = "EVT_908053_OPTIONA"
-command = { type = dissent value = 7 }
+command = { trigger = { ai = no } type = dissent value = 7 }
+command = { trigger = { ai = yes } type = dissent value = 3 }
 }
 
 action_b = {
 ai_chance = 35
 name = "EVT_908053_OPTIONB"
 command = { type = money value = -300 }
-command = { type = dissent value = 5 }
+command = { trigger = { ai = no } type = dissent value = 5 }
+command = { trigger = { ai = yes } type = dissent value = 2 }
 }
 
 action_c = {
 ai_chance = 5
 name = "EVT_908053_OPTIONC"
-command = { type = dissent value = 12 }
+command = { trigger = { ai = no } type = dissent value = 12 }
+command = { trigger = { ai = yes } type = dissent value = 5 }
 }
 }
 

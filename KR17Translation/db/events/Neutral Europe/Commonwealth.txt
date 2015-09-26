@@ -1128,11 +1128,13 @@ country = U00
 
 date = { day = 1 month = january year = 1938 }
 offset = 60
-deathdate = { day = 29 month = december year = 1960 }
+deathdate = { day = 29 month = december year = 1963 }
 
 decision = {
 atwar = no
-NOT = { government = communist }
+NOT = { 
+government = communist 
+}
 OR = {
 AND = {
 control = { province = 235 data = GLD }
@@ -1163,12 +1165,14 @@ exists = GLD
 }
 }
 
-decision_trigger = {
+decision_trigger = { 
 }
 
 trigger = {
 atwar = no
-NOT = { government = communist }
+NOT = { 
+government = communist 
+}
 OR = {
 AND = {
 control = { province = 235 data = GLD }
@@ -1229,6 +1233,7 @@ event = {
 id = 9981030
 random = no
 country = AUS
+
 name = "EVT_9981030_NAME"
 desc = "EVT_9981030_DESC"
 style = 2
@@ -1242,6 +1247,7 @@ command = { type = relation which = U00 value = -50 }
 command = { type = dissent value = -2 }
 command = { type = trigger which = 9981034 }
 }
+
 action_b = {
 ai_chance = 30
 name = "EVT_9981030_OPTIONB"
@@ -1270,6 +1276,7 @@ event = {
 id = 9981031
 random = no
 country = U24
+
 name = "EVT_9981031_NAME"
 desc = "EVT_9981031_DESC"
 style = 2
@@ -1283,6 +1290,7 @@ command = { type = relation which = U00 value = -50 }
 command = { type = dissent value = -2 }
 command = { type = trigger which = 9981034 }
 }
+
 action_b = {
 ai_chance = 1
 name = "EVT_9981031_OPTIONB"
@@ -1310,6 +1318,7 @@ event = {
 id = 9981032
 random = no
 country = U25
+
 name = "EVT_9981032_NAME"
 desc = "EVT_9981032_DESC"
 style = 2
@@ -1323,6 +1332,7 @@ command = { type = relation which = U00 value = -50 }
 command = { type = dissent value = -2 }
 command = { type = trigger which = 9981034 }
 }
+
 action_b = {
 ai_chance = 1
 name = "EVT_9981032_OPTIONB"
@@ -1410,12 +1420,14 @@ exists = GER
 control = { province = 163 data = GER }
 NOT = {
 ispuppet = GER
+ispuppet = U00
 }
 NOT = {
 AND = {
 war = { country = GER country = AUS }
 control = { province = 235 data = AUS }
 alliance = { country = GER country = AUS }
+alliance = { country = U00 country = AUS }
 }
 }
 NOT = {
@@ -1423,6 +1435,7 @@ AND = {
 war = { country = GER country = GLD }
 control = { province = 235 data = GLD }
 alliance = { country = GER country = GLD }
+alliance = { country = U00 country = GLD }
 }
 }
 NOT = {
@@ -1430,6 +1443,7 @@ AND = {
 war = { country = GER country = U24 }
 control = { province = 235 data = U24 }
 alliance = { country = GER country = U24 }
+alliance = { country = U00 country = U24 }
 }
 }
 NOT = {
@@ -1437,6 +1451,7 @@ AND = {
 war = { country = GER country = U25 }
 control = { province = 235 data = U25 }
 alliance = { country = GER country = U25 }
+alliance = { country = U00 country = U25 }
 }
 }
 }
@@ -1460,13 +1475,14 @@ exists = SOV
 exists = SIB
 ispuppet = RUS
 ispuppet = U00
-flag = RUS_BOL
+government = { type = communist country = RUS }
 }
 NOT = {
 AND = {
 war = { country = RUS country = AUS }
 control = { province = 235 data = AUS }
 alliance = { country = RUS country = AUS }
+alliance = { country = U00 country = AUS }
 }
 }
 NOT = {
@@ -1474,6 +1490,7 @@ AND = {
 war = { country = RUS country = GLD }
 control = { province = 235 data = GLD }
 alliance = { country = RUS country = GLD }
+alliance = { country = U00 country = GLD }
 }
 }
 NOT = {
@@ -1481,6 +1498,7 @@ AND = {
 war = { country = RUS country = U24 }
 control = { province = 235 data = U24 }
 alliance = { country = RUS country = U24 }
+alliance = { country = U00 country = U24 }
 }
 }
 NOT = {
@@ -1488,6 +1506,7 @@ AND = {
 war = { country = RUS country = U25 }
 control = { province = 235 data = U25 }
 alliance = { country = RUS country = U25 }
+alliance = { country = U00 country = U25 }
 }
 }
 }
@@ -1507,20 +1526,28 @@ NOT = {
 ispuppet = U00
 }
 NOT = {
+AND = {
 control = { province = 235 data = AUS }
 alliance = { country = AUS country = U00 }
 }
+}
 NOT = {
+AND = {
 control = { province = 235 data = GLD }
 alliance = { country = GLD country = U00 }
 }
+}
 NOT = {
+AND = {
 control = { province = 235 data = U24 }
 alliance = { country = U24 country = U00 }
 }
+}
 NOT = {
+AND = {
 control = { province = 235 data = U25 }
 alliance = { country = U25 country = U00 }
+}
 }
 }
 command = { type = dissent value = -1 }

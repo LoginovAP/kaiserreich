@@ -102,7 +102,7 @@ name = "EVT_654001_NAME"
 desc = "EVT_654001_DESC"
 picture = "politics3"
 
-action_a = {
+action = {
 ai_chance = 60
 name = "EVT_654001_OPTIONA"
 trigger = {
@@ -123,7 +123,7 @@ command = { type = trigger which = 654039 }
 }
 
 
-action_a = {
+action = {
 ai_chance = 60
 name = "EVT_654001_OPTIONB"
 trigger = {
@@ -143,19 +143,19 @@ command = { type = end_guarantee which = GER where = BLR }
 command = { type = trigger which = 654005 }
 }
 
-action_b = {
+action = {
 ai_chance = 30
 name = "EVT_654001_OPTIONC"
 command = { type = relation which = GER value = 20 }
 }
 
-action_c = {
+action = {
 ai_chance = 10
 name = "EVT_654001_OPTIOND"
+command = { type = end_puppet }
 command = { type = leave_alliance when = 1 }
 command = { type = end_guarantee which = GER where = BLR }
-command = { trigger = { OR = { NOT = { event = 555003 } exists = LIT alliance = { country = LIT country = GER } } } type = event which = 654007 where = GER when = 2  }
-command = { trigger = { event = 555003 exists = LIT NOT = { alliance = { country = LIT country = GER } } } type = event which = 654041 where = GER when = 2 }
+command = { type = event which = 654007 where = GER when = 2  }
 }
 }
 
@@ -311,7 +311,6 @@ exists = BLR
 ispuppet = GER
 flag = GER_CON_Capitulation
 flag = GER_Capitulation
-
 }
 }
 
@@ -1151,6 +1150,7 @@ event = {
 id = 654031
 random = no
 country = GER
+style = 2
 
 name = "EVT_654031_NAME"
 desc = "EVT_654031_DESC"
@@ -1160,6 +1160,29 @@ action_a = {
 name = "EVT_654031_OPTIONA"
 command = { type = make_puppet which = BLR }
 command = { type = alliance which = BLR }
+command = { type = trigger which = 654041 }
+}
+}
+
+event = {
+id = 654041
+country = BLR
+style = 2
+picture = "politics1"
+
+name = "EVT_654041_NAME"
+desc = "EVT_654041_DESC"
+
+action_a = {
+name = "EVT_654041_OPTIONA"
+command = { type = add_division value = infantry when = 9 }
+command = { type = add_division value = infantry when = 9 }
+command = { trigger = { government = democratic } type = headofstate which = 517011 } 
+command = { trigger = { government = democratic } type = headofgovernment which = 517016 } 
+command = { trigger = { government = fascist } type = headofstate which = 517013 } 
+command = { trigger = { government = fascist } type = headofgovernment which = 517014 } 
+command = { type = free_ic value = 5 }
+command = { type = ai which = "kaiserreich/Weissruthenien.ai" }
 }
 }
 

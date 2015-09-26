@@ -2681,7 +2681,7 @@ minister = 94105
 name = "EVT_341080_NAME"
 desc = "EVT_341080_DESC"				#
 
-action_a = {
+action = {
 ai_chance = 10
 name = "EVT_341080_OPTIONA"
 command = { type = dissent value = 2 }
@@ -2689,15 +2689,17 @@ command = { type = relation which = RUS value = -20 }
 command = { type = relation which = MON value = 20 }
 }
 
-action_b = {
+action = {
 ai_chance = 80
 name = "EVT_341080_OPTIONB"
 command = { type = dissent value = -1 }
 command = { type = relation which = RUS value = 50 }
 command = { type = relation which = MON value = -40 }
 command = { type = trigger which = 341081 }
+command = { type = sleepevent which = 925014 }
 }
-action_c = {
+
+action = {
 ai_chance = 10
 name = "EVT_341080_OPTIONC"
 command = { type = dissent value = 1 }
@@ -2705,14 +2707,26 @@ command = { type = relation which = RUS value = -10 }
 command = { type = relation which = MON value = -10 }
 }
 
-action_d = {
+action = {
 ai_chance = 10
 name = "EVT_341080_OPTIOND"
 command = { type = setflag which = STB_FLIGHT  }
 command = { type = dissent value = -5 }
 command = { type = relation which = RUS value = 10 }
 command = { type = relation which = MON value = -10 }
-command = { type = trigger which = 341081 }
+}
+
+action = {
+name = "EVT_341080_OPTIONE"
+ai_chance = 30
+command = { type = dissent value = 1 }
+command = { type = sleepleader which = 330025 }
+command = { type = sleepteam which = 6802 }
+command = { type = sleepminister which = 94105 }
+command = { type = sleepminister which = 94111 }
+command = { type = sleepminister which = 94112 }
+command = { type = sleepminister which = 94136 }
+command = { type = sleepevent which = 925014 }
 }
 }
 
@@ -2724,6 +2738,7 @@ picture = "sternberg"
 
 name = "EVT_341081_NAME"
 desc = "EVT_341081_DESC"
+
 action_a = {
 name = "EVT_341081_OPTIONA"
 ai_chance = 70
@@ -2816,14 +2831,14 @@ offset = 2
 deathdate = { day = 29 month = december year = 1960 }
 
 action_a = {
-ai_chance = 50
+ai_chance = 60
 name = "EVT_341082_OPTIONA"
 command = { type = trigger which = 341084 }
 command = { type = dissent value = 1 }
 }
 
 action_b = {
-ai_chance = 50
+ai_chance = 40
 name = "EVT_341082_OPTIONB"
 command = { type = relation which = RUS value = -20 }
 command = { type = dissent value = -2 }
@@ -2844,18 +2859,6 @@ action_a = {
 ai_chance = 5
 name = "EVT_341084_OPTIONA"
 command = { type = relation which = JAP value = 150 }
-command = { trigger = { alliance = { country = JAP country = PRI } } type = relation which = PRI value = 150 }
-command = { trigger = { alliance = { country = JAP country = MON } } type = relation which = MON value = 150 }
-command = { trigger = { alliance = { country = JAP country = MAN } } type = relation which = MAN value = 150 }
-command = { trigger = { alliance = { country = JAP country = U30 } } type = relation which = U30 value = 150 }
-command = { trigger = { alliance = { country = JAP country = SIA } } type = relation which = SIA value = 150 }
-command = { trigger = { alliance = { country = JAP country = U15 } } type = relation which = U15 value = 150 }
-command = { trigger = { alliance = { country = JAP country = PHI } } type = relation which = PHI value = 150 }
-command = { trigger = { alliance = { country = JAP country = AST } } type = relation which = AST value = 150 }
-command = { trigger = { alliance = { country = JAP country = CSX } } type = relation which = CSX value = 150 }
-command = { trigger = { alliance = { country = JAP country = EAF } } type = relation which = EAF value = 150 }
-command = { trigger = { alliance = { country = JAP country = MEN } } type = relation which = MEN value = 150 }
-command = { trigger = { alliance = { country = JAP country = KOR } } type = relation which = KOR value = 150 }
 command = { type = relation which = GER value = -50 }
 command = { type = trigger which = 341085 }
 }
@@ -2889,17 +2892,6 @@ command = { type = addcore which = 1194 }
 command = { type = addcore which = 1190 }
 command = { type = addcore which = 1185 }
 command = { type = relation which = GER value = -10 }
-command = { trigger = { alliance = { country = JAP country = MON } } type = relation which = MON value = 150 }
-command = { trigger = { alliance = { country = JAP country = MAN } } type = relation which = MAN value = 150 }
-command = { trigger = { alliance = { country = JAP country = U30 } } type = relation which = U30 value = 150 }
-command = { trigger = { alliance = { country = JAP country = SIA } } type = relation which = SIA value = 150 }
-command = { trigger = { alliance = { country = JAP country = U15 } } type = relation which = U15 value = 150 }
-command = { trigger = { alliance = { country = JAP country = PHI } } type = relation which = PHI value = 150 }
-command = { trigger = { alliance = { country = JAP country = AST } } type = relation which = AST value = 150 }
-command = { trigger = { alliance = { country = JAP country = CSX } } type = relation which = CSX value = 150 }
-command = { trigger = { alliance = { country = JAP country = EAF } } type = relation which = EAF value = 150 }
-command = { trigger = { alliance = { country = JAP country = MEN } } type = relation which = MEN value = 150 }
-command = { trigger = { alliance = { country = JAP country = KOR } } type = relation which = KOR value = 150 }
 }
 
 action_b = {
@@ -2923,16 +2915,19 @@ desc = "EVT_341085_DESC"
 action_a = {
 name = "EVT_341085_OPTIONA"
 command = { type = alliance which = RUS }
+command = { type = ai which = "kaiserreich/switch/JAP_ALLRUSSIA.ai" }
 command = { type = dissent value = -3 }
 command = { type = relation which = GER value = -50 }
-command = { type = relation which = RUS value = 250 }
-command = { trigger = { puppet = { country = UKR country = RUS  } } type = relation which = UKR value = 150 }
-command = { trigger = { puppet = { country = GEO country = RUS  } } type = relation which = GEO value = 150 }
-command = { trigger = { puppet = { country = AZB country = RUS  } } type = relation which = AZB value = 150 }
-command = { trigger = { puppet = { country = BLR country = RUS  } } type = relation which = BLR value = 150 }
-command = { trigger = { puppet = { country = KAZ country = RUS  } } type = relation which = KAZ value = 150 }
-command = { trigger = { puppet = { country = TRA country = RUS  } } type = relation which = TRA value = 150 }
-#maybe new ai?
+command = { type = set_relation which = RUS value = 180 }
+command = { trigger = { puppet = { country = UKR country = RUS  } } type = set_relation which = UKR value = 150 }
+command = { trigger = { puppet = { country = GEO country = RUS  } } type = set_relation which = GEO value = 150 }
+command = { trigger = { puppet = { country = AZB country = RUS  } } type = set_relation which = AZB value = 150 }
+command = { trigger = { puppet = { country = BLR country = RUS  } } type = set_relation which = BLR value = 150 }
+command = { trigger = { puppet = { country = KAZ country = RUS  } } type = set_relation which = KAZ value = 150 }
+command = { trigger = { puppet = { country = TRA country = RUS  } } type = set_relation which = TRA value = 150 }
+command = { trigger = { puppet = { country = MON country = RUS  } } type = set_relation which = MON value = 150 }
+command = { trigger = { puppet = { country = TAN country = RUS  } } type = set_relation which = TAN value = 150 }
+command = { type = trigger which = 771081 } # in russian foreign policy.txt
 }
 }
 
@@ -2950,18 +2945,22 @@ action_a = {
 ai_chance = 50
 name = "EVT_341086_OPTIONA"
 command = { type = alliance which = RUS }
+command = { type = ai which = "kaiserreich/switch/JAP_ALLRUSSIA.ai" }
 command = { type = dissent value = 3 }
 command = { type = relation which = GER value = -50 }
-command = { type = relation which = RUS value = 250 }
-command = { trigger = { puppet = { country = UKR country = RUS  } } type = relation which = UKR value = 150 }
-command = { trigger = { puppet = { country = GEO country = RUS  } } type = relation which = GEO value = 150 }
-command = { trigger = { puppet = { country = AZB country = RUS  } } type = relation which = AZB value = 150 }
-command = { trigger = { puppet = { country = BLR country = RUS  } } type = relation which = BLR value = 150 }
-command = { trigger = { puppet = { country = KAZ country = RUS  } } type = relation which = KAZ value = 150 }
-command = { trigger = { puppet = { country = TRA country = RUS  } } type = relation which = TRA value = 150 }
+command = { type = set_relation which = RUS value = 180 }
+command = { trigger = { puppet = { country = UKR country = RUS  } } type = set_relation which = UKR value = 150 }
+command = { trigger = { puppet = { country = GEO country = RUS  } } type = set_relation which = GEO value = 150 }
+command = { trigger = { puppet = { country = AZB country = RUS  } } type = set_relation which = AZB value = 150 }
+command = { trigger = { puppet = { country = BLR country = RUS  } } type = set_relation which = BLR value = 150 }
+command = { trigger = { puppet = { country = KAZ country = RUS  } } type = set_relation which = KAZ value = 150 }
+command = { trigger = { puppet = { country = TRA country = RUS  } } type = set_relation which = TRA value = 150 }
+command = { trigger = { puppet = { country = MON country = RUS  } } type = set_relation which = MON value = 150 }
+command = { trigger = { puppet = { country = TAN country = RUS  } } type = set_relation which = TAN value = 150 }
 command = { type = removecore which =  1541 }
 command = { type = secedeprovince which = RUS value = 1541 }
 command = { trigger = { puppet = { country = PRI country = JAP  } } type = trigger which = 341087 }
+command = { type = trigger which = 771081 } # in russian foreign policy.txt
 }
 
 
@@ -3521,6 +3520,7 @@ command = { type = secedeprovince which = JAP value = 1150 }
 command = { type = secedeprovince which = JAP value = 1136 }
 command = { type = secedeprovince which = JAP value = 1137 }
 command = { type = secedeprovince which = JAP value = 1151 }
+command = { type = secedeprovince which = JAP value = 1140 }
 command = { type = secedeprovince which = JAP value = 501 }
 command = { type = secedeprovince which = JAP value = 498 }
 command = { type = secedeprovince which = JAP value = 1115 }
@@ -3554,6 +3554,7 @@ exists = SIB
 command = { type = independence which = SIB value = 1 when = 0 }
 command = { type = trigger which = 341215 }
 }
+
 action_b = {
 ai_chance = 75
 name = "EVT_341214_OPTIONB"
@@ -3622,6 +3623,7 @@ command = { type = secedeprovince which = PRI value = 1150 }
 command = { type = secedeprovince which = PRI value = 1136 }
 command = { type = secedeprovince which = PRI value = 1137 }
 command = { type = secedeprovince which = PRI value = 1151 }
+command = { type = secedeprovince which = JAP value = 1140 }
 command = { type = secedeprovince which = PRI value = 501 }
 command = { type = secedeprovince which = PRI value = 498 }
 command = { type = secedeprovince which = PRI value = 1115 }
@@ -3675,7 +3677,7 @@ desc = "EVT_341216_DESC"
 
 date = { day = 1 month = january year = 1936 }
 offset = 10
-deathdate = { day = 29 month = december year = 1960 }
+deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 ai_chance = 60
@@ -3722,6 +3724,24 @@ command = { type = removeclaim which = 1283 }
 command = { type = removeclaim which = 1285 }
 command = { type = removeclaim which = 1274 }
 command = { type = removeclaim which = 1264 }
+command = { type = removeclaim which = 1278 }
+command = { type = removeclaim which = 1286 }
+command = { type = removeclaim which = 1287 }
+command = { type = removeclaim which = 1288 }
+command = { type = removeclaim which = 1289 }
+command = { type = removeclaim which = 1290 }
+command = { type = removeclaim which = 1294 }
+command = { type = removeclaim which = 1295 }
+command = { type = removeclaim which = 1259 }
+command = { type = removeclaim which = 1255 }
+command = { type = removeclaim which = 1260 }
+command = { type = removeclaim which = 1269 }
+command = { type = removeclaim which = 1271 }
+command = { type = removeclaim which = 1256 }
+command = { type = removeclaim which = 1263 }
+command = { type = removeclaim which = 1257 }
+command = { type = removeclaim which = 1258 }
+
 command = { trigger = { puppet = { country = MON country = JAP  } } type = secedeprovince which = JAP value = 1270 }
 command = { trigger = { puppet = { country = MON country = JAP  } } type = secedeprovince which = JAP value = 1272 }
 command = { trigger = { puppet = { country = MON country = JAP  } } type = secedeprovince which = JAP value = 1273 }
@@ -3741,6 +3761,23 @@ command = { trigger = { puppet = { country = MON country = JAP  } } type = seced
 command = { trigger = { puppet = { country = MON country = JAP  } } type = secedeprovince which = JAP value = 1285 }
 command = { trigger = { puppet = { country = MON country = JAP  } } type = secedeprovince which = JAP value = 1274 }
 command = { trigger = { puppet = { country = MON country = JAP  } } type = secedeprovince which = JAP value = 1264 }
+command = { trigger = { puppet = { country = MON country = JAP  } } type = secedeprovince which = JAP value = 1278 }
+command = { trigger = { puppet = { country = MON country = JAP  } } type = secedeprovince which = JAP value = 1286 }
+command = { trigger = { puppet = { country = MON country = JAP  } } type = secedeprovince which = JAP value = 1287 }
+command = { trigger = { puppet = { country = MON country = JAP  } } type = secedeprovince which = JAP value = 1288 }
+command = { trigger = { puppet = { country = MON country = JAP  } } type = secedeprovince which = JAP value = 1289 }
+command = { trigger = { puppet = { country = MON country = JAP  } } type = secedeprovince which = JAP value = 1290 }
+command = { trigger = { puppet = { country = MON country = JAP  } } type = secedeprovince which = JAP value = 1294 }
+command = { trigger = { puppet = { country = MON country = JAP  } } type = secedeprovince which = JAP value = 1295 }
+command = { trigger = { puppet = { country = MON country = JAP  } } type = secedeprovince which = JAP value = 1259 }
+command = { trigger = { puppet = { country = MON country = JAP  } } type = secedeprovince which = JAP value = 1255 }
+command = { trigger = { puppet = { country = MON country = JAP  } } type = secedeprovince which = JAP value = 1260 }
+command = { trigger = { puppet = { country = MON country = JAP  } } type = secedeprovince which = JAP value = 1269 }
+command = { trigger = { puppet = { country = MON country = JAP  } } type = secedeprovince which = JAP value = 1271 }
+command = { trigger = { puppet = { country = MON country = JAP  } } type = secedeprovince which = JAP value = 1256 }
+command = { trigger = { puppet = { country = MON country = JAP  } } type = secedeprovince which = JAP value = 1263 }
+command = { trigger = { puppet = { country = MON country = JAP  } } type = secedeprovince which = JAP value = 1257 }
+command = { trigger = { puppet = { country = MON country = JAP  } } type = secedeprovince which = JAP value = 1258 }
 
 command = { trigger = { puppet = { country = MON country = RUS  } } type = secedeprovince which = RUS value = 1270 }
 command = { trigger = { puppet = { country = MON country = RUS  } } type = secedeprovince which = RUS value = 1272 }
@@ -3761,6 +3798,23 @@ command = { trigger = { puppet = { country = MON country = RUS  } } type = seced
 command = { trigger = { puppet = { country = MON country = RUS  } } type = secedeprovince which = RUS value = 1285 }
 command = { trigger = { puppet = { country = MON country = RUS  } } type = secedeprovince which = RUS value = 1274 }
 command = { trigger = { puppet = { country = MON country = RUS  } } type = secedeprovince which = RUS value = 1264 }
+command = { trigger = { puppet = { country = MON country = RUS  } } type = secedeprovince which = RUS value = 1278 }
+command = { trigger = { puppet = { country = MON country = RUS  } } type = secedeprovince which = RUS value = 1286 }
+command = { trigger = { puppet = { country = MON country = RUS  } } type = secedeprovince which = RUS value = 1287 }
+command = { trigger = { puppet = { country = MON country = RUS  } } type = secedeprovince which = RUS value = 1288 }
+command = { trigger = { puppet = { country = MON country = RUS  } } type = secedeprovince which = RUS value = 1289 }
+command = { trigger = { puppet = { country = MON country = RUS  } } type = secedeprovince which = RUS value = 1290 }
+command = { trigger = { puppet = { country = MON country = RUS  } } type = secedeprovince which = RUS value = 1294 }
+command = { trigger = { puppet = { country = MON country = RUS  } } type = secedeprovince which = RUS value = 1295 }
+command = { trigger = { puppet = { country = MON country = RUS  } } type = secedeprovince which = RUS value = 1259 }
+command = { trigger = { puppet = { country = MON country = RUS  } } type = secedeprovince which = RUS value = 1255 }
+command = { trigger = { puppet = { country = MON country = RUS  } } type = secedeprovince which = RUS value = 1260 }
+command = { trigger = { puppet = { country = MON country = RUS  } } type = secedeprovince which = RUS value = 1269 }
+command = { trigger = { puppet = { country = MON country = RUS  } } type = secedeprovince which = RUS value = 1271 }
+command = { trigger = { puppet = { country = MON country = RUS  } } type = secedeprovince which = RUS value = 1256 }
+command = { trigger = { puppet = { country = MON country = RUS  } } type = secedeprovince which = RUS value = 1263 }
+command = { trigger = { puppet = { country = MON country = RUS  } } type = secedeprovince which = RUS value = 1257 }
+command = { trigger = { puppet = { country = MON country = RUS  } } type = secedeprovince which = RUS value = 1258 }
 
 command = { trigger = { puppet = { country = MON country = SOV  } } type = secedeprovince which = SOV value = 1270 }
 command = { trigger = { puppet = { country = MON country = SOV  } } type = secedeprovince which = SOV value = 1272 }
@@ -3781,6 +3835,23 @@ command = { trigger = { puppet = { country = MON country = SOV  } } type = seced
 command = { trigger = { puppet = { country = MON country = SOV  } } type = secedeprovince which = SOV value = 1285 }
 command = { trigger = { puppet = { country = MON country = SOV  } } type = secedeprovince which = SOV value = 1274 }
 command = { trigger = { puppet = { country = MON country = SOV  } } type = secedeprovince which = SOV value = 1264 }
+command = { trigger = { puppet = { country = MON country = SOV  } } type = secedeprovince which = SOV value = 1278 }
+command = { trigger = { puppet = { country = MON country = SOV  } } type = secedeprovince which = SOV value = 1286 }
+command = { trigger = { puppet = { country = MON country = SOV  } } type = secedeprovince which = SOV value = 1287 }
+command = { trigger = { puppet = { country = MON country = SOV  } } type = secedeprovince which = SOV value = 1288 }
+command = { trigger = { puppet = { country = MON country = SOV  } } type = secedeprovince which = SOV value = 1289 }
+command = { trigger = { puppet = { country = MON country = SOV  } } type = secedeprovince which = SOV value = 1290 }
+command = { trigger = { puppet = { country = MON country = SOV  } } type = secedeprovince which = SOV value = 1294 }
+command = { trigger = { puppet = { country = MON country = SOV  } } type = secedeprovince which = SOV value = 1295 }
+command = { trigger = { puppet = { country = MON country = SOV  } } type = secedeprovince which = SOV value = 1259 }
+command = { trigger = { puppet = { country = MON country = SOV  } } type = secedeprovince which = SOV value = 1255 }
+command = { trigger = { puppet = { country = MON country = SOV  } } type = secedeprovince which = SOV value = 1260 }
+command = { trigger = { puppet = { country = MON country = SOV  } } type = secedeprovince which = SOV value = 1269 }
+command = { trigger = { puppet = { country = MON country = SOV  } } type = secedeprovince which = SOV value = 1271 }
+command = { trigger = { puppet = { country = MON country = SOV  } } type = secedeprovince which = SOV value = 1256 }
+command = { trigger = { puppet = { country = MON country = SOV  } } type = secedeprovince which = SOV value = 1263 }
+command = { trigger = { puppet = { country = MON country = SOV  } } type = secedeprovince which = SOV value = 1257 }
+command = { trigger = { puppet = { country = MON country = SOV  } } type = secedeprovince which = SOV value = 1258 }
 
 command = { trigger = { puppet = { country = MON country = PRI  } } type = secedeprovince which = PRI value = 1270 }
 command = { trigger = { puppet = { country = MON country = PRI  } } type = secedeprovince which = PRI value = 1272 }
@@ -3801,6 +3872,23 @@ command = { trigger = { puppet = { country = MON country = PRI  } } type = seced
 command = { trigger = { puppet = { country = MON country = PRI  } } type = secedeprovince which = PRI value = 1285 }
 command = { trigger = { puppet = { country = MON country = PRI  } } type = secedeprovince which = PRI value = 1274 }
 command = { trigger = { puppet = { country = MON country = PRI  } } type = secedeprovince which = PRI value = 1264 }
+command = { trigger = { puppet = { country = MON country = PRI  } } type = secedeprovince which = PRI value = 1278 }
+command = { trigger = { puppet = { country = MON country = PRI  } } type = secedeprovince which = PRI value = 1286 }
+command = { trigger = { puppet = { country = MON country = PRI  } } type = secedeprovince which = PRI value = 1287 }
+command = { trigger = { puppet = { country = MON country = PRI  } } type = secedeprovince which = PRI value = 1288 }
+command = { trigger = { puppet = { country = MON country = PRI  } } type = secedeprovince which = PRI value = 1289 }
+command = { trigger = { puppet = { country = MON country = PRI  } } type = secedeprovince which = PRI value = 1290 }
+command = { trigger = { puppet = { country = MON country = PRI  } } type = secedeprovince which = PRI value = 1294 }
+command = { trigger = { puppet = { country = MON country = PRI  } } type = secedeprovince which = PRI value = 1295 }
+command = { trigger = { puppet = { country = MON country = PRI  } } type = secedeprovince which = PRI value = 1259 }
+command = { trigger = { puppet = { country = MON country = PRI  } } type = secedeprovince which = PRI value = 1255 }
+command = { trigger = { puppet = { country = MON country = PRI  } } type = secedeprovince which = PRI value = 1260 }
+command = { trigger = { puppet = { country = MON country = PRI  } } type = secedeprovince which = PRI value = 1269 }
+command = { trigger = { puppet = { country = MON country = PRI  } } type = secedeprovince which = PRI value = 1271 }
+command = { trigger = { puppet = { country = MON country = PRI  } } type = secedeprovince which = PRI value = 1256 }
+command = { trigger = { puppet = { country = MON country = PRI  } } type = secedeprovince which = PRI value = 1263 }
+command = { trigger = { puppet = { country = MON country = PRI  } } type = secedeprovince which = PRI value = 1257 }
+command = { trigger = { puppet = { country = MON country = PRI  } } type = secedeprovince which = PRI value = 1258 }
 
 command = { trigger = { puppet = { country = MON country = SIB  } } type = secedeprovince which = SIB value = 1270 }
 command = { trigger = { puppet = { country = MON country = SIB  } } type = secedeprovince which = SIB value = 1272 }
@@ -3821,6 +3909,23 @@ command = { trigger = { puppet = { country = MON country = SIB  } } type = seced
 command = { trigger = { puppet = { country = MON country = SIB  } } type = secedeprovince which = SIB value = 1285 }
 command = { trigger = { puppet = { country = MON country = SIB  } } type = secedeprovince which = SIB value = 1274 }
 command = { trigger = { puppet = { country = MON country = SIB  } } type = secedeprovince which = SIB value = 1264 }
+command = { trigger = { puppet = { country = MON country = SIB  } } type = secedeprovince which = SIB value = 1278 }
+command = { trigger = { puppet = { country = MON country = SIB  } } type = secedeprovince which = SIB value = 1286 }
+command = { trigger = { puppet = { country = MON country = SIB  } } type = secedeprovince which = SIB value = 1287 }
+command = { trigger = { puppet = { country = MON country = SIB  } } type = secedeprovince which = SIB value = 1288 }
+command = { trigger = { puppet = { country = MON country = SIB  } } type = secedeprovince which = SIB value = 1289 }
+command = { trigger = { puppet = { country = MON country = SIB  } } type = secedeprovince which = SIB value = 1290 }
+command = { trigger = { puppet = { country = MON country = SIB  } } type = secedeprovince which = SIB value = 1294 }
+command = { trigger = { puppet = { country = MON country = SIB  } } type = secedeprovince which = SIB value = 1295 }
+command = { trigger = { puppet = { country = MON country = SIB  } } type = secedeprovince which = SIB value = 1259 }
+command = { trigger = { puppet = { country = MON country = SIB  } } type = secedeprovince which = SIB value = 1255 }
+command = { trigger = { puppet = { country = MON country = SIB  } } type = secedeprovince which = SIB value = 1260 }
+command = { trigger = { puppet = { country = MON country = SIB  } } type = secedeprovince which = SIB value = 1269 }
+command = { trigger = { puppet = { country = MON country = SIB  } } type = secedeprovince which = SIB value = 1271 }
+command = { trigger = { puppet = { country = MON country = SIB  } } type = secedeprovince which = SIB value = 1256 }
+command = { trigger = { puppet = { country = MON country = SIB  } } type = secedeprovince which = SIB value = 1263 }
+command = { trigger = { puppet = { country = MON country = SIB  } } type = secedeprovince which = SIB value = 1257 }
+command = { trigger = { puppet = { country = MON country = SIB  } } type = secedeprovince which = SIB value = 1258 }
 }
 }
 
@@ -5581,7 +5686,7 @@ offset = 14
 deathdate = { day = 29 month = december year = 1960 }
 
 name = "EVT_341800_NAME"
-desc = "EVT_341800_DESC"
+desc = "AI_Event"
 
 action_a = {
 name = "EVT_341800_OPTIONA"
@@ -5611,7 +5716,7 @@ offset = 14
 deathdate = { day = 29 month = december year = 1960 }
 
 name = "EVT_341850_NAME"
-desc = "EVT_341850_DESC"
+desc = "AI_Event"
 
 action_a = {
 name = "EVT_341850_OPTIONA"
@@ -5639,7 +5744,7 @@ offset = 14
 deathdate = { day = 29 month = december year = 1960 }
 
 name = "EVT_341851_NAME"
-desc = "EVT_341851_DESC"
+desc = "AI_Event"
 
 action_a = {
 name = "EVT_341851_OPTIONA"
@@ -5666,7 +5771,7 @@ offset = 14
 deathdate = { day = 29 month = december year = 1960 }
 
 name = "EVT_341852_NAME"
-desc = "EVT_341852_DESC"
+desc = "AI_Event"
 
 action_a = {
 name = "EVT_341852_OPTIONA"
@@ -5694,8 +5799,8 @@ date = { day = 4 month = april year = 1936 }
 offset = 14
 deathdate = { day = 29 month = december year = 1960 }
 
-name = "EVT_341900_NAME"
-desc = "EVT_341900_DESC"
+name = "AI_Event"
+desc = "AI_Event"
 
 action_a = {
 name = "EVT_341900_OPTIONA"
