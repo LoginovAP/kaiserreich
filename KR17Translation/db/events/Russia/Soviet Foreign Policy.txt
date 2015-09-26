@@ -1677,6 +1677,7 @@ command = { type = sleepevent which = 753808 }
 action = {
 trigger = {
 flag = SOV_EXP
+control = { province = 1284 data = SOV }
 }
 ai_chance = 60
 name = "EVT_753807_OPTIOND"
@@ -1699,13 +1700,36 @@ command = { type = dissent value = 5 }
 action = {
 trigger = {
 flag = SOV_EXP
+NOT = {
+control = { province = 1284 data = SOV }
+}
+}
+ai_chance = 60
+name = "EVT_753807_OPTIONE"
+command = { type = belligerence value = 5 }
+command = { type = addclaim which = 1281 }
+command = { type = addclaim which = 1273 }
+command = { type = addclaim which = 1280 }
+command = { type = addclaim which = 1275 }
+command = { type = addclaim which = 1278 }
+command = { type = addclaim which = 1279 }
+command = { type = addclaim which = 1277 }
+command = { type = addclaim which = 1274 }
+command = { type = addclaim which = 1282 }
+command = { type = addclaim which = 1276 }
+command = { type = dissent value = 5 }
+}
+
+action = {
+trigger = {
+flag = SOV_EXP
 OR = {
 alliance = { country = SOV country = CHI }
 puppet = { country = CHI country = SOV  }
 }
 }
 ai_chance = 90
-name = "EVT_753807_OPTIONE"
+name = "EVT_753807_OPTIONF"
 command = { type = belligerence value = 5 }
 command = { type = addclaim which = 1281 }
 command = { type = addclaim which = 1273 }
@@ -1739,7 +1763,7 @@ puppet = { country = CHI country = SOV  }
 }
 }
 ai_chance = 90
-name = "EVT_753807_OPTIONF"
+name = "EVT_753807_OPTIONG"
 command = { type = belligerence value = 5 }
 command = { type = removeclaim which = 1281 }
 command = { type = removeclaim which = 1273 }
@@ -1776,7 +1800,7 @@ puppet = { country = CHI country = SOV  }
 }
 }
 ai_chance = 60
-name = "EVT_753807_OPTIONG"
+name = "EVT_753807_OPTIONERR"
 command = { type = belligerence value = -5 }
 command = { type = removeclaim which = 1281 }
 command = { type = removeclaim which = 1273 }
@@ -5201,6 +5225,7 @@ command = { type = addcore   which = 1158   }
 command = { type = clrflag  which = SIB_PANIC }
 command = { type = relation which = MON value = 10 }
 }
+
 action_b = {
 name = "EVT_889080_OPTIONB"
 ai_chance = 5
@@ -5237,6 +5262,18 @@ command = { type = alliance which = MON }
 command = { type = trigger which = 889082 }
 command = { trigger = { puppet = { country = SIK country = MON  } } type = inherit which = SIK value = 1 }
 command = { trigger = { puppet = { country = CXB country = MON  } } type = inherit which = CXB value = 1 }
+command = { type = removeclaim which = 1123 }
+command = { type = removeclaim which = 1125 }
+command = { type = removeclaim which = 1121 }
+command = { type = removeclaim which = 1122 }
+command = { type = removeclaim which = 1124 }
+command = { type = removeclaim which = 1120 }
+command = { type = secedeprovince which = MON value = 1123 }
+command = { type = secedeprovince which = MON value = 1125 }
+command = { type = secedeprovince which = MON value = 1121 }
+command = { type = secedeprovince which = MON value = 1122 }
+command = { type = secedeprovince which = MON value = 1124 }
+command = { type = secedeprovince which = MON value = 1120 }
 }
 }
 
@@ -5298,18 +5335,19 @@ name = "EVT_889084_OPTIONA"
 ai_chance = 90
 command = { type = flag_ext where = MON  }
 command = { type = peace which = SOV value = 1 }
+command = { type = name where = MON }
 command = { type = flag_ext where = MON which = "_SYN" }
 command = { type = set_domestic which = democratic value = 3     }
 command = { type = set_domestic which = political_left value = 9  }
 command = { type = headofstate which = 94135 }
 command = { type = headofgovernment which = 94120 }
 command = { type = leave_alliance }
-command = { type = secedeprovince which = RUS value = 1167 }
-command = { type = secedeprovince which = RUS value = 1168 }
-command = { type = secedeprovince which = RUS value = 1169 }
-command = { type = secedeprovince which = RUS value = 1146 }
-command = { type = secedeprovince which = RUS value = 1147 }
-command = { type = secedeprovince which = RUS value = 1158 }
+command = { type = secedeprovince which = SOV value = 1167 }
+command = { type = secedeprovince which = SOV value = 1168 }
+command = { type = secedeprovince which = SOV value = 1169 }
+command = { type = secedeprovince which = SOV value = 1146 }
+command = { type = secedeprovince which = SOV value = 1147 }
+command = { type = secedeprovince which = SOV value = 1158 }
 command = { type = removecore which = 1167 }
 command = { type = removecore which = 1168 }
 command = { type = removecore which = 1169 }

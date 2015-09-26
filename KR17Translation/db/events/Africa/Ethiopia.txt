@@ -278,7 +278,7 @@ name = "EVT_91645_OPTIONA"
 command = { type = dissent value = 5 }
 command = { type = domestic which = freedom value = 1 }
 command = { type = setflag which = ETH_REF }
-command = { type = event which = 91646 where = ETH when = 100  }
+command = { type = event which = 923003 where = ETH when = 100  }
 }
 
 action_b = {
@@ -2848,11 +2848,74 @@ persistent = yes
 
 trigger = {
 local_flag = JAP_protects_ETH
-or = {
-event = 343503
-event = 343506
-event = 341704
-event = 341753
+NOT = {
+control = { province = 1221 data = JAP }
+AND = {
+control = { province = 1221 data = KOR }
+OR = {
+puppet = { country = KOR country = JAP }
+alliance = { country = KOR country = JAP }
+}
+}
+control = { province = 1228 data = JAP }
+AND = {
+control = { province = 1228 data = KOR }
+OR = {
+puppet = { country = KOR country = JAP }
+alliance = { country = KOR country = JAP }
+}
+}
+control = { province = 1191 data = JAP }
+AND = {
+control = { province = 1191 data = PRI }
+OR = {
+puppet = { country = PRI country = JAP }
+alliance = { country = PRI country = JAP }
+}
+}
+AND = {
+control = { province = 1191 data = RUS }
+OR = {
+puppet = { country = RUS country = JAP }
+alliance = { country = RUS country = JAP }
+}
+}
+control = { province = 1208 data = JAP }
+AND = {
+control = { province = 1208 data = MAN }
+OR = {
+puppet = { country = MAN country = JAP }
+alliance = { country = MAN country = JAP }
+}
+}
+AND = {
+control = { province = 1208 data = CSX }
+OR = {
+puppet = { country = CSX country = JAP }
+alliance = { country = CSX country = JAP }
+}
+}
+AND = {
+control = { province = 1208 data = CHI }
+OR = {
+puppet = { country = CHI country = JAP }
+alliance = { country = CHI country = JAP }
+}
+}
+AND = {
+control = { province = 1208 data = CHC }
+OR = {
+puppet = { country = CHC country = JAP }
+alliance = { country = CHC country = JAP }
+}
+}
+AND = {
+control = { province = 1208 data = MEN }
+OR = {
+puppet = { country = MEN country = JAP }
+alliance = { country = MEN country = JAP }
+}
+}
 }
 }
 
@@ -3421,5 +3484,429 @@ command = { type = sleepevent which = 923015 }
 command = { type = sleepevent which = 923016 }
 command = { type = sleepevent which = 923017 }
 command = { type = clrflag which = ETH_Pan }
+}
+}
+
+
+#### German Support chain
+
+event = {
+id = 923004
+random = no
+country = ETH
+picture = "ETH_Generic"
+
+trigger = {
+flag = ETH_Ger
+atwar = no
+control = { province = 163 data = GER } #Berlin held by Germany
+NOT = { exists = SOM }
+}
+
+name = "EVT_923004_NAME"
+desc = "EVT_923004_DESC"
+style = 2
+
+date = { day = 1 month = june year = 1938 }
+offset = 150
+deathdate = { day = 30 month = september year = 1960 }
+
+action_a = {
+ai_chance = 90
+name = "EVT_923004_OPTIONA"
+command = { type = trigger which = 923005 }
+command = { type = domestic which = interventionism value = 1 }
+}
+
+action_b = {
+ai_chance = 10
+name = "EVT_923004_OPTIONB"
+command = { type = domestic which = interventionism value = -1 }
+}
+}
+
+event = {
+id = 923005
+random = no
+country = GER
+picture = "ETH_Generic"
+
+name = "EVT_923005_NAME"
+desc = "EVT_923005_DESC"
+style = 2
+
+action_a = {
+ai_chance = 95
+name = "EVT_923005_OPTIONA"
+command = { type = relation which = ETH value = 20 }
+command = { type = event which = 923006 where = ETH when = 100  }
+command = { type = money value = -200 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_923005_OPTIONB"
+command = { type = relation which = ETH value = -20 }
+}
+}
+
+event = {
+id = 923006
+random = no
+country = ETH
+picture = "ETH_Generic"
+
+name = "EVT_923006_NAME"
+desc = "EVT_923006_DESC"
+style = 2
+
+action_a = {
+ai_chance = 100
+name = "EVT_923006_OPTIONA"
+command = { type = waketeam which = 6516 }
+command = { type = relation which = GER value = 20 }
+}
+}
+
+event = {
+id = 923007
+random = no
+country = GER
+picture = "ETH_Generic"
+
+trigger = {
+exists = ETH
+event = 923006
+OR = {
+war = { country = VIC country = GER }    #Germany at war with the northern African countries...
+war = { country = EGY country = GER }
+war = { country = SUD country = GER }
+war = { country = CON country = GER }
+war = { country = U03 country = GER }    # ...or any of the main African revolters, really.
+war = { country = U04 country = GER }
+war = { country = U05 country = GER }
+}
+NOT = {
+exists = SOM
+war = { country = ETH country = GER }
+alliance = { country = GER country = ETH }
+puppet = { country = ETH country = GER }
+}
+}
+
+name = "EVT_923007_NAME"
+desc = "EVT_923007_DESC"
+style = 2
+
+date = { day = 1 month = june year = 1938 }
+offset = 150
+deathdate = { day = 30 month = september year = 1960 }
+
+action_a = {
+ai_chance = 95
+name = "EVT_923007_OPTIONA"
+command = { type = trigger which = 923008 }
+command = { type = domestic which = interventionism value = 1 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_923007_OPTIONB"
+command = { type = domestic which = interventionism value = -1 }
+}
+}
+
+event = {
+id = 923008
+random = no
+country = ETH
+picture = "ETH_Generic"
+
+name = "EVT_923008_NAME"
+desc = "EVT_923008_DESC"
+style = 2
+
+action_a = {
+ai_chance = 95
+name = "EVT_923008_OPTIONA"
+command = { type = dissent value = 5 }
+command = { type = trigger which = 923009 }
+command = { type = relation which = GER value = 50 }
+command = { type = domestic which = interventionism value = 1 }
+}
+
+action_b = {
+ai_chance = 5
+name = "EVT_923008_OPTIONB"
+command = { type = domestic which = interventionism value = -1 }
+command = { type = relation which = GER value = -100 }
+command = { type = dissent value = -1 }
+}
+}
+
+event = {
+id = 923009
+random = no
+country = GER
+picture = "ETH_Generic"
+
+name = "EVT_923009_NAME"
+desc = "EVT_923009_DESC"
+style = 2
+
+action_a = {
+ai_chance = 100
+name = "EVT_923009_OPTIONA"
+command = { type = alliance which = ETH }
+}
+}
+
+#### Panafrican chain
+
+event = {
+id = 923010
+random = no
+country = ETH
+picture = "ETH_Generic"
+
+trigger = {
+flag = ETH_Pan
+event = 923003
+NOT = { exists = SOM }
+}
+
+name = "EVT_923010_NAME"
+desc = "EVT_923010_DESC"
+style = 2
+
+date = { day = 1 month = june year = 1938 }
+offset = 150
+deathdate = { day = 30 month = september year = 1960 }
+
+action = {
+ai_chance = 75
+name = "EVT_923010_OPTIONA"
+command = { type = event which = 923011 where = ETH when = 200  }
+}
+action = {
+ai_chance = 25
+name = "EVT_923010_OPTIONB"
+command = { type = domestic which = interventionism value = -2 }
+command = { type = clrflag which = ETH_Pan }
+command = { type = dissent value = 5 }
+}
+}
+
+event = {
+id = 923011
+random = no
+country = ETH
+picture = "ETH_Generic"
+
+name = "EVT_923011_NAME"
+desc = "EVT_923011_DESC"
+style = 2
+
+action = {
+ai_chance = 75
+name = "EVT_923011_OPTIONA"
+command = { trigger = { exists = CON }    type = event which = 923012 where = CON when = 50  }
+command = { trigger = { NOT = { exists = CON } }    type = event which = 923012 where = GER when = 50  }
+command = { type = dissent value = -1 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = money value = -200 }
+}
+action = {
+ai_chance = 25
+name = "EVT_923011_OPTIONB"
+command = { type = domestic which = interventionism value = -2 }
+command = { type = clrflag which = ETH_Pan }
+command = { type = dissent value = 5 }
+}
+}
+
+event = {
+id = 923012
+random = no
+tag = { GER CON }
+
+name = "EVT_923012_NAME"
+desc = "EVT_923012_DESC"
+style = 2
+
+action = {
+ai_chance = 75
+name = "EVT_923012_OPTIONA"
+command = { type = revolt which = 842 }
+command = { type = revolt which = 842 }
+command = { type = revolt which = 842 }
+command = { type = revolt which = 841 }
+command = { type = revolt which = 841 }
+command = { type = revolt which = 848 }
+command = { type = revolt which = 848 }
+command = { type = dissent value = 1 }
+command = { type = event which = 923013 where = ETH when = 200  }
+}
+}
+
+event = {
+id = 923013
+random = no
+country = ETH
+picture = "ETH_Generic"
+
+name = "EVT_923013_NAME"
+desc = "EVT_923013_DESC"
+style = 2
+
+action = {
+ai_chance = 75
+name = "EVT_923013_OPTIONA"
+command = { trigger = { exists = CON }    type = event which = 923014 where = CON when = 50  }
+command = { trigger = { NOT = { exists = CON } }    type = event which = 923014 where = GER when = 50  }
+command = { type = dissent value = -1 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = money value = -200 }
+}
+action = {
+ai_chance = 25
+name = "EVT_923013_OPTIONB"
+command = { type = domestic which = interventionism value = -2 }
+command = { type = clrflag which = ETH_Pan }
+command = { type = dissent value = 5 }
+}
+}
+
+event = {
+id = 923014
+random = no
+tag = { GER CON }
+
+name = "EVT_923014_NAME"
+desc = "EVT_923014_DESC"
+style = 2
+
+action = {
+ai_chance = 75
+name = "EVT_923014_OPTIONA"
+command = { type = revolt which = 902 }
+command = { type = revolt which = 902 }
+command = { type = revolt which = 902 }
+command = { type = revolt which = 905 }
+command = { type = revolt which = 905 }
+command = { type = revolt which = 847 }
+command = { type = revolt which = 847 }
+command = { type = dissent value = 1 }
+command = { type = event which = 923015 where = ETH when = 200  }
+}
+}
+
+event = {
+id = 923015
+random = no
+country = ETH
+picture = "ETH_Generic"
+
+name = "EVT_923015_NAME"
+desc = "EVT_923015_DESC"
+style = 2
+
+action = {
+ai_chance = 75
+name = "EVT_923015_OPTIONA"
+command = { type = event which = 923016 where = VIC when = 50  }
+command = { type = dissent value = -1 }
+command = { type = domestic which = interventionism value = 1 }
+command = { type = money value = -200 }
+}
+action = {
+ai_chance = 25
+name = "EVT_923015_OPTIONB"
+command = { type = domestic which = interventionism value = -2 }
+command = { type = clrflag which = ETH_Pan }
+command = { type = dissent value = 5 }
+}
+}
+
+event = {
+id = 923016
+random = no
+country = VIC
+
+name = "EVT_923016_NAME"
+desc = "EVT_923016_DESC"
+style = 2
+
+action = {
+ai_chance = 75
+name = "EVT_923016_OPTIONA"
+command = { type = revolt which = 976 }
+command = { type = revolt which = 976 }
+command = { type = revolt which = 976 }
+command = { type = revolt which = 974 }
+command = { type = revolt which = 974 }
+command = { type = revolt which = 972 }
+command = { type = revolt which = 973 }
+command = { type = dissent value = 1 }
+}
+}
+
+event = {
+id = 923017
+random = no
+country = ETH
+picture = "ETH_Generic"
+
+trigger = {
+flag = ETH_Pan
+event = 923003
+atwar = no
+NOT = {
+exists = SOM
+control = { province = 163 data = GER }
+}
+}
+
+name = "EVT_923017_NAME"
+desc = "EVT_923017_DESC"
+style = 2
+
+date = { day = 1 month = june year = 1938 }
+offset = 150
+deathdate = { day = 30 month = september year = 1960 }
+
+action = {
+ai_chance = 75
+name = "EVT_923017_OPTIONA"
+command = { type = dissent value = 5 }
+command = { type = war which = GER }
+command = { type = war which = CON }
+}
+action = {
+ai_chance = 25
+name = "EVT_923017_OPTIONB"
+command = { type = domestic which = interventionism value = -2 }
+command = { type = clrflag which = ETH_Pan }
+command = { type = dissent value = 5 }
+}
+}
+
+### End of Economical Crisis
+
+event = {
+id = 923018
+random = no
+country = ETH
+picture = "Berlin stock exchange"
+
+name = "EVT_923018_NAME"
+desc = "EVT_923018_DESC"
+style = 2
+
+action = {
+ai_chance = 100
+name = "EVT_923018_OPTIONA"
+command = { type = dissent value = -2 }
+command = { type = industrial_modifier which = total value = 4 }
 }
 }

@@ -1267,7 +1267,7 @@ airunit = {
         division = { id = { type = 13016 id = 1085 } name = "13 Kuchikukantai" type = destroyer model = 1 }
         division = { id = { type = 13016 id = 1086 } name = "14 Kuchikukantai" type = destroyer model = 1 }
         division = { id = { type = 13016 id = 1087 } name = "7 Yuso Sentai" type = transport model = 1 }
-        division = { id = { type = 13016 id = 1088 } name = "8 Yuso Sentai" type = transport model = 1 }
+        division = { id = { type = 13016 id = 1088 } name = "20 Yuso Sentai" type = transport model = 1 }
     }
 
     navalunit = {

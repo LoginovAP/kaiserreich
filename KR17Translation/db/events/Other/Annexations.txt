@@ -61,7 +61,6 @@ persistent = yes
 
 decision = {
 NOT = {
-
 exists = BUL
 local_flag = BUL_CONQ
 }
@@ -109,7 +108,6 @@ deathdate = { day = 29 month = december year = 1963 }
 action = {
 name = "EVT_996001_OPTIONA"
 ai_chance = 1
-command = {  }
 command = { trigger = { country = SER } type = addcore which = 328 } #Kumanovo
 command = { trigger = { country = SER } type = addcore which = 331 } #Pirot
 command = { trigger = { country = SER } type = addcore which = 333 } #Skopje
@@ -181,10 +179,79 @@ command = { type = dissent value = -5 }
 
 event = {
 id = 996003
-tag = { GRE SER OTT AUS U24 U25 HUN GER ITA RUS SOV FRA RSI ENG U31 CSA TEX JAP }
+tag = { GRE SER OTT AUS U24 U25 HUN GER ITA RUS SOV FRA RSI ENG U31 CSA TEX JAP BUL }
 persistent = yes
 
+decision = {
+OR = {
+country = GRE
+country = SER
+country = OTT
+country = AUS
+country = U24
+country = U25
+country = HUN
+country = GER
+country = ITA
+country = RUS
+country = SOV
+country = FRA
+country = RSI
+country = ENG
+country = U31
+country = CSA
+country = TEX
+country = JAP
+AND = {
+country = BUL
+government = { type = communist country = BUL }
+}
+}
+NOT = {
+exists = ROM
+exists = URU
+local_flag = ROM_CONQ
+}
+control = { province = 316 data = -1 } #Bucharest
+}
+
+decision_trigger = {
+NOT = {
+war = { country = -1 country = UKR }
+war = { country = -1 country = U24 }
+war = { country = -1 country = U25 }
+war = { country = -1 country = HUN }
+war = { country = -1 country = BUL }
+war = { country = -1 country = SER }
+war = { country = -1 country = YUG }
+}
+}
+
 trigger = {
+OR = {
+country = GRE
+country = SER
+country = OTT
+country = AUS
+country = U24
+country = U25
+country = HUN
+country = GER
+country = ITA
+country = RUS
+country = SOV
+country = FRA
+country = RSI
+country = ENG
+country = U31
+country = CSA
+country = TEX
+country = JAP
+AND = {
+country = BUL
+government = { type = communist country = BUL }
+}
+}
 control = { province = 316 data = -1 } #Bucharest
 NOT = {
 exists = ROM
@@ -198,16 +265,16 @@ war = { country = -1 country = SER }
 war = { country = -1 country = YUG }
 local_flag = ROM_CONQ
 }
-
 }
 
 name = "EVT_996003_NAME"
 desc = "EVT_996003_DESC"
 picture = "POWs"
+decision_picture = "decision_diplomatic_campaign"
 style = 2
 
 
-date = { day = 1 month = january year = 1936 }
+date = { day = 0 month = january year = 1936 }
 offset = 15
 deathdate = { day = 29 month = december year = 1963 }
 
@@ -221,11 +288,16 @@ command = { type = supplies value = 1000 }
 action = {
 ai_chance = 99
 name = "EVT_996003_OPTIONB"
-trigger = {
-NOT = {
-country = BUL
-}
-}
+command = { trigger = { country = RUS flag = RUS_EXP } type = addclaim which = 302 }
+command = { trigger = { country = RUS flag = RUS_EXP } type = addclaim which = 303 }
+command = { trigger = { country = RUS flag = RUS_EXP } type = addclaim which = 304 }
+command = { trigger = { country = RUS flag = RUS_EXP } type = addclaim which = 305 }
+command = { trigger = { country = RUS flag = RUS_EXP } type = addclaim which = 306 }
+command = { trigger = { country = SOV flag = SOV_EXP } type = addclaim which = 302 }
+command = { trigger = { country = SOV flag = SOV_EXP } type = addclaim which = 303 }
+command = { trigger = { country = SOV flag = SOV_EXP } type = addclaim which = 304 }
+command = { trigger = { country = SOV flag = SOV_EXP } type = addclaim which = 305 }
+command = { trigger = { country = SOV flag = SOV_EXP } type = addclaim which = 306 }
 command = { type = independence which = URU value = 1 when = 0 }
 command = { type = make_puppet which = URU  }
 command = { type = supplies value = 1000 }
@@ -239,11 +311,81 @@ command = { type = dissent value = -5 }
 #########
 event = {
 id = 996005
-tag = { BUL GRE ROM OTT AUS U24 U25 HUN GER ITA RUS SOV FRA RSI ENG CSA U31 TEX }
+tag = { BUL GRE ROM OTT AUS U24 U25 HUN GER ITA RUS SOV FRA RSI ENG CSA U31 TEX JAP }
 persistent = yes
+
+decision = {
+OR = {
+AND = {
+country = BUL
+government = { type = communist country = BUL }
+}
+country = GRE
+country = ROM
+country = OTT
+country = AUS
+country = U24
+country = U25
+country = HUN
+country = GER
+country = ITA
+country = RUS
+country = SOV
+country = FRA
+country = RSI
+country = ENG
+country = U31
+country = CSA
+country = TEX
+country = JAP
+}
+NOT = {
+exists = SER
+local_flag = SER_CONQ
+}
+control = { province = 338 data = -1 } #Belgrade
+}
+
+decision_trigger = {
+NOT = {
+war = { country = -1 country = U24 }
+war = { country = -1 country = U25 }
+war = { country = -1 country = AUS }
+war = { country = -1 country = HUN }
+war = { country = -1 country = CRO }
+war = { country = -1 country = BOS }
+war = { country = -1 country = YUG }
+war = { country = -1 country = BUL }
+war = { country = -1 country = ALB }
+}
+}
 
 trigger = {
 control = { province = 338 data = -1 } #Belgrade
+OR = {
+AND = {
+country = BUL
+government = { type = communist country = BUL }
+}
+country = GRE
+country = ROM
+country = OTT
+country = AUS
+country = U24
+country = U25
+country = HUN
+country = GER
+country = ITA
+country = RUS
+country = SOV
+country = FRA
+country = RSI
+country = ENG
+country = U31
+country = CSA
+country = TEX
+country = JAP
+}
 NOT = {
 exists = SER
 war = { country = -1 country = U24 }
@@ -262,12 +404,13 @@ local_flag = SER_CONQ
 name = "EVT_996005_NAME"
 desc = "EVT_996005_DESC"
 picture = "POWs"
+decision_picture = "decision_diplomatic_campaign"
 style = 2
 
 
-date = { day = 1 month = january year = 1936 }
+date = { day = 0 month = january year = 1936 }
 offset = 15
-deathdate = { day = 1 month = december year = 1963 }
+deathdate = { day = 29 month = december year = 1963 }
 
 action = {
 name = "EVT_996005_OPTIONA"
@@ -280,18 +423,6 @@ command = { type = local_setflag which = SER_CONQ }
 action = {
 name = "EVT_996005_OPTIONB"
 ai_chance = 99
-trigger = {
-OR = {
-country = AUS
-country = HUN
-country = U24
-country = U25
-country = CRO
-}
-NOT = {
-country = BUL
-}
-}
 command = { type = supplies value = 1000 }
 command = { type = dissent value = -5 }
 command = { type = independence which = SER value = 1 when = 0 }
@@ -339,10 +470,77 @@ command = { type = dissent value = 3 }
 
 event = {
 id = 996006
-tag = { BUL SER ROM OTT AUS U24 U25 HUN GER ITA RUS SOV FRA RSI ENG CSA TEX U31 }
+tag = { BUL SER ROM OTT AUS U24 U25 HUN GER ITA RUS SOV FRA RSI ENG CSA TEX U31 JAP }
 persistent = yes
 
+decision = {
+OR = {
+AND = {
+country = BUL
+government = { type = communist country = BUL }
+}
+country = SER
+country = ROM
+country = OTT
+country = AUS
+country = U24
+country = U25
+country = HUN
+country = GER
+country = ITA
+country = RUS
+country = SOV
+country = FRA
+country = RSI
+country = ENG
+country = U31
+country = CSA
+country = TEX
+country = JAP
+}
+NOT = {
+exists = GRE
+local_flag = GRE_CONQ
+}
+control = { province = 377 data = -1 } #Athens
+}
+
+decision_trigger = {
+NOT = {
+war = { country = -1 country = OTT }
+war = { country = -1 country = TUR }
+war = { country = -1 country = ALB }
+war = { country = -1 country = BUL }
+war = { country = -1 country = YUG }
+war = { country = -1 country = SER }
+}
+}
+
 trigger = {
+OR = {
+AND = {
+country = BUL
+government = { type = communist country = BUL }
+}
+country = SER
+country = ROM
+country = OTT
+country = AUS
+country = U24
+country = U25
+country = HUN
+country = GER
+country = ITA
+country = RUS
+country = SOV
+country = FRA
+country = RSI
+country = ENG
+country = U31
+country = CSA
+country = TEX
+country = JAP
+}
 control = { province = 377 data = -1 } #Athens
 NOT = {
 exists = GRE
@@ -359,12 +557,13 @@ local_flag = GRE_CONQ
 name = "EVT_996006_NAME"
 desc = "EVT_996006_DESC"
 picture = "greek_soldiers"
+decision_picture = "decision_diplomatic_campaign"
 style = 2
 
 
-date = { day = 1 month = january year = 1936 }
+date = { day = 0 month = january year = 1936 }
 offset = 15
-deathdate = { day = 1 month = december year = 1963 }
+deathdate = { day = 29 month = december year = 1963 }
 
 action = {
 name = "EVT_996006_OPTIONA"
@@ -2106,7 +2305,7 @@ command = { type = dissent value = -10 }
 event = {
 id = 996031
 picture = "southernitaly"
-tag = { AUS U24 U25 GER FRA ENG HUN EUS SOV SPR RUS CSA CAN USA TEX OTT VIC U07 U08 U31 U23 }
+tag = { AUS U24 U25 GER FRA ENG HUN EUS SOV SPR RUS CSA CAN USA TEX OTT VIC U07 U08 U31 U23 PAK }
 style = 2
 
 
@@ -2487,6 +2686,10 @@ alliance = { country = CAN country = ITA }
 AND = {
 country = EUS
 alliance = { country = EUS country = ITA }
+}
+AND = {
+country = EUS
+alliance = { country = PAK country = ITA }
 }
 }
 }
@@ -21650,7 +21853,7 @@ command = { trigger = { OR = { alliance = { country = -1 country = CHC } puppet 
 #########
 event = {
 id = 996012
-tag = { USA TEX CSA RUS SOV JAP CAN VIC U07 U08 FRA ENG U31 CGX SIA BRU VIE PRK PAK IND GER }
+tag = { USA TEX CSA RUS SOV JAP CAN VIC U07 U08 FRA ENG U31 SIA BRU VIE PRK PAK IND GER }
 persistent = yes
 
 decision = {
@@ -21697,9 +21900,9 @@ decision_picture = decision_diplomatic_campaign
 style = 2
 
 
-date = { day = 1 month = january year = 1936 }
+date = { day = 0 month = january year = 1936 }
 offset = 10
-deathdate = { day = 30 month = december year = 1963 }
+deathdate = { day = 29 month = december year = 1963 }
 
 action = {
 name = "EVT_996012_OPTIONA"

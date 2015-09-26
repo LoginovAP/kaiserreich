@@ -1540,12 +1540,16 @@ style = 2
 trigger = {
 control = { province = 1367 data = CHI } # Naoming
 control = { province = 1395 data = CHI } # Hanoi
-not = {
+NOT = {
 exists = CGX
 ispuppet = GER
 ispuppet = CHI
 alliance = { country = GER country = CSX }
 alliance = { country = GER country = JAP }
+alliance = { country = GER country = RUS }
+alliance = { country = CHI country = RUS }
+alliance = { country = CHI country = SOV }
+alliance = { country = CHI country = JAP }
 control = { province = 1392 data = GER }
 }
 war = { country = CHI country = GER }
@@ -1556,20 +1560,21 @@ name = "EVT_630119_NAME"
 desc = "EVT_630119_DESC"
 picture = "mayfourth3"
 
-date = { day = 1 month = january year = 1936 }
+date = { day = 0 month = january year = 1936 }
 offset = 30
-deathdate = { day = 29 month = november year = 1960 }
+deathdate = { day = 29 month = december year = 1963 }
 
 
 
 action_a = {
-ai_chance =  90
+ai_chance =  99
 name = "EVT_630119_OPTIONA"
 command = { type = dissent value = -1 }
 command = { type = trigger which = 630120 }
 }
+
 action_b = {
-ai_chance =  10
+ai_chance =  1
 name = "EVT_630119_OPTIONB"
 command = { type = dissent value = 5 }
 command = { type = relation which = GER value = -100 }

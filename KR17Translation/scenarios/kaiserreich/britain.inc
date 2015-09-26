@@ -155,7 +155,7 @@ dormant_ministers = { 557558 557559 }
 #Land Doctrines
 #Pre ww1 doctrines
 6500 6510 6530 6580 6600 6610 6620 6630 6640 6650 6660 6670 6680 #ww1 doctrines
-6540 6550 6910 #Interwar Doctrines
+6540 6910 #Interwar Doctrines
 6560 6030 #Just to put CoB into grand Battleplan doctrine
 14000 14010 14020 #Hospital systems
 

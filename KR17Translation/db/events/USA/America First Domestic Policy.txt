@@ -322,10 +322,11 @@ event = {
 id = 81143
 random = no
 country = TEX
+
 trigger = {
 flag = END_ACW
 flag = ACW_CSA
-not = {
+NOT = {
 exists = CSA
 }
 exists = FRA
@@ -350,10 +351,13 @@ event = {
 id = 81144
 random = no
 country = TEX
+
 trigger = {
 flag = END_ACW
 flag = ACW_CAL
-not = {
+owned = { province = 1888 data = TEX }
+control = { province = 1888 data = TEX }
+NOT = {
 exists = CAL
 }
 }
@@ -387,15 +391,18 @@ event = {
 id = 81145
 random = no
 country = TEX
+
 trigger = {
 flag = END_ACW
 flag = ACW_AUS
 flag = ACW_CSA
-not = {
+NOT = {
 war = { country = TEX country = CAN }
 flag = ACW_junta
+exists = USA
 }
 }
+
 name = "EVT_81145_NAME"
 desc = "EVT_81145_DESC"
 style = 2

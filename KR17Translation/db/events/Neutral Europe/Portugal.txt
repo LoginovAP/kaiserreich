@@ -1356,7 +1356,21 @@ command = { type = dissent value = 1 }
 action = {
 ai_chance = 60
 trigger = {
-NOT = { ispuppet = GER }
+NOT = { 
+ispuppet = GER 
+}
+OR = {
+NOT = { 
+war = { country = POR country = CON }
+}
+AND = {
+war = { country = POR country = CON }
+NOT = { 
+puppet = { country = CON country = GER }
+alliance = { country = CON country = GER }
+}
+}
+}
 participant = { country = GER value = 2 }
 control = { province = 163 data = GER }
 }
